@@ -17,31 +17,20 @@ package com.google.cloud.oslogin.v1;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey;
-import com.google.cloud.oslogin.v1.stub.GrpcOsLoginServiceStub;
-import com.google.cloud.oslogin.v1.stub.OsLoginServiceStub;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Lists;
+import com.google.cloud.oslogin.v1.stub.OsLoginServiceStubSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -72,103 +61,74 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSettings> {
-  /** The default scopes of the service. */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
-          .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
-          .build();
-
-  private final UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings;
-  private final UnaryCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeySettings;
-  private final UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings;
-  private final UnaryCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeySettings;
-  private final UnaryCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
-      importSshPublicKeySettings;
-  private final UnaryCallSettings<UpdateSshPublicKeyRequest, SshPublicKey>
-      updateSshPublicKeySettings;
-
   /** Returns the object with the settings used for calls to deletePosixAccount. */
   public UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings() {
-    return deletePosixAccountSettings;
+    return ((OsLoginServiceStubSettings) getStubSettings()).deletePosixAccountSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteSshPublicKey. */
   public UnaryCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeySettings() {
-    return deleteSshPublicKeySettings;
+    return ((OsLoginServiceStubSettings) getStubSettings()).deleteSshPublicKeySettings();
   }
 
   /** Returns the object with the settings used for calls to getLoginProfile. */
   public UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings() {
-    return getLoginProfileSettings;
+    return ((OsLoginServiceStubSettings) getStubSettings()).getLoginProfileSettings();
   }
 
   /** Returns the object with the settings used for calls to getSshPublicKey. */
   public UnaryCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeySettings() {
-    return getSshPublicKeySettings;
+    return ((OsLoginServiceStubSettings) getStubSettings()).getSshPublicKeySettings();
   }
 
   /** Returns the object with the settings used for calls to importSshPublicKey. */
   public UnaryCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeySettings() {
-    return importSshPublicKeySettings;
+    return ((OsLoginServiceStubSettings) getStubSettings()).importSshPublicKeySettings();
   }
 
   /** Returns the object with the settings used for calls to updateSshPublicKey. */
   public UnaryCallSettings<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeySettings() {
-    return updateSshPublicKeySettings;
+    return ((OsLoginServiceStubSettings) getStubSettings()).updateSshPublicKeySettings();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public OsLoginServiceStub createStub() throws IOException {
-    if (getTransportChannelProvider()
-        .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcOsLoginServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
-    }
+  public static final OsLoginServiceSettings create(OsLoginServiceStubSettings stub)
+      throws IOException {
+    return new OsLoginServiceSettings.Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
+    return OsLoginServiceStubSettings.defaultExecutorProviderBuilder();
   }
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "oslogin.googleapis.com:443";
+    return OsLoginServiceStubSettings.getDefaultEndpoint();
   }
 
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
-    return DEFAULT_SERVICE_SCOPES;
+    return OsLoginServiceStubSettings.getDefaultServiceScopes();
   }
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return OsLoginServiceStubSettings.defaultCredentialsProviderBuilder();
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return OsLoginServiceStubSettings.defaultGrpcTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
+    return OsLoginServiceStubSettings.defaultTransportChannelProvider();
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(OsLoginServiceSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+    return OsLoginServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
   /** Returns a new builder for this class. */
@@ -188,159 +148,32 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
 
   protected OsLoginServiceSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
-
-    deletePosixAccountSettings = settingsBuilder.deletePosixAccountSettings().build();
-    deleteSshPublicKeySettings = settingsBuilder.deleteSshPublicKeySettings().build();
-    getLoginProfileSettings = settingsBuilder.getLoginProfileSettings().build();
-    getSshPublicKeySettings = settingsBuilder.getSshPublicKeySettings().build();
-    importSshPublicKeySettings = settingsBuilder.importSshPublicKeySettings().build();
-    updateSshPublicKeySettings = settingsBuilder.updateSshPublicKeySettings().build();
   }
 
   /** Builder for OsLoginServiceSettings. */
   public static class Builder extends ClientSettings.Builder<OsLoginServiceSettings, Builder> {
-    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<DeletePosixAccountRequest, Empty>
-        deletePosixAccountSettings;
-    private final UnaryCallSettings.Builder<DeleteSshPublicKeyRequest, Empty>
-        deleteSshPublicKeySettings;
-    private final UnaryCallSettings.Builder<GetLoginProfileRequest, LoginProfile>
-        getLoginProfileSettings;
-    private final UnaryCallSettings.Builder<GetSshPublicKeyRequest, SshPublicKey>
-        getSshPublicKeySettings;
-    private final UnaryCallSettings.Builder<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
-        importSshPublicKeySettings;
-    private final UnaryCallSettings.Builder<UpdateSshPublicKeyRequest, SshPublicKey>
-        updateSshPublicKeySettings;
-
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
-        RETRYABLE_CODE_DEFINITIONS;
-
-    static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
-          ImmutableMap.builder();
-      definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      RETRYABLE_CODE_DEFINITIONS = definitions.build();
-    }
-
-    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
-
-    static {
-      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
-      RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(10000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(10000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("default", settings);
-      RETRY_PARAM_DEFINITIONS = definitions.build();
-    }
-
-    protected Builder() {
+    protected Builder() throws IOException {
       this((ClientContext) null);
     }
 
     protected Builder(ClientContext clientContext) {
-      super(clientContext);
-
-      deletePosixAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getLoginProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      importSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      updateSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deletePosixAccountSettings,
-              deleteSshPublicKeySettings,
-              getLoginProfileSettings,
-              getSshPublicKeySettings,
-              importSshPublicKeySettings,
-              updateSshPublicKeySettings);
-
-      initDefaults(this);
+      super(OsLoginServiceStubSettings.newBuilder(clientContext));
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .deletePosixAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteSshPublicKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getLoginProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSshPublicKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .importSshPublicKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateSshPublicKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
+      return new Builder(OsLoginServiceStubSettings.newBuilder());
     }
 
     protected Builder(OsLoginServiceSettings settings) {
-      super(settings);
+      super(settings.getStubSettings().toBuilder());
+    }
 
-      deletePosixAccountSettings = settings.deletePosixAccountSettings.toBuilder();
-      deleteSshPublicKeySettings = settings.deleteSshPublicKeySettings.toBuilder();
-      getLoginProfileSettings = settings.getLoginProfileSettings.toBuilder();
-      getSshPublicKeySettings = settings.getSshPublicKeySettings.toBuilder();
-      importSshPublicKeySettings = settings.importSshPublicKeySettings.toBuilder();
-      updateSshPublicKeySettings = settings.updateSshPublicKeySettings.toBuilder();
+    protected Builder(OsLoginServiceStubSettings.Builder stubSettings) {
+      super(stubSettings);
+    }
 
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deletePosixAccountSettings,
-              deleteSshPublicKeySettings,
-              getLoginProfileSettings,
-              getSshPublicKeySettings,
-              importSshPublicKeySettings,
-              updateSshPublicKeySettings);
+    public OsLoginServiceStubSettings.Builder getStubSettingsBuilder() {
+      return ((OsLoginServiceStubSettings.Builder) getStubSettings());
     }
 
     /**
@@ -350,44 +183,45 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
      */
     public Builder applyToAllUnaryMethods(
         ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to deletePosixAccount. */
     public UnaryCallSettings.Builder<DeletePosixAccountRequest, Empty>
         deletePosixAccountSettings() {
-      return deletePosixAccountSettings;
+      return getStubSettingsBuilder().deletePosixAccountSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteSshPublicKey. */
     public UnaryCallSettings.Builder<DeleteSshPublicKeyRequest, Empty>
         deleteSshPublicKeySettings() {
-      return deleteSshPublicKeySettings;
+      return getStubSettingsBuilder().deleteSshPublicKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to getLoginProfile. */
     public UnaryCallSettings.Builder<GetLoginProfileRequest, LoginProfile>
         getLoginProfileSettings() {
-      return getLoginProfileSettings;
+      return getStubSettingsBuilder().getLoginProfileSettings();
     }
 
     /** Returns the builder for the settings used for calls to getSshPublicKey. */
     public UnaryCallSettings.Builder<GetSshPublicKeyRequest, SshPublicKey>
         getSshPublicKeySettings() {
-      return getSshPublicKeySettings;
+      return getStubSettingsBuilder().getSshPublicKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to importSshPublicKey. */
     public UnaryCallSettings.Builder<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
         importSshPublicKeySettings() {
-      return importSshPublicKeySettings;
+      return getStubSettingsBuilder().importSshPublicKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to updateSshPublicKey. */
     public UnaryCallSettings.Builder<UpdateSshPublicKeyRequest, SshPublicKey>
         updateSshPublicKeySettings() {
-      return updateSshPublicKeySettings;
+      return getStubSettingsBuilder().updateSshPublicKeySettings();
     }
 
     @Override

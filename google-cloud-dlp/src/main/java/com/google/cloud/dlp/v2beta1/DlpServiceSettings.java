@@ -17,29 +17,16 @@ package com.google.cloud.dlp.v2beta1;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.grpc.ProtoOperationTransformers;
-import com.google.api.gax.longrunning.OperationSnapshot;
-import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.dlp.v2beta1.stub.DlpServiceStub;
-import com.google.cloud.dlp.v2beta1.stub.GrpcDlpServiceStub;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Lists;
+import com.google.cloud.dlp.v2beta1.stub.DlpServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
 import com.google.privacy.dlp.v2beta1.CreateInspectOperationRequest;
@@ -62,7 +49,6 @@ import com.google.privacy.dlp.v2beta1.RiskAnalysisOperationResult;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -93,139 +79,101 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
-  /** The default scopes of the service. */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
-
-  private final UnaryCallSettings<InspectContentRequest, InspectContentResponse>
-      inspectContentSettings;
-  private final UnaryCallSettings<RedactContentRequest, RedactContentResponse>
-      redactContentSettings;
-  private final UnaryCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
-      deidentifyContentSettings;
-  private final UnaryCallSettings<AnalyzeDataSourceRiskRequest, Operation>
-      analyzeDataSourceRiskSettings;
-  private final OperationCallSettings<
-          AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
-      analyzeDataSourceRiskOperationSettings;
-  private final UnaryCallSettings<CreateInspectOperationRequest, Operation>
-      createInspectOperationSettings;
-  private final OperationCallSettings<
-          CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
-      createInspectOperationOperationSettings;
-  private final UnaryCallSettings<ListInspectFindingsRequest, ListInspectFindingsResponse>
-      listInspectFindingsSettings;
-  private final UnaryCallSettings<ListInfoTypesRequest, ListInfoTypesResponse>
-      listInfoTypesSettings;
-  private final UnaryCallSettings<ListRootCategoriesRequest, ListRootCategoriesResponse>
-      listRootCategoriesSettings;
-
   /** Returns the object with the settings used for calls to inspectContent. */
   public UnaryCallSettings<InspectContentRequest, InspectContentResponse> inspectContentSettings() {
-    return inspectContentSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).inspectContentSettings();
   }
 
   /** Returns the object with the settings used for calls to redactContent. */
   public UnaryCallSettings<RedactContentRequest, RedactContentResponse> redactContentSettings() {
-    return redactContentSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).redactContentSettings();
   }
 
   /** Returns the object with the settings used for calls to deidentifyContent. */
   public UnaryCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentSettings() {
-    return deidentifyContentSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).deidentifyContentSettings();
   }
 
   /** Returns the object with the settings used for calls to analyzeDataSourceRisk. */
   public UnaryCallSettings<AnalyzeDataSourceRiskRequest, Operation>
       analyzeDataSourceRiskSettings() {
-    return analyzeDataSourceRiskSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).analyzeDataSourceRiskSettings();
   }
 
   /** Returns the object with the settings used for calls to analyzeDataSourceRisk. */
   public OperationCallSettings<
           AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult, RiskAnalysisOperationMetadata>
       analyzeDataSourceRiskOperationSettings() {
-    return analyzeDataSourceRiskOperationSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).analyzeDataSourceRiskOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createInspectOperation. */
   public UnaryCallSettings<CreateInspectOperationRequest, Operation>
       createInspectOperationSettings() {
-    return createInspectOperationSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).createInspectOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createInspectOperation. */
   public OperationCallSettings<
           CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
       createInspectOperationOperationSettings() {
-    return createInspectOperationOperationSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).createInspectOperationOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listInspectFindings. */
   public UnaryCallSettings<ListInspectFindingsRequest, ListInspectFindingsResponse>
       listInspectFindingsSettings() {
-    return listInspectFindingsSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).listInspectFindingsSettings();
   }
 
   /** Returns the object with the settings used for calls to listInfoTypes. */
   public UnaryCallSettings<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesSettings() {
-    return listInfoTypesSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).listInfoTypesSettings();
   }
 
   /** Returns the object with the settings used for calls to listRootCategories. */
   public UnaryCallSettings<ListRootCategoriesRequest, ListRootCategoriesResponse>
       listRootCategoriesSettings() {
-    return listRootCategoriesSettings;
+    return ((DlpServiceStubSettings) getStubSettings()).listRootCategoriesSettings();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public DlpServiceStub createStub() throws IOException {
-    if (getTransportChannelProvider()
-        .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcDlpServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
-    }
+  public static final DlpServiceSettings create(DlpServiceStubSettings stub) throws IOException {
+    return new DlpServiceSettings.Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
+    return DlpServiceStubSettings.defaultExecutorProviderBuilder();
   }
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "dlp.googleapis.com:443";
+    return DlpServiceStubSettings.getDefaultEndpoint();
   }
 
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
-    return DEFAULT_SERVICE_SCOPES;
+    return DlpServiceStubSettings.getDefaultServiceScopes();
   }
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return DlpServiceStubSettings.defaultCredentialsProviderBuilder();
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return DlpServiceStubSettings.defaultGrpcTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
+    return DlpServiceStubSettings.defaultTransportChannelProvider();
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(DlpServiceSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+    return DlpServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
   /** Returns a new builder for this class. */
@@ -245,252 +193,32 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
   protected DlpServiceSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
-
-    inspectContentSettings = settingsBuilder.inspectContentSettings().build();
-    redactContentSettings = settingsBuilder.redactContentSettings().build();
-    deidentifyContentSettings = settingsBuilder.deidentifyContentSettings().build();
-    analyzeDataSourceRiskSettings = settingsBuilder.analyzeDataSourceRiskSettings().build();
-    analyzeDataSourceRiskOperationSettings =
-        settingsBuilder.analyzeDataSourceRiskOperationSettings().build();
-    createInspectOperationSettings = settingsBuilder.createInspectOperationSettings().build();
-    createInspectOperationOperationSettings =
-        settingsBuilder.createInspectOperationOperationSettings().build();
-    listInspectFindingsSettings = settingsBuilder.listInspectFindingsSettings().build();
-    listInfoTypesSettings = settingsBuilder.listInfoTypesSettings().build();
-    listRootCategoriesSettings = settingsBuilder.listRootCategoriesSettings().build();
   }
 
   /** Builder for DlpServiceSettings. */
   public static class Builder extends ClientSettings.Builder<DlpServiceSettings, Builder> {
-    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<InspectContentRequest, InspectContentResponse>
-        inspectContentSettings;
-    private final UnaryCallSettings.Builder<RedactContentRequest, RedactContentResponse>
-        redactContentSettings;
-    private final UnaryCallSettings.Builder<DeidentifyContentRequest, DeidentifyContentResponse>
-        deidentifyContentSettings;
-    private final UnaryCallSettings.Builder<AnalyzeDataSourceRiskRequest, Operation>
-        analyzeDataSourceRiskSettings;
-    private final OperationCallSettings.Builder<
-            AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult,
-            RiskAnalysisOperationMetadata>
-        analyzeDataSourceRiskOperationSettings;
-    private final UnaryCallSettings.Builder<CreateInspectOperationRequest, Operation>
-        createInspectOperationSettings;
-    private final OperationCallSettings.Builder<
-            CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
-        createInspectOperationOperationSettings;
-    private final UnaryCallSettings.Builder<ListInspectFindingsRequest, ListInspectFindingsResponse>
-        listInspectFindingsSettings;
-    private final UnaryCallSettings.Builder<ListInfoTypesRequest, ListInfoTypesResponse>
-        listInfoTypesSettings;
-    private final UnaryCallSettings.Builder<ListRootCategoriesRequest, ListRootCategoriesResponse>
-        listRootCategoriesSettings;
-
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
-        RETRYABLE_CODE_DEFINITIONS;
-
-    static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
-          ImmutableMap.builder();
-      definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      RETRYABLE_CODE_DEFINITIONS = definitions.build();
-    }
-
-    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
-
-    static {
-      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
-      RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("default", settings);
-      RETRY_PARAM_DEFINITIONS = definitions.build();
-    }
-
-    protected Builder() {
+    protected Builder() throws IOException {
       this((ClientContext) null);
     }
 
     protected Builder(ClientContext clientContext) {
-      super(clientContext);
-
-      inspectContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      redactContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deidentifyContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      analyzeDataSourceRiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      analyzeDataSourceRiskOperationSettings = OperationCallSettings.newBuilder();
-
-      createInspectOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      createInspectOperationOperationSettings = OperationCallSettings.newBuilder();
-
-      listInspectFindingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listInfoTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listRootCategoriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              inspectContentSettings,
-              redactContentSettings,
-              deidentifyContentSettings,
-              analyzeDataSourceRiskSettings,
-              createInspectOperationSettings,
-              listInspectFindingsSettings,
-              listInfoTypesSettings,
-              listRootCategoriesSettings);
-
-      initDefaults(this);
+      super(DlpServiceStubSettings.newBuilder(clientContext));
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .inspectContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .redactContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deidentifyContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .analyzeDataSourceRiskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createInspectOperationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listInspectFindingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listInfoTypesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listRootCategoriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-      builder
-          .analyzeDataSourceRiskOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<AnalyzeDataSourceRiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  RiskAnalysisOperationResult.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  RiskAnalysisOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(20000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(86400000L))
-                      .build()));
-      builder
-          .createInspectOperationOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateInspectOperationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(InspectOperationResult.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(InspectOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(20000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(86400000L))
-                      .build()));
-
-      return builder;
+      return new Builder(DlpServiceStubSettings.newBuilder());
     }
 
     protected Builder(DlpServiceSettings settings) {
-      super(settings);
+      super(settings.getStubSettings().toBuilder());
+    }
 
-      inspectContentSettings = settings.inspectContentSettings.toBuilder();
-      redactContentSettings = settings.redactContentSettings.toBuilder();
-      deidentifyContentSettings = settings.deidentifyContentSettings.toBuilder();
-      analyzeDataSourceRiskSettings = settings.analyzeDataSourceRiskSettings.toBuilder();
-      analyzeDataSourceRiskOperationSettings =
-          settings.analyzeDataSourceRiskOperationSettings.toBuilder();
-      createInspectOperationSettings = settings.createInspectOperationSettings.toBuilder();
-      createInspectOperationOperationSettings =
-          settings.createInspectOperationOperationSettings.toBuilder();
-      listInspectFindingsSettings = settings.listInspectFindingsSettings.toBuilder();
-      listInfoTypesSettings = settings.listInfoTypesSettings.toBuilder();
-      listRootCategoriesSettings = settings.listRootCategoriesSettings.toBuilder();
+    protected Builder(DlpServiceStubSettings.Builder stubSettings) {
+      super(stubSettings);
+    }
 
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              inspectContentSettings,
-              redactContentSettings,
-              deidentifyContentSettings,
-              analyzeDataSourceRiskSettings,
-              createInspectOperationSettings,
-              listInspectFindingsSettings,
-              listInfoTypesSettings,
-              listRootCategoriesSettings);
+    public DlpServiceStubSettings.Builder getStubSettingsBuilder() {
+      return ((DlpServiceStubSettings.Builder) getStubSettings());
     }
 
     /**
@@ -500,32 +228,33 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
      */
     public Builder applyToAllUnaryMethods(
         ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to inspectContent. */
     public UnaryCallSettings.Builder<InspectContentRequest, InspectContentResponse>
         inspectContentSettings() {
-      return inspectContentSettings;
+      return getStubSettingsBuilder().inspectContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to redactContent. */
     public UnaryCallSettings.Builder<RedactContentRequest, RedactContentResponse>
         redactContentSettings() {
-      return redactContentSettings;
+      return getStubSettingsBuilder().redactContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to deidentifyContent. */
     public UnaryCallSettings.Builder<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentSettings() {
-      return deidentifyContentSettings;
+      return getStubSettingsBuilder().deidentifyContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to analyzeDataSourceRisk. */
     public UnaryCallSettings.Builder<AnalyzeDataSourceRiskRequest, Operation>
         analyzeDataSourceRiskSettings() {
-      return analyzeDataSourceRiskSettings;
+      return getStubSettingsBuilder().analyzeDataSourceRiskSettings();
     }
 
     /** Returns the builder for the settings used for calls to analyzeDataSourceRisk. */
@@ -533,38 +262,38 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
             AnalyzeDataSourceRiskRequest, RiskAnalysisOperationResult,
             RiskAnalysisOperationMetadata>
         analyzeDataSourceRiskOperationSettings() {
-      return analyzeDataSourceRiskOperationSettings;
+      return getStubSettingsBuilder().analyzeDataSourceRiskOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createInspectOperation. */
     public UnaryCallSettings.Builder<CreateInspectOperationRequest, Operation>
         createInspectOperationSettings() {
-      return createInspectOperationSettings;
+      return getStubSettingsBuilder().createInspectOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createInspectOperation. */
     public OperationCallSettings.Builder<
             CreateInspectOperationRequest, InspectOperationResult, InspectOperationMetadata>
         createInspectOperationOperationSettings() {
-      return createInspectOperationOperationSettings;
+      return getStubSettingsBuilder().createInspectOperationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listInspectFindings. */
     public UnaryCallSettings.Builder<ListInspectFindingsRequest, ListInspectFindingsResponse>
         listInspectFindingsSettings() {
-      return listInspectFindingsSettings;
+      return getStubSettingsBuilder().listInspectFindingsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listInfoTypes. */
     public UnaryCallSettings.Builder<ListInfoTypesRequest, ListInfoTypesResponse>
         listInfoTypesSettings() {
-      return listInfoTypesSettings;
+      return getStubSettingsBuilder().listInfoTypesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRootCategories. */
     public UnaryCallSettings.Builder<ListRootCategoriesRequest, ListRootCategoriesResponse>
         listRootCategoriesSettings() {
-      return listRootCategoriesSettings;
+      return getStubSettingsBuilder().listRootCategoriesSettings();
     }
 
     @Override

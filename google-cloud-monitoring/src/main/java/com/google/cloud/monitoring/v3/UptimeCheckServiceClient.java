@@ -22,6 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.UptimeCheckServiceStub;
+import com.google.cloud.monitoring.v3.stub.UptimeCheckServiceStubSettings;
 import com.google.monitoring.v3.CreateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.DeleteUptimeCheckConfigRequest;
 import com.google.monitoring.v3.GetUptimeCheckConfigRequest;
@@ -144,7 +145,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    */
   protected UptimeCheckServiceClient(UptimeCheckServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((UptimeCheckServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")

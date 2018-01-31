@@ -50,6 +50,7 @@ import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
+import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -171,7 +172,7 @@ public class BigtableInstanceAdminClient implements BackgroundResource {
    */
   protected BigtableInstanceAdminClient(BigtableInstanceAdminSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((BigtableInstanceAdminStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 

@@ -36,6 +36,7 @@ import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.stub.BigtableStub;
+import com.google.cloud.bigtable.data.v2.stub.BigtableStubSettings;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
@@ -147,7 +148,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    */
   protected BaseBigtableDataClient(BaseBigtableDataSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((BigtableStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")

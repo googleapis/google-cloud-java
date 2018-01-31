@@ -24,6 +24,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.datatransfer.v1.stub.DataTransferServiceStub;
+import com.google.cloud.bigquery.datatransfer.v1.stub.DataTransferServiceStubSettings;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -136,7 +137,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    */
   protected DataTransferServiceClient(DataTransferServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((DataTransferServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
