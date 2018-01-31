@@ -86,8 +86,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static final RetrySettings NO_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
       .setMaxAttempts(1).build();
 
-  private static final Pattern projectIdPattern = Pattern.compile("^[a-z]([a-z0-9]*-*)*[a-z0-9]$");
-
   private static final long serialVersionUID = 9198896031667942014L;
 
   private final String projectId;
@@ -455,7 +453,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
             .setHeaders(new HttpHeaders().set("Metadata-Flavor", "Google"));
     HttpResponse response = request.execute();
     String projectId = response.parseAsString();
-    return isValidProjectId(projectId)? projectId : null;
+    return (projectId != null && isValidProjectId(projectId))? projectId : null;
   }
 
   protected static String getServiceAccountProjectId() {
@@ -486,7 +484,21 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
    * method is primarily used to protect against DNS hijacking.
    */
   static boolean isValidProjectId(String projectId) {   
-    return projectIdPattern.matcher(projectId).matches();
+    for (char c : projectId.toCharArray()) {
+      if (!isLowerCase(c) && !isDigit(c) && c != '-') {
+        return false;
+      }
+    }
+    return projectId.length() > 0 && isLowerCase(projectId.charAt(0))
+      && !projectId.endsWith("-");
+  }
+
+  private static boolean isLowerCase(char c) {
+    return c >= 'a' && c <= 'z';
+  }
+
+  private static boolean isDigit(char c) {
+    return c >= '0' && c <= '9';
   }
 
   /**
