@@ -15,7 +15,7 @@ anchor_run_decrypt: &anchor_run_decrypt
 jobs:
   datastore_it:
     working_directory: ~/googleapis
-    <<: *anchor_docker_image
+    <<: *anchor_docker
     steps:
       - checkout
       - run:
@@ -25,7 +25,7 @@ jobs:
           command: ./utilities/verify_single_it.sh google-cloud-datastore
   speech_it:
     working_directory: ~/googleapis
-    <<: *anchor_docker_image
+    <<: *anchor_docker
     steps:
       - checkout
       - run:
