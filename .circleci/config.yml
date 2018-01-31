@@ -1,6 +1,6 @@
 version: 2.0
 
-anchor_docker: &anchor_docker
+anchor_docker_image: &anchor_docker_image
   - image: circleci/openjdk:8-jdk
     environment:
       TERM: dumb
@@ -15,7 +15,7 @@ jobs:
   datastore_it:
     working_directory: ~/googleapis
     docker:
-      <<: *anchor_docker
+      - <<: *anchor_docker_image
     steps:
       - checkout
       - run:
@@ -26,7 +26,7 @@ jobs:
   speech_it:
     working_directory: ~/googleapis
     docker:
-      <<: *anchor_docker
+      - <<: *anchor_docker_image
     steps:
       - checkout
       - run:
