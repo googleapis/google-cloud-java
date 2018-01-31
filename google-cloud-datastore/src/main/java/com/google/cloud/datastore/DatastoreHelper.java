@@ -18,7 +18,6 @@ package com.google.cloud.datastore;
 
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Maps;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -87,21 +86,5 @@ class DatastoreHelper {
       list.add(map.get(key));
     }
     return list;
-  }
-
-  static <T> T runInTransaction(Datastore datastore, Datastore.TransactionCallable<T> callable) {
-    Transaction transaction = datastore.newTransaction();
-    try {
-      T value = callable.run(transaction);
-      transaction.commit();
-      return value;
-    } catch (Exception ex) {
-      transaction.rollback();
-      throw DatastoreException.propagateUserException(ex);
-    } finally {
-      if (transaction.isActive()) {
-        transaction.rollback();
-      }
-    }
   }
 }
