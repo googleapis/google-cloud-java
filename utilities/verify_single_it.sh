@@ -11,8 +11,8 @@ if [ -z $MODULE ]; then
     exit 1
 fi
 
-#export GCLOUD_PROJECT="gcloud-devel"
-#export GOOGLE_APPLICATION_CREDENTIALS=$(realpath .circleci/it-service-account.json)
+export GCLOUD_PROJECT="$GCLOUD_PROJECT"
+export GOOGLE_APPLICATION_CREDENTIALS=$(realpath "$GOOGLE_APPLICATION_CREDENTIALS")
 
 echo "----- building and installing google-cloud-bom -----"
 mvn -B -pl google-cloud-bom install -DskipTests
@@ -21,7 +21,7 @@ echo "----- building and installing parent pom -----"
 mvn -B -N install -DskipTests
 
 echo "----- building and installing shared modules -----"
-mvn -B -pl google-cloud-core,google-cloud-core-http,google-cloud-core-grpc install -DskipTests
+mvn -B -pl google-cloud-core,google-cloud-core-http,google-cloud-core-grpc,google-cloud-storage install -DskipTests
 
 echo "----- running integration tests -----"
 mvn -B -pl $MODULE -DtrimStackTrace=false -fae verify

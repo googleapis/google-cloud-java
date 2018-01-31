@@ -12,7 +12,7 @@ anchor_auth_vars: &anchor_auth_vars
     GOOGLE_APPLICATION_CREDENTIALS: .circleci/it-service-account.json
 
 anchor_run_decrypt: &anchor_run_decrypt
-  name: Decrypt credentials.
+  name: Decrypt credentials
   command: |
     openssl aes-256-cbc -md sha256 -d -in .circleci/it-service-account.json.enc \
         -out .circleci/it-service-account.json -k "${SYSTEM_TESTS_ENCRYPTION_KEY}"
@@ -27,7 +27,7 @@ jobs:
       - run:
           <<: *anchor_run_decrypt
       - run:
-          name: Run integration tests for google-cloud-bigquery
+          name: Run integration tests
           command: ./utilities/verify_single_it.sh google-cloud-bigquery
   datastore_it:
     working_directory: ~/googleapis
@@ -38,7 +38,7 @@ jobs:
       - run:
           <<: *anchor_run_decrypt
       - run:
-          name: Run integration tests for google-cloud-datastore
+          name: Run integration tests
           command: ./utilities/verify_single_it.sh google-cloud-datastore
   speech_it:
     working_directory: ~/googleapis
@@ -49,7 +49,7 @@ jobs:
       - run:
           <<: *anchor_run_decrypt
       - run:
-          name: Run integration tests for google-cloud-speech
+          name: Run integration tests
           command: ./utilities/verify_single_it.sh google-cloud-speech
 
 workflows:
