@@ -1,0 +1,25 @@
+version: 2.0
+
+jobs:
+  datastore_it:
+    working_directory: ~/googleapis
+    docker:
+      - image: circleci/openjdk:8-jdk
+        environment:
+          TERM: dumb
+    steps:
+      - checkout
+      - run:
+          name: Decrypt credentials.
+          command: |
+            openssl aes-256-cbc -md sha256 -d -in .circleci/it-service-account.json.enc \
+                -out .circleci/it-service-account.json -k "${SYSTEM_TESTS_ENCRYPTION_KEY}"
+      - run:
+          name: Run integration tests for google-cloud-datastore
+          command: ./utilities/verify_single_it.sh google-cloud-datastore
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - datastore_it
