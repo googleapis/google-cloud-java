@@ -42,6 +42,9 @@ import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.firestore.v1beta1.StructuredQuery;
+import com.google.firestore.v1beta1.StructuredQuery.CompositeFilter;
+import com.google.firestore.v1beta1.StructuredQuery.FieldFilter;
+import com.google.firestore.v1beta1.StructuredQuery.UnaryFilter;
 import com.google.firestore.v1beta1.Value;
 import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
@@ -404,6 +407,17 @@ public final class LocalFirestoreHelper {
 
     for (StructuredQuery option : query) {
       structuredQuery.mergeFrom(option);
+    }
+
+    CompositeFilter compositeFilter = structuredQuery.getWhere().getCompositeFilter();
+    if (compositeFilter.getFiltersCount() == 1) {
+      if (compositeFilter.getFilters(0).hasFieldFilter()) {
+        FieldFilter fieldFilter = compositeFilter.getFilters(0).getFieldFilter();
+        structuredQuery.getWhereBuilder().setFieldFilter(fieldFilter);
+      } else {
+        UnaryFilter unaryFilter = compositeFilter.getFilters(0).getUnaryFilter();
+        structuredQuery.getWhereBuilder().setUnaryFilter(unaryFilter);
+      }
     }
 
     if (transactionId != null) {

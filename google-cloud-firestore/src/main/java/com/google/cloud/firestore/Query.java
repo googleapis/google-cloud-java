@@ -33,7 +33,6 @@ import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.firestore.v1beta1.StructuredQuery;
 import com.google.firestore.v1beta1.StructuredQuery.CompositeFilter;
-import com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator;
 import com.google.firestore.v1beta1.StructuredQuery.FieldReference;
 import com.google.firestore.v1beta1.StructuredQuery.Filter;
 import com.google.firestore.v1beta1.StructuredQuery.Order;
@@ -413,8 +412,8 @@ public class Query {
   public Query whereEqualTo(@Nonnull FieldPath fieldPath, @Nullable Object value) {
     Preconditions.checkState(
         options.startCursor == null && options.endCursor == null,
-        "Cannot call whereEqualTo() after defining a boundary with startAt(), " +
-            "startAfter(), endBefore() or endAt().");
+        "Cannot call whereEqualTo() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
 
     if (isUnaryComparison(value)) {
@@ -451,8 +450,8 @@ public class Query {
   public Query whereLessThan(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
         options.startCursor == null && options.endCursor == null,
-        "Cannot call whereLessThan() after defining a boundary with startAt(), " +
-            "startAfter(), endBefore() or endAt().");
+        "Cannot call whereLessThan() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, LESS_THAN, value));
     return new Query(firestore, path, newOptions);
@@ -483,8 +482,8 @@ public class Query {
   public Query whereLessThanOrEqualTo(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
         options.startCursor == null && options.endCursor == null,
-        "Cannot call whereLessThanOrEqualTo() after defining a boundary with startAt(), " +
-            "startAfter(), endBefore() or endAt().");
+        "Cannot call whereLessThanOrEqualTo() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, LESS_THAN_OR_EQUAL, value));
     return new Query(firestore, path, newOptions);
@@ -515,8 +514,8 @@ public class Query {
   public Query whereGreaterThan(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
         options.startCursor == null && options.endCursor == null,
-        "Cannot call whereGreaterThan() after defining a boundary with startAt(), " +
-            "startAfter(), endBefore() or endAt().");
+        "Cannot call whereGreaterThan() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN, value));
     return new Query(firestore, path, newOptions);
@@ -547,8 +546,8 @@ public class Query {
   public Query whereGreaterThanOrEqualTo(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
         options.startCursor == null && options.endCursor == null,
-        "Cannot call whereGreaterThanOrEqualTo() after defining a boundary with startAt(), " +
-            "startAfter(), endBefore() or endAt().");
+        "Cannot call whereGreaterThanOrEqualTo() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN_OR_EQUAL, value));
     return new Query(firestore, path, newOptions);
@@ -810,7 +809,16 @@ public class Query {
     structuredQuery.addFrom(
         StructuredQuery.CollectionSelector.newBuilder().setCollectionId(path.getId()));
 
-    if (!options.fieldFilters.isEmpty()) {
+    if (options.fieldFilters.size() == 1) {
+      Filter filter = options.fieldFilters.get(0).toProto();
+      if (filter.hasFieldFilter()) {
+        structuredQuery.getWhereBuilder().setFieldFilter(filter.getFieldFilter());
+      } else {
+        Preconditions.checkState(
+            filter.hasUnaryFilter(), "Expected a UnaryFilter or a FieldFilter.");
+        structuredQuery.getWhereBuilder().setUnaryFilter(filter.getUnaryFilter());
+      }
+    } else if (options.fieldFilters.size() > 1) {
       Filter.Builder filter = Filter.newBuilder();
       StructuredQuery.CompositeFilter.Builder compositeFilter =
           StructuredQuery.CompositeFilter.newBuilder();
