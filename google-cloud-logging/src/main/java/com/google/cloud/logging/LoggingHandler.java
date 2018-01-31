@@ -30,7 +30,6 @@ import java.util.logging.Filter;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -211,39 +210,6 @@ public class LoggingHandler extends Handler {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;
     }
-  }
-
-  private static List<LoggingHandler> getLoggingHandlers(Logger logger) {
-    ImmutableList.Builder<LoggingHandler> builder = ImmutableList.builder();
-    for (Handler handler : logger.getHandlers()) {
-      if (handler instanceof LoggingHandler) {
-        builder.add((LoggingHandler) handler);
-      }
-    }
-    return builder.build();
-  }
-
-  private static boolean hasLoggingHandler(Logger logger) {
-    // look for Stackdriver Logging handler registered with addHandler()
-    for (Handler handler : logger.getHandlers()) {
-      if (handler instanceof LoggingHandler) {
-        return true;
-      }
-    }
-    // look for Stackdriver Logging handler registered via logging.properties
-    String loggerName = logger.getName();
-    String propertyName =
-        loggerName.equals(ROOT_LOGGER_NAME)
-            ? HANDLERS_PROPERTY
-            : loggerName + "." + HANDLERS_PROPERTY;
-    String handlersProperty = LogManager.getLogManager().getProperty(propertyName);
-    String[] handlers = handlersProperty != null ? handlersProperty.split(",") : NO_HANDLERS;
-    for (String handlerName : handlers) {
-      if (handlerName.contains(LoggingHandler.class.getPackage().getName())) {
-        return true;
-      }
-    }
-    return false;
   }
 
   @Override
