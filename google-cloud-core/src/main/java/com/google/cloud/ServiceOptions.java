@@ -86,6 +86,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static final RetrySettings NO_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
       .setMaxAttempts(1).build();
 
+  private static final Pattern projectIdPattern = Pattern.compile("^[a-z][a-z0-9-]*[a-z0-9]+$");
+
   private static final long serialVersionUID = 9198896031667942014L;
 
   private final String projectId;
@@ -478,16 +480,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   /* 
-   * Returns true if the projectId is valid.
-   * projectId must be between 6 and 30 characters
-   * projectId can have lowercase letters, digits or hyphens
-   * and must start with a lowercase letter
+   * Returns true if the projectId is valid. This method checks whether the projectId
+   * contains only lowercase letters, digits and hyphens, starts with a lowercase letter
+   * and does not end with a hyphen, but does not check the length of projectId. This
+   * method is primarily used to protect against DNS hijacking.
    */
-  private boolean isValidProjectId(String projectId) {
-    Pattern p = Pattern.compile("^[a-z][a-z0-9-]*$");
-    Matcher m = p.matcher(projectId);
-    return projectId.length() >= 6 && projectId.length() <= 30
-      && m.matches();
+  static boolean isValidProjectId(String projectId) {   
+    return projectIdPattern.matcher(projectId).matches();
   }
 
   /**

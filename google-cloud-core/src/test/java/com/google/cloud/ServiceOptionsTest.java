@@ -23,6 +23,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
@@ -312,5 +313,17 @@ public class ServiceOptionsTest {
     File credentialsFile = new File("/doesnotexist");
 
     assertNull(ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
+  }
+
+  @Test
+  public void testValidateProjectId() throws Exception {
+    String validProjectId = "abc-123";
+    String invalidProjectId1 = "abc=123";
+    String invalidProjectId2 = "abc123-";
+    String invalidProjectId3 = "1abc-23";
+    assertThat(ServiceOptions.isValidProjectId(validProjectId)).isTrue();
+    assertThat(ServiceOptions.isValidProjectId(invalidProjectId1)).isFalse();
+    assertThat(ServiceOptions.isValidProjectId(invalidProjectId2)).isFalse();
+    assertThat(ServiceOptions.isValidProjectId(invalidProjectId3)).isFalse();
   }
 }
