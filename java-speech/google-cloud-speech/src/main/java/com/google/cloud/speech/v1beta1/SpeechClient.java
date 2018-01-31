@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1beta1.stub.SpeechStub;
+import com.google.cloud.speech.v1beta1.stub.SpeechStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import java.io.IOException;
@@ -138,7 +139,7 @@ public class SpeechClient implements BackgroundResource {
    */
   protected SpeechClient(SpeechSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((SpeechStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
