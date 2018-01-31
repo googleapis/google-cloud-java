@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.errorreporting.v1beta1.ErrorGroupServiceSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
@@ -65,7 +64,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
   private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
   private final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
 
-  public static final GrpcErrorGroupServiceStub create(ErrorGroupServiceSettings settings)
+  public static final GrpcErrorGroupServiceStub create(ErrorGroupServiceStubSettings settings)
       throws IOException {
     return new GrpcErrorGroupServiceStub(settings, ClientContext.create(settings));
   }
@@ -73,7 +72,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
   public static final GrpcErrorGroupServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcErrorGroupServiceStub(
-        ErrorGroupServiceSettings.newBuilder().build(), clientContext);
+        ErrorGroupServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -82,7 +81,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
    * should be preferred.
    */
   protected GrpcErrorGroupServiceStub(
-      ErrorGroupServiceSettings settings, ClientContext clientContext) throws IOException {
+      ErrorGroupServiceStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<GetGroupRequest, ErrorGroup> getGroupTransportSettings =
         GrpcCallSettings.<GetGroupRequest, ErrorGroup>newBuilder()

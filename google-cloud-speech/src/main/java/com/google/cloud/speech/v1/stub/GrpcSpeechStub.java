@@ -29,7 +29,6 @@ import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognizeRequest;
 import com.google.cloud.speech.v1.RecognizeResponse;
-import com.google.cloud.speech.v1.SpeechSettings;
 import com.google.cloud.speech.v1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1.StreamingRecognizeResponse;
 import com.google.longrunning.Operation;
@@ -89,19 +88,19 @@ public class GrpcSpeechStub extends SpeechStub {
   private final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
 
-  public static final GrpcSpeechStub create(SpeechSettings settings) throws IOException {
+  public static final GrpcSpeechStub create(SpeechStubSettings settings) throws IOException {
     return new GrpcSpeechStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcSpeechStub create(ClientContext clientContext) throws IOException {
-    return new GrpcSpeechStub(SpeechSettings.newBuilder().build(), clientContext);
+    return new GrpcSpeechStub(SpeechStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
    * Constructs an instance of GrpcSpeechStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected GrpcSpeechStub(SpeechSettings settings, ClientContext clientContext)
+  protected GrpcSpeechStub(SpeechStubSettings settings, ClientContext clientContext)
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 

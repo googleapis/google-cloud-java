@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.container.v1.ClusterManagerSettings;
 import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.CompleteIPRotationRequest;
@@ -377,14 +376,15 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<SetNetworkPolicyRequest, Operation> setNetworkPolicyCallable;
   private final UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable;
 
-  public static final GrpcClusterManagerStub create(ClusterManagerSettings settings)
+  public static final GrpcClusterManagerStub create(ClusterManagerStubSettings settings)
       throws IOException {
     return new GrpcClusterManagerStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcClusterManagerStub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcClusterManagerStub(ClusterManagerSettings.newBuilder().build(), clientContext);
+    return new GrpcClusterManagerStub(
+        ClusterManagerStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -392,7 +392,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcClusterManagerStub(ClusterManagerSettings settings, ClientContext clientContext)
+  protected GrpcClusterManagerStub(ClusterManagerStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =

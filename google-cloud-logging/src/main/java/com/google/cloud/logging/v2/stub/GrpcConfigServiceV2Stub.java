@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.logging.v2.ConfigSettings;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
@@ -155,13 +154,15 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable;
   private final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable;
 
-  public static final GrpcConfigServiceV2Stub create(ConfigSettings settings) throws IOException {
+  public static final GrpcConfigServiceV2Stub create(ConfigServiceV2StubSettings settings)
+      throws IOException {
     return new GrpcConfigServiceV2Stub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcConfigServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcConfigServiceV2Stub(ConfigSettings.newBuilder().build(), clientContext);
+    return new GrpcConfigServiceV2Stub(
+        ConfigServiceV2StubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -169,8 +170,8 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcConfigServiceV2Stub(ConfigSettings settings, ClientContext clientContext)
-      throws IOException {
+  protected GrpcConfigServiceV2Stub(
+      ConfigServiceV2StubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<ListSinksRequest, ListSinksResponse> listSinksTransportSettings =
         GrpcCallSettings.<ListSinksRequest, ListSinksResponse>newBuilder()

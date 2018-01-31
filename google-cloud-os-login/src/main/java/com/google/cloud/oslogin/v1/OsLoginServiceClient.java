@@ -20,6 +20,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey;
 import com.google.cloud.oslogin.v1.stub.OsLoginServiceStub;
+import com.google.cloud.oslogin.v1.stub.OsLoginServiceStubSettings;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -131,7 +132,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    */
   protected OsLoginServiceClient(OsLoginServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((OsLoginServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")

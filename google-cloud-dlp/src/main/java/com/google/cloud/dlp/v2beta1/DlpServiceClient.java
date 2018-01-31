@@ -21,6 +21,7 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dlp.v2beta1.stub.DlpServiceStub;
+import com.google.cloud.dlp.v2beta1.stub.DlpServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
@@ -172,7 +173,7 @@ public class DlpServiceClient implements BackgroundResource {
    */
   protected DlpServiceClient(DlpServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((DlpServiceStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 

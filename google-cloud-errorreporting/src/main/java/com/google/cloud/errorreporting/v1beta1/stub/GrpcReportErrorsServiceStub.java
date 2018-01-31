@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.errorreporting.v1beta1.ReportErrorsServiceSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import io.grpc.MethodDescriptor;
@@ -58,7 +57,7 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
   private final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable;
 
-  public static final GrpcReportErrorsServiceStub create(ReportErrorsServiceSettings settings)
+  public static final GrpcReportErrorsServiceStub create(ReportErrorsServiceStubSettings settings)
       throws IOException {
     return new GrpcReportErrorsServiceStub(settings, ClientContext.create(settings));
   }
@@ -66,7 +65,7 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
   public static final GrpcReportErrorsServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcReportErrorsServiceStub(
-        ReportErrorsServiceSettings.newBuilder().build(), clientContext);
+        ReportErrorsServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -75,7 +74,7 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
    * should be preferred.
    */
   protected GrpcReportErrorsServiceStub(
-      ReportErrorsServiceSettings settings, ClientContext clientContext) throws IOException {
+      ReportErrorsServiceStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<ReportErrorEventRequest, ReportErrorEventResponse>
         reportErrorEventTransportSettings =

@@ -26,7 +26,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.Agent;
-import com.google.cloud.dialogflow.v2beta1.AgentsSettings;
 import com.google.cloud.dialogflow.v2beta1.ExportAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.ExportAgentResponse;
 import com.google.cloud.dialogflow.v2beta1.GetAgentRequest;
@@ -118,19 +117,19 @@ public class GrpcAgentsStub extends AgentsStub {
   private final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable;
   private final OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable;
 
-  public static final GrpcAgentsStub create(AgentsSettings settings) throws IOException {
+  public static final GrpcAgentsStub create(AgentsStubSettings settings) throws IOException {
     return new GrpcAgentsStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcAgentsStub create(ClientContext clientContext) throws IOException {
-    return new GrpcAgentsStub(AgentsSettings.newBuilder().build(), clientContext);
+    return new GrpcAgentsStub(AgentsStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
    * Constructs an instance of GrpcAgentsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected GrpcAgentsStub(AgentsSettings settings, ClientContext clientContext)
+  protected GrpcAgentsStub(AgentsStubSettings settings, ClientContext clientContext)
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 

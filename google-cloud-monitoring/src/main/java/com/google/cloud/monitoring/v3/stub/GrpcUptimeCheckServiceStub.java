@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.monitoring.v3.UptimeCheckServiceSettings;
 import com.google.monitoring.v3.CreateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.DeleteUptimeCheckConfigRequest;
 import com.google.monitoring.v3.GetUptimeCheckConfigRequest;
@@ -130,7 +129,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
   private final UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsPagedResponse>
       listUptimeCheckIpsPagedCallable;
 
-  public static final GrpcUptimeCheckServiceStub create(UptimeCheckServiceSettings settings)
+  public static final GrpcUptimeCheckServiceStub create(UptimeCheckServiceStubSettings settings)
       throws IOException {
     return new GrpcUptimeCheckServiceStub(settings, ClientContext.create(settings));
   }
@@ -138,7 +137,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
   public static final GrpcUptimeCheckServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcUptimeCheckServiceStub(
-        UptimeCheckServiceSettings.newBuilder().build(), clientContext);
+        UptimeCheckServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -147,7 +146,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
    * should be preferred.
    */
   protected GrpcUptimeCheckServiceStub(
-      UptimeCheckServiceSettings settings, ClientContext clientContext) throws IOException {
+      UptimeCheckServiceStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
         listUptimeCheckConfigsTransportSettings =

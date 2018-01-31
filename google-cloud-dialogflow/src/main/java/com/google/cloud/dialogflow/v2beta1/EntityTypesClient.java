@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.EntityType.Entity;
 import com.google.cloud.dialogflow.v2beta1.stub.EntityTypesStub;
+import com.google.cloud.dialogflow.v2beta1.stub.EntityTypesStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -138,7 +139,7 @@ public class EntityTypesClient implements BackgroundResource {
    */
   protected EntityTypesClient(EntityTypesSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((EntityTypesStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 

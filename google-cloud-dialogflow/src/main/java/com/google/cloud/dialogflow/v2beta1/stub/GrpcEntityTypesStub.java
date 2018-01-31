@@ -34,7 +34,6 @@ import com.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse;
 import com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteEntityTypeRequest;
 import com.google.cloud.dialogflow.v2beta1.EntityType;
-import com.google.cloud.dialogflow.v2beta1.EntityTypesSettings;
 import com.google.cloud.dialogflow.v2beta1.GetEntityTypeRequest;
 import com.google.cloud.dialogflow.v2beta1.ListEntityTypesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListEntityTypesResponse;
@@ -183,12 +182,13 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
   private final OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationCallable;
 
-  public static final GrpcEntityTypesStub create(EntityTypesSettings settings) throws IOException {
+  public static final GrpcEntityTypesStub create(EntityTypesStubSettings settings)
+      throws IOException {
     return new GrpcEntityTypesStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcEntityTypesStub create(ClientContext clientContext) throws IOException {
-    return new GrpcEntityTypesStub(EntityTypesSettings.newBuilder().build(), clientContext);
+    return new GrpcEntityTypesStub(EntityTypesStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -196,7 +196,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcEntityTypesStub(EntityTypesSettings settings, ClientContext clientContext)
+  protected GrpcEntityTypesStub(EntityTypesStubSettings settings, ClientContext clientContext)
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 

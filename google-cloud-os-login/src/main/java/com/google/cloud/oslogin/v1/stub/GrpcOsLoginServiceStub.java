@@ -30,7 +30,6 @@ import com.google.cloud.oslogin.v1.GetSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse;
 import com.google.cloud.oslogin.v1.LoginProfile;
-import com.google.cloud.oslogin.v1.OsLoginServiceSettings;
 import com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -115,14 +114,15 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
       importSshPublicKeyCallable;
   private final UnaryCallable<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeyCallable;
 
-  public static final GrpcOsLoginServiceStub create(OsLoginServiceSettings settings)
+  public static final GrpcOsLoginServiceStub create(OsLoginServiceStubSettings settings)
       throws IOException {
     return new GrpcOsLoginServiceStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcOsLoginServiceStub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcOsLoginServiceStub(OsLoginServiceSettings.newBuilder().build(), clientContext);
+    return new GrpcOsLoginServiceStub(
+        OsLoginServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -130,7 +130,7 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcOsLoginServiceStub(OsLoginServiceSettings settings, ClientContext clientContext)
+  protected GrpcOsLoginServiceStub(OsLoginServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =

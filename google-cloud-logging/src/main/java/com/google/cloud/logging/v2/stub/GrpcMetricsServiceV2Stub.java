@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.logging.v2.MetricsSettings;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.GetLogMetricRequest;
@@ -105,13 +104,15 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
   private final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
   private final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
 
-  public static final GrpcMetricsServiceV2Stub create(MetricsSettings settings) throws IOException {
+  public static final GrpcMetricsServiceV2Stub create(MetricsServiceV2StubSettings settings)
+      throws IOException {
     return new GrpcMetricsServiceV2Stub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcMetricsServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcMetricsServiceV2Stub(MetricsSettings.newBuilder().build(), clientContext);
+    return new GrpcMetricsServiceV2Stub(
+        MetricsServiceV2StubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -119,8 +120,8 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcMetricsServiceV2Stub(MetricsSettings settings, ClientContext clientContext)
-      throws IOException {
+  protected GrpcMetricsServiceV2Stub(
+      MetricsServiceV2StubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<ListLogMetricsRequest, ListLogMetricsResponse>
         listLogMetricsTransportSettings =

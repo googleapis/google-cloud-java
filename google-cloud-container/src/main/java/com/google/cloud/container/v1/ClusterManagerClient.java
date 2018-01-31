@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.container.v1.stub.ClusterManagerStub;
+import com.google.cloud.container.v1.stub.ClusterManagerStubSettings;
 import com.google.container.v1.AddonsConfig;
 import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.Cluster;
@@ -169,7 +170,7 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   protected ClusterManagerClient(ClusterManagerSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((ClusterManagerStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")

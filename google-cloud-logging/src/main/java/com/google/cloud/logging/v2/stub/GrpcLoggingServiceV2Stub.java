@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
@@ -122,13 +121,15 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
   private final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable;
   private final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable;
 
-  public static final GrpcLoggingServiceV2Stub create(LoggingSettings settings) throws IOException {
+  public static final GrpcLoggingServiceV2Stub create(LoggingServiceV2StubSettings settings)
+      throws IOException {
     return new GrpcLoggingServiceV2Stub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcLoggingServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcLoggingServiceV2Stub(LoggingSettings.newBuilder().build(), clientContext);
+    return new GrpcLoggingServiceV2Stub(
+        LoggingServiceV2StubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -136,8 +137,8 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcLoggingServiceV2Stub(LoggingSettings settings, ClientContext clientContext)
-      throws IOException {
+  protected GrpcLoggingServiceV2Stub(
+      LoggingServiceV2StubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<DeleteLogRequest, Empty> deleteLogTransportSettings =
         GrpcCallSettings.<DeleteLogRequest, Empty>newBuilder()

@@ -21,6 +21,7 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.videointelligence.v1.stub.VideoIntelligenceServiceStub;
+import com.google.cloud.videointelligence.v1.stub.VideoIntelligenceServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import java.io.IOException;
@@ -136,7 +137,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
   protected VideoIntelligenceServiceClient(VideoIntelligenceServiceSettings settings)
       throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((VideoIntelligenceServiceStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 

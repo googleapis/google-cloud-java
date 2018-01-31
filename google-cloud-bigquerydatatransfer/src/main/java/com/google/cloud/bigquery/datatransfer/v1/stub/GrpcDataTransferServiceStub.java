@@ -31,7 +31,6 @@ import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
-import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceSettings;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
@@ -236,7 +235,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
 
-  public static final GrpcDataTransferServiceStub create(DataTransferServiceSettings settings)
+  public static final GrpcDataTransferServiceStub create(DataTransferServiceStubSettings settings)
       throws IOException {
     return new GrpcDataTransferServiceStub(settings, ClientContext.create(settings));
   }
@@ -244,7 +243,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   public static final GrpcDataTransferServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcDataTransferServiceStub(
-        DataTransferServiceSettings.newBuilder().build(), clientContext);
+        DataTransferServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -253,7 +252,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
    * should be preferred.
    */
   protected GrpcDataTransferServiceStub(
-      DataTransferServiceSettings settings, ClientContext clientContext) throws IOException {
+      DataTransferServiceStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<GetDataSourceRequest, DataSource> getDataSourceTransportSettings =
         GrpcCallSettings.<GetDataSourceRequest, DataSource>newBuilder()

@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.pubsub.v1.SubscriptionAdminSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -254,13 +253,13 @@ public class GrpcSubscriberStub extends SubscriberStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  public static final GrpcSubscriberStub create(SubscriptionAdminSettings settings)
+  public static final GrpcSubscriberStub create(SubscriberStubSettings settings)
       throws IOException {
     return new GrpcSubscriberStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcSubscriberStub create(ClientContext clientContext) throws IOException {
-    return new GrpcSubscriberStub(SubscriptionAdminSettings.newBuilder().build(), clientContext);
+    return new GrpcSubscriberStub(SubscriberStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -268,7 +267,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcSubscriberStub(SubscriptionAdminSettings settings, ClientContext clientContext)
+  protected GrpcSubscriberStub(SubscriberStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<Subscription, Subscription> createSubscriptionTransportSettings =

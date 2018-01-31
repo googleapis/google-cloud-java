@@ -19,41 +19,18 @@ import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscrip
 import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
-import com.google.api.gax.batching.PartitionKey;
-import com.google.api.gax.batching.RequestBuilder;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
-import com.google.api.gax.rpc.BatchedRequestIssuer;
 import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.PagedListDescriptor;
-import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
-import com.google.cloud.pubsub.v1.stub.PublisherStub;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Lists;
+import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -71,11 +48,8 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.UpdateTopicRequest;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -106,53 +80,30 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
-  /** The default scopes of the service. */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/pubsub")
-          .build();
-
-  private final UnaryCallSettings<Topic, Topic> createTopicSettings;
-  private final UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings;
-  private final BatchingCallSettings<PublishRequest, PublishResponse> publishSettings;
-  private final UnaryCallSettings<GetTopicRequest, Topic> getTopicSettings;
-  private final PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
-      listTopicsSettings;
-  private final PagedCallSettings<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-          ListTopicSubscriptionsPagedResponse>
-      listTopicSubscriptionsSettings;
-  private final UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
-  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
-
   /** Returns the object with the settings used for calls to createTopic. */
   public UnaryCallSettings<Topic, Topic> createTopicSettings() {
-    return createTopicSettings;
+    return ((PublisherStubSettings) getStubSettings()).createTopicSettings();
   }
 
   /** Returns the object with the settings used for calls to updateTopic. */
-  public UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
-    return updateTopicSettings;
+  /* package-private */ UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings() {
+    return ((PublisherStubSettings) getStubSettings()).updateTopicSettings();
   }
 
   /** Returns the object with the settings used for calls to publish. */
-  public BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
-    return publishSettings;
+  /* package-private */ BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+    return ((PublisherStubSettings) getStubSettings()).publishSettings();
   }
 
   /** Returns the object with the settings used for calls to getTopic. */
   public UnaryCallSettings<GetTopicRequest, Topic> getTopicSettings() {
-    return getTopicSettings;
+    return ((PublisherStubSettings) getStubSettings()).getTopicSettings();
   }
 
   /** Returns the object with the settings used for calls to listTopics. */
   public PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       listTopicsSettings() {
-    return listTopicsSettings;
+    return ((PublisherStubSettings) getStubSettings()).listTopicsSettings();
   }
 
   /** Returns the object with the settings used for calls to listTopicSubscriptions. */
@@ -160,77 +111,66 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings() {
-    return listTopicSubscriptionsSettings;
+    return ((PublisherStubSettings) getStubSettings()).listTopicSubscriptionsSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteTopic. */
   public UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
-    return deleteTopicSettings;
+    return ((PublisherStubSettings) getStubSettings()).deleteTopicSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return setIamPolicySettings;
+    return ((PublisherStubSettings) getStubSettings()).setIamPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return getIamPolicySettings;
+    return ((PublisherStubSettings) getStubSettings()).getIamPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
+    return ((PublisherStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public PublisherStub createStub() throws IOException {
-    if (getTransportChannelProvider()
-        .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcPublisherStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
-    }
+  public static final TopicAdminSettings create(PublisherStubSettings stub) throws IOException {
+    return new TopicAdminSettings.Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
+    return PublisherStubSettings.defaultExecutorProviderBuilder();
   }
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "pubsub.googleapis.com:443";
+    return PublisherStubSettings.getDefaultEndpoint();
   }
 
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
-    return DEFAULT_SERVICE_SCOPES;
+    return PublisherStubSettings.getDefaultServiceScopes();
   }
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return PublisherStubSettings.defaultCredentialsProviderBuilder();
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return PublisherStubSettings.defaultGrpcTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
+    return PublisherStubSettings.defaultTransportChannelProvider();
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(TopicAdminSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+    return PublisherStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
   /** Returns a new builder for this class. */
@@ -250,423 +190,32 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
 
   protected TopicAdminSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
-
-    createTopicSettings = settingsBuilder.createTopicSettings().build();
-    updateTopicSettings = settingsBuilder.updateTopicSettings().build();
-    publishSettings = settingsBuilder.publishSettings().build();
-    getTopicSettings = settingsBuilder.getTopicSettings().build();
-    listTopicsSettings = settingsBuilder.listTopicsSettings().build();
-    listTopicSubscriptionsSettings = settingsBuilder.listTopicSubscriptionsSettings().build();
-    deleteTopicSettings = settingsBuilder.deleteTopicSettings().build();
-    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
-
-  private static final PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
-      LIST_TOPICS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTopicsRequest injectToken(ListTopicsRequest payload, String token) {
-              return ListTopicsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTopicsRequest injectPageSize(ListTopicsRequest payload, int pageSize) {
-              return ListTopicsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTopicsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTopicsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Topic> extractResources(ListTopicsResponse payload) {
-              return payload.getTopicsList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
-      LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTopicSubscriptionsRequest injectToken(
-                ListTopicSubscriptionsRequest payload, String token) {
-              return ListTopicSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTopicSubscriptionsRequest injectPageSize(
-                ListTopicSubscriptionsRequest payload, int pageSize) {
-              return ListTopicSubscriptionsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTopicSubscriptionsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTopicSubscriptionsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<String> extractResources(ListTopicSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
-      LIST_TOPICS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTopicsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTopicsRequest, ListTopicsResponse> callable,
-                ListTopicsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTopicsResponse> futureResponse) {
-              PageContext<ListTopicsRequest, ListTopicsResponse, Topic> pageContext =
-                  PageContext.create(callable, LIST_TOPICS_PAGE_STR_DESC, request, context);
-              return ListTopicsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-          ListTopicSubscriptionsPagedResponse>
-      LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-              ListTopicSubscriptionsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTopicSubscriptionsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
-                    callable,
-                ListTopicSubscriptionsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
-              PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
-              return ListTopicSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final BatchingDescriptor<PublishRequest, PublishResponse> PUBLISH_BATCHING_DESC =
-      new BatchingDescriptor<PublishRequest, PublishResponse>() {
-        @Override
-        public PartitionKey getBatchPartitionKey(PublishRequest request) {
-          return new PartitionKey(request.getTopic());
-        }
-
-        @Override
-        public RequestBuilder<PublishRequest> getRequestBuilder() {
-          return new RequestBuilder<PublishRequest>() {
-            private PublishRequest.Builder builder;
-
-            @Override
-            public void appendRequest(PublishRequest request) {
-              if (builder == null) {
-                builder = request.toBuilder();
-              } else {
-                builder.addAllMessages(request.getMessagesList());
-              }
-            }
-
-            @Override
-            public PublishRequest build() {
-              return builder.build();
-            }
-          };
-        }
-
-        @Override
-        public void splitResponse(
-            PublishResponse batchResponse,
-            Collection<? extends BatchedRequestIssuer<PublishResponse>> batch) {
-          int batchMessageIndex = 0;
-          for (BatchedRequestIssuer<PublishResponse> responder : batch) {
-            List<String> subresponseElements = new ArrayList<>();
-            long subresponseCount = responder.getMessageCount();
-            for (int i = 0; i < subresponseCount; i++) {
-              subresponseElements.add(batchResponse.getMessageIds(batchMessageIndex));
-              batchMessageIndex += 1;
-            }
-            PublishResponse response =
-                PublishResponse.newBuilder().addAllMessageIds(subresponseElements).build();
-            responder.setResponse(response);
-          }
-        }
-
-        @Override
-        public void splitException(
-            Throwable throwable,
-            Collection<? extends BatchedRequestIssuer<PublishResponse>> batch) {
-          for (BatchedRequestIssuer<PublishResponse> responder : batch) {
-            responder.setException(throwable);
-          }
-        }
-
-        @Override
-        public long countElements(PublishRequest request) {
-          return request.getMessagesCount();
-        }
-
-        @Override
-        public long countBytes(PublishRequest request) {
-          return request.getSerializedSize();
-        }
-      };
 
   /** Builder for TopicAdminSettings. */
   public static class Builder extends ClientSettings.Builder<TopicAdminSettings, Builder> {
-    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<Topic, Topic> createTopicSettings;
-    private final UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings;
-    private final BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
-    private final UnaryCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
-    private final PagedCallSettings.Builder<
-            ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
-        listTopicsSettings;
-    private final PagedCallSettings.Builder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
-            ListTopicSubscriptionsPagedResponse>
-        listTopicSubscriptionsSettings;
-    private final UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
-    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
-
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
-        RETRYABLE_CODE_DEFINITIONS;
-
-    static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
-          ImmutableMap.builder();
-      definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "one_plus_delivery",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.ABORTED,
-                  StatusCode.Code.CANCELLED,
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.RESOURCE_EXHAUSTED,
-                  StatusCode.Code.UNAVAILABLE,
-                  StatusCode.Code.UNKNOWN)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      RETRYABLE_CODE_DEFINITIONS = definitions.build();
-    }
-
-    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
-
-    static {
-      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
-      RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("default", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(12000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("messaging", settings);
-      RETRY_PARAM_DEFINITIONS = definitions.build();
-    }
-
-    protected Builder() {
+    protected Builder() throws IOException {
       this((ClientContext) null);
     }
 
     protected Builder(ClientContext clientContext) {
-      super(clientContext);
-
-      createTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      updateTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      publishSettings =
-          BatchingCallSettings.newBuilder(PUBLISH_BATCHING_DESC)
-              .setBatchingSettings(BatchingSettings.newBuilder().build());
-
-      getTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listTopicsSettings = PagedCallSettings.newBuilder(LIST_TOPICS_PAGE_STR_FACT);
-
-      listTopicSubscriptionsSettings =
-          PagedCallSettings.newBuilder(LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT);
-
-      deleteTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createTopicSettings,
-              updateTopicSettings,
-              publishSettings,
-              getTopicSettings,
-              listTopicsSettings,
-              listTopicSubscriptionsSettings,
-              deleteTopicSettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
-
-      initDefaults(this);
+      super(PublisherStubSettings.newBuilder(clientContext));
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .publishSettings()
-          .setBatchingSettings(
-              BatchingSettings.newBuilder()
-                  .setElementCountThreshold(10L)
-                  .setRequestByteThreshold(1024L)
-                  .setDelayThreshold(Duration.ofMillis(10))
-                  .setFlowControlSettings(
-                      FlowControlSettings.newBuilder()
-                          .setLimitExceededBehavior(LimitExceededBehavior.Ignore)
-                          .build())
-                  .build());
-      builder
-          .publishSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("one_plus_delivery"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("messaging"));
-
-      builder
-          .getTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listTopicsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listTopicSubscriptionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
+      return new Builder(PublisherStubSettings.newBuilder());
     }
 
     protected Builder(TopicAdminSettings settings) {
-      super(settings);
+      super(settings.getStubSettings().toBuilder());
+    }
 
-      createTopicSettings = settings.createTopicSettings.toBuilder();
-      updateTopicSettings = settings.updateTopicSettings.toBuilder();
-      publishSettings = settings.publishSettings.toBuilder();
-      getTopicSettings = settings.getTopicSettings.toBuilder();
-      listTopicsSettings = settings.listTopicsSettings.toBuilder();
-      listTopicSubscriptionsSettings = settings.listTopicSubscriptionsSettings.toBuilder();
-      deleteTopicSettings = settings.deleteTopicSettings.toBuilder();
-      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+    protected Builder(PublisherStubSettings.Builder stubSettings) {
+      super(stubSettings);
+    }
 
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createTopicSettings,
-              updateTopicSettings,
-              publishSettings,
-              getTopicSettings,
-              listTopicsSettings,
-              listTopicSubscriptionsSettings,
-              deleteTopicSettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+    public PublisherStubSettings.Builder getStubSettingsBuilder() {
+      return ((PublisherStubSettings.Builder) getStubSettings());
     }
 
     /**
@@ -676,34 +225,37 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
      */
     public Builder applyToAllUnaryMethods(
         ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to createTopic. */
     public UnaryCallSettings.Builder<Topic, Topic> createTopicSettings() {
-      return createTopicSettings;
+      return getStubSettingsBuilder().createTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateTopic. */
-    public UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings() {
-      return updateTopicSettings;
+    /* package-private */ UnaryCallSettings.Builder<UpdateTopicRequest, Topic>
+        updateTopicSettings() {
+      return getStubSettingsBuilder().updateTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to publish. */
-    public BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
-      return publishSettings;
+    /* package-private */ BatchingCallSettings.Builder<PublishRequest, PublishResponse>
+        publishSettings() {
+      return getStubSettingsBuilder().publishSettings();
     }
 
     /** Returns the builder for the settings used for calls to getTopic. */
     public UnaryCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings() {
-      return getTopicSettings;
+      return getStubSettingsBuilder().getTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTopics. */
     public PagedCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
         listTopicsSettings() {
-      return listTopicsSettings;
+      return getStubSettingsBuilder().listTopicsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTopicSubscriptions. */
@@ -711,28 +263,28 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
             ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings() {
-      return listTopicSubscriptionsSettings;
+      return getStubSettingsBuilder().listTopicSubscriptionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteTopic. */
     public UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings() {
-      return deleteTopicSettings;
+      return getStubSettingsBuilder().deleteTopicSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return setIamPolicySettings;
+      return getStubSettingsBuilder().setIamPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getIamPolicySettings;
+      return getStubSettingsBuilder().getIamPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.Context;
-import com.google.cloud.dialogflow.v2beta1.ContextsSettings;
 import com.google.cloud.dialogflow.v2beta1.CreateContextRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteContextRequest;
@@ -112,19 +111,19 @@ public class GrpcContextsStub extends ContextsStub {
   private final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable;
   private final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable;
 
-  public static final GrpcContextsStub create(ContextsSettings settings) throws IOException {
+  public static final GrpcContextsStub create(ContextsStubSettings settings) throws IOException {
     return new GrpcContextsStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcContextsStub create(ClientContext clientContext) throws IOException {
-    return new GrpcContextsStub(ContextsSettings.newBuilder().build(), clientContext);
+    return new GrpcContextsStub(ContextsStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
    * Constructs an instance of GrpcContextsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected GrpcContextsStub(ContextsSettings settings, ClientContext clientContext)
+  protected GrpcContextsStub(ContextsStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
