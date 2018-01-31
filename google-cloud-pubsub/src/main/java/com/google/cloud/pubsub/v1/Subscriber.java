@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -189,7 +190,7 @@ public class Subscriber extends AbstractApiService {
       channelProvider = channelProvider.withHeaders(headers);
     }
     if (channelProvider.needsEndpoint()) {
-      channelProvider = channelProvider.withEndpoint(SubscriptionAdminSettings.getDefaultEndpoint());
+      channelProvider = channelProvider.withEndpoint(SubscriberStubSettings.getDefaultEndpoint());
     }
     this.channelProvider = channelProvider;
     credentialsProvider = builder.credentialsProvider;
@@ -523,15 +524,15 @@ public class Subscriber extends AbstractApiService {
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     ExecutorProvider systemExecutorProvider = FixedExecutorProvider.create(SHARED_SYSTEM_EXECUTOR);
     TransportChannelProvider channelProvider =
-        SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
+        SubscriberStubSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
     HeaderProvider headerProvider = new NoHeaderProvider();
     HeaderProvider internalHeaderProvider =
-        SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
+        SubscriberStubSettings.defaultApiClientHeaderProviderBuilder().build();
     CredentialsProvider credentialsProvider =
-        SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
+        SubscriberStubSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
     boolean useStreaming = true;
     int parallelPullCount = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
