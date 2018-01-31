@@ -16,17 +16,17 @@
 
 package com.google.cloud.examples.compute.snippets;
 
-import com.google.cloud.compute.AttachedDisk;
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.ImageId;
-import com.google.cloud.compute.Instance;
-import com.google.cloud.compute.InstanceId;
-import com.google.cloud.compute.InstanceInfo;
-import com.google.cloud.compute.MachineTypeId;
-import com.google.cloud.compute.NetworkId;
-import com.google.cloud.compute.NetworkInterface;
-import com.google.cloud.compute.Operation;
+import com.google.cloud.compute.deprecated.AttachedDisk;
+import com.google.cloud.compute.deprecated.Compute;
+import com.google.cloud.compute.deprecated.ComputeOptions;
+import com.google.cloud.compute.deprecated.ImageId;
+import com.google.cloud.compute.deprecated.Instance;
+import com.google.cloud.compute.deprecated.InstanceId;
+import com.google.cloud.compute.deprecated.InstanceInfo;
+import com.google.cloud.compute.deprecated.MachineTypeId;
+import com.google.cloud.compute.deprecated.NetworkId;
+import com.google.cloud.compute.deprecated.NetworkInterface;
+import com.google.cloud.compute.deprecated.Operation;
 
 import java.util.concurrent.TimeoutException;
 

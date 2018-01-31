@@ -86,8 +86,8 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
+import com.google.cloud.compute.deprecated.Compute;
+import com.google.cloud.compute.deprecated.ComputeOptions;
 
 Compute compute = ComputeOptions.getDefaultInstance().getService();
 ```
@@ -103,9 +103,9 @@ Engine. In this code snippet, we will create a new external region address.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.AddressInfo;
-import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.RegionAddressId;
+import com.google.cloud.compute.deprecated.AddressInfo;
+import com.google.cloud.compute.deprecated.Operation;
+import com.google.cloud.compute.deprecated.RegionAddressId;
 ```
 
 Then add the following code to create an address. Most Compute Engine calls return an `Operation`
@@ -135,10 +135,10 @@ a publicly-available image.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.DiskInfo;
-import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.ImageDiskConfiguration;
-import com.google.cloud.compute.ImageId;
+import com.google.cloud.compute.deprecated.DiskInfo;
+import com.google.cloud.compute.deprecated.DiskId;
+import com.google.cloud.compute.deprecated.ImageDiskConfiguration;
+import com.google.cloud.compute.deprecated.ImageId;
 ```
 
 Then add the following code to create a disk and wait for disk creation to terminate.
@@ -168,15 +168,15 @@ boot disk the disk we have just created and assigning to it the just created IP 
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.AttachedDisk;
-import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
-import com.google.cloud.compute.InstanceId;
-import com.google.cloud.compute.InstanceInfo;
-import com.google.cloud.compute.MachineTypeId;
-import com.google.cloud.compute.NetworkConfiguration;
-import com.google.cloud.compute.NetworkConfiguration.AccessConfig;
-import com.google.cloud.compute.NetworkId;
-import com.google.cloud.compute.NetworkInterface;
+import com.google.cloud.compute.deprecated.AttachedDisk;
+import com.google.cloud.compute.deprecated.AttachedDisk.PersistentDiskConfiguration;
+import com.google.cloud.compute.deprecated.InstanceId;
+import com.google.cloud.compute.deprecated.InstanceInfo;
+import com.google.cloud.compute.deprecated.MachineTypeId;
+import com.google.cloud.compute.deprecated.NetworkConfiguration;
+import com.google.cloud.compute.deprecated.NetworkConfiguration.AccessConfig;
+import com.google.cloud.compute.deprecated.NetworkId;
+import com.google.cloud.compute.deprecated.NetworkInterface;
 ```
 
 Then add the following code to create an instance and wait for instance creation to terminate.

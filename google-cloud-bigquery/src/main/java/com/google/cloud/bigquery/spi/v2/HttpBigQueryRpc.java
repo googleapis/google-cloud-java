@@ -398,11 +398,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public String open(JobConfiguration configuration) {
     try {
       Job loadJob = new Job().setConfiguration(configuration);
-      StringBuilder builder = new StringBuilder()
-          .append(BASE_RESUMABLE_URI)
-          .append(options.getProjectId())
-          .append("/jobs");
-      GenericUrl url = new GenericUrl(builder.toString());
+      String builder = BASE_RESUMABLE_URI + options.getProjectId() + "/jobs";
+      GenericUrl url = new GenericUrl(builder);
       url.set("uploadType", "resumable");
       JsonFactory jsonFactory = bigquery.getJsonFactory();
       HttpRequestFactory requestFactory = bigquery.getRequestFactory();

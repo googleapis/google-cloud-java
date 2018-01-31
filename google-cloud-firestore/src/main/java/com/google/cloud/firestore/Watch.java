@@ -170,7 +170,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
   }
 
   /**
-   * Creates a new Watch instance that listens listen on Queries.
+   * Creates a new Watch instance that listens on Queries.
    *
    * @param query The query used for this watch.
    * @return A newly created Watch instance.

@@ -16,12 +16,12 @@
 
 package com.google.cloud.examples.compute.snippets;
 
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.Disk;
-import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.Snapshot;
+import com.google.cloud.compute.deprecated.Compute;
+import com.google.cloud.compute.deprecated.ComputeOptions;
+import com.google.cloud.compute.deprecated.Disk;
+import com.google.cloud.compute.deprecated.DiskId;
+import com.google.cloud.compute.deprecated.Operation;
+import com.google.cloud.compute.deprecated.Snapshot;
 
 import java.util.concurrent.TimeoutException;
 
