@@ -11,8 +11,8 @@ if [ -z $MODULE ]; then
     exit 1
 fi
 
-export GCLOUD_PROJECT="gcloud-devel"
-export GOOGLE_APPLICATION_CREDENTIALS=$(realpath .circleci/it-service-account.json)
+#export GCLOUD_PROJECT="gcloud-devel"
+#export GOOGLE_APPLICATION_CREDENTIALS=$(realpath .circleci/it-service-account.json)
 
 echo "----- building and installing google-cloud-bom -----"
 mvn -B -pl google-cloud-bom install -DskipTests
