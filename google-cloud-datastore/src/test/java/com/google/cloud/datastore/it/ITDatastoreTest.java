@@ -59,6 +59,7 @@ import com.google.cloud.datastore.Value;
 import com.google.cloud.datastore.ValueType;
 import com.google.cloud.datastore.testing.RemoteDatastoreHelper;
 import com.google.common.base.Preconditions;
+import com.google.datastore.v1.TransactionOptions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -821,8 +822,6 @@ public class ITDatastoreTest {
     int result = DATASTORE.runInTransaction(callable1);
     assertEquals(result, 2);
 
-    /*
-    //TODO (neowu): enable this test once endpoint is ready
     final Entity entity2 = Entity.newBuilder(ENTITY2).clear().setNull("bla").build();
     Datastore.TransactionCallable<Integer> callable2 =
         new Datastore.TransactionCallable<Integer>() {
@@ -849,8 +848,7 @@ public class ITDatastoreTest {
       DATASTORE.runInTransaction(callable2, readOnlyOptions);
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(10, ((DatastoreException) expected.getCause()).getCode());
+      assertEquals(3, ((DatastoreException) expected.getCause()).getCode());
     }
-    */
   }
 }
