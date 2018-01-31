@@ -25,8 +25,8 @@ import javax.annotation.Nonnull;
 import org.threeten.bp.Instant;
 
 /**
- * A QueryDocumentSnapshot contains data read from a document in a Firestore database as part of
- * a query. The document is guaranteed to exist and its data can be extracted using the {@link
+ * A QueryDocumentSnapshot contains data read from a document in a Firestore database as part of a
+ * query. The document is guaranteed to exist and its data can be extracted using the {@link
  * #getData()} or {@link #get(String)} methods.
  *
  * <p>QueryDocumentSnapshot offers the same API surface as {@link DocumentSnapshot}. Since query
