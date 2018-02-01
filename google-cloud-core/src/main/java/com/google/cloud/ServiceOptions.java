@@ -453,7 +453,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
             .setHeaders(new HttpHeaders().set("Metadata-Flavor", "Google"));
     HttpResponse response = request.execute();
     String projectId = response.parseAsString();
-    return (projectId != null && isValidProjectId(projectId))? projectId : null;
+    return projectId != null && isValidProjectId(projectId)? projectId : null;
   }
 
   protected static String getServiceAccountProjectId() {
