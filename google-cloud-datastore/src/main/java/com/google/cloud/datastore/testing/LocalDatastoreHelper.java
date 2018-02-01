@@ -209,6 +209,9 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    * stopping it might cause it to become orphan.
    *
    * <p>It is not required to call {@link #reset()} before {@code stop()}.
+   *
+   * @param timeout The duration to wait for the emulator process to stop. It is recommended to set
+   *     this value high to ensure proper shutdown, like 5 seconds or more.
    */
   public void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException {
     sendPostRequest("/shutdown");
