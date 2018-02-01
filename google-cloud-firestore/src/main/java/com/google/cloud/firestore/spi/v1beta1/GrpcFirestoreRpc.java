@@ -35,6 +35,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.v1beta1.FirestoreSettings;
+import com.google.cloud.firestore.v1beta1.stub.FirestoreStubSettings;
 import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStub;
 import com.google.cloud.firestore.v1beta1.stub.GrpcFirestoreStub;
@@ -131,8 +132,8 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
               return null;
             }
           };
-      FirestoreSettings.Builder firestoreBuilder =
-          FirestoreSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
+      FirestoreStubSettings.Builder firestoreBuilder =
+          FirestoreStubSettings.newBuilder(clientContext).applyToAllUnaryMethods(retrySettingsSetter);
       firestoreStub = GrpcFirestoreStub.create(firestoreBuilder.build());
     } catch (Exception e) {
       throw new IOException(e);
