@@ -452,8 +452,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
             .setReadTimeout(500)
             .setHeaders(new HttpHeaders().set("Metadata-Flavor", "Google"));
     HttpResponse response = request.execute();
-    String projectId = response.parseAsString();
-    return projectId != null && isValidProjectId(projectId)? projectId : null;
+    return response.parseAsString();
   }
 
   protected static String getServiceAccountProjectId() {
@@ -477,29 +476,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return project;
   }
 
-  /* 
-   * Returns true if the projectId is valid. This method checks whether the projectId
-   * contains only lowercase letters, digits and hyphens, starts with a lowercase letter
-   * and does not end with a hyphen, but does not check the length of projectId. This
-   * method is primarily used to protect against DNS hijacking.
-   */
-  static boolean isValidProjectId(String projectId) {   
-    for (char c : projectId.toCharArray()) {
-      if (!isLowerCase(c) && !isDigit(c) && c != '-') {
-        return false;
-      }
-    }
-    return projectId.length() > 0 && isLowerCase(projectId.charAt(0))
-      && !projectId.endsWith("-");
-  }
-
-  private static boolean isLowerCase(char c) {
-    return c >= 'a' && c <= 'z';
-  }
-
-  private static boolean isDigit(char c) {
-    return c >= '0' && c <= '9';
-  }
 
   /**
    * Returns a Service object for the current service. For instance, when using Google Cloud
