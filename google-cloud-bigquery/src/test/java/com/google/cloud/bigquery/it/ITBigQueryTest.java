@@ -460,8 +460,12 @@ public class ITBigQueryTest {
     String tableName = "test_create_view_table";
     TableId tableId = TableId.of(DATASET, tableName);
     ViewDefinition viewDefinition =
-        ViewDefinition.of("SELECT TimestampField, StringField, BooleanField FROM " + DATASET + "."
-            + TABLE_ID.getTable());
+        ViewDefinition.newBuilder(
+                String.format(
+                    "SELECT TimestampField, StringField, BooleanField FROM %s.%s",
+                    DATASET, TABLE_ID.getTable()))
+            .setUseLegacySql(true)
+            .build();
     TableInfo tableInfo = TableInfo.of(tableId, viewDefinition);
     Table createdTable = bigquery.create(tableInfo);
     assertNotNull(createdTable);
