@@ -31,7 +31,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
+import io.grpc.netty.GrpcSslContexts;
+import io.grpc.netty.NettyChannelBuilder;
+import io.netty.handler.ssl.SslContext;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -77,7 +79,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final int prefetchChunks;
   private final int numChannels;
   private final ImmutableMap<String, String> sessionLabels;
-
+  
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
@@ -157,7 +159,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     /**
      * Sets the labels to add to all Sessions created in this client.
-     *
+     * 
      * @param sessionLabels Map from label key to label value. Label key and value cannot be null.
      *     For more information on valid syntax see
      *     <a href="https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.Session">
@@ -171,7 +173,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.sessionLabels = ImmutableMap.copyOf(sessionLabels);
       return this;
     }
-
+    
     /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
@@ -222,7 +224,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public Map<String, String> getSessionLabels() {
     return sessionLabels;
   }
-
+  
   public int getPrefetchChunks() {
     return prefetchChunks;
   }
@@ -292,25 +294,25 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public ManagedChannel newChannel(String host, int port) {
-      ManagedChannelBuilder builder =
-          ManagedChannelBuilder.forAddress(host, port)
-            // .sslContext(newSslContext())
+      NettyChannelBuilder builder =
+          NettyChannelBuilder.forAddress(host, port)
+            .sslContext(newSslContext())
             .intercept(interceptors)
-            // .maxHeaderListSize(MAX_HEADER_LIST_SIZE)
-            .maxInboundMessageSize(MAX_MESSAGE_SIZE);
+            .maxHeaderListSize(MAX_HEADER_LIST_SIZE)
+            .maxMessageSize(MAX_MESSAGE_SIZE);
       if (userAgent != null) {
         builder.userAgent(userAgent);
       }
       return builder.build();
     }
 
-    // private static SslContext newSslContext() {
-    //   try {
-    //     return GrpcSslContexts.forClient().ciphers(null).build();
-    //   } catch (SSLException e) {
-    //     throw new RuntimeException("SSL configuration failed: " + e.getMessage(), e);
-    //   }
-    // }
+    private static SslContext newSslContext() {
+      try {
+        return GrpcSslContexts.forClient().ciphers(null).build();
+      } catch (SSLException e) {
+        throw new RuntimeException("SSL configuration failed: " + e.getMessage(), e);
+      }
+    }
   }
 
   private static class SpannerDefaults implements

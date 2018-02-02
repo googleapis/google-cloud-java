@@ -53,6 +53,10 @@
   </build>
   <dependencies>
     <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-tcnative-boringssl-static</artifactId>
+    </dependency>
+    <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
     </dependency>
@@ -94,7 +98,7 @@
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
+      <artifactId>grpc-netty</artifactId>
       <exclusions>
         <exclusion>
           <groupId>io.opencensus</groupId>
