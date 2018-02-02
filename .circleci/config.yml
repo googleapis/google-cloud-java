@@ -40,6 +40,7 @@ jobs:
       - run:
           name: Run integration tests for google-cloud-compute
           command: ./utilities/verify_single_it.sh google-cloud-compute
+          no_output_timeout: 20m
   datastore_it:
     working_directory: ~/googleapis
     <<: *anchor_docker
@@ -62,6 +63,24 @@ jobs:
       - run:
           name: Run integration tests for google-cloud-dns
           command: ./utilities/verify_single_it.sh google-cloud-dns
+  firestore_it:
+    working_directory: ~/googleapis
+    <<: *anchor_docker
+    environment:
+      # Firestore can't be turned on in a project with Datastore turned on,
+      # so we use a distinct project (and distinct service account) for it
+      GCLOUD_PROJECT: java-review
+      GOOGLE_APPLICATION_CREDENTIALS: .circleci/firestore-it-service-account.json
+    steps:
+      - checkout
+      - run:
+          name: Decrypt credentials
+          command: |
+            openssl aes-256-cbc -md sha256 -d -in .circleci/firestore-it-service-account.json.enc \
+                -out .circleci/firestore-it-service-account.json -k "${SYSTEM_TESTS_ENCRYPTION_KEY}"
+      - run:
+          name: Run integration tests for google-cloud-firestore
+          command: ./utilities/verify_single_it.sh google-cloud-firestore
   logging_it:
     working_directory: ~/googleapis
     <<: *anchor_docker
@@ -136,6 +155,7 @@ workflows:
       - bigquery_it
       - compute_it
       - datastore_it
+      - firestore_it
       - dns_it
       - logging_it
       - notification_it

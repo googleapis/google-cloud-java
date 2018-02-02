@@ -21,6 +21,8 @@ echo "----- building and installing parent pom -----"
 mvn -B -N install -DskipTests
 
 echo "----- building and installing shared modules -----"
+# storage is present because google-cloud-bigquery and google-cloud-notification depend on it
+# pubsub is present because google-cloud-notification depends on it
 mvn -B -pl google-cloud-core,google-cloud-core-http,google-cloud-core-grpc,google-cloud-storage,google-cloud-pubsub install -DskipTests
 
 echo "----- running integration tests -----"
