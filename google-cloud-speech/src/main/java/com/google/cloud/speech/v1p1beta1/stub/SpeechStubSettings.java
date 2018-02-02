@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.speech.v1.stub;
+package com.google.cloud.speech.v1p1beta1.stub;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -35,13 +35,13 @@ import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.speech.v1.LongRunningRecognizeMetadata;
-import com.google.cloud.speech.v1.LongRunningRecognizeRequest;
-import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
-import com.google.cloud.speech.v1.RecognizeRequest;
-import com.google.cloud.speech.v1.RecognizeResponse;
-import com.google.cloud.speech.v1.StreamingRecognizeRequest;
-import com.google.cloud.speech.v1.StreamingRecognizeResponse;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest;
+import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
+import com.google.cloud.speech.v1p1beta1.RecognizeRequest;
+import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
+import com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
