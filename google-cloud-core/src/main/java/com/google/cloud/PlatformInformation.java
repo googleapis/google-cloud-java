@@ -30,6 +30,7 @@ public final class PlatformInformation {
       "com.google.apphosting.runtime.jetty9.JettyLogger";
   public static final String JETTY_LOGGER_ON_GAE8_DEVSERVER =
       " com.google.appengine.development.jetty9.JettyLogger"; //note the leading space
+  public static final boolean GAE_JAVA7 = "java7".equals(System.getenv("GAE_RUNTIME"));
 
   private PlatformInformation() {}
 
@@ -38,10 +39,7 @@ public final class PlatformInformation {
   }
 
   public static boolean isOnGAEStandard7() {
-    //edge case: when a Java 7 GAE app is deployed to DevServer running on J8, SPECIFICATION_VERSION will be "1.8",
-    //but RUNTIME_JETTY_LOGGER is unset
-    return isOnGAE() && SPECIFICATION_VERSION.equals("1.7")
-        || isOnGAE() && RUNTIME_JETTY_LOGGER == null;
+    return GAE_JAVA7;
   }
 
   public static boolean isOnGAEStandard8() {
