@@ -136,6 +136,17 @@ jobs:
       - run:
           name: Run integration tests for google-cloud-speech
           command: ./utilities/verify_single_it.sh google-cloud-speech
+  storage_it:
+    working_directory: ~/googleapis
+    <<: *anchor_docker
+    <<: *anchor_auth_vars
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_run_decrypt
+      - run:
+          name: Run integration tests for google-cloud-storage
+          command: ./utilities/verify_single_it.sh google-cloud-storage
   translate_it:
     working_directory: ~/googleapis
     <<: *anchor_docker
@@ -162,4 +173,5 @@ workflows:
       - pubsub_it
       - spanner_it
       - speech_it
+      - storage_it
       - translate_it
