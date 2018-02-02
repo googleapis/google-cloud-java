@@ -129,8 +129,7 @@
         <version>1.5.1</version>
         <executions>
           <execution>
-            <id>reformat-sources</id>
-            <phase>process-sources</phase>
+            <id>default-cli</id>
             <goals>
               <goal>format</goal>
             </goals>
