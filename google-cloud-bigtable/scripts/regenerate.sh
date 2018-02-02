@@ -7,7 +7,7 @@
 
 set -eE # same as: `set -o errexit -o errtrace`
 handle_error() {
-  echo "Failed, exiting"
+  echo "Failed, exiting. See deps/output.log for more details"
   exit 1
 }
 trap 'handle_error' ERR
@@ -21,36 +21,12 @@ DOCKER_IMAGE=googleapis/artman:stable
 TOOLKIT="$WORKDIR/toolkit"
 
 function run {
-  init
   run_artman
   copy_api_client_staging
   copy_google_cloud_java
   install_protos
 
   echo "Successfully completed!"
-}
-
-function init {
-  mkdir -p "$WORKDIR"
-  echo "" > $WORKDIR/output.log
-
-  log "Pulling docker image"
-  docker pull "$DOCKER_IMAGE" >>$LOG 2>&1
-
-  if [ ! -d "$WORKDIR/googleapis" ]; then
-    log "Fetching googleapis"
-    git clone "https://github.com/googleapis/googleapis.git" "$WORKDIR/googleapis" >>$LOG 2>&1
-  fi
-
-  if [ ! -d "$WORKDIR/toolkit" ]; then
-    log "Fetching toolkit"
-    git clone "https://github.com/googleapis/toolkit.git" "$WORKDIR/toolkit" >>$LOG 2>&1
-  fi
-
-  if [ ! -d "$WORKDIR/api-client-staging" ]; then
-    log "Fetching api-client-staging"
-    git clone "https://github.com/googleapis/api-client-staging.git" "$WORKDIR/api-client-staging" >>$LOG 2>&1
-  fi
 }
 
 function run_artman {
