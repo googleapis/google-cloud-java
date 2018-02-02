@@ -60,6 +60,14 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-auth</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Test -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
@@ -72,13 +80,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.easymock</groupId>
-      <artifactId>easymock</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.objenesis</groupId>
-      <artifactId>objenesis</artifactId>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
