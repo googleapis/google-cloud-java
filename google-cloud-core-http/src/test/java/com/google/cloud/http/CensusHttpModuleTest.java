@@ -18,10 +18,7 @@ package com.google.cloud.http;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static com.google.cloud.BaseServiceException.UNKNOWN_CODE;
 import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.isA;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
@@ -52,9 +49,8 @@ public class CensusHttpModuleTest {
 
   @Rule public final ExpectedException thrown = ExpectedException.none();
 
-  private Tracer tracer = Tracing.getTracer();
-  private boolean isRecordEvents = false;
-  private CensusHttpModule censusHttpModule = new CensusHttpModule(tracer, isRecordEvents);
+  private final Tracer tracer = Tracing.getTracer();
+  private final CensusHttpModule censusHttpModule = new CensusHttpModule(tracer, false);
   private HttpRequest httpRequest;
 
   @Before

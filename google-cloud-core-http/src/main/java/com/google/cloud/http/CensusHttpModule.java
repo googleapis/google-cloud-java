@@ -22,17 +22,12 @@ import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.common.annotations.VisibleForTesting;
-import io.opencensus.common.Scope;
 import io.opencensus.contrib.http.util.HttpPropagationUtil;
-import io.opencensus.trace.BlankSpan;
-import io.opencensus.trace.Span;
 import io.opencensus.trace.SpanContext;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import io.opencensus.trace.propagation.TextFormat;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
 /**
@@ -40,6 +35,29 @@ import javax.annotation.Nullable;
  * context.
  */
 public final class CensusHttpModule {
+
+  /**
+   * OpenCensus tracing component.
+   * When no OpenCensus implementation is provided, it will return a no-op tracer.
+   */
+  private final Tracer tracer;
+
+  /**
+   * {@link TextFormat} used in tracing context propagation.
+   */
+  @Nullable
+  private final TextFormat propagationTextFormat;
+
+  /**
+   * {@link TextFormat.Setter} for {@link #propagationTextFormat}.
+   */
+  @Nullable
+  private final TextFormat.Setter<HttpHeaders> propagationTextFormatSetter;
+
+  /**
+   * Whether spans are stored locally.
+   */
+  private final boolean isRecordEvents;
 
   /**
    * Default HTTP propagation text formatter.
@@ -70,7 +88,9 @@ public final class CensusHttpModule {
     @Override
     public void intercept(HttpRequest request) throws IOException {
       checkNotNull(request);
-      if (this.interceptor != null) this.interceptor.intercept(request);
+      if (this.interceptor != null) {
+        this.interceptor.intercept(request);
+      }
       if (propagationTextFormat != null && propagationTextFormatSetter != null) {
         SpanContext spanContext = tracer.getCurrentSpan().getContext();
         if (!SpanContext.INVALID.equals(spanContext)) {
@@ -97,33 +117,12 @@ public final class CensusHttpModule {
     @Override
     public void initialize(HttpRequest request) throws IOException {
       checkNotNull(request);
-      if (this.initializer != null) this.initializer.initialize(request);
+      if (this.initializer != null) {
+        this.initializer.initialize(request);
+      }
       request.setInterceptor(new CensusHttpExecuteInterceptor(request.getInterceptor()));
     }
   }
-
-  /**
-   * OpenCensus tracing component.
-   * When no OpenCensus implementation is provided, it will return a no-op tracer.
-   */
-  private Tracer tracer = Tracing.getTracer();
-
-  /**
-   * {@link TextFormat} used in tracing context propagation.
-   */
-  @Nullable
-  private TextFormat propagationTextFormat;
-
-  /**
-   * {@link TextFormat.Setter} for {@link #propagationTextFormat}.
-   */
-  @Nullable
-  private TextFormat.Setter<HttpHeaders> propagationTextFormatSetter;
-
-  /**
-   * Whether spans are stored locally.
-   */
-  private boolean isRecordEvents = true;
 
   /**
    * Creates a {@link CensusHttpModule} with given parameters.
@@ -137,14 +136,6 @@ public final class CensusHttpModule {
     this.isRecordEvents = isRecordEvents;
     this.propagationTextFormat = HttpPropagationUtil.getCloudTraceFormat();
     this.propagationTextFormatSetter = DefaultPropagationTextFormatSetter.INSTANCE;
-  }
-
-  private TextFormat getDefaultPropagationTextFormat() {
-    return HttpPropagationUtil.getCloudTraceFormat();
-  }
-
-  private TextFormat.Setter<HttpHeaders> getDefaultPropagationTextFormatSetter() {
-    return DefaultPropagationTextFormatSetter.INSTANCE;
   }
 
   /**
