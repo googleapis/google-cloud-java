@@ -130,8 +130,8 @@
     <gax.version>1.17.0</gax.version>
     <gax-grpc.version>1.17.0</gax-grpc.version>
     <gax-httpjson.version>0.34.0</gax-httpjson.version>
-    <generated-proto-beta.version>0.1.28</generated-proto-beta.version>
-    <generated-proto-ga.version>1.0.4</generated-proto-ga.version>
+    <generated-proto-beta.version>0.1.29</generated-proto-beta.version>
+    <generated-proto-ga.version>1.0.5</generated-proto-ga.version>
     <google.auth.version>0.9.0</google.auth.version>
     <grpc.version>1.9.0</grpc.version>
     <nettyssl.version>2.0.7.Final</nettyssl.version>
@@ -722,12 +722,22 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
         <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
         <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
