@@ -16,8 +16,14 @@
 package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.ServerStream;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.cloud.bigtable.data.v2.wrappers.Query;
+import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
 import java.io.IOException;
 
 /**
@@ -29,7 +35,9 @@ import java.io.IOException;
  * <pre>{@code
  * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
  * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
- *   // TODO: add example usage
+ *   for(Row row : bigtableDataClient.readRows(Query.create("[TABLE]")) {
+ *     // Do something with row
+ *   }
  * }
  * }</pre>
  *
@@ -40,11 +48,13 @@ import java.io.IOException;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
+ *   <li>A "flattened" method, like `readRows()`. With this type of method, the fields of the
+ *       request type have been converted into function parameters. It may be the case that not all
+ *       fields are available as parameters, and not every API method will have a flattened method
+ *       entry point.
+ *   <li>A "callable" method, like `readRowsCallable()`. This type of method takes no parameters and
+ *       returns an immutable API callable object, which can be used to initiate calls to the
+ *       service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -111,5 +121,135 @@ public class BigtableDataClient implements AutoCloseable {
   @Override
   public void close() throws Exception {
     stub.close();
+  }
+
+  /**
+   * Convenience method for synchronous streaming the results of a {@link Query}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // Import the filter DSL
+   * import static com.google.cloud.bigtable.data.v2.wrappers.Filters.FILTERS;
+   *
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .range("[START KEY]", "[END KEY]")
+   *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
+   *
+   *   // Iterator style
+   *   for(Row row : bigtableClient.readRows(query)) {
+   *     // Do something with row
+   *   }
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   * @see Query For query options.
+   * @see com.google.cloud.bigtable.data.v2.wrappers.Filters For the filter building DSL.
+   */
+  public ServerStream<Row> readRows(Query query) {
+    return readRowsCallable().call(query);
+  }
+
+  /**
+   * Convenience method for asynchronous streaming the results of a {@link Query}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .range("[START KEY]", "[END KEY]")
+   *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
+   *
+   *   client.readRowsAsync(query, new ResponseObserver<Row>() {
+   *     public void onStart(StreamController controller) { }
+   *     public void onResponse(Row response) {
+   *       // Do something with Row
+   *     }
+   *     public void onError(Throwable t) {
+   *       // Handle error before the stream completes
+   *     }
+   *     public void onComplete() {
+   *       // Handle stream completion
+   *     }
+   *   });
+   * }
+   * }</pre>
+   */
+  public void readRowsAsync(Query query, ResponseObserver<Row> observer) {
+    readRowsCallable().call(query, observer);
+  }
+
+  /**
+   * Streams back the results of the query. The returned callable object allows for customization of
+   * api invocation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .range("[START KEY]", "[END KEY]")
+   *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
+   *
+   *   // Iterator style
+   *   for(Row row : bigtableClient.readRowsCallable().call(query)) {
+   *     // Do something with row
+   *   }
+   *
+   *   // Point look ups
+   *   ApiFuture<Row> rowFuture = bigtableClient.readRowsCallable().first().futureCall(query);
+   *
+   *   // etc
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   * @see Query For query options.
+   * @see com.google.cloud.bigtable.data.v2.wrappers.Filters For the filter building DSL.
+   */
+  public ServerStreamingCallable<Query, Row> readRowsCallable() {
+    return stub.readRowsCallable();
+  }
+
+  /**
+   * Streams back the results of the query. This callable allows for customization of the logical
+   * representation of a row. It's meant for advanced use cases.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .range("[START KEY]", "[END KEY]")
+   *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
+   *
+   *   // Iterator style
+   *   for(CustomRow row : bigtableClient.readRowsCallable(new CustomRowAdapter()).call(query)) {
+   *     // Do something with row
+   *   }
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   * @see Query For query options.
+   * @see com.google.cloud.bigtable.data.v2.wrappers.Filters For the filter building DSL.
+   */
+  public <RowT> ServerStreamingCallable<Query, RowT> readRowsCallable(RowAdapter<RowT> rowAdapter) {
+    return stub.createReadRowsCallable(rowAdapter);
   }
 }

@@ -18,6 +18,9 @@ package com.google.cloud.bigtable.data.v2;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.cloud.bigtable.data.v2.wrappers.Query;
+import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import com.google.cloud.bigtable.gaxx.PlaceholderServerStreamingCallSettings;
 import java.io.IOException;
 import javax.annotation.Nonnull;
 
@@ -38,10 +41,13 @@ import javax.annotation.Nonnull;
  * build() is called, the tree of builders is called to create the complete settings object.
  *
  * <pre>{@code
- * BigtableDataSettings bigtableDataSettings = BigtableDataSettings.newBuilder()
+ * BigtableDataSettings.Builder settingsBuilder = BigtableDataSettings.newBuilder()
  *   .setInstanceName(InstanceName.of("my-project", "my-instance-id"))
- *   .setAppProfileId("default")
- *   .build();
+ *   .setAppProfileId("default");
+ *
+ * settingsBuilder.readRowsSettings().setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
+ *
+ * BigtableDataSettings settings = builder.build();
  * }</pre>
  */
 public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
@@ -62,6 +68,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
   /** Returns the configured AppProfile to use */
   public String getAppProfileId() {
     return getTypedStubSettings().getAppProfileId();
+  }
+
+  /** Returns the object with the settings used for calls to ReadRows. */
+  public PlaceholderServerStreamingCallSettings<Query, Row> readRowsSettings() {
+    return getTypedStubSettings().readRowsSettings();
   }
 
   @SuppressWarnings("unchecked")
@@ -122,6 +133,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     /** Gets the app profile id that was previously set on this Builder. */
     public String getAppProfileId() {
       return getTypedStubSettings().getAppProfileId();
+    }
+
+    /** Returns the builder for the settings used for calls to readRows. */
+    public PlaceholderServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
+      return getTypedStubSettings().readRowsSettings();
     }
 
     @SuppressWarnings("unchecked")
