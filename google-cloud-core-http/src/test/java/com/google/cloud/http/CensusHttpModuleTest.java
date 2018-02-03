@@ -66,7 +66,7 @@ public class CensusHttpModuleTest {
 
   @Test
   public void isRecordEventsShouldBeSet() {
-    assertThat(censusHttpModule.isRecordEvents()).isEqualTo(isRecordEvents);
+    assertThat(censusHttpModule.isRecordEvents()).isEqualTo(false);
   }
 
   @Test
