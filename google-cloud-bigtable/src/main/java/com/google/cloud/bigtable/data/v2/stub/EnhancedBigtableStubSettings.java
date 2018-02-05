@@ -23,9 +23,11 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import com.google.common.base.Preconditions;
+import java.util.List;
 import javax.annotation.Nonnull;
 import org.threeten.bp.Duration;
 
@@ -69,6 +71,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final String appProfileId;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
+  private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
 
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
@@ -77,6 +80,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
     // Per method settings.
     readRowsSettings = builder.readRowsSettings.build();
+    sampleRowKeysSettings = builder.sampleRowKeysSettings.build();
   }
 
   /** Create a new builder. */
@@ -99,6 +103,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return readRowsSettings;
   }
 
+  /** Returns the object with the settings used for calls to SampleRowKeys. */
+  public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
+    return sampleRowKeysSettings;
+  }
+
   /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
@@ -110,6 +119,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private String appProfileId;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
+    private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
 
     /**
      * Initializes a new Builder with sane defaults for all settings.
@@ -152,6 +162,22 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
                   .setRpcTimeoutMultiplier(1)
                   .setMaxRpcTimeout(Duration.ofSeconds(20))
                   .build());
+
+      sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      /* TODO: copy retryCodes & retrySettings from baseSettings.sampleRowKeysSettings once it exists in GAPIC */
+      sampleRowKeysSettings
+          .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED)
+          .setRetrySettings(
+              RetrySettings.newBuilder()
+                  .setMaxAttempts(10)
+                  .setTotalTimeout(Duration.ofMinutes(1))
+                  .setInitialRetryDelay(Duration.ofMillis(100))
+                  .setRetryDelayMultiplier(1.3)
+                  .setMaxRetryDelay(Duration.ofMinutes(1))
+                  .setInitialRpcTimeout(Duration.ofSeconds(20))
+                  .setRpcTimeoutMultiplier(1)
+                  .setMaxRpcTimeout(Duration.ofSeconds(20))
+                  .build());
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
@@ -161,6 +187,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       // Per method settings.
       readRowsSettings = settings.readRowsSettings.toBuilder();
+      sampleRowKeysSettings = settings.sampleRowKeysSettings.toBuilder();
     }
 
     // <editor-fold desc="Private Helpers">
@@ -211,6 +238,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return readRowsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to SampleRowKeysSettings. */
+    public UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings() {
+      return sampleRowKeysSettings;
     }
 
     @SuppressWarnings("unchecked")

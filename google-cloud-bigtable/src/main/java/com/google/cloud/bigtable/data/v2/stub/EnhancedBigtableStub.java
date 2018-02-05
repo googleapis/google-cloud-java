@@ -15,17 +15,21 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.wrappers.DefaultRowAdapter;
+import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * The core client that converts method calls to RPCs.
@@ -47,6 +51,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final RequestContext requestContext;
 
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
+  private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
@@ -74,6 +79,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         RequestContext.create(settings.getInstanceName(), settings.getAppProfileId());
 
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
+    sampleRowKeysCallable = createSampleRowKeysCallable();
   }
 
   // <editor-fold desc="Callable creators">
@@ -87,11 +93,35 @@ public class EnhancedBigtableStub implements AutoCloseable {
       }
     };
   }
+
+  /**
+   * Creates a callable chain to handle SampleRowKeys RPcs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a table id to a {@link com.google.bigtable.v2.SampleRowKeysRequest}.
+   *   <li>Dispatch the request to the GAPIC's {@link BigtableStub#sampleRowKeysCallable()}.
+   *   <li>Spool responses into a list.
+   *   <li>Retry on failure.
+   *   <li>Convert the responses into {@link KeyOffset}s.
+   * </ul>
+   */
+  private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
+    return new UnaryCallable<String, List<KeyOffset>>() {
+      @Override
+      public ApiFuture<List<KeyOffset>> futureCall(String request, ApiCallContext context) {
+        throw new UnsupportedOperationException("todo");
+      }
+    };
+  }
   // </editor-fold>
 
   // <editor-fold desc="Callable accessors">
   public ServerStreamingCallable<Query, Row> readRowsCallable() {
     return readRowsCallable;
+  }
+
+  public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {
+    return sampleRowKeysCallable;
   }
   // </editor-fold>
 
