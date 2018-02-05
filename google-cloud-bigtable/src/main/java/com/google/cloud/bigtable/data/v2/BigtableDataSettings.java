@@ -47,10 +47,9 @@ import java.io.IOException;
 public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
   private BigtableDataSettings(Builder builder) throws IOException {
     super(builder);
-
-    // Per method settings.
   }
 
+  /** Create a new builder. */
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -65,7 +64,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     return getTypedStubSettings().getAppProfileId();
   }
 
-  @InternalApi
+  @SuppressWarnings("unchecked")
   EnhancedBigtableStubSettings getTypedStubSettings() {
     return (EnhancedBigtableStubSettings) getStubSettings();
   }

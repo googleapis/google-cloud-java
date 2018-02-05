@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
+import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import java.io.IOException;
@@ -103,7 +104,8 @@ public class BigtableDataClient implements AutoCloseable {
     return new BigtableDataClient(stub);
   }
 
-  private BigtableDataClient(EnhancedBigtableStub stub) {
+  @InternalApi("Visible for testing")
+  BigtableDataClient(EnhancedBigtableStub stub) {
     this.stub = stub;
   }
 
