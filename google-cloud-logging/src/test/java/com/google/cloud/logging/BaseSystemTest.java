@@ -38,6 +38,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
+import com.google.common.util.concurrent.RateLimiter;
 import com.google.logging.v2.LogName;
 import com.google.protobuf.Any;
 import com.google.protobuf.StringValue;
@@ -62,6 +63,8 @@ public abstract class BaseSystemTest {
 
   @Rule
   public Timeout globalTimeout = Timeout.seconds(300);
+
+  private static RateLimiter rateLimiter = RateLimiter.create(1.0);
 
   /**
    * Returns the Logging service used to issue requests. This service can be such that it interacts
@@ -89,6 +92,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testCreateGetUpdateAndDeleteSink() {
+    rateLimiter.acquire();
     String name = formatForTest("test-create-get-update-sink");
     SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
         .setFilter("severity>=ERROR")
@@ -115,6 +119,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testUpdateNonExistingSink() {
+    rateLimiter.acquire();
     String name = formatForTest("test-update-non-existing-sink");
     SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
         .setFilter("severity>=ERROR")
@@ -128,6 +133,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testListSinks() throws InterruptedException {
+    rateLimiter.acquire();
     String firstName = formatForTest("test-list-sinks-1");
     String secondName = formatForTest("test-list-sinks-2");
     Sink firstSink = logging().create(SinkInfo.of(firstName, DatasetDestination.of("dataset")));
@@ -145,6 +151,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testListMonitoredResourceDescriptors() {
+    rateLimiter.acquire();
     Iterator<MonitoredResourceDescriptor> iterator =
         logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(1)).iterateAll().iterator();
     int count = 0;
@@ -157,6 +164,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testCreateGetUpdateAndDeleteMetric() {
+    rateLimiter.acquire();
     String name = formatForTest("test-create-get-update-metric");
     MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
         .setDescription("description")
@@ -180,6 +188,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testUpdateNonExistingMetric() {
+    rateLimiter.acquire();
     String name = formatForTest("test-update-non-existing-metric");
     MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
         .setDescription("description")
@@ -194,6 +203,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testListMetrics() throws InterruptedException {
+    rateLimiter.acquire();
     String firstName = formatForTest("test-list-metrics-1");
     String secondName = formatForTest("test-list-metrics-2");
     Metric firstMetric = logging().create(MetricInfo.of(firstName, "severity>=ERROR"));
@@ -211,6 +221,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testWriteAndListLogEntries() throws InterruptedException {
+    rateLimiter.acquire();
     String logId = formatForTest("test-write-log-entries-log");
     LoggingOptions loggingOptions = logging().getOptions();
     LogName logName = LogName.of(loggingOptions.getProjectId(), logId);
@@ -273,17 +284,29 @@ public abstract class BaseSystemTest {
     while (iterator.hasNext()) {
       assertTrue(iterator.next().getTimestamp() <= lastTimestamp);
     }
-    assertTrue(logging().deleteLog(logId));
+    int deleteAttempts = 0;
+    int allowedDeleteAttempts = 5;
+    boolean deleted = logging().deleteLog(logId);
+    while (!deleted && deleteAttempts < allowedDeleteAttempts) {
+      deleteAttempts++;
+      System.out.println("Not deleted - " + deleteAttempts + " of "
+          + allowedDeleteAttempts + " attempted so far.");
+      Thread.sleep(1000);
+      deleted = logging().deleteLog(logId);
+    }
+    assertTrue(deleted);
   }
 
   @Test
   public void testDeleteNonExistingLog() {
+    rateLimiter.acquire();
     String logId = formatForTest("test-delete-non-existing-log");
     assertFalse(logging().deleteLog(logId));
   }
 
   @Test
   public void testLoggingHandler() throws InterruptedException {
+    rateLimiter.acquire();
     String logId = formatForTest("test-logging-handler");
     LoggingOptions options = logging().getOptions();
     LogName logName = LogName.of(options.getProjectId(), logId);
@@ -323,6 +346,7 @@ public abstract class BaseSystemTest {
 
   @Test
   public void testSyncLoggingHandler() throws InterruptedException {
+    rateLimiter.acquire();
     String logId = formatForTest("test-sync-logging-handler");
     LoggingOptions options = logging().getOptions();
     LogName logName = LogName.of(options.getProjectId(), logId);
