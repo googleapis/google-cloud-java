@@ -114,33 +114,6 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testCreateGetUpdateAndDeleteSinkAsync()
-      throws ExecutionException, InterruptedException {
-    String name = formatForTest("test-create-get-update-sink-async");
-    SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
-        .setFilter("severity>=ERROR")
-        .setVersionFormat(SinkInfo.VersionFormat.V2)
-        .build();
-    Sink sink = logging().createAsync(sinkInfo).get();
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity>=ERROR", sink.getFilter());
-    DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
-    assertEquals("dataset", datasetDestination.getDataset());
-    assertEquals(sink, logging().getSinkAsync(name).get());
-    sink = sink.toBuilder()
-        .setFilter("severity<=ERROR")
-        .build()
-        .updateAsync().get();
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity<=ERROR", sink.getFilter());
-    assertTrue(sink.deleteAsync().get());
-    assertFalse(sink.deleteAsync().get());
-  }
-
-  @Test
   public void testUpdateNonExistingSink() {
     String name = formatForTest("test-update-non-existing-sink");
     SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
@@ -151,19 +124,6 @@ public abstract class BaseSystemTest {
     thrown.expect(LoggingException.class);
     thrown.expectMessage("NOT_FOUND");
     logging().update(sinkInfo);
-  }
-
-  @Test
-  public void testUpdateNonExistingSinkAsync() throws ExecutionException, InterruptedException {
-    String name = formatForTest("test-update-non-existing-sink-async");
-    SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
-        .setFilter("severity>=ERROR")
-        .setVersionFormat(SinkInfo.VersionFormat.V2)
-        .build();
-    assertNull(logging().getSinkAsync(name).get());
-    thrown.expect(ExecutionException.class);
-    thrown.expectMessage("NOT_FOUND");
-    logging().updateAsync(sinkInfo).get();
   }
 
   @Test
@@ -184,39 +144,9 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testListSinksAsync() throws ExecutionException, InterruptedException {
-    String firstName = formatForTest("test-list-sinks-async-1");
-    String secondName = formatForTest("test-list-sinks-async-2");
-    Sink firstSink = logging().create(SinkInfo.of(firstName, DatasetDestination.of("dataset")));
-    Sink secondSink = logging().create(SinkInfo.of(secondName, DatasetDestination.of("dataset")));
-    Logging.ListOption[] options = {Logging.ListOption.pageSize(1)};
-    AsyncPage<Sink> sinkPage = logging().listSinksAsync(options).get();
-    Set<Sink> sinks = Sets.newHashSet(sinkPage.iterateAll());
-    while (!sinks.contains(firstSink) || !sinks.contains(secondSink)) {
-      Thread.sleep(500);
-      sinks = Sets.newHashSet(logging().listSinksAsync(options).get().iterateAll());
-    }
-    firstSink.delete();
-    secondSink.delete();
-  }
-
-  @Test
   public void testListMonitoredResourceDescriptors() {
     Iterator<MonitoredResourceDescriptor> iterator =
         logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(1)).iterateAll().iterator();
-    int count = 0;
-    while (iterator.hasNext()) {
-      assertNotNull(iterator.next().getType());
-      count += 1;
-    }
-    assertTrue(count > 0);
-  }
-
-  @Test
-  public void testListMonitoredResourceDescriptorsAsync()
-      throws ExecutionException, InterruptedException {
-    Iterator<MonitoredResourceDescriptor> iterator = logging()
-        .listMonitoredResourceDescriptorsAsync(Logging.ListOption.pageSize(1)).get().iterateAll().iterator();
     int count = 0;
     while (iterator.hasNext()) {
       assertNotNull(iterator.next().getType());
@@ -249,30 +179,6 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testCreateGetUpdateAndDeleteMetricAsync()
-      throws ExecutionException, InterruptedException {
-    String name = formatForTest("test-create-get-update-metric-async");
-    MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
-        .setDescription("description")
-        .build();
-    Metric metric = logging().createAsync(metricInfo).get();
-    assertEquals(name, metric.getName());
-    assertEquals("severity>=ERROR", metric.getFilter());
-    assertEquals("description", metric.getDescription());
-    assertEquals(metric, logging().getMetricAsync(name).get());
-    metric = metric.toBuilder()
-        .setDescription("newDescription")
-        .setFilter("severity>=WARNING")
-        .build()
-        .updateAsync().get();
-    assertEquals(name, metric.getName());
-    assertEquals("severity>=WARNING", metric.getFilter());
-    assertEquals("newDescription", metric.getDescription());
-    assertTrue(metric.deleteAsync().get());
-    assertFalse(metric.deleteAsync().get());
-  }
-
-  @Test
   public void testUpdateNonExistingMetric() {
     String name = formatForTest("test-update-non-existing-metric");
     MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
@@ -287,20 +193,6 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testUpdateNonExistingMetricAsync() throws ExecutionException, InterruptedException {
-    String name = formatForTest("test-update-non-existing-metric-async");
-    MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
-        .setDescription("description")
-        .build();
-    assertNull(logging().getMetricAsync(name).get());
-    Metric metric = logging().updateAsync(metricInfo).get();
-    assertEquals(name, metric.getName());
-    assertEquals("severity>=ERROR", metric.getFilter());
-    assertEquals("description", metric.getDescription());
-    assertTrue(metric.deleteAsync().get());
-  }
-
-  @Test
   public void testListMetrics() throws InterruptedException {
     String firstName = formatForTest("test-list-metrics-1");
     String secondName = formatForTest("test-list-metrics-2");
@@ -312,23 +204,6 @@ public abstract class BaseSystemTest {
     while (!metrics.contains(firstMetric) || !metrics.contains(secondMetric)) {
       Thread.sleep(500);
       metrics = Sets.newHashSet(logging().listMetrics(options).iterateAll());
-    }
-    firstMetric.delete();
-    secondMetric.delete();
-  }
-
-  @Test
-  public void testListMetricsAsync() throws ExecutionException, InterruptedException {
-    String firstName = formatForTest("test-list-metrics-async-1");
-    String secondName = formatForTest("test-list-metrics-async-2");
-    Metric firstMetric = logging().create(MetricInfo.of(firstName, "severity>=ERROR"));
-    Metric secondMetric = logging().create(MetricInfo.of(secondName, "severity>=ERROR"));
-    Logging.ListOption[] options = {Logging.ListOption.pageSize(1)};
-    AsyncPage<Metric> metricPage = logging().listMetricsAsync(options).get();
-    Set<Metric> metrics = Sets.newHashSet(metricPage.iterateAll());
-    while (!metrics.contains(firstMetric) || !metrics.contains(secondMetric)) {
-      Thread.sleep(500);
-      metrics = Sets.newHashSet(logging().listMetricsAsync(options).get().iterateAll());
     }
     firstMetric.delete();
     secondMetric.delete();
@@ -402,63 +277,9 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testWriteAndListLogEntriesAsync() throws InterruptedException, ExecutionException {
-    String logId = formatForTest("test-write-log-entries-async-log");
-    LoggingOptions loggingOptions = logging().getOptions();
-    LogName logName = LogName.of(loggingOptions.getProjectId(), logId);
-    StringPayload firstPayload = StringPayload.of("stringPayload");
-    LogEntry firstEntry = LogEntry.newBuilder(firstPayload).setSeverity(Severity.ALERT).build();
-    ProtoPayload secondPayload =
-        ProtoPayload.of(Any.pack(StringValue.newBuilder().setValue("protoPayload").build()));
-    LogEntry secondEntry = LogEntry.newBuilder(secondPayload).setSeverity(Severity.DEBUG).build();
-    logging().write(ImmutableList.of(firstEntry, secondEntry),
-        WriteOption.labels(ImmutableMap.of("key1", "value1")),
-        WriteOption.resource(MonitoredResource.newBuilder("global").build()),
-        WriteOption.logName(logId));
-    logging().flush();
-    String filter = createEqualityFilter("logName", logName);
-    EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
-    AsyncPage<LogEntry> page = logging().listLogEntriesAsync(options).get();
-    while (Iterators.size(page.iterateAll().iterator()) < 2) {
-      Thread.sleep(500);
-      page = logging().listLogEntriesAsync(options).get();
-    }
-    Iterator<LogEntry> iterator = page.iterateAll().iterator();
-    assertTrue(iterator.hasNext());
-    LogEntry entry = iterator.next();
-    assertEquals(firstPayload, entry.getPayload());
-    assertEquals(logId, entry.getLogName());
-    assertEquals(ImmutableMap.of("key1", "value1"), entry.getLabels());
-    assertEquals("global", entry.getResource().getType());
-    assertNull(entry.getHttpRequest());
-    assertEquals(Severity.ALERT, entry.getSeverity());
-    assertNull(entry.getOperation());
-    assertNotNull(entry.getInsertId());
-    assertNotNull(entry.getTimestamp());
-    assertTrue(iterator.hasNext());
-    entry = iterator.next();
-    assertEquals(secondPayload, entry.getPayload());
-    assertEquals(logId, entry.getLogName());
-    assertEquals(ImmutableMap.of("key1", "value1"), entry.getLabels());
-    assertEquals("global", entry.getResource().getType());
-    assertNull(entry.getOperation());
-    assertEquals(Severity.DEBUG, entry.getSeverity());
-    assertNull(entry.getHttpRequest());
-    assertNotNull(entry.getInsertId());
-    assertNotNull(entry.getTimestamp());
-    assertTrue(logging().deleteLogAsync(logId).get());
-  }
-
-  @Test
   public void testDeleteNonExistingLog() {
     String logId = formatForTest("test-delete-non-existing-log");
     assertFalse(logging().deleteLog(logId));
-  }
-
-  @Test
-  public void testDeleteNonExistingLogAsync() throws ExecutionException, InterruptedException {
-    String logId = formatForTest("test-delete-non-existing-log-async");
-    assertFalse(logging().deleteLogAsync(logId).get());
   }
 
   @Test
