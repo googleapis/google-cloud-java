@@ -19,6 +19,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 
 /**
@@ -124,6 +125,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
       return getTypedStubSettings().getAppProfileId();
     }
 
+    @SuppressWarnings("unchecked")
     private EnhancedBigtableStubSettings.Builder getTypedStubSettings() {
       return (EnhancedBigtableStubSettings.Builder) getStubSettings();
     }

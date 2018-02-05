@@ -96,8 +96,6 @@ public class BigtableDataClient implements AutoCloseable {
   /**
    * Constructs an instance of BigtableDataClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
-   *
-   * @param settings
    */
   public static BigtableDataClient create(BigtableDataSettings settings) throws IOException {
     EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.getTypedStubSettings());
