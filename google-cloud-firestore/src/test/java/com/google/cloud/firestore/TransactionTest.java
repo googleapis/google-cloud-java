@@ -25,6 +25,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.create;
 import static com.google.cloud.firestore.LocalFirestoreHelper.delete;
 import static com.google.cloud.firestore.LocalFirestoreHelper.get;
+import static com.google.cloud.firestore.LocalFirestoreHelper.getAll;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.query;
 import static com.google.cloud.firestore.LocalFirestoreHelper.queryResponse;
@@ -337,6 +338,47 @@ public class TransactionTest {
 
     assertEquals(begin(), requests.get(0));
     assertEquals(get(TRANSACTION_ID), requests.get(1));
+    assertEquals(commit(TRANSACTION_ID), requests.get(2));
+  }
+
+  @Test
+  public void getMultipleDocuments() throws Exception {
+    final DocumentReference doc1 = firestoreMock.document("coll/doc1");
+    final DocumentReference doc2 = firestoreMock.document("coll/doc2");
+
+    doReturn(beginResponse())
+        .doReturn(commitResponse(0, 0))
+        .when(firestoreMock)
+        .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+
+    doAnswer(getAllResponse(SINGLE_FIELD_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            requestCapture.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable<Message, Message>>any());
+
+    ApiFuture<List<DocumentSnapshot>> transaction =
+        firestoreMock.runTransaction(
+            new Transaction.Function<List<DocumentSnapshot>>() {
+              @Override
+              public List<DocumentSnapshot> updateCallback(Transaction transaction)
+                  throws ExecutionException, InterruptedException {
+                return transaction.getAll(doc1, doc2).get();
+              }
+            },
+            options);
+
+    assertEquals(2, transaction.get().size());
+
+    List<Message> requests = requestCapture.getAllValues();
+    assertEquals(3, requests.size());
+
+    assertEquals(begin(), requests.get(0));
+    assertEquals(
+        getAll(
+            TRANSACTION_ID, doc1.getResourcePath().toString(), doc2.getResourcePath().toString()),
+        requests.get(1));
     assertEquals(commit(TRANSACTION_ID), requests.get(2));
   }
 

@@ -346,9 +346,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent The BigQuery project id where the transfer configuration should be created. Must
-   *     be in the format /projects/{project_id}/locations/{location_id} or
-   *     /projects/{project_id}/locations/- In case when '-' is specified as location_id, location
-   *     is infered from the destination dataset region.
+   *     be in the format /projects/{project_id}/locations/{location_id} If specified location and
+   *     location of the destination bigquery dataset do not match - the request will fail.
    * @param transferConfig Data transfer configuration to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -740,9 +739,9 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates transfer runs for a time range [range_start_time, range_end_time]. For each date - or
-   * whatever granularity the data source supports - in the range, one transfer run is created. Note
-   * that runs are created per UTC time in the time range.
+   * Creates transfer runs for a time range [start_time, end_time]. For each date - or whatever
+   * granularity the data source supports - in the range, one transfer run is created. Note that
+   * runs are created per UTC time in the time range.
    *
    * <p>Sample code:
    *
@@ -777,9 +776,9 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates transfer runs for a time range [range_start_time, range_end_time]. For each date - or
-   * whatever granularity the data source supports - in the range, one transfer run is created. Note
-   * that runs are created per UTC time in the time range.
+   * Creates transfer runs for a time range [start_time, end_time]. For each date - or whatever
+   * granularity the data source supports - in the range, one transfer run is created. Note that
+   * runs are created per UTC time in the time range.
    *
    * <p>Sample code:
    *
@@ -807,9 +806,9 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates transfer runs for a time range [range_start_time, range_end_time]. For each date - or
-   * whatever granularity the data source supports - in the range, one transfer run is created. Note
-   * that runs are created per UTC time in the time range.
+   * Creates transfer runs for a time range [start_time, end_time]. For each date - or whatever
+   * granularity the data source supports - in the range, one transfer run is created. Note that
+   * runs are created per UTC time in the time range.
    *
    * <p>Sample code:
    *

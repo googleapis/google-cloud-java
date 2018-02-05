@@ -428,13 +428,21 @@ public final class LocalFirestoreHelper {
   }
 
   public static BatchGetDocumentsRequest get() {
-    return get(null);
+    return getAll(null, DOCUMENT_NAME);
   }
 
   public static BatchGetDocumentsRequest get(@Nullable ByteString transactionId) {
+    return getAll(transactionId, DOCUMENT_NAME);
+  }
+
+  public static BatchGetDocumentsRequest getAll(
+      @Nullable ByteString transactionId, String... documentNames) {
     BatchGetDocumentsRequest.Builder request = BatchGetDocumentsRequest.newBuilder();
     request.setDatabase(DATABASE_NAME);
-    request.addDocuments(DOCUMENT_NAME);
+
+    for (String documentName : documentNames) {
+      request.addDocuments(documentName);
+    }
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
