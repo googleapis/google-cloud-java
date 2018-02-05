@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bom</artifactId>
   <packaging>pom</packaging>
-  <version>0.34.0-alpha</version>
+  <version>0.34.1-alpha-SNAPSHOT</version>
   <name>Google Cloud Java BOM</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bom</url>
   <description>
@@ -140,39 +140,39 @@
     <protobuf.version>3.5.1</protobuf.version>
     <opencensus.version>0.10.0</opencensus.version>
 
-    <cloud.version>0.34.0-alpha</cloud.version>
-    <bigtable.version>0.34.0-beta</bigtable.version>
-    <bigquery.version>0.34.0-beta</bigquery.version>
-    <bigquerydatatransfer.version>0.34.0-beta</bigquerydatatransfer.version>
-    <compute.version>0.34.0-alpha</compute.version>
-    <container.version>0.34.0-beta</container.version>
-    <contrib.version>0.34.0-alpha</contrib.version>
-    <core.version>1.16.0</core.version>
-    <core-http.version>1.16.0</core-http.version>
-    <core-grpc.version>1.16.0</core-grpc.version>
-    <datastore.version>1.16.0</datastore.version>
-    <dataproc.version>0.34.0-alpha</dataproc.version>
-    <dialogflow.version>0.34.0-alpha</dialogflow.version>
-    <dlp.version>0.34.0-beta</dlp.version>
-    <dns.version>0.34.0-alpha</dns.version>
-    <errorreporting.version>0.34.0-beta</errorreporting.version>
-    <firestore.version>0.34.0-beta</firestore.version>
-    <examples.version>0.34.0-alpha</examples.version>
-    <language.version>1.16.0</language.version>
-    <logging.version>1.16.0</logging.version>
-    <logging-logback.version>0.34.0-beta</logging-logback.version>
-    <monitoring.version>0.34.0-beta</monitoring.version>
-    <os-login.version>0.34.0-alpha</os-login.version>
-    <pubsub.version>0.34.0-beta</pubsub.version>
-    <resourcemanager.version>0.34.0-alpha</resourcemanager.version>
-    <spanner.version>0.34.0-beta</spanner.version>
-    <speech.version>0.34.0-alpha</speech.version>
-    <storage.version>1.16.0</storage.version>
-    <trace.version>0.34.0-beta</trace.version>
-    <translate.version>1.16.0</translate.version>
-    <vision.version>1.16.0</vision.version>
-    <video-intelligence.version>0.34.0-beta</video-intelligence.version>
-    <testing.version>0.34.0-alpha</testing.version>
+    <cloud.version>0.34.1-alpha-SNAPSHOT</cloud.version>
+    <bigtable.version>0.34.1-beta-SNAPSHOT</bigtable.version>
+    <bigquery.version>0.34.1-beta-SNAPSHOT</bigquery.version>
+    <bigquerydatatransfer.version>0.34.1-beta-SNAPSHOT</bigquerydatatransfer.version>
+    <compute.version>0.34.1-alpha-SNAPSHOT</compute.version>
+    <container.version>0.34.1-beta-SNAPSHOT</container.version>
+    <contrib.version>0.34.1-alpha-SNAPSHOT</contrib.version>
+    <core.version>1.16.1-SNAPSHOT</core.version>
+    <core-http.version>1.16.1-SNAPSHOT</core-http.version>
+    <core-grpc.version>1.16.1-SNAPSHOT</core-grpc.version>
+    <datastore.version>1.16.1-SNAPSHOT</datastore.version>
+    <dataproc.version>0.34.1-alpha-SNAPSHOT</dataproc.version>
+    <dialogflow.version>0.34.1-alpha-SNAPSHOT</dialogflow.version>
+    <dlp.version>0.34.1-beta-SNAPSHOT</dlp.version>
+    <dns.version>0.34.1-alpha-SNAPSHOT</dns.version>
+    <errorreporting.version>0.34.1-beta-SNAPSHOT</errorreporting.version>
+    <firestore.version>0.34.1-beta-SNAPSHOT</firestore.version>
+    <examples.version>0.34.1-alpha-SNAPSHOT</examples.version>
+    <language.version>1.16.1-SNAPSHOT</language.version>
+    <logging.version>1.16.1-SNAPSHOT</logging.version>
+    <logging-logback.version>0.34.1-beta-SNAPSHOT</logging-logback.version>
+    <monitoring.version>0.34.1-beta-SNAPSHOT</monitoring.version>
+    <os-login.version>0.34.1-alpha-SNAPSHOT</os-login.version>
+    <pubsub.version>0.34.1-beta-SNAPSHOT</pubsub.version>
+    <resourcemanager.version>0.34.1-alpha-SNAPSHOT</resourcemanager.version>
+    <spanner.version>0.34.1-beta-SNAPSHOT</spanner.version>
+    <speech.version>0.34.1-alpha-SNAPSHOT</speech.version>
+    <storage.version>1.16.1-SNAPSHOT</storage.version>
+    <trace.version>0.34.1-beta-SNAPSHOT</trace.version>
+    <translate.version>1.16.1-SNAPSHOT</translate.version>
+    <vision.version>1.16.1-SNAPSHOT</vision.version>
+    <video-intelligence.version>0.34.1-beta-SNAPSHOT</video-intelligence.version>
+    <testing.version>0.34.1-alpha-SNAPSHOT</testing.version>
   </properties>
   <dependencyManagement>
     <dependencies>
