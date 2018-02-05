@@ -25,7 +25,6 @@ import com.google.common.annotations.VisibleForTesting;
 import io.opencensus.contrib.http.util.HttpPropagationUtil;
 import io.opencensus.trace.SpanContext;
 import io.opencensus.trace.Tracer;
-import io.opencensus.trace.Tracing;
 import io.opencensus.trace.propagation.TextFormat;
 import java.io.IOException;
 import javax.annotation.Nullable;
@@ -103,7 +102,7 @@ public final class CensusHttpModule {
 
   /**
    * An {@link HttpRequestInitializer} implementation to set {@link CensusHttpExecuteInterceptor} as
-   * intercptor.
+   * interceptor.
    */
   @VisibleForTesting
   final class CensusHttpRequestInitializer implements HttpRequestInitializer {

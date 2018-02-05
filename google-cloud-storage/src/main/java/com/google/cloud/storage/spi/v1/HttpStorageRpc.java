@@ -191,7 +191,7 @@ public class HttpStorageRpc implements StorageRpc {
           batch.execute();
         }
       } catch (IOException ex) {
-        span.setStatus(Status.UNKNOWN);
+        span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
         throw translate(ex);
       } finally {
         scope.close();
@@ -258,7 +258,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setPredefinedDefaultObjectAcl(Option.PREDEFINED_DEFAULT_OBJECT_ACL.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -286,7 +286,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -310,7 +310,7 @@ public class HttpStorageRpc implements StorageRpc {
           .execute();
       return Tuple.<String, Iterable<Bucket>>of(buckets.getNextPageToken(), buckets.getItems());
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -341,7 +341,7 @@ public class HttpStorageRpc implements StorageRpc {
               : ImmutableList.<StorageObject>of());
       return Tuple.of(objects.getNextPageToken(), storageObjects);
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -376,7 +376,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
@@ -409,7 +409,7 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       return getCall(object, options).execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
@@ -436,7 +436,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -464,7 +464,7 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       return patchCall(storageObject, options).execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -485,7 +485,7 @@ public class HttpStorageRpc implements StorageRpc {
           .execute();
       return true;
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
@@ -517,7 +517,7 @@ public class HttpStorageRpc implements StorageRpc {
       deleteCall(blob, options).execute();
       return true;
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
@@ -557,7 +557,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(targetOptions))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -583,7 +583,7 @@ public class HttpStorageRpc implements StorageRpc {
       getRequest.executeMedia().download(out);
       return out.toByteArray();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -638,7 +638,7 @@ public class HttpStorageRpc implements StorageRpc {
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HttpStatus.SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
         return Tuple.of(null, new byte[0]);
@@ -698,7 +698,7 @@ public class HttpStorageRpc implements StorageRpc {
         throw translate(error);
       }
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -750,7 +750,7 @@ public class HttpStorageRpc implements StorageRpc {
       }
       return response.getHeaders().getLocation();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -820,7 +820,7 @@ public class HttpStorageRpc implements StorageRpc {
           rewriteResponse.getRewriteToken(),
           rewriteResponse.getTotalBytesRewritten().longValue());
     } catch (IOException ex) {
-      tracer.getCurrentSpan().setStatus(Status.UNKNOWN);
+      tracer.getCurrentSpan().setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     }
   }
@@ -834,7 +834,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
@@ -856,7 +856,7 @@ public class HttpStorageRpc implements StorageRpc {
           .execute();
       return true;
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
@@ -877,7 +877,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -895,7 +895,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -912,7 +912,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute().getItems();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -927,7 +927,7 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       return storage.defaultObjectAccessControls().get(bucket, entity).execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
@@ -947,7 +947,7 @@ public class HttpStorageRpc implements StorageRpc {
       storage.defaultObjectAccessControls().delete(bucket, entity).execute();
       return true;
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
@@ -966,7 +966,7 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       return storage.defaultObjectAccessControls().insert(acl.getBucket(), acl).execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -983,7 +983,7 @@ public class HttpStorageRpc implements StorageRpc {
           .patch(acl.getBucket(), acl.getEntity(), acl)
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -998,7 +998,7 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       return storage.defaultObjectAccessControls().list(bucket).execute().getItems();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1015,7 +1015,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setGeneration(generation)
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
@@ -1037,7 +1037,7 @@ public class HttpStorageRpc implements StorageRpc {
           .execute();
       return true;
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
@@ -1058,7 +1058,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setGeneration(acl.getGeneration())
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1076,7 +1076,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setGeneration(acl.getGeneration())
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1093,7 +1093,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setGeneration(generation)
           .execute().getItems();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1111,7 +1111,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1128,7 +1128,7 @@ public class HttpStorageRpc implements StorageRpc {
           .setUserProject(Option.USER_PROJECT.getString(options))
           .execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1144,7 +1144,7 @@ public class HttpStorageRpc implements StorageRpc {
       return storage.buckets().testIamPermissions(bucket, permissions)
           .setUserProject(Option.USER_PROJECT.getString(options)).execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1160,7 +1160,7 @@ public class HttpStorageRpc implements StorageRpc {
       storage.notifications().delete(bucket, notification).execute();
       return true;
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
@@ -1179,7 +1179,7 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       return storage.notifications().list(bucket).execute().getItems();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1194,7 +1194,7 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       return storage.notifications().insert(bucket, notification).execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
@@ -1209,7 +1209,7 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       return storage.projects().serviceAccount().get(projectId).execute();
     } catch (IOException ex) {
-      span.setStatus(Status.UNKNOWN);
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
     } finally {
       scope.close();
