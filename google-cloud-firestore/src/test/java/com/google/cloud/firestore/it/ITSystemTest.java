@@ -467,11 +467,12 @@ public class ITSystemTest {
               public String updateCallback(Transaction transaction)
                   throws ExecutionException, InterruptedException {
                 attempts.incrementAndGet();
-                DocumentSnapshot documentSnapshot = transaction.get(documentReference).get();
+                List<DocumentSnapshot> documentSnapshots =
+                    transaction.getAll(documentReference).get();
                 latch.countDown();
                 latch.await();
                 transaction.update(
-                    documentReference, "counter", documentSnapshot.getLong("counter") + 1);
+                    documentReference, "counter", documentSnapshots.get(0).getLong("counter") + 1);
                 return "bar";
               }
             });
@@ -831,7 +832,6 @@ public class ITSystemTest {
       }
     }
   }
-
 
   private int paginateResults(Query query, List<DocumentSnapshot> results)
       throws ExecutionException, InterruptedException {
