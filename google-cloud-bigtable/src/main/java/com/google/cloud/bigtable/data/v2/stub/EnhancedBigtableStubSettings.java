@@ -20,7 +20,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.common.base.Preconditions;
-import java.io.IOException;
+import javax.annotation.Nonnull;
 
 /**
  * Settings class to configure an instance of {@link EnhancedBigtableStub}.
@@ -53,7 +53,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final InstanceName instanceName;
   private final String appProfileId;
 
-  private EnhancedBigtableStubSettings(Builder builder) throws IOException {
+  private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
     instanceName = builder.instanceName;
     appProfileId = builder.appProfileId;
@@ -136,7 +136,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
      * Sets the target instance. This setting is required. All RPCs will be made in the context of
      * this setting.
      */
-    public Builder setInstanceName(InstanceName instanceName) {
+    public Builder setInstanceName(@Nonnull InstanceName instanceName) {
       Preconditions.checkNotNull(instanceName);
       this.instanceName = instanceName;
       return this;
@@ -153,7 +153,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
      * identify itself with an application profile ID at connection time, and the requests will be
      * handled according to that application profile.
      */
-    public Builder setAppProfileId(String appProfileId) {
+    public Builder setAppProfileId(@Nonnull String appProfileId) {
       Preconditions.checkNotNull(appProfileId, "AppProfileId can't be null");
       this.appProfileId = appProfileId;
       return this;
@@ -165,7 +165,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     }
 
     @SuppressWarnings("unchecked")
-    public EnhancedBigtableStubSettings build() throws IOException {
+    public EnhancedBigtableStubSettings build() {
       Preconditions.checkState(instanceName != null, "InstanceName must be set");
 
       return new EnhancedBigtableStubSettings(this);

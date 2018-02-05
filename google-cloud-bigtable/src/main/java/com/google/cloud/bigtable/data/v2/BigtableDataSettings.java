@@ -15,12 +15,11 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
-import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
-import com.google.common.base.Preconditions;
 import java.io.IOException;
+import javax.annotation.Nonnull;
 
 /**
  * Settings class to configure an instance of {@link BigtableDataClient}.
@@ -99,7 +98,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
      * Sets the target instance. This setting is required. All RPCs will be made in the context of
      * this setting.
      */
-    public Builder setInstanceName(InstanceName instanceName) {
+    public Builder setInstanceName(@Nonnull InstanceName instanceName) {
       getTypedStubSettings().setInstanceName(instanceName);
       return this;
     }
@@ -115,7 +114,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
      * identify itself with an application profile ID at connection time, and the requests will be
      * handled according to that application profile.
      */
-    public Builder setAppProfileId(String appProfileId) {
+    public Builder setAppProfileId(@Nonnull String appProfileId) {
       getTypedStubSettings().setAppProfileId(appProfileId);
       return this;
     }
