@@ -7,10 +7,6 @@ The Cloud Bigtable client is composed of two layers:
 * an automatically generated GAPIC base layer
 * a handwritten layer
 
-The two layers are meant to live side by side in [google-cloud-java](https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigtable).
-However during initial development the two layers are split. With the automatically generated layer
-living in [google-cloud-java](https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigtable)
-and the handwritten layer living in this repo. This allows for easy regeneration.
 
 ### Generated GAPIC base layer
 
@@ -20,6 +16,7 @@ split into 2 parts: admin and data apis. The admin part is straightforward enoug
 directly by the consumer. However the data client is too protocol focused and is too low level to 
 be consumed by an application directly. Instead, it's intended to be an implementation detail of the
 handwritten layer.
+
 
 ### Handwritten layer
 
