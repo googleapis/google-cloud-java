@@ -11,7 +11,8 @@
 # This is meant to be used conjunction with update-deps.sh to regenerate the underlying client with
 # the latest upstream changes.
 
-set -eE # same as: `set -o errexit -o errtrace`
+set -o errexit -o errtrace
+
 handle_error() {
   echo "Failed, exiting. See deps/output.log for more details"
   exit 1

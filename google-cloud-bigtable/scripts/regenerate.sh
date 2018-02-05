@@ -5,7 +5,8 @@
 # It is meant to be used to test changes to the gapic config before publishing
 # To pull in upstream changes, please use update-deps.sh
 
-set -eE # same as: `set -o errexit -o errtrace`
+set -o errexit -o errtrace
+
 handle_error() {
   echo "Failed, exiting. See deps/output.log for more details"
   exit 1
