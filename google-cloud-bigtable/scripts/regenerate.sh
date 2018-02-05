@@ -93,21 +93,21 @@ function copy_google_cloud_java {
   log "Copying google-cloud-java"
 
   # Delete old files
-  xargs rm < scripts/autogen_files.lst
-  cat /dev/null > scripts/autogen_files.lst
+  xargs rm < autogen_files.lst
+  cat /dev/null > autogen_files.lst
 
   # Update manual files
-  find src -type f > $PROJECT_DIR/scripts/handwritten_files.lst
+  find src -type f > $PROJECT_DIR/handwritten_files.lst
 
   # Generate a list of new files
   # Data
   pushd "$WORKDIR/artman-genfiles/java/google-cloud-bigtable"
-  find src -type f >> $PROJECT_DIR/scripts/autogen_files.lst
+  find src -type f >> $PROJECT_DIR/autogen_files.lst
   cp -r "src" "$PROJECT_DIR"
   popd
   # Admin
   pushd "$WORKDIR/artman-genfiles/java/google-cloud-bigtable-admin"
-  find src -type f >> $PROJECT_DIR/scripts/autogen_files.lst
+  find src -type f >> $PROJECT_DIR/autogen_files.lst
   cp -r "src" "$PROJECT_DIR"
   popd
 }
