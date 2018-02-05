@@ -661,5 +661,33 @@
         </plugins>
       </build>
     </profile>
+
+    <profile>
+      <!-- This profile is meant to be used by client developers, enabled by default in
+      ~/.m2/settings.xml using `<activeProfiles>` -->
+      <id>veneer-dev</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>googleformatter-maven-plugin</artifactId>
+            <version>1.5.1</version>
+            <executions>
+              <execution>
+                <id>reformat-sources</id>
+                <phase>process-sources</phase>
+                <goals>
+                  <goal>format</goal>
+                </goals>
+                <configuration>
+                  <style>GOOGLE</style>
+                  <filterModified>true</filterModified>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
 </project>
