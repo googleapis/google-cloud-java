@@ -15,11 +15,12 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.common.truth.Truth;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -38,7 +39,7 @@ public class EnhancedBigtableStubSettingsTest {
       error = t;
     }
 
-    Truth.assertThat(error).isInstanceOf(IllegalStateException.class);
+    assertThat(error).isInstanceOf(IllegalStateException.class);
   }
 
   @Test
@@ -67,10 +68,10 @@ public class EnhancedBigtableStubSettingsTest {
       String appProfileId,
       String endpoint,
       CredentialsProvider credentialsProvider) {
-    Truth.assertThat(builder.getInstanceName()).isEqualTo(instanceName);
-    Truth.assertThat(builder.getAppProfileId()).isEqualTo(appProfileId);
-    Truth.assertThat(builder.getEndpoint()).isEqualTo(endpoint);
-    Truth.assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
+    assertThat(builder.getInstanceName()).isEqualTo(instanceName);
+    assertThat(builder.getAppProfileId()).isEqualTo(appProfileId);
+    assertThat(builder.getEndpoint()).isEqualTo(endpoint);
+    assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
   }
 
   private void verifySettings(
@@ -79,10 +80,10 @@ public class EnhancedBigtableStubSettingsTest {
       String appProfileId,
       String endpoint,
       CredentialsProvider credentialsProvider) {
-    Truth.assertThat(settings.getInstanceName()).isEqualTo(instanceName);
-    Truth.assertThat(settings.getAppProfileId()).isEqualTo(appProfileId);
-    Truth.assertThat(settings.getEndpoint()).isEqualTo(endpoint);
-    Truth.assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
+    assertThat(settings.getInstanceName()).isEqualTo(instanceName);
+    assertThat(settings.getAppProfileId()).isEqualTo(appProfileId);
+    assertThat(settings.getEndpoint()).isEqualTo(endpoint);
+    assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
   }
 
   @Test
@@ -95,6 +96,6 @@ public class EnhancedBigtableStubSettingsTest {
     InstantiatingGrpcChannelProvider provider =
         (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
 
-    Truth.assertThat(provider.toBuilder().getPoolSize()).isGreaterThan(1);
+    assertThat(provider.toBuilder().getPoolSize()).isGreaterThan(1);
   }
 }
