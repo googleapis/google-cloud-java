@@ -23,8 +23,8 @@ import java.io.IOException;
 /**
  * Client for reading from and writing to existing Bigtable tables.
  *
- * <p>This class provides the ability to make remote calls to the backing service.
- * Sample code to get started:
+ * <p>This class provides the ability to make remote calls to the backing service. Sample code to
+ * get started:
  *
  * <pre>{@code
  * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");

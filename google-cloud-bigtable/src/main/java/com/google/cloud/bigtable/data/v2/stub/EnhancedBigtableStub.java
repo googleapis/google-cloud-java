@@ -39,7 +39,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final ClientContext clientContext;
   private final RequestContext requestContext;
 
-  public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings) throws IOException {
+  public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
+      throws IOException {
     // Configure the base settings
     BigtableStubSettings.Builder baseSettingsBuilder =
         BigtableStubSettings.newBuilder()
