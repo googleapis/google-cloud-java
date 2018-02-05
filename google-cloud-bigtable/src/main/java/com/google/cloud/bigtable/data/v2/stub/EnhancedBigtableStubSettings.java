@@ -109,7 +109,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private InstanceName instanceName;
     private String appProfileId;
 
-    private PlaceholderServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
+    private final PlaceholderServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
 
     /**
      * Initializes a new Builder with sane defaults for all settings.

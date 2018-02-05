@@ -144,8 +144,7 @@ public class EnhancedBigtableStubSettingsTest {
         .isEqualTo(Duration.ofMinutes(5));
     assertThat(builder.build().readRowsSettings().getRetryableCodes())
         .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
-    assertThat(builder.build().readRowsSettings().getRetrySettings())
-        .isEqualTo(retrySettings);
+    assertThat(builder.build().readRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
 
     assertThat(builder.build().toBuilder().readRowsSettings().getTimeoutCheckInterval())
         .isEqualTo(Duration.ofSeconds(10));
@@ -171,13 +170,11 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.getRetrySettings().getMaxAttempts()).isGreaterThan(1);
     assertThat(builder.getRetrySettings().getTotalTimeout()).isGreaterThan(Duration.ZERO);
 
-    assertThat(builder.getRetrySettings().getInitialRetryDelay())
-        .isGreaterThan(Duration.ZERO);
+    assertThat(builder.getRetrySettings().getInitialRetryDelay()).isGreaterThan(Duration.ZERO);
     assertThat(builder.getRetrySettings().getRetryDelayMultiplier()).isAtLeast(1.0);
     assertThat(builder.getRetrySettings().getMaxRetryDelay()).isGreaterThan(Duration.ZERO);
 
-    assertThat(builder.getRetrySettings().getInitialRpcTimeout())
-        .isGreaterThan(Duration.ZERO);
+    assertThat(builder.getRetrySettings().getInitialRpcTimeout()).isGreaterThan(Duration.ZERO);
     assertThat(builder.getRetrySettings().getRpcTimeoutMultiplier()).isAtLeast(1.0);
     assertThat(builder.getRetrySettings().getMaxRpcTimeout()).isGreaterThan(Duration.ZERO);
   }

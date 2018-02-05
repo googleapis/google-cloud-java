@@ -190,14 +190,10 @@ public final class Filters {
   // Implementations of target specific filters.
   /** DSL for adding filters to a chain. */
   public static final class ChainFilter implements Filter {
-    private final RowFilter.Chain.Builder builder;
+    private RowFilter.Chain.Builder builder;
 
     private ChainFilter() {
-      this(RowFilter.Chain.newBuilder());
-    }
-
-    private ChainFilter(RowFilter.Chain.Builder builder) {
-      this.builder = builder;
+      this.builder = RowFilter.Chain.newBuilder();
     }
 
     /** Add a filter to chain. */
@@ -220,20 +216,22 @@ public final class Filters {
     /** Makes a deep copy of the Chain. */
     @Override
     public ChainFilter clone() {
-      return new ChainFilter(builder.clone());
+      try {
+        ChainFilter clone = (ChainFilter) super.clone();
+        clone.builder = builder.clone();
+        return clone;
+      } catch (CloneNotSupportedException | ClassCastException e) {
+        throw new RuntimeException("should never happen");
+      }
     }
   }
 
   /** DSL for adding filters to the interleave list. */
   public static final class InterleaveFilter implements Filter {
-    RowFilter.Interleave.Builder builder;
+    private RowFilter.Interleave.Builder builder;
 
     private InterleaveFilter() {
-      this(RowFilter.Interleave.newBuilder());
-    }
-
-    private InterleaveFilter(RowFilter.Interleave.Builder builder) {
-      this.builder = builder;
+      builder = RowFilter.Interleave.newBuilder();
     }
 
     /** Adds a {@link Filter} to the interleave list. */
@@ -254,18 +252,20 @@ public final class Filters {
     }
 
     @Override
-    protected Object clone() {
-      return new InterleaveFilter(builder.clone());
+    protected InterleaveFilter clone() {
+      try {
+        InterleaveFilter clone = (InterleaveFilter) super.clone();
+        clone.builder = builder.clone();
+        return clone;
+      } catch (CloneNotSupportedException | ClassCastException e) {
+        throw new RuntimeException("should never happen");
+      }
     }
   }
 
   /** DSL for configuring a conditional filter. */
   public static final class ConditionFilter implements Filter {
     private RowFilter.Condition.Builder builder;
-
-    private ConditionFilter(Builder builder) {
-      this.builder = builder;
-    }
 
     private ConditionFilter(@Nonnull Filter predicate) {
       Preconditions.checkNotNull(predicate);
@@ -296,8 +296,14 @@ public final class Filters {
     }
 
     @Override
-    protected Object clone() {
-      return new ConditionFilter(builder.clone());
+    protected ConditionFilter clone() {
+      try {
+        ConditionFilter clone = (ConditionFilter) super.clone();
+        clone.builder = builder.clone();
+        return clone;
+      } catch (CloneNotSupportedException | ClassCastException e) {
+        throw new RuntimeException("should never happen");
+      }
     }
   }
 
@@ -376,15 +382,11 @@ public final class Filters {
 
   /** Matches only cells from columns within the given range. */
   public static final class QualifierRangeFilter implements Filter {
-    private ColumnRange.Builder builder = ColumnRange.newBuilder();
-
-    private QualifierRangeFilter(ColumnRange.Builder builder) {
-      this.builder = builder;
-    }
+    private ColumnRange.Builder builder;
 
     private QualifierRangeFilter(@Nonnull String family) {
       Preconditions.checkNotNull(family);
-      builder.setFamilyName(family);
+      builder = ColumnRange.newBuilder().setFamilyName(family);
     }
 
     /** Used when giving an inclusive lower bound for the range. */
@@ -455,8 +457,14 @@ public final class Filters {
     }
 
     @Override
-    protected Object clone() {
-      return new QualifierRangeFilter(builder.clone());
+    protected QualifierRangeFilter clone() {
+      try {
+        QualifierRangeFilter clone = (QualifierRangeFilter) super.clone();
+        clone.builder = builder.clone();
+        return clone;
+      } catch (CloneNotSupportedException | ClassCastException e) {
+        throw new RuntimeException("should never happen");
+      }
     }
   }
 
@@ -509,14 +517,10 @@ public final class Filters {
    * end is exclusive.
    */
   public static final class TimestampRangeFilter implements Filter {
-    private final TimestampRange.Builder builder;
+    private TimestampRange.Builder builder;
 
     private TimestampRangeFilter() {
-      this(TimestampRange.newBuilder());
-    }
-
-    private TimestampRangeFilter(TimestampRange.Builder builder) {
-      this.builder = builder;
+      builder = TimestampRange.newBuilder();
     }
 
     /**
@@ -546,8 +550,14 @@ public final class Filters {
     }
 
     @Override
-    protected Object clone() {
-      return new TimestampRangeFilter(builder.clone());
+    protected TimestampRangeFilter clone() {
+      try {
+        TimestampRangeFilter clone = (TimestampRangeFilter) super.clone();
+        clone.builder = builder.clone();
+        return clone;
+      } catch (CloneNotSupportedException | ClassCastException e) {
+        throw new RuntimeException("should never happen");
+      }
     }
   }
 
@@ -576,14 +586,10 @@ public final class Filters {
 
   /** Matches only cells with values that fall within the given value range. */
   public static final class ValueRangeFilter implements Filter {
-    private final ValueRange.Builder builder;
+    private ValueRange.Builder builder;
 
     private ValueRangeFilter() {
-      this(ValueRange.newBuilder());
-    }
-
-    private ValueRangeFilter(ValueRange.Builder builder) {
-      this.builder = builder;
+      builder = ValueRange.newBuilder();
     }
 
     /** Used when giving an inclusive lower bound for the range. */
@@ -653,8 +659,14 @@ public final class Filters {
     }
 
     @Override
-    protected Object clone() {
-      return new ValueRangeFilter(builder.clone());
+    public ValueRangeFilter clone() {
+      try {
+        ValueRangeFilter clone = (ValueRangeFilter) super.clone();
+        clone.builder = builder.clone();
+        return clone;
+      } catch (CloneNotSupportedException | ClassCastException e) {
+        throw new RuntimeException("should never happen");
+      }
     }
   }
 
@@ -776,7 +788,7 @@ public final class Filters {
     }
 
     @Override
-    protected Object clone() {
+    public Object clone() {
       return new SimpleFilter(proto);
     }
   }

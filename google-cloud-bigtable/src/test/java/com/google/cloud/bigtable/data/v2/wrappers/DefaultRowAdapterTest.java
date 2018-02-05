@@ -31,7 +31,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class DefaultRowAdapterTest {
 
-  private DefaultRowAdapter adapter = new DefaultRowAdapter();
+  private final DefaultRowAdapter adapter = new DefaultRowAdapter();
   private RowBuilder<Row> rowBuilder;
 
   @Before
