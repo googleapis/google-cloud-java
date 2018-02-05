@@ -104,6 +104,32 @@
         <javadoc.opts>-Xdoclint:none</javadoc.opts>
       </properties>
     </profile>
+
+    <profile>
+      <id>bigtable-dev</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>googleformatter-maven-plugin</artifactId>
+            <version>1.5.1</version>
+            <executions>
+              <execution>
+                <id>reformat-sources</id>
+                <phase>process-sources</phase>
+                <goals>
+                  <goal>format</goal>
+                </goals>
+                <configuration>
+                  <style>GOOGLE</style>
+                  <filterModified>true</filterModified>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
   <build>
     <plugins>
@@ -119,23 +145,6 @@
               <sources>
                 <source>generated/src/main/java</source>
               </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>com.theoryinpractise</groupId>
-        <artifactId>googleformatter-maven-plugin</artifactId>
-        <version>1.5.1</version>
-        <executions>
-          <execution>
-            <id>default-cli</id>
-            <goals>
-              <goal>format</goal>
-            </goals>
-            <configuration>
-              <style>GOOGLE</style>
-              <filterModified>true</filterModified>
             </configuration>
           </execution>
         </executions>
