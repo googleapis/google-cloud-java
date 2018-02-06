@@ -24,6 +24,7 @@ import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
+import com.google.cloud.bigquery.LoadJobConfiguration.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
@@ -61,6 +62,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Boolean useLegacySql;
   private final Integer maximumBillingTier;
   private final List<SchemaUpdateOption> schemaUpdateOptions;
+  private final EncryptionConfiguration destinationEncryptionConfiguration;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be
@@ -102,6 +104,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Boolean useLegacySql = false;
     private Integer maximumBillingTier;
     private List<SchemaUpdateOption> schemaUpdateOptions;
+    private EncryptionConfiguration destinationEncryptionConfiguration;
 
     private Builder() {
       super(Type.QUERY);
@@ -126,6 +129,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.useLegacySql = jobConfiguration.useLegacySql;
       this.maximumBillingTier = jobConfiguration.maximumBillingTier;
       this.schemaUpdateOptions = jobConfiguration.schemaUpdateOptions;
+      this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -187,6 +191,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
           schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
         }
         this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
+      }
+      if (queryConfigurationPb.getDestinationEncryptionConfiguration() != null) {
+        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
+            queryConfigurationPb.getDestinationEncryptionConfiguration()).build();
       }
     }
 
@@ -291,6 +299,12 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+
+    public Builder setDestinationEncryptionConfiguration(
+        EncryptionConfiguration encryptionConfiguration) {
+      this.destinationEncryptionConfiguration = encryptionConfiguration;
+      return this;
+    }
 
     /**
      * Sets the external tables definitions. If querying external data sources outside of BigQuery,
@@ -508,6 +522,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.useLegacySql = builder.useLegacySql;
     this.maximumBillingTier = builder.maximumBillingTier;
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
+    this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
   }
 
   /**
@@ -549,6 +564,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   public TableId getDestinationTable() {
     return destinationTable;
+  }
+
+  public EncryptionConfiguration getDestinationEncryptionConfiguration() {
+    return destinationEncryptionConfiguration;
   }
 
   /**
@@ -687,6 +706,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("positionalParameters", positionalParameters)
         .add("namedParameters", namedParameters)
         .add("destinationTable", destinationTable)
+        .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("defaultDataset", defaultDataset)
         .add("allowLargeResults", allowLargeResults)
         .add("flattenResults", flattenResults)
@@ -790,6 +810,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
         schemaUpdateOptionsBuilder.add(schemaUpdateOption.name());
       }
       queryConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
+    }
+    if (destinationEncryptionConfiguration != null) {
+      queryConfigurationPb.setDestinationEncryptionConfiguration(destinationEncryptionConfiguration.toPb());
     }
     return configurationPb.setQuery(queryConfigurationPb);
   }
