@@ -25,6 +25,7 @@ import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import java.util.List;
+import com.google.cloud.bigtable.data.v2.wrappers.RowMutation;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,14 +38,16 @@ public class BigtableDataClientTest {
   @Mock private EnhancedBigtableStub mockStub;
   @Mock private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
   @Mock private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
+  @Mock private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
 
   private BigtableDataClient bigtableDataClient;
 
   @Before
   public void setUp() {
+    bigtableDataClient = new BigtableDataClient(mockStub);
     Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
     Mockito.when(mockStub.sampleRowKeysCallable()).thenReturn(mockSampleRowKeysCallable);
-    bigtableDataClient = new BigtableDataClient(mockStub);
+    Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
   }
 
   @Test
@@ -85,5 +88,20 @@ public class BigtableDataClientTest {
   public void proxySampleRowKeysTest() {
     bigtableDataClient.sampleRowKeys("fake-table");
     Mockito.verify(mockSampleRowKeysCallable).futureCall("fake-table");
+  }
+
+  @Test
+  public void proxyMutateRowCallableTest() {
+    assertThat(bigtableDataClient.mutateRowCallable()).isSameAs(mockMutateRowCallable);
+  }
+
+  @Test
+  public void proxyMutateRowTest() {
+    RowMutation request =
+        RowMutation.create("fake-table", "some-key")
+            .setCell("some-family", "fake-qualifier", "fake-value");
+
+    bigtableDataClient.mutateRow(request);
+    Mockito.verify(mockMutateRowCallable).futureCall(request);
   }
 }

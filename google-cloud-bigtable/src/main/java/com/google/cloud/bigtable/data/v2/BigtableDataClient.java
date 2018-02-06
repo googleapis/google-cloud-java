@@ -27,6 +27,7 @@ import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
+import com.google.cloud.bigtable.data.v2.wrappers.RowMutation;
 import java.io.IOException;
 import java.util.List;
 
@@ -290,6 +291,46 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {
     return stub.sampleRowKeysCallable();
+  }
+
+  /**
+   * Convenience method to asynchronously mutate a single row atomically. Cells already present in
+   * the row are left unchanged unless explicitly changed by the {@link RowMutation}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
+   *     .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
+   *
+   *   ApitFuture<Void> future = bigtableClient.mutateRow(mutation);
+   * }
+   * }</pre>
+   */
+  public ApiFuture<Void> mutateRow(RowMutation rowMutation) {
+    return mutateRowCallable().futureCall(rowMutation);
+  }
+
+  /**
+   * Mutates a single row atomically. Cells already present in the row are left unchanged unless
+   * explicitly changed by the {@link RowMutation}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
+   *     .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
+   *
+   *   bigtableClient.mutateRowCallable.call(mutation);
+   * }
+   * }</pre>
+   */
+  public UnaryCallable<RowMutation, Void> mutateRowCallable() {
+    return stub.mutateRowCallable();
   }
 
   /** Close the clients and releases all associated resources. */
