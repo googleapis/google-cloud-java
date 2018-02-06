@@ -51,6 +51,8 @@ import com.google.common.io.Files;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.mockito.Mockito;
+import org.mockito.Matchers;
 
 public class ServiceOptionsTest {
   private static final String JSON_KEY =
@@ -327,23 +329,27 @@ public class ServiceOptionsTest {
 
   @Test
   public void testResponseHeaderContainsMetaDataFlavor() throws Exception {  
-    HttpTransport transport = new MockHttpTransport() {
-      @Override
-      public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
-        return new MockLowLevelHttpRequest() {
-          @Override
-          public LowLevelHttpResponse execute() throws IOException {
-            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-            response.addHeader("Metadata-Flavor", "Google");
-            response.setStatusCode(200);
-            return response;
-          }
-        };
-      }
-    };
-    HttpRequest request = transport.createRequestFactory().buildGetRequest(HttpTesting.SIMPLE_GENERIC_URL);
+    // HttpTransport transport = new MockHttpTransport() {
+    //   @Override
+    //   public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+    //     return new MockLowLevelHttpRequest() {
+    //       @Override
+    //       public LowLevelHttpResponse execute() throws IOException {
+    //         MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+    //         response.addHeader("Metadata-Flavor", "Google");
+    //         response.setStatusCode(200);
+    //         return response;
+    //       }
+    //     };
+    //   }
+    // };
+    HttpTransport mockHttpTransport = Mockito.mock(MockHttpTransport.class);
+    MockLowLevelHttpResponse mockResponse = new MockLowLevelHttpResponse();
+    mockResponse.addHeader("Metadata-Flavor", "Google");
+    Mockito.when(mockHttpTransport.buildRequest(Matchers.anyString(), Matchers.anyString()).execute()).thenReturn(mockResponse);
+
+    HttpRequest request = mockHttpTransport.createRequestFactory().buildGetRequest(HttpTesting.SIMPLE_GENERIC_URL);
     HttpResponse response = request.execute();
-    
     assertThat(ServiceOptions.headerContainsMetadataFlavor(response)).isTrue();
   }
 }
