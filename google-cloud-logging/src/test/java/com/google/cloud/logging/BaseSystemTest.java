@@ -22,16 +22,13 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.paging.AsyncPage;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.Logging.SortingField;
 import com.google.cloud.logging.Logging.SortingOrder;
-import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.JsonPayload;
-import com.google.cloud.logging.Payload.ProtoPayload;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 import com.google.common.collect.ImmutableList;
@@ -39,11 +36,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.logging.v2.LogName;
-import com.google.protobuf.Any;
-import com.google.protobuf.StringValue;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Rule;
@@ -146,7 +140,7 @@ public abstract class BaseSystemTest {
   @Test
   public void testListMonitoredResourceDescriptors() {
     Iterator<MonitoredResourceDescriptor> iterator =
-        logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(1)).iterateAll().iterator();
+        logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(100)).iterateAll().iterator();
     int count = 0;
     while (iterator.hasNext()) {
       assertNotNull(iterator.next().getType());
@@ -273,7 +267,15 @@ public abstract class BaseSystemTest {
     while (iterator.hasNext()) {
       assertTrue(iterator.next().getTimestamp() <= lastTimestamp);
     }
-    assertTrue(logging().deleteLog(logId));
+    int deleteAttempts = 0;
+    int allowedDeleteAttempts = 5;
+    boolean deleted = false;
+    while (!deleted && deleteAttempts < allowedDeleteAttempts) {
+      Thread.sleep(1000);
+      deleted = logging().deleteLog(logId);
+      deleteAttempts++;
+    }
+    assertTrue(deleted);
   }
 
   @Test
