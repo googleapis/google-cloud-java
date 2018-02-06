@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.33.1-alpha-SNAPSHOT</version>
+  <version>0.34.1-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -136,7 +136,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud</site.installationModule>
-    <google-cloud-bom.version>0.33.1-alpha-SNAPSHOT</google-cloud-bom.version>
+    <google-cloud-bom.version>0.34.1-alpha-SNAPSHOT</google-cloud-bom.version>
 
     <!-- test dependency versions -->
     <easymock.version>3.4</easymock.version>
@@ -657,6 +657,34 @@
                 <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
               </links>
             </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!-- This profile is meant to be used by client developers, enabled by default in
+      ~/.m2/settings.xml using `<activeProfiles>` -->
+      <id>veneer-dev</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>googleformatter-maven-plugin</artifactId>
+            <version>1.5.1</version>
+            <executions>
+              <execution>
+                <id>reformat-sources</id>
+                <phase>process-sources</phase>
+                <goals>
+                  <goal>format</goal>
+                </goals>
+                <configuration>
+                  <style>GOOGLE</style>
+                  <filterModified>true</filterModified>
+                </configuration>
+              </execution>
+            </executions>
           </plugin>
         </plugins>
       </build>

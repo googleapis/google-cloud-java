@@ -410,8 +410,7 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param context Required. The context to update. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
+   * @param context Required. The context to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context updateContext(Context context) {
