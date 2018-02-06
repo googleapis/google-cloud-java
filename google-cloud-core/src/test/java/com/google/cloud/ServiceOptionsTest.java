@@ -27,7 +27,6 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
-import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpTransport;
