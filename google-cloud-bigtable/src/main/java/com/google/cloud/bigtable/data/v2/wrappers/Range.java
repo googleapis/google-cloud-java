@@ -108,7 +108,7 @@ abstract class Range<T, R extends Range<T, R>> {
   /**
    * Extension point for subclasses to override. This allows subclasses to maintain chainability.
    */
-  protected abstract R newInstance(BoundType startBound, T start, BoundType endBound, T end);
+  abstract R newInstance(BoundType startBound, T start, BoundType endBound, T end);
 
   /** Abstract specialization of a {@link Range} for timestamps. */
   abstract static class AbstractTimestampRange<R extends AbstractTimestampRange<R>>
@@ -157,7 +157,7 @@ abstract class Range<T, R extends Range<T, R>> {
 
     /** Creates a new {@link Range} with the specified exclusive end and the current start. */
     public R endOpen(String end) {
-      return newInstance(getStartBound(), start, BoundType.OPEN, wrap(end));
+      return newInstance(startBound, start, BoundType.OPEN, wrap(end));
     }
 
     /** Creates a new {@link Range} with the specified inclusive end and the current start. */
@@ -171,7 +171,7 @@ abstract class Range<T, R extends Range<T, R>> {
   }
 
   /** Concrete Range for timestamps */
-  public static class TimestampRange extends AbstractTimestampRange<TimestampRange> {
+  public static final class TimestampRange extends AbstractTimestampRange<TimestampRange> {
     public static TimestampRange unbounded() {
       return new TimestampRange(BoundType.UNBOUNDED, null, BoundType.UNBOUNDED, null);
     }
@@ -185,14 +185,14 @@ abstract class Range<T, R extends Range<T, R>> {
     }
 
     @Override
-    protected TimestampRange newInstance(
+    TimestampRange newInstance(
         BoundType startBound, Long start, BoundType endBound, Long end) {
       return new TimestampRange(startBound, start, endBound, end);
     }
   }
 
   /** Concrete Range for ByteStrings */
-  public static class ByteStringRange extends AbstractByteStringRange<ByteStringRange> {
+  public static final class ByteStringRange extends AbstractByteStringRange<ByteStringRange> {
     public static ByteStringRange unbounded() {
       return new ByteStringRange(BoundType.UNBOUNDED, null, BoundType.UNBOUNDED, null);
     }
@@ -212,7 +212,7 @@ abstract class Range<T, R extends Range<T, R>> {
     }
 
     @Override
-    protected ByteStringRange newInstance(
+    ByteStringRange newInstance(
         BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
       return new ByteStringRange(startBound, start, endBound, end);
     }
