@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -26,8 +27,19 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.testing.http.HttpTesting;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -37,6 +49,7 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 import com.google.common.io.Files;
+import org.easymock.EasyMock;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -312,5 +325,27 @@ public class ServiceOptionsTest {
     File credentialsFile = new File("/doesnotexist");
 
     assertNull(ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
+  }
+
+  @Test
+  public void testResponseHeaderContainsMetaDataFlavor() throws Exception {  
+    HttpTransport transport = new MockHttpTransport() {
+      @Override
+      public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+        return new MockLowLevelHttpRequest() {
+          @Override
+          public LowLevelHttpResponse execute() throws IOException {
+            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+            response.addHeader("Metadata-Flavor", "Google");
+            response.setStatusCode(200);
+            return response;
+          }
+        };
+      }
+    };
+    HttpRequest request = transport.createRequestFactory().buildGetRequest(HttpTesting.SIMPLE_GENERIC_URL);
+    HttpResponse response = request.execute();
+    
+    assertThat(ServiceOptions.headerContainsMetadataFlavor(response)).isTrue();
   }
 }

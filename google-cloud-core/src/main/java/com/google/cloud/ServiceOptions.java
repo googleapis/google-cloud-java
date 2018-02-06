@@ -66,6 +66,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.threeten.bp.Duration;
 
+
 /**
  * Abstract class representing service options.
  *
@@ -452,7 +453,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
             .setReadTimeout(500)
             .setHeaders(new HttpHeaders().set("Metadata-Flavor", "Google"));
     HttpResponse response = request.execute();
-    return response.parseAsString();
+    return headerContainsMetadataFlavor(response) ? response.parseAsString() : null;
+  }
+
+  @InternalApi("Visible for testing")
+  static boolean headerContainsMetadataFlavor(HttpResponse response) {
+    return response.getHeaders()
+      .getFirstHeaderStringValue("Metadata-Flavor").equals("Google");
   }
 
   protected static String getServiceAccountProjectId() {
