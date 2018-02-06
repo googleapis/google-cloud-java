@@ -20,6 +20,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.wrappers.Range.ByteStringRange;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 
@@ -86,14 +87,31 @@ public class Query {
   }
 
   /** Adds a range to be looked up. */
-  public Query range(Range<ByteString> range) {
+  public Query range(ByteStringRange range) {
     RowRange.Builder rangeBuilder = RowRange.newBuilder();
-    if (range.getStart() != null) {
-      rangeBuilder.setStartKeyClosed(range.getStart());
+
+    switch (range.getStartBound()) {
+      case OPEN:
+        rangeBuilder.setStartKeyOpen(range.getStart());
+        break;
+      case CLOSED:
+        rangeBuilder.setStartKeyClosed(range.getStart());
+        break;
+      default:
+        throw new IllegalStateException("Unknown range bound: " + range.getStartBound());
     }
-    if (range.getEnd() != null) {
-      rangeBuilder.setEndKeyOpen(range.getEnd());
+
+    switch (range.getEndBound()) {
+      case OPEN:
+        rangeBuilder.setEndKeyOpen(range.getEnd());
+        break;
+      case CLOSED:
+        rangeBuilder.setEndKeyClosed(range.getEnd());
+        break;
+      default:
+        throw new IllegalStateException("Unknown range bound: " + range.getEndBound());
     }
+
     builder.getRowsBuilder().addRowRanges(rangeBuilder.build());
 
     return this;

@@ -19,10 +19,10 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ColumnRange;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowFilter.Condition;
-import com.google.bigtable.v2.RowFilter.Condition.Builder;
-import com.google.bigtable.v2.TimestampRange;
 import com.google.bigtable.v2.ValueRange;
 import com.google.cloud.bigtable.data.v2.internal.RegexUtil;
+import com.google.cloud.bigtable.data.v2.wrappers.Range.AbstractByteStringRange;
+import com.google.cloud.bigtable.data.v2.wrappers.Range.AbstractTimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  */
 public final class Filters {
   /** Entry point into the DSL. */
+  @SuppressWarnings("WeakerAccess")
   public static final Filters FILTERS = new Filters();
 
   private static final SimpleFilter PASS =
@@ -380,94 +381,6 @@ public final class Filters {
     }
   }
 
-  /** Matches only cells from columns within the given range. */
-  public static final class QualifierRangeFilter implements Filter {
-    private ColumnRange.Builder builder;
-
-    private QualifierRangeFilter(@Nonnull String family) {
-      Preconditions.checkNotNull(family);
-      builder = ColumnRange.newBuilder().setFamilyName(family);
-    }
-
-    /** Used when giving an inclusive lower bound for the range. */
-    public QualifierRangeFilter startClosed(@Nullable String value) {
-      return startClosed(wrapString(value));
-    }
-
-    /** Used when giving an inclusive lower bound for the range. */
-    public QualifierRangeFilter startClosed(@Nullable ByteString value) {
-      if (value == null) {
-        builder.clearStartQualifier();
-      } else {
-        builder.setStartQualifierClosed(value);
-      }
-      return this;
-    }
-
-    /** Used when giving an exclusive lower bound for the range. */
-    public QualifierRangeFilter startOpen(@Nullable String value) {
-      return startOpen(wrapString(value));
-    }
-
-    /** Used when giving an exclusive lower bound for the range. */
-    public QualifierRangeFilter startOpen(@Nullable ByteString value) {
-      if (value == null) {
-        builder.clearStartQualifier();
-      } else {
-        builder.setStartQualifierOpen(value);
-      }
-      return this;
-    }
-
-    /** Used when giving an inclusive upper bound for the range. */
-    public QualifierRangeFilter endClosed(@Nullable String value) {
-      return endClosed(wrapString(value));
-    }
-
-    /** Used when giving an inclusive upper bound for the range. */
-    public QualifierRangeFilter endClosed(@Nullable ByteString value) {
-      if (value == null) {
-        builder.clearEndQualifier();
-      } else {
-        builder.setEndQualifierClosed(value);
-      }
-      return this;
-    }
-
-    /** Used when giving an exclusive upper bound for the range. */
-    public QualifierRangeFilter endOpen(@Nullable String value) {
-      builder.setEndQualifierOpen(wrapString(value));
-      return this;
-    }
-
-    /** Used when giving an exclusive upper bound for the range. */
-    public QualifierRangeFilter endOpen(@Nullable ByteString value) {
-      if (value == null) {
-        builder.clearEndQualifier();
-      } else {
-        builder.setEndQualifierOpen(value);
-      }
-      return this;
-    }
-
-    @InternalApi
-    @Override
-    public RowFilter toProto() {
-      return RowFilter.newBuilder().setColumnRangeFilter(builder.build()).build();
-    }
-
-    @Override
-    protected QualifierRangeFilter clone() {
-      try {
-        QualifierRangeFilter clone = (QualifierRangeFilter) super.clone();
-        clone.builder = builder.clone();
-        return clone;
-      } catch (CloneNotSupportedException | ClassCastException e) {
-        throw new RuntimeException("should never happen");
-      }
-    }
-  }
-
   public static final class QualifierFilter {
     private QualifierFilter() {}
 
@@ -512,49 +425,65 @@ public final class Filters {
     }
   }
 
-  /**
-   * Matches only cells with microsecond timestamps within the given range. Start is inclusive and
-   * end is exclusive.
-   */
-  public static final class TimestampRangeFilter implements Filter {
-    private TimestampRange.Builder builder;
+  /** Matches only cells from columns within the given range. */
+  public static final class QualifierRangeFilter
+      extends AbstractByteStringRange<QualifierRangeFilter> implements Filter {
+    private @Nonnull String family;
 
-    private TimestampRangeFilter() {
-      builder = TimestampRange.newBuilder();
+    private QualifierRangeFilter(String family) {
+      super();
+      this.family = family;
     }
 
-    /**
-     * Inclusive lower bound. If left empty, interpreted as 0.
-     *
-     * @param startMicros inclusive timestamp in microseconds.
-     */
-    public TimestampRangeFilter startClosed(long startMicros) {
-      builder.setStartTimestampMicros(startMicros);
-      return this;
+    private QualifierRangeFilter(
+        String family, BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
+      super(startBound, start, endBound, end);
+      this.family = Preconditions.checkNotNull(family);
     }
 
-    /**
-     * Exclusive upper bound. If left empty, interpreted as infinity.
-     *
-     * @param endMicros exclusive timestamp in microseconds.
-     */
-    public TimestampRangeFilter endOpen(long endMicros) {
-      builder.setEndTimestampMicros(endMicros);
-      return this;
+    @Override
+    protected QualifierRangeFilter newInstance(
+        BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
+      return new QualifierRangeFilter(family, startBound, start, endBound, end);
     }
 
     @InternalApi
     @Override
     public RowFilter toProto() {
-      return RowFilter.newBuilder().setTimestampRangeFilter(builder.build()).build();
+      ColumnRange.Builder builder = ColumnRange.newBuilder().setFamilyName(family);
+
+      switch (getStartBound()) {
+        case CLOSED:
+          builder.setStartQualifierClosed(getStart());
+          break;
+        case OPEN:
+          builder.setStartQualifierOpen(getStart());
+          break;
+        case UNBOUNDED:
+          break;
+        default:
+          throw new IllegalStateException("Unknown start bound: " + getStartBound());
+      }
+      switch (getEndBound()) {
+        case CLOSED:
+          builder.setEndQualifierClosed(getEnd());
+          break;
+        case OPEN:
+          builder.setEndQualifierOpen(getEnd());
+          break;
+        case UNBOUNDED:
+          break;
+        default:
+          throw new IllegalStateException("Unknown start bound: " + getStartBound());
+      }
+
+      return RowFilter.newBuilder().setColumnRangeFilter(builder.build()).build();
     }
 
     @Override
-    protected TimestampRangeFilter clone() {
+    protected QualifierRangeFilter clone() {
       try {
-        TimestampRangeFilter clone = (TimestampRangeFilter) super.clone();
-        clone.builder = builder.clone();
-        return clone;
+        return (QualifierRangeFilter) super.clone();
       } catch (CloneNotSupportedException | ClassCastException e) {
         throw new RuntimeException("should never happen");
       }
@@ -572,98 +501,65 @@ public final class Filters {
     public TimestampRangeFilter range() {
       return new TimestampRangeFilter();
     }
-
-    /**
-     * Matches only cells with timestamps within the given range.
-     *
-     * @param startMicros Inclusive start of the range in microseconds.
-     * @param endMicros Exclusive end of the range in microseconds.
-     */
-    public Filter range(long startMicros, long endMicros) {
-      return range().startClosed(startMicros).endOpen(endMicros);
-    }
   }
 
-  /** Matches only cells with values that fall within the given value range. */
-  public static final class ValueRangeFilter implements Filter {
-    private ValueRange.Builder builder;
-
-    private ValueRangeFilter() {
-      builder = ValueRange.newBuilder();
+  /**
+   * Matches only cells with microsecond timestamps within the given range. Start is inclusive and
+   * end is exclusive.
+   */
+  public static final class TimestampRangeFilter
+      extends AbstractTimestampRange<TimestampRangeFilter> implements Filter {
+    private TimestampRangeFilter() {
+      super();
     }
 
-    /** Used when giving an inclusive lower bound for the range. */
-    public ValueRangeFilter startClosed(@Nullable String value) {
-      return startClosed(wrapString(value));
+    private TimestampRangeFilter(BoundType startBound, Long start, BoundType endBound, Long end) {
+      super(startBound, start, endBound, end);
     }
 
-    /** Used when giving an inclusive lower bound for the range. */
-    public ValueRangeFilter startClosed(@Nullable ByteString value) {
-      if (value == null) {
-        builder.clearStartValue();
-      } else {
-        builder.setStartValueClosed(value);
-      }
-      return this;
-    }
-
-    /** Used when giving an exclusive lower bound for the range. */
-    public ValueRangeFilter startOpen(@Nullable String value) {
-      return startOpen(wrapString(value));
-    }
-
-    /** Used when giving an exclusive lower bound for the range. */
-    public ValueRangeFilter startOpen(@Nullable ByteString value) {
-      if (value == null) {
-        builder.clearStartValue();
-      } else {
-        builder.setStartValueOpen(value);
-      }
-      return this;
-    }
-
-    /** Used when giving an inclusive upper bound for the range. */
-    public ValueRangeFilter endClosed(@Nullable String value) {
-      return endClosed(wrapString(value));
-    }
-
-    /** Used when giving an inclusive upper bound for the range. */
-    public ValueRangeFilter endClosed(@Nullable ByteString value) {
-      if (value == null) {
-        builder.clearEndValue();
-      } else {
-        builder.setEndValueClosed(value);
-      }
-      return this;
-    }
-
-    /** Used when giving an exclusive upper bound for the range. */
-    public ValueRangeFilter endOpen(@Nullable String value) {
-      return endOpen(wrapString(value));
-    }
-
-    /** Used when giving an exclusive upper bound for the range. */
-    public ValueRangeFilter endOpen(@Nullable ByteString value) {
-      if (value == null) {
-        builder.clearEndValue();
-      } else {
-        builder.setEndValueOpen(value);
-      }
-      return this;
+    @Override
+    protected TimestampRangeFilter newInstance(
+        BoundType startBound, Long start, BoundType endBound, Long end) {
+      return new TimestampRangeFilter(startBound, start, endBound, end);
     }
 
     @InternalApi
     @Override
     public RowFilter toProto() {
-      return RowFilter.newBuilder().setValueRangeFilter(builder.build()).build();
+      com.google.bigtable.v2.TimestampRange.Builder builder =
+          com.google.bigtable.v2.TimestampRange.newBuilder();
+
+      switch (getStartBound()) {
+        case CLOSED:
+          builder.setStartTimestampMicros(getStart());
+          break;
+        case OPEN:
+          builder.setStartTimestampMicros(getStart() + 1);
+          break;
+        case UNBOUNDED:
+          break;
+        default:
+          throw new IllegalStateException("Unknown start bound: " + getStartBound());
+      }
+      switch (getEndBound()) {
+        case CLOSED:
+          builder.setEndTimestampMicros(getEnd() + 1);
+          break;
+        case OPEN:
+          builder.setEndTimestampMicros(getEnd());
+          break;
+        case UNBOUNDED:
+          break;
+        default:
+          throw new IllegalStateException("Unknown end bound: " + getEndBound());
+      }
+      return RowFilter.newBuilder().setTimestampRangeFilter(builder.build()).build();
     }
 
     @Override
-    public ValueRangeFilter clone() {
+    protected TimestampRangeFilter clone() {
       try {
-        ValueRangeFilter clone = (ValueRangeFilter) super.clone();
-        clone.builder = builder.clone();
-        return clone;
+        return (TimestampRangeFilter) super.clone();
       } catch (CloneNotSupportedException | ClassCastException e) {
         throw new RuntimeException("should never happen");
       }
@@ -711,29 +607,68 @@ public final class Filters {
       return new ValueRangeFilter();
     }
 
-    /**
-     * Construct a {@link ValueRangeFilter} that can create a {@link ValueRange} oriented {@link
-     * Filter}.
-     *
-     * @return a new {@link ValueRangeFilter}
-     */
-    public ValueRangeFilter range(ByteString start, ByteString end) {
-      return range().startClosed(start).endOpen(end);
-    }
-
-    /**
-     * Construct a {@link ValueRangeFilter} that can create a {@link ValueRange} oriented {@link
-     * Filter}.
-     *
-     * @return a new {@link ValueRangeFilter}
-     */
-    public ValueRangeFilter range(String start, String end) {
-      return range().startClosed(start).endOpen(end);
-    }
-
     /** Replaces each cell's value with the empty string. */
     public Filter strip() {
       return STRIP_VALUE;
+    }
+  }
+
+  /** Matches only cells with values that fall within the given value range. */
+  public static final class ValueRangeFilter extends AbstractByteStringRange<ValueRangeFilter>
+      implements Filter {
+    private ValueRangeFilter() {
+      super();
+    }
+
+    private ValueRangeFilter(
+        BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
+      super(startBound, start, endBound, end);
+    }
+
+    @Override
+    protected ValueRangeFilter newInstance(
+        BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
+      return new ValueRangeFilter(startBound, start, endBound, end);
+    }
+
+    @InternalApi
+    @Override
+    public RowFilter toProto() {
+      ValueRange.Builder builder = ValueRange.newBuilder();
+      switch (getStartBound()) {
+        case CLOSED:
+          builder.setStartValueClosed(getStart());
+          break;
+        case OPEN:
+          builder.setStartValueOpen(getStart());
+          break;
+        case UNBOUNDED:
+          break;
+        default:
+          throw new IllegalStateException("Unknown start bound: " + getStartBound());
+      }
+      switch (getEndBound()) {
+        case CLOSED:
+          builder.setEndValueClosed(getEnd());
+          break;
+        case OPEN:
+          builder.setEndValueOpen(getEnd());
+          break;
+        case UNBOUNDED:
+          break;
+        default:
+          throw new IllegalStateException("Unknown end bound: " + getEndBound());
+      }
+      return RowFilter.newBuilder().setValueRangeFilter(builder.build()).build();
+    }
+
+    @Override
+    public ValueRangeFilter clone() {
+      try {
+        return (ValueRangeFilter) super.clone();
+      } catch (CloneNotSupportedException | ClassCastException e) {
+        throw new RuntimeException("should never happen");
+      }
     }
   }
 
@@ -774,7 +709,7 @@ public final class Filters {
   }
 
   private static final class SimpleFilter implements Filter {
-    private final RowFilter proto;
+    private RowFilter proto;
 
     private SimpleFilter(@Nonnull RowFilter proto) {
       Preconditions.checkNotNull(proto);
@@ -788,8 +723,12 @@ public final class Filters {
     }
 
     @Override
-    public Object clone() {
-      return new SimpleFilter(proto);
+    public SimpleFilter clone() {
+      try {
+        return (SimpleFilter) super.clone();
+      } catch (CloneNotSupportedException e) {
+        throw new RuntimeException("should never happen", e);
+      }
     }
   }
 

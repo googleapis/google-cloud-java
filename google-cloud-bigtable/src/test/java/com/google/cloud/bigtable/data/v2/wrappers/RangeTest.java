@@ -17,35 +17,186 @@ package com.google.cloud.bigtable.data.v2.wrappers;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.bigtable.data.v2.wrappers.Range.BoundType;
+import com.google.cloud.bigtable.data.v2.wrappers.Range.ByteStringRange;
+import com.google.cloud.bigtable.data.v2.wrappers.Range.TimestampRange;
+import com.google.common.truth.DefaultSubject;
+import com.google.common.truth.Subject;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
+import org.junit.internal.Throwables;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class RangeTest {
   @Test
-  public void utf8StringsTest() {
-    Range<ByteString> range = Range.ofUtf8ByteStrings("begin", "end");
+  public void timestampUnboundedTest() {
+    TimestampRange range = TimestampRange.unbounded();
+    assertThat(range.getStartBound()).isEqualTo(BoundType.UNBOUNDED);
+    assertThat(range.getEndBound()).isEqualTo(BoundType.UNBOUNDED);
 
-    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("begin"));
-    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("end"));
+    Throwable actualError = null;
+    try {
+      //noinspection ResultOfMethodCallIgnored
+      range.getStart();
+    } catch (Throwable e) {
+      actualError = e;
+    }
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
+
+    try {
+      //noinspection ResultOfMethodCallIgnored
+      range.getEnd();
+    } catch (Throwable e) {
+      actualError = e;
+    }
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
   }
 
   @Test
-  public void changeStartTest() {
-    Range<ByteString> range =
-        Range.ofUtf8ByteStrings("begin", "end").withStart(ByteString.copyFromUtf8("begin2"));
-
-    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("begin2"));
-    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("end"));
-  }
-
-  @Test
-  public void changeEndTest() {
-    Range<Integer> range = Range.of(10, 20).withEnd(30);
-
+  public void timestampOfTest() {
+    TimestampRange range = TimestampRange.create(10, 2_000);
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
     assertThat(range.getStart()).isEqualTo(10);
-    assertThat(range.getEnd()).isEqualTo(30);
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(2_000);
+  }
+
+  @Test
+  public void timestampChangeStartTest() {
+    TimestampRange range = TimestampRange.create(10, 2_000).startOpen(20L);
+
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(2_000);
+
+    assertThat(range.getStartBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getStart()).isEqualTo(20);
+
+    range = range.startClosed(30L);
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getStart()).isEqualTo(30);
+  }
+
+  @Test
+  public void timestampChangeEndTest() {
+    TimestampRange range = TimestampRange.create(10, 2_000).endClosed(1_000L);
+
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getStart()).isEqualTo(10);
+
+    assertThat(range.getEndBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getEnd()).isEqualTo(1_000);
+
+    range = range.endOpen(3_000L);
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(3_000);
+  }
+
+  @Test
+  public void byteStringUnboundedTest() {
+    ByteStringRange range = ByteStringRange.unbounded();
+    assertThat(range.getStartBound()).isEqualTo(BoundType.UNBOUNDED);
+    assertThat(range.getEndBound()).isEqualTo(BoundType.UNBOUNDED);
+
+    Throwable actualError = null;
+    try {
+      range.getStart();
+    } catch (Throwable e) {
+      actualError = e;
+    }
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
+
+    try {
+      range.getEnd();
+    } catch (Throwable e) {
+      actualError = e;
+    }
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
+  }
+
+  @Test
+  public void byteStringOfTest() {
+    ByteStringRange range =
+        ByteStringRange.create(ByteString.copyFromUtf8("a"), ByteString.copyFromUtf8("b"));
+
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("a"));
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("b"));
+  }
+
+  @Test
+  public void byteStringOfStringTest() {
+    ByteStringRange range = ByteStringRange.create("a", "b");
+
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("a"));
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("b"));
+  }
+
+  @Test
+  public void byteStringChangeStartTest() {
+    ByteStringRange range =
+        ByteStringRange.create(ByteString.copyFromUtf8("a"), ByteString.copyFromUtf8("z"))
+            .startOpen(ByteString.copyFromUtf8("b"));
+
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("z"));
+
+    assertThat(range.getStartBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("b"));
+
+    range = range.startClosed(ByteString.copyFromUtf8("c"));
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("c"));
+  }
+
+  @Test
+  public void byteStringChangeStartStringTest() {
+    ByteStringRange range = ByteStringRange.create("a", "z").startOpen("b");
+
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("z"));
+
+    assertThat(range.getStartBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("b"));
+
+    range = range.startClosed("c");
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("c"));
+  }
+
+  @Test
+  public void byteStringChangeEndTest() {
+    ByteStringRange range =
+        ByteStringRange.create(ByteString.copyFromUtf8("a"), ByteString.copyFromUtf8("z"))
+            .endClosed(ByteString.copyFromUtf8("y"));
+
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("a"));
+
+    assertThat(range.getEndBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("y"));
+
+    range = range.endOpen(ByteString.copyFromUtf8("x"));
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("x"));
+  }
+
+  @Test
+  public void byteStringChangeEndStringTest() {
+    ByteStringRange range = ByteStringRange.create("a", "z").endClosed("y");
+
+    assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("a"));
+
+    assertThat(range.getEndBound()).isEqualTo(BoundType.CLOSED);
+    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("y"));
+
+    range = range.endOpen("x");
+    assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
+    assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("x"));
   }
 }

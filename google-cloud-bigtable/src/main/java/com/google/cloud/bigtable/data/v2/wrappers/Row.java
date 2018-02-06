@@ -48,7 +48,7 @@ public abstract class Row implements Comparable<Row> {
   public int compareTo(@Nonnull Row row) {
     int sizeA = key().size();
     int sizeB = row.key().size();
-    int size =  Math.min(sizeA, sizeB);
+    int size = Math.min(sizeA, sizeB);
 
     for (int i = 0; i < size; i++) {
       int byteA = key().byteAt(i) & 0xff;

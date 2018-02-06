@@ -23,6 +23,7 @@ import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowFilter.Chain;
 import com.google.bigtable.v2.RowFilter.Condition;
 import com.google.bigtable.v2.RowFilter.Interleave;
+import com.google.bigtable.v2.TimestampRange;
 import com.google.bigtable.v2.ValueRange;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
@@ -114,43 +115,17 @@ public class FiltersTest {
   }
 
   @Test
-  public void passTest() {
-    RowFilter actualFilter = FILTERS.pass().toProto();
-
-    RowFilter expectedFilter = RowFilter.newBuilder().setPassAllFilter(true).build();
-
-    assertThat(actualFilter).isEqualTo(expectedFilter);
-  }
-
-  @Test
-  public void blockTest() {
-    RowFilter actualFilter = FILTERS.block().toProto();
-
-    RowFilter expectedFilter = RowFilter.newBuilder().setBlockAllFilter(true).build();
-
-    assertThat(actualFilter).isEqualTo(expectedFilter);
-  }
-
-  @Test
-  public void sinkTest() {
-    RowFilter actualFilter = FILTERS.sink().toProto();
-
-    RowFilter expectedFilter = RowFilter.newBuilder().setSink(true).build();
-
-    assertThat(actualFilter).isEqualTo(expectedFilter);
-  }
-
-  @Test
-  public void labelTest() {
-    RowFilter actualFilter = FILTERS.label("my-label").toProto();
-
-    RowFilter expectedFilter = RowFilter.newBuilder().setApplyLabelTransformer("my-label").build();
-
-    assertThat(actualFilter).isEqualTo(expectedFilter);
-  }
-
-  @Test
   public void keyRegexTest() {
+    RowFilter actualFilter = FILTERS.key().regex(ByteString.copyFromUtf8(".*")).toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void keyRegexStringTest() {
     RowFilter actualFilter = FILTERS.key().regex(".*").toProto();
 
     RowFilter expectedFilter =
@@ -198,6 +173,18 @@ public class FiltersTest {
 
   @Test
   public void qualifierRegexTest() {
+    RowFilter actualFilter = FILTERS.qualifier().regex(ByteString.copyFromUtf8("^hi")).toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder()
+            .setColumnQualifierRegexFilter(ByteString.copyFromUtf8("^hi"))
+            .build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void qualifierRegexStringTest() {
     RowFilter actualFilter = FILTERS.qualifier().regex("^hi").toProto();
 
     RowFilter expectedFilter =
@@ -222,7 +209,7 @@ public class FiltersTest {
   }
 
   @Test
-  public void qualifierRangeSimple() {
+  public void qualifierRangeInFamilyClosedOpen() {
     RowFilter actualFilter =
         FILTERS
             .qualifier()
@@ -244,13 +231,13 @@ public class FiltersTest {
   }
 
   @Test
-  public void qualifierRangeByte() {
+  public void qualifierRangeInFamilyOpenClosed() {
     RowFilter actualFilter =
         FILTERS
             .qualifier()
             .rangeWithinFamily("family")
-            .startClosed("begin")
-            .endOpen("end")
+            .startOpen("begin")
+            .endClosed("end")
             .toProto();
 
     RowFilter expectedFilter =
@@ -258,8 +245,8 @@ public class FiltersTest {
             .setColumnRangeFilter(
                 ColumnRange.newBuilder()
                     .setFamilyName("family")
-                    .setStartQualifierClosed(ByteString.copyFromUtf8("begin"))
-                    .setEndQualifierOpen(ByteString.copyFromUtf8("end")))
+                    .setStartQualifierOpen(ByteString.copyFromUtf8("begin"))
+                    .setEndQualifierClosed(ByteString.copyFromUtf8("end")))
             .build();
 
     assertThat(actualFilter).isEqualTo(expectedFilter);
@@ -282,6 +269,39 @@ public class FiltersTest {
                     .setFamilyName("family")
                     .setStartQualifierClosed(ByteString.copyFromUtf8("begin"))
                     .setEndQualifierOpen(ByteString.copyFromUtf8("end")))
+            .build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void timestampRange() {
+    RowFilter actualFilter =
+        FILTERS.timestamp().range().startClosed(1_000L).endOpen(30_000L).toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder()
+            .setTimestampRangeFilter(
+                TimestampRange.newBuilder()
+                    .setStartTimestampMicros(1_000L)
+                    .setEndTimestampMicros(30_000L))
+            .build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void timestampOpenClosedFakeRange() {
+    RowFilter actualFilter =
+        FILTERS.timestamp().range().startOpen(1_000L).endClosed(30_000L).toProto();
+
+    // open start & closed end are faked in the client by incrementing the query
+    RowFilter expectedFilter =
+        RowFilter.newBuilder()
+            .setTimestampRangeFilter(
+                TimestampRange.newBuilder()
+                    .setStartTimestampMicros(1_000L + 1)
+                    .setEndTimestampMicros(30_000L + 1))
             .build();
 
     assertThat(actualFilter).isEqualTo(expectedFilter);
@@ -313,8 +333,11 @@ public class FiltersTest {
   }
 
   @Test
-  public void valueRangeSimple() {
-    RowFilter actualFilter = FILTERS.value().range("begin", "end").toProto();
+  public void valueRangeClosedOpen() {
+    RowFilter actualFilter = FILTERS.value().range()
+        .startClosed("begin")
+        .endOpen("end")
+        .toProto();
 
     RowFilter expectedFilter =
         RowFilter.newBuilder()
@@ -328,34 +351,18 @@ public class FiltersTest {
   }
 
   @Test
-  public void valueRangeByte() {
-    RowFilter actualFilter =
-        FILTERS
-            .value()
-            .range(ByteString.copyFromUtf8("begin"), ByteString.copyFromUtf8("end"))
-            .toProto();
+  public void valueRangeOpenClosed() {
+    RowFilter actualFilter = FILTERS.value().range()
+        .startOpen("begin")
+        .endClosed("end")
+        .toProto();
 
     RowFilter expectedFilter =
         RowFilter.newBuilder()
             .setValueRangeFilter(
                 ValueRange.newBuilder()
-                    .setStartValueClosed(ByteString.copyFromUtf8("begin"))
-                    .setEndValueOpen(ByteString.copyFromUtf8("end")))
-            .build();
-
-    assertThat(actualFilter).isEqualTo(expectedFilter);
-  }
-
-  @Test
-  public void valueRangeRange() {
-    RowFilter actualFilter = FILTERS.value().range().startClosed("begin").endOpen("end").toProto();
-
-    RowFilter expectedFilter =
-        RowFilter.newBuilder()
-            .setValueRangeFilter(
-                ValueRange.newBuilder()
-                    .setStartValueClosed(ByteString.copyFromUtf8("begin"))
-                    .setEndValueOpen(ByteString.copyFromUtf8("end")))
+                    .setStartValueOpen(ByteString.copyFromUtf8("begin"))
+                    .setEndValueClosed(ByteString.copyFromUtf8("end")))
             .build();
 
     assertThat(actualFilter).isEqualTo(expectedFilter);
@@ -393,6 +400,42 @@ public class FiltersTest {
     RowFilter actualFilter = FILTERS.limit().cellsPerColumn(10).toProto();
 
     RowFilter expectedFilter = RowFilter.newBuilder().setCellsPerColumnLimitFilter(10).build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void passTest() {
+    RowFilter actualFilter = FILTERS.pass().toProto();
+
+    RowFilter expectedFilter = RowFilter.newBuilder().setPassAllFilter(true).build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void blockTest() {
+    RowFilter actualFilter = FILTERS.block().toProto();
+
+    RowFilter expectedFilter = RowFilter.newBuilder().setBlockAllFilter(true).build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void sinkTest() {
+    RowFilter actualFilter = FILTERS.sink().toProto();
+
+    RowFilter expectedFilter = RowFilter.newBuilder().setSink(true).build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void labelTest() {
+    RowFilter actualFilter = FILTERS.label("my-label").toProto();
+
+    RowFilter expectedFilter = RowFilter.newBuilder().setApplyLabelTransformer("my-label").build();
 
     assertThat(actualFilter).isEqualTo(expectedFilter);
   }

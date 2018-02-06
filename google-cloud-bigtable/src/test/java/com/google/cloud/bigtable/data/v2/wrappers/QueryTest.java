@@ -25,6 +25,7 @@ import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.wrappers.Range.ByteStringRange;
 import com.google.protobuf.ByteString;
 import org.junit.Before;
 import org.junit.Test;
@@ -76,7 +77,7 @@ public class QueryTest {
         Query.create(TABLE_NAME.getTable())
             .range("simple-begin", "simple-end")
             .range(ByteString.copyFromUtf8("byte-begin"), ByteString.copyFromUtf8("byte-end"))
-            .range(Range.ofUtf8ByteStrings("range-begin", "range-end"));
+            .range(ByteStringRange.create("range-begin", "range-end"));
 
     Builder expectedProto = expectedProtoBuilder();
     expectedProto
