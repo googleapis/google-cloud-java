@@ -66,7 +66,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.threeten.bp.Duration;
 
-
 /**
  * Abstract class representing service options.
  *
