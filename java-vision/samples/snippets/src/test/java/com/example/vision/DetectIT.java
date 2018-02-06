@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +34,6 @@ import org.junit.runners.JUnit4;
 public class DetectIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
-  private Detect app;
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String BUCKET = PROJECT_ID;
 
@@ -42,7 +42,6 @@ public class DetectIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-    app = new Detect();
   }
 
   @After
@@ -186,6 +185,7 @@ public class DetectIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("adult: VERY_UNLIKELY");
+    assertThat(got).contains("racy: UNLIKELY");
   }
 
   @Test
@@ -197,6 +197,7 @@ public class DetectIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("adult: VERY_UNLIKELY");
+    assertThat(got).contains("racy: UNLIKELY");
   }
 
   @Test
@@ -235,7 +236,8 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Palace");
+    assertThat(got).contains("Palace of Fine Arts Theatre");
+    assertThat(got).contains("Best guess label: palace of fine arts");
   }
 
   @Test
@@ -246,7 +248,51 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Palace");
+    assertThat(got).contains("Palace of Fine Arts Theatre");
+    assertThat(got).contains("Best guess label: palace of fine arts");
+  }
+
+  @Test
+  public void testDetectWebEntities() throws Exception {
+    // Act
+    String[] args = {"web-entities", "./resources/city.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).doesNotContain("Zepra");
+  }
+
+  @Test
+  public void testDetectWebEntitiesGcs() throws Exception {
+    // Act
+    String[] args = {"web-entities", "gs://" + BUCKET + "/vision/landmark.jpg"};
+    Detect.argsHelper(args, out);
+
+    String got = bout.toString();
+    assertThat(got).contains("Description: Palace of Fine Arts Theatre");
+  }
+
+  @Test
+  public void testDetectWebEntitiesIncludeGeoResults() throws Exception {
+    // Act
+    String[] args = {"web-entities-include-geo", "./resources/city.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    // Note: entities and labels can change over time.
+    assertThat(got).doesNotContain("Error");
+  }
+
+  @Test
+  public void testDetectWebEntitiesIncludeGeoResultsGcs() throws Exception {
+    // Act
+    String[] args = {"web-entities-include-geo", "gs://" + BUCKET + "/vision/landmark.jpg"};
+    Detect.argsHelper(args, out);
+
+    String got = bout.toString();
+    assertThat(got).contains("Description: Palace of Fine Arts Theatre");
   }
 
   @Test
@@ -285,6 +331,7 @@ public class DetectIT {
     String got = bout.toString();
     assertThat(got).contains("After preparation is complete, the ");
     assertThat(got).contains("37%");
+    assertThat(got).contains("Word text: class (confidence:");
   }
 
   @Test
@@ -297,5 +344,6 @@ public class DetectIT {
     String got = bout.toString();
     assertThat(got).contains("After preparation is complete, the ");
     assertThat(got).contains("37%");
+    assertThat(got).contains("Word text: class (confidence:");
   }
 }
