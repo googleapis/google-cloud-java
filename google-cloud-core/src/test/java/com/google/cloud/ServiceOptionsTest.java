@@ -49,7 +49,6 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 import com.google.common.io.Files;
-import org.easymock.EasyMock;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
