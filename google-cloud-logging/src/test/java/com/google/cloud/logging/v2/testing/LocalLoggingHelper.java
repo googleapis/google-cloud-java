@@ -14,13 +14,11 @@
 
 package com.google.cloud.logging.v2.testing;
 
-
 import io.grpc.ManagedChannel;
 import io.grpc.Server;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
-import java.net.SocketAddress;
 
 /**
  * LocalLoggingHelper runs an in-memory Logging server for use in tests.
@@ -30,14 +28,12 @@ public class LocalLoggingHelper {
   private final Server server;
   private final LocalLoggingImpl loggingImpl;
 
-  /**
-   * Constructs a new LocalLoggingHelper. The method start() must
-   * be called before it is used.
-   */
+  /** Constructs a new LocalLoggingHelper. The method start() must be called before it is used. */
   public LocalLoggingHelper(String address) {
     this.address = address;
     this.loggingImpl = new LocalLoggingImpl();
-    this.server = InProcessServerBuilder.forName(address).addService(loggingImpl.bindService()).build();
+    this.server =
+        InProcessServerBuilder.forName(address).addService(loggingImpl.bindService()).build();
   }
   /**
    * Starts the in-memory service.
