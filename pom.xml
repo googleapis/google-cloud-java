@@ -566,27 +566,7 @@
                   <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
                   <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-iam-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-container-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigquerydatatransfer-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigtable-v2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigtable-admin-v2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-error-reporting-v1beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-language-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-language-v1beta2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-logging-v2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-monitoring-v3/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-pubsub-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-dialogflow-v2beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-dlp-v2beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-speech-v1beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-trace-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-trace-v2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-vision-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-vision-v1p1beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1/${generated-proto-beta.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/all/latest/apidocs/</link>
                 </links>
               </configuration>
             </plugin>
