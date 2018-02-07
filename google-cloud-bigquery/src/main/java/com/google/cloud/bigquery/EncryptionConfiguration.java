@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google LLC
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public final class EncryptionConfiguration implements Serializable {
+  private static final long serialVersionUID = -100849671239964L;
+
   private final String kmsKeyName;
 
   public String getKmsKeyName() {

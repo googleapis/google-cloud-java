@@ -19,7 +19,6 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationTableCopy;
-import com.google.cloud.bigquery.LoadJobConfiguration.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;

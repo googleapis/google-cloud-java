@@ -24,7 +24,6 @@ import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
-import com.google.cloud.bigquery.LoadJobConfiguration.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
