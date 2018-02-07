@@ -457,7 +457,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
   @InternalApi("Visible for testing")
   static boolean headerContainsMetadataFlavor(HttpResponse response) {
-    return "Google".equals(response.getHeaders().getFirstHeaderStringValue("Metadata-Flavor"));
+    String metadataFlavorValue = response.getHeaders().getFirstHeaderStringValue("Metadata-Flavor");
+    return "Google".equals(metadataFlavorValue);
   }
 
   protected static String getServiceAccountProjectId() {

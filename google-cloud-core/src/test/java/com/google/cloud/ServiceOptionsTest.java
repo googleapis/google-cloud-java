@@ -44,11 +44,12 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import com.google.common.io.Files;
 import org.junit.Rule;
 import org.junit.Test;
@@ -328,17 +329,21 @@ public class ServiceOptionsTest {
   }
 
   @Test
-  public void testResponseHeaderContainsMetaDataFlavor() throws Exception {  
-    Map<String, String> headers = new HashMap<String, String>();
-    HttpResponse httpResponse = createHttpResponseWithHeader(headers);
-    assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isFalse();
-
+  public void testResponseHeaderContainsMetaDataFlavor() throws Exception {
+    Multimap<String, String> headers = ArrayListMultimap.create();
     headers.put("Metadata-Flavor", "Google");
-    httpResponse = createHttpResponseWithHeader(headers);
+    HttpResponse httpResponse = createHttpResponseWithHeader(headers);
     assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isTrue();
   }
+
+  @Test
+  public void testResponseHeaderDoesNotContainMetaDataFlavor() throws Exception {  
+    Multimap<String, String> headers = ArrayListMultimap.create();
+    HttpResponse httpResponse = createHttpResponseWithHeader(headers);
+    assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isFalse(); 
+  }
   
-  private HttpResponse createHttpResponseWithHeader(final Map<String, String> headers) throws Exception {
+  private HttpResponse createHttpResponseWithHeader(final Multimap<String, String> headers) throws Exception {
     HttpTransport mockHttpTransport = new MockHttpTransport() {
       @Override
       public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
@@ -346,7 +351,7 @@ public class ServiceOptionsTest {
           @Override
           public LowLevelHttpResponse execute() throws IOException {
             MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-            for (Map.Entry<String, String> entry : headers.entrySet()) {
+            for (Map.Entry<String, String> entry : headers.entries()) {
               response.addHeader(entry.getKey(), entry.getValue());
             }            
             return response;
