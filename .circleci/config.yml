@@ -32,6 +32,7 @@ jobs:
       - image: maven:3.5.2-jdk-7
         environment:
           TERM: dumb
+          MAVEN_OPTS: -Xmx256m
     steps:
       - checkout
       - run:
@@ -44,6 +45,7 @@ jobs:
       - image: circleci/openjdk:8-jdk
         environment:
           TERM: dumb
+          MAVEN_OPTS: -Xmx256m
     steps:
       - checkout
       - run:
@@ -56,6 +58,7 @@ jobs:
       - image: circleci/openjdk:8-jdk
         environment:
           TERM: dumb
+          MAVEN_OPTS: -Xmx256m
     macos:
       xcode: "9.2.0"
     steps:
