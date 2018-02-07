@@ -29,7 +29,7 @@ jobs:
   openjdk_7:
     working_directory: ~/googleapis
     docker:
-      - image: openjdk:7-jdk
+      - image: maven/3.5.2-jdk-7
         environment:
           TERM: dumb
     steps:
@@ -42,18 +42,6 @@ jobs:
     working_directory: ~/googleapis
     docker:
       - image: circleci/openjdk:8-jdk
-        environment:
-          TERM: dumb
-    steps:
-      - checkout
-      - run:
-          <<: *anchor_build
-      - run:
-          <<: *anchor_unittest
-  openjdk_9:
-    working_directory: ~/googleapis
-    docker:
-      - image: circleci/openjdk:9-jdk
         environment:
           TERM: dumb
     steps:
@@ -224,7 +212,6 @@ workflows:
     jobs:
       - openjdk_7
       - openjdk_8
-      - openjdk_9
       - mac_openjdk_8
       - bigquery_it:
           filters:
