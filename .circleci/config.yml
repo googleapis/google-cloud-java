@@ -206,8 +206,11 @@ jobs:
 
 workflows:
   version: 2
-  integration_tests:
+  build:
     jobs:
+      - openjdk_7
+      - openjdk_8
+      - mac_openjdk_8
       - bigquery_it
           filters:
             branches:
@@ -253,8 +256,3 @@ workflows:
             branches:
               only: master
       - translate_it
-  build:
-    jobs:
-      - openjdk_7
-      - openjdk_8
-      - mac_openjdk_8
