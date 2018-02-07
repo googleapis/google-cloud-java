@@ -12,7 +12,7 @@ Here are some guidelines for hacking on google-cloud-java.
 
 Using maven for build/test
 --------------------------
-After you cloned the repository use Maven for building and running the tests.
+After you cloned the repository use Maven for building and running the tests. Run `mvn install -DskipITs` to skip integration tests when  you install.
 Maven 3.0+ is required.
 
 When downloading the source, we recommend you obtain service account credentials. 
