@@ -29,7 +29,7 @@ jobs:
   openjdk_7:
     working_directory: ~/googleapis
     docker:
-      - image: maven/3.5.2-jdk-7
+      - image: maven:3.5.2-jdk-7
         environment:
           TERM: dumb
     steps:
