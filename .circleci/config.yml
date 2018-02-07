@@ -211,48 +211,51 @@ workflows:
       - openjdk_7
       - openjdk_8
       - mac_openjdk_8
-      - bigquery_it
+      - bigquery_it:
           filters:
             branches:
               only: master
-      - compute_it
+      - compute_it:
           filters:
             branches:
               only: master
-      - datastore_it
+      - datastore_it:
           filters:
             branches:
               only: master
-      - firestore_it
+      - firestore_it:
           filters:
             branches:
               only: master
-      - dns_it
+      - dns_it:
           filters:
             branches:
               only: master
-      - logging_it
+      - logging_it:
           filters:
             branches:
               only: master
-      - notification_it
+      - notification_it:
           filters:
             branches:
               only: master
-      - pubsub_it
+      - pubsub_it:
           filters:
             branches:
               only: master
-      - spanner_it
+      - spanner_it:
           filters:
             branches:
               only: master
-      - speech_it
+      - speech_it:
           filters:
             branches:
               only: master
-      - storage_it
+      - storage_it:
           filters:
             branches:
               only: master
-      - translate_it
+      - translate_it:
+          filters:
+            branches:
+              only: master
