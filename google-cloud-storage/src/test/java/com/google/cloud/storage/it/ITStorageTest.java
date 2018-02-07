@@ -326,7 +326,15 @@ public class ITStorageTest {
     Blob remoteBlob = storage.create(blob);
     assertNotNull(remoteBlob);
     BlobId wrongGenerationBlob = BlobId.of(BUCKET, blobName, -1L);
-    assertNull(storage.get(wrongGenerationBlob));
+    try {
+      assertNull(storage.get(wrongGenerationBlob));
+    } catch (StorageException e) {
+      // *if* Storage throws an exception, it should contain "Invalid argument".
+      // Note: Storage only sometimes throws this; more often it returns "Not found"
+      // (resulting in storage.get() returning null)
+      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2864
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
     assertTrue(remoteBlob.delete());
   }
 
@@ -652,7 +660,15 @@ public class ITStorageTest {
     String blobName = "test-delete-blob-non-existing-generation";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+    try {
+      assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+    } catch (StorageException e) {
+      // *if* Storage throws an exception, it should contain "Invalid argument".
+      // Note: it only sometimes throws this; more often it throws "Not found".
+      // (resulting in storage.delete() returning false)
+      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2864
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
   }
 
   @Test
@@ -1515,8 +1531,26 @@ public class ITStorageTest {
     assertNull(storage.getAcl(blobId, User.ofAllAuthenticatedUsers()));
     // test non-existing blob
     BlobId otherBlobId = BlobId.of(BUCKET, "test-blob-acl", -1L);
-    assertNull(storage.getAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
-    assertFalse(storage.deleteAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+    try {
+      assertNull(storage.getAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+    } catch (StorageException e) {
+      // *if* Storage throws an exception, it should contain "Invalid argument".
+      // Note: Storage only sometimes throws this; more often it returns "Not found".
+      // (resulting in storage.getAcl() returning null)
+      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2864
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
+
+    try {
+      assertFalse(storage.deleteAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+    } catch (StorageException e) {
+      // *if* Storage throws an exception, it should contain "Invalid argument".
+      // Note: Storage only sometimes throws this; more often it returns "Not found".
+      // (resulting in storage.deleteAcl() returning false)
+      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2864
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
+
     try {
       storage.createAcl(otherBlobId, acl);
       fail("Expected StorageException");
