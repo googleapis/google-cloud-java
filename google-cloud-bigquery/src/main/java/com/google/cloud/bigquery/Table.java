@@ -26,6 +26,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -125,6 +126,12 @@ public class Table extends TableInfo {
     @Override
     public Builder setDefinition(TableDefinition definition) {
       infoBuilder.setDefinition(definition);
+      return this;
+    }
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
+      infoBuilder.setLabels(labels);
       return this;
     }
 
