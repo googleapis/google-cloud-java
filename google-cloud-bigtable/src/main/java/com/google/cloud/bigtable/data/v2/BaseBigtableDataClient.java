@@ -279,7 +279,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
 
     MutateRowRequest request =
         MutateRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .addAllMutations(mutations)
             .build();
@@ -426,7 +426,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
 
     CheckAndMutateRowRequest request =
         CheckAndMutateRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .setPredicateFilter(predicateFilter)
             .addAllTrueMutations(trueMutations)
@@ -517,7 +517,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
 
     ReadModifyWriteRowRequest request =
         ReadModifyWriteRowRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName == null ? null : tableName.toString())
             .setRowKey(rowKey)
             .addAllRules(rules)
             .build();

@@ -182,7 +182,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
 
     ReportErrorEventRequest request =
         ReportErrorEventRequest.newBuilder()
-            .setProjectName(projectName.toString())
+            .setProjectName(projectName == null ? null : projectName.toString())
             .setEvent(event)
             .build();
     return reportErrorEvent(request);

@@ -175,7 +175,10 @@ public class TraceServiceClient implements BackgroundResource {
   public final void batchWriteSpans(ProjectName name, List<Span> spans) {
 
     BatchWriteSpansRequest request =
-        BatchWriteSpansRequest.newBuilder().setName(name.toString()).addAllSpans(spans).build();
+        BatchWriteSpansRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .addAllSpans(spans)
+            .build();
     batchWriteSpans(request);
   }
 

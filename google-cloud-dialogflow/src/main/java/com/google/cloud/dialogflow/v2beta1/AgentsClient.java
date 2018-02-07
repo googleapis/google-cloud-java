@@ -40,10 +40,29 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages conversational agents.
+ * Service Description: Agents are best described as Natural Language Understanding (NLU) modules
+ * that transform user requests into actionable data. You can include agents in your app, product,
+ * or service to determine user intent and respond to the user in a natural way.
  *
- * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/agents) for more details
- * about agents. #
+ * <p>After you create an agent, you can add [Intents][google.cloud.dialogflow.v2beta1.Intents],
+ * [Contexts][google.cloud.dialogflow.v2beta1.Contexts], [Entity
+ * Types][google.cloud.dialogflow.v2beta1.EntityTypes],
+ * [Webhooks][google.cloud.dialogflow.v2beta1.WebhookRequest], and so on to manage the flow of a
+ * conversation and match user input to predefined intents and actions.
+ *
+ * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
+ * Edition. For details, see [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+ *
+ * <p>You can save your agent for backup or versioning by exporting the agent by using the
+ * [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
+ * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
+ *
+ * <p>Dialogflow provides several [prebuilt agents](https://dialogflow.com/docs/prebuilt-agents) for
+ * common conversation scenarios such as determining a date and time, converting currency, and so
+ * on.
+ *
+ * <p>For more information about agents, see the [Dialogflow
+ * documentation](https://dialogflow.com/docs/agents).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -189,7 +208,8 @@ public class AgentsClient implements BackgroundResource {
    */
   public final Agent getAgent(ProjectName parent) {
 
-    GetAgentRequest request = GetAgentRequest.newBuilder().setParent(parent.toString()).build();
+    GetAgentRequest request =
+        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return getAgent(request);
   }
 
@@ -264,7 +284,9 @@ public class AgentsClient implements BackgroundResource {
    */
   public final SearchAgentsPagedResponse searchAgents(ProjectName parent) {
     SearchAgentsRequest request =
-        SearchAgentsRequest.newBuilder().setParent(parent.toString()).build();
+        SearchAgentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return searchAgents(request);
   }
 
@@ -386,7 +408,8 @@ public class AgentsClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, Struct> trainAgentAsync(ProjectName parent) {
 
-    TrainAgentRequest request = TrainAgentRequest.newBuilder().setParent(parent.toString()).build();
+    TrainAgentRequest request =
+        TrainAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return trainAgentAsync(request);
   }
 
@@ -490,7 +513,9 @@ public class AgentsClient implements BackgroundResource {
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(ProjectName parent) {
 
     ExportAgentRequest request =
-        ExportAgentRequest.newBuilder().setParent(parent.toString()).build();
+        ExportAgentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return exportAgentAsync(request);
   }
 

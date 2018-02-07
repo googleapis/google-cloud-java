@@ -171,7 +171,9 @@ public class OsLoginServiceClient implements BackgroundResource {
   public final void deletePosixAccount(ProjectName name) {
 
     DeletePosixAccountRequest request =
-        DeletePosixAccountRequest.newBuilder().setName(name.toString()).build();
+        DeletePosixAccountRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     deletePosixAccount(request);
   }
 
@@ -241,7 +243,9 @@ public class OsLoginServiceClient implements BackgroundResource {
   public final void deleteSshPublicKey(FingerprintName name) {
 
     DeleteSshPublicKeyRequest request =
-        DeleteSshPublicKeyRequest.newBuilder().setName(name.toString()).build();
+        DeleteSshPublicKeyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     deleteSshPublicKey(request);
   }
 
@@ -310,7 +314,7 @@ public class OsLoginServiceClient implements BackgroundResource {
   public final LoginProfile getLoginProfile(UserName name) {
 
     GetLoginProfileRequest request =
-        GetLoginProfileRequest.newBuilder().setName(name.toString()).build();
+        GetLoginProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLoginProfile(request);
   }
 
@@ -382,7 +386,7 @@ public class OsLoginServiceClient implements BackgroundResource {
   public final SshPublicKey getSshPublicKey(FingerprintName name) {
 
     GetSshPublicKeyRequest request =
-        GetSshPublicKeyRequest.newBuilder().setName(name.toString()).build();
+        GetSshPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSshPublicKey(request);
   }
 
@@ -455,7 +459,7 @@ public class OsLoginServiceClient implements BackgroundResource {
 
     ImportSshPublicKeyRequest request =
         ImportSshPublicKeyRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSshPublicKey(sshPublicKey)
             .build();
     return importSshPublicKey(request);
@@ -487,7 +491,7 @@ public class OsLoginServiceClient implements BackgroundResource {
 
     ImportSshPublicKeyRequest request =
         ImportSshPublicKeyRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSshPublicKey(sshPublicKey)
             .setProjectId(projectId)
             .build();
@@ -571,7 +575,7 @@ public class OsLoginServiceClient implements BackgroundResource {
 
     UpdateSshPublicKeyRequest request =
         UpdateSshPublicKeyRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setSshPublicKey(sshPublicKey)
             .build();
     return updateSshPublicKey(request);
@@ -605,7 +609,7 @@ public class OsLoginServiceClient implements BackgroundResource {
 
     UpdateSshPublicKeyRequest request =
         UpdateSshPublicKeyRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setSshPublicKey(sshPublicKey)
             .setUpdateMask(updateMask)
             .build();

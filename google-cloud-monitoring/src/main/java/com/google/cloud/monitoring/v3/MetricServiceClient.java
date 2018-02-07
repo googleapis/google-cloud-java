@@ -196,7 +196,9 @@ public class MetricServiceClient implements BackgroundResource {
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
       ProjectName name) {
     ListMonitoredResourceDescriptorsRequest request =
-        ListMonitoredResourceDescriptorsRequest.newBuilder().setName(name.toString()).build();
+        ListMonitoredResourceDescriptorsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return listMonitoredResourceDescriptors(request);
   }
 
@@ -311,7 +313,9 @@ public class MetricServiceClient implements BackgroundResource {
       MonitoredResourceDescriptorName name) {
 
     GetMonitoredResourceDescriptorRequest request =
-        GetMonitoredResourceDescriptorRequest.newBuilder().setName(name.toString()).build();
+        GetMonitoredResourceDescriptorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return getMonitoredResourceDescriptor(request);
   }
 
@@ -386,7 +390,9 @@ public class MetricServiceClient implements BackgroundResource {
    */
   public final ListMetricDescriptorsPagedResponse listMetricDescriptors(ProjectName name) {
     ListMetricDescriptorsRequest request =
-        ListMetricDescriptorsRequest.newBuilder().setName(name.toString()).build();
+        ListMetricDescriptorsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return listMetricDescriptors(request);
   }
 
@@ -497,7 +503,9 @@ public class MetricServiceClient implements BackgroundResource {
   public final MetricDescriptor getMetricDescriptor(MetricDescriptorName name) {
 
     GetMetricDescriptorRequest request =
-        GetMetricDescriptorRequest.newBuilder().setName(name.toString()).build();
+        GetMetricDescriptorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return getMetricDescriptor(request);
   }
 
@@ -572,7 +580,7 @@ public class MetricServiceClient implements BackgroundResource {
 
     CreateMetricDescriptorRequest request =
         CreateMetricDescriptorRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setMetricDescriptor(metricDescriptor)
             .build();
     return createMetricDescriptor(request);
@@ -652,7 +660,9 @@ public class MetricServiceClient implements BackgroundResource {
   public final void deleteMetricDescriptor(MetricDescriptorName name) {
 
     DeleteMetricDescriptorRequest request =
-        DeleteMetricDescriptorRequest.newBuilder().setName(name.toString()).build();
+        DeleteMetricDescriptorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     deleteMetricDescriptor(request);
   }
 
@@ -741,7 +751,7 @@ public class MetricServiceClient implements BackgroundResource {
       ListTimeSeriesRequest.TimeSeriesView view) {
     ListTimeSeriesRequest request =
         ListTimeSeriesRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setFilter(filter)
             .setInterval(interval)
             .setView(view)
@@ -877,7 +887,7 @@ public class MetricServiceClient implements BackgroundResource {
 
     CreateTimeSeriesRequest request =
         CreateTimeSeriesRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .addAllTimeSeries(timeSeries)
             .build();
     createTimeSeries(request);
