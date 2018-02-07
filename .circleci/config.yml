@@ -1,10 +1,10 @@
 version: 2.0
 
-anchor_build:
+anchor_build: &anchor_build
   name: Build
   command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipTests install
 
-anchor_unittest:
+anchor_unittest: &anchor_unittest
   name: Run unit tests
   command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipITs install -P release
 
