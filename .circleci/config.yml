@@ -1,5 +1,13 @@
 version: 2.0
 
+anchor_build:
+  name: Build
+  command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipTests install
+
+anchor_unittest:
+  name: Run unit tests
+  command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipITs install -P release
+
 anchor_docker: &anchor_docker
   docker:
     - image: circleci/openjdk:8-jdk
@@ -21,17 +29,15 @@ jobs:
   openjdk_7:
     working_directory: ~/googleapis
     docker:
-      - image: circleci/openjdk:7-jdk
+      - image: openjdk:7-jdk
         environment:
           TERM: dumb
     steps:
       - checkout
       - run:
-          name: Build
-          command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipTests install
+          <<: *anchor_build
       - run:
-          name: Run unit tests
-          command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipITs install -P release
+          <<: *anchor_unittest
   openjdk_8:
     working_directory: ~/googleapis
     docker:
@@ -41,11 +47,21 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build
-          command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipTests install
+          <<: *anchor_build
       - run:
-          name: Run unit tests
-          command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipITs install -P release
+          <<: *anchor_unittest
+  openjdk_9:
+    working_directory: ~/googleapis
+    docker:
+      - image: circleci/openjdk:9-jdk
+        environment:
+          TERM: dumb
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_build
+      - run:
+          <<: *anchor_unittest
   mac_openjdk_8:
     working_directory: ~/googleapis
     docker:
@@ -57,11 +73,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build
-          command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipTests install
+          <<: *anchor_build
       - run:
-          name: Run unit tests
-          command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipITs install -P release
+          <<: *anchor_unittest
 
   bigquery_it:
     working_directory: ~/googleapis
@@ -210,6 +224,7 @@ workflows:
     jobs:
       - openjdk_7
       - openjdk_8
+      - openjdk_9
       - mac_openjdk_8
       - bigquery_it:
           filters:
