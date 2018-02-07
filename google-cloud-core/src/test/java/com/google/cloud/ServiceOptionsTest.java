@@ -44,6 +44,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -51,8 +53,6 @@ import com.google.common.io.Files;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.mockito.Mockito;
-import org.mockito.Matchers;
 
 public class ServiceOptionsTest {
   private static final String JSON_KEY =
@@ -329,27 +329,32 @@ public class ServiceOptionsTest {
 
   @Test
   public void testResponseHeaderContainsMetaDataFlavor() throws Exception {  
-    // HttpTransport transport = new MockHttpTransport() {
-    //   @Override
-    //   public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
-    //     return new MockLowLevelHttpRequest() {
-    //       @Override
-    //       public LowLevelHttpResponse execute() throws IOException {
-    //         MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-    //         response.addHeader("Metadata-Flavor", "Google");
-    //         response.setStatusCode(200);
-    //         return response;
-    //       }
-    //     };
-    //   }
-    // };
-    HttpTransport mockHttpTransport = Mockito.mock(MockHttpTransport.class);
-    MockLowLevelHttpResponse mockResponse = new MockLowLevelHttpResponse();
-    mockResponse.addHeader("Metadata-Flavor", "Google");
-    Mockito.when(mockHttpTransport.buildRequest(Matchers.anyString(), Matchers.anyString()).execute()).thenReturn(mockResponse);
+    Map<String, String> headers = new HashMap<String, String>();
+    HttpResponse httpResponse = createHttpResponseWithHeader(headers);
+    assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isFalse();
 
+    headers.put("Metadata-Flavor", "Google");
+    httpResponse = createHttpResponseWithHeader(headers);
+    assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isTrue();
+  }
+  
+  private HttpResponse createHttpResponseWithHeader(final Map<String, String> headers) throws Exception {
+    HttpTransport mockHttpTransport = new MockHttpTransport() {
+      @Override
+      public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+        return new MockLowLevelHttpRequest() {
+          @Override
+          public LowLevelHttpResponse execute() throws IOException {
+            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+            for (Map.Entry<String, String> entry : headers.entrySet()) {
+              response.addHeader(entry.getKey(), entry.getValue());
+            }            
+            return response;
+          }
+        };
+      }
+    };
     HttpRequest request = mockHttpTransport.createRequestFactory().buildGetRequest(HttpTesting.SIMPLE_GENERIC_URL);
-    HttpResponse response = request.execute();
-    assertThat(ServiceOptions.headerContainsMetadataFlavor(response)).isTrue();
+    return request.execute();
   }
 }
