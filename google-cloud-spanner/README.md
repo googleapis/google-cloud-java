@@ -2,7 +2,7 @@
 
 Java idiomatic client for [Cloud Spanner][cloud-spanner].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Build Status](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=svg&circle-token=0bd0446709b29a4ec850fa46f9fe5835c6874f33)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)

@@ -103,8 +103,8 @@
     <tag>HEAD</tag>
   </scm>
   <ciManagement>
-    <system>Travis CI</system>
-    <url>https://travis-ci.org/GoogleCloudPlatform/google-cloud-java</url>
+    <system>Circle CI</system>
+    <url>https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java</url>
   </ciManagement>
   <issueManagement>
     <url>https://github.com/GoogleCloudPlatform/google-cloud-java/issues</url>
