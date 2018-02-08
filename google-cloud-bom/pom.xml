@@ -127,8 +127,8 @@
     <api-client.version>1.23.0</api-client.version>
 
     <api-common.version>1.2.0</api-common.version>
-    <gax.version>1.18.0</gax.version>
-    <gax-grpc.version>1.18.0</gax-grpc.version>
+    <gax.version>1.19.0</gax.version>
+    <gax-grpc.version>1.19.0</gax-grpc.version>
     <gax-httpjson.version>0.35.0</gax-httpjson.version>
     <generated-proto-beta.version>0.1.29</generated-proto-beta.version>
     <generated-proto-ga.version>1.0.5</generated-proto-ga.version>
