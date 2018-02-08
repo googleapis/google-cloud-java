@@ -1049,11 +1049,6 @@
       </dependency>
       <dependency>
         <groupId>io.opencensus</groupId>
-        <artifactId>opencensus-impl</artifactId>
-        <version>${opencensus.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.opencensus</groupId>
         <artifactId>opencensus-contrib-grpc-util</artifactId>
         <version>${opencensus.version}</version>
       </dependency>

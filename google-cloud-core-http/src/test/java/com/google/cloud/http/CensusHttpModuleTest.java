@@ -19,6 +19,7 @@ package com.google.cloud.http;
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.createMockBuilder;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
@@ -30,11 +31,18 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.javanet.NetHttpTransport;
 
 import io.opencensus.common.Scope;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.SpanContext;
+import io.opencensus.trace.SpanId;
+import io.opencensus.trace.TraceId;
+import io.opencensus.trace.TraceOptions;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import io.opencensus.trace.propagation.TextFormat;
 
 import java.io.IOException;
+import java.util.EnumSet;
+import java.util.Random;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -105,7 +113,16 @@ public class CensusHttpModuleTest {
 
   @Test
   public void censusHttpExecuteInterceptorShouldInjectHeader() throws IOException {
-    Scope scope = censusHttpModule.getTracer().spanBuilder("Test span").startScopedSpan();
+    Random random = new Random();
+    SpanContext spanContext = SpanContext.create(
+        TraceId.generateRandomId(random),
+        SpanId.generateRandomId(random),
+        TraceOptions.DEFAULT);
+    Span mockSpan = createMockBuilder(Span.class)
+        .withConstructor(SpanContext.class, EnumSet.class)
+        .withArgs(spanContext, null)
+        .createMock();
+    Scope scope = tracer.withSpan(mockSpan);
     try {
       HttpExecuteInterceptor interceptor = censusHttpModule.new CensusHttpExecuteInterceptor(null);
       interceptor.intercept(httpRequest);
