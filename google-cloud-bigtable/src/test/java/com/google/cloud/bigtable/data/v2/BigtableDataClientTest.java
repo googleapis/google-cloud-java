@@ -15,12 +15,13 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
-import com.google.common.truth.Truth;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,7 +50,7 @@ public class BigtableDataClientTest {
 
   @Test
   public void proxyReadRowsCallableTest() {
-    Truth.assertThat(bigtableDataClient.readRowsCallable()).isSameAs(mockReadRowsCallable);
+    assertThat(bigtableDataClient.readRowsCallable()).isSameAs(mockReadRowsCallable);
   }
 
   @Test
