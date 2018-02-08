@@ -3,7 +3,7 @@ Google Cloud Java Client for BigQuery
 
 Java idiomatic client for [Google Cloud BigQuery][cloud-bigquery].
 
-[![Build Status](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=svg&circle-token=0bd0446709b29a4ec850fa46f9fe5835c6874f33)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
+[![CircleCI](https://img.shields.io/circleci/project/github/GoogleCloudPlatform/google-cloud-java.svg?style=flat)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
