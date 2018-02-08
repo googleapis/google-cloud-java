@@ -49,6 +49,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final Boolean ignoreUnknownValues;
   private final List<SchemaUpdateOption> schemaUpdateOptions;
   private final Boolean autodetect;
+  private final EncryptionConfiguration destinationEncryptionConfiguration;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -62,6 +63,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private Boolean ignoreUnknownValues;
     private List<SchemaUpdateOption> schemaUpdateOptions;
     private Boolean autodetect;
+    private EncryptionConfiguration destinationEncryptionConfiguration;
 
     private Builder() {}
 
@@ -76,6 +78,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.ignoreUnknownValues = writeChannelConfiguration.ignoreUnknownValues;
       this.schemaUpdateOptions = writeChannelConfiguration.schemaUpdateOptions;
       this.autodetect = writeChannelConfiguration.autodetect;
+      this.destinationEncryptionConfiguration = writeChannelConfiguration.destinationEncryptionConfiguration;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -133,12 +136,23 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
       }
       this.autodetect = loadConfigurationPb.getAutodetect();
+      if (loadConfigurationPb.getDestinationEncryptionConfiguration() != null) {
+        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
+            configurationPb.getLoad().getDestinationEncryptionConfiguration()).build();
+      }
     }
 
 
     @Override
     public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
+      return this;
+    }
+
+    @Override
+    public LoadConfiguration.Builder setDestinationEncryptionConfiguration(
+        EncryptionConfiguration encryptionConfiguration) {
+      this.destinationEncryptionConfiguration = encryptionConfiguration;
       return this;
     }
 
@@ -221,12 +235,18 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
     this.autodetect = builder.autodetect;
+    this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
   }
 
 
   @Override
   public TableId getDestinationTable() {
     return destinationTable;
+  }
+
+  @Override
+  public EncryptionConfiguration getDestinationEncryptionConfiguration() {
+    return destinationEncryptionConfiguration;
   }
 
 
@@ -301,6 +321,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   MoreObjects.ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
         .add("destinationTable", destinationTable)
+        .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
         .add("formatOptions", formatOptions)
@@ -378,6 +399,10 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       loadConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
     }
     loadConfigurationPb.setAutodetect(autodetect);
+    if (destinationEncryptionConfiguration != null) {
+      loadConfigurationPb.setDestinationEncryptionConfiguration(
+          destinationEncryptionConfiguration.toPb());
+    }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }
