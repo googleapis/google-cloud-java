@@ -334,10 +334,7 @@ public class FiltersTest {
 
   @Test
   public void valueRangeClosedOpen() {
-    RowFilter actualFilter = FILTERS.value().range()
-        .startClosed("begin")
-        .endOpen("end")
-        .toProto();
+    RowFilter actualFilter = FILTERS.value().range().startClosed("begin").endOpen("end").toProto();
 
     RowFilter expectedFilter =
         RowFilter.newBuilder()
@@ -352,10 +349,7 @@ public class FiltersTest {
 
   @Test
   public void valueRangeOpenClosed() {
-    RowFilter actualFilter = FILTERS.value().range()
-        .startOpen("begin")
-        .endClosed("end")
-        .toProto();
+    RowFilter actualFilter = FILTERS.value().range().startOpen("begin").endClosed("end").toProto();
 
     RowFilter expectedFilter =
         RowFilter.newBuilder()

@@ -185,8 +185,7 @@ abstract class Range<T, R extends Range<T, R>> {
     }
 
     @Override
-    TimestampRange newInstance(
-        BoundType startBound, Long start, BoundType endBound, Long end) {
+    TimestampRange newInstance(BoundType startBound, Long start, BoundType endBound, Long end) {
       return new TimestampRange(startBound, start, endBound, end);
     }
   }
