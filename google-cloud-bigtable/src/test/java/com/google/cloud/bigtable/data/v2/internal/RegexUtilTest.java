@@ -15,7 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.internal;
 
-import com.google.common.truth.Truth;
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.protobuf.ByteString;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +29,7 @@ public class RegexUtilTest {
     ByteString input = ByteString.copyFromUtf8("hi");
     ByteString actual = RegexUtil.literalRegex(input);
 
-    Truth.assertThat(actual).isEqualTo(input);
+    assertThat(actual).isEqualTo(input);
   }
 
   @Test
@@ -37,7 +38,7 @@ public class RegexUtilTest {
     ByteString actual = RegexUtil.literalRegex(input);
     ByteString expected = ByteString.copyFromUtf8("h\\.\\*i");
 
-    Truth.assertThat(actual).isEqualTo(expected);
+    assertThat(actual).isEqualTo(expected);
   }
 
   @Test
@@ -45,6 +46,6 @@ public class RegexUtilTest {
     ByteString input = ByteString.copyFrom(new byte[] {(byte) 0xe2, (byte) 0x80, (byte) 0xb3});
     ByteString actual = RegexUtil.literalRegex(input);
 
-    Truth.assertThat(actual).isEqualTo(input);
+    assertThat(actual).isEqualTo(input);
   }
 }

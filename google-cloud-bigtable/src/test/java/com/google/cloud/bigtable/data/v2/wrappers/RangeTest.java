@@ -20,11 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.bigtable.data.v2.wrappers.Range.BoundType;
 import com.google.cloud.bigtable.data.v2.wrappers.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.wrappers.Range.TimestampRange;
-import com.google.common.truth.DefaultSubject;
-import com.google.common.truth.Subject;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
-import org.junit.internal.Throwables;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
