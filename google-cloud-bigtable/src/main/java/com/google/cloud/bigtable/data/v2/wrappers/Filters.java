@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
 /**
  * A Fluent DSL to create a hierarchy of filters for the CheckAndMutateRow RPCs and ReadRows Query.
  *
- * <p>Intended usage is to statically import, or in case of conflict assign the static variable
+ * <p>Intended usage is to statically import, or in case of conflict, assign the static variable
  * FILTERS and use its fluent API to build filters.
  *
  * <p>Sample code:
@@ -474,7 +474,7 @@ public final class Filters {
         case UNBOUNDED:
           break;
         default:
-          throw new IllegalStateException("Unknown start bound: " + getStartBound());
+          throw new IllegalStateException("Unknown end bound: " + getStartBound());
       }
 
       return RowFilter.newBuilder().setColumnRangeFilter(builder.build()).build();

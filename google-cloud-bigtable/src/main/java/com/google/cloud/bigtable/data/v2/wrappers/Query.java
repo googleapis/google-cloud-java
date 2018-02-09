@@ -30,8 +30,8 @@ public class Query {
   private final ReadRowsRequest.Builder builder = ReadRowsRequest.newBuilder();
 
   /**
-   * Constructs a new Query object for the specified table id. The table id will be resolved against
-   * the instance id specified in the {@link
+   * Constructs a new Query object for the specified table id. The table id will be combined with
+   * the instance name specified in the {@link
    * com.google.cloud.bigtable.data.v2.BigtableDataSettings}.
    */
   public static Query create(String tableId) {
@@ -97,8 +97,11 @@ public class Query {
       case CLOSED:
         rangeBuilder.setStartKeyClosed(range.getStart());
         break;
+      case UNBOUNDED:
+        rangeBuilder.clearStartKey();
+        break;
       default:
-        throw new IllegalStateException("Unknown range bound: " + range.getStartBound());
+        throw new IllegalStateException("Unknown start bound: " + range.getStartBound());
     }
 
     switch (range.getEndBound()) {
@@ -108,8 +111,11 @@ public class Query {
       case CLOSED:
         rangeBuilder.setEndKeyClosed(range.getEnd());
         break;
+      case UNBOUNDED:
+        rangeBuilder.clearEndKey();
+        break;
       default:
-        throw new IllegalStateException("Unknown range bound: " + range.getEndBound());
+        throw new IllegalStateException("Unknown end bound: " + range.getEndBound());
     }
 
     builder.getRowsBuilder().addRowRanges(rangeBuilder.build());
@@ -118,8 +124,8 @@ public class Query {
   }
 
   /**
-   * Sets the filter to look apply to each row. Only one filter can be set at a time. To use
-   * multiple filters, please use {@link Filters#interleave()} or {@link Filters#chain()}.
+   * Sets the filter to apply to each row. Only one filter can be set at a time. To use multiple
+   * filters, please use {@link Filters#interleave()} or {@link Filters#chain()}.
    */
   public Query filter(Filters.Filter filter) {
     builder.setFilter(filter.toProto());
@@ -143,6 +149,7 @@ public class Query {
             requestContext.getInstanceName().getProject(),
             requestContext.getInstanceName().getInstance(),
             tableId);
+
     return builder
         .setTableName(tableName.toString())
         .setAppProfileId(requestContext.getAppProfileId())

@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.wrappers;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.wrappers.Row.Cell;
 import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter.RowBuilder;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -57,7 +56,7 @@ public class DefaultRowAdapterTest {
             Row.create(
                 ByteString.copyFromUtf8("my-key"),
                 ImmutableList.of(
-                    Cell.create(
+                    RowCell.create(
                         "my-family",
                         ByteString.copyFromUtf8("my-qualifier"),
                         100,
@@ -67,7 +66,7 @@ public class DefaultRowAdapterTest {
 
   @Test
   public void multiCellTest() {
-    List<Cell> expectedCells = Lists.newArrayList();
+    List<RowCell> expectedCells = Lists.newArrayList();
 
     rowBuilder.startRow(ByteString.copyFromUtf8("my-key"));
 
@@ -79,7 +78,7 @@ public class DefaultRowAdapterTest {
       rowBuilder.finishCell();
 
       expectedCells.add(
-          Cell.create("family", qualifier, 1000, ImmutableList.of("my-label"), value));
+          RowCell.create("family", qualifier, 1000, ImmutableList.of("my-label"), value));
     }
 
     assertThat(rowBuilder.finishRow())
@@ -107,7 +106,7 @@ public class DefaultRowAdapterTest {
             Row.create(
                 ByteString.copyFromUtf8("my-key"),
                 ImmutableList.of(
-                    Cell.create(
+                    RowCell.create(
                         "family",
                         ByteString.copyFromUtf8("qualifier"),
                         1000,

@@ -208,7 +208,7 @@ public class BigtableDataClient implements AutoCloseable {
    *     // Do something with row
    *   }
    *
-   *   // Point look ups
+   *   // Point look up
    *   ApiFuture<Row> rowFuture = bigtableClient.readRowsCallable().first().futureCall(query);
    *
    *   // etc

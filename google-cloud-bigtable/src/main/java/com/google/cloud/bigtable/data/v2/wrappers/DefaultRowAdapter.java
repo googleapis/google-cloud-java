@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.wrappers;
 
-import com.google.cloud.bigtable.data.v2.wrappers.Row.Cell;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.util.List;
@@ -27,7 +26,7 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
   /** {@inheritDoc} */
   @Override
   public boolean isScanMarkerRow(Row row) {
-    return row.cells().isEmpty();
+    return row.getCells().isEmpty();
   }
 
   /** {@inheritDoc} */
@@ -39,13 +38,13 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
   /** {@inheritDoc} */
   @Override
   public ByteString getKey(Row row) {
-    return row.key();
+    return row.getKey();
   }
 
   /** {@inheritDoc} */
   public class DefaultRowBuilder implements RowBuilder<Row> {
     private ByteString currentKey;
-    private ImmutableList.Builder<Cell> cells;
+    private ImmutableList.Builder<RowCell> cells;
     private String family;
     private ByteString qualifier;
     private List<String> labels;
@@ -55,7 +54,7 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
     /** {@inheritDoc} */
     @Override
     public Row createScanMarkerRow(ByteString key) {
-      return Row.create(key, ImmutableList.<Cell>of());
+      return Row.create(key, ImmutableList.<RowCell>of());
     }
 
     /** {@inheritDoc} */
@@ -85,7 +84,7 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
     /** {@inheritDoc} */
     @Override
     public void finishCell() {
-      cells.add(Cell.create(family, qualifier, timestamp, labels, value));
+      cells.add(RowCell.create(family, qualifier, timestamp, labels, value));
     }
 
     /** {@inheritDoc} */

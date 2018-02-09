@@ -21,7 +21,6 @@ import com.google.auto.value.AutoValue;
 import com.google.protobuf.ByteString;
 import java.util.List;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /** Default representation of a logical row. */
 @BetaApi
@@ -29,30 +28,30 @@ import javax.annotation.Nullable;
 public abstract class Row implements Comparable<Row> {
   /** Creates a new instance of the {@link Row}. */
   @InternalApi
-  public static Row create(ByteString key, List<Cell> cells) {
+  public static Row create(ByteString key, List<RowCell> cells) {
     return new AutoValue_Row(key, cells);
   }
 
   /** Returns the row key */
   @Nonnull
-  public abstract ByteString key();
+  public abstract ByteString getKey();
 
   /**
    * Returns the list of cells. The cells will be clustered by their family and sorted by their
    * qualifier.
    */
-  public abstract List<Cell> cells();
+  public abstract List<RowCell> getCells();
 
   /** Lexicographically compares this row's key to another row's key. */
   @Override
   public int compareTo(@Nonnull Row row) {
-    int sizeA = key().size();
-    int sizeB = row.key().size();
+    int sizeA = getKey().size();
+    int sizeB = row.getKey().size();
     int size = Math.min(sizeA, sizeB);
 
     for (int i = 0; i < size; i++) {
-      int byteA = key().byteAt(i) & 0xff;
-      int byteB = row.key().byteAt(i) & 0xff;
+      int byteA = getKey().byteAt(i) & 0xff;
+      int byteB = row.getKey().byteAt(i) & 0xff;
       if (byteA == byteB) {
         continue;
       } else {
@@ -63,43 +62,5 @@ public abstract class Row implements Comparable<Row> {
       return 0;
     }
     return sizeA < sizeB ? -1 : 1;
-  }
-
-  /** Default representation of a cell in a {@link Row}. */
-  @AutoValue
-  public abstract static class Cell {
-    /** Creates a new instance of the {@link Cell}. */
-    @InternalApi
-    public static Cell create(
-        String family,
-        ByteString qualifier,
-        long timestamp,
-        List<String> labels,
-        ByteString value) {
-      return new AutoValue_Row_Cell(family, qualifier, timestamp, value, labels);
-    }
-
-    /** The cell's family */
-    @Nonnull
-    public abstract String family();
-
-    /** The cell's qualifier (column name) */
-    @Nullable
-    public abstract ByteString qualifier();
-
-    /** The timestamp of the cell */
-    public abstract long timestamp();
-
-    /** The value of the cell */
-    @Nonnull
-    public abstract ByteString value();
-
-    /**
-     * The labels assigned to the cell
-     *
-     * @see Filters#label(String)
-     */
-    @Nonnull
-    public abstract List<String> labels();
   }
 }

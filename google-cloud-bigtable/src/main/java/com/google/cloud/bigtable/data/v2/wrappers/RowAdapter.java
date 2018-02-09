@@ -19,9 +19,9 @@ import com.google.protobuf.ByteString;
 import java.util.List;
 
 /**
- * An extension point that allows end users to plugin a custom implementation of logical rows. This
+ * An extension point that allows end users to plug in a custom implementation of logical rows. This
  * useful in cases where the user would like to apply advanced client side filtering of cells. This
- * adapter acts like a factory for SAX style a row builder.
+ * adapter acts like a factory for a SAX style row builder.
  */
 public interface RowAdapter<RowT> {
   /** Creates a new instance of a {@link RowBuilder}. */

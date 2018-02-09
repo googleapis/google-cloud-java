@@ -17,11 +17,25 @@ package com.google.cloud.bigtable.data.v2.wrappers;
 
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import javax.annotation.Nonnull;
 
 /**
  * Range API.
  *
- * <p>This base class represents the API for all ranges in the Cloud Bigtable client.
+ * <p>This base class represents the API for all ranges in the Cloud Bigtable client. It is an
+ * immutable class, so all of its modification methods return ne instances. It's intended to support
+ * fluent DSLs. For example:
+ *
+ * <pre>{@code
+ * // A Range that encloses all strings
+ * ByteStringRange.unbounded();
+ *
+ * // Range that includes all strings including "begin" up until "end"
+ * ByteStringRange.unbounded().of("start", "end");
+ *
+ * // Create a Bytestring range with an unbounded start and the inclusive end "end"
+ * ByteStringRange.unbounded().endClosed("end");
+ * }</pre>
  */
 abstract class Range<T, R extends Range<T, R>> {
   public enum BoundType {
@@ -40,37 +54,47 @@ abstract class Range<T, R extends Range<T, R>> {
   }
 
   Range(BoundType startBound, T start, BoundType endBound, T end) {
-    this.start = start;
     this.startBound = startBound;
-    this.end = end;
+    this.start = start;
     this.endBound = endBound;
+    this.end = end;
   }
 
   /**
    * Creates a new {@link Range} with the specified inclusive start and the specified exclusive end.
    */
-  public R of(T startClosed, T endOpen) {
-    return newInstance(BoundType.CLOSED, startClosed, BoundType.OPEN, endOpen);
+  public R of(@Nonnull T startClosed, @Nonnull T endOpen) {
+    return newInstanceSafe(BoundType.CLOSED, startClosed, BoundType.OPEN, endOpen);
+  }
+
+  /** Creates a new {@link Range} with an unbounded start and the current end. */
+  public R startUnbounded() {
+    return newInstanceSafe(BoundType.UNBOUNDED, null, endBound, end);
   }
 
   /** Creates a new {@link Range} with the specified exclusive start and the current end. */
-  public R startOpen(T start) {
-    return newInstance(BoundType.OPEN, start, endBound, end);
+  public R startOpen(@Nonnull T start) {
+    return newInstanceSafe(BoundType.OPEN, start, endBound, end);
   }
 
   /** Creates a new {@link Range} with the specified inclusive start and the current end. */
-  public R startClosed(T start) {
-    return newInstance(BoundType.CLOSED, start, endBound, end);
+  public R startClosed(@Nonnull T start) {
+    return newInstanceSafe(BoundType.CLOSED, start, endBound, end);
+  }
+
+  /** Creates a new {@link Range} with the current start and an unbounded end. */
+  public R endUnbounded() {
+    return newInstanceSafe(startBound, start, BoundType.UNBOUNDED, null);
   }
 
   /** Creates a new {@link Range} with the specified exclusive end and the current start. */
-  public R endOpen(T end) {
-    return newInstance(startBound, start, BoundType.OPEN, end);
+  public R endOpen(@Nonnull T end) {
+    return newInstanceSafe(startBound, start, BoundType.OPEN, end);
   }
 
   /** Creates a new {@link Range} with the specified inclusive end and the current start. */
-  public R endClosed(T end) {
-    return newInstance(startBound, start, BoundType.CLOSED, end);
+  public R endClosed(@Nonnull T end) {
+    return newInstanceSafe(startBound, start, BoundType.CLOSED, end);
   }
 
   /** Gets the current start {@link BoundType}. */
@@ -105,6 +129,15 @@ abstract class Range<T, R extends Range<T, R>> {
     return end;
   }
 
+  private R newInstanceSafe(BoundType startBound, T start, BoundType endBound, T end) {
+    if (startBound != BoundType.UNBOUNDED) {
+      Preconditions.checkNotNull(start, "Bounded start can't be null.");
+    }
+    if (endBound != BoundType.UNBOUNDED) {
+      Preconditions.checkNotNull(end, "Bounded end can't be null");
+    }
+    return newInstance(startBound, start, endBound, end);
+  }
   /**
    * Extension point for subclasses to override. This allows subclasses to maintain chainability.
    */

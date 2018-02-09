@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.wrappers;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.wrappers.Row.Cell;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
@@ -32,7 +31,7 @@ public class RowTest {
         Row.create(
             ByteString.copyFromUtf8("key1"),
             ImmutableList.of(
-                Cell.create(
+                RowCell.create(
                     "family",
                     ByteString.EMPTY,
                     1000,
@@ -42,7 +41,7 @@ public class RowTest {
         Row.create(
             ByteString.copyFromUtf8("key2"),
             ImmutableList.of(
-                Cell.create(
+                RowCell.create(
                     "family",
                     ByteString.EMPTY,
                     1000,
@@ -52,7 +51,7 @@ public class RowTest {
         Row.create(
             ByteString.copyFromUtf8("key2"),
             ImmutableList.of(
-                Cell.create(
+                RowCell.create(
                     "family2",
                     ByteString.EMPTY,
                     1000,
