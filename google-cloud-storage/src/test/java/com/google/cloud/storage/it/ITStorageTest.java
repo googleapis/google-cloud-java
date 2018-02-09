@@ -328,11 +328,8 @@ public class ITStorageTest {
     BlobId wrongGenerationBlob = BlobId.of(BUCKET, blobName, -1L);
     try {
       assertNull(storage.get(wrongGenerationBlob));
+      fail("Expected an 'Invalid argument' exception");
     } catch (StorageException e) {
-      // *if* Storage throws an exception, it should contain "Invalid argument".
-      // Note: Storage only sometimes throws this; more often it returns "Not found"
-      // (resulting in storage.get() returning null)
-      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2864
       assertThat(e.getMessage()).contains("Invalid argument");
     }
     assertTrue(remoteBlob.delete());
@@ -662,11 +659,8 @@ public class ITStorageTest {
     assertNotNull(storage.create(blob));
     try {
       assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+      fail("Expected an 'Invalid argument' exception");
     } catch (StorageException e) {
-      // *if* Storage throws an exception, it should contain "Invalid argument".
-      // Note: it only sometimes throws this; more often it throws "Not found".
-      // (resulting in storage.delete() returning false)
-      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2864
       assertThat(e.getMessage()).contains("Invalid argument");
     }
   }
@@ -1079,14 +1073,24 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertFalse(deleteResult2.get());
+    try {
+      deleteResult2.get();
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
     try {
       getResult1.get();
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
-    assertNull(getResult2.get());
+    try {
+      getResult2.get();
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
   }
 
   @Test
@@ -1533,21 +1537,15 @@ public class ITStorageTest {
     BlobId otherBlobId = BlobId.of(BUCKET, "test-blob-acl", -1L);
     try {
       assertNull(storage.getAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+      fail("Expected an 'Invalid argument' exception");
     } catch (StorageException e) {
-      // *if* Storage throws an exception, it should contain "Invalid argument".
-      // Note: Storage only sometimes throws this; more often it returns "Not found".
-      // (resulting in storage.getAcl() returning null)
-      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2864
       assertThat(e.getMessage()).contains("Invalid argument");
     }
 
     try {
       assertFalse(storage.deleteAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+      fail("Expected an 'Invalid argument' exception");
     } catch (StorageException e) {
-      // *if* Storage throws an exception, it should contain "Invalid argument".
-      // Note: Storage only sometimes throws this; more often it returns "Not found".
-      // (resulting in storage.deleteAcl() returning false)
-      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2864
       assertThat(e.getMessage()).contains("Invalid argument");
     }
 
