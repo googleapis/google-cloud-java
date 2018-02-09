@@ -30,16 +30,16 @@ abstract class Range<T, R extends Range<T, R>> {
     UNBOUNDED
   }
 
-  protected final BoundType startBound;
-  protected final T start;
-  protected final BoundType endBound;
-  protected final T end;
+  final BoundType startBound;
+  final T start;
+  final BoundType endBound;
+  final T end;
 
-  protected Range() {
+  Range() {
     this(BoundType.UNBOUNDED, null, BoundType.UNBOUNDED, null);
   }
 
-  protected Range(BoundType startBound, T start, BoundType endBound, T end) {
+  Range(BoundType startBound, T start, BoundType endBound, T end) {
     this.start = start;
     this.startBound = startBound;
     this.end = end;
@@ -47,7 +47,7 @@ abstract class Range<T, R extends Range<T, R>> {
   }
 
   /**
-   * Creates a new {@link Range} with the specified inclusive start and the spcified exclusive end.
+   * Creates a new {@link Range} with the specified inclusive start and the specified exclusive end.
    */
   public R of(T startClosed, T endOpen) {
     return newInstance(BoundType.CLOSED, startClosed, BoundType.OPEN, endOpen);
@@ -138,7 +138,7 @@ abstract class Range<T, R extends Range<T, R>> {
     }
 
     /**
-     * Creates a new {@link Range} with the specified inclusive start and the spcified exclusive
+     * Creates a new {@link Range} with the specified inclusive start and the specified exclusive
      * end.
      */
     public R of(String startClosed, String endOpen) {
