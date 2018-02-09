@@ -117,12 +117,6 @@ public class BigtableDataClient implements AutoCloseable {
     this.stub = stub;
   }
 
-  /** Close the clients and releases all associated resources. */
-  @Override
-  public void close() throws Exception {
-    stub.close();
-  }
-
   /**
    * Convenience method for synchronous streaming the results of a {@link Query}.
    *
@@ -251,5 +245,11 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public <RowT> ServerStreamingCallable<Query, RowT> readRowsCallable(RowAdapter<RowT> rowAdapter) {
     return stub.createReadRowsCallable(rowAdapter);
+  }
+
+  /** Close the clients and releases all associated resources. */
+  @Override
+  public void close() throws Exception {
+    stub.close();
   }
 }
