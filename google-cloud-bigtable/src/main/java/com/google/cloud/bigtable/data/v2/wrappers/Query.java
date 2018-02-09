@@ -134,6 +134,7 @@ public class Query {
 
   /** Limits the number of rows that can be returned */
   public Query limit(long limit) {
+    Preconditions.checkArgument(limit > 0, "Limit must be greater than 0.");
     builder.setRowsLimit(limit);
     return this;
   }
