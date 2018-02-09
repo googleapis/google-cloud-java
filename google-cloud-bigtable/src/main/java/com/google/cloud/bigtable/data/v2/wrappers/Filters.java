@@ -253,7 +253,7 @@ public final class Filters {
     }
 
     @Override
-    protected InterleaveFilter clone() {
+    public InterleaveFilter clone() {
       try {
         InterleaveFilter clone = (InterleaveFilter) super.clone();
         clone.builder = builder.clone();
@@ -297,7 +297,7 @@ public final class Filters {
     }
 
     @Override
-    protected ConditionFilter clone() {
+    public ConditionFilter clone() {
       try {
         ConditionFilter clone = (ConditionFilter) super.clone();
         clone.builder = builder.clone();
@@ -481,7 +481,7 @@ public final class Filters {
     }
 
     @Override
-    protected QualifierRangeFilter clone() {
+    public QualifierRangeFilter clone() {
       try {
         return (QualifierRangeFilter) super.clone();
       } catch (CloneNotSupportedException | ClassCastException e) {
@@ -557,7 +557,7 @@ public final class Filters {
     }
 
     @Override
-    protected TimestampRangeFilter clone() {
+    public TimestampRangeFilter clone() {
       try {
         return (TimestampRangeFilter) super.clone();
       } catch (CloneNotSupportedException | ClassCastException e) {
