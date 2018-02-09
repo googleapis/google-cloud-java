@@ -36,12 +36,12 @@ public abstract class KeyOffset {
    * should therefore not make any assumptions about the row key structure that are specific to
    * their use case.
    */
-  public abstract ByteString key();
+  public abstract ByteString geyKey();
 
   /**
-   * Approximate total storage space used by all rows in the table which precede {@link #key()}.
+   * Approximate total storage space used by all rows in the table which precede {@link #geyKey()}.
    * Buffering the contents of all rows between two subsequent samples would require space roughly
-   * equal to the difference in their {@link #offsetBytes()} fields.
+   * equal to the difference in their {@link #getOffsetBytes()} fields.
    */
-  public abstract long offsetBytes();
+  public abstract long getOffsetBytes();
 }
