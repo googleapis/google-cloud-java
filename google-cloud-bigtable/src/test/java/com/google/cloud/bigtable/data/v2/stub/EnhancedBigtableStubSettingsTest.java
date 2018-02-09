@@ -20,12 +20,12 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
-import com.google.cloud.bigtable.gaxx.PlaceholderServerStreamingCallSettings;
 import java.io.IOException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -158,7 +158,7 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void readRowsHasSaneDefaultsTest() {
-    PlaceholderServerStreamingCallSettings.Builder<Query, Row> builder =
+    ServerStreamingCallSettings.Builder<Query, Row> builder =
         EnhancedBigtableStubSettings.newBuilder().readRowsSettings();
 
     assertThat(builder.getTimeoutCheckInterval()).isGreaterThan(Duration.ZERO);

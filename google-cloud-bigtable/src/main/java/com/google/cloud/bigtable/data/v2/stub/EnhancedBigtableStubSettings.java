@@ -18,13 +18,13 @@ package com.google.cloud.bigtable.data.v2.stub;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
-import com.google.cloud.bigtable.gaxx.PlaceholderServerStreamingCallSettings;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
 import org.threeten.bp.Duration;
@@ -68,7 +68,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final InstanceName instanceName;
   private final String appProfileId;
 
-  private final PlaceholderServerStreamingCallSettings<Query, Row> readRowsSettings;
+  private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
 
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
@@ -95,7 +95,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   }
 
   /** Returns the object with the settings used for calls to ReadRows. */
-  public PlaceholderServerStreamingCallSettings<Query, Row> readRowsSettings() {
+  public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
     return readRowsSettings;
   }
 
@@ -109,7 +109,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private InstanceName instanceName;
     private String appProfileId;
 
-    private final PlaceholderServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
+    private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
 
     /**
      * Initializes a new Builder with sane defaults for all settings.
@@ -135,7 +135,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
               .build());
 
       // Per-method settings using baseSettings for defaults.
-      readRowsSettings = PlaceholderServerStreamingCallSettings.newBuilder();
+      readRowsSettings = ServerStreamingCallSettings.newBuilder();
       /* TODO: copy timeouts, retryCodes & retrySettings from baseSettings.readRows once it exists in GAPIC */
       readRowsSettings
           .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED)
@@ -209,7 +209,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     }
 
     /** Returns the builder for the settings used for calls to readRows. */
-    public PlaceholderServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
+    public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return readRowsSettings;
     }
 

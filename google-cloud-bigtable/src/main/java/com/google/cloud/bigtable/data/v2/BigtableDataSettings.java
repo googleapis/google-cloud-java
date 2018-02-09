@@ -16,11 +16,11 @@
 package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
-import com.google.cloud.bigtable.gaxx.PlaceholderServerStreamingCallSettings;
 import java.io.IOException;
 import javax.annotation.Nonnull;
 
@@ -71,7 +71,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
   }
 
   /** Returns the object with the settings used for calls to ReadRows. */
-  public PlaceholderServerStreamingCallSettings<Query, Row> readRowsSettings() {
+  public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
     return getTypedStubSettings().readRowsSettings();
   }
 
@@ -136,7 +136,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     }
 
     /** Returns the builder for the settings used for calls to readRows. */
-    public PlaceholderServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
+    public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return getTypedStubSettings().readRowsSettings();
     }
 
