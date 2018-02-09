@@ -428,7 +428,7 @@ public final class Filters {
   /** Matches only cells from columns within the given range. */
   public static final class QualifierRangeFilter
       extends AbstractByteStringRange<QualifierRangeFilter> implements Filter {
-    private @Nonnull String family;
+    private final String family;
 
     private QualifierRangeFilter(String family) {
       super();
@@ -709,7 +709,7 @@ public final class Filters {
   }
 
   private static final class SimpleFilter implements Filter {
-    private RowFilter proto;
+    private final RowFilter proto;
 
     private SimpleFilter(@Nonnull RowFilter proto) {
       Preconditions.checkNotNull(proto);
