@@ -128,8 +128,8 @@ abstract class Range<T, R extends Range<T, R>> {
     Preconditions.checkState(endBound != BoundType.UNBOUNDED, "End is unbounded");
     return end;
   }
-
-  private R newInstanceSafe(BoundType startBound, T start, BoundType endBound, T end) {
+  
+  R newInstanceSafe(BoundType startBound, T start, BoundType endBound, T end) {
     if (startBound != BoundType.UNBOUNDED) {
       Preconditions.checkNotNull(start, "Bounded start can't be null.");
     }
@@ -175,27 +175,27 @@ abstract class Range<T, R extends Range<T, R>> {
      * end.
      */
     public R of(String startClosed, String endOpen) {
-      return newInstance(BoundType.CLOSED, wrap(startClosed), BoundType.OPEN, wrap(endOpen));
+      return newInstanceSafe(BoundType.CLOSED, wrap(startClosed), BoundType.OPEN, wrap(endOpen));
     }
 
     /** Creates a new {@link Range} with the specified exclusive start and the current end. */
     public R startOpen(String start) {
-      return newInstance(BoundType.OPEN, wrap(start), endBound, end);
+      return newInstanceSafe(BoundType.OPEN, wrap(start), endBound, end);
     }
 
     /** Creates a new {@link Range} with the specified inclusive start and the current end. */
     public R startClosed(String start) {
-      return newInstance(BoundType.CLOSED, wrap(start), endBound, end);
+      return newInstanceSafe(BoundType.CLOSED, wrap(start), endBound, end);
     }
 
     /** Creates a new {@link Range} with the specified exclusive end and the current start. */
     public R endOpen(String end) {
-      return newInstance(startBound, start, BoundType.OPEN, wrap(end));
+      return newInstanceSafe(startBound, start, BoundType.OPEN, wrap(end));
     }
 
     /** Creates a new {@link Range} with the specified inclusive end and the current start. */
     public R endClosed(String end) {
-      return newInstance(startBound, start, BoundType.CLOSED, wrap(end));
+      return newInstanceSafe(startBound, start, BoundType.CLOSED, wrap(end));
     }
 
     static ByteString wrap(String str) {
