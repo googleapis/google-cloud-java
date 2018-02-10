@@ -474,7 +474,7 @@ public final class Filters {
         case UNBOUNDED:
           break;
         default:
-          throw new IllegalStateException("Unknown end bound: " + getStartBound());
+          throw new IllegalStateException("Unknown end bound: " + getEndBound());
       }
 
       return RowFilter.newBuilder().setColumnRangeFilter(builder.build()).build();
