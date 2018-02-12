@@ -237,7 +237,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     try {
       return getJob(jobInfo.getJobId());
     } catch (BigQueryException e) {
-      System.err.println("rethrow");
       throw createException;
     }
   }

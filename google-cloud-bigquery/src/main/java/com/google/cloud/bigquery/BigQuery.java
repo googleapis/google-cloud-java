@@ -1043,6 +1043,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Runs the query associated with the request, using an internally-generated random JobId.
    *
+   * <p>This method cannot be used in conjuction with {@link QueryJobConfiguration#dryRun()}
+   * queries. Since dry-run queries are not actually executed, there's no way to retrieve results.
+   *
    * <p>Example of running a query.
    *
    * <pre>{@code
@@ -1082,6 +1085,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Runs the query associated with the request, using the given JobId.
+   *
+   * <p>This method cannot be used in conjuction with {@link QueryJobConfiguration#dryRun()}
+   * queries. Since dry-run queries are not actually executed, there's no way to retrieve results.
    *
    * <p>See {@link #query(QueryJobConfiguration, JobOption...)} for examples on populating a {@link
    * QueryJobConfiguration}.

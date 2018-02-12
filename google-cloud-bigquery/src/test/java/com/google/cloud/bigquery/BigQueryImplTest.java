@@ -912,9 +912,13 @@ public class BigQueryImplTest {
         .andReturn(newJobPb());
     EasyMock.replay(bigqueryRpcMock);
 
+    BigQuery.JobOption options = BigQuery.JobOption.fields(BigQuery.JobField.USER_EMAIL);
+
     bigquery = options.getService();
-    Job job = bigquery.create(QUERY_JOB, JOB_OPTION_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.getRpcOption());
+    bigquery.create(newJobPb(), options);
+    String selector = (String) capturedOptions.getValue().get(options.getRpcOption());
+
+    // jobReference and configuration are always sent; the RPC call won't succeed otherwise.
     assertThat(selector.split(","))
         .asList()
         .containsExactly("jobReference", "configuration", "user_email");
