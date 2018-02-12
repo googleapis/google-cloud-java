@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.Data;
+import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
@@ -259,7 +260,12 @@ public class FieldValue implements Serializable {
    * <p>If the {@code attribute} is {@link Attribute#REPEATED} or {@link Attribute#RECORD}, the
    * {@code value} should be {@code List} of {@link FieldValue}s or {@link FieldValueList},
    * respectively.
+   *
+   * <p>This method is unstable. See <a
+   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * for more context.
    */
+  @BetaApi
   public static FieldValue of(Attribute attribute, Object value) {
     return new FieldValue(attribute, value);
   }
