@@ -19,12 +19,19 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.wrappers.Query;
+import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import java.io.IOException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class EnhancedBigtableStubSettingsTest {
@@ -97,5 +104,78 @@ public class EnhancedBigtableStubSettingsTest {
         (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
 
     assertThat(provider.toBuilder().getPoolSize()).isGreaterThan(1);
+  }
+
+  @Test
+  public void readRowsIsNotLostTest() throws IOException {
+    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofHours(1))
+            .setInitialRpcTimeout(Duration.ofSeconds(10))
+            .setRpcTimeoutMultiplier(1)
+            .setMaxRpcTimeout(Duration.ofSeconds(10))
+            .setJittered(true)
+            .build();
+
+    builder
+        .readRowsSettings()
+        .setTimeoutCheckInterval(Duration.ofSeconds(10))
+        .setIdleTimeout(Duration.ofMinutes(5))
+        .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
+        .setRetrySettings(retrySettings)
+        .build();
+
+    assertThat(builder.readRowsSettings().getTimeoutCheckInterval())
+        .isEqualTo(Duration.ofSeconds(10));
+    assertThat(builder.readRowsSettings().getIdleTimeout()).isEqualTo(Duration.ofMinutes(5));
+    assertThat(builder.readRowsSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.readRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().readRowsSettings().getTimeoutCheckInterval())
+        .isEqualTo(Duration.ofSeconds(10));
+    assertThat(builder.build().readRowsSettings().getIdleTimeout())
+        .isEqualTo(Duration.ofMinutes(5));
+    assertThat(builder.build().readRowsSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().readRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().toBuilder().readRowsSettings().getTimeoutCheckInterval())
+        .isEqualTo(Duration.ofSeconds(10));
+    assertThat(builder.build().toBuilder().readRowsSettings().getIdleTimeout())
+        .isEqualTo(Duration.ofMinutes(5));
+    assertThat(builder.build().toBuilder().readRowsSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().toBuilder().readRowsSettings().getRetrySettings())
+        .isEqualTo(retrySettings);
+  }
+
+  @Test
+  public void readRowsHasSaneDefaultsTest() {
+    ServerStreamingCallSettings.Builder<Query, Row> builder =
+        EnhancedBigtableStubSettings.newBuilder().readRowsSettings();
+
+    assertThat(builder.getTimeoutCheckInterval()).isGreaterThan(Duration.ZERO);
+    assertThat(builder.getIdleTimeout()).isGreaterThan(Duration.ZERO);
+
+    assertThat(builder.getRetryableCodes())
+        .containsAllOf(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED);
+
+    assertThat(builder.getRetrySettings().getMaxAttempts()).isGreaterThan(1);
+    assertThat(builder.getRetrySettings().getTotalTimeout()).isGreaterThan(Duration.ZERO);
+
+    assertThat(builder.getRetrySettings().getInitialRetryDelay()).isGreaterThan(Duration.ZERO);
+    assertThat(builder.getRetrySettings().getRetryDelayMultiplier()).isAtLeast(1.0);
+    assertThat(builder.getRetrySettings().getMaxRetryDelay()).isGreaterThan(Duration.ZERO);
+
+    assertThat(builder.getRetrySettings().getInitialRpcTimeout()).isGreaterThan(Duration.ZERO);
+    assertThat(builder.getRetrySettings().getRpcTimeoutMultiplier()).isAtLeast(1.0);
+    assertThat(builder.getRetrySettings().getMaxRpcTimeout()).isGreaterThan(Duration.ZERO);
   }
 }
