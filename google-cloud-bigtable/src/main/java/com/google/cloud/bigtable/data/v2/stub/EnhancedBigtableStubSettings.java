@@ -17,11 +17,17 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.wrappers.Query;
+import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
+import org.threeten.bp.Duration;
 
 /**
  * Settings class to configure an instance of {@link EnhancedBigtableStub}.
@@ -40,10 +46,14 @@ import javax.annotation.Nonnull;
  * build() is called, the tree of builders is called to create the complete settings object.
  *
  * <pre>{@code
- * BigtableDataSettings bigtableDataSettings = BigtableDataSettings.newBuilder()
+ * BigtableDataSettings.Builder settingsBuilder = BigtableDataSettings.newBuilder()
  *   .setInstanceName(InstanceName.of("my-project", "my-instance-id"))
- *   .setAppProfileId("default")
- *   .build();
+ *   .setAppProfileId("default");
+ *
+ * settingsBuilder.readRowsSettings()
+ *  .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
+ *
+ * BigtableDataSettings settings = builder.build();
  * }</pre>
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
@@ -58,14 +68,18 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final InstanceName instanceName;
   private final String appProfileId;
 
+  private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
+
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
     instanceName = builder.instanceName;
     appProfileId = builder.appProfileId;
 
     // Per method settings.
+    readRowsSettings = builder.readRowsSettings.build();
   }
 
+  /** Create a new builder. */
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -80,6 +94,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return appProfileId;
   }
 
+  /** Returns the object with the settings used for calls to ReadRows. */
+  public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
+    return readRowsSettings;
+  }
+
   /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
@@ -89,6 +108,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   public static class Builder extends StubSettings.Builder<EnhancedBigtableStubSettings, Builder> {
     private InstanceName instanceName;
     private String appProfileId;
+
+    private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
 
     /**
      * Initializes a new Builder with sane defaults for all settings.
@@ -114,6 +135,23 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
               .build());
 
       // Per-method settings using baseSettings for defaults.
+      readRowsSettings = ServerStreamingCallSettings.newBuilder();
+      /* TODO: copy timeouts, retryCodes & retrySettings from baseSettings.readRows once it exists in GAPIC */
+      readRowsSettings
+          .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED)
+          .setTimeoutCheckInterval(Duration.ofSeconds(10))
+          .setIdleTimeout(Duration.ofMinutes(5))
+          .setRetrySettings(
+              RetrySettings.newBuilder()
+                  .setMaxAttempts(10)
+                  .setTotalTimeout(Duration.ofHours(1))
+                  .setInitialRetryDelay(Duration.ofMillis(100))
+                  .setRetryDelayMultiplier(1.3)
+                  .setMaxRetryDelay(Duration.ofMinutes(1))
+                  .setInitialRpcTimeout(Duration.ofSeconds(20))
+                  .setRpcTimeoutMultiplier(1)
+                  .setMaxRpcTimeout(Duration.ofSeconds(20))
+                  .build());
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
@@ -122,6 +160,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       appProfileId = settings.appProfileId;
 
       // Per method settings.
+      readRowsSettings = settings.readRowsSettings.toBuilder();
     }
 
     // <editor-fold desc="Private Helpers">
@@ -167,6 +206,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /** Gets the app profile id that was previously set on this Builder. */
     public String getAppProfileId() {
       return appProfileId;
+    }
+
+    /** Returns the builder for the settings used for calls to readRows. */
+    public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
+      return readRowsSettings;
     }
 
     @SuppressWarnings("unchecked")

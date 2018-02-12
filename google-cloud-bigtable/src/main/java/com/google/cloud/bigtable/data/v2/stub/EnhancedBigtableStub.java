@@ -16,8 +16,15 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.wrappers.DefaultRowAdapter;
+import com.google.cloud.bigtable.data.v2.wrappers.Query;
+import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
 import java.io.IOException;
 
 /**
@@ -38,6 +45,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final GrpcBigtableStub stub;
   private final ClientContext clientContext;
   private final RequestContext requestContext;
+
+  private final ServerStreamingCallable<Query, Row> readRowsCallable;
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
@@ -63,16 +72,31 @@ public class EnhancedBigtableStub implements AutoCloseable {
     this.stub = stub;
     this.requestContext =
         RequestContext.create(settings.getInstanceName(), settings.getAppProfileId());
+
+    readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
   }
+
+  // <editor-fold desc="Callable creators">
+  public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
+      RowAdapter<RowT> rowAdapter) {
+    return new ServerStreamingCallable<Query, RowT>() {
+      @Override
+      public void call(
+          Query query, ResponseObserver<RowT> responseObserver, ApiCallContext context) {
+        throw new UnsupportedOperationException("todo");
+      }
+    };
+  }
+  // </editor-fold>
+
+  // <editor-fold desc="Callable accessors">
+  public ServerStreamingCallable<Query, Row> readRowsCallable() {
+    return readRowsCallable;
+  }
+  // </editor-fold>
 
   @Override
   public void close() throws Exception {
     stub.close();
   }
-
-  // <editor-fold desc="Callable creators">
-  // </editor-fold>
-
-  // <editor-fold desc="Callable accessors">
-  // </editor-fold>
 }

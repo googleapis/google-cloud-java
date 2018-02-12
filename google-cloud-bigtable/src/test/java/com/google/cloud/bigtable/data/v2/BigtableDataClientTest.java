@@ -15,7 +15,13 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
+import static com.google.common.truth.Truth.assertThat;
+
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.cloud.bigtable.data.v2.wrappers.Query;
+import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,11 +32,13 @@ import org.mockito.runners.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class BigtableDataClientTest {
   @Mock private EnhancedBigtableStub mockStub;
+  @Mock private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
 
   private BigtableDataClient bigtableDataClient;
 
   @Before
   public void setUp() {
+    Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
     bigtableDataClient = new BigtableDataClient(mockStub);
   }
 
@@ -38,5 +46,28 @@ public class BigtableDataClientTest {
   public void proxyCloseTest() throws Exception {
     bigtableDataClient.close();
     Mockito.verify(mockStub).close();
+  }
+
+  @Test
+  public void proxyReadRowsCallableTest() {
+    assertThat(bigtableDataClient.readRowsCallable()).isSameAs(mockReadRowsCallable);
+  }
+
+  @Test
+  public void proxyReadRowsSyncTest() {
+    Query query = Query.create("fake-table");
+    bigtableDataClient.readRows(query);
+
+    Mockito.verify(mockReadRowsCallable).call(query);
+  }
+
+  @Test
+  public void proxyReadRowsAsyncTest() {
+    Query query = Query.create("fake-table");
+    @SuppressWarnings("unchecked")
+    ResponseObserver<Row> mockObserver = Mockito.mock(ResponseObserver.class);
+    bigtableDataClient.readRowsAsync(query, mockObserver);
+
+    Mockito.verify(mockReadRowsCallable).call(query, mockObserver);
   }
 }
