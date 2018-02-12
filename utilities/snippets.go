@@ -1,3 +1,17 @@
+// Copyright 2018 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//       http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 package main
 
 import (
@@ -96,7 +110,7 @@ func getSnip(file, txt string, snip map[string]string) error {
 
 		var key string
 		if p := strings.IndexByte(txt, '\n'); p >= 0 {
-			key = strings.TrimLeft(txt[:p], "\r")
+			key = txt[:p]
 			txt = txt[p:]
 		} else {
 			key = txt
@@ -105,7 +119,7 @@ func getSnip(file, txt string, snip map[string]string) error {
 
 		if p := strings.Index(txt, key); p >= 0 {
 			// "// SNIPPET foo" -> "<!--SNIPPET foo-->"
-			key = fmt.Sprintf("<!--%s-->", key[3:])
+			key = fmt.Sprintf("<!--%s-->", strings.TrimSpace(key[3:]))
 
 			if _, exist := snip[key]; exist {
 				return fmt.Errorf("%s:%d snippet %q has already been defined", file, lineNum(ftxt, txt), key)
@@ -113,6 +127,8 @@ func getSnip(file, txt string, snip map[string]string) error {
 
 			snip[key] = strings.Trim(txt[:p], "\n\r")
 			txt = txt[p+len(snipPrefix):]
+		} else {
+			return fmt.Errorf("%s:%d snippet %q not closed", file, lineNum(ftxt, txt), key)
 		}
 	}
 }
