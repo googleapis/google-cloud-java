@@ -76,11 +76,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
   }
 
-  @Override
-  public void close() throws Exception {
-    stub.close();
-  }
-
   // <editor-fold desc="Callable creators">
   public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
       RowAdapter<RowT> rowAdapter) {
@@ -99,4 +94,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return readRowsCallable;
   }
   // </editor-fold>
+
+  @Override
+  public void close() throws Exception {
+    stub.close();
+  }
 }
