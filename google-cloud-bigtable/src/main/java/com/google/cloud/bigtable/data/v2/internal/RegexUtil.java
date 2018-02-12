@@ -18,10 +18,19 @@ package com.google.cloud.bigtable.data.v2.internal;
 import com.google.api.core.InternalApi;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.ByteString.ByteIterator;
-import com.google.protobuf.ByteString.Output;
-import java.io.IOException;
-import java.io.OutputStream;
 
+/**
+ * Contains utilities to handle RE2 flavor regular expressions. This differs from {@link
+ * java.util.regex.Pattern} in two important ways:
+ *
+ * <ol>
+ *   <li>Binary strings are supported.
+ *   <li>The syntax is a lot more restricted but allows different modifiers.
+ * </ol>
+ *
+ * <p>See <a href="https://github.com/google/re2">https://github.com/google/re2</a> for more
+ * details.
+ */
 @InternalApi
 public final class RegexUtil {
   private static final byte[] NULL_BYTES = "\\x00".getBytes();
@@ -33,22 +42,17 @@ public final class RegexUtil {
   }
   /** Converts the value to a quoted regular expression. */
   public static ByteString literalRegex(ByteString value) {
-    Output output = ByteString.newOutput(value.size() * 2);
+    ByteString.Output output = ByteString.newOutput(value.size() * 2);
 
     ByteIterator it = value.iterator();
-    try {
-      writeLiteralRegex(it, output);
-    } catch (IOException e) {
-      throw new RuntimeException("Unexpected io error converting regex", e);
-    }
+    writeLiteralRegex(it, output);
 
     return output.toByteString();
   }
 
   // Extracted from: re2 QuoteMeta:
   // https://github.com/google/re2/blob/70f66454c255080a54a8da806c52d1f618707f8a/re2/re2.cc#L456
-  private static void writeLiteralRegex(ByteIterator input, OutputStream output)
-      throws IOException {
+  private static void writeLiteralRegex(ByteIterator input, ByteString.Output output) {
     while (input.hasNext()) {
       byte unquoted = input.nextByte();
 

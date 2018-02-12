@@ -128,7 +128,7 @@ abstract class Range<T, R extends Range<T, R>> {
     Preconditions.checkState(endBound != BoundType.UNBOUNDED, "End is unbounded");
     return end;
   }
-  
+
   R newInstanceSafe(BoundType startBound, T start, BoundType endBound, T end) {
     if (startBound != BoundType.UNBOUNDED) {
       Preconditions.checkNotNull(start, "Bounded start can't be null.");
