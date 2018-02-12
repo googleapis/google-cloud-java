@@ -84,11 +84,11 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
     return row.size();
   }
 
-  static FieldValueList of(List<FieldValue> row, FieldList schema) {
+  public static FieldValueList of(List<FieldValue> row, FieldList schema) {
     return new FieldValueList(row, schema);
   }
 
-  static FieldValueList of(List<FieldValue> row, Field... schema) {
+  public static FieldValueList of(List<FieldValue> row, Field... schema) {
     return of(row, schema.length > 0 ? FieldList.of(schema) : null);
   }
 
