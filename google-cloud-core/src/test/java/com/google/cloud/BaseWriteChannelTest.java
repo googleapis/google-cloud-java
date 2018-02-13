@@ -21,6 +21,7 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.spi.ServiceRpcFactory;
 
@@ -111,11 +112,16 @@ public class BaseWriteChannelTest {
   @Test
   public void testChunkSize() {
     channel.setChunkSize(42);
-    assertEquals(MIN_CHUNK_SIZE, channel.getChunkSize());
+    assertThat(channel.getChunkSize() >= MIN_CHUNK_SIZE).isTrue();
+    assertThat(channel.getChunkSize() % MIN_CHUNK_SIZE).isEqualTo(0);
+
     channel.setChunkSize(2 * MIN_CHUNK_SIZE);
-    assertEquals(2 * MIN_CHUNK_SIZE, channel.getChunkSize());
-    channel.setChunkSize(512 * 1025);
-    assertEquals(2 * MIN_CHUNK_SIZE, channel.getChunkSize());
+    assertThat(channel.getChunkSize() >= MIN_CHUNK_SIZE).isTrue();
+    assertThat(channel.getChunkSize() % MIN_CHUNK_SIZE).isEqualTo(0);
+
+    channel.setChunkSize(2 * MIN_CHUNK_SIZE + 1);
+    assertThat(channel.getChunkSize() >= MIN_CHUNK_SIZE).isTrue();
+    assertThat(channel.getChunkSize() % MIN_CHUNK_SIZE).isEqualTo(0);
   }
 
   @Test
