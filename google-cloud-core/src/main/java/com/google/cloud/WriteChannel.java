@@ -25,10 +25,8 @@ import java.nio.channels.WritableByteChannel;
  * <p>Implementations of this class may further buffer data internally to reduce remote calls.
  * Written data might not be visible until calling {@link #close()}. This interface implements
  * {@link Restorable} to allow saving the writer's state to continue writing afterwards.
- * </p>
  */
 public interface WriteChannel extends WritableByteChannel, Closeable, Restorable<WriteChannel> {
-
 
   /**
    * Sets the minimum size that will be written by a single RPC.
