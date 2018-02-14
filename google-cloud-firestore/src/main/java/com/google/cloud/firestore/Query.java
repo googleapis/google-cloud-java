@@ -369,33 +369,31 @@ public class Query {
    * a DocumentReference that can directly be used in the Query.
    */
   private Object convertReference(Object fieldValue) {
-    Object sanitizedValue;
-    DocumentReference cursorDocument;
+    DocumentReference reference;
     if (fieldValue instanceof String) {
-      cursorDocument = new DocumentReference(firestore, path.append((String) fieldValue));
+      reference = new DocumentReference(firestore, path.append((String) fieldValue));
     } else if (fieldValue instanceof DocumentReference) {
-      cursorDocument = (DocumentReference) fieldValue;
+      reference = (DocumentReference) fieldValue;
     } else {
       throw new IllegalArgumentException(
           "The corresponding value for FieldPath.documentId() must be a String or a "
               + "DocumentReference.");
     }
 
-    if (!this.path.isPrefixOf(cursorDocument.getResourcePath())) {
+    if (!this.path.isPrefixOf(reference.getResourcePath())) {
       throw new IllegalArgumentException(
           String.format(
               "'%s' is not part of the query result set and cannot be used as a query boundary.",
-              cursorDocument.getPath()));
+              reference.getPath()));
     }
-    if (!cursorDocument.getParent().getResourcePath().equals(this.path)) {
+    if (!reference.getParent().getResourcePath().equals(this.path)) {
       throw new IllegalArgumentException(
           String.format(
               "Only a direct child can be used as a query boundary. Found: '%s'",
-              cursorDocument.getPath()));
+              reference.getPath()));
     }
 
-    sanitizedValue = cursorDocument;
-    return sanitizedValue;
+    return reference;
   }
 
   /**
