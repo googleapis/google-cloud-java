@@ -832,7 +832,6 @@ public class ITSystemTest {
     }
   }
 
-
   private int paginateResults(Query query, List<DocumentSnapshot> results)
       throws ExecutionException, InterruptedException {
     if (!results.isEmpty()) {
