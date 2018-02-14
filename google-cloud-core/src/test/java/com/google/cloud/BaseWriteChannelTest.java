@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertArrayEquals;
@@ -23,18 +24,16 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.spi.ServiceRpcFactory;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.util.Arrays;
 import java.util.Random;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class BaseWriteChannelTest {
 
@@ -111,11 +110,16 @@ public class BaseWriteChannelTest {
   @Test
   public void testChunkSize() {
     channel.setChunkSize(42);
-    assertEquals(MIN_CHUNK_SIZE, channel.getChunkSize());
+    assertThat(channel.getChunkSize() >= MIN_CHUNK_SIZE).isTrue();
+    assertThat(channel.getChunkSize() % MIN_CHUNK_SIZE).isEqualTo(0);
+
     channel.setChunkSize(2 * MIN_CHUNK_SIZE);
-    assertEquals(2 * MIN_CHUNK_SIZE, channel.getChunkSize());
-    channel.setChunkSize(512 * 1025);
-    assertEquals(2 * MIN_CHUNK_SIZE, channel.getChunkSize());
+    assertThat(channel.getChunkSize() >= MIN_CHUNK_SIZE).isTrue();
+    assertThat(channel.getChunkSize() % MIN_CHUNK_SIZE).isEqualTo(0);
+
+    channel.setChunkSize(2 * MIN_CHUNK_SIZE + 1);
+    assertThat(channel.getChunkSize() >= MIN_CHUNK_SIZE).isTrue();
+    assertThat(channel.getChunkSize() % MIN_CHUNK_SIZE).isEqualTo(0);
   }
 
   @Test
