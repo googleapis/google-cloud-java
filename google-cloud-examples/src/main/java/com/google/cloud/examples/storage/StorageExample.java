@@ -352,10 +352,11 @@ public class StorageExample {
 
     @Override
     public void run(Storage storage, Tuple<BlobId, Path> tuple) throws IOException {
-      run(storage, tuple.x(), tuple.y());
+      run(storage, tuple.x().getBucket(), tuple.x().getName(), tuple.y());
     }
 
-    private void run(Storage storage, BlobId blobId, Path downloadTo) throws IOException {
+    private void run(Storage storage, String bucketName, String objectName, Path downloadTo) throws IOException {
+      BlobId blobId = BlobId.of(bucketName, objectName);
       Blob blob = storage.get(blobId);
       if (blob == null) {
         System.out.println("No such object");
