@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.wrappers;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
@@ -28,13 +29,18 @@ import com.google.protobuf.ByteString;
 import java.util.List;
 import javax.annotation.Nonnull;
 
-/** This is the base DSL for creating mutations for {@link RowMutation} */
-@InternalApi
+/**
+ * This is the base DSL for creating mutations for {@link RowMutation}
+ *
+ * <p>Package private to allow extension by Bigtable Client, but the methods are public for external
+ * usage in the subclasses.
+ */
+@InternalExtensionOnly
 abstract class AbstractMutation<T extends AbstractMutation> {
   private final ImmutableList.Builder<Mutation> mutations = ImmutableList.builder();
 
-  @InternalApi
-  protected AbstractMutation() {}
+  @InternalExtensionOnly
+  AbstractMutation() {}
 
   /**
    * Adds a mutation which sets the value of the specified cell.

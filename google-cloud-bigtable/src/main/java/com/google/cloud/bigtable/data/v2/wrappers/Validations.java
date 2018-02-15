@@ -18,6 +18,11 @@ package com.google.cloud.bigtable.data.v2.wrappers;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
 
+/**
+ * Miscellaneous helpers to validate input in the DSL.
+ *
+ * <p>Package-private for internal use.
+ */
 class Validations {
   static void validateFamily(@Nonnull String name) {
     Preconditions.checkNotNull(name, "Family name can't be null");

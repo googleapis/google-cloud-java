@@ -325,7 +325,7 @@ public class BigtableDataClient implements AutoCloseable {
    *   RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *     .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
-   *   bigtableClient.mutateRowCallable.call(mutation);
+   *   bigtableClient.mutateRowCallable().call(mutation);
    * }
    * }</pre>
    */
