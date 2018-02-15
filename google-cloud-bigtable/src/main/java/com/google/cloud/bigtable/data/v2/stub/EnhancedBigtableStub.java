@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -134,8 +133,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
-    UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
-        spooling = stub.sampleRowKeysCallable().all();
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> spooling =
+        stub.sampleRowKeysCallable().all();
 
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retrying =
         Callables.retrying(spooling, settings.sampleRowKeysSettings(), clientContext);

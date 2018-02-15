@@ -41,7 +41,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class SampleRowKeysCallableTest {
-  private RequestContext requestContext =
+  private final RequestContext requestContext =
       RequestContext.create(InstanceName.of("my-project", "my-instance"), "my-app-profile");
   private FakeCallable inner;
   private SampleRowKeysCallable callable;

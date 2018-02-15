@@ -36,7 +36,7 @@ class SampleRowKeysCallable extends UnaryCallable<String, List<KeyOffset>> {
       inner;
 
   SampleRowKeysCallable(
-      UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>> inner,
+      UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> inner,
       RequestContext requestContext) {
 
     this.requestContext = requestContext;
