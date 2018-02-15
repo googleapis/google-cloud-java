@@ -41,7 +41,8 @@ import com.google.api.core.InternalApi;
  * </pre>
  *
  * @param <InnerT> The type of responses coming from the inner ServerStreamingCallable.
- * @param <OuterT> The type of responses the outer {@link ResponseObserver} expects.
+ * @param <OuterT> The type of responses the outer {@link com.google.api.gax.rpc.ResponseObserver}
+ *     expects.
  */
 @InternalApi
 public interface Reframer<OuterT, InnerT> {
