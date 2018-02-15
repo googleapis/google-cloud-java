@@ -31,8 +31,7 @@ import java.util.List;
 /** Simple wrapper for SampleRowKeys to wrap the request and response protobufs. */
 class SampleRowKeysCallable extends UnaryCallable<String, List<KeyOffset>> {
   private final RequestContext requestContext;
-  private final UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>>
-      inner;
+  private final UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> inner;
 
   SampleRowKeysCallable(
       UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> inner,

@@ -50,18 +50,6 @@ import org.threeten.bp.Duration;
  */
 @InternalApi
 public class EnhancedBigtableStub implements AutoCloseable {
-  private static final RetrySettings DISABLED_RETRY_SETTINGS =
-      RetrySettings.newBuilder()
-          .setMaxAttempts(1)
-          .setTotalTimeout(Duration.ofHours(2))
-          .setInitialRetryDelay(Duration.ZERO)
-          .setRetryDelayMultiplier(1)
-          .setMaxRetryDelay(Duration.ZERO)
-          .setInitialRpcTimeout(Duration.ofHours(2))
-          .setRpcTimeoutMultiplier(1)
-          .setMaxRpcTimeout(Duration.ofHours(2))
-          .build();
-
   private final EnhancedBigtableStubSettings settings;
   private final GrpcBigtableStub stub;
   private final ClientContext clientContext;
@@ -80,13 +68,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setEndpoint(settings.getEndpoint())
             .setCredentialsProvider(settings.getCredentialsProvider());
 
-    // SampleRowKeys retries are handled in the overlay: disable retries in the base layer
+    // SampleRowKeys retries are handled in the overlay: disable retries in the base layer (but make
+    // sure to preserve the exception callable settings.
     baseSettingsBuilder
         .sampleRowKeysSettings()
-        .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes())
-        .setRetrySettings(DISABLED_RETRY_SETTINGS)
-        .setTimeoutCheckInterval(Duration.ZERO)
-        .setIdleTimeout(Duration.ZERO);
+        .setSimpleTimeoutNoRetries(
+            baseSettingsBuilder.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())
+        .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes());
 
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
