@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_NAME;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_SNAPSHOT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.endAt;
 import static com.google.cloud.firestore.LocalFirestoreHelper.filter;
@@ -164,6 +165,27 @@ public class QueryTest {
     for (RunQueryRequest actual : runQuery.getAllValues()) {
       assertEquals(expected.next(), actual);
     }
+  }
+
+  @Test
+  public void withDocumentIdFilter() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(
+            runQuery.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    query.whereEqualTo(FieldPath.documentId(), "doc").get().get();
+
+    RunQueryRequest expectedRequest =
+        query(
+            filter(
+                Operator.EQUAL,
+                "__name__",
+                Value.newBuilder().setReferenceValue(DOCUMENT_NAME).build()));
+
+    assertEquals(expectedRequest, runQuery.getValue());
   }
 
   @Test
@@ -491,9 +513,7 @@ public class QueryTest {
 
   @Test
   public void getResult() throws Exception {
-    doAnswer(
-            queryResponse(
-                LocalFirestoreHelper.DOCUMENT_NAME + "1", LocalFirestoreHelper.DOCUMENT_NAME + "2"))
+    doAnswer(queryResponse(DOCUMENT_NAME + "1", DOCUMENT_NAME + "2"))
         .when(firestoreMock)
         .streamRequest(
             runQuery.capture(),
@@ -523,9 +543,7 @@ public class QueryTest {
 
   @Test
   public void streamResult() throws Exception {
-    doAnswer(
-            queryResponse(
-                LocalFirestoreHelper.DOCUMENT_NAME + "1", LocalFirestoreHelper.DOCUMENT_NAME + "2"))
+    doAnswer(queryResponse(DOCUMENT_NAME + "1", DOCUMENT_NAME + "2"))
         .when(firestoreMock)
         .streamRequest(
             runQuery.capture(),
