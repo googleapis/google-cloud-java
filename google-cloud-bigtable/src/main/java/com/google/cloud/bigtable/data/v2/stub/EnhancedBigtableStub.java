@@ -17,11 +17,15 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.SampleRowKeysRequest;
+import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
@@ -31,6 +35,7 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 import java.util.List;
+import org.threeten.bp.Duration;
 
 /**
  * The core client that converts method calls to RPCs.
@@ -46,6 +51,18 @@ import java.util.List;
  */
 @InternalApi
 public class EnhancedBigtableStub implements AutoCloseable {
+  private static final RetrySettings DISABLED_RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .setMaxAttempts(1)
+          .setTotalTimeout(Duration.ofHours(2))
+          .setInitialRetryDelay(Duration.ZERO)
+          .setRetryDelayMultiplier(1)
+          .setMaxRetryDelay(Duration.ZERO)
+          .setInitialRpcTimeout(Duration.ofHours(2))
+          .setRpcTimeoutMultiplier(1)
+          .setMaxRpcTimeout(Duration.ofHours(2))
+          .build();
+
   private final EnhancedBigtableStubSettings settings;
   private final GrpcBigtableStub stub;
   private final ClientContext clientContext;
@@ -63,6 +80,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setTransportChannelProvider(settings.getTransportChannelProvider())
             .setEndpoint(settings.getEndpoint())
             .setCredentialsProvider(settings.getCredentialsProvider());
+
+    // SampleRowKeys retries are handled in the overlay: disable retries in the base layer
+    baseSettingsBuilder
+        .sampleRowKeysSettings()
+        .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes())
+        .setRetrySettings(DISABLED_RETRY_SETTINGS)
+        .setTimeoutCheckInterval(Duration.ZERO)
+        .setIdleTimeout(Duration.ZERO);
 
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
@@ -109,12 +134,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
-    return new UnaryCallable<String, List<KeyOffset>>() {
-      @Override
-      public ApiFuture<List<KeyOffset>> futureCall(String request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    UnaryCallable<com.google.bigtable.v2.SampleRowKeysRequest, List<SampleRowKeysResponse>>
+        spooling = stub.sampleRowKeysCallable().all();
+
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retrying =
+        Callables.retrying(spooling, settings.sampleRowKeysSettings(), clientContext);
+
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withContext =
+        retrying.withDefaultCallContext(clientContext.getDefaultCallContext());
+
+    return new SampleRowKeysCallable(withContext, requestContext);
   }
 
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
