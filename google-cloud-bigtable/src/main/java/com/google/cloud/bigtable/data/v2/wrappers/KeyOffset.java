@@ -28,11 +28,12 @@ public abstract class KeyOffset {
   }
 
   /**
-   * Sorted streamed sequence of sample row keys in the table. The table might have contents before
-   * the first row key in the list and after the last one, but a key containing the empty string
-   * indicates "end of table" and will be the last response given, if present.
+   * A row key value that is returned as part of the response of
+   * {@link com.google.cloud.bigtable.data.v2.BigtableDataClient#sampleRowKeys(String)}. The key
+   * represents end boundary of one of the contiguous section in a list of approximately equal sized
+   * sections.
    *
-   * <p>Note that row keys in this list may not have ever been written to or read from, and users
+   * <p>Note that row key may not have ever been written to or read from, and users
    * should therefore not make any assumptions about the row key structure that are specific to
    * their use case.
    */
