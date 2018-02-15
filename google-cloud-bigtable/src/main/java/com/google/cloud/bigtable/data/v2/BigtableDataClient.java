@@ -15,16 +15,20 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Client for reading from and writing to existing Bigtable tables.
@@ -245,6 +249,47 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public <RowT> ServerStreamingCallable<Query, RowT> readRowsCallable(RowAdapter<RowT> rowAdapter) {
     return stub.createReadRowsCallable(rowAdapter);
+  }
+
+  /**
+   * Convenience method to asynchronously return a sample of row keys in the table. The returned row
+   * keys will delimit contiguous sections of the table of approximately equal size, which can be
+   * used to break up the data for distributed tasks like mapreduces.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   ApiFuture<List<KeyOffset>> keyOffsets = bigtableClient.sampleRowKeys("[TABLE]");
+   * }
+   * }</pre>
+   */
+  public ApiFuture<List<KeyOffset>> sampleRowKeys(String tableId) {
+    return sampleRowKeysCallable().futureCall(tableId);
+  }
+
+  /**
+   * Returns a sample of row keys in the table. The returned row keys will delimit contiguous
+   * sections of the table of approximately equal size, which can be used to break up the data for
+   * distributed tasks like mapreduces. The returned callable object allows for customization of api
+   * invocation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   // Synchronous invocation
+   *   List<KeyOffset> keyOffsets = bigtableClient.sampleRowKeysCallable().call("[TABLE]");
+   *
+   *   // Asynchronous invocation
+   *   ApiFuture<List<KeyOffset>> keyOffsets = bigtableClient.sampleRowKeysCallable().futureCall("[TABLE]");
+   * }
+   * }</pre>
+   */
+  public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {
+    return stub.sampleRowKeysCallable();
   }
 
   /** Close the clients and releases all associated resources. */

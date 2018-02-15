@@ -17,11 +17,14 @@ package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import java.io.IOException;
+import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
@@ -73,6 +76,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
   /** Returns the object with the settings used for calls to ReadRows. */
   public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
     return getTypedStubSettings().readRowsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to sampleRowKeys. */
+  public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
+    return getTypedStubSettings().sampleRowKeysSettings();
   }
 
   @SuppressWarnings("unchecked")
@@ -138,6 +146,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return getTypedStubSettings().readRowsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to SampleRowKeysSettings. */
+    public UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings() {
+      return getTypedStubSettings().sampleRowKeysSettings();
     }
 
     @SuppressWarnings("unchecked")
