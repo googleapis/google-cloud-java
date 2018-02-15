@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.GrpcStatusCode;
@@ -27,7 +29,6 @@ import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.common.collect.ImmutableList;
-import com.google.common.truth.Truth;
 import com.google.protobuf.ByteString;
 import io.grpc.Status.Code;
 import java.util.List;
@@ -56,7 +57,7 @@ public class SampleRowKeysCallableTest {
   public void requestIsCorrect() {
     callable.futureCall("my-table");
 
-    Truth.assertThat(inner.request)
+    assertThat(inner.request)
         .isEqualTo(
             SampleRowKeysRequest.newBuilder()
                 .setTableName(requestContext.getInstanceName() + "/tables/my-table")
@@ -80,7 +81,7 @@ public class SampleRowKeysCallableTest {
                 .setOffsetBytes(1000)
                 .build()));
 
-    Truth.assertThat(result.get(1, TimeUnit.SECONDS))
+    assertThat(result.get(1, TimeUnit.SECONDS))
         .isEqualTo(
             ImmutableList.of(
                 KeyOffset.create(ByteString.copyFromUtf8("key1"), 100),
@@ -104,7 +105,7 @@ public class SampleRowKeysCallableTest {
       actualError = t;
     }
 
-    Truth.assertThat(actualError).isEqualTo(expectedError);
+    assertThat(actualError).isEqualTo(expectedError);
   }
 
   static class FakeCallable
