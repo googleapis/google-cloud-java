@@ -254,8 +254,7 @@ public class BigtableDataClient implements AutoCloseable {
   /**
    * Convenience method to asynchronously return a sample of row keys in the table. The returned row
    * keys will delimit contiguous sections of the table of approximately equal size, which can be
-   * used to break up the data for distributed tasks like mapreduces. The returned callable object
-   * allows for customization of api invocation.
+   * used to break up the data for distributed tasks like mapreduces.
    *
    * <p>Sample code:
    *
