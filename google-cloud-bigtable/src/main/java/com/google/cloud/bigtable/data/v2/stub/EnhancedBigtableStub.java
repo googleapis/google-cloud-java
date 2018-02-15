@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
@@ -34,7 +33,6 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 import java.util.List;
-import org.threeten.bp.Duration;
 
 /**
  * The core client that converts method calls to RPCs.
