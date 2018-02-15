@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.wrappers;
 
-import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
