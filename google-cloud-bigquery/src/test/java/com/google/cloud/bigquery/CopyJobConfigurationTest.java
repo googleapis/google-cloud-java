@@ -37,10 +37,13 @@ public class CopyJobConfigurationTest {
   private static final TableId DESTINATION_TABLE = TableId.of("dataset", "destinationTable");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
+  private static final EncryptionConfiguration COPY_JOB_ENCRYPTION_CONFIGURATION =
+      EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION =
       CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLE)
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
+          .setDestinationEncryptionConfiguration(COPY_JOB_ENCRYPTION_CONFIGURATION)
           .build();
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION_MULTIPLE_TABLES =
       CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLES)
@@ -133,5 +136,6 @@ public class CopyJobConfigurationTest {
     assertEquals(expected.getSourceTables(), value.getSourceTables());
     assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
+    assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
   }
 }

@@ -25,10 +25,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
+import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -42,6 +44,7 @@ import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
+import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -874,52 +877,29 @@ public class BigQueryImplTest {
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
   }
 
-  @Test
-  public void testCreateQueryJob() {
-    EasyMock.expect(
-            bigqueryRpcMock.create(
-                JobInfo.of(QUERY_JOB_CONFIGURATION_WITH_PROJECT).toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(COMPLETE_QUERY_JOB.toPb());
-    EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.getService();
-    Job job = bigquery.create(QUERY_JOB);
-    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_QUERY_JOB)), job);
+  // The "minimally initialized" Job that lets Job.fromPb run without throwing.
+  private static com.google.api.services.bigquery.model.Job newJobPb() {
+    return new com.google.api.services.bigquery.model.Job()
+        .setConfiguration(
+            new com.google.api.services.bigquery.model.JobConfiguration()
+                .setQuery(new JobConfigurationQuery().setQuery("FOO")));
   }
 
   @Test
-  public void testCreateLoadJob() {
-    EasyMock.expect(
-            bigqueryRpcMock.create(
-                JobInfo.of(LOAD_JOB_CONFIGURATION_WITH_PROJECT).toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(COMPLETE_LOAD_JOB.toPb());
-    EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.getService();
-    Job job = bigquery.create(LOAD_JOB);
-    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_LOAD_JOB)), job);
-  }
+  public void testCreateJobSuccess() {
+    String id = "testCreateJobSuccess-id";
+    JobId jobId = JobId.of(id);
+    String query = "SELECT * in FOO";
 
-  @Test
-  public void testCreateCopyJob() {
+    Capture<com.google.api.services.bigquery.model.Job> jobCapture = EasyMock.newCapture();
     EasyMock.expect(
-            bigqueryRpcMock.create(
-                JobInfo.of(COPY_JOB_CONFIGURATION_WITH_PROJECT).toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(COMPLETE_COPY_JOB.toPb());
+            bigqueryRpcMock.create(EasyMock.capture(jobCapture), EasyMock.eq(EMPTY_RPC_OPTIONS)))
+        .andReturn(newJobPb());
     EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.getService();
-    Job job = bigquery.create(COPY_JOB);
-    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_COPY_JOB)), job);
-  }
 
-  @Test
-  public void testCreateExtractJob() {
-    EasyMock.expect(
-            bigqueryRpcMock.create(
-                JobInfo.of(EXTRACT_JOB_CONFIGURATION_WITH_PROJECT).toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(COMPLETE_EXTRACT_JOB.toPb());
-    EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
-    Job job = bigquery.create(EXTRACT_JOB);
-    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_EXTRACT_JOB)), job);
+    assertThat(bigquery.create(JobInfo.of(jobId, QueryJobConfiguration.of(query)))).isNotNull();
+    assertThat(jobCapture.getValue().getJobReference().getJobId()).isEqualTo(id);
   }
 
   @Test
@@ -927,18 +907,69 @@ public class BigQueryImplTest {
     Capture<Map<BigQueryRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
             bigqueryRpcMock.create(
-                eq(JobInfo.of(QUERY_JOB_CONFIGURATION_WITH_PROJECT).toPb()),
-                capture(capturedOptions)))
-        .andReturn(COMPLETE_QUERY_JOB.toPb());
+                EasyMock.anyObject(com.google.api.services.bigquery.model.Job.class),
+                EasyMock.capture(capturedOptions)))
+        .andReturn(newJobPb());
     EasyMock.replay(bigqueryRpcMock);
+
+    BigQuery.JobOption jobOptions = BigQuery.JobOption.fields(BigQuery.JobField.USER_EMAIL);
+
     bigquery = options.getService();
-    Job job = bigquery.create(QUERY_JOB, JOB_OPTION_FIELDS);
-    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_QUERY_JOB)), job);
-    String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.getRpcOption());
-    assertTrue(selector.contains("jobReference"));
-    assertTrue(selector.contains("configuration"));
-    assertTrue(selector.contains("user_email"));
-    assertEquals(37, selector.length());
+    bigquery.create(JobInfo.of(QueryJobConfiguration.of("SOME QUERY")), jobOptions);
+    String selector = (String) capturedOptions.getValue().get(jobOptions.getRpcOption());
+
+    // jobReference and configuration are always sent; the RPC call won't succeed otherwise.
+    assertThat(selector.split(","))
+        .asList()
+        .containsExactly("jobReference", "configuration", "user_email");
+  }
+
+  @Test
+  public void testCreateJobNoGet() {
+    String id = "testCreateJobNoGet-id";
+    JobId jobId = JobId.of(id);
+    String query = "SELECT * in FOO";
+
+    Capture<com.google.api.services.bigquery.model.Job> jobCapture = EasyMock.newCapture();
+    EasyMock.expect(
+            bigqueryRpcMock.create(EasyMock.capture(jobCapture), EasyMock.eq(EMPTY_RPC_OPTIONS)))
+        .andThrow(new BigQueryException(409, "already exists, for some reason"));
+    EasyMock.replay(bigqueryRpcMock);
+
+    bigquery = options.getService();
+    try {
+      bigquery.create(JobInfo.of(jobId, QueryJobConfiguration.of(query)));
+      fail("should throw");
+    } catch (BigQueryException e) {
+      assertThat(jobCapture.getValue().getJobReference().getJobId()).isEqualTo(id);
+    }
+  }
+
+  @Test
+  public void testCreateJobTryGet() {
+    final String id = "testCreateJobTryGet-id";
+    String query = "SELECT * in FOO";
+    Supplier<JobId> idProvider =
+        new Supplier<JobId>() {
+          @Override
+          public JobId get() {
+            return JobId.of(id);
+          }
+        };
+
+    Capture<com.google.api.services.bigquery.model.Job> jobCapture = EasyMock.newCapture();
+    EasyMock.expect(
+            bigqueryRpcMock.create(EasyMock.capture(jobCapture), EasyMock.eq(EMPTY_RPC_OPTIONS)))
+        .andThrow(new BigQueryException(409, "already exists, for some reason"));
+    EasyMock.expect(
+            bigqueryRpcMock.getJob(
+                EasyMock.anyString(), EasyMock.eq(id), EasyMock.eq(EMPTY_RPC_OPTIONS)))
+        .andReturn(newJobPb());
+    EasyMock.replay(bigqueryRpcMock);
+
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).create(JobInfo.of(QueryJobConfiguration.of(query)), idProvider);
+    assertThat(jobCapture.getValue().getJobReference().getJobId()).isEqualTo(id);
   }
 
   @Test

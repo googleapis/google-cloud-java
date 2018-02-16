@@ -326,7 +326,12 @@ public class ITStorageTest {
     Blob remoteBlob = storage.create(blob);
     assertNotNull(remoteBlob);
     BlobId wrongGenerationBlob = BlobId.of(BUCKET, blobName, -1L);
-    assertNull(storage.get(wrongGenerationBlob));
+    try {
+      assertNull(storage.get(wrongGenerationBlob));
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
     assertTrue(remoteBlob.delete());
   }
 
@@ -652,7 +657,12 @@ public class ITStorageTest {
     String blobName = "test-delete-blob-non-existing-generation";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+    try {
+      assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
   }
 
   @Test
@@ -1063,14 +1073,24 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertFalse(deleteResult2.get());
+    try {
+      deleteResult2.get();
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
     try {
       getResult1.get();
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
-    assertNull(getResult2.get());
+    try {
+      getResult2.get();
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
   }
 
   @Test
@@ -1515,8 +1535,20 @@ public class ITStorageTest {
     assertNull(storage.getAcl(blobId, User.ofAllAuthenticatedUsers()));
     // test non-existing blob
     BlobId otherBlobId = BlobId.of(BUCKET, "test-blob-acl", -1L);
-    assertNull(storage.getAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
-    assertFalse(storage.deleteAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+    try {
+      assertNull(storage.getAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
+
+    try {
+      assertFalse(storage.deleteAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
+
     try {
       storage.createAcl(otherBlobId, acl);
       fail("Expected StorageException");

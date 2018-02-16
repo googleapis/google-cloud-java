@@ -114,11 +114,6 @@ Go to the [releases page](https://github.com/GoogleCloudPlatform/google-cloud-ja
 
 9. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/google-cloud-java/pull/227).
 
-To push a snapshot version
-==========================
-
-Pushing a snapshot is completely automated.  If "-SNAPSHOT" is included in the version denoted by the base directory's pom.xml, then an updated artifact will be pushed to the snapshot repository when Travis CI successfully completes a non-PR build. The build triggers the `after_success.sh` script, which handles the release process for SNAPSHOT versions.
-
 Improvements
 ============
 

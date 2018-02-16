@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
@@ -38,6 +39,7 @@ import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
+import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -175,19 +177,67 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public Job create(JobInfo jobInfo, JobOption... options) {
+    Supplier<JobId> idProvider =
+        new Supplier<JobId>() {
+          @Override
+          public JobId get() {
+            return JobId.of();
+          }
+        };
+    return create(jobInfo, idProvider, options);
+  }
+
+  @InternalApi("visible for testing")
+  Job create(JobInfo jobInfo, Supplier<JobId> idProvider, JobOption... options) {
+    boolean idRandom = false;
+    if (jobInfo.getJobId() == null) {
+      jobInfo = jobInfo.toBuilder().setJobId(idProvider.get()).build();
+      idRandom = true;
+    }
     final com.google.api.services.bigquery.model.Job jobPb =
         jobInfo.setProjectId(getOptions().getProjectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
+
+    BigQueryException createException;
+    // NOTE(pongad): This double-try structure is admittedly odd.
+    // translateAndThrow itself throws, and pretends to return an exception only
+    // so users can pretend to throw.
+    // This makes it difficult to translate without throwing.
+    // Fixing this entails some work on BaseServiceException.translate.
+    // Since that affects a bunch of APIs, we should fix this as a separate change.
     try {
-      return Job.fromPb(this,
-          runWithRetries(new Callable<com.google.api.services.bigquery.model.Job>() {
-            @Override
-            public com.google.api.services.bigquery.model.Job call() {
-              return bigQueryRpc.create(jobPb, optionsMap);
-            }
-          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
-    } catch (RetryHelper.RetryHelperException e) {
-      throw BigQueryException.translateAndThrow(e);
+      try {
+        return Job.fromPb(
+            this,
+            runWithRetries(
+                new Callable<com.google.api.services.bigquery.model.Job>() {
+                  @Override
+                  public com.google.api.services.bigquery.model.Job call() {
+                    return bigQueryRpc.create(jobPb, optionsMap);
+                  }
+                },
+                getOptions().getRetrySettings(),
+                EXCEPTION_HANDLER,
+                getOptions().getClock()));
+      } catch (RetryHelper.RetryHelperException e) {
+        throw BigQueryException.translateAndThrow(e);
+      }
+    } catch (BigQueryException e) {
+      createException = e;
+    }
+
+    if (!idRandom) {
+      throw createException;
+    }
+
+    // If create RPC fails, it's still possible that the job has been successfully created,
+    // and get might work.
+    // We can only do this if we randomly generated the ID. Otherwise we might mistakenly
+    // fetch a job created by someone else.
+    try {
+      return getJob(jobInfo.getJobId());
+    } catch (BigQueryException e) {
+      throw createException;
     }
   }
 
@@ -590,7 +640,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public TableResult query(QueryJobConfiguration configuration, JobOption... options)
       throws InterruptedException, JobException {
-    return query(configuration, JobId.of(), options);
+    Job.checkNotDryRun(configuration, "query");
+    return create(JobInfo.of(configuration), options).getQueryResults();
   }
 
   @Override

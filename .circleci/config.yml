@@ -1,5 +1,13 @@
 version: 2.0
 
+anchor_build: &anchor_build
+  name: Build
+  command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipTests install
+
+anchor_unittest: &anchor_unittest
+  name: Run unit tests
+  command: mvn -B -DtrimStackTrace=false -fae --quiet -DskipITs install -P release
+
 anchor_docker: &anchor_docker
   docker:
     - image: circleci/openjdk:8-jdk
@@ -18,6 +26,48 @@ anchor_run_decrypt: &anchor_run_decrypt
         -out .circleci/it-service-account.json -k "${SYSTEM_TESTS_ENCRYPTION_KEY}"
 
 jobs:
+  openjdk_7:
+    working_directory: ~/googleapis
+    docker:
+      - image: maven:3.5.2-jdk-7
+        environment:
+          TERM: dumb
+          MAVEN_OPTS: -Xmx256m
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_build
+      - run:
+          <<: *anchor_unittest
+  openjdk_8:
+    working_directory: ~/googleapis
+    docker:
+      - image: circleci/openjdk:8-jdk
+        environment:
+          TERM: dumb
+          MAVEN_OPTS: -Xmx256m
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_build
+      - run:
+          <<: *anchor_unittest
+  mac_openjdk_8:
+    working_directory: ~/googleapis
+    docker:
+      - image: circleci/openjdk:8-jdk
+        environment:
+          TERM: dumb
+          MAVEN_OPTS: -Xmx256m
+    macos:
+      xcode: "9.2.0"
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_build
+      - run:
+          <<: *anchor_unittest
+
   bigquery_it:
     working_directory: ~/googleapis
     <<: *anchor_docker
@@ -163,15 +213,54 @@ workflows:
   version: 2
   build:
     jobs:
-      - bigquery_it
-      - compute_it
-      - datastore_it
-      - firestore_it
-      - dns_it
-      - logging_it
-      - notification_it
-      - pubsub_it
-      - spanner_it
-      - speech_it
-      - storage_it
-      - translate_it
+      - openjdk_7
+      - openjdk_8
+      - mac_openjdk_8
+      - bigquery_it:
+          filters:
+            branches:
+              only: master
+      - compute_it:
+          filters:
+            branches:
+              only: master
+      - datastore_it:
+          filters:
+            branches:
+              only: master
+      - firestore_it:
+          filters:
+            branches:
+              only: master
+      - dns_it:
+          filters:
+            branches:
+              only: master
+      - logging_it:
+          filters:
+            branches:
+              only: master
+      - notification_it:
+          filters:
+            branches:
+              only: master
+      - pubsub_it:
+          filters:
+            branches:
+              only: master
+      - spanner_it:
+          filters:
+            branches:
+              only: master
+      - speech_it:
+          filters:
+            branches:
+              only: master
+      - storage_it:
+          filters:
+            branches:
+              only: master
+      - translate_it:
+          filters:
+            branches:
+              only: master

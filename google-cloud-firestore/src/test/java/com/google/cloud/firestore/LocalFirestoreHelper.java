@@ -365,6 +365,11 @@ public final class LocalFirestoreHelper {
 
   public static StructuredQuery filter(
       StructuredQuery.FieldFilter.Operator operator, String path, String value) {
+    return filter(operator, path, string(value));
+  }
+
+  public static StructuredQuery filter(
+      StructuredQuery.FieldFilter.Operator operator, String path, Value value) {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
     StructuredQuery.CompositeFilter.Builder compositeFilter =
         structuredQuery.getWhereBuilder().getCompositeFilterBuilder();
@@ -374,7 +379,7 @@ public final class LocalFirestoreHelper {
         compositeFilter.addFiltersBuilder().getFieldFilterBuilder();
     fieldFilter.setField(StructuredQuery.FieldReference.newBuilder().setFieldPath(path));
     fieldFilter.setOp(operator);
-    fieldFilter.setValue(Value.newBuilder().setStringValue(value));
+    fieldFilter.setValue(value);
 
     return structuredQuery.build();
   }

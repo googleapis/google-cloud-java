@@ -3,7 +3,7 @@
 # Requires bash version >= 4.
 
 # This script updates pom.xml, README.md and other relevant files to the next version number.
-# This script is meant to be run manually (not by Travis)
+# This script is meant to be run manually (not by continuous integration)
 #
 # This script should be ALWAYS executed from the repo root directory: ./utilities/update_versions.sh
 #
