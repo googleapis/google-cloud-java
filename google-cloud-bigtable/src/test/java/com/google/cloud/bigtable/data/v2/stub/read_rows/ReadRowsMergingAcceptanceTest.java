@@ -15,11 +15,12 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.read_rows;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
-import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.wrappers.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import com.google.cloud.bigtable.data.v2.wrappers.RowCell;
@@ -28,6 +29,7 @@ import com.google.common.base.CaseFormat;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.google.protobuf.TextFormat;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -36,7 +38,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -45,7 +46,6 @@ import org.junit.runners.Parameterized.Parameters;
 /** Parses and runs the acceptance tests for read rows */
 @RunWith(Parameterized.class)
 public class ReadRowsMergingAcceptanceTest {
-
   private final ChunkTestCase testCase;
 
   public ReadRowsMergingAcceptanceTest(ChunkTestCase testCase) {
@@ -57,13 +57,17 @@ public class ReadRowsMergingAcceptanceTest {
     InputStream testInputStream =
         ReadRowsMergingAcceptanceTest.class.getResourceAsStream("read-rows-acceptance-test.json");
 
+    // Parse the json
     Gson gson = new Gson();
     AcceptanceTest acceptanceTest =
         gson.fromJson(new InputStreamReader(testInputStream), AcceptanceTest.class);
+
+    // Construct parameters for each test run
     List<Object[]> data = new ArrayList<>();
     for (ChunkTestCase test : acceptanceTest.tests) {
       data.add(new Object[] {test});
     }
+
     return data;
   }
 
@@ -71,21 +75,23 @@ public class ReadRowsMergingAcceptanceTest {
   public void test() throws Exception {
     List<ReadRowsResponse> responses = Lists.newArrayList();
 
+    // Convert the chunks into a single ReadRowsResponse
     for (String chunkStr : testCase.chunks) {
       ReadRowsResponse.Builder responseBuilder = ReadRowsResponse.newBuilder();
-      CellChunk.Builder ccBuilder = CellChunk.newBuilder();
-      TextFormat.merge(new StringReader(chunkStr), ccBuilder);
-      responseBuilder.addChunks(ccBuilder.build());
+      TextFormat.merge(new StringReader(chunkStr), responseBuilder.addChunksBuilder());
       responses.add(responseBuilder.build());
     }
 
+    // Wrap the responses in a callable
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> source =
         new ServerStreamingStashCallable<>(responses);
     RowMergingCallable<Row> mergingCallable =
         new RowMergingCallable<>(source, new DefaultRowAdapter());
 
+    // Invoke the callable to get the merged rows
     ServerStream<Row> stream = mergingCallable.call(ReadRowsRequest.getDefaultInstance());
 
+    // Read all of the rows and transform them into logical cells
     List<TestResult> actualResults = Lists.newArrayList();
     Exception error = null;
 
@@ -99,39 +105,37 @@ public class ReadRowsMergingAcceptanceTest {
                   cell.qualifier().toStringUtf8(),
                   cell.timestamp(),
                   cell.value().toStringUtf8(),
-                  cell.labels().isEmpty() ? "" : cell.labels().get(0),
-                  false));
+                  cell.labels().isEmpty() ? "" : cell.labels().get(0)));
         }
       }
     } catch (Exception e) {
       error = e;
     }
 
+    // Verify the results
     if (testCase.expectsError()) {
-      Assert.assertNotNull(error);
+      assertThat(error).isNotNull();
     } else {
       if (error != null) {
         throw error;
       }
     }
 
-    Assert.assertEquals(testCase.getNonExceptionResults(), actualResults);
+    assertThat(testCase.getNonExceptionResults()).isEqualTo(actualResults);
   }
 
-  // The acceptance test data model, populated via jackson data binding
+  // <editor-fold desc="JSON data model populated by gson">
   private static final class AcceptanceTest {
-
-    public List<ChunkTestCase> tests;
+    List<ChunkTestCase> tests;
   }
 
   private static final class ChunkTestCase {
-
-    public String name;
-    public List<String> chunks;
-    public List<TestResult> results;
+    String name;
+    List<String> chunks;
+    List<TestResult> results;
 
     /** The test name in the source file is an arbitrary string. Make it junit-friendly. */
-    public String getJunitTestName() {
+    String getJunitTestName() {
       return CaseFormat.LOWER_HYPHEN.to(CaseFormat.LOWER_CAMEL, name.replace(" ", "-"));
     }
 
@@ -140,11 +144,11 @@ public class ReadRowsMergingAcceptanceTest {
       return getJunitTestName();
     }
 
-    public boolean expectsError() {
+    boolean expectsError() {
       return results != null && !results.isEmpty() && results.get(results.size() - 1).error;
     }
 
-    public List<TestResult> getNonExceptionResults() {
+    List<TestResult> getNonExceptionResults() {
       ArrayList<TestResult> response = new ArrayList<>();
       if (results != null) {
         for (TestResult result : results) {
@@ -158,37 +162,49 @@ public class ReadRowsMergingAcceptanceTest {
   }
 
   private static final class TestResult {
+    @SerializedName("rk")
+    String rowKey;
 
-    public String rk;
-    public String fm;
-    public String qual;
-    public long ts;
-    public String value;
-    public String label;
-    public boolean error;
+    @SerializedName("fm")
+    String family;
+
+    @SerializedName("qual")
+    String qualifier;
+
+    @SerializedName("ts")
+    long timestamp;
+
+    String value;
+    String label;
+    boolean error;
 
     /** Constructor for JSon deserialization. */
     @SuppressWarnings("unused")
     public TestResult() {}
 
-    public TestResult(
-        String rk, String fm, String qual, long ts, String value, String label, boolean error) {
-      this.rk = rk;
-      this.fm = fm;
-      this.qual = qual;
-      this.ts = ts;
+    TestResult(
+        String rowKey,
+        String family,
+        String qualifier,
+        long timestamp,
+        String value,
+        String label) {
+      this.rowKey = rowKey;
+      this.family = family;
+      this.qualifier = qualifier;
+      this.timestamp = timestamp;
       this.value = value;
       this.label = label;
-      this.error = error;
+      this.error = false;
     }
 
     @Override
     public String toString() {
       return MoreObjects.toStringHelper(this)
-          .add("rk", rk)
-          .add("fm", fm)
-          .add("qual", qual)
-          .add("ts", ts)
+          .add("rowKey", rowKey)
+          .add("family", family)
+          .add("qualifier", qualifier)
+          .add("timestamp", timestamp)
           .add("value", value)
           .add("label", label)
           .add("error", error)
@@ -204,13 +220,14 @@ public class ReadRowsMergingAcceptanceTest {
         return true;
       }
       TestResult other = (TestResult) obj;
-      return Objects.equals(rk, other.rk)
-          && Objects.equals(fm, other.fm)
-          && Objects.equals(qual, other.qual)
-          && Objects.equals(ts, other.ts)
+      return Objects.equals(rowKey, other.rowKey)
+          && Objects.equals(family, other.family)
+          && Objects.equals(qualifier, other.qualifier)
+          && Objects.equals(timestamp, other.timestamp)
           && Objects.equals(value, other.value)
           && Objects.equals(label, other.label)
           && Objects.equals(error, other.error);
     }
   }
+  // </editor-fold>
 }
