@@ -357,7 +357,7 @@ final class StateMachine<RowT> {
     return CompleteRow;
   }
 
-  private void validate(boolean condition, String message) {
+  private static void validate(boolean condition, String message) {
     if (!condition) {
       throw new InvalidInputException(message);
     }
