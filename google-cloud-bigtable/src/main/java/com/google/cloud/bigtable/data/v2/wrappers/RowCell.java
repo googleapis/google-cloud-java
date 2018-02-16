@@ -37,7 +37,7 @@ public abstract class RowCell {
   public abstract String family();
 
   /** The cell's qualifier (column name) */
-  @Nullable
+  @Nonnull
   public abstract ByteString qualifier();
 
   /** The timestamp of the cell */
