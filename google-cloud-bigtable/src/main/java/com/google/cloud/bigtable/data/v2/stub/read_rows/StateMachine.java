@@ -108,8 +108,8 @@ final class StateMachine<RowT> {
   }
 
   /**
-   * Feeds a new chunk into the sate machine. If the chunk is invalid, the state machine will be
-   * reset and await a new row.
+   * Feeds a new chunk into the sate machine. If the chunk is invalid, the state machine will throw
+   * an exception and should be used for further input.
    *
    * @param chunk The new chunk to process.
    * @return True if this chunk completed a row.
