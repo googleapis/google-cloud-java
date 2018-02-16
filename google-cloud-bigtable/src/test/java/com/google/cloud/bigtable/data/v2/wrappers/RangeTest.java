@@ -91,6 +91,17 @@ public class RangeTest {
   }
 
   @Test
+  public void timestampCloneTest() {
+    TimestampRange range = TimestampRange.create(10, 2_000);
+    TimestampRange rangeSame = range.endClosed(3_000L);
+    TimestampRange rangeClone = range.clone().endClosed(4_000L);
+
+    assertThat(range.getEnd()).isEqualTo(3_000);
+    assertThat(rangeSame.getEnd()).isEqualTo(3_000);
+    assertThat(rangeClone.getEnd()).isEqualTo(4_000);
+  }
+
+  @Test
   public void byteStringUnboundedTest() {
     ByteStringRange range = ByteStringRange.unbounded();
     assertThat(range.getStartBound()).isEqualTo(BoundType.UNBOUNDED);
@@ -195,5 +206,16 @@ public class RangeTest {
     range = range.endOpen("x");
     assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
     assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("x"));
+  }
+
+  @Test
+  public void byteStringCloneTest() {
+    ByteStringRange range = ByteStringRange.create("a", "original");
+    ByteStringRange rangeSame = range.endClosed("sameInstance");
+    ByteStringRange rangeClone = range.clone().endClosed("cloneInstance");
+
+    assertThat(range.getEnd().toStringUtf8()).isEqualTo("sameInstance");
+    assertThat(rangeSame.getEnd().toStringUtf8()).isEqualTo("sameInstance");
+    assertThat(rangeClone.getEnd().toStringUtf8()).isEqualTo("cloneInstance");
   }
 }
