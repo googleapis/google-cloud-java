@@ -17,9 +17,11 @@ package com.google.cloud.bigtable.data.v2.wrappers;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.bigtable.data.v2.wrappers.Range.BoundType;
 import com.google.cloud.bigtable.data.v2.wrappers.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.wrappers.Range.TimestampRange;
+import com.google.common.truth.Truth;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -88,6 +90,17 @@ public class RangeTest {
     range = range.endOpen(3_000L);
     assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
     assertThat(range.getEnd()).isEqualTo(3_000);
+  }
+
+  @Test
+  public void timestampCloneTest() {
+    TimestampRange range = TimestampRange.create(10, 2_000);
+    TimestampRange rangeSame = range.endClosed(3_000L);
+    TimestampRange rangeClone = range.clone().endClosed(4_000L);
+
+    Truth.assertThat(range.getEnd()).isEqualTo(3_000);
+    Truth.assertThat(rangeSame.getEnd()).isEqualTo(3_000);
+    Truth.assertThat(rangeClone.getEnd()).isEqualTo(4_000);
   }
 
   @Test
@@ -195,5 +208,16 @@ public class RangeTest {
     range = range.endOpen("x");
     assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
     assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("x"));
+  }
+
+  @Test
+  public void byteStringCloneTest() {
+    ByteStringRange range = ByteStringRange.create("a", "original");
+    ByteStringRange rangeSame = range.endClosed("sameInstance");
+    ByteStringRange rangeClone = range.clone().endClosed("cloneInstance");
+
+    Truth.assertThat(range.getEnd().toStringUtf8()).isEqualTo("sameInstance");
+    Truth.assertThat(rangeSame.getEnd().toStringUtf8()).isEqualTo("sameInstance");
+    Truth.assertThat(rangeClone.getEnd().toStringUtf8()).isEqualTo("cloneInstance");
   }
 }

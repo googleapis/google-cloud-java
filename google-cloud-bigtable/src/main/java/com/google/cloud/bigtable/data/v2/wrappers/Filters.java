@@ -435,18 +435,6 @@ public final class Filters {
       this.family = family;
     }
 
-    private QualifierRangeFilter(
-        String family, BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
-      super(startBound, start, endBound, end);
-      this.family = Preconditions.checkNotNull(family);
-    }
-
-    @Override
-    protected QualifierRangeFilter newInstance(
-        BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
-      return new QualifierRangeFilter(family, startBound, start, endBound, end);
-    }
-
     @InternalApi
     @Override
     public RowFilter toProto() {
@@ -482,11 +470,7 @@ public final class Filters {
 
     @Override
     public QualifierRangeFilter clone() {
-      try {
-        return (QualifierRangeFilter) super.clone();
-      } catch (CloneNotSupportedException | ClassCastException e) {
-        throw new RuntimeException("should never happen");
-      }
+      return super.clone();
     }
   }
 
@@ -511,16 +495,6 @@ public final class Filters {
       extends AbstractTimestampRange<TimestampRangeFilter> implements Filter {
     private TimestampRangeFilter() {
       super();
-    }
-
-    private TimestampRangeFilter(BoundType startBound, Long start, BoundType endBound, Long end) {
-      super(startBound, start, endBound, end);
-    }
-
-    @Override
-    protected TimestampRangeFilter newInstance(
-        BoundType startBound, Long start, BoundType endBound, Long end) {
-      return new TimestampRangeFilter(startBound, start, endBound, end);
     }
 
     @InternalApi
@@ -558,11 +532,7 @@ public final class Filters {
 
     @Override
     public TimestampRangeFilter clone() {
-      try {
-        return (TimestampRangeFilter) super.clone();
-      } catch (CloneNotSupportedException | ClassCastException e) {
-        throw new RuntimeException("should never happen");
-      }
+      return super.clone();
     }
   }
 
@@ -620,17 +590,6 @@ public final class Filters {
       super();
     }
 
-    private ValueRangeFilter(
-        BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
-      super(startBound, start, endBound, end);
-    }
-
-    @Override
-    protected ValueRangeFilter newInstance(
-        BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
-      return new ValueRangeFilter(startBound, start, endBound, end);
-    }
-
     @InternalApi
     @Override
     public RowFilter toProto() {
@@ -664,11 +623,7 @@ public final class Filters {
 
     @Override
     public ValueRangeFilter clone() {
-      try {
-        return (ValueRangeFilter) super.clone();
-      } catch (CloneNotSupportedException | ClassCastException e) {
-        throw new RuntimeException("should never happen");
-      }
+      return super.clone();
     }
   }
 
