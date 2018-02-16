@@ -71,7 +71,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     baseSettingsBuilder
         .sampleRowKeysSettings()
         .setSimpleTimeoutNoRetries(
-            baseSettingsBuilder.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())
+            settings.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())
         .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes());
 
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
@@ -119,14 +119,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
-    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> spooling =
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> spoolable =
         stub.sampleRowKeysCallable().all();
 
-    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retrying =
-        Callables.retrying(spooling, settings.sampleRowKeysSettings(), clientContext);
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retryable =
+        Callables.retrying(spoolable, settings.sampleRowKeysSettings(), clientContext);
 
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withContext =
-        retrying.withDefaultCallContext(clientContext.getDefaultCallContext());
+        retryable.withDefaultCallContext(clientContext.getDefaultCallContext());
 
     return new SampleRowKeysCallable(withContext, requestContext);
   }

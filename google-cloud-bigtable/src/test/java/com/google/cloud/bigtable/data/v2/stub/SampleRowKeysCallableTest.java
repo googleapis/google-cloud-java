@@ -34,7 +34,6 @@ import io.grpc.Status.Code;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -66,8 +65,7 @@ public class SampleRowKeysCallableTest {
   }
 
   @Test
-  public void responseCorrectlyTransformed()
-      throws ExecutionException, InterruptedException, TimeoutException {
+  public void responseCorrectlyTransformed() throws Exception {
     ApiFuture<List<KeyOffset>> result = callable.futureCall("my-table");
 
     inner.response.set(
@@ -89,7 +87,7 @@ public class SampleRowKeysCallableTest {
   }
 
   @Test
-  public void errorIsPropagated() {
+  public void errorIsPropagated() throws Exception {
     ApiFuture<List<KeyOffset>> result = callable.futureCall("my-table");
 
     Throwable expectedError =
@@ -101,8 +99,6 @@ public class SampleRowKeysCallableTest {
       result.get(1, TimeUnit.SECONDS);
     } catch (ExecutionException e) {
       actualError = e.getCause();
-    } catch (Throwable t) {
-      actualError = t;
     }
 
     assertThat(actualError).isEqualTo(expectedError);

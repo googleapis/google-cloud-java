@@ -61,16 +61,16 @@ class SampleRowKeysCallable extends UnaryCallable<String, List<KeyOffset>> {
         rawResponse,
         new ApiFunction<List<SampleRowKeysResponse>, List<KeyOffset>>() {
           @Override
-          public List<KeyOffset> apply(List<SampleRowKeysResponse> responses) {
-            return convert(responses);
+          public List<KeyOffset> apply(List<SampleRowKeysResponse> rawResponse) {
+            return convert(rawResponse);
           }
         });
   }
 
-  private List<KeyOffset> convert(List<SampleRowKeysResponse> response) {
+  private static List<KeyOffset> convert(List<SampleRowKeysResponse> rawResponse) {
     ImmutableList.Builder<KeyOffset> results = ImmutableList.builder();
 
-    for (SampleRowKeysResponse element : response) {
+    for (SampleRowKeysResponse element : rawResponse) {
       results.add(KeyOffset.create(element.getRowKey(), element.getOffsetBytes()));
     }
 
