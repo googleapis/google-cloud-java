@@ -364,7 +364,6 @@ final class StateMachine<RowT> {
   }
 
   static class InvalidInputException extends RuntimeException {
-
     InvalidInputException(String message) {
       super(message);
     }
