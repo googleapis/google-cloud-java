@@ -24,7 +24,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableMap;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Map;
@@ -67,7 +66,7 @@ public class TableInfo implements Serializable {
   private final Long lastModifiedTime;
   private final TableDefinition definition;
   private final EncryptionConfiguration encryptionConfiguration;
-  private final Map<String, String> labels;
+  private final Labels labels;
 
   /**
    * A builder for {@code TableInfo} objects.
@@ -121,6 +120,10 @@ public class TableInfo implements Serializable {
      *
      * <p>Unstable, because labels are <a
      * href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables">experimental</a>.
+     *
+     * <p>When used with {@link BigQuery#update(TableInfo, TableOption...)}, setting {@code labels}
+     * to {@code null} removes all labels; otherwise all keys that are mapped to {@code null} values
+     * are removed and other keys are updated to their respective values.
      */
     @BetaApi
     public abstract Builder setLabels(Map<String, String> labels);
@@ -146,7 +149,7 @@ public class TableInfo implements Serializable {
     private Long lastModifiedTime;
     private TableDefinition definition;
     private EncryptionConfiguration encryptionConfiguration;
-    private Map<String, String> labels;
+    private Labels labels = Labels.ZERO;
 
     BuilderImpl() {}
 
@@ -162,7 +165,7 @@ public class TableInfo implements Serializable {
       this.lastModifiedTime = tableInfo.lastModifiedTime;
       this.definition = tableInfo.definition;
       this.encryptionConfiguration = tableInfo.encryptionConfiguration;
-      this.labels = tableInfo.labels != null ? ImmutableMap.copyOf(tableInfo.labels) : null;
+      this.labels = tableInfo.labels;
     }
 
     BuilderImpl(Table tablePb) {
@@ -182,7 +185,7 @@ public class TableInfo implements Serializable {
         this.encryptionConfiguration =
             new EncryptionConfiguration.Builder(tablePb.getEncryptionConfiguration()).build();
       }
-      this.labels = tablePb.getLabels() != null ? ImmutableMap.copyOf(tablePb.getLabels()) : null;
+      this.labels = Labels.fromPb(tablePb.getLabels());
     }
 
     @Override
@@ -260,7 +263,7 @@ public class TableInfo implements Serializable {
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
-      this.labels = ImmutableMap.copyOf(labels);
+      this.labels = Labels.fromUser(labels);
       return this;
     }
 
@@ -380,7 +383,7 @@ public class TableInfo implements Serializable {
    */
   @BetaApi
   public Map<String, String> getLabels() {
-    return labels;
+    return labels.userMap();
   }
 
   /**
@@ -462,9 +465,7 @@ public class TableInfo implements Serializable {
     if (encryptionConfiguration != null) {
       tablePb.setEncryptionConfiguration(encryptionConfiguration.toPb());
     }
-    if (labels != null) {
-      tablePb.setLabels(labels);
-    }
+    tablePb.setLabels(labels.toPb());
     return tablePb;
   }
 

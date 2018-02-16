@@ -18,7 +18,6 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
@@ -133,6 +132,7 @@ public class Table extends TableInfo {
     @Override
     public TableInfo.Builder setEncryptionConfiguration(EncryptionConfiguration configuration) {
       infoBuilder.setEncryptionConfiguration(configuration);
+      return this;
     }
 
     @Override
