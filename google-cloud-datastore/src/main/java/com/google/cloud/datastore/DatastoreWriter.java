@@ -50,6 +50,8 @@ public interface DatastoreWriter {
   /**
    * A Datastore update operation. The operation will fail if an entity with the same key does not
    * already exist.
+   *
+   * @throws DatastoreException upon failure
    */
   void update(Entity... entities);
 

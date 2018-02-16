@@ -20,9 +20,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.Data;
+import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.io.BaseEncoding;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -65,7 +65,7 @@ public class FieldValue implements Serializable {
   }
 
   private FieldValue(Attribute attribute, Object value) {
-    this.attribute = attribute;
+    this.attribute = checkNotNull(attribute);
     this.value = value;
   }
 
@@ -251,7 +251,22 @@ public class FieldValue implements Serializable {
     return attribute == other.attribute && Objects.equals(value, other.value);
   }
 
-  static FieldValue of(Attribute attribute, Object value) {
+  /**
+   * Creates an instance of {@code FieldValue}, useful for testing.
+   *
+   * <p>If the {@code attribute} is {@link Attribute#PRIMITIVE}, the {@code value} should be the
+   * string representation of the underlying value, eg {@code "123"} for number {@code 123}.
+   *
+   * <p>If the {@code attribute} is {@link Attribute#REPEATED} or {@link Attribute#RECORD}, the
+   * {@code value} should be {@code List} of {@link FieldValue}s or {@link FieldValueList},
+   * respectively.
+   *
+   * <p>This method is unstable. See <a
+   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * for more context.
+   */
+  @BetaApi
+  public static FieldValue of(Attribute attribute, Object value) {
     return new FieldValue(attribute, value);
   }
 

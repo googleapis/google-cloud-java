@@ -39,6 +39,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
   private final TableId destinationTable;
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
+  private final EncryptionConfiguration destinationEncryptionConfiguration;
 
   public static final class Builder
       extends JobConfiguration.Builder<CopyJobConfiguration, Builder> {
@@ -47,6 +48,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     private TableId destinationTable;
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
+    private EncryptionConfiguration destinationEncryptionConfiguration;
 
     private Builder() {
       super(Type.COPY);
@@ -58,6 +60,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
       this.destinationTable = jobConfiguration.destinationTable;
       this.createDisposition = jobConfiguration.createDisposition;
       this.writeDisposition = jobConfiguration.writeDisposition;
+      this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -78,6 +81,10 @@ public final class CopyJobConfiguration extends JobConfiguration {
         this.writeDisposition = JobInfo.WriteDisposition.valueOf(
             copyConfigurationPb.getWriteDisposition());
       }
+      if (copyConfigurationPb.getDestinationEncryptionConfiguration() != null) {
+        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
+            copyConfigurationPb.getDestinationEncryptionConfiguration()).build();
+      }
     }
 
 
@@ -95,6 +102,13 @@ public final class CopyJobConfiguration extends JobConfiguration {
      */
     public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
+      return this;
+    }
+
+
+    public Builder setDestinationEncryptionConfiguration(
+        EncryptionConfiguration encryptionConfiguration) {
+      this.destinationEncryptionConfiguration = encryptionConfiguration;
       return this;
     }
 
@@ -133,6 +147,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     this.destinationTable = checkNotNull(builder.destinationTable);
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
+    this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
   }
 
 
@@ -149,6 +164,11 @@ public final class CopyJobConfiguration extends JobConfiguration {
    */
   public TableId getDestinationTable() {
     return destinationTable;
+  }
+
+
+  public EncryptionConfiguration getDestinationEncryptionConfiguration() {
+    return destinationEncryptionConfiguration;
   }
 
 
@@ -183,6 +203,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return super.toStringHelper()
         .add("sourceTables", sourceTables)
         .add("destinationTable", destinationTable)
+        .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition);
   }
@@ -228,6 +249,10 @@ public final class CopyJobConfiguration extends JobConfiguration {
     }
     if (writeDisposition != null) {
       configurationPb.setWriteDisposition(writeDisposition.toString());
+    }
+    if (destinationEncryptionConfiguration != null) {
+      configurationPb.setDestinationEncryptionConfiguration(
+          destinationEncryptionConfiguration.toPb());
     }
     return new com.google.api.services.bigquery.model.JobConfiguration().setCopy(configurationPb);
   }

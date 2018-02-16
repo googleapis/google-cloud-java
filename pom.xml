@@ -103,8 +103,8 @@
     <tag>HEAD</tag>
   </scm>
   <ciManagement>
-    <system>Travis CI</system>
-    <url>https://travis-ci.org/GoogleCloudPlatform/google-cloud-java</url>
+    <system>Circle CI</system>
+    <url>https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java</url>
   </ciManagement>
   <issueManagement>
     <url>https://github.com/GoogleCloudPlatform/google-cloud-java/issues</url>
@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
-        <version>2.1.2</version>
+        <version>2.2.0</version>
       </dependency>
       <dependency>
         <groupId>org.easymock</groupId>
