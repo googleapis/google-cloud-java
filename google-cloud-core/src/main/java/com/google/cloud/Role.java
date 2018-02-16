@@ -83,8 +83,10 @@ public final class Role implements Serializable {
    * Returns a new role given its string value.
    *
    * <p>If the value contains no slash character ({@code '/'}), the prefix {@code "roles/""} is
-   * prepended. For custom roles, call this method with the fully-qualified name, eg {@code
-   * "projects/XXX/roles/YYY"}.
+   * prepended. This slightly simplifies usage for <a
+   * href="https://cloud.google.com/iam/docs/understanding-roles>"predefined roles</a>. For <a
+   * href="https://cloud.google.com/iam/docs/creating-custom-roles">custom roles</a>, call this
+   * method with the fully-qualified name, eg {@code "projects/XXX/roles/YYY"}.
    *
    * @param value the string value for the role
    * @see <a href="https://cloud.google.com/iam/docs/viewing-grantable-roles">Viewing the Grantable
