@@ -10,7 +10,7 @@ apply plugin: 'signing'
 
 description = 'PROTO library for proto-google-iam-v1'
 group = "com.google.api.grpc"
-version = "0.1.29"
+version = "0.1.30"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
@@ -110,61 +110,4 @@ if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')
       + "to be set. They can be set inside your ~/.gradle/gradle.properties file.")
   }
   tasks.uploadArchives.dependsOn(failUploadArchives)
-}
-
-task checkOutGhPages << {
-  if (!new File(javaDocRoot).exists()) {
-    exec {
-      workingDir projectDir
-      commandLine 'git', 'clone', '--branch', 'gh-pages',
-          '--single-branch', 'git@github.com:googleapis/googleapis.git', 'tmp_gh-pages'
-    }
-  }
-}
-
-task copyFilesToGhPages {
-  dependsOn 'checkOutGhPages'
-  dependsOn 'javadoc'
-  doLast {
-    def newSiteDirPath = javaDocRoot + "/java/${packageName}/${project.version}/apidocs/"
-    new File(newSiteDirPath).mkdirs()
-    copy {
-      from 'build/docs/javadoc'
-      into newSiteDirPath
-    }
-  }
-}
-
-// Regenerates the gh-pages branch under tmp_gh-pages
-task updateDocs {
-  dependsOn 'copyFilesToGhPages'
-  doLast {
-    def outputContent = new File(projectDir.getAbsolutePath() + '/templates/apidocs_index.html.template').text
-    outputContent = outputContent.replace('{{siteVersion}}', project.version)
-    outputContent = outputContent.replace('{{packageName}}', packageName)
-    new File(javaDocRoot + "/java/${packageName}/apidocs").mkdirs()
-    new File(javaDocRoot + "/java/${packageName}/apidocs/index.html").write(outputContent)
-    exec {
-      workingDir javaDocRoot
-      commandLine 'git', 'add', '.'
-    }
-    exec {
-      workingDir javaDocRoot
-      commandLine 'git', 'commit', '-m', "Regenerating docs for ${packageName} ${project.version}"
-    }
-    println 'New docs have been generated under tmp_gh-pages and have been committed;'
-    println 'Next they just need to be pushed with "git push".'
-  }
-}
-
-// Regenerates and push the gh-pages branch under tmp_gh-pages
-task updateAndPushDocs {
-  dependsOn 'updateDocs'
-  doLast {
-    exec {
-      workingDir javaDocRoot
-      commandLine 'git', 'push'
-      println "New docs have been pushed to Github for ${packageName} ${project.version}"
-    }
-  }
 }
