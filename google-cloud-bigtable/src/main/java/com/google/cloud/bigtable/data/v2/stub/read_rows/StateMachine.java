@@ -230,6 +230,7 @@ final class StateMachine<RowT> {
          */
         @Override
         State handleChunk(CellChunk chunk) {
+          // Handle row level logic
           if (chunk.getResetRow()) {
             return handleResetChunk(chunk);
           }
@@ -238,17 +239,7 @@ final class StateMachine<RowT> {
             validate(rowKey.equals(chunk.getRowKey()), "Cell row keys must not change");
           }
 
-          boolean isSplit = chunk.getValueSize() > 0;
-          if (isSplit) {
-            validate(
-                !chunk.getCommitRow(), "NewRow can't commit when valueSize indicates more data");
-            validate(
-                !chunk.getValue().isEmpty(),
-                "NewRow must have data when valueSize promises more data in the next chunk");
-          }
-          validate(chunk.getValueSize() >= 0, "NewRow valueSize can't be negative");
-
-          // update name & make sure it changed
+          // Update cell identifier buffers
           if (chunk.hasFamilyName()) {
             familyName = chunk.getFamilyName().getValue();
             validate(chunk.hasQualifier(), "NewCell has a familyName, but no qualifier");
@@ -259,14 +250,24 @@ final class StateMachine<RowT> {
           timestamp = chunk.getTimestampMicros();
           labels = chunk.getLabelsList();
 
-          // calculate cell size
+          // Update value expectations
+          validate(chunk.getValueSize() >= 0, "NewRow valueSize can't be negative");
+
+          boolean isSplit = chunk.getValueSize() > 0;
           if (isSplit) {
+            validate(
+                !chunk.getCommitRow(), "NewRow can't commit when valueSize indicates more data");
+            validate(
+                !chunk.getValue().isEmpty(),
+                "NewRow must have data when valueSize promises more data in the next chunk");
+
             expectedCellSize = chunk.getValueSize();
             remainingCellBytes = expectedCellSize - chunk.getValue().size();
           } else {
             expectedCellSize = chunk.getValue().size();
             remainingCellBytes = 0;
           }
+
           // Start building cell
           adapter.startCell(familyName, qualifier, timestamp, labels, expectedCellSize);
           adapter.cellValue(chunk.getValue());
