@@ -51,7 +51,6 @@ import java.util.List;
  *   ReadRowsResponse response = responseIterator.next();
  *   if (!response.getLastScannedRowKey().isEmpty()) {
  *     stateMachine.handleLastScannedRow(response.getLastScannedRowKey());
- *     continue;
  *   }
  *
  *   for(CellChunk chunk : response.getChunksList()) {
