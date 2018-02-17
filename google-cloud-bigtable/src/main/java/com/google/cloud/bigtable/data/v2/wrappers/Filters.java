@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.data.v2.wrappers;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ColumnRange;
 import com.google.bigtable.v2.RowFilter;
-import com.google.bigtable.v2.RowFilter.Condition;
 import com.google.bigtable.v2.ValueRange;
 import com.google.cloud.bigtable.data.v2.internal.RegexUtil;
 import com.google.cloud.bigtable.data.v2.wrappers.Range.AbstractByteStringRange;
@@ -26,7 +25,6 @@ import com.google.cloud.bigtable.data.v2.wrappers.Range.AbstractTimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * A Fluent DSL to create a hierarchy of filters for the CheckAndMutateRow RPCs and ReadRows Query.
@@ -151,6 +149,15 @@ public final class Filters {
   }
 
   // Miscellaneous filters without a clear target.
+  /**
+   * Wraps protobuf representation of a filter.
+   *
+   * <p>For advanced use only.
+   */
+  public Filter raw(RowFilter rowFilter) {
+    return new SimpleFilter(rowFilter);
+  }
+
   /** Matches all cells, regardless of input. Functionally equivalent to having no filter. */
   public Filter pass() {
     return PASS;
@@ -270,7 +277,7 @@ public final class Filters {
 
     private ConditionFilter(@Nonnull Filter predicate) {
       Preconditions.checkNotNull(predicate);
-      builder = Condition.newBuilder().setPredicateFilter(predicate.toProto());
+      builder = RowFilter.Condition.newBuilder().setPredicateFilter(predicate.toProto());
     }
 
     /** Sets (replaces) the filter to apply when the predicate is true. */
@@ -321,7 +328,7 @@ public final class Filters {
      */
     public Filter regex(@Nonnull String regex) {
       Preconditions.checkNotNull(regex);
-      return regex(wrapString(regex));
+      return regex(ByteString.copyFromUtf8(regex));
     }
 
     /**
@@ -392,7 +399,8 @@ public final class Filters {
      * be present in a binary qualifier.
      */
     public Filter regex(@Nonnull String regex) {
-      return regex(wrapString(regex));
+      Preconditions.checkNotNull(regex);
+      return regex(ByteString.copyFromUtf8(regex));
     }
 
     /**
@@ -410,6 +418,7 @@ public final class Filters {
 
     /** Matches only cells from columns whose qualifiers equal the value. */
     public Filter exactMatch(@Nonnull ByteString value) {
+      Preconditions.checkNotNull(value);
       return regex(RegexUtil.literalRegex(value));
     }
 
@@ -431,7 +440,6 @@ public final class Filters {
     private final String family;
 
     private QualifierRangeFilter(String family) {
-      super();
       this.family = family;
     }
 
@@ -487,15 +495,10 @@ public final class Filters {
     }
   }
 
-  /**
-   * Matches only cells with microsecond timestamps within the given range. Start is inclusive and
-   * end is exclusive.
-   */
+  /** Matches only cells with microsecond timestamps within the given range. */
   public static final class TimestampRangeFilter
       extends AbstractTimestampRange<TimestampRangeFilter> implements Filter {
-    private TimestampRangeFilter() {
-      super();
-    }
+    private TimestampRangeFilter() {}
 
     @InternalApi
     @Override
@@ -547,11 +550,13 @@ public final class Filters {
      * in a binary value.
      */
     public Filter regex(@Nonnull String regex) {
-      return regex(wrapString(regex));
+      Preconditions.checkNotNull(regex);
+      return regex(ByteString.copyFromUtf8(regex));
     }
 
     /** Matches only cells with values that match the given value. */
     public Filter exactMatch(@Nonnull ByteString value) {
+      Preconditions.checkNotNull(value);
       return regex(RegexUtil.literalRegex(value));
     }
 
@@ -586,9 +591,7 @@ public final class Filters {
   /** Matches only cells with values that fall within the given value range. */
   public static final class ValueRangeFilter extends AbstractByteStringRange<ValueRangeFilter>
       implements Filter {
-    private ValueRangeFilter() {
-      super();
-    }
+    private ValueRangeFilter() {}
 
     @InternalApi
     @Override
@@ -690,12 +693,5 @@ public final class Filters {
   public interface Filter extends Cloneable {
     @InternalApi
     RowFilter toProto();
-  }
-
-  private static ByteString wrapString(@Nullable String value) {
-    if (value == null) {
-      return null;
-    }
-    return ByteString.copyFromUtf8(value);
   }
 }
