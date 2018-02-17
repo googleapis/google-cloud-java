@@ -49,6 +49,11 @@ public final class LegacySQLTypeName extends StringEnumValue {
   public static final LegacySQLTypeName INTEGER = type.createAndRegister("INTEGER").setStandardType(StandardSQLTypeName.INT64);
   /** A 64-bit IEEE binary floating-point value. */
   public static final LegacySQLTypeName FLOAT = type.createAndRegister("FLOAT").setStandardType(StandardSQLTypeName.FLOAT64);
+  /**
+   * A decimal value with 38 digits of precision and 9 digits of scale.
+   * Note, support for this type is limited in legacy SQL.
+   */
+  public static final LegacySQLTypeName NUMERIC = type.createAndRegister("NUMERIC").setStandardType(StandardSQLTypeName.NUMERIC);
   /** A Boolean value (true or false). */
   public static final LegacySQLTypeName BOOLEAN = type.createAndRegister("BOOLEAN").setStandardType(StandardSQLTypeName.BOOL);
   /** Represents an absolute point in time, with microsecond precision. */
