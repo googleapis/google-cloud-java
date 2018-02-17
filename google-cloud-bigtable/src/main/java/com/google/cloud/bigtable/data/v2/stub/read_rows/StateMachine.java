@@ -117,14 +117,12 @@ final class StateMachine<RowT> {
    * an exception and should be used for further input.
    *
    * @param chunk The new chunk to process.
-   * @return True if this chunk completed a row.
    * @throws InvalidInputException When the chunk is not applicable to the current state.
    * @throws IllegalStateException When the internal state is inconsistent
    */
-  boolean handleChunk(CellChunk chunk) {
+  void handleChunk(CellChunk chunk) {
     try {
       currentState = currentState.handleChunk(chunk);
-      return currentState == CompleteRow;
     } catch (RuntimeException e) {
       currentState = null;
       throw e;
@@ -144,6 +142,10 @@ final class StateMachine<RowT> {
     return row;
   }
 
+  /** Checks if there is a complete to bew consumed. */
+  boolean hasCompleteRow() {
+    return currentState == CompleteRow;
+  }
   /**
    * Checks if the state machine is in the middle of processing a row.
    *

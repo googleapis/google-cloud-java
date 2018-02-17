@@ -54,11 +54,10 @@ class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
     buffer = response;
     nextChunk = 0;
 
-    // If the server sends a scan heartbeat, wrap it in a synthetic row that will be filtered out
-    // after the resume logic.
+    // If the server sends a scan heartbeat, notify the StateMachine. It will generate a synthetic
+    // row marker. See RowAdapter for more info.
     if (!response.getLastScannedRowKey().isEmpty()) {
       stateMachine.handleLastScannedRow(response.getLastScannedRowKey());
-      nextRow = stateMachine.consumeRow();
     }
   }
 
@@ -97,8 +96,16 @@ class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
   }
 
   private boolean readNextRow() {
+    // StateMachine might have a complete row already from receiving a scan marker.
+    if (stateMachine.hasCompleteRow()) {
+      nextRow = stateMachine.consumeRow();
+      return true;
+    }
+
     while (nextChunk < buffer.getChunksCount()) {
-      if (stateMachine.handleChunk(buffer.getChunks(nextChunk++))) {
+      stateMachine.handleChunk(buffer.getChunks(nextChunk++));
+
+      if (stateMachine.hasCompleteRow()) {
         nextRow = stateMachine.consumeRow();
         return true;
       }
