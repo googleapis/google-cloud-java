@@ -31,6 +31,8 @@ import com.google.common.base.Preconditions;
  * applications.
  *
  * <p>Package-private for internal use.
+ *
+ * @see com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserver for example usage.
  */
 @InternalApi
 class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
