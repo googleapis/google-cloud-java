@@ -48,6 +48,11 @@ import java.util.List;
  * StateMachine stateMachine = new StateMachine<>(myRowAdapter);
  * while(responseIterator.hasNext()) {
  *   ReadRowsResponse response = responseIterator.next();
+ *   if (!response.getLastScannedRowKey().isEmpty()) {
+ *     stateMachine.handleLastScannedRow(response.getLastScannedRowKey());
+ *     continue;
+ *   }
+ *
  *   for(CellChunk chunk : response.getChunksList()) {
  *     boolean hasCompleteRow = stateMachine.handleChunk(chunk);
  *     if (hasCompleteRow) {
@@ -69,7 +74,7 @@ import java.util.List;
  */
 final class StateMachine<RowT> {
   private final RowBuilder<RowT> adapter;
-  private State state;
+  private State currentState;
   private ByteString lastCompleteRowKey;
 
   // Track current cell attributes: protocol omits them when they are repeated
@@ -100,9 +105,9 @@ final class StateMachine<RowT> {
    */
   void handleLastScannedRow(ByteString key) {
     try {
-      state = state.handleLastScannedRow(key);
+      currentState = currentState.handleLastScannedRow(key);
     } catch (RuntimeException e) {
-      state = null;
+      currentState = null;
       throw e;
     }
   }
@@ -118,10 +123,10 @@ final class StateMachine<RowT> {
    */
   boolean handleChunk(CellChunk chunk) {
     try {
-      state = state.handleChunk(chunk);
-      return state == CompleteRow;
+      currentState = currentState.handleChunk(chunk);
+      return currentState == CompleteRow;
     } catch (RuntimeException e) {
-      state = null;
+      currentState = null;
       throw e;
     }
   }
@@ -133,7 +138,7 @@ final class StateMachine<RowT> {
    * @throws IllegalStateException If the last chunk did not complete a row.
    */
   RowT consumeRow() {
-    Preconditions.checkState(state == CompleteRow, "No row to consume");
+    Preconditions.checkState(currentState == CompleteRow, "No row to consume");
     RowT row = completeRow;
     reset();
     return row;
@@ -145,11 +150,11 @@ final class StateMachine<RowT> {
    * @return True If there is a row in progress.
    */
   boolean isRowInProgress() {
-    return state != NewRow;
+    return currentState != NewRow;
   }
 
   private void reset() {
-    state = NewRow;
+    currentState = NewRow;
     rowKey = null;
     familyName = null;
     qualifier = null;

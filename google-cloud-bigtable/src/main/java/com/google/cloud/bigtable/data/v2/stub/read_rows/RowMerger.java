@@ -54,7 +54,7 @@ class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
     buffer = response;
     nextChunk = 0;
 
-    // If the server sends a scan heartbeat, wrap it in a synthetic row that will be be filtered out
+    // If the server sends a scan heartbeat, wrap it in a synthetic row that will be filtered out
     // after the resume logic.
     if (!response.getLastScannedRowKey().isEmpty()) {
       stateMachine.handleLastScannedRow(response.getLastScannedRowKey());
@@ -64,12 +64,29 @@ class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
 
   @Override
   public boolean hasFullFrame() {
-    return nextRow != null || readNextRow();
+    // Check if there an assembled row to consume
+    if (nextRow != null) {
+      return true;
+    }
+
+    // Otherwise try to assemble a new row (readNextRow will set nextRow)
+    boolean newRowCompleted = readNextRow();
+    return newRowCompleted;
   }
 
   @Override
   public boolean hasPartialFrame() {
-    return hasFullFrame() || stateMachine.isRowInProgress();
+    // Check if any of the buffers in this class contain data.
+    // `hasFullFrame()` will check if `nextRow` has a row ready to go or if chunks in `buffer` can
+    // be used to create a new `nextRow`
+    if (hasFullFrame()) {
+      return true;
+    }
+
+    // If an assembled is still not available, then that means `buffer` has been fully consumed.
+    // The last place to check is the StateMachine buffer, to see if its holding on to an incomplete
+    // row.
+    return stateMachine.isRowInProgress();
   }
 
   @Override
