@@ -26,7 +26,7 @@ import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import com.google.cloud.bigtable.data.v2.wrappers.RowCell;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import com.google.common.base.CaseFormat;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
@@ -37,7 +37,6 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -199,34 +198,26 @@ public class ReadRowsMergingAcceptanceTest {
     }
 
     @Override
-    public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("rowKey", rowKey)
-          .add("family", family)
-          .add("qualifier", qualifier)
-          .add("timestamp", timestamp)
-          .add("value", value)
-          .add("label", label)
-          .add("error", error)
-          .toString();
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      TestResult that = (TestResult) o;
+      return Objects.equal(rowKey, that.rowKey)
+          && Objects.equal(family, that.family)
+          && Objects.equal(qualifier, that.qualifier)
+          && timestamp == that.timestamp
+          && Objects.equal(value, that.value)
+          && Objects.equal(label, that.label)
+          && error == that.error;
     }
 
     @Override
-    public boolean equals(Object obj) {
-      if (obj == null || !(obj instanceof TestResult)) {
-        return false;
-      }
-      if (obj == this) {
-        return true;
-      }
-      TestResult other = (TestResult) obj;
-      return Objects.equals(rowKey, other.rowKey)
-          && Objects.equals(family, other.family)
-          && Objects.equals(qualifier, other.qualifier)
-          && Objects.equals(timestamp, other.timestamp)
-          && Objects.equals(value, other.value)
-          && Objects.equals(label, other.label)
-          && Objects.equals(error, other.error);
+    public int hashCode() {
+      return Objects.hashCode(rowKey, family, qualifier, timestamp, value, label, error);
     }
   }
   // </editor-fold>
