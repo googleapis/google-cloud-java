@@ -23,8 +23,9 @@ import com.google.protobuf.ByteString;
 import java.util.List;
 
 /**
- * A state machine to merge {@link CellChunk}s from a ReadRows response stream. Building of the
- * actual row object is delegated to a {@link RowBuilder}. This class is not thread safe.
+ * A state machine to merge {@link com.google.bigtable.v2.ReadRowsResponse.CellChunk}s from a
+ * ReadRows response stream. Building of the actual row object is delegated to a {@link RowBuilder}.
+ * This class is not thread safe.
  *
  * <p>The inputs are:
  *
@@ -102,6 +103,13 @@ final class StateMachine<RowT> {
    * Feeds the last scanned serverside key into the state machine. The adapter will wrap this key in
    * a special marker row that can be used downstream for efficient resume. It is the callers
    * responsibility to eventually filter out this row.
+   *
+   * <dl>
+   *   <dt>Valid states:
+   *   <dd>{@link StateMachine#NewRow}
+   *   <dt>Resulting states:
+   *   <dd>{@link StateMachine#CompleteRow}
+   * </dl>
    */
   void handleLastScannedRow(ByteString key) {
     try {
@@ -115,6 +123,17 @@ final class StateMachine<RowT> {
   /**
    * Feeds a new chunk into the sate machine. If the chunk is invalid, the state machine will throw
    * an exception and should be used for further input.
+   *
+   * <dl>
+   *   <dt>Valid states:
+   *   <dd>{@link StateMachine#NewRow}
+   *   <dd>{@link StateMachine#NewCell}
+   *   <dd>{@link StateMachine#CellInProgress}
+   *   <dt>Resulting states:
+   *   <dd>{@link StateMachine#NewCell}
+   *   <dd>{@link StateMachine#CellInProgress}
+   *   <dd>{@link StateMachine#CompleteRow}
+   * </dl>
    *
    * @param chunk The new chunk to process.
    * @throws InvalidInputException When the chunk is not applicable to the current state.
@@ -164,11 +183,19 @@ final class StateMachine<RowT> {
     labels = null;
     expectedCellSize = 0;
     remainingCellBytes = 0;
+    completeRow = null;
 
     adapter.reset();
   }
 
-  /** Base class for all of the state machine's internal states. */
+  /**
+   * Base class for all of the state machine's internal states.
+   *
+   * <p>Each state can consume 2 events: lastScannedRowKey and a chunk. By default, the default
+   * implementation will just throw an IllegalStateException unless the subclass adds explicit
+   * handling for the event by overriding {@link #handleLastScannedRow(ByteString)} or {@link
+   * #handleChunk(CellChunk)}.
+   */
   abstract static class State {
     /**
      * Accepts the last row key scanned by the server. And set its as the last complete row. This
@@ -345,6 +372,10 @@ final class StateMachine<RowT> {
       };
 
   // Helpers ------------------------
+  /**
+   * Handles a special CellChunk that is marked with the reset flag. Will drop all buffers and
+   * transition to the {@link #NewRow} state.
+   */
   private State handleResetChunk(CellChunk cellChunk) {
     validate(cellChunk.getRowKey().isEmpty(), "Reset chunks can't have row keys");
     validate(!cellChunk.hasFamilyName(), "Reset chunks can't have families");
@@ -354,7 +385,7 @@ final class StateMachine<RowT> {
     validate(cellChunk.getValue().isEmpty(), "Reset chunks can't have values");
 
     reset();
-    return NewRow;
+    return currentState; // NewRow
   }
 
   private State handleCommit() {

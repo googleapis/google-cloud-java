@@ -26,9 +26,9 @@ import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter.RowBuilder;
 import com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserver;
 
 /**
- * A ServerStreamingCallable that will merge {@link ReadRowsResponse.CellChunk}s into logical rows.
- * This class delegates all of the work to gax's {@link ReframingResponseObserver} and the logic to
- * {@link RowMerger}.
+ * A ServerStreamingCallable that will merge {@link
+ * com.google.bigtable.v2.ReadRowsResponse.CellChunk}s into logical rows. This class delegates all
+ * of the work to gax's {@link ReframingResponseObserver} and the logic to {@link RowMerger}.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.

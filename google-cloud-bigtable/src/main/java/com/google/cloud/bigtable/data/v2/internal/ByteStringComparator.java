@@ -28,7 +28,8 @@ public class ByteStringComparator implements Comparator<ByteString> {
   public int compare(ByteString o1, ByteString o2) {
     int sizeA = o1.size();
     int sizeB = o2.size();
-    for (int i = 0, size = Math.min(sizeA, sizeB); i < size; i++) {
+    int shortestSize = Math.min(sizeA, sizeB);
+    for (int i = 0; i < shortestSize; i++) {
       int byteA = o1.byteAt(i) & 0xff;
       int byteB = o2.byteAt(i) & 0xff;
       if (byteA == byteB) {
