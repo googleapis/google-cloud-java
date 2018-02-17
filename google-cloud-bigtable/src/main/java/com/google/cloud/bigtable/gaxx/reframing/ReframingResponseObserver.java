@@ -193,10 +193,23 @@ public class ReframingResponseObserver<InnerT, OuterT>
    */
   @Override
   protected void onResponseImpl(InnerT response) {
+    boolean shoudCancelStream = false;
+
     synchronized (lock) {
       Preconditions.checkState(awaitingInner, "Received unsolicited response from upstream");
       awaitingInner = false;
-      reframer.push(response);
+
+      try {
+        reframer.push(response);
+      } catch (Throwable t) {
+        if (error != null) {
+          shoudCancelStream = true;
+          error = t;
+        }
+      }
+    }
+    if (shoudCancelStream) {
+      innerController.cancel();
     }
     deliver();
   }
@@ -262,6 +275,7 @@ public class ReframingResponseObserver<InnerT, OuterT>
 
       if (forceClose) {
         outerResponseObserver.onError(t);
+        innerController.cancel();
       }
     }
   }
