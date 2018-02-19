@@ -275,7 +275,7 @@ Version Management
 
 The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
 
-```
+```xml
   <dependencyManagement>
     <dependencies>
       <dependency>
