@@ -6,7 +6,7 @@ components plus its dependencies.
 
 To use it in Maven, add the following to your POM:
 
-```
+```xml
   <dependencyManagement>
     <dependencies>
       <dependency>
