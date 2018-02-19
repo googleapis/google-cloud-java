@@ -16,6 +16,12 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.ExecutorProvider;
@@ -35,23 +41,16 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
+import java.io.IOException;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ScheduledExecutorService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
-
-import java.io.IOException;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ScheduledExecutorService;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
@@ -482,12 +481,12 @@ public class PublisherImplTest {
     assertEquals(
         Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
         builder.batchingSettings.getElementCountThreshold().longValue());
-    assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
+    assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings.build());
   }
 
   @Test
-  public void testBuilderInvalidArguments() {
-    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
+  public void testBuilderInvalidArguments() throws Exception {
+    Publisher.Builder builder = getTestPublisherBuilder();
 
     try {
       builder.setChannelProvider(null);
@@ -592,32 +591,62 @@ public class PublisherImplTest {
       // Expected
     }
 
-    builder.setRetrySettings(
-        Publisher.Builder.DEFAULT_RETRY_SETTINGS
-            .toBuilder()
-            .setInitialRpcTimeout(Publisher.Builder.MIN_RPC_TIMEOUT)
-            .build());
+    // Remember to shutdown so we don't leak resources.
+    builder
+        .setRetrySettings(
+            Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                .toBuilder()
+                .setInitialRpcTimeout(Publisher.MIN_RPC_TIMEOUT)
+                .build())
+        .build()
+        .shutdown();
     try {
-      builder.setRetrySettings(
-          Publisher.Builder.DEFAULT_RETRY_SETTINGS
-              .toBuilder()
-              .setInitialRpcTimeout(Publisher.Builder.MIN_RPC_TIMEOUT.minusMillis(1))
-              .build());
+      builder
+          .setRetrySettings(
+              Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                  .toBuilder()
+                  .setInitialRpcTimeout(Publisher.MIN_RPC_TIMEOUT.minusMillis(1))
+                  .build())
+          .build()
+          .shutdown();
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
-    builder.setRetrySettings(
-        Publisher.Builder.DEFAULT_RETRY_SETTINGS
-            .toBuilder()
-            .setTotalTimeout(Publisher.Builder.MIN_TOTAL_TIMEOUT)
-            .build());
     try {
-      builder.setRetrySettings(
-          Publisher.Builder.DEFAULT_RETRY_SETTINGS
-              .toBuilder()
-              .setTotalTimeout(Publisher.Builder.MIN_TOTAL_TIMEOUT.minusMillis(1))
-              .build());
+      Publisher.Builder builder2 = getTestPublisherBuilder();
+      builder2.retrySettingsBuilder().setInitialRpcTimeout(Publisher.MIN_RPC_TIMEOUT.minusMillis(1));
+      builder2.build().shutdown();
+      fail("Should have thrown an IllegalArgumentException");
+    } catch (IllegalArgumentException expected) {
+      // Expected
+    }
+
+    builder
+        .setRetrySettings(
+            Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                .toBuilder()
+                .setTotalTimeout(Publisher.MIN_TOTAL_TIMEOUT)
+                .build())
+        .build()
+        .shutdown();
+    try {
+      builder
+          .setRetrySettings(
+              Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                  .toBuilder()
+                  .setTotalTimeout(Publisher.MIN_TOTAL_TIMEOUT.minusMillis(1))
+                  .build())
+          .build()
+          .shutdown();
+      fail("Should have thrown an IllegalArgumentException");
+    } catch (IllegalArgumentException expected) {
+      // Expected
+    }
+    try {
+      Publisher.Builder builder2 = getTestPublisherBuilder();
+      builder2.retrySettingsBuilder().setTotalTimeout(Publisher.MIN_TOTAL_TIMEOUT.minusMillis(1));
+      builder2.build().shutdown();
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
