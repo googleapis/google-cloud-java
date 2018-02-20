@@ -215,9 +215,12 @@ public final class Filters {
     @InternalApi
     @Override
     public RowFilter toProto() {
-      if (builder.getFiltersCount() == 1) {
+      switch (builder.getFiltersCount()) {
+      case 0:
+        return PASS.toProto();
+      case 1:
         return builder.getFilters(0);
-      } else {
+      default:
         return RowFilter.newBuilder().setChain(builder.build()).build();
       }
     }
@@ -253,9 +256,12 @@ public final class Filters {
     @InternalApi
     @Override
     public RowFilter toProto() {
-      if (builder.getFiltersCount() == 1) {
+      switch (builder.getFiltersCount()) {
+      case 0:
+        return PASS.toProto();
+      case 1:
         return builder.getFilters(0);
-      } else {
+      default:
         return RowFilter.newBuilder().setInterleave(builder.build()).build();
       }
     }
