@@ -80,7 +80,7 @@ public class FiltersTest {
             .toProto();
 
     RowFilter expectedFilter =
-      RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*"))).build();
+      RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
@@ -135,7 +135,7 @@ public class FiltersTest {
             .toProto();
 
     RowFilter expectedFilter =
-      RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*"))).build();
+      RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
