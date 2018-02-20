@@ -98,7 +98,6 @@ public class RowMergingCallableTest {
       rowMergingCallable.all().call(ReadRowsRequest.getDefaultInstance());
     } catch (Throwable t) {
       actualError = t;
-      t.printStackTrace();
     }
     Truth.assertThat(actualError).isInstanceOf(IllegalStateException.class);
   }
