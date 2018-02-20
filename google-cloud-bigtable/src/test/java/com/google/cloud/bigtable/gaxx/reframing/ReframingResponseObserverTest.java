@@ -47,17 +47,17 @@ public class ReframingResponseObserverTest {
   private ExecutorService executor;
 
   @Before
-  public void setUp() {
+  public void setUp() throws Exception {
     executor = Executors.newCachedThreadPool();
   }
 
   @After
-  public void tearDown() {
+  public void tearDown() throws Exception {
     executor.shutdownNow();
   }
 
   @Test
-  public void testUnsolicitedResponseError() {
+  public void testUnsolicitedResponseError() throws Exception {
     // Have the outer observer request manual flow control
     MockResponseObserver<String> outerObserver = new MockResponseObserver<>(false);
     ReframingResponseObserver<String, String> middleware =
@@ -130,7 +130,7 @@ public class ReframingResponseObserverTest {
   }
 
   @Test
-  public void testOneToOne() {
+  public void testOneToOne() throws InterruptedException {
     // Have the outer observer request manual flow control
     MockResponseObserver<String> outerObserver = new MockResponseObserver<>(false);
     ReframingResponseObserver<String, String> middleware =
@@ -149,7 +149,7 @@ public class ReframingResponseObserverTest {
   }
 
   @Test
-  public void testOneToOneAuto() {
+  public void testOneToOneAuto() throws InterruptedException {
     MockResponseObserver<String> outerObserver = new MockResponseObserver<>(true);
     ReframingResponseObserver<String, String> middleware =
         new ReframingResponseObserver<>(outerObserver, new DasherizingReframer(1));
@@ -163,7 +163,7 @@ public class ReframingResponseObserverTest {
   }
 
   @Test
-  public void testManyToOne() {
+  public void testManyToOne() throws InterruptedException {
     MockResponseObserver<String> outerObserver = new MockResponseObserver<>(false);
     ReframingResponseObserver<String, String> middleware =
         new ReframingResponseObserver<>(outerObserver, new DasherizingReframer(1));
@@ -188,7 +188,7 @@ public class ReframingResponseObserverTest {
   }
 
   @Test
-  public void testManyToOneAuto() {
+  public void testManyToOneAuto() throws InterruptedException {
     MockResponseObserver<String> outerObserver = new MockResponseObserver<>(true);
     ReframingResponseObserver<String, String> middleware =
         new ReframingResponseObserver<>(outerObserver, new DasherizingReframer(1));
@@ -202,7 +202,7 @@ public class ReframingResponseObserverTest {
   }
 
   @Test
-  public void testManyToOneCancelEarly() {
+  public void testManyToOneCancelEarly() throws InterruptedException {
     MockResponseObserver<String> outerObserver = new MockResponseObserver<>(false);
     ReframingResponseObserver<String, String> middleware =
         new ReframingResponseObserver<>(outerObserver, new DasherizingReframer(1));
@@ -225,7 +225,7 @@ public class ReframingResponseObserverTest {
   }
 
   @Test
-  public void testOneToMany() {
+  public void testOneToMany() throws InterruptedException {
     MockResponseObserver<String> outerObserver = new MockResponseObserver<>(false);
     ReframingResponseObserver<String, String> middleware =
         new ReframingResponseObserver<>(outerObserver, new DasherizingReframer(2));
@@ -242,7 +242,7 @@ public class ReframingResponseObserverTest {
   }
 
   @Test
-  public void testOneToManyAuto() {
+  public void testOneToManyAuto() throws InterruptedException {
     MockResponseObserver<String> outerObserver = new MockResponseObserver<>(true);
     ReframingResponseObserver<String, String> middleware =
         new ReframingResponseObserver<>(outerObserver, new DasherizingReframer(2));
@@ -417,7 +417,7 @@ public class ReframingResponseObserverTest {
     final Breakpoint completeBreakpoint = new Breakpoint();
     final Breakpoint errorBreakpoint = new Breakpoint();
 
-    GatedMockResponseObserver(boolean autoFlowControl) {
+    public GatedMockResponseObserver(boolean autoFlowControl) {
       super(autoFlowControl);
     }
 
@@ -438,12 +438,12 @@ public class ReframingResponseObserverTest {
     private volatile CountDownLatch arriveLatch = new CountDownLatch(0);
     private volatile CountDownLatch leaveLatch = new CountDownLatch(0);
 
-    void enable() {
+    public void enable() {
       arriveLatch = new CountDownLatch(1);
       leaveLatch = new CountDownLatch(1);
     }
 
-    void arrive() {
+    public void arrive() {
       arriveLatch.countDown();
       try {
         leaveLatch.await(1, TimeUnit.SECONDS);
@@ -460,7 +460,7 @@ public class ReframingResponseObserverTest {
       }
     }
 
-    void release() {
+    public void release() {
       leaveLatch.countDown();
     }
   }
