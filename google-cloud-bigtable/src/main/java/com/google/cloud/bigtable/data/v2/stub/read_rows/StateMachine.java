@@ -105,9 +105,9 @@ final class StateMachine<RowT> {
    *
    * <dl>
    *   <dt>Valid states:
-   *   <dd>{@link StateMachine#NewRow}
+   *   <dd>{@link StateMachine#AWAITING_NEW_ROW}
    *   <dt>Resulting states:
-   *   <dd>{@link StateMachine#CompleteRow}
+   *   <dd>{@link StateMachine#AWAITING_ROW_CONSUME}
    * </dl>
    */
   void handleLastScannedRow(ByteString key) {
@@ -125,13 +125,13 @@ final class StateMachine<RowT> {
    *
    * <dl>
    *   <dt>Valid states:
-   *   <dd>{@link StateMachine#NewRow}
-   *   <dd>{@link StateMachine#NewCell}
-   *   <dd>{@link StateMachine#CellInProgress}
+   *   <dd>{@link StateMachine#AWAITING_NEW_ROW}
+   *   <dd>{@link StateMachine#AWAITING_NEW_CELL}
+   *   <dd>{@link StateMachine#AWAITING_CELL_VALUE}
    *   <dt>Resulting states:
-   *   <dd>{@link StateMachine#NewCell}
-   *   <dd>{@link StateMachine#CellInProgress}
-   *   <dd>{@link StateMachine#CompleteRow}
+   *   <dd>{@link StateMachine#AWAITING_NEW_CELL}
+   *   <dd>{@link StateMachine#AWAITING_CELL_VALUE}
+   *   <dd>{@link StateMachine#AWAITING_ROW_CONSUME}
    * </dl>
    *
    * @param chunk The new chunk to process.
@@ -154,7 +154,7 @@ final class StateMachine<RowT> {
    * @throws IllegalStateException If the last chunk did not complete a row.
    */
   RowT consumeRow() {
-    Preconditions.checkState(currentState == CompleteRow, "No row to consume");
+    Preconditions.checkState(currentState == AWAITING_ROW_CONSUME, "No row to consume");
     RowT row = completeRow;
     reset();
     return row;
@@ -162,7 +162,7 @@ final class StateMachine<RowT> {
 
   /** Checks if there is a complete to bew consumed. */
   boolean hasCompleteRow() {
-    return currentState == CompleteRow;
+    return currentState == AWAITING_ROW_CONSUME;
   }
   /**
    * Checks if the state machine is in the middle of processing a row.
@@ -170,11 +170,11 @@ final class StateMachine<RowT> {
    * @return True If there is a row in progress.
    */
   boolean isRowInProgress() {
-    return currentState != NewRow;
+    return currentState != AWAITING_NEW_ROW;
   }
 
   private void reset() {
-    currentState = NewRow;
+    currentState = AWAITING_NEW_ROW;
     rowKey = null;
     familyName = null;
     qualifier = null;
@@ -199,6 +199,8 @@ final class StateMachine<RowT> {
     /**
      * Accepts the last row key scanned by the server. And set its as the last complete row. This
      * row should be treated specially because it doesn't actually contain data.
+     *
+     * @throws IllegalStateException If the subclass can't handle last scanned row events.
      */
     State handleLastScannedRow(ByteString rowKey) {
       throw new IllegalStateException();
@@ -209,8 +211,8 @@ final class StateMachine<RowT> {
      *
      * @param chunk The new chunk to process.
      * @return The next state.
-     * @throws IllegalStateException If the state can't handle any chunk.
-     * @throws InvalidInputException If the state can't handle this chunk.
+     * @throws IllegalStateException If the subclass can't handle chunks.
+     * @throws InvalidInputException If the subclass determines that this chunk is invalid.
      */
     State handleChunk(CellChunk chunk) {
       throw new IllegalStateException();
@@ -219,47 +221,47 @@ final class StateMachine<RowT> {
 
   /**
    * The default state when the state machine is awaiting a chunk to start a new row. It will notify
-   * the adapter of the new row and delegate to the NewCell to process the first Cell in the Chunk.
-   * Exit states: same as NewCell
+   * the adapter of the new row and delegate to the AWAITING_NEW_CELL state to process the first
+   * Cell in the Chunk. Exit states: same as AWAITING_NEW_CELL
    */
-  private final State NewRow =
+  private final State AWAITING_NEW_ROW =
       new State() {
         @Override
         State handleLastScannedRow(ByteString rowKey) {
           completeRow = adapter.createScanMarkerRow(rowKey);
           lastCompleteRowKey = rowKey;
-          return CompleteRow;
+          return AWAITING_ROW_CONSUME;
         }
 
         @Override
         State handleChunk(CellChunk chunk) {
-          validate(!chunk.getResetRow(), "NewRow can't reset");
-          validate(!chunk.getRowKey().isEmpty(), "NewRow must have a rowKey");
-          validate(chunk.hasFamilyName(), "NewRow must have a family");
-          validate(chunk.hasQualifier(), "NewRow must have a qualifier");
+          validate(!chunk.getResetRow(), "AWAITING_NEW_ROW: can't reset");
+          validate(!chunk.getRowKey().isEmpty(), "AWAITING_NEW_ROW: rowKey missing");
+          validate(chunk.hasFamilyName(), "AWAITING_NEW_ROW: family missing");
+          validate(chunk.hasQualifier(), "AWAITING_NEW_ROW: qualifier missing");
           if (lastCompleteRowKey != null) {
             validate(
                 ByteStringComparator.INSTANCE.compare(lastCompleteRowKey, chunk.getRowKey()) < 0,
-                "NewRow key must be strictly increasing");
+                "AWAITING_NEW_ROW: key must be strictly increasing");
           }
 
           rowKey = chunk.getRowKey();
           adapter.startRow(rowKey);
 
           // auto transition
-          return NewCell.handleChunk(chunk);
+          return AWAITING_NEW_CELL.handleChunk(chunk);
         }
       };
 
   /** A state that represents a cell boundary in a row. */
-  private final State NewCell =
+  private final State AWAITING_NEW_CELL =
       new State() {
         /**
          * Processes the next chunk.
          *
          * @param chunk The new chunk to process.
-         * @return NewCell if the chunk completed a Cell, CellInProgress if the chunk left a partial
-         *     Cell.
+         * @return AWAITING_NEW_CELL if the chunk completed a Cell, AWAITING_CELL_VALUE if the chunk
+         *     left a partial Cell.
          */
         @Override
         State handleChunk(CellChunk chunk) {
@@ -269,13 +271,14 @@ final class StateMachine<RowT> {
           }
 
           if (!chunk.getRowKey().isEmpty()) {
-            validate(rowKey.equals(chunk.getRowKey()), "Cell row keys must not change");
+            validate(
+                rowKey.equals(chunk.getRowKey()), "AWAITING_NEW_CELL: row keys must not change");
           }
 
           // Update cell identifier buffers
           if (chunk.hasFamilyName()) {
             familyName = chunk.getFamilyName().getValue();
-            validate(chunk.hasQualifier(), "NewCell has a familyName, but no qualifier");
+            validate(chunk.hasQualifier(), "AWAITING_NEW_CELL: has familyName, but no qualifier");
           }
           if (chunk.hasQualifier()) {
             qualifier = chunk.getQualifier().getValue();
@@ -284,15 +287,16 @@ final class StateMachine<RowT> {
           labels = chunk.getLabelsList();
 
           // Update value expectations
-          validate(chunk.getValueSize() >= 0, "NewRow valueSize can't be negative");
+          validate(chunk.getValueSize() >= 0, "AWAITING_NEW_CELL: valueSize can't be negative");
 
           boolean isSplit = chunk.getValueSize() > 0;
           if (isSplit) {
             validate(
-                !chunk.getCommitRow(), "NewRow can't commit when valueSize indicates more data");
+                !chunk.getCommitRow(),
+                "AWAITING_NEW_CELL: can't commit when valueSize indicates more data");
             validate(
                 !chunk.getValue().isEmpty(),
-                "NewRow must have data when valueSize promises more data in the next chunk");
+                "AWAITING_NEW_CELL: must have data when valueSize promises more data in the next chunk");
 
             expectedCellSize = chunk.getValueSize();
             remainingCellBytes = expectedCellSize - chunk.getValue().size();
@@ -307,12 +311,12 @@ final class StateMachine<RowT> {
 
           // Transitions
           if (isSplit) {
-            return CellInProgress;
+            return AWAITING_CELL_VALUE;
           }
           adapter.finishCell();
 
           if (!chunk.getCommitRow()) {
-            return NewCell;
+            return AWAITING_NEW_CELL;
           }
 
           return handleCommit();
@@ -320,7 +324,7 @@ final class StateMachine<RowT> {
       };
 
   /** A state that represents a cell's value continuation. */
-  private final State CellInProgress =
+  private final State AWAITING_CELL_VALUE =
       new State() {
         @Override
         State handleChunk(CellChunk chunk) {
@@ -330,50 +334,52 @@ final class StateMachine<RowT> {
 
           boolean isLast = chunk.getValueSize() == 0;
 
-          validate(!chunk.hasFamilyName(), "CellInProgress can't have a family");
-          validate(!chunk.hasQualifier(), "CellInProgress can't have a qualifier");
-          validate(chunk.getTimestampMicros() == 0, "CellInProgress can't have a timestamp");
-          validate(chunk.getLabelsCount() == 0, "CellInProgress can't have labels");
+          validate(!chunk.hasFamilyName(), "AWAITING_CELL_VALUE: can't have a family");
+          validate(!chunk.hasQualifier(), "AWAITING_CELL_VALUE: can't have a qualifier");
+          validate(chunk.getTimestampMicros() == 0, "AWAITING_CELL_VALUE: can't have a timestamp");
+          validate(chunk.getLabelsCount() == 0, "AWAITING_CELL_VALUE: can't have labels");
           if (isLast) {
             long missingBytes = remainingCellBytes - chunk.getValue().size();
             validate(
                 missingBytes == 0,
-                "CellInProgress is last, but is missing " + missingBytes + " bytes");
+                "AWAITING_CELL_VALUE: terminal cell is missing " + missingBytes + " bytes");
           } else {
             validate(
                 expectedCellSize == chunk.getValueSize(),
-                "CellInProgress valueSizes should be identical for nonterminal chunks");
-            validate(!chunk.getCommitRow(), "CellInProgress can't commit with a nonterminal chunk");
+                "AWAITING_CELL_VALUE: valueSizes should be identical for nonterminal chunks");
+            validate(
+                !chunk.getCommitRow(),
+                "AWAITING_CELL_VALUE: can't commit with a nonterminal chunk");
           }
           remainingCellBytes -= chunk.getValue().size();
           adapter.cellValue(chunk.getValue());
 
           // Transitions
           if (!isLast) {
-            return CellInProgress;
+            return AWAITING_CELL_VALUE;
           }
           adapter.finishCell();
 
           if (!chunk.getCommitRow()) {
-            return NewCell;
+            return AWAITING_NEW_CELL;
           }
 
           return handleCommit();
         }
       };
 
-  private static final State CompleteRow =
+  private static final State AWAITING_ROW_CONSUME =
       new State() {
         @Override
         State handleChunk(CellChunk chunk) {
-          throw new IllegalStateException("Skipping completed row");
+          throw new IllegalStateException("AWAITING_ROW_CONSUME: Skipping completed row");
         }
       };
 
   // Helpers ------------------------
   /**
    * Handles a special CellChunk that is marked with the reset flag. Will drop all buffers and
-   * transition to the {@link #NewRow} state.
+   * transition to the {@link #AWAITING_NEW_ROW} state.
    */
   private State handleResetChunk(CellChunk cellChunk) {
     validate(cellChunk.getRowKey().isEmpty(), "Reset chunks can't have row keys");
@@ -384,14 +390,14 @@ final class StateMachine<RowT> {
     validate(cellChunk.getValue().isEmpty(), "Reset chunks can't have values");
 
     reset();
-    return currentState; // NewRow
+    return currentState; // AWAITING_NEW_ROW
   }
 
   private State handleCommit() {
     validate(remainingCellBytes == 0, "Can't commit with remaining bytes");
     completeRow = adapter.finishRow();
     lastCompleteRowKey = rowKey;
-    return CompleteRow;
+    return AWAITING_ROW_CONSUME;
   }
 
   private static void validate(boolean condition, String message) {

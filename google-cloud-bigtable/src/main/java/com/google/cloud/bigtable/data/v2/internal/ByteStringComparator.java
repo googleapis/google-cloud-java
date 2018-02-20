@@ -32,10 +32,10 @@ public class ByteStringComparator implements Comparator<ByteString> {
     for (int i = 0; i < shortestSize; i++) {
       int byteA = o1.byteAt(i) & 0xff;
       int byteB = o2.byteAt(i) & 0xff;
-      if (byteA == byteB) {
-        continue;
+
+      if (byteA != byteB) {
+        return byteA < byteB ? -1 : 1;
       }
-      return byteA < byteB ? -1 : 1;
     }
     if (sizeA == sizeB) {
       return 0;

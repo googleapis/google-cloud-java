@@ -25,23 +25,43 @@ import com.google.common.base.Preconditions;
  * An implementation of a {@link Reframer} that feeds the row merging {@link StateMachine}.
  *
  * <p>{@link com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserver} pushes {@link
- * ReadRowsResponse.CellChunk}s into this class and pops fully merged logical rows.
+ * ReadRowsResponse.CellChunk}s into this class and pops fully merged logical rows. Example usage:
+ *
+ * <pre>{@code
+ * RowMerger<Row> rowMerger = new RowMerger<>(myRowBuilder);
+ *
+ * while(responseIterator.hasNext()) {
+ *   ReadRowsResponse response = responseIterator.next();
+ *
+ *   if (rowMerger.hasFullFrame()) {
+ *     Row row = rowMerger.pop();
+ *     // Do something with row.
+ *   } else {
+ *     rowMerger.push(response);
+ *   }
+ * }
+ *
+ * if (rowMerger.hasPartialFrame()) {
+ *   throw new RuntimeException("Incomplete stream");
+ * }
+ *
+ * }</pre>
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.
  *
  * <p>Package-private for internal use.
  *
- * @see com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserver for example usage.
+ * @see com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserver for more details
  */
 @InternalApi
-class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
+public class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
   private final StateMachine<RowT> stateMachine;
   private ReadRowsResponse buffer;
   private int nextChunk;
   private RowT nextRow;
 
-  RowMerger(RowBuilder<RowT> rowBuilder) {
+  public RowMerger(RowBuilder<RowT> rowBuilder) {
     stateMachine = new StateMachine<>(rowBuilder);
 
     nextChunk = 0;
