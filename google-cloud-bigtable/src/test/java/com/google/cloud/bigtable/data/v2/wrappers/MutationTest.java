@@ -30,18 +30,18 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class MutationTest {
-  private MutationImpl mutationBuilder;
+  private Mutation mutation;
 
   @Before
   public void setUp() {
-    mutationBuilder = new MutationImpl();
+    mutation = Mutation.create();
   }
 
   @Test
   public void setCellTest() {
     long minTimestamp = System.currentTimeMillis() * 1_000;
 
-    mutationBuilder
+    mutation
         .setCell(
             "fake-family",
             ByteString.copyFromUtf8("fake-qualifier"),
@@ -54,7 +54,7 @@ public class MutationTest {
         .setCell("fake-family2", "fake-qualifier2", 1_000, "fake-value2")
         .setCell("fake-family2", "fake-qualifier2", "fake-value2");
 
-    List<com.google.bigtable.v2.Mutation> actual = mutationBuilder.getMutations();
+    List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
 
     long maxTimestamp = System.currentTimeMillis() * 1_000;
     com.google.common.collect.Range<Long> expectedTimestampRange =
@@ -93,7 +93,7 @@ public class MutationTest {
 
   @Test
   public void deleteColumnTest() {
-    mutationBuilder
+    mutation
         .deleteCells("fake-family", "fake-qualifier")
         .deleteCells("fake-family2", ByteString.copyFromUtf8("fake-qualifier2"))
         .deleteCells(
@@ -101,7 +101,7 @@ public class MutationTest {
             ByteString.copyFromUtf8("fake-qualifier3"),
             TimestampRange.create(1000L, 2000L));
 
-    List<com.google.bigtable.v2.Mutation> actual = mutationBuilder.getMutations();
+    List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
 
     assertThat(actual)
         .containsExactly(
@@ -131,9 +131,9 @@ public class MutationTest {
 
   @Test
   public void deleteFamilyTest() {
-    mutationBuilder.deleteFamily("fake-family1").deleteFamily("fake-family2");
+    mutation.deleteFamily("fake-family1").deleteFamily("fake-family2");
 
-    List<com.google.bigtable.v2.Mutation> actual = mutationBuilder.getMutations();
+    List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
 
     assertThat(actual)
         .containsExactly(
@@ -147,8 +147,8 @@ public class MutationTest {
 
   @Test
   public void deleteRowTest() {
-    mutationBuilder.deleteRow();
-    List<com.google.bigtable.v2.Mutation> actual = mutationBuilder.getMutations();
+    mutation.deleteRow();
+    List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
 
     assertThat(actual)
         .containsExactly(
@@ -156,6 +156,4 @@ public class MutationTest {
                 .setDeleteFromRow(DeleteFromRow.newBuilder())
                 .build());
   }
-
-  static class MutationImpl extends Mutation<MutationImpl> {}
 }
