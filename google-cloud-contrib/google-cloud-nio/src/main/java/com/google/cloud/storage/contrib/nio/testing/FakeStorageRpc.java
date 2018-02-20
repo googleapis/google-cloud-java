@@ -117,7 +117,7 @@ class FakeStorageRpc implements StorageRpc {
   public Tuple<String, Iterable<Bucket>> list(Map<Option, ?> options) throws StorageException {
     throw new UnsupportedOperationException();
   }
-  
+
   @Override
   public Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options)
       throws StorageException {
