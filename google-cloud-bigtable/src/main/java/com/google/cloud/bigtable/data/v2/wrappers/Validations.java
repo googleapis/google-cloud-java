@@ -24,6 +24,8 @@ import javax.annotation.Nonnull;
  * <p>Package-private for internal use.
  */
 class Validations {
+  private Validations() {}
+
   static void validateFamily(@Nonnull String name) {
     Preconditions.checkNotNull(name, "Family name can't be null");
     Preconditions.checkArgument(!name.isEmpty(), "Family name can't be empty");
