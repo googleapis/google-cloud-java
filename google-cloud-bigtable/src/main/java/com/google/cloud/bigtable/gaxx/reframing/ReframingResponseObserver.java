@@ -77,7 +77,7 @@ public class ReframingResponseObserver<InnerT, OuterT>
   private final AtomicReference<Throwable> cancellation = new AtomicReference<>();
 
   // Only written under lock
-  private volatile boolean awaitingInner = false;
+  private volatile boolean awaitingInner;
   // Written by multiple interleaved threads. It is the staging area for messages before they are
   // fed to the Reframer. It protects the Reframer from having to worry about concurrency, by acting
   // like a single item queue: a GRPC thread puts a value in, and then, after acquiring the lock,
