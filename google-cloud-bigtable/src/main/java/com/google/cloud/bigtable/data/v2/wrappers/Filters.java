@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.wrappers;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.bigtable.v2.ColumnRange;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.ValueRange;
@@ -690,6 +691,7 @@ public final class Filters {
     }
   }
 
+  @InternalExtensionOnly
   public interface Filter extends Cloneable {
     @InternalApi
     RowFilter toProto();
