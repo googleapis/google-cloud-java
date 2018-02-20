@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -261,16 +261,23 @@ public class BigtableInstanceAdminClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void partialUpdateInstanceTest() {
-    String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+  public void partialUpdateInstanceTest() throws Exception {
+    InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
+    String displayName = "displayName1615086568";
+    Instance expectedResponse =
+        Instance.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("partialUpdateInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
 
     Instance instance = Instance.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Operation actualResponse = client.partialUpdateInstance(instance, updateMask);
+    Instance actualResponse = client.partialUpdateInstanceAsync(instance, updateMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
@@ -296,10 +303,12 @@ public class BigtableInstanceAdminClientTest {
       Instance instance = Instance.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.partialUpdateInstance(instance, updateMask);
+      client.partialUpdateInstanceAsync(instance, updateMask).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -663,16 +672,24 @@ public class BigtableInstanceAdminClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void updateAppProfileTest() {
+  public void updateAppProfileTest() throws Exception {
     String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+    String etag = "etag3123477";
+    String description = "description-1724546052";
+    AppProfile expectedResponse =
+        AppProfile.newBuilder().setName(name).setEtag(etag).setDescription(description).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAppProfileTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
 
     AppProfile appProfile = AppProfile.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Operation actualResponse = client.updateAppProfile(appProfile, updateMask);
+    AppProfile actualResponse = client.updateAppProfileAsync(appProfile, updateMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockBigtableInstanceAdmin.getRequests();
@@ -697,10 +714,12 @@ public class BigtableInstanceAdminClientTest {
       AppProfile appProfile = AppProfile.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.updateAppProfile(appProfile, updateMask);
+      client.updateAppProfileAsync(appProfile, updateMask).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

@@ -15,8 +15,8 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
-import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
-import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
+import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListGroupStatsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;

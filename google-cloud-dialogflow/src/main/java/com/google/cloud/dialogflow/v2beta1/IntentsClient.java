@@ -15,12 +15,17 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListIntentsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.IntentsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.IntentsStubSettings;
@@ -922,5 +927,78 @@ public class IntentsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListIntentsPagedResponse
+      extends AbstractPagedListResponse<
+          ListIntentsRequest, ListIntentsResponse, Intent, ListIntentsPage,
+          ListIntentsFixedSizeCollection> {
+
+    public static ApiFuture<ListIntentsPagedResponse> createAsync(
+        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        ApiFuture<ListIntentsResponse> futureResponse) {
+      ApiFuture<ListIntentsPage> futurePage =
+          ListIntentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListIntentsPage, ListIntentsPagedResponse>() {
+            @Override
+            public ListIntentsPagedResponse apply(ListIntentsPage input) {
+              return new ListIntentsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListIntentsPagedResponse(ListIntentsPage page) {
+      super(page, ListIntentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListIntentsPage
+      extends AbstractPage<ListIntentsRequest, ListIntentsResponse, Intent, ListIntentsPage> {
+
+    private ListIntentsPage(
+        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        ListIntentsResponse response) {
+      super(context, response);
+    }
+
+    private static ListIntentsPage createEmptyPage() {
+      return new ListIntentsPage(null, null);
+    }
+
+    @Override
+    protected ListIntentsPage createPage(
+        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        ListIntentsResponse response) {
+      return new ListIntentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListIntentsPage> createPageAsync(
+        PageContext<ListIntentsRequest, ListIntentsResponse, Intent> context,
+        ApiFuture<ListIntentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListIntentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListIntentsRequest, ListIntentsResponse, Intent, ListIntentsPage,
+          ListIntentsFixedSizeCollection> {
+
+    private ListIntentsFixedSizeCollection(List<ListIntentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListIntentsFixedSizeCollection createEmptyCollection() {
+      return new ListIntentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListIntentsFixedSizeCollection createCollection(
+        List<ListIntentsPage> pages, int collectionSize) {
+      return new ListIntentsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

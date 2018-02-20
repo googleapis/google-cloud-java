@@ -23,7 +23,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient.ListSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.common.collect.Iterables;
 import com.google.iam.v1.Policy;

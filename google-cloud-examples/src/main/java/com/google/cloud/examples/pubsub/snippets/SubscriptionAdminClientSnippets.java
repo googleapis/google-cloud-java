@@ -21,7 +21,7 @@ package com.google.cloud.examples.pubsub.snippets;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient.ListSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.iam.v1.Binding;

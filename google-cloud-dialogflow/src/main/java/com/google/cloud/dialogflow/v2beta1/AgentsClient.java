@@ -15,12 +15,17 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.SearchAgentsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.AgentsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.AgentsStubSettings;
@@ -29,6 +34,7 @@ import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -768,5 +774,78 @@ public class AgentsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class SearchAgentsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage,
+          SearchAgentsFixedSizeCollection> {
+
+    public static ApiFuture<SearchAgentsPagedResponse> createAsync(
+        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        ApiFuture<SearchAgentsResponse> futureResponse) {
+      ApiFuture<SearchAgentsPage> futurePage =
+          SearchAgentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<SearchAgentsPage, SearchAgentsPagedResponse>() {
+            @Override
+            public SearchAgentsPagedResponse apply(SearchAgentsPage input) {
+              return new SearchAgentsPagedResponse(input);
+            }
+          });
+    }
+
+    private SearchAgentsPagedResponse(SearchAgentsPage page) {
+      super(page, SearchAgentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchAgentsPage
+      extends AbstractPage<SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage> {
+
+    private SearchAgentsPage(
+        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        SearchAgentsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchAgentsPage createEmptyPage() {
+      return new SearchAgentsPage(null, null);
+    }
+
+    @Override
+    protected SearchAgentsPage createPage(
+        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        SearchAgentsResponse response) {
+      return new SearchAgentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchAgentsPage> createPageAsync(
+        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        ApiFuture<SearchAgentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchAgentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage,
+          SearchAgentsFixedSizeCollection> {
+
+    private SearchAgentsFixedSizeCollection(List<SearchAgentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchAgentsFixedSizeCollection createEmptyCollection() {
+      return new SearchAgentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchAgentsFixedSizeCollection createCollection(
+        List<SearchAgentsPage> pages, int collectionSize) {
+      return new SearchAgentsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

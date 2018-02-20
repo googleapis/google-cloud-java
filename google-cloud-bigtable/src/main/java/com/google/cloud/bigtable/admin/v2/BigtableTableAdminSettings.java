@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListSnapshotsPagedResponse;
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListTablesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -48,6 +48,7 @@ import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Snapshot;
+import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
@@ -146,6 +147,12 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
   /** Returns the object with the settings used for calls to snapshotTable. */
   public UnaryCallSettings<SnapshotTableRequest, Operation> snapshotTableSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).snapshotTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to snapshotTable. */
+  public OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+      snapshotTableOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).snapshotTableOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getSnapshot. */
@@ -321,6 +328,12 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
     /** Returns the builder for the settings used for calls to snapshotTable. */
     public UnaryCallSettings.Builder<SnapshotTableRequest, Operation> snapshotTableSettings() {
       return getStubSettingsBuilder().snapshotTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to snapshotTable. */
+    public OperationCallSettings.Builder<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+        snapshotTableOperationSettings() {
+      return getStubSettingsBuilder().snapshotTableOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getSnapshot. */

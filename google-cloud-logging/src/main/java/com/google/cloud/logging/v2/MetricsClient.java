@@ -15,10 +15,15 @@
  */
 package com.google.cloud.logging.v2;
 
-import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.MetricsServiceV2Stub;
 import com.google.cloud.logging.v2.stub.MetricsServiceV2StubSettings;
@@ -33,6 +38,7 @@ import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -584,5 +590,79 @@ public class MetricsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListLogMetricsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric, ListLogMetricsPage,
+          ListLogMetricsFixedSizeCollection> {
+
+    public static ApiFuture<ListLogMetricsPagedResponse> createAsync(
+        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        ApiFuture<ListLogMetricsResponse> futureResponse) {
+      ApiFuture<ListLogMetricsPage> futurePage =
+          ListLogMetricsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListLogMetricsPage, ListLogMetricsPagedResponse>() {
+            @Override
+            public ListLogMetricsPagedResponse apply(ListLogMetricsPage input) {
+              return new ListLogMetricsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListLogMetricsPagedResponse(ListLogMetricsPage page) {
+      super(page, ListLogMetricsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLogMetricsPage
+      extends AbstractPage<
+          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric, ListLogMetricsPage> {
+
+    private ListLogMetricsPage(
+        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        ListLogMetricsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLogMetricsPage createEmptyPage() {
+      return new ListLogMetricsPage(null, null);
+    }
+
+    @Override
+    protected ListLogMetricsPage createPage(
+        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        ListLogMetricsResponse response) {
+      return new ListLogMetricsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLogMetricsPage> createPageAsync(
+        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        ApiFuture<ListLogMetricsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLogMetricsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric, ListLogMetricsPage,
+          ListLogMetricsFixedSizeCollection> {
+
+    private ListLogMetricsFixedSizeCollection(List<ListLogMetricsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLogMetricsFixedSizeCollection createEmptyCollection() {
+      return new ListLogMetricsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLogMetricsFixedSizeCollection createCollection(
+        List<ListLogMetricsPage> pages, int collectionSize) {
+      return new ListLogMetricsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

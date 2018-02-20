@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2.stub;
 
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -64,8 +64,10 @@ import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
+import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
+import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -132,9 +134,11 @@ public class BigtableInstanceAdminStubSettings
   private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
   private final UnaryCallSettings<ListInstancesRequest, ListInstancesResponse>
       listInstancesSettings;
-  private final UnaryCallSettings<Instance, Instance> updateInstanceSettings;
   private final UnaryCallSettings<PartialUpdateInstanceRequest, Operation>
       partialUpdateInstanceSettings;
+  private final OperationCallSettings<
+          PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
+      partialUpdateInstanceOperationSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Empty> deleteInstanceSettings;
   private final UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings;
   private final OperationCallSettings<CreateClusterRequest, Cluster, CreateClusterMetadata>
@@ -151,6 +155,8 @@ public class BigtableInstanceAdminStubSettings
           ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
       listAppProfilesSettings;
   private final UnaryCallSettings<UpdateAppProfileRequest, Operation> updateAppProfileSettings;
+  private final OperationCallSettings<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
+      updateAppProfileOperationSettings;
   private final UnaryCallSettings<DeleteAppProfileRequest, Empty> deleteAppProfileSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
@@ -178,15 +184,16 @@ public class BigtableInstanceAdminStubSettings
     return listInstancesSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateInstance. */
-  public UnaryCallSettings<Instance, Instance> updateInstanceSettings() {
-    return updateInstanceSettings;
-  }
-
   /** Returns the object with the settings used for calls to partialUpdateInstance. */
   public UnaryCallSettings<PartialUpdateInstanceRequest, Operation>
       partialUpdateInstanceSettings() {
     return partialUpdateInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to partialUpdateInstance. */
+  public OperationCallSettings<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
+      partialUpdateInstanceOperationSettings() {
+    return partialUpdateInstanceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
@@ -251,6 +258,12 @@ public class BigtableInstanceAdminStubSettings
   /** Returns the object with the settings used for calls to updateAppProfile. */
   public UnaryCallSettings<UpdateAppProfileRequest, Operation> updateAppProfileSettings() {
     return updateAppProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAppProfile. */
+  public OperationCallSettings<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
+      updateAppProfileOperationSettings() {
+    return updateAppProfileOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteAppProfile. */
@@ -346,8 +359,9 @@ public class BigtableInstanceAdminStubSettings
     createInstanceOperationSettings = settingsBuilder.createInstanceOperationSettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
-    updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
     partialUpdateInstanceSettings = settingsBuilder.partialUpdateInstanceSettings().build();
+    partialUpdateInstanceOperationSettings =
+        settingsBuilder.partialUpdateInstanceOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     createClusterSettings = settingsBuilder.createClusterSettings().build();
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
@@ -360,6 +374,7 @@ public class BigtableInstanceAdminStubSettings
     getAppProfileSettings = settingsBuilder.getAppProfileSettings().build();
     listAppProfilesSettings = settingsBuilder.listAppProfilesSettings().build();
     updateAppProfileSettings = settingsBuilder.updateAppProfileSettings().build();
+    updateAppProfileOperationSettings = settingsBuilder.updateAppProfileOperationSettings().build();
     deleteAppProfileSettings = settingsBuilder.deleteAppProfileSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -435,9 +450,11 @@ public class BigtableInstanceAdminStubSettings
     private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
     private final UnaryCallSettings.Builder<ListInstancesRequest, ListInstancesResponse>
         listInstancesSettings;
-    private final UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings;
     private final UnaryCallSettings.Builder<PartialUpdateInstanceRequest, Operation>
         partialUpdateInstanceSettings;
+    private final OperationCallSettings.Builder<
+            PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
+        partialUpdateInstanceOperationSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Empty> deleteInstanceSettings;
     private final UnaryCallSettings.Builder<CreateClusterRequest, Operation> createClusterSettings;
     private final OperationCallSettings.Builder<
@@ -458,6 +475,9 @@ public class BigtableInstanceAdminStubSettings
         listAppProfilesSettings;
     private final UnaryCallSettings.Builder<UpdateAppProfileRequest, Operation>
         updateAppProfileSettings;
+    private final OperationCallSettings.Builder<
+            UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
+        updateAppProfileOperationSettings;
     private final UnaryCallSettings.Builder<DeleteAppProfileRequest, Empty>
         deleteAppProfileSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -516,9 +536,9 @@ public class BigtableInstanceAdminStubSettings
 
       listInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       partialUpdateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      partialUpdateInstanceOperationSettings = OperationCallSettings.newBuilder();
 
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -544,6 +564,8 @@ public class BigtableInstanceAdminStubSettings
 
       updateAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updateAppProfileOperationSettings = OperationCallSettings.newBuilder();
+
       deleteAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -557,7 +579,6 @@ public class BigtableInstanceAdminStubSettings
               createInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
-              updateInstanceSettings,
               partialUpdateInstanceSettings,
               deleteInstanceSettings,
               createClusterSettings,
@@ -600,11 +621,6 @@ public class BigtableInstanceAdminStubSettings
 
       builder
           .listInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -706,6 +722,29 @@ public class BigtableInstanceAdminStubSettings
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
+          .partialUpdateInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PartialUpdateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(UpdateInstanceMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
           .createClusterOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -750,6 +789,29 @@ public class BigtableInstanceAdminStubSettings
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
+      builder
+          .updateAppProfileOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAppProfileRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AppProfile.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(UpdateAppProfileMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -761,8 +823,9 @@ public class BigtableInstanceAdminStubSettings
       createInstanceOperationSettings = settings.createInstanceOperationSettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
-      updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
       partialUpdateInstanceSettings = settings.partialUpdateInstanceSettings.toBuilder();
+      partialUpdateInstanceOperationSettings =
+          settings.partialUpdateInstanceOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       createClusterSettings = settings.createClusterSettings.toBuilder();
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
@@ -775,6 +838,7 @@ public class BigtableInstanceAdminStubSettings
       getAppProfileSettings = settings.getAppProfileSettings.toBuilder();
       listAppProfilesSettings = settings.listAppProfilesSettings.toBuilder();
       updateAppProfileSettings = settings.updateAppProfileSettings.toBuilder();
+      updateAppProfileOperationSettings = settings.updateAppProfileOperationSettings.toBuilder();
       deleteAppProfileSettings = settings.deleteAppProfileSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -785,7 +849,6 @@ public class BigtableInstanceAdminStubSettings
               createInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
-              updateInstanceSettings,
               partialUpdateInstanceSettings,
               deleteInstanceSettings,
               createClusterSettings,
@@ -840,15 +903,17 @@ public class BigtableInstanceAdminStubSettings
       return listInstancesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateInstance. */
-    public UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings() {
-      return updateInstanceSettings;
-    }
-
     /** Returns the builder for the settings used for calls to partialUpdateInstance. */
     public UnaryCallSettings.Builder<PartialUpdateInstanceRequest, Operation>
         partialUpdateInstanceSettings() {
       return partialUpdateInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to partialUpdateInstance. */
+    public OperationCallSettings.Builder<
+            PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
+        partialUpdateInstanceOperationSettings() {
+      return partialUpdateInstanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
@@ -916,6 +981,13 @@ public class BigtableInstanceAdminStubSettings
     public UnaryCallSettings.Builder<UpdateAppProfileRequest, Operation>
         updateAppProfileSettings() {
       return updateAppProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAppProfile. */
+    public OperationCallSettings.Builder<
+            UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
+        updateAppProfileOperationSettings() {
+      return updateAppProfileOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteAppProfile. */

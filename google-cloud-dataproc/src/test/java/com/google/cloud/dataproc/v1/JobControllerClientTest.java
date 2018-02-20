@@ -15,7 +15,7 @@
  */
 package com.google.cloud.dataproc.v1;
 
-import static com.google.cloud.dataproc.v1.PagedResponseWrappers.ListJobsPagedResponse;
+import static com.google.cloud.dataproc.v1.JobControllerClient.ListJobsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;

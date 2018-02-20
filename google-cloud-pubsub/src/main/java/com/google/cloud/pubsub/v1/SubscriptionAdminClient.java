@@ -15,12 +15,16 @@
  */
 package com.google.cloud.pubsub.v1;
 
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSnapshotsPagedResponse;
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
@@ -1746,5 +1750,155 @@ public class SubscriptionAdminClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListSubscriptionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription, ListSubscriptionsPage,
+          ListSubscriptionsFixedSizeCollection> {
+
+    public static ApiFuture<ListSubscriptionsPagedResponse> createAsync(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ApiFuture<ListSubscriptionsResponse> futureResponse) {
+      ApiFuture<ListSubscriptionsPage> futurePage =
+          ListSubscriptionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListSubscriptionsPage, ListSubscriptionsPagedResponse>() {
+            @Override
+            public ListSubscriptionsPagedResponse apply(ListSubscriptionsPage input) {
+              return new ListSubscriptionsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListSubscriptionsPagedResponse(ListSubscriptionsPage page) {
+      super(page, ListSubscriptionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubscriptionsPage
+      extends AbstractPage<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription,
+          ListSubscriptionsPage> {
+
+    private ListSubscriptionsPage(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ListSubscriptionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubscriptionsPage createEmptyPage() {
+      return new ListSubscriptionsPage(null, null);
+    }
+
+    @Override
+    protected ListSubscriptionsPage createPage(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ListSubscriptionsResponse response) {
+      return new ListSubscriptionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubscriptionsPage> createPageAsync(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ApiFuture<ListSubscriptionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubscriptionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription, ListSubscriptionsPage,
+          ListSubscriptionsFixedSizeCollection> {
+
+    private ListSubscriptionsFixedSizeCollection(
+        List<ListSubscriptionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubscriptionsFixedSizeCollection createEmptyCollection() {
+      return new ListSubscriptionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubscriptionsFixedSizeCollection createCollection(
+        List<ListSubscriptionsPage> pages, int collectionSize) {
+      return new ListSubscriptionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSnapshotsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage,
+          ListSnapshotsFixedSizeCollection> {
+
+    public static ApiFuture<ListSnapshotsPagedResponse> createAsync(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ApiFuture<ListSnapshotsResponse> futureResponse) {
+      ApiFuture<ListSnapshotsPage> futurePage =
+          ListSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListSnapshotsPage, ListSnapshotsPagedResponse>() {
+            @Override
+            public ListSnapshotsPagedResponse apply(ListSnapshotsPage input) {
+              return new ListSnapshotsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListSnapshotsPagedResponse(ListSnapshotsPage page) {
+      super(page, ListSnapshotsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSnapshotsPage
+      extends AbstractPage<
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage> {
+
+    private ListSnapshotsPage(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ListSnapshotsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSnapshotsPage createEmptyPage() {
+      return new ListSnapshotsPage(null, null);
+    }
+
+    @Override
+    protected ListSnapshotsPage createPage(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ListSnapshotsResponse response) {
+      return new ListSnapshotsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSnapshotsPage> createPageAsync(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ApiFuture<ListSnapshotsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSnapshotsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage,
+          ListSnapshotsFixedSizeCollection> {
+
+    private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSnapshotsFixedSizeCollection createEmptyCollection() {
+      return new ListSnapshotsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSnapshotsFixedSizeCollection createCollection(
+        List<ListSnapshotsPage> pages, int collectionSize) {
+      return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

@@ -15,11 +15,15 @@
  */
 package com.google.cloud.monitoring.v3;
 
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListUptimeCheckConfigsPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListUptimeCheckIpsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.UptimeCheckServiceStub;
 import com.google.cloud.monitoring.v3.stub.UptimeCheckServiceStubSettings;
@@ -32,8 +36,10 @@ import com.google.monitoring.v3.ListUptimeCheckIpsRequest;
 import com.google.monitoring.v3.ListUptimeCheckIpsResponse;
 import com.google.monitoring.v3.UpdateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.UptimeCheckConfig;
+import com.google.monitoring.v3.UptimeCheckIp;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -683,5 +689,165 @@ public class UptimeCheckServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListUptimeCheckConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig,
+          ListUptimeCheckConfigsPage, ListUptimeCheckConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListUptimeCheckConfigsPagedResponse> createAsync(
+        PageContext<
+                ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
+            context,
+        ApiFuture<ListUptimeCheckConfigsResponse> futureResponse) {
+      ApiFuture<ListUptimeCheckConfigsPage> futurePage =
+          ListUptimeCheckConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListUptimeCheckConfigsPage, ListUptimeCheckConfigsPagedResponse>() {
+            @Override
+            public ListUptimeCheckConfigsPagedResponse apply(ListUptimeCheckConfigsPage input) {
+              return new ListUptimeCheckConfigsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListUptimeCheckConfigsPagedResponse(ListUptimeCheckConfigsPage page) {
+      super(page, ListUptimeCheckConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUptimeCheckConfigsPage
+      extends AbstractPage<
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig,
+          ListUptimeCheckConfigsPage> {
+
+    private ListUptimeCheckConfigsPage(
+        PageContext<
+                ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
+            context,
+        ListUptimeCheckConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListUptimeCheckConfigsPage createEmptyPage() {
+      return new ListUptimeCheckConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListUptimeCheckConfigsPage createPage(
+        PageContext<
+                ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
+            context,
+        ListUptimeCheckConfigsResponse response) {
+      return new ListUptimeCheckConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUptimeCheckConfigsPage> createPageAsync(
+        PageContext<
+                ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
+            context,
+        ApiFuture<ListUptimeCheckConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUptimeCheckConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig,
+          ListUptimeCheckConfigsPage, ListUptimeCheckConfigsFixedSizeCollection> {
+
+    private ListUptimeCheckConfigsFixedSizeCollection(
+        List<ListUptimeCheckConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUptimeCheckConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListUptimeCheckConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUptimeCheckConfigsFixedSizeCollection createCollection(
+        List<ListUptimeCheckConfigsPage> pages, int collectionSize) {
+      return new ListUptimeCheckConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListUptimeCheckIpsPagedResponse
+      extends AbstractPagedListResponse<
+          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp,
+          ListUptimeCheckIpsPage, ListUptimeCheckIpsFixedSizeCollection> {
+
+    public static ApiFuture<ListUptimeCheckIpsPagedResponse> createAsync(
+        PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp> context,
+        ApiFuture<ListUptimeCheckIpsResponse> futureResponse) {
+      ApiFuture<ListUptimeCheckIpsPage> futurePage =
+          ListUptimeCheckIpsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListUptimeCheckIpsPage, ListUptimeCheckIpsPagedResponse>() {
+            @Override
+            public ListUptimeCheckIpsPagedResponse apply(ListUptimeCheckIpsPage input) {
+              return new ListUptimeCheckIpsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListUptimeCheckIpsPagedResponse(ListUptimeCheckIpsPage page) {
+      super(page, ListUptimeCheckIpsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUptimeCheckIpsPage
+      extends AbstractPage<
+          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp,
+          ListUptimeCheckIpsPage> {
+
+    private ListUptimeCheckIpsPage(
+        PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp> context,
+        ListUptimeCheckIpsResponse response) {
+      super(context, response);
+    }
+
+    private static ListUptimeCheckIpsPage createEmptyPage() {
+      return new ListUptimeCheckIpsPage(null, null);
+    }
+
+    @Override
+    protected ListUptimeCheckIpsPage createPage(
+        PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp> context,
+        ListUptimeCheckIpsResponse response) {
+      return new ListUptimeCheckIpsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUptimeCheckIpsPage> createPageAsync(
+        PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp> context,
+        ApiFuture<ListUptimeCheckIpsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUptimeCheckIpsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp,
+          ListUptimeCheckIpsPage, ListUptimeCheckIpsFixedSizeCollection> {
+
+    private ListUptimeCheckIpsFixedSizeCollection(
+        List<ListUptimeCheckIpsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUptimeCheckIpsFixedSizeCollection createEmptyCollection() {
+      return new ListUptimeCheckIpsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUptimeCheckIpsFixedSizeCollection createCollection(
+        List<ListUptimeCheckIpsPage> pages, int collectionSize) {
+      return new ListUptimeCheckIpsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }
