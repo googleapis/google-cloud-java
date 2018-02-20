@@ -30,7 +30,7 @@ import javax.annotation.Nonnull;
  * The concrete implementation of {@link MutationApi} that can be used to create and represent a
  * list of mutations. This class is meant to used as child of other classes.
  */
-public final class Mutation implements MutationApi {
+public final class Mutation implements MutationApi<Mutation> {
   private final ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =
       ImmutableList.builder();
 
