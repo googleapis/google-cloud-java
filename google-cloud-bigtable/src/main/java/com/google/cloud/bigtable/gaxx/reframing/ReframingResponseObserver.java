@@ -156,6 +156,9 @@ public class ReframingResponseObserver<InnerT, OuterT>
 
     while (true) {
       int current = numRequested.get();
+      if (current == Integer.MAX_VALUE) {
+        return;
+      }
       // Prevent overflow
       int maxRequest = Integer.MAX_VALUE - current;
       int newValue = maxRequest > count ? current + count : Integer.MAX_VALUE;
