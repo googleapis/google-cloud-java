@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.wrappers;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
@@ -30,7 +29,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class AbstractMutationTest {
+public class MutationTest {
   private MutationImpl mutationBuilder;
 
   @Before
@@ -55,7 +54,7 @@ public class AbstractMutationTest {
         .setCell("fake-family2", "fake-qualifier2", 1_000, "fake-value2")
         .setCell("fake-family2", "fake-qualifier2", "fake-value2");
 
-    List<Mutation> actual = mutationBuilder.getMutations();
+    List<com.google.bigtable.v2.Mutation> actual = mutationBuilder.getMutations();
 
     long maxTimestamp = System.currentTimeMillis() * 1_000;
     com.google.common.collect.Range<Long> expectedTimestampRange =
@@ -102,23 +101,23 @@ public class AbstractMutationTest {
             ByteString.copyFromUtf8("fake-qualifier3"),
             TimestampRange.create(1000L, 2000L));
 
-    List<Mutation> actual = mutationBuilder.getMutations();
+    List<com.google.bigtable.v2.Mutation> actual = mutationBuilder.getMutations();
 
     assertThat(actual)
         .containsExactly(
-            Mutation.newBuilder()
+            com.google.bigtable.v2.Mutation.newBuilder()
                 .setDeleteFromColumn(
                     DeleteFromColumn.newBuilder()
                         .setFamilyName("fake-family")
                         .setColumnQualifier(ByteString.copyFromUtf8("fake-qualifier")))
                 .build(),
-            Mutation.newBuilder()
+            com.google.bigtable.v2.Mutation.newBuilder()
                 .setDeleteFromColumn(
                     DeleteFromColumn.newBuilder()
                         .setFamilyName("fake-family2")
                         .setColumnQualifier(ByteString.copyFromUtf8("fake-qualifier2")))
                 .build(),
-            Mutation.newBuilder()
+            com.google.bigtable.v2.Mutation.newBuilder()
                 .setDeleteFromColumn(
                     DeleteFromColumn.newBuilder()
                         .setFamilyName("fake-family3")
@@ -134,14 +133,14 @@ public class AbstractMutationTest {
   public void deleteFamilyTest() {
     mutationBuilder.deleteFamily("fake-family1").deleteFamily("fake-family2");
 
-    List<Mutation> actual = mutationBuilder.getMutations();
+    List<com.google.bigtable.v2.Mutation> actual = mutationBuilder.getMutations();
 
     assertThat(actual)
         .containsExactly(
-            Mutation.newBuilder()
+            com.google.bigtable.v2.Mutation.newBuilder()
                 .setDeleteFromFamily(DeleteFromFamily.newBuilder().setFamilyName("fake-family1"))
                 .build(),
-            Mutation.newBuilder()
+            com.google.bigtable.v2.Mutation.newBuilder()
                 .setDeleteFromFamily(DeleteFromFamily.newBuilder().setFamilyName("fake-family2"))
                 .build());
   }
@@ -149,12 +148,14 @@ public class AbstractMutationTest {
   @Test
   public void deleteRowTest() {
     mutationBuilder.deleteRow();
-    List<Mutation> actual = mutationBuilder.getMutations();
+    List<com.google.bigtable.v2.Mutation> actual = mutationBuilder.getMutations();
 
     assertThat(actual)
         .containsExactly(
-            Mutation.newBuilder().setDeleteFromRow(DeleteFromRow.newBuilder()).build());
+            com.google.bigtable.v2.Mutation.newBuilder()
+                .setDeleteFromRow(DeleteFromRow.newBuilder())
+                .build());
   }
 
-  static class MutationImpl extends AbstractMutation<MutationImpl> {}
+  static class MutationImpl extends Mutation<MutationImpl> {}
 }

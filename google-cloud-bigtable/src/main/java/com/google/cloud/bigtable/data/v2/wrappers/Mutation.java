@@ -15,8 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.wrappers;
 
-import com.google.api.core.InternalExtensionOnly;
-import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
@@ -29,34 +27,27 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
- * This is the base DSL for creating mutations for {@link RowMutation}
- *
- * <p>Package private to allow extension by Bigtable Client, but the methods are public for external
- * usage in the subclasses.
+ * The concrete implementation of {@link MutationApi} that can be used to create and represent a
+ * list of mutations. This class is meant to used as child of other classes.
  */
-@InternalExtensionOnly
-abstract class AbstractMutation<T extends AbstractMutation> {
-  private final ImmutableList.Builder<Mutation> mutations = ImmutableList.builder();
+public final class Mutation implements MutationApi {
+  private final ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =
+      ImmutableList.builder();
 
-  @InternalExtensionOnly
-  AbstractMutation() {}
+  public static Mutation create() {
+    return new Mutation();
+  }
 
-  /**
-   * Adds a mutation which sets the value of the specified cell.
-   *
-   * <p>This a convenience method that converts Strings to ByteStrings and uses microseconds since
-   * epoch as the timestamp.
-   */
-  public T setCell(@Nonnull String familyName, @Nonnull String qualifier, @Nonnull String value) {
+  private Mutation() {}
+
+  @Override
+  public Mutation setCell(
+      @Nonnull String familyName, @Nonnull String qualifier, @Nonnull String value) {
     return setCell(familyName, wrapByteString(qualifier), wrapByteString(value));
   }
 
-  /**
-   * Adds a mutation which sets the value of the specified cell.
-   *
-   * <p>This is a convenience override that converts Strings to ByteStrings.
-   */
-  public T setCell(
+  @Override
+  public Mutation setCell(
       @Nonnull String familyName,
       @Nonnull String qualifier,
       long timestamp,
@@ -64,20 +55,16 @@ abstract class AbstractMutation<T extends AbstractMutation> {
     return setCell(familyName, wrapByteString(qualifier), timestamp, wrapByteString(value));
   }
 
-  /**
-   * Adds a mutation which sets the value of the specified cell.
-   *
-   * <p>Uses microseconds since epoch as the timestamp.
-   */
-  public T setCell(
+  @Override
+  public Mutation setCell(
       @Nonnull String familyName, @Nonnull ByteString qualifier, @Nonnull ByteString value) {
     long timestamp = System.currentTimeMillis() * 1_000;
 
     return setCell(familyName, qualifier, timestamp, value);
   }
 
-  /** Adds a mutation which sets the value of the specified cell. */
-  public T setCell(
+  @Override
+  public Mutation setCell(
       @Nonnull String familyName,
       @Nonnull ByteString qualifier,
       long timestamp,
@@ -87,8 +74,8 @@ abstract class AbstractMutation<T extends AbstractMutation> {
     Preconditions.checkNotNull(value, "value can't be null.");
     Preconditions.checkArgument(timestamp != -1, "Serverside timestamps are not supported");
 
-    Mutation mutation =
-        Mutation.newBuilder()
+    com.google.bigtable.v2.Mutation mutation =
+        com.google.bigtable.v2.Mutation.newBuilder()
             .setSetCell(
                 SetCell.newBuilder()
                     .setFamilyName(familyName)
@@ -99,31 +86,24 @@ abstract class AbstractMutation<T extends AbstractMutation> {
             .build();
 
     mutations.add(mutation);
-    return thisT();
+    return this;
   }
 
-  /** Adds a mutation which deletes cells from the specified column. */
-  public T deleteCells(@Nonnull String familyName, @Nonnull String qualifier) {
+  @Override
+  public Mutation deleteCells(@Nonnull String familyName, @Nonnull String qualifier) {
     return deleteCells(familyName, wrapByteString(qualifier));
   }
 
-  /** Adds a mutation which deletes cells from the specified column. */
-  public T deleteCells(@Nonnull String familyName, @Nonnull ByteString qualifier) {
+  @Override
+  public Mutation deleteCells(@Nonnull String familyName, @Nonnull ByteString qualifier) {
     Validations.validateFamily(familyName);
     Preconditions.checkNotNull(qualifier, "qualifier can't be null.");
 
     return deleteCells(familyName, qualifier, TimestampRange.unbounded());
   }
 
-  /**
-   * Adds a mutation which deletes cells from the specified column, restricted to a given timestamp
-   * range.
-   *
-   * @param familyName The family name.
-   * @param qualifier The qualifier.
-   * @param timestampRange The timestamp range in microseconds.
-   */
-  public T deleteCells(
+  @Override
+  public Mutation deleteCells(
       @Nonnull String familyName,
       @Nonnull ByteString qualifier,
       @Nonnull TimestampRange timestampRange) {
@@ -160,37 +140,35 @@ abstract class AbstractMutation<T extends AbstractMutation> {
         throw new IllegalArgumentException("Unknown end bound: " + timestampRange.getEndBound());
     }
 
-    Mutation mutation = Mutation.newBuilder().setDeleteFromColumn(builder.build()).build();
+    com.google.bigtable.v2.Mutation mutation =
+        com.google.bigtable.v2.Mutation.newBuilder().setDeleteFromColumn(builder.build()).build();
     mutations.add(mutation);
 
-    return thisT();
+    return this;
   }
 
-  /** Adds a mutation which deletes all cells from the specified column family. */
-  public T deleteFamily(@Nonnull String familyName) {
+  @Override
+  public Mutation deleteFamily(@Nonnull String familyName) {
     Validations.validateFamily(familyName);
 
-    Mutation mutation =
-        Mutation.newBuilder()
+    com.google.bigtable.v2.Mutation mutation =
+        com.google.bigtable.v2.Mutation.newBuilder()
             .setDeleteFromFamily(DeleteFromFamily.newBuilder().setFamilyName(familyName).build())
             .build();
     mutations.add(mutation);
 
-    return thisT();
+    return this;
   }
 
-  /** Adds a mutation which deletes all cells from the containing row. */
-  public T deleteRow() {
-    Mutation mutation =
-        Mutation.newBuilder().setDeleteFromRow(DeleteFromRow.getDefaultInstance()).build();
+  @Override
+  public Mutation deleteRow() {
+    com.google.bigtable.v2.Mutation mutation =
+        com.google.bigtable.v2.Mutation.newBuilder()
+            .setDeleteFromRow(DeleteFromRow.getDefaultInstance())
+            .build();
     mutations.add(mutation);
 
-    return thisT();
-  }
-
-  @SuppressWarnings("unchecked")
-  private T thisT() {
-    return (T) this;
+    return this;
   }
 
   private static ByteString wrapByteString(String str) {
@@ -201,7 +179,8 @@ abstract class AbstractMutation<T extends AbstractMutation> {
     }
   }
 
-  protected List<Mutation> getMutations() {
+  /** Returns the mutation protos. */
+  List<com.google.bigtable.v2.Mutation> getMutations() {
     return mutations.build();
   }
 }

@@ -21,17 +21,23 @@ import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsRequest.Entry;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.wrappers.Range.TimestampRange;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
 
-public class RowMutation extends AbstractMutation<RowMutation> {
-
+/**
+ * Represents a list of mutations targeted at a single row. It's meant to be used as an parameter
+ * for {@link com.google.cloud.bigtable.data.v2.BigtableDataClient#mutateRow(RowMutation)}.
+ */
+public final class RowMutation implements MutationApi<RowMutation> {
   private final String tableId;
   private final ByteString key;
+  private final Mutation mutation;
 
   private RowMutation(String tableId, ByteString key) {
     this.tableId = tableId;
     this.key = key;
+    this.mutation = Mutation.create();
   }
 
   public static RowMutation create(@Nonnull String tableId, @Nonnull String key) {
@@ -40,6 +46,73 @@ public class RowMutation extends AbstractMutation<RowMutation> {
 
   public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key) {
     return new RowMutation(tableId, key);
+  }
+
+  @Override
+  public RowMutation setCell(
+      @Nonnull String familyName, @Nonnull String qualifier, @Nonnull String value) {
+    mutation.setCell(familyName, qualifier, value);
+    return this;
+  }
+
+  @Override
+  public RowMutation setCell(
+      @Nonnull String familyName,
+      @Nonnull String qualifier,
+      long timestamp,
+      @Nonnull String value) {
+    mutation.setCell(familyName, qualifier, timestamp, value);
+    return this;
+  }
+
+  @Override
+  public RowMutation setCell(
+      @Nonnull String familyName, @Nonnull ByteString qualifier, @Nonnull ByteString value) {
+    mutation.setCell(familyName, qualifier, value);
+    return this;
+  }
+
+  @Override
+  public RowMutation setCell(
+      @Nonnull String familyName,
+      @Nonnull ByteString qualifier,
+      long timestamp,
+      @Nonnull ByteString value) {
+    mutation.setCell(familyName, qualifier, timestamp, value);
+    return this;
+  }
+
+  @Override
+  public RowMutation deleteCells(@Nonnull String familyName, @Nonnull String qualifier) {
+    mutation.deleteCells(familyName, qualifier);
+    return this;
+  }
+
+  @Override
+  public RowMutation deleteCells(@Nonnull String familyName, @Nonnull ByteString qualifier) {
+    mutation.deleteCells(familyName, qualifier);
+    return this;
+  }
+
+  @Override
+  public RowMutation deleteCells(
+      @Nonnull String familyName,
+      @Nonnull ByteString qualifier,
+      @Nonnull TimestampRange timestampRange) {
+    mutation.deleteCells(familyName, qualifier, timestampRange);
+    return this;
+  }
+
+  @Override
+  public RowMutation deleteFamily(@Nonnull String familyName) {
+    mutation.deleteFamily(familyName);
+    return this;
+  }
+
+  @Override
+  public RowMutation deleteRow() {
+    mutation.deleteRow();
+    return this;
   }
 
   @InternalApi
@@ -54,7 +127,7 @@ public class RowMutation extends AbstractMutation<RowMutation> {
         .setAppProfileId(requestContext.getAppProfileId())
         .setTableName(tableName.toString())
         .setRowKey(key)
-        .addAllMutations(getMutations())
+        .addAllMutations(mutation.getMutations())
         .build();
   }
 
@@ -73,7 +146,8 @@ public class RowMutation extends AbstractMutation<RowMutation> {
     return MutateRowsRequest.newBuilder()
         .setAppProfileId(requestContext.getAppProfileId())
         .setTableName(tableName.toString())
-        .addEntries(Entry.newBuilder().setRowKey(key).addAllMutations(getMutations()).build())
+        .addEntries(
+            Entry.newBuilder().setRowKey(key).addAllMutations(mutation.getMutations()).build())
         .build();
   }
 }
