@@ -15,14 +15,20 @@
  */
 package com.google.cloud.pubsub.v1;
 
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
+import com.google.common.base.Function;
+import com.google.common.collect.Iterables;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -39,6 +45,7 @@ import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.UpdateTopicRequest;
@@ -1008,5 +1015,198 @@ public class TopicAdminClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListTopicsPagedResponse
+      extends AbstractPagedListResponse<
+          ListTopicsRequest, ListTopicsResponse, Topic, ListTopicsPage,
+          ListTopicsFixedSizeCollection> {
+
+    public static ApiFuture<ListTopicsPagedResponse> createAsync(
+        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        ApiFuture<ListTopicsResponse> futureResponse) {
+      ApiFuture<ListTopicsPage> futurePage =
+          ListTopicsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListTopicsPage, ListTopicsPagedResponse>() {
+            @Override
+            public ListTopicsPagedResponse apply(ListTopicsPage input) {
+              return new ListTopicsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListTopicsPagedResponse(ListTopicsPage page) {
+      super(page, ListTopicsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTopicsPage
+      extends AbstractPage<ListTopicsRequest, ListTopicsResponse, Topic, ListTopicsPage> {
+
+    private ListTopicsPage(
+        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        ListTopicsResponse response) {
+      super(context, response);
+    }
+
+    private static ListTopicsPage createEmptyPage() {
+      return new ListTopicsPage(null, null);
+    }
+
+    @Override
+    protected ListTopicsPage createPage(
+        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        ListTopicsResponse response) {
+      return new ListTopicsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTopicsPage> createPageAsync(
+        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        ApiFuture<ListTopicsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTopicsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTopicsRequest, ListTopicsResponse, Topic, ListTopicsPage,
+          ListTopicsFixedSizeCollection> {
+
+    private ListTopicsFixedSizeCollection(List<ListTopicsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTopicsFixedSizeCollection createEmptyCollection() {
+      return new ListTopicsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTopicsFixedSizeCollection createCollection(
+        List<ListTopicsPage> pages, int collectionSize) {
+      return new ListTopicsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListTopicSubscriptionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String,
+          ListTopicSubscriptionsPage, ListTopicSubscriptionsFixedSizeCollection> {
+
+    public static ApiFuture<ListTopicSubscriptionsPagedResponse> createAsync(
+        PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
+        ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
+      ApiFuture<ListTopicSubscriptionsPage> futurePage =
+          ListTopicSubscriptionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListTopicSubscriptionsPage, ListTopicSubscriptionsPagedResponse>() {
+            @Override
+            public ListTopicSubscriptionsPagedResponse apply(ListTopicSubscriptionsPage input) {
+              return new ListTopicSubscriptionsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListTopicSubscriptionsPagedResponse(ListTopicSubscriptionsPage page) {
+      super(page, ListTopicSubscriptionsFixedSizeCollection.createEmptyCollection());
+    }
+
+    public Iterable<SubscriptionName> iterateAllAsSubscriptionName() {
+      return Iterables.transform(
+          iterateAll(),
+          new Function<String, SubscriptionName>() {
+            @Override
+            public SubscriptionName apply(String arg0) {
+              return SubscriptionName.parse(arg0);
+            }
+          });
+    }
+  }
+
+  public static class ListTopicSubscriptionsPage
+      extends AbstractPage<
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String,
+          ListTopicSubscriptionsPage> {
+
+    private ListTopicSubscriptionsPage(
+        PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
+        ListTopicSubscriptionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListTopicSubscriptionsPage createEmptyPage() {
+      return new ListTopicSubscriptionsPage(null, null);
+    }
+
+    @Override
+    protected ListTopicSubscriptionsPage createPage(
+        PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
+        ListTopicSubscriptionsResponse response) {
+      return new ListTopicSubscriptionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTopicSubscriptionsPage> createPageAsync(
+        PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
+        ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+
+    public Iterable<SubscriptionName> iterateAllAsSubscriptionName() {
+      return Iterables.transform(
+          iterateAll(),
+          new Function<String, SubscriptionName>() {
+            @Override
+            public SubscriptionName apply(String arg0) {
+              return SubscriptionName.parse(arg0);
+            }
+          });
+    }
+
+    public Iterable<SubscriptionName> getValuesAsSubscriptionName() {
+      return Iterables.transform(
+          getValues(),
+          new Function<String, SubscriptionName>() {
+            @Override
+            public SubscriptionName apply(String arg0) {
+              return SubscriptionName.parse(arg0);
+            }
+          });
+    }
+  }
+
+  public static class ListTopicSubscriptionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String,
+          ListTopicSubscriptionsPage, ListTopicSubscriptionsFixedSizeCollection> {
+
+    private ListTopicSubscriptionsFixedSizeCollection(
+        List<ListTopicSubscriptionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTopicSubscriptionsFixedSizeCollection createEmptyCollection() {
+      return new ListTopicSubscriptionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTopicSubscriptionsFixedSizeCollection createCollection(
+        List<ListTopicSubscriptionsPage> pages, int collectionSize) {
+      return new ListTopicSubscriptionsFixedSizeCollection(pages, collectionSize);
+    }
+
+    public Iterable<SubscriptionName> getValuesAsSubscriptionName() {
+      return Iterables.transform(
+          getValues(),
+          new Function<String, SubscriptionName>() {
+            @Override
+            public SubscriptionName apply(String arg0) {
+              return SubscriptionName.parse(arg0);
+            }
+          });
+    }
   }
 }

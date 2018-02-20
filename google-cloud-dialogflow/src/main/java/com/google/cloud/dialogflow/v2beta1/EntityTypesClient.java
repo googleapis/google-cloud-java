@@ -15,12 +15,17 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListEntityTypesPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.EntityType.Entity;
 import com.google.cloud.dialogflow.v2beta1.stub.EntityTypesStub;
@@ -1393,5 +1398,80 @@ public class EntityTypesClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListEntityTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage,
+          ListEntityTypesFixedSizeCollection> {
+
+    public static ApiFuture<ListEntityTypesPagedResponse> createAsync(
+        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        ApiFuture<ListEntityTypesResponse> futureResponse) {
+      ApiFuture<ListEntityTypesPage> futurePage =
+          ListEntityTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListEntityTypesPage, ListEntityTypesPagedResponse>() {
+            @Override
+            public ListEntityTypesPagedResponse apply(ListEntityTypesPage input) {
+              return new ListEntityTypesPagedResponse(input);
+            }
+          });
+    }
+
+    private ListEntityTypesPagedResponse(ListEntityTypesPage page) {
+      super(page, ListEntityTypesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEntityTypesPage
+      extends AbstractPage<
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage> {
+
+    private ListEntityTypesPage(
+        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        ListEntityTypesResponse response) {
+      super(context, response);
+    }
+
+    private static ListEntityTypesPage createEmptyPage() {
+      return new ListEntityTypesPage(null, null);
+    }
+
+    @Override
+    protected ListEntityTypesPage createPage(
+        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        ListEntityTypesResponse response) {
+      return new ListEntityTypesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEntityTypesPage> createPageAsync(
+        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        ApiFuture<ListEntityTypesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEntityTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage,
+          ListEntityTypesFixedSizeCollection> {
+
+    private ListEntityTypesFixedSizeCollection(
+        List<ListEntityTypesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEntityTypesFixedSizeCollection createEmptyCollection() {
+      return new ListEntityTypesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEntityTypesFixedSizeCollection createCollection(
+        List<ListEntityTypesPage> pages, int collectionSize) {
+      return new ListEntityTypesFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

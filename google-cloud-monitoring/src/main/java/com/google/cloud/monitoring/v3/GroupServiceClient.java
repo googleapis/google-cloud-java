@@ -15,11 +15,16 @@
  */
 package com.google.cloud.monitoring.v3;
 
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupsPagedResponse;
-
+import com.google.api.MonitoredResource;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStub;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStubSettings;
@@ -36,6 +41,7 @@ import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -661,5 +667,154 @@ public class GroupServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage,
+          ListGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListGroupsPagedResponse> createAsync(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ApiFuture<ListGroupsResponse> futureResponse) {
+      ApiFuture<ListGroupsPage> futurePage =
+          ListGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListGroupsPage, ListGroupsPagedResponse>() {
+            @Override
+            public ListGroupsPagedResponse apply(ListGroupsPage input) {
+              return new ListGroupsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListGroupsPagedResponse(ListGroupsPage page) {
+      super(page, ListGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGroupsPage
+      extends AbstractPage<ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage> {
+
+    private ListGroupsPage(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ListGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListGroupsPage createEmptyPage() {
+      return new ListGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListGroupsPage createPage(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ListGroupsResponse response) {
+      return new ListGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListGroupsPage> createPageAsync(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ApiFuture<ListGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage,
+          ListGroupsFixedSizeCollection> {
+
+    private ListGroupsFixedSizeCollection(List<ListGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGroupsFixedSizeCollection createCollection(
+        List<ListGroupsPage> pages, int collectionSize) {
+      return new ListGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListGroupMembersPagedResponse
+      extends AbstractPagedListResponse<
+          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
+          ListGroupMembersPage, ListGroupMembersFixedSizeCollection> {
+
+    public static ApiFuture<ListGroupMembersPagedResponse> createAsync(
+        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        ApiFuture<ListGroupMembersResponse> futureResponse) {
+      ApiFuture<ListGroupMembersPage> futurePage =
+          ListGroupMembersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListGroupMembersPage, ListGroupMembersPagedResponse>() {
+            @Override
+            public ListGroupMembersPagedResponse apply(ListGroupMembersPage input) {
+              return new ListGroupMembersPagedResponse(input);
+            }
+          });
+    }
+
+    private ListGroupMembersPagedResponse(ListGroupMembersPage page) {
+      super(page, ListGroupMembersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGroupMembersPage
+      extends AbstractPage<
+          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
+          ListGroupMembersPage> {
+
+    private ListGroupMembersPage(
+        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        ListGroupMembersResponse response) {
+      super(context, response);
+    }
+
+    private static ListGroupMembersPage createEmptyPage() {
+      return new ListGroupMembersPage(null, null);
+    }
+
+    @Override
+    protected ListGroupMembersPage createPage(
+        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        ListGroupMembersResponse response) {
+      return new ListGroupMembersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListGroupMembersPage> createPageAsync(
+        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        ApiFuture<ListGroupMembersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGroupMembersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
+          ListGroupMembersPage, ListGroupMembersFixedSizeCollection> {
+
+    private ListGroupMembersFixedSizeCollection(
+        List<ListGroupMembersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGroupMembersFixedSizeCollection createEmptyCollection() {
+      return new ListGroupMembersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGroupMembersFixedSizeCollection createCollection(
+        List<ListGroupMembersPage> pages, int collectionSize) {
+      return new ListGroupMembersFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

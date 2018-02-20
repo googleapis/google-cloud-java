@@ -15,7 +15,7 @@
  */
 package com.google.cloud.trace.v1;
 
-import static com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedResponse;
+import static com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;

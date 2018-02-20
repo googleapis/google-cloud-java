@@ -15,7 +15,7 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListIntentsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.IntentsClient.ListIntentsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;

@@ -15,8 +15,8 @@
  */
 package com.google.cloud.pubsub.v1;
 
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
+import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
+import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;

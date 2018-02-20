@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2.stub;
 
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListSnapshotsPagedResponse;
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListTablesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -40,6 +40,7 @@ import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Snapshot;
+import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.longrunning.Operation;
@@ -108,6 +109,11 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
   public UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse>
       checkConsistencyCallable() {
     throw new UnsupportedOperationException("Not implemented: checkConsistencyCallable()");
+  }
+
+  public OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+      snapshotTableOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: snapshotTableOperationCallable()");
   }
 
   public UnaryCallable<SnapshotTableRequest, Operation> snapshotTableCallable() {

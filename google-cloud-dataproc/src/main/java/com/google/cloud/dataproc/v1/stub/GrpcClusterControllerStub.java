@@ -15,7 +15,7 @@
  */
 package com.google.cloud.dataproc.v1.stub;
 
-import static com.google.cloud.dataproc.v1.PagedResponseWrappers.ListClustersPagedResponse;
+import static com.google.cloud.dataproc.v1.ClusterControllerClient.ListClustersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
