@@ -66,7 +66,12 @@ public class FiltersTest {
     RowFilter actualProto = FILTERS.chain().toProto();
 
     RowFilter expectedFilter =
-        RowFilter.newBuilder().setChain(Chain.newBuilder()).build();
+        RowFilter.newBuilder()
+            .setChain(
+                Chain.newBuilder()
+                    .addFilters(
+                        RowFilter.newBuilder().setPassAllFilter(true).build()))
+            .build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
@@ -121,7 +126,12 @@ public class FiltersTest {
     RowFilter actualProto = FILTERS.chain().toProto();
 
     RowFilter expectedFilter =
-        RowFilter.newBuilder().setInterleave(Interleave.newBuilder()).build();
+        RowFilter.newBuilder()
+            .setInterleave(
+                Interleave.newBuilder()
+                    .addFilters(
+                        RowFilter.newBuilder().setPassAllFilter(true).build()))
+            .build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
