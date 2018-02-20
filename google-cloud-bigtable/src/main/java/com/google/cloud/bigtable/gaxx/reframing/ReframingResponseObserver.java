@@ -202,7 +202,7 @@ public class ReframingResponseObserver<InnerT, OuterT>
       try {
         reframer.push(response);
       } catch (Throwable t) {
-        if (error != null) {
+        if (error == null) {
           shoudCancelStream = true;
           error = t;
         }
