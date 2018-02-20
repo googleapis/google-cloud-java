@@ -154,7 +154,7 @@ public final class Filters {
    *
    * <p>For advanced use only.
    */
-  public Filter raw(RowFilter rowFilter) {
+  public Filter fromProto(RowFilter rowFilter) {
     return new SimpleFilter(rowFilter);
   }
 

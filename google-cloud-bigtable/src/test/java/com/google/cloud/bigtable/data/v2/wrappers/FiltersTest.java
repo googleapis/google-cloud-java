@@ -399,10 +399,10 @@ public class FiltersTest {
   }
 
   @Test
-  public void rawTest() {
+  public void fromProtoTest() {
     RowFilter inner = RowFilter.newBuilder().setRowSampleFilter(0.5).build();
 
-    RowFilter actualFilter = FILTERS.raw(inner).toProto();
+    RowFilter actualFilter = FILTERS.fromProto(inner).toProto();
     assertThat(actualFilter).isEqualTo(inner);
   }
 
