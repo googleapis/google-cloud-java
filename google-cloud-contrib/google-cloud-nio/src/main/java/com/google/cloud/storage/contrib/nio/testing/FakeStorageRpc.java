@@ -41,7 +41,7 @@ import java.util.Map;
 import javax.annotation.concurrent.NotThreadSafe;
 
 /**
- * A bare-bones in-memory implementation of StorageRpc, meant for testing of CloudStorageFileSystem.
+ * A bare-bones in-memory implementation of StorageRpc, meant for testing.
  *
  * <p>This class is <i>not</i> thread-safe. It's also (currently) limited in the following ways:
  * <ul>
@@ -117,12 +117,7 @@ class FakeStorageRpc implements StorageRpc {
   public Tuple<String, Iterable<Bucket>> list(Map<Option, ?> options) throws StorageException {
     throw new UnsupportedOperationException();
   }
-
-  /**
-   * This method lists all the objects that have been created. Since this class 
-   * does not support creating, listing and deleting buckets, The parameter bucket 
-   * here is not actually used and on serves as a placeholder.
-   */
+  
   @Override
   public Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options)
       throws StorageException {
