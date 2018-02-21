@@ -28,7 +28,11 @@ public abstract class RowCell {
   /** Creates a new instance of the {@link RowCell}. */
   @InternalApi
   public static RowCell create(
-      String family, ByteString qualifier, long timestamp, List<String> labels, ByteString value) {
+      @Nonnull String family,
+      @Nonnull ByteString qualifier,
+      long timestamp,
+      @Nonnull List<String> labels,
+      @Nonnull ByteString value) {
     return new AutoValue_RowCell(family, qualifier, timestamp, value, labels);
   }
 
@@ -37,7 +41,7 @@ public abstract class RowCell {
   public abstract String family();
 
   /** The cell's qualifier (column name) */
-  @Nullable
+  @Nonnull
   public abstract ByteString qualifier();
 
   /** The timestamp of the cell */

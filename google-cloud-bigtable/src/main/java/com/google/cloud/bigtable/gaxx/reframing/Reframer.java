@@ -52,7 +52,11 @@ public interface Reframer<OuterT, InnerT> {
    */
   void push(InnerT response);
 
-  /** Checks if there is a frame to be popped. */
+  /**
+   * Checks if there is a frame to be popped.
+   *
+   * <p>Note that this method might update internal to buffer the next response.
+   */
   boolean hasFullFrame();
 
   /** Checks if there is any incomplete data. Used to check if the stream closed prematurely. */
