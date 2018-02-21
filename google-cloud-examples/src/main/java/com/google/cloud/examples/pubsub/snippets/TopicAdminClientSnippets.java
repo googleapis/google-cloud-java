@@ -19,17 +19,18 @@ package com.google.cloud.examples.pubsub.snippets;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
-import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ProjectName;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.Topic;
-import com.google.pubsub.v1.TopicName;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class TopicAdminClientSnippets {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       // projectId <=  unique project identifier, eg. "my-project-id"
       // topicId <= "my-topic-id"
-      TopicName topicName = TopicName.of(projectId, topicId);
+      ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
       Topic topic = topicAdminClient.createTopic(topicName);
       return topic;
     }
@@ -65,7 +66,7 @@ public class TopicAdminClientSnippets {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       ListTopicsRequest listTopicsRequest =
           ListTopicsRequest.newBuilder()
-              .setProjectWithProjectName(ProjectName.of(projectId))
+              .setProject(ProjectName.format(projectId))
               .build();
       ListTopicsPagedResponse response = topicAdminClient.listTopics(listTopicsRequest);
       Iterable<Topic> topics = response.iterateAll();
@@ -82,10 +83,10 @@ public class TopicAdminClientSnippets {
       throws Exception {
     // [START pubsub_list_topic_subscriptions]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-      TopicName topicName = TopicName.of(projectId, topicId);
+      ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
       ListTopicSubscriptionsRequest request =
           ListTopicSubscriptionsRequest.newBuilder()
-              .setTopicWithTopicName(topicName)
+              .setTopic(topicName.toString())
               .build();
       ListTopicSubscriptionsPagedResponse response =
           topicAdminClient.listTopicSubscriptions(request);
@@ -99,10 +100,10 @@ public class TopicAdminClientSnippets {
   }
 
   /** Example of deleting a topic. */
-  public TopicName deleteTopic(String topicId) throws Exception {
+  public ProjectTopicName deleteTopic(String topicId) throws Exception {
     // [START pubsub_delete_topic]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-      TopicName topicName = TopicName.of(projectId, topicId);
+      ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
       topicAdminClient.deleteTopic(topicName);
       return topicName;
     }
@@ -113,7 +114,7 @@ public class TopicAdminClientSnippets {
   public Policy getTopicPolicy(String topicId) throws Exception {
     // [START pubsub_get_topic_policy]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-      TopicName topicName = TopicName.of(projectId, topicId);
+      ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
       Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
       if (policy == null) {
         // topic iam policy was not found
@@ -127,7 +128,7 @@ public class TopicAdminClientSnippets {
   public Policy replaceTopicPolicy(String topicId) throws Exception {
     // [START pubsub_set_topic_policy]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-      String topicName = TopicName.of(projectId, topicId).toString();
+      String topicName = ProjectTopicName.format(projectId, topicId);
       Policy policy = topicAdminClient.getIamPolicy(topicName);
       // add role -> members binding
       Binding binding =
@@ -150,7 +151,7 @@ public class TopicAdminClientSnippets {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.topics.get");
-      TopicName topicName = TopicName.of(projectId, topicId);
+      ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
       TestIamPermissionsResponse testedPermissions =
           topicAdminClient.testIamPermissions(topicName.toString(), permissions);
       return testedPermissions;
@@ -162,7 +163,7 @@ public class TopicAdminClientSnippets {
   public Topic getTopic(String topicId) throws Exception {
     // [START pubsub_get_topic]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-      TopicName topicName = TopicName.of(projectId, topicId);
+      ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
       Topic topic = topicAdminClient.getTopic(topicName);
       return topic;
     }

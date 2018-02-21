@@ -40,16 +40,19 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
 import com.google.pubsub.v1.PublisherGrpc.PublisherFutureStub;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
 import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
+import org.threeten.bp.Duration;
+
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -65,8 +68,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -89,7 +90,7 @@ import org.threeten.bp.Duration;
 public class Publisher {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
 
-  private final TopicName topicName;
+  private final ProjectTopicName topicName;
   private final String cachedTopicNameString;
 
   private final BatchingSettings batchingSettings;
@@ -166,7 +167,7 @@ public class Publisher {
   }
 
   /** Topic which the publisher publishes to. */
-  public TopicName getTopicName() {
+  public ProjectTopicName getTopicName() {
     return topicName;
   }
 
@@ -499,31 +500,7 @@ public class Publisher {
    * <pre>{@code
    * String projectName = "my_project";
    * String topicName = "my_topic";
-   * TopicName topic = TopicName.create(projectName, topicName);
-   * Publisher publisher = Publisher.newBuilder(topic).build();
-   * try {
-   *   // ...
-   * } finally {
-   *   // When finished with the publisher, make sure to shutdown to free up resources.
-   *   publisher.shutdown();
-   * }
-   * }</pre>
-   *
-   * @deprecated Use {@link #newBuilder(TopicName)} instead.
-   */
-  @Deprecated
-  public static Builder defaultBuilder(TopicName topicName) {
-    return newBuilder(topicName);
-  }
-
-  /**
-   * Constructs a new {@link Builder} using the given topic.
-   *
-   * <p>Example of creating a {@code Publisher}.
-   * <pre>{@code
-   * String projectName = "my_project";
-   * String topicName = "my_topic";
-   * TopicName topic = TopicName.create(projectName, topicName);
+   * ProjectTopicName topic = ProjectTopicName.create(projectName, topicName);
    * Publisher publisher = Publisher.newBuilder(topic).build();
    * try {
    *   // ...
@@ -534,7 +511,7 @@ public class Publisher {
    * }</pre>
    *
    */
-  public static Builder newBuilder(TopicName topicName) {
+  public static Builder newBuilder(ProjectTopicName topicName) {
     return new Builder(topicName);
   }
 
@@ -579,7 +556,7 @@ public class Publisher {
             .setExecutorThreadCount(THREADS_PER_CPU * Runtime.getRuntime().availableProcessors())
             .build();
 
-    TopicName topicName;
+    ProjectTopicName topicName;
 
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
@@ -597,7 +574,7 @@ public class Publisher {
     CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();
 
-    private Builder(TopicName topic) {
+    private Builder(ProjectTopicName topic) {
       this.topicName = Preconditions.checkNotNull(topic);
     }
 
