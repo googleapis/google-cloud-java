@@ -30,7 +30,9 @@ import com.google.common.collect.Queues;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeUnit;
 
 @InternalApi("for testing")
 public class FakeStreamingApi {
@@ -118,6 +120,7 @@ public class FakeStreamingApi {
     private ResponseObserver<ResponseT> actualObserver;
     private RequestT actualRequest;
     private List<ResponseT> responseList;
+    private BlockingQueue<StreamControllerStash<ResponseT>> calls = Queues.newLinkedBlockingQueue();
 
     public ServerStreamingStashCallable() {
       responseList = new ArrayList<>();
@@ -138,7 +141,17 @@ public class FakeStreamingApi {
 
       StreamControllerStash<ResponseT> controller =
           new StreamControllerStash<>(responseList, responseObserver);
+      calls.add(controller);
       controller.start();
+    }
+
+    public StreamControllerStash<ResponseT> popLastCall() {
+      try {
+        return calls.poll(1, TimeUnit.SECONDS);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new RuntimeException(e);
+      }
     }
 
     public ApiCallContext getContext() {
@@ -154,11 +167,12 @@ public class FakeStreamingApi {
     }
 
     // Minimal implementation of back pressure aware stream controller. Not threadsafe
-    private static class StreamControllerStash<ResponseT> implements StreamController {
+    public static class StreamControllerStash<ResponseT> implements StreamController {
       final ResponseObserver<ResponseT> observer;
       final Queue<ResponseT> queue;
       boolean autoFlowControl = true;
       long numPending;
+      long numDelivered;
       Throwable error;
       boolean delivering, closed;
 
@@ -166,6 +180,14 @@ public class FakeStreamingApi {
           List<ResponseT> responseList, ResponseObserver<ResponseT> observer) {
         this.observer = observer;
         this.queue = Queues.newArrayDeque(responseList);
+      }
+
+      public Throwable getError() {
+        return error;
+      }
+
+      public long getNumDelivered() {
+        return numDelivered;
       }
 
       public void start() {
@@ -200,6 +222,7 @@ public class FakeStreamingApi {
         try {
           while (error == null && numPending > 0 && !queue.isEmpty()) {
             numPending--;
+            numDelivered++;
             observer.onResponse(queue.poll());
           }
 
