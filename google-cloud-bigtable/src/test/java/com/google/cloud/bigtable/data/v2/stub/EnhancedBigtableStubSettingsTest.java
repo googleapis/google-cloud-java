@@ -24,14 +24,12 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 import java.util.List;
-import java.util.Set;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -62,8 +60,8 @@ public class EnhancedBigtableStubSettingsTest {
     String endpoint = "some.other.host:123";
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
 
-    BigtableDataSettings.Builder builder =
-        BigtableDataSettings.newBuilder()
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
             .setInstanceName(instanceName)
             .setAppProfileId(appProfileId)
             .setEndpoint(endpoint)
@@ -76,7 +74,7 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   private void verifyBuilder(
-      BigtableDataSettings.Builder builder,
+      EnhancedBigtableStubSettings.Builder builder,
       InstanceName instanceName,
       String appProfileId,
       String endpoint,
@@ -88,7 +86,7 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   private void verifySettings(
-      BigtableDataSettings settings,
+      EnhancedBigtableStubSettings settings,
       InstanceName instanceName,
       String appProfileId,
       String endpoint,
@@ -103,8 +101,8 @@ public class EnhancedBigtableStubSettingsTest {
   public void multipleChannelsByDefaultTest() {
     InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
 
-    BigtableDataSettings.Builder builder =
-        BigtableDataSettings.newBuilder().setInstanceName(dummyInstanceName);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
 
     InstantiatingGrpcChannelProvider provider =
         (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
@@ -254,7 +252,7 @@ public class EnhancedBigtableStubSettingsTest {
   @Test
   public void mutateRowHasSaneDefaultsTest() {
     UnaryCallSettings.Builder<RowMutation, Void> builder =
-        BigtableDataSettings.newBuilder().mutateRowSettings();
+        EnhancedBigtableStubSettings.newBuilder().mutateRowSettings();
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
   }
 

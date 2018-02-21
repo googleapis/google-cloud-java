@@ -60,27 +60,22 @@ public class FiltersTest {
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
-  
+
   @Test
   public void chainEmptyTest() {
     RowFilter actualProto = FILTERS.chain().toProto();
 
-    RowFilter expectedFilter =
-        RowFilter.newBuilder().setPassAllFilter(true).build();
+    RowFilter expectedFilter = RowFilter.newBuilder().setPassAllFilter(true).build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
-  
+
   @Test
   public void chainSingleTest() {
-    RowFilter actualProto =
-        FILTERS
-            .chain()
-            .filter(FILTERS.key().regex(".*"))
-            .toProto();
+    RowFilter actualProto = FILTERS.chain().filter(FILTERS.key().regex(".*")).toProto();
 
     RowFilter expectedFilter =
-      RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
+        RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
@@ -115,27 +110,22 @@ public class FiltersTest {
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
-  
+
   @Test
   public void interleaveEmptyTest() {
     RowFilter actualProto = FILTERS.chain().toProto();
 
-    RowFilter expectedFilter =
-        RowFilter.newBuilder().setPassAllFilter(true).build();
+    RowFilter expectedFilter = RowFilter.newBuilder().setPassAllFilter(true).build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
-  
+
   @Test
   public void interleaveSingleTest() {
-    RowFilter actualProto =
-        FILTERS
-            .interleave()
-            .filter(FILTERS.key().regex(".*"))
-            .toProto();
+    RowFilter actualProto = FILTERS.interleave().filter(FILTERS.key().regex(".*")).toProto();
 
     RowFilter expectedFilter =
-      RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
+        RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
