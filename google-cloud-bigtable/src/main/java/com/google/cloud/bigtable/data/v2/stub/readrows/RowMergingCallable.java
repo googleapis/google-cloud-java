@@ -21,8 +21,8 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
-import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
-import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter.RowBuilder;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
 import com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserver;
 
 /**

@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
-import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter.RowBuilder;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import java.util.List;

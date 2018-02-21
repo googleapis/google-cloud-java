@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.wrappers;
+package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowRequest;
@@ -21,13 +21,13 @@ import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsRequest.Entry;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.wrappers.Range.TimestampRange;
+import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
 
 /**
  * Represents a list of mutations targeted at a single row. It's meant to be used as an parameter
- * for {@link com.google.cloud.bigtable.data.v2.BigtableDataClient#mutateRow(RowMutation)}.
+ * for {@link com.google.cloud.bigtable.data.v2.BigtableDataClient#mutateRowAsync(RowMutation)}.
  */
 public final class RowMutation implements MutationApi<RowMutation> {
   private final String tableId;

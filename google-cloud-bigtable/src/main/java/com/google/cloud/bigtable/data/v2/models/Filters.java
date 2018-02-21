@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.wrappers;
+package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
@@ -21,8 +21,8 @@ import com.google.bigtable.v2.ColumnRange;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.ValueRange;
 import com.google.cloud.bigtable.data.v2.internal.RegexUtil;
-import com.google.cloud.bigtable.data.v2.wrappers.Range.AbstractByteStringRange;
-import com.google.cloud.bigtable.data.v2.wrappers.Range.AbstractTimestampRange;
+import com.google.cloud.bigtable.data.v2.models.Range.AbstractByteStringRange;
+import com.google.cloud.bigtable.data.v2.models.Range.AbstractTimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
@@ -36,7 +36,7 @@ import javax.annotation.Nonnull;
  * <p>Sample code:
  *
  * <pre>{@code
- * import static com.google.cloud.bigtable.data.v2.wrappers.Filters.FILTERS;
+ * import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
  *
  * void main() {
  *   // Build the filter expression
