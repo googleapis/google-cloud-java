@@ -22,14 +22,15 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.BulkMutations;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
-import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import java.io.IOException;
 import java.util.List;
 
@@ -333,6 +334,33 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public UnaryCallable<RowMutation, Void> mutateRowCallable() {
     return stub.mutateRowCallable();
+  }
+
+  /**
+   * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
+   * but the entire batch is not executed atomically.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   try (BulkMutations mutations = bigtableClient.newBulkMutations()) {
+   *     for (String someValue : someCollection) {
+   *       RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
+   *         .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
+   *
+   *       mutations.send(mutation);
+   *     }
+   *   } catch (BulkMutationFailure failure) {
+   *     // Handle error
+   *   }
+   *   // After `mutations` is closed, all mutations have been applied
+   * }
+   * }</pre>
+   */
+  public BulkMutations newBulkMutations() {
+    return new BulkMutations(stub.mutateRowsCallable());
   }
 
   /**

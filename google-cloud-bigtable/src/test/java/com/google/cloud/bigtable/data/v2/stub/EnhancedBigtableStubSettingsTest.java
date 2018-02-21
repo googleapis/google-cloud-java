@@ -17,9 +17,11 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -29,6 +31,7 @@ import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.common.collect.Range;
 import java.util.List;
 import java.util.Set;
 import org.junit.Test;
@@ -254,6 +257,73 @@ public class EnhancedBigtableStubSettingsTest {
     UnaryCallSettings.Builder<RowMutation, Void> builder =
         EnhancedBigtableStubSettings.newBuilder().mutateRowSettings();
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+  }
+
+  @Test
+  public void mutateRowsSettingsAreNotLostTest() {
+    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofHours(1))
+            .setInitialRpcTimeout(Duration.ofSeconds(10))
+            .setRpcTimeoutMultiplier(1)
+            .setMaxRpcTimeout(Duration.ofSeconds(10))
+            .setJittered(true)
+            .build();
+
+    BatchingSettings batchingSettings = BatchingSettings.newBuilder().build();
+
+    builder
+        .mutateRowsSettings()
+        .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
+        .setRetrySettings(retrySettings)
+        .setBatchingSettings(batchingSettings)
+        .build();
+
+    assertThat(builder.mutateRowsSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.mutateRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
+    assertThat(builder.mutateRowsSettings().getBatchingSettings()).isSameAs(batchingSettings);
+
+    assertThat(builder.build().mutateRowsSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().mutateRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
+    assertThat(builder.build().mutateRowsSettings().getBatchingSettings())
+        .isSameAs(batchingSettings);
+
+    assertThat(builder.build().toBuilder().mutateRowsSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().toBuilder().mutateRowsSettings().getRetrySettings())
+        .isEqualTo(retrySettings);
+    assertThat(builder.build().toBuilder().mutateRowsSettings().getBatchingSettings())
+        .isSameAs(batchingSettings);
+  }
+
+  @Test
+  public void mutateRowsHasSaneDefaultsTest() {
+    BatchingCallSettings.Builder<RowMutation, Void> builder =
+        EnhancedBigtableStubSettings.newBuilder().mutateRowsSettings();
+
+    verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+
+    assertThat(builder.getBatchingSettings().getDelayThreshold())
+        .isIn(Range.open(Duration.ZERO, Duration.ofMinutes(1)));
+    assertThat(builder.getBatchingSettings().getElementCountThreshold())
+        .isIn(Range.open(0L, 1_000L));
+    assertThat(builder.getBatchingSettings().getIsEnabled()).isTrue();
+    assertThat(builder.getBatchingSettings().getRequestByteThreshold())
+        .isLessThan(256L * 1024 * 1024);
+    assertThat(
+            builder.getBatchingSettings().getFlowControlSettings().getMaxOutstandingElementCount())
+        .isLessThan(10_000L);
+    assertThat(
+            builder.getBatchingSettings().getFlowControlSettings().getMaxOutstandingRequestBytes())
+        .isLessThan(512L * 1024 * 1024);
   }
 
   @Test

@@ -59,6 +59,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
   private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
   private final UnaryCallable<RowMutation, Void> mutateRowCallable;
+  private final UnaryCallable<RowMutation, Void> mutateRowsCallable;
   private final UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable;
   private final UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable;
 
@@ -98,6 +99,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
     sampleRowKeysCallable = createSampleRowKeysCallable();
     mutateRowCallable = createMutateRowCallable();
+    mutateRowsCallable = createMutateRowsCallable();
     checkAndMutateRowCallable = createCheckAndMutateRowCallable();
     readModifyWriteRowCallable = createReadModifyWriteRowCallable();
   }
@@ -147,6 +149,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
     };
   }
 
+  private UnaryCallable<RowMutation, Void> createMutateRowsCallable() {
+    return new UnaryCallable<RowMutation, Void>() {
+      @Override
+      public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
+        throw new UnsupportedOperationException("todo");
+      }
+    };
+  }
+
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
     return new UnaryCallable<ConditionalRowMutation, Boolean>() {
       @Override
@@ -177,6 +188,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   public UnaryCallable<RowMutation, Void> mutateRowCallable() {
     return mutateRowCallable;
+  }
+
+  public UnaryCallable<RowMutation, Void> mutateRowsCallable() {
+    return mutateRowsCallable;
   }
 
   public UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable() {
