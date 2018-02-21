@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.read_rows;
+package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
-import com.google.bigtable.v2.ReadRowsResponse.Builder;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.wrappers.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
@@ -29,9 +28,6 @@ import com.google.common.truth.Truth;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
-import com.google.protobuf.TextFormat;
-import java.io.IOException;
-import java.io.StringReader;
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,7 +35,7 @@ import org.junit.runners.JUnit4;
 
 /**
  * Additional tests in addition to {@link
- * com.google.cloud.bigtable.data.v2.stub.read_rows.ReadRowsMergingAcceptanceTest}. At some point
+ * com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsMergingAcceptanceTest}. At some point
  * they should be reintegrated into the json file.
  */
 @RunWith(JUnit4.class)

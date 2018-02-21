@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.read_rows;
+package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
@@ -129,7 +129,7 @@ final class StateMachine<RowT> {
 
   /**
    * Feeds a new chunk into the sate machine. If the chunk is invalid, the state machine will throw
-   * an exception and should be used for further input.
+   * an exception and should not be used for further input.
    *
    * <dl>
    *   <dt>Valid states:
