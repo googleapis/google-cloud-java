@@ -27,7 +27,7 @@ import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import io.grpc.Status.Code;

@@ -24,7 +24,7 @@ import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 

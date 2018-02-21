@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.Callables;
