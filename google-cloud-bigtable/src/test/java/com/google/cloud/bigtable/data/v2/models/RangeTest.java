@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.wrappers;
+package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.wrappers.Range.BoundType;
-import com.google.cloud.bigtable.data.v2.wrappers.Range.ByteStringRange;
-import com.google.cloud.bigtable.data.v2.wrappers.Range.TimestampRange;
+import com.google.cloud.bigtable.data.v2.models.Range.BoundType;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
+import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
 import org.junit.runner.RunWith;

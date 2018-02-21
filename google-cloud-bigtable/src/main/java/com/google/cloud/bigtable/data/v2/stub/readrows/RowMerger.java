@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ReadRowsResponse;
-import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter.RowBuilder;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
 import com.google.cloud.bigtable.gaxx.reframing.Reframer;
 import com.google.common.base.Preconditions;
 

@@ -23,12 +23,12 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.wrappers.DefaultRowAdapter;
-import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
-import com.google.cloud.bigtable.data.v2.wrappers.Query;
-import com.google.cloud.bigtable.data.v2.wrappers.Row;
-import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
-import com.google.cloud.bigtable.data.v2.wrappers.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 import java.util.List;
 

@@ -21,11 +21,11 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
-import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
-import com.google.cloud.bigtable.data.v2.wrappers.Query;
-import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
 import java.util.List;
-import com.google.cloud.bigtable.data.v2.wrappers.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -86,7 +86,7 @@ public class BigtableDataClientTest {
 
   @Test
   public void proxySampleRowKeysTest() {
-    bigtableDataClient.sampleRowKeys("fake-table");
+    bigtableDataClient.sampleRowKeysAsync("fake-table");
     Mockito.verify(mockSampleRowKeysCallable).futureCall("fake-table");
   }
 
@@ -101,7 +101,7 @@ public class BigtableDataClientTest {
         RowMutation.create("fake-table", "some-key")
             .setCell("some-family", "fake-qualifier", "fake-value");
 
-    bigtableDataClient.mutateRow(request);
+    bigtableDataClient.mutateRowAsync(request);
     Mockito.verify(mockMutateRowCallable).futureCall(request);
   }
 }

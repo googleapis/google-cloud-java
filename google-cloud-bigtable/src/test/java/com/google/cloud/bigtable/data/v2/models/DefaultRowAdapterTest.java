@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.wrappers;
+package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter.RowBuilder;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
