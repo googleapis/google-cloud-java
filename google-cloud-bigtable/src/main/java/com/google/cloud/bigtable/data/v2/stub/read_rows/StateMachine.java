@@ -39,7 +39,7 @@ import java.util.List;
  *
  * <ul>
  *   <li>Logical rows that were constructed using the {@link RowBuilder}
- *   <li>Special marker rows that represent resumption points that were sent by Last scanned row
+ *   <li>Special marker rows that represent resumption points that were sent by last scanned row
  *       notifications.
  * </ul>
  *
@@ -99,9 +99,17 @@ final class StateMachine<RowT> {
   }
 
   /**
-   * Feeds the last scanned serverside key into the state machine. The adapter will wrap this key in
-   * a special marker row that can be used downstream for efficient resume. It is the callers
-   * responsibility to eventually filter out this row.
+   * Handle last scanned row events from the server.
+   *
+   * <p>The server might return the row key of the last row it has scanned. The client can use this
+   * to construct a more efficient retry request if needed: any row keys or portions of ranges less
+   * than this row key can be dropped from the request. The retry logic is implemented downstream
+   * from the logical rows produced by this class. To communicate this information to the retry
+   * logic, the state machine will encode the last scanned keys as scan marker rows using {@link
+   * RowBuilder#createScanMarkerRow(ByteString)}. It is the responsibility of the retry logic to
+   * filter out these marker before delivering the results to the user.
+   *
+   * <p>The scan marker must be immediately consumed before any more events are processed.
    *
    * <dl>
    *   <dt>Valid states:
@@ -248,12 +256,16 @@ final class StateMachine<RowT> {
           rowKey = chunk.getRowKey();
           adapter.startRow(rowKey);
 
-          // auto transition
+          // The first chunk signals both the start of a new row and the start of a new cell, so
+          // force the chunk processing in the AWAITING_CELL_VALUE.
           return AWAITING_NEW_CELL.handleChunk(chunk);
         }
       };
 
-  /** A state that represents a cell boundary in a row. */
+  /**
+   * A state that represents a cell boundary in a row. It will notify the adapter of new cell. Valid
+   * exit states: all of them depending on the chunk.
+   */
   private final State AWAITING_NEW_CELL =
       new State() {
         /**
@@ -323,7 +335,10 @@ final class StateMachine<RowT> {
         }
       };
 
-  /** A state that represents a cell's value continuation. */
+  /**
+   * A state that represents a cell's value continuation. Notifies the adapter to append more data
+   * to the cell's value. Valid exit states: all of them depending on the chunk.
+   */
   private final State AWAITING_CELL_VALUE =
       new State() {
         @Override
@@ -368,6 +383,10 @@ final class StateMachine<RowT> {
         }
       };
 
+  /**
+   * A state that represents a completed row. It prevents new rows from being read until the current
+   * one has been consumed. Valid exit states: AWAITING_NEW_ROW.
+   */
   private static final State AWAITING_ROW_CONSUME =
       new State() {
         @Override
