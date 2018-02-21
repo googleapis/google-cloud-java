@@ -35,10 +35,21 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages contexts.
+ * Service Description: A context represents additional information included with user input or with
+ * an intent returned by the Dialogflow API. Contexts are helpful for differentiating user input
+ * which may be vague or have a different meaning depending on additional details from your
+ * application such as user setting and preferences, previous user input, where the user is in your
+ * application, geographic location, and so on.
  *
- * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/contexts) for more details
- * about contexts. #
+ * <p>You can include contexts as input parameters of a
+ * [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
+ * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) request,
+ * or as output contexts included in the returned intent. Contexts expire when an intent is matched,
+ * after the number of `DetectIntent` requests specified by the `lifespan_count` parameter, or after
+ * 10 minutes if no intents are matched for a `DetectIntent` request.
+ *
+ * <p>For more information about contexts, see the [Dialogflow
+ * documentation](https://dialogflow.com/docs/contexts).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -178,7 +189,9 @@ public class ContextsClient implements BackgroundResource {
    */
   public final ListContextsPagedResponse listContexts(SessionName parent) {
     ListContextsRequest request =
-        ListContextsRequest.newBuilder().setParent(parent.toString()).build();
+        ListContextsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listContexts(request);
   }
 
@@ -286,7 +299,8 @@ public class ContextsClient implements BackgroundResource {
    */
   public final Context getContext(ContextName name) {
 
-    GetContextRequest request = GetContextRequest.newBuilder().setName(name.toString()).build();
+    GetContextRequest request =
+        GetContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContext(request);
   }
 
@@ -360,7 +374,10 @@ public class ContextsClient implements BackgroundResource {
   public final Context createContext(SessionName parent, Context context) {
 
     CreateContextRequest request =
-        CreateContextRequest.newBuilder().setParent(parent.toString()).setContext(context).build();
+        CreateContextRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setContext(context)
+            .build();
     return createContext(request);
   }
 
@@ -504,7 +521,7 @@ public class ContextsClient implements BackgroundResource {
   public final void deleteContext(ContextName name) {
 
     DeleteContextRequest request =
-        DeleteContextRequest.newBuilder().setName(name.toString()).build();
+        DeleteContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteContext(request);
   }
 
@@ -576,7 +593,9 @@ public class ContextsClient implements BackgroundResource {
   public final void deleteAllContexts(SessionName parent) {
 
     DeleteAllContextsRequest request =
-        DeleteAllContextsRequest.newBuilder().setParent(parent.toString()).build();
+        DeleteAllContextsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     deleteAllContexts(request);
   }
 

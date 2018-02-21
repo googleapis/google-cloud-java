@@ -226,7 +226,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
 
     CreateTableRequest request =
         CreateTableRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setTableId(tableId)
             .setTable(table)
             .build();
@@ -323,7 +323,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
 
     CreateTableFromSnapshotRequest request =
         CreateTableFromSnapshotRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setTableId(tableId)
             .setSourceSnapshot(sourceSnapshot)
             .build();
@@ -451,7 +451,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTablesPagedResponse listTables(InstanceName parent) {
-    ListTablesRequest request = ListTablesRequest.newBuilder().setParent(parent.toString()).build();
+    ListTablesRequest request =
+        ListTablesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTables(request);
   }
 
@@ -554,7 +555,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    */
   public final Table getTable(TableName name) {
 
-    GetTableRequest request = GetTableRequest.newBuilder().setName(name.toString()).build();
+    GetTableRequest request =
+        GetTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTable(request);
   }
 
@@ -622,7 +624,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    */
   public final void deleteTable(TableName name) {
 
-    DeleteTableRequest request = DeleteTableRequest.newBuilder().setName(name.toString()).build();
+    DeleteTableRequest request =
+        DeleteTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTable(request);
   }
 
@@ -699,7 +702,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
 
     ModifyColumnFamiliesRequest request =
         ModifyColumnFamiliesRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .addAllModifications(modifications)
             .build();
     return modifyColumnFamilies(request);
@@ -832,7 +835,9 @@ public class BigtableTableAdminClient implements BackgroundResource {
   public final GenerateConsistencyTokenResponse generateConsistencyToken(TableName name) {
 
     GenerateConsistencyTokenRequest request =
-        GenerateConsistencyTokenRequest.newBuilder().setName(name.toString()).build();
+        GenerateConsistencyTokenRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return generateConsistencyToken(request);
   }
 
@@ -926,7 +931,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
 
     CheckConsistencyRequest request =
         CheckConsistencyRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setConsistencyToken(consistencyToken)
             .build();
     return checkConsistency(request);
@@ -1123,7 +1128,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    */
   public final Snapshot getSnapshot(SnapshotName name) {
 
-    GetSnapshotRequest request = GetSnapshotRequest.newBuilder().setName(name.toString()).build();
+    GetSnapshotRequest request =
+        GetSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSnapshot(request);
   }
 
@@ -1210,7 +1216,9 @@ public class BigtableTableAdminClient implements BackgroundResource {
    */
   public final ListSnapshotsPagedResponse listSnapshots(ClusterName parent) {
     ListSnapshotsRequest request =
-        ListSnapshotsRequest.newBuilder().setParent(parent.toString()).build();
+        ListSnapshotsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listSnapshots(request);
   }
 
@@ -1335,7 +1343,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
   public final void deleteSnapshot(SnapshotName name) {
 
     DeleteSnapshotRequest request =
-        DeleteSnapshotRequest.newBuilder().setName(name.toString()).build();
+        DeleteSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSnapshot(request);
   }
 

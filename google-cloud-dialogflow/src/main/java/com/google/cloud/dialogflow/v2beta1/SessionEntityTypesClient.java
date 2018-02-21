@@ -35,12 +35,16 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages session entity types.
+ * Service Description: Entities are extracted from user input and represent parameters that are
+ * meaningful to your application. For example, a date range, a proper name such as a geographic
+ * location or landmark, and so on. Entities represent actionable data for your application.
  *
- * <p>Session entity types can be redefined on a session level, allowing for specific concepts, like
- * a user's playlists.
+ * <p>Session entity types are referred to as &#42;&#42;User&#42;&#42; entity types and are entities
+ * that are built for an individual user such as favorites, preferences, playlists, and so on. You
+ * can redefine a session entity type at the session level.
  *
- * <p>#
+ * <p>For more information about entity types, see the [Dialogflow
+ * documentation](https://dialogflow.com/docs/entities).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -183,7 +187,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
    */
   public final ListSessionEntityTypesPagedResponse listSessionEntityTypes(SessionName parent) {
     ListSessionEntityTypesRequest request =
-        ListSessionEntityTypesRequest.newBuilder().setParent(parent.toString()).build();
+        ListSessionEntityTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listSessionEntityTypes(request);
   }
 
@@ -294,7 +300,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   public final SessionEntityType getSessionEntityType(SessionEntityTypeName name) {
 
     GetSessionEntityTypeRequest request =
-        GetSessionEntityTypeRequest.newBuilder().setName(name.toString()).build();
+        GetSessionEntityTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return getSessionEntityType(request);
   }
 
@@ -371,7 +379,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
     CreateSessionEntityTypeRequest request =
         CreateSessionEntityTypeRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSessionEntityType(sessionEntityType)
             .build();
     return createSessionEntityType(request);
@@ -525,7 +533,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   public final void deleteSessionEntityType(SessionEntityTypeName name) {
 
     DeleteSessionEntityTypeRequest request =
-        DeleteSessionEntityTypeRequest.newBuilder().setName(name.toString()).build();
+        DeleteSessionEntityTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     deleteSessionEntityType(request);
   }
 

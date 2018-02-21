@@ -32,7 +32,7 @@ import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.ExclusionName;
-import com.google.logging.v2.ExclusionNameOneof;
+import com.google.logging.v2.ExclusionNames;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListExclusionsRequest;
@@ -41,10 +41,13 @@ import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
-import com.google.logging.v2.ParentNameOneof;
+import com.google.logging.v2.ParentName;
+import com.google.logging.v2.ParentNames;
+import com.google.logging.v2.ProjectExclusionName;
 import com.google.logging.v2.ProjectName;
+import com.google.logging.v2.ProjectSinkName;
 import com.google.logging.v2.SinkName;
-import com.google.logging.v2.SinkNameOneof;
+import com.google.logging.v2.SinkNames;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
@@ -116,7 +119,7 @@ public class ConfigClientTest {
         ListSinksResponse.newBuilder().setNextPageToken(nextPageToken).addAllSinks(sinks).build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+    ParentName parent = ProjectName.of("[PROJECT]");
 
     ListSinksPagedResponse pagedListResponse = client.listSinks(parent);
 
@@ -128,7 +131,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListSinksRequest actualRequest = (ListSinksRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ParentNames.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -142,7 +145,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+      ParentName parent = ProjectName.of("[PROJECT]");
 
       client.listSinks(parent);
       Assert.fail("No exception raised");
@@ -169,7 +172,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
+    SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
 
     LogSink actualResponse = client.getSink(sinkName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -178,7 +181,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetSinkRequest actualRequest = (GetSinkRequest) actualRequests.get(0);
 
-    Assert.assertEquals(sinkName, SinkNameOneof.parse(actualRequest.getSinkName()));
+    Assert.assertEquals(sinkName, SinkNames.parse(actualRequest.getSinkName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -192,7 +195,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
+      SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
 
       client.getSink(sinkName);
       Assert.fail("No exception raised");
@@ -219,7 +222,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+    ParentName parent = ProjectName.of("[PROJECT]");
     LogSink sink = LogSink.newBuilder().build();
 
     LogSink actualResponse = client.createSink(parent, sink);
@@ -229,7 +232,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateSinkRequest actualRequest = (CreateSinkRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ParentNames.parse(actualRequest.getParent()));
     Assert.assertEquals(sink, actualRequest.getSink());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -244,7 +247,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+      ParentName parent = ProjectName.of("[PROJECT]");
       LogSink sink = LogSink.newBuilder().build();
 
       client.createSink(parent, sink);
@@ -272,7 +275,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
+    SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
     LogSink sink = LogSink.newBuilder().build();
 
     LogSink actualResponse = client.updateSink(sinkName, sink);
@@ -282,7 +285,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     UpdateSinkRequest actualRequest = (UpdateSinkRequest) actualRequests.get(0);
 
-    Assert.assertEquals(sinkName, SinkNameOneof.parse(actualRequest.getSinkName()));
+    Assert.assertEquals(sinkName, SinkNames.parse(actualRequest.getSinkName()));
     Assert.assertEquals(sink, actualRequest.getSink());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -297,7 +300,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
+      SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
       LogSink sink = LogSink.newBuilder().build();
 
       client.updateSink(sinkName, sink);
@@ -313,7 +316,7 @@ public class ConfigClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
+    SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
 
     client.deleteSink(sinkName);
 
@@ -321,7 +324,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteSinkRequest actualRequest = (DeleteSinkRequest) actualRequests.get(0);
 
-    Assert.assertEquals(sinkName, SinkNameOneof.parse(actualRequest.getSinkName()));
+    Assert.assertEquals(sinkName, SinkNames.parse(actualRequest.getSinkName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -335,7 +338,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
+      SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
 
       client.deleteSink(sinkName);
       Assert.fail("No exception raised");
@@ -357,7 +360,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+    ParentName parent = ProjectName.of("[PROJECT]");
 
     ListExclusionsPagedResponse pagedListResponse = client.listExclusions(parent);
 
@@ -369,7 +372,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListExclusionsRequest actualRequest = (ListExclusionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ParentNames.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -383,7 +386,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+      ParentName parent = ProjectName.of("[PROJECT]");
 
       client.listExclusions(parent);
       Assert.fail("No exception raised");
@@ -408,7 +411,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
+    ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
 
     LogExclusion actualResponse = client.getExclusion(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -417,7 +420,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetExclusionRequest actualRequest = (GetExclusionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ExclusionNameOneof.parse(actualRequest.getName()));
+    Assert.assertEquals(name, ExclusionNames.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -431,8 +434,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ExclusionNameOneof name =
-          ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
+      ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
 
       client.getExclusion(name);
       Assert.fail("No exception raised");
@@ -457,7 +459,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+    ParentName parent = ProjectName.of("[PROJECT]");
     LogExclusion exclusion = LogExclusion.newBuilder().build();
 
     LogExclusion actualResponse = client.createExclusion(parent, exclusion);
@@ -467,7 +469,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateExclusionRequest actualRequest = (CreateExclusionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ParentNameOneof.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ParentNames.parse(actualRequest.getParent()));
     Assert.assertEquals(exclusion, actualRequest.getExclusion());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -482,7 +484,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+      ParentName parent = ProjectName.of("[PROJECT]");
       LogExclusion exclusion = LogExclusion.newBuilder().build();
 
       client.createExclusion(parent, exclusion);
@@ -508,7 +510,7 @@ public class ConfigClientTest {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
+    ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
     LogExclusion exclusion = LogExclusion.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -519,7 +521,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     UpdateExclusionRequest actualRequest = (UpdateExclusionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ExclusionNameOneof.parse(actualRequest.getName()));
+    Assert.assertEquals(name, ExclusionNames.parse(actualRequest.getName()));
     Assert.assertEquals(exclusion, actualRequest.getExclusion());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
@@ -535,8 +537,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ExclusionNameOneof name =
-          ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
+      ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
       LogExclusion exclusion = LogExclusion.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -553,7 +554,7 @@ public class ConfigClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    ExclusionNameOneof name = ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
+    ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
 
     client.deleteExclusion(name);
 
@@ -561,7 +562,7 @@ public class ConfigClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteExclusionRequest actualRequest = (DeleteExclusionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ExclusionNameOneof.parse(actualRequest.getName()));
+    Assert.assertEquals(name, ExclusionNames.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -575,8 +576,7 @@ public class ConfigClientTest {
     mockConfigServiceV2.addException(exception);
 
     try {
-      ExclusionNameOneof name =
-          ExclusionNameOneof.from(ExclusionName.of("[PROJECT]", "[EXCLUSION]"));
+      ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
 
       client.deleteExclusion(name);
       Assert.fail("No exception raised");
