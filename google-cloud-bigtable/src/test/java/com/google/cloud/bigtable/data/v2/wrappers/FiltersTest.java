@@ -60,6 +60,30 @@ public class FiltersTest {
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
+  
+  @Test
+  public void chainEmptyTest() {
+    RowFilter actualProto = FILTERS.chain().toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder().setPassAllFilter(true).build();
+
+    assertThat(actualProto).isEqualTo(expectedFilter);
+  }
+  
+  @Test
+  public void chainSingleTest() {
+    RowFilter actualProto =
+        FILTERS
+            .chain()
+            .filter(FILTERS.key().regex(".*"))
+            .toProto();
+
+    RowFilter expectedFilter =
+      RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
+
+    assertThat(actualProto).isEqualTo(expectedFilter);
+  }
 
   @Test
   public void interleaveTest() {
@@ -88,6 +112,30 @@ public class FiltersTest {
                                     .addFilters(
                                         RowFilter.newBuilder().setPassAllFilter(true).build()))))
             .build();
+
+    assertThat(actualProto).isEqualTo(expectedFilter);
+  }
+  
+  @Test
+  public void interleaveEmptyTest() {
+    RowFilter actualProto = FILTERS.chain().toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder().setPassAllFilter(true).build();
+
+    assertThat(actualProto).isEqualTo(expectedFilter);
+  }
+  
+  @Test
+  public void interleaveSingleTest() {
+    RowFilter actualProto =
+        FILTERS
+            .interleave()
+            .filter(FILTERS.key().regex(".*"))
+            .toProto();
+
+    RowFilter expectedFilter =
+      RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")).build();
 
     assertThat(actualProto).isEqualTo(expectedFilter);
   }
@@ -396,6 +444,14 @@ public class FiltersTest {
     RowFilter expectedFilter = RowFilter.newBuilder().setCellsPerColumnLimitFilter(10).build();
 
     assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void fromProtoTest() {
+    RowFilter inner = RowFilter.newBuilder().setRowSampleFilter(0.5).build();
+
+    RowFilter actualFilter = FILTERS.fromProto(inner).toProto();
+    assertThat(actualFilter).isEqualTo(inner);
   }
 
   @Test
