@@ -48,6 +48,10 @@ import com.google.cloud.storage.StorageOptions;
  *   <li>IAM operations</li>
  *   </ul>
  * </ul>
+ * 
+ * {@link FakeStorageRpc#list(String, Map<Option, ?>)} lists all the objects that have been created rather than
+ * the objects in the provided bucket. Since this class does not support creating, listing and deleting buckets, 
+ * the parameter bucket here is not actually used and on serves as a placeholder.
  */
 public final class LocalStorageHelper {
 

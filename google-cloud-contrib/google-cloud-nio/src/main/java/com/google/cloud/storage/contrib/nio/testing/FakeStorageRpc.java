@@ -41,7 +41,7 @@ import java.util.Map;
 import javax.annotation.concurrent.NotThreadSafe;
 
 /**
- * A bare-bones in-memory implementation of Storage, meant for testing.
+ * A bare-bones in-memory implementation of StorageRpc, meant for testing.
  *
  * <p>This class is <i>not</i> thread-safe. It's also (currently) limited in the following ways:
  * <ul>
