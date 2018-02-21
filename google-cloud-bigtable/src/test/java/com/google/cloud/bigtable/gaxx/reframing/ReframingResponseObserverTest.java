@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.gaxx.reframing;
 
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
+import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable.StreamControllerStash;
 import com.google.cloud.bigtable.gaxx.testing.MockStreamingApi.MockResponseObserver;
 import com.google.cloud.bigtable.gaxx.testing.MockStreamingApi.MockServerStreamingCall;
 import com.google.cloud.bigtable.gaxx.testing.MockStreamingApi.MockServerStreamingCallable;
@@ -34,6 +35,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -309,6 +311,67 @@ public class ReframingResponseObserverTest {
     outerObserver.getController().cancel();
 
     Truth.assertThat(latch.await(1, TimeUnit.MINUTES)).isTrue();
+  }
+
+  @Test
+  public void testReframerPushError() throws Exception {
+    MockResponseObserver<String> outerObserver = new MockResponseObserver<>(true);
+    Reframer<String, String> reframer =
+        new DasherizingReframer(1) {
+          @Override
+          public void push(String response) {
+            if (response.equals("boom")) {
+              throw new IllegalStateException("fake error");
+            }
+            super.push(response);
+          }
+        };
+
+    ReframingResponseObserver<String, String> middleware =
+        new ReframingResponseObserver<>(outerObserver, reframer);
+    ServerStreamingStashCallable<String, String> innerCallable =
+        new ServerStreamingStashCallable<>(ImmutableList.of("a", "boom", "c"));
+
+    innerCallable.call("request", middleware);
+
+    Truth.assertThat(outerObserver.getFinalError()).isInstanceOf(IllegalStateException.class);
+    Truth.assertThat(outerObserver.getFinalError()).hasMessage("fake error");
+    Truth.assertThat(outerObserver.popNextResponse()).isEqualTo("a");
+    Truth.assertThat(outerObserver.popNextResponse()).isNull();
+  }
+
+  @Test
+  public void testReframerPopError() {
+    final AtomicInteger popCount = new AtomicInteger();
+
+    MockResponseObserver<String> outerObserver = new MockResponseObserver<>(true);
+    Reframer<String, String> reframer =
+        new DasherizingReframer(1) {
+          @Override
+          public String pop() {
+            if (popCount.incrementAndGet() == 2) {
+              throw new IllegalStateException("fake error");
+            }
+            return super.pop();
+          }
+        };
+
+    ReframingResponseObserver<String, String> middleware =
+        new ReframingResponseObserver<>(outerObserver, reframer);
+    ServerStreamingStashCallable<String, String> innerCallable =
+        new ServerStreamingStashCallable<>(ImmutableList.of("a", "boom", "c"));
+
+    innerCallable.call("request", middleware);
+    StreamControllerStash<String> lastCall = innerCallable.popLastCall();
+
+    Truth.assertThat(outerObserver.getFinalError()).isInstanceOf(IllegalStateException.class);
+    Truth.assertThat(outerObserver.getFinalError()).hasMessage("fake error");
+    Truth.assertThat(outerObserver.popNextResponse()).isEqualTo("a");
+    Truth.assertThat(outerObserver.popNextResponse()).isNull();
+    Truth.assertThat(popCount.get()).isEqualTo(2);
+
+    Truth.assertThat(lastCall.getError()).isInstanceOf(CancellationException.class);
+    Truth.assertThat(lastCall.getNumDelivered()).isEqualTo(2);
   }
 
   /**
