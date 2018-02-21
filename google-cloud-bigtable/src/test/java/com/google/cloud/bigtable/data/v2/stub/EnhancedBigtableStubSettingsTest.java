@@ -28,8 +28,10 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import com.google.cloud.bigtable.data.v2.wrappers.RowMutation;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -209,6 +211,50 @@ public class EnhancedBigtableStubSettingsTest {
   public void sampleRowKeysHasSaneDefaultsTest() {
     UnaryCallSettings.Builder<String, List<KeyOffset>> builder =
         EnhancedBigtableStubSettings.newBuilder().sampleRowKeysSettings();
+    verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+  }
+
+  @Test
+  public void mutateRowSettingsAreNotLostTest() {
+    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofHours(1))
+            .setInitialRpcTimeout(Duration.ofSeconds(10))
+            .setRpcTimeoutMultiplier(1)
+            .setMaxRpcTimeout(Duration.ofSeconds(10))
+            .setJittered(true)
+            .build();
+
+    builder
+        .mutateRowSettings()
+        .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
+        .setRetrySettings(retrySettings)
+        .build();
+
+    assertThat(builder.mutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.mutateRowSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().mutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().mutateRowSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().toBuilder().mutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().toBuilder().mutateRowSettings().getRetrySettings())
+        .isEqualTo(retrySettings);
+  }
+
+  @Test
+  public void mutateRowHasSaneDefaultsTest() {
+    UnaryCallSettings.Builder<RowMutation, Void> builder =
+        BigtableDataSettings.newBuilder().mutateRowSettings();
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
   }
 

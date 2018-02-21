@@ -28,6 +28,7 @@ import com.google.cloud.bigtable.data.v2.wrappers.KeyOffset;
 import com.google.cloud.bigtable.data.v2.wrappers.Query;
 import com.google.cloud.bigtable.data.v2.wrappers.Row;
 import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
+import com.google.cloud.bigtable.data.v2.wrappers.RowMutation;
 import java.io.IOException;
 import java.util.List;
 
@@ -52,6 +53,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
   private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
+  private final UnaryCallable<RowMutation, Void> mutateRowCallable;
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
@@ -80,6 +82,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
     sampleRowKeysCallable = createSampleRowKeysCallable();
+    mutateRowCallable = createMutateRowCallable();
   }
 
   // <editor-fold desc="Callable creators">
@@ -113,6 +116,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
       }
     };
   }
+
+  private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
+    return new UnaryCallable<RowMutation, Void>() {
+      @Override
+      public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
+        throw new UnsupportedOperationException("todo");
+      }
+    };
+  }
   // </editor-fold>
 
   // <editor-fold desc="Callable accessors">
@@ -122,6 +134,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {
     return sampleRowKeysCallable;
+  }
+
+  public UnaryCallable<RowMutation, Void> mutateRowCallable() {
+    return mutateRowCallable;
   }
   // </editor-fold>
 
