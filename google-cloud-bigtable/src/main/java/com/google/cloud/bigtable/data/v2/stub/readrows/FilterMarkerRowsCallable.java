@@ -48,7 +48,7 @@ public class FilterMarkerRowsCallable<RowT> extends ServerStreamingCallable<Read
   }
 
   private class FilteringResponseObserver implements ResponseObserver<RowT> {
-    private ResponseObserver<RowT> outerObserver;
+    private final ResponseObserver<RowT> outerObserver;
     private StreamController innerController;
     private boolean autoFlowControl = true;
 

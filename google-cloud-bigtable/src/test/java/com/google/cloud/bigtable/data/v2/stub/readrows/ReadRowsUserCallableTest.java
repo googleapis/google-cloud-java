@@ -30,7 +30,6 @@ import org.junit.runners.JUnit4;
 public class ReadRowsUserCallableTest {
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create(InstanceName.of("fake-project", "fake-instance"), "fake-profile");
-  private ServerStreamingStashCallable<Query, Row> innerCallable;
 
   @Test
   public void testRequestConverted() {

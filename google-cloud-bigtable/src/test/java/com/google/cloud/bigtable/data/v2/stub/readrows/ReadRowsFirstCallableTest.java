@@ -51,7 +51,8 @@ public class ReadRowsFirstCallableTest {
   @Test
   public void testLimitAdded() {
     ReadRowsFirstCallable<Row> callable = new ReadRowsFirstCallable<>(innerCallable);
-    callable.futureCall(Query.create("fake-table"));
+    innerResult.set(null);
+    callable.call(Query.create("fake-table"));
 
     Truth.assertThat(innerQuery.getValue().toProto(REQUEST_CONTEXT))
         .isEqualTo(Query.create("fake-table").limit(1).toProto(REQUEST_CONTEXT));
@@ -60,7 +61,8 @@ public class ReadRowsFirstCallableTest {
   @Test
   public void testLimitChanged() {
     ReadRowsFirstCallable<Row> callable = new ReadRowsFirstCallable<>(innerCallable);
-    callable.futureCall(Query.create("fake-table").limit(1_000));
+    innerResult.set(null);
+    callable.call(Query.create("fake-table").limit(1_000));
 
     Truth.assertThat(innerQuery.getValue().toProto(REQUEST_CONTEXT))
         .isEqualTo(Query.create("fake-table").limit(1).toProto(REQUEST_CONTEXT));

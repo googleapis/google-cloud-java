@@ -25,7 +25,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
  * cancelling the RPC
  */
 class ReadRowsFirstCallable<RowT> extends UnaryCallable<Query, RowT> {
-  private UnaryCallable<Query, RowT> inner;
+  private final UnaryCallable<Query, RowT> inner;
 
   ReadRowsFirstCallable(UnaryCallable<Query, RowT> inner) {
     this.inner = inner;
