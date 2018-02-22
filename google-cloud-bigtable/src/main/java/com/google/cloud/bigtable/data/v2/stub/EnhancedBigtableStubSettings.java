@@ -154,7 +154,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
     private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
-    private UnaryCallSettings.Builder<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
+    private final UnaryCallSettings.Builder<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
 
     /**
      * Initializes a new Builder with sane defaults for all settings.
