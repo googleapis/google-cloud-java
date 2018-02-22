@@ -216,12 +216,12 @@ public final class Filters {
     @Override
     public RowFilter toProto() {
       switch (builder.getFiltersCount()) {
-      case 0:
-        return PASS.toProto();
-      case 1:
-        return builder.getFilters(0);
-      default:
-        return RowFilter.newBuilder().setChain(builder.build()).build();
+        case 0:
+          return PASS.toProto();
+        case 1:
+          return builder.getFilters(0);
+        default:
+          return RowFilter.newBuilder().setChain(builder.build()).build();
       }
     }
 
@@ -257,12 +257,12 @@ public final class Filters {
     @Override
     public RowFilter toProto() {
       switch (builder.getFiltersCount()) {
-      case 0:
-        return PASS.toProto();
-      case 1:
-        return builder.getFilters(0);
-      default:
-        return RowFilter.newBuilder().setInterleave(builder.build()).build();
+        case 0:
+          return PASS.toProto();
+        case 1:
+          return builder.getFilters(0);
+        default:
+          return RowFilter.newBuilder().setInterleave(builder.build()).build();
       }
     }
 
