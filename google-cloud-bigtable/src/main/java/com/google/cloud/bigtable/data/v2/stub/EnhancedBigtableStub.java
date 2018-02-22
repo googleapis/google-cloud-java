@@ -20,9 +20,9 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
@@ -34,6 +34,9 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
+import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
+import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
 import java.io.IOException;
 import java.util.List;
 
@@ -103,15 +106,33 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   // <editor-fold desc="Callable creators">
+
+  /**
+   * Creates a callable chain to handle ReadRows RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link Query} into a {@link com.google.bigtable.v2.ReadRowsRequest} and
+   *       dispatch the RPC.
+   *   <li>Upon receiving the response stream, it will merge the {@link
+   *       com.google.bigtable.v2.ReadRowsResponse.CellChunk}s in logical rows. The actual row
+   *       implementation can be configured in {@link
+   *       com.google.cloud.bigtable.data.v2.BigtableDataSettings}.
+   *   <li>Retry/resume on failure.
+   *   <li>Filter out marker rows.
+   * </ul>
+   */
   public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
       RowAdapter<RowT> rowAdapter) {
-    return new ServerStreamingCallable<Query, RowT>() {
-      @Override
-      public void call(
-          Query query, ResponseObserver<RowT> responseObserver, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+
+    ServerStreamingCallable<ReadRowsRequest, RowT> merging =
+        new RowMergingCallable<>(stub.readRowsCallable(), rowAdapter);
+
+    FilterMarkerRowsCallable<RowT> filtering = new FilterMarkerRowsCallable<>(rowAdapter, merging);
+
+    ServerStreamingCallable<ReadRowsRequest, RowT> withContext =
+        filtering.withDefaultCallContext(clientContext.getDefaultCallContext());
+
+    return new ReadRowsUserCallable<>(withContext, requestContext);
   }
 
   /**
