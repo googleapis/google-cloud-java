@@ -23,6 +23,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
@@ -82,6 +84,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .setSimpleTimeoutNoRetries(
             settings.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())
         .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes());
+
+    // MutateRow: copy outer settings to the underlying GAPIC client
+    baseSettingsBuilder
+        .mutateRowSettings()
+        .setRetryableCodes(settings.mutateRowSettings().getRetryableCodes())
+        .setRetrySettings(settings.mutateRowSettings().getRetrySettings());
 
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
@@ -166,13 +174,18 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return new SampleRowKeysCallable(withContext, requestContext);
   }
 
+  /**
+   * Creates a callable chain to handle MutateRow RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link RowMutation} into a {@link com.google.bigtable.v2.MutateRowRequest}.
+   * </ul>
+   */
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
-    return new UnaryCallable<RowMutation, Void>() {
-      @Override
-      public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    UnaryCallable<MutateRowRequest, MutateRowResponse> withContext =
+        stub.mutateRowCallable().withDefaultCallContext(clientContext.getDefaultCallContext());
+
+    return new MutateRowCallable(withContext, requestContext);
   }
 
   private UnaryCallable<RowMutation, Void> createMutateRowsCallable() {
