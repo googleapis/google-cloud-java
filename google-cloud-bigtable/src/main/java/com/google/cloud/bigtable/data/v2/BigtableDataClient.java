@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -337,5 +338,47 @@ public class BigtableDataClient implements AutoCloseable {
   @Override
   public void close() throws Exception {
     stub.close();
+  }
+
+  /**
+   * Convenience method to asynchronously mutate a row atomically based on the output of a filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
+   *     .then(
+   *       Mutation.create()
+   *         .setCell("[FAMILY]", "[QUALIFIER]", "[VALUE]")
+   *       );
+   *
+   *   ApiFuture<Boolean> future = bigtableClient.checkAndMutateRowAsync(mutation);
+   * }</pre>
+   */
+  public ApiFuture<Boolean> checkAndMutateRowAsync(ConditionalRowMutation mutation) {
+    return checkAndMutateRowCallable().futureCall(mutation);
+  }
+
+  /**
+   * Mutates a row atomically based on the output of a filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
+   *     .then(
+   *       Mutation.create()
+   *         .setCell("[FAMILY]", "[QUALIFIER]", "[VALUE]")
+   *       );
+   *
+   *   boolean success = bigtableClient.checkAndMutateRowCallable().call(mutation);
+   * }</pre>
+   */
+  public UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable() {
+    return stub.checkAndMutateRowCallable();
   }
 }

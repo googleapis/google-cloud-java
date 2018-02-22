@@ -30,4 +30,9 @@ class Validations {
     Preconditions.checkNotNull(name, "Family name can't be null");
     Preconditions.checkArgument(!name.isEmpty(), "Family name can't be empty");
   }
+
+  static void validateTableId(@Nonnull String tableId) {
+    Preconditions.checkNotNull(tableId, "tableId can't be null");
+    Preconditions.checkArgument(!tableId.isEmpty(), "tableId can't be empty");
+  }
 }
