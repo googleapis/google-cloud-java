@@ -22,6 +22,7 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import javax.annotation.Nonnull;
 
 /** Mutates a row atomically based on the output of a condition filter. */
 public final class ConditionalRowMutation {
@@ -51,10 +52,12 @@ public final class ConditionalRowMutation {
    * #otherwise(Mutation)} will be executed. If unset, checks that the row contains any values at
    * all.
    */
-  public ConditionalRowMutation condition(Filter condition) {
+  public ConditionalRowMutation condition(@Nonnull Filter condition) {
+    Preconditions.checkNotNull(condition);
     Preconditions.checkState(
         !builder.hasPredicateFilter(),
         "Can only have a single condition, please use a Filters#chain or Filters#interleave filter instead");
+    //TODO: verify that the condition does not use any FILTERS.condition() filters
 
     builder.setPredicateFilter(condition.toProto());
 
@@ -67,7 +70,8 @@ public final class ConditionalRowMutation {
    * be masked by later ones. Must contain at least one entry if {@link #otherwise(Mutation)} is
    * empty, and at most 100000.
    */
-  public ConditionalRowMutation then(Mutation mutation) {
+  public ConditionalRowMutation then(@Nonnull Mutation mutation) {
+    Preconditions.checkNotNull(mutation);
     builder.addAllTrueMutations(mutation.getMutations());
     return this;
   }
@@ -78,7 +82,8 @@ public final class ConditionalRowMutation {
    * be masked by later ones. Must contain at least one entry if {@link #then(Mutation)} is empty,
    * and at most 100000.
    */
-  public ConditionalRowMutation otherwise(Mutation mutation) {
+  public ConditionalRowMutation otherwise(@Nonnull Mutation mutation) {
+    Preconditions.checkNotNull(mutation);
     builder.addAllFalseMutations(mutation.getMutations());
     return this;
   }
