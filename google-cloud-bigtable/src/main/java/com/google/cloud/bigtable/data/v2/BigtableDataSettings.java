@@ -20,6 +20,7 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -93,6 +94,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
   /** Returns the object with the settings used for calls to checkAndMutateRow. */
   public UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
     return getTypedStubSettings().checkAndMutateRowSettings();
+  }
+
+  /** Returns the object with the settings used for calls to ReadModifyWriteRow. */
+  public UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
+    return getTypedStubSettings().readModifyWriteRowSettings();
   }
 
   @SuppressWarnings("unchecked")
@@ -173,6 +179,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     /** Returns the object with the settings used for calls to checkAndMutateRow. */
     public UnaryCallSettings.Builder<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
       return getTypedStubSettings().checkAndMutateRowSettings();
+    }
+
+    /** Returns the builder with the settings used for calls to ReadModifyWriteRow. */
+    public UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
+      return getTypedStubSettings().readModifyWriteRowSettings();
     }
 
     @SuppressWarnings("unchecked")
