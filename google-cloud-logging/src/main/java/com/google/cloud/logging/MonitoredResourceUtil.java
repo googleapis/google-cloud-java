@@ -21,8 +21,7 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.logging.LogEntry.Builder;
 import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableMap;
-
+import com.google.common.collect.ImmutableMultimap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,6 +41,7 @@ public class MonitoredResourceUtil {
     InstanceId("instance_id"),
     InstanceName("instance_name"),
     ModuleId("module_id"),
+    PodId("pod_id"),
     ProjectId("project_id"),
     VersionId("version_id"),
     Zone("zone");
@@ -77,25 +77,18 @@ public class MonitoredResourceUtil {
 
   private static final String APPENGINE_LABEL_PREFIX = "appengine.googleapis.com/";
 
-  private static Map<String, Label[]> resourceTypeWithLabels;
-
-  static {
-    resourceTypeWithLabels =
-        new ImmutableMap.Builder<String, Label[]>()
-            .put(
-                Resource.GaeAppFlex.getKey(),
-                new Label[] {
-                    Label.ModuleId,
-                    Label.VersionId,
-                    Label.Zone
-                })
-            .put(
-                Resource.GaeAppStandard.getKey(),
-                new Label[] {Label.ModuleId, Label.VersionId})
-            .put(Resource.Container.getKey(), new Label[] {Label.ClusterName, Label.Zone})
-            .put(Resource.GceInstance.getKey(), new Label[] {Label.InstanceId, Label.Zone})
-            .build();
-  }
+  private static ImmutableMultimap<String, Label> resourceTypeWithLabels =
+      ImmutableMultimap.<String, Label>builder()
+          .putAll(Resource.GaeAppFlex.getKey(), Label.ModuleId, Label.VersionId, Label.Zone)
+          .putAll(Resource.GaeAppStandard.getKey(), Label.ModuleId, Label.VersionId)
+          .putAll(
+              Resource.Container.getKey(),
+              Label.ClusterName,
+              Label.InstanceId,
+              Label.PodId,
+              Label.Zone)
+          .putAll(Resource.GceInstance.getKey(), Label.InstanceId, Label.Zone)
+          .build();
 
   private MonitoredResourceUtil() {
   }
@@ -113,13 +106,11 @@ public class MonitoredResourceUtil {
     String resourceName = resourceType.startsWith("gae_app") ? "gae_app" : resourceType;
     MonitoredResource.Builder builder =
         MonitoredResource.newBuilder(resourceName).addLabel(Label.ProjectId.getKey(), projectId);
-    Label[] resourceLabels = resourceTypeWithLabels.get(resourceType);
-    if (resourceLabels != null) {
-      for (Label label : resourceLabels) {
-        String value = getValue(label);
-        if (value != null) {
-          builder.addLabel(label.getKey(), value);
-        }
+
+    for (Label label : resourceTypeWithLabels.get(resourceType)) {
+      String value = getValue(label);
+      if (value != null) {
+        builder.addLabel(label.getKey(), value);
       }
     }
     return builder.build();
@@ -152,6 +143,9 @@ public class MonitoredResourceUtil {
         break;
       case ModuleId:
         value = getAppEngineModuleId();
+        break;
+      case PodId:
+        value = System.getenv("HOSTNAME");
         break;
       case VersionId:
         value = getAppEngineVersionId();
