@@ -18,10 +18,13 @@ package com.google.cloud.bigtable.data.v2.stub;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.SampleRowKeysRequest;
+import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
@@ -63,6 +66,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setTransportChannelProvider(settings.getTransportChannelProvider())
             .setEndpoint(settings.getEndpoint())
             .setCredentialsProvider(settings.getCredentialsProvider());
+
+    // SampleRowKeys retries are handled in the overlay: disable retries in the base layer (but make
+    // sure to preserve the exception callable settings.
+    baseSettingsBuilder
+        .sampleRowKeysSettings()
+        .setSimpleTimeoutNoRetries(
+            settings.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())
+        .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes());
 
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
@@ -109,12 +120,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
-    return new UnaryCallable<String, List<KeyOffset>>() {
-      @Override
-      public ApiFuture<List<KeyOffset>> futureCall(String request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> spoolable =
+        stub.sampleRowKeysCallable().all();
+
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retryable =
+        Callables.retrying(spoolable, settings.sampleRowKeysSettings(), clientContext);
+
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withContext =
+        retryable.withDefaultCallContext(clientContext.getDefaultCallContext());
+
+    return new SampleRowKeysCallable(withContext, requestContext);
   }
 
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
