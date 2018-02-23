@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,41 @@
 
 package com.google.cloud;
 
+import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.testing.http.HttpTesting;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
+
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
+
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+import com.google.common.io.Files;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -282,5 +301,65 @@ public class ServiceOptionsTest {
   public void testBaseHashCode() {
     assertEquals(OPTIONS.hashCode(), OPTIONS_COPY.hashCode());
     assertNotEquals(DEFAULT_OPTIONS.hashCode(), OPTIONS.hashCode());
+  }
+
+  @Test
+  public void testGetServiceAccountProjectId() throws Exception {
+    File credentialsFile = File.createTempFile("credentials", ".json");
+    credentialsFile.deleteOnExit();
+    Files.write("{\"project_id\":\"my-project-id\"}".getBytes(), credentialsFile);
+
+    assertEquals("my-project-id", ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
+  }
+
+  @Test
+  public void testGetServiceAccountProjectId_badJson() throws Exception {
+    File credentialsFile = File.createTempFile("credentials", ".json");
+    credentialsFile.deleteOnExit();
+    Files.write("asdfghj".getBytes(), credentialsFile);
+
+    assertNull(ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
+  }
+
+  @Test
+  public void testGetServiceAccountProjectId_nonExistentFile() throws Exception {
+    File credentialsFile = new File("/doesnotexist");
+
+    assertNull(ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
+  }
+
+  @Test
+  public void testResponseHeaderContainsMetaDataFlavor() throws Exception {
+    Multimap<String, String> headers = ArrayListMultimap.create();
+    headers.put("Metadata-Flavor", "Google");
+    HttpResponse httpResponse = createHttpResponseWithHeader(headers);
+    assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isTrue();
+  }
+
+  @Test
+  public void testResponseHeaderDoesNotContainMetaDataFlavor() throws Exception {  
+    Multimap<String, String> headers = ArrayListMultimap.create();
+    HttpResponse httpResponse = createHttpResponseWithHeader(headers);
+    assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isFalse(); 
+  }
+  
+  private HttpResponse createHttpResponseWithHeader(final Multimap<String, String> headers) throws Exception {
+    HttpTransport mockHttpTransport = new MockHttpTransport() {
+      @Override
+      public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+        return new MockLowLevelHttpRequest() {
+          @Override
+          public LowLevelHttpResponse execute() throws IOException {
+            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+            for (Map.Entry<String, String> entry : headers.entries()) {
+              response.addHeader(entry.getKey(), entry.getValue());
+            }            
+            return response;
+          }
+        };
+      }
+    };
+    HttpRequest request = mockHttpTransport.createRequestFactory().buildGetRequest(HttpTesting.SIMPLE_GENERIC_URL);
+    return request.execute();
   }
 }

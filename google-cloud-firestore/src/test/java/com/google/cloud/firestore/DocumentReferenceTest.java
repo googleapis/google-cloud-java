@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,10 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.ALL_SUPPORTED_TYPE
 import static com.google.cloud.firestore.LocalFirestoreHelper.ALL_SUPPORTED_TYPES_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.ALL_SUPPORTED_TYPES_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.BLOB;
+import static com.google.cloud.firestore.LocalFirestoreHelper.CREATE_PRECONDITION;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DATE;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_NAME;
 import static com.google.cloud.firestore.LocalFirestoreHelper.DOCUMENT_PATH;
-import static com.google.cloud.firestore.LocalFirestoreHelper.EMPTY_MAP_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.GEO_POINT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.NESTED_CLASS_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SERVER_TIMESTAMP_COMMIT_RESPONSE;
@@ -34,6 +34,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_MAP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_WRITE_COMMIT_RESPONSE;
+import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATE_PRECONDITION;
 import static com.google.cloud.firestore.LocalFirestoreHelper.assertCommitEquals;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commit;
 import static com.google.cloud.firestore.LocalFirestoreHelper.create;
@@ -41,6 +42,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.delete;
 import static com.google.cloud.firestore.LocalFirestoreHelper.get;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.map;
+import static com.google.cloud.firestore.LocalFirestoreHelper.object;
 import static com.google.cloud.firestore.LocalFirestoreHelper.set;
 import static com.google.cloud.firestore.LocalFirestoreHelper.streamingResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.string;
@@ -60,7 +62,6 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.CommitRequest;
@@ -145,7 +146,7 @@ public class DocumentReferenceTest {
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    documentReference.set(ImmutableMap.of("docRef", (Object) documentReference)).get();
+    documentReference.set(map("docRef", (Object) documentReference)).get();
 
     Map<String, Value> documentReferenceFields = new HashMap<>();
     documentReferenceFields.put(
@@ -211,8 +212,7 @@ public class DocumentReferenceTest {
   public void deserializeDocumentReference() throws Exception {
     doAnswer(
             getAllResponse(
-                ImmutableMap.of(
-                    "docRef", Value.newBuilder().setReferenceValue(DOCUMENT_NAME).build())))
+                map("docRef", Value.newBuilder().setReferenceValue(DOCUMENT_NAME).build())))
         .when(firestoreMock)
         .streamRequest(
             getAllCapture.capture(),
@@ -242,12 +242,7 @@ public class DocumentReferenceTest {
     assertEquals(documentReference, snapshot.getReference());
     assertFalse(snapshot.exists());
     assertEquals(snapshot.getReadTime(), Instant.ofEpochSecond(5, 6));
-
-    try {
-      snapshot.getData();
-      fail();
-    } catch (IllegalStateException ignored) {
-    }
+    assertNull(snapshot.getData());
   }
 
   @Test
@@ -289,44 +284,66 @@ public class DocumentReferenceTest {
   }
 
   @Test
-  public void serverTimestamp() throws Exception {
-    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
+  public void createWithServerTimestamp() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.create(LocalFirestoreHelper.SERVER_TIMESTAMP_MAP).get();
     documentReference.create(LocalFirestoreHelper.SERVER_TIMESTAMP_OBJECT).get();
-    documentReference.set(LocalFirestoreHelper.SERVER_TIMESTAMP_MAP).get();
-    documentReference.set(LocalFirestoreHelper.SERVER_TIMESTAMP_OBJECT).get();
-    documentReference.update(LocalFirestoreHelper.SERVER_TIMESTAMP_MAP).get();
-    documentReference.update(
-        "foo", FieldValue.serverTimestamp(), "inner.bar", FieldValue.serverTimestamp());
 
-    CommitRequest create = commit(create(SERVER_TIMESTAMP_PROTO), SERVER_TIMESTAMP_TRANSFORM);
-    CommitRequest set = commit(set(SERVER_TIMESTAMP_PROTO), SERVER_TIMESTAMP_TRANSFORM);
-    CommitRequest update =
-        commit(
-            update(SERVER_TIMESTAMP_PROTO, Arrays.asList("foo", "inner")),
-            SERVER_TIMESTAMP_TRANSFORM);
+    CommitRequest create = commit(transform(CREATE_PRECONDITION, "foo", "inner.bar"));
 
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(create, commitRequests.get(0));
     assertCommitEquals(create, commitRequests.get(1));
-    assertCommitEquals(set, commitRequests.get(2));
-    assertCommitEquals(set, commitRequests.get(3));
-    assertCommitEquals(update, commitRequests.get(4));
+  }
 
-    update =
+  @Test
+  public void setWithServerTimestamp() throws Exception {
+    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference.set(LocalFirestoreHelper.SERVER_TIMESTAMP_MAP).get();
+    documentReference.set(LocalFirestoreHelper.SERVER_TIMESTAMP_OBJECT).get();
+
+    CommitRequest set = commit(set(SERVER_TIMESTAMP_PROTO), SERVER_TIMESTAMP_TRANSFORM);
+
+    List<CommitRequest> commitRequests = commitCapture.getAllValues();
+    assertCommitEquals(set, commitRequests.get(0));
+    assertCommitEquals(set, commitRequests.get(1));
+  }
+
+  @Test
+  public void updateWithServerTimestamp() throws Exception {
+    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference.update(LocalFirestoreHelper.SERVER_TIMESTAMP_MAP).get();
+
+    CommitRequest update =
         commit(
-            update(SERVER_TIMESTAMP_PROTO, Arrays.asList("foo", "inner.bar")),
+            update(Collections.<String, Value>emptyMap(), Collections.singletonList("inner")),
             SERVER_TIMESTAMP_TRANSFORM);
-    assertCommitEquals(update, commitRequests.get(5));
+
+    assertCommitEquals(update, commitCapture.getValue());
+
+    documentReference.update(
+        "foo", FieldValue.serverTimestamp(), "inner.bar", FieldValue.serverTimestamp());
+
+    update = commit(transform(UPDATE_PRECONDITION, "foo", "inner.bar"));
+
+    assertCommitEquals(update, commitCapture.getValue());
   }
 
   @Test
   public void mergeWithServerTimestamps() throws Exception {
-    doReturn(SERVER_TIMESTAMP_COMMIT_RESPONSE)
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
@@ -338,8 +355,7 @@ public class DocumentReferenceTest {
         .set(LocalFirestoreHelper.SERVER_TIMESTAMP_OBJECT, SetOptions.mergeFields("inner.bar"))
         .get();
 
-    CommitRequest set =
-        commit(set(EMPTY_MAP_PROTO, Arrays.asList("inner.bar")), transform("inner.bar"));
+    CommitRequest set = commit(transform("inner.bar"));
 
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(set, commitRequests.get(0));
@@ -359,10 +375,7 @@ public class DocumentReferenceTest {
     }
 
     list.clear();
-    list.put(
-        "a",
-        ImmutableList.of(
-            ImmutableList.of("b", ImmutableMap.of("c", FieldValue.serverTimestamp()))));
+    list.put("a", ImmutableList.of(ImmutableList.of("b", map("c", FieldValue.serverTimestamp()))));
 
     try {
       documentReference.create(list);
@@ -484,7 +497,7 @@ public class DocumentReferenceTest {
 
     documentReference
         .set(
-            ImmutableMap.of("a.b.c", ImmutableMap.of("d.e", "foo", "f.g", "bar")),
+            map("a.b.c", map("d.e", "foo", "f.g", "bar")),
             SetOptions.mergeFieldPaths(Arrays.asList(FieldPath.of("a.b.c", "d.e"))))
         .get();
 
@@ -562,9 +575,7 @@ public class DocumentReferenceTest {
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    documentReference
-        .update(ImmutableMap.of("a.b.c", (Object) ImmutableMap.of("d.e", "foo")))
-        .get();
+    documentReference.update(map("a.b.c", (Object) map("d.e", "foo"))).get();
 
     Map<String, Value> nestedUpdate = new HashMap<>();
     Value.Builder valueProto = Value.newBuilder();
@@ -578,6 +589,26 @@ public class DocumentReferenceTest {
     nestedUpdate.put("a", bProto.build());
 
     CommitRequest expectedCommit = commit(update(nestedUpdate, Arrays.asList("a.b.c")));
+    assertCommitEquals(expectedCommit, commitCapture.getValue());
+  }
+
+  @Test
+  public void updateNestedMap() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference.update("a.b", "foo", "a.c", FieldValue.delete()).get();
+
+    Map<String, Value> nestedUpdate = new HashMap<>();
+    Value.Builder valueProto = Value.newBuilder();
+    valueProto
+        .getMapValueBuilder()
+        .putFields("b", Value.newBuilder().setStringValue("foo").build());
+    nestedUpdate.put("a", valueProto.build());
+
+    CommitRequest expectedCommit = commit(update(nestedUpdate, Arrays.asList("a.b", "a.c")));
     assertCommitEquals(expectedCommit, commitCapture.getValue());
   }
 
@@ -626,7 +657,6 @@ public class DocumentReferenceTest {
 
     Map<String, Value> fieldMap = new HashMap<>();
     fieldMap.put("foo", string("bar"));
-    fieldMap.put("bar", emptyMap.build());
 
     CommitRequest expectedCommit = commit(update(fieldMap, Arrays.asList("foo", "bar.foo")));
 
@@ -647,8 +677,8 @@ public class DocumentReferenceTest {
 
     Map<String, Value> expandedObject = new HashMap<>();
     expandedObject.put("a", string("b"));
-    expandedObject.put("c", map("d", string("e")));
-    expandedObject.put("f", map("g", map("h", string("i"))));
+    expandedObject.put("c", object("d", string("e")));
+    expandedObject.put("f", object("g", object("h", string("i"))));
 
     documentReference.update(nestedObject).get();
 
@@ -669,7 +699,7 @@ public class DocumentReferenceTest {
     CommitRequest expectedCommit =
         commit(
             update(
-                ImmutableMap.of(
+                map(
                     "a",
                     Value.newBuilder().setStringValue("b").build(),
                     "c",

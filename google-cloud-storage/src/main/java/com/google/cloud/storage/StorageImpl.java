@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Arrays;
@@ -509,53 +510,80 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           "Signing key was not provided and could not be derived");
       credentials = (ServiceAccountSigner) this.getOptions().getCredentials();
     }
-    // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
-    StringBuilder stBuilder = new StringBuilder();
-    if (optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)) {
-      stBuilder.append(optionMap.get(SignUrlOption.Option.HTTP_METHOD));
-    } else {
-      stBuilder.append(HttpMethod.GET);
-    }
-    stBuilder.append('\n');
-    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false)) {
-      checkArgument(blobInfo.getMd5() != null, "Blob is missing a value for md5");
-      stBuilder.append(blobInfo.getMd5());
-    }
-    stBuilder.append('\n');
-    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false)) {
-      checkArgument(blobInfo.getContentType() != null, "Blob is missing a value for content-type");
-      stBuilder.append(blobInfo.getContentType());
-    }
-    stBuilder.append('\n');
+    
     long expiration = TimeUnit.SECONDS.convert(
-        getOptions().getClock().millisTime() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
-    stBuilder.append(expiration).append('\n');
-    StringBuilder path = new StringBuilder();
-    if (!blobInfo.getBucket().startsWith("/")) {
-      path.append('/');
+            getOptions().getClock().millisTime() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
+    
+    StringBuilder stPath = new StringBuilder();
+    if (!blobInfo.getBucket().startsWith(PATH_DELIMITER)) {
+      stPath.append(PATH_DELIMITER);
     }
-    path.append(blobInfo.getBucket());
-    if (!blobInfo.getBucket().endsWith("/")) {
-      path.append('/');
+    stPath.append(blobInfo.getBucket());
+    if (!blobInfo.getBucket().endsWith(PATH_DELIMITER)) {
+      stPath.append(PATH_DELIMITER);
     }
-    if (blobInfo.getName().startsWith("/")) {
-      path.setLength(path.length() - 1);
+    if (blobInfo.getName().startsWith(PATH_DELIMITER)) {
+      stPath.setLength(stPath.length() - 1);
     }
+    
     String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
-    path.append(escapedName.replace("?", "%3F"));
-    stBuilder.append(path);
+    stPath.append(escapedName.replace("?", "%3F"));
+    
+    URI path = URI.create(stPath.toString());
+    
     try {
-      byte[] signatureBytes = credentials.sign(stBuilder.toString().getBytes(UTF_8));
-      stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
+      SignatureInfo signatureInfo = buildSignatureInfo(optionMap, blobInfo, expiration, path);
+      byte[] signatureBytes =
+          credentials.sign(signatureInfo.constructUnsignedPayload().getBytes(UTF_8));
+      StringBuilder stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
       String signature =
           URLEncoder.encode(BaseEncoding.base64().encode(signatureBytes), UTF_8.name());
       stBuilder.append("?GoogleAccessId=").append(credentials.getAccount());
       stBuilder.append("&Expires=").append(expiration);
       stBuilder.append("&Signature=").append(signature);
+      
       return new URL(stBuilder.toString());
+    
     } catch (MalformedURLException | UnsupportedEncodingException ex) {
       throw new IllegalStateException(ex);
     }
+  }
+  
+  /**
+   * Builds signature info.
+   * @param optionMap the option map
+   * @param blobInfo  the blob info
+   * @param expiration the expiration in seconds
+   * @param path the resource URI
+   * @return signature info
+   */
+  private SignatureInfo buildSignatureInfo(Map<SignUrlOption.Option, Object> optionMap,
+      BlobInfo blobInfo, long expiration, URI path) {
+
+    HttpMethod httpVerb = optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)
+        ? (HttpMethod) optionMap.get(SignUrlOption.Option.HTTP_METHOD)
+        : HttpMethod.GET;
+
+    SignatureInfo.Builder signatureInfoBuilder =
+        new SignatureInfo.Builder(httpVerb, expiration, path);
+
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false)) {
+      checkArgument(blobInfo.getMd5() != null, "Blob is missing a value for md5");
+      signatureInfoBuilder.setContentMd5(blobInfo.getMd5());
+    }
+
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false)) {
+      checkArgument(blobInfo.getContentType() != null, "Blob is missing a value for content-type");
+      signatureInfoBuilder.setContentType(blobInfo.getContentType());
+    }
+
+    @SuppressWarnings("unchecked")
+    Map<String, String> extHeaders =
+        (Map<String, String>) (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)
+            ? (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS)
+            : Collections.emptyMap());
+
+    return signatureInfoBuilder.setCanonicalizedExtensionHeaders(extHeaders).build();
   }
 
   @Override

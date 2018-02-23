@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.api.core.InternalApi;
 import com.google.api.services.bigquery.Bigquery;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.DatasetList;
@@ -46,7 +47,6 @@ import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableList;
 import com.google.api.services.bigquery.model.TableReference;
-import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -68,6 +68,20 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   private static final int HTTP_RESUME_INCOMPLETE = 308;
   private final BigQueryOptions options;
   private final Bigquery bigquery;
+
+  @InternalApi("Visible for testing")
+  static final Function<DatasetList.Datasets, Dataset> LIST_TO_DATASET =
+      new Function<DatasetList.Datasets, Dataset>() {
+        @Override
+        public Dataset apply(DatasetList.Datasets datasetPb) {
+          return new Dataset()
+              .setDatasetReference(datasetPb.getDatasetReference())
+              .setFriendlyName(datasetPb.getFriendlyName())
+              .setId(datasetPb.getId())
+              .setKind(datasetPb.getKind())
+              .setLabels(datasetPb.getLabels());
+        }
+      };
 
   public HttpBigQueryRpc(BigQueryOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
@@ -111,19 +125,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           .setPageToken(Option.PAGE_TOKEN.getString(options))
           .execute();
       Iterable<DatasetList.Datasets> datasets = datasetsList.getDatasets();
-      return Tuple.of(datasetsList.getNextPageToken(),
-          Iterables.transform(datasets != null ? datasets
-              : ImmutableList.<DatasetList.Datasets>of(),
-              new Function<DatasetList.Datasets, Dataset>() {
-                @Override
-                public Dataset apply(DatasetList.Datasets datasetPb) {
-                  return new Dataset()
-                      .setDatasetReference(datasetPb.getDatasetReference())
-                      .setFriendlyName(datasetPb.getFriendlyName())
-                      .setId(datasetPb.getId())
-                      .setKind(datasetPb.getKind());
-                }
-              }));
+      return Tuple.of(
+          datasetsList.getNextPageToken(),
+          Iterables.transform(
+              datasets != null ? datasets : ImmutableList.<DatasetList.Datasets>of(),
+              LIST_TO_DATASET));
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -283,18 +289,19 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<TableRow>> listTableData(String projectId, String datasetId,
-      String tableId, Map<Option, ?> options) {
+  public TableDataList listTableData(
+      String projectId, String datasetId, String tableId, Map<Option, ?> options) {
     try {
-      TableDataList tableDataList = bigquery.tabledata()
+      return bigquery
+          .tabledata()
           .list(projectId, datasetId, tableId)
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setStartIndex(Option.START_INDEX.getLong(options) != null
-              ? BigInteger.valueOf(Option.START_INDEX.getLong(options)) : null)
+          .setStartIndex(
+              Option.START_INDEX.getLong(options) != null
+                  ? BigInteger.valueOf(Option.START_INDEX.getLong(options))
+                  : null)
           .execute();
-      return Tuple.<String, Iterable<TableRow>>of(tableDataList.getPageToken(),
-          tableDataList.getRows());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -391,11 +398,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public String open(JobConfiguration configuration) {
     try {
       Job loadJob = new Job().setConfiguration(configuration);
-      StringBuilder builder = new StringBuilder()
-          .append(BASE_RESUMABLE_URI)
-          .append(options.getProjectId())
-          .append("/jobs");
-      GenericUrl url = new GenericUrl(builder.toString());
+      String builder = BASE_RESUMABLE_URI + options.getProjectId() + "/jobs";
+      GenericUrl url = new GenericUrl(builder);
       url.set("uploadType", "resumable");
       JsonFactory jsonFactory = bigquery.getJsonFactory();
       HttpRequestFactory requestFactory = bigquery.getRequestFactory();

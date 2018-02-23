@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,8 @@ public class LoadJobConfigurationTest {
           ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
   private static final Boolean AUTODETECT = true;
+  private static final EncryptionConfiguration JOB_ENCRYPTION_CONFIGURATION =
+      EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -61,6 +63,7 @@ public class LoadJobConfigurationTest {
           .setSchema(TABLE_SCHEMA)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .setAutodetect(AUTODETECT)
+          .setDestinationEncryptionConfiguration(JOB_ENCRYPTION_CONFIGURATION)
           .build();
   private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
       .setProjectionFields(ImmutableList.of("field_1", "field_2"))
@@ -159,5 +162,6 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getDatastoreBackupOptions(), value.getDatastoreBackupOptions());
     assertEquals(expected.getAutodetect(), value.getAutodetect());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
+    assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
   }
 }

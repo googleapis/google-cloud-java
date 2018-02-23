@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.List;
@@ -116,6 +117,22 @@ public final class SetOptions {
   @Nonnull
   public static SetOptions mergeFieldPaths(List<FieldPath> fields) {
     return new SetOptions(true, fields);
+  }
+
+  /** Returns the EncodingOptions to use for a set() call. */
+  EncodingOptions getEncodingOptions() {
+    if (!merge) {
+      return UserDataConverter.NO_DELETES;
+    } else if (fieldMask == null) {
+      return UserDataConverter.ALLOW_ALL_DELETES;
+    } else {
+      return new EncodingOptions() {
+        @Override
+        public boolean allowDelete(FieldPath fieldPath) {
+          return fieldMask.contains(fieldPath);
+        }
+      };
+    }
   }
 
   @Override

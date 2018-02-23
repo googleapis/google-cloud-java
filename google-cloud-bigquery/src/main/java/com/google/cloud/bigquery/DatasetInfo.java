@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import com.google.api.services.bigquery.model.TableReference;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
@@ -69,7 +68,7 @@ public class DatasetInfo implements Serializable {
   private final Long lastModified;
   private final String location;
   private final String selfLink;
-  private final Map<String, String> labels;
+  private final Labels labels;
 
   /**
    * A builder for {@code DatasetInfo} objects.
@@ -157,7 +156,7 @@ public class DatasetInfo implements Serializable {
     private Long lastModified;
     private String location;
     private String selfLink;
-    private Map<String, String> labels;
+    private Labels labels = Labels.ZERO;
 
     BuilderImpl() {}
 
@@ -173,9 +172,7 @@ public class DatasetInfo implements Serializable {
       this.lastModified = datasetInfo.lastModified;
       this.location = datasetInfo.location;
       this.selfLink = datasetInfo.selfLink;
-      this.labels = datasetInfo.labels != null
-                    ? ImmutableMap.copyOf(datasetInfo.labels)
-                    : null;
+      this.labels = datasetInfo.labels;
     }
 
     BuilderImpl(com.google.api.services.bigquery.model.Dataset datasetPb) {
@@ -199,9 +196,7 @@ public class DatasetInfo implements Serializable {
       this.lastModified = datasetPb.getLastModifiedTime();
       this.location = datasetPb.getLocation();
       this.selfLink = datasetPb.getSelfLink();
-      this.labels = datasetPb.getLabels() != null
-                    ? ImmutableMap.copyOf(datasetPb.getLabels())
-                    : null;
+      this.labels = Labels.fromPb(datasetPb.getLabels());
     }
 
 
@@ -277,9 +272,16 @@ public class DatasetInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Sets the labels applied to this dataset.
+     *
+     * <p>When used with {@link BigQuery#update(DatasetInfo, DatasetOption...)}, setting {@code
+     * labels} to {@code null} removes all labels; otherwise all keys that are mapped to {@code
+     * null} values are removed and other keys are updated to their respective values.
+     */
     @Override
     public Builder setLabels(Map<String, String> labels) {
-      this.labels = ImmutableMap.copyOf(labels);
+      this.labels = Labels.fromUser(labels);
       return this;
     }
 
@@ -411,7 +413,7 @@ public class DatasetInfo implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/docs/labeling-datasets">Labeling Datasets</a>
    */
   public Map<String, String> getLabels() {
-    return labels;
+    return labels.userMap();
   }
 
   /**
@@ -494,9 +496,7 @@ public class DatasetInfo implements Serializable {
         }
       }));
     }
-    if (labels != null) {
-      datasetPb.setLabels(labels);
-    }
+    datasetPb.setLabels(labels.toPb());
     return datasetPb;
   }
 

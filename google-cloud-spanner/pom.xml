@@ -4,7 +4,7 @@
                               http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.32.1-beta-SNAPSHOT</version>
+  <version>0.35.1-beta-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Google Cloud Spanner</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-spanner</url>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.32.1-alpha-SNAPSHOT</version>
+    <version>0.35.1-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
@@ -52,10 +52,6 @@
     </plugins>
   </build>
   <dependencies>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-tcnative-boringssl-static</artifactId>
-    </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
@@ -100,7 +96,7 @@
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty</artifactId>
+      <artifactId>grpc-netty-shaded</artifactId>
       <exclusions>
         <exclusion>
           <groupId>io.opencensus</groupId>
@@ -168,6 +164,11 @@
     <dependency>
       <groupId>io.opencensus</groupId>
       <artifactId>opencensus-contrib-grpc-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

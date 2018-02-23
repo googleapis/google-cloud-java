@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,29 +16,30 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient.ListSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.common.collect.Iterables;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.Subscription;
-import com.google.pubsub.v1.TopicName;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class ITSubscriptionAdminClientSnippets {
 
@@ -160,7 +161,7 @@ public class ITSubscriptionAdminClientSnippets {
 
   private void createTopic(String name) throws Exception {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-      topicAdminClient.createTopic(TopicName.of(projectId, name));
+      topicAdminClient.createTopic(ProjectTopicName.of(projectId, name));
     }
   }
 

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,7 +28,7 @@
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
+ *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
  *   loggingClient.deleteLog(logName);
  * }
  * </code>
@@ -44,7 +44,7 @@
  * <pre>
  * <code>
  * try (ConfigClient configClient = ConfigClient.create()) {
- *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.of("[PROJECT]", "[SINK]"));
+ *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
  *   LogSink response = configClient.getSink(sinkName);
  * }
  * </code>
@@ -59,7 +59,7 @@
  * <pre>
  * <code>
  * try (MetricsClient metricsClient = MetricsClient.create()) {
- *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+ *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
  *   LogMetric response = metricsClient.getLogMetric(metricName);
  * }
  * </code>

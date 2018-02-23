@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
-import com.google.pubsub.v1.SubscriptionName;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 
 class Cleanup {
 
@@ -33,7 +33,7 @@ class Cleanup {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       for (String topicId : testTopics) {
         try {
-          topicAdminClient.deleteTopic(TopicName.of(projectId, topicId));
+          topicAdminClient.deleteTopic(ProjectTopicName.of(projectId, topicId));
           System.out.println("Topic deleted : " + topicId);
         } catch (Exception e) {
           //do nothing catch clause
@@ -48,7 +48,7 @@ class Cleanup {
       for (String subscriptionId : subscriptions) {
         try {
           subscriptionAdminClient.deleteSubscription(
-              SubscriptionName.of(projectId, subscriptionId));
+              ProjectSubscriptionName.of(projectId, subscriptionId));
           System.out.println("Subscription deleted : " + subscriptionId);
         } catch (Exception e) {
           //do nothing catch clause

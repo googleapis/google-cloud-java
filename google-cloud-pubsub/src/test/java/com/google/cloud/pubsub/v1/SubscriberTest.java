@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.pubsub.v1.Subscriber.Builder;
+import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.ManagedChannel;
 import io.grpc.Server;
 import io.grpc.Status;
@@ -45,8 +45,8 @@ import org.junit.rules.TestName;
 /** Tests for {@link Subscriber}. */
 public class SubscriberTest {
 
-  private static final SubscriptionName TEST_SUBSCRIPTION =
-      SubscriptionName.of("test-project", "test-subscription");
+  private static final ProjectSubscriptionName TEST_SUBSCRIPTION =
+      ProjectSubscriptionName.of("test-project", "test-subscription");
 
   private ManagedChannel testChannel;
   private FakeScheduledExecutorService fakeExecutor;
@@ -99,7 +99,7 @@ public class SubscriberTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setExecutorProvider(
+                .setSystemExecutorProvider(
                     InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build()));
 
     // Recoverable error
@@ -117,7 +117,7 @@ public class SubscriberTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setExecutorProvider(
+                .setSystemExecutorProvider(
                     InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(10).build()));
 
     // Fatal error

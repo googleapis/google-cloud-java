@@ -2,7 +2,7 @@
 
 Java idiomatic client for [Cloud Spanner][cloud-spanner].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>0.32.0-beta</version>
+  <version>0.35.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-spanner:0.32.0-beta'
+compile 'com.google.cloud:google-cloud-spanner:0.35.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.32.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.35.0-beta"
 ```
 
 ## Authentication
@@ -85,14 +85,15 @@ try {
   DatabaseClient dbClient = spanner.getDatabaseClient(
     DatabaseId.of(options.getProjectId(), instance, database));
   // Queries the database
-  ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"));
-  // Prints the results
-  while (resultSet.next()) {
-    System.out.printf("%d\n", resultSet.getLong(0));
+  try (ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"))) {
+    // Prints the results
+    while (resultSet.next()) {
+      System.out.printf("%d\n", resultSet.getLong(0));
+    }
   }
 } finally {
   // Closes the client which will free up the resources used
-  spanner.closeAsync().get();
+  spanner.close();
 }
 ```
 

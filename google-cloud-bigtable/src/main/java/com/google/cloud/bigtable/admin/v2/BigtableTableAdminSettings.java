@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,49 +15,48 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListTablesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.PagedListDescriptor;
-import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.CheckConsistencyRequest;
+import com.google.bigtable.admin.v2.CheckConsistencyResponse;
+import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
+import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
+import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
+import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListSnapshotsRequest;
+import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
+import com.google.bigtable.admin.v2.Snapshot;
+import com.google.bigtable.admin.v2.SnapshotTableMetadata;
+import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
-import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
-import com.google.cloud.bigtable.admin.v2.stub.GrpcBigtableTableAdminStub;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Lists;
+import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -88,107 +87,127 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdminSettings> {
-  /** The default scopes of the service. */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/bigtable.admin")
-          .add("https://www.googleapis.com/auth/bigtable.admin.cluster")
-          .add("https://www.googleapis.com/auth/bigtable.admin.instance")
-          .add("https://www.googleapis.com/auth/bigtable.admin.table")
-          .add("https://www.googleapis.com/auth/cloud-bigtable.admin")
-          .add("https://www.googleapis.com/auth/cloud-bigtable.admin.cluster")
-          .add("https://www.googleapis.com/auth/cloud-bigtable.admin.table")
-          .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
-          .build();
-
-  private final UnaryCallSettings<CreateTableRequest, Table> createTableSettings;
-  private final PagedCallSettings<ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
-      listTablesSettings;
-  private final UnaryCallSettings<GetTableRequest, Table> getTableSettings;
-  private final UnaryCallSettings<DeleteTableRequest, Empty> deleteTableSettings;
-  private final UnaryCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesSettings;
-  private final UnaryCallSettings<DropRowRangeRequest, Empty> dropRowRangeSettings;
-
   /** Returns the object with the settings used for calls to createTable. */
   public UnaryCallSettings<CreateTableRequest, Table> createTableSettings() {
-    return createTableSettings;
+    return ((BigtableTableAdminStubSettings) getStubSettings()).createTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTableFromSnapshot. */
+  public UnaryCallSettings<CreateTableFromSnapshotRequest, Operation>
+      createTableFromSnapshotSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).createTableFromSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTableFromSnapshot. */
+  public OperationCallSettings<
+          CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
+      createTableFromSnapshotOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings())
+        .createTableFromSnapshotOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listTables. */
   public PagedCallSettings<ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
       listTablesSettings() {
-    return listTablesSettings;
+    return ((BigtableTableAdminStubSettings) getStubSettings()).listTablesSettings();
   }
 
   /** Returns the object with the settings used for calls to getTable. */
   public UnaryCallSettings<GetTableRequest, Table> getTableSettings() {
-    return getTableSettings;
+    return ((BigtableTableAdminStubSettings) getStubSettings()).getTableSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteTable. */
   public UnaryCallSettings<DeleteTableRequest, Empty> deleteTableSettings() {
-    return deleteTableSettings;
+    return ((BigtableTableAdminStubSettings) getStubSettings()).deleteTableSettings();
   }
 
   /** Returns the object with the settings used for calls to modifyColumnFamilies. */
   public UnaryCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesSettings() {
-    return modifyColumnFamiliesSettings;
+    return ((BigtableTableAdminStubSettings) getStubSettings()).modifyColumnFamiliesSettings();
   }
 
   /** Returns the object with the settings used for calls to dropRowRange. */
   public UnaryCallSettings<DropRowRangeRequest, Empty> dropRowRangeSettings() {
-    return dropRowRangeSettings;
+    return ((BigtableTableAdminStubSettings) getStubSettings()).dropRowRangeSettings();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public BigtableTableAdminStub createStub() throws IOException {
-    if (getTransportChannelProvider()
-        .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcBigtableTableAdminStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
-    }
+  /** Returns the object with the settings used for calls to generateConsistencyToken. */
+  public UnaryCallSettings<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
+      generateConsistencyTokenSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).generateConsistencyTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to checkConsistency. */
+  public UnaryCallSettings<CheckConsistencyRequest, CheckConsistencyResponse>
+      checkConsistencySettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).checkConsistencySettings();
+  }
+
+  /** Returns the object with the settings used for calls to snapshotTable. */
+  public UnaryCallSettings<SnapshotTableRequest, Operation> snapshotTableSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).snapshotTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to snapshotTable. */
+  public OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+      snapshotTableOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).snapshotTableOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSnapshot. */
+  public UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).getSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSnapshots. */
+  public PagedCallSettings<ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+      listSnapshotsSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).listSnapshotsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSnapshot. */
+  public UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).deleteSnapshotSettings();
+  }
+
+  public static final BigtableTableAdminSettings create(BigtableTableAdminStubSettings stub)
+      throws IOException {
+    return new BigtableTableAdminSettings.Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
+    return BigtableTableAdminStubSettings.defaultExecutorProviderBuilder();
   }
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "bigtableadmin.googleapis.com:443";
+    return BigtableTableAdminStubSettings.getDefaultEndpoint();
   }
 
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
-    return DEFAULT_SERVICE_SCOPES;
+    return BigtableTableAdminStubSettings.getDefaultServiceScopes();
   }
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return BigtableTableAdminStubSettings.defaultCredentialsProviderBuilder();
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return BigtableTableAdminStubSettings.defaultGrpcTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
+    return BigtableTableAdminStubSettings.defaultTransportChannelProvider();
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(BigtableTableAdminSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+    return BigtableTableAdminStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
   /** Returns a new builder for this class. */
@@ -206,211 +225,34 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
     return new Builder(this);
   }
 
-  private BigtableTableAdminSettings(Builder settingsBuilder) throws IOException {
+  protected BigtableTableAdminSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
-
-    createTableSettings = settingsBuilder.createTableSettings().build();
-    listTablesSettings = settingsBuilder.listTablesSettings().build();
-    getTableSettings = settingsBuilder.getTableSettings().build();
-    deleteTableSettings = settingsBuilder.deleteTableSettings().build();
-    modifyColumnFamiliesSettings = settingsBuilder.modifyColumnFamiliesSettings().build();
-    dropRowRangeSettings = settingsBuilder.dropRowRangeSettings().build();
   }
-
-  private static final PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>
-      LIST_TABLES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTablesRequest injectToken(ListTablesRequest payload, String token) {
-              return ListTablesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTablesRequest injectPageSize(ListTablesRequest payload, int pageSize) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
-            }
-
-            @Override
-            public Integer extractPageSize(ListTablesRequest payload) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
-            }
-
-            @Override
-            public String extractNextToken(ListTablesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Table> extractResources(ListTablesResponse payload) {
-              return payload.getTablesList();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
-      LIST_TABLES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>() {
-            @Override
-            public ApiFuture<ListTablesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTablesRequest, ListTablesResponse> callable,
-                ListTablesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTablesResponse> futureResponse) {
-              PageContext<ListTablesRequest, ListTablesResponse, Table> pageContext =
-                  PageContext.create(callable, LIST_TABLES_PAGE_STR_DESC, request, context);
-              return ListTablesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for BigtableTableAdminSettings. */
   public static class Builder extends ClientSettings.Builder<BigtableTableAdminSettings, Builder> {
-    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<CreateTableRequest, Table> createTableSettings;
-    private final PagedCallSettings.Builder<
-            ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
-        listTablesSettings;
-    private final UnaryCallSettings.Builder<GetTableRequest, Table> getTableSettings;
-    private final UnaryCallSettings.Builder<DeleteTableRequest, Empty> deleteTableSettings;
-    private final UnaryCallSettings.Builder<ModifyColumnFamiliesRequest, Table>
-        modifyColumnFamiliesSettings;
-    private final UnaryCallSettings.Builder<DropRowRangeRequest, Empty> dropRowRangeSettings;
-
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
-        RETRYABLE_CODE_DEFINITIONS;
-
-    static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
-          ImmutableMap.builder();
-      definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      RETRYABLE_CODE_DEFINITIONS = definitions.build();
-    }
-
-    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
-
-    static {
-      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
-      RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("default", settings);
-      RETRY_PARAM_DEFINITIONS = definitions.build();
-    }
-
-    private Builder() {
+    protected Builder() throws IOException {
       this((ClientContext) null);
     }
 
-    private Builder(ClientContext clientContext) {
-      super(clientContext);
-
-      createTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listTablesSettings = PagedCallSettings.newBuilder(LIST_TABLES_PAGE_STR_FACT);
-
-      getTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      modifyColumnFamiliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      dropRowRangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createTableSettings,
-              listTablesSettings,
-              getTableSettings,
-              deleteTableSettings,
-              modifyColumnFamiliesSettings,
-              dropRowRangeSettings);
-
-      initDefaults(this);
+    protected Builder(ClientContext clientContext) {
+      super(BigtableTableAdminStubSettings.newBuilder(clientContext));
     }
 
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
+      return new Builder(BigtableTableAdminStubSettings.newBuilder());
     }
 
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listTablesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .modifyColumnFamiliesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .dropRowRangeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
+    protected Builder(BigtableTableAdminSettings settings) {
+      super(settings.getStubSettings().toBuilder());
     }
 
-    private Builder(BigtableTableAdminSettings settings) {
-      super(settings);
+    protected Builder(BigtableTableAdminStubSettings.Builder stubSettings) {
+      super(stubSettings);
+    }
 
-      createTableSettings = settings.createTableSettings.toBuilder();
-      listTablesSettings = settings.listTablesSettings.toBuilder();
-      getTableSettings = settings.getTableSettings.toBuilder();
-      deleteTableSettings = settings.deleteTableSettings.toBuilder();
-      modifyColumnFamiliesSettings = settings.modifyColumnFamiliesSettings.toBuilder();
-      dropRowRangeSettings = settings.dropRowRangeSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createTableSettings,
-              listTablesSettings,
-              getTableSettings,
-              deleteTableSettings,
-              modifyColumnFamiliesSettings,
-              dropRowRangeSettings);
+    public BigtableTableAdminStubSettings.Builder getStubSettingsBuilder() {
+      return ((BigtableTableAdminStubSettings.Builder) getStubSettings());
     }
 
     /**
@@ -420,40 +262,95 @@ public class BigtableTableAdminSettings extends ClientSettings<BigtableTableAdmi
      */
     public Builder applyToAllUnaryMethods(
         ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
-      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to createTable. */
     public UnaryCallSettings.Builder<CreateTableRequest, Table> createTableSettings() {
-      return createTableSettings;
+      return getStubSettingsBuilder().createTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTableFromSnapshot. */
+    public UnaryCallSettings.Builder<CreateTableFromSnapshotRequest, Operation>
+        createTableFromSnapshotSettings() {
+      return getStubSettingsBuilder().createTableFromSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTableFromSnapshot. */
+    public OperationCallSettings.Builder<
+            CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
+        createTableFromSnapshotOperationSettings() {
+      return getStubSettingsBuilder().createTableFromSnapshotOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTables. */
     public PagedCallSettings.Builder<ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
         listTablesSettings() {
-      return listTablesSettings;
+      return getStubSettingsBuilder().listTablesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getTable. */
     public UnaryCallSettings.Builder<GetTableRequest, Table> getTableSettings() {
-      return getTableSettings;
+      return getStubSettingsBuilder().getTableSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteTable. */
     public UnaryCallSettings.Builder<DeleteTableRequest, Empty> deleteTableSettings() {
-      return deleteTableSettings;
+      return getStubSettingsBuilder().deleteTableSettings();
     }
 
     /** Returns the builder for the settings used for calls to modifyColumnFamilies. */
     public UnaryCallSettings.Builder<ModifyColumnFamiliesRequest, Table>
         modifyColumnFamiliesSettings() {
-      return modifyColumnFamiliesSettings;
+      return getStubSettingsBuilder().modifyColumnFamiliesSettings();
     }
 
     /** Returns the builder for the settings used for calls to dropRowRange. */
     public UnaryCallSettings.Builder<DropRowRangeRequest, Empty> dropRowRangeSettings() {
-      return dropRowRangeSettings;
+      return getStubSettingsBuilder().dropRowRangeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateConsistencyToken. */
+    public UnaryCallSettings.Builder<
+            GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
+        generateConsistencyTokenSettings() {
+      return getStubSettingsBuilder().generateConsistencyTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to checkConsistency. */
+    public UnaryCallSettings.Builder<CheckConsistencyRequest, CheckConsistencyResponse>
+        checkConsistencySettings() {
+      return getStubSettingsBuilder().checkConsistencySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to snapshotTable. */
+    public UnaryCallSettings.Builder<SnapshotTableRequest, Operation> snapshotTableSettings() {
+      return getStubSettingsBuilder().snapshotTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to snapshotTable. */
+    public OperationCallSettings.Builder<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+        snapshotTableOperationSettings() {
+      return getStubSettingsBuilder().snapshotTableOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSnapshot. */
+    public UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+      return getStubSettingsBuilder().getSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSnapshots. */
+    public PagedCallSettings.Builder<
+            ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+        listSnapshotsSettings() {
+      return getStubSettingsBuilder().listSnapshotsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSnapshot. */
+    public UnaryCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings() {
+      return getStubSettingsBuilder().deleteSnapshotSettings();
     }
 
     @Override

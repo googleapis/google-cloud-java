@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.create;
 import static com.google.cloud.firestore.LocalFirestoreHelper.delete;
 import static com.google.cloud.firestore.LocalFirestoreHelper.get;
+import static com.google.cloud.firestore.LocalFirestoreHelper.getAll;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.query;
 import static com.google.cloud.firestore.LocalFirestoreHelper.queryResponse;
@@ -53,6 +54,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -273,17 +275,19 @@ public class TransactionTest {
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
+    final AtomicInteger retryCount = new AtomicInteger(1);
+
     ApiFuture<String> transaction =
         firestoreMock.runTransaction(
             new Transaction.Function<String>() {
               @Override
               public String updateCallback(Transaction transaction) {
-                return "foo";
+                return "foo" + retryCount.getAndIncrement();
               }
             },
             TransactionOptions.create(options.getExecutor(), 6));
 
-    assertEquals("foo", transaction.get());
+    assertEquals("foo6", transaction.get());
 
     List<Message> requests = requestCapture.getAllValues();
     assertEquals(12, requests.size());
@@ -338,6 +342,47 @@ public class TransactionTest {
   }
 
   @Test
+  public void getMultipleDocuments() throws Exception {
+    final DocumentReference doc1 = firestoreMock.document("coll/doc1");
+    final DocumentReference doc2 = firestoreMock.document("coll/doc2");
+
+    doReturn(beginResponse())
+        .doReturn(commitResponse(0, 0))
+        .when(firestoreMock)
+        .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+
+    doAnswer(getAllResponse(SINGLE_FIELD_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            requestCapture.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable<Message, Message>>any());
+
+    ApiFuture<List<DocumentSnapshot>> transaction =
+        firestoreMock.runTransaction(
+            new Transaction.Function<List<DocumentSnapshot>>() {
+              @Override
+              public List<DocumentSnapshot> updateCallback(Transaction transaction)
+                  throws ExecutionException, InterruptedException {
+                return transaction.getAll(doc1, doc2).get();
+              }
+            },
+            options);
+
+    assertEquals(2, transaction.get().size());
+
+    List<Message> requests = requestCapture.getAllValues();
+    assertEquals(3, requests.size());
+
+    assertEquals(begin(), requests.get(0));
+    assertEquals(
+        getAll(
+            TRANSACTION_ID, doc1.getResourcePath().toString(), doc2.getResourcePath().toString()),
+        requests.get(1));
+    assertEquals(commit(TRANSACTION_ID), requests.get(2));
+  }
+
+  @Test
   public void getQuery() throws Exception {
     doReturn(beginResponse())
         .doReturn(commitResponse(0, 0))
@@ -375,7 +420,7 @@ public class TransactionTest {
   @Test
   public void updateDocument() throws Exception {
     doReturn(beginResponse())
-        .doReturn(commitResponse(4, 0))
+        .doReturn(commitResponse(2, 0))
         .when(firestoreMock)
         .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
 
@@ -385,12 +430,7 @@ public class TransactionTest {
               @Override
               public String updateCallback(Transaction transaction) {
                 transaction.update(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP);
-                transaction.update(
-                    documentReference,
-                    LocalFirestoreHelper.SINGLE_FIELD_MAP,
-                    Precondition.exists(true));
                 transaction.update(documentReference, "foo", "bar");
-                transaction.update(documentReference, Precondition.exists(true), "foo", "bar");
                 return "foo";
               }
             },
@@ -400,7 +440,7 @@ public class TransactionTest {
 
     List<Write> writes = new ArrayList<>();
 
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 2; ++i) {
       writes.add(update(SINGLE_FIELD_PROTO, Collections.singletonList("foo")));
     }
 

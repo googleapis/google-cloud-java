@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -876,7 +877,7 @@ public interface Storage extends Service<StorageOptions> {
     private final Object value;
 
     enum Option {
-      HTTP_METHOD, CONTENT_TYPE, MD5, SERVICE_ACCOUNT_CRED
+      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -893,15 +894,17 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * The HTTP method to be used with the signed URL.
+     * The HTTP method to be used with the signed URL. 
+     * If this method is not called, defaults to GET.
      */
     public static SignUrlOption httpMethod(HttpMethod httpMethod) {
-      return new SignUrlOption(Option.HTTP_METHOD, httpMethod.name());
+      return new SignUrlOption(Option.HTTP_METHOD, httpMethod);
     }
 
     /**
      * Use it if signature should include the blob's content-type.
      * When used, users of the signed URL should include the blob's content-type with their request.
+     * If using this URL from a browser, you must include a content type that matches what the browser will send.
      */
     public static SignUrlOption withContentType() {
       return new SignUrlOption(Option.CONTENT_TYPE, true);
@@ -913,6 +916,16 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static SignUrlOption withMd5() {
       return new SignUrlOption(Option.MD5, true);
+    }
+    
+    /**
+     * Use it if signature should include the blob's canonicalized extended headers.
+     * When used, users of the signed URL should include the canonicalized extended headers with
+     * their request.
+     * @see <a href="https://cloud.google.com/storage/docs/xml-api/reference-headers"></a>
+     */
+    public static SignUrlOption withExtHeaders(Map<String, String> extHeaders) {
+      return new SignUrlOption(Option.EXT_HEADERS, extHeaders);
     }
 
     /**

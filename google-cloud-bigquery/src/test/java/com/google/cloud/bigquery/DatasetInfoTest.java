@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -128,7 +129,8 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLastModified());
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
-    assertNull(datasetInfo.getLabels());
+    assertTrue(datasetInfo.getLabels().isEmpty());
+
     datasetInfo = DatasetInfo.of(DATASET_ID);
     assertEquals(DATASET_ID, datasetInfo.getDatasetId());
     assertNull(datasetInfo.getAcl());
@@ -141,7 +143,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLastModified());
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
-    assertNull(datasetInfo.getLabels());
+    assertTrue(datasetInfo.getLabels().isEmpty());
   }
 
   @Test

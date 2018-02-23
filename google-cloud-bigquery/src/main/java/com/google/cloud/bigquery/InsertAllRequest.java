@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,9 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -74,11 +75,18 @@ public final class InsertAllRequest implements Serializable {
     private static final long serialVersionUID = 8563060538219179157L;
 
     private final String id;
+
+    // Always immutable, but might not be ImmutableMap, since they don't support nulls.
     private final Map<String, Object> content;
 
     RowToInsert(String id, Map<String, ?> content) {
       this.id = id;
-      this.content = ImmutableMap.copyOf(content);
+
+      if (content instanceof ImmutableMap) {
+        this.content = ImmutableMap.copyOf(content);
+      } else {
+        this.content = Collections.unmodifiableMap(new HashMap<>(content));
+      }
     }
 
 
@@ -89,9 +97,10 @@ public final class InsertAllRequest implements Serializable {
       return id;
     }
 
-
     /**
      * Returns the actual content of the row, as a map.
+     *
+     * <p>The returned map is always immutable. Its iteration order is unspecified.
      */
     public Map<String, Object> getContent() {
       return content;

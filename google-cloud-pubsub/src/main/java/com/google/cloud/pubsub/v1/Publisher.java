@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
@@ -30,28 +31,34 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
 import com.google.pubsub.v1.PublisherGrpc.PublisherFutureStub;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
 import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
+import org.threeten.bp.Duration;
+
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadLocalRandom;
@@ -61,8 +68,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
-import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -85,7 +90,7 @@ import org.threeten.bp.Duration;
 public class Publisher {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
 
-  private final TopicName topicName;
+  private final ProjectTopicName topicName;
   private final String cachedTopicNameString;
 
   private final BatchingSettings batchingSettings;
@@ -98,8 +103,7 @@ public class Publisher {
 
   private final AtomicBoolean activeAlarm;
 
-  private final Channel[] channels;
-  private final AtomicRoundRobin channelIndex;
+  private final Channel channel;
   @Nullable private final CallCredentials callCredentials;
 
   private final ScheduledExecutorService executor;
@@ -133,26 +137,27 @@ public class Publisher {
     if (builder.executorProvider.shouldAutoClose()) {
       closeables.add(new ExecutorAsBackgroundResource(executor));
     }
-    channels = new Channel[Runtime.getRuntime().availableProcessors()];
     TransportChannelProvider channelProvider = builder.channelProvider;
     if (channelProvider.needsExecutor()) {
       channelProvider = channelProvider.withExecutor(executor);
     }
     if (channelProvider.needsHeaders()) {
-      channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
+      Map<String, String> headers =
+          ImmutableMap.<String, String>builder()
+              .putAll(builder.headerProvider.getHeaders())
+              .putAll(builder.internalHeaderProvider.getHeaders())
+              .build();
+      channelProvider = channelProvider.withHeaders(headers);
     }
     if (channelProvider.needsEndpoint()) {
       channelProvider = channelProvider.withEndpoint(TopicAdminSettings.getDefaultEndpoint());
     }
-    for (int i = 0; i < channels.length; i++) {
-      GrpcTransportChannel transportChannel =
-          (GrpcTransportChannel) channelProvider.getTransportChannel();
-      channels[i] = transportChannel.getChannel();
-      if (channelProvider.shouldAutoClose()) {
-        closeables.add(transportChannel);
-      }
+    GrpcTransportChannel transportChannel =
+        (GrpcTransportChannel) channelProvider.getTransportChannel();
+    channel = transportChannel.getChannel();
+    if (channelProvider.shouldAutoClose()) {
+      closeables.add(transportChannel);
     }
-    channelIndex = new AtomicRoundRobin(channels.length);
 
     Credentials credentials = builder.credentialsProvider.getCredentials();
     callCredentials = credentials == null ? null : MoreCallCredentials.from(credentials);
@@ -162,7 +167,7 @@ public class Publisher {
   }
 
   /** Topic which the publisher publishes to. */
-  public TopicName getTopicName() {
+  public ProjectTopicName getTopicName() {
     return topicName;
   }
 
@@ -312,8 +317,6 @@ public class Publisher {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    int currentChannel = channelIndex.next();
-
     long rpcTimeoutMs =
         Math.round(
             retrySettings.getInitialRpcTimeout().toMillis()
@@ -321,8 +324,7 @@ public class Publisher {
     rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().toMillis());
 
     PublisherFutureStub stub =
-        PublisherGrpc.newFutureStub(channels[currentChannel])
-            .withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
+        PublisherGrpc.newFutureStub(channel).withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
     if (callCredentials != null) {
       stub = stub.withCallCredentials(callCredentials);
     }
@@ -498,31 +500,7 @@ public class Publisher {
    * <pre>{@code
    * String projectName = "my_project";
    * String topicName = "my_topic";
-   * TopicName topic = TopicName.create(projectName, topicName);
-   * Publisher publisher = Publisher.newBuilder(topic).build();
-   * try {
-   *   // ...
-   * } finally {
-   *   // When finished with the publisher, make sure to shutdown to free up resources.
-   *   publisher.shutdown();
-   * }
-   * }</pre>
-   *
-   * @deprecated Use {@link #newBuilder(TopicName)} instead.
-   */
-  @Deprecated
-  public static Builder defaultBuilder(TopicName topicName) {
-    return newBuilder(topicName);
-  }
-
-  /**
-   * Constructs a new {@link Builder} using the given topic.
-   *
-   * <p>Example of creating a {@code Publisher}.
-   * <pre>{@code
-   * String projectName = "my_project";
-   * String topicName = "my_topic";
-   * TopicName topic = TopicName.create(projectName, topicName);
+   * ProjectTopicName topic = ProjectTopicName.create(projectName, topicName);
    * Publisher publisher = Publisher.newBuilder(topic).build();
    * try {
    *   // ...
@@ -533,7 +511,7 @@ public class Publisher {
    * }</pre>
    *
    */
-  public static Builder newBuilder(TopicName topicName) {
+  public static Builder newBuilder(ProjectTopicName topicName) {
     return new Builder(topicName);
   }
 
@@ -578,7 +556,7 @@ public class Publisher {
             .setExecutorThreadCount(THREADS_PER_CPU * Runtime.getRuntime().availableProcessors())
             .build();
 
-    TopicName topicName;
+    ProjectTopicName topicName;
 
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
@@ -587,14 +565,16 @@ public class Publisher {
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
     TransportChannelProvider channelProvider =
-        TopicAdminSettings.defaultGrpcTransportProviderBuilder().build();
-    HeaderProvider headerProvider =
+        TopicAdminSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
+
+    HeaderProvider headerProvider = new NoHeaderProvider();
+    HeaderProvider internalHeaderProvider =
         TopicAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();
 
-    private Builder(TopicName topic) {
+    private Builder(ProjectTopicName topic) {
       this.topicName = Preconditions.checkNotNull(topic);
     }
 
@@ -602,17 +582,42 @@ public class Publisher {
      * {@code ChannelProvider} to use to create Channels, which must point at Cloud Pub/Sub
      * endpoint.
      *
-     * <p>For performance, this client benefits from having multiple channels open at once. Users
-     * are encouraged to provide instances of {@code ChannelProvider} that creates new channels
-     * instead of returning pre-initialized ones.
+     * <p>For performance, this client benefits from having multiple underlying connections. See
+     * {@link com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder#setPoolSize(int)}.
      */
     public Builder setChannelProvider(TransportChannelProvider channelProvider) {
       this.channelProvider = Preconditions.checkNotNull(channelProvider);
       return this;
     }
 
+    /**
+     * Sets the static header provider. The header provider will be called during client
+     * construction only once. The headers returned by the provider will be cached and supplied as
+     * is for each request issued by the constructed client. Some reserved headers can be overridden
+     * (e.g. Content-Type) or merged with the default value (e.g. User-Agent) by the underlying
+     * transport layer.
+     *
+     * @param headerProvider the header provider
+     * @return the builder
+     */
+    @BetaApi
     public Builder setHeaderProvider(HeaderProvider headerProvider) {
       this.headerProvider = Preconditions.checkNotNull(headerProvider);
+      return this;
+    }
+
+    /**
+     * Sets the static header provider for getting internal (library-defined) headers. The header
+     * provider will be called during client construction only once. The headers returned by the
+     * provider will be cached and supplied as is for each request issued by the constructed client.
+     * Some reserved headers can be overridden (e.g. Content-Type) or merged with the default value
+     * (e.g. User-Agent) by the underlying transport layer.
+     *
+     * @param internalHeaderProvider the internal header provider
+     * @return the builder
+     */
+    Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
+      this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
       return this;
     }
 

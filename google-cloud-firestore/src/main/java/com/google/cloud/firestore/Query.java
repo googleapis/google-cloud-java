@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Executor;
@@ -74,6 +75,88 @@ public class Query {
     }
   }
 
+  private abstract static class FieldFilter {
+    final FieldPath fieldPath;
+    final Object value;
+
+    FieldFilter(FieldPath fieldPath, Object value) {
+      this.value = value;
+      this.fieldPath = fieldPath;
+    }
+
+    Value encodeValue() {
+      Object sanitizedObject = CustomClassMapper.serialize(value);
+      Value encodedValue =
+          UserDataConverter.encodeValue(fieldPath, sanitizedObject, UserDataConverter.NO_DELETES);
+
+      if (encodedValue == null) {
+        throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
+      }
+      return encodedValue;
+    }
+
+    abstract boolean isEqualsFilter();
+
+    abstract Filter toProto();
+  }
+
+  private static class UnaryFilter extends FieldFilter {
+    UnaryFilter(FieldPath fieldPath, Object value) {
+      super(fieldPath, value);
+      Preconditions.checkArgument(
+          isUnaryComparison(value), "Cannot use '%s' in unary comparison", value);
+    }
+
+    @Override
+    boolean isEqualsFilter() {
+      return true;
+    }
+
+    Filter toProto() {
+      Filter.Builder result = Filter.newBuilder();
+
+      result
+          .getUnaryFilterBuilder()
+          .setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()))
+          .setOp(
+              value == null
+                  ? StructuredQuery.UnaryFilter.Operator.IS_NULL
+                  : StructuredQuery.UnaryFilter.Operator.IS_NAN);
+
+      return result.build();
+    }
+  }
+
+  private static class ComparisonFilter extends FieldFilter {
+    final StructuredQuery.FieldFilter.Operator operator;
+
+    ComparisonFilter(
+        FieldPath fieldPath, StructuredQuery.FieldFilter.Operator operator, Object value) {
+      super(fieldPath, value);
+      Preconditions.checkArgument(
+          !isUnaryComparison(value), "Cannot use '%s' in field comparison", value);
+      this.operator = operator;
+    }
+
+    @Override
+    boolean isEqualsFilter() {
+      return operator.equals(EQUAL);
+    }
+
+    Filter toProto() {
+      Filter.Builder result = Filter.newBuilder();
+
+      Value encodedValue = encodeValue();
+
+      result
+          .getFieldFilterBuilder()
+          .setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()))
+          .setValue(encodedValue)
+          .setOp(operator);
+      return result.build();
+    }
+  }
+
   private static class FieldOrder {
     final FieldPath fieldPath;
     final Direction direction;
@@ -83,7 +166,7 @@ public class Query {
       this.direction = direction;
     }
 
-    private Order toProto() {
+    Order toProto() {
       Order.Builder result = Order.newBuilder();
       result.setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()));
       result.setDirection(direction.getDirection());
@@ -98,7 +181,7 @@ public class Query {
     private int offset;
     private Cursor startCursor;
     private Cursor endCursor;
-    private List<Filter> fieldFilters;
+    private List<FieldFilter> fieldFilters;
     private List<FieldOrder> fieldOrders;
     private List<FieldReference> fieldProjections;
 
@@ -193,88 +276,84 @@ public class Query {
     return value == null || value.equals(Double.NaN) || value.equals(Float.NaN);
   }
 
-  private Filter createFieldFilter(
-      FieldPath fieldPath, StructuredQuery.FieldFilter.Operator operator, Object value) {
-    Preconditions.checkState(
-        !isUnaryComparison(value), "Firestore only support equals comparisons with Null and NaN");
+  /** Computes the backend ordering semantics for DocumentSnapshot cursors. */
+  private List<FieldOrder> createImplicitOrderBy() {
+    List<FieldOrder> implicitOrders = new ArrayList<>(options.fieldOrders);
+    boolean hasDocumentId = false;
 
-    Filter.Builder result = Filter.newBuilder();
-
-    Object sanitizedObject = CustomClassMapper.serialize(value);
-    Value encodedValue = FirestoreImpl.encodeValue(sanitizedObject);
-
-    if (encodedValue == null) {
-      throw FirestoreException.invalidState("Cannot use Firestore Sentinels in FieldFilter");
+    if (implicitOrders.isEmpty()) {
+      // If no explicit ordering is specified, use the first inequality to define an implicit order.
+      for (FieldFilter fieldFilter : options.fieldFilters) {
+        if (!fieldFilter.isEqualsFilter()) {
+          implicitOrders.add(new FieldOrder(fieldFilter.fieldPath, Direction.ASCENDING));
+          break;
+        }
+      }
+    } else {
+      for (FieldOrder fieldOrder : options.fieldOrders) {
+        if (fieldOrder.fieldPath.equals(FieldPath.DOCUMENT_ID)) {
+          hasDocumentId = true;
+        }
+      }
     }
 
-    result
-        .getFieldFilterBuilder()
-        .setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()))
-        .setValue(encodedValue)
-        .setOp(operator);
+    if (!hasDocumentId) {
+      // Add implicit sorting by name, using the last specified direction.
+      Direction lastDirection =
+          implicitOrders.isEmpty()
+              ? Direction.ASCENDING
+              : implicitOrders.get(implicitOrders.size() - 1).direction;
 
-    return result.build();
+      implicitOrders.add(new FieldOrder(FieldPath.documentId(), lastDirection));
+    }
+    return implicitOrders;
   }
 
-  private Filter createUnaryFilter(FieldPath fieldPath, Object value) {
-    Preconditions.checkState(isUnaryComparison(value));
+  private Cursor createCursor(
+      List<FieldOrder> order, DocumentSnapshot documentSnapshot, boolean before) {
+    List<Object> fieldValues = new ArrayList<>();
 
-    Filter.Builder result = Filter.newBuilder();
-    result
-        .getUnaryFilterBuilder()
-        .setField(FieldReference.newBuilder().setFieldPath(fieldPath.getEncodedPath()))
-        .setOp(
-            value == null
-                ? StructuredQuery.UnaryFilter.Operator.IS_NULL
-                : StructuredQuery.UnaryFilter.Operator.IS_NAN);
+    for (FieldOrder fieldOrder : order) {
+      if (fieldOrder.fieldPath.equals(FieldPath.DOCUMENT_ID)) {
+        fieldValues.add(documentSnapshot.getReference());
+      } else {
+        Preconditions.checkArgument(
+            documentSnapshot.contains(fieldOrder.fieldPath),
+            "Field '%s' is missing in the provided DocumentSnapshot. Please provide a document that contains values for all specified orderBy() and where() constraints.");
+        fieldValues.add(documentSnapshot.get(fieldOrder.fieldPath));
+      }
+    }
 
-    return result.build();
+    return createCursor(order, fieldValues.toArray(), before);
   }
 
-  private Cursor createCursor(Object[] fieldValues, boolean before) {
+  private Cursor createCursor(List<FieldOrder> order, Object[] fieldValues, boolean before) {
     Cursor.Builder result = Cursor.newBuilder();
 
     Preconditions.checkState(
-        fieldValues.length <= options.fieldOrders.size(),
+        fieldValues.length <= order.size(),
         "Too many cursor values specified. The specified values must match the "
             + "orderBy() constraints of the query.");
 
-    for (int i = 0; i < fieldValues.length; ++i) {
+    Iterator<FieldOrder> fieldOrderIterator = order.iterator();
+
+    for (Object fieldValue : fieldValues) {
       Object sanitizedValue;
 
-      if (options.fieldOrders.get(i).fieldPath.equals(FieldPath.DOCUMENT_ID)) {
-        DocumentReference cursorDocument;
-        if (fieldValues[i] instanceof String) {
-          cursorDocument = new DocumentReference(firestore, path.append((String) fieldValues[i]));
-        } else if (fieldValues[i] instanceof DocumentReference) {
-          cursorDocument = (DocumentReference) fieldValues[i];
-        } else {
-          throw new IllegalArgumentException(
-              "The corresponding value for FieldPath.documentId() must be a String or a "
-                  + "DocumentReference.");
-        }
+      FieldPath fieldPath = fieldOrderIterator.next().fieldPath;
 
-        if (!this.path.isPrefixOf(cursorDocument.getResourcePath())) {
-          throw new IllegalArgumentException(
-              String.format(
-                  "'%s' is not part of the query result set and cannot be used as a query boundary.",
-                  cursorDocument.getPath()));
-        }
-        if (!cursorDocument.getParent().getResourcePath().equals(this.path)) {
-          throw new IllegalArgumentException(
-              String.format(
-                  "Only a direct child can be used as a query boundary. Found: '%s'",
-                  cursorDocument.getPath()));
-        }
-
-        sanitizedValue = cursorDocument;
+      if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
+        sanitizedValue = convertReference(fieldValue);
       } else {
-        sanitizedValue = CustomClassMapper.serialize(fieldValues[i]);
+        sanitizedValue = CustomClassMapper.serialize(fieldValue);
       }
 
-      Value encodedValue = FirestoreImpl.encodeValue(sanitizedValue);
+      Value encodedValue =
+          UserDataConverter.encodeValue(fieldPath, sanitizedValue, UserDataConverter.NO_DELETES);
+
       if (encodedValue == null) {
-        throw FirestoreException.invalidState("Cannot use Firestore Sentinels in Cursor");
+        throw FirestoreException.invalidState(
+            "Cannot use FieldValue.delete() or FieldValue.serverTimestamp() in a query boundary");
       }
       result.addValues(encodedValue);
     }
@@ -282,6 +361,39 @@ public class Query {
     result.setBefore(before);
 
     return result.build();
+  }
+
+  /**
+   * Validates that a value used with FieldValue.documentId() is either a string or a
+   * DocumentReference that is part of the query`s result set. Throws a validation error or returns
+   * a DocumentReference that can directly be used in the Query.
+   */
+  private Object convertReference(Object fieldValue) {
+    DocumentReference reference;
+    if (fieldValue instanceof String) {
+      reference = new DocumentReference(firestore, path.append((String) fieldValue));
+    } else if (fieldValue instanceof DocumentReference) {
+      reference = (DocumentReference) fieldValue;
+    } else {
+      throw new IllegalArgumentException(
+          "The corresponding value for FieldPath.documentId() must be a String or a "
+              + "DocumentReference.");
+    }
+
+    if (!this.path.isPrefixOf(reference.getResourcePath())) {
+      throw new IllegalArgumentException(
+          String.format(
+              "'%s' is not part of the query result set and cannot be used as a query boundary.",
+              reference.getPath()));
+    }
+    if (!reference.getParent().getResourcePath().equals(this.path)) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Only a direct child can be used as a query boundary. Found: '%s'",
+              reference.getPath()));
+    }
+
+    return reference;
   }
 
   /**
@@ -307,12 +419,19 @@ public class Query {
    */
   @Nonnull
   public Query whereEqualTo(@Nonnull FieldPath fieldPath, @Nullable Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereEqualTo() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
 
     if (isUnaryComparison(value)) {
-      newOptions.fieldFilters.add(createUnaryFilter(fieldPath, value));
+      newOptions.fieldFilters.add(new UnaryFilter(fieldPath, value));
     } else {
-      newOptions.fieldFilters.add(createFieldFilter(fieldPath, EQUAL, value));
+      if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
+        value = this.convertReference(value);
+      }
+      newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, EQUAL, value));
     }
 
     return new Query(firestore, path, newOptions);
@@ -341,8 +460,12 @@ public class Query {
    */
   @Nonnull
   public Query whereLessThan(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereLessThan() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(createFieldFilter(fieldPath, LESS_THAN, value));
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, LESS_THAN, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -369,8 +492,12 @@ public class Query {
    */
   @Nonnull
   public Query whereLessThanOrEqualTo(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereLessThanOrEqualTo() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(createFieldFilter(fieldPath, LESS_THAN_OR_EQUAL, value));
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, LESS_THAN_OR_EQUAL, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -397,8 +524,12 @@ public class Query {
    */
   @Nonnull
   public Query whereGreaterThan(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereGreaterThan() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(createFieldFilter(fieldPath, GREATER_THAN, value));
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -425,8 +556,12 @@ public class Query {
    */
   @Nonnull
   public Query whereGreaterThanOrEqualTo(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
+    Preconditions.checkState(
+        options.startCursor == null && options.endCursor == null,
+        "Cannot call whereGreaterThanOrEqualTo() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(createFieldFilter(fieldPath, GREATER_THAN_OR_EQUAL, value));
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN_OR_EQUAL, value));
     return new Query(firestore, path, newOptions);
   }
 
@@ -482,6 +617,7 @@ public class Query {
 
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldOrders.add(new FieldOrder(fieldPath, direction));
+
     return new Query(firestore, path, newOptions);
   }
 
@@ -513,6 +649,22 @@ public class Query {
   }
 
   /**
+   * Creates and returns a new Query that starts at the provided document (inclusive). The starting
+   * position is relative to the order of the query. The document must contain all of the fields
+   * provided in the orderBy of this query.
+   *
+   * @param snapshot The snapshot of the document to start at.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query startAt(@Nonnull DocumentSnapshot snapshot) {
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldOrders = createImplicitOrderBy();
+    newOptions.startCursor = createCursor(newOptions.fieldOrders, snapshot, true);
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
    * Creates and returns a new Query that starts at the provided fields relative to the order of the
    * query. The order of the field values must match the order of the order by clauses of the query.
    *
@@ -522,7 +674,7 @@ public class Query {
   @Nonnull
   public Query startAt(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.startCursor = createCursor(fieldValues, true);
+    newOptions.startCursor = createCursor(newOptions.fieldOrders, fieldValues, true);
     return new Query(firestore, path, newOptions);
   }
 
@@ -572,6 +724,22 @@ public class Query {
   }
 
   /**
+   * Creates and returns a new Query that starts after the provided document (exclusive). The
+   * starting position is relative to the order of the query. The document must contain all of the
+   * fields provided in the orderBy of this query.
+   *
+   * @param snapshot The snapshot of the document to start after.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query startAfter(@Nonnull DocumentSnapshot snapshot) {
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldOrders = createImplicitOrderBy();
+    newOptions.startCursor = createCursor(newOptions.fieldOrders, snapshot, false);
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
    * Creates and returns a new Query that starts after the provided fields relative to the order of
    * the query. The order of the field values must match the order of the order by clauses of the
    * query.
@@ -582,7 +750,23 @@ public class Query {
    */
   public Query startAfter(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.startCursor = createCursor(fieldValues, false);
+    newOptions.startCursor = createCursor(newOptions.fieldOrders, fieldValues, false);
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
+   * Creates and returns a new Query that ends before the provided document (exclusive). The end
+   * position is relative to the order of the query. The document must contain all of the fields
+   * provided in the orderBy of this query.
+   *
+   * @param snapshot The snapshot of the document to end before.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query endBefore(@Nonnull DocumentSnapshot snapshot) {
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldOrders = createImplicitOrderBy();
+    newOptions.endCursor = createCursor(newOptions.fieldOrders, snapshot, true);
     return new Query(firestore, path, newOptions);
   }
 
@@ -597,7 +781,7 @@ public class Query {
   @Nonnull
   public Query endBefore(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.endCursor = createCursor(fieldValues, true);
+    newOptions.endCursor = createCursor(newOptions.fieldOrders, fieldValues, true);
     return new Query(firestore, path, newOptions);
   }
 
@@ -611,7 +795,23 @@ public class Query {
   @Nonnull
   public Query endAt(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.endCursor = createCursor(fieldValues, false);
+    newOptions.endCursor = createCursor(newOptions.fieldOrders, fieldValues, false);
+    return new Query(firestore, path, newOptions);
+  }
+
+  /**
+   * Creates and returns a new Query that ends at the provided document (inclusive). The end
+   * position is relative to the order of the query. The document must contain all of the fields
+   * provided in the orderBy of this query.
+   *
+   * @param snapshot The snapshot of the document to end at.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query endAt(@Nonnull DocumentSnapshot snapshot) {
+    QueryOptions newOptions = new QueryOptions(options);
+    newOptions.fieldOrders = createImplicitOrderBy();
+    newOptions.endCursor = createCursor(newOptions.fieldOrders, snapshot, false);
     return new Query(firestore, path, newOptions);
   }
 
@@ -621,12 +821,23 @@ public class Query {
     structuredQuery.addFrom(
         StructuredQuery.CollectionSelector.newBuilder().setCollectionId(path.getId()));
 
-    if (!options.fieldFilters.isEmpty()) {
+    if (options.fieldFilters.size() == 1) {
+      Filter filter = options.fieldFilters.get(0).toProto();
+      if (filter.hasFieldFilter()) {
+        structuredQuery.getWhereBuilder().setFieldFilter(filter.getFieldFilter());
+      } else {
+        Preconditions.checkState(
+            filter.hasUnaryFilter(), "Expected a UnaryFilter or a FieldFilter.");
+        structuredQuery.getWhereBuilder().setUnaryFilter(filter.getUnaryFilter());
+      }
+    } else if (options.fieldFilters.size() > 1) {
       Filter.Builder filter = Filter.newBuilder();
       StructuredQuery.CompositeFilter.Builder compositeFilter =
           StructuredQuery.CompositeFilter.newBuilder();
       compositeFilter.setOp(CompositeFilter.Operator.AND);
-      compositeFilter.addAllFilters(options.fieldFilters);
+      for (FieldFilter fieldFilter : options.fieldFilters) {
+        compositeFilter.addFilters(fieldFilter.toProto());
+      }
       filter.setCompositeFilter(compositeFilter.build());
       structuredQuery.setWhere(filter.build());
     }
@@ -669,7 +880,7 @@ public class Query {
     stream(
         new QuerySnapshotObserver() {
           @Override
-          public void onNext(DocumentSnapshot documentSnapshot) {
+          public void onNext(QueryDocumentSnapshot documentSnapshot) {
             responseObserver.onNext(documentSnapshot);
           }
 
@@ -688,7 +899,7 @@ public class Query {
 
   /** Stream observer that captures DocumentSnapshots as well as the Query read time. */
   private abstract static class QuerySnapshotObserver
-      implements ApiStreamObserver<DocumentSnapshot> {
+      implements ApiStreamObserver<QueryDocumentSnapshot> {
 
     private Instant readTime;
 
@@ -719,8 +930,8 @@ public class Query {
           public void onNext(RunQueryResponse response) {
             if (response.hasDocument()) {
               Document document = response.getDocument();
-              DocumentSnapshot documentSnapshot =
-                  DocumentSnapshot.fromDocument(firestore, response.getReadTime(), document);
+              QueryDocumentSnapshot documentSnapshot =
+                  QueryDocumentSnapshot.fromDocument(firestore, response.getReadTime(), document);
               documentObserver.onNext(documentSnapshot);
             }
 
@@ -784,11 +995,11 @@ public class Query {
 
     stream(
         new QuerySnapshotObserver() {
-          List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
+          List<QueryDocumentSnapshot> documentSnapshots = new ArrayList<>();
           List<DocumentChange> documentChanges = new ArrayList<>();
 
           @Override
-          public void onNext(DocumentSnapshot documentSnapshot) {
+          public void onNext(QueryDocumentSnapshot documentSnapshot) {
             documentSnapshots.add(documentSnapshot);
             documentChanges.add(
                 new DocumentChange(documentSnapshot, Type.ADDED, -1, documentSnapshots.size() - 1));
@@ -812,13 +1023,13 @@ public class Query {
     return result;
   }
 
-  Comparator<DocumentSnapshot> comparator() {
-    return new Comparator<DocumentSnapshot>() {
+  Comparator<QueryDocumentSnapshot> comparator() {
+    return new Comparator<QueryDocumentSnapshot>() {
       @Override
-      public int compare(DocumentSnapshot doc1, DocumentSnapshot doc2) {
+      public int compare(QueryDocumentSnapshot doc1, QueryDocumentSnapshot doc2) {
         // Add implicit sorting by name, using the last specified direction.
         Direction lastDirection =
-            options.fieldOrders.size() == 0
+            options.fieldOrders.isEmpty()
                 ? Direction.ASCENDING
                 : options.fieldOrders.get(options.fieldOrders.size() - 1).direction;
 

@@ -3,16 +3,16 @@ Google Cloud Client Library for Java
 
 Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.cloud%22%20a%3A%22google-cloud%22)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+- [Google Cloud Platform Documentation][cloud-platform-docs]
+- [Client Library Documentation][client-lib-docs]
 
-This client supports the following Google Cloud Platform services at a [GA](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [Stackdriver Logging](google-cloud-logging) (GA)
 -  [Cloud Datastore](google-cloud-datastore) (GA)
 -  [Cloud Natural Language](google-cloud-language) (GA)
@@ -20,7 +20,7 @@ This client supports the following Google Cloud Platform services at a [GA](#ver
 -  [Cloud Translation](google-cloud-translate) (GA)
 -  [Cloud Vision](google-cloud-vision) (GA)
 
-This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery](google-cloud-bigquery) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
@@ -32,35 +32,45 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
 -  [Stackdriver Trace](google-cloud-trace) (Beta)
 
-This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
--  [Cloud Compute](google-cloud-compute) (Alpha)
+-  [Cloud Dataproc](google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-dns) (Alpha)
+-  [Cloud OS Login](google-cloud-os-login) (Alpha)
 -  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
 -  [Cloud Speech](google-cloud-speech) (Alpha)
+-  [Dialogflow](google-cloud-dialogflow) (Alpha)
 
-> Note: google-cloud-java is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+These libraries are deprecated and no longer receive updates:
+
+-  [Cloud Compute](google-cloud-compute) (Deprecated)
 
 Quickstart
 ----------
+
+The easy way to get started is to add the umbrella package which pulls in all of the supported clients as
+dependencies. Note that even though the version of the umbrella package is Alpha, the individual clients are
+at different support levels (Alpha, Beta, and GA).
 
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.32.0-alpha</version>
+  <version>0.35.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.32.0-alpha'
+compile 'com.google.cloud:google-cloud:0.33.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.32.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.33.0-alpha"
 ```
+
+It also works just as well to declare a dependency only on the specific clients that you need. See the README of
+each client for instructions.
 
 For running on Google App Engine, see [more instructions here](./APPENGINE.md).
 
@@ -265,13 +275,13 @@ Version Management
 
 The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
 
-```
+```xml
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.32.0-alpha</version>
+        <version>0.35.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -334,4 +344,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
+
 [cloud-platform]: https://cloud.google.com/
+[cloud-platform-docs]: https://cloud.google.com/docs/
+[client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/

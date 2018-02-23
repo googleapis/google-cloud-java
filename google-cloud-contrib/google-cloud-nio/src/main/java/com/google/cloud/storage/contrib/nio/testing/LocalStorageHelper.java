@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,10 @@ import com.google.cloud.storage.StorageOptions;
  *   <li>IAM operations</li>
  *   </ul>
  * </ul>
+ * 
+ * {@link FakeStorageRpc#list(String, java.util.Map)} lists all the objects that have been created rather than
+ * the objects in the provided bucket. Since this class does not support creating, listing and deleting buckets,
+ * the parameter bucket here is not actually used and on serves as a placeholder.
  */
 public final class LocalStorageHelper {
 

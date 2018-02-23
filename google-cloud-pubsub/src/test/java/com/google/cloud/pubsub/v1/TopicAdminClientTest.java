@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,12 +15,15 @@
  */
 package com.google.cloud.pubsub.v1;
 
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
+import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
+import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -38,12 +41,12 @@ import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.ProjectName;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
-import com.google.pubsub.v1.TopicName;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -64,6 +67,7 @@ public class TopicAdminClientTest {
   private static MockSubscriber mockSubscriber;
   private static MockServiceHelper serviceHelper;
   private TopicAdminClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,9 +89,10 @@ public class TopicAdminClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     TopicAdminSettings settings =
         TopicAdminSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = TopicAdminClient.create(settings);
@@ -101,11 +106,11 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createTopicTest() {
-    TopicName name2 = TopicName.of("[PROJECT]", "[TOPIC]");
-    Topic expectedResponse = Topic.newBuilder().setNameWithTopicName(name2).build();
+    ProjectTopicName name2 = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    Topic expectedResponse = Topic.newBuilder().setName(name2.toString()).build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName name = TopicName.of("[PROJECT]", "[TOPIC]");
+    ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -114,7 +119,11 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     Topic actualRequest = (Topic) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsTopicName());
+    Assert.assertEquals(name, ProjectTopicName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -124,7 +133,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName name = TopicName.of("[PROJECT]", "[TOPIC]");
+      ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
       client.createTopic(name);
       Assert.fail("No exception raised");
@@ -142,7 +151,7 @@ public class TopicAdminClientTest {
         PublishResponse.newBuilder().addAllMessageIds(messageIds).build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
     ByteString data = ByteString.copyFromUtf8("-86");
     PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
     List<PubsubMessage> messages = Arrays.asList(messagesElement);
@@ -154,8 +163,12 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     PublishRequest actualRequest = (PublishRequest) actualRequests.get(0);
 
-    Assert.assertEquals(topic, actualRequest.getTopicAsTopicName());
+    Assert.assertEquals(topic, ProjectTopicName.parse(actualRequest.getTopic()));
     Assert.assertEquals(messages, actualRequest.getMessagesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -165,7 +178,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+      ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
       ByteString data = ByteString.copyFromUtf8("-86");
       PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
       List<PubsubMessage> messages = Arrays.asList(messagesElement);
@@ -180,11 +193,11 @@ public class TopicAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTopicTest() {
-    TopicName name = TopicName.of("[PROJECT]", "[TOPIC]");
-    Topic expectedResponse = Topic.newBuilder().setNameWithTopicName(name).build();
+    ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+    Topic expectedResponse = Topic.newBuilder().setName(name.toString()).build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -193,7 +206,11 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetTopicRequest actualRequest = (GetTopicRequest) actualRequests.get(0);
 
-    Assert.assertEquals(topic, actualRequest.getTopicAsTopicName());
+    Assert.assertEquals(topic, ProjectTopicName.parse(actualRequest.getTopic()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -203,7 +220,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+      ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
       client.getTopic(topic);
       Assert.fail("No exception raised");
@@ -237,7 +254,11 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListTopicsRequest actualRequest = (ListTopicsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(project, actualRequest.getProjectAsProjectName());
+    Assert.assertEquals(project, ProjectName.parse(actualRequest.getProject()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -260,34 +281,40 @@ public class TopicAdminClientTest {
   @SuppressWarnings("all")
   public void listTopicSubscriptionsTest() {
     String nextPageToken = "";
-    SubscriptionName subscriptionsElement = SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
-    List<SubscriptionName> subscriptions = Arrays.asList(subscriptionsElement);
+    ProjectSubscriptionName subscriptionsElement =
+        ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+    List<ProjectSubscriptionName> subscriptions = Arrays.asList(subscriptionsElement);
     ListTopicSubscriptionsResponse expectedResponse =
         ListTopicSubscriptionsResponse.newBuilder()
             .setNextPageToken(nextPageToken)
-            .addAllSubscriptionsWithSubscriptionNameList(subscriptions)
+            .addAllSubscriptions(ProjectSubscriptionName.toStringList(subscriptions))
             .build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
     ListTopicSubscriptionsPagedResponse pagedListResponse = client.listTopicSubscriptions(topic);
 
     List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
-    List<SubscriptionName> resourceNames =
-        Lists.newArrayList(pagedListResponse.iterateAllAsSubscriptionName());
+    List<ProjectSubscriptionName> resourceNames =
+        Lists.newArrayList(pagedListResponse.iterateAllAsProjectSubscriptionName());
     Assert.assertEquals(1, resourceNames.size());
     Assert.assertEquals(
-        expectedResponse.getSubscriptionsListAsSubscriptionNameList().get(0), resourceNames.get(0));
+        ProjectSubscriptionName.parse(expectedResponse.getSubscriptionsList().get(0)),
+        resourceNames.get(0));
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTopicSubscriptionsRequest actualRequest =
         (ListTopicSubscriptionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(topic, actualRequest.getTopicAsTopicName());
+    Assert.assertEquals(topic, ProjectTopicName.parse(actualRequest.getTopic()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -297,7 +324,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+      ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
       client.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
@@ -312,7 +339,7 @@ public class TopicAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+    ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
     client.deleteTopic(topic);
 
@@ -320,7 +347,11 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteTopicRequest actualRequest = (DeleteTopicRequest) actualRequests.get(0);
 
-    Assert.assertEquals(topic, actualRequest.getTopicAsTopicName());
+    Assert.assertEquals(topic, ProjectTopicName.parse(actualRequest.getTopic()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -330,7 +361,7 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+      ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
 
       client.deleteTopic(topic);
       Assert.fail("No exception raised");
@@ -347,7 +378,7 @@ public class TopicAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
+    String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
@@ -359,6 +390,10 @@ public class TopicAdminClientTest {
 
     Assert.assertEquals(formattedResource, actualRequest.getResource());
     Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -368,7 +403,7 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
+      String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(formattedResource, policy);
@@ -386,7 +421,7 @@ public class TopicAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
+    String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
 
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -396,6 +431,10 @@ public class TopicAdminClientTest {
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -405,7 +444,7 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
+      String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
 
       client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
@@ -420,7 +459,7 @@ public class TopicAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
+    String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse =
@@ -433,6 +472,10 @@ public class TopicAdminClientTest {
 
     Assert.assertEquals(formattedResource, actualRequest.getResource());
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -442,7 +485,7 @@ public class TopicAdminClientTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = TopicName.of("[PROJECT]", "[TOPIC]").toString();
+      String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(formattedResource, permissions);

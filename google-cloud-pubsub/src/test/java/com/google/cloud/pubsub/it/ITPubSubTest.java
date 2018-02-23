@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
 
 package com.google.cloud.pubsub.it;
 
-import static com.google.common.truth.Truth.assertThat;
-
 import com.google.auto.value.AutoValue;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
@@ -30,21 +28,24 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
-import com.google.pubsub.v1.SubscriptionName;
-import com.google.pubsub.v1.TopicName;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
+
+import static com.google.common.truth.Truth.assertThat;
 
 public class ITPubSubTest {
 
@@ -85,7 +86,7 @@ public class ITPubSubTest {
 
   @Test
   public void testTopicPolicy() {
-    TopicName topicName = TopicName.of(projectId, formatForTest("testing-topic-policy"));
+    ProjectTopicName topicName = ProjectTopicName.of(projectId, formatForTest("testing-topic-policy"));
     topicAdminClient.createTopic(topicName);
 
     Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
@@ -108,10 +109,10 @@ public class ITPubSubTest {
 
   @Test
   public void testPublishSubscribe() throws Exception {
-    TopicName topicName =
-        TopicName.of(projectId, formatForTest("testing-publish-subscribe-topic"));
-    SubscriptionName subscriptionName =
-        SubscriptionName.of(projectId, formatForTest("testing-publish-subscribe-subscription"));
+    ProjectTopicName topicName =
+        ProjectTopicName.of(projectId, formatForTest("testing-publish-subscribe-topic"));
+    ProjectSubscriptionName subscriptionName =
+        ProjectSubscriptionName.of(projectId, formatForTest("testing-publish-subscribe-subscription"));
 
     topicAdminClient.createTopic(topicName);
     subscriptionAdminClient.createSubscription(

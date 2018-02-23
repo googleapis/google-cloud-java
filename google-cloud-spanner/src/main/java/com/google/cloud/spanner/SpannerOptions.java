@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,9 +31,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
-import io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.NettyChannelBuilder;
-import io.netty.handler.ssl.SslContext;
+import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -79,7 +79,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final int prefetchChunks;
   private final int numChannels;
   private final ImmutableMap<String, String> sessionLabels;
-  
+
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
@@ -159,7 +159,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     /**
      * Sets the labels to add to all Sessions created in this client.
-     * 
+     *
      * @param sessionLabels Map from label key to label value. Label key and value cannot be null.
      *     For more information on valid syntax see
      *     <a href="https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.Session">
@@ -173,7 +173,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.sessionLabels = ImmutableMap.copyOf(sessionLabels);
       return this;
     }
-    
+
     /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
@@ -224,7 +224,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public Map<String, String> getSessionLabels() {
     return sessionLabels;
   }
-  
+
   public int getPrefetchChunks() {
     return prefetchChunks;
   }

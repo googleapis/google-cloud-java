@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.logging.HttpRequest.RequestMethod;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.threeten.bp.Duration;
 
 public class HttpRequestTest {
 
@@ -43,21 +43,23 @@ public class HttpRequestTest {
   private static final boolean CACHE_HIT = true;
   private static final boolean CACHE_VALIDATED_WITH_ORIGIN_SERVER = false;
   private static final Long CACHE_FILL_BYTES = 3L;
-  private static final HttpRequest HTTP_REQUEST = HttpRequest.newBuilder()
-      .setRequestMethod(REQUEST_METHOD)
-      .setRequestUrl(REQUEST_URL)
-      .setRequestSize(REQUEST_SIZE)
-      .setStatus(STATUS)
-      .setResponseSize(REPONSE_SIZE)
-      .setUserAgent(USER_AGENT)
-      .setRemoteIp(REMOTE_IP)
-      .setServerIp(SERVER_IP)
-      .setReferer(REFERER)
-      .setCacheLookup(CACHE_LOOKUP)
-      .setCacheHit(CACHE_HIT)
-      .setCacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
-      .setCacheFillBytes(CACHE_FILL_BYTES)
-      .build();
+  private static final HttpRequest HTTP_REQUEST =
+      HttpRequest.newBuilder()
+          .setRequestMethod(REQUEST_METHOD)
+          .setRequestUrl(REQUEST_URL)
+          .setRequestSize(REQUEST_SIZE)
+          .setStatus(STATUS)
+          .setResponseSize(REPONSE_SIZE)
+          .setUserAgent(USER_AGENT)
+          .setRemoteIp(REMOTE_IP)
+          .setServerIp(SERVER_IP)
+          .setReferer(REFERER)
+          .setCacheLookup(CACHE_LOOKUP)
+          .setCacheHit(CACHE_HIT)
+          .setCacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
+          .setCacheFillBytes(CACHE_FILL_BYTES)
+          .setLatency(Duration.ofSeconds(123, 456))
+          .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();

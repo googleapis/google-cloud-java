@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectTopicName;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -60,7 +60,7 @@ public class NotificationInfo implements Serializable {
         }
       };
   private final String generatedId;
-  private final TopicName topic;
+  private final ProjectTopicName topic;
   private final List<String> eventTypes;
   private final Map<String, String> customAttributes;
   private final PayloadFormat payloadFormat;
@@ -71,7 +71,7 @@ public class NotificationInfo implements Serializable {
   public static final class Builder {
 
     private String generatedId;
-    private TopicName topic;
+    private ProjectTopicName topic;
     private List<String> eventTypes;
     private Map<String, String> customAttributes;
     private PayloadFormat payloadFormat;
@@ -79,7 +79,7 @@ public class NotificationInfo implements Serializable {
     private String etag;
     private String selfLink;
 
-    Builder(TopicName topic) {
+    Builder(ProjectTopicName topic) {
       this.topic = topic;
     }
 
@@ -104,7 +104,7 @@ public class NotificationInfo implements Serializable {
       return this;
     }
 
-    public Builder setTopic(TopicName topic) {
+    public Builder setTopic(ProjectTopicName topic) {
       this.topic = topic;
       return this;
     }
@@ -162,7 +162,7 @@ public class NotificationInfo implements Serializable {
   /**
    * Returns the Cloud PubSub topic to which this subscription publishes.
    */
-  public TopicName getTopic() {
+  public ProjectTopicName getTopic() {
     return topic;
   }
 
@@ -272,19 +272,19 @@ public class NotificationInfo implements Serializable {
   /**
    * Creates a {@code NotificationInfo} object for the provided topic name.
    */
-  public static NotificationInfo of(TopicName topic) {
+  public static NotificationInfo of(ProjectTopicName topic) {
     return newBuilder(topic).build();
   }
 
   /**
    * Returns a {@code NotificationInfo} builder where the topic's name is set to the provided name.
    */
-  public static Builder newBuilder(TopicName topic) {
+  public static Builder newBuilder(ProjectTopicName topic) {
     return new Builder(topic);
   }
 
   static NotificationInfo fromPb(Notification notificationPb) {
-    Builder builder = newBuilder(TopicName.parse(notificationPb.getTopic()));
+    Builder builder = newBuilder(ProjectTopicName.parse(notificationPb.getTopic()));
     if (notificationPb.getId() != null) {
       builder.setGeneratedId(notificationPb.getId());
     }
@@ -301,7 +301,7 @@ public class NotificationInfo implements Serializable {
       builder.setObjectNamePrefix(notificationPb.getObjectNamePrefix());
     }
     if (notificationPb.getTopic() != null) {
-      builder.setTopic(TopicName.parse(notificationPb.getTopic()));
+      builder.setTopic(ProjectTopicName.parse(notificationPb.getTopic()));
     }
     if (notificationPb.getEventTypes() != null) {
       builder.setEventTypes(notificationPb.getEventTypes());

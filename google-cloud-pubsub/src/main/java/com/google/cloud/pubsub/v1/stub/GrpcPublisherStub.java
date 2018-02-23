@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,8 +15,8 @@
  */
 package com.google.cloud.pubsub.v1.stub;
 
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
+import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
+import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.pubsub.v1.TopicAdminSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -156,12 +155,12 @@ public class GrpcPublisherStub extends PublisherStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  public static final GrpcPublisherStub create(TopicAdminSettings settings) throws IOException {
+  public static final GrpcPublisherStub create(PublisherStubSettings settings) throws IOException {
     return new GrpcPublisherStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcPublisherStub create(ClientContext clientContext) throws IOException {
-    return new GrpcPublisherStub(TopicAdminSettings.newBuilder().build(), clientContext);
+    return new GrpcPublisherStub(PublisherStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -169,7 +168,7 @@ public class GrpcPublisherStub extends PublisherStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcPublisherStub(TopicAdminSettings settings, ClientContext clientContext)
+  protected GrpcPublisherStub(PublisherStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<Topic, Topic> createTopicTransportSettings =

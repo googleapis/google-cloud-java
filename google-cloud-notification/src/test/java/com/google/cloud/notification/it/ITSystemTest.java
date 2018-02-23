@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectTopicName;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -92,7 +92,7 @@ public class ITSystemTest {
   @Test
   public void testNotifications() {
     // Use Pubsub to create a Topic.
-    final TopicName topic = TopicName.create(projectId, formatForTest("testing-topic-foo"));
+    final ProjectTopicName topic = ProjectTopicName.of(projectId, formatForTest("testing-topic-foo"));
     topicAdminClient.createTopic(topic);
 
     Policy policy = topicAdminClient.getIamPolicy(topic.toString());

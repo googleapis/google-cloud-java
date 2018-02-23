@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -2437598817433266049L;
 
-  public static class DefaultBigqueryFactory implements BigQueryFactory {
+  public static class DefaultBigQueryFactory implements BigQueryFactory {
 
-    private static final BigQueryFactory INSTANCE = new DefaultBigqueryFactory();
+    private static final BigQueryFactory INSTANCE = new DefaultBigQueryFactory();
 
     @Override
     public BigQuery create(BigQueryOptions options) {
@@ -89,7 +89,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
     @Override
     public BigQueryFactory getDefaultServiceFactory() {
-      return DefaultBigqueryFactory.INSTANCE;
+      return DefaultBigQueryFactory.INSTANCE;
     }
 
     @Override

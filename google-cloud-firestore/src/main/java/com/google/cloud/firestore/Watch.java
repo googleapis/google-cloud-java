@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
   private final FirestoreImpl firestore;
   private final ScheduledExecutorService firestoreExecutor;
-  private final Comparator<DocumentSnapshot> comparator;
+  private final Comparator<QueryDocumentSnapshot> comparator;
   private final ExponentialRetryAlgorithm backoff;
   private final Target target;
   private TimedAttemptSettings nextAttempt;
@@ -122,9 +122,9 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
   /** The list of document changes in a snapshot separated by change type. */
   static class ChangeSet {
-    List<DocumentSnapshot> deletes = new ArrayList<>();
-    List<DocumentSnapshot> adds = new ArrayList<>();
-    List<DocumentSnapshot> updates = new ArrayList<>();
+    List<QueryDocumentSnapshot> deletes = new ArrayList<>();
+    List<QueryDocumentSnapshot> adds = new ArrayList<>();
+    List<QueryDocumentSnapshot> updates = new ArrayList<>();
   }
 
   /**
@@ -133,7 +133,8 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    * @param comparator A comparator for DocumentSnapshots that is used to order the document
    *     snapshots returned by this watch.
    */
-  private Watch(FirestoreImpl firestore, Target target, Comparator<DocumentSnapshot> comparator) {
+  private Watch(
+      FirestoreImpl firestore, Target target, Comparator<QueryDocumentSnapshot> comparator) {
     this.firestore = firestore;
     this.target = target;
     this.comparator = comparator;
@@ -158,9 +159,9 @@ class Watch implements ApiStreamObserver<ListenResponse> {
     return new Watch(
         (FirestoreImpl) documentReference.getFirestore(),
         target.build(),
-        new Comparator<DocumentSnapshot>() {
+        new Comparator<QueryDocumentSnapshot>() {
           @Override
-          public int compare(DocumentSnapshot o1, DocumentSnapshot o2) {
+          public int compare(QueryDocumentSnapshot o1, QueryDocumentSnapshot o2) {
             // We should only ever receive one document for DocumentReference listeners.
             Preconditions.checkState(o1.equals(o2));
             return 0;
@@ -169,7 +170,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
   }
 
   /**
-   * Creates a new Watch instance that listens listen on Queries.
+   * Creates a new Watch instance that listens on Queries.
    *
    * @param query The query used for this watch.
    * @return A newly created Watch instance.
@@ -452,8 +453,8 @@ class Watch implements ApiStreamObserver<ListenResponse> {
         continue;
       }
 
-      DocumentSnapshot snapshot =
-          DocumentSnapshot.fromDocument(firestore, readTime, change.getValue());
+      QueryDocumentSnapshot snapshot =
+          QueryDocumentSnapshot.fromDocument(firestore, readTime, change.getValue());
 
       if (documentSet.contains(change.getKey())) {
         changeSet.updates.add(snapshot);
@@ -497,7 +498,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
   /**
    * Applies a document delete to the document tree. Returns the corresponding DocumentChange event.
    */
-  private DocumentChange deleteDoc(DocumentSnapshot oldDocument) {
+  private DocumentChange deleteDoc(QueryDocumentSnapshot oldDocument) {
     ResourcePath resourcePath = oldDocument.getReference().getResourcePath();
     int oldIndex = documentSet.indexOf(resourcePath);
     documentSet = documentSet.remove(resourcePath);
@@ -507,7 +508,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
   /**
    * Applies a document add to the document tree. Returns the corresponding DocumentChange event.
    */
-  private DocumentChange addDoc(DocumentSnapshot newDocument) {
+  private DocumentChange addDoc(QueryDocumentSnapshot newDocument) {
     ResourcePath resourcePath = newDocument.getReference().getResourcePath();
     documentSet = documentSet.add(newDocument);
     int newIndex = documentSet.indexOf(resourcePath);
@@ -519,7 +520,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    * successful modifications.
    */
   @Nullable
-  private DocumentChange modifyDoc(DocumentSnapshot newDocument) {
+  private DocumentChange modifyDoc(QueryDocumentSnapshot newDocument) {
     ResourcePath resourcePath = newDocument.getReference().getResourcePath();
     DocumentSnapshot oldDocument = documentSet.getDocument(resourcePath);
 
@@ -548,17 +549,17 @@ class Watch implements ApiStreamObserver<ListenResponse> {
     // and then modifications). We also need to sort the individual changes to assure that
     // oldIndex/newIndex keep incrementing.
     Collections.sort(changeSet.deletes, comparator);
-    for (DocumentSnapshot delete : changeSet.deletes) {
+    for (QueryDocumentSnapshot delete : changeSet.deletes) {
       appliedChanges.add(deleteDoc(delete));
     }
 
     Collections.sort(changeSet.adds, comparator);
-    for (DocumentSnapshot add : changeSet.adds) {
+    for (QueryDocumentSnapshot add : changeSet.adds) {
       appliedChanges.add(addDoc(add));
     }
 
     Collections.sort(changeSet.updates, comparator);
-    for (DocumentSnapshot update : changeSet.updates) {
+    for (QueryDocumentSnapshot update : changeSet.updates) {
       DocumentChange change = modifyDoc(update);
       if (change != null) {
         appliedChanges.add(change);

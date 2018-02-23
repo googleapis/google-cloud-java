@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.LogEntryOperation;
 import com.google.logging.v2.LogEntrySourceLocation;
 import com.google.logging.v2.LogName;
+import com.google.logging.v2.ProjectLogName;
 import com.google.protobuf.Timestamp;
 
 import java.io.Serializable;
@@ -452,7 +453,7 @@ public class LogEntry implements Serializable {
     com.google.logging.v2.LogEntry.Builder builder = payload.toPb();
     builder.putAllLabels(labels);
     if (logName != null) {
-      builder.setLogName(LogName.of(projectId, logName).toString());
+      builder.setLogName(ProjectLogName.of(projectId, logName).toString());
     }
     if (resource != null) {
       builder.setResource(resource.toPb());
@@ -512,7 +513,7 @@ public class LogEntry implements Serializable {
     builder.setLabels(entryPb.getLabelsMap());
     builder.setSeverity(Severity.fromPb(entryPb.getSeverity()));
     if (!entryPb.getLogName().equals("")) {
-      builder.setLogName(LogName.parse(entryPb.getLogName()).getLog());
+      builder.setLogName(ProjectLogName.parse(entryPb.getLogName()).getLog());
     }
     if (!entryPb.getResource().equals(com.google.api.MonitoredResource.getDefaultInstance())) {
       builder.setResource(MonitoredResource.fromPb(entryPb.getResource()));

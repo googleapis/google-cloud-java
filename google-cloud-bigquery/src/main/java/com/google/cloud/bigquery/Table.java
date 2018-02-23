@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,15 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
+import com.google.cloud.bigquery.TableInfo.Builder;
 import com.google.common.collect.ImmutableList;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -126,6 +126,18 @@ public class Table extends TableInfo {
     @Override
     public Builder setDefinition(TableDefinition definition) {
       infoBuilder.setDefinition(definition);
+      return this;
+    }
+
+    @Override
+    public TableInfo.Builder setEncryptionConfiguration(EncryptionConfiguration configuration) {
+      infoBuilder.setEncryptionConfiguration(configuration);
+      return this;
+    }
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
+      infoBuilder.setLabels(labels);
       return this;
     }
 
@@ -289,8 +301,11 @@ public class Table extends TableInfo {
    * Returns the paginated list rows in this table.
    *
    * <p>Example of listing rows in the table.
-   * <pre> {@code
-   * Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
+   *
+   * <pre>{@code
+   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+   * // simply omit the option.
+   * TableResult page = table.list(TableDataListOption.pageSize(100));
    * for (FieldValueList row : page.iterateAll()) {
    *   // do something with the row
    * }
@@ -299,9 +314,30 @@ public class Table extends TableInfo {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  public Page<FieldValueList> list(TableDataListOption... options)
-      throws BigQueryException {
+  public TableResult list(TableDataListOption... options) throws BigQueryException {
     return bigquery.listTableData(getTableId(), options);
+  }
+
+  /**
+   * Returns the paginated list rows in this table.
+   *
+   * <p>Example of listing rows in the table.
+   *
+   * <pre>{@code
+   * Schema schema = ...;
+   * String field = "my_field";
+   * TableResult page = table.list(schema);
+   * for (FieldValueList row : page.iterateAll()) {
+   *   row.get(field);
+   * }
+   * }</pre>
+   *
+   * @param options table data list options
+   * @throws BigQueryException upon failure
+   */
+  public TableResult list(Schema schema, TableDataListOption... options)
+      throws BigQueryException {
+    return bigquery.listTableData(getTableId(), schema, options);
   }
 
   /**
@@ -521,7 +557,7 @@ public class Table extends TableInfo {
   /**
    * Returns the table's {@code BigQuery} object used to issue requests.
    */
-  public BigQuery getBigquery() {
+  public BigQuery getBigQuery() {
     return bigquery;
   }
 

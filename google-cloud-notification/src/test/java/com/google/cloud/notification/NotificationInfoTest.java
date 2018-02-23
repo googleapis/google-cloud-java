@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,16 @@
 
 package com.google.cloud.notification;
 
-import static org.junit.Assert.assertEquals;
-
 import com.google.cloud.notification.NotificationInfo.PayloadFormat;
 import com.google.common.collect.ImmutableList;
-
 import com.google.common.collect.ImmutableMap;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectTopicName;
 import org.junit.Test;
 
 import java.util.List;
 import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 
 public class NotificationInfoTest {
 
@@ -36,7 +35,7 @@ public class NotificationInfoTest {
   private static final List<String> EVENT_TYPES = ImmutableList.of("OBJECT_FINALIZE", "OBJECT_METADATA_UPDATE");
   private static final String OBJECT_NAME_PREFIX = "index.html";
   private static final PayloadFormat PAYLOAD_FORMAT = PayloadFormat.JSON_API_V1;
-  private static final TopicName TOPIC = TopicName.create("myProject", "topic1");
+  private static final ProjectTopicName TOPIC = ProjectTopicName.of("myProject", "topic1");
   private static final Map<String, String> CUSTOM_ATTRIBUTES = ImmutableMap.of("label1", "value1");
   private static final NotificationInfo NOTIFICATION_INFO = NotificationInfo.newBuilder(TOPIC)
       .setEtag(ETAG)
@@ -59,14 +58,14 @@ public class NotificationInfoTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    NotificationInfo incompleteBucketInfo = NotificationInfo.newBuilder(TopicName.create("myProject", "topic1")).build();
+    NotificationInfo incompleteBucketInfo = NotificationInfo.newBuilder(ProjectTopicName.of("myProject", "topic1")).build();
     compareBuckets(incompleteBucketInfo, incompleteBucketInfo.toBuilder().build());
   }
 
   @Test
   public void testOf() {
-    NotificationInfo bucketInfo = NotificationInfo.of(TopicName.create("myProject", "topic1"));
-    assertEquals(TopicName.create("myProject", "topic1"), bucketInfo.getTopic());
+    NotificationInfo bucketInfo = NotificationInfo.of(ProjectTopicName.of("myProject", "topic1"));
+    assertEquals(ProjectTopicName.of("myProject", "topic1"), bucketInfo.getTopic());
   }
 
   @Test
@@ -85,7 +84,7 @@ public class NotificationInfoTest {
   public void testToPbAndFromPb() {
     compareBuckets(NOTIFICATION_INFO, NotificationInfo.fromPb(NOTIFICATION_INFO.toPb()));
     NotificationInfo bucketInfo = NotificationInfo.of(
-        TopicName.create("myProject", "topic1"))
+        ProjectTopicName.of("myProject", "topic1"))
         .toBuilder()
         .setPayloadFormat(PayloadFormat.NONE)
         .build();

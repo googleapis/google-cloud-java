@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,10 @@ import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogName;
 import com.google.logging.v2.MetricName;
+import com.google.logging.v2.ProjectLogName;
+import com.google.logging.v2.ProjectMetricName;
 import com.google.logging.v2.ProjectName;
+import com.google.logging.v2.ProjectSinkName;
 import com.google.logging.v2.SinkName;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
@@ -253,7 +256,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public ApiFuture<Sink> updateAsync(SinkInfo sink) {
     UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
-        .setSinkName(SinkName.of(getOptions().getProjectId(), sink.getName()).toString())
+        .setSinkName(ProjectSinkName.of(getOptions().getProjectId(), sink.getName()).toString())
         .setSink(sink.toPb(getOptions().getProjectId()))
         .build();
     return transform(rpc.update(request), Sink.fromPbFunction(this));
@@ -267,7 +270,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public ApiFuture<Sink> getSinkAsync(String sink) {
     GetSinkRequest request = GetSinkRequest.newBuilder()
-        .setSinkName(SinkName.of(getOptions().getProjectId(), sink).toString())
+        .setSinkName(ProjectSinkName.of(getOptions().getProjectId(), sink).toString())
         .build();
     return transform(rpc.get(request), Sink.fromPbFunction(this));
   }
@@ -323,7 +326,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public ApiFuture<Boolean> deleteSinkAsync(String sink) {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
-        .setSinkName(SinkName.of(getOptions().getProjectId(), sink).toString())
+        .setSinkName(ProjectSinkName.of(getOptions().getProjectId(), sink).toString())
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -334,7 +337,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   public ApiFuture<Boolean> deleteLogAsync(String log) {
     DeleteLogRequest request = DeleteLogRequest.newBuilder()
-        .setLogName(LogName.of(getOptions().getProjectId(), log).toString())
+        .setLogName(ProjectLogName.of(getOptions().getProjectId(), log).toString())
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -417,7 +420,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public ApiFuture<Metric> updateAsync(MetricInfo metric) {
     UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-        .setMetricName(MetricName.of(getOptions().getProjectId(), metric.getName()).toString())
+        .setMetricName(ProjectMetricName.of(getOptions().getProjectId(), metric.getName()).toString())
         .setMetric(metric.toPb())
         .build();
     return transform(rpc.update(request), Metric.fromPbFunction(this));
@@ -431,7 +434,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public ApiFuture<Metric> getMetricAsync(String metric) {
     GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-        .setMetricName(MetricName.of(getOptions().getProjectId(), metric).toString())
+        .setMetricName(ProjectMetricName.of(getOptions().getProjectId(), metric).toString())
         .build();
     return transform(rpc.get(request), Metric.fromPbFunction(this));
   }
@@ -487,7 +490,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public ApiFuture<Boolean> deleteMetricAsync(String metric) {
     DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-        .setMetricName(MetricName.of(getOptions().getProjectId(), metric).toString())
+        .setMetricName(ProjectMetricName.of(getOptions().getProjectId(), metric).toString())
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -498,7 +501,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     WriteLogEntriesRequest.Builder builder = WriteLogEntriesRequest.newBuilder();
     String logName = LOG_NAME.get(options);
     if (logName != null) {
-      builder.setLogName(LogName.of(projectId, logName).toString());
+      builder.setLogName(ProjectLogName.of(projectId, logName).toString());
     }
     MonitoredResource resource = RESOURCE.get(options);
     if (resource != null) {

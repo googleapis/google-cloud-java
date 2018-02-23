@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
@@ -56,7 +56,7 @@ import static org.junit.Assert.fail;
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
 
-  private static final TopicName TEST_TOPIC = TopicName.of("test-project", "test-topic");
+  private static final ProjectTopicName TEST_TOPIC = ProjectTopicName.of("test-project", "test-topic");
 
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();

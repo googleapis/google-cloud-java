@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,8 @@ public class QueryJobConfigurationTest {
       ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_RELAXATION);
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
       UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
+  private static final EncryptionConfiguration JOB_ENCRYPTION_CONFIGURATION =
+      EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -92,6 +94,7 @@ public class QueryJobConfigurationTest {
           .setUseLegacySql(USE_LEGACY_SQL)
           .setMaximumBillingTier(MAX_BILLING_TIER)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
+          .setDestinationEncryptionConfiguration(JOB_ENCRYPTION_CONFIGURATION)
           .build();
 
   @Test
@@ -162,5 +165,6 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.useLegacySql(), value.useLegacySql());
     assertEquals(expected.getMaximumBillingTier(), value.getMaximumBillingTier());
     assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
+    assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
   }
 }

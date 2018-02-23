@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.core.BetaApi;
 import com.google.common.collect.ImmutableList;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -84,12 +85,32 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
     return row.size();
   }
 
-  static FieldValueList of(List<FieldValue> row, FieldList schema) {
+  /**
+   * Creates an instance of {@code FieldValueList}, useful for testing.
+   *
+   * <p>This method is unstable. See <a
+   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * for more context.
+   */
+  @BetaApi
+  public static FieldValueList of(List<FieldValue> row, FieldList schema) {
     return new FieldValueList(row, schema);
   }
 
-  static FieldValueList of(List<FieldValue> row, Field... schema) {
+  /**
+   * Creates an instance of {@code FieldValueList}, useful for testing.
+   *
+   * <p>This method is unstable. See <a
+   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * for more context.
+   */
+  @BetaApi
+  public static FieldValueList of(List<FieldValue> row, Field... schema) {
     return of(row, schema.length > 0 ? FieldList.of(schema) : null);
+  }
+
+  FieldValueList withSchema(FieldList schema) {
+    return new FieldValueList(this.row, schema);
   }
 
   static FieldValueList fromPb(List<?> rowPb, FieldList schema) {

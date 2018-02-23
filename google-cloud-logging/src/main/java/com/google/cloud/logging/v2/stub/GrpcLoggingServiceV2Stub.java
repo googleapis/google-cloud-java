@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,9 +15,9 @@
  */
 package com.google.cloud.logging.v2.stub;
 
-import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogEntriesPagedResponse;
-import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogsPagedResponse;
-import static com.google.cloud.logging.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
+import static com.google.cloud.logging.v2.LoggingClient.ListLogEntriesPagedResponse;
+import static com.google.cloud.logging.v2.LoggingClient.ListLogsPagedResponse;
+import static com.google.cloud.logging.v2.LoggingClient.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
@@ -122,13 +121,15 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
   private final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable;
   private final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable;
 
-  public static final GrpcLoggingServiceV2Stub create(LoggingSettings settings) throws IOException {
+  public static final GrpcLoggingServiceV2Stub create(LoggingServiceV2StubSettings settings)
+      throws IOException {
     return new GrpcLoggingServiceV2Stub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcLoggingServiceV2Stub create(ClientContext clientContext)
       throws IOException {
-    return new GrpcLoggingServiceV2Stub(LoggingSettings.newBuilder().build(), clientContext);
+    return new GrpcLoggingServiceV2Stub(
+        LoggingServiceV2StubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -136,8 +137,8 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcLoggingServiceV2Stub(LoggingSettings settings, ClientContext clientContext)
-      throws IOException {
+  protected GrpcLoggingServiceV2Stub(
+      LoggingServiceV2StubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<DeleteLogRequest, Empty> deleteLogTransportSettings =
         GrpcCallSettings.<DeleteLogRequest, Empty>newBuilder()

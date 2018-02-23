@@ -3,7 +3,7 @@ Google Cloud Java Client for Compute
 
 Java idiomatic client for [Google Cloud Compute][cloud-compute].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
@@ -23,16 +23,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>0.32.0-alpha</version>
+  <version>0.35.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-compute:0.32.0-alpha'
+compile 'com.google.cloud:google-cloud-compute:0.35.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.32.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.35.0-alpha"
 ```
 
 Example Application
@@ -86,8 +86,8 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
+import com.google.cloud.compute.deprecated.Compute;
+import com.google.cloud.compute.deprecated.ComputeOptions;
 
 Compute compute = ComputeOptions.getDefaultInstance().getService();
 ```
@@ -103,9 +103,9 @@ Engine. In this code snippet, we will create a new external region address.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.AddressInfo;
-import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.RegionAddressId;
+import com.google.cloud.compute.deprecated.AddressInfo;
+import com.google.cloud.compute.deprecated.Operation;
+import com.google.cloud.compute.deprecated.RegionAddressId;
 ```
 
 Then add the following code to create an address. Most Compute Engine calls return an `Operation`
@@ -135,10 +135,10 @@ a publicly-available image.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.DiskInfo;
-import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.ImageDiskConfiguration;
-import com.google.cloud.compute.ImageId;
+import com.google.cloud.compute.deprecated.DiskInfo;
+import com.google.cloud.compute.deprecated.DiskId;
+import com.google.cloud.compute.deprecated.ImageDiskConfiguration;
+import com.google.cloud.compute.deprecated.ImageId;
 ```
 
 Then add the following code to create a disk and wait for disk creation to terminate.
@@ -168,15 +168,15 @@ boot disk the disk we have just created and assigning to it the just created IP 
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.AttachedDisk;
-import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
-import com.google.cloud.compute.InstanceId;
-import com.google.cloud.compute.InstanceInfo;
-import com.google.cloud.compute.MachineTypeId;
-import com.google.cloud.compute.NetworkConfiguration;
-import com.google.cloud.compute.NetworkConfiguration.AccessConfig;
-import com.google.cloud.compute.NetworkId;
-import com.google.cloud.compute.NetworkInterface;
+import com.google.cloud.compute.deprecated.AttachedDisk;
+import com.google.cloud.compute.deprecated.AttachedDisk.PersistentDiskConfiguration;
+import com.google.cloud.compute.deprecated.InstanceId;
+import com.google.cloud.compute.deprecated.InstanceInfo;
+import com.google.cloud.compute.deprecated.MachineTypeId;
+import com.google.cloud.compute.deprecated.NetworkConfiguration;
+import com.google.cloud.compute.deprecated.NetworkConfiguration.AccessConfig;
+import com.google.cloud.compute.deprecated.NetworkId;
+import com.google.cloud.compute.deprecated.NetworkInterface;
 ```
 
 Then add the following code to create an instance and wait for instance creation to terminate.

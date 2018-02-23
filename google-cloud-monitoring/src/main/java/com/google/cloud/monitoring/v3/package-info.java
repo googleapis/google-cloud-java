@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -54,6 +54,26 @@
  * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
  *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
  *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ======================== UptimeCheckServiceClient ========================
+ *
+ * <p>Service Description: The UptimeCheckService API is used to manage (list, create, delete, edit)
+ * uptime check configurations in the Stackdriver Monitoring product. An uptime check is a piece of
+ * configuration that determines which resources and services to monitor for availability. These
+ * configurations can also be configured interactively by navigating to the [Cloud Console]
+ * (http://console.cloud.google.com), selecting the appropriate project, clicking on "Monitoring" on
+ * the left-hand side to navigate to Stackdriver, and then clicking on "Uptime".
+ *
+ * <p>Sample for UptimeCheckServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
+ *   String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+ *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(formattedName);
  * }
  * </code>
  * </pre>

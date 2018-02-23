@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,8 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
 import org.threeten.bp.Duration;
 
 import java.io.FileInputStream;
@@ -67,11 +67,11 @@ public class PublisherSnippets {
   }
 
   /** Example of creating a {@code Publisher}. */
-  // [TARGET newBuilder(TopicName)]
+  // [TARGET newBuilder(ProjectTopicName)]
   // [VARIABLE "my_project"]
   // [VARIABLE "my_topic"]
   public static void newBuilder(String projectId, String topicId) throws Exception {
-    TopicName topic = TopicName.of(projectId, topicId);
+    ProjectTopicName topic = ProjectTopicName.of(projectId, topicId);
     Publisher publisher = Publisher.newBuilder(topic).build();
     try {
       // ...
@@ -81,7 +81,7 @@ public class PublisherSnippets {
     }
   }
 
-  public Publisher getPublisherWithCustomBatchSettings(TopicName topicName) throws Exception {
+  public Publisher getPublisherWithCustomBatchSettings(ProjectTopicName topicName) throws Exception {
     // [START pubsub_publisher_batch_settings]
     // Batch settings control how the publisher batches messages
     long requestBytesThreshold = 5000L; // default : 1kb
@@ -102,7 +102,7 @@ public class PublisherSnippets {
     return publisher;
   }
 
-  public Publisher getPublisherWithCustomRetrySettings(TopicName topicName) throws Exception {
+  public Publisher getPublisherWithCustomRetrySettings(ProjectTopicName topicName) throws Exception {
     // [START pubsub_publisher_retry_settings]
     // Retry settings control how the publisher handles retryable failures
     Duration retryDelay = Duration.ofMillis(100); // default : 1 ms
@@ -121,7 +121,7 @@ public class PublisherSnippets {
     return publisher;
   }
 
-  public Publisher getSingleThreadedPublisher(TopicName topicName) throws Exception {
+  public Publisher getSingleThreadedPublisher(ProjectTopicName topicName) throws Exception {
     // [START pubsub_publisher_single_threaded]
     // create a publisher with a single threaded executor
     ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
@@ -132,7 +132,7 @@ public class PublisherSnippets {
     return publisher;
   }
 
-  private Publisher createPublisherWithCustomCredentials(TopicName topicName) throws Exception {
+  private Publisher createPublisherWithCustomCredentials(ProjectTopicName topicName) throws Exception {
     // [START pubsub_publisher_custom_credentials]
     // read service account credentials from file
     CredentialsProvider credentialsProvider =

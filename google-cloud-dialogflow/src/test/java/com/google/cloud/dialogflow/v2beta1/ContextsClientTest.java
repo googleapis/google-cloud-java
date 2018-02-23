@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,14 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListContextsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.ContextsClient.ListContextsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
@@ -46,6 +49,7 @@ public class ContextsClientTest {
   private static MockSessions mockSessions;
   private static MockServiceHelper serviceHelper;
   private ContextsClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -76,9 +80,10 @@ public class ContextsClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     ContextsSettings settings =
         ContextsSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = ContextsClient.create(settings);
@@ -114,7 +119,11 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListContextsRequest actualRequest = (ListContextsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsSessionName());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -139,7 +148,7 @@ public class ContextsClientTest {
     ContextName name2 = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder().setNameWithContextName(name2).setLifespanCount(lifespanCount).build();
+        Context.newBuilder().setName(name2.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
@@ -151,7 +160,11 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetContextRequest actualRequest = (GetContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsContextName());
+    Assert.assertEquals(name, ContextName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -176,7 +189,7 @@ public class ContextsClientTest {
     ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder().setNameWithContextName(name).setLifespanCount(lifespanCount).build();
+        Context.newBuilder().setName(name.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
@@ -189,8 +202,12 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateContextRequest actualRequest = (CreateContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsSessionName());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
     Assert.assertEquals(context, actualRequest.getContext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -216,7 +233,7 @@ public class ContextsClientTest {
     ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
     int lifespanCount = 1178775510;
     Context expectedResponse =
-        Context.newBuilder().setNameWithContextName(name).setLifespanCount(lifespanCount).build();
+        Context.newBuilder().setName(name.toString()).setLifespanCount(lifespanCount).build();
     mockContexts.addResponse(expectedResponse);
 
     Context context = Context.newBuilder().build();
@@ -229,6 +246,10 @@ public class ContextsClientTest {
     UpdateContextRequest actualRequest = (UpdateContextRequest) actualRequests.get(0);
 
     Assert.assertEquals(context, actualRequest.getContext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -261,7 +282,11 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteContextRequest actualRequest = (DeleteContextRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getNameAsContextName());
+    Assert.assertEquals(name, ContextName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -294,7 +319,11 @@ public class ContextsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteAllContextsRequest actualRequest = (DeleteAllContextsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsSessionName());
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

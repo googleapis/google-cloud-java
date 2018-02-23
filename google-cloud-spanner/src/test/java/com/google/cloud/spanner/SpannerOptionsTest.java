@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import java.util.Map;
 import com.google.cloud.TransportOptions;
 
 import io.grpc.ManagedChannel;
-import io.grpc.netty.NettyChannelBuilder;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -86,7 +86,7 @@ public class SpannerOptionsTest {
     thrown.expect(IllegalArgumentException.class);
     SpannerOptions.newBuilder().setTransportOptions(Mockito.mock(TransportOptions.class));
   }
-  
+
   @Test
   public void testInvalidSessionLabels() {
     thrown.expect(NullPointerException.class);
@@ -94,7 +94,7 @@ public class SpannerOptionsTest {
     labels.put("env", null);
     SpannerOptions.newBuilder().setSessionLabels(labels);
   }
-  
+
   @Test
   public void testNullSessionLabels() {
     thrown.expect(NullPointerException.class);

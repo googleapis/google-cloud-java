@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,10 @@ import com.google.api.core.ApiFunction;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
-
+import com.google.common.base.Strings;
 import java.io.Serializable;
 import java.util.Objects;
+import org.threeten.bp.Duration;
 
 /**
  * Objects of this class represent information about the (optional) HTTP request associated with a
@@ -49,6 +50,7 @@ public final class HttpRequest implements Serializable {
   private final boolean cacheHit;
   private final boolean cacheValidatedWithOriginServer;
   private final Long cacheFillBytes;
+  private final Duration latency;
 
   /**
    * The HTTP request method.
@@ -118,6 +120,7 @@ public final class HttpRequest implements Serializable {
     private boolean cacheHit;
     private boolean cacheValidatedWithOriginServer;
     private Long cacheFillBytes;
+    private Duration latency;
 
     Builder() {}
 
@@ -135,6 +138,7 @@ public final class HttpRequest implements Serializable {
       this.cacheHit = request.cacheHit;
       this.cacheValidatedWithOriginServer = request.cacheValidatedWithOriginServer;
       this.cacheFillBytes = request.cacheFillBytes;
+      this.latency = request.latency;
     }
 
 
@@ -269,6 +273,15 @@ public final class HttpRequest implements Serializable {
     }
 
     /**
+     * Sets the latency on the server, from the time the request was received until the response was
+     * sent.
+     */
+    public Builder setLatency(Duration latency) {
+      this.latency = latency;
+      return this;
+    }
+
+    /**
      * Creates a {@code HttpRequest} object for this builder.
      */
     public HttpRequest build() {
@@ -290,6 +303,7 @@ public final class HttpRequest implements Serializable {
     this.cacheHit = builder.cacheHit;
     this.cacheValidatedWithOriginServer = builder.cacheValidatedWithOriginServer;
     this.cacheFillBytes = builder.cacheFillBytes;
+    this.latency = builder.latency;
   }
 
 
@@ -408,11 +422,33 @@ public final class HttpRequest implements Serializable {
     return cacheFillBytes;
   }
 
+  /**
+   * Returns the processing latency on the server, from the time the request was received until the
+   * response was sent.
+   *
+   * @return the latency, for null if not populated.
+   */
+  public Duration getLatency() {
+    return latency;
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(requestMethod, requestUrl, requestSize, status, responseSize, userAgent,
-        serverIp, cacheLookup, cacheFillBytes, remoteIp, referer, cacheHit,
-        cacheValidatedWithOriginServer);
+    return Objects.hash(
+        requestMethod,
+        requestUrl,
+        requestSize,
+        status,
+        responseSize,
+        userAgent,
+        serverIp,
+        cacheLookup,
+        cacheFillBytes,
+        remoteIp,
+        referer,
+        cacheHit,
+        cacheValidatedWithOriginServer,
+        latency);
   }
 
   @Override
@@ -431,6 +467,7 @@ public final class HttpRequest implements Serializable {
         .add("cacheHit", cacheHit)
         .add("cacheValidatedWithOriginServer", cacheValidatedWithOriginServer)
         .add("cacheFillBytes", cacheFillBytes)
+        .add("latency", latency)
         .toString();
   }
 
@@ -452,6 +489,7 @@ public final class HttpRequest implements Serializable {
         && Objects.equals(remoteIp, other.remoteIp)
         && Objects.equals(serverIp, other.serverIp)
         && Objects.equals(referer, other.referer)
+        && Objects.equals(latency, other.latency)
         && cacheLookup == other.cacheLookup
         && cacheHit == other.cacheHit
         && cacheValidatedWithOriginServer == other.cacheValidatedWithOriginServer
@@ -501,6 +539,14 @@ public final class HttpRequest implements Serializable {
     if (cacheFillBytes != null) {
       builder.setCacheFillBytes(cacheFillBytes);
     }
+    if (latency != null) {
+      // NOTE(pongad): Don't convert to nano; large durations overflow longs!
+      builder.setLatency(
+          com.google.protobuf.Duration.newBuilder()
+              .setSeconds(latency.getSeconds())
+              .setNanos(latency.getNano())
+              .build());
+    }
     return builder.build();
   }
 
@@ -514,10 +560,10 @@ public final class HttpRequest implements Serializable {
 
   static HttpRequest fromPb(com.google.logging.type.HttpRequest requestPb) {
     Builder builder = newBuilder();
-    if (requestPb.getRequestMethod() != null && !requestPb.getRequestMethod().equals("")) {
+    if (!Strings.isNullOrEmpty(requestPb.getRequestMethod())) {
       builder.setRequestMethod(RequestMethod.valueOf(requestPb.getRequestMethod()));
     }
-    if (requestPb.getRequestUrl() != null && !requestPb.getRequestUrl().equals("")) {
+    if (!Strings.isNullOrEmpty(requestPb.getRequestUrl())) {
       builder.setRequestUrl(requestPb.getRequestUrl());
     }
     if (requestPb.getRequestSize() != 0L) {
@@ -529,16 +575,16 @@ public final class HttpRequest implements Serializable {
     if (requestPb.getResponseSize() != 0L) {
       builder.setResponseSize(requestPb.getResponseSize());
     }
-    if (requestPb.getUserAgent() != null && !requestPb.getRequestUrl().equals("")) {
+    if (!Strings.isNullOrEmpty(requestPb.getUserAgent())) {
       builder.setUserAgent(requestPb.getUserAgent());
     }
-    if (requestPb.getServerIp() != null && !requestPb.getServerIp().equals("")) {
+    if (!Strings.isNullOrEmpty(requestPb.getServerIp())) {
       builder.setServerIp(requestPb.getServerIp());
     }
-    if (requestPb.getRemoteIp() != null && !requestPb.getRemoteIp().equals("")) {
+    if (!Strings.isNullOrEmpty(requestPb.getRemoteIp())) {
       builder.setRemoteIp(requestPb.getRemoteIp());
     }
-    if (requestPb.getReferer() != null && !requestPb.getReferer().equals("")) {
+    if (!Strings.isNullOrEmpty(requestPb.getReferer())) {
       builder.setReferer(requestPb.getReferer());
     }
     builder.setCacheLookup(requestPb.getCacheLookup());
@@ -546,6 +592,12 @@ public final class HttpRequest implements Serializable {
     builder.setCacheValidatedWithOriginServer(requestPb.getCacheValidatedWithOriginServer());
     if (requestPb.getCacheFillBytes() != 0L) {
       builder.setCacheFillBytes(requestPb.getCacheFillBytes());
+    }
+    if (requestPb.hasLatency()) {
+      // NOTE(pongad): Don't convert to nano; large durations overflow longs!
+      builder.setLatency(
+          Duration.ofSeconds(
+              requestPb.getLatency().getSeconds(), requestPb.getLatency().getNanos()));
     }
     return builder.build();
   }

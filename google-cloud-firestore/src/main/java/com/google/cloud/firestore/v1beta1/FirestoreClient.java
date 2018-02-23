@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,16 +15,21 @@
  */
 package com.google.cloud.firestore.v1beta1;
 
-import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
-import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListDocumentsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStub;
+import com.google.cloud.firestore.v1beta1.stub.FirestoreStubSettings;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.BeginTransactionRequest;
@@ -91,13 +96,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -299,7 +304,7 @@ public class FirestoreClient implements BackgroundResource {
    */
   protected FirestoreClient(FirestoreSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((FirestoreStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -1174,5 +1179,154 @@ public class FirestoreClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListDocumentsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDocumentsRequest, ListDocumentsResponse, Document, ListDocumentsPage,
+          ListDocumentsFixedSizeCollection> {
+
+    public static ApiFuture<ListDocumentsPagedResponse> createAsync(
+        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        ApiFuture<ListDocumentsResponse> futureResponse) {
+      ApiFuture<ListDocumentsPage> futurePage =
+          ListDocumentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListDocumentsPage, ListDocumentsPagedResponse>() {
+            @Override
+            public ListDocumentsPagedResponse apply(ListDocumentsPage input) {
+              return new ListDocumentsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListDocumentsPagedResponse(ListDocumentsPage page) {
+      super(page, ListDocumentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDocumentsPage
+      extends AbstractPage<
+          ListDocumentsRequest, ListDocumentsResponse, Document, ListDocumentsPage> {
+
+    private ListDocumentsPage(
+        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        ListDocumentsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDocumentsPage createEmptyPage() {
+      return new ListDocumentsPage(null, null);
+    }
+
+    @Override
+    protected ListDocumentsPage createPage(
+        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        ListDocumentsResponse response) {
+      return new ListDocumentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDocumentsPage> createPageAsync(
+        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        ApiFuture<ListDocumentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDocumentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDocumentsRequest, ListDocumentsResponse, Document, ListDocumentsPage,
+          ListDocumentsFixedSizeCollection> {
+
+    private ListDocumentsFixedSizeCollection(List<ListDocumentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDocumentsFixedSizeCollection createEmptyCollection() {
+      return new ListDocumentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDocumentsFixedSizeCollection createCollection(
+        List<ListDocumentsPage> pages, int collectionSize) {
+      return new ListDocumentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCollectionIdsPagedResponse
+      extends AbstractPagedListResponse<
+          ListCollectionIdsRequest, ListCollectionIdsResponse, String, ListCollectionIdsPage,
+          ListCollectionIdsFixedSizeCollection> {
+
+    public static ApiFuture<ListCollectionIdsPagedResponse> createAsync(
+        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        ApiFuture<ListCollectionIdsResponse> futureResponse) {
+      ApiFuture<ListCollectionIdsPage> futurePage =
+          ListCollectionIdsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListCollectionIdsPage, ListCollectionIdsPagedResponse>() {
+            @Override
+            public ListCollectionIdsPagedResponse apply(ListCollectionIdsPage input) {
+              return new ListCollectionIdsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListCollectionIdsPagedResponse(ListCollectionIdsPage page) {
+      super(page, ListCollectionIdsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCollectionIdsPage
+      extends AbstractPage<
+          ListCollectionIdsRequest, ListCollectionIdsResponse, String, ListCollectionIdsPage> {
+
+    private ListCollectionIdsPage(
+        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        ListCollectionIdsResponse response) {
+      super(context, response);
+    }
+
+    private static ListCollectionIdsPage createEmptyPage() {
+      return new ListCollectionIdsPage(null, null);
+    }
+
+    @Override
+    protected ListCollectionIdsPage createPage(
+        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        ListCollectionIdsResponse response) {
+      return new ListCollectionIdsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCollectionIdsPage> createPageAsync(
+        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        ApiFuture<ListCollectionIdsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCollectionIdsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCollectionIdsRequest, ListCollectionIdsResponse, String, ListCollectionIdsPage,
+          ListCollectionIdsFixedSizeCollection> {
+
+    private ListCollectionIdsFixedSizeCollection(
+        List<ListCollectionIdsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCollectionIdsFixedSizeCollection createEmptyCollection() {
+      return new ListCollectionIdsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCollectionIdsFixedSizeCollection createCollection(
+        List<ListCollectionIdsPage> pages, int collectionSize) {
+      return new ListCollectionIdsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

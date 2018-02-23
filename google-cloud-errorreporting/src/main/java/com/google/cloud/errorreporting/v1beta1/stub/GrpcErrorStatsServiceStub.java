@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,8 +15,8 @@
  */
 package com.google.cloud.errorreporting.v1beta1.stub;
 
-import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
-import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
+import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListGroupStatsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
@@ -88,7 +87,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
-  public static final GrpcErrorStatsServiceStub create(ErrorStatsServiceSettings settings)
+  public static final GrpcErrorStatsServiceStub create(ErrorStatsServiceStubSettings settings)
       throws IOException {
     return new GrpcErrorStatsServiceStub(settings, ClientContext.create(settings));
   }
@@ -96,7 +95,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
   public static final GrpcErrorStatsServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcErrorStatsServiceStub(
-        ErrorStatsServiceSettings.newBuilder().build(), clientContext);
+        ErrorStatsServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -105,7 +104,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
    * should be preferred.
    */
   protected GrpcErrorStatsServiceStub(
-      ErrorStatsServiceSettings settings, ClientContext clientContext) throws IOException {
+      ErrorStatsServiceStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<ListGroupStatsRequest, ListGroupStatsResponse>
         listGroupStatsTransportSettings =

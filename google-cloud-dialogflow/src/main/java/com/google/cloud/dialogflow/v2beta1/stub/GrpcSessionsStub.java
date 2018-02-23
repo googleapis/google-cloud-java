@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,7 +25,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.v2beta1.DetectIntentResponse;
-import com.google.cloud.dialogflow.v2beta1.SessionsSettings;
 import com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse;
 import io.grpc.MethodDescriptor;
@@ -70,19 +69,19 @@ public class GrpcSessionsStub extends SessionsStub {
   private final BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable;
 
-  public static final GrpcSessionsStub create(SessionsSettings settings) throws IOException {
+  public static final GrpcSessionsStub create(SessionsStubSettings settings) throws IOException {
     return new GrpcSessionsStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcSessionsStub create(ClientContext clientContext) throws IOException {
-    return new GrpcSessionsStub(SessionsSettings.newBuilder().build(), clientContext);
+    return new GrpcSessionsStub(SessionsStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
    * Constructs an instance of GrpcSessionsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected GrpcSessionsStub(SessionsSettings settings, ClientContext clientContext)
+  protected GrpcSessionsStub(SessionsStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<DetectIntentRequest, DetectIntentResponse> detectIntentTransportSettings =

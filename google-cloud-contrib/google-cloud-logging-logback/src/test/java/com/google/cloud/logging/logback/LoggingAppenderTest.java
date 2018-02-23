@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging.logback;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.anyObject;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.expectLastCall;
@@ -36,7 +37,6 @@ import com.google.common.collect.ImmutableMap;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
 import org.easymock.EasyMockRunner;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -96,8 +96,8 @@ public class LoggingAppenderTest {
     loggingAppender.start();
     loggingAppender.doAppend(loggingEvent);
     verify(logging);
-    Assert.assertTrue(capturedArgument.getValue().iterator().hasNext());
-    Assert.assertTrue(logEntry.equals(capturedArgument.getValue().iterator().next()));
+    assertThat(capturedArgument.getValue().iterator().hasNext()).isTrue();
+    assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(logEntry);
   }
 
   @Test
@@ -131,8 +131,8 @@ public class LoggingAppenderTest {
     // error event gets logged
     loggingAppender.doAppend(loggingEvent2);
     verify(logging);
-    Assert.assertTrue(capturedArgument.getValue().iterator().hasNext());
-    Assert.assertTrue(logEntry.equals(capturedArgument.getValue().iterator().next()));
+    assertThat(capturedArgument.getValue().iterator().hasNext()).isTrue();
+    assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(logEntry);
   }
 
   @Test
@@ -162,8 +162,8 @@ public class LoggingAppenderTest {
     LoggingEvent loggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
     loggingAppender.doAppend(loggingEvent);
     verify(logging);
-    Assert.assertTrue(capturedArgument.getValue().iterator().hasNext());
-    Assert.assertTrue(logEntry.equals(capturedArgument.getValue().iterator().next()));
+    assertThat(capturedArgument.getValue().iterator().hasNext()).isTrue();
+    assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(logEntry);
   }
 
   @Test
@@ -178,8 +178,9 @@ public class LoggingAppenderTest {
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.ERROR, timestamp.getSeconds());
     loggingAppender.doAppend(loggingEvent);
-    Assert.assertTrue(logNameArg.getValue().equals(defaultWriteOptions[0]));
-    Assert.assertTrue(resourceArg.getValue().equals(defaultWriteOptions[1]));
+
+    assertThat(logNameArg.getValue()).isEqualTo(defaultWriteOptions[0]);
+    assertThat(resourceArg.getValue()).isEqualTo(defaultWriteOptions[1]);
   }
 
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.trace.v2.stub.TraceServiceStub;
+import com.google.cloud.trace.v2.stub.TraceServiceStubSettings;
 import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
 import com.google.devtools.cloudtrace.v2.ProjectName;
 import com.google.devtools.cloudtrace.v2.Span;
@@ -133,7 +134,7 @@ public class TraceServiceClient implements BackgroundResource {
    */
   protected TraceServiceClient(TraceServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((TraceServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -174,7 +175,10 @@ public class TraceServiceClient implements BackgroundResource {
   public final void batchWriteSpans(ProjectName name, List<Span> spans) {
 
     BatchWriteSpansRequest request =
-        BatchWriteSpansRequest.newBuilder().setNameWithProjectName(name).addAllSpans(spans).build();
+        BatchWriteSpansRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .addAllSpans(spans)
+            .build();
     batchWriteSpans(request);
   }
 
@@ -189,7 +193,7 @@ public class TraceServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
    *   BatchWriteSpansRequest request = BatchWriteSpansRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .addAllSpans(spans)
    *     .build();
    *   traceServiceClient.batchWriteSpans(request);
@@ -214,7 +218,7 @@ public class TraceServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
    *   BatchWriteSpansRequest request = BatchWriteSpansRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .addAllSpans(spans)
    *     .build();
    *   ApiFuture&lt;Void&gt; future = traceServiceClient.batchWriteSpansCallable().futureCall(request);
@@ -241,7 +245,7 @@ public class TraceServiceClient implements BackgroundResource {
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   Span request = Span.newBuilder()
-   *     .setNameWithSpanName(name)
+   *     .setName(name.toString())
    *     .setSpanId(spanId)
    *     .setDisplayName(displayName)
    *     .setStartTime(startTime)
@@ -272,7 +276,7 @@ public class TraceServiceClient implements BackgroundResource {
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   Span request = Span.newBuilder()
-   *     .setNameWithSpanName(name)
+   *     .setName(name.toString())
    *     .setSpanId(spanId)
    *     .setDisplayName(displayName)
    *     .setStartTime(startTime)

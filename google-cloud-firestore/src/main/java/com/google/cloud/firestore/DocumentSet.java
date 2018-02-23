@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,15 +29,15 @@ import javax.annotation.Nullable;
  * An immutable set of documents (unique by key) ordered by the given comparator or ordered by key
  * by default if no document is present.
  */
-class DocumentSet implements Iterable<DocumentSnapshot> {
-  private static final ImmutableSortedMap<ResourcePath, DocumentSnapshot> EMPTY_DOCUMENT_MAP =
+class DocumentSet implements Iterable<QueryDocumentSnapshot> {
+  private static final ImmutableSortedMap<ResourcePath, QueryDocumentSnapshot> EMPTY_DOCUMENT_MAP =
       ImmutableSortedMap.Builder.emptyMap(ResourcePath.comparator());
 
   /** Returns an empty DocumentSet sorted by the given comparator, then by keys. */
-  static DocumentSet emptySet(final Comparator<DocumentSnapshot> comparator) {
+  static DocumentSet emptySet(final Comparator<QueryDocumentSnapshot> comparator) {
     return new DocumentSet(
         EMPTY_DOCUMENT_MAP,
-        new ImmutableSortedSet<>(Collections.<DocumentSnapshot>emptyList(), comparator));
+        new ImmutableSortedSet<>(Collections.<QueryDocumentSnapshot>emptyList(), comparator));
   }
 
   /**
@@ -45,18 +45,18 @@ class DocumentSet implements Iterable<DocumentSnapshot> {
    * guarantee the uniqueness of document keys in the set and to allow lookup and removal of
    * documents by key.
    */
-  private final ImmutableSortedMap<ResourcePath, DocumentSnapshot> keyIndex;
+  private final ImmutableSortedMap<ResourcePath, QueryDocumentSnapshot> keyIndex;
 
   /**
    * The main collection of documents in the DocumentSet. The documents are ordered by the provided
    * comparator. The collection exists in addition to the index to allow ordered traversal of the
    * DocumentSet.
    */
-  private final ImmutableSortedSet<DocumentSnapshot> sortedSet;
+  private final ImmutableSortedSet<QueryDocumentSnapshot> sortedSet;
 
   private DocumentSet(
-      ImmutableSortedMap<ResourcePath, DocumentSnapshot> keyIndex,
-      ImmutableSortedSet<DocumentSnapshot> sortedSet) {
+      ImmutableSortedMap<ResourcePath, QueryDocumentSnapshot> keyIndex,
+      ImmutableSortedSet<QueryDocumentSnapshot> sortedSet) {
     this.keyIndex = keyIndex;
     this.sortedSet = sortedSet;
   }
@@ -76,7 +76,7 @@ class DocumentSet implements Iterable<DocumentSnapshot> {
 
   /** Returns the document from this set with the given key if it exists or null if it doesn't. */
   @Nullable
-  DocumentSnapshot getDocument(ResourcePath key) {
+  QueryDocumentSnapshot getDocument(ResourcePath key) {
     return keyIndex.get(key);
   }
 
@@ -85,7 +85,7 @@ class DocumentSet implements Iterable<DocumentSnapshot> {
    * present in the set;
    */
   int indexOf(ResourcePath key) {
-    DocumentSnapshot document = keyIndex.get(key);
+    QueryDocumentSnapshot document = keyIndex.get(key);
     if (document == null) {
       return -1;
     }
@@ -96,40 +96,40 @@ class DocumentSet implements Iterable<DocumentSnapshot> {
    * Returns a new DocumentSet that contains the given document, replacing any old document with the
    * same key.
    */
-  DocumentSet add(DocumentSnapshot document) {
+  DocumentSet add(QueryDocumentSnapshot document) {
     // Remove any prior mapping of the document's key before adding, preventing sortedSet from
     // accumulating values that aren't in the index.
     DocumentSet removed = remove(document.getReference().getResourcePath());
 
-    ImmutableSortedMap<ResourcePath, DocumentSnapshot> newKeyIndex =
+    ImmutableSortedMap<ResourcePath, QueryDocumentSnapshot> newKeyIndex =
         removed.keyIndex.insert(document.getReference().getResourcePath(), document);
-    ImmutableSortedSet<DocumentSnapshot> newSortedSet = removed.sortedSet.insert(document);
+    ImmutableSortedSet<QueryDocumentSnapshot> newSortedSet = removed.sortedSet.insert(document);
     return new DocumentSet(newKeyIndex, newSortedSet);
   }
 
   /** Returns a new DocumentSet with the document for the provided key removed. */
   DocumentSet remove(ResourcePath key) {
-    DocumentSnapshot document = keyIndex.get(key);
+    QueryDocumentSnapshot document = keyIndex.get(key);
     if (document == null) {
       return this;
     }
 
-    ImmutableSortedMap<ResourcePath, DocumentSnapshot> newKeyIndex = keyIndex.remove(key);
-    ImmutableSortedSet<DocumentSnapshot> newSortedSet = sortedSet.remove(document);
+    ImmutableSortedMap<ResourcePath, QueryDocumentSnapshot> newKeyIndex = keyIndex.remove(key);
+    ImmutableSortedSet<QueryDocumentSnapshot> newSortedSet = sortedSet.remove(document);
     return new DocumentSet(newKeyIndex, newSortedSet);
   }
 
   /** Returns a copy of the documents in this set as array. This is O(n) in the size of the set. */
-  List<DocumentSnapshot> toList() {
-    List<DocumentSnapshot> documents = new ArrayList<>(size());
-    for (DocumentSnapshot document : this) {
+  List<QueryDocumentSnapshot> toList() {
+    List<QueryDocumentSnapshot> documents = new ArrayList<>(size());
+    for (QueryDocumentSnapshot document : this) {
       documents.add(document);
     }
     return documents;
   }
 
   @Override
-  public Iterator<DocumentSnapshot> iterator() {
+  public Iterator<QueryDocumentSnapshot> iterator() {
     return sortedSet.iterator();
   }
 
@@ -148,8 +148,8 @@ class DocumentSet implements Iterable<DocumentSnapshot> {
       return false;
     }
 
-    Iterator<DocumentSnapshot> thisIterator = iterator();
-    Iterator<DocumentSnapshot> otherIterator = documentSet.iterator();
+    Iterator<QueryDocumentSnapshot> thisIterator = iterator();
+    Iterator<QueryDocumentSnapshot> otherIterator = documentSet.iterator();
     while (thisIterator.hasNext()) {
       DocumentSnapshot thisDoc = thisIterator.next();
       DocumentSnapshot otherDoc = otherIterator.next();

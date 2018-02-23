@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
+import java.util.Collections;
 import java.util.List;
+import org.junit.Test;
 
 public class TableInfoTest {
 
@@ -85,16 +84,18 @@ public class TableInfoTest {
   private static final ViewDefinition VIEW_DEFINITION =
       ViewDefinition.newBuilder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
-  private static final TableInfo TABLE_INFO = TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
-      .setCreationTime(CREATION_TIME)
-      .setDescription(DESCRIPTION)
-      .setEtag(ETAG)
-      .setExpirationTime(EXPIRATION_TIME)
-      .setFriendlyName(FRIENDLY_NAME)
-      .setGeneratedId(GENERATED_ID)
-      .setLastModifiedTime(LAST_MODIFIED_TIME)
-      .setSelfLink(SELF_LINK)
-      .build();
+  private static final TableInfo TABLE_INFO =
+      TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
+          .setCreationTime(CREATION_TIME)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setExpirationTime(EXPIRATION_TIME)
+          .setFriendlyName(FRIENDLY_NAME)
+          .setGeneratedId(GENERATED_ID)
+          .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setSelfLink(SELF_LINK)
+          .setLabels(Collections.singletonMap("a", "b"))
+          .build();
   private static final TableInfo VIEW_INFO = TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
       .setCreationTime(CREATION_TIME)
       .setDescription(DESCRIPTION)
@@ -241,7 +242,7 @@ public class TableInfoTest {
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
     assertEquals(expected.getSelfLink(), value.getSelfLink());
-    assertEquals(expected.getDefinition(), value.getDefinition());
+    assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

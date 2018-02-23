@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,9 @@ import com.google.api.core.ApiFutures;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.List;
 public class CreateTopicAndPublishMessages {
 
   public static void createTopic() throws Exception {
-    TopicName topic = TopicName.of("my-project-id", "my-topic-id");
+    ProjectTopicName topic = ProjectTopicName.of("my-project-id", "my-topic-id");
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.createTopic(topic);
     }
@@ -42,7 +43,7 @@ public class CreateTopicAndPublishMessages {
 
   public static void publishMessages() throws Exception {
     // [START pubsub_publish]
-    TopicName topicName = TopicName.of("my-project-id", "my-topic-id");
+    ProjectTopicName topicName = ProjectTopicName.of("my-project-id", "my-topic-id");
     Publisher publisher = null;
     List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
 

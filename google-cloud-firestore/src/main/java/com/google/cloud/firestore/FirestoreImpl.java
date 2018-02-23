@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,24 +26,17 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.common.base.Preconditions;
-import com.google.firestore.v1beta1.ArrayValue;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.DatabaseRootName;
-import com.google.firestore.v1beta1.MapValue;
-import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.NullValue;
-import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
@@ -59,84 +52,11 @@ class FirestoreImpl implements Firestore {
   private static final String AUTO_ID_ALPHABET =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  /** Creates a pseudo-random 20-character ID that can be used for Firestore documents. */
-  static String autoId() {
-    StringBuilder builder = new StringBuilder();
-    int maxRandom = AUTO_ID_ALPHABET.length();
-    for (int i = 0; i < AUTO_ID_LENGTH; i++) {
-      builder.append(AUTO_ID_ALPHABET.charAt(RANDOM.nextInt(maxRandom)));
-    }
-    return builder.toString();
-  }
-
-  /**
-   * Encodes a Java Object to a Firestore Value proto.
-   *
-   * @param sanitizedObject An Object that has been sanitized by CustomClassMapper and only contains
-   *     valid types.
-   * @return The Value proto.
-   */
-  @Nullable
-  static Value encodeValue(@Nullable Object sanitizedObject) {
-    if (sanitizedObject == FieldValue.SERVER_TIMESTAMP_SENTINEL) {
-      return null;
-    } else if (sanitizedObject == FieldValue.DELETE_SENTINEL) {
-      return null;
-    } else if (sanitizedObject == null) {
-      return Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
-    } else if (sanitizedObject instanceof String) {
-      return Value.newBuilder().setStringValue((String) sanitizedObject).build();
-    } else if (sanitizedObject instanceof Integer) {
-      return Value.newBuilder().setIntegerValue((Integer) sanitizedObject).build();
-    } else if (sanitizedObject instanceof Long) {
-      return Value.newBuilder().setIntegerValue((Long) sanitizedObject).build();
-    } else if (sanitizedObject instanceof Double) {
-      return Value.newBuilder().setDoubleValue((Double) sanitizedObject).build();
-    } else if (sanitizedObject instanceof Boolean) {
-      return Value.newBuilder().setBooleanValue((Boolean) sanitizedObject).build();
-    } else if (sanitizedObject instanceof Date) {
-      Date date = (Date) sanitizedObject;
-      long epochSeconds = TimeUnit.MILLISECONDS.toSeconds(date.getTime());
-      long msOffset = date.getTime() - TimeUnit.SECONDS.toMillis(epochSeconds);
-      Timestamp.Builder timestampBuilder = Timestamp.newBuilder();
-      timestampBuilder.setSeconds(epochSeconds);
-      timestampBuilder.setNanos((int) TimeUnit.MILLISECONDS.toNanos(msOffset));
-      return Value.newBuilder().setTimestampValue(timestampBuilder.build()).build();
-    } else if (sanitizedObject instanceof List) {
-      ArrayValue.Builder res = ArrayValue.newBuilder();
-      for (Object child : (List) sanitizedObject) {
-        Value encodedValue = encodeValue(child);
-        if (encodedValue != null) {
-          res.addValues(encodedValue);
-        }
-      }
-      return Value.newBuilder().setArrayValue(res.build()).build();
-    } else if (sanitizedObject instanceof GeoPoint) {
-      GeoPoint geopoint = (GeoPoint) sanitizedObject;
-      return Value.newBuilder().setGeoPointValue(geopoint.toProto()).build();
-    } else if (sanitizedObject instanceof Blob) {
-      Blob blob = (Blob) sanitizedObject;
-      return Value.newBuilder().setBytesValue(blob.toByteString()).build();
-    } else if (sanitizedObject instanceof DocumentReference) {
-      DocumentReference docRef = (DocumentReference) sanitizedObject;
-      return Value.newBuilder().setReferenceValue(docRef.getName()).build();
-    } else if (sanitizedObject instanceof Map) {
-      MapValue.Builder res = MapValue.newBuilder();
-      for (Map.Entry<String, Object> entry : ((Map<String, Object>) sanitizedObject).entrySet()) {
-        Value encodedValue = encodeValue(entry.getValue());
-        if (encodedValue != null) {
-          res.putFields(entry.getKey(), encodedValue);
-        }
-      }
-      return Value.newBuilder().setMapValue(res.build()).build();
-    }
-
-    throw FirestoreException.invalidState("Cannot convert %s to Firestore Value", sanitizedObject);
-  }
-
   private final FirestoreRpc firestoreClient;
   private final FirestoreOptions firestoreOptions;
   private final ResourcePath databasePath;
+
+  private boolean closed;
 
   FirestoreImpl(FirestoreOptions options) {
     this(options, options.getFirestoreRpc());
@@ -151,6 +71,16 @@ class FirestoreImpl implements Firestore {
             + "Please explicitly set your Project ID in FirestoreOptions.");
     this.databasePath =
         ResourcePath.create(DatabaseRootName.of(options.getProjectId(), options.getDatabaseId()));
+  }
+
+  /** Creates a pseudo-random 20-character ID that can be used for Firestore documents. */
+  static String autoId() {
+    StringBuilder builder = new StringBuilder();
+    int maxRandom = AUTO_ID_ALPHABET.length();
+    for (int i = 0; i < AUTO_ID_LENGTH; i++) {
+      builder.append(AUTO_ID_ALPHABET.charAt(RANDOM.nextInt(maxRandom)));
+    }
+    return builder.toString();
   }
 
   @Nonnull
@@ -396,6 +326,7 @@ class FirestoreImpl implements Firestore {
   /** Request funnel for all read/write requests. */
   <RequestT, ResponseT> ApiFuture<ResponseT> sendRequest(
       RequestT requestT, UnaryCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     return callable.futureCall(requestT);
   }
 
@@ -404,6 +335,7 @@ class FirestoreImpl implements Firestore {
       RequestT requestT,
       ApiStreamObserver<ResponseT> responseObserverT,
       ServerStreamingCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     callable.serverStreamingCall(requestT, responseObserverT);
   }
 
@@ -411,11 +343,18 @@ class FirestoreImpl implements Firestore {
   <RequestT, ResponseT> ApiStreamObserver<RequestT> streamRequest(
       ApiStreamObserver<ResponseT> responseObserverT,
       BidiStreamingCallable<RequestT, ResponseT> callable) {
+    Preconditions.checkState(!closed, "Firestore client has already been closed");
     return callable.bidiStreamingCall(responseObserverT);
   }
 
   @Override
   public FirestoreOptions getOptions() {
     return firestoreOptions;
+  }
+
+  @Override
+  public void close() throws Exception {
+    firestoreClient.close();
+    closed = true;
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,9 @@ public final class Role implements Serializable {
     this.value = value;
   }
 
-
   /**
-   * Returns the string identifier for this role. For example, {@code "roles/viewer"},
-   * {@code "roles/editor"}, or {@code "roles/owner"}.
+   * Returns the string identifier for this role. For example, {@code "roles/viewer"}, {@code
+   * "roles/editor"}, or {@code "roles/owner"}.
    */
   public String getValue() {
     return value;
@@ -82,15 +81,22 @@ public final class Role implements Serializable {
   /**
    * Returns a new role given its string value.
    *
-   * @param value the string value for the role, for example, {@code "roles/viewer"},
-   *     {@code "roles/editor"}, or {@code "roles/owner"}. If this value does not start with the
-   *     role prefix {@code roles/}, the prefix is prepended.
+   * <p>If the value contains no slash character ({@code '/'}), the prefix {@code "roles/""} is
+   * prepended. This slightly simplifies usage for <a
+   * href="https://cloud.google.com/iam/docs/understanding-roles">predefined roles</a>. For <a
+   * href="https://cloud.google.com/iam/docs/creating-custom-roles">custom roles</a>, call this
+   * method with the fully-qualified name, eg {@code "projects/XXX/roles/YYY"}.
+   *
+   * @param value the string value for the role
    * @see <a href="https://cloud.google.com/iam/docs/viewing-grantable-roles">Viewing the Grantable
    *     Roles on Resources</a>
    */
   public static Role of(String value) {
     checkNotNull(value);
-    return new Role(value.startsWith(ROLE_PREFIX) ? value : ROLE_PREFIX + value);
+    if (!value.contains("/")) {
+      value = ROLE_PREFIX + value;
+    }
+    return new Role(value);
   }
 
   @Override

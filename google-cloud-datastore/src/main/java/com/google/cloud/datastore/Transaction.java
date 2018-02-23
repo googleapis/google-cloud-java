@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.protobuf.ByteString;
 import java.util.Iterator;
 import java.util.List;
 
@@ -445,4 +446,6 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * Returns the transaction associated {@link Datastore}.
    */
   Datastore getDatastore();
+
+  ByteString getTransactionId();
 }

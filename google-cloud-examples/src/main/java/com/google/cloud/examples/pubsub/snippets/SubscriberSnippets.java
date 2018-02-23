@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,16 +32,16 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
-import com.google.cloud.pubsub.v1.SubscriptionAdminSettings;
+import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
 import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.AcknowledgeRequest;
+import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.ReceivedMessage;
-import com.google.pubsub.v1.SubscriptionName;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,7 @@ import java.util.concurrent.Executor;
 /** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
 
-  private final SubscriptionName subscriptionName;
+  private final ProjectSubscriptionName subscriptionName;
 
   private final MessageReceiver receiver;
 
@@ -59,7 +59,7 @@ public class SubscriberSnippets {
   private final Executor executor;
 
   public SubscriberSnippets(
-      SubscriptionName subscriptionName,
+      ProjectSubscriptionName subscriptionName,
       MessageReceiver receiver,
       ApiFuture<Void> done,
       Executor executor) {
@@ -84,8 +84,19 @@ public class SubscriberSnippets {
     // Wait for a stop signal.
     // In a server, this might be a signal to stop serving.
     // In this example, the signal is just a dummy Future.
+    //
+    // By default, Subscriber uses daemon threads (see
+    // https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html).
+    // Consequently, once other threads have terminated, Subscriber will not stop the JVM from
+    // exiting.
+    // If the Subscriber should simply run forever, either use the setExecutorProvider method in
+    // Subscriber.Builder
+    // to use non-daemon threads or run
+    //   for (;;) {
+    //     Thread.sleep(Long.MAX_VALUE);
+    //   }
+    // at the end of main() to previent the main thread from exiting.
     done.get();
-
     subscriber.stopAsync().awaitTerminated();
   }
 
@@ -94,7 +105,7 @@ public class SubscriberSnippets {
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
 
-    SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
+    ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(projectId, subscriptionId);
     // Instantiate an asynchronous message receiver
     MessageReceiver receiver =
         new MessageReceiver() {
@@ -180,13 +191,13 @@ public class SubscriberSnippets {
   static List<ReceivedMessage> createSubscriberWithSyncPull(
       String projectId, String subscriptionId, int numOfMessages) throws Exception {
     // [START subscriber_sync_pull]
-    SubscriptionAdminSettings subscriptionAdminSettings =
-        SubscriptionAdminSettings.newBuilder().build();
-    try (SubscriberStub subscriber = GrpcSubscriberStub.create(subscriptionAdminSettings)) {
+    SubscriberStubSettings subscriberStubSettings =
+        SubscriberStubSettings.newBuilder().build();
+    try (SubscriberStub subscriber = GrpcSubscriberStub.create(subscriberStubSettings)) {
       // String projectId = "my-project-id";
       // String subscriptionId = "my-subscription-id";
       // int numOfMessages = 10;   // max number of messages to be pulled
-      String subscriptionName = SubscriptionName.of(projectId, subscriptionId).toString();
+      String subscriptionName = ProjectSubscriptionName.format(projectId, subscriptionId);
       PullRequest pullRequest =
           PullRequest.newBuilder()
               .setMaxMessages(numOfMessages)

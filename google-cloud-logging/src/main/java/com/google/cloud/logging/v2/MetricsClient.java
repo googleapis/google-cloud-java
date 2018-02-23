@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,23 +15,30 @@
  */
 package com.google.cloud.logging.v2;
 
-import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.MetricsServiceV2Stub;
+import com.google.cloud.logging.v2.stub.MetricsServiceV2StubSettings;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.LogMetric;
-import com.google.logging.v2.MetricNameOneof;
-import com.google.logging.v2.ParentNameOneof;
+import com.google.logging.v2.MetricName;
+import com.google.logging.v2.ParentName;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -45,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (MetricsClient metricsClient = MetricsClient.create()) {
- *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+ *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
  *   LogMetric response = metricsClient.getLogMetric(metricName);
  * }
  * </code>
@@ -135,7 +142,7 @@ public class MetricsClient implements BackgroundResource {
    */
   protected MetricsClient(MetricsSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((MetricsServiceV2StubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -161,7 +168,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   for (LogMetric element : metricsClient.listLogMetrics(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -172,9 +179,11 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogMetricsPagedResponse listLogMetrics(ParentNameOneof parent) {
+  public final ListLogMetricsPagedResponse listLogMetrics(ParentName parent) {
     ListLogMetricsRequest request =
-        ListLogMetricsRequest.newBuilder().setParentWithParentNameOneof(parent).build();
+        ListLogMetricsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listLogMetrics(request);
   }
 
@@ -186,9 +195,9 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (LogMetric element : metricsClient.listLogMetrics(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -211,9 +220,9 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListLogMetricsPagedResponse&gt; future = metricsClient.listLogMetricsPagedCallable().futureCall(request);
    *   // Do something
@@ -236,9 +245,9 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListLogMetricsResponse response = metricsClient.listLogMetricsCallable().call(request);
@@ -268,7 +277,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   LogMetric response = metricsClient.getLogMetric(metricName);
    * }
    * </code></pre>
@@ -277,10 +286,12 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric getLogMetric(MetricNameOneof metricName) {
+  public final LogMetric getLogMetric(MetricName metricName) {
 
     GetLogMetricRequest request =
-        GetLogMetricRequest.newBuilder().setMetricNameWithMetricNameOneof(metricName).build();
+        GetLogMetricRequest.newBuilder()
+            .setMetricName(metricName == null ? null : metricName.toString())
+            .build();
     return getLogMetric(request);
   }
 
@@ -292,9 +303,9 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .build();
    *   LogMetric response = metricsClient.getLogMetric(request);
    * }
@@ -315,9 +326,9 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .build();
    *   ApiFuture&lt;LogMetric&gt; future = metricsClient.getLogMetricCallable().futureCall(request);
    *   // Do something
@@ -337,7 +348,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   LogMetric response = metricsClient.createLogMetric(parent, metric);
    * }
@@ -349,11 +360,11 @@ public class MetricsClient implements BackgroundResource {
    * @param metric The new logs-based metric, which must not have an identifier that already exists.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric createLogMetric(ParentNameOneof parent, LogMetric metric) {
+  public final LogMetric createLogMetric(ParentName parent, LogMetric metric) {
 
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder()
-            .setParentWithParentNameOneof(parent)
+            .setParent(parent == null ? null : parent.toString())
             .setMetric(metric)
             .build();
     return createLogMetric(request);
@@ -367,10 +378,10 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .setMetric(metric)
    *     .build();
    *   LogMetric response = metricsClient.createLogMetric(request);
@@ -392,10 +403,10 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .setMetric(metric)
    *     .build();
    *   ApiFuture&lt;LogMetric&gt; future = metricsClient.createLogMetricCallable().futureCall(request);
@@ -416,7 +427,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   LogMetric response = metricsClient.updateLogMetric(metricName, metric);
    * }
@@ -430,11 +441,11 @@ public class MetricsClient implements BackgroundResource {
    * @param metric The updated metric.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogMetric updateLogMetric(MetricNameOneof metricName, LogMetric metric) {
+  public final LogMetric updateLogMetric(MetricName metricName, LogMetric metric) {
 
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder()
-            .setMetricNameWithMetricNameOneof(metricName)
+            .setMetricName(metricName == null ? null : metricName.toString())
             .setMetric(metric)
             .build();
     return updateLogMetric(request);
@@ -448,10 +459,10 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .setMetric(metric)
    *     .build();
    *   LogMetric response = metricsClient.updateLogMetric(request);
@@ -473,10 +484,10 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .setMetric(metric)
    *     .build();
    *   ApiFuture&lt;LogMetric&gt; future = metricsClient.updateLogMetricCallable().futureCall(request);
@@ -497,7 +508,7 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   metricsClient.deleteLogMetric(metricName);
    * }
    * </code></pre>
@@ -506,10 +517,12 @@ public class MetricsClient implements BackgroundResource {
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLogMetric(MetricNameOneof metricName) {
+  public final void deleteLogMetric(MetricName metricName) {
 
     DeleteLogMetricRequest request =
-        DeleteLogMetricRequest.newBuilder().setMetricNameWithMetricNameOneof(metricName).build();
+        DeleteLogMetricRequest.newBuilder()
+            .setMetricName(metricName == null ? null : metricName.toString())
+            .build();
     deleteLogMetric(request);
   }
 
@@ -521,9 +534,9 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .build();
    *   metricsClient.deleteLogMetric(request);
    * }
@@ -544,9 +557,9 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (MetricsClient metricsClient = MetricsClient.create()) {
-   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.of("[PROJECT]", "[METRIC]"));
+   *   MetricName metricName = ProjectMetricName.of("[PROJECT]", "[METRIC]");
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-   *     .setMetricNameWithMetricNameOneof(metricName)
+   *     .setMetricName(metricName.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = metricsClient.deleteLogMetricCallable().futureCall(request);
    *   // Do something
@@ -586,5 +599,79 @@ public class MetricsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListLogMetricsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric, ListLogMetricsPage,
+          ListLogMetricsFixedSizeCollection> {
+
+    public static ApiFuture<ListLogMetricsPagedResponse> createAsync(
+        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        ApiFuture<ListLogMetricsResponse> futureResponse) {
+      ApiFuture<ListLogMetricsPage> futurePage =
+          ListLogMetricsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListLogMetricsPage, ListLogMetricsPagedResponse>() {
+            @Override
+            public ListLogMetricsPagedResponse apply(ListLogMetricsPage input) {
+              return new ListLogMetricsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListLogMetricsPagedResponse(ListLogMetricsPage page) {
+      super(page, ListLogMetricsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLogMetricsPage
+      extends AbstractPage<
+          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric, ListLogMetricsPage> {
+
+    private ListLogMetricsPage(
+        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        ListLogMetricsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLogMetricsPage createEmptyPage() {
+      return new ListLogMetricsPage(null, null);
+    }
+
+    @Override
+    protected ListLogMetricsPage createPage(
+        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        ListLogMetricsResponse response) {
+      return new ListLogMetricsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLogMetricsPage> createPageAsync(
+        PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> context,
+        ApiFuture<ListLogMetricsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLogMetricsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric, ListLogMetricsPage,
+          ListLogMetricsFixedSizeCollection> {
+
+    private ListLogMetricsFixedSizeCollection(List<ListLogMetricsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLogMetricsFixedSizeCollection createEmptyCollection() {
+      return new ListLogMetricsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLogMetricsFixedSizeCollection createCollection(
+        List<ListLogMetricsPage> pages, int collectionSize) {
+      return new ListLogMetricsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

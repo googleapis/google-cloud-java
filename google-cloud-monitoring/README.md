@@ -3,7 +3,7 @@ Google Cloud Java Client for Stackdriver Monitoring
 
 Java idiomatic client for [Stackdriver Monitoring][stackdriver-monitoring].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>0.32.0-beta</version>
+  <version>0.35.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-monitoring:0.32.0-beta'
+compile 'com.google.cloud:google-cloud-monitoring:0.35.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "0.32.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "0.35.0-beta"
 ```
 
 Authentication

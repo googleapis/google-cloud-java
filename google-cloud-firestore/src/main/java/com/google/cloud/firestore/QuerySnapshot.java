@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,18 +30,18 @@ import org.threeten.bp.Instant;
  * A QuerySnapshot contains the results of a query. It can contain zero or more DocumentSnapshot
  * objects.
  */
-public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
+public final class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
 
   private final Query query;
   private final DocumentSet documentSet;
-  @Nullable private volatile List<DocumentSnapshot> documentSnapshots;
+  @Nullable private volatile List<QueryDocumentSnapshot> documentSnapshots;
   private final Instant readTime;
   private final List<DocumentChange> documentChanges;
 
   QuerySnapshot(
       Query query,
       Instant readTime,
-      List<DocumentSnapshot> results,
+      List<QueryDocumentSnapshot> results,
       List<DocumentChange> documentChanges) {
     this.query = query;
     this.documentSet = null;
@@ -84,7 +84,7 @@ public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
    * @return The list of documents.
    */
   @Nonnull
-  public List<DocumentSnapshot> getDocuments() {
+  public List<QueryDocumentSnapshot> getDocuments() {
     if (documentSnapshots == null) {
       Preconditions.checkState(documentSet != null);
       synchronized (documentSet) {
@@ -120,7 +120,7 @@ public final class QuerySnapshot implements Iterable<DocumentSnapshot> {
 
   @Override
   @Nonnull
-  public Iterator<DocumentSnapshot> iterator() {
+  public Iterator<QueryDocumentSnapshot> iterator() {
     return getDocuments().iterator();
   }
 

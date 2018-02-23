@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,9 @@ import javax.annotation.Nullable;
  * @see Firestore#runTransaction(Function)
  */
 public final class Transaction extends UpdateBuilder<Transaction> {
+
+  private static final String READ_BEFORE_WRITE_ERROR_MSG =
+      "Firestore transactions require all reads to be executed before all writes";
 
   /**
    * User callback that takes a Firestore Transaction
@@ -121,14 +124,14 @@ public final class Transaction extends UpdateBuilder<Transaction> {
   }
 
   /**
-   * Reads the document referred to by the provided DocumentReference.
+   * Reads the document referred to by the provided DocumentReference. Holds a pessimistic lock on
+   * the returned document.
    *
    * @return The contents of the Document at this DocumentReference.
    */
   @Nonnull
   public ApiFuture<DocumentSnapshot> get(@Nonnull DocumentReference documentRef) {
-    Preconditions.checkState(
-        isEmpty(), "Firestore transactions require all reads to be executed before all writes");
+    Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
 
     return ApiFutures.transform(
         firestore.getAll(new DocumentReference[] {documentRef}, transactionId),
@@ -141,14 +144,27 @@ public final class Transaction extends UpdateBuilder<Transaction> {
   }
 
   /**
-   * Returns the result set from the provided query.
+   * Retrieves multiple documents from Firestore. Holds a pessimistic lock on all returned
+   * documents.
+   *
+   * @param documentReferences List of Document References to fetch.
+   */
+  @Nonnull
+  public ApiFuture<List<DocumentSnapshot>> getAll(final DocumentReference... documentReferences) {
+    Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
+
+    return firestore.getAll(documentReferences, transactionId);
+  }
+
+  /**
+   * Returns the result set from the provided query. Holds a pessimistic lock on all returned
+   * documents.
    *
    * @return The contents of the Document at this DocumentReference.
    */
   @Nonnull
   public ApiFuture<QuerySnapshot> get(@Nonnull Query query) {
-    Preconditions.checkState(
-        isEmpty(), "Firestore transactions require all reads to be executed before all writes");
+    Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
 
     return query.get(transactionId);
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,8 +104,9 @@ public abstract class BaseWriteChannel<
 
   @Override
   public final void setChunkSize(int chunkSize) {
-    chunkSize = (chunkSize / getMinChunkSize()) * getMinChunkSize();
-    this.chunkSize = Math.max(getMinChunkSize(), chunkSize);
+    int minSize = getMinChunkSize();
+
+    this.chunkSize = Math.max(minSize, (chunkSize + minSize - 1) / minSize * minSize);
   }
 
   @InternalApi("This class should only be extended within google-cloud-java")
@@ -173,7 +174,6 @@ public abstract class BaseWriteChannel<
   public RestorableState<WriteChannel> capture() {
     byte[] bufferToSave = null;
     if (isOpen) {
-      flush();
       bufferToSave = Arrays.copyOf(buffer, limit);
     }
     return stateBuilder()

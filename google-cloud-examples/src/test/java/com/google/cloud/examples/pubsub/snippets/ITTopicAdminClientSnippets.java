@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,33 +16,34 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
-import com.google.cloud.pubsub.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
+import com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
 import com.google.common.collect.Iterables;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Subscription;
-import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
-import com.google.pubsub.v1.TopicName;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class ITTopicAdminClientSnippets {
 
@@ -141,7 +142,7 @@ public class ITTopicAdminClientSnippets {
     String topicName = topics[0];
     Topic topicAdded = topicAdminClientSnippets.createTopic(topicName);
     assertNotNull(topicAdded);
-    TopicName formattedName = topicAdminClientSnippets.deleteTopic(topicName);
+    ProjectTopicName formattedName = topicAdminClientSnippets.deleteTopic(topicName);
     assertNotNull(formattedName);
     topicAdminClientSnippets.getTopic(topicName);
   }
@@ -170,8 +171,8 @@ public class ITTopicAdminClientSnippets {
   private String createSubscription(String topic, String subscriptionName) throws Exception {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       Subscription subscription = subscriptionAdminClient.createSubscription(
-          SubscriptionName.of(projectId, subscriptionName),
-          TopicName.of(projectId, topic), PushConfig.getDefaultInstance(), 0);
+          ProjectSubscriptionName.of(projectId, subscriptionName),
+          ProjectTopicName.of(projectId, topic), PushConfig.getDefaultInstance(), 0);
       return subscription.getName();
     }
   }

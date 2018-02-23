@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,12 +23,10 @@ import java.nio.channels.WritableByteChannel;
  * A channel for writing data to Google Cloud services.
  *
  * <p>Implementations of this class may further buffer data internally to reduce remote calls.
- * Written data will only be visible after calling {@link #close()}. This interface implements
+ * Written data might not be visible until calling {@link #close()}. This interface implements
  * {@link Restorable} to allow saving the writer's state to continue writing afterwards.
- * </p>
  */
 public interface WriteChannel extends WritableByteChannel, Closeable, Restorable<WriteChannel> {
-
 
   /**
    * Sets the minimum size that will be written by a single RPC.

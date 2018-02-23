@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,12 +20,13 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
+import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -64,6 +65,8 @@ public class TableInfo implements Serializable {
   private final Long expirationTime;
   private final Long lastModifiedTime;
   private final TableDefinition definition;
+  private final EncryptionConfiguration encryptionConfiguration;
+  private final Labels labels;
 
   /**
    * A builder for {@code TableInfo} objects.
@@ -99,7 +102,6 @@ public class TableInfo implements Serializable {
 
     abstract Builder setSelfLink(String selfLink);
 
-
     /**
      * Sets the table identity.
      */
@@ -114,9 +116,24 @@ public class TableInfo implements Serializable {
     public abstract Builder setDefinition(TableDefinition definition);
 
     /**
+     * Sets the labels applied to this table.
+     *
+     * <p>Unstable, because labels are <a
+     * href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables">experimental</a>.
+     *
+     * <p>When used with {@link BigQuery#update(TableInfo, TableOption...)}, setting {@code labels}
+     * to {@code null} removes all labels; otherwise all keys that are mapped to {@code null} values
+     * are removed and other keys are updated to their respective values.
+     */
+    @BetaApi
+    public abstract Builder setLabels(Map<String, String> labels);
+
+    /**
      * Creates a {@code TableInfo} object.
      */
     public abstract TableInfo build();
+
+    public abstract Builder setEncryptionConfiguration(EncryptionConfiguration configuration);
   }
 
   static class BuilderImpl extends Builder {
@@ -131,6 +148,8 @@ public class TableInfo implements Serializable {
     private Long expirationTime;
     private Long lastModifiedTime;
     private TableDefinition definition;
+    private EncryptionConfiguration encryptionConfiguration;
+    private Labels labels = Labels.ZERO;
 
     BuilderImpl() {}
 
@@ -145,6 +164,8 @@ public class TableInfo implements Serializable {
       this.expirationTime = tableInfo.expirationTime;
       this.lastModifiedTime = tableInfo.lastModifiedTime;
       this.definition = tableInfo.definition;
+      this.encryptionConfiguration = tableInfo.encryptionConfiguration;
+      this.labels = tableInfo.labels;
     }
 
     BuilderImpl(Table tablePb) {
@@ -160,6 +181,11 @@ public class TableInfo implements Serializable {
       this.generatedId = tablePb.getId();
       this.selfLink = tablePb.getSelfLink();
       this.definition = TableDefinition.fromPb(tablePb);
+      if (tablePb.getEncryptionConfiguration() != null) {
+        this.encryptionConfiguration =
+            new EncryptionConfiguration.Builder(tablePb.getEncryptionConfiguration()).build();
+      }
+      this.labels = Labels.fromPb(tablePb.getLabels());
     }
 
     @Override
@@ -227,6 +253,20 @@ public class TableInfo implements Serializable {
       return this;
     }
 
+
+    @Override
+    public Builder setEncryptionConfiguration(EncryptionConfiguration configuration) {
+      this.encryptionConfiguration = configuration;
+      return this;
+    }
+
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = Labels.fromUser(labels);
+      return this;
+    }
+
     @Override
     public TableInfo build() {
       return new TableInfo(this);
@@ -244,6 +284,8 @@ public class TableInfo implements Serializable {
     this.expirationTime = builder.expirationTime;
     this.lastModifiedTime = builder.lastModifiedTime;
     this.definition = builder.definition;
+    this.encryptionConfiguration = builder.encryptionConfiguration;
+    labels = builder.labels;
   }
 
 
@@ -321,12 +363,27 @@ public class TableInfo implements Serializable {
   }
 
 
+  public EncryptionConfiguration getEncryptionConfiguration() {
+    return encryptionConfiguration;
+  }
+
   /**
    * Returns the table definition.
    */
   @SuppressWarnings("unchecked")
   public <T extends TableDefinition> T getDefinition() {
     return (T) definition;
+  }
+
+  /**
+   * Return a map for labels applied to the table.
+   *
+   * <p>Unstable, because labels are <a
+   * href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables">experimental</a>.
+   */
+  @BetaApi
+  public Map<String, String> getLabels() {
+    return labels.userMap();
   }
 
   /**
@@ -349,6 +406,8 @@ public class TableInfo implements Serializable {
         .add("creationTime", creationTime)
         .add("lastModifiedTime", lastModifiedTime)
         .add("definition", definition)
+        .add("encryptionConfiguration", encryptionConfiguration)
+        .add("labels", labels)
         .toString();
   }
 
@@ -403,6 +462,10 @@ public class TableInfo implements Serializable {
     tablePb.setFriendlyName(friendlyName);
     tablePb.setId(generatedId);
     tablePb.setSelfLink(selfLink);
+    if (encryptionConfiguration != null) {
+      tablePb.setEncryptionConfiguration(encryptionConfiguration.toPb());
+    }
+    tablePb.setLabels(labels.toPb());
     return tablePb;
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.it;
 
 import static com.google.cloud.bigquery.JobStatus.State.DONE;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -33,8 +34,6 @@ import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
-import com.google.cloud.bigquery.BigQuery.QueryOption;
-import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryError;
@@ -52,6 +51,7 @@ import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
@@ -59,7 +59,6 @@ import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
-import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -67,6 +66,7 @@ import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.TimePartitioning;
 import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.cloud.bigquery.ViewDefinition;
@@ -85,6 +85,8 @@ import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
@@ -311,17 +313,34 @@ public class ITBigQueryTest {
 
   @Test
   public void testUpdateDataset() {
-    Dataset dataset = bigquery.create(DatasetInfo.newBuilder(OTHER_DATASET)
-        .setDescription("Some Description")
-        .build());
-    assertNotNull(dataset);
-    assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
-    assertEquals(OTHER_DATASET, dataset.getDatasetId().getDataset());
-    assertEquals("Some Description", dataset.getDescription());
+    Dataset dataset =
+        bigquery.create(
+            DatasetInfo.newBuilder(OTHER_DATASET)
+                .setDescription("Some Description")
+                .setLabels(Collections.singletonMap("a", "b"))
+                .build());
+    assertThat(dataset).isNotNull();
+    assertThat(dataset.getDatasetId().getProject()).isEqualTo(bigquery.getOptions().getProjectId());
+    assertThat(dataset.getDatasetId().getDataset()).isEqualTo(OTHER_DATASET);
+    assertThat(dataset.getDescription()).isEqualTo("Some Description");
+    assertThat(dataset.getLabels()).containsExactly("a", "b");
+
+    Map<String, String> updateLabels = new HashMap<>();
+    updateLabels.put("x", "y");
+    updateLabels.put("a", null);
     Dataset updatedDataset =
-        bigquery.update(dataset.toBuilder().setDescription("Updated Description").build());
-    assertEquals("Updated Description", updatedDataset.getDescription());
-    assertTrue(dataset.delete());
+        bigquery.update(
+            dataset
+                .toBuilder()
+                .setDescription("Updated Description")
+                .setLabels(updateLabels)
+                .build());
+    assertThat(updatedDataset.getDescription()).isEqualTo("Updated Description");
+    assertThat(updatedDataset.getLabels()).containsExactly("x", "y");
+
+    updatedDataset = bigquery.update(updatedDataset.toBuilder().setLabels(null).build());
+    assertThat(updatedDataset.getLabels()).isEmpty();
+    assertThat(dataset.delete()).isTrue();
   }
 
   @Test
@@ -428,11 +447,10 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResponse response = bigquery.query(
-        config, QueryOption.of(QueryResultsOption.maxWaitTime(60000L)));
+    TableResult result = bigquery.query(config);
     long integerValue = 0;
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -462,8 +480,12 @@ public class ITBigQueryTest {
     String tableName = "test_create_view_table";
     TableId tableId = TableId.of(DATASET, tableName);
     ViewDefinition viewDefinition =
-        ViewDefinition.of("SELECT TimestampField, StringField, BooleanField FROM " + DATASET + "."
-            + TABLE_ID.getTable());
+        ViewDefinition.newBuilder(
+                String.format(
+                    "SELECT TimestampField, StringField, BooleanField FROM %s.%s",
+                    DATASET, TABLE_ID.getTable()))
+            .setUseLegacySql(true)
+            .build();
     TableInfo tableInfo = TableInfo.of(tableId, viewDefinition);
     Table createdTable = bigquery.create(tableInfo);
     assertNotNull(createdTable);
@@ -488,12 +510,9 @@ public class ITBigQueryTest {
         .setDefaultDataset(DatasetId.of(DATASET))
         .setUseLegacySql(true)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
+    TableResult result = bigquery.query(config);
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -535,16 +554,31 @@ public class ITBigQueryTest {
   public void testUpdateTable() {
     String tableName = "test_update_table";
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
-    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
+    TableInfo tableInfo =
+        TableInfo.newBuilder(TableId.of(DATASET, tableName), tableDefinition)
+            .setDescription("Some Description")
+            .setLabels(Collections.singletonMap("a", "b"))
+            .build();
     Table createdTable = bigquery.create(tableInfo);
-    assertNotNull(createdTable);
+    assertThat(createdTable.getDescription()).isEqualTo("Some Description");
+    assertThat(createdTable.getLabels()).containsExactly("a", "b");
+
+    Map<String, String> updateLabels = new HashMap<>();
+    updateLabels.put("x", "y");
+    updateLabels.put("a", null);
     Table updatedTable =
-        bigquery.update(tableInfo.toBuilder().setDescription("newDescription").build());
-    assertEquals(DATASET, updatedTable.getTableId().getDataset());
-    assertEquals(tableName, updatedTable.getTableId().getTable());
-    assertEquals(TABLE_SCHEMA, updatedTable.getDefinition().getSchema());
-    assertEquals("newDescription", updatedTable.getDescription());
-    assertTrue(updatedTable.delete());
+        bigquery.update(
+            createdTable
+                .toBuilder()
+                .setDescription("Updated Description")
+                .setLabels(updateLabels)
+                .build());
+    assertThat(updatedTable.getDescription()).isEqualTo("Updated Description");
+    assertThat(updatedTable.getLabels()).containsExactly("x", "y");
+
+    updatedTable = bigquery.update(updatedTable.toBuilder().setLabels(null).build());
+    assertThat(updatedTable.getLabels()).isEmpty();
+    assertThat(createdTable.delete()).isTrue();
   }
 
   @Test
@@ -778,13 +812,12 @@ public class ITBigQueryTest {
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query)
         .setDefaultDataset(DatasetId.of(DATASET))
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
-    assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+
+    TableResult result = job.getQueryResults();
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
       assertEquals(timestampCell, row.get("TimestampField"));
       FieldValue stringCell = row.get(1);
@@ -800,8 +833,9 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
-    Job queryJob = bigquery.getJob(response.getJobId());
-    JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+
+    Job job2 = bigquery.getJob(job.getJobId());
+    JobStatistics.QueryStatistics statistics = job2.getStatistics();
     assertNotNull(statistics.getQueryPlan());
   }
 
@@ -830,12 +864,9 @@ public class ITBigQueryTest {
         .addPositionalParameter(int64Parameter)
         .addPositionalParameter(float64Parameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
-    assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
-    assertEquals(2, Iterables.size(response.getResult().getValues()));
+    TableResult result = bigquery.query(config);
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
+    assertEquals(2, Iterables.size(result.getValues()));
   }
 
   @Test
@@ -853,12 +884,9 @@ public class ITBigQueryTest {
         .addNamedParameter("stringParam", stringParameter)
         .addNamedParameter("integerList", intArrayParameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config,
-        QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
-        QueryOption.of(QueryResultsOption.pageSize(1000L)));
-    assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
-    assertEquals(2, Iterables.size(response.getResult().getValues()));
+    TableResult result = bigquery.query(config);
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
+    assertEquals(2, Iterables.size(result.getValues()));
   }
 
   @Test
@@ -870,10 +898,9 @@ public class ITBigQueryTest {
         .setUseLegacySql(false)
         .addNamedParameter("p", bytesParameter)
         .build();
-    QueryResponse response = bigquery.query(
-        config, QueryOption.of(QueryResultsOption.maxWaitTime(60000L)));
+    TableResult result = bigquery.query(config);
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       rowCount++;
       assertEquals(2, row.get(0).getLongValue());
       assertEquals(2, row.get("length").getLongValue());
@@ -1034,11 +1061,10 @@ public class ITBigQueryTest {
     remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.getStatus().getError());
 
-    QueryResponse response = remoteJob.getQueryResults();
-    assertFalse(response.hasErrors());
-    assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
+    TableResult result = remoteJob.getQueryResults();
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
     int rowCount = 0;
-    for (FieldValueList row : response.getResult().getValues()) {
+    for (FieldValueList row : result.getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue booleanCell = row.get(2);

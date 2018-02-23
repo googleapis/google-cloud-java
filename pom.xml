@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.32.1-alpha-SNAPSHOT</version>
+  <version>0.35.1-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -103,8 +103,8 @@
     <tag>HEAD</tag>
   </scm>
   <ciManagement>
-    <system>Travis CI</system>
-    <url>https://travis-ci.org/GoogleCloudPlatform/google-cloud-java</url>
+    <system>Circle CI</system>
+    <url>https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java</url>
   </ciManagement>
   <issueManagement>
     <url>https://github.com/GoogleCloudPlatform/google-cloud-java/issues</url>
@@ -136,7 +136,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud</site.installationModule>
-    <google-cloud-bom.version>0.32.1-alpha-SNAPSHOT</google-cloud-bom.version>
+    <bom.version>0.35.1-alpha-SNAPSHOT</bom.version>
 
     <!-- test dependency versions -->
     <easymock.version>3.4</easymock.version>
@@ -148,7 +148,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>${google-cloud-bom.version}</version>
+        <version>${bom.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
-        <version>2.1.2</version>
+        <version>2.2.0</version>
       </dependency>
       <dependency>
         <groupId>org.easymock</groupId>
@@ -208,6 +208,7 @@
     <module>google-cloud-core</module>
     <module>google-cloud-core-http</module>
     <module>google-cloud-core-grpc</module>
+    <module>google-cloud-dataproc</module>
     <module>google-cloud-datastore</module>
     <module>google-cloud-dlp</module>
     <module>google-cloud-dialogflow</module>
@@ -219,6 +220,7 @@
     <module>google-cloud-logging</module>
     <module>google-cloud-monitoring</module>
     <module>google-cloud-notification</module>
+    <module>google-cloud-os-login</module>
     <module>google-cloud-pubsub</module>
     <module>google-cloud-resourcemanager</module>
     <module>google-cloud-spanner</module>
@@ -229,7 +231,6 @@
     <module>google-cloud-vision</module>
     <module>google-cloud-video-intelligence</module>
 
-    <module>google-cloud-dep-verification</module>
     <module>google-cloud-util</module>
     <module>google-cloud</module>
 
@@ -542,7 +543,7 @@
                   </group>
                   <group>
                     <title>Test helpers packages</title>
-                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.compute.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing:com.google.cloud.spanner.testing:com.google.cloud.storage.contrib.nio.testing</packages>
+                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing:com.google.cloud.spanner.testing:com.google.cloud.storage.contrib.nio.testing</packages>
                   </group>
                   <group>
                     <title>Example packages</title>
@@ -550,38 +551,22 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi*:com.google.cloud.bigquery.spi*:com.google.cloud.compute.spi*:com.google.cloud.datastore.spi*:com.google.cloud.dns.spi*:com.google.cloud.logging.spi*:com.google.cloud.resourcemanager.spi*:com.google.cloud.spanner.spi*:com.google.cloud.storage.spi*:com.google.cloud.translate.spi*</packages>
+                    <packages>com.google.cloud.spi*:com.google.cloud.bigquery.spi*:com.google.cloud.datastore.spi*:com.google.cloud.dns.spi*:com.google.cloud.logging.spi*:com.google.cloud.resourcemanager.spi*:com.google.cloud.spanner.spi*:com.google.cloud.storage.spi*:com.google.cloud.translate.spi*</packages>
                   </group>
                   <group>
                     <title>Stub packages</title>
                     <packages>com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub</packages>
+                  </group>
+                  <group>
+                    <title>Deprecated packages</title>
+                    <packages>com.google.cloud.compute.*</packages>
                   </group>
                 </groups>
                 <links>
                   <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
                   <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-iam-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-container-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigquerydatatransfer-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigtable-v2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-bigtable-admin-v2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-error-reporting-v1beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-language-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-language-v1beta2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-logging-v2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-monitoring-v3/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-pubsub-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-dialogflow-v2beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-dlp-v2beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-speech-v1beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-trace-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-trace-v2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-vision-v1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-vision-v1p1beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta1/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1beta2/${generated-proto-beta.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/proto-google-cloud-videointelligence-v1/${generated-proto-beta.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/all/latest/apidocs/</link>
                 </links>
               </configuration>
             </plugin>
@@ -652,6 +637,34 @@
                 <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
               </links>
             </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!-- This profile is meant to be used by client developers, enabled by default in
+      ~/.m2/settings.xml using `<activeProfiles>` -->
+      <id>veneer-dev</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>googleformatter-maven-plugin</artifactId>
+            <version>1.5.1</version>
+            <executions>
+              <execution>
+                <id>reformat-sources</id>
+                <phase>process-sources</phase>
+                <goals>
+                  <goal>format</goal>
+                </goals>
+                <configuration>
+                  <style>GOOGLE</style>
+                  <filterModified>true</filterModified>
+                </configuration>
+              </execution>
+            </executions>
           </plugin>
         </plugins>
       </build>

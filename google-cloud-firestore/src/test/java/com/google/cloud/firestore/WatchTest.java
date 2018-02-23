@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_MAP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
 import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATED_FIELD_MAP;
 import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATED_FIELD_PROTO;
+import static com.google.cloud.firestore.LocalFirestoreHelper.map;
 import static com.google.cloud.firestore.LocalFirestoreHelper.string;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -35,7 +36,6 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.cloud.firestore.Query.Direction;
 import com.google.cloud.firestore.WatchTest.SnapshotDocument.ChangeType;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.DocumentChange;
 import com.google.firestore.v1beta1.DocumentDelete;
@@ -437,12 +437,12 @@ public class WatchTest {
 
     ListenResponse[] documents =
         new ListenResponse[] {
-          doc("coll/doc1", ImmutableMap.of("foo", string("a"), "bar", string("b"))),
-          doc("coll/doc2", ImmutableMap.of("foo", string("a"), "bar", string("a"))),
-          doc("coll/doc3", ImmutableMap.of("foo", string("b"), "bar", string("b"))),
-          doc("coll/doc5", ImmutableMap.of("foo", string("b"), "bar", string("a"))),
+          doc("coll/doc1", map("foo", string("a"), "bar", string("b"))),
+          doc("coll/doc2", map("foo", string("a"), "bar", string("a"))),
+          doc("coll/doc3", map("foo", string("b"), "bar", string("b"))),
+          doc("coll/doc5", map("foo", string("b"), "bar", string("a"))),
           // doc4 sorts after doc5 because __name__ uses the last specified sort direction.
-          doc("coll/doc4", ImmutableMap.of("foo", string("b"), "bar", string("a")))
+          doc("coll/doc4", map("foo", string("b"), "bar", string("a")))
         };
 
     awaitAddTarget();
@@ -682,7 +682,7 @@ public class WatchTest {
     QuerySnapshot querySnapshot = querySnapshots.take();
 
     // List of documents to use a base to replay all changes. Verifies oldIndex and newIndex.
-    List<DocumentSnapshot> updatedDocuments = new ArrayList<>();
+    List<QueryDocumentSnapshot> updatedDocuments = new ArrayList<>();
 
     if (lastSnapshot != null) {
       updatedDocuments.addAll(lastSnapshot.getDocuments());
@@ -691,7 +691,7 @@ public class WatchTest {
     // List of document names in the expected sorted order.
     List<String> expectedOrder = new ArrayList<>();
 
-    Iterator<DocumentSnapshot> snapshotIterator = querySnapshot.getDocuments().iterator();
+    Iterator<QueryDocumentSnapshot> snapshotIterator = querySnapshot.getDocuments().iterator();
 
     for (SnapshotDocument expected : documents) {
       if (expected.type != ChangeType.REMOVED) {
@@ -730,7 +730,8 @@ public class WatchTest {
     verifyOrder(expectedOrder, updatedDocuments);
   }
 
-  private void verifyOrder(List<String> expectedOrder, List<DocumentSnapshot> updatedDocuments) {
+  private void verifyOrder(
+      List<String> expectedOrder, List<QueryDocumentSnapshot> updatedDocuments) {
     assertEquals(expectedOrder.size(), updatedDocuments.size());
 
     for (int i = 0; i < expectedOrder.size(); ++i) {

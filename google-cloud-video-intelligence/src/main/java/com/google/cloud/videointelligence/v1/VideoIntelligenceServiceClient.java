@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,6 +21,7 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.videointelligence.v1.stub.VideoIntelligenceServiceStub;
+import com.google.cloud.videointelligence.v1.stub.VideoIntelligenceServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import java.io.IOException;
@@ -136,7 +137,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
   protected VideoIntelligenceServiceClient(VideoIntelligenceServiceSettings settings)
       throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((VideoIntelligenceServiceStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
@@ -212,7 +213,13 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder().build();
+   *   String inputUri = "gs://demomaker/cat.mp4";
+   *   Feature featuresElement = Feature.LABEL_DETECTION;
+   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+   *     .setInputUri(inputUri)
+   *     .addAllFeatures(features)
+   *     .build();
    *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(request).get();
    * }
    * </code></pre>
@@ -236,7 +243,13 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder().build();
+   *   String inputUri = "gs://demomaker/cat.mp4";
+   *   Feature featuresElement = Feature.LABEL_DETECTION;
+   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+   *     .setInputUri(inputUri)
+   *     .addAllFeatures(features)
+   *     .build();
    *   OperationFuture&lt;Operation&gt; future = videoIntelligenceServiceClient.annotateVideoOperationCallable().futureCall(request);
    *   // Do something
    *   AnnotateVideoResponse response = future.get();
@@ -259,7 +272,13 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder().build();
+   *   String inputUri = "gs://demomaker/cat.mp4";
+   *   Feature featuresElement = Feature.LABEL_DETECTION;
+   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+   *     .setInputUri(inputUri)
+   *     .addAllFeatures(features)
+   *     .build();
    *   ApiFuture&lt;Operation&gt; future = videoIntelligenceServiceClient.annotateVideoCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();

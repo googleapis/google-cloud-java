@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.dlp.v2beta1.DlpServiceSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
@@ -162,12 +161,13 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final UnaryCallable<ListRootCategoriesRequest, ListRootCategoriesResponse>
       listRootCategoriesCallable;
 
-  public static final GrpcDlpServiceStub create(DlpServiceSettings settings) throws IOException {
+  public static final GrpcDlpServiceStub create(DlpServiceStubSettings settings)
+      throws IOException {
     return new GrpcDlpServiceStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcDlpServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcDlpServiceStub(DlpServiceSettings.newBuilder().build(), clientContext);
+    return new GrpcDlpServiceStub(DlpServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -175,7 +175,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcDlpServiceStub(DlpServiceSettings settings, ClientContext clientContext)
+  protected GrpcDlpServiceStub(DlpServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 

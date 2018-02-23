@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@ public interface LoadConfiguration {
      */
     Builder setDestinationTable(TableId destinationTable);
 
+
+    Builder setDestinationEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration);
 
     /**
      * Sets whether the job is allowed to create new tables.
@@ -125,6 +127,8 @@ public interface LoadConfiguration {
    * Returns the destination table to load the data into.
    */
   TableId getDestinationTable();
+
+  EncryptionConfiguration getDestinationEncryptionConfiguration();
 
 
   /**

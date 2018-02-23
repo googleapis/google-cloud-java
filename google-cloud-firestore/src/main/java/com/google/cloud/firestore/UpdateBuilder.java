@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,8 @@ package com.google.cloud.firestore;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.UnmodifiableIterator;
 import com.google.firestore.v1beta1.CommitRequest;
 import com.google.firestore.v1beta1.CommitResponse;
 import com.google.firestore.v1beta1.Write;
@@ -43,12 +42,19 @@ import javax.annotation.Nullable;
  */
 abstract class UpdateBuilder<T extends UpdateBuilder> {
 
-  FirestoreImpl firestore;
-  private List<Write> writes;
+  private static class Mutation {
+    Write.Builder document;
+    Write.Builder transform;
+    com.google.firestore.v1beta1.Precondition precondition;
+  }
+
+  final FirestoreImpl firestore;
+  private final List<Mutation> mutations;
+  private boolean committed;
 
   UpdateBuilder(FirestoreImpl firestore) {
     this.firestore = firestore;
-    this.writes = new ArrayList<>();
+    this.mutations = new ArrayList<>();
   }
 
   /**
@@ -107,20 +113,33 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
   private T performCreate(
       @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
     DocumentSnapshot documentSnapshot =
-        DocumentSnapshot.fromObject(firestore, documentReference, fields);
-    Write.Builder write = Write.newBuilder();
-    write.setUpdate(documentSnapshot.toPb());
-    write.getCurrentDocumentBuilder().setExists(false);
-    writes.add(write.build());
-
-    DocumentTransform transform =
+        DocumentSnapshot.fromObject(
+            firestore, documentReference, fields, UserDataConverter.NO_DELETES);
+    DocumentTransform documentTransform =
         DocumentTransform.fromFieldPathMap(
             documentReference, convertToFieldPaths(fields, /* splitOnDots= */ false));
-    if (!transform.isEmpty()) {
-      writes.add(transform.toPb());
+
+    Mutation mutation = addMutation();
+    mutation.precondition = Precondition.exists(false).toPb();
+
+    if (!documentSnapshot.isEmpty() || documentTransform.isEmpty()) {
+      mutation.document = documentSnapshot.toPb();
+    }
+
+    if (!documentTransform.isEmpty()) {
+      mutation.transform = documentTransform.toPb();
     }
 
     return (T) this;
+  }
+
+  /** Adds a new mutation to the batch. */
+  private Mutation addMutation() {
+    Preconditions.checkState(
+        !committed, "Cannot modify a WriteBatch that has already been committed.");
+    Mutation mutation = new Mutation();
+    mutations.add(mutation);
+    return mutation;
   }
 
   /**
@@ -213,32 +232,41 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
     Map<FieldPath, Object> documentData;
 
     if (options.getFieldMask() != null) {
-      documentData = applyFieldMask(fields, options.getFieldMask(), FieldPath.empty());
+      documentData = applyFieldMask(fields, options.getFieldMask());
     } else {
       documentData = convertToFieldPaths(fields, /* splitOnDots= */ false);
     }
 
-    DocumentSnapshot document =
-        DocumentSnapshot.fromObject(firestore, documentReference, expandObject(documentData));
-    Write.Builder write = Write.newBuilder();
-    write.setUpdate(document.toPb());
+    DocumentSnapshot documentSnapshot =
+        DocumentSnapshot.fromObject(
+            firestore, documentReference, expandObject(documentData), options.getEncodingOptions());
+    DocumentMask documentMask = DocumentMask.EMPTY_MASK;
+    DocumentTransform documentTransform =
+        DocumentTransform.fromFieldPathMap(documentReference, documentData);
 
     if (options.isMerge()) {
-      DocumentMask documentMask;
+      Preconditions.checkArgument(!fields.isEmpty(), "Data to merge cannot be empty.");
       if (options.getFieldMask() != null) {
-        documentMask = new DocumentMask(options.getFieldMask());
+        List<FieldPath> fieldMask = new ArrayList<>(options.getFieldMask());
+        fieldMask.removeAll(documentTransform.getFields());
+        documentMask = new DocumentMask(fieldMask);
       } else {
         documentMask = DocumentMask.fromObject(fields);
       }
-      write.setUpdateMask(documentMask.toPb());
     }
 
-    writes.add(write.build());
+    Mutation mutation = addMutation();
 
-    DocumentTransform transform =
-        DocumentTransform.fromFieldPathMap(documentReference, documentData);
-    if (!transform.isEmpty()) {
-      writes.add(transform.toPb());
+    if (!options.isMerge() || !documentSnapshot.isEmpty() || !documentMask.isEmpty()) {
+      mutation.document = documentSnapshot.toPb();
+    }
+
+    if (!documentMask.isEmpty()) {
+      mutation.document.setUpdateMask(documentMask.toPb());
+    }
+
+    if (!documentTransform.isEmpty()) {
+      mutation.transform = documentTransform.toPb();
     }
 
     return (T) this;
@@ -246,16 +274,40 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   /** Removes all values in 'fields' that are not specified in 'fieldMask'. */
   private Map<FieldPath, Object> applyFieldMask(
+      Map<String, Object> fields, List<FieldPath> fieldMask) {
+    List<FieldPath> remainingFields = new ArrayList<>(fieldMask);
+    Map<FieldPath, Object> filteredData =
+        applyFieldMask(fields, remainingFields, FieldPath.empty());
+
+    if (!remainingFields.isEmpty()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Field masks contains invalid path. No data exist at field '%s'.",
+              remainingFields.get(0)));
+    }
+
+    return filteredData;
+  }
+
+  /**
+   * Strips all values in 'fields' that are not specified in 'fieldMask'. Modifies 'fieldMask'
+   * inline and removes all matched fields.
+   */
+  private Map<FieldPath, Object> applyFieldMask(
       Map<String, Object> fields, List<FieldPath> fieldMask, FieldPath root) {
     Map<FieldPath, Object> filteredMap = new HashMap<>();
 
     for (Entry<String, Object> entry : fields.entrySet()) {
       FieldPath currentField = root.append(FieldPath.of(entry.getKey()));
-      if (fieldMask.contains(currentField)) {
+      if (fieldMask.remove(currentField)) {
         filteredMap.put(currentField, entry.getValue());
       } else if (entry.getValue() instanceof Map) {
         filteredMap.putAll(
             applyFieldMask((Map<String, Object>) entry.getValue(), fieldMask, currentField));
+      } else if (entry.getValue() == FieldValue.DELETE_SENTINEL) {
+        throw new IllegalArgumentException(
+            String.format(
+                "Cannot specify FieldValue.delete() for non-merged field '%s'.", currentField));
       }
     }
 
@@ -288,7 +340,10 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
   @Nonnull
   public T update(
       @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
-    return update(documentReference, fields, Precondition.exists(true));
+    return performUpdate(
+        documentReference,
+        convertToFieldPaths(fields, /* splitOnDots= */ true),
+        Precondition.exists(true));
   }
 
   /**
@@ -305,6 +360,8 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull DocumentReference documentReference,
       @Nonnull Map<String, Object> fields,
       Precondition options) {
+    Preconditions.checkArgument(
+        !options.hasExists(), "Precondition 'exists' cannot be specified for update() calls.");
     return performUpdate(
         documentReference, convertToFieldPaths(fields, /* splitOnDots= */ true), options);
   }
@@ -325,7 +382,12 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull String field,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
-    return update(documentReference, Precondition.exists(true), field, value, moreFieldsAndValues);
+    return performUpdate(
+        documentReference,
+        Precondition.exists(true),
+        FieldPath.fromDotSeparatedString(field),
+        value,
+        moreFieldsAndValues);
   }
 
   /**
@@ -344,7 +406,7 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull FieldPath fieldPath,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
-    return update(
+    return performUpdate(
         documentReference, Precondition.exists(true), fieldPath, value, moreFieldsAndValues);
   }
 
@@ -366,7 +428,9 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull String field,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
-    return update(
+    Preconditions.checkArgument(
+        !options.hasExists(), "Precondition 'exists' cannot be specified for update() calls.");
+    return performUpdate(
         documentReference,
         options,
         FieldPath.fromDotSeparatedString(field),
@@ -392,6 +456,17 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull FieldPath fieldPath,
       @Nullable Object value,
       Object... moreFieldsAndValues) {
+    Preconditions.checkArgument(
+        !options.hasExists(), "Precondition 'exists' cannot be specified for update() calls.");
+    return performUpdate(documentReference, options, fieldPath, value, moreFieldsAndValues);
+  }
+
+  private T performUpdate(
+      @Nonnull DocumentReference documentReference,
+      @Nonnull Precondition options,
+      @Nonnull FieldPath fieldPath,
+      @Nullable Object value,
+      Object[] moreFieldsAndValues) {
     Map<FieldPath, Object> fields = new HashMap<>();
     fields.put(fieldPath, value);
 
@@ -401,14 +476,23 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       Object objectPath = moreFieldsAndValues[i];
       Object objectValue = moreFieldsAndValues[i + 1];
 
+      FieldPath currentPath;
+
       if (objectPath instanceof String) {
-        fields.put(FieldPath.fromDotSeparatedString((String) objectPath), objectValue);
+        currentPath = FieldPath.fromDotSeparatedString((String) objectPath);
       } else if (objectPath instanceof FieldPath) {
-        fields.put((FieldPath) objectPath, objectValue);
+        currentPath = (FieldPath) objectPath;
       } else {
         throw new IllegalArgumentException(
             "Field '" + objectPath + "' is not of type String or Field Path.");
       }
+
+      if (fields.containsKey(currentPath)) {
+        throw new IllegalArgumentException(
+            "Field value for field '" + objectPath + "' was specified multiple times.");
+      }
+
+      fields.put(currentPath, objectValue);
     }
 
     return performUpdate(documentReference, fields, options);
@@ -416,22 +500,38 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   private T performUpdate(
       @Nonnull DocumentReference documentReference,
-      @Nonnull Map<FieldPath, Object> fields,
-      Precondition options) {
+      @Nonnull final Map<FieldPath, Object> fields,
+      @Nonnull Precondition precondition) {
+    Preconditions.checkArgument(!fields.isEmpty(), "Data for update() cannot be empty.");
+
     Map<String, Object> deconstructedMap = expandObject(fields);
-    DocumentSnapshot document =
-        DocumentSnapshot.fromObject(firestore, documentReference, deconstructedMap);
-    DocumentMask documentMask = new DocumentMask(fields.keySet());
+    DocumentSnapshot documentSnapshot =
+        DocumentSnapshot.fromObject(
+            firestore,
+            documentReference,
+            deconstructedMap,
+            new EncodingOptions() {
+              @Override
+              public boolean allowDelete(FieldPath fieldPath) {
+                return fields.containsKey(fieldPath);
+              }
+            });
+    List<FieldPath> fieldPaths = new ArrayList<>(fields.keySet());
+    DocumentTransform documentTransform =
+        DocumentTransform.fromFieldPathMap(documentReference, fields);
+    fieldPaths.removeAll(documentTransform.getFields());
+    DocumentMask documentMask = new DocumentMask(fieldPaths);
 
-    Write.Builder write = Write.newBuilder();
-    write.setUpdate(document.toPb());
-    write.setCurrentDocument(options.toPb());
-    write.setUpdateMask(documentMask.toPb());
-    writes.add(write.build());
+    Mutation mutation = addMutation();
+    mutation.precondition = precondition.toPb();
 
-    DocumentTransform transform = DocumentTransform.fromFieldPathMap(documentReference, fields);
-    if (!transform.isEmpty()) {
-      writes.add(transform.toPb());
+    if (!documentSnapshot.isEmpty() || !documentMask.isEmpty()) {
+      mutation.document = documentSnapshot.toPb();
+      mutation.document.setUpdateMask(documentMask.toPb());
+    }
+
+    if (!documentTransform.isEmpty()) {
+      mutation.transform = documentTransform.toPb();
     }
 
     return (T) this;
@@ -463,25 +563,46 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   private T performDelete(
       @Nonnull DocumentReference documentReference, @Nonnull Precondition precondition) {
-    Write.Builder writeBuilder = Write.newBuilder();
-    writeBuilder.setDelete(documentReference.getName());
-    writeBuilder.setCurrentDocument(precondition.toPb());
-    writes.add(writeBuilder.build());
+    Mutation mutation = addMutation();
+    mutation.document = Write.newBuilder().setDelete(documentReference.getName());
+
+    if (!precondition.isEmpty()) {
+      mutation.precondition = precondition.toPb();
+    }
+
     return (T) this;
   }
 
   /** Commit the current batch. */
   ApiFuture<List<WriteResult>> commit(@Nullable ByteString transactionId) {
-    // We create our own copy of this list since we need to access it when processing the response.
-    final ImmutableList<Write> writeRequests = ImmutableList.copyOf(this.writes);
 
-    CommitRequest.Builder request = CommitRequest.newBuilder();
+    final CommitRequest.Builder request = CommitRequest.newBuilder();
     request.setDatabase(firestore.getDatabaseName());
-    request.addAllWrites(writeRequests);
+
+    for (Mutation mutation : mutations) {
+      Preconditions.checkState(
+          mutation.document != null || mutation.transform != null,
+          "Either a write or transform must be set");
+
+      if (mutation.precondition != null) {
+        (mutation.document != null ? mutation.document : mutation.transform)
+            .setCurrentDocument(mutation.precondition);
+      }
+
+      if (mutation.document != null) {
+        request.addWrites(mutation.document);
+      }
+
+      if (mutation.transform != null) {
+        request.addWrites(mutation.transform);
+      }
+    }
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
     }
+
+    committed = true;
 
     ApiFuture<CommitResponse> response =
         firestore.sendRequest(request.build(), firestore.getClient().commitCallable());
@@ -497,29 +618,28 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
             List<WriteResult> result = new ArrayList<>();
 
             Preconditions.checkState(
-                writeRequests.size() == writeResults.size(),
+                request.getWritesCount() == writeResults.size(),
                 "Expected one write result per operation, but got %s results for %s operations.",
                 writeResults.size(),
-                writeRequests.size());
+                request.getWritesCount());
 
-            UnmodifiableIterator<Write> requestIterator = writeRequests.iterator();
+            Iterator<Mutation> mutationIterator = mutations.iterator();
             Iterator<com.google.firestore.v1beta1.WriteResult> responseIterator =
                 writeResults.iterator();
 
-            while (requestIterator.hasNext() && responseIterator.hasNext()) {
-              // Don't return write results for DocumentTransforms, as the fact
-              // that we have to split one write operation into two distinct
-              // write requests is an implementation detail.
-              switch (requestIterator.next().getOperationCase()) {
-                case UPDATE: // Fall through
-                case DELETE:
-                  result.add(
-                      WriteResult.fromProto(
-                          responseIterator.next(), commitResponse.getCommitTime()));
-                  break;
-                default:
-                  break;
+            while (mutationIterator.hasNext()) {
+              Mutation mutation = mutationIterator.next();
+
+              // Don't return both write results for a write that contains a transform, as the fact
+              // that we have to split one write operation into two distinct write requests is an
+              // implementation detail.
+              if (mutation.document != null && mutation.transform != null) {
+                // The document transform is always sent last and produces the latest update time.
+                responseIterator.next();
               }
+
+              result.add(
+                  WriteResult.fromProto(responseIterator.next(), commitResponse.getCommitTime()));
             }
 
             return result;
@@ -529,6 +649,6 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   /** Checks whether any updates have been queued. */
   boolean isEmpty() {
-    return writes.isEmpty();
+    return mutations.isEmpty();
   }
 }

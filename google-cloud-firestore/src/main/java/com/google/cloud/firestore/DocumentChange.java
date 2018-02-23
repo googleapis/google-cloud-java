@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public class DocumentChange {
 
   private final Type type;
 
-  private final DocumentSnapshot document;
+  private final QueryDocumentSnapshot document;
 
   /** The index in the old snapshot, after processing all previous changes. */
   private final int oldIndex;
@@ -46,7 +46,7 @@ public class DocumentChange {
   /** The index in the new snapshot, after processing all previous changes. */
   private final int newIndex;
 
-  DocumentChange(DocumentSnapshot document, Type type, int oldIndex, int newIndex) {
+  DocumentChange(QueryDocumentSnapshot document, Type type, int oldIndex, int newIndex) {
     this.type = type;
     this.document = document;
     this.oldIndex = oldIndex;
@@ -58,8 +58,15 @@ public class DocumentChange {
     return type;
   }
 
+  /**
+   * Returns the newly added or modified document if this DocumentChange is for an updated document.
+   * Returns the deleted document if this document change represents a removal.
+   *
+   * @return A snapshot of the new data (for Type.ADDED or Type.MODIFIED) or the removed data (for
+   *     Type.REMOVED).
+   */
   @Nonnull
-  public DocumentSnapshot getDocument() {
+  public QueryDocumentSnapshot getDocument() {
     return document;
   }
 

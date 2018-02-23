@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -37,6 +36,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
   private final List<String> sourceUris;
   private final TableId destinationTable;
+  private final EncryptionConfiguration destinationEncryptionConfiguration;
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
   private final FormatOptions formatOptions;
@@ -53,6 +53,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
     private List<String> sourceUris;
     private TableId destinationTable;
+    private EncryptionConfiguration destinationEncryptionConfiguration;
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
     private FormatOptions formatOptions;
@@ -81,6 +82,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.sourceUris = loadConfiguration.sourceUris;
       this.schemaUpdateOptions = loadConfiguration.schemaUpdateOptions;
       this.autodetect = loadConfiguration.autodetect;
+      this.destinationEncryptionConfiguration =
+          loadConfiguration.destinationEncryptionConfiguration;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -139,12 +142,23 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
       }
       this.autodetect = loadConfigurationPb.getAutodetect();
+      if (loadConfigurationPb.getDestinationEncryptionConfiguration() != null) {
+        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
+            loadConfigurationPb.getDestinationEncryptionConfiguration()).build();
+      }
     }
 
 
     @Override
     public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
+      return this;
+    }
+
+    @Override
+    public Builder setDestinationEncryptionConfiguration(
+        EncryptionConfiguration encryptionConfiguration) {
+      this.destinationEncryptionConfiguration = encryptionConfiguration;
       return this;
     }
 
@@ -238,12 +252,19 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
     this.autodetect = builder.autodetect;
+    this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
   }
 
 
   @Override
   public TableId getDestinationTable() {
     return destinationTable;
+  }
+
+
+  @Override
+  public EncryptionConfiguration getDestinationEncryptionConfiguration() {
+    return destinationEncryptionConfiguration;
   }
 
 
@@ -326,6 +347,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("destinationTable", destinationTable)
+        .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
         .add("formatOptions", formatOptions)
@@ -403,6 +425,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       loadConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
     }
     loadConfigurationPb.setAutodetect(autodetect);
+    if (destinationEncryptionConfiguration != null) {
+      loadConfigurationPb.setDestinationEncryptionConfiguration(
+          destinationEncryptionConfiguration.toPb());
+    }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }

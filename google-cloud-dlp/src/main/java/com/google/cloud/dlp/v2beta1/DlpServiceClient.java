@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,6 +21,7 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dlp.v2beta1.stub.DlpServiceStub;
+import com.google.cloud.dlp.v2beta1.stub.DlpServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.privacy.dlp.v2beta1.AnalyzeDataSourceRiskRequest;
@@ -172,7 +173,7 @@ public class DlpServiceClient implements BackgroundResource {
    */
   protected DlpServiceClient(DlpServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((DlpServiceStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
@@ -346,9 +347,20 @@ public class DlpServiceClient implements BackgroundResource {
    *     .setValue(value)
    *     .build();
    *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
+   *   String name2 = "EMAIL_ADDRESS";
+   *   InfoType infoType = InfoType.newBuilder()
+   *     .setName(name2)
+   *     .build();
+   *   String replaceWith = "REDACTED";
+   *   RedactContentRequest.ReplaceConfig replaceConfigsElement = RedactContentRequest.ReplaceConfig.newBuilder()
+   *     .setInfoType(infoType)
+   *     .setReplaceWith(replaceWith)
+   *     .build();
+   *   List&lt;RedactContentRequest.ReplaceConfig&gt; replaceConfigs = Arrays.asList(replaceConfigsElement);
    *   RedactContentRequest request = RedactContentRequest.newBuilder()
    *     .setInspectConfig(inspectConfig)
    *     .addAllItems(items)
+   *     .addAllReplaceConfigs(replaceConfigs)
    *     .build();
    *   RedactContentResponse response = dlpServiceClient.redactContent(request);
    * }
@@ -385,9 +397,20 @@ public class DlpServiceClient implements BackgroundResource {
    *     .setValue(value)
    *     .build();
    *   List&lt;ContentItem&gt; items = Arrays.asList(itemsElement);
+   *   String name2 = "EMAIL_ADDRESS";
+   *   InfoType infoType = InfoType.newBuilder()
+   *     .setName(name2)
+   *     .build();
+   *   String replaceWith = "REDACTED";
+   *   RedactContentRequest.ReplaceConfig replaceConfigsElement = RedactContentRequest.ReplaceConfig.newBuilder()
+   *     .setInfoType(infoType)
+   *     .setReplaceWith(replaceWith)
+   *     .build();
+   *   List&lt;RedactContentRequest.ReplaceConfig&gt; replaceConfigs = Arrays.asList(replaceConfigsElement);
    *   RedactContentRequest request = RedactContentRequest.newBuilder()
    *     .setInspectConfig(inspectConfig)
    *     .addAllItems(items)
+   *     .addAllReplaceConfigs(replaceConfigs)
    *     .build();
    *   ApiFuture&lt;RedactContentResponse&gt; future = dlpServiceClient.redactContentCallable().futureCall(request);
    *   // Do something
@@ -801,7 +824,9 @@ public class DlpServiceClient implements BackgroundResource {
   public final ListInspectFindingsResponse listInspectFindings(ResultName name) {
 
     ListInspectFindingsRequest request =
-        ListInspectFindingsRequest.newBuilder().setNameWithResultName(name).build();
+        ListInspectFindingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return listInspectFindings(request);
   }
 
@@ -815,7 +840,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ResultName name = ResultName.of("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
-   *     .setNameWithResultName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ListInspectFindingsResponse response = dlpServiceClient.listInspectFindings(request);
    * }
@@ -838,7 +863,7 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ResultName name = ResultName.of("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
-   *     .setNameWithResultName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ListInspectFindingsResponse&gt; future = dlpServiceClient.listInspectFindingsCallable().futureCall(request);
    *   // Do something

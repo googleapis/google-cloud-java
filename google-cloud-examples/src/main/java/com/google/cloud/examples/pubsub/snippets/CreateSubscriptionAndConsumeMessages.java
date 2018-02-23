@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,10 @@ import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
-import com.google.pubsub.v1.SubscriptionName;
-import com.google.pubsub.v1.TopicName;
 
 /**
  * A snippet for Google Cloud Pub/Sub showing how to create a Pub/Sub pull subscription and
@@ -33,8 +33,8 @@ import com.google.pubsub.v1.TopicName;
 public class CreateSubscriptionAndConsumeMessages {
 
   public static void main(String... args) throws Exception {
-    TopicName topic = TopicName.of("my-project-id", "my-topic-id");
-    SubscriptionName subscription = SubscriptionName.of("my-project-id", "my-subscription-id");
+    ProjectTopicName topic = ProjectTopicName.of("my-project-id", "my-topic-id");
+    ProjectSubscriptionName subscription = ProjectSubscriptionName.of("my-project-id", "my-subscription-id");
 
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
