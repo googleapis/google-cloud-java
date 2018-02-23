@@ -12,6 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Use case: Update all the versions in README.md and pom.xml files based on
+# the versions in versions.txt
+#
+#    python utilities/replace_versions.py
+#
+# Use case: Update the versions in a particular file
+#
+#    python utilities/replace_versions.py my-file
+#
+# The script must be run at the root of google-cloud-java.
+
 import argparse
 import os
 import re
@@ -31,32 +42,27 @@ class CodeModule:
 
 def replace_versions(version_map, target):
     newlines = []
-    repl_open = False
-    repl_thisline = False
+    repl_open, repl_thisline = False, False
     with open(target) as f:
         for line in f:
             repl_thisline = repl_open
             match = version_update_marker.search(line)
             if match:
-                module_name = match.group(1)
-                version_type = match.group(2)
+                module_name, version_type = match.group(1), match.group(2)
                 repl_thisline = True
             else:
                 match = version_update_start_marker.search(line)
                 if match:
-                    module_name = match.group(1)
-                    version_type = match.group(2)
-                    repl_open = True
-                    repl_thisline = True
+                    module_name, version_type = match.group(1), match.group(2)
+                    repl_open, repl_thisline = True, True
                 else:
                     match = version_update_end_marker.search(line)
                     if match:
-                        repl_open = False
-                        repl_thisline = False
+                        repl_open, repl_thisline = False, False
 
             if repl_thisline:
                 if module_name not in version_map:
-                    raise ValueError('module not found in version.txt: ' + module_name)
+                    raise ValueError('module not found in version.txt: {}'.format(module_name))
                 module = version_map[module_name]
                 new_version = ''
                 if version_type == 'current':
@@ -64,7 +70,7 @@ def replace_versions(version_map, target):
                 elif version_type == 'released':
                     new_version = module.released
                 else:
-                    raise ValueError('invalid version type: ' + version_type)
+                    raise ValueError('invalid version type: {}'.format(version_type))
 
                 newline = re.sub(version_regex_str, new_version, line)
                 newlines.append(newline)
@@ -72,8 +78,7 @@ def replace_versions(version_map, target):
                 newlines.append(line)
 
             if not repl_open:
-                module_name = ''
-                version_type = ''
+                module_name, version_type = '', ''
 
     with open(target, 'w') as f:
         for line in newlines:

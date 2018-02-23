@@ -12,6 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Use case: Bump to the next patch release version in preparation for a release
+#
+#    python utilities/bump_versions.py next_release patch
+#
+# Use case: Bump to the next minor release version in preparation for a release
+#
+#    python utilities/bump_versions.py next_release minor
+#
+# Use case: Bump to the next snapshot version in preparation for new development
+#
+#    python utilities/bump_versions.py next_snapshot patch
+#
+# This script will update versions.txt in place.
+# The script must be run at the root of google-cloud-java.
+
 import argparse
 import copy
 import re
@@ -51,7 +66,7 @@ class Version:
         elif bump_type == 'patch':
             self.bump_patch()
         else:
-            raise ValueError('invalid bump_type: ' + bump_type)
+            raise ValueError('invalid bump_type: {}'.format(bump_type))
 
     def bump_minor(self):
         self.minor += 1
@@ -64,7 +79,7 @@ class Version:
         self.snapshot = snapshot
 
     def __str__(self):
-        mmp = str(self.major) + '.' + str(self.minor) + '.' + str(self.patch)
+        mmp = '{}.{}.{}'.format(self.major, self.minor, self.patch)
         postfix = self.variant
         if self.snapshot:
             postfix += '-SNAPSHOT'
@@ -91,9 +106,9 @@ def bump_versions(next_version_type, bump_type):
                 current_version.bump(bump_type)
                 current_version.set_snapshot(True)
             else:
-                raise ValueError('invalid next_version_type: ' + next_version_type)
+                raise ValueError('invalid next_version_type: {}'.format(next_version_type))
 
-            newlines.append(module + ':' + str(released_version) + ':' + str(current_version) + '\n')
+            newlines.append('{}:{}:{}\n'.format(module, released_version, current_version))
 
     with open('versions.txt', 'w') as f:
         for line in newlines:
