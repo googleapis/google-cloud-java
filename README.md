@@ -72,7 +72,7 @@ libraryDependencies += "com.google.cloud" % "google-cloud" % "0.33.0-alpha"
 It also works just as well to declare a dependency only on the specific clients that you need. See the README of
 each client for instructions.
 
-For running on Google App Engine, see [more instructions here](./APPENGINE.md).
+These client librareis can be used on App Engine standard Java 8 runtime, App Engine flexible (including the Compat runtime), but not on the App Engine standard Java 7 runtime.
 
 If you are running into problems with version conflicts, see [Version Management](#version-management).
 
