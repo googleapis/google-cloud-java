@@ -93,21 +93,16 @@ function copy_api_client_staging {
     "$WORKDIR/artman-genfiles/java/grpc-google-cloud-bigtable-admin-v2" \
     "$WORKDIR/artman-genfiles/java/proto-google-cloud-bigtable-v2" \
     "$WORKDIR/artman-genfiles/java/proto-google-cloud-bigtable-admin-v2" \
+    "$WORKDIR/artman-genfiles/java/gapic-google-cloud-bigtable-v2" \
+    "$WORKDIR/artman-genfiles/java/gapic-google-cloud-bigtable-admin-v2" \
     "$WORKDIR/api-client-staging/generated/java/"
-
-  cp -r \
-    "$WORKDIR/artman-genfiles/java/google-cloud-bigtable" \
-    "$WORKDIR/api-client-staging/generated/java/gapic-google-cloud-bigtable-v2"
-  cp -r \
-    "$WORKDIR/artman-genfiles/java/google-cloud-bigtable-admin" \
-    "$WORKDIR/api-client-staging/generated/java/gapic-google-cloud-bigtable-admin-v2"
 }
 
 function copy_google_cloud_java {
   log "Copying google-cloud-java"
 
   # Delete old files
-  xargs rm < autogen_files.lst
+  xargs rm -f < autogen_files.lst
   cat /dev/null > autogen_files.lst
 
   # Update manual files
@@ -115,12 +110,12 @@ function copy_google_cloud_java {
 
   # Generate a list of new files
   # Data
-  pushd "$WORKDIR/artman-genfiles/java/google-cloud-bigtable"
+  pushd "$WORKDIR/artman-genfiles/java/gapic-google-cloud-bigtable-v2"
   find src -type f >> $PROJECT_DIR/autogen_files.lst
   cp -r "src" "$PROJECT_DIR"
   popd
   # Admin
-  pushd "$WORKDIR/artman-genfiles/java/google-cloud-bigtable-admin"
+  pushd "$WORKDIR/artman-genfiles/java/gapic-google-cloud-bigtable-admin-v2"
   find src -type f >> $PROJECT_DIR/autogen_files.lst
   cp -r "src" "$PROJECT_DIR"
   popd
