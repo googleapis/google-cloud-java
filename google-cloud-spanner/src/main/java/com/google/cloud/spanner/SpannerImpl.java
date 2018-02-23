@@ -244,7 +244,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  // TODO(snehashah): change this to return SessionImpl and modify all corresponding references.
+  // TODO(user): change this to return SessionImpl and modify all corresponding references.
   Session createSession(final DatabaseId db) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options =
         optionMap(SessionOption.channelHint(random.nextLong()));

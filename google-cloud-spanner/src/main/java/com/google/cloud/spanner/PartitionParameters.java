@@ -21,20 +21,20 @@ import com.google.common.base.Preconditions;
 public class PartitionParameters {
   private final Integer desiredBytesPerBatch;
   private final Integer maxPartitionCount;
-  
+
   PartitionParameters(Builder builder) {
     desiredBytesPerBatch = builder.desiredBytesPerBatch;
     maxPartitionCount = builder.maxPartitionCount;
   }
-  
+
   /** Builder for {@PartitionParameters} instance. **/
   public static class Builder {
-    
+
     private Integer desiredBytesPerBatch;
     private Integer maxPartitionCount;
-    
+
     private Builder() {}
-    
+
     public Builder setDesiredBytesPerBatch(int desiredBytesPerBatch) {
       Preconditions.checkArgument(desiredBytesPerBatch > 0,
           "Invalid desiredBytesPerBatch: " + desiredBytesPerBatch);
@@ -43,7 +43,7 @@ public class PartitionParameters {
     }
 
     public Builder setMaxPartitionCount(int maxPartitionCount) {
-      Preconditions.checkArgument(maxPartitionCount > 0, 
+      Preconditions.checkArgument(maxPartitionCount > 0,
           "Invalid maxPartitionCount: " + maxPartitionCount);
       this.maxPartitionCount = maxPartitionCount;
       return this;
@@ -53,11 +53,11 @@ public class PartitionParameters {
       return new PartitionParameters(this);
     }
   }
-  
+
   public static PartitionParameters getDefaultInstance() {
     return newBuilder().build();
   }
-  
+
   public static Builder newBuilder() {
     return new Builder();
   }

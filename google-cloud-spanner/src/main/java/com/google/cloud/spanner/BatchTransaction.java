@@ -41,7 +41,7 @@ public interface BatchTransaction extends ReadOnlyTransaction {
       PartitionParameters parameters, Statement statement, QueryOption... options);
 
   ResultSet execute(Partition partition);
-  
+
   BatchTransactionId getBatchTransactionId();
 
   @Override
