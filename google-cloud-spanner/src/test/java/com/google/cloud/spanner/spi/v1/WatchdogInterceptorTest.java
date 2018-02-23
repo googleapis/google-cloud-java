@@ -61,7 +61,6 @@ public class WatchdogInterceptorTest {
 
   @Mock Channel channel;
   @Mock ClientCall<Void, Void> innerCall;
-
   @Mock ClientCall.Listener<Void> listener;
 
   @Captor ArgumentCaptor<ClientCall.Listener<Void>> innerListener;

@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.protobuf.ByteString;
+
 import java.io.Serializable;
 import java.util.Objects;
 

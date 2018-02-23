@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
+
 import java.util.List;
 
 /**
