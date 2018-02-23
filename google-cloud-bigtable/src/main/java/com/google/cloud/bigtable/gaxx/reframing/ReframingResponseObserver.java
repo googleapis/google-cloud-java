@@ -20,6 +20,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StateCheckingResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import com.google.common.base.Preconditions;
+import com.google.common.math.IntMath;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
@@ -159,10 +160,8 @@ public class ReframingResponseObserver<InnerT, OuterT>
       if (current == Integer.MAX_VALUE) {
         return;
       }
-      // Prevent overflow
-      int maxRequest = Integer.MAX_VALUE - current;
-      int newValue = maxRequest > count ? current + count : Integer.MAX_VALUE;
 
+      int newValue = IntMath.saturatedAdd(current, count);
       if (numRequested.compareAndSet(current, newValue)) {
         break;
       }
