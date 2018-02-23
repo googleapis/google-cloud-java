@@ -25,6 +25,7 @@ package com.google.cloud.examples.bigquery.snippets;
 import com.google.api.client.util.Charsets;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
@@ -47,6 +48,7 @@ import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -376,6 +378,38 @@ public class BigQuerySnippets {
     LoadStatistics stats = job.getStatistics();
     return stats.getOutputRows();
     // [END writeFileToTable]
+  }
+  
+  /**
+   * Example of writing a newline-delimited-json file from GCS to a table.
+   */
+  // [TARGET writer(WriteChannelConfiguration)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE "my_source_uri")]
+  public Long writeRemoteFileToTable(String datasetName, String tableName, String sourceUri) 
+      throws InterruptedException {
+    // [START bigquery_load_table_gcs_json]
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    TableId tableId = TableId.of(datasetName, tableName);
+    LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
+            .setFormatOptions(FormatOptions.json())
+            .build();
+    // Table field definition
+    Field nameField = Field.of("name", LegacySQLTypeName.STRING);
+    Field abbrField = Field.of("post_abbr", LegacySQLTypeName.STRING);
+    // Table schema definition
+    Schema schema = Schema.of(nameField, abbrField);
+    // Create the table
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
+    bigquery.create(TableInfo.of(tableId, tableDefinition));
+    // Load the table
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    remoteLoadJob = remoteLoadJob.waitFor();
+    // Check the table
+    System.out.println("State: " + remoteLoadJob.getStatus().getState());
+    return (StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows());
+    // [END bigquery_load_table_gcs_json]
   }
 
   /**
