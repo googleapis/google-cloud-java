@@ -22,6 +22,7 @@ import static java.net.HttpURLConnection.HTTP_OK;
 
 import com.google.api.client.json.JsonFactory;
 import com.google.api.services.cloudresourcemanager.model.Binding;
+import com.google.api.services.cloudresourcemanager.model.Operation;
 import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
@@ -35,14 +36,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.ByteStreams;
-
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -64,6 +61,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * Utility to create a local Resource Manager mock for testing.
@@ -96,8 +94,9 @@ public class LocalResourceManagerHelper {
   private static final JsonFactory jsonFactory =
       new com.google.api.client.json.jackson.JacksonFactory();
   private static final Random PROJECT_NUMBER_GENERATOR = new Random();
-  private static final String VERSION = "v1beta1";
+  private static final String VERSION = "v1";
   private static final String CONTEXT = "/" + VERSION + "/projects";
+  private static final String OPERATION_CONTEXT = "/" + VERSION + "/operations";
   private static final URI BASE_CONTEXT;
   private static final Set<String> SUPPORTED_COMPRESSION_ENCODINGS =
       ImmutableSet.of("gzip", "x-gzip");
@@ -249,6 +248,48 @@ public class LocalResourceManagerHelper {
     }
   }
 
+  private class OperationRequestHandler implements HttpHandler {
+    @Override
+    public void handle(HttpExchange exchange) {
+      // see https://cloud.google.com/resource-manager/reference/rest/
+      String projectId;
+      try {
+        projectId = new URI(OPERATION_CONTEXT).relativize(exchange.getRequestURI()).getPath();
+      } catch (URISyntaxException e) {
+        throw new IllegalStateException(e);
+      }
+      Response response;
+      String requestMethod = exchange.getRequestMethod();
+      switch (requestMethod) {
+        case "GET":
+          Project project = projects.get(projectId);
+          if (project == null) {
+            response = Error.PERMISSION_DENIED.response("Project " + projectId + " not found.");
+            break;
+          }
+          try {
+            response =
+                new Response(
+                    HTTP_OK,
+                    jsonFactory.toString(new Operation().setDone(true).setResponse(project)));
+          } catch (IOException e) {
+            response =
+                Error.INTERNAL_ERROR.response(
+                    "Error when serializing project " + project.getProjectId());
+          }
+          break;
+        default:
+          response =
+              Error.BAD_REQUEST.response(
+                  "The server could not understand the following request URI: "
+                      + requestMethod
+                      + " "
+                      + projectId);
+      }
+      writeResponse(exchange, response);
+    }
+  }
+
   private static void writeResponse(HttpExchange exchange, Response response) {
     exchange.getResponseHeaders().set("Content-type", "application/json; charset=UTF-8");
     OutputStream outputStream = exchange.getResponseBody();
@@ -397,7 +438,10 @@ public class LocalResourceManagerHelper {
           .setVersion(0);
       policies.put(project.getProjectId(), emptyPolicy);
       try {
-        String createdProjectStr = jsonFactory.toString(project);
+        // Pretend it's not done yet.
+        String createdProjectStr =
+            jsonFactory.toString(
+                new Operation().setDone(false).setName("operations/" + project.getProjectId()));
         return new Response(HTTP_OK, createdProjectStr);
       } catch (IOException e) {
         return Error.INTERNAL_ERROR.response("Error serializing project " + project.getProjectId());
@@ -659,6 +703,7 @@ public class LocalResourceManagerHelper {
       server = HttpServer.create(new InetSocketAddress(0), 0);
       port = server.getAddress().getPort();
       server.createContext(CONTEXT, new RequestHandler());
+      server.createContext(OPERATION_CONTEXT, new OperationRequestHandler());
     } catch (IOException e) {
       throw new RuntimeException("Could not bind the mock Resource Manager server.", e);
     }
