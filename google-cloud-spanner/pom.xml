@@ -67,7 +67,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-v1</artifactId>
-      <version>0.2.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -80,7 +79,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-v1</artifactId>
-      <version>0.2.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
