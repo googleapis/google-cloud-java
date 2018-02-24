@@ -162,6 +162,8 @@
     <logging.version>1.17.1-SNAPSHOT</logging.version><!-- {x-version-update:google-cloud-logging:current} -->
     <logging-logback.version>0.35.1-alpha-SNAPSHOT</logging-logback.version><!-- {x-version-update:google-cloud-logging-logback:current} -->
     <monitoring.version>0.35.1-beta-SNAPSHOT</monitoring.version><!-- {x-version-update:google-cloud-monitoring:current} -->
+    <nio.version>0.35.1-beta-SNAPSHOT</nio.version><!-- {x-version-update:google-cloud-nio:current} -->
+    <nio-examples.version>0.35.1-beta-SNAPSHOT</nio-examples.version><!-- {x-version-update:google-cloud-nio-examples:current} -->
     <notification.version>0.35.1-beta-SNAPSHOT</notification.version><!-- {x-version-update:google-cloud-notification:current} -->
     <os-login.version>0.35.1-alpha-SNAPSHOT</os-login.version><!-- {x-version-update:google-cloud-os-login:current} -->
     <pubsub.version>0.35.1-beta-SNAPSHOT</pubsub.version><!-- {x-version-update:google-cloud-pubsub:current} -->
@@ -169,11 +171,18 @@
     <spanner.version>0.35.1-beta-SNAPSHOT</spanner.version><!-- {x-version-update:google-cloud-spanner:current} -->
     <speech.version>0.35.1-alpha-SNAPSHOT</speech.version><!-- {x-version-update:google-cloud-speech:current} -->
     <storage.version>1.17.1-SNAPSHOT</storage.version><!-- {x-version-update:google-cloud-storage:current} -->
-    <testing.version>0.35.1-alpha-SNAPSHOT</testing.version><!-- {x-version-update:google-cloud-testing:current} -->
     <trace.version>0.35.1-beta-SNAPSHOT</trace.version><!-- {x-version-update:google-cloud-trace:current} -->
     <translate.version>1.17.1-SNAPSHOT</translate.version><!-- {x-version-update:google-cloud-translate:current} -->
     <video-intelligence.version>0.35.1-beta-SNAPSHOT</video-intelligence.version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
     <vision.version>1.17.1-SNAPSHOT</vision.version><!-- {x-version-update:google-cloud-vision:current} -->
+
+    <appengineflexcompat.version>0.35.1-alpha-SNAPSHOT</appengineflexcompat.version><!-- {x-version-update:google-cloud-appengineflexcompat:current} -->
+    <appengineflexcustom.version>0.35.1-alpha-SNAPSHOT</appengineflexcustom.version><!-- {x-version-update:google-cloud-appengineflexcustom:current} -->
+    <appengineflexjava.version>0.35.1-alpha-SNAPSHOT</appengineflexjava.version><!-- {x-version-update:google-cloud-appengineflexjava:current} -->
+    <appenginejava8.version>0.35.1-alpha-SNAPSHOT</appenginejava8.version><!-- {x-version-update:google-cloud-appenginejava8:current} -->
+    <compat-checker.version>0.35.1-alpha-SNAPSHOT</compat-checker.version><!-- {x-version-update:google-cloud-compat-checker:current} -->
+    <managedtest.version>0.35.1-alpha-SNAPSHOT</managedtest.version><!-- {x-version-update:google-cloud-managedtest:current} -->
+    <testing.version>0.35.1-alpha-SNAPSHOT</testing.version><!-- {x-version-update:google-cloud-testing:current} -->
   </properties>
   <dependencyManagement>
     <dependencies>

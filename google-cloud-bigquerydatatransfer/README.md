@@ -19,6 +19,7 @@ Transfer][cloud-bigquerydatatransfer].
 Quickstart
 ----------
 
+[//]: # ({x-version-update-start:google-cloud-bigquerydatatransfer:released})
 Add this to your pom.xml file
 ```xml
 <dependency>
@@ -35,6 +36,7 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "0.35.0-beta"
 ```
+[//]: # ({x-version-update-end})
 
 Authentication
 --------------

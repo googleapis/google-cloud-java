@@ -14,6 +14,8 @@ This module provides common functionality required by service-specific modules o
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud-core:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -30,6 +32,7 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-core" % "1.17.0"
 ```
+[//]: # ({x-version-update-end})
 
 Troubleshooting
 ---------------
