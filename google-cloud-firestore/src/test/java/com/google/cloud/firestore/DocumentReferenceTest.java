@@ -108,6 +108,13 @@ public class DocumentReferenceTest {
   }
 
   @Test
+  public void equals() {
+    DocumentReference doc1 = documentReference.collection("subcoll").document("doc");
+    DocumentReference doc2 = documentReference.collection("subcoll").document("doc");
+    assertEquals(doc1, doc2);
+  }
+
+  @Test
   public void getCollection() {
     CollectionReference collectionReference = documentReference.collection("subcoll");
     assertEquals("subcoll", collectionReference.getId());
