@@ -552,7 +552,7 @@ public class ITSystemTest {
     randomDoc.create(Collections.<String, Object>emptyMap()).get();
     assertEquals(expected, getData());
 
-    randomDoc.delete();
+    randomDoc.delete().get();
     assertFalse(randomDoc.get().get().exists());
 
     randomDoc.create(map("a", map("b", "c"))).get();
