@@ -247,6 +247,8 @@ class FirestoreImpl implements Firestore {
       final Transaction.Function<T> transactionCallback,
       final SettableApiFuture<T> resultFuture,
       final TransactionOptions options) {
+    // span is intentionally not ended here. It will be ended by runTransactionAttempt on success
+    // or error.
     Span span = tracer.spanBuilder("CloudFirestore.Transaction").startSpan();
     try (Scope s = tracer.withSpan(span)) {
       runTransactionAttempt(transactionCallback, resultFuture, options, span);
@@ -339,7 +341,6 @@ class FirestoreImpl implements Firestore {
                   span);
             } else {
               span.setStatus(TOO_MANY_RETRIES_STATUS);
-              span.end();
               rejectTransaction(
                   FirestoreException.serverRejected(
                       Status.ABORTED, "Transaction was cancelled because of too many retries."));

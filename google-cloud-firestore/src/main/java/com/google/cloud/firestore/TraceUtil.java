@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import io.opencensus.contrib.grpc.util.StatusConverter;
 import io.opencensus.trace.Status;
 
 /** Census tracing utilities. */
-class TraceUtil {
+final class TraceUtil {
   private TraceUtil() {}
 
   public static Status statusFromApiException(ApiException exception) {
