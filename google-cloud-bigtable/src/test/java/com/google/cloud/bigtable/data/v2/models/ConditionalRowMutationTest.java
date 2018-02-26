@@ -15,13 +15,14 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.common.truth.Truth;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -50,7 +51,7 @@ public class ConditionalRowMutationTest {
     CheckAndMutateRowRequest actualProto =
         mutation.toProto(REQUEST_CONTEXT).toBuilder().clearTrueMutations().build();
 
-    Truth.assertThat(actualProto)
+    assertThat(actualProto)
         .isEqualTo(
             CheckAndMutateRowRequest.newBuilder()
                 .setTableName(TABLE_NAME.toString())
@@ -68,7 +69,7 @@ public class ConditionalRowMutationTest {
 
     CheckAndMutateRowRequest actualProto = mutation.toProto(REQUEST_CONTEXT);
 
-    Truth.assertThat(actualProto.getPredicateFilter())
+    assertThat(actualProto.getPredicateFilter())
         .isEqualTo(
             RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8("a.*")).build());
   }
@@ -82,7 +83,7 @@ public class ConditionalRowMutationTest {
 
     CheckAndMutateRowRequest actualProto = mutation.toProto(REQUEST_CONTEXT);
 
-    Truth.assertThat(actualProto.getTrueMutationsList())
+    assertThat(actualProto.getTrueMutationsList())
         .containsExactly(
             com.google.bigtable.v2.Mutation.newBuilder()
                 .setDeleteFromColumn(
@@ -108,7 +109,7 @@ public class ConditionalRowMutationTest {
 
     CheckAndMutateRowRequest actualProto = mutation.toProto(REQUEST_CONTEXT);
 
-    Truth.assertThat(actualProto.getFalseMutationsList())
+    assertThat(actualProto.getFalseMutationsList())
         .containsExactly(
             com.google.bigtable.v2.Mutation.newBuilder()
                 .setDeleteFromColumn(
@@ -123,5 +124,21 @@ public class ConditionalRowMutationTest {
                         .setColumnQualifier(ByteString.copyFromUtf8("qualifier2")))
                 .build())
         .inOrder();
+  }
+
+  @Test
+  public void noEffectClausesTest() {
+    ConditionalRowMutation mutation =
+        ConditionalRowMutation.create(TABLE_ID, TEST_KEY).condition(Filters.FILTERS.pass());
+
+    Throwable actualError = null;
+
+    try {
+      mutation.toProto(REQUEST_CONTEXT);
+    } catch (Throwable t) {
+      actualError = t;
+    }
+
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
   }
 }

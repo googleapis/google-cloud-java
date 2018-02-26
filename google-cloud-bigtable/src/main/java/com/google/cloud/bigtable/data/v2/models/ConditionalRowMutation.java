@@ -35,15 +35,15 @@ public final class ConditionalRowMutation {
   }
 
   /** Creates a new instance of the mutation builder. */
-  public static ConditionalRowMutation create(String tableId, String key) {
-    return create(tableId, ByteString.copyFromUtf8(key));
+  public static ConditionalRowMutation create(String tableId, String rowKey) {
+    return create(tableId, ByteString.copyFromUtf8(rowKey));
   }
 
   /** Creates a new instance of the mutation builder. */
-  public static ConditionalRowMutation create(String tableId, ByteString key) {
+  public static ConditionalRowMutation create(String tableId, ByteString rowKey) {
     Validations.validateTableId(tableId);
 
-    return new ConditionalRowMutation(tableId, key);
+    return new ConditionalRowMutation(tableId, rowKey);
   }
 
   /**
@@ -51,13 +51,19 @@ public final class ConditionalRowMutation {
    * results are yielded, either the mutations added via {@link #then(Mutation)} or {@link
    * #otherwise(Mutation)} will be executed. If unset, checks that the row contains any values at
    * all.
+   *
+   * <p>Unlike {@link #then(Mutation)} and {@link #otherwise(Mutation)}, only a single condition can
+   * be set. However that filter can be a {@link Filters#chain()} or {@link Filters#interleave()},
+   * which can wrap multiple other filters.
+   *
+   * <p>WARNING: {@link Filters#condition(Filter)} is not supported.
    */
   public ConditionalRowMutation condition(@Nonnull Filter condition) {
     Preconditions.checkNotNull(condition);
     Preconditions.checkState(
         !builder.hasPredicateFilter(),
         "Can only have a single condition, please use a Filters#chain or Filters#interleave filter instead");
-    //TODO: verify that the condition does not use any FILTERS.condition() filters
+    // TODO: verify that the condition does not use any FILTERS.condition() filters
 
     builder.setPredicateFilter(condition.toProto());
 
@@ -66,9 +72,12 @@ public final class ConditionalRowMutation {
 
   /**
    * Adds changes to be atomically applied to the specified row if the condition yields at least one
-   * cell when applied to the row. Entries are applied in order, meaning that earlier mutations can
-   * be masked by later ones. Must contain at least one entry if {@link #otherwise(Mutation)} is
-   * empty, and at most 100000.
+   * cell when applied to the row.
+   *
+   * <p>Each {@code mutation} can specify multiple changes and the changes are accumulated each time
+   * this method is called. Mutations are applied in order, meaning that earlier mutations can be
+   * masked by later ones. Must contain at least one entry if {@link #otherwise(Mutation)} is empty,
+   * and at most 100000.
    */
   public ConditionalRowMutation then(@Nonnull Mutation mutation) {
     Preconditions.checkNotNull(mutation);
@@ -77,10 +86,13 @@ public final class ConditionalRowMutation {
   }
 
   /**
-   * Adds changes to be atomically applied to the specified row if the condition does not yield any
-   * cells when applied to the row. Entries are applied in order, meaning that earlier mutations can
-   * be masked by later ones. Must contain at least one entry if {@link #then(Mutation)} is empty,
-   * and at most 100000.
+   * Adds changes to be atomically applied to the specified row if the condition does not yields any
+   * cells when applied to the row.
+   *
+   * <p>Each {@code mutation} can specify multiple changes and the changes are accumulated each time
+   * this method is called. Mutations are applied in order, meaning that earlier mutations can be
+   * masked by later ones. Must contain at least one entry if {@link #then(Mutation)} is empty, and
+   * at most 100000.
    */
   public ConditionalRowMutation otherwise(@Nonnull Mutation mutation) {
     Preconditions.checkNotNull(mutation);

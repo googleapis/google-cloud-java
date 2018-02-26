@@ -349,6 +349,7 @@ public class BigtableDataClient implements AutoCloseable {
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
    * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
    *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
+   *     .condition(FILTERS.value().regex("old-value"))
    *     .then(
    *       Mutation.create()
    *         .setCell("[FAMILY]", "[QUALIFIER]", "[VALUE]")
@@ -370,6 +371,7 @@ public class BigtableDataClient implements AutoCloseable {
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
    * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
    *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
+   *     .condition(FILTERS.value().regex("old-value"))
    *     .then(
    *       Mutation.create()
    *         .setCell("[FAMILY]", "[QUALIFIER]", "[VALUE]")
