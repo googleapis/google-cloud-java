@@ -20,6 +20,7 @@ Quickstart
 
 ### google-cloud-nio
 
+[//]: # ({x-version-update-start:google-cloud-contrib:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -36,6 +37,7 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-contrib" % "0.35.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
 ### google-cloud-nio-examples
 

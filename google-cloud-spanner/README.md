@@ -16,6 +16,7 @@ Java idiomatic client for [Cloud Spanner][cloud-spanner].
 
 ## Quickstart
 
+[//]: # ({x-version-update-start:google-cloud-spanner:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -32,6 +33,7 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "0.35.0-beta"
 ```
+[//]: # ({x-version-update-end})
 
 ## Authentication
 

@@ -52,6 +52,7 @@ The easy way to get started is to add the umbrella package which pulls in all of
 dependencies. Note that even though the version of the umbrella package is Alpha, the individual clients are
 at different support levels (Alpha, Beta, and GA).
 
+[//]: # ({x-version-update-start:google-cloud:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -68,6 +69,7 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud" % "0.33.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
 It also works just as well to declare a dependency only on the specific clients that you need. See the README of
 each client for instructions.
@@ -275,6 +277,7 @@ Version Management
 
 The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
 
+[//]: # ({x-version-update-start:google-cloud-bom:released})
 ```xml
   <dependencyManagement>
     <dependencies>
@@ -288,6 +291,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
     </dependencies>
   </dependencyManagement>
 ```
+[//]: # ({x-version-update-end})
 
 This BOM is only available starting at version 0.32.0-alpha. If you are having problems with prior versions of
 google-cloud, use the following table as a reference to make sure that your versions are compatible. Definitions:

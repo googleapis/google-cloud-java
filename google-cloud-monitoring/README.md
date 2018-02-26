@@ -17,6 +17,8 @@ Java idiomatic client for [Stackdriver Monitoring][stackdriver-monitoring].
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud-monitoring:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,6 +35,7 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "0.35.0-beta"
 ```
+[//]: # ({x-version-update-end})
 
 Authentication
 --------------

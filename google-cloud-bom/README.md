@@ -6,6 +6,7 @@ components plus its dependencies.
 
 To use it in Maven, add the following to your POM:
 
+[//]: # ({x-version-update-start:google-cloud-bom:released})
 ```xml
   <dependencyManagement>
     <dependencies>
@@ -19,6 +20,7 @@ To use it in Maven, add the following to your POM:
     </dependencies>
   </dependencyManagement>
 ```
+[//]: # ({x-version-update-end})
 
 Contributing
 ------------
