@@ -173,19 +173,19 @@ public final class Options implements Serializable {
   public String toString() {
     StringBuilder b = new StringBuilder();
     if (limit != null) {
-      b.append("limit: ").append(limit).append(" ");
+      b.append("limit: ").append(limit).append(' ');
     }
     if (prefetchChunks != null) {
-      b.append("prefetchChunks: ").append(prefetchChunks).append(" ");
+      b.append("prefetchChunks: ").append(prefetchChunks).append(' ');
     }
     if (pageSize != null) {
-      b.append("pageSize: ").append(pageSize).append(" ");
+      b.append("pageSize: ").append(pageSize).append(' ');
     }
     if (pageToken != null) {
-      b.append("pageToken: ").append(pageToken).append(" ");
+      b.append("pageToken: ").append(pageToken).append(' ');
     }
     if (filter != null) {
-      b.append("filter: ").append(filter).append(" ");
+      b.append("filter: ").append(filter).append(' ');
     }
     return b.toString();
   }
@@ -202,10 +202,10 @@ public final class Options implements Serializable {
     }
 
     Options that = (Options) o;
-    return ((!hasLimit() && !that.hasLimit()) || Objects.equals(limit(), that.limit()))
-        && ((!hasPrefetchChunks() && !that.hasPrefetchChunks())
+    return (!hasLimit() && !that.hasLimit() || Objects.equals(limit(), that.limit()))
+        && (!hasPrefetchChunks() && !that.hasPrefetchChunks()
             || Objects.equals(prefetchChunks(), that.prefetchChunks()))
-        && ((!hasPageSize() && !that.hasPageSize()) || Objects.equals(pageSize(), that.pageSize()))
+        && (!hasPageSize() && !that.hasPageSize() || Objects.equals(pageSize(), that.pageSize()))
         && Objects.equals(pageToken(), that.pageToken())
         && Objects.equals(filter(), that.filter());
   }

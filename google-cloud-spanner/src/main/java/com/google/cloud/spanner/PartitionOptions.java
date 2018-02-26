@@ -44,8 +44,8 @@ public class PartitionOptions implements Serializable {
   /** Builder for {@code PartitionOptions} instance. */
   public static class Builder {
 
-    private long partitionSizeBytes = 0;
-    private long maxPartitions = 0;
+    private long partitionSizeBytes;
+    private long maxPartitions;
 
     private Builder() {}
 

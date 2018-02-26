@@ -135,27 +135,27 @@ public class Partition implements Serializable {
     b.append("partitionToken: ")
         .append(partitionToken.toStringUtf8())
         .append(" partitionOptions: ")
-        .append(partitionOptions).append(" ");
+        .append(partitionOptions).append(' ');
     if (table != null) {
-      b.append("table: ").append(table).append(" ");
+      b.append("table: ").append(table).append(' ');
     }
     if (index != null) {
-      b.append("index: ").append(index).append(" ");
+      b.append("index: ").append(index).append(' ');
     }
     if (keys != null) {
-      b.append("keys: ").append(keys).append(" ");
+      b.append("keys: ").append(keys).append(' ');
     }
     if (columns != null) {
-      b.append("columns: ").append(columns).append(" ");
+      b.append("columns: ").append(columns).append(' ');
     }
     if (readOptions != null) {
-      b.append("readOptions: ").append(readOptions).append(" ");
+      b.append("readOptions: ").append(readOptions).append(' ');
     }
     if (statement != null) {
-      b.append("statement: ").append(statement).append(" ");
+      b.append("statement: ").append(statement).append(' ');
     }
     if (queryOptions != null) {
-      b.append("queryOptions: ").append(queryOptions).append(" ");
+      b.append("queryOptions: ").append(queryOptions).append(' ');
     }
     return b.toString();
   }

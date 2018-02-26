@@ -42,20 +42,20 @@ public class BatchClientImpl implements BatchClient {
   private final DatabaseId db;
 
   BatchClientImpl(DatabaseId db, SpannerImpl spanner) {
-    this.db = Preconditions.checkNotNull(db);
-    this.spanner = Preconditions.checkNotNull(spanner);
+    this.db = checkNotNull(db);
+    this.spanner = checkNotNull(spanner);
   }
 
   @Override
   public BatchReadOnlyTransaction batchReadOnlyTransaction(TimestampBound bound) {
     SessionImpl session = (SessionImpl) spanner.createSession(db);
-    return new BatchReadOnlyTransactionImpl(spanner, session, Preconditions.checkNotNull(bound));
+    return new BatchReadOnlyTransactionImpl(spanner, session, checkNotNull(bound));
   }
 
   @Override
   public BatchReadOnlyTransaction batchReadOnlyTransaction(BatchTransactionId batchTransactionId) {
     SessionImpl session =
-        spanner.sessionWithId(Preconditions.checkNotNull(batchTransactionId).getSessionId());
+        spanner.sessionWithId(checkNotNull(batchTransactionId).getSessionId());
     return new BatchReadOnlyTransactionImpl(spanner, session, batchTransactionId);
   }
 
@@ -66,9 +66,9 @@ public class BatchClientImpl implements BatchClient {
 
     BatchReadOnlyTransactionImpl(SpannerImpl spanner, SessionImpl session, TimestampBound bound) {
       super(
-          Preconditions.checkNotNull(session),
-          Preconditions.checkNotNull(bound),
-          Preconditions.checkNotNull(spanner).getOptions().getSpannerRpcV1(),
+          checkNotNull(session),
+          checkNotNull(bound),
+          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
@@ -78,10 +78,10 @@ public class BatchClientImpl implements BatchClient {
     BatchReadOnlyTransactionImpl(
         SpannerImpl spanner, SessionImpl session, BatchTransactionId batchTransactionId) {
       super(
-          Preconditions.checkNotNull(session),
-          Preconditions.checkNotNull(batchTransactionId).getTransactionId(),
+          checkNotNull(session),
+          checkNotNull(batchTransactionId).getTransactionId(),
           batchTransactionId.getTimestamp(),
-          Preconditions.checkNotNull(spanner).getOptions().getSpannerRpcV1(),
+          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
