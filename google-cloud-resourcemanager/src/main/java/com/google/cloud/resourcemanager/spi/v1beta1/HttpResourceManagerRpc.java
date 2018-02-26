@@ -23,6 +23,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
@@ -47,7 +48,6 @@ import com.google.cloud.resourcemanager.ResourceManagerOptions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
-import com.google.api.client.json.JsonFactory;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -73,6 +73,28 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
           .setJittered(false)
           .setInitialRpcTimeout(Duration.ofSeconds(5))
           .setMaxRpcTimeout(Duration.ofSeconds(5))
+          .build();
+
+  // reference: https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+  private static final ImmutableMap<Integer, Integer> RPC_TO_HTTP_CODES =
+      ImmutableMap.builder()
+          .put(0, 200)
+          .put(1, 499)
+          .put(2, 500)
+          .put(3, 400)
+          .put(4, 504)
+          .put(5, 404)
+          .put(6, 409)
+          .put(7, 403)
+          .put(16, 401)
+          .put(8, 429)
+          .put(9, 400)
+          .put(10, 409)
+          .put(11, 400)
+          .put(12, 501)
+          .put(13, 500)
+          .put(14, 503)
+          .put(15, 500)
           .build();
 
   private static final ResultRetryAlgorithm<Operation> OPERATION_HANDLER =
@@ -110,63 +132,8 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   }
 
   private static ResourceManagerException translate(Status status) {
-    int code;
-    // reference: https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
-    switch (status.getCode()) {
-      case 0:
-        code = 200;
-        break;
-      case 1:
-        code = 499;
-        break;
-      case 2:
-        code = 500;
-        break;
-      case 3:
-        code = 400;
-        break;
-      case 4:
-        code = 504;
-        break;
-      case 5:
-        code = 404;
-        break;
-      case 6:
-        code = 409;
-        break;
-      case 7:
-        code = 403;
-        break;
-      case 16:
-        code = 401;
-        break;
-      case 8:
-        code = 429;
-        break;
-      case 9:
-        code = 400;
-        break;
-      case 10:
-        code = 409;
-        break;
-      case 11:
-        code = 400;
-        break;
-      case 12:
-        code = 501;
-        break;
-      case 13:
-        code = 500;
-        break;
-      case 14:
-        code = 503;
-        break;
-      case 15:
-        code = 500;
-        break;
-      default:
-        code = BaseHttpServiceException.UNKNOWN_CODE;
-    }
+    int code =
+        RPC_TO_HTTP_CODES.getOrDefault(status.getCode(), BaseHttpServiceException.UNKNOWN_CODE);
     return new ResourceManagerException(code, status.getMessage());
   }
 
@@ -197,11 +164,11 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
       }
 
       // NOTE(pongad): Operation.getResponse() returns a Map<String, Object>.
-      // `(Project) finishedOp.getResponse()` doesn't work,
-      //   because JSON deserializer in execute() didn't know to create a Project object.
-      // `new Project().putAll(finishedOp.getResponse())` doesn't work either.
-      //   64-bit integers are sent as strings in JSON,
-      //   so execute(), not knowing the type, parses it as String, not Long.
+      // 1. `(Project) finishedOp.getResponse()` doesn't work,
+      // because JSON deserializer in execute() didn't know to create a Project object.
+      // 2. `new Project().putAll(finishedOp.getResponse())` doesn't work either.
+      // 64-bit integers are sent as strings in JSON,
+      // so execute(), not knowing the type, parses it as String, not Long.
       String responseTxt = JSON_FACTORY.toString(finishedOp.getResponse());
       return JSON_FACTORY.fromString(responseTxt, Project.class);
     } catch (IOException ex) {
