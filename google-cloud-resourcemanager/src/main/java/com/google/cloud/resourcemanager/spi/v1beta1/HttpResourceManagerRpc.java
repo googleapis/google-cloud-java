@@ -46,6 +46,7 @@ import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.resourcemanager.ResourceManagerException;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.List;
