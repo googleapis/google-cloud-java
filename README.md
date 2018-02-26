@@ -63,11 +63,11 @@ If you are using Maven, add this to your pom.xml file
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.33.0-alpha'
+compile 'com.google.cloud:google-cloud:0.35.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.33.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.35.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
