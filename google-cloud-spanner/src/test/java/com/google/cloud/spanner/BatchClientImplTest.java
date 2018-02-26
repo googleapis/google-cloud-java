@@ -53,13 +53,12 @@ public final class BatchClientImplTest {
   @Mock private BatchTransactionId txnID;
 
   private BatchClient client;
-  private SpannerImpl spanner;
 
   @Before
   public void setUp() {
     initMocks(this);
     DatabaseId db = DatabaseId.of(DB_NAME);
-    spanner = new SpannerImpl(rpc, 1, spannerOptions);
+    SpannerImpl spanner = new SpannerImpl(rpc, 1, spannerOptions);
     client = new BatchClientImpl(db, spanner);
   }
 
