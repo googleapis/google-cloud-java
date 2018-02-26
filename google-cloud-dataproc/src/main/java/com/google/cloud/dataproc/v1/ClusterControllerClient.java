@@ -15,12 +15,17 @@
  */
 package com.google.cloud.dataproc.v1;
 
-import static com.google.cloud.dataproc.v1.PagedResponseWrappers.ListClustersPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.stub.ClusterControllerStub;
 import com.google.cloud.dataproc.v1.stub.ClusterControllerStubSettings;
@@ -28,6 +33,7 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -832,5 +838,78 @@ public class ClusterControllerClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListClustersPagedResponse
+      extends AbstractPagedListResponse<
+          ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage,
+          ListClustersFixedSizeCollection> {
+
+    public static ApiFuture<ListClustersPagedResponse> createAsync(
+        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        ApiFuture<ListClustersResponse> futureResponse) {
+      ApiFuture<ListClustersPage> futurePage =
+          ListClustersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListClustersPage, ListClustersPagedResponse>() {
+            @Override
+            public ListClustersPagedResponse apply(ListClustersPage input) {
+              return new ListClustersPagedResponse(input);
+            }
+          });
+    }
+
+    private ListClustersPagedResponse(ListClustersPage page) {
+      super(page, ListClustersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListClustersPage
+      extends AbstractPage<ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage> {
+
+    private ListClustersPage(
+        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        ListClustersResponse response) {
+      super(context, response);
+    }
+
+    private static ListClustersPage createEmptyPage() {
+      return new ListClustersPage(null, null);
+    }
+
+    @Override
+    protected ListClustersPage createPage(
+        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        ListClustersResponse response) {
+      return new ListClustersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListClustersPage> createPageAsync(
+        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        ApiFuture<ListClustersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListClustersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage,
+          ListClustersFixedSizeCollection> {
+
+    private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListClustersFixedSizeCollection createEmptyCollection() {
+      return new ListClustersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListClustersFixedSizeCollection createCollection(
+        List<ListClustersPage> pages, int collectionSize) {
+      return new ListClustersFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

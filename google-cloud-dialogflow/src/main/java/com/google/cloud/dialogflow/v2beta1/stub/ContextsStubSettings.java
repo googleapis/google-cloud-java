@@ -15,7 +15,7 @@
  */
 package com.google.cloud.dialogflow.v2beta1.stub;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListContextsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.ContextsClient.ListContextsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;

@@ -16,7 +16,7 @@
 
 package com.google.cloud;
 
-import static org.junit.Assert.assertEquals;
+import static com.google.common.truth.Truth.assertThat;
 
 import org.junit.Test;
 
@@ -28,28 +28,31 @@ public class RoleTest {
 
   @Test
   public void testOf() {
-    assertEquals("roles/viewer", VIEWER.getValue());
-    assertEquals("roles/editor", EDITOR.getValue());
-    assertEquals("roles/owner", OWNER.getValue());
+    assertThat(VIEWER.getValue()).isEqualTo("roles/viewer");
+    assertThat(EDITOR.getValue()).isEqualTo("roles/editor");
+    assertThat(OWNER.getValue()).isEqualTo("roles/owner");
     compareRoles(VIEWER, Role.of("roles/viewer"));
     compareRoles(EDITOR, Role.of("roles/editor"));
     compareRoles(OWNER, Role.of("roles/owner"));
+
+    String customRole = "projects/foo/roles/bar";
+    assertThat(Role.of(customRole).getValue()).isEqualTo(customRole);
   }
 
 
   @Test
   public void testViewer() {
-    assertEquals("roles/viewer", Role.viewer().getValue());
+    assertThat(Role.viewer().getValue()).isEqualTo("roles/viewer");
   }
 
   @Test
   public void testEditor() {
-    assertEquals("roles/editor", Role.editor().getValue());
+    assertThat(Role.editor().getValue()).isEqualTo("roles/editor");
   }
 
   @Test
   public void testOwner() {
-    assertEquals("roles/owner", Role.owner().getValue());
+    assertThat(Role.owner().getValue()).isEqualTo("roles/owner");
   }
 
   @Test(expected = NullPointerException.class)
@@ -58,9 +61,9 @@ public class RoleTest {
   }
 
   private void compareRoles(Role expected, Role actual) {
-    assertEquals(expected, actual);
-    assertEquals(expected.getValue(), actual.getValue());
-    assertEquals(expected.hashCode(), actual.hashCode());
-    assertEquals(expected.toString(), actual.toString());
+    assertThat(actual).isEqualTo(expected);
+    assertThat(actual.getValue()).isEqualTo(expected.getValue());
+    assertThat(actual.hashCode()).isEqualTo(expected.hashCode());
+    assertThat(actual.toString()).isEqualTo(expected.toString());
   }
 }

@@ -15,24 +15,41 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListContextsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.ContextsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.ContextsStubSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages contexts.
+ * Service Description: A context represents additional information included with user input or with
+ * an intent returned by the Dialogflow API. Contexts are helpful for differentiating user input
+ * which may be vague or have a different meaning depending on additional details from your
+ * application such as user setting and preferences, previous user input, where the user is in your
+ * application, geographic location, and so on.
  *
- * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/contexts) for more details
- * about contexts. #
+ * <p>You can include contexts as input parameters of a
+ * [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
+ * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) request,
+ * or as output contexts included in the returned intent. Contexts expire when an intent is matched,
+ * after the number of `DetectIntent` requests specified by the `lifespan_count` parameter, or after
+ * 10 minutes if no intents are matched for a `DetectIntent` request.
+ *
+ * <p>For more information about contexts, see the [Dialogflow
+ * documentation](https://dialogflow.com/docs/contexts).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -164,12 +181,17 @@ public class ContextsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The session to list all contexts from. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListContextsPagedResponse listContexts(SessionName parent) {
     ListContextsRequest request =
-        ListContextsRequest.newBuilder().setParent(parent.toString()).build();
+        ListContextsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listContexts(request);
   }
 
@@ -268,12 +290,17 @@ public class ContextsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the context. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session
+   *     ID&gt;/contexts/&lt;Context ID&gt;`. Note: Runtimes are under construction and will be
+   *     available soon. If &lt;Runtime ID&gt; is not specified, we assume default 'sandbox'
+   *     runtime.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context getContext(ContextName name) {
 
-    GetContextRequest request = GetContextRequest.newBuilder().setName(name.toString()).build();
+    GetContextRequest request =
+        GetContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContext(request);
   }
 
@@ -337,14 +364,20 @@ public class ContextsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The session to create a context for. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime.
    * @param context Required. The context to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context createContext(SessionName parent, Context context) {
 
     CreateContextRequest request =
-        CreateContextRequest.newBuilder().setParent(parent.toString()).setContext(context).build();
+        CreateContextRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setContext(context)
+            .build();
     return createContext(request);
   }
 
@@ -478,13 +511,17 @@ public class ContextsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the context to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`.
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session
+   *     ID&gt;/contexts/&lt;Context ID&gt;`. Note: Runtimes are under construction and will be
+   *     available soon. If &lt;Runtime ID&gt; is not specified, we assume default 'sandbox'
+   *     runtime.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteContext(ContextName name) {
 
     DeleteContextRequest request =
-        DeleteContextRequest.newBuilder().setName(name.toString()).build();
+        DeleteContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteContext(request);
   }
 
@@ -547,13 +584,18 @@ public class ContextsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The name of the session to delete all contexts from. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified we
+   *     assume default 'sandbox' runtime.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAllContexts(SessionName parent) {
 
     DeleteAllContextsRequest request =
-        DeleteAllContextsRequest.newBuilder().setParent(parent.toString()).build();
+        DeleteAllContextsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     deleteAllContexts(request);
   }
 
@@ -630,5 +672,78 @@ public class ContextsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListContextsPagedResponse
+      extends AbstractPagedListResponse<
+          ListContextsRequest, ListContextsResponse, Context, ListContextsPage,
+          ListContextsFixedSizeCollection> {
+
+    public static ApiFuture<ListContextsPagedResponse> createAsync(
+        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        ApiFuture<ListContextsResponse> futureResponse) {
+      ApiFuture<ListContextsPage> futurePage =
+          ListContextsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListContextsPage, ListContextsPagedResponse>() {
+            @Override
+            public ListContextsPagedResponse apply(ListContextsPage input) {
+              return new ListContextsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListContextsPagedResponse(ListContextsPage page) {
+      super(page, ListContextsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListContextsPage
+      extends AbstractPage<ListContextsRequest, ListContextsResponse, Context, ListContextsPage> {
+
+    private ListContextsPage(
+        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        ListContextsResponse response) {
+      super(context, response);
+    }
+
+    private static ListContextsPage createEmptyPage() {
+      return new ListContextsPage(null, null);
+    }
+
+    @Override
+    protected ListContextsPage createPage(
+        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        ListContextsResponse response) {
+      return new ListContextsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListContextsPage> createPageAsync(
+        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        ApiFuture<ListContextsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListContextsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListContextsRequest, ListContextsResponse, Context, ListContextsPage,
+          ListContextsFixedSizeCollection> {
+
+    private ListContextsFixedSizeCollection(List<ListContextsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListContextsFixedSizeCollection createEmptyCollection() {
+      return new ListContextsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListContextsFixedSizeCollection createCollection(
+        List<ListContextsPage> pages, int collectionSize) {
+      return new ListContextsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

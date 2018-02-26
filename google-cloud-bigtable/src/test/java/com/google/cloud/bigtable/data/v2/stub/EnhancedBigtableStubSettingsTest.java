@@ -22,11 +22,15 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.wrappers.Query;
-import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
+import java.util.List;
+import java.util.Set;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -56,8 +60,8 @@ public class EnhancedBigtableStubSettingsTest {
     String endpoint = "some.other.host:123";
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
 
-    BigtableDataSettings.Builder builder =
-        BigtableDataSettings.newBuilder()
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
             .setInstanceName(instanceName)
             .setAppProfileId(appProfileId)
             .setEndpoint(endpoint)
@@ -70,7 +74,7 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   private void verifyBuilder(
-      BigtableDataSettings.Builder builder,
+      EnhancedBigtableStubSettings.Builder builder,
       InstanceName instanceName,
       String appProfileId,
       String endpoint,
@@ -82,7 +86,7 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   private void verifySettings(
-      BigtableDataSettings settings,
+      EnhancedBigtableStubSettings settings,
       InstanceName instanceName,
       String appProfileId,
       String endpoint,
@@ -97,8 +101,8 @@ public class EnhancedBigtableStubSettingsTest {
   public void multipleChannelsByDefaultTest() {
     InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
 
-    BigtableDataSettings.Builder builder =
-        BigtableDataSettings.newBuilder().setInstanceName(dummyInstanceName);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
 
     InstantiatingGrpcChannelProvider provider =
         (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
@@ -161,21 +165,109 @@ public class EnhancedBigtableStubSettingsTest {
     ServerStreamingCallSettings.Builder<Query, Row> builder =
         EnhancedBigtableStubSettings.newBuilder().readRowsSettings();
 
-    assertThat(builder.getTimeoutCheckInterval()).isGreaterThan(Duration.ZERO);
-    assertThat(builder.getIdleTimeout()).isGreaterThan(Duration.ZERO);
+    verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+  }
 
-    assertThat(builder.getRetryableCodes())
-        .containsAllOf(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED);
+  @Test
+  public void sampleRowKeysSettingsAreNotLostTest() {
+    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
 
-    assertThat(builder.getRetrySettings().getMaxAttempts()).isGreaterThan(1);
-    assertThat(builder.getRetrySettings().getTotalTimeout()).isGreaterThan(Duration.ZERO);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
 
-    assertThat(builder.getRetrySettings().getInitialRetryDelay()).isGreaterThan(Duration.ZERO);
-    assertThat(builder.getRetrySettings().getRetryDelayMultiplier()).isAtLeast(1.0);
-    assertThat(builder.getRetrySettings().getMaxRetryDelay()).isGreaterThan(Duration.ZERO);
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofHours(1))
+            .setInitialRpcTimeout(Duration.ofSeconds(10))
+            .setRpcTimeoutMultiplier(1)
+            .setMaxRpcTimeout(Duration.ofSeconds(10))
+            .setJittered(true)
+            .build();
 
-    assertThat(builder.getRetrySettings().getInitialRpcTimeout()).isGreaterThan(Duration.ZERO);
-    assertThat(builder.getRetrySettings().getRpcTimeoutMultiplier()).isAtLeast(1.0);
-    assertThat(builder.getRetrySettings().getMaxRpcTimeout()).isGreaterThan(Duration.ZERO);
+    builder
+        .sampleRowKeysSettings()
+        .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
+        .setRetrySettings(retrySettings)
+        .build();
+
+    assertThat(builder.sampleRowKeysSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.sampleRowKeysSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().sampleRowKeysSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().sampleRowKeysSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().toBuilder().sampleRowKeysSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().toBuilder().sampleRowKeysSettings().getRetrySettings())
+        .isEqualTo(retrySettings);
+  }
+
+  @Test
+  public void sampleRowKeysHasSaneDefaultsTest() {
+    UnaryCallSettings.Builder<String, List<KeyOffset>> builder =
+        EnhancedBigtableStubSettings.newBuilder().sampleRowKeysSettings();
+    verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+  }
+
+  @Test
+  public void mutateRowSettingsAreNotLostTest() {
+    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofHours(1))
+            .setInitialRpcTimeout(Duration.ofSeconds(10))
+            .setRpcTimeoutMultiplier(1)
+            .setMaxRpcTimeout(Duration.ofSeconds(10))
+            .setJittered(true)
+            .build();
+
+    builder
+        .mutateRowSettings()
+        .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
+        .setRetrySettings(retrySettings)
+        .build();
+
+    assertThat(builder.mutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.mutateRowSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().mutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().mutateRowSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().toBuilder().mutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().toBuilder().mutateRowSettings().getRetrySettings())
+        .isEqualTo(retrySettings);
+  }
+
+  @Test
+  public void mutateRowHasSaneDefaultsTest() {
+    UnaryCallSettings.Builder<RowMutation, Void> builder =
+        EnhancedBigtableStubSettings.newBuilder().mutateRowSettings();
+    verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+  }
+
+  private void verifyRetrySettingAreSane(Set<Code> retryCodes, RetrySettings retrySettings) {
+    assertThat(retryCodes).containsAllOf(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED);
+
+    assertThat(retrySettings.getMaxAttempts()).isGreaterThan(1);
+    assertThat(retrySettings.getTotalTimeout()).isGreaterThan(Duration.ZERO);
+
+    assertThat(retrySettings.getInitialRetryDelay()).isGreaterThan(Duration.ZERO);
+    assertThat(retrySettings.getRetryDelayMultiplier()).isAtLeast(1.0);
+    assertThat(retrySettings.getMaxRetryDelay()).isGreaterThan(Duration.ZERO);
+
+    assertThat(retrySettings.getInitialRpcTimeout()).isGreaterThan(Duration.ZERO);
+    assertThat(retrySettings.getRpcTimeoutMultiplier()).isAtLeast(1.0);
+    assertThat(retrySettings.getMaxRpcTimeout()).isGreaterThan(Duration.ZERO);
   }
 }

@@ -37,11 +37,11 @@ import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.AcknowledgeRequest;
+import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.ReceivedMessage;
-import com.google.pubsub.v1.SubscriptionName;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,7 @@ import java.util.concurrent.Executor;
 /** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
 
-  private final SubscriptionName subscriptionName;
+  private final ProjectSubscriptionName subscriptionName;
 
   private final MessageReceiver receiver;
 
@@ -59,7 +59,7 @@ public class SubscriberSnippets {
   private final Executor executor;
 
   public SubscriberSnippets(
-      SubscriptionName subscriptionName,
+      ProjectSubscriptionName subscriptionName,
       MessageReceiver receiver,
       ApiFuture<Void> done,
       Executor executor) {
@@ -105,7 +105,7 @@ public class SubscriberSnippets {
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
 
-    SubscriptionName subscriptionName = SubscriptionName.of(projectId, subscriptionId);
+    ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(projectId, subscriptionId);
     // Instantiate an asynchronous message receiver
     MessageReceiver receiver =
         new MessageReceiver() {
@@ -197,7 +197,7 @@ public class SubscriberSnippets {
       // String projectId = "my-project-id";
       // String subscriptionId = "my-subscription-id";
       // int numOfMessages = 10;   // max number of messages to be pulled
-      String subscriptionName = SubscriptionName.of(projectId, subscriptionId).toString();
+      String subscriptionName = ProjectSubscriptionName.format(projectId, subscriptionId);
       PullRequest pullRequest =
           PullRequest.newBuilder()
               .setMaxMessages(numOfMessages)

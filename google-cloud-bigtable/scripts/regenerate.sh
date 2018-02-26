@@ -1,4 +1,18 @@
 #!/usr/bin/env bash
+#
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 # This script is used to regenerate protos & GAPIC stubs.
 # It stages all of the generated code in deps/ and then installs it into the local maven repo.
@@ -79,21 +93,16 @@ function copy_api_client_staging {
     "$WORKDIR/artman-genfiles/java/grpc-google-cloud-bigtable-admin-v2" \
     "$WORKDIR/artman-genfiles/java/proto-google-cloud-bigtable-v2" \
     "$WORKDIR/artman-genfiles/java/proto-google-cloud-bigtable-admin-v2" \
+    "$WORKDIR/artman-genfiles/java/gapic-google-cloud-bigtable-v2" \
+    "$WORKDIR/artman-genfiles/java/gapic-google-cloud-bigtable-admin-v2" \
     "$WORKDIR/api-client-staging/generated/java/"
-
-  cp -r \
-    "$WORKDIR/artman-genfiles/java/google-cloud-bigtable" \
-    "$WORKDIR/api-client-staging/generated/java/gapic-google-cloud-bigtable-v2"
-  cp -r \
-    "$WORKDIR/artman-genfiles/java/google-cloud-bigtable-admin" \
-    "$WORKDIR/api-client-staging/generated/java/gapic-google-cloud-bigtable-admin-v2"
 }
 
 function copy_google_cloud_java {
   log "Copying google-cloud-java"
 
   # Delete old files
-  xargs rm < autogen_files.lst
+  xargs rm -f < autogen_files.lst
   cat /dev/null > autogen_files.lst
 
   # Update manual files
@@ -101,12 +110,12 @@ function copy_google_cloud_java {
 
   # Generate a list of new files
   # Data
-  pushd "$WORKDIR/artman-genfiles/java/google-cloud-bigtable"
+  pushd "$WORKDIR/artman-genfiles/java/gapic-google-cloud-bigtable-v2"
   find src -type f >> $PROJECT_DIR/autogen_files.lst
   cp -r "src" "$PROJECT_DIR"
   popd
   # Admin
-  pushd "$WORKDIR/artman-genfiles/java/google-cloud-bigtable-admin"
+  pushd "$WORKDIR/artman-genfiles/java/gapic-google-cloud-bigtable-admin-v2"
   find src -type f >> $PROJECT_DIR/autogen_files.lst
   cp -r "src" "$PROJECT_DIR"
   popd

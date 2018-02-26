@@ -19,9 +19,13 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
-import com.google.cloud.bigtable.data.v2.wrappers.Query;
-import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import java.util.List;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,13 +37,17 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class BigtableDataClientTest {
   @Mock private EnhancedBigtableStub mockStub;
   @Mock private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
+  @Mock private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
+  @Mock private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
 
   private BigtableDataClient bigtableDataClient;
 
   @Before
   public void setUp() {
-    Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
     bigtableDataClient = new BigtableDataClient(mockStub);
+    Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
+    Mockito.when(mockStub.sampleRowKeysCallable()).thenReturn(mockSampleRowKeysCallable);
+    Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
   }
 
   @Test
@@ -69,5 +77,31 @@ public class BigtableDataClientTest {
     bigtableDataClient.readRowsAsync(query, mockObserver);
 
     Mockito.verify(mockReadRowsCallable).call(query, mockObserver);
+  }
+
+  @Test
+  public void proxySampleRowKeysCallableTest() {
+    assertThat(bigtableDataClient.sampleRowKeysCallable()).isSameAs(mockSampleRowKeysCallable);
+  }
+
+  @Test
+  public void proxySampleRowKeysTest() {
+    bigtableDataClient.sampleRowKeysAsync("fake-table");
+    Mockito.verify(mockSampleRowKeysCallable).futureCall("fake-table");
+  }
+
+  @Test
+  public void proxyMutateRowCallableTest() {
+    assertThat(bigtableDataClient.mutateRowCallable()).isSameAs(mockMutateRowCallable);
+  }
+
+  @Test
+  public void proxyMutateRowTest() {
+    RowMutation request =
+        RowMutation.create("fake-table", "some-key")
+            .setCell("some-family", "fake-qualifier", "fake-value");
+
+    bigtableDataClient.mutateRowAsync(request);
+    Mockito.verify(mockMutateRowCallable).futureCall(request);
   }
 }

@@ -300,7 +300,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
 
       builder
           .mutateRowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder

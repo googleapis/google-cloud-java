@@ -15,15 +15,21 @@
  */
 package com.google.cloud.dataproc.v1;
 
-import static com.google.cloud.dataproc.v1.PagedResponseWrappers.ListJobsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.stub.JobControllerStub;
 import com.google.cloud.dataproc.v1.stub.JobControllerStubSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -691,5 +697,74 @@ public class JobControllerClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListJobsPagedResponse> createAsync(
+        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        ApiFuture<ListJobsResponse> futureResponse) {
+      ApiFuture<ListJobsPage> futurePage =
+          ListJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListJobsPage, ListJobsPagedResponse>() {
+            @Override
+            public ListJobsPagedResponse apply(ListJobsPage input) {
+              return new ListJobsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListJobsPagedResponse(ListJobsPage page) {
+      super(page, ListJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListJobsPage
+      extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
+
+    private ListJobsPage(
+        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListJobsPage createEmptyPage() {
+      return new ListJobsPage(null, null);
+    }
+
+    @Override
+    protected ListJobsPage createPage(
+        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+      return new ListJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListJobsPage> createPageAsync(
+        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        ApiFuture<ListJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
+
+    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListJobsFixedSizeCollection createEmptyCollection() {
+      return new ListJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListJobsFixedSizeCollection createCollection(
+        List<ListJobsPage> pages, int collectionSize) {
+      return new ListJobsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

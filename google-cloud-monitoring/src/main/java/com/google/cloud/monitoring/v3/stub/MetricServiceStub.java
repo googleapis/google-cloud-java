@@ -15,9 +15,9 @@
  */
 package com.google.cloud.monitoring.v3.stub;
 
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListMetricDescriptorsPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListTimeSeriesPagedResponse;
+import static com.google.cloud.monitoring.v3.MetricServiceClient.ListMetricDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.v3.MetricServiceClient.ListMonitoredResourceDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.v3.MetricServiceClient.ListTimeSeriesPagedResponse;
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;

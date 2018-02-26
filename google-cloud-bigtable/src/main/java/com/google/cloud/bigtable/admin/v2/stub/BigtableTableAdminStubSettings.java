@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2.stub;
 
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListSnapshotsPagedResponse;
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListTablesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -62,6 +62,7 @@ import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Snapshot;
+import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.common.collect.ImmutableList;
@@ -135,6 +136,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   private final UnaryCallSettings<CheckConsistencyRequest, CheckConsistencyResponse>
       checkConsistencySettings;
   private final UnaryCallSettings<SnapshotTableRequest, Operation> snapshotTableSettings;
+  private final OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+      snapshotTableOperationSettings;
   private final UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings;
   private final PagedCallSettings<
           ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
@@ -200,6 +203,12 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   /** Returns the object with the settings used for calls to snapshotTable. */
   public UnaryCallSettings<SnapshotTableRequest, Operation> snapshotTableSettings() {
     return snapshotTableSettings;
+  }
+
+  /** Returns the object with the settings used for calls to snapshotTable. */
+  public OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+      snapshotTableOperationSettings() {
+    return snapshotTableOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getSnapshot. */
@@ -298,6 +307,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     generateConsistencyTokenSettings = settingsBuilder.generateConsistencyTokenSettings().build();
     checkConsistencySettings = settingsBuilder.checkConsistencySettings().build();
     snapshotTableSettings = settingsBuilder.snapshotTableSettings().build();
+    snapshotTableOperationSettings = settingsBuilder.snapshotTableOperationSettings().build();
     getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
     listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
     deleteSnapshotSettings = settingsBuilder.deleteSnapshotSettings().build();
@@ -432,6 +442,9 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     private final UnaryCallSettings.Builder<CheckConsistencyRequest, CheckConsistencyResponse>
         checkConsistencySettings;
     private final UnaryCallSettings.Builder<SnapshotTableRequest, Operation> snapshotTableSettings;
+    private final OperationCallSettings.Builder<
+            SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+        snapshotTableOperationSettings;
     private final UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings;
     private final PagedCallSettings.Builder<
             ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
@@ -500,6 +513,8 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       checkConsistencySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       snapshotTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      snapshotTableOperationSettings = OperationCallSettings.newBuilder();
 
       getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -625,6 +640,29 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
+      builder
+          .snapshotTableOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SnapshotTableRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Snapshot.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(SnapshotTableMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -644,6 +682,7 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       generateConsistencyTokenSettings = settings.generateConsistencyTokenSettings.toBuilder();
       checkConsistencySettings = settings.checkConsistencySettings.toBuilder();
       snapshotTableSettings = settings.snapshotTableSettings.toBuilder();
+      snapshotTableOperationSettings = settings.snapshotTableOperationSettings.toBuilder();
       getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
       listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
       deleteSnapshotSettings = settings.deleteSnapshotSettings.toBuilder();
@@ -741,6 +780,12 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     /** Returns the builder for the settings used for calls to snapshotTable. */
     public UnaryCallSettings.Builder<SnapshotTableRequest, Operation> snapshotTableSettings() {
       return snapshotTableSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to snapshotTable. */
+    public OperationCallSettings.Builder<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+        snapshotTableOperationSettings() {
+      return snapshotTableOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getSnapshot. */

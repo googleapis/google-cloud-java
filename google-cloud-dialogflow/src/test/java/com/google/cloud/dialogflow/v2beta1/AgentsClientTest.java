@@ -15,7 +15,7 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.SearchAgentsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.AgentsClient.SearchAgentsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -28,7 +28,6 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
@@ -253,12 +252,8 @@ public class AgentsClientTest {
   @SuppressWarnings("all")
   public void exportAgentTest() throws Exception {
     String agentUri = "agentUri-1700713166";
-    ByteString agentContent = ByteString.copyFromUtf8("63");
     ExportAgentResponse expectedResponse =
-        ExportAgentResponse.newBuilder()
-            .setAgentUri(agentUri)
-            .setAgentContent(agentContent)
-            .build();
+        ExportAgentResponse.newBuilder().setAgentUri(agentUri).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportAgentTest")

@@ -40,11 +40,11 @@ import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.pubsub.v1.GetSubscriptionRequest;
+import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberStub;
 import com.google.pubsub.v1.Subscription;
-import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
 import io.grpc.auth.MoreCallCredentials;
@@ -107,7 +107,7 @@ public class Subscriber extends AbstractApiService {
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
-  private final SubscriptionName subscriptionName;
+  private final ProjectSubscriptionName subscriptionName;
   private final String cachedSubscriptionNameString;
   private final FlowControlSettings flowControlSettings;
   private final Duration ackExpirationPadding;
@@ -210,30 +210,13 @@ public class Subscriber extends AbstractApiService {
    * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
    * @param receiver an implementation of {@link MessageReceiver} used to process the received
    *     messages
-   *
-   * @deprecated Use {@link #newBuilder(SubscriptionName, MessageReceiver)} instead.
    */
-  @Deprecated
-  public static Builder defaultBuilder(SubscriptionName subscription, MessageReceiver receiver) {
-    return newBuilder(subscription, receiver);
-  }
-
-  /**
-   * Constructs a new {@link Builder}.
-   *
-   * <p>Once {@link Builder#build} is called a gRPC stub will be created for use of the {@link
-   * Subscriber}.
-   *
-   * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
-   * @param receiver an implementation of {@link MessageReceiver} used to process the received
-   *     messages
-   */
-  public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
+  public static Builder newBuilder(ProjectSubscriptionName subscription, MessageReceiver receiver) {
     return new Builder(subscription, receiver);
   }
 
   /** Subscription which the subscriber is subscribed to. */
-  public SubscriptionName getSubscriptionName() {
+  public ProjectSubscriptionName getSubscriptionName() {
     return subscriptionName;
   }
 
@@ -508,7 +491,7 @@ public class Subscriber extends AbstractApiService {
                     * Runtime.getRuntime().availableProcessors())
             .build();
 
-    SubscriptionName subscriptionName;
+    ProjectSubscriptionName subscriptionName;
     MessageReceiver receiver;
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
@@ -536,7 +519,7 @@ public class Subscriber extends AbstractApiService {
     boolean useStreaming = true;
     int parallelPullCount = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
 
-    Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
+    Builder(ProjectSubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
       this.receiver = receiver;
     }

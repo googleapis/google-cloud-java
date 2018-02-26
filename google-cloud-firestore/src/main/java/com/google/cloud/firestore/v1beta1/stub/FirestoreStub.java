@@ -15,8 +15,8 @@
  */
 package com.google.cloud.firestore.v1beta1.stub;
 
-import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
-import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListDocumentsPagedResponse;
+import static com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
+import static com.google.cloud.firestore.v1beta1.FirestoreClient.ListDocumentsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;

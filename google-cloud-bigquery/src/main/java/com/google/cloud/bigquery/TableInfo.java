@@ -20,12 +20,13 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
+import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -65,6 +66,7 @@ public class TableInfo implements Serializable {
   private final Long lastModifiedTime;
   private final TableDefinition definition;
   private final EncryptionConfiguration encryptionConfiguration;
+  private final Labels labels;
 
   /**
    * A builder for {@code TableInfo} objects.
@@ -100,7 +102,6 @@ public class TableInfo implements Serializable {
 
     abstract Builder setSelfLink(String selfLink);
 
-
     /**
      * Sets the table identity.
      */
@@ -113,6 +114,19 @@ public class TableInfo implements Serializable {
      * {@link ExternalTableDefinition} to create a BigQuery a table backed by external data.
      */
     public abstract Builder setDefinition(TableDefinition definition);
+
+    /**
+     * Sets the labels applied to this table.
+     *
+     * <p>Unstable, because labels are <a
+     * href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables">experimental</a>.
+     *
+     * <p>When used with {@link BigQuery#update(TableInfo, TableOption...)}, setting {@code labels}
+     * to {@code null} removes all labels; otherwise all keys that are mapped to {@code null} values
+     * are removed and other keys are updated to their respective values.
+     */
+    @BetaApi
+    public abstract Builder setLabels(Map<String, String> labels);
 
     /**
      * Creates a {@code TableInfo} object.
@@ -135,6 +149,7 @@ public class TableInfo implements Serializable {
     private Long lastModifiedTime;
     private TableDefinition definition;
     private EncryptionConfiguration encryptionConfiguration;
+    private Labels labels = Labels.ZERO;
 
     BuilderImpl() {}
 
@@ -150,6 +165,7 @@ public class TableInfo implements Serializable {
       this.lastModifiedTime = tableInfo.lastModifiedTime;
       this.definition = tableInfo.definition;
       this.encryptionConfiguration = tableInfo.encryptionConfiguration;
+      this.labels = tableInfo.labels;
     }
 
     BuilderImpl(Table tablePb) {
@@ -169,6 +185,7 @@ public class TableInfo implements Serializable {
         this.encryptionConfiguration =
             new EncryptionConfiguration.Builder(tablePb.getEncryptionConfiguration()).build();
       }
+      this.labels = Labels.fromPb(tablePb.getLabels());
     }
 
     @Override
@@ -245,6 +262,12 @@ public class TableInfo implements Serializable {
 
 
     @Override
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = Labels.fromUser(labels);
+      return this;
+    }
+
+    @Override
     public TableInfo build() {
       return new TableInfo(this);
     }
@@ -262,6 +285,7 @@ public class TableInfo implements Serializable {
     this.lastModifiedTime = builder.lastModifiedTime;
     this.definition = builder.definition;
     this.encryptionConfiguration = builder.encryptionConfiguration;
+    labels = builder.labels;
   }
 
 
@@ -352,6 +376,17 @@ public class TableInfo implements Serializable {
   }
 
   /**
+   * Return a map for labels applied to the table.
+   *
+   * <p>Unstable, because labels are <a
+   * href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables">experimental</a>.
+   */
+  @BetaApi
+  public Map<String, String> getLabels() {
+    return labels.userMap();
+  }
+
+  /**
    * Returns a builder for the table object.
    */
   public Builder toBuilder() {
@@ -372,6 +407,7 @@ public class TableInfo implements Serializable {
         .add("lastModifiedTime", lastModifiedTime)
         .add("definition", definition)
         .add("encryptionConfiguration", encryptionConfiguration)
+        .add("labels", labels)
         .toString();
   }
 
@@ -429,6 +465,7 @@ public class TableInfo implements Serializable {
     if (encryptionConfiguration != null) {
       tablePb.setEncryptionConfiguration(encryptionConfiguration.toPb());
     }
+    tablePb.setLabels(labels.toPb());
     return tablePb;
   }
 

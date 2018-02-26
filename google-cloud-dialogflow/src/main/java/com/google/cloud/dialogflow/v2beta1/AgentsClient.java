@@ -15,12 +15,17 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.SearchAgentsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.AgentsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.AgentsStubSettings;
@@ -29,15 +34,35 @@ import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages conversational agents.
+ * Service Description: Agents are best described as Natural Language Understanding (NLU) modules
+ * that transform user requests into actionable data. You can include agents in your app, product,
+ * or service to determine user intent and respond to the user in a natural way.
  *
- * <p>Refer to the [Dialogflow documentation](https://dialogflow.com/docs/agents) for more details
- * about agents. #
+ * <p>After you create an agent, you can add [Intents][google.cloud.dialogflow.v2beta1.Intents],
+ * [Contexts][google.cloud.dialogflow.v2beta1.Contexts], [Entity
+ * Types][google.cloud.dialogflow.v2beta1.EntityTypes],
+ * [Webhooks][google.cloud.dialogflow.v2beta1.WebhookRequest], and so on to manage the flow of a
+ * conversation and match user input to predefined intents and actions.
+ *
+ * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
+ * Edition. For details, see [Dialogflow Editions](/dialogflow-enterprise/docs/editions).
+ *
+ * <p>You can save your agent for backup or versioning by exporting the agent by using the
+ * [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
+ * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
+ *
+ * <p>Dialogflow provides several [prebuilt agents](https://dialogflow.com/docs/prebuilt-agents) for
+ * common conversation scenarios such as determining a date and time, converting currency, and so
+ * on.
+ *
+ * <p>For more information about agents, see the [Dialogflow
+ * documentation](https://dialogflow.com/docs/agents).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -183,7 +208,8 @@ public class AgentsClient implements BackgroundResource {
    */
   public final Agent getAgent(ProjectName parent) {
 
-    GetAgentRequest request = GetAgentRequest.newBuilder().setParent(parent.toString()).build();
+    GetAgentRequest request =
+        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return getAgent(request);
   }
 
@@ -258,7 +284,9 @@ public class AgentsClient implements BackgroundResource {
    */
   public final SearchAgentsPagedResponse searchAgents(ProjectName parent) {
     SearchAgentsRequest request =
-        SearchAgentsRequest.newBuilder().setParent(parent.toString()).build();
+        SearchAgentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return searchAgents(request);
   }
 
@@ -380,7 +408,8 @@ public class AgentsClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, Struct> trainAgentAsync(ProjectName parent) {
 
-    TrainAgentRequest request = TrainAgentRequest.newBuilder().setParent(parent.toString()).build();
+    TrainAgentRequest request =
+        TrainAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return trainAgentAsync(request);
   }
 
@@ -484,7 +513,9 @@ public class AgentsClient implements BackgroundResource {
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(ProjectName parent) {
 
     ExportAgentRequest request =
-        ExportAgentRequest.newBuilder().setParent(parent.toString()).build();
+        ExportAgentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return exportAgentAsync(request);
   }
 
@@ -768,5 +799,78 @@ public class AgentsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class SearchAgentsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage,
+          SearchAgentsFixedSizeCollection> {
+
+    public static ApiFuture<SearchAgentsPagedResponse> createAsync(
+        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        ApiFuture<SearchAgentsResponse> futureResponse) {
+      ApiFuture<SearchAgentsPage> futurePage =
+          SearchAgentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<SearchAgentsPage, SearchAgentsPagedResponse>() {
+            @Override
+            public SearchAgentsPagedResponse apply(SearchAgentsPage input) {
+              return new SearchAgentsPagedResponse(input);
+            }
+          });
+    }
+
+    private SearchAgentsPagedResponse(SearchAgentsPage page) {
+      super(page, SearchAgentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchAgentsPage
+      extends AbstractPage<SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage> {
+
+    private SearchAgentsPage(
+        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        SearchAgentsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchAgentsPage createEmptyPage() {
+      return new SearchAgentsPage(null, null);
+    }
+
+    @Override
+    protected SearchAgentsPage createPage(
+        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        SearchAgentsResponse response) {
+      return new SearchAgentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchAgentsPage> createPageAsync(
+        PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> context,
+        ApiFuture<SearchAgentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchAgentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage,
+          SearchAgentsFixedSizeCollection> {
+
+    private SearchAgentsFixedSizeCollection(List<SearchAgentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchAgentsFixedSizeCollection createEmptyCollection() {
+      return new SearchAgentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchAgentsFixedSizeCollection createCollection(
+        List<SearchAgentsPage> pages, int collectionSize) {
+      return new SearchAgentsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

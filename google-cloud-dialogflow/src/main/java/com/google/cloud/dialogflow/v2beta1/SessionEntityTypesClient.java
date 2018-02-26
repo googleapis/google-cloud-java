@@ -15,26 +15,36 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListSessionEntityTypesPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.SessionEntityTypesStub;
 import com.google.cloud.dialogflow.v2beta1.stub.SessionEntityTypesStubSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages session entity types.
+ * Service Description: Entities are extracted from user input and represent parameters that are
+ * meaningful to your application. For example, a date range, a proper name such as a geographic
+ * location or landmark, and so on. Entities represent actionable data for your application.
  *
- * <p>Session entity types can be redefined on a session level, allowing for specific concepts, like
- * a user's playlists.
+ * <p>Session entity types are referred to as &#42;&#42;User&#42;&#42; entity types and are entities
+ * that are built for an individual user such as favorites, preferences, playlists, and so on. You
+ * can redefine a session entity type at the session level.
  *
- * <p>#
+ * <p>For more information about entity types, see the [Dialogflow
+ * documentation](https://dialogflow.com/docs/entities).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -169,12 +179,17 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The session to list all session entity types from. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSessionEntityTypesPagedResponse listSessionEntityTypes(SessionName parent) {
     ListSessionEntityTypesRequest request =
-        ListSessionEntityTypesRequest.newBuilder().setParent(parent.toString()).build();
+        ListSessionEntityTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listSessionEntityTypes(request);
   }
 
@@ -275,13 +290,19 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the session entity type. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. Note: Runtimes are under construction
+   *     and will be available soon. If &lt;Runtime ID&gt; is not specified, we assume default
+   *     'sandbox' runtime.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType getSessionEntityType(SessionEntityTypeName name) {
 
     GetSessionEntityTypeRequest request =
-        GetSessionEntityTypeRequest.newBuilder().setName(name.toString()).build();
+        GetSessionEntityTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return getSessionEntityType(request);
   }
 
@@ -346,7 +367,10 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The session to create a session entity type for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime.
    * @param sessionEntityType Required. The session entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -355,7 +379,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
     CreateSessionEntityTypeRequest request =
         CreateSessionEntityTypeRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSessionEntityType(sessionEntityType)
             .build();
     return createSessionEntityType(request);
@@ -425,7 +449,11 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param sessionEntityType Required. The entity type to update. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. Note: Runtimes are under construction
+   *     and will be available soon. If &lt;Runtime ID&gt; is not specified, we assume default
+   *     'sandbox' runtime.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType updateSessionEntityType(SessionEntityType sessionEntityType) {
@@ -495,13 +523,19 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`.
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. Note: Runtimes are under construction
+   *     and will be available soon. If &lt;Runtime ID&gt; is not specified, we assume default
+   *     'sandbox' runtime.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSessionEntityType(SessionEntityTypeName name) {
 
     DeleteSessionEntityTypeRequest request =
-        DeleteSessionEntityTypeRequest.newBuilder().setName(name.toString()).build();
+        DeleteSessionEntityTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     deleteSessionEntityType(request);
   }
 
@@ -579,5 +613,89 @@ public class SessionEntityTypesClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListSessionEntityTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType,
+          ListSessionEntityTypesPage, ListSessionEntityTypesFixedSizeCollection> {
+
+    public static ApiFuture<ListSessionEntityTypesPagedResponse> createAsync(
+        PageContext<
+                ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType>
+            context,
+        ApiFuture<ListSessionEntityTypesResponse> futureResponse) {
+      ApiFuture<ListSessionEntityTypesPage> futurePage =
+          ListSessionEntityTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListSessionEntityTypesPage, ListSessionEntityTypesPagedResponse>() {
+            @Override
+            public ListSessionEntityTypesPagedResponse apply(ListSessionEntityTypesPage input) {
+              return new ListSessionEntityTypesPagedResponse(input);
+            }
+          });
+    }
+
+    private ListSessionEntityTypesPagedResponse(ListSessionEntityTypesPage page) {
+      super(page, ListSessionEntityTypesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSessionEntityTypesPage
+      extends AbstractPage<
+          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType,
+          ListSessionEntityTypesPage> {
+
+    private ListSessionEntityTypesPage(
+        PageContext<
+                ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType>
+            context,
+        ListSessionEntityTypesResponse response) {
+      super(context, response);
+    }
+
+    private static ListSessionEntityTypesPage createEmptyPage() {
+      return new ListSessionEntityTypesPage(null, null);
+    }
+
+    @Override
+    protected ListSessionEntityTypesPage createPage(
+        PageContext<
+                ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType>
+            context,
+        ListSessionEntityTypesResponse response) {
+      return new ListSessionEntityTypesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSessionEntityTypesPage> createPageAsync(
+        PageContext<
+                ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType>
+            context,
+        ApiFuture<ListSessionEntityTypesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSessionEntityTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType,
+          ListSessionEntityTypesPage, ListSessionEntityTypesFixedSizeCollection> {
+
+    private ListSessionEntityTypesFixedSizeCollection(
+        List<ListSessionEntityTypesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSessionEntityTypesFixedSizeCollection createEmptyCollection() {
+      return new ListSessionEntityTypesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSessionEntityTypesFixedSizeCollection createCollection(
+        List<ListSessionEntityTypesPage> pages, int collectionSize) {
+      return new ListSessionEntityTypesFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

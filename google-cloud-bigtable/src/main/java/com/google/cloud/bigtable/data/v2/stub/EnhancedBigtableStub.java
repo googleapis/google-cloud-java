@@ -15,17 +15,25 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.SampleRowKeysRequest;
+import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.wrappers.DefaultRowAdapter;
-import com.google.cloud.bigtable.data.v2.wrappers.Query;
-import com.google.cloud.bigtable.data.v2.wrappers.Row;
-import com.google.cloud.bigtable.data.v2.wrappers.RowAdapter;
+import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * The core client that converts method calls to RPCs.
@@ -47,6 +55,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final RequestContext requestContext;
 
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
+  private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
+  private final UnaryCallable<RowMutation, Void> mutateRowCallable;
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
@@ -56,6 +66,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setTransportChannelProvider(settings.getTransportChannelProvider())
             .setEndpoint(settings.getEndpoint())
             .setCredentialsProvider(settings.getCredentialsProvider());
+
+    // SampleRowKeys retries are handled in the overlay: disable retries in the base layer (but make
+    // sure to preserve the exception callable settings.
+    baseSettingsBuilder
+        .sampleRowKeysSettings()
+        .setSimpleTimeoutNoRetries(
+            settings.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())
+        .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes());
 
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
@@ -74,6 +92,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
         RequestContext.create(settings.getInstanceName(), settings.getAppProfileId());
 
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
+    sampleRowKeysCallable = createSampleRowKeysCallable();
+    mutateRowCallable = createMutateRowCallable();
   }
 
   // <editor-fold desc="Callable creators">
@@ -87,11 +107,52 @@ public class EnhancedBigtableStub implements AutoCloseable {
       }
     };
   }
+
+  /**
+   * Creates a callable chain to handle SampleRowKeys RPcs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a table id to a {@link com.google.bigtable.v2.SampleRowKeysRequest}.
+   *   <li>Dispatch the request to the GAPIC's {@link BigtableStub#sampleRowKeysCallable()}.
+   *   <li>Spool responses into a list.
+   *   <li>Retry on failure.
+   *   <li>Convert the responses into {@link KeyOffset}s.
+   * </ul>
+   */
+  private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> spoolable =
+        stub.sampleRowKeysCallable().all();
+
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retryable =
+        Callables.retrying(spoolable, settings.sampleRowKeysSettings(), clientContext);
+
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withContext =
+        retryable.withDefaultCallContext(clientContext.getDefaultCallContext());
+
+    return new SampleRowKeysCallable(withContext, requestContext);
+  }
+
+  private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
+    return new UnaryCallable<RowMutation, Void>() {
+      @Override
+      public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
+        throw new UnsupportedOperationException("todo");
+      }
+    };
+  }
   // </editor-fold>
 
   // <editor-fold desc="Callable accessors">
   public ServerStreamingCallable<Query, Row> readRowsCallable() {
     return readRowsCallable;
+  }
+
+  public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {
+    return sampleRowKeysCallable;
+  }
+
+  public UnaryCallable<RowMutation, Void> mutateRowCallable() {
+    return mutateRowCallable;
   }
   // </editor-fold>
 

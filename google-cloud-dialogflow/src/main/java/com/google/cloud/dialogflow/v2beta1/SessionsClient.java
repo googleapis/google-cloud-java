@@ -27,9 +27,10 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages user sessions.
- *
- * <p>#
+ * Service Description: A session represents an interaction with a user. You retrieve user input and
+ * pass it to the [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
+ * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) method
+ * to determine user intent and respond.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -163,9 +164,12 @@ public class SessionsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param session Required. The name of the session this query is sent to. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API caller
-   *     to choose an appropriate session ID. It can be a random number or some type of user
-   *     identifier (preferably hashed). The length of the session ID must not exceed 36 bytes.
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime. It's up to the API caller to choose an appropriate
+   *     session ID. It can be a random number or some type of user identifier (preferably hashed).
+   *     The length of the session ID must not exceed 36 bytes.
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -177,7 +181,7 @@ public class SessionsClient implements BackgroundResource {
 
     DetectIntentRequest request =
         DetectIntentRequest.newBuilder()
-            .setSession(session.toString())
+            .setSession(session == null ? null : session.toString())
             .setQueryInput(queryInput)
             .build();
     return detectIntent(request);

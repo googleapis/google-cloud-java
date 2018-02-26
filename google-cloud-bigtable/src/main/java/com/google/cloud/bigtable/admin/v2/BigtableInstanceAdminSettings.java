@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -50,8 +50,10 @@ import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
+import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
+import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -115,15 +117,17 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).listInstancesSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateInstance. */
-  public UnaryCallSettings<Instance, Instance> updateInstanceSettings() {
-    return ((BigtableInstanceAdminStubSettings) getStubSettings()).updateInstanceSettings();
-  }
-
   /** Returns the object with the settings used for calls to partialUpdateInstance. */
   public UnaryCallSettings<PartialUpdateInstanceRequest, Operation>
       partialUpdateInstanceSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).partialUpdateInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to partialUpdateInstance. */
+  public OperationCallSettings<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
+      partialUpdateInstanceOperationSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings())
+        .partialUpdateInstanceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
@@ -188,6 +192,13 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
   /** Returns the object with the settings used for calls to updateAppProfile. */
   public UnaryCallSettings<UpdateAppProfileRequest, Operation> updateAppProfileSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).updateAppProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAppProfile. */
+  public OperationCallSettings<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
+      updateAppProfileOperationSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings())
+        .updateAppProfileOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteAppProfile. */
@@ -330,15 +341,17 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
       return getStubSettingsBuilder().listInstancesSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateInstance. */
-    public UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings() {
-      return getStubSettingsBuilder().updateInstanceSettings();
-    }
-
     /** Returns the builder for the settings used for calls to partialUpdateInstance. */
     public UnaryCallSettings.Builder<PartialUpdateInstanceRequest, Operation>
         partialUpdateInstanceSettings() {
       return getStubSettingsBuilder().partialUpdateInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to partialUpdateInstance. */
+    public OperationCallSettings.Builder<
+            PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
+        partialUpdateInstanceOperationSettings() {
+      return getStubSettingsBuilder().partialUpdateInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
@@ -406,6 +419,13 @@ public class BigtableInstanceAdminSettings extends ClientSettings<BigtableInstan
     public UnaryCallSettings.Builder<UpdateAppProfileRequest, Operation>
         updateAppProfileSettings() {
       return getStubSettingsBuilder().updateAppProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAppProfile. */
+    public OperationCallSettings.Builder<
+            UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
+        updateAppProfileOperationSettings() {
+      return getStubSettingsBuilder().updateAppProfileOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteAppProfile. */

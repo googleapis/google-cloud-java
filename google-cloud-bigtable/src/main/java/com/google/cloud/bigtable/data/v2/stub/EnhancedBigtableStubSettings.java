@@ -23,9 +23,14 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.cloud.bigtable.data.v2.wrappers.Query;
-import com.google.cloud.bigtable.data.v2.wrappers.Row;
+import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableSet;
+import java.util.List;
+import java.util.Set;
 import javax.annotation.Nonnull;
 import org.threeten.bp.Duration;
 
@@ -65,10 +70,27 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final int MAX_MESSAGE_SIZE = 256 * 1024 * 1024;
   private static final String SERVER_DEFAULT_APP_PROFILE_ID = "";
 
+  private static final Set<Code> DEFAULT_RETRY_CODES =
+      ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED);
+
+  private static final RetrySettings DEFAULT_RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .setMaxAttempts(10)
+          .setTotalTimeout(Duration.ofHours(1))
+          .setInitialRetryDelay(Duration.ofMillis(100))
+          .setRetryDelayMultiplier(1.3)
+          .setMaxRetryDelay(Duration.ofMinutes(1))
+          .setInitialRpcTimeout(Duration.ofSeconds(20))
+          .setRpcTimeoutMultiplier(1)
+          .setMaxRpcTimeout(Duration.ofSeconds(20))
+          .build();
+
   private final InstanceName instanceName;
   private final String appProfileId;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
+  private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
+  private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
 
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
@@ -77,6 +99,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
     // Per method settings.
     readRowsSettings = builder.readRowsSettings.build();
+    sampleRowKeysSettings = builder.sampleRowKeysSettings.build();
+    mutateRowSettings = builder.mutateRowSettings.build();
   }
 
   /** Create a new builder. */
@@ -99,6 +123,16 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return readRowsSettings;
   }
 
+  /** Returns the object with the settings used for calls to SampleRowKeys. */
+  public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
+    return sampleRowKeysSettings;
+  }
+
+  /** Returns the object with the settings used for calls to MutateRow. */
+  public UnaryCallSettings<RowMutation, Void> mutateRowSettings() {
+    return mutateRowSettings;
+  }
+
   /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
@@ -110,6 +144,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private String appProfileId;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
+    private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
+    private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
 
     /**
      * Initializes a new Builder with sane defaults for all settings.
@@ -138,20 +174,25 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
       /* TODO: copy timeouts, retryCodes & retrySettings from baseSettings.readRows once it exists in GAPIC */
       readRowsSettings
-          .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED)
+          .setRetryableCodes(DEFAULT_RETRY_CODES)
+          .setRetrySettings(DEFAULT_RETRY_SETTINGS)
           .setTimeoutCheckInterval(Duration.ofSeconds(10))
-          .setIdleTimeout(Duration.ofMinutes(5))
-          .setRetrySettings(
-              RetrySettings.newBuilder()
-                  .setMaxAttempts(10)
-                  .setTotalTimeout(Duration.ofHours(1))
-                  .setInitialRetryDelay(Duration.ofMillis(100))
-                  .setRetryDelayMultiplier(1.3)
-                  .setMaxRetryDelay(Duration.ofMinutes(1))
-                  .setInitialRpcTimeout(Duration.ofSeconds(20))
-                  .setRpcTimeoutMultiplier(1)
-                  .setMaxRpcTimeout(Duration.ofSeconds(20))
-                  .build());
+          .setIdleTimeout(Duration.ofMinutes(5));
+
+      sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      /* TODO: copy retryCodes & retrySettings from baseSettings.sampleRowKeysSettings once it exists in GAPIC */
+      sampleRowKeysSettings
+          .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED)
+          .setRetrySettings(DEFAULT_RETRY_SETTINGS);
+
+      // NOTE: This client enforces client side timestamps, which makes all mutations retryable.
+      // However, since the base GAPIC client allows for server side timestamps, it is not
+      // configured to enable retries. So the retry settings have to be defined here instead of
+      // being copied from the BigtableStubSettings.
+      mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      mutateRowSettings
+          .setRetryableCodes(DEFAULT_RETRY_CODES)
+          .setRetrySettings(DEFAULT_RETRY_SETTINGS);
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
@@ -161,6 +202,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       // Per method settings.
       readRowsSettings = settings.readRowsSettings.toBuilder();
+      sampleRowKeysSettings = settings.sampleRowKeysSettings.toBuilder();
+      mutateRowSettings = settings.mutateRowSettings.toBuilder();
     }
 
     // <editor-fold desc="Private Helpers">
@@ -211,6 +254,16 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return readRowsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to SampleRowKeysSettings. */
+    public UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings() {
+      return sampleRowKeysSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to MutateRow. */
+    public UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings() {
+      return mutateRowSettings;
     }
 
     @SuppressWarnings("unchecked")

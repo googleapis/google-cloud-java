@@ -36,7 +36,7 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.v1beta1.FirestoreSettings;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStubSettings;
-import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
+import com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
 import com.google.cloud.firestore.v1beta1.stub.FirestoreStub;
 import com.google.cloud.firestore.v1beta1.stub.GrpcFirestoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;

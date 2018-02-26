@@ -57,7 +57,7 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.33.0-alpha</version>
+  <version>0.35.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
@@ -275,13 +275,13 @@ Version Management
 
 The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
 
-```
+```xml
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.33.0-alpha</version>
+        <version>0.35.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

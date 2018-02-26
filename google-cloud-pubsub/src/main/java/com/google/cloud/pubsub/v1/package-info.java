@@ -31,7 +31,7 @@
  * <pre>
  * <code>
  * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
- *   TopicName name = TopicName.of("[PROJECT]", "[TOPIC]");
+ *   ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
  *   Topic response = topicAdminClient.createTopic(name);
  * }
  * </code>
@@ -49,8 +49,8 @@
  * <pre>
  * <code>
  * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
- *   SubscriptionName name = SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
- *   TopicName topic = TopicName.of("[PROJECT]", "[TOPIC]");
+ *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+ *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
  *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);

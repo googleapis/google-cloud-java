@@ -15,13 +15,17 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListSnapshotsPagedResponse;
-import static com.google.cloud.bigtable.admin.v2.PagedResponseWrappers.ListTablesPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
@@ -45,6 +49,7 @@ import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotName;
+import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
@@ -221,7 +226,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
 
     CreateTableRequest request =
         CreateTableRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setTableId(tableId)
             .setTable(table)
             .build();
@@ -318,7 +323,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
 
     CreateTableFromSnapshotRequest request =
         CreateTableFromSnapshotRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setTableId(tableId)
             .setSourceSnapshot(sourceSnapshot)
             .build();
@@ -446,7 +451,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTablesPagedResponse listTables(InstanceName parent) {
-    ListTablesRequest request = ListTablesRequest.newBuilder().setParent(parent.toString()).build();
+    ListTablesRequest request =
+        ListTablesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTables(request);
   }
 
@@ -549,7 +555,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    */
   public final Table getTable(TableName name) {
 
-    GetTableRequest request = GetTableRequest.newBuilder().setName(name.toString()).build();
+    GetTableRequest request =
+        GetTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTable(request);
   }
 
@@ -617,7 +624,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    */
   public final void deleteTable(TableName name) {
 
-    DeleteTableRequest request = DeleteTableRequest.newBuilder().setName(name.toString()).build();
+    DeleteTableRequest request =
+        DeleteTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTable(request);
   }
 
@@ -694,7 +702,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
 
     ModifyColumnFamiliesRequest request =
         ModifyColumnFamiliesRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .addAllModifications(modifications)
             .build();
     return modifyColumnFamilies(request);
@@ -827,7 +835,9 @@ public class BigtableTableAdminClient implements BackgroundResource {
   public final GenerateConsistencyTokenResponse generateConsistencyToken(TableName name) {
 
     GenerateConsistencyTokenRequest request =
-        GenerateConsistencyTokenRequest.newBuilder().setName(name.toString()).build();
+        GenerateConsistencyTokenRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return generateConsistencyToken(request);
   }
 
@@ -921,7 +931,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
 
     CheckConsistencyRequest request =
         CheckConsistencyRequest.newBuilder()
-            .setName(name.toString())
+            .setName(name == null ? null : name.toString())
             .setConsistencyToken(consistencyToken)
             .build();
     return checkConsistency(request);
@@ -1013,15 +1023,51 @@ public class BigtableTableAdminClient implements BackgroundResource {
    *     .setSnapshotId(snapshotId)
    *     .setDescription(description)
    *     .build();
-   *   Operation response = bigtableTableAdminClient.snapshotTable(request);
+   *   Snapshot response = bigtableTableAdminClient.snapshotTableAsync(request).get();
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation snapshotTable(SnapshotTableRequest request) {
-    return snapshotTableCallable().call(request);
+  public final OperationFuture<Snapshot, SnapshotTableMetadata> snapshotTableAsync(
+      SnapshotTableRequest request) {
+    return snapshotTableOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * This is a private alpha release of Cloud Bigtable snapshots. This feature is not currently
+   * available to most Cloud Bigtable customers. This feature might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   *
+   * <p>Creates a new snapshot in the specified cluster from the specified source table. The cluster
+   * and the table must be in the same instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.create()) {
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   String cluster = "";
+   *   String snapshotId = "";
+   *   String description = "";
+   *   SnapshotTableRequest request = SnapshotTableRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setCluster(cluster)
+   *     .setSnapshotId(snapshotId)
+   *     .setDescription(description)
+   *     .build();
+   *   OperationFuture&lt;Operation&gt; future = bigtableTableAdminClient.snapshotTableOperationCallable().futureCall(request);
+   *   // Do something
+   *   Snapshot response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+      snapshotTableOperationCallable() {
+    return stub.snapshotTableOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1082,7 +1128,8 @@ public class BigtableTableAdminClient implements BackgroundResource {
    */
   public final Snapshot getSnapshot(SnapshotName name) {
 
-    GetSnapshotRequest request = GetSnapshotRequest.newBuilder().setName(name.toString()).build();
+    GetSnapshotRequest request =
+        GetSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSnapshot(request);
   }
 
@@ -1169,7 +1216,9 @@ public class BigtableTableAdminClient implements BackgroundResource {
    */
   public final ListSnapshotsPagedResponse listSnapshots(ClusterName parent) {
     ListSnapshotsRequest request =
-        ListSnapshotsRequest.newBuilder().setParent(parent.toString()).build();
+        ListSnapshotsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
     return listSnapshots(request);
   }
 
@@ -1294,7 +1343,7 @@ public class BigtableTableAdminClient implements BackgroundResource {
   public final void deleteSnapshot(SnapshotName name) {
 
     DeleteSnapshotRequest request =
-        DeleteSnapshotRequest.newBuilder().setName(name.toString()).build();
+        DeleteSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSnapshot(request);
   }
 
@@ -1381,5 +1430,152 @@ public class BigtableTableAdminClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListTablesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTablesRequest, ListTablesResponse, Table, ListTablesPage,
+          ListTablesFixedSizeCollection> {
+
+    public static ApiFuture<ListTablesPagedResponse> createAsync(
+        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        ApiFuture<ListTablesResponse> futureResponse) {
+      ApiFuture<ListTablesPage> futurePage =
+          ListTablesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListTablesPage, ListTablesPagedResponse>() {
+            @Override
+            public ListTablesPagedResponse apply(ListTablesPage input) {
+              return new ListTablesPagedResponse(input);
+            }
+          });
+    }
+
+    private ListTablesPagedResponse(ListTablesPage page) {
+      super(page, ListTablesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTablesPage
+      extends AbstractPage<ListTablesRequest, ListTablesResponse, Table, ListTablesPage> {
+
+    private ListTablesPage(
+        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        ListTablesResponse response) {
+      super(context, response);
+    }
+
+    private static ListTablesPage createEmptyPage() {
+      return new ListTablesPage(null, null);
+    }
+
+    @Override
+    protected ListTablesPage createPage(
+        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        ListTablesResponse response) {
+      return new ListTablesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTablesPage> createPageAsync(
+        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        ApiFuture<ListTablesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTablesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTablesRequest, ListTablesResponse, Table, ListTablesPage,
+          ListTablesFixedSizeCollection> {
+
+    private ListTablesFixedSizeCollection(List<ListTablesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTablesFixedSizeCollection createEmptyCollection() {
+      return new ListTablesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTablesFixedSizeCollection createCollection(
+        List<ListTablesPage> pages, int collectionSize) {
+      return new ListTablesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSnapshotsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage,
+          ListSnapshotsFixedSizeCollection> {
+
+    public static ApiFuture<ListSnapshotsPagedResponse> createAsync(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ApiFuture<ListSnapshotsResponse> futureResponse) {
+      ApiFuture<ListSnapshotsPage> futurePage =
+          ListSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListSnapshotsPage, ListSnapshotsPagedResponse>() {
+            @Override
+            public ListSnapshotsPagedResponse apply(ListSnapshotsPage input) {
+              return new ListSnapshotsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListSnapshotsPagedResponse(ListSnapshotsPage page) {
+      super(page, ListSnapshotsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSnapshotsPage
+      extends AbstractPage<
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage> {
+
+    private ListSnapshotsPage(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ListSnapshotsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSnapshotsPage createEmptyPage() {
+      return new ListSnapshotsPage(null, null);
+    }
+
+    @Override
+    protected ListSnapshotsPage createPage(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ListSnapshotsResponse response) {
+      return new ListSnapshotsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSnapshotsPage> createPageAsync(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ApiFuture<ListSnapshotsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSnapshotsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage,
+          ListSnapshotsFixedSizeCollection> {
+
+    private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSnapshotsFixedSizeCollection createEmptyCollection() {
+      return new ListSnapshotsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSnapshotsFixedSizeCollection createCollection(
+        List<ListSnapshotsPage> pages, int collectionSize) {
+      return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

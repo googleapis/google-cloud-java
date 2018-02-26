@@ -22,6 +22,5 @@ src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStubS
 src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminStub.java
 src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStub.java
 src/main/java/com/google/cloud/bigtable/admin/v2/BigtableInstanceAdminClient.java
-src/main/java/com/google/cloud/bigtable/admin/v2/PagedResponseWrappers.java
 src/main/java/com/google/cloud/bigtable/admin/v2/BigtableTableAdminClient.java
 src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java

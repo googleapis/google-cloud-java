@@ -15,8 +15,8 @@
  */
 package com.google.cloud.monitoring.v3.stub;
 
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupsPagedResponse;
+import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupMembersPagedResponse;
+import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupsPagedResponse;
 
 import com.google.api.MonitoredResource;
 import com.google.api.core.ApiFunction;

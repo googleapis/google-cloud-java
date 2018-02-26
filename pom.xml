@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.34.1-alpha-SNAPSHOT</version>
+  <version>0.35.1-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -136,7 +136,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud</site.installationModule>
-    <google-cloud-bom.version>0.34.1-alpha-SNAPSHOT</google-cloud-bom.version>
+    <bom.version>0.35.1-alpha-SNAPSHOT</bom.version>
 
     <!-- test dependency versions -->
     <easymock.version>3.4</easymock.version>
@@ -148,7 +148,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>${google-cloud-bom.version}</version>
+        <version>${bom.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
