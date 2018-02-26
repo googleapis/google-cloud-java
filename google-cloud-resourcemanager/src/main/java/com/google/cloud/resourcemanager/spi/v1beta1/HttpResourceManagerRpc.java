@@ -59,7 +59,7 @@ import org.threeten.bp.Duration;
 public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
   private static final JsonFactory JSON_FACTORY =
-      new com.google.api.client.json.jackson.JacksonFactory();
+      new JacksonFactory();
 
   // See doc of create() for more details:
   // https://developers.google.com/resources/api-libraries/documentation/cloudresourcemanager/v1/java/latest/com/google/api/services/cloudresourcemanager/CloudResourceManager.Projects.html#create(com.google.api.services.cloudresourcemanager.model.Project)
@@ -78,7 +78,7 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
   // reference: https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
   private static final ImmutableMap<Integer, Integer> RPC_TO_HTTP_CODES =
-      ImmutableMap.builder()
+      ImmutableMap.<Integer, Integer>builder()
           .put(0, 200)
           .put(1, 499)
           .put(2, 500)
@@ -109,7 +109,7 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
         @Override
         public boolean shouldRetry(Throwable prevThrowable, Operation prevOp)
             throws CancellationException {
-          return prevThrowable != null || prevOp.getDone() == null || prevOp.getDone() == false;
+          return prevThrowable != null || prevOp.getDone() == null || !prevOp.getDone();
         }
       };
 
@@ -152,8 +152,6 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
                     return resourceManager.operations().get(operation.getName()).execute();
                   } catch (IOException ex) {
                     throw translate(ex);
-                  } catch (Exception ex) {
-                    throw ex;
                   }
                 }
               },
