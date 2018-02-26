@@ -96,7 +96,7 @@ def replace_versions_all(target):
     if target:
         replace_versions(version_map, target)
     else:
-        for root, dirs, files in os.walk("."):
+        for root, _, files in os.walk("."):
             for file_name in files:
                 file_path = root + os.sep + file_name
                 if file_name == 'README.md' or file_name == 'pom.xml':
