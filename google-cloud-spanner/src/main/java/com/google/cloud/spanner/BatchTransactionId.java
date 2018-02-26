@@ -27,7 +27,7 @@ import java.util.Objects;
  * used to re-initialize a BatchReadOnlyTransaction on different machine or process by calling
  * {@link BatchClient#batchReadOnlyTransaction(BatchTransactionId)}.
  */
-public final class BatchTransactionId implements Serializable {
+public class BatchTransactionId implements Serializable {
 
   private final ByteString transactionId;
   private final String sessionId;
@@ -56,7 +56,7 @@ public final class BatchTransactionId implements Serializable {
   public String toString() {
     return String.format(
         "transactionId: %s, sessionId: %s, timestamp: %s",
-        transactionId.toString(), sessionId, timestamp);
+        transactionId.toStringUtf8(), sessionId, timestamp);
   }
 
   @Override
