@@ -85,21 +85,15 @@ public final class Precondition {
     return precondition.build();
   }
 
-  /**
-   * Returns true if this Precondition is equal to the provided object.
-   *
-   * @param obj The object to compare against.
-   * @return Whether this Precondition is equal to the provided object.
-   */
   @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
+  public boolean equals(Object o) {
+    if (this == o) {
       return true;
     }
-    if (obj == null || getClass() != obj.getClass()) {
+    if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Precondition that = (Precondition) obj;
+    Precondition that = (Precondition) o;
     return Objects.equals(exists, that.exists) && Objects.equals(updateTime, that.updateTime);
   }
 

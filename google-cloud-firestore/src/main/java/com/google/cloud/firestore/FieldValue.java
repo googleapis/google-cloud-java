@@ -24,7 +24,7 @@ public abstract class FieldValue {
   static final Object SERVER_TIMESTAMP_SENTINEL = new Object();
   static final Object DELETE_SENTINEL = new Object();
 
-  private FieldValue() {}
+  FieldValue() {}
 
   /**
    * Returns a sentinel used with set() or update() to include a server-generated timestamp in the
@@ -39,20 +39,5 @@ public abstract class FieldValue {
   @Nonnull
   public static Object delete() {
     return DELETE_SENTINEL;
-  }
-
-  /**
-   * Returns true if this FieldValue is equal to the provided object.
-   *
-   * @param obj The object to compare against.
-   * @return Whether this FieldValue is equal to the provided object.
-   */
-  @Override
-  public boolean equals(Object obj) {
-    return this == obj;
-  }
-
-  public int hashCode() {
-    return super.hashCode();
   }
 }

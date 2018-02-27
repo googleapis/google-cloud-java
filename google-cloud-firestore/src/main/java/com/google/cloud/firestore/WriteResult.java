@@ -17,7 +17,6 @@
 package com.google.cloud.firestore;
 
 import com.google.protobuf.Timestamp;
-import java.util.Objects;
 import javax.annotation.Nonnull;
 import org.threeten.bp.Instant;
 
@@ -45,28 +44,5 @@ public final class WriteResult {
     Timestamp timestamp = writeResult.hasUpdateTime() ? writeResult.getUpdateTime() : commitTime;
     Instant instant = Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
     return new WriteResult(instant);
-  }
-
-  /**
-   * Returns true if this WriteResult is equal to the provided object.
-   *
-   * @param obj The object to compare against.
-   * @return Whether this WriteResult is equal to the provided object.
-   */
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
-      return true;
-    }
-    if (obj == null || getClass() != obj.getClass()) {
-      return false;
-    }
-    WriteResult that = (WriteResult) obj;
-    return Objects.equals(updateTime, that.updateTime);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(updateTime);
   }
 }
