@@ -133,8 +133,12 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   }
 
   private static ResourceManagerException translate(Status status) {
-    int code =
-        RPC_TO_HTTP_CODES.getOrDefault(status.getCode(), BaseHttpServiceException.UNKNOWN_CODE);
+    int code;
+    if (RPC_TO_HTTP_CODES.containsKey(status.getCode())) {
+      code = RPC_TO_HTTP_CODES.get(status.getCode());
+    } else {
+      code = BaseHttpServiceException.UNKNOWN_CODE;
+    }
     return new ResourceManagerException(code, status.getMessage());
   }
 
