@@ -120,7 +120,7 @@ public class FakeStreamingApi {
     private ResponseObserver<ResponseT> actualObserver;
     private RequestT actualRequest;
     private List<ResponseT> responseList;
-    private BlockingQueue<StreamControllerStash<ResponseT>> calls = Queues.newLinkedBlockingQueue();
+    private final BlockingQueue<StreamControllerStash<ResponseT>> calls = Queues.newLinkedBlockingQueue();
 
     public ServerStreamingStashCallable() {
       responseList = new ArrayList<>();

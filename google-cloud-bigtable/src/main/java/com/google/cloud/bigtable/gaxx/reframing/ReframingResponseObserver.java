@@ -20,8 +20,10 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StateCheckingResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import com.google.common.base.Preconditions;
+import com.google.common.math.IntMath;
 import java.util.concurrent.CancellationException;
-import javax.annotation.concurrent.GuardedBy;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Mediates message flow between two {@link ResponseObserver}s. It is intended for situations when a
@@ -34,8 +36,6 @@ import javax.annotation.concurrent.GuardedBy;
  * either case, the downstream methods will be invoked sequentially. Neither the downstream {@link
  * ResponseObserver} nor the {@link Reframer} need to be threadsafe.
  *
- * <p>All invocations to the {@link Reframer} are made while holding a lock.
- *
  * <p>Expected usage:
  *
  * <pre>{@code
@@ -46,10 +46,10 @@ import javax.annotation.concurrent.GuardedBy;
  *      this.innerCallable = innerCallable;
  *    }
  *
- *    public void call(Request request, ResponseObserver<FullResponse> outerObserver,
+ *    public void call(Request request, ResponseObserver<FullResponse> outerResponseObserver,
  * ApiCallContext context) {
  *      Reframer<Chunk, FullResponse> myReframer = new Reframer<>();
- *      innerCallable.call(request, new ReframingResponseObserver(myReframer, outerObserver),
+ *      innerCallable.call(request, new ReframingResponseObserver(myReframer, outerResponseObserver),
  * context);
  *    }
  *  }
@@ -58,45 +58,42 @@ import javax.annotation.concurrent.GuardedBy;
 @InternalApi
 public class ReframingResponseObserver<InnerT, OuterT>
     extends StateCheckingResponseObserver<InnerT> {
-  private final Object lock = new Object();
+  // Used as a nonblocking mutex for deliver().
+  // 0 means unlocked
+  // 1 means locked without contention
+  // > 1 means locked with contention (another thread tried to deliver concurrently)
+  private final AtomicInteger lock = new AtomicInteger();
 
-  @GuardedBy("lock")
   private final ResponseObserver<OuterT> outerResponseObserver;
-
-  @GuardedBy("lock")
   private final Reframer<OuterT, InnerT> reframer;
 
+  // Written in the initial calling thread.
   private StreamController innerController;
   private boolean hasStarted;
   private boolean autoFlowControl = true;
 
-  @GuardedBy("lock")
-  private int numPending;
+  // Read and written by different threads w/o lock.
+  private final AtomicInteger numRequested = new AtomicInteger();
+  // Written by an application thread and read under lock in delivery.
+  private final AtomicReference<Throwable> cancellation = new AtomicReference<>();
 
-  // Delivery mutual exclusion: only one thread can be delivering at a time
-  @GuardedBy("lock")
-  private boolean inDelivery;
-  // When another thread is delivering, signal it to take an extra run to pick up changes
-  @GuardedBy("lock")
-  private boolean missed;
+  // Only written under lock
+  private volatile boolean awaitingInner;
+  // Written by multiple interleaved threads. It is the staging area for messages before they are
+  // fed to the Reframer. It protects the Reframer from having to worry about concurrency, by acting
+  // like a single item queue: a GRPC thread puts a value in, and then, after acquiring the lock,
+  // any thread can take the value out and feed it to the Reframer.
+  private final AtomicReference<InnerT> newItem = new AtomicReference<>();
 
-  // Request mutex: only one upstream request can be active at a time
-  @GuardedBy("lock")
-  private boolean awaitingInner;
-  // By default all errors should be deferred until buffers have been exhausted
-  // However, when a stream is cancelled, the errors should be immediate
-  @GuardedBy("lock")
-  private boolean deferError = true;
-  // Deferred delivery stop: the upstream is exhausted, request downstream notification when
-  // internal buffers are exhausted
-  @GuardedBy("lock")
-  private boolean closeOnDone;
-  // When closing, this signals an error.
-  @GuardedBy("lock")
+  // Written by a GRPC thread, and read by any thread after acquiring a lock
+  // Care must be to taken to read the volatile done before accessing error.
   private Throwable error;
-  // This stream has been closed; don't do any more processing.
-  @GuardedBy("lock")
-  private boolean closed;
+  private volatile boolean done;
+
+  // Always written and read by the same thread under lock.
+  // Safety flag set in the delivery loop before notifying the outer observer of termination.
+  // It's checked by error handling in delivery() to avoid double notifying the outer observer.
+  private boolean finished;
 
   public ReframingResponseObserver(
       ResponseObserver<OuterT> observer, Reframer<OuterT, InnerT> reframer) {
@@ -123,7 +120,7 @@ public class ReframingResponseObserver<InnerT, OuterT>
             Preconditions.checkState(
                 !hasStarted, "Can't disable automatic flow control once the stream has started");
             autoFlowControl = false;
-            numPending = 0;
+            numRequested.set(0);
           }
 
           @Override
@@ -141,7 +138,7 @@ public class ReframingResponseObserver<InnerT, OuterT>
     hasStarted = true;
 
     if (autoFlowControl) {
-      numPending = Integer.MAX_VALUE;
+      numRequested.set(Integer.MAX_VALUE);
       deliver();
     }
   }
@@ -158,11 +155,16 @@ public class ReframingResponseObserver<InnerT, OuterT>
     Preconditions.checkState(!autoFlowControl, "Auto flow control enabled");
     Preconditions.checkArgument(count > 0, "Count must be > 0");
 
-    synchronized (lock) {
-      int maxCount = Integer.MAX_VALUE - numPending;
-      count = Math.min(maxCount, count);
+    while (true) {
+      int current = numRequested.get();
+      if (current == Integer.MAX_VALUE) {
+        return;
+      }
 
-      numPending += count;
+      int newValue = IntMath.saturatedAdd(current, count);
+      if (numRequested.compareAndSet(current, newValue)) {
+        break;
+      }
     }
 
     deliver();
@@ -171,47 +173,39 @@ public class ReframingResponseObserver<InnerT, OuterT>
   /**
    * Cancels the stream and notifies the downstream {@link ResponseObserver#onError(Throwable)}.
    * This method can be called multiple times, but only the first time has any effect. Please note
-   * that there is a race condition between cancellation and the stream completing normally. Please
-   * note that you can only specify a message or a cause, not both.
+   * that there is a race condition between cancellation and the stream completing normally.
    */
   private void onCancel() {
-    innerController.cancel();
-
-    synchronized (lock) {
-      deferError = false;
-      error = new CancellationException("User cancelled stream");
+    if (cancellation.compareAndSet(null, new CancellationException("User cancelled stream"))) {
+      innerController.cancel();
     }
 
     deliver();
   }
 
   /**
-   * Process a new response from inner/upstream callable. The message will be fed to the reframer
-   * and the output will be delivered to the downstream {@link ResponseObserver}.
+   * Accept a new response from inner/upstream callable. This message will be processed by the
+   * {@link Reframer} in the delivery loop and the output will be delivered to the downstream {@link
+   * ResponseObserver}.
    *
    * <p>If the delivery loop is stopped, this will restart it.
    */
   @Override
   protected void onResponseImpl(InnerT response) {
-    boolean shoudCancelStream = false;
+    IllegalStateException error = null;
 
-    synchronized (lock) {
-      Preconditions.checkState(awaitingInner, "Received unsolicited response from upstream");
-      awaitingInner = false;
-
-      try {
-        reframer.push(response);
-      } catch (Throwable t) {
-        if (error == null) {
-          shoudCancelStream = true;
-          error = t;
-        }
-      }
-    }
-    if (shoudCancelStream) {
-      innerController.cancel();
+    // Guard against unsolicited notifications
+    if (!awaitingInner || !newItem.compareAndSet(null, response)) {
+      // Notify downstream if it's still open
+      error = new IllegalStateException("Received unsolicited response from upstream.");
+      cancellation.compareAndSet(null, error);
     }
     deliver();
+
+    // Notify upstream by throwing an exception
+    if (error != null) {
+      throw error;
+    }
   }
 
   /**
@@ -222,12 +216,9 @@ public class ReframingResponseObserver<InnerT, OuterT>
    */
   @Override
   protected void onErrorImpl(Throwable t) {
-    synchronized (lock) {
-      if (error == null) {
-        error = t;
-      }
-      closeOnDone = true;
-    }
+    // order of assignment matters
+    error = t;
+    done = true;
     deliver();
   }
 
@@ -239,156 +230,150 @@ public class ReframingResponseObserver<InnerT, OuterT>
    */
   @Override
   protected void onCompleteImpl() {
-    synchronized (lock) {
-      closeOnDone = true;
-    }
+    done = true;
     deliver();
   }
 
   /** Tries to kick off the delivery loop, wrapping it in error handling. */
   private void deliver() {
-    // Ensure mutual exclusion via the inDelivery flag; if there is a currently active delivery
-    // then use the missed flag to schedule an extra delivery run.
-    synchronized (lock) {
-      if (inDelivery) {
-        missed = true;
-        return;
-      }
-      inDelivery = true;
-    }
-
     try {
-      unsafeDeliver();
+      deliverUnsafe();
     } catch (Throwable t) {
       // This should never happen. If does, it means we are in an inconsistent state and should
-      // close the stream
-      // and prevent further processing. This is accomplished by purposefully leaving the inDelivery
-      // flag set and
-      // notifying the outerResponseObserver of the error. Care must be taken to avoid calling close
-      // twice in
-      // case the first invocation threw an error.
-      final boolean forceClose;
-      synchronized (lock) {
-        forceClose = !closed;
-        closed = true;
-      }
-
-      if (forceClose) {
+      // close the stream and further processing should be prevented. This is accomplished by
+      // purposefully leaving the lock non-zero and notifying the outerResponseObserver of the
+      // error. Care must be taken to avoid calling close twice in case the first invocation threw
+      // an error.
+      innerController.cancel();
+      if (!finished) {
         outerResponseObserver.onError(t);
-        innerController.cancel();
       }
     }
-  }
-
-  /** The internal states of the delivery loop */
-  private enum DeliveryAction {
-    /** There is supply & demand, so deliver the current message */
-    DELIVER,
-    /** There is demand but no supply, so request more from upstream */
-    REQUEST_MORE,
-    /** There is demand but no supply and with an outstanding request, so do nothing */
-    AWAIT_MORE_DATA,
-    /** Demand has been fully supplied */
-    FULFILLED,
-    /** The stream should be closed for various reasons */
-    CLOSE,
-    /** The stream is already closed, do nothing */
-    NOOP,
   }
 
   /**
    * Coordinates state transfer between inner/downstream callable and the outer/upstream. It
    * orchestrates the flow of demand from downstream to upstream. The data flows from upstream
-   * through the delegate to downstream. It is back pressure aware and will only send as many
+   * through the Reframer to downstream. It is back pressure aware and will only send as many
    * messages as were requested. However, it will send unsolicited onComplete & onError messages.
    *
    * <p>This method is thread safe and performs all state changes (including interactions with the
-   * Reframer) in a synchronized block. The lock is released when interacting with outer/downstream
-   * {@link ResponseObserver} and the inner/upstream callable.
+   * Reframer) using CAS mutex.
    */
-  private void unsafeDeliver() {
-    // Outer loop: will iterate while there missed deliveries
-    while (true) {
-      DeliveryAction action;
-      Throwable closeError = null;
+  private void deliverUnsafe() {
+    // Try to acquire the lock
+    if (lock.getAndIncrement() != 0) {
+      return;
+    }
 
-      // Data pump: will loop while there is both supply & demand.
-      do {
-        OuterT result = null;
+    do {
+      // Optimization: the inner loop will eager process any accumulated state, so reset the lock
+      // for just this iteration. (If another event occurs during processing, it can increment the
+      // lock to enqueue another iteration).
+      lock.lazySet(1);
 
-        synchronized (lock) {
-          if (closed) {
-            // Nothing to do.
-            action = DeliveryAction.NOOP;
-          }
-          // Check for early cancellation.
-          else if (!deferError && error != null) {
-            closed = true;
-            closeError = this.error;
-            action = DeliveryAction.CLOSE;
-          }
-          // There is supply & demand: schedule delivery.
-          else if (numPending > 0 && reframer.hasFullFrame()) {
-            result = reframer.pop();
-            if (!autoFlowControl) {
-              numPending--;
-            }
-            action = DeliveryAction.DELIVER;
-          }
-          // There is demand, the buffer is empty, request more from upstream.
-          else if (numPending > 0 && !reframer.hasFullFrame() && !closeOnDone) {
-            if (!awaitingInner) {
-              action = DeliveryAction.REQUEST_MORE;
-              awaitingInner = true;
-            } else {
-              action = DeliveryAction.AWAIT_MORE_DATA;
-            }
-          }
-          // There is no supply and more can't be requested, notify regardless of demand
-          else if (!reframer.hasFullFrame() && closeOnDone) {
-            if (error == null && reframer.hasPartialFrame()) {
-              error = new IncompleteStreamException();
-            }
-            closed = true;
-            closeError = error;
-            action = DeliveryAction.CLOSE;
-          }
-          // demand has been fulfilled, do nothing
-          else if (numPending == 0) {
-            action = DeliveryAction.FULFILLED;
-          } else {
-            throw new IllegalStateException("ReframingResponseObserver is in an unexpected state");
-          }
-        }
+      // Process the upstream message if one exists.
+      pollUpstream();
 
-        if (action == DeliveryAction.DELIVER) {
-          outerResponseObserver.onResponse(result);
-        }
-      } while (action == DeliveryAction.DELIVER);
-
-      switch (action) {
-        case REQUEST_MORE:
-          innerController.request(1);
-          break;
-        case CLOSE:
-          if (closeError != null) {
-            outerResponseObserver.onError(closeError);
-          } else {
-            outerResponseObserver.onComplete();
-          }
-          break;
-      }
-
-      // exit only if there were no missed delivery requests
-      synchronized (lock) {
-        if (missed) {
-          missed = false;
-          continue;
-        }
-
-        inDelivery = false;
+      // Eagerly notify of onComplete/onError disregarding demand.
+      // NOTE: this will purposely leave wip set to avoid further deliveries.
+      if (maybeFinish()) {
         return;
       }
+
+      // Deliver as many messages as possible
+      int demandSnapshot = numRequested.get();
+      int delivered = 0;
+
+      while (delivered < demandSnapshot) {
+        // Deliver a message if we can
+        if (reframer.hasFullFrame()) {
+          delivered++;
+          outerResponseObserver.onResponse(reframer.pop());
+        } else {
+          // Otherwise request more from upstream (if we haven't done so already)
+          if (!awaitingInner) {
+            awaitingInner = true;
+            innerController.request(1);
+          }
+          break;
+        }
+
+        if (maybeFinish()) {
+          return;
+        }
+      }
+
+      // update the counter in bulk
+      if (delivered != 0) {
+        numRequested.addAndGet(-delivered);
+      }
+    } while (lock.decrementAndGet() != 0);
+  }
+
+  /**
+   * Checks if the awaited upstream response is available. If it is, then feed it to the {@link
+   * Reframer} and update the {@link #awaitingInner} flag. Upon exit, if awaitingInner is not set,
+   * then done is guaranteed to reflect the current status of the upstream.
+   */
+  private void pollUpstream() {
+    if (!awaitingInner) {
+      return;
     }
+
+    boolean localDone = this.done;
+
+    // Try to move the new item into the reframer
+    InnerT newUpstreamItem = newItem.getAndSet(null);
+    if (newUpstreamItem != null) {
+      reframer.push(newUpstreamItem);
+      // and reset the awaiting flag, if the item arrived or upstream closed
+      awaitingInner = false;
+    } else if (localDone) {
+      awaitingInner = false;
+    }
+  }
+
+  /**
+   * Completes the outer observer if appropriate.
+   *
+   * <p>Grounds for completion:
+   *
+   * <ul>
+   *   <li>Caller cancelled the stream
+   *   <li>Upstream has been exhausted and there is no hope of completing another frame.
+   * </ul>
+   *
+   * <p>Upon upstream exhaustion, the outer observer will be notified via onComplete only if all
+   * buffers have been consumed. Otherwise it will be notified with an IncompleteStreamException.
+   *
+   * @return true if the outer observer has been notified of completion.
+   */
+  private boolean maybeFinish() {
+    // Check for cancellations
+    Throwable localError = this.cancellation.get();
+    if (localError != null) {
+      finished = true;
+
+      outerResponseObserver.onError(localError);
+      return true;
+    }
+
+    // Check for upstream termination and exhaustion of local buffers
+    if (done && !reframer.hasFullFrame() && !awaitingInner) {
+      finished = true;
+
+      if (error != null) {
+        outerResponseObserver.onError(error);
+      } else if (reframer.hasPartialFrame()) {
+        outerResponseObserver.onError(new IncompleteStreamException());
+      } else {
+        outerResponseObserver.onComplete();
+      }
+      return true;
+    }
+
+    // No termination conditions found, go back to business as usual
+    return false;
   }
 }
