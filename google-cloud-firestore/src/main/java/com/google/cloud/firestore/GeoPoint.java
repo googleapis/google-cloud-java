@@ -21,7 +21,6 @@ import com.google.type.LatLng;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /** Immutable class representing a geographic location in Firestore */
 public class GeoPoint implements Serializable {
@@ -77,16 +76,21 @@ public class GeoPoint implements Serializable {
   public String toString() {
     return "GeoPoint { latitude=" + this.latitude + ", longitude=" + this.longitude + " }";
   }
-
+  /**
+   * Returns true if this GeoPoint is equal to the provided object.
+   *
+   * @param obj The object to compare against.
+   * @return Whether this GeoPoint is equal to the provided object.
+   */
   @Override
-  public boolean equals(@Nullable Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
-    GeoPoint geoPoint = (GeoPoint) o;
+    GeoPoint geoPoint = (GeoPoint) obj;
     return Double.compare(geoPoint.latitude, latitude) == 0
         && Double.compare(geoPoint.longitude, longitude) == 0;
   }

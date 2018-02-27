@@ -539,6 +539,8 @@ public class QueryTest {
         Arrays.asList(
             LocalFirestoreHelper.SINGLE_FIELD_OBJECT, LocalFirestoreHelper.SINGLE_FIELD_OBJECT),
         result.toObjects(LocalFirestoreHelper.SINGLE_FIELD_OBJECT.getClass()));
+
+    assertEquals(2, result.getDocumentChanges().size());
   }
 
   @Test

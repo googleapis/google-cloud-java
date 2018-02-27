@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import java.util.Objects;
 import javax.annotation.Nonnull;
 
 /**
@@ -86,5 +87,31 @@ public class DocumentChange {
    */
   public int getNewIndex() {
     return newIndex;
+  }
+
+  /**
+   * Returns true if this DocumentChange is equal to the provided object.
+   *
+   * @param obj The object to compare against.
+   * @return Whether this DocumentChange is equal to the provided object.
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    DocumentChange that = (DocumentChange) obj;
+    return oldIndex == that.oldIndex
+        && newIndex == that.newIndex
+        && type == that.type
+        && Objects.equals(document, that.document);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(type, document, oldIndex, newIndex);
   }
 }
