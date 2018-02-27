@@ -298,6 +298,42 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
+   *   MutateRowResponse response = baseBigtableDataClient.mutateRow(tableName.toString(), rowKey, mutations);
+   * }
+   * </code></pre>
+   *
+   * @param tableName The unique name of the table to which the mutation should be applied. Values
+   *     are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param rowKey The key of the row to which the mutation should be applied.
+   * @param mutations Changes to be atomically applied to the specified row. Entries are applied in
+   *     order, meaning that earlier mutations can be masked by later ones. Must contain at least
+   *     one entry and at most 100000.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MutateRowResponse mutateRow(
+      String tableName, ByteString rowKey, List<Mutation> mutations) {
+
+    MutateRowRequest request =
+        MutateRowRequest.newBuilder()
+            .setTableName(tableName)
+            .setRowKey(rowKey)
+            .addAllMutations(mutations)
+            .build();
+    return mutateRow(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Mutates a row atomically. Cells already present in the row are left unchanged unless explicitly
+   * changed by `mutation`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.copyFromUtf8("");
+   *   List&lt;Mutation&gt; mutations = new ArrayList&lt;&gt;();
    *   MutateRowRequest request = MutateRowRequest.newBuilder()
    *     .setTableName(tableName.toString())
    *     .setRowKey(rowKey)
@@ -445,6 +481,58 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
    *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ByteString rowKey = ByteString.copyFromUtf8("");
+   *   RowFilter predicateFilter = RowFilter.newBuilder().build();
+   *   List&lt;Mutation&gt; trueMutations = new ArrayList&lt;&gt;();
+   *   List&lt;Mutation&gt; falseMutations = new ArrayList&lt;&gt;();
+   *   CheckAndMutateRowResponse response = baseBigtableDataClient.checkAndMutateRow(tableName.toString(), rowKey, predicateFilter, trueMutations, falseMutations);
+   * }
+   * </code></pre>
+   *
+   * @param tableName The unique name of the table to which the conditional mutation should be
+   *     applied. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param rowKey The key of the row to which the conditional mutation should be applied.
+   * @param predicateFilter The filter to be applied to the contents of the specified row. Depending
+   *     on whether or not any results are yielded, either `true_mutations` or `false_mutations`
+   *     will be executed. If unset, checks that the row contains any values at all.
+   * @param trueMutations Changes to be atomically applied to the specified row if
+   *     `predicate_filter` yields at least one cell when applied to `row_key`. Entries are applied
+   *     in order, meaning that earlier mutations can be masked by later ones. Must contain at least
+   *     one entry if `false_mutations` is empty, and at most 100000.
+   * @param falseMutations Changes to be atomically applied to the specified row if
+   *     `predicate_filter` does not yield any cells when applied to `row_key`. Entries are applied
+   *     in order, meaning that earlier mutations can be masked by later ones. Must contain at least
+   *     one entry if `true_mutations` is empty, and at most 100000.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CheckAndMutateRowResponse checkAndMutateRow(
+      String tableName,
+      ByteString rowKey,
+      RowFilter predicateFilter,
+      List<Mutation> trueMutations,
+      List<Mutation> falseMutations) {
+
+    CheckAndMutateRowRequest request =
+        CheckAndMutateRowRequest.newBuilder()
+            .setTableName(tableName)
+            .setRowKey(rowKey)
+            .setPredicateFilter(predicateFilter)
+            .addAllTrueMutations(trueMutations)
+            .addAllFalseMutations(falseMutations)
+            .build();
+    return checkAndMutateRow(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Mutates a row atomically based on the output of a predicate Reader filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.copyFromUtf8("");
    *   CheckAndMutateRowRequest request = CheckAndMutateRowRequest.newBuilder()
    *     .setTableName(tableName.toString())
    *     .setRowKey(rowKey)
@@ -518,6 +606,45 @@ public class BaseBigtableDataClient implements BackgroundResource {
     ReadModifyWriteRowRequest request =
         ReadModifyWriteRowRequest.newBuilder()
             .setTableName(tableName == null ? null : tableName.toString())
+            .setRowKey(rowKey)
+            .addAllRules(rules)
+            .build();
+    return readModifyWriteRow(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Modifies a row atomically on the server. The method reads the latest existing timestamp and
+   * value from the specified columns and writes a new entry based on pre-defined read/modify/write
+   * rules. The new value for the timestamp is the greater of the existing timestamp or the current
+   * server time. The method returns the new contents of all modified cells.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableDataClient baseBigtableDataClient = BaseBigtableDataClient.create()) {
+   *   TableName tableName = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ByteString rowKey = ByteString.copyFromUtf8("");
+   *   List&lt;ReadModifyWriteRule&gt; rules = new ArrayList&lt;&gt;();
+   *   ReadModifyWriteRowResponse response = baseBigtableDataClient.readModifyWriteRow(tableName.toString(), rowKey, rules);
+   * }
+   * </code></pre>
+   *
+   * @param tableName The unique name of the table to which the read/modify/write rules should be
+   *     applied. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * @param rowKey The key of the row to which the read/modify/write rules should be applied.
+   * @param rules Rules specifying how the specified row's contents are to be transformed into
+   *     writes. Entries are applied in order, meaning that earlier rules will affect the results of
+   *     later ones.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadModifyWriteRowResponse readModifyWriteRow(
+      String tableName, ByteString rowKey, List<ReadModifyWriteRule> rules) {
+
+    ReadModifyWriteRowRequest request =
+        ReadModifyWriteRowRequest.newBuilder()
+            .setTableName(tableName)
             .setRowKey(rowKey)
             .addAllRules(rules)
             .build();

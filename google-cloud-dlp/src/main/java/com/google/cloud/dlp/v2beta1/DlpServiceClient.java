@@ -839,6 +839,30 @@ public class DlpServiceClient implements BackgroundResource {
    * <pre><code>
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   ResultName name = ResultName.of("[RESULT]");
+   *   ListInspectFindingsResponse response = dlpServiceClient.listInspectFindings(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Identifier of the results set returned as metadata of the longrunning operation
+   *     created by a call to InspectDataSource. Should be in the format of `inspect/results/{id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInspectFindingsResponse listInspectFindings(String name) {
+
+    ListInspectFindingsRequest request =
+        ListInspectFindingsRequest.newBuilder().setName(name).build();
+    return listInspectFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns list of results for given inspect operation result set id.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ResultName name = ResultName.of("[RESULT]");
    *   ListInspectFindingsRequest request = ListInspectFindingsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
