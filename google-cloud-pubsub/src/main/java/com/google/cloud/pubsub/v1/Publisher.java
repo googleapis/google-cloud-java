@@ -35,11 +35,12 @@ import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.batchingexperimental.RequestAccumulator;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -50,24 +51,21 @@ import io.grpc.CallCredentials;
 import io.grpc.Channel;
 import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
-import org.threeten.bp.Duration;
-
-import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -97,9 +95,7 @@ public class Publisher {
   private final RetrySettings retrySettings;
   private final LongRandom longRandom;
 
-  private final Lock messagesBatchLock;
-  private List<OutstandingPublish> messagesBatch;
-  private int batchedBytes;
+  private final RequestAccumulator<PubsubMessage, String> accumulator;
 
   private final AtomicBoolean activeAlarm;
 
@@ -130,8 +126,22 @@ public class Publisher {
     this.retrySettings = builder.retrySettings;
     this.longRandom = builder.longRandom;
 
-    messagesBatch = new LinkedList<>();
-    messagesBatchLock = new ReentrantLock();
+    // messagesBatch = new LinkedList<>();
+    // messagesBatchLock = new ReentrantLock();
+    int batchingCount;
+    if (builder.batchingSettings.getElementCountThreshold() == null) {
+      batchingCount = Integer.MAX_VALUE;
+    } else {
+      batchingCount = builder.batchingSettings.getElementCountThreshold().intValue();
+    }
+    long batchingSize;
+    if (builder.batchingSettings.getRequestByteThreshold() == null) {
+      batchingSize = Long.MAX_VALUE;
+    } else {
+      batchingSize = builder.batchingSettings.getRequestByteThreshold();
+    }
+    accumulator = new RequestAccumulator<>(batchingCount, batchingSize);
+
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
@@ -202,77 +212,119 @@ public class Publisher {
     }
 
     final int messageSize = message.getSerializedSize();
-    OutstandingBatch batchToSend = null;
     SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
-    final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
-    messagesBatchLock.lock();
-    try {
-      // Check if the next message makes the batch exceed the current batch byte size.
-      if (!messagesBatch.isEmpty()
-          && hasBatchingBytes()
-          && batchedBytes + messageSize >= getMaxBatchBytes()) {
-        batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
-        messagesBatch = new LinkedList<>();
-        batchedBytes = 0;
-      }
-
-      // Border case if the message to send is greater equals to the max batch size then can't be
-      // included in the current batch and instead sent immediately.
-      if (!hasBatchingBytes() || messageSize < getMaxBatchBytes()) {
-        batchedBytes += messageSize;
-        messagesBatch.add(outstandingPublish);
-
-        // If after adding the message we have reached the batch max messages then we have a batch
-        // to send.
-        if (messagesBatch.size() == getBatchingSettings().getElementCountThreshold()) {
-          batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
-          messagesBatch = new LinkedList<>();
-          batchedBytes = 0;
-        }
-      }
-      // Setup the next duration based delivery alarm if there are messages batched.
-      if (!messagesBatch.isEmpty()) {
-        setupDurationBasedPublishAlarm();
-      } else if (currentAlarmFuture != null) {
-        logger.log(Level.FINER, "Cancelling alarm, no more messages");
-        if (activeAlarm.getAndSet(false)) {
-          currentAlarmFuture.cancel(false);
-        }
-      }
-    } finally {
-      messagesBatchLock.unlock();
-    }
 
     messagesWaiter.incrementPendingMessages(1);
-
-    if (batchToSend != null) {
-      logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-      final OutstandingBatch finalBatchToSend = batchToSend;
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              publishOutstandingBatch(finalBatchToSend);
-            }
-          });
+    synchronized (accumulator) {
+      accumulator.add(message, messageSize, publishResult);
+      while (accumulator.hasBatch()) {
+        publishBatch(
+            PublishRequest.newBuilder()
+                .setTopic(cachedTopicNameString)
+                .addAllMessages(accumulator.batch())
+                .build(),
+            new ArrayList<>(accumulator.futureBatch()),
+            executor);
+        accumulator.next();
+      }
     }
-
-    // If the message is over the size limit, it was not added to the pending messages and it will
-    // be sent in its own batch immediately.
-    if (hasBatchingBytes() && messageSize >= getMaxBatchBytes()) {
-      logger.log(
-          Level.FINER, "Message exceeds the max batch bytes, scheduling it for immediate send.");
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              publishOutstandingBatch(
-                  new OutstandingBatch(ImmutableList.of(outstandingPublish), messageSize));
-            }
-          });
-    }
-
+    setupDurationBasedPublishAlarm();
     return publishResult;
+  }
+
+  private void publishBatch(
+      final PublishRequest publishRequest,
+      final List<SettableApiFuture<String>> futures,
+      Executor publishExecutor) {
+    // Is the create time right?
+    final long createTimeMs = System.currentTimeMillis();
+    publishExecutor.execute(
+        new Runnable() {
+          @Override
+          public void run() {
+            publishBatchHelper(publishRequest, futures, createTimeMs, 1);
+          }
+        });
+  }
+
+  private void publishBatchHelper(
+      final PublishRequest publishRequest,
+      final List<SettableApiFuture<String>> futures,
+      final long createTimeMs,
+      final int numAttmpt) {
+    long rpcTimeoutMs =
+        Math.round(
+            retrySettings.getInitialRpcTimeout().toMillis()
+                * Math.pow(retrySettings.getRpcTimeoutMultiplier(), numAttmpt - 1));
+    rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().toMillis());
+
+    PublisherFutureStub stub =
+        PublisherGrpc.newFutureStub(channel).withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
+    if (callCredentials != null) {
+      stub = stub.withCallCredentials(callCredentials);
+    }
+
+    Futures.addCallback(
+        stub.publish(publishRequest),
+        new FutureCallback<PublishResponse>() {
+          @Override
+          public void onSuccess(PublishResponse result) {
+            try {
+              if (result.getMessageIdsCount() != futures.size()) {
+                Throwable t =
+                    new IllegalStateException(
+                        String.format(
+                            "The publish result count %d does not match "
+                                + "the expected %d results. Please contact Cloud Pub/Sub support "
+                                + "if this frequently occurs",
+                            result.getMessageIdsCount(), futures.size()));
+                for (SettableApiFuture<String> publishResult : futures) {
+                  publishResult.setException(t);
+                }
+                return;
+              }
+
+              Iterator<SettableApiFuture<String>> messagesResultsIt = futures.iterator();
+              for (String messageId : result.getMessageIdsList()) {
+                messagesResultsIt.next().set(messageId);
+              }
+            } finally {
+              messagesWaiter.incrementPendingMessages(-futures.size());
+            }
+          }
+
+          @Override
+          public void onFailure(Throwable t) {
+            long nextBackoffDelay = computeNextBackoffDelayMs(numAttmpt, retrySettings, longRandom);
+
+            if (!isRetryable(t)
+                || retrySettings.getMaxAttempts() > 0 && numAttmpt >= retrySettings.getMaxAttempts()
+                || System.currentTimeMillis() + nextBackoffDelay
+                    > createTimeMs + retrySettings.getTotalTimeout().toMillis()) {
+              try {
+                ApiException gaxException =
+                    ApiExceptionFactory.createException(
+                        t, GrpcStatusCode.of(Status.fromThrowable(t).getCode()), false);
+                for (SettableApiFuture<String> publishResult : futures) {
+                  publishResult.setException(gaxException);
+                }
+              } finally {
+                messagesWaiter.incrementPendingMessages(-futures.size());
+              }
+              return;
+            }
+
+            executor.schedule(
+                new Runnable() {
+                  @Override
+                  public void run() {
+                    publishBatchHelper(publishRequest, futures, createTimeMs, numAttmpt + 1);
+                  }
+                },
+                nextBackoffDelay,
+                TimeUnit.MILLISECONDS);
+          }
+        });
   }
 
   private void setupDurationBasedPublishAlarm() {
@@ -295,146 +347,21 @@ public class Publisher {
   }
 
   private void publishAllOutstanding() {
-    messagesBatchLock.lock();
-    OutstandingBatch batchToSend;
-    try {
-      if (messagesBatch.isEmpty()) {
-        return;
-      }
-      batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
-      messagesBatch = new LinkedList<>();
-      batchedBytes = 0;
-    } finally {
-      messagesBatchLock.unlock();
-    }
-    publishOutstandingBatch(batchToSend);
-  }
-
-  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
-    PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
-    publishRequest.setTopic(cachedTopicNameString);
-    for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
-      publishRequest.addMessages(outstandingPublish.message);
-    }
-
-    long rpcTimeoutMs =
-        Math.round(
-            retrySettings.getInitialRpcTimeout().toMillis()
-                * Math.pow(retrySettings.getRpcTimeoutMultiplier(), outstandingBatch.attempt - 1));
-    rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().toMillis());
-
-    PublisherFutureStub stub =
-        PublisherGrpc.newFutureStub(channel).withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
-    if (callCredentials != null) {
-      stub = stub.withCallCredentials(callCredentials);
-    }
-
-    Futures.addCallback(
-        stub.publish(publishRequest.build()),
-        new FutureCallback<PublishResponse>() {
-          @Override
-          public void onSuccess(PublishResponse result) {
-            try {
-              if (result.getMessageIdsCount() != outstandingBatch.size()) {
-                Throwable t =
-                    new IllegalStateException(
-                        String.format(
-                            "The publish result count %s does not match "
-                                + "the expected %s results. Please contact Cloud Pub/Sub support "
-                                + "if this frequently occurs",
-                            result.getMessageIdsCount(), outstandingBatch.size()));
-                for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
-                  oustandingMessage.publishResult.setException(t);
-                }
-                return;
-              }
-
-              Iterator<OutstandingPublish> messagesResultsIt =
-                  outstandingBatch.outstandingPublishes.iterator();
-              for (String messageId : result.getMessageIdsList()) {
-                messagesResultsIt.next().publishResult.set(messageId);
-              }
-            } finally {
-              messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
-            }
-          }
-
-          @Override
-          public void onFailure(Throwable t) {
-            long nextBackoffDelay =
-                computeNextBackoffDelayMs(outstandingBatch, retrySettings, longRandom);
-
-            if (!isRetryable(t)
-                || retrySettings.getMaxAttempts() > 0
-                    && outstandingBatch.getAttempt() > retrySettings.getMaxAttempts()
-                || System.currentTimeMillis() + nextBackoffDelay
-                    > outstandingBatch.creationTime + retrySettings.getTotalTimeout().toMillis()) {
-              try {
-                ApiException gaxException =
-                    ApiExceptionFactory.createException(
-                        t, GrpcStatusCode.of(Status.fromThrowable(t).getCode()), false);
-                for (OutstandingPublish outstandingPublish :
-                    outstandingBatch.outstandingPublishes) {
-                  outstandingPublish.publishResult.setException(gaxException);
-                }
-              } finally {
-                messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
-              }
-              return;
-            }
-
-            executor.schedule(
-                new Runnable() {
-                  @Override
-                  public void run() {
-                    publishOutstandingBatch(outstandingBatch);
-                  }
-                },
-                nextBackoffDelay,
-                TimeUnit.MILLISECONDS);
-          }
-        });
-  }
-
-  private static final class OutstandingBatch {
-    final List<OutstandingPublish> outstandingPublishes;
-    final long creationTime;
-    int attempt;
-    int batchSizeBytes;
-
-    OutstandingBatch(List<OutstandingPublish> outstandingPublishes, int batchSizeBytes) {
-      this.outstandingPublishes = outstandingPublishes;
-      attempt = 1;
-      creationTime = System.currentTimeMillis();
-      this.batchSizeBytes = batchSizeBytes;
-    }
-
-    public int getAttempt() {
-      return attempt;
-    }
-
-    public int size() {
-      return outstandingPublishes.size();
-    }
-  }
-
-  private static final class OutstandingPublish {
-    SettableApiFuture<String> publishResult;
-    PubsubMessage message;
-
-    OutstandingPublish(SettableApiFuture<String> publishResult, PubsubMessage message) {
-      this.publishResult = publishResult;
-      this.message = message;
+    synchronized (accumulator) {
+      publishBatch(
+          PublishRequest.newBuilder()
+              .setTopic(cachedTopicNameString)
+              .addAllMessages(accumulator.batch())
+              .build(),
+          new ArrayList<>(accumulator.futureBatch()),
+          MoreExecutors.directExecutor());
+      accumulator.next();
     }
   }
 
   /** The batching settings configured on this {@code Publisher}. */
   public BatchingSettings getBatchingSettings() {
     return batchingSettings;
-  }
-
-  private long getMaxBatchBytes() {
-    return getBatchingSettings().getRequestByteThreshold();
   }
 
   /**
@@ -458,18 +385,13 @@ public class Publisher {
     }
   }
 
-  private boolean hasBatchingBytes() {
-    return getMaxBatchBytes() > 0;
-  }
-
   private static long computeNextBackoffDelayMs(
-      OutstandingBatch outstandingBatch, RetrySettings retrySettings, LongRandom longRandom) {
+      int attempt, RetrySettings retrySettings, LongRandom longRandom) {
     long delayMillis =
         Math.round(
             retrySettings.getInitialRetryDelay().toMillis()
-                * Math.pow(retrySettings.getRetryDelayMultiplier(), outstandingBatch.attempt - 1));
+                * Math.pow(retrySettings.getRetryDelayMultiplier(), attempt - 1));
     delayMillis = Math.min(retrySettings.getMaxRetryDelay().toMillis(), delayMillis);
-    outstandingBatch.attempt++;
     return longRandom.nextLong(0, delayMillis);
   }
 
