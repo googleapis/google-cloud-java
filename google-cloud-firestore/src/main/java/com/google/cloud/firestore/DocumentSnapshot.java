@@ -411,29 +411,25 @@ public class DocumentSnapshot {
     return write;
   }
 
-  /**
-   * Returns true if the document's data and path in this DocumentSnapshot equals the provided
-   * snapshot.
-   *
-   * @param obj The object to compare against.
-   * @return Whether this DocumentSnapshot is equal to the provided object.
-   */
   @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
+  public boolean equals(Object o) {
+    if (this == o) {
       return true;
     }
-    if (obj == null || getClass() != obj.getClass()) {
+    if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentSnapshot that = (DocumentSnapshot) obj;
+    DocumentSnapshot that = (DocumentSnapshot) o;
     return Objects.equals(firestore, that.firestore)
         && Objects.equals(docRef, that.docRef)
-        && Objects.equals(fields, that.fields);
+        && Objects.equals(fields, that.fields)
+        && Objects.equals(readTime, that.readTime)
+        && Objects.equals(updateTime, that.updateTime)
+        && Objects.equals(createTime, that.createTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firestore, docRef, fields);
+    return Objects.hash(firestore, docRef, fields, readTime, updateTime, createTime);
   }
 }

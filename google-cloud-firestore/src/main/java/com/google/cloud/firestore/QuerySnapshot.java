@@ -16,137 +16,48 @@
 
 package com.google.cloud.firestore;
 
-import com.google.cloud.firestore.DocumentChange.Type;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
 
 /**
  * A QuerySnapshot contains the results of a query. It can contain zero or more DocumentSnapshot
  * objects.
  */
-public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
+public final class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
 
   private final Query query;
+  private final DocumentSet documentSet;
+  @Nullable private volatile List<QueryDocumentSnapshot> documentSnapshots;
   private final Instant readTime;
+  private final List<DocumentChange> documentChanges;
 
-  private QuerySnapshot(Query query, Instant readTime) {
-    this.query = query;
-    this.readTime = readTime;
-  }
-
-  /** Creates a new QuerySnapshot representing the results of a Query with added documents. */
-  public static QuerySnapshot withDocuments(
-      final Query query, Instant readTime, final List<QueryDocumentSnapshot> documents) {
-    return new QuerySnapshot(query, readTime) {
-      volatile List<DocumentChange> documentChanges;
-
-      @Nonnull
-      @Override
-      public List<QueryDocumentSnapshot> getDocuments() {
-        return Collections.unmodifiableList(documents);
-      }
-
-      @Nonnull
-      @Override
-      public List<DocumentChange> getDocumentChanges() {
-        if (documentChanges == null) {
-          synchronized (documents) {
-            if (documentChanges == null) {
-              documentChanges = new ArrayList<>();
-              for (int i = 0; i < documents.size(); ++i) {
-                documentChanges.add(new DocumentChange(documents.get(0), Type.ADDED, -1, i));
-              }
-            }
-          }
-        }
-        return Collections.unmodifiableList(documentChanges);
-      }
-
-      @Override
-      public int size() {
-        return documents.size();
-      }
-
-      @Override
-      public boolean equals(Object o) {
-        if (this == o) {
-          return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-          return false;
-        }
-        QuerySnapshot that = (QuerySnapshot) o;
-        return Objects.equals(query, that.query)
-            && Objects.equals(this.size(), that.size())
-            && Objects.equals(this.getDocuments(), that.getDocuments());
-      }
-
-      @Override
-      public int hashCode() {
-        return Objects.hash(query, this.getDocuments());
-      }
-    };
-  }
-
-  /** Creates a new QuerySnapshot representing a snapshot of a Query with changed documents. */
-  public static QuerySnapshot withChanges(
-      final Query query,
+  QuerySnapshot(
+      Query query,
       Instant readTime,
-      final DocumentSet documentSet,
-      final List<DocumentChange> documentChanges) {
-    return new QuerySnapshot(query, readTime) {
-      volatile List<QueryDocumentSnapshot> documents;
-
-      @Nonnull
-      @Override
-      public List<QueryDocumentSnapshot> getDocuments() {
-        if (documents == null) {
-          synchronized (documentSet) {
-            if (documents == null) {
-              documents = documentSet.toList();
-            }
-          }
-        }
-        return Collections.unmodifiableList(documents);
-      }
-
-      @Nonnull
-      @Override
-      public List<DocumentChange> getDocumentChanges() {
-        return Collections.unmodifiableList(documentChanges);
-      }
-
-      @Override
-      public int size() {
-        return documents.size();
-      }
-
-      @Override
-      public boolean equals(Object o) {
-        if (this == o) {
-          return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-          return false;
-        }
-        QuerySnapshot that = (QuerySnapshot) o;
-        return Objects.equals(query, that.query)
-            && Objects.equals(this.size(), that.size())
-            && Objects.equals(this.getDocumentChanges(), that.getDocumentChanges())
-            && Objects.equals(this.getDocuments(), that.getDocuments());
-      }
-
-      @Override
-      public int hashCode() {
-        return Objects.hash(query, this.getDocumentChanges(), this.getDocuments());
-      }
-    };
+      List<QueryDocumentSnapshot> results,
+      List<DocumentChange> documentChanges) {
+    this.query = query;
+    this.documentSet = null;
+    this.documentSnapshots = results;
+    this.readTime = readTime;
+    this.documentChanges = documentChanges;
   }
+
+  QuerySnapshot(
+      Query query, Instant readTime, DocumentSet results, List<DocumentChange> documentChanges) {
+    this.query = query;
+    this.documentSet = results;
+    this.readTime = readTime;
+    this.documentChanges = documentChanges;
+  }
+
   /**
    * Returns the query for the snapshot.
    *
@@ -173,7 +84,18 @@ public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
    * @return The list of documents.
    */
   @Nonnull
-  public abstract List<QueryDocumentSnapshot> getDocuments();
+  public List<QueryDocumentSnapshot> getDocuments() {
+    if (documentSnapshots == null) {
+      Preconditions.checkState(documentSet != null);
+      synchronized (documentSet) {
+        if (documentSnapshots == null) {
+          documentSnapshots = documentSet.toList();
+        }
+      }
+    }
+
+    return Collections.unmodifiableList(documentSnapshots);
+  }
 
   /**
    * Returns the list of documents that changed since the last snapshot. If it's the first snapshot
@@ -182,15 +104,19 @@ public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
    * @return The list of documents that changed since the last snapshot.
    */
   @Nonnull
-  public abstract List<DocumentChange> getDocumentChanges();
+  public List<DocumentChange> getDocumentChanges() {
+    return Collections.unmodifiableList(documentChanges);
+  }
 
   /** Returns true if there are no documents in the QuerySnapshot. */
   public boolean isEmpty() {
-    return this.size() == 0;
+    return documentSnapshots != null ? documentSnapshots.isEmpty() : documentSet.isEmpty();
   }
 
   /** Returns the number of documents in the QuerySnapshot. */
-  public abstract int size();
+  public int size() {
+    return documentSnapshots != null ? documentSnapshots.size() : documentSet.size();
+  }
 
   @Override
   @Nonnull
@@ -215,15 +141,20 @@ public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
     return results;
   }
 
-  /**
-   * Returns true if the document data in this QuerySnapshot equals the provided snapshot.
-   *
-   * @param obj The object to compare against.
-   * @return Whether this QuerySnapshot is equal to the provided object.
-   */
   @Override
-  public abstract boolean equals(Object obj);
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    QuerySnapshot that = (QuerySnapshot) o;
+    return Objects.equals(query, that.query) && Objects.equals(readTime, that.readTime);
+  }
 
   @Override
-  public abstract int hashCode();
+  public int hashCode() {
+    return Objects.hash(query, readTime);
+  }
 }
