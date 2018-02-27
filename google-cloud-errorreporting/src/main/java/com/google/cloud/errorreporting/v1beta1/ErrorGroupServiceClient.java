@@ -188,6 +188,33 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * <pre><code>
    * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
+   *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName.toString());
+   * }
+   * </code></pre>
+   *
+   * @param groupName [Required] The group resource name. Written as
+   *     &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
+   *     Call &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
+   *     &lt;code&gt;groupStats.list&lt;/code&gt;&lt;/a&gt; to return a list of groups belonging to
+   *     this project.
+   *     <p>Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ErrorGroup getGroup(String groupName) {
+
+    GetGroupRequest request = GetGroupRequest.newBuilder().setGroupName(groupName).build();
+    return getGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get the specified group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
    *     .setGroupName(groupName.toString())
    *     .build();

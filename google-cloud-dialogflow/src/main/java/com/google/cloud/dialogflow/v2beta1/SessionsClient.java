@@ -199,6 +199,43 @@ public class SessionsClient implements BackgroundResource {
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
+   *   DetectIntentResponse response = sessionsClient.detectIntent(session.toString(), queryInput);
+   * }
+   * </code></pre>
+   *
+   * @param session Required. The name of the session this query is sent to. Format:
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime. It's up to the API caller to choose an appropriate
+   *     session ID. It can be a random number or some type of user identifier (preferably hashed).
+   *     The length of the session ID must not exceed 36 bytes.
+   * @param queryInput Required. The input specification. It can be set to:
+   *     <p>1. an audio config which instructs the speech recognizer how to process the speech
+   *     audio,
+   *     <p>2. a conversational query in the form of text, or
+   *     <p>3. an event that specifies which intent to trigger.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DetectIntentResponse detectIntent(String session, QueryInput queryInput) {
+
+    DetectIntentRequest request =
+        DetectIntentRequest.newBuilder().setSession(session).setQueryInput(queryInput).build();
+    return detectIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Processes a natural language query and returns structured, actionable data as a result. This
+   * method is not idempotent, because it may cause contexts and session entity types to be updated,
+   * which in turn might affect results of future queries.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+   *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
    *     .setSession(session.toString())
    *     .setQueryInput(queryInput)

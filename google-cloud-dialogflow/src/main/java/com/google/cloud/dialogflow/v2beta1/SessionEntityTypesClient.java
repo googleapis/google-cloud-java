@@ -202,6 +202,34 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   for (SessionEntityType element : sessionEntityTypesClient.listSessionEntityTypes(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The session to list all session entity types from. Format:
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSessionEntityTypesPagedResponse listSessionEntityTypes(String parent) {
+    ListSessionEntityTypesRequest request =
+        ListSessionEntityTypesRequest.newBuilder().setParent(parent).build();
+    return listSessionEntityTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the list of all session entity types in the specified session.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
    *   ListSessionEntityTypesRequest request = ListSessionEntityTypesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -315,6 +343,34 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <pre><code>
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the session entity type. Format: `projects/&lt;Project
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. Note: Runtimes are under construction
+   *     and will be available soon. If &lt;Runtime ID&gt; is not specified, we assume default
+   *     'sandbox' runtime.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SessionEntityType getSessionEntityType(String name) {
+
+    GetSessionEntityTypeRequest request =
+        GetSessionEntityTypeRequest.newBuilder().setName(name).build();
+    return getSessionEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified session entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
    *   GetSessionEntityTypeRequest request = GetSessionEntityTypeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -380,6 +436,39 @@ public class SessionEntityTypesClient implements BackgroundResource {
     CreateSessionEntityTypeRequest request =
         CreateSessionEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
+            .setSessionEntityType(sessionEntityType)
+            .build();
+    return createSessionEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a session entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+   *   SessionEntityType response = sessionEntityTypesClient.createSessionEntityType(parent.toString(), sessionEntityType);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The session to create a session entity type for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime.
+   * @param sessionEntityType Required. The session entity type to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SessionEntityType createSessionEntityType(
+      String parent, SessionEntityType sessionEntityType) {
+
+    CreateSessionEntityTypeRequest request =
+        CreateSessionEntityTypeRequest.newBuilder()
+            .setParent(parent)
             .setSessionEntityType(sessionEntityType)
             .build();
     return createSessionEntityType(request);
@@ -536,6 +625,34 @@ public class SessionEntityTypesClient implements BackgroundResource {
         DeleteSessionEntityTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
             .build();
+    deleteSessionEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified session entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   sessionEntityTypesClient.deleteSessionEntityType(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. Note: Runtimes are under construction
+   *     and will be available soon. If &lt;Runtime ID&gt; is not specified, we assume default
+   *     'sandbox' runtime.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSessionEntityType(String name) {
+
+    DeleteSessionEntityTypeRequest request =
+        DeleteSessionEntityTypeRequest.newBuilder().setName(name).build();
     deleteSessionEntityType(request);
   }
 

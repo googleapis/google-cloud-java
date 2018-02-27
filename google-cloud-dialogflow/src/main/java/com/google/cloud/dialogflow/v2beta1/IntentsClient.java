@@ -230,6 +230,30 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   for (Intent element : intentsClient.listIntents(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
+   *     ID&gt;/agent`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIntentsPagedResponse listIntents(String parent) {
+    ListIntentsRequest request = ListIntentsRequest.newBuilder().setParent(parent).build();
+    return listIntents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the list of all intents in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   String languageCode = "";
    *   for (Intent element : intentsClient.listIntents(parent, languageCode).iterateAll()) {
    *     // doThingsWith(element);
@@ -251,6 +275,36 @@ public class IntentsClient implements BackgroundResource {
             .setParent(parent == null ? null : parent.toString())
             .setLanguageCode(languageCode)
             .build();
+    return listIntents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the list of all intents in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   String languageCode = "";
+   *   for (Intent element : intentsClient.listIntents(parent.toString(), languageCode).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The agent to list all intents from. Format: `projects/&lt;Project
+   *     ID&gt;/agent`.
+   * @param languageCode Optional. The language to list training phrases, parameters and rich
+   *     messages for. If not specified, the agent's default language is used. [More than a dozen
+   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
+   *     must be enabled in the agent before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIntentsPagedResponse listIntents(String parent, String languageCode) {
+    ListIntentsRequest request =
+        ListIntentsRequest.newBuilder().setParent(parent).setLanguageCode(languageCode).build();
     return listIntents(request);
   }
 
@@ -368,6 +422,29 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   Intent response = intentsClient.getIntent(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the intent. Format: `projects/&lt;Project
+   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Intent getIntent(String name) {
+
+    GetIntentRequest request = GetIntentRequest.newBuilder().setName(name).build();
+    return getIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified intent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
    *   String languageCode = "";
    *   Intent response = intentsClient.getIntent(name, languageCode);
    * }
@@ -388,6 +465,35 @@ public class IntentsClient implements BackgroundResource {
             .setName(name == null ? null : name.toString())
             .setLanguageCode(languageCode)
             .build();
+    return getIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified intent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   String languageCode = "";
+   *   Intent response = intentsClient.getIntent(name.toString(), languageCode);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the intent. Format: `projects/&lt;Project
+   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param languageCode Optional. The language to retrieve training phrases, parameters and rich
+   *     messages for. If not specified, the agent's default language is used. [More than a dozen
+   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
+   *     must be enabled in the agent, before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Intent getIntent(String name, String languageCode) {
+
+    GetIntentRequest request =
+        GetIntentRequest.newBuilder().setName(name).setLanguageCode(languageCode).build();
     return getIntent(request);
   }
 
@@ -475,6 +581,32 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
+   *   Intent response = intentsClient.createIntent(parent.toString(), intent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The agent to create a intent for. Format: `projects/&lt;Project
+   *     ID&gt;/agent`.
+   * @param intent Required. The intent to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Intent createIntent(String parent, Intent intent) {
+
+    CreateIntentRequest request =
+        CreateIntentRequest.newBuilder().setParent(parent).setIntent(intent).build();
+    return createIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an intent in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   Intent intent = Intent.newBuilder().build();
    *   String languageCode = "";
    *   Intent response = intentsClient.createIntent(parent, intent, languageCode);
    * }
@@ -494,6 +626,41 @@ public class IntentsClient implements BackgroundResource {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
+            .setIntent(intent)
+            .setLanguageCode(languageCode)
+            .build();
+    return createIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an intent in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   Intent intent = Intent.newBuilder().build();
+   *   String languageCode = "";
+   *   Intent response = intentsClient.createIntent(parent.toString(), intent, languageCode);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The agent to create a intent for. Format: `projects/&lt;Project
+   *     ID&gt;/agent`.
+   * @param intent Required. The intent to create.
+   * @param languageCode Optional. The language of training phrases, parameters and rich messages
+   *     defined in `intent`. If not specified, the agent's default language is used. [More than a
+   *     dozen languages](https://dialogflow.com/docs/reference/language) are supported. Note:
+   *     languages must be enabled in the agent, before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Intent createIntent(String parent, Intent intent, String languageCode) {
+
+    CreateIntentRequest request =
+        CreateIntentRequest.newBuilder()
+            .setParent(parent)
             .setIntent(intent)
             .setLanguageCode(languageCode)
             .build();
@@ -695,6 +862,29 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   intentsClient.deleteIntent(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the intent to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteIntent(String name) {
+
+    DeleteIntentRequest request = DeleteIntentRequest.newBuilder().setName(name).build();
+    deleteIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified intent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
    *   DeleteIntentRequest request = DeleteIntentRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -845,6 +1035,36 @@ public class IntentsClient implements BackgroundResource {
             .setParent(parent == null ? null : parent.toString())
             .addAllIntents(intents)
             .build();
+    return batchDeleteIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes intents in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
+   *   Empty response = intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to delete all entities types for. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param intents Required. The collection of intents to delete. Only intent `name` must be filled
+   *     in.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> batchDeleteIntentsAsync(
+      String parent, List<Intent> intents) {
+
+    BatchDeleteIntentsRequest request =
+        BatchDeleteIntentsRequest.newBuilder().setParent(parent).addAllIntents(intents).build();
     return batchDeleteIntentsAsync(request);
   }
 
