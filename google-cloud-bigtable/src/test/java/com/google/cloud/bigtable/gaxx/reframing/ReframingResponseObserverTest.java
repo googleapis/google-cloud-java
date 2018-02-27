@@ -320,7 +320,7 @@ public class ReframingResponseObserverTest {
         new DasherizingReframer(1) {
           @Override
           public void push(String response) {
-            if (response.equals("boom")) {
+            if ("boom".equals(response)) {
               throw new IllegalStateException("fake error");
             }
             super.push(response);
