@@ -144,6 +144,12 @@ class DatabaseClientImpl implements DatabaseClient {
     }
   }
 
+  @Override
+  public TransactionManager transactionManager() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
   ListenableFuture<Void> closeAsync() {
     return pool.closeAsync();
   }

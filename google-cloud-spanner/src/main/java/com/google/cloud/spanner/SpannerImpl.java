@@ -992,7 +992,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           ExecuteSqlRequest.newBuilder()
               .setSql(statement.getSql())
               .setQueryMode(queryMode)
-              .setSession(session.name);
+              .setSession(session.getName());
       Map<String, Value> stmtParameters = statement.getParameters();
       if (!stmtParameters.isEmpty()) {
         com.google.protobuf.Struct.Builder paramsBuilder = builder.getParamsBuilder();

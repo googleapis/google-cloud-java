@@ -240,5 +240,10 @@ public interface DatabaseClient {
    */
   TransactionRunner readWriteTransaction();
   
+  /**
+   * Returns a transaction manager which allows manual management of transaction lifecycle. This
+   * API is meant for advanced users. Most users should instead use the
+   * {@link #readWriteTransaction()} API instead.
+   */
   TransactionManager transactionManager();
 }

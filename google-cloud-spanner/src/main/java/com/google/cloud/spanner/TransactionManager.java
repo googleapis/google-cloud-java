@@ -25,9 +25,10 @@ import com.google.cloud.Timestamp;
  *     txn.buffer(
  *             Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
  *     try {
- *       txn.commit();
+ *       manager.commit();
  *       break;
  *     } catch (AbortedException e) {
+ *       Thread.sleep(e.getRetryDelayInMillis() / 1000);
  *       txn = manager.resetForRetry();
  *     }
  *   }
@@ -44,7 +45,8 @@ public interface TransactionManager extends AutoCloseable {
   TransactionContext begin();
   
   /**
-   * Commits the currently active transaction.
+   * Commits the currently active transaction. If the transaction was already aborted, then this
+   * would throw an {@link AbortedException}.
    */
   void commit();
   
@@ -56,12 +58,16 @@ public interface TransactionManager extends AutoCloseable {
   
   /**
    * Creates a new transaction for retry. This should only be called if the previous transaction
-   * failed with {@code ABORTED}. In all other cases, this will throw a {@link SpannerException}.
+   * failed with {@code ABORTED}. In all other cases, this will throw an
+   * {@link IllegalStateException}. Users should backoff before calling this method. Backoff delay
+   * is specified by {@link SpannerException#getRetryDelayInMillis()} on the
+   * {@code SpannerException} throw by the previous commit call.
    */
   TransactionContext resetForRetry();
   
   /**
-   * Returns the commit timestamp if the transaction committed successfully.
+   * Returns the commit timestamp if the transaction committed successfully otherwise it will throw
+   * {@code IllegalStateException}.
    */
   Timestamp getCommitTimestamp();
   
