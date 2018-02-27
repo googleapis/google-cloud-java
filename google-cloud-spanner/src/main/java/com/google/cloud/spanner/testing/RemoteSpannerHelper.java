@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.testing;
 
+import com.google.cloud.spanner.BatchClient;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.InstanceId;
@@ -61,6 +62,10 @@ public class RemoteSpannerHelper {
 
   public DatabaseClient getDatabaseClient(Database db) {
     return getClient().getDatabaseClient(db.getId());
+  }
+
+  public BatchClient getBatchClient(Database db) {
+    return getClient().getBatchClient(db.getId());
   }
 
   public InstanceId getInstanceId() {

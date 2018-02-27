@@ -18,8 +18,12 @@ package com.google.cloud.spanner;
 
 import com.google.common.base.Preconditions;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /** Specifies options for various spanner operations */
-public final class Options {
+public final class Options implements Serializable {
+  private static final long serialVersionUID = 8067099123096783941L;
 
   /** Marker interface to mark options applicable to both Read and Query operations */
   public interface ReadAndQueryOption extends ReadOption, QueryOption {}
@@ -163,6 +167,68 @@ public final class Options {
 
   String filter() {
     return filter;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder b = new StringBuilder();
+    if (limit != null) {
+      b.append("limit: ").append(limit).append(' ');
+    }
+    if (prefetchChunks != null) {
+      b.append("prefetchChunks: ").append(prefetchChunks).append(' ');
+    }
+    if (pageSize != null) {
+      b.append("pageSize: ").append(pageSize).append(' ');
+    }
+    if (pageToken != null) {
+      b.append("pageToken: ").append(pageToken).append(' ');
+    }
+    if (filter != null) {
+      b.append("filter: ").append(filter).append(' ');
+    }
+    return b.toString();
+  }
+
+  @Override
+  // Since Options mandates checking hasXX() before XX() is called, the equals & hashCode look more
+  // complicated than usual.
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    Options that = (Options) o;
+    return (!hasLimit() && !that.hasLimit() || Objects.equals(limit(), that.limit()))
+        && (!hasPrefetchChunks() && !that.hasPrefetchChunks()
+            || Objects.equals(prefetchChunks(), that.prefetchChunks()))
+        && (!hasPageSize() && !that.hasPageSize() || Objects.equals(pageSize(), that.pageSize()))
+        && Objects.equals(pageToken(), that.pageToken())
+        && Objects.equals(filter(), that.filter());
+  }
+
+  @Override
+  public int hashCode() {
+    int result = 31;
+    if (limit != null) {
+      result = 31 * result + limit.hashCode();
+    }
+    if (prefetchChunks != null) {
+      result = 31 * result + prefetchChunks.hashCode();
+    }
+    if (pageSize != null) {
+      result = 31 * result + pageSize.hashCode();
+    }
+    if (pageToken != null) {
+      result = 31 * result + pageToken.hashCode();
+    }
+    if (filter != null) {
+      result = 31 * result + filter.hashCode();
+    }
+    return result;
   }
 
   static Options fromReadOptions(ReadOption... options) {

@@ -104,7 +104,7 @@ public final class ResultSets {
     @Override
     public Type getColumnType(String columnName) {
       for (Type.StructField field : getType().getStructFields()) {
-        if (field.getName() == columnName) {
+        if (field.getName().equals(columnName)) {
           return field.getType();
         }
       }

@@ -23,7 +23,6 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.TypeCode;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
