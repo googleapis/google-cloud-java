@@ -25,6 +25,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.map;
 import static com.google.cloud.firestore.LocalFirestoreHelper.string;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -661,6 +662,100 @@ public class WatchTest {
     awaitQuerySnapshot();
   }
 
+  @Test
+  public void emptySnapshotEquals() throws InterruptedException {
+    addQueryListener();
+    awaitAddTarget();
+    send(addTarget());
+    send(current());
+    send(snapshot());
+    QuerySnapshot firstSnapshot = awaitQuerySnapshot();
+
+    restartWatch();
+
+    addQueryListener();
+    awaitAddTarget();
+    send(addTarget());
+    send(current());
+    send(snapshot());
+    QuerySnapshot secondSnapshot = awaitQuerySnapshot();
+
+    assertEquals(firstSnapshot, firstSnapshot);
+    assertEquals(firstSnapshot, secondSnapshot);
+  }
+
+  @Test
+  public void snapshotWithChangesEquals() throws InterruptedException {
+    ListenResponse doc1 = doc("coll/doc1", SINGLE_FIELD_PROTO);
+    ListenResponse doc2 = doc("coll/doc2", SINGLE_FIELD_PROTO);
+    ListenResponse doc3 = doc("coll/doc3", SINGLE_FIELD_PROTO);
+
+    addQueryListener();
+    awaitAddTarget();
+    send(addTarget());
+    send(doc1);
+    send(current());
+    send(snapshot());
+    QuerySnapshot firstSnapshot =
+        awaitQuerySnapshot(new SnapshotDocument(ChangeType.ADDED, "coll/doc1", SINGLE_FIELD_MAP));
+
+    send(doc2);
+    send(doc3);
+    send(snapshot());
+    QuerySnapshot secondSnapshot =
+        awaitQuerySnapshot(
+            new SnapshotDocument(ChangeType.UNCHANGED, "coll/doc1", SINGLE_FIELD_MAP),
+            new SnapshotDocument(ChangeType.ADDED, "coll/doc2", SINGLE_FIELD_MAP),
+            new SnapshotDocument(ChangeType.ADDED, "coll/doc3", SINGLE_FIELD_MAP));
+    assertNotEquals(secondSnapshot, firstSnapshot);
+
+    send(docDelete("coll/doc3"));
+    send(snapshot());
+    QuerySnapshot thirdSnapshot =
+        awaitQuerySnapshot(
+            new SnapshotDocument(ChangeType.UNCHANGED, "coll/doc1", SINGLE_FIELD_MAP),
+            new SnapshotDocument(ChangeType.UNCHANGED, "coll/doc2", SINGLE_FIELD_MAP),
+            new SnapshotDocument(ChangeType.REMOVED, "coll/doc3", null));
+    assertNotEquals(thirdSnapshot, firstSnapshot);
+    assertNotEquals(thirdSnapshot, secondSnapshot);
+
+    restartWatch();
+
+    addQueryListener();
+    awaitAddTarget();
+    send(addTarget());
+    send(doc2);
+    send(current());
+    send(snapshot());
+    QuerySnapshot currentSnapshot =
+        awaitQuerySnapshot(new SnapshotDocument(ChangeType.ADDED, "coll/doc2", SINGLE_FIELD_MAP));
+    assertNotEquals(currentSnapshot, firstSnapshot);
+
+    send(doc3);
+    send(doc1);
+    send(snapshot());
+    currentSnapshot =
+        awaitQuerySnapshot(
+            new SnapshotDocument(ChangeType.ADDED, "coll/doc1", SINGLE_FIELD_MAP),
+            new SnapshotDocument(ChangeType.UNCHANGED, "coll/doc2", SINGLE_FIELD_MAP),
+            new SnapshotDocument(ChangeType.ADDED, "coll/doc3", SINGLE_FIELD_MAP));
+    assertNotEquals(currentSnapshot, secondSnapshot);
+
+    send(docDelete("coll/doc3"));
+    send(snapshot());
+    currentSnapshot =
+        awaitQuerySnapshot(
+            new SnapshotDocument(ChangeType.UNCHANGED, "coll/doc1", SINGLE_FIELD_MAP),
+            new SnapshotDocument(ChangeType.UNCHANGED, "coll/doc2", SINGLE_FIELD_MAP),
+            new SnapshotDocument(ChangeType.REMOVED, "coll/doc3", null));
+    assertEquals(currentSnapshot, thirdSnapshot);
+  }
+
+  private void restartWatch() {
+    after();
+    before();
+  }
+
   private void awaitException(Code expectedCode) throws InterruptedException {
     FirestoreException exception = exceptions.take();
 
@@ -678,7 +773,8 @@ public class WatchTest {
   }
 
   /** Awaits a QuerySnapshot and validates its contents based on the provided documents. */
-  private void awaitQuerySnapshot(SnapshotDocument... documents) throws InterruptedException {
+  private QuerySnapshot awaitQuerySnapshot(SnapshotDocument... documents)
+      throws InterruptedException {
     QuerySnapshot querySnapshot = querySnapshots.take();
 
     // List of documents to use a base to replay all changes. Verifies oldIndex and newIndex.
@@ -728,6 +824,8 @@ public class WatchTest {
     lastSnapshot = querySnapshot;
 
     verifyOrder(expectedOrder, updatedDocuments);
+
+    return querySnapshot;
   }
 
   private void verifyOrder(
