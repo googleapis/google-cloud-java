@@ -81,7 +81,6 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
   private final FirestoreImpl firestore;
   private final ScheduledExecutorService firestoreExecutor;
-  private final Query query;
   private final Comparator<QueryDocumentSnapshot> comparator;
   private final ExponentialRetryAlgorithm backoff;
   private final Target target;
@@ -130,14 +129,15 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
   /**
    * @param firestore The Firestore Database client.
-   * @param query The query that is used to order the document snapshots returned by this watch.
    * @param target A Firestore 'Target' proto denoting the target to listen on.
+   * @param comparator A comparator for DocumentSnapshots that is used to order the document
+   *     snapshots returned by this watch.
    */
-  private Watch(FirestoreImpl firestore, Query query, Target target) {
+  private Watch(
+      FirestoreImpl firestore, Target target, Comparator<QueryDocumentSnapshot> comparator) {
     this.firestore = firestore;
     this.target = target;
-    this.query = query;
-    this.comparator = query.comparator();
+    this.comparator = comparator;
     this.backoff =
         new ExponentialRetryAlgorithm(RETRY_SETTINGS, CurrentMillisClock.getDefaultClock());
     this.firestoreExecutor = firestore.getClient().getExecutor();
@@ -158,8 +158,15 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
     return new Watch(
         (FirestoreImpl) documentReference.getFirestore(),
-        documentReference.getParent(),
-        target.build());
+        target.build(),
+        new Comparator<QueryDocumentSnapshot>() {
+          @Override
+          public int compare(QueryDocumentSnapshot o1, QueryDocumentSnapshot o2) {
+            // We should only ever receive one document for DocumentReference listeners.
+            Preconditions.checkState(o1.equals(o2));
+            return 0;
+          }
+        });
   }
 
   /**
@@ -177,7 +184,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
             .build());
     target.setTargetId(WATCH_TARGET_ID);
 
-    return new Watch((FirestoreImpl) query.getFirestore(), query, target.build());
+    return new Watch((FirestoreImpl) query.getFirestore(), target.build(), query.comparator());
   }
 
   @Override
@@ -465,17 +472,19 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    */
   private void pushSnapshot(final Timestamp readTime, ByteString nextResumeToken) {
     final List<DocumentChange> changes = computeSnapshot(readTime);
+    final DocumentSet documents = documentSet;
+
     if (!hasPushed || !changes.isEmpty()) {
-      final QuerySnapshot querySnapshot =
-          QuerySnapshot.withChanges(
-              query,
-              Instant.ofEpochSecond(readTime.getSeconds(), readTime.getNanos()),
-              documentSet,
-              changes);
       userCallbackExecutor.execute(
           new Runnable() {
             @Override
             public void run() {
+              QuerySnapshot querySnapshot =
+                  new QuerySnapshot(
+                      null,
+                      Instant.ofEpochSecond(readTime.getSeconds(), readTime.getNanos()),
+                      documents,
+                      changes);
               listener.onEvent(querySnapshot, null);
             }
           });

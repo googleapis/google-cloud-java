@@ -74,21 +74,15 @@ public final class Blob implements Serializable {
     return byteString.toByteArray();
   }
 
-  /**
-   * Returns true if this Blob is equal to the provided object.
-   *
-   * @param obj The object to compare against.
-   * @return Whether this Blob is equal to the provided object.
-   */
   @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
+  public boolean equals(Object o) {
+    if (this == o) {
       return true;
     }
-    if (obj == null || getClass() != obj.getClass()) {
+    if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Blob blob = (Blob) obj;
+    Blob blob = (Blob) o;
     return Objects.equals(byteString, blob.byteString);
   }
 
