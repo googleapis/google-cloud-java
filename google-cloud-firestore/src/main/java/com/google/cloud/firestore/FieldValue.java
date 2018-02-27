@@ -51,4 +51,8 @@ public abstract class FieldValue {
   public boolean equals(Object obj) {
     return this == obj;
   }
+
+  public int hashCode() {
+    return super.hashCode();
+  }
 }
