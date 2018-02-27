@@ -123,7 +123,7 @@ public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
 
       @Override
       public int size() {
-        return documents.size();
+        return documentSet.size();
       }
 
       @Override

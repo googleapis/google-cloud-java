@@ -52,6 +52,7 @@ public abstract class FieldValue {
     return this == obj;
   }
 
+  @Override
   public int hashCode() {
     return super.hashCode();
   }
