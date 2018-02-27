@@ -412,20 +412,6 @@ public class DocumentReferenceTest {
   }
 
   @Test
-  public void setDocumentWithEmptyMerge() throws Exception {
-    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
-        .when(firestoreMock)
-        .sendRequest(
-            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
-
-    documentReference.set(map(), SetOptions.merge()).get();
-
-    assertCommitEquals(
-        commit(set(Collections.<String, Value>emptyMap(), Collections.<String>emptyList())),
-        commitCapture.getValue());
-  }
-
-  @Test
   public void setDocumentWithNestedMerge() throws Exception {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
