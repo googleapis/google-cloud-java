@@ -245,7 +245,6 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
         DocumentTransform.fromFieldPathMap(documentReference, documentData);
 
     if (options.isMerge()) {
-      Preconditions.checkArgument(!fields.isEmpty(), "Data to merge cannot be empty.");
       if (options.getFieldMask() != null) {
         List<FieldPath> fieldMask = new ArrayList<>(options.getFieldMask());
         fieldMask.removeAll(documentTransform.getFields());
@@ -257,11 +256,12 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
     Mutation mutation = addMutation();
 
-    if (!options.isMerge() || !documentSnapshot.isEmpty() || !documentMask.isEmpty()) {
-      mutation.document = documentSnapshot.toPb();
-    }
+    boolean hasDocumentData = !documentSnapshot.isEmpty() || !documentMask.isEmpty();
 
-    if (!documentMask.isEmpty()) {
+    if (!options.isMerge()) {
+      mutation.document = documentSnapshot.toPb();
+    } else if (hasDocumentData || documentTransform.isEmpty()) {
+      mutation.document = documentSnapshot.toPb();
       mutation.document.setUpdateMask(documentMask.toPb());
     }
 
