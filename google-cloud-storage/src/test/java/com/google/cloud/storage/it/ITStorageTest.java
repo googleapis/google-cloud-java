@@ -126,7 +126,7 @@ public class ITStorageTest {
       // Here, delete all buckets older than 2 days. They should already be empty and easy.
       long cleanTime = System.currentTimeMillis() - TimeUnit.DAYS.toMillis(2);
       long cleanTimeout = System.currentTimeMillis() - TimeUnit.MINUTES.toMillis(1);
-      RemoteStorageHelper.cleanOldBuckets(storage, cleanTime, cleanTimeout);
+      RemoteStorageHelper.cleanBuckets(storage, cleanTime, cleanTimeout);
 
       boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 1, TimeUnit.MINUTES);
       if (!wasDeleted && log.isLoggable(Level.WARNING)) {

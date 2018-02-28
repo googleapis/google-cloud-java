@@ -70,7 +70,7 @@ public class RemoteStorageHelper {
     return options;
   }
 
-  public static void cleanOldBuckets(final Storage storage, final long olderThan, long timeoutMs) {
+  public static void cleanBuckets(final Storage storage, final long olderThan, long timeoutMs) {
     Runnable task =
         new Runnable() {
           @Override
@@ -93,7 +93,7 @@ public class RemoteStorageHelper {
     try {
       thread.join(timeoutMs);
     } catch (InterruptedException e) {
-      log.info("cleanOldBuckets interrupted");
+      log.info("cleanBuckets interrupted");
     }
   }
 
