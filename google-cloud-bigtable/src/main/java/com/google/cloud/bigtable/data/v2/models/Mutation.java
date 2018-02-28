@@ -28,7 +28,8 @@ import javax.annotation.Nonnull;
 
 /**
  * The concrete implementation of {@link MutationApi} that can be used to create and represent a
- * list of mutations. This class is meant to used as child of other classes.
+ * list of mutations. It used by {@link RowMutation} and {@link ConditionalRowMutation} to
+ * encapsulate a list of mutations that will to be applied to a single row.
  */
 public final class Mutation implements MutationApi<Mutation> {
   private final ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =

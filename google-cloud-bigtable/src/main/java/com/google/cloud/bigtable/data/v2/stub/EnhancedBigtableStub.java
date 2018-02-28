@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -57,6 +58,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
   private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
   private final UnaryCallable<RowMutation, Void> mutateRowCallable;
+  private final UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable;
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
@@ -94,6 +96,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
     sampleRowKeysCallable = createSampleRowKeysCallable();
     mutateRowCallable = createMutateRowCallable();
+    checkAndMutateRowCallable = createCheckAndMutateRowCallable();
   }
 
   // <editor-fold desc="Callable creators">
@@ -140,6 +143,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
       }
     };
   }
+
+  private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
+    return new UnaryCallable<ConditionalRowMutation, Boolean>() {
+      @Override
+      public ApiFuture<Boolean> futureCall(ConditionalRowMutation request, ApiCallContext context) {
+        throw new UnsupportedOperationException("todo");
+      }
+    };
+  }
   // </editor-fold>
 
   // <editor-fold desc="Callable accessors">
@@ -153,6 +165,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   public UnaryCallable<RowMutation, Void> mutateRowCallable() {
     return mutateRowCallable;
+  }
+
+  public UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable() {
+    return checkAndMutateRowCallable;
   }
   // </editor-fold>
 

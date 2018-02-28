@@ -19,6 +19,7 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -87,6 +88,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
   /** Returns the object with the settings used for calls to MutateRow. */
   public UnaryCallSettings<RowMutation, Void> mutateRowSettings() {
     return getTypedStubSettings().mutateRowSettings();
+  }
+
+  /** Returns the object with the settings used for calls to checkAndMutateRow. */
+  public UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
+    return getTypedStubSettings().checkAndMutateRowSettings();
   }
 
   @SuppressWarnings("unchecked")
@@ -162,6 +168,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     /** Returns the builder for the settings used for calls to MutateRow. */
     public UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings() {
       return getTypedStubSettings().mutateRowSettings();
+    }
+
+    /** Returns the object with the settings used for calls to checkAndMutateRow. */
+    public UnaryCallSettings.Builder<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
+      return getTypedStubSettings().checkAndMutateRowSettings();
     }
 
     @SuppressWarnings("unchecked")

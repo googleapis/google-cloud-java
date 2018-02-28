@@ -24,11 +24,11 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 import org.junit.Test;
@@ -54,7 +54,7 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   @Test
-  public void settingsAreNotLostTest() throws Exception {
+  public void settingsAreNotLostTest() {
     InstanceName instanceName = InstanceName.of("my-project", "my-instance");
     String appProfileId = "my-app-profile-id";
     String endpoint = "some.other.host:123";
@@ -111,7 +111,7 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   @Test
-  public void readRowsIsNotLostTest() throws IOException {
+  public void readRowsIsNotLostTest() {
     InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
 
     EnhancedBigtableStubSettings.Builder builder =
@@ -254,6 +254,46 @@ public class EnhancedBigtableStubSettingsTest {
     UnaryCallSettings.Builder<RowMutation, Void> builder =
         EnhancedBigtableStubSettings.newBuilder().mutateRowSettings();
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+  }
+
+  @Test
+  public void checkAndMutateRowSettingsAreNotLostTest() {
+    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+
+    RetrySettings retrySettings = RetrySettings.newBuilder().build();
+    builder
+        .checkAndMutateRowSettings()
+        .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
+        .setRetrySettings(retrySettings)
+        .build();
+
+    assertThat(builder.checkAndMutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.checkAndMutateRowSettings().getRetrySettings()).isSameAs(retrySettings);
+
+    assertThat(builder.build().checkAndMutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().checkAndMutateRowSettings().getRetrySettings())
+        .isSameAs(retrySettings);
+
+    assertThat(builder.build().toBuilder().checkAndMutateRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().toBuilder().checkAndMutateRowSettings().getRetrySettings())
+        .isSameAs(retrySettings);
+  }
+
+  @Test
+  public void checkAndMutateRowSettingsAreSane() {
+    UnaryCallSettings.Builder<ConditionalRowMutation, Boolean> builder =
+        EnhancedBigtableStubSettings.newBuilder().checkAndMutateRowSettings();
+
+    // CheckAndMutateRow is not retryable in the case of toggle mutations. So it's disabled by
+    // default.
+    assertThat(builder.getRetrySettings().getMaxAttempts()).isAtMost(1);
+    assertThat(builder.getRetryableCodes()).isEmpty();
   }
 
   private void verifyRetrySettingAreSane(Set<Code> retryCodes, RetrySettings retrySettings) {
