@@ -270,7 +270,8 @@ we're working towards their release candidate. We will address issues and reques
 a higher priority.
 
 **Alpha**: Libraries defined at an Alpha quality level are still a work-in-progress and
-are more likely to get backwards-incompatible updates.
+are more likely to get backwards-incompatible updates. Additionally, it's possible for Alpha
+libraries to get deprecated and deleted before ever being promoted to Beta or GA.
 
 Version Management
 ------------------
