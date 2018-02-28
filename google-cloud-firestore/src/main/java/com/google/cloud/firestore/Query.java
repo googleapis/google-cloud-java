@@ -25,7 +25,6 @@ import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
-import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1beta1.Cursor;
 import com.google.firestore.v1beta1.Document;
@@ -996,13 +995,10 @@ public class Query {
     stream(
         new QuerySnapshotObserver() {
           List<QueryDocumentSnapshot> documentSnapshots = new ArrayList<>();
-          List<DocumentChange> documentChanges = new ArrayList<>();
 
           @Override
           public void onNext(QueryDocumentSnapshot documentSnapshot) {
             documentSnapshots.add(documentSnapshot);
-            documentChanges.add(
-                new DocumentChange(documentSnapshot, Type.ADDED, -1, documentSnapshots.size() - 1));
           }
 
           @Override
@@ -1013,8 +1009,7 @@ public class Query {
           @Override
           public void onCompleted() {
             QuerySnapshot querySnapshot =
-                new QuerySnapshot(
-                    Query.this, this.getReadTime(), documentSnapshots, documentChanges);
+                QuerySnapshot.withDocuments(Query.this, this.getReadTime(), documentSnapshots);
             result.set(querySnapshot);
           }
         },
@@ -1071,15 +1066,21 @@ public class Query {
     return path;
   }
 
+  /**
+   * Returns true if this Query is equal to the provided object.
+   *
+   * @param obj The object to compare against.
+   * @return Whether this Query is equal to the provided object.
+   */
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (obj == null || !(obj instanceof Query)) {
       return false;
     }
-    Query query = (Query) o;
+    Query query = (Query) obj;
     return Objects.equals(path, query.path)
         && Objects.equals(firestore, query.firestore)
         && Objects.equals(options, query.options);

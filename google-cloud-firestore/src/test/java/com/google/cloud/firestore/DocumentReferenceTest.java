@@ -108,6 +108,13 @@ public class DocumentReferenceTest {
   }
 
   @Test
+  public void equals() {
+    DocumentReference doc1 = documentReference.collection("subcoll").document("doc");
+    DocumentReference doc2 = documentReference.collection("subcoll").document("doc");
+    assertEquals(doc1, doc2);
+  }
+
+  @Test
   public void getCollection() {
     CollectionReference collectionReference = documentReference.collection("subcoll");
     assertEquals("subcoll", collectionReference.getId());
@@ -409,6 +416,20 @@ public class DocumentReferenceTest {
     for (int i = 0; i < 5; ++i) {
       assertCommitEquals(expectedCommit, commitCapture.getAllValues().get(i));
     }
+  }
+
+  @Test
+  public void setDocumentWithEmptyMerge() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference.set(map(), SetOptions.merge()).get();
+
+    assertCommitEquals(
+        commit(set(Collections.<String, Value>emptyMap(), Collections.<String>emptyList())),
+        commitCapture.getValue());
   }
 
   @Test
