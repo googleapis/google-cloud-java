@@ -674,7 +674,7 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-cloudresourcemanager</artifactId>
-        <version>v1beta1-rev10-1.21.0</version>
+        <version>v1-rev470-1.23.0</version>
       </dependency>
 
       <dependency>
