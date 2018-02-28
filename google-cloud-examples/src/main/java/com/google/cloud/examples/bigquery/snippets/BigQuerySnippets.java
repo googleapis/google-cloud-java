@@ -25,6 +25,7 @@ package com.google.cloud.examples.bigquery.snippets;
 import com.google.api.client.util.Charsets;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
@@ -63,6 +64,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -376,6 +378,40 @@ public class BigQuerySnippets {
     LoadStatistics stats = job.getStatistics();
     return stats.getOutputRows();
     // [END writeFileToTable]
+  }
+
+  /**
+   * Example of writing a newline-delimited-json file with textual fields from GCS to a table.
+   */
+  // [TARGET writer(WriteChannelConfiguration)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE "my_source_uri")]
+  // [VARIABLE "field_names")]
+  public Long writeRemoteFileToTable(String datasetName, String tableName, String sourceUri, List<String> fieldNames)
+      throws InterruptedException {
+    // [START bigquery_load_table_gcs_json]
+    TableId tableId = TableId.of(datasetName, tableName);
+    LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
+        .setFormatOptions(FormatOptions.json())
+        .build();
+    // Table field definition
+    ArrayList<Field> fields = new ArrayList<>();
+    for (String fieldName: fieldNames) {
+      fields.add(Field.of(fieldName, LegacySQLTypeName.STRING));
+    }
+    // Table schema definition
+    Schema schema = Schema.of(fields.toArray(new Field[fields.size()]));
+    // Create the table
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
+    bigquery.create(TableInfo.of(tableId, tableDefinition));
+    // Load the table
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    remoteLoadJob = remoteLoadJob.waitFor();
+    // Check the table
+    System.out.println("State: " + remoteLoadJob.getStatus().getState());
+    return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
+    // [END bigquery_load_table_gcs_json]
   }
 
   /**
