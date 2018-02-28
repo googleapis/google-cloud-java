@@ -42,6 +42,8 @@ public class BigtableDataClientTest {
   @Mock private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
   @Mock private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
   @Mock private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
+  @Mock private UnaryCallable<ConditionalRowMutation, Boolean> mockCheckAndMutateRowCallable;
+  @Mock private UnaryCallable<ReadModifyWriteRow, Row> mockReadModifyWriteRowCallable;
 
   private BigtableDataClient bigtableDataClient;
 
@@ -51,6 +53,8 @@ public class BigtableDataClientTest {
     Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
     Mockito.when(mockStub.sampleRowKeysCallable()).thenReturn(mockSampleRowKeysCallable);
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
+    Mockito.when(mockStub.checkAndMutateRowCallable()).thenReturn(mockCheckAndMutateRowCallable);
+    Mockito.when(mockStub.readModifyWriteRowCallable()).thenReturn(mockReadModifyWriteRowCallable);
   }
 
   @Test
