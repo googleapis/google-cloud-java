@@ -670,7 +670,7 @@
         <artifactId>opencensus-contrib-http-util</artifactId>
         <version>${opencensus.version}</version>
       </dependency>
-<!-- testlib deps. Only put testlib dependencies here, which are testlib packages
+      <!-- testlib deps. Only put testlib dependencies here, which are testlib packages
       that correspond to another non-test package. Put pure test dependencies (e.g.
       junit) in the main pom.xml. -->
       <dependency>
@@ -690,8 +690,6 @@
         <version>${gax-httpjson.version}</version>
         <classifier>testlib</classifier>
       </dependency>
-
-      <!-- pure test deps -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
