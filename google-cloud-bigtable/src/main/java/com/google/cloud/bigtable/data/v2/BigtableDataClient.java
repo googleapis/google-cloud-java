@@ -23,6 +23,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -334,12 +335,6 @@ public class BigtableDataClient implements AutoCloseable {
     return stub.mutateRowCallable();
   }
 
-  /** Close the clients and releases all associated resources. */
-  @Override
-  public void close() throws Exception {
-    stub.close();
-  }
-
   /**
    * Convenience method to asynchronously mutate a row atomically based on the output of a filter.
    *
@@ -382,5 +377,55 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable() {
     return stub.checkAndMutateRowCallable();
+  }
+
+  /**
+   * Convenience method that asynchronously modifies a row atomically on the server. The method
+   * reads the latest existing timestamp and value from the specified columns and writes a new
+   * entry. The new value for the timestamp is the greater of the existing timestamp or the current
+   * server time. The method returns the new contents of all modified cells.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   ReadModifyWriteRow mutation = ReadModifyWriteRow.create("[TABLE]", "[KEY]")
+   *     .increment("[FAMILY]", "[QUALIFIER]", 1)
+   *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
+   *
+   *   ApiFuture<Row> success = bigtableClient.readModifyWriteRowAsync(mutation);
+   * }</pre>
+   */
+  public ApiFuture<Row> readModifyWriteRowAsync(ReadModifyWriteRow mutation) {
+    return readModifyWriteRowCallable().futureCall(mutation);
+  }
+
+  /**
+   * Modifies a row atomically on the server. The method reads the latest existing timestamp and
+   * value from the specified columns and writes a new entry. The new value for the timestamp is the
+   * greater of the existing timestamp or the current server time. The method returns the new
+   * contents of all modified cells.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   ReadModifyWriteRow mutation = ReadModifyWriteRow.create("[TABLE]", "[KEY]")
+   *     .increment("[FAMILY]", "[QUALIFIER]", 1)
+   *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
+   *
+   *   Row row = bigtableClient.readModifyWriteRowCallable().call(mutation);
+   * }</pre>
+   */
+  public UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable() {
+    return stub.readModifyWriteRowCallable();
+  }
+
+  /** Close the clients and releases all associated resources. */
+  @Override
+  public void close() throws Exception {
+    stub.close();
   }
 }

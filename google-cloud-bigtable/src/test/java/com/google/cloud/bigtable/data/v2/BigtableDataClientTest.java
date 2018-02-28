@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -42,6 +43,7 @@ public class BigtableDataClientTest {
   @Mock private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
   @Mock private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
   @Mock private UnaryCallable<ConditionalRowMutation, Boolean> mockCheckAndMutateRowCallable;
+  @Mock private UnaryCallable<ReadModifyWriteRow, Row> mockReadModifyWriteRowCallable;
 
   private BigtableDataClient bigtableDataClient;
 
@@ -52,6 +54,7 @@ public class BigtableDataClientTest {
     Mockito.when(mockStub.sampleRowKeysCallable()).thenReturn(mockSampleRowKeysCallable);
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
     Mockito.when(mockStub.checkAndMutateRowCallable()).thenReturn(mockCheckAndMutateRowCallable);
+    Mockito.when(mockStub.readModifyWriteRowCallable()).thenReturn(mockReadModifyWriteRowCallable);
   }
 
   @Test
@@ -123,5 +126,20 @@ public class BigtableDataClientTest {
     bigtableDataClient.checkAndMutateRowAsync(mutation);
 
     Mockito.verify(mockCheckAndMutateRowCallable).futureCall(mutation);
+  }
+
+  @Test
+  public void proxyReadModifyWriteRowTest() {
+    ReadModifyWriteRow request =
+        ReadModifyWriteRow.create("fake-table", "some-key")
+            .append("fake-family", "fake-qualifier", "suffix");
+    bigtableDataClient.readModifyWriteRowAsync(request);
+    Mockito.verify(mockReadModifyWriteRowCallable).futureCall(request);
+  }
+
+  @Test
+  public void proxyReadModifyWriterRowCallableTest() {
+    assertThat(bigtableDataClient.readModifyWriteRowCallable())
+        .isSameAs(mockReadModifyWriteRowCallable);
   }
 }
