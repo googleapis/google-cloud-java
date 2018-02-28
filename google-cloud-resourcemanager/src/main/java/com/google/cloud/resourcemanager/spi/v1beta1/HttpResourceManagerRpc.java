@@ -53,7 +53,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
-import java.util.concurrent.CancellationException;
 import org.threeten.bp.Duration;
 
 public class HttpResourceManagerRpc implements ResourceManagerRpc {
@@ -65,13 +64,15 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   // https://developers.google.com/resources/api-libraries/documentation/cloudresourcemanager/v1/java/latest/com/google/api/services/cloudresourcemanager/CloudResourceManager.Projects.html#create(com.google.api.services.cloudresourcemanager.model.Project)
   private static final RetrySettings CREATE_RETRY_SETTINGS =
       RetrySettings.newBuilder()
-          // SLO permits 30s at 90th percentile, double it for total limit
-          .setTotalTimeout(Duration.ofMinutes(1))
+          // SLO permits 30s at 90th percentile, 4x it for total limit.
+          // Observed latency is much lower: 11s at 95th percentile.
+          .setTotalTimeout(Duration.ofMinutes(2))
+          // Linked doc recommends polling at 5th second.
           .setInitialRetryDelay(Duration.ofSeconds(5))
           .setRetryDelayMultiplier(1.5)
           // Observed P95 latency is 11s. We probably shouldn't sleep longer than this.
           .setMaxRetryDelay(Duration.ofSeconds(11))
-          .setJittered(false)
+          .setJittered(true)
           .setInitialRpcTimeout(Duration.ofSeconds(5))
           .setMaxRpcTimeout(Duration.ofSeconds(5))
           .build();
@@ -107,9 +108,12 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
         }
 
         @Override
-        public boolean shouldRetry(Throwable prevThrowable, Operation prevOp)
-            throws CancellationException {
-          return prevThrowable != null || prevOp.getDone() == null || !prevOp.getDone();
+        public boolean shouldRetry(Throwable prevThrowable, Operation prevOp) {
+          if (prevThrowable == null) {
+            return prevOp.getDone() == null || !prevOp.getDone();
+          }
+          return prevThrowable instanceof ResourceManagerException
+              && ((ResourceManagerException) prevThrowable).isRetryable();
         }
       };
 
@@ -133,10 +137,8 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   }
 
   private static ResourceManagerException translate(Status status) {
-    int code;
-    if (RPC_TO_HTTP_CODES.containsKey(status.getCode())) {
-      code = RPC_TO_HTTP_CODES.get(status.getCode());
-    } else {
+    Integer code = RPC_TO_HTTP_CODES.get(status.getCode());
+    if (code == null) {
       code = BaseHttpServiceException.UNKNOWN_CODE;
     }
     return new ResourceManagerException(code, status.getMessage());
@@ -144,40 +146,44 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
   @Override
   public Project create(Project project) {
+    final Operation operation;
     try {
-      final Operation operation = resourceManager.projects().create(project).execute();
+      operation = resourceManager.projects().create(project).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
 
-      Operation finishedOp =
-          runWithRetries(
-              new Callable<Operation>() {
-                @Override
-                public Operation call() {
-                  try {
-                    return resourceManager.operations().get(operation.getName()).execute();
-                  } catch (IOException ex) {
-                    throw translate(ex);
-                  }
+    Operation finishedOp =
+        runWithRetries(
+            new Callable<Operation>() {
+              @Override
+              public Operation call() {
+                try {
+                  return resourceManager.operations().get(operation.getName()).execute();
+                } catch (IOException ex) {
+                  throw translate(ex);
                 }
-              },
-              CREATE_RETRY_SETTINGS,
-              OPERATION_HANDLER,
-              clock);
+              }
+            },
+            CREATE_RETRY_SETTINGS,
+            OPERATION_HANDLER,
+            clock);
       if (finishedOp.getError() != null) {
         throw translate(finishedOp.getError());
       }
 
-      // NOTE(pongad): Operation.getResponse() returns a Map<String, Object>.
-      // 1. `(Project) finishedOp.getResponse()` doesn't work,
-      // because JSON deserializer in execute() didn't know to create a Project object.
-      // 2. `new Project().putAll(finishedOp.getResponse())` doesn't work either.
-      // 64-bit integers are sent as strings in JSON,
-      // so execute(), not knowing the type, parses it as String, not Long.
+    // NOTE(pongad): Operation.getResponse() returns a Map<String, Object>.
+    // 1. `(Project) finishedOp.getResponse()` doesn't work,
+    // because JSON deserializer in execute() didn't know to create a Project object.
+    // 2. `new Project().putAll(finishedOp.getResponse())` doesn't work either.
+    // 64-bit integers are sent as strings in JSON,
+    // so execute(), not knowing the type, parses it as String, not Long.
+    try {
       String responseTxt = JSON_FACTORY.toString(finishedOp.getResponse());
       return JSON_FACTORY.fromString(responseTxt, Project.class);
     } catch (IOException ex) {
       throw translate(ex);
     }
-
   }
 
   @Override
