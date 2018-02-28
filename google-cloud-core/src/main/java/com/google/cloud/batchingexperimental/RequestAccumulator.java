@@ -44,6 +44,9 @@ import java.util.List;
  *     accumulator.next();
  *   }
  * }
+ *
+ * @param <E> The elements that, when batched, make up RPC calls.
+ * @param <R> The RPC results for the individual elements.
  * }</pre>
  */
 @InternalApi
