@@ -177,7 +177,7 @@ Credentials in the following locations (in order):
 Troubleshooting
 ---------------
 
-To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [Troubleshooting document](https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TROUBLESHOOTING.md).
 
 Using a proxy
 -------------
