@@ -423,7 +423,7 @@ public class DocumentSnapshot {
     if (this == obj) {
       return true;
     }
-    if (obj == null || getClass() != obj.getClass()) {
+    if (obj == null || !(obj instanceof DocumentSnapshot)) {
       return false;
     }
     DocumentSnapshot that = (DocumentSnapshot) obj;

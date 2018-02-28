@@ -1077,7 +1077,7 @@ public class Query {
     if (this == obj) {
       return true;
     }
-    if (obj == null || getClass() != obj.getClass()) {
+    if (obj == null || !(obj instanceof Query)) {
       return false;
     }
     Query query = (Query) obj;
