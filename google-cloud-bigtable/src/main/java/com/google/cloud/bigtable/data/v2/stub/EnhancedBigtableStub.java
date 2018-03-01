@@ -22,6 +22,8 @@ import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.ReadModifyWriteRowRequest;
+import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
@@ -94,6 +96,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .checkAndMutateRowSettings()
         .setRetryableCodes(settings.checkAndMutateRowSettings().getRetryableCodes())
         .setRetrySettings(settings.checkAndMutateRowSettings().getRetrySettings());
+
+    // ReadModifyWriteRow is a simple passthrough
+    baseSettingsBuilder
+        .readModifyWriteRowSettings()
+        .setRetryableCodes(settings.readModifyWriteRowSettings().getRetryableCodes())
+        .setRetrySettings(settings.readModifyWriteRowSettings().getRetrySettings());
 
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
@@ -215,13 +223,21 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
+  /**
+   * Creates a callable chain to handle ReadModifyWriteRow RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert {@link ReadModifyWriteRow}s into {@link
+   *       com.google.bigtable.v2.ReadModifyWriteRowRequest}s.
+   *   <li>Convert the responses into {@link Row}.
+   * </ul>
+   */
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
-    return new UnaryCallable<ReadModifyWriteRow, Row>() {
-      @Override
-      public ApiFuture<Row> futureCall(ReadModifyWriteRow request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> withContext =
+        stub.readModifyWriteRowCallable()
+            .withDefaultCallContext(clientContext.getDefaultCallContext());
+
+    return new ReadModifyWriteRowCallable(withContext, requestContext);
   }
   // </editor-fold>
 
