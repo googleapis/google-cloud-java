@@ -132,6 +132,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<ReadRowsRequest, RowT> withContext =
         filtering.withDefaultCallContext(clientContext.getDefaultCallContext());
 
+    // NOTE: Ideally `withDefaultCallContext` should be the outer-most callable, however the
+    // ReadRowsUserCallable overrides the first() method which be lost. At some point in the future,
+    // gax-java should allow preserving these kind of overrides through callable chains, at which
+    // point this should be re-ordered.
     return new ReadRowsUserCallable<>(withContext, requestContext);
   }
 
