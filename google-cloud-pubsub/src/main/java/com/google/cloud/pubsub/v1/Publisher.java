@@ -236,7 +236,6 @@ public class Publisher {
       final PublishRequest publishRequest,
       final List<SettableApiFuture<String>> futures,
       Executor publishExecutor) {
-    // Is the create time right?
     final long createTimeMs = System.currentTimeMillis();
     publishExecutor.execute(
         new Runnable() {
