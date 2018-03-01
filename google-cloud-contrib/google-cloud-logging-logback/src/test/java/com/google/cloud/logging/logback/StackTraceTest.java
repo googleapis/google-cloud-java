@@ -28,7 +28,7 @@ public class StackTraceTest {
     ex = new IllegalStateException("bar", ex);
 
     StringBuilder stackBuilder = new StringBuilder();
-    LoggingAppender.writeStack(new ThrowableProxy(ex), "", stackBuilder);
+    LoggingEventTransformerUtils.writeStack(new ThrowableProxy(ex), "", stackBuilder);
     String stack = stackBuilder.toString();
 
     assertThat(stack).contains("java.lang.IllegalStateException: bar");
