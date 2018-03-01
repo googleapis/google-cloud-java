@@ -98,9 +98,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
   private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
   private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
+  private final BatchingCallSettings<RowMutation, Void> mutateRowsSettings;
   private final UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
   private final UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
-  private final BatchingCallSettings<RowMutation, Void> mutateRowsSettings;
 
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);

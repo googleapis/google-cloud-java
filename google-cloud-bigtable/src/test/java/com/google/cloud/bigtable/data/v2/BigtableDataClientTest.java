@@ -63,9 +63,9 @@ public class BigtableDataClientTest {
     Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
     Mockito.when(mockStub.sampleRowKeysCallable()).thenReturn(mockSampleRowKeysCallable);
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
+    Mockito.when(mockStub.mutateRowsCallable()).thenReturn(mockBulkMutateRowsCallable);
     Mockito.when(mockStub.checkAndMutateRowCallable()).thenReturn(mockCheckAndMutateRowCallable);
     Mockito.when(mockStub.readModifyWriteRowCallable()).thenReturn(mockReadModifyWriteRowCallable);
-    Mockito.when(mockStub.mutateRowsCallable()).thenReturn(mockBulkMutateRowsCallable);
   }
 
   @Test
