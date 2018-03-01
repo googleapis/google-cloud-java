@@ -50,6 +50,9 @@ public class ReadRowsUserCallable<RowT> extends ServerStreamingCallable<Query, R
     inner.call(innerRequest, responseObserver, context);
   }
 
+  // Optimization: since the server supports row limits, override the first callable.
+  // This way unnecessary data doesn't need to be buffered and the number of CANCELLED request
+  // statuses is minimized
   @Override
   public UnaryCallable<Query, RowT> first() {
     return firstCallable;
