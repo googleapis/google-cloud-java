@@ -15,17 +15,18 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
+import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
-import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Nonnull;
@@ -89,6 +90,13 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
   /** Returns the object with the settings used for calls to MutateRow. */
   public UnaryCallSettings<RowMutation, Void> mutateRowSettings() {
     return getTypedStubSettings().mutateRowSettings();
+  }
+
+  /** Returns the object with the settings used for BulkMutations. */
+  public BatchingCallSettings<RowMutation, Void> bulkMutationsSettings() {
+    // NOTE: the user facing BigtableDataClient only exposes this api as newBulkMutationBatcher,
+    // so the outer name should match that, while the stub should stick to rpc names.
+    return getTypedStubSettings().mutateRowsSettings();
   }
 
   /** Returns the object with the settings used for calls to checkAndMutateRow. */
@@ -174,6 +182,13 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     /** Returns the builder for the settings used for calls to MutateRow. */
     public UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings() {
       return getTypedStubSettings().mutateRowSettings();
+    }
+
+    /** Returns the builder for the settings used for BulkMutations. */
+    public BatchingCallSettings.Builder<RowMutation, Void> bulkMutationsSettings() {
+      // NOTE: the user facing BigtableDataClient only exposes this api as newBulkMutationBatcher,
+      // so the outer name should match that, while the stub should stick to rpc names.
+      return getTypedStubSettings().mutateRowsSettings();
     }
 
     /** Returns the object with the settings used for calls to checkAndMutateRow. */

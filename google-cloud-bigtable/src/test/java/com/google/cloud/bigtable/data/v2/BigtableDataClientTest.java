@@ -17,24 +17,33 @@ package com.google.cloud.bigtable.data.v2;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
+import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher.BulkMutationFailure;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.Mutation;
-import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
-import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
-import java.util.List;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import io.grpc.Status.Code;
+import java.util.List;
+import java.util.concurrent.TimeoutException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.threeten.bp.Duration;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BigtableDataClientTest {
@@ -44,6 +53,7 @@ public class BigtableDataClientTest {
   @Mock private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
   @Mock private UnaryCallable<ConditionalRowMutation, Boolean> mockCheckAndMutateRowCallable;
   @Mock private UnaryCallable<ReadModifyWriteRow, Row> mockReadModifyWriteRowCallable;
+  @Mock private UnaryCallable<RowMutation, Void> mockBulkMutateRowsCallable;
 
   private BigtableDataClient bigtableDataClient;
 
@@ -53,6 +63,7 @@ public class BigtableDataClientTest {
     Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
     Mockito.when(mockStub.sampleRowKeysCallable()).thenReturn(mockSampleRowKeysCallable);
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
+    Mockito.when(mockStub.mutateRowsCallable()).thenReturn(mockBulkMutateRowsCallable);
     Mockito.when(mockStub.checkAndMutateRowCallable()).thenReturn(mockCheckAndMutateRowCallable);
     Mockito.when(mockStub.readModifyWriteRowCallable()).thenReturn(mockReadModifyWriteRowCallable);
   }
@@ -110,6 +121,93 @@ public class BigtableDataClientTest {
 
     bigtableDataClient.mutateRowAsync(request);
     Mockito.verify(mockMutateRowCallable).futureCall(request);
+  }
+
+  @Test
+  public void proxyBulkMutationsSendTest() {
+    BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher();
+
+    RowMutation request =
+        RowMutation.create("fake-table", "some-key")
+            .setCell("some-family", "fake-qualifier", "fake-value");
+
+    SettableApiFuture<Void> innerResult = SettableApiFuture.create();
+    Mockito.when(mockBulkMutateRowsCallable.futureCall(request)).thenReturn(innerResult);
+
+    ApiFuture<Void> actualResult = batcher.add(request);
+    assertThat(actualResult).isSameAs(innerResult);
+  }
+
+  @Test
+  public void bulkMutationsCloseTest() throws Exception {
+    BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher();
+
+    RowMutation request =
+        RowMutation.create("fake-table", "some-key")
+            .setCell("some-family", "fake-qualifier", "fake-value");
+
+    SettableApiFuture<Void> innerResult = SettableApiFuture.create();
+    Mockito.when(mockBulkMutateRowsCallable.futureCall(request)).thenReturn(innerResult);
+
+    batcher.add(request);
+
+    // Close will timeout while the request is outstanding.
+    Throwable error = null;
+    try {
+      batcher.close(Duration.ofMillis(20));
+    } catch (Throwable t) {
+      error = t;
+    }
+    assertThat(error).isInstanceOf(TimeoutException.class);
+
+    // Resolve the request
+    innerResult.set(null);
+
+    // Now, close will promptly finish
+    batcher.close(Duration.ofMillis(20));
+  }
+
+  @Test
+  public void bulkMutationsNoSendAfterCloseTest() throws InterruptedException, TimeoutException {
+    BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher();
+
+    batcher.close();
+
+    RowMutation request =
+        RowMutation.create("fake-table", "some-key")
+            .setCell("some-family", "fake-qualifier", "fake-value");
+
+    Throwable error = null;
+    try {
+      batcher.add(request);
+    } catch (Throwable t) {
+      error = t;
+    }
+    assertThat(error).isInstanceOf(IllegalStateException.class);
+  }
+
+  @Test
+  public void bulkMutationsFailureTest() throws Exception {
+    BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher();
+    RowMutation request =
+        RowMutation.create("fake-table", "some-key")
+            .setCell("some-family", "fake-qualifier", "fake-value");
+
+    SettableApiFuture<Void> innerResult = SettableApiFuture.create();
+    Mockito.when(mockBulkMutateRowsCallable.futureCall(request)).thenReturn(innerResult);
+
+    ApiException innerError = new ApiException(null, GrpcStatusCode.of(Code.INTERNAL), false);
+
+    batcher.add(request);
+    innerResult.setException(innerError);
+
+    Throwable outerError = null;
+    try {
+      batcher.close(Duration.ofMillis(10));
+    } catch (Throwable t) {
+      outerError = t;
+    }
+    assertThat(outerError).isInstanceOf(BulkMutationFailure.class);
   }
 
   @Test
