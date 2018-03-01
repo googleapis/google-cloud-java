@@ -126,7 +126,7 @@
   <properties>
     <cloud.version>0.37.1-alpha-SNAPSHOT</cloud.version><!-- {x-version-update:google-cloud:current} -->
     <bigtable.version>0.37.1-alpha-SNAPSHOT</bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
-    <bigquery.version>0.37.1-beta-SNAPSHOT</bigquery.version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <bigquery.version>1.19.1-SNAPSHOT</bigquery.version><!-- {x-version-update:google-cloud-bigquery:current} -->
     <bigquerydatatransfer.version>0.37.1-beta-SNAPSHOT</bigquerydatatransfer.version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
     <compute.version>0.37.1-alpha-SNAPSHOT</compute.version><!-- {x-version-update:google-cloud-compute:current} -->
     <container.version>0.37.1-beta-SNAPSHOT</container.version><!-- {x-version-update:google-cloud-container:current} -->
