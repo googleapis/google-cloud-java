@@ -16,13 +16,14 @@
 package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.cloud.bigtable.data.v2.models.BulkMutations;
+import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -345,12 +346,12 @@ public class BigtableDataClient implements AutoCloseable {
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
    * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
-   *   try (BulkMutations mutations = bigtableClient.newBulkMutations()) {
+   *   try (BulkMutations mutations = bigtableClient.newBulkMutationBatcher()) {
    *     for (String someValue : someCollection) {
    *       RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *         .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
-   *       mutations.send(mutation);
+   *       mutations.add(mutation);
    *     }
    *   } catch (BulkMutationFailure failure) {
    *     // Handle error
@@ -359,8 +360,9 @@ public class BigtableDataClient implements AutoCloseable {
    * }
    * }</pre>
    */
-  public BulkMutations newBulkMutations() {
-    return new BulkMutations(stub.mutateRowsCallable());
+  @BetaApi("This surface is likely to change as the batching surface evolves.")
+  public BulkMutationBatcher newBulkMutationBatcher() {
+    return new BulkMutationBatcher(stub.mutateRowsCallable());
   }
 
   /**

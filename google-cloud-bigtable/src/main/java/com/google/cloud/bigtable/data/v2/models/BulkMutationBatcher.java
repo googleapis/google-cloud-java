@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
@@ -29,9 +30,11 @@ import org.threeten.bp.Duration;
  * Tracker for outstanding bulk mutations. Allows for the caller to wait for all of the outstanding
  * mutations to complete.
  *
- * @see com.google.cloud.bigtable.data.v2.BigtableDataClient#newBulkMutations() for example usage.
+ * @see com.google.cloud.bigtable.data.v2.BigtableDataClient#newBulkMutationBatcher() for example
+ *     usage.
  */
-public final class BulkMutations implements AutoCloseable {
+@BetaApi("This surface is likely to change as the batching surface evolves.")
+public final class BulkMutationBatcher implements AutoCloseable {
   private final UnaryCallable<RowMutation, Void> callable;
   // Shared
   private final Object lock = new Object();
@@ -42,7 +45,7 @@ public final class BulkMutations implements AutoCloseable {
   private boolean closed;
 
   @InternalApi
-  public BulkMutations(UnaryCallable<RowMutation, Void> callable) {
+  public BulkMutationBatcher(UnaryCallable<RowMutation, Void> callable) {
     this.callable = callable;
   }
 
@@ -89,7 +92,7 @@ public final class BulkMutations implements AutoCloseable {
    *
    * @throws IllegalStateException If this instance has been closed.
    */
-  public ApiFuture<Void> send(final RowMutation rowMutation) {
+  public ApiFuture<Void> add(final RowMutation rowMutation) {
     Preconditions.checkState(!closed, "BulkMutations has been closed");
     numOutstanding.incrementAndGet();
 

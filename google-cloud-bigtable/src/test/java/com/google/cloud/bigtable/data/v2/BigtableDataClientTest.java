@@ -24,8 +24,8 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.bigtable.data.v2.models.BulkMutations;
-import com.google.cloud.bigtable.data.v2.models.BulkMutations.BulkMutationFailure;
+import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
+import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher.BulkMutationFailure;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
@@ -125,7 +125,7 @@ public class BigtableDataClientTest {
 
   @Test
   public void proxyBulkMutationsSendTest() {
-    BulkMutations bulkMutations = bigtableDataClient.newBulkMutations();
+    BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher();
 
     RowMutation request =
         RowMutation.create("fake-table", "some-key")
@@ -134,13 +134,13 @@ public class BigtableDataClientTest {
     SettableApiFuture<Void> innerResult = SettableApiFuture.create();
     Mockito.when(mockBulkMutateRowsCallable.futureCall(request)).thenReturn(innerResult);
 
-    ApiFuture<Void> actualResult = bulkMutations.send(request);
+    ApiFuture<Void> actualResult = batcher.add(request);
     assertThat(actualResult).isSameAs(innerResult);
   }
 
   @Test
   public void bulkMutationsCloseTest() throws Exception {
-    BulkMutations bulkMutations = bigtableDataClient.newBulkMutations();
+    BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher();
 
     RowMutation request =
         RowMutation.create("fake-table", "some-key")
@@ -149,12 +149,12 @@ public class BigtableDataClientTest {
     SettableApiFuture<Void> innerResult = SettableApiFuture.create();
     Mockito.when(mockBulkMutateRowsCallable.futureCall(request)).thenReturn(innerResult);
 
-    bulkMutations.send(request);
+    batcher.add(request);
 
     // Close will timeout while the request is outstanding.
     Throwable error = null;
     try {
-      bulkMutations.close(Duration.ofMillis(20));
+      batcher.close(Duration.ofMillis(20));
     } catch (Throwable t) {
       error = t;
     }
@@ -164,14 +164,14 @@ public class BigtableDataClientTest {
     innerResult.set(null);
 
     // Now, close will promptly finish
-    bulkMutations.close(Duration.ofMillis(20));
+    batcher.close(Duration.ofMillis(20));
   }
 
   @Test
   public void bulkMutationsNoSendAfterCloseTest() throws InterruptedException, TimeoutException {
-    BulkMutations bulkMutations = bigtableDataClient.newBulkMutations();
+    BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher();
 
-    bulkMutations.close();
+    batcher.close();
 
     RowMutation request =
         RowMutation.create("fake-table", "some-key")
@@ -179,7 +179,7 @@ public class BigtableDataClientTest {
 
     Throwable error = null;
     try {
-      bulkMutations.send(request);
+      batcher.add(request);
     } catch (Throwable t) {
       error = t;
     }
@@ -188,7 +188,7 @@ public class BigtableDataClientTest {
 
   @Test
   public void bulkMutationsFailureTest() throws Exception {
-    BulkMutations bulkMutations = bigtableDataClient.newBulkMutations();
+    BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher();
     RowMutation request =
         RowMutation.create("fake-table", "some-key")
             .setCell("some-family", "fake-qualifier", "fake-value");
@@ -198,12 +198,12 @@ public class BigtableDataClientTest {
 
     ApiException innerError = new ApiException(null, GrpcStatusCode.of(Code.INTERNAL), false);
 
-    bulkMutations.send(request);
+    batcher.add(request);
     innerResult.setException(innerError);
 
     Throwable outerError = null;
     try {
-      bulkMutations.close(Duration.ofMillis(10));
+      batcher.close(Duration.ofMillis(10));
     } catch (Throwable t) {
       outerError = t;
     }
