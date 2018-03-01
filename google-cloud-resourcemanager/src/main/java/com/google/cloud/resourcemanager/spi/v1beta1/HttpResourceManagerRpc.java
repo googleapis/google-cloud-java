@@ -16,55 +16,171 @@
 
 package com.google.cloud.resourcemanager.spi.v1beta1;
 
+import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static java.net.HttpURLConnection.HTTP_FORBIDDEN;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.api.services.cloudresourcemanager.Cloudresourcemanager;
+import com.google.api.core.ApiClock;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedAttemptSettings;
+import com.google.api.services.cloudresourcemanager.CloudResourceManager;
 import com.google.api.services.cloudresourcemanager.model.GetIamPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.ListProjectsResponse;
+import com.google.api.services.cloudresourcemanager.model.Operation;
 import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
+import com.google.api.services.cloudresourcemanager.model.Status;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
+import com.google.api.services.cloudresourcemanager.model.UndeleteProjectRequest;
 import com.google.cloud.Tuple;
+import com.google.cloud.http.BaseHttpServiceException;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.resourcemanager.ResourceManagerException;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.Callable;
+import org.threeten.bp.Duration;
 
 public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
-  private final Cloudresourcemanager resourceManager;
+  private static final JsonFactory JSON_FACTORY =
+      new JacksonFactory();
+
+  // See doc of create() for more details:
+  // https://developers.google.com/resources/api-libraries/documentation/cloudresourcemanager/v1/java/latest/com/google/api/services/cloudresourcemanager/CloudResourceManager.Projects.html#create(com.google.api.services.cloudresourcemanager.model.Project)
+  private static final RetrySettings CREATE_RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          // SLO permits 30s at 90th percentile, 4x it for total limit.
+          // Observed latency is much lower: 11s at 95th percentile.
+          .setTotalTimeout(Duration.ofMinutes(2))
+          // Linked doc recommends polling at 5th second.
+          .setInitialRetryDelay(Duration.ofSeconds(5))
+          .setRetryDelayMultiplier(1.5)
+          // Observed P95 latency is 11s. We probably shouldn't sleep longer than this.
+          .setMaxRetryDelay(Duration.ofSeconds(11))
+          .setJittered(true)
+          .setInitialRpcTimeout(Duration.ofSeconds(5))
+          .setMaxRpcTimeout(Duration.ofSeconds(5))
+          .build();
+
+  // reference: https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+  private static final ImmutableMap<Integer, Integer> RPC_TO_HTTP_CODES =
+      ImmutableMap.<Integer, Integer>builder()
+          .put(0, 200)
+          .put(1, 499)
+          .put(2, 500)
+          .put(3, 400)
+          .put(4, 504)
+          .put(5, 404)
+          .put(6, 409)
+          .put(7, 403)
+          .put(16, 401)
+          .put(8, 429)
+          .put(9, 400)
+          .put(10, 409)
+          .put(11, 400)
+          .put(12, 501)
+          .put(13, 500)
+          .put(14, 503)
+          .put(15, 500)
+          .build();
+
+  private static final ResultRetryAlgorithm<Operation> OPERATION_HANDLER =
+      new ResultRetryAlgorithm<Operation>() {
+        @Override
+        public TimedAttemptSettings createNextAttempt(
+            Throwable prevThrowable, Operation prevResponse, TimedAttemptSettings prevSettings) {
+          return null;
+        }
+
+        @Override
+        public boolean shouldRetry(Throwable prevThrowable, Operation prevOp) {
+          if (prevThrowable == null) {
+            return prevOp.getDone() == null || !prevOp.getDone();
+          }
+          return prevThrowable instanceof ResourceManagerException
+              && ((ResourceManagerException) prevThrowable).isRetryable();
+        }
+      };
+
+  private final CloudResourceManager resourceManager;
+  private final ApiClock clock;
 
   public HttpResourceManagerRpc(ResourceManagerOptions options) {
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     resourceManager =
-        new Cloudresourcemanager.Builder(transport, new JacksonFactory(), initializer)
+        new CloudResourceManager.Builder(transport, new JacksonFactory(), initializer)
             .setRootUrl(options.getHost())
             .setApplicationName(options.getApplicationName())
             .build();
+    clock = options.getClock();
   }
 
   private static ResourceManagerException translate(IOException exception) {
     return new ResourceManagerException(exception);
   }
 
+  private static ResourceManagerException translate(Status status) {
+    Integer code = RPC_TO_HTTP_CODES.get(status.getCode());
+    if (code == null) {
+      code = BaseHttpServiceException.UNKNOWN_CODE;
+    }
+    return new ResourceManagerException(code, status.getMessage());
+  }
+
   @Override
   public Project create(Project project) {
+    final Operation operation;
     try {
-      return resourceManager.projects().create(project).execute();
+      operation = resourceManager.projects().create(project).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+
+    Operation finishedOp =
+        runWithRetries(
+            new Callable<Operation>() {
+              @Override
+              public Operation call() {
+                try {
+                  return resourceManager.operations().get(operation.getName()).execute();
+                } catch (IOException ex) {
+                  throw translate(ex);
+                }
+              }
+            },
+            CREATE_RETRY_SETTINGS,
+            OPERATION_HANDLER,
+            clock);
+      if (finishedOp.getError() != null) {
+        throw translate(finishedOp.getError());
+      }
+
+    // NOTE(pongad): Operation.getResponse() returns a Map<String, Object>.
+    // 1. `(Project) finishedOp.getResponse()` doesn't work,
+    // because JSON deserializer in execute() didn't know to create a Project object.
+    // 2. `new Project().putAll(finishedOp.getResponse())` doesn't work either.
+    // 64-bit integers are sent as strings in JSON,
+    // so execute(), not knowing the type, parses it as String, not Long.
+    try {
+      String responseTxt = JSON_FACTORY.toString(finishedOp.getResponse());
+      return JSON_FACTORY.fromString(responseTxt, Project.class);
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -117,7 +233,7 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   @Override
   public void undelete(String projectId) {
     try {
-      resourceManager.projects().undelete(projectId).execute();
+      resourceManager.projects().undelete(projectId, new UndeleteProjectRequest()).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

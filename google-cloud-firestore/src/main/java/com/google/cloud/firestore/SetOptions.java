@@ -135,15 +135,21 @@ public final class SetOptions {
     }
   }
 
+  /**
+   * Returns true if this SetOptions is equal to the provided object.
+   *
+   * @param obj The object to compare against.
+   * @return Whether this SetOptions is equal to the provided object.
+   */
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
-    SetOptions that = (SetOptions) o;
+    SetOptions that = (SetOptions) obj;
     return merge == that.merge && Objects.equals(fieldMask, that.fieldMask);
   }
 

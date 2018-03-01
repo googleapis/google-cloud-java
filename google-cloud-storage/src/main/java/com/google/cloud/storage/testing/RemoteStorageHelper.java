@@ -16,17 +16,20 @@
 
 package com.google.cloud.storage.testing;
 
+import com.google.api.gax.paging.Page;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.http.HttpTransportOptions;
-import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -65,6 +68,33 @@ public class RemoteStorageHelper {
    */
   public StorageOptions getOptions() {
     return options;
+  }
+
+  public static void cleanBuckets(final Storage storage, final long olderThan, long timeoutMs) {
+    Runnable task =
+        new Runnable() {
+          @Override
+          public void run() {
+            Page<Bucket> buckets =
+                storage.list(Storage.BucketListOption.prefix(BUCKET_NAME_PREFIX));
+            for (Bucket bucket : buckets.iterateAll()) {
+              if (bucket.getCreateTime() < olderThan) {
+                try {
+                  forceDelete(storage, bucket.getName());
+                } catch (Exception e) {
+                  // Ignore the exception, maybe the bucket is being deleted by someone else.
+                }
+              }
+            }
+          }
+        };
+    Thread thread = new Thread(task);
+    thread.start();
+    try {
+      thread.join(timeoutMs);
+    } catch (InterruptedException e) {
+      log.info("cleanBuckets interrupted");
+    }
   }
 
   /**
@@ -184,8 +214,12 @@ public class RemoteStorageHelper {
     @Override
     public Boolean call() {
       while (true) {
+        ArrayList<BlobId> ids = new ArrayList<>();
         for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true)).getValues()) {
-          storage.delete(info.getBlobId());
+          ids.add(info.getBlobId());
+        }
+        if (!ids.isEmpty()) {
+          storage.delete(ids);
         }
         try {
           storage.delete(bucket);

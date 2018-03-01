@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.it;
 
+import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -24,7 +25,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.Identity;
@@ -50,8 +50,8 @@ import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
-import com.google.cloud.storage.StorageRoles;
 import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.StorageRoles;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -85,7 +85,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.crypto.spec.SecretKeySpec;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -114,13 +113,22 @@ public class ITStorageTest {
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
     remoteStorageHelper = RemoteStorageHelper.create();
     storage = remoteStorageHelper.getOptions().getService();
-    storage.create(BucketInfo.of(BUCKET));
+    storage.create(
+        BucketInfo.newBuilder(BUCKET)
+            .setDeleteRules(Collections.singleton(new BucketInfo.AgeDeleteRule(1)))
+            .build());
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (storage != null) {
-      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
+      // In beforeClass, we make buckets auto-delete blobs older than a day old.
+      // Here, delete all buckets older than 2 days. They should already be empty and easy.
+      long cleanTime = System.currentTimeMillis() - TimeUnit.DAYS.toMillis(2);
+      long cleanTimeout = System.currentTimeMillis() - TimeUnit.MINUTES.toMillis(1);
+      RemoteStorageHelper.cleanBuckets(storage, cleanTime, cleanTimeout);
+
+      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 1, TimeUnit.MINUTES);
       if (!wasDeleted && log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
@@ -194,7 +202,6 @@ public class ITStorageTest {
     byte[] readBytes =
         storage.readAllBytes(BUCKET, blobName, Storage.BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -207,7 +214,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), remoteBlob.getName());
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(new byte[0], readBytes);
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -222,7 +228,6 @@ public class ITStorageTest {
     assertEquals(blob.getContentType(), remoteBlob.getContentType());
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertEquals(BLOB_STRING_CONTENT, new String(readBytes, UTF_8));
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -239,7 +244,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -266,7 +270,6 @@ public class ITStorageTest {
     Blob remoteBlob = storage.get(blob.getBlobId(), Storage.BlobGetOption.fields());
     assertEquals(blob.getBlobId(), remoteBlob.getBlobId());
     assertNull(remoteBlob.getContentType());
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -282,7 +285,6 @@ public class ITStorageTest {
     assertEquals(blob.getBlobId(), remoteBlob.getBlobId());
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.getMetadata());
     assertNull(remoteBlob.getContentType());
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -300,7 +302,6 @@ public class ITStorageTest {
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.getMetadata());
     assertNotNull(remoteBlob.getGeneratedId());
     assertNotNull(remoteBlob.getSelfLink());
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -316,7 +317,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -332,7 +332,6 @@ public class ITStorageTest {
     } catch (StorageException e) {
       assertThat(e.getMessage()).contains("Invalid argument");
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test(timeout = 5000)
@@ -372,8 +371,6 @@ public class ITStorageTest {
       assertEquals(metadata, remoteBlob.getMetadata());
       assertNull(remoteBlob.getContentType());
     }
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteBlob2.delete());
   }
 
   @Test(timeout = 5000)
@@ -409,8 +406,6 @@ public class ITStorageTest {
       assertTrue(blobSet.contains(remoteBlob.getName()));
       assertNull(remoteBlob.getContentType());
     }
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteBlob2.delete());
   }
 
   @Test(timeout = 5000)
@@ -455,8 +450,6 @@ public class ITStorageTest {
           Storage.BlobListOption.fields(),
           Storage.BlobListOption.userProject(projectId));
     }
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteBlob2.delete());
   }
 
   @Test(timeout = 15000)
@@ -497,9 +490,6 @@ public class ITStorageTest {
         assertTrue(blobSet.contains(remoteBlob.getName()));
         assertNotNull(remoteBlob.getGeneration());
       }
-      assertTrue(remoteBlob1.delete());
-      assertTrue(remoteBlob2.delete());
-      assertTrue(remoteBlob3.delete());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
     }
@@ -547,8 +537,6 @@ public class ITStorageTest {
         fail("Unexpected blob with name " + remoteBlob.getName());
       }
     }
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteBlob2.delete());
   }
 
   @Test
@@ -562,7 +550,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), updatedBlob.getName());
     assertEquals(blob.getBucket(), updatedBlob.getBucket());
     assertEquals(CONTENT_TYPE, updatedBlob.getContentType());
-    assertTrue(updatedBlob.delete());
   }
 
   @Test
@@ -583,7 +570,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), updatedBlob.getName());
     assertEquals(blob.getBucket(), updatedBlob.getBucket());
     assertEquals(newMetadata, updatedBlob.getMetadata());
-    assertTrue(updatedBlob.delete());
   }
 
   @Test
@@ -603,7 +589,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), updatedBlob.getName());
     assertEquals(blob.getBucket(), updatedBlob.getBucket());
     assertEquals(expectedMetadata, updatedBlob.getMetadata());
-    assertTrue(updatedBlob.delete());
   }
 
   @Test
@@ -625,7 +610,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), updatedBlob.getName());
     assertEquals(blob.getBucket(), updatedBlob.getBucket());
     assertEquals(expectedMetadata, updatedBlob.getMetadata());
-    assertTrue(updatedBlob.delete());
   }
 
   @Test
@@ -643,7 +627,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -704,9 +687,6 @@ public class ITStorageTest {
     System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
         BLOB_BYTE_CONTENT.length);
     assertArrayEquals(composedBytes, readBytes);
-    assertTrue(remoteSourceBlob1.delete());
-    assertTrue(remoteSourceBlob2.delete());
-    assertTrue(remoteTargetBlob.delete());
   }
 
   @Test
@@ -734,9 +714,6 @@ public class ITStorageTest {
     System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
         BLOB_BYTE_CONTENT.length);
     assertArrayEquals(composedBytes, readBytes);
-    assertTrue(remoteSourceBlob1.delete());
-    assertTrue(remoteSourceBlob2.delete());
-    assertTrue(remoteTargetBlob.delete());
   }
 
   @Test
@@ -762,8 +739,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteSourceBlob1.delete());
-    assertTrue(remoteSourceBlob2.delete());
   }
 
   @Test
@@ -929,7 +904,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteSourceBlob.delete());
   }
 
   @Test
@@ -1040,8 +1014,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob2.getName(), remoteUpdatedBlob2.getName());
     assertEquals(updatedBlob2.getContentType(), remoteUpdatedBlob2.getContentType());
 
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteUpdatedBlob2.delete());
   }
 
   @Test
@@ -1113,7 +1085,6 @@ public class ITStorageTest {
     }
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
     assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
-    assertTrue(storage.delete(BUCKET, blobName));
   }
 
   @Test
@@ -1225,7 +1196,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -1303,7 +1273,6 @@ public class ITStorageTest {
     try (InputStream responseStream = connection.getInputStream()) {
       assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
       assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-      assertTrue(remoteBlob.delete());
     }
   }
 
@@ -1321,7 +1290,6 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -1337,8 +1305,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob1.getName(), remoteBlobs.get(0).getName());
     assertEquals(sourceBlob2.getBucket(), remoteBlobs.get(1).getBucket());
     assertEquals(sourceBlob2.getName(), remoteBlobs.get(1).getName());
-    assertTrue(remoteBlobs.get(0).delete());
-    assertTrue(remoteBlobs.get(1).delete());
   }
 
   @Test
@@ -1401,7 +1367,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob1.getBucket(), remoteBlobs.get(0).getBucket());
     assertEquals(sourceBlob1.getName(), remoteBlobs.get(0).getName());
     assertNull(remoteBlobs.get(1));
-    assertTrue(remoteBlobs.get(0).delete());
   }
 
   @Test
@@ -1448,8 +1413,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob2.getBucket(), updatedBlobs.get(1).getBucket());
     assertEquals(sourceBlob2.getName(), updatedBlobs.get(1).getName());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(1).getContentType());
-    assertTrue(updatedBlobs.get(0).delete());
-    assertTrue(updatedBlobs.get(1).delete());
   }
 
   @Test
@@ -1467,7 +1430,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob1.getName(), updatedBlobs.get(0).getName());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(0).getContentType());
     assertNull(updatedBlobs.get(1));
-    assertTrue(updatedBlobs.get(0).delete());
   }
 
   @Test
@@ -1595,7 +1557,6 @@ public class ITStorageTest {
         assertArrayEquals(BLOB_STRING_CONTENT.getBytes(UTF_8), ByteStreams.toByteArray(zipInput));
       }
     }
-    blob.delete();
   }
 
   @Test
@@ -1689,7 +1650,6 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-    assertTrue(remoteBlob.delete());
   }
 
   @Test

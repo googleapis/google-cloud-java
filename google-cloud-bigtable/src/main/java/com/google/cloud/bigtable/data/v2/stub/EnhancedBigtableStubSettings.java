@@ -23,8 +23,10 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
@@ -91,6 +93,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
   private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
   private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
+  private final UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
+  private final UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
 
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
@@ -101,6 +105,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     readRowsSettings = builder.readRowsSettings.build();
     sampleRowKeysSettings = builder.sampleRowKeysSettings.build();
     mutateRowSettings = builder.mutateRowSettings.build();
+    checkAndMutateRowSettings = builder.checkAndMutateRowSettings.build();
+    readModifyWriteRowSettings = builder.readModifyWriteRowSettings.build();
   }
 
   /** Create a new builder. */
@@ -133,6 +139,16 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return mutateRowSettings;
   }
 
+  /** Returns the object with the settings used for calls to CheckAndMutateRow. */
+  public UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
+    return checkAndMutateRowSettings;
+  }
+
+  /** Returns the object with the settings used for calls to ReadModifyWriteRow. */
+  public UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
+    return readModifyWriteRowSettings;
+  }
+
   /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
@@ -146,6 +162,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
     private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
+    private final UnaryCallSettings.Builder<ConditionalRowMutation, Boolean>
+        checkAndMutateRowSettings;
+    private final UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
 
     /**
      * Initializes a new Builder with sane defaults for all settings.
@@ -193,6 +212,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       mutateRowSettings
           .setRetryableCodes(DEFAULT_RETRY_CODES)
           .setRetrySettings(DEFAULT_RETRY_SETTINGS);
+
+      checkAndMutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      copyRetrySettings(baseDefaults.checkAndMutateRowSettings(), checkAndMutateRowSettings);
+
+      readModifyWriteRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      copyRetrySettings(baseDefaults.readModifyWriteRowSettings(), readModifyWriteRowSettings);
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
@@ -204,6 +229,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       readRowsSettings = settings.readRowsSettings.toBuilder();
       sampleRowKeysSettings = settings.sampleRowKeysSettings.toBuilder();
       mutateRowSettings = settings.mutateRowSettings.toBuilder();
+      checkAndMutateRowSettings = settings.checkAndMutateRowSettings.toBuilder();
+      readModifyWriteRowSettings = settings.readModifyWriteRowSettings.toBuilder();
     }
 
     // <editor-fold desc="Private Helpers">
@@ -264,6 +291,16 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /** Returns the builder for the settings used for calls to MutateRow. */
     public UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings() {
       return mutateRowSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to CheckAndMutateRow. */
+    public UnaryCallSettings.Builder<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
+      return checkAndMutateRowSettings;
+    }
+
+    /** Returns the builder with the settings used for calls to ReadModifyWriteRow. */
+    public UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
+      return readModifyWriteRowSettings;
     }
 
     @SuppressWarnings("unchecked")
