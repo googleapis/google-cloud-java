@@ -23,6 +23,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.CheckAndMutateRowRequest;
+import com.google.bigtable.v2.CheckAndMutateRowResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
@@ -78,6 +80,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .setSimpleTimeoutNoRetries(
             settings.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())
         .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes());
+
+    // CheckAndMutateRow is a simple passthrough
+    baseSettingsBuilder
+        .checkAndMutateRowSettings()
+        .setRetryableCodes(settings.checkAndMutateRowSettings().getRetryableCodes())
+        .setRetrySettings(settings.checkAndMutateRowSettings().getRetrySettings());
 
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
@@ -147,13 +155,20 @@ public class EnhancedBigtableStub implements AutoCloseable {
     };
   }
 
+  /**
+   * Creates a callable chain to handle CheckAndMutateRow RPCs. THe chain will:
+   *
+   * <ul>
+   *   <li>Convert {@link ConditionalRowMutation}s into {@link
+   *       com.google.bigtable.v2.CheckAndMutateRowRequest}s.
+   * </ul>
+   */
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
-    return new UnaryCallable<ConditionalRowMutation, Boolean>() {
-      @Override
-      public ApiFuture<Boolean> futureCall(ConditionalRowMutation request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> withContext =
+        stub.checkAndMutateRowCallable()
+            .withDefaultCallContext(clientContext.getDefaultCallContext());
+
+    return new CheckAndMutateRowCallable(withContext, requestContext);
   }
 
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
@@ -179,6 +194,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return mutateRowCallable;
   }
 
+  /** Returns the callable chain created in {@link #createCheckAndMutateRowCallable()}. */
   public UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable() {
     return checkAndMutateRowCallable;
   }
