@@ -346,17 +346,17 @@ public class BigtableDataClient implements AutoCloseable {
    * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
    * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
-   *   try (BulkMutations mutations = bigtableClient.newBulkMutationBatcher()) {
+   *   try (BulkMutationBatcher batcher = bigtableClient.newBulkMutationBatcher()) {
    *     for (String someValue : someCollection) {
    *       RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *         .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
-   *       mutations.add(mutation);
+   *       batcher.add(mutation);
    *     }
    *   } catch (BulkMutationFailure failure) {
    *     // Handle error
    *   }
-   *   // After `mutations` is closed, all mutations have been applied
+   *   // After `batcher` is closed, all mutations have been applied
    * }
    * }</pre>
    */
