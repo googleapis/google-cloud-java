@@ -36,8 +36,8 @@ import java.util.List;
  *   accumulator.add(item, future);
  *   while (accumulator.hasBatch()) {
  *     // If items and futures must be retained, they must be copied.
- *     List<E> items = new ArrayList<>(accumulator.batch());
- *     List<SettableApiFuture<R>> futures = new ArrayList<>(accumulator.futureBatch());
+ *     List<ElementT> items = new ArrayList<>(accumulator.batch());
+ *     List<SettableApiFuture<ResponseT>> futures = new ArrayList<>(accumulator.futureBatch());
  *
  *     // ...
  *
@@ -45,14 +45,14 @@ import java.util.List;
  *   }
  * }
  *
- * @param <E> The elements that, when batched, make up RPC calls.
- * @param <R> The RPC results for the individual elements.
+ * @param <ElementT> The elements that, when batched, make up RPC calls.
+ * @param <ResponseT> The RPC results for the individual elements.
  * }</pre>
  */
 @InternalApi
-public class RequestAccumulator<E, R> {
-  private final ArrayList<E> requests = new ArrayList<>();
-  private final ArrayList<SettableApiFuture<R>> futures = new ArrayList<>();
+public class RequestAccumulator<ElementT, ResponseT> {
+  private final ArrayList<ElementT> requests = new ArrayList<>();
+  private final ArrayList<SettableApiFuture<ResponseT>> futures = new ArrayList<>();
   private long curBytes = 0;
 
   // If not 0, the last element of requests is oversized and
@@ -88,7 +88,7 @@ public class RequestAccumulator<E, R> {
    * @throws IllegalStateException if {@link #hasBatch()} would return true immediately before the
    *     call.
    */
-  public void add(E e, long bytes, SettableApiFuture<R> future) {
+  public void add(ElementT e, long bytes, SettableApiFuture<ResponseT> future) {
     Preconditions.checkArgument(bytes >= 0, "size of element must not be negative");
     Preconditions.checkState(!hasBatch(), "invalid use of add; there's already a batch waiting");
 
@@ -112,7 +112,7 @@ public class RequestAccumulator<E, R> {
    * Returns the previously added items. The returned list must not be modified and will become
    * invalid after the next call to {@link #next()}.
    */
-  public List<E> batch() {
+  public List<ElementT> batch() {
     if (oversizedBytes > 0) {
       return requests.subList(0, requests.size() - 1);
     }
@@ -123,7 +123,7 @@ public class RequestAccumulator<E, R> {
    * Returns the previously added futures. The returned list must not be modified and will become
    * invalid after the next call to {@link #next()}.
    */
-  public List<SettableApiFuture<R>> futureBatch() {
+  public List<SettableApiFuture<ResponseT>> futureBatch() {
     if (oversizedBytes > 0) {
       return futures.subList(0, futures.size() - 1);
     }
