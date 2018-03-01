@@ -36,37 +36,38 @@ import java.util.Collection;
  * applications.
  */
 @InternalApi
-public class DummyBatchingDescriptor<ReqT, RespT> implements BatchingDescriptor<ReqT, RespT> {
+public class DummyBatchingDescriptor<RequestT, ResponseT>
+    implements BatchingDescriptor<RequestT, ResponseT> {
 
   @Override
-  public PartitionKey getBatchPartitionKey(ReqT reqT) {
+  public PartitionKey getBatchPartitionKey(RequestT request) {
     throw new UnsupportedOperationException("Placeholder descriptor should not be used");
   }
 
   @Override
-  public RequestBuilder<ReqT> getRequestBuilder() {
+  public RequestBuilder<RequestT> getRequestBuilder() {
     throw new UnsupportedOperationException("Placeholder descriptor should not be used");
   }
 
   @Override
   public void splitResponse(
-      RespT respT, Collection<? extends BatchedRequestIssuer<RespT>> collection) {
+      ResponseT response, Collection<? extends BatchedRequestIssuer<ResponseT>> collection) {
     throw new UnsupportedOperationException("Placeholder descriptor should not be used");
   }
 
   @Override
   public void splitException(
-      Throwable throwable, Collection<? extends BatchedRequestIssuer<RespT>> collection) {
+      Throwable throwable, Collection<? extends BatchedRequestIssuer<ResponseT>> collection) {
     throw new UnsupportedOperationException("Placeholder descriptor should not be used");
   }
 
   @Override
-  public long countElements(ReqT reqT) {
+  public long countElements(RequestT request) {
     throw new UnsupportedOperationException("Placeholder descriptor should not be used");
   }
 
   @Override
-  public long countBytes(ReqT reqT) {
+  public long countBytes(RequestT request) {
     throw new UnsupportedOperationException("Placeholder descriptor should not be used");
   }
 }
