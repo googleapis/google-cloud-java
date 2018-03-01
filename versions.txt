@@ -5,7 +5,7 @@ google-cloud-appengineflexcustom:0.37.0-alpha:0.37.1-alpha-SNAPSHOT
 google-cloud-appengineflexjava:0.37.0-alpha:0.37.1-alpha-SNAPSHOT
 google-cloud-appenginejava8:0.37.0-alpha:0.37.1-alpha-SNAPSHOT
 google-cloud:0.37.0-alpha:0.37.1-alpha-SNAPSHOT
-google-cloud-bigquery:0.37.0-beta:0.37.1-beta-SNAPSHOT
+google-cloud-bigquery:1.19.0:1.19.1-SNAPSHOT
 google-cloud-bigquerydatatransfer:0.37.0-beta:0.37.1-beta-SNAPSHOT
 google-cloud-bigtable:0.37.0-alpha:0.37.1-alpha-SNAPSHOT
 google-cloud-bom:0.37.0-alpha:0.37.1-alpha-SNAPSHOT
