@@ -127,7 +127,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<ReadRowsRequest, RowT> merging =
         new RowMergingCallable<>(stub.readRowsCallable(), rowAdapter);
 
-    FilterMarkerRowsCallable<RowT> filtering = new FilterMarkerRowsCallable<>(rowAdapter, merging);
+    FilterMarkerRowsCallable<RowT> filtering = new FilterMarkerRowsCallable<>(merging, rowAdapter);
 
     ServerStreamingCallable<ReadRowsRequest, RowT> withContext =
         filtering.withDefaultCallContext(clientContext.getDefaultCallContext());

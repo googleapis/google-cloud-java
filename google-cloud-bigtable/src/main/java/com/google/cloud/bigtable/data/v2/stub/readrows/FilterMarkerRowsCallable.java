@@ -31,11 +31,11 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
  */
 @InternalApi
 public class FilterMarkerRowsCallable<RowT> extends ServerStreamingCallable<ReadRowsRequest, RowT> {
-  private final RowAdapter<RowT> rowAdapter;
   private final ServerStreamingCallable<ReadRowsRequest, RowT> innerCallable;
+  private final RowAdapter<RowT> rowAdapter;
 
   public FilterMarkerRowsCallable(
-      RowAdapter<RowT> rowAdapter, ServerStreamingCallable<ReadRowsRequest, RowT> inner) {
+      ServerStreamingCallable<ReadRowsRequest, RowT> inner, RowAdapter<RowT> rowAdapter) {
     this.rowAdapter = rowAdapter;
     this.innerCallable = inner;
   }

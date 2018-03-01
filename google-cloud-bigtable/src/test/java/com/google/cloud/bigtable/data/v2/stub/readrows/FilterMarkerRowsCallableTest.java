@@ -38,7 +38,7 @@ public class FilterMarkerRowsCallableTest {
     ServerStreamingStashCallable<ReadRowsRequest, Row> innerCallable =
         new ServerStreamingStashCallable<>();
     FilterMarkerRowsCallable<Row> filterCallable =
-        new FilterMarkerRowsCallable<>(rowAdapter, innerCallable);
+        new FilterMarkerRowsCallable<>(innerCallable, rowAdapter);
 
     ServerStream<Row> results = filterCallable.call(ReadRowsRequest.getDefaultInstance());
 
@@ -50,7 +50,7 @@ public class FilterMarkerRowsCallableTest {
     ServerStreamingStashCallable<ReadRowsRequest, Row> innerCallable =
         new ServerStreamingStashCallable<>(Lists.newArrayList(buildScanMarker()));
     FilterMarkerRowsCallable<Row> filterCallable =
-        new FilterMarkerRowsCallable<>(rowAdapter, innerCallable);
+        new FilterMarkerRowsCallable<>(innerCallable, rowAdapter);
 
     ServerStream<Row> results = filterCallable.call(ReadRowsRequest.getDefaultInstance());
 
@@ -64,7 +64,7 @@ public class FilterMarkerRowsCallableTest {
     ServerStreamingStashCallable<ReadRowsRequest, Row> innerCallable =
         new ServerStreamingStashCallable<>(Lists.newArrayList(row));
     FilterMarkerRowsCallable<Row> filterCallable =
-        new FilterMarkerRowsCallable<>(rowAdapter, innerCallable);
+        new FilterMarkerRowsCallable<>(innerCallable, rowAdapter);
 
     ServerStream<Row> results = filterCallable.call(ReadRowsRequest.getDefaultInstance());
 
@@ -79,7 +79,7 @@ public class FilterMarkerRowsCallableTest {
     ServerStreamingStashCallable<ReadRowsRequest, Row> innerCallable =
         new ServerStreamingStashCallable<>(Lists.newArrayList(row, markerRow));
     FilterMarkerRowsCallable<Row> filterCallable =
-        new FilterMarkerRowsCallable<>(rowAdapter, innerCallable);
+        new FilterMarkerRowsCallable<>(innerCallable, rowAdapter);
 
     ServerStream<Row> results = filterCallable.call(ReadRowsRequest.getDefaultInstance());
 
