@@ -379,6 +379,7 @@ public class BigtableDataClient implements AutoCloseable {
    *       );
    *
    *   ApiFuture<Boolean> future = bigtableClient.checkAndMutateRowAsync(mutation);
+   * }
    * }</pre>
    */
   public ApiFuture<Boolean> checkAndMutateRowAsync(ConditionalRowMutation mutation) {
@@ -401,6 +402,7 @@ public class BigtableDataClient implements AutoCloseable {
    *       );
    *
    *   boolean success = bigtableClient.checkAndMutateRowCallable().call(mutation);
+   * }
    * }</pre>
    */
   public UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable() {
@@ -423,6 +425,7 @@ public class BigtableDataClient implements AutoCloseable {
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
    *
    *   ApiFuture<Row> success = bigtableClient.readModifyWriteRowAsync(mutation);
+   * }
    * }</pre>
    */
   public ApiFuture<Row> readModifyWriteRowAsync(ReadModifyWriteRow mutation) {
@@ -445,6 +448,7 @@ public class BigtableDataClient implements AutoCloseable {
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
    *
    *   Row row = bigtableClient.readModifyWriteRowCallable().call(mutation);
+   * }
    * }</pre>
    */
   public UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable() {
