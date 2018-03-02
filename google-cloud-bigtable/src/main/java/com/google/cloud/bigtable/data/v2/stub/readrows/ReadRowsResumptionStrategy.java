@@ -39,7 +39,7 @@ public class ReadRowsResumptionStrategy<RowT>
     implements StreamResumptionStrategy<ReadRowsRequest, RowT> {
   private final RowAdapter<RowT> rowAdapter;
   private ByteString lastKey = ByteString.EMPTY;
-  private long numProcessed = 0;
+  private long numProcessed;
 
   public ReadRowsResumptionStrategy(RowAdapter<RowT> rowAdapter) {
     this.rowAdapter = rowAdapter;

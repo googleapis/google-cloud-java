@@ -238,6 +238,9 @@ public class ReadRowsRetryTest {
         case OPEN:
           rowRange.setStartKeyOpen(ByteString.copyFromUtf8(range.lowerEndpoint()));
           break;
+        default:
+          throw new IllegalArgumentException(
+              "Unexpected lowerBoundType: " + range.lowerBoundType());
       }
       switch (range.upperBoundType()) {
         case CLOSED:
@@ -246,6 +249,9 @@ public class ReadRowsRetryTest {
         case OPEN:
           rowRange.setEndKeyOpen(ByteString.copyFromUtf8(range.upperEndpoint()));
           break;
+        default:
+          throw new IllegalArgumentException(
+              "Unexpected upperBoundType: " + range.upperBoundType());
       }
 
       return this;
