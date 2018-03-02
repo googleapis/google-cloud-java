@@ -167,6 +167,8 @@
     <compat-checker.version>0.37.1-alpha-SNAPSHOT</compat-checker.version><!-- {x-version-update:google-cloud-compat-checker:current} -->
     <managedtest.version>0.37.1-alpha-SNAPSHOT</managedtest.version><!-- {x-version-update:google-cloud-managedtest:current} -->
     <testing.version>0.37.1-alpha-SNAPSHOT</testing.version><!-- {x-version-update:google-cloud-testing:current} -->
+    <generated-proto-beta.version>0.2.1</generated-proto-beta.version>
+    <generated-proto-ga.version>1.1.1</generated-proto-ga.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -194,6 +196,26 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigtable-v2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquery</artifactId>
         <version>${bigquery.version}</version>
@@ -216,6 +238,16 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigquerydatatransfer-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-bigquerydatatransfer-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
         <version>${compute.version}</version>
@@ -236,6 +268,16 @@
         <artifactId>google-cloud-container</artifactId>
         <version>${container.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-container-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-container-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -304,6 +346,16 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dataproc-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
         <version>${datastore.version}</version>
@@ -313,6 +365,11 @@
         <artifactId>google-cloud-datastore</artifactId>
         <version>${datastore.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-datastore-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -326,6 +383,16 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dlp-v2beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow</artifactId>
         <version>${dialogflow.version}</version>
@@ -335,6 +402,16 @@
         <artifactId>google-cloud-dialogflow</artifactId>
         <version>${dialogflow.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dialogflow-v2beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -359,6 +436,16 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-examples</artifactId>
         <version>${examples.version}</version>
@@ -369,7 +456,6 @@
         <version>${examples.version}</version>
         <type>test-jar</type>
       </dependency>
-
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-firestore</artifactId>
@@ -380,6 +466,16 @@
         <artifactId>google-cloud-firestore</artifactId>
         <version>${firestore.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-firestore-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -393,6 +489,26 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-language-v1</artifactId>
+        <version>${generated-proto-ga.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-language-v1beta2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-language-v1</artifactId>
+        <version>${generated-proto-ga.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-language-v1beta2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
         <version>${logging.version}</version>
@@ -402,6 +518,16 @@
         <artifactId>google-cloud-logging</artifactId>
         <version>${logging.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-logging-v2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-logging-v2</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -421,6 +547,16 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-monitoring-v3</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-login</artifactId>
         <version>${os-login.version}</version>
@@ -432,6 +568,16 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-os-login-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-os-login-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub</artifactId>
         <version>${pubsub.version}</version>
@@ -441,6 +587,16 @@
         <artifactId>google-cloud-pubsub</artifactId>
         <version>${pubsub.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-pubsub-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -465,6 +621,36 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-spanner-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-spanner-admin-database-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-spanner-admin-instance-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-spanner-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech</artifactId>
         <version>${speech.version}</version>
@@ -474,6 +660,36 @@
         <artifactId>google-cloud-speech</artifactId>
         <version>${speech.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-speech-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-speech-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -498,6 +714,26 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-trace-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-trace-v2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-trace-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-trace-v2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-translate</artifactId>
         <version>${translate.version}</version>
@@ -520,6 +756,26 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-vision-v1</artifactId>
+        <version>${generated-proto-ga.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-vision-v1</artifactId>
+        <version>${generated-proto-ga.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-vision-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence</artifactId>
         <version>${video-intelligence.version}</version>
@@ -529,6 +785,56 @@
         <artifactId>google-cloud-video-intelligence</artifactId>
         <version>${video-intelligence.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-video-intelligence-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-video-intelligence-v1beta2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-video-intelligence-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-video-intelligence-v1beta1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-video-intelligence-v1beta2</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-common-protos</artifactId>
+        <version>${generated-proto-ga.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-common-protos</artifactId>
+        <version>${generated-proto-ga.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v1</artifactId>
+        <version>${generated-proto-beta.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
