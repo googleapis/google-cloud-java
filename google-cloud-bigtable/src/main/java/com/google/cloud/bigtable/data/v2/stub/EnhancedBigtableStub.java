@@ -168,10 +168,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retryable =
         Callables.retrying(spoolable, settings.sampleRowKeysSettings(), clientContext);
 
-    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withContext =
-        retryable.withDefaultCallContext(clientContext.getDefaultCallContext());
+    UnaryCallable<String, List<KeyOffset>> userFacing =
+        new SampleRowKeysCallable(retryable, requestContext);
 
-    return new SampleRowKeysCallable(withContext, requestContext);
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -182,10 +182,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
-    UnaryCallable<MutateRowRequest, MutateRowResponse> withContext =
-        stub.mutateRowCallable().withDefaultCallContext(clientContext.getDefaultCallContext());
+    MutateRowCallable userFacing = new MutateRowCallable(stub.mutateRowCallable(), requestContext);
 
-    return new MutateRowCallable(withContext, requestContext);
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   private UnaryCallable<RowMutation, Void> createMutateRowsCallable() {
