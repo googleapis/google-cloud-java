@@ -211,11 +211,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
-    UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> withContext =
-        stub.checkAndMutateRowCallable()
-            .withDefaultCallContext(clientContext.getDefaultCallContext());
+    CheckAndMutateRowCallable userFacing =
+        new CheckAndMutateRowCallable(stub.checkAndMutateRowCallable(), requestContext);
 
-    return new CheckAndMutateRowCallable(withContext, requestContext);
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
