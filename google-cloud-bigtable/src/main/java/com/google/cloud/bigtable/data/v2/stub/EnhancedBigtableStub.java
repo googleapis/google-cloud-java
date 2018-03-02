@@ -83,6 +83,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
             settings.sampleRowKeysSettings().getRetrySettings().getTotalTimeout())
         .setRetryableCodes(settings.sampleRowKeysSettings().getRetryableCodes());
 
+    // MutateRow: copy outer settings to the underlying GAPIC client
+    baseSettingsBuilder
+        .mutateRowSettings()
+        .setRetryableCodes(settings.mutateRowSettings().getRetryableCodes())
+        .setRetrySettings(settings.mutateRowSettings().getRetrySettings());
+
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
     GrpcBigtableStub stub = new GrpcBigtableStub(baseSettings, clientContext);
@@ -160,19 +166,23 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retryable =
         Callables.retrying(spoolable, settings.sampleRowKeysSettings(), clientContext);
 
-    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withContext =
-        retryable.withDefaultCallContext(clientContext.getDefaultCallContext());
+    UnaryCallable<String, List<KeyOffset>> userFacing =
+        new SampleRowKeysCallable(retryable, requestContext);
 
-    return new SampleRowKeysCallable(withContext, requestContext);
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
+  /**
+   * Creates a callable chain to handle MutateRow RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link RowMutation} into a {@link com.google.bigtable.v2.MutateRowRequest}.
+   * </ul>
+   */
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
-    return new UnaryCallable<RowMutation, Void>() {
-      @Override
-      public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    MutateRowCallable userFacing = new MutateRowCallable(stub.mutateRowCallable(), requestContext);
+
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   private UnaryCallable<RowMutation, Void> createMutateRowsCallable() {
