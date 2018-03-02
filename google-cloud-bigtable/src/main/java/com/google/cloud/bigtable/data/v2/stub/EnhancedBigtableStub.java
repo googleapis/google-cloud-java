@@ -89,6 +89,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .setRetryableCodes(settings.mutateRowSettings().getRetryableCodes())
         .setRetrySettings(settings.mutateRowSettings().getRetrySettings());
 
+    // CheckAndMutateRow is a simple passthrough
+    baseSettingsBuilder
+        .checkAndMutateRowSettings()
+        .setRetryableCodes(settings.checkAndMutateRowSettings().getRetryableCodes())
+        .setRetrySettings(settings.checkAndMutateRowSettings().getRetrySettings());
+
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
     GrpcBigtableStub stub = new GrpcBigtableStub(baseSettings, clientContext);
@@ -194,13 +200,19 @@ public class EnhancedBigtableStub implements AutoCloseable {
     };
   }
 
+  /**
+   * Creates a callable chain to handle CheckAndMutateRow RPCs. THe chain will:
+   *
+   * <ul>
+   *   <li>Convert {@link ConditionalRowMutation}s into {@link
+   *       com.google.bigtable.v2.CheckAndMutateRowRequest}s.
+   * </ul>
+   */
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
-    return new UnaryCallable<ConditionalRowMutation, Boolean>() {
-      @Override
-      public ApiFuture<Boolean> futureCall(ConditionalRowMutation request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    CheckAndMutateRowCallable userFacing =
+        new CheckAndMutateRowCallable(stub.checkAndMutateRowCallable(), requestContext);
+
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
@@ -230,6 +242,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return mutateRowsCallable;
   }
 
+  /**
+   * Returns the callable chain created in {@link #createCheckAndMutateRowCallable()} during stub
+   * construction.
+   */
   public UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable() {
     return checkAndMutateRowCallable;
   }
