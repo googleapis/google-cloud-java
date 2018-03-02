@@ -32,6 +32,7 @@ public class RequestAccumulatorTest {
     acc.add("b", 1, null);
     assertThat(acc.hasBatch()).isTrue();
     assertThat(acc.batch()).containsExactly("a", "b");
+    assertThat(acc.bytes()).isEqualTo(2);
 
     acc.next();
     assertThat(acc.hasBatch()).isFalse();
@@ -42,6 +43,7 @@ public class RequestAccumulatorTest {
     acc.add("d", 1, null);
     assertThat(acc.hasBatch()).isTrue();
     assertThat(acc.batch()).containsExactly("c", "d");
+    assertThat(acc.bytes()).isEqualTo(2);
 
     acc.next();
     assertThat(acc.hasBatch()).isFalse();
@@ -58,6 +60,7 @@ public class RequestAccumulatorTest {
     acc.add("bc", 2, null);
     assertThat(acc.hasBatch()).isTrue();
     assertThat(acc.batch()).containsExactly("a", "bc");
+    assertThat(acc.bytes()).isEqualTo(3);
 
     acc.next();
     assertThat(acc.hasBatch()).isFalse();
@@ -68,6 +71,7 @@ public class RequestAccumulatorTest {
     acc.add("fg", 2, null);
     assertThat(acc.hasBatch()).isTrue();
     assertThat(acc.batch()).containsExactly("de", "fg");
+    assertThat(acc.bytes()).isEqualTo(4);
 
     acc.next();
     assertThat(acc.hasBatch()).isFalse();
@@ -79,6 +83,7 @@ public class RequestAccumulatorTest {
     acc.add("abc", 3, null);
     assertThat(acc.hasBatch()).isTrue();
     assertThat(acc.batch()).containsExactly("abc");
+    assertThat(acc.bytes()).isEqualTo(3);
   }
 
   @Test
@@ -90,10 +95,12 @@ public class RequestAccumulatorTest {
     acc.add("xyz", 3, null);
     assertThat(acc.hasBatch()).isTrue();
     assertThat(acc.batch()).containsExactly("a");
+    assertThat(acc.bytes()).isEqualTo(1);
 
     acc.next();
     assertThat(acc.hasBatch()).isTrue();
     assertThat(acc.batch()).containsExactly("xyz");
+    assertThat(acc.bytes()).isEqualTo(3);
 
     acc.next();
     assertThat(acc.hasBatch()).isFalse();

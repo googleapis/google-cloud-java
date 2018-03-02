@@ -130,6 +130,11 @@ public class RequestAccumulator<ElementT, ResponseT> {
     return futures;
   }
 
+  /** Returns the combined size of items in {@link #batch()}. */
+  public long bytes() {
+    return curBytes - oversizedBytes;
+  }
+
   /** Consumes the current batch. */
   public void next() {
     batch().clear();
