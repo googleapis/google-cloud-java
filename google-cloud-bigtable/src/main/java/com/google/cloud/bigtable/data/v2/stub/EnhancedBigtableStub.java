@@ -242,7 +242,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return mutateRowsCallable;
   }
 
-  /** Returns the callable chain created in {@link #createCheckAndMutateRowCallable()}. */
+  /**
+   * Returns the callable chain created in {@link #createCheckAndMutateRowCallable()} during stub
+   * construction.
+   */
   public UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable() {
     return checkAndMutateRowCallable;
   }
