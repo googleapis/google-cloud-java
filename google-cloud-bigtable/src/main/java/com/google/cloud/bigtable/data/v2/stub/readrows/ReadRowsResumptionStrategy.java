@@ -117,6 +117,8 @@ public class ReadRowsResumptionStrategy<RowT>
             break;
           case ENDKEY_NOT_SET:
             rangeBuilder.clearEndKey();
+          default:
+            throw new IllegalArgumentException("Unknown endKeyCase: " + rowRange.getEndKeyCase());
         }
 
         switch (rowRange.getStartKeyCase()) {
