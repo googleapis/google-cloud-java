@@ -8,7 +8,7 @@ If you see exceptions related to `ALPN is not configured properly`, such as:
 Caused by: java.lang.IllegalArgumentException: ALPN is not configured properly. See https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting for more information.
 ```
 
-This means can mean that:
+This can mean that:
 - You are not on a [supported platform](https://github.com/GoogleCloudPlatform/google-cloud-java/#supported-platforms)
 - There are class path conflicts with `netty`
 - Or, any of the conflicts specified in [gRPC Troubleshooting guide](https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting).
@@ -44,7 +44,7 @@ If you are using `google-cloud-java` version 0.35.0 or above, then it already us
 ## ClassNotFoundException, NoSuchMethodError, NoClassDefFoundError
 
 These errors are usually caused by having multiple versions or conflicting versions of the same dependency in the classpath.
-Usually these dependency conflicts occur with `guava` and `protobuf-java`.
+Usually these dependency conflicts occur with `guava` or `protobuf-java`.
 
 There may be multiple sources for classpath conflicts:
 - Multiple transitive dependencies in the dependency tree
@@ -68,7 +68,7 @@ $ mvn dependency:tree
 
 Look for versions of all of the `guava`, `protobuf-java`, etc.
 
-If you experience the error only during runtime, then it may mean that your runtime environment may be introducing conflicting JARs into your runtime classpath. A typical example of this is that Hadoop, Spark, or other server software that your application runs on, may have conflicting versions `netty`, `guava`, or `protobuf-java` JARs in the classpath.
+If you experience the error only during runtime, then it means that your runtime environment may be introducing conflicting JARs into your runtime classpath. A typical example of this is that Hadoop, Spark, or other server software that your application runs on, may have conflicting versions `netty`, `guava`, or `protobuf-java` JARs in the classpath.
 
 ### Detecting the conflict early during build
 
