@@ -233,11 +233,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
-    UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> withContext =
-        stub.readModifyWriteRowCallable()
-            .withDefaultCallContext(clientContext.getDefaultCallContext());
+    ReadModifyWriteRowCallable userFacing =
+        new ReadModifyWriteRowCallable(stub.readModifyWriteRowCallable(), requestContext);
 
-    return new ReadModifyWriteRowCallable(withContext, requestContext);
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
   // </editor-fold>
 
