@@ -347,6 +347,9 @@ public class Publisher {
 
   private void publishAllOutstanding() {
     synchronized (accumulator) {
+      if (accumulator.batch().isEmpty()) {
+        return;
+      }
       publishBatch(
           PublishRequest.newBuilder()
               .setTopic(cachedTopicNameString)
