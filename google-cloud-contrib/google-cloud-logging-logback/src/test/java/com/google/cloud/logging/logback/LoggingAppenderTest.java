@@ -31,6 +31,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
+import com.google.cloud.logging.Payload;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Severity;
 import com.google.common.collect.ImmutableMap;
@@ -181,6 +182,40 @@ public class LoggingAppenderTest {
 
     assertThat(logNameArg.getValue()).isEqualTo(defaultWriteOptions[0]);
     assertThat(resourceArg.getValue()).isEqualTo(defaultWriteOptions[1]);
+  }
+
+  @Test
+  public void testTransformersAddCorrectPayload() {
+    LogEntry logEntry =
+        LogEntry.newBuilder(
+            Payload.JsonPayload.of(
+                new ImmutableMap.Builder<String, String>()
+                    .put("loggerName", "com.example.logger")
+                    .put("message", "this is a test")
+                    .build()))
+            .setTimestamp(100000L)
+            .setSeverity(Severity.WARNING)
+            .setLabels(
+                new ImmutableMap.Builder<String, String>()
+                    .put("levelName", "WARN")
+                    .put("levelValue", String.valueOf(30000L))
+                    .build())
+            .build();
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.write(
+        capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().once();
+    replay(logging);
+    loggingAppender.setTransformer("com.example.loggingtransformers.TestJsonPayloadTransformer");
+    loggingAppender.start();
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
+    LoggingEvent loggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
+    loggingEvent.setLoggerName("com.example.logger");
+    loggingAppender.doAppend(loggingEvent);
+    verify(logging);
+    assertThat(capturedArgument.getValue().iterator().hasNext()).isTrue();
+    assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(logEntry);
   }
 
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {

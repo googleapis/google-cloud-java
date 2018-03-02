@@ -50,6 +50,8 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
       <level>INFO</level>
     </filter>
     <log>application.log</log> <!-- Optional : default java.log -->
+     <!-- Optional : only one allowed, default StringPayloadTransformer -->
+    <transformer>com.example.loggingtransformers.TestJsonPayloadTransformer</transformer>
     <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer> <!-- Optional -->
     <enhancer>com.example.enhancers.AnotherEnhancer</enhancer> <!-- Optional -->
     <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->

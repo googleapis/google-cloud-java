@@ -60,12 +60,13 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private volatile Logging logging;
   private List<LoggingEnhancer> loggingEnhancers;
   private WriteOption[] defaultWriteOptions;
-  private ILoggingEventTransformer loggingEventTransformer = new StringPayloadTransformer();
+  private ILoggingEventTransformer loggingEventTransformer;
 
   private Level flushLevel;
   private String log;
   private String resourceType;
   private Set<String> enhancerClassNames = new HashSet<>();
+  private String loggingEventTransformerClassName;
 
   /**
    * Batched logging requests get immediately flushed for logs at or above this level.
@@ -108,6 +109,23 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     this.enhancerClassNames.add(enhancerClassName);
   }
 
+  /**
+   * Customize how a Logback {@link ILoggingEvent} becomes StackDriver Cloud {@link LogEntry},
+   * for example, to send a jsonPayload or add labels that are computed from the ILoggingEvent.
+   *
+   * <p>Must be the full name of a class that implements {@link ILoggingEventTransformer}.
+   *
+   * <p>If you do <em>not</em> need to read from the ILoggingEvent, use a {@link LoggingEnhancer}
+   * instead via {@link #addEnhancer(String)}.
+   *
+   * <p>Defaults to {@link StringPayloadTransformer} which sets the log message as a stringPayload.
+   *
+   * @param loggingEventTransformer name of a class implementing {@link ILoggingEventTransformer}.
+   */
+  public void setTransformer(String loggingEventTransformer) {
+    this.loggingEventTransformerClassName = loggingEventTransformer;
+  }
+
   Level getFlushLevel() {
     return (flushLevel != null) ? flushLevel : Level.ERROR;
   }
@@ -147,6 +165,18 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     return null;
   }
 
+  private ILoggingEventTransformer getLoggingEventTransformer(String transformerClassName) {
+    try {
+      Class<? extends ILoggingEventTransformer> clz =
+          (Class<? extends ILoggingEventTransformer>)
+              Loader.loadClass(transformerClassName.trim());
+      return clz.newInstance();
+    } catch (Exception ex) {
+      // Fallback to StringPayloadTransformer
+    }
+    return new StringPayloadTransformer();
+  }
+
   /**
    * Initialize and configure the cloud logging service.
    */
@@ -163,6 +193,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     List<LoggingEnhancer> resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
     loggingEnhancers.addAll(resourceEnhancers);
     loggingEnhancers.addAll(getLoggingEnhancers());
+    loggingEventTransformer = getLoggingEventTransformer(loggingEventTransformerClassName);
     super.start();
   }
 
