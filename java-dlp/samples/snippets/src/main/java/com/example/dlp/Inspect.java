@@ -19,7 +19,6 @@ package com.example.dlp;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.dlp.v2beta1.DlpServiceClient;
-import com.google.longrunning.Operation;
 import com.google.privacy.dlp.v2beta1.BigQueryOptions;
 import com.google.privacy.dlp.v2beta1.BigQueryTable;
 import com.google.privacy.dlp.v2beta1.CloudStorageOptions;
@@ -241,7 +240,7 @@ public class Inspect {
       // ...
       // block on response, returning job id of the operation
       InspectOperationResult inspectOperationResult = responseFuture.get();
-      ResultName resultName = inspectOperationResult.getNameAsResultName();
+      String resultName = inspectOperationResult.getName();
       InspectResult inspectResult = dlpServiceClient.listInspectFindings(resultName).getResult();
 
       if (inspectResult.getFindingsCount() > 0) {
@@ -315,7 +314,7 @@ public class Inspect {
       // ...
       // block on response, returning job id of the operation
       InspectOperationResult inspectOperationResult = responseFuture.get();
-      ResultName resultName = inspectOperationResult.getNameAsResultName();
+      String resultName = inspectOperationResult.getName();
       InspectResult inspectResult = dlpServiceClient.listInspectFindings(resultName).getResult();
 
       if (inspectResult.getFindingsCount() > 0) {
@@ -394,7 +393,7 @@ public class Inspect {
       // ...
       // block on response, returning job id of the operation
       InspectOperationResult inspectOperationResult = responseFuture.get();
-      ResultName resultName = inspectOperationResult.getNameAsResultName();
+      String resultName = inspectOperationResult.getName();
       InspectResult inspectResult = dlpServiceClient.listInspectFindings(resultName).getResult();
 
       if (inspectResult.getFindingsCount() > 0) {
