@@ -1,0 +1,64 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.data.v2.it.env;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.junit.rules.ExternalResource;
+
+public class TestEnvRule extends ExternalResource {
+  private static final Logger LOGGER = Logger.getLogger(TestEnvRule.class.getName());
+
+  private static final String ENV_PROPERTY = "bigtable.env";
+
+  private TestEnv testEnv;
+
+  @Override
+  protected void before() throws Throwable {
+    String env = System.getProperty(ENV_PROPERTY, "emulator");
+
+    switch (env) {
+      case "emulator":
+        testEnv = new EmulatorEnv();
+        break;
+      case "prod":
+        testEnv = ProdEnv.fromSystemProperties();
+        break;
+      default:
+        throw new RuntimeException(
+            "Unknown env: "
+                + env
+                + ". Please set the system propert "
+                + ENV_PROPERTY
+                + " to either 'emulator' or 'prod'.");
+    }
+    testEnv.start();
+  }
+
+  @Override
+  protected void after() {
+    try {
+      testEnv.stop();
+    } catch (Exception e) {
+      LOGGER.log(Level.WARNING, "Failed to stop the environment", e);
+    }
+    testEnv = null;
+  }
+
+  public TestEnv env() {
+    return testEnv;
+  }
+}
