@@ -19,6 +19,7 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.UnsafeByteOperations;
 import javax.annotation.Nonnull;
 
 /**
@@ -320,6 +321,44 @@ public abstract class Range<T, R extends Range<T, R>> {
 
   /** Concrete Range for ByteStrings */
   public static final class ByteStringRange extends AbstractByteStringRange<ByteStringRange> {
+    public static ByteStringRange prefix(String prefix) {
+      return prefix(ByteString.copyFromUtf8(prefix));
+    }
+
+    public static ByteStringRange prefix(ByteString prefix) {
+      if (prefix.isEmpty()) {
+        return unbounded();
+      }
+
+      int offset = prefix.size() - 1;
+      int curByte = 0xFF;
+
+      while (offset >= 0) {
+        curByte = prefix.byteAt(offset) & 0xFF;
+        if (curByte != 0xFF) {
+          break;
+        }
+        offset--;
+      }
+
+      if (offset < 0) {
+        // We got an 0xFFFF... (only FFs) stopRow value which is
+        // the last possible prefix before the end of the table.
+        // So set it to stop at the 'end of the table'
+        return unbounded().startClosed(prefix);
+      }
+
+      ByteString endPrefix = offset == 0 ? ByteString.EMPTY : prefix.substring(0, offset);
+      ByteString endSuffix = UnsafeByteOperations.unsafeWrap(new byte[] {(byte) (curByte + 1)});
+      ByteString end = endPrefix.concat(endSuffix);
+
+      ByteStringRange range = ByteStringRange.unbounded().startClosed(prefix);
+      if (!end.isEmpty()) {
+        range.endOpen(end);
+      }
+      return range;
+    }
+
     public static ByteStringRange unbounded() {
       return new ByteStringRange(BoundType.UNBOUNDED, null, BoundType.UNBOUNDED, null);
     }
