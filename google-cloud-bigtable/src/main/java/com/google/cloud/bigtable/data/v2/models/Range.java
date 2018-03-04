@@ -198,23 +198,63 @@ public abstract class Range<T, R extends Range<T, R>> {
     }
 
     /** Creates a new {@link Range} with the specified exclusive start and the current end. */
-    public R startOpen(String start) {
+    public R startOpen(@Nonnull String start) {
       return startOpen(wrap(start));
     }
 
     /** Creates a new {@link Range} with the specified inclusive start and the current end. */
-    public R startClosed(String start) {
+    public R startClosed(@Nonnull String start) {
       return startClosed(wrap(start));
     }
 
     /** Creates a new {@link Range} with the specified exclusive end and the current start. */
-    public R endOpen(String end) {
+    public R endOpen(@Nonnull String end) {
       return endOpen(wrap(end));
     }
 
     /** Creates a new {@link Range} with the specified inclusive end and the current start. */
-    public R endClosed(String end) {
+    public R endClosed(@Nonnull String end) {
       return endClosed(wrap(end));
+    }
+
+    @Override
+    public R startOpen(@Nonnull ByteString start) {
+      Preconditions.checkNotNull(start);
+      if (start.isEmpty()) {
+        return startUnbounded();
+      } else {
+        return super.startOpen(start);
+      }
+    }
+
+    @Override
+    public R startClosed(@Nonnull ByteString start) {
+      Preconditions.checkNotNull(start);
+      if (start.isEmpty()) {
+        return startUnbounded();
+      } else {
+        return super.startClosed(start);
+      }
+    }
+
+    @Override
+    public R endOpen(@Nonnull ByteString end) {
+      Preconditions.checkNotNull(end);
+      if (end.isEmpty()) {
+        return endUnbounded();
+      } else {
+        return super.endOpen(end);
+      }
+    }
+
+    @Override
+    public R endClosed(@Nonnull ByteString end) {
+      Preconditions.checkNotNull(end);
+      if (end.isEmpty()) {
+        return endUnbounded();
+      } else {
+        return super.endClosed(end);
+      }
     }
 
     @SuppressWarnings("unchecked")

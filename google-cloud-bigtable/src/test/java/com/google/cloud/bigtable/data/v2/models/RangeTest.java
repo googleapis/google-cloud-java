@@ -189,6 +189,9 @@ public class RangeTest {
     range = range.startClosed(ByteString.copyFromUtf8("c"));
     assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
     assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("c"));
+
+    assertThat(range.startOpen(ByteString.EMPTY).getStartBound()).isEqualTo(BoundType.UNBOUNDED);
+    assertThat(range.startClosed(ByteString.EMPTY).getStartBound()).isEqualTo(BoundType.UNBOUNDED);
   }
 
   @Test
@@ -204,6 +207,9 @@ public class RangeTest {
     range = range.startClosed("c");
     assertThat(range.getStartBound()).isEqualTo(BoundType.CLOSED);
     assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("c"));
+
+    assertThat(range.startOpen("").getStartBound()).isEqualTo(BoundType.UNBOUNDED);
+    assertThat(range.startClosed("").getStartBound()).isEqualTo(BoundType.UNBOUNDED);
   }
 
   @Test
@@ -221,6 +227,9 @@ public class RangeTest {
     range = range.endOpen(ByteString.copyFromUtf8("x"));
     assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
     assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("x"));
+
+    assertThat(range.endOpen(ByteString.EMPTY).getEndBound()).isEqualTo(BoundType.UNBOUNDED);
+    assertThat(range.endClosed(ByteString.EMPTY).getEndBound()).isEqualTo(BoundType.UNBOUNDED);
   }
 
   @Test
@@ -236,6 +245,9 @@ public class RangeTest {
     range = range.endOpen("x");
     assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
     assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("x"));
+
+    assertThat(range.endOpen("").getEndBound()).isEqualTo(BoundType.UNBOUNDED);
+    assertThat(range.endClosed("").getEndBound()).isEqualTo(BoundType.UNBOUNDED);
   }
 
   @Test
