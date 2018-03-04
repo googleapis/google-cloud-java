@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalExtensionOnly;
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
@@ -244,6 +245,37 @@ public abstract class Range<T, R extends Range<T, R>> {
     private TimestampRange(BoundType startBound, Long start, BoundType endBound, Long end) {
       super(startBound, start, endBound, end);
     }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      TimestampRange range = (TimestampRange) o;
+
+      if (getStartBound() != range.getStartBound() || getEndBound() != range.getEndBound()) {
+        return false;
+      }
+      if (getStartBound() != BoundType.UNBOUNDED && !Objects.equal(getStart(), range.getStart())) {
+        return false;
+      }
+      if (getEndBound() != BoundType.UNBOUNDED && !Objects.equal(getEnd(), range.getEnd())) {
+        return false;
+      }
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(
+          getStartBound(),
+          getStartBound() == BoundType.UNBOUNDED ? null : getStart(),
+          getEndBound(),
+          getEndBound() == BoundType.UNBOUNDED ? null : getEnd());
+    }
   }
 
   /** Concrete Range for ByteStrings */
@@ -264,6 +296,37 @@ public abstract class Range<T, R extends Range<T, R>> {
     private ByteStringRange(
         BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
       super(startBound, start, endBound, end);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      ByteStringRange range = (ByteStringRange) o;
+
+      if (getStartBound() != range.getStartBound() || getEndBound() != range.getEndBound()) {
+        return false;
+      }
+      if (getStartBound() != BoundType.UNBOUNDED && !Objects.equal(getStart(), range.getStart())) {
+        return false;
+      }
+      if (getEndBound() != BoundType.UNBOUNDED && !Objects.equal(getEnd(), range.getEnd())) {
+        return false;
+      }
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(
+          getStartBound(),
+          getStartBound() == BoundType.UNBOUNDED ? null : getStart(),
+          getEndBound(),
+          getEndBound() == BoundType.UNBOUNDED ? null : getEnd());
     }
   }
 }

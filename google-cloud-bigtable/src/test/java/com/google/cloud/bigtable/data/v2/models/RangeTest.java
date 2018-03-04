@@ -102,6 +102,17 @@ public class RangeTest {
   }
 
   @Test
+  public void timestampEqualsTest() {
+    TimestampRange r1 = TimestampRange.create(1, 10);
+    TimestampRange r2 = TimestampRange.create(1, 10);
+    TimestampRange r3 = TimestampRange.create(2, 20);
+
+    assertThat(r1).isEqualTo(r2);
+    assertThat(r2).isEqualTo(r1);
+    assertThat(r1).isNotEqualTo(r3);
+  }
+
+  @Test
   public void byteStringUnboundedTest() {
     ByteStringRange range = ByteStringRange.unbounded();
     assertThat(range.getStartBound()).isEqualTo(BoundType.UNBOUNDED);
@@ -142,6 +153,25 @@ public class RangeTest {
     assertThat(range.getStart()).isEqualTo(ByteString.copyFromUtf8("a"));
     assertThat(range.getEndBound()).isEqualTo(BoundType.OPEN);
     assertThat(range.getEnd()).isEqualTo(ByteString.copyFromUtf8("b"));
+  }
+
+  @Test
+  public void byteStringPrefixTest() {
+    assertThat(ByteStringRange.prefix("a")).isEqualTo(ByteStringRange.create("a", "b"));
+
+    assertThat(ByteStringRange.prefix("ab")).isEqualTo(ByteStringRange.create("ab", "ac"));
+
+    ByteString prefix2 = ByteString.copyFrom(new byte[] {'a', (byte) 0xFF});
+
+    assertThat(ByteStringRange.prefix(prefix2))
+        .isEqualTo(ByteStringRange.create(prefix2, ByteString.copyFromUtf8("b")));
+
+    ByteString prefix3 = ByteString.copyFrom(new byte[] {(byte) 0xFF, (byte) 0xFF});
+
+    assertThat(ByteStringRange.prefix(prefix3))
+        .isEqualTo(ByteStringRange.unbounded().startClosed(prefix3));
+
+    assertThat(ByteStringRange.prefix(ByteString.EMPTY)).isEqualTo(ByteStringRange.unbounded());
   }
 
   @Test
@@ -217,5 +247,16 @@ public class RangeTest {
     assertThat(range.getEnd().toStringUtf8()).isEqualTo("sameInstance");
     assertThat(rangeSame.getEnd().toStringUtf8()).isEqualTo("sameInstance");
     assertThat(rangeClone.getEnd().toStringUtf8()).isEqualTo("cloneInstance");
+  }
+
+  @Test
+  public void byteStringEqualsTest() {
+    ByteStringRange r1 = ByteStringRange.create("a", "c");
+    ByteStringRange r2 = ByteStringRange.create("a", "c");
+    ByteStringRange r3 = ByteStringRange.create("q", "z");
+
+    assertThat(r1).isEqualTo(r2);
+    assertThat(r2).isEqualTo(r1);
+    assertThat(r1).isNotEqualTo(r3);
   }
 }
