@@ -25,6 +25,7 @@ package com.google.cloud.examples.bigquery.snippets;
 import com.google.api.client.util.Charsets;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -392,19 +393,18 @@ public class BigQuerySnippets {
       throws InterruptedException {
     // [START bigquery_load_table_gcs_json]
     TableId tableId = TableId.of(datasetName, tableName);
-    LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
-        .setFormatOptions(FormatOptions.json())
-        .build();
     // Table field definition
     ArrayList<Field> fields = new ArrayList<>();
-    for (String fieldName: fieldNames) {
+    for (String fieldName : fieldNames) {
       fields.add(Field.of(fieldName, LegacySQLTypeName.STRING));
     }
     // Table schema definition
-    Schema schema = Schema.of(fields.toArray(new Field[fields.size()]));
-    // Create the table
-    StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
-    bigquery.create(TableInfo.of(tableId, tableDefinition));
+    Schema schema = Schema.of(fields);
+    LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
+        .setFormatOptions(FormatOptions.json())
+        .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+        .setSchema(schema)
+        .build();
     // Load the table
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
     remoteLoadJob = remoteLoadJob.waitFor();
