@@ -38,6 +38,7 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
+import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
 import java.io.IOException;
@@ -148,8 +149,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *       dispatch the RPC.
    *   <li>Upon receiving the response stream, it will merge the {@link
    *       com.google.bigtable.v2.ReadRowsResponse.CellChunk}s in logical rows. The actual row
-   *       implementation can be configured in {@link
-   *       com.google.cloud.bigtable.data.v2.BigtableDataSettings}.
+   *       implementation can be configured in by the {@code rowAdapter} parameter.
    *   <li>Retry/resume on failure.
    *   <li>Filter out marker rows.
    * </ul>
@@ -171,10 +171,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setIdleTimeout(settings.readRowsSettings().getIdleTimeout())
             .build();
 
-    ServerStreamingCallable<ReadRowsRequest, RowT> retrying =
-        Callables.retrying(merging, innerSettings, clientContext);
+    // Retry logic is split into 2 parts to workaround a rare edge case described in
+    // ReadRowsRetryCompletedCallable
+    ServerStreamingCallable<ReadRowsRequest, RowT> retrying1 =
+        new ReadRowsRetryCompletedCallable<>(merging);
 
-    FilterMarkerRowsCallable<RowT> filtering = new FilterMarkerRowsCallable<>(retrying, rowAdapter);
+    ServerStreamingCallable<ReadRowsRequest, RowT> retrying2 =
+        Callables.retrying(retrying1, innerSettings, clientContext);
+
+    FilterMarkerRowsCallable<RowT> filtering =
+        new FilterMarkerRowsCallable<>(retrying2, rowAdapter);
 
     ServerStreamingCallable<ReadRowsRequest, RowT> withContext =
         filtering.withDefaultCallContext(clientContext.getDefaultCallContext());

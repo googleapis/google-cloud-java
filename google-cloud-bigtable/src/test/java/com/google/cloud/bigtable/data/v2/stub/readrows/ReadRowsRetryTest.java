@@ -169,14 +169,29 @@ public class ReadRowsRetryTest {
             .respondWith("r1", "r2")
             .respondWithStatus(Code.UNAVAILABLE));
 
-    Throwable error = null;
-    try {
-      getResults(Query.create(tableName.getTable()).range("r1", "r3").limit(2));
-    } catch (Throwable t) {
-      error = t;
-    }
+    // Second retry request is handled locally in ReadRowsRetryCompletedCallable
 
-    Truth.assertThat(error.getCause()).isInstanceOf(IllegalStateException.class);
+    List<String> actualResults =
+        getResults(Query.create(tableName.getTable()).range("r1", "r3").limit(2));
+
+    Truth.assertThat(actualResults).containsExactly("r1", "r2");
+  }
+
+  @Test
+  public void errorAfterRequestCompleteTest() {
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.closedOpen("r1", "r3"))
+            .expectRequest("r4")
+            .respondWith("r2", "r4")
+            .respondWithStatus(Code.UNAVAILABLE));
+
+    // Second retry request is handled locally in ReadRowsRetryCompletedCallable
+
+    List<String> actualResults =
+        getResults(Query.create(tableName.getTable()).range("r1", "r3").rowKey("r4"));
+
+    Truth.assertThat(actualResults).containsExactly("r2", "r4");
   }
 
   @Test

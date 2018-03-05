@@ -85,11 +85,10 @@ public class ReadRowsResumptionStrategy<RowT>
     }
     Builder builder = request.toBuilder();
 
-    // NOTE: It is considered an an unrecoverable error for the server to send all of the rows,
-    // followed by an error status.
     if (request.getRowsLimit() > 0) {
+      // NOTE: the edge case of request.getRowsLimit() == numProcessed is handled below
       Preconditions.checkState(
-          request.getRowsLimit() > numProcessed,
+          request.getRowsLimit() >= numProcessed,
           "Detected too many rows for the current row limit during a retry.");
       builder.setRowsLimit(request.getRowsLimit() - numProcessed);
     }
@@ -102,13 +101,14 @@ public class ReadRowsResumptionStrategy<RowT>
     // Special case: empty query implies full table scan
     if (request.getRows().getRowKeysList().isEmpty()
         && request.getRows().getRowRangesList().isEmpty()) {
-      rowSetBuilder.addRowRanges(RowRange.newBuilder().setStartKeyOpen(lastKey).build());
 
-      builder.setRows(rowSetBuilder.build());
-      return builder.build();
+      request =
+          request
+              .toBuilder()
+              .setRows(RowSet.newBuilder().addRowRanges(RowRange.getDefaultInstance()))
+              .build();
     }
 
-    // Normal flow: narrow the request keys & ranges
     for (ByteString key : request.getRows().getRowKeysList()) {
       if (ByteStringComparator.INSTANCE.compare(key, lastKey) > 0) {
         rowSetBuilder.addRowKeys(key);
@@ -162,6 +162,16 @@ public class ReadRowsResumptionStrategy<RowT>
           throw new IllegalArgumentException("Unknown startKeyCase: " + rowRange.getStartKeyCase());
       }
       rowSetBuilder.addRowRanges(rowRangeBuilder.build());
+    }
+
+    // Edge case: retrying a fulfilled request.
+    // A fulfilled request is one that has had all of its row keys and ranges fulfilled or if it had
+    // a row limit, has seen enough rows. These requests are replaced with a marker request that
+    // will be handled by ReadRowsRetryCompletedCallable. See docs in ReadRowsRetryCompletedCallable
+    // for more details.
+    if ((rowSetBuilder.getRowRangesCount() == 0 && rowSetBuilder.getRowKeysCount() == 0)
+        || (request.getRowsLimit() > 0 && request.getRowsLimit() == numProcessed)) {
+      return ReadRowsRetryCompletedCallable.FULFILLED_REQUEST_MARKER;
     }
 
     builder.setRows(rowSetBuilder.build());
