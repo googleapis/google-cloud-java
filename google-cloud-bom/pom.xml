@@ -168,7 +168,7 @@
     <managedtest.version>0.37.1-alpha-SNAPSHOT</managedtest.version><!-- {x-version-update:google-cloud-managedtest:current} -->
     <testing.version>0.37.1-alpha-SNAPSHOT</testing.version><!-- {x-version-update:google-cloud-testing:current} -->
     
-    <api-common.version>1.3.0</api-common.version>
+    <api-common.version>1.4.0</api-common.version>
     <gax.version>1.19.0</gax.version>
     <gax-grpc.version>1.19.0</gax-grpc.version>
     <gax-httpjson.version>0.36.0</gax-httpjson.version>
