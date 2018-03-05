@@ -387,17 +387,16 @@ public class BigQuerySnippets {
   // [TARGET writer(WriteChannelConfiguration)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  // [VARIABLE "my_source_uri")]
-  // [VARIABLE "field_names")]
-  public Long writeRemoteFileToTable(String datasetName, String tableName, String sourceUri, List<String> fieldNames)
+  public Long writeRemoteFileToTable(String datasetName, String tableName)
       throws InterruptedException {
     // [START bigquery_load_table_gcs_json]
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
     TableId tableId = TableId.of(datasetName, tableName);
     // Table field definition
-    ArrayList<Field> fields = new ArrayList<>();
-    for (String fieldName : fieldNames) {
-      fields.add(Field.of(fieldName, LegacySQLTypeName.STRING));
-    }
+    Field[] fields = new Field[] {
+        Field.of("name", LegacySQLTypeName.STRING),
+        Field.of("post_abbr", LegacySQLTypeName.STRING)
+    };
     // Table schema definition
     Schema schema = Schema.of(fields);
     LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)

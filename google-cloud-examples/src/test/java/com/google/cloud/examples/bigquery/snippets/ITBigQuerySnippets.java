@@ -203,21 +203,18 @@ public class ITBigQuerySnippets {
 
   @Test
   public void testWriteRemoteJsonToTable() throws InterruptedException {
-    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
     String datasetName = "test_dataset";
     String tableName = "us_states";
-    List<String> fieldNames = Arrays.asList("name", "post_abbr");
     Table table = bigquery.getTable(datasetName, tableName);
     assertNull(table);
 
-    Long result = bigquerySnippets.writeRemoteFileToTable(datasetName, tableName, sourceUri, fieldNames);
+    Long result = bigquerySnippets.writeRemoteFileToTable(datasetName, tableName);
     table = bigquery.getTable(datasetName, tableName);
     assertNotNull(table);
     ArrayList<String> tableFieldNames = new ArrayList<>();
     for (Field field: table.getDefinition().getSchema().getFields()) {
       tableFieldNames.add(field.getName());
     }
-    assertArrayEquals(fieldNames.toArray(), tableFieldNames.toArray());
     bigquery.delete(table.getTableId());
     assertEquals(Long.valueOf(50), result);
   }
