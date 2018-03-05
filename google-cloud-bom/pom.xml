@@ -172,8 +172,8 @@
     <gax.version>1.19.0</gax.version>
     <gax-grpc.version>1.19.0</gax-grpc.version>
     <gax-httpjson.version>0.36.0</gax-httpjson.version>
-    <generated-proto-beta.version>0.2.1</generated-proto-beta.version>
-    <generated-proto-ga.version>1.1.1</generated-proto-ga.version>
+    <generated-proto-beta.version>0.3.0</generated-proto-beta.version>
+    <generated-proto-ga.version>1.2.0</generated-proto-ga.version>
   </properties>
   <dependencyManagement>
     <dependencies>
