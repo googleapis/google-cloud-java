@@ -83,39 +83,34 @@ public class ReadRowsResumptionStrategy<RowT>
     if (lastKey.isEmpty()) {
       return request;
     }
-    Builder builder = request.toBuilder();
 
-    if (request.getRowsLimit() > 0) {
-      // NOTE: the edge case of request.getRowsLimit() == numProcessed is handled below
-      Preconditions.checkState(
-          request.getRowsLimit() >= numProcessed,
-          "Detected too many rows for the current row limit during a retry.");
-      builder.setRowsLimit(request.getRowsLimit() - numProcessed);
-    }
+    ReadRowsRequest originalRequest = request;
 
-    // Reset rows to scan.
-    builder.clearRows();
-
-    RowSet.Builder rowSetBuilder = RowSet.newBuilder();
-
-    // Special case: empty query implies full table scan
+    // Special case: empty query implies full table scan, make this explicit by adding an unbounded
+    // range to the request
     if (request.getRows().getRowKeysList().isEmpty()
         && request.getRows().getRowRangesList().isEmpty()) {
 
-      request =
+      originalRequest =
           request
               .toBuilder()
               .setRows(RowSet.newBuilder().addRowRanges(RowRange.getDefaultInstance()))
               .build();
     }
 
-    for (ByteString key : request.getRows().getRowKeysList()) {
+    // Start building the resume request. The keys & ranges are cleared and will be recomputed.
+    Builder builder = originalRequest.toBuilder();
+    builder.clearRows();
+
+    RowSet.Builder rowSetBuilder = RowSet.newBuilder();
+
+    for (ByteString key : originalRequest.getRows().getRowKeysList()) {
       if (ByteStringComparator.INSTANCE.compare(key, lastKey) > 0) {
         rowSetBuilder.addRowKeys(key);
       }
     }
 
-    for (RowRange rowRange : request.getRows().getRowRangesList()) {
+    for (RowRange rowRange : originalRequest.getRows().getRowRangesList()) {
       RowRange.Builder rowRangeBuilder = RowRange.newBuilder();
 
       switch (rowRange.getEndKeyCase()) {
@@ -170,8 +165,15 @@ public class ReadRowsResumptionStrategy<RowT>
     // will be handled by ReadRowsRetryCompletedCallable. See docs in ReadRowsRetryCompletedCallable
     // for more details.
     if ((rowSetBuilder.getRowRangesCount() == 0 && rowSetBuilder.getRowKeysCount() == 0)
-        || (request.getRowsLimit() > 0 && request.getRowsLimit() == numProcessed)) {
+        || (originalRequest.getRowsLimit() > 0 && originalRequest.getRowsLimit() == numProcessed)) {
       return ReadRowsRetryCompletedCallable.FULFILLED_REQUEST_MARKER;
+    }
+
+    if (originalRequest.getRowsLimit() > 0) {
+      Preconditions.checkState(
+          originalRequest.getRowsLimit() > numProcessed,
+          "Detected too many rows for the current row limit during a retry.");
+      builder.setRowsLimit(originalRequest.getRowsLimit() - numProcessed);
     }
 
     builder.setRows(rowSetBuilder.build());
