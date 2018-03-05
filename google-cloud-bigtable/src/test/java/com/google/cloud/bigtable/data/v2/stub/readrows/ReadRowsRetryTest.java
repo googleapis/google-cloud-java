@@ -30,6 +30,7 @@ import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.common.collect.Queues;
 import com.google.common.collect.Range;
@@ -42,7 +43,6 @@ import io.grpc.Status.Code;
 import io.grpc.stub.StreamObserver;
 import io.grpc.testing.GrpcServerRule;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Queue;
 import org.junit.After;
@@ -82,9 +82,7 @@ public class ReadRowsRetryTest {
 
   @After
   public void tearDown() throws Exception {
-    if (client != null) {
-      client.close();
-    }
+    client.close();
   }
 
   @Test
@@ -162,6 +160,96 @@ public class ReadRowsRetryTest {
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
+  @Test
+  public void errorAfterRowLimitMetTest() {
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.closedOpen("r1", "r3"))
+            .expectRowLimit(2)
+            .respondWith("r1", "r2")
+            .respondWithStatus(Code.UNAVAILABLE));
+
+    Throwable error = null;
+    try {
+      getResults(Query.create(tableName.getTable()).range("r1", "r3").limit(2));
+    } catch (Throwable t) {
+      error = t;
+    }
+
+    Truth.assertThat(error.getCause()).isInstanceOf(IllegalStateException.class);
+  }
+
+  @Test
+  public void pointTest() {
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest("r1", "r2")
+            .respondWith("r1")
+            .respondWithStatus(Code.UNAVAILABLE));
+    service.expectations.add(RpcExpectation.create().expectRequest("r2").respondWith("r2"));
+
+    List<String> actualResults =
+        getResults(Query.create(tableName.getTable()).rowKey("r1").rowKey("r2"));
+    Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
+  }
+
+  @Test
+  public void fullTableScanTest() {
+    service.expectations.add(
+        RpcExpectation.create().respondWith("r1").respondWithStatus(Code.UNAVAILABLE));
+    service.expectations.add(
+        RpcExpectation.create().expectRequest(Range.greaterThan("r1")).respondWith("r2"));
+    List<String> actualResults = getResults(Query.create(tableName.getTable()));
+    Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
+  }
+
+  @Test
+  public void retryUnboundedStartTest() {
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.lessThan("r9"))
+            .respondWith("r1")
+            .respondWithStatus(Code.UNAVAILABLE));
+    service.expectations.add(
+        RpcExpectation.create().expectRequest(Range.open("r1", "r9")).respondWith("r2"));
+
+    List<String> actualResults =
+        getResults(
+            Query.create(tableName.getTable()).range(ByteStringRange.unbounded().endOpen("r9")));
+    Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
+  }
+
+  @Test
+  public void retryUnboundedEndTest() {
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.atLeast("r1"))
+            .respondWith("r1")
+            .respondWithStatus(Code.UNAVAILABLE));
+    service.expectations.add(
+        RpcExpectation.create().expectRequest(Range.greaterThan("r1")).respondWith("r2"));
+
+    List<String> actualResults =
+        getResults(
+            Query.create(tableName.getTable())
+                .range(ByteStringRange.unbounded().startClosed("r1")));
+    Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
+  }
+
+  @Test
+  public void retryWithLastScannedKeyTest() {
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest(Range.closedOpen("r1", "r9"))
+            .respondWithLastScannedKey("r5")
+            .respondWithStatus(Code.UNAVAILABLE));
+    service.expectations.add(
+        RpcExpectation.create().expectRequest(Range.open("r5", "r9")).respondWith("r7"));
+    List<String> actualResults =
+        getResults(Query.create(tableName.getTable()).range(ByteStringRange.create("r1", "r9")));
+    Truth.assertThat(actualResults).containsExactly("r7").inOrder();
+  }
+
   private List<String> getResults(Query query) {
     ServerStream<Row> actualRows = client.readRows(query);
     List<String> actualValues = Lists.newArrayList();
@@ -173,31 +261,23 @@ public class ReadRowsRetryTest {
 
   private static class TestBigtableService extends BigtableGrpc.BigtableImplBase {
     Queue<RpcExpectation> expectations = Queues.newArrayDeque();
+    int i = -1;
 
     @Override
     public void readRows(
         ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
 
       RpcExpectation expectedRpc = expectations.poll();
+      i++;
 
-      Truth.assertWithMessage("Unexpected request: " + request.toString())
+      Truth.assertWithMessage("Unexpected request#" + i + ":" + request.toString())
           .that(expectedRpc)
           .isNotNull();
-      Truth.assertThat(request).isEqualTo(expectedRpc.getExpectedRequest());
+      Truth.assertWithMessage("Unexpected request#" + i)
+          .that(request)
+          .isEqualTo(expectedRpc.getExpectedRequest());
 
-      for (String key : expectedRpc.responses) {
-        ReadRowsResponse response =
-            ReadRowsResponse.newBuilder()
-                .addChunks(
-                    CellChunk.newBuilder()
-                        .setRowKey(ByteString.copyFromUtf8(key))
-                        .setFamilyName(StringValue.newBuilder().setValue("family"))
-                        .setQualifier(BytesValue.newBuilder().setValue(ByteString.EMPTY))
-                        .setTimestampMicros(1_000)
-                        .setValue(ByteString.copyFromUtf8("value"))
-                        .setCommitRow(true))
-                .build();
-
+      for (ReadRowsResponse response : expectedRpc.responses) {
         responseObserver.onNext(response);
       }
       if (expectedRpc.statusCode.toStatus().isOk()) {
@@ -211,7 +291,7 @@ public class ReadRowsRetryTest {
   private static class RpcExpectation {
     ReadRowsRequest.Builder requestBuilder;
     Status.Code statusCode;
-    List<String> responses;
+    List<ReadRowsResponse> responses;
 
     private RpcExpectation() {
       this.requestBuilder = ReadRowsRequest.newBuilder().setTableName(tableName.toString());
@@ -223,35 +303,46 @@ public class ReadRowsRetryTest {
       return new RpcExpectation();
     }
 
-    RpcExpectation expectRequest(String key) {
-      requestBuilder.getRowsBuilder().addRowKeys(ByteString.copyFromUtf8(key));
+    RpcExpectation expectRequest(String... keys) {
+      for (String key : keys) {
+        requestBuilder.getRowsBuilder().addRowKeys(ByteString.copyFromUtf8(key));
+      }
       return this;
     }
 
     RpcExpectation expectRequest(Range<String> range) {
       RowRange.Builder rowRange = requestBuilder.getRowsBuilder().addRowRangesBuilder();
 
-      switch (range.lowerBoundType()) {
-        case CLOSED:
-          rowRange.setStartKeyClosed(ByteString.copyFromUtf8(range.lowerEndpoint()));
-          break;
-        case OPEN:
-          rowRange.setStartKeyOpen(ByteString.copyFromUtf8(range.lowerEndpoint()));
-          break;
-        default:
-          throw new IllegalArgumentException(
-              "Unexpected lowerBoundType: " + range.lowerBoundType());
+      if (range.hasLowerBound()) {
+        switch (range.lowerBoundType()) {
+          case CLOSED:
+            rowRange.setStartKeyClosed(ByteString.copyFromUtf8(range.lowerEndpoint()));
+            break;
+          case OPEN:
+            rowRange.setStartKeyOpen(ByteString.copyFromUtf8(range.lowerEndpoint()));
+            break;
+          default:
+            throw new IllegalArgumentException(
+                "Unexpected lowerBoundType: " + range.lowerBoundType());
+        }
+      } else {
+        rowRange.clearStartKey();
       }
-      switch (range.upperBoundType()) {
-        case CLOSED:
-          rowRange.setEndKeyClosed(ByteString.copyFromUtf8(range.upperEndpoint()));
-          break;
-        case OPEN:
-          rowRange.setEndKeyOpen(ByteString.copyFromUtf8(range.upperEndpoint()));
-          break;
-        default:
-          throw new IllegalArgumentException(
-              "Unexpected upperBoundType: " + range.upperBoundType());
+
+      if (range.hasUpperBound()) {
+        switch (range.upperBoundType()) {
+          case CLOSED:
+            rowRange.setEndKeyClosed(ByteString.copyFromUtf8(range.upperEndpoint()));
+            break;
+          case OPEN:
+            rowRange.setEndKeyOpen(ByteString.copyFromUtf8(range.upperEndpoint()));
+            break;
+          default:
+            throw new IllegalArgumentException(
+                "Unexpected upperBoundType: " + range.upperBoundType());
+        }
+      } else {
+        rowRange.clearEndKey();
       }
 
       return this;
@@ -268,7 +359,25 @@ public class ReadRowsRetryTest {
     }
 
     RpcExpectation respondWith(String... responses) {
-      this.responses.addAll(Arrays.asList(responses));
+      for (String response : responses) {
+        this.responses.add(
+            ReadRowsResponse.newBuilder()
+                .addChunks(
+                    CellChunk.newBuilder()
+                        .setRowKey(ByteString.copyFromUtf8(response))
+                        .setFamilyName(StringValue.newBuilder().setValue("family").build())
+                        .setQualifier(BytesValue.newBuilder().setValue(ByteString.EMPTY).build())
+                        .setTimestampMicros(10_000)
+                        .setValue(ByteString.copyFromUtf8("value"))
+                        .setCommitRow(true))
+                .build());
+      }
+      return this;
+    }
+
+    RpcExpectation respondWithLastScannedKey(String key) {
+      this.responses.add(
+          ReadRowsResponse.newBuilder().setLastScannedRowKey(ByteString.copyFromUtf8(key)).build());
       return this;
     }
 

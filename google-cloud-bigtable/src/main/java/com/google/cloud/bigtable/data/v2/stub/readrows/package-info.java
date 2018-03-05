@@ -28,8 +28,7 @@
  *       rows. The logical row representation is configurable via a RowAdapter. Please note that
  *       this will also emit special marker rows that help with retries in the next stage, but need
  *       to be filtered out.
- *   <li>ReadRowsTracker (+ helpers): Implements resuming retries for gax's Callables#retrying
- *       middleware.
+ *   <li>RowMerger (+ helpers): Implements resuming retries for gax's Callables#retrying middleware.
  *   <li>FilterMarkerRowsCallable: Filters out marker rows that are used for efficient retry
  *       resumes. This is necessary because
  * </ul>

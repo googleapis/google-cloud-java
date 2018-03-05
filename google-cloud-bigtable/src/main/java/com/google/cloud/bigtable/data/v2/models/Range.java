@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.InternalExtensionOnly;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
@@ -40,7 +41,8 @@ import javax.annotation.Nonnull;
  * ByteStringRange r2 = r1.clone().endUnbounded();
  * }</pre>
  */
-abstract class Range<T, R extends Range<T, R>> {
+@InternalExtensionOnly
+public abstract class Range<T, R extends Range<T, R>> {
   public enum BoundType {
     OPEN,
     CLOSED,

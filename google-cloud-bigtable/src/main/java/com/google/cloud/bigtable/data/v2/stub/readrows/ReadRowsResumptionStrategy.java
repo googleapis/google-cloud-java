@@ -28,7 +28,7 @@ import com.google.protobuf.ByteString;
 
 /**
  * An implementation of a {@link StreamResumptionStrategy} for merged rows. This class tracks the
- * last complete row seen and upon retry can build a request to resume the stream from were it left
+ * last complete row seen and upon retry can build a request to resume the stream from where it left
  * off.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
@@ -39,6 +39,7 @@ public class ReadRowsResumptionStrategy<RowT>
     implements StreamResumptionStrategy<ReadRowsRequest, RowT> {
   private final RowAdapter<RowT> rowAdapter;
   private ByteString lastKey = ByteString.EMPTY;
+  // Number of rows processed excluding Marker row.
   private long numProcessed;
 
   public ReadRowsResumptionStrategy(RowAdapter<RowT> rowAdapter) {
@@ -67,87 +68,103 @@ public class ReadRowsResumptionStrategy<RowT>
     }
   }
 
+  /**
+   * {@inheritDoc}
+   *
+   * <p>Given a request, this implementation will narrow that request to exclude all row keys and
+   * ranges that would produce rows that come before {@link #lastKey}. Furthermore this
+   * implementation takes care to update the row limit of the request to account for all of the
+   * received rows.
+   */
   @Override
   public ReadRowsRequest getResumeRequest(ReadRowsRequest request) {
+    // An empty lastKey means that we have not successfully read the first row,
+    // resume with the original request object.
     if (lastKey.isEmpty()) {
       return request;
     }
     Builder builder = request.toBuilder();
 
+    // NOTE: It is considered an an unrecoverable error for the server to send all of the rows,
+    // followed by an error status.
     if (request.getRowsLimit() > 0) {
       Preconditions.checkState(
-          request.getRowsLimit() >= numProcessed,
-          "Detected too many responses for the current row limit during a retry.");
+          request.getRowsLimit() > numProcessed,
+          "Detected too many rows for the current row limit during a retry.");
       builder.setRowsLimit(request.getRowsLimit() - numProcessed);
     }
 
     // Reset rows to scan.
     builder.clearRows();
 
-    RowSet.Builder newRowSet = RowSet.newBuilder();
+    RowSet.Builder rowSetBuilder = RowSet.newBuilder();
 
     // Special case: empty query implies full table scan
     if (request.getRows().getRowKeysList().isEmpty()
         && request.getRows().getRowRangesList().isEmpty()) {
-      newRowSet.addRowRanges(RowRange.newBuilder().setStartKeyOpen(lastKey).build());
-    } else {
-      for (ByteString key : request.getRows().getRowKeysList()) {
-        if (ByteStringComparator.INSTANCE.compare(key, lastKey) > 0) {
-          newRowSet.addRowKeys(key);
-        }
-      }
+      rowSetBuilder.addRowRanges(RowRange.newBuilder().setStartKeyOpen(lastKey).build());
 
-      for (RowRange rowRange : request.getRows().getRowRangesList()) {
-        RowRange.Builder rangeBuilder = RowRange.newBuilder();
+      builder.setRows(rowSetBuilder.build());
+      return builder.build();
+    }
 
-        switch (rowRange.getEndKeyCase()) {
-          case END_KEY_CLOSED:
-            if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyClosed(), lastKey) <= 0) {
-              continue;
-            } else {
-              rangeBuilder.setEndKeyClosed(rowRange.getEndKeyClosed());
-            }
-            break;
-          case END_KEY_OPEN:
-            if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyOpen(), lastKey) <= 0) {
-              continue;
-            } else {
-              rangeBuilder.setEndKeyOpen(rowRange.getEndKeyOpen());
-            }
-            break;
-          case ENDKEY_NOT_SET:
-            rangeBuilder.clearEndKey();
-          default:
-            throw new IllegalArgumentException("Unknown endKeyCase: " + rowRange.getEndKeyCase());
-        }
-
-        switch (rowRange.getStartKeyCase()) {
-          case STARTKEY_NOT_SET:
-            rangeBuilder.setStartKeyOpen(lastKey);
-            break;
-          case START_KEY_OPEN:
-            if (ByteStringComparator.INSTANCE.compare(rowRange.getStartKeyOpen(), lastKey) < 0) {
-              rangeBuilder.setStartKeyOpen(lastKey);
-            } else {
-              rangeBuilder.setStartKeyOpen(rowRange.getStartKeyOpen());
-            }
-            break;
-          case START_KEY_CLOSED:
-            if (ByteStringComparator.INSTANCE.compare(rowRange.getStartKeyClosed(), lastKey) <= 0) {
-              rangeBuilder.setStartKeyOpen(lastKey);
-            } else {
-              rangeBuilder.setStartKeyClosed(rowRange.getStartKeyClosed());
-            }
-            break;
-          default:
-            throw new IllegalArgumentException(
-                "Unknown startKeyCase: " + rowRange.getStartKeyCase());
-        }
-        newRowSet.addRowRanges(rangeBuilder.build());
+    // Normal flow: narrow the request keys & ranges
+    for (ByteString key : request.getRows().getRowKeysList()) {
+      if (ByteStringComparator.INSTANCE.compare(key, lastKey) > 0) {
+        rowSetBuilder.addRowKeys(key);
       }
     }
 
-    builder.setRows(newRowSet.build());
+    for (RowRange rowRange : request.getRows().getRowRangesList()) {
+      RowRange.Builder rowRangeBuilder = RowRange.newBuilder();
+
+      switch (rowRange.getEndKeyCase()) {
+        case END_KEY_CLOSED:
+          if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyClosed(), lastKey) <= 0) {
+            continue;
+          } else {
+            rowRangeBuilder.setEndKeyClosed(rowRange.getEndKeyClosed());
+          }
+          break;
+        case END_KEY_OPEN:
+          if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyOpen(), lastKey) <= 0) {
+            continue;
+          } else {
+            rowRangeBuilder.setEndKeyOpen(rowRange.getEndKeyOpen());
+          }
+          break;
+        case ENDKEY_NOT_SET:
+          rowRangeBuilder.clearEndKey();
+          break;
+        default:
+          throw new IllegalArgumentException("Unknown endKeyCase: " + rowRange.getEndKeyCase());
+      }
+
+      switch (rowRange.getStartKeyCase()) {
+        case STARTKEY_NOT_SET:
+          rowRangeBuilder.setStartKeyOpen(lastKey);
+          break;
+        case START_KEY_OPEN:
+          if (ByteStringComparator.INSTANCE.compare(rowRange.getStartKeyOpen(), lastKey) < 0) {
+            rowRangeBuilder.setStartKeyOpen(lastKey);
+          } else {
+            rowRangeBuilder.setStartKeyOpen(rowRange.getStartKeyOpen());
+          }
+          break;
+        case START_KEY_CLOSED:
+          if (ByteStringComparator.INSTANCE.compare(rowRange.getStartKeyClosed(), lastKey) <= 0) {
+            rowRangeBuilder.setStartKeyOpen(lastKey);
+          } else {
+            rowRangeBuilder.setStartKeyClosed(rowRange.getStartKeyClosed());
+          }
+          break;
+        default:
+          throw new IllegalArgumentException("Unknown startKeyCase: " + rowRange.getStartKeyCase());
+      }
+      rowSetBuilder.addRowRanges(rowRangeBuilder.build());
+    }
+
+    builder.setRows(rowSetBuilder.build());
     return builder.build();
   }
 }
