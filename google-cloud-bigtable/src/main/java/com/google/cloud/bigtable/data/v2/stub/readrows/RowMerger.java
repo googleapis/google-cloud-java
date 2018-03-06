@@ -25,7 +25,8 @@ import com.google.common.base.Preconditions;
  * An implementation of a {@link Reframer} that feeds the row merging {@link StateMachine}.
  *
  * <p>{@link com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserver} pushes {@link
- * ReadRowsResponse.CellChunk}s into this class and pops fully merged logical rows. Example usage:
+ * com.google.bigtable.v2.ReadRowsResponse.CellChunk}s into this class and pops fully merged logical
+ * rows. Example usage:
  *
  * <pre>{@code
  * RowMerger<Row> rowMerger = new RowMerger<>(myRowBuilder);
