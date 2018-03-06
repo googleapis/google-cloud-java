@@ -15,7 +15,7 @@
  */
 package com.google.cloud.monitoring.v3;
 
-import static com.google.cloud.monitoring.v3.UptimeCheckServiceClient.ListUptimeCheckConfigsPagedResponse;
+import static com.google.cloud.monitoring.v3.AlertPolicyServiceClient.ListAlertPoliciesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -25,16 +25,17 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
-import com.google.monitoring.v3.CreateUptimeCheckConfigRequest;
-import com.google.monitoring.v3.DeleteUptimeCheckConfigRequest;
-import com.google.monitoring.v3.GetUptimeCheckConfigRequest;
-import com.google.monitoring.v3.ListUptimeCheckConfigsRequest;
-import com.google.monitoring.v3.ListUptimeCheckConfigsResponse;
+import com.google.monitoring.v3.AlertPolicy;
+import com.google.monitoring.v3.AlertPolicyName;
+import com.google.monitoring.v3.CreateAlertPolicyRequest;
+import com.google.monitoring.v3.DeleteAlertPolicyRequest;
+import com.google.monitoring.v3.GetAlertPolicyRequest;
+import com.google.monitoring.v3.ListAlertPoliciesRequest;
+import com.google.monitoring.v3.ListAlertPoliciesResponse;
 import com.google.monitoring.v3.ProjectName;
-import com.google.monitoring.v3.UpdateUptimeCheckConfigRequest;
-import com.google.monitoring.v3.UptimeCheckConfig;
-import com.google.monitoring.v3.UptimeCheckConfigName;
+import com.google.monitoring.v3.UpdateAlertPolicyRequest;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -49,14 +50,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class UptimeCheckServiceClientTest {
+public class AlertPolicyServiceClientTest {
   private static MockAlertPolicyService mockAlertPolicyService;
   private static MockGroupService mockGroupService;
   private static MockMetricService mockMetricService;
   private static MockNotificationChannelService mockNotificationChannelService;
   private static MockUptimeCheckService mockUptimeCheckService;
   private static MockServiceHelper serviceHelper;
-  private UptimeCheckServiceClient client;
+  private AlertPolicyServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
@@ -87,12 +88,12 @@ public class UptimeCheckServiceClientTest {
   public void setUp() throws IOException {
     serviceHelper.reset();
     channelProvider = serviceHelper.createChannelProvider();
-    UptimeCheckServiceSettings settings =
-        UptimeCheckServiceSettings.newBuilder()
+    AlertPolicyServiceSettings settings =
+        AlertPolicyServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
-    client = UptimeCheckServiceClient.create(settings);
+    client = AlertPolicyServiceClient.create(settings);
   }
 
   @After
@@ -102,32 +103,30 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listUptimeCheckConfigsTest() {
+  public void listAlertPoliciesTest() {
     String nextPageToken = "";
-    UptimeCheckConfig uptimeCheckConfigsElement = UptimeCheckConfig.newBuilder().build();
-    List<UptimeCheckConfig> uptimeCheckConfigs = Arrays.asList(uptimeCheckConfigsElement);
-    ListUptimeCheckConfigsResponse expectedResponse =
-        ListUptimeCheckConfigsResponse.newBuilder()
+    AlertPolicy alertPoliciesElement = AlertPolicy.newBuilder().build();
+    List<AlertPolicy> alertPolicies = Arrays.asList(alertPoliciesElement);
+    ListAlertPoliciesResponse expectedResponse =
+        ListAlertPoliciesResponse.newBuilder()
             .setNextPageToken(nextPageToken)
-            .addAllUptimeCheckConfigs(uptimeCheckConfigs)
+            .addAllAlertPolicies(alertPolicies)
             .build();
-    mockUptimeCheckService.addResponse(expectedResponse);
+    mockAlertPolicyService.addResponse(expectedResponse);
 
-    String formattedParent = ProjectName.format("[PROJECT]");
+    ProjectName name = ProjectName.of("[PROJECT]");
 
-    ListUptimeCheckConfigsPagedResponse pagedListResponse =
-        client.listUptimeCheckConfigs(formattedParent);
+    ListAlertPoliciesPagedResponse pagedListResponse = client.listAlertPolicies(name);
 
-    List<UptimeCheckConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<AlertPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getUptimeCheckConfigsList().get(0), resources.get(0));
+    Assert.assertEquals(expectedResponse.getAlertPoliciesList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockUptimeCheckService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListUptimeCheckConfigsRequest actualRequest =
-        (ListUptimeCheckConfigsRequest) actualRequests.get(0);
+    ListAlertPoliciesRequest actualRequest = (ListAlertPoliciesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -136,14 +135,14 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listUptimeCheckConfigsExceptionTest() throws Exception {
+  public void listAlertPoliciesExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUptimeCheckService.addException(exception);
+    mockAlertPolicyService.addException(exception);
 
     try {
-      String formattedParent = ProjectName.format("[PROJECT]");
+      ProjectName name = ProjectName.of("[PROJECT]");
 
-      client.listUptimeCheckConfigs(formattedParent);
+      client.listAlertPolicies(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -152,23 +151,23 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getUptimeCheckConfigTest() {
+  public void getAlertPolicyTest() {
     String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
-    UptimeCheckConfig expectedResponse =
-        UptimeCheckConfig.newBuilder().setName(name2).setDisplayName(displayName).build();
-    mockUptimeCheckService.addResponse(expectedResponse);
+    AlertPolicy expectedResponse =
+        AlertPolicy.newBuilder().setName(name2).setDisplayName(displayName).build();
+    mockAlertPolicyService.addResponse(expectedResponse);
 
-    String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+    AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
 
-    UptimeCheckConfig actualResponse = client.getUptimeCheckConfig(formattedName);
+    AlertPolicy actualResponse = client.getAlertPolicy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockUptimeCheckService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetUptimeCheckConfigRequest actualRequest = (GetUptimeCheckConfigRequest) actualRequests.get(0);
+    GetAlertPolicyRequest actualRequest = (GetAlertPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, AlertPolicyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -177,14 +176,14 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getUptimeCheckConfigExceptionTest() throws Exception {
+  public void getAlertPolicyExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUptimeCheckService.addException(exception);
+    mockAlertPolicyService.addException(exception);
 
     try {
-      String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+      AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
 
-      client.getUptimeCheckConfig(formattedName);
+      client.getAlertPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -193,27 +192,25 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createUptimeCheckConfigTest() {
-    String name = "name3373707";
+  public void createAlertPolicyTest() {
+    String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
-    UptimeCheckConfig expectedResponse =
-        UptimeCheckConfig.newBuilder().setName(name).setDisplayName(displayName).build();
-    mockUptimeCheckService.addResponse(expectedResponse);
+    AlertPolicy expectedResponse =
+        AlertPolicy.newBuilder().setName(name2).setDisplayName(displayName).build();
+    mockAlertPolicyService.addResponse(expectedResponse);
 
-    String formattedParent = ProjectName.format("[PROJECT]");
-    UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
+    ProjectName name = ProjectName.of("[PROJECT]");
+    AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
 
-    UptimeCheckConfig actualResponse =
-        client.createUptimeCheckConfig(formattedParent, uptimeCheckConfig);
+    AlertPolicy actualResponse = client.createAlertPolicy(name, alertPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockUptimeCheckService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateUptimeCheckConfigRequest actualRequest =
-        (CreateUptimeCheckConfigRequest) actualRequests.get(0);
+    CreateAlertPolicyRequest actualRequest = (CreateAlertPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
-    Assert.assertEquals(uptimeCheckConfig, actualRequest.getUptimeCheckConfig());
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(alertPolicy, actualRequest.getAlertPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -222,15 +219,15 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createUptimeCheckConfigExceptionTest() throws Exception {
+  public void createAlertPolicyExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUptimeCheckService.addException(exception);
+    mockAlertPolicyService.addException(exception);
 
     try {
-      String formattedParent = ProjectName.format("[PROJECT]");
-      UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
+      ProjectName name = ProjectName.of("[PROJECT]");
+      AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
 
-      client.createUptimeCheckConfig(formattedParent, uptimeCheckConfig);
+      client.createAlertPolicy(name, alertPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -239,62 +236,19 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void updateUptimeCheckConfigTest() {
-    String name = "name3373707";
-    String displayName = "displayName1615086568";
-    UptimeCheckConfig expectedResponse =
-        UptimeCheckConfig.newBuilder().setName(name).setDisplayName(displayName).build();
-    mockUptimeCheckService.addResponse(expectedResponse);
-
-    UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
-
-    UptimeCheckConfig actualResponse = client.updateUptimeCheckConfig(uptimeCheckConfig);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<GeneratedMessageV3> actualRequests = mockUptimeCheckService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateUptimeCheckConfigRequest actualRequest =
-        (UpdateUptimeCheckConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(uptimeCheckConfig, actualRequest.getUptimeCheckConfig());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateUptimeCheckConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUptimeCheckService.addException(exception);
-
-    try {
-      UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
-
-      client.updateUptimeCheckConfig(uptimeCheckConfig);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteUptimeCheckConfigTest() {
+  public void deleteAlertPolicyTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockUptimeCheckService.addResponse(expectedResponse);
+    mockAlertPolicyService.addResponse(expectedResponse);
 
-    String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+    AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
 
-    client.deleteUptimeCheckConfig(formattedName);
+    client.deleteAlertPolicy(name);
 
-    List<GeneratedMessageV3> actualRequests = mockUptimeCheckService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteUptimeCheckConfigRequest actualRequest =
-        (DeleteUptimeCheckConfigRequest) actualRequests.get(0);
+    DeleteAlertPolicyRequest actualRequest = (DeleteAlertPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, AlertPolicyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -303,14 +257,58 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteUptimeCheckConfigExceptionTest() throws Exception {
+  public void deleteAlertPolicyExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUptimeCheckService.addException(exception);
+    mockAlertPolicyService.addException(exception);
 
     try {
-      String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+      AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
 
-      client.deleteUptimeCheckConfig(formattedName);
+      client.deleteAlertPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateAlertPolicyTest() {
+    String name = "name3373707";
+    String displayName = "displayName1615086568";
+    AlertPolicy expectedResponse =
+        AlertPolicy.newBuilder().setName(name).setDisplayName(displayName).build();
+    mockAlertPolicyService.addResponse(expectedResponse);
+
+    FieldMask updateMask = FieldMask.newBuilder().build();
+    AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
+
+    AlertPolicy actualResponse = client.updateAlertPolicy(updateMask, alertPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockAlertPolicyService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAlertPolicyRequest actualRequest = (UpdateAlertPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertEquals(alertPolicy, actualRequest.getAlertPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateAlertPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAlertPolicyService.addException(exception);
+
+    try {
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
+
+      client.updateAlertPolicy(updateMask, alertPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

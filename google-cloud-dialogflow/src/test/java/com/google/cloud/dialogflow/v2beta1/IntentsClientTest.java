@@ -207,6 +207,7 @@ public class IntentsClientTest {
     int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
+    boolean mlDisabled = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -218,6 +219,7 @@ public class IntentsClientTest {
             .setPriority(priority)
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
+            .setMlDisabled(mlDisabled)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -265,6 +267,7 @@ public class IntentsClientTest {
     int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
+    boolean mlDisabled = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -276,6 +279,7 @@ public class IntentsClientTest {
             .setPriority(priority)
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
+            .setMlDisabled(mlDisabled)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -326,6 +330,7 @@ public class IntentsClientTest {
     int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
+    boolean mlDisabled = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -337,6 +342,7 @@ public class IntentsClientTest {
             .setPriority(priority)
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
+            .setMlDisabled(mlDisabled)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -387,6 +393,7 @@ public class IntentsClientTest {
     int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
+    boolean mlDisabled = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -398,6 +405,7 @@ public class IntentsClientTest {
             .setPriority(priority)
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
+            .setMlDisabled(mlDisabled)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -451,6 +459,7 @@ public class IntentsClientTest {
     int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
+    boolean mlDisabled = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -462,6 +471,7 @@ public class IntentsClientTest {
             .setPriority(priority)
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
+            .setMlDisabled(mlDisabled)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)
@@ -512,6 +522,7 @@ public class IntentsClientTest {
     int priority = 1165461084;
     boolean isFallback = false;
     boolean mlEnabled = false;
+    boolean mlDisabled = true;
     String action = "action-1422950858";
     boolean resetContexts = true;
     String rootFollowupIntentName = "rootFollowupIntentName402253784";
@@ -523,6 +534,7 @@ public class IntentsClientTest {
             .setPriority(priority)
             .setIsFallback(isFallback)
             .setMlEnabled(mlEnabled)
+            .setMlDisabled(mlDisabled)
             .setAction(action)
             .setResetContexts(resetContexts)
             .setRootFollowupIntentName(rootFollowupIntentName)

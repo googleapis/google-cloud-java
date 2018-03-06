@@ -19,7 +19,27 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>================== GroupServiceClient ==================
+ * <p>======================== AlertPolicyServiceClient ========================
+ *
+ * <p>Service Description: The AlertPolicyService API is used to manage (list, create, delete, edit)
+ * alert policies in Stackdriver Monitoring. An alerting policy is a description of the conditions
+ * under which some aspect of your system is considered to be "unhealthy" and the ways to notify
+ * people or services about this state. In addition to using this API, alert policies can also be
+ * managed through [Stackdriver Monitoring](https://cloud.google.com/monitoring/docs/), which can be
+ * reached by clicking the "Monitoring" tab in [Cloud Console](https://console.cloud.google.com/).
+ *
+ * <p>Sample for AlertPolicyServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+ *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
+ *   AlertPolicy response = alertPolicyServiceClient.getAlertPolicy(name);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================== GroupServiceClient ==================
  *
  * <p>Service Description: The Group API lets you inspect and manage your
  * [groups](google.monitoring.v3.Group).
@@ -54,6 +74,23 @@
  * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
  *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
  *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================================ NotificationChannelServiceClient
+ * ================================
+ *
+ * <p>Service Description: The Notification Channel API provides access to configuration that
+ * controls how messages related to incidents are sent.
+ *
+ * <p>Sample for NotificationChannelServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+ *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+ *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name);
  * }
  * </code>
  * </pre>
