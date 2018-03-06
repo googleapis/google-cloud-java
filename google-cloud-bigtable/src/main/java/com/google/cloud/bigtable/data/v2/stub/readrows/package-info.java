@@ -17,9 +17,9 @@
  * Implementation details for {@link
  * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#readRowsCallable()}.
  *
- * <p>The ReadRows protocol is optimized for transmission and cannot be consumed directly. This
- * package implements significant customizations on top of the raw GAPIC generated stub to handle
- * row merging and retries.
+ * <p>The ReadRows protocol is optimized for transmission and is not designed to be consumed
+ * directly. This package implements significant customizations on top of the raw GAPIC generated
+ * stub to handle row merging and retries.
  *
  * <ul>
  *   <li>ReadRowsUserCallable: Creates protobuf {@link com.google.bigtable.v2.ReadRowsRequest}s from
@@ -30,7 +30,8 @@
  *       to be filtered out.
  *   <li>RowMerger (+ helpers): Implements resuming retries for gax's Callables#retrying middleware.
  *   <li>FilterMarkerRowsCallable: Filters out marker rows that are used for efficient retry
- *       resumes. This is necessary because
+ *       resumes. The marker is an internal implementation detail to communicate state to the
+ *       RowMerger and should not be exposed to the caller.
  * </ul>
  *
  * <p>This package is considered an internal implementation detail and is not meant to be used by

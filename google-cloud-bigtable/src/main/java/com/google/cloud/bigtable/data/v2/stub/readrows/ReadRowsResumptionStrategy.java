@@ -60,7 +60,8 @@ public class ReadRowsResumptionStrategy<RowT>
   public void onProgress(RowT response) {
     // Last key can come from both the last processed row key and a synthetic row marker. The
     // synthetic row marker is emitted when the server has read a lot of data that was filtered out.
-    // So it can trim the start of the scan, but does not contribute to the row limit.
+    // The row marker can be used to trim the start of the scan, but does not contribute to the row
+    // limit.
     lastKey = rowAdapter.getKey(response);
     if (!rowAdapter.isScanMarkerRow(response)) {
       // Only real rows count towards the rows limit.
@@ -79,15 +80,15 @@ public class ReadRowsResumptionStrategy<RowT>
   @Override
   public ReadRowsRequest getResumeRequest(ReadRowsRequest request) {
     // An empty lastKey means that we have not successfully read the first row,
-    // resume with the original request object.
+    // so resume with the original request object.
     if (lastKey.isEmpty()) {
       return request;
     }
 
     ReadRowsRequest originalRequest = request;
 
-    // Special case: empty query implies full table scan, make this explicit by adding an unbounded
-    // range to the request
+    // Special case: empty query implies full table scan, so make this explicit by adding an
+    // unbounded range to the request
     if (request.getRows().getRowKeysList().isEmpty()
         && request.getRows().getRowRangesList().isEmpty()) {
 
@@ -115,17 +116,17 @@ public class ReadRowsResumptionStrategy<RowT>
 
       switch (rowRange.getEndKeyCase()) {
         case END_KEY_CLOSED:
-          if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyClosed(), lastKey) <= 0) {
-            continue;
-          } else {
+          if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyClosed(), lastKey) > 0) {
             rowRangeBuilder.setEndKeyClosed(rowRange.getEndKeyClosed());
+          } else {
+            continue;
           }
           break;
         case END_KEY_OPEN:
-          if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyOpen(), lastKey) <= 0) {
-            continue;
-          } else {
+          if (ByteStringComparator.INSTANCE.compare(rowRange.getEndKeyOpen(), lastKey) > 0) {
             rowRangeBuilder.setEndKeyOpen(rowRange.getEndKeyOpen());
+          } else {
+            continue;
           }
           break;
         case ENDKEY_NOT_SET:
@@ -160,8 +161,8 @@ public class ReadRowsResumptionStrategy<RowT>
     }
 
     // Edge case: retrying a fulfilled request.
-    // A fulfilled request is one that has had all of its row keys and ranges fulfilled or if it had
-    // a row limit, has seen enough rows. These requests are replaced with a marker request that
+    // A fulfilled request is one that has had all of its row keys and ranges fulfilled, or if it
+    // had a row limit, has seen enough rows. These requests are replaced with a marker request that
     // will be handled by ReadRowsRetryCompletedCallable. See docs in ReadRowsRetryCompletedCallable
     // for more details.
     if ((rowSetBuilder.getRowRangesCount() == 0 && rowSetBuilder.getRowKeysCount() == 0)

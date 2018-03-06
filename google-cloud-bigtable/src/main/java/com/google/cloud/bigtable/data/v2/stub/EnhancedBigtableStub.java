@@ -81,7 +81,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setCredentialsProvider(settings.getCredentialsProvider());
 
     // ReadRow retries are handled in the overlay: disable retries in the base layer (but make
-    // sure to preserve the exception callable settings.
+    // sure to preserve the exception callable settings).
     baseSettingsBuilder
         .readRowsSettings()
         .setSimpleTimeoutNoRetries(Duration.ofHours(2))

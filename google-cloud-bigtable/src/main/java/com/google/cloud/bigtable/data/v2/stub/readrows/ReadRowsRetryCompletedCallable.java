@@ -28,8 +28,9 @@ import com.google.bigtable.v2.ReadRowsRequest;
  * an OK response.
  *
  * <p>This callable works in tandem with {@link ReadRowsResumptionStrategy}, which will send a
- * {@link #FULFILLED_REQUEST_MARKER} to be processed by this callable. Which will promptly notify
- * the {@link ResponseObserver} that the stream has been successfully compeleted.
+ * {@link #FULFILLED_REQUEST_MARKER} to be processed by this callable. Upon receiving the {@link
+ * #FULFILLED_REQUEST_MARKER}, this callable will promptly notify the {@link ResponseObserver} that
+ * the stream has been successfully compeleted.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.
