@@ -63,8 +63,10 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class MetricServiceClientTest {
+  private static MockAlertPolicyService mockAlertPolicyService;
   private static MockGroupService mockGroupService;
   private static MockMetricService mockMetricService;
+  private static MockNotificationChannelService mockNotificationChannelService;
   private static MockUptimeCheckService mockUptimeCheckService;
   private static MockServiceHelper serviceHelper;
   private MetricServiceClient client;
@@ -72,14 +74,20 @@ public class MetricServiceClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockAlertPolicyService = new MockAlertPolicyService();
     mockGroupService = new MockGroupService();
     mockMetricService = new MockMetricService();
+    mockNotificationChannelService = new MockNotificationChannelService();
     mockUptimeCheckService = new MockUptimeCheckService();
     serviceHelper =
         new MockServiceHelper(
             "in-process-1",
             Arrays.<MockGrpcService>asList(
-                mockGroupService, mockMetricService, mockUptimeCheckService));
+                mockAlertPolicyService,
+                mockGroupService,
+                mockMetricService,
+                mockNotificationChannelService,
+                mockUptimeCheckService));
     serviceHelper.start();
   }
 
