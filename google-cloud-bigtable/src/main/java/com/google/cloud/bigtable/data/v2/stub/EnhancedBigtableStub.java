@@ -95,6 +95,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .setRetryableCodes(settings.checkAndMutateRowSettings().getRetryableCodes())
         .setRetrySettings(settings.checkAndMutateRowSettings().getRetrySettings());
 
+    // ReadModifyWriteRow is a simple passthrough
+    baseSettingsBuilder
+        .readModifyWriteRowSettings()
+        .setRetryableCodes(settings.readModifyWriteRowSettings().getRetryableCodes())
+        .setRetrySettings(settings.readModifyWriteRowSettings().getRetrySettings());
+
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
     GrpcBigtableStub stub = new GrpcBigtableStub(baseSettings, clientContext);
@@ -215,13 +221,20 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
+  /**
+   * Creates a callable chain to handle ReadModifyWriteRow RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert {@link ReadModifyWriteRow}s into {@link
+   *       com.google.bigtable.v2.ReadModifyWriteRowRequest}s.
+   *   <li>Convert the responses into {@link Row}.
+   * </ul>
+   */
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
-    return new UnaryCallable<ReadModifyWriteRow, Row>() {
-      @Override
-      public ApiFuture<Row> futureCall(ReadModifyWriteRow request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    ReadModifyWriteRowCallable userFacing =
+        new ReadModifyWriteRowCallable(stub.readModifyWriteRowCallable(), requestContext);
+
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
   // </editor-fold>
 
@@ -250,6 +263,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return checkAndMutateRowCallable;
   }
 
+  /**
+   * Returns the callable chain created in {@link #createReadModifyWriteRowCallable()} ()} during
+   * stub construction.
+   */
   public UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable() {
     return readModifyWriteRowCallable;
   }
