@@ -24,7 +24,7 @@
  *   <li>BulkMutationsUserFacingCallable: Wraps request and response protobufs.
  *   <li>BulkMutationsSpoolingCallable: The Bigtable protocol streams results from the mutations as
  *       they are applied. However gax's {@link com.google.api.gax.rpc.BatchingCallable} is designed
- *       for {@link com.google.api.gax.rpc.UnaryCallable}s. This adapter spools the responses
+ *       for {@link com.google.api.gax.rpc.UnaryCallable}s. This adapter spools the responses and
  *       presents the results as if they came from a {@link com.google.api.gax.rpc.UnaryCallable}.
  *   <li>BulkMutateRowsBatchingDescriptor: Each entry can fail independently from the overall
  *       request. The descriptor splits the results for each entry and notifies the responsible

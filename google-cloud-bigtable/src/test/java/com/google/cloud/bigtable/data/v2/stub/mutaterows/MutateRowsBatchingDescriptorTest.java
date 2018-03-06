@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.grpc.GrpcStatusCode;
@@ -31,7 +33,6 @@ import com.google.bigtable.v2.Mutation.SetCell;
 import com.google.bigtable.v2.TableName;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.truth.Truth;
 import com.google.protobuf.ByteString;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -63,14 +64,14 @@ public class MutateRowsBatchingDescriptorTest {
   public void countBytesTest() {
     MutateRowsRequest request = createRequest(2);
     long actual = descriptor.countBytes(request);
-    Truth.assertThat(actual).isEqualTo(request.getSerializedSize());
+    assertThat(actual).isEqualTo(request.getSerializedSize());
   }
 
   @Test
   public void countElementsTest() {
     MutateRowsRequest request = createRequest(2);
     long actual = descriptor.countElements(request);
-    Truth.assertThat(actual).isEqualTo(2);
+    assertThat(actual).isEqualTo(2);
   }
 
   @Test
@@ -81,7 +82,7 @@ public class MutateRowsBatchingDescriptorTest {
         createRequest(2).toBuilder().setTableName(myTableName.toString()).build();
 
     PartitionKey actual = descriptor.getBatchPartitionKey(request);
-    Truth.assertThat(actual).isEqualTo(new PartitionKey(myTableName.toString()));
+    assertThat(actual).isEqualTo(new PartitionKey(myTableName.toString()));
   }
 
   @Test
@@ -101,7 +102,7 @@ public class MutateRowsBatchingDescriptorTest {
     }
 
     MutateRowsRequest actual = builder.build();
-    Truth.assertThat(actual).isEqualTo(expected);
+    assertThat(actual).isEqualTo(expected);
   }
 
   @Test
@@ -129,7 +130,7 @@ public class MutateRowsBatchingDescriptorTest {
     } catch (ExecutionException t) {
       error1 = t.getCause();
     }
-    Truth.assertThat(error1).isSameAs(serverError);
+    assertThat(error1).isSameAs(serverError);
 
     Throwable error2 = null;
     try {
@@ -137,7 +138,7 @@ public class MutateRowsBatchingDescriptorTest {
     } catch (ExecutionException t) {
       error2 = t.getCause();
     }
-    Truth.assertThat(error2).isSameAs(serverError);
+    assertThat(error2).isSameAs(serverError);
   }
 
   @Test
@@ -168,11 +169,11 @@ public class MutateRowsBatchingDescriptorTest {
     issuer1.sendResult();
     issuer2.sendResult();
 
-    Truth.assertThat(result1.get(1, TimeUnit.SECONDS))
+    assertThat(result1.get(1, TimeUnit.SECONDS))
         .isEqualTo(
             MutateRowsResponse.newBuilder().addEntries(okEntryBuilder.setIndex(0).build()).build());
 
-    Truth.assertThat(result2.get(1, TimeUnit.SECONDS))
+    assertThat(result2.get(1, TimeUnit.SECONDS))
         .isEqualTo(
             MutateRowsResponse.newBuilder().addEntries(okEntryBuilder.setIndex(0).build()).build());
   }
@@ -220,11 +221,11 @@ public class MutateRowsBatchingDescriptorTest {
       actualError1 = e.getCause();
     }
 
-    Truth.assertThat(actualError1).isInstanceOf(ApiException.class);
-    Truth.assertThat(((ApiException) actualError1).isRetryable()).isTrue();
+    assertThat(actualError1).isInstanceOf(ApiException.class);
+    assertThat(((ApiException) actualError1).isRetryable()).isTrue();
 
-    Truth.assertThat(actualError1.getCause()).isInstanceOf(StatusRuntimeException.class);
-    Truth.assertThat(((StatusRuntimeException) actualError1.getCause()).getStatus().getCode())
+    assertThat(actualError1.getCause()).isInstanceOf(StatusRuntimeException.class);
+    assertThat(((StatusRuntimeException) actualError1.getCause()).getStatus().getCode())
         .isEqualTo(Status.Code.DEADLINE_EXCEEDED);
 
     Throwable actualError2 = null;
@@ -235,11 +236,11 @@ public class MutateRowsBatchingDescriptorTest {
       actualError2 = e.getCause();
     }
 
-    Truth.assertThat(actualError2).isInstanceOf(ApiException.class);
-    Truth.assertThat(((ApiException) actualError2).isRetryable()).isFalse();
+    assertThat(actualError2).isInstanceOf(ApiException.class);
+    assertThat(((ApiException) actualError2).isRetryable()).isFalse();
 
-    Truth.assertThat(actualError2.getCause()).isInstanceOf(StatusRuntimeException.class);
-    Truth.assertThat(((StatusRuntimeException) actualError2.getCause()).getStatus().getCode())
+    assertThat(actualError2.getCause()).isInstanceOf(StatusRuntimeException.class);
+    assertThat(((StatusRuntimeException) actualError2.getCause()).getStatus().getCode())
         .isEqualTo(Status.Code.INTERNAL);
   }
 

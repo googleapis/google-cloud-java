@@ -15,6 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
+import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
+
 import com.google.api.client.util.Lists;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -35,7 +38,6 @@ import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Queues;
-import com.google.common.truth.Truth;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.stub.StreamObserver;
@@ -114,7 +116,7 @@ public class BulkMutateRowsRetryTest {
     ApiFuture<Void> result = bulkMutations.add(RowMutation.create(TABLE_ID, "key1"));
     verifyOk(result);
 
-    Truth.assertThat(service.expectations).isEmpty();
+    assertThat(service.expectations).isEmpty();
   }
 
   @Test
@@ -128,7 +130,7 @@ public class BulkMutateRowsRetryTest {
     verifyOk(result1);
     verifyOk(result2);
 
-    Truth.assertThat(service.expectations).isEmpty();
+    assertThat(service.expectations).isEmpty();
   }
 
   @Test
@@ -139,7 +141,7 @@ public class BulkMutateRowsRetryTest {
     ApiFuture<Void> result = bulkMutations.add(RowMutation.create(TABLE_ID, "key1"));
     verifyOk(result);
 
-    Truth.assertThat(service.expectations).isEmpty();
+    assertThat(service.expectations).isEmpty();
   }
 
   @Test
@@ -153,7 +155,7 @@ public class BulkMutateRowsRetryTest {
     verifyOk(result1);
     verifyOk(result2);
 
-    Truth.assertThat(service.expectations).isEmpty();
+    assertThat(service.expectations).isEmpty();
   }
 
   @Test
@@ -167,7 +169,7 @@ public class BulkMutateRowsRetryTest {
     verifyError(result1, StatusCode.Code.INVALID_ARGUMENT);
     verifyOk(result2);
 
-    Truth.assertThat(service.expectations).isEmpty();
+    assertThat(service.expectations).isEmpty();
   }
 
   @Test
@@ -182,7 +184,7 @@ public class BulkMutateRowsRetryTest {
     ApiFuture<Void> result1 = bulkMutations.add(RowMutation.create(TABLE_ID, "key1"));
     verifyError(result1, StatusCode.Code.DEADLINE_EXCEEDED);
 
-    Truth.assertThat(service.expectations).isEmpty();
+    assertThat(service.expectations).isEmpty();
   }
 
   @Test
@@ -207,7 +209,7 @@ public class BulkMutateRowsRetryTest {
     }
 
     verifyOk(ApiFutures.allAsList(results));
-    Truth.assertThat(service.expectations).isEmpty();
+    assertThat(service.expectations).isEmpty();
   }
 
   private void verifyOk(ApiFuture<?> result) {
@@ -221,7 +223,7 @@ public class BulkMutateRowsRetryTest {
       error = t;
     }
 
-    Truth.assertThat(error).isNull();
+    assertThat(error).isNull();
   }
 
   @SuppressWarnings("ConstantConditions")
@@ -236,8 +238,8 @@ public class BulkMutateRowsRetryTest {
       error = t;
     }
 
-    Truth.assertThat(error).isInstanceOf(ApiException.class);
-    Truth.assertThat(((ApiException) error).getStatusCode().getCode()).isEqualTo(expectedCode);
+    assertThat(error).isInstanceOf(ApiException.class);
+    assertThat(((ApiException) error).getStatusCode().getCode()).isEqualTo(expectedCode);
   }
 
   static class RpcExpectation {
@@ -272,16 +274,14 @@ public class BulkMutateRowsRetryTest {
       RpcExpectation expectedRpc = expectations.poll();
 
       // Make sure that this isn't an extra request.
-      Truth.assertWithMessage("Unexpected request: " + request.toString())
-          .that(expectedRpc)
-          .isNotNull();
+      assertWithMessage("Unexpected request: " + request.toString()).that(expectedRpc).isNotNull();
 
       // Make sure that this request has the same keys as the expected request.
       List<String> requestKeys = Lists.newArrayList();
       for (Entry entry : request.getEntriesList()) {
         requestKeys.add(entry.getRowKey().toStringUtf8());
       }
-      Truth.assertThat(requestKeys).containsExactlyElementsIn(expectedRpc.entries.keySet());
+      assertThat(requestKeys).containsExactlyElementsIn(expectedRpc.entries.keySet());
 
       // Check if the expectation is to fail the entire request.
       if (expectedRpc.resultCode != Code.OK) {

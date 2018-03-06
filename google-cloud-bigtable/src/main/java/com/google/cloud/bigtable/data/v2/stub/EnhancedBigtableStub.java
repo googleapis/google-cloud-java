@@ -212,7 +212,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *
    * <ul>
    *   <li>Convert a {@link RowMutation} into a {@link MutateRowsRequest} with a single entry.
-   *   <li>Using gax's {@link com.google.api.gax.rpc.BatchingCallable} spool the requests and
+   *   <li>Using gax's {@link com.google.api.gax.rpc.BatchingCallable} to spool the requests and
    *       aggregate the {@link MutateRowsRequest.Entry}s.
    *   <li>Spool the streamed responses.
    *   <li>Split the responses using {@link MutateRowsBatchingDescriptor}.
@@ -279,8 +279,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   /**
-   * Returns the callable chain created in {@link #createMutateRowsCallable()} ()} ()} during
-   * stub construction.
+   * Returns the callable chain created in {@link #createMutateRowsCallable()} during stub
+   * construction.
    */
   public UnaryCallable<RowMutation, Void> mutateRowsCallable() {
     return mutateRowsCallable;

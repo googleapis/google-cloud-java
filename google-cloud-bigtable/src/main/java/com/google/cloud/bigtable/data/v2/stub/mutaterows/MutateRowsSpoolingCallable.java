@@ -27,8 +27,8 @@ import com.google.bigtable.v2.MutateRowsResponse;
 import java.util.List;
 
 /**
- * Converts a stream {@link MutateRowsResponse}s into a unary MutateRowsResponse. This is necessary
- * to adapt Cloud Bigtable API to work with gax's batching infrastructure.
+ * Converts a stream of {@link MutateRowsResponse}s into a unary MutateRowsResponse. This is
+ * necessary to adapt Cloud Bigtable API to work with gax's batching infrastructure.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.
