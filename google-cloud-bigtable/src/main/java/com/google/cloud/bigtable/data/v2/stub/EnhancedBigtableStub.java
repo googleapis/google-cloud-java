@@ -17,9 +17,11 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -35,10 +37,13 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
+import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
+import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
 import java.io.IOException;
 import java.util.List;
+import org.threeten.bp.Duration;
 
 /**
  * The core client that converts method calls to RPCs.
@@ -74,6 +79,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setTransportChannelProvider(settings.getTransportChannelProvider())
             .setEndpoint(settings.getEndpoint())
             .setCredentialsProvider(settings.getCredentialsProvider());
+
+    // ReadRow retries are handled in the overlay: disable retries in the base layer (but make
+    // sure to preserve the exception callable settings).
+    baseSettingsBuilder
+        .readRowsSettings()
+        .setSimpleTimeoutNoRetries(Duration.ofHours(2))
+        .setRetryableCodes(settings.readRowsSettings().getRetryableCodes())
+        .setTimeoutCheckInterval(Duration.ZERO)
+        .setIdleTimeout(Duration.ZERO);
 
     // SampleRowKeys retries are handled in the overlay: disable retries in the base layer (but make
     // sure to preserve the exception callable settings.
@@ -135,8 +149,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *       dispatch the RPC.
    *   <li>Upon receiving the response stream, it will merge the {@link
    *       com.google.bigtable.v2.ReadRowsResponse.CellChunk}s in logical rows. The actual row
-   *       implementation can be configured in {@link
-   *       com.google.cloud.bigtable.data.v2.BigtableDataSettings}.
+   *       implementation can be configured in by the {@code rowAdapter} parameter.
    *   <li>Retry/resume on failure.
    *   <li>Filter out marker rows.
    * </ul>
@@ -147,7 +160,27 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<ReadRowsRequest, RowT> merging =
         new RowMergingCallable<>(stub.readRowsCallable(), rowAdapter);
 
-    FilterMarkerRowsCallable<RowT> filtering = new FilterMarkerRowsCallable<>(merging, rowAdapter);
+    // Copy settings for the middle ReadRowsRequest -> RowT callable (as opposed to the outer
+    // Query -> RowT callable or the inner ReadRowsRequest -> ReadRowsResponse callable).
+    ServerStreamingCallSettings<ReadRowsRequest, RowT> innerSettings =
+        ServerStreamingCallSettings.<ReadRowsRequest, RowT>newBuilder()
+            .setResumptionStrategy(new ReadRowsResumptionStrategy<>(rowAdapter))
+            .setRetryableCodes(settings.readRowsSettings().getRetryableCodes())
+            .setRetrySettings(settings.readRowsSettings().getRetrySettings())
+            .setTimeoutCheckInterval(settings.readRowsSettings().getTimeoutCheckInterval())
+            .setIdleTimeout(settings.readRowsSettings().getIdleTimeout())
+            .build();
+
+    // Retry logic is split into 2 parts to workaround a rare edge case described in
+    // ReadRowsRetryCompletedCallable
+    ServerStreamingCallable<ReadRowsRequest, RowT> retrying1 =
+        new ReadRowsRetryCompletedCallable<>(merging);
+
+    ServerStreamingCallable<ReadRowsRequest, RowT> retrying2 =
+        Callables.retrying(retrying1, innerSettings, clientContext);
+
+    FilterMarkerRowsCallable<RowT> filtering =
+        new FilterMarkerRowsCallable<>(retrying2, rowAdapter);
 
     ServerStreamingCallable<ReadRowsRequest, RowT> withContext =
         filtering.withDefaultCallContext(clientContext.getDefaultCallContext());
