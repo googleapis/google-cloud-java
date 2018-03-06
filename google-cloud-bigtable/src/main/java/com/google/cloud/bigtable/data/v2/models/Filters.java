@@ -360,7 +360,6 @@ public final class Filters {
       return exactMatch(ByteString.copyFromUtf8(value));
     }
 
-
     /**
      * Matches only cells from rows whose keys equal the value. In other words, passes through the
      * entire row when the key matches, and otherwise produces an empty row.
