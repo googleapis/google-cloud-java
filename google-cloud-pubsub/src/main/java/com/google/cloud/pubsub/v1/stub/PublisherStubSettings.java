@@ -21,9 +21,6 @@ import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedRespons
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.GaxProperties;
@@ -36,7 +33,6 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.BatchedRequestIssuer;
-import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.PageContext;
@@ -113,7 +109,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
   private final UnaryCallSettings<Topic, Topic> createTopicSettings;
   private final UnaryCallSettings<UpdateTopicRequest, Topic> updateTopicSettings;
-  private final BatchingCallSettings<PublishRequest, PublishResponse> publishSettings;
+  private final UnaryCallSettings<PublishRequest, PublishResponse> publishSettings;
   private final UnaryCallSettings<GetTopicRequest, Topic> getTopicSettings;
   private final PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       listTopicsSettings;
@@ -138,7 +134,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to publish. */
-  public BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+  public UnaryCallSettings<PublishRequest, PublishResponse> publishSettings() {
     return publishSettings;
   }
 
@@ -446,7 +442,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
     private final UnaryCallSettings.Builder<Topic, Topic> createTopicSettings;
     private final UnaryCallSettings.Builder<UpdateTopicRequest, Topic> updateTopicSettings;
-    private final BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
+    private final UnaryCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
     private final UnaryCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
     private final PagedCallSettings.Builder<
             ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
@@ -528,9 +524,10 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
       updateTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      publishSettings =
-          BatchingCallSettings.newBuilder(PUBLISH_BATCHING_DESC)
-              .setBatchingSettings(BatchingSettings.newBuilder().build());
+      publishSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      // publishSettings =
+      //     BatchingCallSettings.newBuilder(PUBLISH_BATCHING_DESC)
+      //         .setBatchingSettings(BatchingSettings.newBuilder().build());
 
       getTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -586,16 +583,21 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
       builder
           .publishSettings()
-          .setBatchingSettings(
-              BatchingSettings.newBuilder()
-                  .setElementCountThreshold(10L)
-                  .setRequestByteThreshold(1024L)
-                  .setDelayThreshold(Duration.ofMillis(10))
-                  .setFlowControlSettings(
-                      FlowControlSettings.newBuilder()
-                          .setLimitExceededBehavior(LimitExceededBehavior.Ignore)
-                          .build())
-                  .build());
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      // builder
+      //     .publishSettings()
+      //     .setBatchingSettings(
+      //         BatchingSettings.newBuilder()
+      //             .setElementCountThreshold(10L)
+      //             .setRequestByteThreshold(1024L)
+      //             .setDelayThreshold(Duration.ofMillis(10))
+      //             .setFlowControlSettings(
+      //                 FlowControlSettings.newBuilder()
+      //                     .setLimitExceededBehavior(LimitExceededBehavior.Ignore)
+      //                     .build())
+      //             .build());
       builder
           .publishSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("one_plus_delivery"))
@@ -693,7 +695,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to publish. */
-    public BatchingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+    public UnaryCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
       return publishSettings;
     }
 

@@ -222,7 +222,7 @@ public class GrpcPublisherStub extends PublisherStub {
         GrpcCallableFactory.createUnaryCallable(
             updateTopicTransportSettings, settings.updateTopicSettings(), clientContext);
     this.publishCallable =
-        GrpcCallableFactory.createBatchingCallable(
+        GrpcCallableFactory.createUnaryCallable(
             publishTransportSettings, settings.publishSettings(), clientContext);
     this.getTopicCallable =
         GrpcCallableFactory.createUnaryCallable(

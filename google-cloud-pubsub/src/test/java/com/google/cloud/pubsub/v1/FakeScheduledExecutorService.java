@@ -93,11 +93,11 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       expectedWorkQueue.add(delay);
     }
   }
-  
+
   /**
-   * Blocks the current thread until all the work 
-   * {@link FakeScheduledExecutorService#setupScheduleExpectation(Duration) expected} has been
-   * scheduled in the executor. 
+   * Blocks the current thread until all the work {@link
+   * FakeScheduledExecutorService#setupScheduleExpectation(Duration) expected} has been scheduled in
+   * the executor.
    */
   public void waitForExpectedWork() {
     synchronized (expectedWorkQueue) {
@@ -224,7 +224,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       }
       expectedWorkQueue.notifyAll();
     }
-    
+
     return callable.getScheduledFuture();
   }
 

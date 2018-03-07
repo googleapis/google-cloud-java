@@ -24,7 +24,6 @@ import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
-import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -91,7 +90,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   }
 
   /** Returns the object with the settings used for calls to publish. */
-  /* package-private */ BatchingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+  /* package-private */ UnaryCallSettings<PublishRequest, PublishResponse> publishSettings() {
     return ((PublisherStubSettings) getStubSettings()).publishSettings();
   }
 
@@ -242,7 +241,7 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     }
 
     /** Returns the builder for the settings used for calls to publish. */
-    /* package-private */ BatchingCallSettings.Builder<PublishRequest, PublishResponse>
+    /* package-private */ UnaryCallSettings.Builder<PublishRequest, PublishResponse>
         publishSettings() {
       return getStubSettingsBuilder().publishSettings();
     }

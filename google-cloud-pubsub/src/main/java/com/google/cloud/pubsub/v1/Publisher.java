@@ -17,57 +17,46 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorAsBackgroundResource;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
-import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
-import com.google.pubsub.v1.PublisherGrpc;
-import com.google.pubsub.v1.PublisherGrpc.PublisherFutureStub;
 import com.google.pubsub.v1.PubsubMessage;
-import io.grpc.CallCredentials;
-import io.grpc.Channel;
 import io.grpc.Status;
-import io.grpc.auth.MoreCallCredentials;
-import org.threeten.bp.Duration;
-
-import javax.annotation.Nullable;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -94,8 +83,6 @@ public class Publisher {
   private final String cachedTopicNameString;
 
   private final BatchingSettings batchingSettings;
-  private final RetrySettings retrySettings;
-  private final LongRandom longRandom;
 
   private final Lock messagesBatchLock;
   private List<OutstandingPublish> messagesBatch;
@@ -103,12 +90,11 @@ public class Publisher {
 
   private final AtomicBoolean activeAlarm;
 
-  private final Channel channel;
-  @Nullable private final CallCredentials callCredentials;
+  private final TopicAdminClient topicClient;
 
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
+  private final List<AutoCloseable> closeables;
   private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
 
@@ -127,40 +113,42 @@ public class Publisher {
     cachedTopicNameString = topicName.toString();
 
     this.batchingSettings = builder.batchingSettings;
-    this.retrySettings = builder.retrySettings;
-    this.longRandom = builder.longRandom;
 
     messagesBatch = new LinkedList<>();
     messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
-      closeables.add(new ExecutorAsBackgroundResource(executor));
-    }
-    TransportChannelProvider channelProvider = builder.channelProvider;
-    if (channelProvider.needsExecutor()) {
-      channelProvider = channelProvider.withExecutor(executor);
-    }
-    if (channelProvider.needsHeaders()) {
-      Map<String, String> headers =
-          ImmutableMap.<String, String>builder()
-              .putAll(builder.headerProvider.getHeaders())
-              .putAll(builder.internalHeaderProvider.getHeaders())
-              .build();
-      channelProvider = channelProvider.withHeaders(headers);
-    }
-    if (channelProvider.needsEndpoint()) {
-      channelProvider = channelProvider.withEndpoint(TopicAdminSettings.getDefaultEndpoint());
-    }
-    GrpcTransportChannel transportChannel =
-        (GrpcTransportChannel) channelProvider.getTransportChannel();
-    channel = transportChannel.getChannel();
-    if (channelProvider.shouldAutoClose()) {
-      closeables.add(transportChannel);
+      closeables =
+          Collections.<AutoCloseable>singletonList(new ExecutorAsBackgroundResource(executor));
+    } else {
+      closeables = Collections.emptyList();
     }
 
-    Credentials credentials = builder.credentialsProvider.getCredentials();
-    callCredentials = credentials == null ? null : MoreCallCredentials.from(credentials);
+    // Publisher used to take maxAttempt == 0 to mean infinity, but to GAX it means don't retry.
+    // We post-process this here to keep backward-compatibility.
+    RetrySettings retrySettings = builder.retrySettings;
+    if (retrySettings.getMaxAttempts() == 0) {
+      retrySettings = retrySettings.toBuilder().setMaxAttempts(Integer.MAX_VALUE).build();
+    }
+
+    TopicAdminSettings.Builder topicSettings =
+        TopicAdminSettings.newBuilder()
+            .setCredentialsProvider(builder.credentialsProvider)
+            .setExecutorProvider(FixedExecutorProvider.create(executor))
+            .setTransportChannelProvider(builder.channelProvider);
+    topicSettings
+        .publishSettings()
+        .setRetryableCodes(
+            StatusCode.Code.ABORTED,
+            StatusCode.Code.CANCELLED,
+            StatusCode.Code.DEADLINE_EXCEEDED,
+            StatusCode.Code.INTERNAL,
+            StatusCode.Code.RESOURCE_EXHAUSTED,
+            StatusCode.Code.UNKNOWN,
+            StatusCode.Code.UNAVAILABLE)
+        .setRetrySettings(retrySettings);
+    this.topicClient = TopicAdminClient.create(topicSettings.build());
 
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessageWaiter();
@@ -317,21 +305,9 @@ public class Publisher {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    long rpcTimeoutMs =
-        Math.round(
-            retrySettings.getInitialRpcTimeout().toMillis()
-                * Math.pow(retrySettings.getRpcTimeoutMultiplier(), outstandingBatch.attempt - 1));
-    rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().toMillis());
-
-    PublisherFutureStub stub =
-        PublisherGrpc.newFutureStub(channel).withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
-    if (callCredentials != null) {
-      stub = stub.withCallCredentials(callCredentials);
-    }
-
-    Futures.addCallback(
-        stub.publish(publishRequest.build()),
-        new FutureCallback<PublishResponse>() {
+    ApiFutures.addCallback(
+        topicClient.publishCallable().futureCall(publishRequest.build()),
+        new ApiFutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
             try {
@@ -361,37 +337,16 @@ public class Publisher {
 
           @Override
           public void onFailure(Throwable t) {
-            long nextBackoffDelay =
-                computeNextBackoffDelayMs(outstandingBatch, retrySettings, longRandom);
-
-            if (!isRetryable(t)
-                || retrySettings.getMaxAttempts() > 0
-                    && outstandingBatch.getAttempt() > retrySettings.getMaxAttempts()
-                || System.currentTimeMillis() + nextBackoffDelay
-                    > outstandingBatch.creationTime + retrySettings.getTotalTimeout().toMillis()) {
-              try {
-                ApiException gaxException =
-                    ApiExceptionFactory.createException(
-                        t, GrpcStatusCode.of(Status.fromThrowable(t).getCode()), false);
-                for (OutstandingPublish outstandingPublish :
-                    outstandingBatch.outstandingPublishes) {
-                  outstandingPublish.publishResult.setException(gaxException);
-                }
-              } finally {
-                messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
+            try {
+              ApiException gaxException =
+                  ApiExceptionFactory.createException(
+                      t, GrpcStatusCode.of(Status.fromThrowable(t).getCode()), false);
+              for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
+                outstandingPublish.publishResult.setException(gaxException);
               }
-              return;
+            } finally {
+              messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
-
-            executor.schedule(
-                new Runnable() {
-                  @Override
-                  public void run() {
-                    publishOutstandingBatch(outstandingBatch);
-                  }
-                },
-                nextBackoffDelay,
-                TimeUnit.MILLISECONDS);
           }
         });
   }
@@ -456,41 +411,11 @@ public class Publisher {
     for (AutoCloseable closeable : closeables) {
       closeable.close();
     }
+    topicClient.shutdown();
   }
 
   private boolean hasBatchingBytes() {
     return getMaxBatchBytes() > 0;
-  }
-
-  private static long computeNextBackoffDelayMs(
-      OutstandingBatch outstandingBatch, RetrySettings retrySettings, LongRandom longRandom) {
-    long delayMillis =
-        Math.round(
-            retrySettings.getInitialRetryDelay().toMillis()
-                * Math.pow(retrySettings.getRetryDelayMultiplier(), outstandingBatch.attempt - 1));
-    delayMillis = Math.min(retrySettings.getMaxRetryDelay().toMillis(), delayMillis);
-    outstandingBatch.attempt++;
-    return longRandom.nextLong(0, delayMillis);
-  }
-
-  private boolean isRetryable(Throwable t) {
-    Status status = Status.fromThrowable(t);
-    switch (status.getCode()) {
-      case ABORTED:
-      case CANCELLED:
-      case DEADLINE_EXCEEDED:
-      case INTERNAL:
-      case RESOURCE_EXHAUSTED:
-      case UNKNOWN:
-      case UNAVAILABLE:
-        return true;
-      default:
-        return false;
-    }
-  }
-
-  interface LongRandom {
-    long nextLong(long least, long bound);
   }
 
   /**
@@ -542,13 +467,6 @@ public class Publisher {
             .setRpcTimeoutMultiplier(2)
             .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .build();
-    static final LongRandom DEFAULT_LONG_RANDOM =
-        new LongRandom() {
-          @Override
-          public long nextLong(long least, long bound) {
-            return ThreadLocalRandom.current().nextLong(least, bound);
-          }
-        };
 
     private static final int THREADS_PER_CPU = 5;
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
@@ -562,7 +480,6 @@ public class Publisher {
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
-    LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
     TransportChannelProvider channelProvider =
         TopicAdminSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
@@ -647,12 +564,6 @@ public class Publisher {
       Preconditions.checkArgument(
           retrySettings.getInitialRpcTimeout().compareTo(MIN_RPC_TIMEOUT) >= 0);
       this.retrySettings = retrySettings;
-      return this;
-    }
-
-    @InternalApi
-    Builder setLongRandom(LongRandom longRandom) {
-      this.longRandom = Preconditions.checkNotNull(longRandom);
       return this;
     }
 
