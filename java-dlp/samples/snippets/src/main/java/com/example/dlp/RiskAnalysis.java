@@ -55,7 +55,7 @@ public class RiskAnalysis {
   private static void calculateNumericalStats(
       String projectId, String datasetId, String tableId, String columnName)
       throws Exception {
-    // [START dlp_numerical_stats_analysis]
+    // [START dlp_numerical_stats]
 
     /**
      * Calculate numerical statistics for a column in a BigQuery table using the DLP API.
@@ -128,13 +128,13 @@ public class RiskAnalysis {
     } catch (Exception e) {
       System.out.println("Error in numericalStatsAnalysis: " + e.getMessage());
     }
-    // [END dlp_numerical_stats_analysis]
+    // [END dlp_numerical_stats]
   }
 
   private static void calculateCategoricalStats(
       String projectId, String datasetId, String tableId, String columnName)
       throws Exception {
-    // [START dlp_categorical_stats_analysis]
+    // [START dlp_categorical_stats]
     /**
      * Calculate categorical statistics for a column in a BigQuery table using the DLP API.
      * @param projectId The Google Cloud Platform project ID to run the API call under.
@@ -206,7 +206,7 @@ public class RiskAnalysis {
     } catch (Exception e) {
       System.out.println("Error in categoricalStatsAnalysis: " + e.getMessage());
     }
-    // [END dlp_categorical_stats_analysis]
+    // [END dlp_categorical_stats]
   }
 
   private static void calculateKAnonymity(

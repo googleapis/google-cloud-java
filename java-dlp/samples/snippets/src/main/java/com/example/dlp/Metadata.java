@@ -49,7 +49,7 @@ public class Metadata {
   }
 
   private static void listRootCategories(String languageCode) throws Exception {
-    // [START dlp_list_root_categories]
+    // [START dlp_list_categories]
     // Instantiate a DLP client
     try (DlpServiceClient dlpClient = DlpServiceClient.create()) {
       // The BCP-47 language code to use, e.g. 'en-US'
@@ -61,7 +61,7 @@ public class Metadata {
         System.out.println("Display name : " + categoryDescription.getDisplayName());
       }
     }
-    // [END dlp_list_root_categories]
+    // [END dlp_list_categories]
   }
 
   /** Retrieve infoTypes. */

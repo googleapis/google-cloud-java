@@ -46,7 +46,7 @@ public class DeIdentification {
       String string,
       Character maskingCharacter,
       int numberToMask) {
-    // [START dlp_deidentify_mask]
+    // [START dlp_deidentify_masking]
     /**
      * Deidentify a string by masking sensitive information with a character using the DLP API.
      * @param string The string to deidentify.
@@ -113,7 +113,7 @@ public class DeIdentification {
     } catch (Exception e) {
       System.out.println("Error in deidentifyWithMask: " + e.getMessage());
     }
-    // [END dlp_deidentify_mask]
+    // [END dlp_deidentify_masking]
   }
 
   private static void deIdentifyWithFpe(
