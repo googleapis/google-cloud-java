@@ -56,6 +56,14 @@ public class Query {
     return this;
   }
 
+  public Query prefix(ByteString prefix) {
+    return range(ByteStringRange.prefix(prefix));
+  }
+
+  public Query prefix(String prefix) {
+    return range(ByteStringRange.prefix(prefix));
+  }
+
   /**
    * Adds a range to be looked up.
    *

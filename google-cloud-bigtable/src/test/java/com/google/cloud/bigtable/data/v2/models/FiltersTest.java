@@ -183,6 +183,16 @@ public class FiltersTest {
   }
 
   @Test
+  public void keyExactMatchStringTest() {
+    RowFilter actualFilter = FILTERS.key().exactMatch(".*").toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8("\\.\\*")).build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
   public void keySampleTest() {
     RowFilter actualFilter = FILTERS.key().sample(0.3).toProto();
 
@@ -237,6 +247,18 @@ public class FiltersTest {
   public void qualifierExactMatchTest() {
     RowFilter actualFilter =
         FILTERS.qualifier().exactMatch(ByteString.copyFromUtf8("^hi")).toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder()
+            .setColumnQualifierRegexFilter(ByteString.copyFromUtf8("\\^hi"))
+            .build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void qualifierExactStringMatchTest() {
+    RowFilter actualFilter = FILTERS.qualifier().exactMatch("^hi").toProto();
 
     RowFilter expectedFilter =
         RowFilter.newBuilder()
@@ -361,6 +383,18 @@ public class FiltersTest {
   public void valueExactMatch() {
     RowFilter actualFilter =
         FILTERS.value().exactMatch(ByteString.copyFromUtf8("some[0-9]regex")).toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder()
+            .setValueRegexFilter(ByteString.copyFromUtf8("some\\[0\\-9\\]regex"))
+            .build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
+  public void valueExactStringMatch() {
+    RowFilter actualFilter = FILTERS.value().exactMatch("some[0-9]regex").toProto();
 
     RowFilter expectedFilter =
         RowFilter.newBuilder()
