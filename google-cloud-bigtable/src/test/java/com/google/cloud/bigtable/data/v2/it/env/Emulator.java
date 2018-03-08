@@ -43,9 +43,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Java wrapper around the gcloud bigtable emulator.
- */
+/** Java wrapper around the gcloud bigtable emulator. */
 // TODO(igorbernstein): Clean this up and externalize this in a separate artifact
 // TODO(igorbernstein): Stop depending on gcloud for the binary, instead wrap it in a jar.
 class Emulator {
@@ -137,7 +135,7 @@ class Emulator {
     return tableAdminClient;
   }
 
-  //<editor-fold desc="Helpers">
+  // <editor-fold desc="Helpers">
   private static int getAvailablePort() {
     try (ServerSocket serverSocket = new ServerSocket(0)) {
       return serverSocket.getLocalPort();
@@ -177,32 +175,35 @@ class Emulator {
   private static void pipeStreamToLog(final InputStream stream, final Level level) {
     final BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 
-    Thread thread = new Thread(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          String line;
-          while ((line = reader.readLine()) != null)
-            LOGGER.log(level, line);
-        } catch (IOException e) {
-          LOGGER.log(Level.WARNING, "Failed to read process stream", e);
-        }
-      }
-    });
+    Thread thread =
+        new Thread(
+            new Runnable() {
+              @Override
+              public void run() {
+                try {
+                  String line;
+                  while ((line = reader.readLine()) != null) LOGGER.log(level, line);
+                } catch (IOException e) {
+                  LOGGER.log(Level.WARNING, "Failed to read process stream", e);
+                }
+              }
+            });
     thread.setDaemon(true);
     thread.start();
   }
 
   private static Future<String> bufferOutput(final InputStream stream) {
-    FutureTask<String> task = new FutureTask<>(new Callable<String>() {
-      @Override
-      public String call() throws Exception {
-        return CharStreams.toString(new InputStreamReader(stream));
-      }
-    });
+    FutureTask<String> task =
+        new FutureTask<>(
+            new Callable<String>() {
+              @Override
+              public String call() throws Exception {
+                return CharStreams.toString(new InputStreamReader(stream));
+              }
+            });
     task.run();
 
     return task;
   }
-  //</editor-fold>
+  // </editor-fold>
 }

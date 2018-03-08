@@ -36,8 +36,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class SampleRowsIT {
-  @ClassRule
-  public static TestEnvRule testEnvRule = new TestEnvRule();
+  @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
   @Test
   public void test() throws InterruptedException, ExecutionException, TimeoutException {
@@ -46,17 +45,18 @@ public class SampleRowsIT {
     // Create some data so that sample row keys has something to show
     List<ApiFuture<?>> futures = Lists.newArrayList();
     for (int i = 0; i < 10; i++) {
-      ApiFuture<Void> future = client.mutateRowAsync(
-          RowMutation.create(testEnvRule.env().getTableName().getTable(),
-              testEnvRule.env().getRowPrefix() + "-" + i)
-              .setCell(testEnvRule.env().getFamilyId(), "", "value")
-      );
+      ApiFuture<Void> future =
+          client.mutateRowAsync(
+              RowMutation.create(
+                      testEnvRule.env().getTableName().getTable(),
+                      testEnvRule.env().getRowPrefix() + "-" + i)
+                  .setCell(testEnvRule.env().getFamilyId(), "", "value"));
       futures.add(future);
     }
     ApiFutures.allAsList(futures).get(1, TimeUnit.MINUTES);
 
-    ApiFuture<List<KeyOffset>> future = client
-        .sampleRowKeysAsync(testEnvRule.env().getTableName().getTable());
+    ApiFuture<List<KeyOffset>> future =
+        client.sampleRowKeysAsync(testEnvRule.env().getTableName().getTable());
 
     List<KeyOffset> results = future.get(1, TimeUnit.MINUTES);
 

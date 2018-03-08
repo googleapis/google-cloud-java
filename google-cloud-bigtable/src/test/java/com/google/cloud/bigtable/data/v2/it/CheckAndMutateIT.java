@@ -33,8 +33,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class CheckAndMutateIT {
-  @ClassRule
-  public static TestEnvRule testEnvRule = new TestEnvRule();
+  @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
   @Test
   public void test() throws Exception {
@@ -42,21 +41,31 @@ public class CheckAndMutateIT {
     String rowKey = testEnvRule.env().getRowPrefix();
     String familyId = testEnvRule.env().getFamilyId();
 
-    testEnvRule.env().getDataClient().mutateRowCallable().call(
-        RowMutation.create(tableId, rowKey)
-          .setCell(familyId, "q1", "val1")
-          .setCell(familyId, "q2", "val2")
-    );
+    testEnvRule
+        .env()
+        .getDataClient()
+        .mutateRowCallable()
+        .call(
+            RowMutation.create(tableId, rowKey)
+                .setCell(familyId, "q1", "val1")
+                .setCell(familyId, "q2", "val2"));
 
-    testEnvRule.env().getDataClient().checkAndMutateRowAsync(
-        ConditionalRowMutation.create(tableId, rowKey)
-          .condition(FILTERS.qualifier().exactMatch("q1"))
-          .then(Mutation.create().setCell(familyId, "q3", "q1"))
-    ).get(1, TimeUnit.MINUTES);
+    testEnvRule
+        .env()
+        .getDataClient()
+        .checkAndMutateRowAsync(
+            ConditionalRowMutation.create(tableId, rowKey)
+                .condition(FILTERS.qualifier().exactMatch("q1"))
+                .then(Mutation.create().setCell(familyId, "q3", "q1")))
+        .get(1, TimeUnit.MINUTES);
 
-    Row row = testEnvRule.env().getDataClient().readRowsCallable().first().call(
-        Query.create(tableId).rowKey(rowKey)
-    );
+    Row row =
+        testEnvRule
+            .env()
+            .getDataClient()
+            .readRowsCallable()
+            .first()
+            .call(Query.create(tableId).rowKey(rowKey));
 
     assertThat(row.getCells()).hasSize(3);
     assertThat(row.getCells().get(2).getValue()).isEqualTo(ByteString.copyFromUtf8("q1"));

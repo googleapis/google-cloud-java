@@ -30,31 +30,38 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class MutateRowIT {
-  @ClassRule
-  public static TestEnvRule testEnvRule = new TestEnvRule();
+  @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
   @Test
   public void test() throws Exception {
     String rowKey = testEnvRule.env().getRowPrefix() + "testA";
     String familyId = testEnvRule.env().getFamilyId();
 
+    testEnvRule
+        .env()
+        .getDataClient()
+        .mutateRowAsync(
+            RowMutation.create(testEnvRule.env().getTableName().getTable(), rowKey)
+                .setCell(familyId, "q", "myVal")
+                .setCell(familyId, "q2", "myVal2")
+                .setCell(familyId, "q3", "myVal3"))
+        .get(1, TimeUnit.MINUTES);
 
-    testEnvRule.env().getDataClient().mutateRowAsync(
-        RowMutation.create(testEnvRule.env().getTableName().getTable(), rowKey)
-            .setCell(familyId, "q", "myVal")
-            .setCell(familyId, "q2", "myVal2")
-            .setCell(familyId, "q3", "myVal3")
-    ).get(1, TimeUnit.MINUTES);
+    testEnvRule
+        .env()
+        .getDataClient()
+        .mutateRowAsync(
+            RowMutation.create(testEnvRule.env().getTableName().getTable(), rowKey)
+                .deleteCells(familyId, "q2"))
+        .get(1, TimeUnit.MINUTES);
 
-    testEnvRule.env().getDataClient().mutateRowAsync(
-        RowMutation.create(testEnvRule.env().getTableName().getTable(), rowKey)
-          .deleteCells(familyId, "q2")
-    ).get(1, TimeUnit.MINUTES);
-
-    Row row = testEnvRule.env().getDataClient().readRowsCallable().first().call(
-        Query.create(testEnvRule.env().getTableName().getTable())
-            .rowKey(rowKey)
-    );
+    Row row =
+        testEnvRule
+            .env()
+            .getDataClient()
+            .readRowsCallable()
+            .first()
+            .call(Query.create(testEnvRule.env().getTableName().getTable()).rowKey(rowKey));
 
     assertThat(row.getCells()).hasSize(2);
     assertThat(row.getCells().get(0).getValue()).isEqualTo(ByteString.copyFromUtf8("myVal"));

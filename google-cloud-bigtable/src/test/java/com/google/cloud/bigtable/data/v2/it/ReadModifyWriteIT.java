@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.bigtable.data.v2.it.env.TestEnvRule;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.protobuf.ByteString;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -30,8 +31,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ReadModifyWriteIT {
-  @ClassRule
-  public static TestEnvRule testEnvRule = new TestEnvRule();
+  @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
   @Test
   public void test() throws InterruptedException, ExecutionException, TimeoutException {
@@ -39,11 +39,15 @@ public class ReadModifyWriteIT {
     String family = testEnvRule.env().getFamilyId();
     String rowKey = testEnvRule.env().getRowPrefix();
 
-    Row row = testEnvRule.env().getDataClient().readModifyWriteRowAsync(
-        ReadModifyWriteRow.create(tableId, rowKey)
-            .append(family, "q1", "a")
-            .increment(family, "q2", 3)
-    ).get(1, TimeUnit.MINUTES);
+    Row row =
+        testEnvRule
+            .env()
+            .getDataClient()
+            .readModifyWriteRowAsync(
+                ReadModifyWriteRow.create(tableId, rowKey)
+                    .append(family, "q1", "a")
+                    .increment(family, "q2", 3))
+            .get(1, TimeUnit.MINUTES);
 
     assertThat(row.getCells()).hasSize(2);
     assertThat(row.getCells().get(0).getValue()).isEqualTo(ByteString.copyFromUtf8("a"));
