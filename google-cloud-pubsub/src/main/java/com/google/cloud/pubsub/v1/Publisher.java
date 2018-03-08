@@ -147,7 +147,8 @@ public class Publisher {
             StatusCode.Code.RESOURCE_EXHAUSTED,
             StatusCode.Code.UNKNOWN,
             StatusCode.Code.UNAVAILABLE)
-        .setRetrySettings(retrySettings);
+        .setRetrySettings(retrySettings)
+        .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.topicClient = TopicAdminClient.create(topicSettings.build());
 
     shutdown = new AtomicBoolean(false);
