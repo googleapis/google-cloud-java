@@ -19,11 +19,14 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
@@ -36,6 +39,9 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsSpoolingCallable;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
@@ -102,6 +108,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .mutateRowSettings()
         .setRetryableCodes(settings.mutateRowSettings().getRetryableCodes())
         .setRetrySettings(settings.mutateRowSettings().getRetrySettings());
+
+    // MutateRows(BulkMutateRows) retries are handled in the overlay: disable retries in the base
+    // layer
+    baseSettingsBuilder
+        .mutateRowsSettings()
+        .setSimpleTimeoutNoRetries(Duration.ofHours(2))
+        .setRetryableCodes(settings.mutateRowsSettings().getRetryableCodes())
+        .setTimeoutCheckInterval(Duration.ZERO)
+        .setIdleTimeout(Duration.ZERO);
 
     // CheckAndMutateRow is a simple passthrough
     baseSettingsBuilder
@@ -230,13 +245,37 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
+  /**
+   * Creates a callable chain to handle MutatesRows RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link RowMutation} into a {@link MutateRowsRequest} with a single entry.
+   *   <li>Using gax's {@link com.google.api.gax.rpc.BatchingCallable} to spool the requests and
+   *       aggregate the {@link MutateRowsRequest.Entry}s.
+   *   <li>Spool the streamed responses.
+   *   <li>Split the responses using {@link MutateRowsBatchingDescriptor}.
+   *   <li>Apply retries to individual mutations
+   * </ul>
+   */
   private UnaryCallable<RowMutation, Void> createMutateRowsCallable() {
-    return new UnaryCallable<RowMutation, Void>() {
-      @Override
-      public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
-        throw new UnsupportedOperationException("todo");
-      }
-    };
+    MutateRowsSpoolingCallable spooling = new MutateRowsSpoolingCallable(stub.mutateRowsCallable());
+
+    // recreate BatchingCallSettings with the correct descriptor
+    BatchingCallSettings.Builder<MutateRowsRequest, MutateRowsResponse> batchingCallSettings =
+        BatchingCallSettings.newBuilder(
+                new MutateRowsBatchingDescriptor(settings.mutateRowsSettings().getRetryableCodes()))
+            .setBatchingSettings(settings.mutateRowsSettings().getBatchingSettings());
+
+    UnaryCallable<MutateRowsRequest, MutateRowsResponse> batching =
+        Callables.batching(spooling, batchingCallSettings.build(), clientContext);
+
+    UnaryCallable<MutateRowsRequest, MutateRowsResponse> retrying =
+        Callables.retrying(batching, settings.mutateRowsSettings(), clientContext);
+
+    MutateRowsUserFacingCallable userFacing =
+        new MutateRowsUserFacingCallable(retrying, requestContext);
+
+    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -284,6 +323,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return mutateRowCallable;
   }
 
+  /**
+   * Returns the callable chain created in {@link #createMutateRowsCallable()} during stub
+   * construction.
+   */
   public UnaryCallable<RowMutation, Void> mutateRowsCallable() {
     return mutateRowsCallable;
   }
