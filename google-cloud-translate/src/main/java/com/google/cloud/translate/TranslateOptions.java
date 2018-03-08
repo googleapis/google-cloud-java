@@ -169,7 +169,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
       logger.log(
           Level.WARNING,
           String.format(
-              "Ignoring Application Default Credentials: using explicit setting for API key instead.",
+              "Ignoring Application Default Credentials %s: using explicit setting for API key instead.",
               ServiceOptions.CREDENTIAL_ENV_NAME));
     } else if (credentials != null) { // credentials assigned from ADC in superclass constructor
       apiKey = null;
