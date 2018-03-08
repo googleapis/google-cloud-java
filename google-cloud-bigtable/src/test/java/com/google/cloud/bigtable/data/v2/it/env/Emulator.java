@@ -34,8 +34,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
@@ -49,7 +52,7 @@ import java.util.logging.Logger;
 class Emulator {
   private static final Logger LOGGER = Logger.getLogger(Emulator.class.getName());
 
-  private final String executable;
+  private final Path executable;
   private Process process;
   private ManagedChannel channel;
   private BigtableTableAdminClient tableAdminClient;
@@ -58,35 +61,20 @@ class Emulator {
   private static final InstanceName INSTANCE_NAME =
       InstanceName.of("fake-project", "fake-instance");
 
+  // Use the gcloud installed emulator
   static Emulator createGCloud() {
-    final Process p;
+    final Path gcloudSdkPath;
 
     try {
-      p = Runtime.getRuntime().exec("gcloud info --format=value(installation.sdk_root)");
-      pipeStreamToLog(p.getErrorStream(), Level.WARNING);
-    } catch (IOException e) {
-      throw new RuntimeException("Failed to run gcloud info", e);
-    }
-
-    String sdkRoot;
-    try {
-      sdkRoot = bufferOutput(p.getInputStream()).get(1, TimeUnit.MINUTES).trim();
+      gcloudSdkPath = getGcloudSdkPath();
     } catch (Exception e) {
-      throw new RuntimeException("Failed to get gcloud sdk install path", e);
+      throw new RuntimeException("Failed to get the gcloud SDK path. Is it installed?", e);
     }
 
-    try {
-      if (p.waitFor() != 0) {
-        throw new RuntimeException("Failed to get sdk root, is gcloud sdk installed?");
-      }
-    } catch (InterruptedException e) {
-      throw new RuntimeException("Interrupted invoking gcloud", e);
-    }
+    Path emulatorPath =
+        gcloudSdkPath.resolve(Paths.get("platform", "bigtable-emulator", "cbtemulator"));
 
-    String emulatorPath =
-        Paths.get(sdkRoot, "platform", "bigtable-emulator", "cbtemulator").toString();
-
-    if (!new File(emulatorPath).exists()) {
+    if (!Files.exists(emulatorPath)) {
       throw new RuntimeException(
           "cbtemulator is not installed, please install with `gcloud components install bigtable`");
     }
@@ -94,11 +82,11 @@ class Emulator {
     return new Emulator(emulatorPath);
   }
 
-  private Emulator(String executable) {
+  private Emulator(Path executable) {
     this.executable = executable;
   }
 
-  void start() throws InterruptedException, IOException, TimeoutException {
+  void start() throws Exception {
     int availablePort = getAvailablePort();
 
     process = Runtime.getRuntime().exec(executable + " -port " + "" + availablePort);
@@ -120,11 +108,14 @@ class Emulator {
   }
 
   void stop() throws Exception {
-    dataClient.close();
-    tableAdminClient.close();
-    channel.shutdownNow();
-    channel.awaitTermination(1, TimeUnit.MINUTES);
-    process.destroy();
+    try {
+      dataClient.close();
+      tableAdminClient.close();
+      channel.shutdownNow();
+      channel.awaitTermination(1, TimeUnit.MINUTES);
+    } finally {
+      process.destroy();
+    }
   }
 
   BigtableDataClient getDataClient() {
@@ -136,6 +127,18 @@ class Emulator {
   }
 
   // <editor-fold desc="Helpers">
+  private static Path getGcloudSdkPath() throws Exception {
+    Process p = Runtime.getRuntime().exec("gcloud info --format=value(installation.sdk_root)");
+    pipeStreamToLog(p.getErrorStream(), Level.WARNING);
+
+    String sdkRoot = bufferOutput(p.getInputStream()).get(1, TimeUnit.MINUTES).trim();
+
+    if (p.waitFor() != 0) {
+      throw new RuntimeException("Failed to get sdk root, is gcloud sdk installed?");
+    }
+    return Paths.get(sdkRoot);
+  }
+
   private static int getAvailablePort() {
     try (ServerSocket serverSocket = new ServerSocket(0)) {
       return serverSocket.getLocalPort();

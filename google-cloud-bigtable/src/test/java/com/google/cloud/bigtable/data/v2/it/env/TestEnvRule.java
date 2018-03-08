@@ -19,6 +19,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.rules.ExternalResource;
 
+/**
+ * Simple JUnit rule to start and stop the target test environment.
+ *
+ * <p>The environment can be specified via the system property {@code bigtable.env}. The choices
+ * are:
+ *
+ * <ul>
+ *   <li>{@code emulator}: uses the cbtemulator component that can be installed by gcloud
+ *   <li>{@code prod}: uses a pre-existing production table. The target table is defined using
+ *       system properties listed in {@link ProdEnv} and application default credentials
+ * </ul>
+ *
+ * <p>By default, {@code emulator} will be used
+ */
 public class TestEnvRule extends ExternalResource {
   private static final Logger LOGGER = Logger.getLogger(TestEnvRule.class.getName());
 

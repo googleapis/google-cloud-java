@@ -33,7 +33,7 @@ public class EmulatorEnv implements TestEnv {
   private Emulator emulator;
 
   @Override
-  public void start() throws IOException, InterruptedException, TimeoutException {
+  public void start() throws Exception {
     emulator = Emulator.createGCloud();
     emulator.start();
 

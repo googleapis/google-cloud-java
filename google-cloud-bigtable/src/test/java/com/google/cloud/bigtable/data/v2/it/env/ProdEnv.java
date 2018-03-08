@@ -41,10 +41,6 @@ import java.util.concurrent.TimeoutException;
  *   <li>{@code bigtable.instance}
  *   <li>{@code bigtable.table}
  * </ul>
- *
- * Expects the instance to exist with a table created: cbt -project igorbernstein-dev -instance
- * integration-tests createtable my-table cbt -project igorbernstein-dev -instance integration-tests
- * createfamily my-table cf
  */
 public class ProdEnv implements TestEnv {
   private static final String PROJECT_PROPERTY_NAME = "bigtable.project";

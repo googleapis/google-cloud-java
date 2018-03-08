@@ -20,8 +20,13 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * Defines the interface of a target environment.
+ *
+ * <p>This allows for integration tests to run against either production or an emulator.
+ */
 public interface TestEnv {
-  void start() throws IOException, InterruptedException, TimeoutException;
+  void start() throws Exception;
 
   void stop() throws Exception;
 
