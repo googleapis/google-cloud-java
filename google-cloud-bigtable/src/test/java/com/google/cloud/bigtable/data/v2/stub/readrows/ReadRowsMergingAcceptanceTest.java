@@ -100,11 +100,11 @@ public class ReadRowsMergingAcceptanceTest {
           actualResults.add(
               new TestResult(
                   row.getKey().toStringUtf8(),
-                  cell.family(),
-                  cell.qualifier().toStringUtf8(),
-                  cell.timestamp(),
-                  cell.value().toStringUtf8(),
-                  cell.labels().isEmpty() ? "" : cell.labels().get(0)));
+                  cell.getFamily(),
+                  cell.getQualifier().toStringUtf8(),
+                  cell.getTimestamp(),
+                  cell.getValue().toStringUtf8(),
+                  cell.getLabels().isEmpty() ? "" : cell.getLabels().get(0)));
         }
       }
     } catch (Exception e) {
