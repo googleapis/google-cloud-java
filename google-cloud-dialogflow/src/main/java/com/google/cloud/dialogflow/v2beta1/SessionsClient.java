@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,15 +20,17 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.SessionsStub;
+import com.google.cloud.dialogflow.v2beta1.stub.SessionsStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages user sessions.
- *
- * <p>Custom methods.
+ * Service Description: A session represents an interaction with a user. You retrieve user input and
+ * pass it to the [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
+ * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) method
+ * to determine user intent and respond.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -127,7 +129,7 @@ public class SessionsClient implements BackgroundResource {
    */
   protected SessionsClient(SessionsSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((SessionsStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -162,9 +164,12 @@ public class SessionsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param session Required. The name of the session this query is sent to. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API caller
-   *     to choose an appropriate session ID. It can be a random number or some type of user
-   *     identifier (preferably hashed). The length of the session ID must not exceed 36 bytes.
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime. It's up to the API caller to choose an appropriate
+   *     session ID. It can be a random number or some type of user identifier (preferably hashed).
+   *     The length of the session ID must not exceed 36 bytes.
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -176,7 +181,7 @@ public class SessionsClient implements BackgroundResource {
 
     DetectIntentRequest request =
         DetectIntentRequest.newBuilder()
-            .setSessionWithSessionName(session)
+            .setSession(session == null ? null : session.toString())
             .setQueryInput(queryInput)
             .build();
     return detectIntent(request);
@@ -194,8 +199,45 @@ public class SessionsClient implements BackgroundResource {
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
+   *   DetectIntentResponse response = sessionsClient.detectIntent(session.toString(), queryInput);
+   * }
+   * </code></pre>
+   *
+   * @param session Required. The name of the session this query is sent to. Format:
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
+   *     ID&gt;/agent/runtimes/&lt;Runtime ID&gt;/sessions/&lt;Session ID&gt;`. Note: Runtimes are
+   *     under construction and will be available soon. If &lt;Runtime ID&gt; is not specified, we
+   *     assume default 'sandbox' runtime. It's up to the API caller to choose an appropriate
+   *     session ID. It can be a random number or some type of user identifier (preferably hashed).
+   *     The length of the session ID must not exceed 36 bytes.
+   * @param queryInput Required. The input specification. It can be set to:
+   *     <p>1. an audio config which instructs the speech recognizer how to process the speech
+   *     audio,
+   *     <p>2. a conversational query in the form of text, or
+   *     <p>3. an event that specifies which intent to trigger.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DetectIntentResponse detectIntent(String session, QueryInput queryInput) {
+
+    DetectIntentRequest request =
+        DetectIntentRequest.newBuilder().setSession(session).setQueryInput(queryInput).build();
+    return detectIntent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Processes a natural language query and returns structured, actionable data as a result. This
+   * method is not idempotent, because it may cause contexts and session entity types to be updated,
+   * which in turn might affect results of future queries.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+   *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSessionWithSessionName(session)
+   *     .setSession(session.toString())
    *     .setQueryInput(queryInput)
    *     .build();
    *   DetectIntentResponse response = sessionsClient.detectIntent(request);
@@ -222,7 +264,7 @@ public class SessionsClient implements BackgroundResource {
    *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSessionWithSessionName(session)
+   *     .setSession(session.toString())
    *     .setQueryInput(queryInput)
    *     .build();
    *   ApiFuture&lt;DetectIntentResponse&gt; future = sessionsClient.detectIntentCallable().futureCall(request);

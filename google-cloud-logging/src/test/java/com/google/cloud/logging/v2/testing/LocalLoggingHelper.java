@@ -14,42 +14,26 @@
 
 package com.google.cloud.logging.v2.testing;
 
-
 import io.grpc.ManagedChannel;
 import io.grpc.Server;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
-import io.grpc.netty.NettyServerBuilder;
-import io.netty.channel.local.LocalAddress;
-import io.netty.channel.local.LocalChannel;
-import io.netty.channel.local.LocalServerChannel;
-
+import io.grpc.inprocess.InProcessChannelBuilder;
+import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
-import java.net.SocketAddress;
 
 /**
  * LocalLoggingHelper runs an in-memory Logging server for use in tests.
  */
 public class LocalLoggingHelper {
-  private static final int FLOW_CONTROL_WINDOW = 65 * 1024;
-
-  private final SocketAddress address;
+  private final String address;
   private final Server server;
   private final LocalLoggingImpl loggingImpl;
 
-  /**
-   * Constructs a new LocalLoggingHelper. The method start() must
-   * be called before it is used.
-   */
-  public LocalLoggingHelper(String addressString) {
-    address = new LocalAddress(addressString);
-    loggingImpl = new LocalLoggingImpl();
-    NettyServerBuilder builder =
-        NettyServerBuilder.forAddress(address)
-            .flowControlWindow(FLOW_CONTROL_WINDOW)
-            .channelType(LocalServerChannel.class);
-    builder.addService(loggingImpl.bindService());
-    server = builder.build();
+  /** Constructs a new LocalLoggingHelper. The method start() must be called before it is used. */
+  public LocalLoggingHelper(String address) {
+    this.address = address;
+    this.loggingImpl = new LocalLoggingImpl();
+    this.server =
+        InProcessServerBuilder.forName(address).addService(loggingImpl.bindService()).build();
   }
   /**
    * Starts the in-memory service.
@@ -77,10 +61,7 @@ public class LocalLoggingHelper {
    * Creates a channel for making requests to the in-memory service.
    */
   public ManagedChannel createChannel() {
-    return NettyChannelBuilder.forAddress(address)
-        .negotiationType(NegotiationType.PLAINTEXT)
-        .channelType(LocalChannel.class)
-        .build();
+    return InProcessChannelBuilder.forName(address).usePlaintext(true).build();
   }
   /**
    * Shuts down the in-memory service.

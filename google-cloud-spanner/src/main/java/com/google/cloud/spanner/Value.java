@@ -25,7 +25,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,15 +15,20 @@
  */
 package com.google.cloud.logging.v2;
 
-import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogEntriesPagedResponse;
-import static com.google.cloud.logging.v2.PagedResponseWrappers.ListLogsPagedResponse;
-import static com.google.cloud.logging.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
-
 import com.google.api.MonitoredResource;
+import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.LoggingServiceV2Stub;
+import com.google.cloud.logging.v2.stub.LoggingServiceV2StubSettings;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
@@ -32,8 +37,8 @@ import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
-import com.google.logging.v2.LogNameOneof;
-import com.google.logging.v2.ParentNameOneof;
+import com.google.logging.v2.LogName;
+import com.google.logging.v2.ParentName;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -53,7 +58,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
+ *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
  *   loggingClient.deleteLog(logName);
  * }
  * </code>
@@ -143,7 +148,7 @@ public class LoggingClient implements BackgroundResource {
    */
   protected LoggingClient(LoggingSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((LoggingServiceV2StubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -170,7 +175,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
    *   loggingClient.deleteLog(logName);
    * }
    * </code></pre>
@@ -183,10 +188,12 @@ public class LoggingClient implements BackgroundResource {
    *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLog(LogNameOneof logName) {
+  public final void deleteLog(LogName logName) {
 
     DeleteLogRequest request =
-        DeleteLogRequest.newBuilder().setLogNameWithLogNameOneof(logName).build();
+        DeleteLogRequest.newBuilder()
+            .setLogName(logName == null ? null : logName.toString())
+            .build();
     deleteLog(request);
   }
 
@@ -199,9 +206,37 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   loggingClient.deleteLog(logName.toString());
+   * }
+   * </code></pre>
+   *
+   * @param logName Required. The resource name of the log to delete:
+   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
+   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
+   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
+   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteLog(String logName) {
+
+    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName).build();
+    deleteLog(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all the log entries in a log. The log reappears if it receives new entries. Log entries
+   * written shortly before the delete operation might not be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
-   *     .setLogNameWithLogNameOneof(logName)
+   *     .setLogName(logName.toString())
    *     .build();
    *   loggingClient.deleteLog(request);
    * }
@@ -223,9 +258,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
-   *     .setLogNameWithLogNameOneof(logName)
+   *     .setLogName(logName.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = loggingClient.deleteLogCallable().futureCall(request);
    *   // Do something
@@ -249,7 +284,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogNameOneof logName = LogNameOneof.from(LogName.of("[PROJECT]", "[LOG]"));
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
@@ -292,14 +327,84 @@ public class LoggingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
-      LogNameOneof logName,
+      LogName logName,
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
 
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
-            .setLogNameWithLogNameOneof(logName)
+            .setLogName(logName == null ? null : logName.toString())
+            .setResource(resource)
+            .putAllLabels(labels)
+            .addAllEntries(entries)
+            .build();
+    return writeLogEntries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * ## Log entry resources
+   *
+   * <p>Writes log entries to Stackdriver Logging. This API method is the only way to send log
+   * entries to Stackdriver Logging. This method is used, directly or indirectly, by the Stackdriver
+   * Logging agent (fluentd) and all logging libraries configured to use Stackdriver Logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   MonitoredResource resource = MonitoredResource.newBuilder().build();
+   *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
+   *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
+   *   WriteLogEntriesResponse response = loggingClient.writeLogEntries(logName.toString(), resource, labels, entries);
+   * }
+   * </code></pre>
+   *
+   * @param logName Optional. A default log resource name that is assigned to all log entries in
+   *     `entries` that do not specify a value for `log_name`:
+   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]" "folders/[FOLDER_ID]/logs/[LOG_ID]"
+   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"` or
+   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
+   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
+   * @param resource Optional. A default monitored resource object that is assigned to all log
+   *     entries in `entries` that do not specify a value for `resource`. Example:
+   *     <p>{ "type": "gce_instance", "labels": { "zone": "us-central1-a", "instance_id":
+   *     "00000000000000000000" }}
+   *     <p>See [LogEntry][google.logging.v2.LogEntry].
+   * @param labels Optional. Default labels that are added to the `labels` field of all log entries
+   *     in `entries`. If a log entry already has a label with the same key as a label in this
+   *     parameter, then the log entry's label is not changed. See
+   *     [LogEntry][google.logging.v2.LogEntry].
+   * @param entries Required. The log entries to send to Stackdriver Logging. The order of log
+   *     entries in this list does not matter. Values supplied in this method's `log_name`,
+   *     `resource`, and `labels` fields are copied into those log entries in this list that do not
+   *     include values for their corresponding fields. For more information, see the
+   *     [LogEntry][google.logging.v2.LogEntry] type.
+   *     <p>If the `timestamp` or `insert_id` fields are missing in log entries, then this method
+   *     supplies the current time or a unique identifier, respectively. The supplied values are
+   *     chosen so that, among the log entries that did not supply their own values, the entries
+   *     earlier in the list will sort before the entries later in the list. See the `entries.list`
+   *     method.
+   *     <p>Log entries with timestamps that are more than the [logs retention
+   *     period](/logging/quota-policy) in the past or more than 24 hours in the future might be
+   *     discarded. Discarding does not return an error.
+   *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
+   *     for calls to `entries.write`, you should try to include several log entries in this list,
+   *     rather than calling this method for each individual log entry.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteLogEntriesResponse writeLogEntries(
+      String logName,
+      MonitoredResource resource,
+      Map<String, String> labels,
+      List<LogEntry> entries) {
+
+    WriteLogEntriesRequest request =
+        WriteLogEntriesRequest.newBuilder()
+            .setLogName(logName)
             .setResource(resource)
             .putAllLabels(labels)
             .addAllEntries(entries)
@@ -578,7 +683,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -590,9 +695,9 @@ public class LoggingClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(ParentNameOneof parent) {
+  public final ListLogsPagedResponse listLogs(ParentName parent) {
     ListLogsRequest request =
-        ListLogsRequest.newBuilder().setParentWithParentNameOneof(parent).build();
+        ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
   }
 
@@ -605,9 +710,35 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   for (String element : loggingClient.listLogs(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name that owns the logs:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogsPagedResponse listLogs(String parent) {
+    ListLogsRequest request = ListLogsRequest.newBuilder().setParent(parent).build();
+    return listLogs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have
+   * entries are listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (String element : loggingClient.listLogs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -631,9 +762,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListLogsPagedResponse&gt; future = loggingClient.listLogsPagedCallable().futureCall(request);
    *   // Do something
@@ -656,9 +787,9 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.of("[PROJECT]"));
+   *   ParentName parent = ProjectName.of("[PROJECT]");
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
-   *     .setParentWithParentNameOneof(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListLogsResponse response = loggingClient.listLogsCallable().call(request);
@@ -707,5 +838,243 @@ public class LoggingClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListLogEntriesPagedResponse
+      extends AbstractPagedListResponse<
+          ListLogEntriesRequest, ListLogEntriesResponse, LogEntry, ListLogEntriesPage,
+          ListLogEntriesFixedSizeCollection> {
+
+    public static ApiFuture<ListLogEntriesPagedResponse> createAsync(
+        PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
+        ApiFuture<ListLogEntriesResponse> futureResponse) {
+      ApiFuture<ListLogEntriesPage> futurePage =
+          ListLogEntriesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListLogEntriesPage, ListLogEntriesPagedResponse>() {
+            @Override
+            public ListLogEntriesPagedResponse apply(ListLogEntriesPage input) {
+              return new ListLogEntriesPagedResponse(input);
+            }
+          });
+    }
+
+    private ListLogEntriesPagedResponse(ListLogEntriesPage page) {
+      super(page, ListLogEntriesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLogEntriesPage
+      extends AbstractPage<
+          ListLogEntriesRequest, ListLogEntriesResponse, LogEntry, ListLogEntriesPage> {
+
+    private ListLogEntriesPage(
+        PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
+        ListLogEntriesResponse response) {
+      super(context, response);
+    }
+
+    private static ListLogEntriesPage createEmptyPage() {
+      return new ListLogEntriesPage(null, null);
+    }
+
+    @Override
+    protected ListLogEntriesPage createPage(
+        PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
+        ListLogEntriesResponse response) {
+      return new ListLogEntriesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLogEntriesPage> createPageAsync(
+        PageContext<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> context,
+        ApiFuture<ListLogEntriesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLogEntriesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLogEntriesRequest, ListLogEntriesResponse, LogEntry, ListLogEntriesPage,
+          ListLogEntriesFixedSizeCollection> {
+
+    private ListLogEntriesFixedSizeCollection(List<ListLogEntriesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLogEntriesFixedSizeCollection createEmptyCollection() {
+      return new ListLogEntriesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLogEntriesFixedSizeCollection createCollection(
+        List<ListLogEntriesPage> pages, int collectionSize) {
+      return new ListLogEntriesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMonitoredResourceDescriptorsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor, ListMonitoredResourceDescriptorsPage,
+          ListMonitoredResourceDescriptorsFixedSizeCollection> {
+
+    public static ApiFuture<ListMonitoredResourceDescriptorsPagedResponse> createAsync(
+        PageContext<
+                ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+                MonitoredResourceDescriptor>
+            context,
+        ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse) {
+      ApiFuture<ListMonitoredResourceDescriptorsPage> futurePage =
+          ListMonitoredResourceDescriptorsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              ListMonitoredResourceDescriptorsPage,
+              ListMonitoredResourceDescriptorsPagedResponse>() {
+            @Override
+            public ListMonitoredResourceDescriptorsPagedResponse apply(
+                ListMonitoredResourceDescriptorsPage input) {
+              return new ListMonitoredResourceDescriptorsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListMonitoredResourceDescriptorsPagedResponse(
+        ListMonitoredResourceDescriptorsPage page) {
+      super(page, ListMonitoredResourceDescriptorsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMonitoredResourceDescriptorsPage
+      extends AbstractPage<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor, ListMonitoredResourceDescriptorsPage> {
+
+    private ListMonitoredResourceDescriptorsPage(
+        PageContext<
+                ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+                MonitoredResourceDescriptor>
+            context,
+        ListMonitoredResourceDescriptorsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMonitoredResourceDescriptorsPage createEmptyPage() {
+      return new ListMonitoredResourceDescriptorsPage(null, null);
+    }
+
+    @Override
+    protected ListMonitoredResourceDescriptorsPage createPage(
+        PageContext<
+                ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+                MonitoredResourceDescriptor>
+            context,
+        ListMonitoredResourceDescriptorsResponse response) {
+      return new ListMonitoredResourceDescriptorsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMonitoredResourceDescriptorsPage> createPageAsync(
+        PageContext<
+                ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+                MonitoredResourceDescriptor>
+            context,
+        ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMonitoredResourceDescriptorsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor, ListMonitoredResourceDescriptorsPage,
+          ListMonitoredResourceDescriptorsFixedSizeCollection> {
+
+    private ListMonitoredResourceDescriptorsFixedSizeCollection(
+        List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMonitoredResourceDescriptorsFixedSizeCollection createEmptyCollection() {
+      return new ListMonitoredResourceDescriptorsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMonitoredResourceDescriptorsFixedSizeCollection createCollection(
+        List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
+      return new ListMonitoredResourceDescriptorsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLogsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLogsRequest, ListLogsResponse, String, ListLogsPage, ListLogsFixedSizeCollection> {
+
+    public static ApiFuture<ListLogsPagedResponse> createAsync(
+        PageContext<ListLogsRequest, ListLogsResponse, String> context,
+        ApiFuture<ListLogsResponse> futureResponse) {
+      ApiFuture<ListLogsPage> futurePage =
+          ListLogsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListLogsPage, ListLogsPagedResponse>() {
+            @Override
+            public ListLogsPagedResponse apply(ListLogsPage input) {
+              return new ListLogsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListLogsPagedResponse(ListLogsPage page) {
+      super(page, ListLogsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLogsPage
+      extends AbstractPage<ListLogsRequest, ListLogsResponse, String, ListLogsPage> {
+
+    private ListLogsPage(
+        PageContext<ListLogsRequest, ListLogsResponse, String> context, ListLogsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLogsPage createEmptyPage() {
+      return new ListLogsPage(null, null);
+    }
+
+    @Override
+    protected ListLogsPage createPage(
+        PageContext<ListLogsRequest, ListLogsResponse, String> context, ListLogsResponse response) {
+      return new ListLogsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLogsPage> createPageAsync(
+        PageContext<ListLogsRequest, ListLogsResponse, String> context,
+        ApiFuture<ListLogsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLogsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLogsRequest, ListLogsResponse, String, ListLogsPage, ListLogsFixedSizeCollection> {
+
+    private ListLogsFixedSizeCollection(List<ListLogsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLogsFixedSizeCollection createEmptyCollection() {
+      return new ListLogsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLogsFixedSizeCollection createCollection(
+        List<ListLogsPage> pages, int collectionSize) {
+      return new ListLogsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

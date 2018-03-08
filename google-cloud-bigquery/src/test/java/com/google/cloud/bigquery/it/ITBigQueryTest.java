@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.it;
 
 import static com.google.cloud.bigquery.JobStatus.State.DONE;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -84,6 +85,8 @@ import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
@@ -310,17 +313,34 @@ public class ITBigQueryTest {
 
   @Test
   public void testUpdateDataset() {
-    Dataset dataset = bigquery.create(DatasetInfo.newBuilder(OTHER_DATASET)
-        .setDescription("Some Description")
-        .build());
-    assertNotNull(dataset);
-    assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
-    assertEquals(OTHER_DATASET, dataset.getDatasetId().getDataset());
-    assertEquals("Some Description", dataset.getDescription());
+    Dataset dataset =
+        bigquery.create(
+            DatasetInfo.newBuilder(OTHER_DATASET)
+                .setDescription("Some Description")
+                .setLabels(Collections.singletonMap("a", "b"))
+                .build());
+    assertThat(dataset).isNotNull();
+    assertThat(dataset.getDatasetId().getProject()).isEqualTo(bigquery.getOptions().getProjectId());
+    assertThat(dataset.getDatasetId().getDataset()).isEqualTo(OTHER_DATASET);
+    assertThat(dataset.getDescription()).isEqualTo("Some Description");
+    assertThat(dataset.getLabels()).containsExactly("a", "b");
+
+    Map<String, String> updateLabels = new HashMap<>();
+    updateLabels.put("x", "y");
+    updateLabels.put("a", null);
     Dataset updatedDataset =
-        bigquery.update(dataset.toBuilder().setDescription("Updated Description").build());
-    assertEquals("Updated Description", updatedDataset.getDescription());
-    assertTrue(dataset.delete());
+        bigquery.update(
+            dataset
+                .toBuilder()
+                .setDescription("Updated Description")
+                .setLabels(updateLabels)
+                .build());
+    assertThat(updatedDataset.getDescription()).isEqualTo("Updated Description");
+    assertThat(updatedDataset.getLabels()).containsExactly("x", "y");
+
+    updatedDataset = bigquery.update(updatedDataset.toBuilder().setLabels(null).build());
+    assertThat(updatedDataset.getLabels()).isEmpty();
+    assertThat(dataset.delete()).isTrue();
   }
 
   @Test
@@ -460,8 +480,12 @@ public class ITBigQueryTest {
     String tableName = "test_create_view_table";
     TableId tableId = TableId.of(DATASET, tableName);
     ViewDefinition viewDefinition =
-        ViewDefinition.of("SELECT TimestampField, StringField, BooleanField FROM " + DATASET + "."
-            + TABLE_ID.getTable());
+        ViewDefinition.newBuilder(
+                String.format(
+                    "SELECT TimestampField, StringField, BooleanField FROM %s.%s",
+                    DATASET, TABLE_ID.getTable()))
+            .setUseLegacySql(true)
+            .build();
     TableInfo tableInfo = TableInfo.of(tableId, viewDefinition);
     Table createdTable = bigquery.create(tableInfo);
     assertNotNull(createdTable);
@@ -530,16 +554,31 @@ public class ITBigQueryTest {
   public void testUpdateTable() {
     String tableName = "test_update_table";
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
-    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
+    TableInfo tableInfo =
+        TableInfo.newBuilder(TableId.of(DATASET, tableName), tableDefinition)
+            .setDescription("Some Description")
+            .setLabels(Collections.singletonMap("a", "b"))
+            .build();
     Table createdTable = bigquery.create(tableInfo);
-    assertNotNull(createdTable);
+    assertThat(createdTable.getDescription()).isEqualTo("Some Description");
+    assertThat(createdTable.getLabels()).containsExactly("a", "b");
+
+    Map<String, String> updateLabels = new HashMap<>();
+    updateLabels.put("x", "y");
+    updateLabels.put("a", null);
     Table updatedTable =
-        bigquery.update(tableInfo.toBuilder().setDescription("newDescription").build());
-    assertEquals(DATASET, updatedTable.getTableId().getDataset());
-    assertEquals(tableName, updatedTable.getTableId().getTable());
-    assertEquals(TABLE_SCHEMA, updatedTable.getDefinition().getSchema());
-    assertEquals("newDescription", updatedTable.getDescription());
-    assertTrue(updatedTable.delete());
+        bigquery.update(
+            createdTable
+                .toBuilder()
+                .setDescription("Updated Description")
+                .setLabels(updateLabels)
+                .build());
+    assertThat(updatedTable.getDescription()).isEqualTo("Updated Description");
+    assertThat(updatedTable.getLabels()).containsExactly("x", "y");
+
+    updatedTable = bigquery.update(updatedTable.toBuilder().setLabels(null).build());
+    assertThat(updatedTable.getLabels()).isEmpty();
+    assertThat(createdTable.delete()).isTrue();
   }
 
   @Test

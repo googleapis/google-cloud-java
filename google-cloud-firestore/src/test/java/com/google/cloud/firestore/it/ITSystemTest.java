@@ -41,6 +41,7 @@ import com.google.cloud.firestore.LocalFirestoreHelper.AllSupportedTypes;
 import com.google.cloud.firestore.LocalFirestoreHelper.SingleField;
 import com.google.cloud.firestore.Precondition;
 import com.google.cloud.firestore.Query;
+import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.SetOptions;
 import com.google.cloud.firestore.Transaction;
@@ -48,6 +49,7 @@ import com.google.cloud.firestore.Transaction.Function;
 import com.google.cloud.firestore.WriteBatch;
 import com.google.cloud.firestore.WriteResult;
 import com.google.common.collect.ImmutableList;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -60,6 +62,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -88,6 +91,11 @@ public class ITSystemTest {
         firestore.collection(
             String.format("java-%s-%s", testName.getMethodName(), LocalFirestoreHelper.autoId()));
     randomDoc = randomColl.document();
+  }
+
+  @After
+  public void after() throws Exception {
+    firestore.close();
   }
 
   private DocumentReference addDocument(String key, Object value, Object... fields)
@@ -230,7 +238,7 @@ public class ITSystemTest {
     QuerySnapshot querySnapshot = randomColl.get().get();
     assertEquals(2, querySnapshot.size());
 
-    Iterator<DocumentSnapshot> documents = querySnapshot.iterator();
+    Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals("bar", documents.next().get("foo"));
     assertEquals("bar", documents.next().get("foo"));
   }
@@ -278,7 +286,7 @@ public class ITSystemTest {
     addDocument("foo", 2);
 
     QuerySnapshot querySnapshot = randomColl.orderBy("foo").get().get();
-    Iterator<DocumentSnapshot> documents = querySnapshot.iterator();
+    Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals(1L, documents.next().get("foo"));
     assertEquals(2L, documents.next().get("foo"));
 
@@ -372,7 +380,7 @@ public class ITSystemTest {
 
     QuerySnapshot querySnapshot = randomColl.orderBy("foo").startAt(1).get().get();
     assertEquals(2, querySnapshot.size());
-    Iterator<DocumentSnapshot> documents = querySnapshot.iterator();
+    Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals(1L, documents.next().get("foo"));
     assertEquals(2L, documents.next().get("foo"));
   }
@@ -394,7 +402,7 @@ public class ITSystemTest {
 
     QuerySnapshot querySnapshot = randomColl.orderBy("foo").endAt(2).get().get();
     assertEquals(2, querySnapshot.size());
-    Iterator<DocumentSnapshot> documents = querySnapshot.iterator();
+    Iterator<QueryDocumentSnapshot> documents = querySnapshot.iterator();
     assertEquals(1L, documents.next().get("foo"));
     assertEquals(2L, documents.next().get("foo"));
   }
@@ -459,11 +467,12 @@ public class ITSystemTest {
               public String updateCallback(Transaction transaction)
                   throws ExecutionException, InterruptedException {
                 attempts.incrementAndGet();
-                DocumentSnapshot documentSnapshot = transaction.get(documentReference).get();
+                List<DocumentSnapshot> documentSnapshots =
+                    transaction.getAll(documentReference).get();
                 latch.countDown();
                 latch.await();
                 transaction.update(
-                    documentReference, "counter", documentSnapshot.getLong("counter") + 1);
+                    documentReference, "counter", documentSnapshots.get(0).getLong("counter") + 1);
                 return "bar";
               }
             });
@@ -543,7 +552,7 @@ public class ITSystemTest {
     randomDoc.create(Collections.<String, Object>emptyMap()).get();
     assertEquals(expected, getData());
 
-    randomDoc.delete();
+    randomDoc.delete().get();
     assertFalse(randomDoc.get().get().exists());
 
     randomDoc.create(map("a", map("b", "c"))).get();
@@ -822,5 +831,57 @@ public class ITSystemTest {
         registration.remove();
       }
     }
+  }
+
+  private int paginateResults(Query query, List<DocumentSnapshot> results)
+      throws ExecutionException, InterruptedException {
+    if (!results.isEmpty()) {
+      query = query.startAfter(results.get(results.size() - 1));
+    }
+
+    QuerySnapshot querySnapshot = query.get().get();
+
+    if (querySnapshot.isEmpty()) {
+      return 0;
+    } else {
+      results.addAll(querySnapshot.getDocuments());
+      return 1 + paginateResults(query, results);
+    }
+  }
+
+  @Test
+  public void queryPaginationWithOrderByClause() throws ExecutionException, InterruptedException {
+    WriteBatch batch = firestore.batch();
+
+    for (int i = 0; i < 10; ++i) {
+      batch.set(randomColl.document(), map("val", i));
+    }
+
+    batch.commit().get();
+
+    Query query = randomColl.orderBy("val").limit(3);
+
+    List<DocumentSnapshot> results = new ArrayList<>();
+    int pageCount = paginateResults(query, results);
+    assertEquals(4, pageCount);
+    assertEquals(10, results.size());
+  }
+
+  @Test
+  public void queryPaginationWithWhereClause() throws ExecutionException, InterruptedException {
+    WriteBatch batch = firestore.batch();
+
+    for (int i = 0; i < 10; ++i) {
+      batch.set(randomColl.document(), map("val", i));
+    }
+
+    batch.commit().get();
+
+    Query query = randomColl.whereGreaterThanOrEqualTo("val", 1).limit(3);
+
+    List<DocumentSnapshot> results = new ArrayList<>();
+    int pageCount = paginateResults(query, results);
+    assertEquals(3, pageCount);
+    assertEquals(9, results.size());
   }
 }

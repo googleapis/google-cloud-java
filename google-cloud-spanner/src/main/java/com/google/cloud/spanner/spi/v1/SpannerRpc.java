@@ -18,6 +18,7 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.collect.ImmutableList;
 import com.google.longrunning.Operation;
 import com.google.protobuf.FieldMask;
@@ -29,6 +30,9 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
+import com.google.spanner.v1.PartitionQueryRequest;
+import com.google.spanner.v1.PartitionReadRequest;
+import com.google.spanner.v1.PartitionResponse;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
@@ -206,4 +210,12 @@ public interface SpannerRpc extends ServiceRpc {
       throws SpannerException;
 
   void rollback(RollbackRequest request, @Nullable Map<Option, ?> options) throws SpannerException;
+
+  PartitionResponse partitionQuery(
+      PartitionQueryRequest request, @Nullable Map<Option, ?> options)
+      throws SpannerException;
+
+  PartitionResponse partitionRead(
+      PartitionReadRequest request, @Nullable Map<Option, ?> options)
+      throws SpannerException;
 }

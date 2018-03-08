@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,12 +15,15 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
-import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
-import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
+import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListEventsPagedResponse;
+import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListGroupStatsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
@@ -53,6 +56,7 @@ public class ErrorStatsServiceClientTest {
   private static MockReportErrorsService mockReportErrorsService;
   private static MockServiceHelper serviceHelper;
   private ErrorStatsServiceClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -75,9 +79,10 @@ public class ErrorStatsServiceClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     ErrorStatsServiceSettings settings =
         ErrorStatsServiceSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = ErrorStatsServiceClient.create(settings);
@@ -114,8 +119,12 @@ public class ErrorStatsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListGroupStatsRequest actualRequest = (ListGroupStatsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(projectName, actualRequest.getProjectNameAsProjectName());
+    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
     Assert.assertEquals(timeRange, actualRequest.getTimeRange());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -161,8 +170,12 @@ public class ErrorStatsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListEventsRequest actualRequest = (ListEventsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(projectName, actualRequest.getProjectNameAsProjectName());
+    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
     Assert.assertEquals(groupId, actualRequest.getGroupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -197,7 +210,11 @@ public class ErrorStatsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteEventsRequest actualRequest = (DeleteEventsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(projectName, actualRequest.getProjectNameAsProjectName());
+    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

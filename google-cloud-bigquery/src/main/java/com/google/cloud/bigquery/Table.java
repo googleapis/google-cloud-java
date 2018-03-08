@@ -18,14 +18,15 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
+import com.google.cloud.bigquery.TableInfo.Builder;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -125,6 +126,18 @@ public class Table extends TableInfo {
     @Override
     public Builder setDefinition(TableDefinition definition) {
       infoBuilder.setDefinition(definition);
+      return this;
+    }
+
+    @Override
+    public TableInfo.Builder setEncryptionConfiguration(EncryptionConfiguration configuration) {
+      infoBuilder.setEncryptionConfiguration(configuration);
+      return this;
+    }
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
+      infoBuilder.setLabels(labels);
       return this;
     }
 

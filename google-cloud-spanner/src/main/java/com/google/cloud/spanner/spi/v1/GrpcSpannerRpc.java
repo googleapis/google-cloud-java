@@ -62,6 +62,9 @@ import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
+import com.google.spanner.v1.PartitionQueryRequest;
+import com.google.spanner.v1.PartitionReadRequest;
+import com.google.spanner.v1.PartitionResponse;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
@@ -411,6 +414,30 @@ public class GrpcSpannerRpc implements SpannerRpc {
     get(
         doUnaryCall(
             SpannerGrpc.METHOD_ROLLBACK,
+            request,
+            request.getSession(),
+            Option.CHANNEL_HINT.getLong(options)));
+  }
+
+  @Override
+  public PartitionResponse partitionQuery(
+      PartitionQueryRequest request, @Nullable Map<Option, ?> options)
+          throws SpannerException {
+    return get(
+        doUnaryCall(
+            SpannerGrpc.METHOD_PARTITION_QUERY,
+            request,
+            request.getSession(),
+            Option.CHANNEL_HINT.getLong(options)));
+  }
+
+  @Override
+  public PartitionResponse partitionRead(
+      PartitionReadRequest request, @Nullable Map<Option, ?> options)
+          throws SpannerException {
+    return get(
+        doUnaryCall(
+            SpannerGrpc.METHOD_PARTITION_READ,
             request,
             request.getSession(),
             Option.CHANNEL_HINT.getLong(options)));

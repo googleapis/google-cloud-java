@@ -3,7 +3,7 @@ Google Cloud Java Client for BigQuery
 
 Java idiomatic client for [Google Cloud BigQuery][cloud-bigquery].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
@@ -17,22 +17,24 @@ Java idiomatic client for [Google Cloud BigQuery][cloud-bigquery].
 
 Quickstart
 ----------
+[//]: # ({x-version-update-start:google-cloud-bigquery:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>0.32.0-beta</version>
+  <version>0.38.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery:0.32.0-beta'
+compile 'com.google.cloud:google-cloud-bigquery:0.38.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.32.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.38.0-beta"
 ```
+[//]: # ({x-version-update-end})
 
 Example Application
 -------------------

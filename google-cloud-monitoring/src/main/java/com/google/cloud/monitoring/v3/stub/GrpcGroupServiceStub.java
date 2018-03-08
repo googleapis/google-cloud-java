@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,8 +15,8 @@
  */
 package com.google.cloud.monitoring.v3.stub;
 
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupsPagedResponse;
+import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupMembersPagedResponse;
+import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.monitoring.v3.GroupServiceSettings;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
@@ -112,13 +111,13 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
   private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable;
 
-  public static final GrpcGroupServiceStub create(GroupServiceSettings settings)
+  public static final GrpcGroupServiceStub create(GroupServiceStubSettings settings)
       throws IOException {
     return new GrpcGroupServiceStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcGroupServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcGroupServiceStub(GroupServiceSettings.newBuilder().build(), clientContext);
+    return new GrpcGroupServiceStub(GroupServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -126,7 +125,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcGroupServiceStub(GroupServiceSettings settings, ClientContext clientContext)
+  protected GrpcGroupServiceStub(GroupServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =

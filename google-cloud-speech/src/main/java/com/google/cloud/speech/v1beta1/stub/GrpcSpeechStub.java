@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,7 +27,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeMetadata;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
-import com.google.cloud.speech.v1beta1.SpeechSettings;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
@@ -91,19 +90,19 @@ public class GrpcSpeechStub extends SpeechStub {
   private final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
 
-  public static final GrpcSpeechStub create(SpeechSettings settings) throws IOException {
+  public static final GrpcSpeechStub create(SpeechStubSettings settings) throws IOException {
     return new GrpcSpeechStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcSpeechStub create(ClientContext clientContext) throws IOException {
-    return new GrpcSpeechStub(SpeechSettings.newBuilder().build(), clientContext);
+    return new GrpcSpeechStub(SpeechStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
    * Constructs an instance of GrpcSpeechStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected GrpcSpeechStub(SpeechSettings settings, ClientContext clientContext)
+  protected GrpcSpeechStub(SpeechStubSettings settings, ClientContext clientContext)
       throws IOException {
     this.operationsStub = GrpcOperationsStub.create(clientContext);
 

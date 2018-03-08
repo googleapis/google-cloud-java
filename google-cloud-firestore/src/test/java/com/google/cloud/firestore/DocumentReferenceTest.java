@@ -108,6 +108,13 @@ public class DocumentReferenceTest {
   }
 
   @Test
+  public void equals() {
+    DocumentReference doc1 = documentReference.collection("subcoll").document("doc");
+    DocumentReference doc2 = documentReference.collection("subcoll").document("doc");
+    assertEquals(doc1, doc2);
+  }
+
+  @Test
   public void getCollection() {
     CollectionReference collectionReference = documentReference.collection("subcoll");
     assertEquals("subcoll", collectionReference.getId());
@@ -242,12 +249,7 @@ public class DocumentReferenceTest {
     assertEquals(documentReference, snapshot.getReference());
     assertFalse(snapshot.exists());
     assertEquals(snapshot.getReadTime(), Instant.ofEpochSecond(5, 6));
-
-    try {
-      snapshot.getData();
-      fail();
-    } catch (IllegalStateException ignored) {
-    }
+    assertNull(snapshot.getData());
   }
 
   @Test
@@ -414,6 +416,20 @@ public class DocumentReferenceTest {
     for (int i = 0; i < 5; ++i) {
       assertCommitEquals(expectedCommit, commitCapture.getAllValues().get(i));
     }
+  }
+
+  @Test
+  public void setDocumentWithEmptyMerge() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference.set(map(), SetOptions.merge()).get();
+
+    assertCommitEquals(
+        commit(set(Collections.<String, Value>emptyMap(), Collections.<String>emptyList())),
+        commitCapture.getValue());
   }
 
   @Test
@@ -594,6 +610,26 @@ public class DocumentReferenceTest {
     nestedUpdate.put("a", bProto.build());
 
     CommitRequest expectedCommit = commit(update(nestedUpdate, Arrays.asList("a.b.c")));
+    assertCommitEquals(expectedCommit, commitCapture.getValue());
+  }
+
+  @Test
+  public void updateNestedMap() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference.update("a.b", "foo", "a.c", FieldValue.delete()).get();
+
+    Map<String, Value> nestedUpdate = new HashMap<>();
+    Value.Builder valueProto = Value.newBuilder();
+    valueProto
+        .getMapValueBuilder()
+        .putFields("b", Value.newBuilder().setStringValue("foo").build());
+    nestedUpdate.put("a", valueProto.build());
+
+    CommitRequest expectedCommit = commit(update(nestedUpdate, Arrays.asList("a.b", "a.c")));
     assertCommitEquals(expectedCommit, commitCapture.getValue());
   }
 

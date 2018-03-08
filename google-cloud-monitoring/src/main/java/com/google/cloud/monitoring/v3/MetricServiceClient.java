@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,16 +15,20 @@
  */
 package com.google.cloud.monitoring.v3;
 
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListMetricDescriptorsPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListTimeSeriesPagedResponse;
-
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStub;
+import com.google.cloud.monitoring.v3.stub.MetricServiceStubSettings;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -151,7 +155,7 @@ public class MetricServiceClient implements BackgroundResource {
    */
   protected MetricServiceClient(MetricServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((MetricServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -192,7 +196,36 @@ public class MetricServiceClient implements BackgroundResource {
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
       ProjectName name) {
     ListMonitoredResourceDescriptorsRequest request =
-        ListMonitoredResourceDescriptorsRequest.newBuilder().setNameWithProjectName(name).build();
+        ListMonitoredResourceDescriptorsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return listMonitoredResourceDescriptors(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists monitored resource descriptors that match a filter. This method does not require a
+   * Stackdriver account.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   for (MonitoredResourceDescriptor element : metricServiceClient.listMonitoredResourceDescriptors(name.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name The project on which to execute the request. The format is
+   *     `"projects/{project_id_or_number}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
+      String name) {
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().setName(name).build();
     return listMonitoredResourceDescriptors(request);
   }
 
@@ -207,7 +240,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   for (MonitoredResourceDescriptor element : metricServiceClient.listMonitoredResourceDescriptors(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -234,7 +267,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ListMonitoredResourceDescriptorsPagedResponse&gt; future = metricServiceClient.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
@@ -261,7 +294,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response = metricServiceClient.listMonitoredResourceDescriptorsCallable().call(request);
@@ -308,7 +341,7 @@ public class MetricServiceClient implements BackgroundResource {
 
     GetMonitoredResourceDescriptorRequest request =
         GetMonitoredResourceDescriptorRequest.newBuilder()
-            .setNameWithMonitoredResourceDescriptorName(name)
+            .setName(name == null ? null : name.toString())
             .build();
     return getMonitoredResourceDescriptor(request);
   }
@@ -323,8 +356,34 @@ public class MetricServiceClient implements BackgroundResource {
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+   *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The monitored resource descriptor to get. The format is
+   *     `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`. The
+   *     `{resource_type}` is a predefined type, such as `cloudsql_database`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(String name) {
+
+    GetMonitoredResourceDescriptorRequest request =
+        GetMonitoredResourceDescriptorRequest.newBuilder().setName(name).build();
+    return getMonitoredResourceDescriptor(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single monitored resource descriptor. This method does not require a Stackdriver
+   * account.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
    *   GetMonitoredResourceDescriptorRequest request = GetMonitoredResourceDescriptorRequest.newBuilder()
-   *     .setNameWithMonitoredResourceDescriptorName(name)
+   *     .setName(name.toString())
    *     .build();
    *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(request);
    * }
@@ -349,7 +408,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
    *   GetMonitoredResourceDescriptorRequest request = GetMonitoredResourceDescriptorRequest.newBuilder()
-   *     .setNameWithMonitoredResourceDescriptorName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;MonitoredResourceDescriptor&gt; future = metricServiceClient.getMonitoredResourceDescriptorCallable().futureCall(request);
    *   // Do something
@@ -384,7 +443,35 @@ public class MetricServiceClient implements BackgroundResource {
    */
   public final ListMetricDescriptorsPagedResponse listMetricDescriptors(ProjectName name) {
     ListMetricDescriptorsRequest request =
-        ListMetricDescriptorsRequest.newBuilder().setNameWithProjectName(name).build();
+        ListMetricDescriptorsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return listMetricDescriptors(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
+   * account.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   for (MetricDescriptor element : metricServiceClient.listMetricDescriptors(name.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name The project on which to execute the request. The format is
+   *     `"projects/{project_id_or_number}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(String name) {
+    ListMetricDescriptorsRequest request =
+        ListMetricDescriptorsRequest.newBuilder().setName(name).build();
     return listMetricDescriptors(request);
   }
 
@@ -399,7 +486,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   for (MetricDescriptor element : metricServiceClient.listMetricDescriptors(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -426,7 +513,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ListMetricDescriptorsPagedResponse&gt; future = metricServiceClient.listMetricDescriptorsPagedCallable().futureCall(request);
    *   // Do something
@@ -452,7 +539,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   while (true) {
    *     ListMetricDescriptorsResponse response = metricServiceClient.listMetricDescriptorsCallable().call(request);
@@ -495,7 +582,34 @@ public class MetricServiceClient implements BackgroundResource {
   public final MetricDescriptor getMetricDescriptor(MetricDescriptorName name) {
 
     GetMetricDescriptorRequest request =
-        GetMetricDescriptorRequest.newBuilder().setNameWithMetricDescriptorName(name).build();
+        GetMetricDescriptorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getMetricDescriptor(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single metric descriptor. This method does not require a Stackdriver account.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The metric descriptor on which to execute the request. The format is
+   *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example value of
+   *     `{metric_id}` is `"compute.googleapis.com/instance/disk/read_bytes_count"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MetricDescriptor getMetricDescriptor(String name) {
+
+    GetMetricDescriptorRequest request =
+        GetMetricDescriptorRequest.newBuilder().setName(name).build();
     return getMetricDescriptor(request);
   }
 
@@ -509,7 +623,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   GetMetricDescriptorRequest request = GetMetricDescriptorRequest.newBuilder()
-   *     .setNameWithMetricDescriptorName(name)
+   *     .setName(name.toString())
    *     .build();
    *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(request);
    * }
@@ -532,7 +646,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   GetMetricDescriptorRequest request = GetMetricDescriptorRequest.newBuilder()
-   *     .setNameWithMetricDescriptorName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;MetricDescriptor&gt; future = metricServiceClient.getMetricDescriptorCallable().futureCall(request);
    *   // Do something
@@ -570,7 +684,38 @@ public class MetricServiceClient implements BackgroundResource {
 
     CreateMetricDescriptorRequest request =
         CreateMetricDescriptorRequest.newBuilder()
-            .setNameWithProjectName(name)
+            .setName(name == null ? null : name.toString())
+            .setMetricDescriptor(metricDescriptor)
+            .build();
+    return createMetricDescriptor(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * metrics](/monitoring/custom-metrics).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
+   *   MetricDescriptor response = metricServiceClient.createMetricDescriptor(name.toString(), metricDescriptor);
+   * }
+   * </code></pre>
+   *
+   * @param name The project on which to execute the request. The format is
+   *     `"projects/{project_id_or_number}"`.
+   * @param metricDescriptor The new [custom metric](/monitoring/custom-metrics) descriptor.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MetricDescriptor createMetricDescriptor(
+      String name, MetricDescriptor metricDescriptor) {
+
+    CreateMetricDescriptorRequest request =
+        CreateMetricDescriptorRequest.newBuilder()
+            .setName(name)
             .setMetricDescriptor(metricDescriptor)
             .build();
     return createMetricDescriptor(request);
@@ -588,7 +733,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
    *   CreateMetricDescriptorRequest request = CreateMetricDescriptorRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .setMetricDescriptor(metricDescriptor)
    *     .build();
    *   MetricDescriptor response = metricServiceClient.createMetricDescriptor(request);
@@ -614,7 +759,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
    *   CreateMetricDescriptorRequest request = CreateMetricDescriptorRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .setMetricDescriptor(metricDescriptor)
    *     .build();
    *   ApiFuture&lt;MetricDescriptor&gt; future = metricServiceClient.createMetricDescriptorCallable().futureCall(request);
@@ -650,7 +795,35 @@ public class MetricServiceClient implements BackgroundResource {
   public final void deleteMetricDescriptor(MetricDescriptorName name) {
 
     DeleteMetricDescriptorRequest request =
-        DeleteMetricDescriptorRequest.newBuilder().setNameWithMetricDescriptorName(name).build();
+        DeleteMetricDescriptorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteMetricDescriptor(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a metric descriptor. Only user-created [custom metrics](/monitoring/custom-metrics) can
+   * be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   metricServiceClient.deleteMetricDescriptor(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The metric descriptor on which to execute the request. The format is
+   *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example of
+   *     `{metric_id}` is: `"custom.googleapis.com/my_test_metric"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMetricDescriptor(String name) {
+
+    DeleteMetricDescriptorRequest request =
+        DeleteMetricDescriptorRequest.newBuilder().setName(name).build();
     deleteMetricDescriptor(request);
   }
 
@@ -665,7 +838,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   DeleteMetricDescriptorRequest request = DeleteMetricDescriptorRequest.newBuilder()
-   *     .setNameWithMetricDescriptorName(name)
+   *     .setName(name.toString())
    *     .build();
    *   metricServiceClient.deleteMetricDescriptor(request);
    * }
@@ -689,7 +862,7 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   DeleteMetricDescriptorRequest request = DeleteMetricDescriptorRequest.newBuilder()
-   *     .setNameWithMetricDescriptorName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = metricServiceClient.deleteMetricDescriptorCallable().futureCall(request);
    *   // Do something
@@ -739,7 +912,52 @@ public class MetricServiceClient implements BackgroundResource {
       ListTimeSeriesRequest.TimeSeriesView view) {
     ListTimeSeriesRequest request =
         ListTimeSeriesRequest.newBuilder()
-            .setNameWithProjectName(name)
+            .setName(name == null ? null : name.toString())
+            .setFilter(filter)
+            .setInterval(interval)
+            .setView(view)
+            .build();
+    return listTimeSeries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists time series that match a filter. This method does not require a Stackdriver account.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   TimeInterval interval = TimeInterval.newBuilder().build();
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
+   *   for (TimeSeries element : metricServiceClient.listTimeSeries(name.toString(), filter, interval, view).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name The project on which to execute the request. The format is
+   *     "projects/{project_id_or_number}".
+   * @param filter A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
+   *     series should be returned. The filter must specify a single metric type, and can
+   *     additionally specify metric labels and other information. For example:
+   *     <p>metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
+   *     metric.label.instance_name = "my-instance-name"
+   * @param interval The time interval for which results should be returned. Only time series that
+   *     contain data points in the specified interval are included in the response.
+   * @param view Specifies which information is returned about the time series.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTimeSeriesPagedResponse listTimeSeries(
+      String name,
+      String filter,
+      TimeInterval interval,
+      ListTimeSeriesRequest.TimeSeriesView view) {
+    ListTimeSeriesRequest request =
+        ListTimeSeriesRequest.newBuilder()
+            .setName(name)
             .setFilter(filter)
             .setInterval(interval)
             .setView(view)
@@ -760,7 +978,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .setFilter(filter)
    *     .setInterval(interval)
    *     .setView(view)
@@ -791,7 +1009,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .setFilter(filter)
    *     .setInterval(interval)
    *     .setView(view)
@@ -822,7 +1040,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .setFilter(filter)
    *     .setInterval(interval)
    *     .setView(view)
@@ -875,7 +1093,7 @@ public class MetricServiceClient implements BackgroundResource {
 
     CreateTimeSeriesRequest request =
         CreateTimeSeriesRequest.newBuilder()
-            .setNameWithProjectName(name)
+            .setName(name == null ? null : name.toString())
             .addAllTimeSeries(timeSeries)
             .build();
     createTimeSeries(request);
@@ -893,8 +1111,39 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
+   *   metricServiceClient.createTimeSeries(name.toString(), timeSeries);
+   * }
+   * </code></pre>
+   *
+   * @param name The project on which to execute the request. The format is
+   *     `"projects/{project_id_or_number}"`.
+   * @param timeSeries The new data to be added to a list of time series. Adds at most one data
+   *     point to each of several time series. The new data point must be more recent than any other
+   *     point in its time series. Each `TimeSeries` value must fully specify a unique time series
+   *     by supplying all label values for the metric and the monitored resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void createTimeSeries(String name, List<TimeSeries> timeSeries) {
+
+    CreateTimeSeriesRequest request =
+        CreateTimeSeriesRequest.newBuilder().setName(name).addAllTimeSeries(timeSeries).build();
+    createTimeSeries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates or adds data to one or more time series. The response is empty if all time series in
+   * the request were written. If any time series could not be written, a corresponding failure
+   * message is included in the error response.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
    *   CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .addAllTimeSeries(timeSeries)
    *     .build();
    *   metricServiceClient.createTimeSeries(request);
@@ -921,7 +1170,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
    *   CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .addAllTimeSeries(timeSeries)
    *     .build();
    *   ApiFuture&lt;Void&gt; future = metricServiceClient.createTimeSeriesCallable().futureCall(request);
@@ -962,5 +1211,254 @@ public class MetricServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListMonitoredResourceDescriptorsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor, ListMonitoredResourceDescriptorsPage,
+          ListMonitoredResourceDescriptorsFixedSizeCollection> {
+
+    public static ApiFuture<ListMonitoredResourceDescriptorsPagedResponse> createAsync(
+        PageContext<
+                ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+                MonitoredResourceDescriptor>
+            context,
+        ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse) {
+      ApiFuture<ListMonitoredResourceDescriptorsPage> futurePage =
+          ListMonitoredResourceDescriptorsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              ListMonitoredResourceDescriptorsPage,
+              ListMonitoredResourceDescriptorsPagedResponse>() {
+            @Override
+            public ListMonitoredResourceDescriptorsPagedResponse apply(
+                ListMonitoredResourceDescriptorsPage input) {
+              return new ListMonitoredResourceDescriptorsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListMonitoredResourceDescriptorsPagedResponse(
+        ListMonitoredResourceDescriptorsPage page) {
+      super(page, ListMonitoredResourceDescriptorsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMonitoredResourceDescriptorsPage
+      extends AbstractPage<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor, ListMonitoredResourceDescriptorsPage> {
+
+    private ListMonitoredResourceDescriptorsPage(
+        PageContext<
+                ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+                MonitoredResourceDescriptor>
+            context,
+        ListMonitoredResourceDescriptorsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMonitoredResourceDescriptorsPage createEmptyPage() {
+      return new ListMonitoredResourceDescriptorsPage(null, null);
+    }
+
+    @Override
+    protected ListMonitoredResourceDescriptorsPage createPage(
+        PageContext<
+                ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+                MonitoredResourceDescriptor>
+            context,
+        ListMonitoredResourceDescriptorsResponse response) {
+      return new ListMonitoredResourceDescriptorsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMonitoredResourceDescriptorsPage> createPageAsync(
+        PageContext<
+                ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+                MonitoredResourceDescriptor>
+            context,
+        ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMonitoredResourceDescriptorsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor, ListMonitoredResourceDescriptorsPage,
+          ListMonitoredResourceDescriptorsFixedSizeCollection> {
+
+    private ListMonitoredResourceDescriptorsFixedSizeCollection(
+        List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMonitoredResourceDescriptorsFixedSizeCollection createEmptyCollection() {
+      return new ListMonitoredResourceDescriptorsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMonitoredResourceDescriptorsFixedSizeCollection createCollection(
+        List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
+      return new ListMonitoredResourceDescriptorsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMetricDescriptorsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor,
+          ListMetricDescriptorsPage, ListMetricDescriptorsFixedSizeCollection> {
+
+    public static ApiFuture<ListMetricDescriptorsPagedResponse> createAsync(
+        PageContext<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+            context,
+        ApiFuture<ListMetricDescriptorsResponse> futureResponse) {
+      ApiFuture<ListMetricDescriptorsPage> futurePage =
+          ListMetricDescriptorsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListMetricDescriptorsPage, ListMetricDescriptorsPagedResponse>() {
+            @Override
+            public ListMetricDescriptorsPagedResponse apply(ListMetricDescriptorsPage input) {
+              return new ListMetricDescriptorsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListMetricDescriptorsPagedResponse(ListMetricDescriptorsPage page) {
+      super(page, ListMetricDescriptorsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMetricDescriptorsPage
+      extends AbstractPage<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor,
+          ListMetricDescriptorsPage> {
+
+    private ListMetricDescriptorsPage(
+        PageContext<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+            context,
+        ListMetricDescriptorsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMetricDescriptorsPage createEmptyPage() {
+      return new ListMetricDescriptorsPage(null, null);
+    }
+
+    @Override
+    protected ListMetricDescriptorsPage createPage(
+        PageContext<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+            context,
+        ListMetricDescriptorsResponse response) {
+      return new ListMetricDescriptorsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMetricDescriptorsPage> createPageAsync(
+        PageContext<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+            context,
+        ApiFuture<ListMetricDescriptorsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMetricDescriptorsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor,
+          ListMetricDescriptorsPage, ListMetricDescriptorsFixedSizeCollection> {
+
+    private ListMetricDescriptorsFixedSizeCollection(
+        List<ListMetricDescriptorsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMetricDescriptorsFixedSizeCollection createEmptyCollection() {
+      return new ListMetricDescriptorsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMetricDescriptorsFixedSizeCollection createCollection(
+        List<ListMetricDescriptorsPage> pages, int collectionSize) {
+      return new ListMetricDescriptorsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListTimeSeriesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries, ListTimeSeriesPage,
+          ListTimeSeriesFixedSizeCollection> {
+
+    public static ApiFuture<ListTimeSeriesPagedResponse> createAsync(
+        PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
+        ApiFuture<ListTimeSeriesResponse> futureResponse) {
+      ApiFuture<ListTimeSeriesPage> futurePage =
+          ListTimeSeriesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListTimeSeriesPage, ListTimeSeriesPagedResponse>() {
+            @Override
+            public ListTimeSeriesPagedResponse apply(ListTimeSeriesPage input) {
+              return new ListTimeSeriesPagedResponse(input);
+            }
+          });
+    }
+
+    private ListTimeSeriesPagedResponse(ListTimeSeriesPage page) {
+      super(page, ListTimeSeriesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTimeSeriesPage
+      extends AbstractPage<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries, ListTimeSeriesPage> {
+
+    private ListTimeSeriesPage(
+        PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
+        ListTimeSeriesResponse response) {
+      super(context, response);
+    }
+
+    private static ListTimeSeriesPage createEmptyPage() {
+      return new ListTimeSeriesPage(null, null);
+    }
+
+    @Override
+    protected ListTimeSeriesPage createPage(
+        PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
+        ListTimeSeriesResponse response) {
+      return new ListTimeSeriesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTimeSeriesPage> createPageAsync(
+        PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
+        ApiFuture<ListTimeSeriesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTimeSeriesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries, ListTimeSeriesPage,
+          ListTimeSeriesFixedSizeCollection> {
+
+    private ListTimeSeriesFixedSizeCollection(List<ListTimeSeriesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTimeSeriesFixedSizeCollection createEmptyCollection() {
+      return new ListTimeSeriesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTimeSeriesFixedSizeCollection createCollection(
+        List<ListTimeSeriesPage> pages, int collectionSize) {
+      return new ListTimeSeriesFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

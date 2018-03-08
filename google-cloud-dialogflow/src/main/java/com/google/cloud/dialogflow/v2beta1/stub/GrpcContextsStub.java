@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +15,7 @@
  */
 package com.google.cloud.dialogflow.v2beta1.stub;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListContextsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.ContextsClient.ListContextsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.Context;
-import com.google.cloud.dialogflow.v2beta1.ContextsSettings;
 import com.google.cloud.dialogflow.v2beta1.CreateContextRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteContextRequest;
@@ -112,19 +111,19 @@ public class GrpcContextsStub extends ContextsStub {
   private final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable;
   private final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable;
 
-  public static final GrpcContextsStub create(ContextsSettings settings) throws IOException {
+  public static final GrpcContextsStub create(ContextsStubSettings settings) throws IOException {
     return new GrpcContextsStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcContextsStub create(ClientContext clientContext) throws IOException {
-    return new GrpcContextsStub(ContextsSettings.newBuilder().build(), clientContext);
+    return new GrpcContextsStub(ContextsStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
    * Constructs an instance of GrpcContextsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected GrpcContextsStub(ContextsSettings settings, ClientContext clientContext)
+  protected GrpcContextsStub(ContextsStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =

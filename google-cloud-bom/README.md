@@ -6,19 +6,21 @@ components plus its dependencies.
 
 To use it in Maven, add the following to your POM:
 
-```
+[//]: # ({x-version-update-start:google-cloud-bom:released})
+```xml
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.32.0-alpha</version>
+        <version>0.38.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
 ```
+[//]: # ({x-version-update-end})
 
 Contributing
 ------------

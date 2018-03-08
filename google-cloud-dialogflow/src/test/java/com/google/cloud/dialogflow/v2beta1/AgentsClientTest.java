@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,17 +15,19 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.SearchAgentsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.AgentsClient.SearchAgentsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
@@ -51,6 +53,7 @@ public class AgentsClientTest {
   private static MockSessions mockSessions;
   private static MockServiceHelper serviceHelper;
   private AgentsClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -81,9 +84,10 @@ public class AgentsClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     AgentsSettings settings =
         AgentsSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = AgentsClient.create(settings);
@@ -127,7 +131,11 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetAgentRequest actualRequest = (GetAgentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -171,7 +179,11 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     SearchAgentsRequest actualRequest = (SearchAgentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -211,7 +223,11 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     TrainAgentRequest actualRequest = (TrainAgentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -236,12 +252,8 @@ public class AgentsClientTest {
   @SuppressWarnings("all")
   public void exportAgentTest() throws Exception {
     String agentUri = "agentUri-1700713166";
-    ByteString agentContent = ByteString.copyFromUtf8("63");
     ExportAgentResponse expectedResponse =
-        ExportAgentResponse.newBuilder()
-            .setAgentUri(agentUri)
-            .setAgentContent(agentContent)
-            .build();
+        ExportAgentResponse.newBuilder().setAgentUri(agentUri).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportAgentTest")
@@ -259,7 +271,11 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ExportAgentRequest actualRequest = (ExportAgentRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParentAsProjectName());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

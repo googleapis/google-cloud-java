@@ -18,12 +18,12 @@ package com.google.cloud.bigquery;
 
 import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.api.services.bigquery.model.Table;
+import com.google.auto.value.AutoValue;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.MoreObjects.ToStringHelper;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 /**
  * A Google BigQuery default table definition. This definition is used for standard, two-dimensional
@@ -34,15 +34,10 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
-public class StandardTableDefinition extends TableDefinition {
+@AutoValue
+public abstract class StandardTableDefinition extends TableDefinition {
 
   private static final long serialVersionUID = 2113445776046717900L;
-
-  private final Long numBytes;
-  private final Long numRows;
-  private final String location;
-  private final StreamingBuffer streamingBuffer;
-  private final TimePartitioning timePartitioning;
 
   /**
    * Google BigQuery Table's Streaming Buffer information. This class contains information on a
@@ -124,143 +119,71 @@ public class StandardTableDefinition extends TableDefinition {
     }
   }
 
-  public static final class Builder
+  @AutoValue.Builder
+  public abstract static class Builder
       extends TableDefinition.Builder<StandardTableDefinition, Builder> {
 
-    private Long numBytes;
-    private Long numRows;
-    private String location;
-    private StreamingBuffer streamingBuffer;
-    private TimePartitioning timePartitioning;
+    public abstract Builder setNumBytes(Long numBytes);
 
-    private Builder() {
-      super(Type.TABLE);
-    }
+    public abstract Builder setNumRows(Long numRows);
 
-    private Builder(StandardTableDefinition tableDefinition) {
-      super(tableDefinition);
-      this.numBytes = tableDefinition.numBytes;
-      this.numRows = tableDefinition.numRows;
-      this.location = tableDefinition.location;
-      this.streamingBuffer = tableDefinition.streamingBuffer;
-      this.timePartitioning = tableDefinition.timePartitioning;
-    }
+    public abstract Builder setLocation(String location);
 
-    private Builder(Table tablePb) {
-      super(tablePb);
-      if (tablePb.getNumRows() != null) {
-        this.setNumRows(tablePb.getNumRows().longValue());
-      }
-      this.numBytes = tablePb.getNumBytes();
-      this.location = tablePb.getLocation();
-      if (tablePb.getStreamingBuffer() != null) {
-        this.streamingBuffer = StreamingBuffer.fromPb(tablePb.getStreamingBuffer());
-      }
-      if (tablePb.getTimePartitioning() != null) {
-        this.timePartitioning = TimePartitioning.fromPb(tablePb.getTimePartitioning());
-      }
-    }
+    public abstract Builder setStreamingBuffer(StreamingBuffer streamingBuffer);
 
-    Builder setNumBytes(Long numBytes) {
-      this.numBytes = numBytes;
-      return self();
-    }
+    public abstract Builder setType(Type type);
 
-    Builder setNumRows(Long numRows) {
-      this.numRows = numRows;
-      return self();
-    }
-
-    Builder setLocation(String location) {
-      this.location = location;
-      return self();
-    }
-
-    Builder setStreamingBuffer(StreamingBuffer streamingBuffer) {
-      this.streamingBuffer = streamingBuffer;
-      return self();
-    }
-
+    /** Sets the table schema. */
+    public abstract Builder setSchema(Schema schema);
 
     /**
      * Sets the time partitioning configuration for the table. If not set, the table is not
      * time-partitioned.
      */
-    public Builder setTimePartitioning(TimePartitioning timePartitioning) {
-      this.timePartitioning = timePartitioning;
-      return this;
-    }
+    public abstract Builder setTimePartitioning(TimePartitioning timePartitioning);
 
-    /**
-     * Creates a {@code StandardTableDefinition} object.
-     */
-    @Override
-    public StandardTableDefinition build() {
-      return new StandardTableDefinition(this);
-    }
+    /** Creates a {@code StandardTableDefinition} object. */
+    public abstract StandardTableDefinition build();
   }
 
-  private StandardTableDefinition(Builder builder) {
-    super(builder);
-    this.numBytes = builder.numBytes;
-    this.numRows = builder.numRows;
-    this.location = builder.location;
-    this.streamingBuffer = builder.streamingBuffer;
-    this.timePartitioning = builder.timePartitioning;
-  }
+  /** Returns the size of this table in bytes, excluding any data in the streaming buffer. */
+  @Nullable
+  public abstract Long getNumBytes();
 
-
-  /**
-   * Returns the size of this table in bytes, excluding any data in the streaming buffer.
-   */
-  public Long getNumBytes() {
-    return numBytes;
-  }
-
-
-  /**
-   * Returns the number of rows in this table, excluding any data in the streaming buffer.
-   */
-  public Long getNumRows() {
-    return numRows;
-  }
-
+  /** Returns the number of rows in this table, excluding any data in the streaming buffer. */
+  @Nullable
+  public abstract Long getNumRows();
 
   /**
    * Returns the geographic location where the table should reside. This value is inherited from the
    * dataset.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
    *     Dataset Location</a>
    */
-  public String getLocation() {
-    return location;
-  }
-
+  @Nullable
+  public abstract String getLocation();
 
   /**
    * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
    * streaming buffer exists.
    */
-  public StreamingBuffer getStreamingBuffer() {
-    return streamingBuffer;
-  }
-
+  @Nullable
+  public abstract StreamingBuffer getStreamingBuffer();
 
   /**
    * Returns the time partitioning configuration for this table. If {@code null}, the table is not
    * time-partitioned.
    */
-  public TimePartitioning getTimePartitioning() {
-    return timePartitioning;
-  }
-
+  @Nullable
+  public abstract TimePartitioning getTimePartitioning();
 
   /**
    * Returns a builder for a BigQuery standard table definition.
    */
   public static Builder newBuilder() {
-    return new Builder();
+    return new AutoValue_StandardTableDefinition.Builder().setType(Type.TABLE);
   }
 
   /**
@@ -272,57 +195,38 @@ public class StandardTableDefinition extends TableDefinition {
     return newBuilder().setSchema(schema).build();
   }
 
-  /**
-   * Returns a builder for the {@code StandardTableDefinition} object.
-   */
-  @Override
-  public Builder toBuilder() {
-    return new Builder(this);
-  }
-
-  @Override
-  ToStringHelper toStringHelper() {
-    return super.toStringHelper()
-        .add("numBytes", numBytes)
-        .add("numRows", numRows)
-        .add("location", location)
-        .add("streamingBuffer", streamingBuffer)
-        .add("timePartitioning", timePartitioning);
-  }
-
-  @Override
-  public final boolean equals(Object obj) {
-    return obj == this
-        || obj != null
-        && obj.getClass().equals(StandardTableDefinition.class)
-        && baseEquals((StandardTableDefinition) obj);
-  }
-
-  @Override
-  public final int hashCode() {
-    return Objects.hash(baseHashCode(), numBytes, numRows, location, streamingBuffer,
-        timePartitioning);
-  }
+  /** Returns a builder for the {@code StandardTableDefinition} object. */
+  public abstract Builder toBuilder();
 
   @Override
   Table toPb() {
     Table tablePb = super.toPb();
-    if (numRows != null) {
-      tablePb.setNumRows(BigInteger.valueOf(numRows));
+    if (getNumRows() != null) {
+      tablePb.setNumRows(BigInteger.valueOf(getNumRows()));
     }
-    tablePb.setNumBytes(numBytes);
-    tablePb.setLocation(location);
-    if (streamingBuffer != null) {
-      tablePb.setStreamingBuffer(streamingBuffer.toPb());
+    tablePb.setNumBytes(getNumBytes());
+    tablePb.setLocation(getLocation());
+    if (getStreamingBuffer() != null) {
+      tablePb.setStreamingBuffer(getStreamingBuffer().toPb());
     }
-    if (timePartitioning != null) {
-      tablePb.setTimePartitioning(timePartitioning.toPb());
+    if (getTimePartitioning() != null) {
+      tablePb.setTimePartitioning(getTimePartitioning().toPb());
     }
     return tablePb;
   }
 
   @SuppressWarnings("unchecked")
   static StandardTableDefinition fromPb(Table tablePb) {
-    return new Builder(tablePb).build();
+    Builder builder = newBuilder().table(tablePb);
+    if (tablePb.getNumRows() != null) {
+      builder.setNumRows(tablePb.getNumRows().longValue());
+    }
+    if (tablePb.getStreamingBuffer() != null) {
+      builder.setStreamingBuffer(StreamingBuffer.fromPb(tablePb.getStreamingBuffer()));
+    }
+    if (tablePb.getTimePartitioning() != null) {
+      builder.setTimePartitioning(TimePartitioning.fromPb(tablePb.getTimePartitioning()));
+    }
+    return builder.setNumBytes(tablePb.getNumBytes()).setLocation(tablePb.getLocation()).build();
   }
 }

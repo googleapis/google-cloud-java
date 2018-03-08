@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.errorreporting.v1beta1.stub.ReportErrorsServiceStub;
+import com.google.cloud.errorreporting.v1beta1.stub.ReportErrorsServiceStubSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
@@ -131,7 +132,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    */
   protected ReportErrorsServiceClient(ReportErrorsServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((ReportErrorsServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -181,7 +182,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
 
     ReportErrorEventRequest request =
         ReportErrorEventRequest.newBuilder()
-            .setProjectNameWithProjectName(projectName)
+            .setProjectName(projectName == null ? null : projectName.toString())
             .setEvent(event)
             .build();
     return reportErrorEvent(request);
@@ -204,8 +205,43 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
+   *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName.toString(), event);
+   * }
+   * </code></pre>
+   *
+   * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
+   *     as `projects/` plus the [Google Cloud Platform project
+   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
+   * @param event [Required] The error event to be reported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportErrorEventResponse reportErrorEvent(
+      String projectName, ReportedErrorEvent event) {
+
+    ReportErrorEventRequest request =
+        ReportErrorEventRequest.newBuilder().setProjectName(projectName).setEvent(event).build();
+    return reportErrorEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Report an individual error event.
+   *
+   * <p>This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
+   * &lt;strong&gt;or&lt;/strong&gt; an &lt;a
+   * href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt; for authentication.
+   * To use an API key, append it to the URL as the value of a `key` parameter. For example:
+   * &lt;pre&gt;POST
+   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
+   *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setEvent(event)
    *     .build();
    *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(request);
@@ -237,7 +273,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setEvent(event)
    *     .build();
    *   ApiFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceClient.reportErrorEventCallable().futureCall(request);

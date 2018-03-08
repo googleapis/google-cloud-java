@@ -81,7 +81,8 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
   private final FirestoreImpl firestore;
   private final ScheduledExecutorService firestoreExecutor;
-  private final Comparator<DocumentSnapshot> comparator;
+  private final Query query;
+  private final Comparator<QueryDocumentSnapshot> comparator;
   private final ExponentialRetryAlgorithm backoff;
   private final Target target;
   private TimedAttemptSettings nextAttempt;
@@ -122,21 +123,21 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
   /** The list of document changes in a snapshot separated by change type. */
   static class ChangeSet {
-    List<DocumentSnapshot> deletes = new ArrayList<>();
-    List<DocumentSnapshot> adds = new ArrayList<>();
-    List<DocumentSnapshot> updates = new ArrayList<>();
+    List<QueryDocumentSnapshot> deletes = new ArrayList<>();
+    List<QueryDocumentSnapshot> adds = new ArrayList<>();
+    List<QueryDocumentSnapshot> updates = new ArrayList<>();
   }
 
   /**
    * @param firestore The Firestore Database client.
+   * @param query The query that is used to order the document snapshots returned by this watch.
    * @param target A Firestore 'Target' proto denoting the target to listen on.
-   * @param comparator A comparator for DocumentSnapshots that is used to order the document
-   *     snapshots returned by this watch.
    */
-  private Watch(FirestoreImpl firestore, Target target, Comparator<DocumentSnapshot> comparator) {
+  private Watch(FirestoreImpl firestore, Query query, Target target) {
     this.firestore = firestore;
     this.target = target;
-    this.comparator = comparator;
+    this.query = query;
+    this.comparator = query.comparator();
     this.backoff =
         new ExponentialRetryAlgorithm(RETRY_SETTINGS, CurrentMillisClock.getDefaultClock());
     this.firestoreExecutor = firestore.getClient().getExecutor();
@@ -157,19 +158,12 @@ class Watch implements ApiStreamObserver<ListenResponse> {
 
     return new Watch(
         (FirestoreImpl) documentReference.getFirestore(),
-        target.build(),
-        new Comparator<DocumentSnapshot>() {
-          @Override
-          public int compare(DocumentSnapshot o1, DocumentSnapshot o2) {
-            // We should only ever receive one document for DocumentReference listeners.
-            Preconditions.checkState(o1.equals(o2));
-            return 0;
-          }
-        });
+        documentReference.getParent(),
+        target.build());
   }
 
   /**
-   * Creates a new Watch instance that listens listen on Queries.
+   * Creates a new Watch instance that listens on Queries.
    *
    * @param query The query used for this watch.
    * @return A newly created Watch instance.
@@ -183,7 +177,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
             .build());
     target.setTargetId(WATCH_TARGET_ID);
 
-    return new Watch((FirestoreImpl) query.getFirestore(), target.build(), query.comparator());
+    return new Watch((FirestoreImpl) query.getFirestore(), query, target.build());
   }
 
   @Override
@@ -452,8 +446,8 @@ class Watch implements ApiStreamObserver<ListenResponse> {
         continue;
       }
 
-      DocumentSnapshot snapshot =
-          DocumentSnapshot.fromDocument(firestore, readTime, change.getValue());
+      QueryDocumentSnapshot snapshot =
+          QueryDocumentSnapshot.fromDocument(firestore, readTime, change.getValue());
 
       if (documentSet.contains(change.getKey())) {
         changeSet.updates.add(snapshot);
@@ -471,19 +465,17 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    */
   private void pushSnapshot(final Timestamp readTime, ByteString nextResumeToken) {
     final List<DocumentChange> changes = computeSnapshot(readTime);
-    final DocumentSet documents = documentSet;
-
     if (!hasPushed || !changes.isEmpty()) {
+      final QuerySnapshot querySnapshot =
+          QuerySnapshot.withChanges(
+              query,
+              Instant.ofEpochSecond(readTime.getSeconds(), readTime.getNanos()),
+              documentSet,
+              changes);
       userCallbackExecutor.execute(
           new Runnable() {
             @Override
             public void run() {
-              QuerySnapshot querySnapshot =
-                  new QuerySnapshot(
-                      null,
-                      Instant.ofEpochSecond(readTime.getSeconds(), readTime.getNanos()),
-                      documents,
-                      changes);
               listener.onEvent(querySnapshot, null);
             }
           });
@@ -497,7 +489,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
   /**
    * Applies a document delete to the document tree. Returns the corresponding DocumentChange event.
    */
-  private DocumentChange deleteDoc(DocumentSnapshot oldDocument) {
+  private DocumentChange deleteDoc(QueryDocumentSnapshot oldDocument) {
     ResourcePath resourcePath = oldDocument.getReference().getResourcePath();
     int oldIndex = documentSet.indexOf(resourcePath);
     documentSet = documentSet.remove(resourcePath);
@@ -507,7 +499,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
   /**
    * Applies a document add to the document tree. Returns the corresponding DocumentChange event.
    */
-  private DocumentChange addDoc(DocumentSnapshot newDocument) {
+  private DocumentChange addDoc(QueryDocumentSnapshot newDocument) {
     ResourcePath resourcePath = newDocument.getReference().getResourcePath();
     documentSet = documentSet.add(newDocument);
     int newIndex = documentSet.indexOf(resourcePath);
@@ -519,7 +511,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    * successful modifications.
    */
   @Nullable
-  private DocumentChange modifyDoc(DocumentSnapshot newDocument) {
+  private DocumentChange modifyDoc(QueryDocumentSnapshot newDocument) {
     ResourcePath resourcePath = newDocument.getReference().getResourcePath();
     DocumentSnapshot oldDocument = documentSet.getDocument(resourcePath);
 
@@ -548,17 +540,17 @@ class Watch implements ApiStreamObserver<ListenResponse> {
     // and then modifications). We also need to sort the individual changes to assure that
     // oldIndex/newIndex keep incrementing.
     Collections.sort(changeSet.deletes, comparator);
-    for (DocumentSnapshot delete : changeSet.deletes) {
+    for (QueryDocumentSnapshot delete : changeSet.deletes) {
       appliedChanges.add(deleteDoc(delete));
     }
 
     Collections.sort(changeSet.adds, comparator);
-    for (DocumentSnapshot add : changeSet.adds) {
+    for (QueryDocumentSnapshot add : changeSet.adds) {
       appliedChanges.add(addDoc(add));
     }
 
     Collections.sort(changeSet.updates, comparator);
-    for (DocumentSnapshot update : changeSet.updates) {
+    for (QueryDocumentSnapshot update : changeSet.updates) {
       DocumentChange change = modifyDoc(update);
       if (change != null) {
         appliedChanges.add(change);

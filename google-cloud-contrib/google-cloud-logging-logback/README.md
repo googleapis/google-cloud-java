@@ -14,22 +14,25 @@ This library allows you to use [Logback](https://logback.qos.ch/) configuration 
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud-logging-logback:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.32.0-alpha</version>
+  <version>0.38.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging-logback:0.32.0-alpha'
+compile 'com.google.cloud:google-cloud-logging-logback:0.38.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.32.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.38.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
 Usage 
 -----

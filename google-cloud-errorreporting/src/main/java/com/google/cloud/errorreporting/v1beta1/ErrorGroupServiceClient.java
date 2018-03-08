@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.errorreporting.v1beta1.stub.ErrorGroupServiceStub;
+import com.google.cloud.errorreporting.v1beta1.stub.ErrorGroupServiceStubSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.GroupName;
@@ -130,7 +131,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    */
   protected ErrorGroupServiceClient(ErrorGroupServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((ErrorGroupServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -172,7 +173,36 @@ public class ErrorGroupServiceClient implements BackgroundResource {
   public final ErrorGroup getGroup(GroupName groupName) {
 
     GetGroupRequest request =
-        GetGroupRequest.newBuilder().setGroupNameWithGroupName(groupName).build();
+        GetGroupRequest.newBuilder()
+            .setGroupName(groupName == null ? null : groupName.toString())
+            .build();
+    return getGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get the specified group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
+   *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName.toString());
+   * }
+   * </code></pre>
+   *
+   * @param groupName [Required] The group resource name. Written as
+   *     &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
+   *     Call &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
+   *     &lt;code&gt;groupStats.list&lt;/code&gt;&lt;/a&gt; to return a list of groups belonging to
+   *     this project.
+   *     <p>Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ErrorGroup getGroup(String groupName) {
+
+    GetGroupRequest request = GetGroupRequest.newBuilder().setGroupName(groupName).build();
     return getGroup(request);
   }
 
@@ -186,7 +216,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setGroupNameWithGroupName(groupName)
+   *     .setGroupName(groupName.toString())
    *     .build();
    *   ErrorGroup response = errorGroupServiceClient.getGroup(request);
    * }
@@ -209,7 +239,7 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setGroupNameWithGroupName(groupName)
+   *     .setGroupName(groupName.toString())
    *     .build();
    *   ApiFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.getGroupCallable().futureCall(request);
    *   // Do something

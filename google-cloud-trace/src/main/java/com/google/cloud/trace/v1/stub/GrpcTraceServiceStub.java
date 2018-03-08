@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +15,7 @@
  */
 package com.google.cloud.trace.v1.stub;
 
-import static com.google.cloud.trace.v1.PagedResponseWrappers.ListTracesPagedResponse;
+import static com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.trace.v1.TraceServiceSettings;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -77,13 +76,13 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
   private final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
   private final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable;
 
-  public static final GrpcTraceServiceStub create(TraceServiceSettings settings)
+  public static final GrpcTraceServiceStub create(TraceServiceStubSettings settings)
       throws IOException {
     return new GrpcTraceServiceStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcTraceServiceStub create(ClientContext clientContext) throws IOException {
-    return new GrpcTraceServiceStub(TraceServiceSettings.newBuilder().build(), clientContext);
+    return new GrpcTraceServiceStub(TraceServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -91,7 +90,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcTraceServiceStub(TraceServiceSettings settings, ClientContext clientContext)
+  protected GrpcTraceServiceStub(TraceServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<PatchTracesRequest, Empty> patchTracesTransportSettings =

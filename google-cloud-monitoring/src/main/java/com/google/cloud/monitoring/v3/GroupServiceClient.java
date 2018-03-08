@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,13 +15,19 @@
  */
 package com.google.cloud.monitoring.v3;
 
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
-import static com.google.cloud.monitoring.v3.PagedResponseWrappers.ListGroupsPagedResponse;
-
+import com.google.api.MonitoredResource;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStub;
+import com.google.cloud.monitoring.v3.stub.GroupServiceStubSettings;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
@@ -35,6 +41,7 @@ import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -147,7 +154,7 @@ public class GroupServiceClient implements BackgroundResource {
    */
   protected GroupServiceClient(GroupServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((GroupServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -175,7 +182,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   for (Group element : groupServiceClient.listGroups(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -200,7 +207,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ListGroupsPagedResponse&gt; future = groupServiceClient.listGroupsPagedCallable().futureCall(request);
    *   // Do something
@@ -224,7 +231,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .build();
    *   while (true) {
    *     ListGroupsResponse response = groupServiceClient.listGroupsCallable().call(request);
@@ -264,7 +271,31 @@ public class GroupServiceClient implements BackgroundResource {
    */
   public final Group getGroup(GroupName name) {
 
-    GetGroupRequest request = GetGroupRequest.newBuilder().setNameWithGroupName(name).build();
+    GetGroupRequest request =
+        GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   Group response = groupServiceClient.getGroup(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The group to retrieve. The format is
+   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group getGroup(String name) {
+
+    GetGroupRequest request = GetGroupRequest.newBuilder().setName(name).build();
     return getGroup(request);
   }
 
@@ -278,7 +309,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setNameWithGroupName(name)
+   *     .setName(name.toString())
    *     .build();
    *   Group response = groupServiceClient.getGroup(request);
    * }
@@ -301,7 +332,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setNameWithGroupName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Group&gt; future = groupServiceClient.getGroupCallable().futureCall(request);
    *   // Do something
@@ -336,7 +367,37 @@ public class GroupServiceClient implements BackgroundResource {
   public final Group createGroup(ProjectName name, Group group) {
 
     CreateGroupRequest request =
-        CreateGroupRequest.newBuilder().setNameWithProjectName(name).setGroup(group).build();
+        CreateGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setGroup(group)
+            .build();
+    return createGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   Group group = Group.newBuilder().build();
+   *   Group response = groupServiceClient.createGroup(name.toString(), group);
+   * }
+   * </code></pre>
+   *
+   * @param name The project in which to create the group. The format is
+   *     `"projects/{project_id_or_number}"`.
+   * @param group A group definition. It is an error to define the `name` field because the system
+   *     assigns the name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group createGroup(String name, Group group) {
+
+    CreateGroupRequest request =
+        CreateGroupRequest.newBuilder().setName(name).setGroup(group).build();
     return createGroup(request);
   }
 
@@ -351,7 +412,7 @@ public class GroupServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   Group group = Group.newBuilder().build();
    *   CreateGroupRequest request = CreateGroupRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .setGroup(group)
    *     .build();
    *   Group response = groupServiceClient.createGroup(request);
@@ -376,7 +437,7 @@ public class GroupServiceClient implements BackgroundResource {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   Group group = Group.newBuilder().build();
    *   CreateGroupRequest request = CreateGroupRequest.newBuilder()
-   *     .setNameWithProjectName(name)
+   *     .setName(name.toString())
    *     .setGroup(group)
    *     .build();
    *   ApiFuture&lt;Group&gt; future = groupServiceClient.createGroupCallable().futureCall(request);
@@ -476,7 +537,31 @@ public class GroupServiceClient implements BackgroundResource {
    */
   public final void deleteGroup(GroupName name) {
 
-    DeleteGroupRequest request = DeleteGroupRequest.newBuilder().setNameWithGroupName(name).build();
+    DeleteGroupRequest request =
+        DeleteGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   groupServiceClient.deleteGroup(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The group to delete. The format is
+   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteGroup(String name) {
+
+    DeleteGroupRequest request = DeleteGroupRequest.newBuilder().setName(name).build();
     deleteGroup(request);
   }
 
@@ -490,7 +575,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
    *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
-   *     .setNameWithGroupName(name)
+   *     .setName(name.toString())
    *     .build();
    *   groupServiceClient.deleteGroup(request);
    * }
@@ -513,7 +598,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
    *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
-   *     .setNameWithGroupName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = groupServiceClient.deleteGroupCallable().futureCall(request);
    *   // Do something
@@ -546,7 +631,31 @@ public class GroupServiceClient implements BackgroundResource {
    */
   public final ListGroupMembersPagedResponse listGroupMembers(GroupName name) {
     ListGroupMembersRequest request =
-        ListGroupMembersRequest.newBuilder().setNameWithGroupName(name).build();
+        ListGroupMembersRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return listGroupMembers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the monitored resources that are members of a group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   for (MonitoredResource element : groupServiceClient.listGroupMembers(name.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name The group whose members are listed. The format is
+   *     `"projects/{project_id_or_number}/groups/{group_id}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupMembersPagedResponse listGroupMembers(String name) {
+    ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder().setName(name).build();
     return listGroupMembers(request);
   }
 
@@ -560,7 +669,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
-   *     .setNameWithGroupName(name)
+   *     .setName(name.toString())
    *     .build();
    *   for (MonitoredResource element : groupServiceClient.listGroupMembers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -585,7 +694,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
-   *     .setNameWithGroupName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ListGroupMembersPagedResponse&gt; future = groupServiceClient.listGroupMembersPagedCallable().futureCall(request);
    *   // Do something
@@ -610,7 +719,7 @@ public class GroupServiceClient implements BackgroundResource {
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
-   *     .setNameWithGroupName(name)
+   *     .setName(name.toString())
    *     .build();
    *   while (true) {
    *     ListGroupMembersResponse response = groupServiceClient.listGroupMembersCallable().call(request);
@@ -660,5 +769,154 @@ public class GroupServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage,
+          ListGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListGroupsPagedResponse> createAsync(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ApiFuture<ListGroupsResponse> futureResponse) {
+      ApiFuture<ListGroupsPage> futurePage =
+          ListGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListGroupsPage, ListGroupsPagedResponse>() {
+            @Override
+            public ListGroupsPagedResponse apply(ListGroupsPage input) {
+              return new ListGroupsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListGroupsPagedResponse(ListGroupsPage page) {
+      super(page, ListGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGroupsPage
+      extends AbstractPage<ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage> {
+
+    private ListGroupsPage(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ListGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListGroupsPage createEmptyPage() {
+      return new ListGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListGroupsPage createPage(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ListGroupsResponse response) {
+      return new ListGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListGroupsPage> createPageAsync(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ApiFuture<ListGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage,
+          ListGroupsFixedSizeCollection> {
+
+    private ListGroupsFixedSizeCollection(List<ListGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGroupsFixedSizeCollection createCollection(
+        List<ListGroupsPage> pages, int collectionSize) {
+      return new ListGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListGroupMembersPagedResponse
+      extends AbstractPagedListResponse<
+          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
+          ListGroupMembersPage, ListGroupMembersFixedSizeCollection> {
+
+    public static ApiFuture<ListGroupMembersPagedResponse> createAsync(
+        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        ApiFuture<ListGroupMembersResponse> futureResponse) {
+      ApiFuture<ListGroupMembersPage> futurePage =
+          ListGroupMembersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListGroupMembersPage, ListGroupMembersPagedResponse>() {
+            @Override
+            public ListGroupMembersPagedResponse apply(ListGroupMembersPage input) {
+              return new ListGroupMembersPagedResponse(input);
+            }
+          });
+    }
+
+    private ListGroupMembersPagedResponse(ListGroupMembersPage page) {
+      super(page, ListGroupMembersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGroupMembersPage
+      extends AbstractPage<
+          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
+          ListGroupMembersPage> {
+
+    private ListGroupMembersPage(
+        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        ListGroupMembersResponse response) {
+      super(context, response);
+    }
+
+    private static ListGroupMembersPage createEmptyPage() {
+      return new ListGroupMembersPage(null, null);
+    }
+
+    @Override
+    protected ListGroupMembersPage createPage(
+        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        ListGroupMembersResponse response) {
+      return new ListGroupMembersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListGroupMembersPage> createPageAsync(
+        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        ApiFuture<ListGroupMembersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGroupMembersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
+          ListGroupMembersPage, ListGroupMembersFixedSizeCollection> {
+
+    private ListGroupMembersFixedSizeCollection(
+        List<ListGroupMembersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGroupMembersFixedSizeCollection createEmptyCollection() {
+      return new ListGroupMembersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGroupMembersFixedSizeCollection createCollection(
+        List<ListGroupMembersPage> pages, int collectionSize) {
+      return new ListGroupMembersFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

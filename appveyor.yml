@@ -42,7 +42,7 @@ build_script:
 
 # verify artifacts
 test_script:
-  - IF DEFINED APPVEYOR_PULL_REQUEST_NUMBER (mvn verify -DskipITs) ELSE (mvn verify)
+  - mvn verify -B -DtrimStackTrace=false -fae --quiet -DskipITs
 
 # preserve dependencies between builds
 cache:

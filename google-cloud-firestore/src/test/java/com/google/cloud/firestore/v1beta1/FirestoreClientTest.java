@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,16 +15,20 @@
  */
 package com.google.cloud.firestore.v1beta1;
 
-import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
+import static com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
@@ -68,6 +72,7 @@ public class FirestoreClientTest {
   private static MockFirestore mockFirestore;
   private static MockServiceHelper serviceHelper;
   private FirestoreClient client;
+  private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -85,9 +90,10 @@ public class FirestoreClientTest {
   @Before
   public void setUp() throws IOException {
     serviceHelper.reset();
+    channelProvider = serviceHelper.createChannelProvider();
     FirestoreSettings settings =
         FirestoreSettings.newBuilder()
-            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = FirestoreClient.create(settings);
@@ -117,6 +123,10 @@ public class FirestoreClientTest {
 
     Assert.assertEquals(document, actualRequest.getDocument());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -152,6 +162,10 @@ public class FirestoreClientTest {
     DeleteDocumentRequest actualRequest = (DeleteDocumentRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -224,9 +238,9 @@ public class FirestoreClientTest {
       List<BatchGetDocumentsResponse> actualResponses = responseObserver.future().get();
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
-      Assert.assertTrue(e.getCause() instanceof StatusRuntimeException);
-      StatusRuntimeException statusException = (StatusRuntimeException) e.getCause();
-      Assert.assertEquals(Status.INVALID_ARGUMENT, statusException.getStatus());
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -248,6 +262,10 @@ public class FirestoreClientTest {
     BeginTransactionRequest actualRequest = (BeginTransactionRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedDatabase, actualRequest.getDatabase());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -284,6 +302,10 @@ public class FirestoreClientTest {
 
     Assert.assertEquals(formattedDatabase, actualRequest.getDatabase());
     Assert.assertEquals(writes, actualRequest.getWritesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -320,6 +342,10 @@ public class FirestoreClientTest {
 
     Assert.assertEquals(formattedDatabase, actualRequest.getDatabase());
     Assert.assertEquals(transaction, actualRequest.getTransaction());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
@@ -382,9 +408,9 @@ public class FirestoreClientTest {
       List<RunQueryResponse> actualResponses = responseObserver.future().get();
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
-      Assert.assertTrue(e.getCause() instanceof StatusRuntimeException);
-      StatusRuntimeException statusException = (StatusRuntimeException) e.getCause();
-      Assert.assertEquals(Status.INVALID_ARGUMENT, statusException.getStatus());
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -431,9 +457,9 @@ public class FirestoreClientTest {
       List<WriteResponse> actualResponses = responseObserver.future().get();
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
-      Assert.assertTrue(e.getCause() instanceof StatusRuntimeException);
-      StatusRuntimeException statusException = (StatusRuntimeException) e.getCause();
-      Assert.assertEquals(Status.INVALID_ARGUMENT, statusException.getStatus());
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -477,9 +503,9 @@ public class FirestoreClientTest {
       List<ListenResponse> actualResponses = responseObserver.future().get();
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
-      Assert.assertTrue(e.getCause() instanceof StatusRuntimeException);
-      StatusRuntimeException statusException = (StatusRuntimeException) e.getCause();
-      Assert.assertEquals(Status.INVALID_ARGUMENT, statusException.getStatus());
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -510,6 +536,10 @@ public class FirestoreClientTest {
     ListCollectionIdsRequest actualRequest = (ListCollectionIdsRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test

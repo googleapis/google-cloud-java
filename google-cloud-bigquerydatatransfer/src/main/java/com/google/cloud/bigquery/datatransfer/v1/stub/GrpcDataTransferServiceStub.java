@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,10 +15,10 @@
  */
 package com.google.cloud.bigquery.datatransfer.v1.stub;
 
-import static com.google.cloud.bigquery.datatransfer.v1.PagedResponseWrappers.ListDataSourcesPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.PagedResponseWrappers.ListTransferConfigsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.PagedResponseWrappers.ListTransferLogsPagedResponse;
-import static com.google.cloud.bigquery.datatransfer.v1.PagedResponseWrappers.ListTransferRunsPagedResponse;
+import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
+import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferConfigsPagedResponse;
+import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferLogsPagedResponse;
+import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferRunsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -31,7 +31,6 @@ import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
-import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceSettings;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
@@ -236,7 +235,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
 
-  public static final GrpcDataTransferServiceStub create(DataTransferServiceSettings settings)
+  public static final GrpcDataTransferServiceStub create(DataTransferServiceStubSettings settings)
       throws IOException {
     return new GrpcDataTransferServiceStub(settings, ClientContext.create(settings));
   }
@@ -244,7 +243,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   public static final GrpcDataTransferServiceStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcDataTransferServiceStub(
-        DataTransferServiceSettings.newBuilder().build(), clientContext);
+        DataTransferServiceStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -253,7 +252,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
    * should be preferred.
    */
   protected GrpcDataTransferServiceStub(
-      DataTransferServiceSettings settings, ClientContext clientContext) throws IOException {
+      DataTransferServiceStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<GetDataSourceRequest, DataSource> getDataSourceTransportSettings =
         GrpcCallSettings.<GetDataSourceRequest, DataSource>newBuilder()

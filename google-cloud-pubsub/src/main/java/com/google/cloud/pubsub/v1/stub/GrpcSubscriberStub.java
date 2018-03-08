@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,8 +15,8 @@
  */
 package com.google.cloud.pubsub.v1.stub;
 
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSnapshotsPagedResponse;
-import static com.google.cloud.pubsub.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
+import static com.google.cloud.pubsub.v1.SubscriptionAdminClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.pubsub.v1.SubscriptionAdminClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.pubsub.v1.SubscriptionAdminSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -254,13 +253,13 @@ public class GrpcSubscriberStub extends SubscriberStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  public static final GrpcSubscriberStub create(SubscriptionAdminSettings settings)
+  public static final GrpcSubscriberStub create(SubscriberStubSettings settings)
       throws IOException {
     return new GrpcSubscriberStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcSubscriberStub create(ClientContext clientContext) throws IOException {
-    return new GrpcSubscriberStub(SubscriptionAdminSettings.newBuilder().build(), clientContext);
+    return new GrpcSubscriberStub(SubscriberStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -268,7 +267,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcSubscriberStub(SubscriptionAdminSettings settings, ClientContext clientContext)
+  protected GrpcSubscriberStub(SubscriberStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<Subscription, Subscription> createSubscriptionTransportSettings =

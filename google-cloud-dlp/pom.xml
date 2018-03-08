@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-dlp</artifactId>
-  <version>0.32.1-beta-SNAPSHOT</version>
+  <version>0.38.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Data Loss Prevention API</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-dlp</url>
@@ -12,16 +12,12 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.32.1-alpha-SNAPSHOT</version>
+    <version>0.38.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dlp-v2beta1</site.installationModule>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-tcnative-boringssl-static</artifactId>
-    </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
@@ -36,7 +32,7 @@
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty</artifactId>
+      <artifactId>grpc-netty-shaded</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>

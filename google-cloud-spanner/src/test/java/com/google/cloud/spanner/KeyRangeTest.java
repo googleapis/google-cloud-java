@@ -16,17 +16,17 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.cloud.spanner.KeyRange.Endpoint.CLOSED;
+import static com.google.cloud.spanner.KeyRange.Endpoint.OPEN;
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.common.testing.EqualsTester;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import static com.google.cloud.spanner.KeyRange.Endpoint.CLOSED;
-import static com.google.cloud.spanner.KeyRange.Endpoint.OPEN;
-import static com.google.common.testing.SerializableTester.reserializeAndAssert;
-import static com.google.common.truth.Truth.assertThat;
 
 /** Unit tests for {@link com.google.cloud.spanner.KeyRange}. */
 @RunWith(JUnit4.class)

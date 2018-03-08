@@ -21,14 +21,16 @@ To run this example:
 
 4.    Run the sample with:
 
+[//]: # ({x-version-update-start:google-cloud-nio:current})
     ```
-    java -cp google-cloud-contrib/google-cloud-nio/target/google-cloud-nio-0.32.1-alpha-SNAPSHOT-shaded.jar:google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.32.1-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
+    java -cp google-cloud-contrib/google-cloud-nio/target/google-cloud-nio-0.38.1-alpha-SNAPSHOT.jar:google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.38.1-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
     ```
 
     Notice that it lists Google Cloud Storage, which it wouldn't if you ran it without the NIO jar:
     ```
-    java -cp google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.32.1-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
+    java -cp google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.38.1-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
     ```
+[//]: # ({x-version-update-end})
 
 The sample doesn't have anything about Google Cloud Storage in it. It gets that ability from the NIO
 jar that we're adding to the classpath. You can use the NIO "fat shaded" jar for this purpose as it

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,15 +15,21 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListEntityTypesPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.EntityType.Entity;
 import com.google.cloud.dialogflow.v2beta1.stub.EntityTypesStub;
+import com.google.cloud.dialogflow.v2beta1.stub.EntityTypesStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -35,12 +41,31 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages agent entity types.
+ * Service Description: Entities are extracted from user input and represent parameters that are
+ * meaningful to your application. For example, a date range, a proper name such as a geographic
+ * location or landmark, and so on. Entities represent actionable data for your application.
  *
- * <p>Refer to [documentation](https://dialogflow.com/docs/entities) for more # details about entity
- * types.
+ * <p>When you define an entity, you can also include synonyms that all map to that entity. For
+ * example, "soft drink", "soda", "pop", and so on.
  *
- * <p>Standard methods.
+ * <p>There are three types of entities:
+ *
+ * <p>&#42; &#42;&#42;System&#42;&#42; - entities that are defined by the Dialogflow API for common
+ * data types such as date, time, currency, and so on. A system entity is represented by the
+ * `EntityType` type.
+ *
+ * <p>&#42; &#42;&#42;Developer&#42;&#42; - entities that are defined by you that represent
+ * actionable data that is meaningful to your application. For example, you could define a
+ * `pizza.sauce` entity for red or white pizza sauce, a `pizza.cheese` entity for the different
+ * types of cheese on a pizza, a `pizza.topping` entity for different toppings, and so on. A
+ * developer entity is represented by the `EntityType` type.
+ *
+ * <p>&#42; &#42;&#42;User&#42;&#42; - entities that are built for an individual user such as
+ * favorites, preferences, playlists, and so on. A user entity is represented by the
+ * [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
+ *
+ * <p>For more information about entity types, see the [Dialogflow
+ * documentation](https://dialogflow.com/docs/entities).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -140,7 +165,7 @@ public class EntityTypesClient implements BackgroundResource {
    */
   protected EntityTypesClient(EntityTypesSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((EntityTypesStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
@@ -189,7 +214,33 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final ListEntityTypesPagedResponse listEntityTypes(ProjectAgentName parent) {
     ListEntityTypesRequest request =
-        ListEntityTypesRequest.newBuilder().setParentWithProjectAgentName(parent).build();
+        ListEntityTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listEntityTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the list of all entity types in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   for (EntityType element : entityTypesClient.listEntityTypes(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
+   *     ID&gt;/agent`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntityTypesPagedResponse listEntityTypes(String parent) {
+    ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder().setParent(parent).build();
     return listEntityTypes(request);
   }
 
@@ -221,7 +272,7 @@ public class EntityTypesClient implements BackgroundResource {
       ProjectAgentName parent, String languageCode) {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder()
-            .setParentWithProjectAgentName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .setLanguageCode(languageCode)
             .build();
     return listEntityTypes(request);
@@ -236,8 +287,38 @@ public class EntityTypesClient implements BackgroundResource {
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   String languageCode = "";
+   *   for (EntityType element : entityTypesClient.listEntityTypes(parent.toString(), languageCode).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
+   *     ID&gt;/agent`.
+   * @param languageCode Optional. The language to list entity synonyms for. If not specified, the
+   *     agent's default language is used. [More than a dozen
+   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
+   *     must be enabled in the agent, before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntityTypesPagedResponse listEntityTypes(String parent, String languageCode) {
+    ListEntityTypesRequest request =
+        ListEntityTypesRequest.newBuilder().setParent(parent).setLanguageCode(languageCode).build();
+    return listEntityTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the list of all entity types in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (EntityType element : entityTypesClient.listEntityTypes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -262,7 +343,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListEntityTypesPagedResponse&gt; future = entityTypesClient.listEntityTypesPagedCallable().futureCall(request);
    *   // Do something
@@ -287,7 +368,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListEntityTypesResponse response = entityTypesClient.listEntityTypesCallable().call(request);
@@ -329,7 +410,30 @@ public class EntityTypesClient implements BackgroundResource {
   public final EntityType getEntityType(EntityTypeName name) {
 
     GetEntityTypeRequest request =
-        GetEntityTypeRequest.newBuilder().setNameWithEntityTypeName(name).build();
+        GetEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   EntityType response = entityTypesClient.getEntityType(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entity type. Format: `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntityType getEntityType(String name) {
+
+    GetEntityTypeRequest request = GetEntityTypeRequest.newBuilder().setName(name).build();
     return getEntityType(request);
   }
 
@@ -359,7 +463,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     GetEntityTypeRequest request =
         GetEntityTypeRequest.newBuilder()
-            .setNameWithEntityTypeName(name)
+            .setName(name == null ? null : name.toString())
             .setLanguageCode(languageCode)
             .build();
     return getEntityType(request);
@@ -374,8 +478,37 @@ public class EntityTypesClient implements BackgroundResource {
    * <pre><code>
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   String languageCode = "";
+   *   EntityType response = entityTypesClient.getEntityType(name.toString(), languageCode);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entity type. Format: `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param languageCode Optional. The language to retrieve entity synonyms for. If not specified,
+   *     the agent's default language is used. [More than a dozen
+   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
+   *     must be enabled in the agent, before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntityType getEntityType(String name, String languageCode) {
+
+    GetEntityTypeRequest request =
+        GetEntityTypeRequest.newBuilder().setName(name).setLanguageCode(languageCode).build();
+    return getEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   GetEntityTypeRequest request = GetEntityTypeRequest.newBuilder()
-   *     .setNameWithEntityTypeName(name)
+   *     .setName(name.toString())
    *     .build();
    *   EntityType response = entityTypesClient.getEntityType(request);
    * }
@@ -398,7 +531,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   GetEntityTypeRequest request = GetEntityTypeRequest.newBuilder()
-   *     .setNameWithEntityTypeName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;EntityType&gt; future = entityTypesClient.getEntityTypeCallable().futureCall(request);
    *   // Do something
@@ -433,9 +566,35 @@ public class EntityTypesClient implements BackgroundResource {
 
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
-            .setParentWithProjectAgentName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .setEntityType(entityType)
             .build();
+    return createEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an entity type in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   EntityType entityType = EntityType.newBuilder().build();
+   *   EntityType response = entityTypesClient.createEntityType(parent.toString(), entityType);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
+   *     ID&gt;/agent`.
+   * @param entityType Required. The entity type to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntityType createEntityType(String parent, EntityType entityType) {
+
+    CreateEntityTypeRequest request =
+        CreateEntityTypeRequest.newBuilder().setParent(parent).setEntityType(entityType).build();
     return createEntityType(request);
   }
 
@@ -468,7 +627,43 @@ public class EntityTypesClient implements BackgroundResource {
 
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
-            .setParentWithProjectAgentName(parent)
+            .setParent(parent == null ? null : parent.toString())
+            .setEntityType(entityType)
+            .setLanguageCode(languageCode)
+            .build();
+    return createEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates an entity type in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   EntityType entityType = EntityType.newBuilder().build();
+   *   String languageCode = "";
+   *   EntityType response = entityTypesClient.createEntityType(parent.toString(), entityType, languageCode);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
+   *     ID&gt;/agent`.
+   * @param entityType Required. The entity type to create.
+   * @param languageCode Optional. The language of entity synonyms defined in `entity_type`. If not
+   *     specified, the agent's default language is used. [More than a dozen
+   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
+   *     must be enabled in the agent, before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntityType createEntityType(
+      String parent, EntityType entityType, String languageCode) {
+
+    CreateEntityTypeRequest request =
+        CreateEntityTypeRequest.newBuilder()
+            .setParent(parent)
             .setEntityType(entityType)
             .setLanguageCode(languageCode)
             .build();
@@ -486,7 +681,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   EntityType entityType = EntityType.newBuilder().build();
    *   CreateEntityTypeRequest request = CreateEntityTypeRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .setEntityType(entityType)
    *     .build();
    *   EntityType response = entityTypesClient.createEntityType(request);
@@ -511,7 +706,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   EntityType entityType = EntityType.newBuilder().build();
    *   CreateEntityTypeRequest request = CreateEntityTypeRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .setEntityType(entityType)
    *     .build();
    *   ApiFuture&lt;EntityType&gt; future = entityTypesClient.createEntityTypeCallable().futureCall(request);
@@ -645,7 +840,30 @@ public class EntityTypesClient implements BackgroundResource {
   public final void deleteEntityType(EntityTypeName name) {
 
     DeleteEntityTypeRequest request =
-        DeleteEntityTypeRequest.newBuilder().setNameWithEntityTypeName(name).build();
+        DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   entityTypesClient.deleteEntityType(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntityType(String name) {
+
+    DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder().setName(name).build();
     deleteEntityType(request);
   }
 
@@ -659,7 +877,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder()
-   *     .setNameWithEntityTypeName(name)
+   *     .setName(name.toString())
    *     .build();
    *   entityTypesClient.deleteEntityType(request);
    * }
@@ -682,7 +900,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder()
-   *     .setNameWithEntityTypeName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = entityTypesClient.deleteEntityTypeCallable().futureCall(request);
    *   // Do something
@@ -698,7 +916,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates/Creates multiple entity types in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateEntityTypesResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -706,7 +926,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   BatchUpdateEntityTypesRequest request = BatchUpdateEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   BatchUpdateEntityTypesResponse response = entityTypesClient.batchUpdateEntityTypesAsync(request).get();
    * }
@@ -724,7 +944,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates/Creates multiple entity types in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateEntityTypesResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -732,7 +954,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   BatchUpdateEntityTypesRequest request = BatchUpdateEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchUpdateEntityTypesOperationCallable().futureCall(request);
    *   // Do something
@@ -750,7 +972,9 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates/Creates multiple entity types in the specified agent.
    *
-   * <p>Operation&lt;response: BatchUpdateEntityTypesResponse, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response:
+   * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+   * metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -758,7 +982,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   BatchUpdateEntityTypesRequest request = BatchUpdateEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchUpdateEntityTypesCallable().futureCall(request);
    *   // Do something
@@ -775,7 +999,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -798,7 +1023,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     BatchDeleteEntityTypesRequest request =
         BatchDeleteEntityTypesRequest.newBuilder()
-            .setParentWithProjectAgentName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntityTypeNames(entityTypeNames)
             .build();
     return batchDeleteEntityTypesAsync(request);
@@ -808,7 +1033,42 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
+   *   Empty response = entityTypesClient.batchDeleteEntityTypesAsync(parent.toString(), entityTypeNames).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to delete all entities types for. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param entityTypeNames Required. The names entity types to delete. All names must point to the
+   *     same agent as `parent`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
+      String parent, List<String> entityTypeNames) {
+
+    BatchDeleteEntityTypesRequest request =
+        BatchDeleteEntityTypesRequest.newBuilder()
+            .setParent(parent)
+            .addAllEntityTypeNames(entityTypeNames)
+            .build();
+    return batchDeleteEntityTypesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -817,7 +1077,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
    *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntityTypeNames(entityTypeNames)
    *     .build();
    *   Empty response = entityTypesClient.batchDeleteEntityTypesAsync(request).get();
@@ -836,7 +1096,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -845,7 +1106,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
    *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntityTypeNames(entityTypeNames)
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntityTypesOperationCallable().futureCall(request);
@@ -863,7 +1124,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entity types in the specified agent.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -872,7 +1134,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
    *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
-   *     .setParentWithProjectAgentName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntityTypeNames(entityTypeNames)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntityTypesCallable().futureCall(request);
@@ -891,7 +1153,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -913,7 +1175,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
-            .setParentWithEntityTypeName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntities(entities)
             .build();
     return batchCreateEntitiesAsync(request);
@@ -924,7 +1186,37 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
+   *   Empty response = entityTypesClient.batchCreateEntitiesAsync(parent.toString(), entities).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to create entities in. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entities Required. The collection of entities to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
+      String parent, List<EntityType.Entity> entities) {
+
+    BatchCreateEntitiesRequest request =
+        BatchCreateEntitiesRequest.newBuilder().setParent(parent).addAllEntities(entities).build();
+    return batchCreateEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates multiple new entities in the specified entity type (extends the existing collection of
+   * entries).
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -951,7 +1243,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     BatchCreateEntitiesRequest request =
         BatchCreateEntitiesRequest.newBuilder()
-            .setParentWithEntityTypeName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntities(entities)
             .setLanguageCode(languageCode)
             .build();
@@ -963,7 +1255,46 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
+   *   String languageCode = "";
+   *   Empty response = entityTypesClient.batchCreateEntitiesAsync(parent.toString(), entities, languageCode).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to create entities in. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entities Required. The collection of entities to create.
+   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
+   *     specified, the agent's default language is used. [More than a dozen
+   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
+   *     must be enabled in the agent, before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> batchCreateEntitiesAsync(
+      String parent, List<EntityType.Entity> entities, String languageCode) {
+
+    BatchCreateEntitiesRequest request =
+        BatchCreateEntitiesRequest.newBuilder()
+            .setParent(parent)
+            .addAllEntities(entities)
+            .setLanguageCode(languageCode)
+            .build();
+    return batchCreateEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates multiple new entities in the specified entity type (extends the existing collection of
+   * entries).
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -972,7 +1303,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchCreateEntitiesRequest request = BatchCreateEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
    *   Empty response = entityTypesClient.batchCreateEntitiesAsync(request).get();
@@ -992,7 +1323,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1001,7 +1332,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchCreateEntitiesRequest request = BatchCreateEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchCreateEntitiesOperationCallable().futureCall(request);
@@ -1020,7 +1351,7 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates multiple new entities in the specified entity type (extends the existing collection of
    * entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1029,7 +1360,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchCreateEntitiesRequest request = BatchCreateEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchCreateEntitiesCallable().futureCall(request);
@@ -1046,7 +1377,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1068,7 +1400,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
-            .setParentWithEntityTypeName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntities(entities)
             .build();
     return batchUpdateEntitiesAsync(request);
@@ -1078,7 +1410,38 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
+   *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(parent.toString(), entities).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to update the entities in. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entities Required. The collection of new entities to replace the existing entities.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
+      String parent, List<EntityType.Entity> entities) {
+
+    BatchUpdateEntitiesRequest request =
+        BatchUpdateEntitiesRequest.newBuilder().setParent(parent).addAllEntities(entities).build();
+    return batchUpdateEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1105,7 +1468,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     BatchUpdateEntitiesRequest request =
         BatchUpdateEntitiesRequest.newBuilder()
-            .setParentWithEntityTypeName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntities(entities)
             .setLanguageCode(languageCode)
             .build();
@@ -1116,7 +1479,47 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
+   *   String languageCode = "";
+   *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(parent.toString(), entities, languageCode).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to update the entities in. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entities Required. The collection of new entities to replace the existing entities.
+   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
+   *     specified, the agent's default language is used. [More than a dozen
+   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
+   *     must be enabled in the agent, before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> batchUpdateEntitiesAsync(
+      String parent, List<EntityType.Entity> entities, String languageCode) {
+
+    BatchUpdateEntitiesRequest request =
+        BatchUpdateEntitiesRequest.newBuilder()
+            .setParent(parent)
+            .addAllEntities(entities)
+            .setLanguageCode(languageCode)
+            .build();
+    return batchUpdateEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates entities in the specified entity type (replaces the existing collection of entries).
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1125,7 +1528,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchUpdateEntitiesRequest request = BatchUpdateEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
    *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(request).get();
@@ -1144,7 +1547,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1153,7 +1557,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchUpdateEntitiesRequest request = BatchUpdateEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchUpdateEntitiesOperationCallable().futureCall(request);
@@ -1171,7 +1575,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates entities in the specified entity type (replaces the existing collection of entries).
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1180,7 +1585,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   BatchUpdateEntitiesRequest request = BatchUpdateEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchUpdateEntitiesCallable().futureCall(request);
@@ -1197,7 +1602,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1220,7 +1626,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
-            .setParentWithEntityTypeName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntityValues(entityValues)
             .build();
     return batchDeleteEntitiesAsync(request);
@@ -1230,7 +1636,42 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to delete entries for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entityValues Required. The canonical `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
+      String parent, List<String> entityValues) {
+
+    BatchDeleteEntitiesRequest request =
+        BatchDeleteEntitiesRequest.newBuilder()
+            .setParent(parent)
+            .addAllEntityValues(entityValues)
+            .build();
+    return batchDeleteEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1258,7 +1699,7 @@ public class EntityTypesClient implements BackgroundResource {
 
     BatchDeleteEntitiesRequest request =
         BatchDeleteEntitiesRequest.newBuilder()
-            .setParentWithEntityTypeName(parent)
+            .setParent(parent == null ? null : parent.toString())
             .addAllEntityValues(entityValues)
             .setLanguageCode(languageCode)
             .build();
@@ -1269,7 +1710,48 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   String languageCode = "";
+   *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues, languageCode).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to delete entries for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entityValues Required. The canonical `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
+   * @param languageCode Optional. The language of entity synonyms defined in `entities`. If not
+   *     specified, the agent's default language is used. [More than a dozen
+   *     languages](https://dialogflow.com/docs/reference/language) are supported. Note: languages
+   *     must be enabled in the agent, before they can be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
+      String parent, List<String> entityValues, String languageCode) {
+
+    BatchDeleteEntitiesRequest request =
+        BatchDeleteEntitiesRequest.newBuilder()
+            .setParent(parent)
+            .addAllEntityValues(entityValues)
+            .setLanguageCode(languageCode)
+            .build();
+    return batchDeleteEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1278,7 +1760,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntityValues(entityValues)
    *     .build();
    *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(request).get();
@@ -1297,7 +1779,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1306,7 +1789,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntityValues(entityValues)
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntitiesOperationCallable().futureCall(request);
@@ -1324,7 +1807,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes entities in the specified entity type.
    *
-   * <p>Operation&lt;response: google.protobuf.Empty, metadata: google.protobuf.Struct&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty], metadata:
+   * [google.protobuf.Struct][google.protobuf.Struct]&gt;
    *
    * <p>Sample code:
    *
@@ -1333,7 +1817,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
-   *     .setParentWithEntityTypeName(parent)
+   *     .setParent(parent.toString())
    *     .addAllEntityValues(entityValues)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntitiesCallable().futureCall(request);
@@ -1374,5 +1858,80 @@ public class EntityTypesClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListEntityTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage,
+          ListEntityTypesFixedSizeCollection> {
+
+    public static ApiFuture<ListEntityTypesPagedResponse> createAsync(
+        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        ApiFuture<ListEntityTypesResponse> futureResponse) {
+      ApiFuture<ListEntityTypesPage> futurePage =
+          ListEntityTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListEntityTypesPage, ListEntityTypesPagedResponse>() {
+            @Override
+            public ListEntityTypesPagedResponse apply(ListEntityTypesPage input) {
+              return new ListEntityTypesPagedResponse(input);
+            }
+          });
+    }
+
+    private ListEntityTypesPagedResponse(ListEntityTypesPage page) {
+      super(page, ListEntityTypesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEntityTypesPage
+      extends AbstractPage<
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage> {
+
+    private ListEntityTypesPage(
+        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        ListEntityTypesResponse response) {
+      super(context, response);
+    }
+
+    private static ListEntityTypesPage createEmptyPage() {
+      return new ListEntityTypesPage(null, null);
+    }
+
+    @Override
+    protected ListEntityTypesPage createPage(
+        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        ListEntityTypesResponse response) {
+      return new ListEntityTypesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEntityTypesPage> createPageAsync(
+        PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> context,
+        ApiFuture<ListEntityTypesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEntityTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage,
+          ListEntityTypesFixedSizeCollection> {
+
+    private ListEntityTypesFixedSizeCollection(
+        List<ListEntityTypesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEntityTypesFixedSizeCollection createEmptyCollection() {
+      return new ListEntityTypesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEntityTypesFixedSizeCollection createCollection(
+        List<ListEntityTypesPage> pages, int collectionSize) {
+      return new ListEntityTypesFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +15,7 @@
  */
 package com.google.cloud.dialogflow.v2beta1.stub;
 
-import static com.google.cloud.dialogflow.v2beta1.PagedResponseWrappers.ListSessionEntityTypesPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.SessionEntityTypesClient.ListSessionEntityTypesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -30,7 +30,6 @@ import com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest;
 import com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse;
 import com.google.cloud.dialogflow.v2beta1.SessionEntityType;
-import com.google.cloud.dialogflow.v2beta1.SessionEntityTypesSettings;
 import com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -118,7 +117,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
   private final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
       deleteSessionEntityTypeCallable;
 
-  public static final GrpcSessionEntityTypesStub create(SessionEntityTypesSettings settings)
+  public static final GrpcSessionEntityTypesStub create(SessionEntityTypesStubSettings settings)
       throws IOException {
     return new GrpcSessionEntityTypesStub(settings, ClientContext.create(settings));
   }
@@ -126,7 +125,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
   public static final GrpcSessionEntityTypesStub create(ClientContext clientContext)
       throws IOException {
     return new GrpcSessionEntityTypesStub(
-        SessionEntityTypesSettings.newBuilder().build(), clientContext);
+        SessionEntityTypesStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -135,7 +134,7 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
    * should be preferred.
    */
   protected GrpcSessionEntityTypesStub(
-      SessionEntityTypesSettings settings, ClientContext clientContext) throws IOException {
+      SessionEntityTypesStubSettings settings, ClientContext clientContext) throws IOException {
 
     GrpcCallSettings<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
         listSessionEntityTypesTransportSettings =

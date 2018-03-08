@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptions;
-import com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
+import com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
 import com.google.firestore.v1beta1.ListCollectionIdsRequest;
 import java.util.Iterator;
 import java.util.List;
@@ -449,15 +449,21 @@ public final class DocumentReference {
     return String.format("DocumentReference{path=%s}", path);
   }
 
+  /**
+   * Returns true if this DocumentReference is equal to the provided object.
+   *
+   * @param obj The object to compare against.
+   * @return Whether this DocumentReference is equal to the provided object.
+   */
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
-    DocumentReference that = (DocumentReference) o;
+    DocumentReference that = (DocumentReference) obj;
     return Objects.equals(path, that.path) && Objects.equals(firestore, that.firestore);
   }
 

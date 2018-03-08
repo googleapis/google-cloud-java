@@ -19,5 +19,4 @@
  *
  * @see <a href="https://cloud.google.com/spanner/">Cloud Spanner</a>
  */
-
 package com.google.cloud.spanner;

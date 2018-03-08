@@ -17,7 +17,7 @@
 package com.google.cloud.datastore;
 
 import com.google.cloud.Service;
-
+import com.google.datastore.v1.TransactionOptions;
 import java.util.Iterator;
 import java.util.List;
 
@@ -25,6 +25,14 @@ import java.util.List;
  * An interface for Google Cloud Datastore.
  */
 public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWriter {
+
+  /**
+   * Returns a new Datastore transaction.
+   *
+   * @param options a transaction option indicating the mode of the transaction (read-only or read-write)
+   * @throws DatastoreException upon failure
+   */
+  Transaction newTransaction(TransactionOptions options);
 
   /**
    * Returns a new Datastore transaction.
@@ -68,6 +76,40 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   <T> T runInTransaction(TransactionCallable<T> callable);
+
+
+  /**
+   * Invokes the callback's {@link Datastore.TransactionCallable#run} method with a
+   * {@link DatastoreReaderWriter} that is associated with a new transaction.
+   * The transaction will be committed upon successful invocation.
+   * Any thrown exception will cause the transaction to rollback and will be propagated
+   * as a {@link DatastoreException} with the original exception as its root cause.
+   * If {@link TransactionOptions} is set to read-write mode, previous transaction Id
+   * in the options will be automatically populated each time a transaction is retried.
+   *
+   * <p>Example of running in a transaction.
+   * <pre> {@code
+   * String callableResult = "my_callable_result";
+   * TransactionCallable<String> callable = new TransactionCallable<String>() {
+   *   public String run(DatastoreReaderWriter readerWriter) {
+   *     // use readerWriter to run in transaction
+   *     return callableResult;
+   *   }
+   * };
+   *
+   * TransactionOptions options = TransactionOptions.newBuilder()
+   *     .setReadWrite(TransactionOptions.ReadWrite
+   *         .getDefaultInstance())
+   *     .build();
+   *
+   * String result = datastore.runInTransaction(callable, options);
+   * }</pre>
+   *
+   * @param callable the callback to call with a newly created transactional readerWriter
+   * @param options the Transaction options indicating whether the transaction mode is Read-only or Read-Write
+   * @throws DatastoreException upon failure
+   */
+  <T> T runInTransaction(TransactionCallable<T> callable, TransactionOptions options);
 
   /**
    * Returns a new Batch for processing multiple write operations in one request.

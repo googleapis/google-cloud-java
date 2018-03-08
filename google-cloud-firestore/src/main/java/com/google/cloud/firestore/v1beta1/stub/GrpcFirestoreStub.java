@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,8 +15,8 @@
  */
 package com.google.cloud.firestore.v1beta1.stub;
 
-import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListCollectionIdsPagedResponse;
-import static com.google.cloud.firestore.v1beta1.PagedResponseWrappers.ListDocumentsPagedResponse;
+import static com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
+import static com.google.cloud.firestore.v1beta1.FirestoreClient.ListDocumentsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -27,7 +27,6 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.firestore.v1beta1.FirestoreSettings;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.BeginTransactionRequest;
@@ -201,12 +200,12 @@ public class GrpcFirestoreStub extends FirestoreStub {
   private final UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
       listCollectionIdsPagedCallable;
 
-  public static final GrpcFirestoreStub create(FirestoreSettings settings) throws IOException {
+  public static final GrpcFirestoreStub create(FirestoreStubSettings settings) throws IOException {
     return new GrpcFirestoreStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcFirestoreStub create(ClientContext clientContext) throws IOException {
-    return new GrpcFirestoreStub(FirestoreSettings.newBuilder().build(), clientContext);
+    return new GrpcFirestoreStub(FirestoreStubSettings.newBuilder().build(), clientContext);
   }
 
   /**
@@ -214,7 +213,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
    * preferred.
    */
-  protected GrpcFirestoreStub(FirestoreSettings settings, ClientContext clientContext)
+  protected GrpcFirestoreStub(FirestoreStubSettings settings, ClientContext clientContext)
       throws IOException {
 
     GrpcCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =

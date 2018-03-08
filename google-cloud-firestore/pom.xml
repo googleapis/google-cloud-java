@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-firestore</artifactId>
-  <version>0.32.1-beta-SNAPSHOT</version>
+  <version>0.38.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Firestore</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-firestore
@@ -15,16 +15,12 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.32.1-alpha-SNAPSHOT</version>
+    <version>0.38.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-firestore</site.installationModule>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-tcnative-boringssl-static</artifactId>
-    </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
@@ -46,13 +42,18 @@
       <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-firestore-v1beta1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty</artifactId>
+      <artifactId>grpc-netty-shaded</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>

@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.protobuf.ByteString;
 import java.util.Iterator;
 import java.util.List;
 
@@ -445,4 +446,6 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * Returns the transaction associated {@link Datastore}.
    */
   Datastore getDatastore();
+
+  ByteString getTransactionId();
 }

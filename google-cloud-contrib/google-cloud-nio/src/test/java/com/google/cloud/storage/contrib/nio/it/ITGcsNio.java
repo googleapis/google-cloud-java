@@ -384,6 +384,28 @@ public class ITGcsNio {
     }
   }
 
+  @Test
+  public void testListFilesInRootDirectory() throws IOException {
+    CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket(
+      BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
+      .build());
+    
+    // test absolute path
+    Path rootPath = fs.getPath("");
+    List<String> objectNames = new ArrayList<String>();
+    for (Path path : Files.newDirectoryStream(rootPath)) {
+      objectNames.add(path.toString());
+    }
+    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
+    
+    // test relative path
+    rootPath = fs.getPath(".");
+    for (Path path : Files.newDirectoryStream(rootPath)) {
+      objectNames.add(path.toString());
+    }
+    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
+  }
+
   /**
    * Delete the given directory and all of its contents if non-empty.
    * @param directory the directory to delete

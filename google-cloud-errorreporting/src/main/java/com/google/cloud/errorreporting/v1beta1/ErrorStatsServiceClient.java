@@ -1,11 +1,11 @@
 /*
- * Copyright 2017, Google LLC All rights reserved.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,15 +15,22 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
-import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
-import static com.google.cloud.errorreporting.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
-
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.errorreporting.v1beta1.stub.ErrorStatsServiceStub;
+import com.google.cloud.errorreporting.v1beta1.stub.ErrorStatsServiceStubSettings;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
+import com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent;
+import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
@@ -31,6 +38,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -138,7 +146,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    */
   protected ErrorStatsServiceClient(ErrorStatsServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.stub = settings.createStub();
+    this.stub = ((ErrorStatsServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -189,7 +197,46 @@ public class ErrorStatsServiceClient implements BackgroundResource {
       ProjectName projectName, QueryTimeRange timeRange) {
     ListGroupStatsRequest request =
         ListGroupStatsRequest.newBuilder()
-            .setProjectNameWithProjectName(projectName)
+            .setProjectName(projectName == null ? null : projectName.toString())
+            .setTimeRange(timeRange)
+            .build();
+    return listGroupStats(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the specified groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
+   *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
+   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(projectName.toString(), timeRange).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
+   *     as &lt;code&gt;projects/&lt;/code&gt; plus the &lt;a
+   *     href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud Platform project
+   *     ID&lt;/a&gt;.
+   *     <p>Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+   * @param timeRange [Optional] List data for the given time range. If not set a default time range
+   *     is used. The field time_range_begin in the response will specify the beginning of this time
+   *     range. Only &lt;code&gt;ErrorGroupStats&lt;/code&gt; with a non-zero count in the given
+   *     time range are returned, unless the request contains an explicit group_id list. If a
+   *     group_id list is given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences
+   *     are returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupStatsPagedResponse listGroupStats(
+      String projectName, QueryTimeRange timeRange) {
+    ListGroupStatsRequest request =
+        ListGroupStatsRequest.newBuilder()
+            .setProjectName(projectName)
             .setTimeRange(timeRange)
             .build();
     return listGroupStats(request);
@@ -206,7 +253,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setTimeRange(timeRange)
    *     .build();
    *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(request).iterateAll()) {
@@ -233,7 +280,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setTimeRange(timeRange)
    *     .build();
    *   ApiFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
@@ -260,7 +307,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setTimeRange(timeRange)
    *     .build();
    *   while (true) {
@@ -308,7 +355,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   public final ListEventsPagedResponse listEvents(ProjectName projectName, String groupId) {
     ListEventsRequest request =
         ListEventsRequest.newBuilder()
-            .setProjectNameWithProjectName(projectName)
+            .setProjectName(projectName == null ? null : projectName.toString())
             .setGroupId(groupId)
             .build();
     return listEvents(request);
@@ -324,8 +371,36 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
+   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(projectName.toString(), groupId).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
+   *     as `projects/` plus the [Google Cloud Platform project
+   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
+   * @param groupId [Required] The group for which events shall be returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEventsPagedResponse listEvents(String projectName, String groupId) {
+    ListEventsRequest request =
+        ListEventsRequest.newBuilder().setProjectName(projectName).setGroupId(groupId).build();
+    return listEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the specified events.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
+   *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setGroupId(groupId)
    *     .build();
    *   for (ErrorEvent element : errorStatsServiceClient.listEvents(request).iterateAll()) {
@@ -352,7 +427,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setGroupId(groupId)
    *     .build();
    *   ApiFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
@@ -378,7 +453,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .setGroupId(groupId)
    *     .build();
    *   while (true) {
@@ -421,7 +496,34 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
 
     DeleteEventsRequest request =
-        DeleteEventsRequest.newBuilder().setProjectNameWithProjectName(projectName).build();
+        DeleteEventsRequest.newBuilder()
+            .setProjectName(projectName == null ? null : projectName.toString())
+            .build();
+    return deleteEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all error events of a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
+   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName.toString());
+   * }
+   * </code></pre>
+   *
+   * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
+   *     as `projects/` plus the [Google Cloud Platform project
+   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeleteEventsResponse deleteEvents(String projectName) {
+
+    DeleteEventsRequest request =
+        DeleteEventsRequest.newBuilder().setProjectName(projectName).build();
     return deleteEvents(request);
   }
 
@@ -435,7 +537,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .build();
    *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(request);
    * }
@@ -458,7 +560,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
-   *     .setProjectNameWithProjectName(projectName)
+   *     .setProjectName(projectName.toString())
    *     .build();
    *   ApiFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
    *   // Do something
@@ -498,5 +600,152 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListGroupStatsPagedResponse
+      extends AbstractPagedListResponse<
+          ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats, ListGroupStatsPage,
+          ListGroupStatsFixedSizeCollection> {
+
+    public static ApiFuture<ListGroupStatsPagedResponse> createAsync(
+        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        ApiFuture<ListGroupStatsResponse> futureResponse) {
+      ApiFuture<ListGroupStatsPage> futurePage =
+          ListGroupStatsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListGroupStatsPage, ListGroupStatsPagedResponse>() {
+            @Override
+            public ListGroupStatsPagedResponse apply(ListGroupStatsPage input) {
+              return new ListGroupStatsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListGroupStatsPagedResponse(ListGroupStatsPage page) {
+      super(page, ListGroupStatsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGroupStatsPage
+      extends AbstractPage<
+          ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats, ListGroupStatsPage> {
+
+    private ListGroupStatsPage(
+        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        ListGroupStatsResponse response) {
+      super(context, response);
+    }
+
+    private static ListGroupStatsPage createEmptyPage() {
+      return new ListGroupStatsPage(null, null);
+    }
+
+    @Override
+    protected ListGroupStatsPage createPage(
+        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        ListGroupStatsResponse response) {
+      return new ListGroupStatsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListGroupStatsPage> createPageAsync(
+        PageContext<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> context,
+        ApiFuture<ListGroupStatsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGroupStatsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats, ListGroupStatsPage,
+          ListGroupStatsFixedSizeCollection> {
+
+    private ListGroupStatsFixedSizeCollection(List<ListGroupStatsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGroupStatsFixedSizeCollection createEmptyCollection() {
+      return new ListGroupStatsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGroupStatsFixedSizeCollection createCollection(
+        List<ListGroupStatsPage> pages, int collectionSize) {
+      return new ListGroupStatsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListEventsPagedResponse
+      extends AbstractPagedListResponse<
+          ListEventsRequest, ListEventsResponse, ErrorEvent, ListEventsPage,
+          ListEventsFixedSizeCollection> {
+
+    public static ApiFuture<ListEventsPagedResponse> createAsync(
+        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        ApiFuture<ListEventsResponse> futureResponse) {
+      ApiFuture<ListEventsPage> futurePage =
+          ListEventsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListEventsPage, ListEventsPagedResponse>() {
+            @Override
+            public ListEventsPagedResponse apply(ListEventsPage input) {
+              return new ListEventsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListEventsPagedResponse(ListEventsPage page) {
+      super(page, ListEventsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEventsPage
+      extends AbstractPage<ListEventsRequest, ListEventsResponse, ErrorEvent, ListEventsPage> {
+
+    private ListEventsPage(
+        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        ListEventsResponse response) {
+      super(context, response);
+    }
+
+    private static ListEventsPage createEmptyPage() {
+      return new ListEventsPage(null, null);
+    }
+
+    @Override
+    protected ListEventsPage createPage(
+        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        ListEventsResponse response) {
+      return new ListEventsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEventsPage> createPageAsync(
+        PageContext<ListEventsRequest, ListEventsResponse, ErrorEvent> context,
+        ApiFuture<ListEventsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEventsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEventsRequest, ListEventsResponse, ErrorEvent, ListEventsPage,
+          ListEventsFixedSizeCollection> {
+
+    private ListEventsFixedSizeCollection(List<ListEventsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEventsFixedSizeCollection createEmptyCollection() {
+      return new ListEventsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEventsFixedSizeCollection createCollection(
+        List<ListEventsPage> pages, int collectionSize) {
+      return new ListEventsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

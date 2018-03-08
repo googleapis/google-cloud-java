@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import java.util.Objects;
 import javax.annotation.Nonnull;
 
 /**
@@ -38,7 +39,7 @@ public class DocumentChange {
 
   private final Type type;
 
-  private final DocumentSnapshot document;
+  private final QueryDocumentSnapshot document;
 
   /** The index in the old snapshot, after processing all previous changes. */
   private final int oldIndex;
@@ -46,7 +47,7 @@ public class DocumentChange {
   /** The index in the new snapshot, after processing all previous changes. */
   private final int newIndex;
 
-  DocumentChange(DocumentSnapshot document, Type type, int oldIndex, int newIndex) {
+  DocumentChange(QueryDocumentSnapshot document, Type type, int oldIndex, int newIndex) {
     this.type = type;
     this.document = document;
     this.oldIndex = oldIndex;
@@ -58,8 +59,15 @@ public class DocumentChange {
     return type;
   }
 
+  /**
+   * Returns the newly added or modified document if this DocumentChange is for an updated document.
+   * Returns the deleted document if this document change represents a removal.
+   *
+   * @return A snapshot of the new data (for Type.ADDED or Type.MODIFIED) or the removed data (for
+   *     Type.REMOVED).
+   */
   @Nonnull
-  public DocumentSnapshot getDocument() {
+  public QueryDocumentSnapshot getDocument() {
     return document;
   }
 
@@ -79,5 +87,31 @@ public class DocumentChange {
    */
   public int getNewIndex() {
     return newIndex;
+  }
+
+  /**
+   * Returns true if this DocumentChange is equal to the provided object.
+   *
+   * @param obj The object to compare against.
+   * @return Whether this DocumentChange is equal to the provided object.
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    DocumentChange that = (DocumentChange) obj;
+    return oldIndex == that.oldIndex
+        && newIndex == that.newIndex
+        && type == that.type
+        && Objects.equals(document, that.document);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(type, document, oldIndex, newIndex);
   }
 }

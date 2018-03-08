@@ -19,6 +19,7 @@ package com.google.cloud.pubsub.v1;
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiService;
+import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowControlSettings;
@@ -31,17 +32,19 @@ import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import com.google.pubsub.v1.GetSubscriptionRequest;
+import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberStub;
 import com.google.pubsub.v1.Subscription;
-import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
 import io.grpc.auth.MoreCallCredentials;
@@ -50,6 +53,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -103,7 +107,7 @@ public class Subscriber extends AbstractApiService {
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
-  private final SubscriptionName subscriptionName;
+  private final ProjectSubscriptionName subscriptionName;
   private final String cachedSubscriptionNameString;
   private final FlowControlSettings flowControlSettings;
   private final Duration ackExpirationPadding;
@@ -177,7 +181,12 @@ public class Subscriber extends AbstractApiService {
       channelProvider = channelProvider.withExecutor(executor);
     }
     if (channelProvider.needsHeaders()) {
-      channelProvider = channelProvider.withHeaders(builder.headerProvider.getHeaders());
+      Map<String, String> headers =
+          ImmutableMap.<String, String>builder()
+              .putAll(builder.headerProvider.getHeaders())
+              .putAll(builder.internalHeaderProvider.getHeaders())
+              .build();
+      channelProvider = channelProvider.withHeaders(headers);
     }
     if (channelProvider.needsEndpoint()) {
       channelProvider = channelProvider.withEndpoint(SubscriptionAdminSettings.getDefaultEndpoint());
@@ -201,30 +210,13 @@ public class Subscriber extends AbstractApiService {
    * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
    * @param receiver an implementation of {@link MessageReceiver} used to process the received
    *     messages
-   *
-   * @deprecated Use {@link #newBuilder(SubscriptionName, MessageReceiver)} instead.
    */
-  @Deprecated
-  public static Builder defaultBuilder(SubscriptionName subscription, MessageReceiver receiver) {
-    return newBuilder(subscription, receiver);
-  }
-
-  /**
-   * Constructs a new {@link Builder}.
-   *
-   * <p>Once {@link Builder#build} is called a gRPC stub will be created for use of the {@link
-   * Subscriber}.
-   *
-   * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
-   * @param receiver an implementation of {@link MessageReceiver} used to process the received
-   *     messages
-   */
-  public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
+  public static Builder newBuilder(ProjectSubscriptionName subscription, MessageReceiver receiver) {
     return new Builder(subscription, receiver);
   }
 
   /** Subscription which the subscriber is subscribed to. */
-  public SubscriptionName getSubscriptionName() {
+  public ProjectSubscriptionName getSubscriptionName() {
     return subscriptionName;
   }
 
@@ -499,7 +491,7 @@ public class Subscriber extends AbstractApiService {
                     * Runtime.getRuntime().availableProcessors())
             .build();
 
-    SubscriptionName subscriptionName;
+    ProjectSubscriptionName subscriptionName;
     MessageReceiver receiver;
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
@@ -518,7 +510,8 @@ public class Subscriber extends AbstractApiService {
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
-    HeaderProvider headerProvider =
+    HeaderProvider headerProvider = new NoHeaderProvider();
+    HeaderProvider internalHeaderProvider =
         SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
@@ -526,7 +519,7 @@ public class Subscriber extends AbstractApiService {
     boolean useStreaming = true;
     int parallelPullCount = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
 
-    Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
+    Builder(ProjectSubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
       this.receiver = receiver;
     }
@@ -544,8 +537,34 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
+    /**
+     * Sets the static header provider. The header provider will be called during client
+     * construction only once. The headers returned by the provider will be cached and supplied as
+     * is for each request issued by the constructed client. Some reserved headers can be overridden
+     * (e.g. Content-Type) or merged with the default value (e.g. User-Agent) by the underlying
+     * transport layer.
+     *
+     * @param headerProvider the header provider
+     * @return the builder
+     */
+    @BetaApi
     public Builder setHeaderProvider(HeaderProvider headerProvider) {
       this.headerProvider = Preconditions.checkNotNull(headerProvider);
+      return this;
+    }
+
+    /**
+     * Sets the static header provider for getting internal (library-defined) headers. The header
+     * provider will be called during client construction only once. The headers returned by the
+     * provider will be cached and supplied as is for each request issued by the constructed client.
+     * Some reserved headers can be overridden (e.g. Content-Type) or merged with the default value
+     * (e.g. User-Agent) by the underlying transport layer.
+     *
+     * @param internalHeaderProvider the internal header provider
+     * @return the builder
+     */
+    Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
+      this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
       return this;
     }
 

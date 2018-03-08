@@ -54,7 +54,7 @@ public class MetadataConfig {
   }
 
   public static String getClusterName() {
-    return getAttribute("instance/cluster-name");
+    return getAttribute("instance/attributes/cluster-name");
   }
 
   private static String getAttribute(String attributeName) {

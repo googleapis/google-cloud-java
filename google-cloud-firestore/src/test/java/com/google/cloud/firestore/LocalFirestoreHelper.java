@@ -42,6 +42,9 @@ import com.google.firestore.v1beta1.RollbackRequest;
 import com.google.firestore.v1beta1.RunQueryRequest;
 import com.google.firestore.v1beta1.RunQueryResponse;
 import com.google.firestore.v1beta1.StructuredQuery;
+import com.google.firestore.v1beta1.StructuredQuery.CompositeFilter;
+import com.google.firestore.v1beta1.StructuredQuery.FieldFilter;
+import com.google.firestore.v1beta1.StructuredQuery.UnaryFilter;
 import com.google.firestore.v1beta1.Value;
 import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
@@ -357,6 +360,16 @@ public final class LocalFirestoreHelper {
   }
 
   public static StructuredQuery filter(StructuredQuery.FieldFilter.Operator operator) {
+    return filter(operator, "foo", "bar");
+  }
+
+  public static StructuredQuery filter(
+      StructuredQuery.FieldFilter.Operator operator, String path, String value) {
+    return filter(operator, path, string(value));
+  }
+
+  public static StructuredQuery filter(
+      StructuredQuery.FieldFilter.Operator operator, String path, Value value) {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
     StructuredQuery.CompositeFilter.Builder compositeFilter =
         structuredQuery.getWhereBuilder().getCompositeFilterBuilder();
@@ -364,9 +377,9 @@ public final class LocalFirestoreHelper {
 
     StructuredQuery.FieldFilter.Builder fieldFilter =
         compositeFilter.addFiltersBuilder().getFieldFilterBuilder();
-    fieldFilter.setField(StructuredQuery.FieldReference.newBuilder().setFieldPath("foo"));
+    fieldFilter.setField(StructuredQuery.FieldReference.newBuilder().setFieldPath(path));
     fieldFilter.setOp(operator);
-    fieldFilter.setValue(Value.newBuilder().setStringValue("bar"));
+    fieldFilter.setValue(value);
 
     return structuredQuery.build();
   }
@@ -401,6 +414,17 @@ public final class LocalFirestoreHelper {
       structuredQuery.mergeFrom(option);
     }
 
+    CompositeFilter compositeFilter = structuredQuery.getWhere().getCompositeFilter();
+    if (compositeFilter.getFiltersCount() == 1) {
+      if (compositeFilter.getFilters(0).hasFieldFilter()) {
+        FieldFilter fieldFilter = compositeFilter.getFilters(0).getFieldFilter();
+        structuredQuery.getWhereBuilder().setFieldFilter(fieldFilter);
+      } else {
+        UnaryFilter unaryFilter = compositeFilter.getFilters(0).getUnaryFilter();
+        structuredQuery.getWhereBuilder().setUnaryFilter(unaryFilter);
+      }
+    }
+
     if (transactionId != null) {
       request.setTransaction(transactionId);
     }
@@ -409,13 +433,21 @@ public final class LocalFirestoreHelper {
   }
 
   public static BatchGetDocumentsRequest get() {
-    return get(null);
+    return getAll(null, DOCUMENT_NAME);
   }
 
   public static BatchGetDocumentsRequest get(@Nullable ByteString transactionId) {
+    return getAll(transactionId, DOCUMENT_NAME);
+  }
+
+  public static BatchGetDocumentsRequest getAll(
+      @Nullable ByteString transactionId, String... documentNames) {
     BatchGetDocumentsRequest.Builder request = BatchGetDocumentsRequest.newBuilder();
     request.setDatabase(DATABASE_NAME);
-    request.addDocuments(DOCUMENT_NAME);
+
+    for (String documentName : documentNames) {
+      request.addDocuments(documentName);
+    }
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
@@ -594,7 +626,9 @@ public final class LocalFirestoreHelper {
             null,
             new DocumentReference(
                 null,
-                ResourcePath.create(DatabaseRootName.of("", ""), ImmutableList.of("coll", "doc"))),
+                ResourcePath.create(
+                    DatabaseRootName.of("test-project", "(default)"),
+                    ImmutableList.of("coll", "doc"))),
             SINGLE_FIELD_PROTO,
             Instant.ofEpochSecond(5, 6),
             Instant.ofEpochSecond(3, 4),

@@ -3,7 +3,7 @@ Google Cloud Java Client Examples
 
 Examples for google-cloud (Java idiomatic client for [Google Cloud Platform][cloud-platform] services).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-examples.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-examples.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
@@ -14,22 +14,25 @@ Examples for google-cloud (Java idiomatic client for [Google Cloud Platform][clo
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud-examples:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.32.0-alpha</version>
+  <version>0.38.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-examples:0.32.0-alpha'
+compile 'com.google.cloud:google-cloud-examples:0.38.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.32.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.38.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
 To run examples from your command line:
 
