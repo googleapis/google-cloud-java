@@ -33,7 +33,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -42,7 +41,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
