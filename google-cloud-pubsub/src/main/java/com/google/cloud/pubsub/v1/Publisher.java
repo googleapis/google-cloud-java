@@ -41,6 +41,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.pubsub.v1.ProjectTopicName;
+import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.TopicNames;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
@@ -90,8 +92,7 @@ import java.util.logging.Logger;
 public class Publisher {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
 
-  private final ProjectTopicName topicName;
-  private final String cachedTopicNameString;
+  private final String topicName;
 
   private final BatchingSettings batchingSettings;
   private final RetrySettings retrySettings;
@@ -124,7 +125,6 @@ public class Publisher {
 
   private Publisher(Builder builder) throws IOException {
     topicName = builder.topicName;
-    cachedTopicNameString = topicName.toString();
 
     this.batchingSettings = builder.batchingSettings;
     this.retrySettings = builder.retrySettings;
@@ -167,7 +167,12 @@ public class Publisher {
   }
 
   /** Topic which the publisher publishes to. */
-  public ProjectTopicName getTopicName() {
+  public TopicName getTopicName() {
+    return TopicNames.parse(topicName);
+  }
+
+/** Topic which the publisher publishes to. */
+  public String getTopicNameString() {
     return topicName;
   }
 
@@ -312,7 +317,7 @@ public class Publisher {
 
   private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
-    publishRequest.setTopic(cachedTopicNameString);
+    publishRequest.setTopic(topicName);
     for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
@@ -511,7 +516,27 @@ public class Publisher {
    * }</pre>
    *
    */
-  public static Builder newBuilder(ProjectTopicName topicName) {
+  public static Builder newBuilder(TopicName topicName) {
+    return newBuilder(topicName.toString());
+  }
+
+  /**
+   * Constructs a new {@link Builder} using the given topic.
+   *
+   * <p>Example of creating a {@code Publisher}.
+   * <pre>{@code
+   * String topic = "projects/my_project/topics/my_topic";
+   * Publisher publisher = Publisher.newBuilder(topic).build();
+   * try {
+   *   // ...
+   * } finally {
+   *   // When finished with the publisher, make sure to shutdown to free up resources.
+   *   publisher.shutdown();
+   * }
+   * }</pre>
+   *
+   */
+  public static Builder newBuilder(String topicName) {
     return new Builder(topicName);
   }
 
@@ -556,7 +581,7 @@ public class Publisher {
             .setExecutorThreadCount(THREADS_PER_CPU * Runtime.getRuntime().availableProcessors())
             .build();
 
-    ProjectTopicName topicName;
+    String topicName;
 
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
@@ -574,7 +599,7 @@ public class Publisher {
     CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();
 
-    private Builder(ProjectTopicName topic) {
+    private Builder(String topic) {
       this.topicName = Preconditions.checkNotNull(topic);
     }
 

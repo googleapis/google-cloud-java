@@ -472,7 +472,7 @@ public class PublisherImplTest {
   @Test
   public void testBuilderParametersAndDefaults() {
     Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
-    assertEquals(TEST_TOPIC, builder.topicName);
+    assertEquals(TEST_TOPIC.toString(), builder.topicName);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
     assertEquals(
         Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,

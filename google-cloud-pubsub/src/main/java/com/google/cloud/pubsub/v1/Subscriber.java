@@ -107,8 +107,7 @@ public class Subscriber extends AbstractApiService {
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
-  private final ProjectSubscriptionName subscriptionName;
-  private final String cachedSubscriptionNameString;
+  private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
@@ -135,7 +134,6 @@ public class Subscriber extends AbstractApiService {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
-    cachedSubscriptionNameString = subscriptionName.toString();
 
     Preconditions.checkArgument(
         builder.ackExpirationPadding.compareTo(Duration.ZERO) > 0, "padding must be positive");
@@ -204,19 +202,32 @@ public class Subscriber extends AbstractApiService {
   /**
    * Constructs a new {@link Builder}.
    *
-   * <p>Once {@link Builder#build} is called a gRPC stub will be created for use of the {@link
-   * Subscriber}.
-   *
    * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
    * @param receiver an implementation of {@link MessageReceiver} used to process the received
    *     messages
    */
   public static Builder newBuilder(ProjectSubscriptionName subscription, MessageReceiver receiver) {
+    return newBuilder(subscription.toString(), receiver);
+  }
+
+  /**
+   * Constructs a new {@link Builder}.
+   *
+   * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
+   * @param receiver an implementation of {@link MessageReceiver} used to process the received
+   *     messages
+   */
+  public static Builder newBuilder(String subscription, MessageReceiver receiver) {
     return new Builder(subscription, receiver);
   }
 
   /** Subscription which the subscriber is subscribed to. */
   public ProjectSubscriptionName getSubscriptionName() {
+    return ProjectSubscriptionName.parse(subscriptionName);
+  }
+
+  /** Subscription which the subscriber is subscribed to. */
+  public String getSubscriptionNameString() {
     return subscriptionName;
   }
 
@@ -344,7 +355,7 @@ public class Subscriber extends AbstractApiService {
       Subscription subscriptionInfo =
           getSubStub.getSubscription(
               GetSubscriptionRequest.newBuilder()
-                  .setSubscription(cachedSubscriptionNameString)
+                  .setSubscription(subscriptionName)
                   .build());
 
       for (Channel channel : channels) {
@@ -401,7 +412,7 @@ public class Subscriber extends AbstractApiService {
         }
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
-                cachedSubscriptionNameString,
+                subscriptionName,
                 receiver,
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
@@ -491,7 +502,7 @@ public class Subscriber extends AbstractApiService {
                     * Runtime.getRuntime().availableProcessors())
             .build();
 
-    ProjectSubscriptionName subscriptionName;
+    String subscriptionName;
     MessageReceiver receiver;
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
@@ -519,7 +530,7 @@ public class Subscriber extends AbstractApiService {
     boolean useStreaming = true;
     int parallelPullCount = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
 
-    Builder(ProjectSubscriptionName subscriptionName, MessageReceiver receiver) {
+    Builder(String subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
       this.receiver = receiver;
     }
