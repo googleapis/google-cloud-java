@@ -522,19 +522,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * } catch (BigQueryException e) {
    *   // the dataset was not created
    * }
-   * } </pre>
-   *
-   * <p>Example of creating a dataset.
-   * <pre> {@code
-   * String datasetName = "my_dataset_name";
-   * Dataset dataset = null;
-   * DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
-   * try {
-   *   // the dataset was created
-   *   dataset = bigquery.create(datasetInfo);
-   * } catch (BigQueryException e) {
-   *   // the dataset was not created
-   * }
    * }</pre>
    *
    * @throws BigQueryException upon failure
@@ -1093,7 +1080,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of running a query with query parameters.
    * <pre> {@code
-   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where;
+   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount";
    * // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
    *     .addNamedParameter("wordCount", QueryParameterValue.int64(5))

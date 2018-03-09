@@ -664,8 +664,7 @@ public class BigQuerySnippets {
    * Example of running a query with query parameters.
    */
   // [TARGET query(QueryJobConfiguration, JobOption...)]
-  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where
-  // word_count > @wordCount"]
+  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
   public void runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
     // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
