@@ -566,7 +566,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Creates a new job.
    *
-   * <p>Example of writing a newline-delimited-json file with textual fields from GCS to a table.
+   * <p>Example of loading a newline-delimited-json file with textual fields from GCS to a table.
    * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
