@@ -381,7 +381,7 @@ public class BigQuerySnippets {
   }
 
   /**
-   * Example of writing a newline-delimited-json file with textual fields from GCS to a table.
+   * Example of loading a newline-delimited-json file with textual fields from GCS to a table.
    */
   // [TARGET create(JobInfo, JobOption...)]
   // [VARIABLE "my_dataset_name"]
