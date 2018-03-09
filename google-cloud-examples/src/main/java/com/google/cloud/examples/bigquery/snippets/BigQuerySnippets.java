@@ -383,7 +383,7 @@ public class BigQuerySnippets {
   /**
    * Example of writing a newline-delimited-json file with textual fields from GCS to a table.
    */
-  // [TARGET writer(WriteChannelConfiguration)]
+  // [TARGET create(JobInfo, JobOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public Long writeRemoteFileToTable(String datasetName, String tableName)
@@ -504,7 +504,9 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /** Example of listing table rows with schema. */
+  /**
+   * Example of listing table rows with schema.
+   */
   // [TARGET listTableData(String, String, Schema, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -522,7 +524,9 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /** Example of listing table rows with schema. */
+  /**
+   * Example of listing table rows with schema.
+   */
   // [TARGET listTableData(TableId, Schema, TableDataListOption...)]
   public FieldValueList listTableDataSchemaId() {
     // [START listTableDataSchemaId]
@@ -641,8 +645,10 @@ public class BigQuerySnippets {
     return success;
   }
 
-  /** Example of running a query. */
-  // [TARGET query(QueryJobConfiguration, QueryOption...)]
+  /**
+   * Example of running a query.
+   */
+  // [TARGET query(QueryJobConfiguration, JobOption...)]
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
   public void runQuery(String query) throws InterruptedException {
     // [START runQuery]
@@ -654,8 +660,10 @@ public class BigQuerySnippets {
     // [END runQuery]
   }
 
-  /** Example of running a query with query parameters. */
-  // [TARGET query(QueryJobConfiguration, QueryOption...)]
+  /**
+   * Example of running a query with query parameters.
+   */
+  // [TARGET query(QueryJobConfiguration, JobOption...)]
   // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where
   // word_count > @wordCount"]
   public void runQueryWithParameters(String query) throws InterruptedException {
