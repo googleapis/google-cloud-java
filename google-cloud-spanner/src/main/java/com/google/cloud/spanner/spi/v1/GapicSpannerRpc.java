@@ -42,119 +42,131 @@ import javax.annotation.Nullable;
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
 
-  // private final DatabaseAdminClient adminDatabaseClient;
-  // private final InstanceAdminClient adminInstanceClient;
-
+  @Override
   public Paginated<InstanceConfig> listInstanceConfigs(int pageSize, @Nullable String pageToken)
       throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public InstanceConfig getInstanceConfig(String instanceConfigName) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
-    // return adminInstanceClient.getInstanceConfig(instanceConfigName);
   }
 
+  @Override
   public Paginated<Instance> listInstances(
       int pageSize, @Nullable String pageToken, @Nullable String filter) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
-    // return adminInstanceClient.listInstances();
   }
 
+  @Override
   public Operation createInstance(String parent, String instanceId, Instance instance)
       throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public Operation updateInstance(Instance instance, FieldMask fieldMask) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public Instance getInstance(String instanceName) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
-    // return adminInstanceClient.getInstance(instanceName);
   }
 
+  @Override
   public void deleteInstance(String instanceName) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
-    // adminInstanceClient.deleteInstance(instanceName);
   }
 
-  // Database admin APIs.
+  @Override
   public Paginated<Database> listDatabases(
       String instanceName, int pageSize, @Nullable String pageToken) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public Operation createDatabase(String instanceName, String createDatabaseStatement,
       Iterable<String> additionalStatements) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public Operation updateDatabaseDdl(String databaseName, Iterable<String> updateDatabaseStatements,
       @Nullable String updateId) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public void dropDatabase(String databaseName) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
-    // adminDatabaseClient.dropDatabase(databaseName);
   }
 
+  @Override
   public Database getDatabase(String databaseName) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
-    // adminDatabaseClient.getDatabase(databaseName);
   }
 
+  @Override
   public List<String> getDatabaseDdl(String databaseName) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
-  /** Retrieves a long running operation. */
+  @Override
   public Operation getOperation(String name) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public Session createSession(String databaseName, @Nullable Map<String, String> labels,
       @Nullable Map<Option, ?> options) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public void deleteSession(String sessionName, @Nullable Map<Option, ?> options)
       throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public StreamingCall read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public Transaction beginTransaction(
       BeginTransactionRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public CommitResponse commit(CommitRequest commitRequest, @Nullable Map<Option, ?> options)
       throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public void rollback(RollbackRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public PartitionResponse partitionQuery(
       PartitionQueryRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
   }
 
+  @Override
   public PartitionResponse partitionRead(
       PartitionReadRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
     throw new UnsupportedOperationException("Not implemented yet.");
