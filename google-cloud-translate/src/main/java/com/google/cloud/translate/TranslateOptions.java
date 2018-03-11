@@ -155,30 +155,28 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
       apiKey = null;
       if (builder.apiKey != null) {
         logger.log(
-            Level.WARNING, "Ignoring API key: using explicit setting for credentials instead.");
+            Level.WARNING,
+                "Ignoring API key: using explicit setting for credentials instead.");
       } else if (getDefaultApiKey() != null) {
         logger.log(
             Level.WARNING,
-            String.format(
-                "Ignoring API key set in environment variable %s: using explicit setting for credentials instead.",
-                API_KEY_ENV_NAME));
+                "Ignoring API key set in environment variable {0}: using explicit setting for credentials instead.",
+                API_KEY_ENV_NAME);
       }
     } else if (builder.apiKey != null) {
       credentials = null;
       apiKey = builder.apiKey;
       logger.log(
           Level.WARNING,
-          String.format(
-              "Ignoring Application Default Credentials: using explicit setting for API key instead.",
-              ServiceOptions.CREDENTIAL_ENV_NAME));
+          "Ignoring Application Default Credentials {0}: using explicit setting for API key instead.",
+              ServiceOptions.CREDENTIAL_ENV_NAME);
     } else if (credentials != null) { // credentials assigned from ADC in superclass constructor
       apiKey = null;
       if (getDefaultApiKey() != null) {
         logger.log(
             Level.WARNING,
-            String.format(
-                "Ignoring API key set in environment variable %s: using Application Default Credentials instead.",
-                API_KEY_ENV_NAME));
+                "Ignoring API key set in environment variable {0}: using Application Default Credentials instead.",
+                API_KEY_ENV_NAME);
       }
     } else {
       apiKey = getDefaultApiKey();
