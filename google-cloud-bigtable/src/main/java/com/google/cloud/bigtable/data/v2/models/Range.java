@@ -16,8 +16,10 @@
 package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalExtensionOnly;
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.UnsafeByteOperations;
 import javax.annotation.Nonnull;
 
 /**
@@ -197,23 +199,63 @@ public abstract class Range<T, R extends Range<T, R>> {
     }
 
     /** Creates a new {@link Range} with the specified exclusive start and the current end. */
-    public R startOpen(String start) {
+    public R startOpen(@Nonnull String start) {
       return startOpen(wrap(start));
     }
 
     /** Creates a new {@link Range} with the specified inclusive start and the current end. */
-    public R startClosed(String start) {
+    public R startClosed(@Nonnull String start) {
       return startClosed(wrap(start));
     }
 
     /** Creates a new {@link Range} with the specified exclusive end and the current start. */
-    public R endOpen(String end) {
+    public R endOpen(@Nonnull String end) {
       return endOpen(wrap(end));
     }
 
     /** Creates a new {@link Range} with the specified inclusive end and the current start. */
-    public R endClosed(String end) {
+    public R endClosed(@Nonnull String end) {
       return endClosed(wrap(end));
+    }
+
+    @Override
+    public R startOpen(@Nonnull ByteString start) {
+      Preconditions.checkNotNull(start);
+      if (start.isEmpty()) {
+        return startUnbounded();
+      } else {
+        return super.startOpen(start);
+      }
+    }
+
+    @Override
+    public R startClosed(@Nonnull ByteString start) {
+      Preconditions.checkNotNull(start);
+      if (start.isEmpty()) {
+        return startUnbounded();
+      } else {
+        return super.startClosed(start);
+      }
+    }
+
+    @Override
+    public R endOpen(@Nonnull ByteString end) {
+      Preconditions.checkNotNull(end);
+      if (end.isEmpty()) {
+        return endUnbounded();
+      } else {
+        return super.endOpen(end);
+      }
+    }
+
+    @Override
+    public R endClosed(@Nonnull ByteString end) {
+      Preconditions.checkNotNull(end);
+      if (end.isEmpty()) {
+        return endUnbounded();
+      } else {
+        return super.endClosed(end);
+      }
     }
 
     @SuppressWarnings("unchecked")
@@ -244,10 +286,79 @@ public abstract class Range<T, R extends Range<T, R>> {
     private TimestampRange(BoundType startBound, Long start, BoundType endBound, Long end) {
       super(startBound, start, endBound, end);
     }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      TimestampRange range = (TimestampRange) o;
+
+      if (getStartBound() != range.getStartBound() || getEndBound() != range.getEndBound()) {
+        return false;
+      }
+      if (getStartBound() != BoundType.UNBOUNDED && !Objects.equal(getStart(), range.getStart())) {
+        return false;
+      }
+      if (getEndBound() != BoundType.UNBOUNDED && !Objects.equal(getEnd(), range.getEnd())) {
+        return false;
+      }
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(
+          getStartBound(),
+          getStartBound() == BoundType.UNBOUNDED ? null : getStart(),
+          getEndBound(),
+          getEndBound() == BoundType.UNBOUNDED ? null : getEnd());
+    }
   }
 
   /** Concrete Range for ByteStrings */
   public static final class ByteStringRange extends AbstractByteStringRange<ByteStringRange> {
+    public static ByteStringRange prefix(String prefix) {
+      return prefix(ByteString.copyFromUtf8(prefix));
+    }
+
+    public static ByteStringRange prefix(ByteString prefix) {
+      if (prefix.isEmpty()) {
+        return unbounded();
+      }
+
+      int offset = prefix.size() - 1;
+      int curByte = 0xFF;
+
+      while (offset >= 0) {
+        curByte = prefix.byteAt(offset) & 0xFF;
+        if (curByte != 0xFF) {
+          break;
+        }
+        offset--;
+      }
+
+      if (offset < 0) {
+        // We got an 0xFFFF... (only FFs) stopRow value which is
+        // the last possible prefix before the end of the table.
+        // So set it to stop at the 'end of the table'
+        return unbounded().startClosed(prefix);
+      }
+
+      ByteString endPrefix = offset == 0 ? ByteString.EMPTY : prefix.substring(0, offset);
+      ByteString endSuffix = UnsafeByteOperations.unsafeWrap(new byte[] {(byte) (curByte + 1)});
+      ByteString end = endPrefix.concat(endSuffix);
+
+      ByteStringRange range = ByteStringRange.unbounded().startClosed(prefix);
+      if (!end.isEmpty()) {
+        range.endOpen(end);
+      }
+      return range;
+    }
+
     public static ByteStringRange unbounded() {
       return new ByteStringRange(BoundType.UNBOUNDED, null, BoundType.UNBOUNDED, null);
     }
@@ -264,6 +375,37 @@ public abstract class Range<T, R extends Range<T, R>> {
     private ByteStringRange(
         BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
       super(startBound, start, endBound, end);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      ByteStringRange range = (ByteStringRange) o;
+
+      if (getStartBound() != range.getStartBound() || getEndBound() != range.getEndBound()) {
+        return false;
+      }
+      if (getStartBound() != BoundType.UNBOUNDED && !Objects.equal(getStart(), range.getStart())) {
+        return false;
+      }
+      if (getEndBound() != BoundType.UNBOUNDED && !Objects.equal(getEnd(), range.getEnd())) {
+        return false;
+      }
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(
+          getStartBound(),
+          getStartBound() == BoundType.UNBOUNDED ? null : getStart(),
+          getEndBound(),
+          getEndBound() == BoundType.UNBOUNDED ? null : getEnd());
     }
   }
 }

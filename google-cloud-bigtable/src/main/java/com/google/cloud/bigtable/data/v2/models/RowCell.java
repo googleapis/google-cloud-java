@@ -38,18 +38,18 @@ public abstract class RowCell {
 
   /** The cell's family */
   @Nonnull
-  public abstract String family();
+  public abstract String getFamily();
 
   /** The cell's qualifier (column name) */
   @Nonnull
-  public abstract ByteString qualifier();
+  public abstract ByteString getQualifier();
 
   /** The timestamp of the cell */
-  public abstract long timestamp();
+  public abstract long getTimestamp();
 
   /** The value of the cell */
   @Nonnull
-  public abstract ByteString value();
+  public abstract ByteString getValue();
 
   /**
    * The labels assigned to the cell
@@ -57,5 +57,5 @@ public abstract class RowCell {
    * @see Filters#label(String)
    */
   @Nonnull
-  public abstract List<String> labels();
+  public abstract List<String> getLabels();
 }

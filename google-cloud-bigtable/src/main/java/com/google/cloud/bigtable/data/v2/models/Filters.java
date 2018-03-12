@@ -355,6 +355,15 @@ public final class Filters {
      * Matches only cells from rows whose keys equal the value. In other words, passes through the
      * entire row when the key matches, and otherwise produces an empty row.
      */
+    public Filter exactMatch(@Nonnull String value) {
+      Preconditions.checkNotNull(value);
+      return exactMatch(ByteString.copyFromUtf8(value));
+    }
+
+    /**
+     * Matches only cells from rows whose keys equal the value. In other words, passes through the
+     * entire row when the key matches, and otherwise produces an empty row.
+     */
     public Filter exactMatch(@Nonnull ByteString value) {
       Preconditions.checkNotNull(value);
 
@@ -421,6 +430,12 @@ public final class Filters {
       Preconditions.checkNotNull(regex);
 
       return new SimpleFilter(RowFilter.newBuilder().setColumnQualifierRegexFilter(regex).build());
+    }
+
+    /** Matches only cells from columns whose qualifiers equal the value. */
+    public Filter exactMatch(@Nonnull String value) {
+      Preconditions.checkNotNull(value);
+      return exactMatch(ByteString.copyFromUtf8(value));
     }
 
     /** Matches only cells from columns whose qualifiers equal the value. */
@@ -559,6 +574,12 @@ public final class Filters {
     public Filter regex(@Nonnull String regex) {
       Preconditions.checkNotNull(regex);
       return regex(ByteString.copyFromUtf8(regex));
+    }
+
+    /** Matches only cells with values that match the given value. */
+    public Filter exactMatch(@Nonnull String value) {
+      Preconditions.checkNotNull(value);
+      return exactMatch(ByteString.copyFromUtf8(value));
     }
 
     /** Matches only cells with values that match the given value. */

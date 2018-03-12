@@ -28,9 +28,9 @@ import java.util.Collection;
  * are exposed to the user using the {@link com.google.cloud.bigtable.data.v2.models.RowMutation}
  * wrapper, but the actual descriptor works on the underlying {@link
  * com.google.bigtable.v2.MutateRowsRequest}s. This class is used as a placeholder for the settings
- * and is replaced with the actual implementation of
- * com.google.cloud.bigtable.data.v2.stub.bulkmutaterows.BulkMutateRowsBatchingDescriptor when
- * constructing the callable chain.
+ * and is replaced with the actual implementation of {@link
+ * com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor} when constructing
+ * the callable chain.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.
