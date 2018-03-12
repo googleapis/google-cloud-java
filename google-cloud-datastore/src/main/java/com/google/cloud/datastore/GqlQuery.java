@@ -27,7 +27,7 @@ import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
-
+import io.grpc.Status;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -282,9 +282,9 @@ public final class GqlQuery<V> extends Query<V> {
      * @param value a {@link FullEntity} object or a list of {@link FullEntity} objects that binds
      *     to a given name
      */
+    @Deprecated
     public Builder<V> setBinding(String name, FullEntity<?>... value) {
-      namedBindings.put(name, toBinding(EntityValue.MARSHALLER, Arrays.asList(value)));
-      return this;
+      throw new DatastoreException(Status.Code.UNIMPLEMENTED.value(), "Binding entities is not supported.", "UNIMPLEMENTED");
     }
 
     /**
@@ -378,9 +378,9 @@ public final class GqlQuery<V> extends Query<V> {
      * @param value a {@link FullEntity} object or a list of {@link FullEntity} objects to be set as
      *     a new positional binding
      */
+    @Deprecated
     public Builder<V> addBinding(FullEntity<?>... value) {
-      positionalBindings.add(toBinding(EntityValue.MARSHALLER, Arrays.asList(value)));
-      return this;
+      throw new DatastoreException(Status.Code.UNIMPLEMENTED.value(), "Binding entities is not supported.", "UNIMPLEMENTED");
     }
 
     /**
