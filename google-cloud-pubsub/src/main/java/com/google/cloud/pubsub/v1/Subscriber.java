@@ -354,9 +354,7 @@ public class Subscriber extends AbstractApiService {
       }
       Subscription subscriptionInfo =
           getSubStub.getSubscription(
-              GetSubscriptionRequest.newBuilder()
-                  .setSubscription(subscriptionName)
-                  .build());
+              GetSubscriptionRequest.newBuilder().setSubscription(subscriptionName).build());
 
       for (Channel channel : channels) {
         SubscriberFutureStub stub = SubscriberGrpc.newFutureStub(channel);

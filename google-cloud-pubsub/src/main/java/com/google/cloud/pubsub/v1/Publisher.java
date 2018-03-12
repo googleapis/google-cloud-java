@@ -40,21 +40,17 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
-import com.google.pubsub.v1.ProjectTopicName;
-import com.google.pubsub.v1.TopicName;
-import com.google.pubsub.v1.TopicNames;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
 import com.google.pubsub.v1.PublisherGrpc.PublisherFutureStub;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.TopicNames;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
 import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
-import org.threeten.bp.Duration;
-
-import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -70,6 +66,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import org.threeten.bp.Duration;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -171,7 +169,7 @@ public class Publisher {
     return TopicNames.parse(topicName);
   }
 
-/** Topic which the publisher publishes to. */
+  /** Topic which the publisher publishes to. */
   public String getTopicNameString() {
     return topicName;
   }
@@ -502,6 +500,7 @@ public class Publisher {
    * Constructs a new {@link Builder} using the given topic.
    *
    * <p>Example of creating a {@code Publisher}.
+   *
    * <pre>{@code
    * String projectName = "my_project";
    * String topicName = "my_topic";
@@ -514,7 +513,6 @@ public class Publisher {
    *   publisher.shutdown();
    * }
    * }</pre>
-   *
    */
   public static Builder newBuilder(TopicName topicName) {
     return newBuilder(topicName.toString());
@@ -524,6 +522,7 @@ public class Publisher {
    * Constructs a new {@link Builder} using the given topic.
    *
    * <p>Example of creating a {@code Publisher}.
+   *
    * <pre>{@code
    * String topic = "projects/my_project/topics/my_topic";
    * Publisher publisher = Publisher.newBuilder(topic).build();
@@ -534,7 +533,6 @@ public class Publisher {
    *   publisher.shutdown();
    * }
    * }</pre>
-   *
    */
   public static Builder newBuilder(String topicName) {
     return new Builder(topicName);
