@@ -36,6 +36,9 @@ import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
+import com.google.cloud.pubsub.v1.stub.PublisherStub;
+import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.pubsub.v1.ProjectTopicName;
@@ -90,7 +93,7 @@ public class Publisher {
 
   private final AtomicBoolean activeAlarm;
 
-  private final TopicAdminClient topicClient;
+  private final PublisherStub publisherStub;
 
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
@@ -132,12 +135,12 @@ public class Publisher {
       retrySettings = retrySettings.toBuilder().setMaxAttempts(Integer.MAX_VALUE).build();
     }
 
-    TopicAdminSettings.Builder topicSettings =
-        TopicAdminSettings.newBuilder()
+    PublisherStubSettings.Builder stubSettings =
+        PublisherStubSettings.newBuilder()
             .setCredentialsProvider(builder.credentialsProvider)
             .setExecutorProvider(FixedExecutorProvider.create(executor))
             .setTransportChannelProvider(builder.channelProvider);
-    topicSettings
+    stubSettings
         .publishSettings()
         .setRetryableCodes(
             StatusCode.Code.ABORTED,
@@ -149,7 +152,7 @@ public class Publisher {
             StatusCode.Code.UNAVAILABLE)
         .setRetrySettings(retrySettings)
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
-    this.topicClient = TopicAdminClient.create(topicSettings.build());
+    this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
 
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessageWaiter();
@@ -307,7 +310,7 @@ public class Publisher {
     }
 
     ApiFutures.addCallback(
-        topicClient.publishCallable().futureCall(publishRequest.build()),
+        publisherStub.publishCallable().futureCall(publishRequest.build()),
         new ApiFutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
@@ -412,7 +415,7 @@ public class Publisher {
     for (AutoCloseable closeable : closeables) {
       closeable.close();
     }
-    topicClient.shutdown();
+    publisherStub.shutdown();
   }
 
   private boolean hasBatchingBytes() {
