@@ -18,6 +18,9 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
+import com.google.cloud.spanner.v1.stub.GrpcSpannerStub;
+import com.google.cloud.spanner.v1.stub.SpannerStub;
+import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.database.v1.Database;
@@ -34,13 +37,18 @@ import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
+  private final SpannerStub stub;
+
+  public GapicSpannerRpc() throws IOException {
+    stub = GrpcSpannerStub.create(SpannerStubSettings.newBuilder().build());
+  }
 
   @Override
   public Paginated<InstanceConfig> listInstanceConfigs(int pageSize, @Nullable String pageToken)
@@ -169,6 +177,8 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Override
   public PartitionResponse partitionRead(
       PartitionReadRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    // TODO(pongad): Figure out metadata
+    // TODO(pongad): Figure out channel affinity
+    return stub.partitionReadCallable().call(request);
   }
 }
