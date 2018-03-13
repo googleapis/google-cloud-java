@@ -113,10 +113,7 @@ public class RequestAccumulator<ElementT, ResponseT> {
    * invalid after the next call to {@link #next()}.
    */
   public List<ElementT> batch() {
-    if (oversizedBytes > 0) {
-      return requests.subList(0, requests.size() - 1);
-    }
-    return requests;
+    return subList(requests);
   }
 
   /**
@@ -124,10 +121,19 @@ public class RequestAccumulator<ElementT, ResponseT> {
    * invalid after the next call to {@link #next()}.
    */
   public List<SettableApiFuture<ResponseT>> futureBatch() {
+    return subList(futures);
+  }
+
+  private <E> List<E> subList(List<E> list) {
     if (oversizedBytes > 0) {
-      return futures.subList(0, futures.size() - 1);
+      return list.subList(0, list.size() - 1);
     }
-    return futures;
+    return list;
+  }
+
+  /** Returns the total size of elements in {@link #batch()}. */
+  public long bytes() {
+    return curBytes - oversizedBytes;
   }
 
   /** Consumes the current batch. */

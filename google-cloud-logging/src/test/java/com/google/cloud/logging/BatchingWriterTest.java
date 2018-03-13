@@ -19,6 +19,8 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.batching.FlowController;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -50,7 +52,14 @@ public class BatchingWriterTest {
           }
         };
 
-    BatchingWriter writer = new BatchingWriter(rpc, 10, 10, EMPTY_REQUEST, EXECUTOR);
+    BatchingWriter writer =
+        new BatchingWriter(
+            rpc,
+            10,
+            10,
+            new FlowController(FlowControlSettings.getDefaultInstance()),
+            EMPTY_REQUEST,
+            EXECUTOR);
     writer.initFlush();
 
     // If there's no message, there's no RPC.
@@ -68,7 +77,14 @@ public class BatchingWriterTest {
           }
         };
 
-    BatchingWriter writer = new BatchingWriter(rpc, 10, 10, EMPTY_REQUEST, EXECUTOR);
+    BatchingWriter writer =
+        new BatchingWriter(
+            rpc,
+            10,
+            10,
+            new FlowController(FlowControlSettings.getDefaultInstance()),
+            EMPTY_REQUEST,
+            EXECUTOR);
     writer.add(EMPTY_ENTRY);
     writer.initFlush();
 

@@ -18,6 +18,8 @@ package com.google.cloud.logging;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.batching.FlowController;
+import com.google.cloud.batchingexperimental.RequestAccumulator;
 import com.google.common.base.Preconditions;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import java.util.ArrayList;
@@ -25,7 +27,6 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 class BatchingWriter {
@@ -35,8 +36,8 @@ class BatchingWriter {
   }
 
   private final Rpc rpc;
-  private final int batchSize;
-  private final Semaphore pending;
+  private final FlowController flowController;
+  private final RequestAccumulator<com.google.logging.v2.LogEntry, Void> accumulator;
   private final WriteLogEntriesRequest requestPrototype;
   private final ScheduledThreadPoolExecutor executor;
 
@@ -44,25 +45,20 @@ class BatchingWriter {
   private final ConcurrentHashMap<ApiFuture<Void>, Boolean> pendingWrites =
       new ConcurrentHashMap<>();
 
-  private final ArrayList<com.google.logging.v2.LogEntry> currentBatch;
-
   private Future<?> flushJob = null;
 
   BatchingWriter(
       Rpc rpc,
-      int batchSize,
-      int maxPending,
+      int batchCount,
+      long batchSize,
+      FlowController flowController,
       WriteLogEntriesRequest requestPrototype,
       ScheduledThreadPoolExecutor executor) {
-    Preconditions.checkArgument(batchSize > 0, "batchSize must be positive");
-    this.batchSize = batchSize;
-    Preconditions.checkArgument(maxPending > 0, "maxPending must be positive");
-    this.pending = new Semaphore(maxPending);
-
+    this.flowController = Preconditions.checkNotNull(flowController);
     this.rpc = Preconditions.checkNotNull(rpc);
     this.requestPrototype = Preconditions.checkNotNull(requestPrototype);
     this.executor = Preconditions.checkNotNull(executor);
-    this.currentBatch = new ArrayList<>(batchSize);
+    this.accumulator = new RequestAccumulator<>(batchCount, batchSize);
   }
 
   synchronized void startJob() {
@@ -85,43 +81,50 @@ class BatchingWriter {
     flushJob.cancel(false);
   }
 
-  void add(com.google.logging.v2.LogEntry entry) throws InterruptedException {
-    pending.acquire(1);
-    synchronized (currentBatch) {
-      currentBatch.add(entry);
-      if (currentBatch.size() == batchSize) {
-        final WriteLogEntriesRequest request =
-            requestPrototype.toBuilder().addAllEntries(currentBatch).build();
-        currentBatch.clear();
+  void add(com.google.logging.v2.LogEntry entry) throws FlowController.FlowControlException {
+    long entrySize = entry.getSerializedSize();
 
+    flowController.reserve(1, entrySize);
+    synchronized (accumulator) {
+      accumulator.add(entry, entrySize, null);
+      while (accumulator.hasBatch()) {
+        final WriteLogEntriesRequest request =
+            requestPrototype.toBuilder().addAllEntries(accumulator.batch()).build();
+        final long size = accumulator.bytes();
         // Whoever calls send serializes the proto; so we do it off-thread.
         // This gives better CPU utilization if there are few producer threads
         // on a many-core machine.
+        //
+        // BUG(pongad): send() puts future in the map too late. To make flush work properly,
+        // we must guarantee adding future to map before this method returns.
         executor.execute(
             new Runnable() {
               @Override
               public void run() {
-                send(request);
+                send(request, size);
               }
             });
+        accumulator.next();
       }
     }
   }
 
   void initFlush() {
     WriteLogEntriesRequest request;
-    synchronized (currentBatch) {
-      request = requestPrototype.toBuilder().addAllEntries(currentBatch).build();
-      currentBatch.clear();
+    long size;
+    synchronized (accumulator) {
+      if (accumulator.batch().isEmpty()) {
+        return;
+      }
+      request = requestPrototype.toBuilder().addAllEntries(accumulator.batch()).build();
+      size = accumulator.bytes();
+      accumulator.next();
     }
-    send(request);
+    send(request, size);
   }
 
-  private void send(WriteLogEntriesRequest request) {
+  private void send(WriteLogEntriesRequest request, final long size) {
     final int count = request.getEntriesCount();
-    if (count == 0) {
-      return;
-    }
 
     final ApiFuture<Void> writeFuture = rpc.call(request);
     pendingWrites.put(writeFuture, Boolean.TRUE);
@@ -130,7 +133,7 @@ class BatchingWriter {
         new ApiFutureCallback<Void>() {
           private void onBoth() {
             pendingWrites.remove(writeFuture);
-            pending.release(count);
+            flowController.release(count, size);
           }
 
           @Override
