@@ -10,7 +10,7 @@ apply plugin: 'signing'
 
 description = 'GRPC library for grpc-google-iam-v1'
 group = "com.google.api.grpc"
-version = "0.3.0"
+version = "0.4.0"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
@@ -56,6 +56,8 @@ signing {
   required false
   sign configurations.archives
 }
+
+compileJava.options.encoding = "UTF-8"
 
 if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')) {
   uploadArchives {
