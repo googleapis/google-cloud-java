@@ -346,11 +346,8 @@ public class Publisher {
           @Override
           public void onFailure(Throwable t) {
             try {
-              ApiException gaxException =
-                  ApiExceptionFactory.createException(
-                      t, GrpcStatusCode.of(Status.fromThrowable(t).getCode()), false);
               for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
-                outstandingPublish.publishResult.setException(gaxException);
+                outstandingPublish.publishResult.setException(t);
               }
             } finally {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
