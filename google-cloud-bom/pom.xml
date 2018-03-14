@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bom</artifactId>
   <packaging>pom</packaging>
-  <version>0.38.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+  <version>0.39.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
   <name>Google Cloud Java BOM</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bom</url>
   <description>
@@ -124,49 +124,49 @@
     </license>
   </licenses>
   <properties>
-    <cloud.version>0.38.1-alpha-SNAPSHOT</cloud.version><!-- {x-version-update:google-cloud:current} -->
-    <bigtable.version>0.38.1-alpha-SNAPSHOT</bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
-    <bigquery.version>0.38.1-beta-SNAPSHOT</bigquery.version><!-- {x-version-update:google-cloud-bigquery:current} -->
-    <bigquerydatatransfer.version>0.38.1-beta-SNAPSHOT</bigquerydatatransfer.version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
-    <compute.version>0.38.1-alpha-SNAPSHOT</compute.version><!-- {x-version-update:google-cloud-compute:current} -->
-    <container.version>0.38.1-beta-SNAPSHOT</container.version><!-- {x-version-update:google-cloud-container:current} -->
-    <contrib.version>0.38.1-alpha-SNAPSHOT</contrib.version><!-- {x-version-update:google-cloud-contrib:current} -->
-    <core.version>1.20.1-SNAPSHOT</core.version><!-- {x-version-update:google-cloud-core:current} -->
-    <core-http.version>1.20.1-SNAPSHOT</core-http.version><!-- {x-version-update:google-cloud-core-http:current} -->
-    <core-grpc.version>1.20.1-SNAPSHOT</core-grpc.version><!-- {x-version-update:google-cloud-core-grpc:current} -->
-    <dataproc.version>0.38.1-alpha-SNAPSHOT</dataproc.version><!-- {x-version-update:google-cloud-dataproc:current} -->
-    <datastore.version>1.20.1-SNAPSHOT</datastore.version><!-- {x-version-update:google-cloud-datastore:current} -->
-    <dialogflow.version>0.38.1-alpha-SNAPSHOT</dialogflow.version><!-- {x-version-update:google-cloud-dialogflow:current} -->
-    <dlp.version>0.38.1-beta-SNAPSHOT</dlp.version><!-- {x-version-update:google-cloud-dlp:current} -->
-    <dns.version>0.38.1-alpha-SNAPSHOT</dns.version><!-- {x-version-update:google-cloud-dns:current} -->
-    <errorreporting.version>0.38.1-beta-SNAPSHOT</errorreporting.version><!-- {x-version-update:google-cloud-errorreporting:current} -->
-    <examples.version>0.38.1-alpha-SNAPSHOT</examples.version><!-- {x-version-update:google-cloud-examples:current} -->
-    <firestore.version>0.38.1-beta-SNAPSHOT</firestore.version><!-- {x-version-update:google-cloud-firestore:current} -->
-    <language.version>1.20.1-SNAPSHOT</language.version><!-- {x-version-update:google-cloud-language:current} -->
-    <logging.version>1.20.1-SNAPSHOT</logging.version><!-- {x-version-update:google-cloud-logging:current} -->
-    <logging-logback.version>0.38.1-alpha-SNAPSHOT</logging-logback.version><!-- {x-version-update:google-cloud-logging-logback:current} -->
-    <monitoring.version>0.38.1-beta-SNAPSHOT</monitoring.version><!-- {x-version-update:google-cloud-monitoring:current} -->
-    <nio.version>0.38.1-alpha-SNAPSHOT</nio.version><!-- {x-version-update:google-cloud-nio:current} -->
-    <nio-examples.version>0.38.1-alpha-SNAPSHOT</nio-examples.version><!-- {x-version-update:google-cloud-nio-examples:current} -->
-    <notification.version>0.38.1-beta-SNAPSHOT</notification.version><!-- {x-version-update:google-cloud-notification:current} -->
-    <os-login.version>0.38.1-alpha-SNAPSHOT</os-login.version><!-- {x-version-update:google-cloud-os-login:current} -->
-    <pubsub.version>0.38.1-beta-SNAPSHOT</pubsub.version><!-- {x-version-update:google-cloud-pubsub:current} -->
-    <resourcemanager.version>0.38.1-alpha-SNAPSHOT</resourcemanager.version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
-    <spanner.version>0.38.1-beta-SNAPSHOT</spanner.version><!-- {x-version-update:google-cloud-spanner:current} -->
-    <speech.version>0.38.1-alpha-SNAPSHOT</speech.version><!-- {x-version-update:google-cloud-speech:current} -->
-    <storage.version>1.20.1-SNAPSHOT</storage.version><!-- {x-version-update:google-cloud-storage:current} -->
-    <trace.version>0.38.1-beta-SNAPSHOT</trace.version><!-- {x-version-update:google-cloud-trace:current} -->
-    <translate.version>1.20.1-SNAPSHOT</translate.version><!-- {x-version-update:google-cloud-translate:current} -->
-    <video-intelligence.version>0.38.1-beta-SNAPSHOT</video-intelligence.version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
-    <vision.version>1.20.1-SNAPSHOT</vision.version><!-- {x-version-update:google-cloud-vision:current} -->
+    <cloud.version>0.39.0-alpha</cloud.version><!-- {x-version-update:google-cloud:current} -->
+    <bigtable.version>0.39.0-alpha</bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <bigquery.version>1.21.0</bigquery.version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <bigquerydatatransfer.version>0.39.0-beta</bigquerydatatransfer.version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+    <compute.version>0.39.0-alpha</compute.version><!-- {x-version-update:google-cloud-compute:current} -->
+    <container.version>0.39.0-beta</container.version><!-- {x-version-update:google-cloud-container:current} -->
+    <contrib.version>0.39.0-alpha</contrib.version><!-- {x-version-update:google-cloud-contrib:current} -->
+    <core.version>1.21.0</core.version><!-- {x-version-update:google-cloud-core:current} -->
+    <core-http.version>1.21.0</core-http.version><!-- {x-version-update:google-cloud-core-http:current} -->
+    <core-grpc.version>1.21.0</core-grpc.version><!-- {x-version-update:google-cloud-core-grpc:current} -->
+    <dataproc.version>0.39.0-alpha</dataproc.version><!-- {x-version-update:google-cloud-dataproc:current} -->
+    <datastore.version>1.21.0</datastore.version><!-- {x-version-update:google-cloud-datastore:current} -->
+    <dialogflow.version>0.39.0-alpha</dialogflow.version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+    <dlp.version>0.39.0-beta</dlp.version><!-- {x-version-update:google-cloud-dlp:current} -->
+    <dns.version>0.39.0-alpha</dns.version><!-- {x-version-update:google-cloud-dns:current} -->
+    <errorreporting.version>0.39.0-beta</errorreporting.version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+    <examples.version>0.39.0-alpha</examples.version><!-- {x-version-update:google-cloud-examples:current} -->
+    <firestore.version>0.39.0-beta</firestore.version><!-- {x-version-update:google-cloud-firestore:current} -->
+    <language.version>1.21.0</language.version><!-- {x-version-update:google-cloud-language:current} -->
+    <logging.version>1.21.0</logging.version><!-- {x-version-update:google-cloud-logging:current} -->
+    <logging-logback.version>0.39.0-alpha</logging-logback.version><!-- {x-version-update:google-cloud-logging-logback:current} -->
+    <monitoring.version>0.39.0-beta</monitoring.version><!-- {x-version-update:google-cloud-monitoring:current} -->
+    <nio.version>0.39.0-alpha</nio.version><!-- {x-version-update:google-cloud-nio:current} -->
+    <nio-examples.version>0.39.0-alpha</nio-examples.version><!-- {x-version-update:google-cloud-nio-examples:current} -->
+    <notification.version>0.39.0-beta</notification.version><!-- {x-version-update:google-cloud-notification:current} -->
+    <os-login.version>0.39.0-alpha</os-login.version><!-- {x-version-update:google-cloud-os-login:current} -->
+    <pubsub.version>0.39.0-beta</pubsub.version><!-- {x-version-update:google-cloud-pubsub:current} -->
+    <resourcemanager.version>0.39.0-alpha</resourcemanager.version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+    <spanner.version>0.39.0-beta</spanner.version><!-- {x-version-update:google-cloud-spanner:current} -->
+    <speech.version>0.39.0-alpha</speech.version><!-- {x-version-update:google-cloud-speech:current} -->
+    <storage.version>1.21.0</storage.version><!-- {x-version-update:google-cloud-storage:current} -->
+    <trace.version>0.39.0-beta</trace.version><!-- {x-version-update:google-cloud-trace:current} -->
+    <translate.version>1.21.0</translate.version><!-- {x-version-update:google-cloud-translate:current} -->
+    <video-intelligence.version>0.39.0-beta</video-intelligence.version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+    <vision.version>1.21.0</vision.version><!-- {x-version-update:google-cloud-vision:current} -->
 
-    <appengineflexcompat.version>0.38.1-alpha-SNAPSHOT</appengineflexcompat.version><!-- {x-version-update:google-cloud-appengineflexcompat:current} -->
-    <appengineflexcustom.version>0.38.1-alpha-SNAPSHOT</appengineflexcustom.version><!-- {x-version-update:google-cloud-appengineflexcustom:current} -->
-    <appengineflexjava.version>0.38.1-alpha-SNAPSHOT</appengineflexjava.version><!-- {x-version-update:google-cloud-appengineflexjava:current} -->
-    <appenginejava8.version>0.38.1-alpha-SNAPSHOT</appenginejava8.version><!-- {x-version-update:google-cloud-appenginejava8:current} -->
-    <compat-checker.version>0.38.1-alpha-SNAPSHOT</compat-checker.version><!-- {x-version-update:google-cloud-compat-checker:current} -->
-    <managedtest.version>0.38.1-alpha-SNAPSHOT</managedtest.version><!-- {x-version-update:google-cloud-managedtest:current} -->
-    <testing.version>0.38.1-alpha-SNAPSHOT</testing.version><!-- {x-version-update:google-cloud-testing:current} -->
+    <appengineflexcompat.version>0.39.0-alpha</appengineflexcompat.version><!-- {x-version-update:google-cloud-appengineflexcompat:current} -->
+    <appengineflexcustom.version>0.39.0-alpha</appengineflexcustom.version><!-- {x-version-update:google-cloud-appengineflexcustom:current} -->
+    <appengineflexjava.version>0.39.0-alpha</appengineflexjava.version><!-- {x-version-update:google-cloud-appengineflexjava:current} -->
+    <appenginejava8.version>0.39.0-alpha</appenginejava8.version><!-- {x-version-update:google-cloud-appenginejava8:current} -->
+    <compat-checker.version>0.39.0-alpha</compat-checker.version><!-- {x-version-update:google-cloud-compat-checker:current} -->
+    <managedtest.version>0.39.0-alpha</managedtest.version><!-- {x-version-update:google-cloud-managedtest:current} -->
+    <testing.version>0.39.0-alpha</testing.version><!-- {x-version-update:google-cloud-testing:current} -->
     
     <api-common.version>1.4.0</api-common.version>
     <gax.version>1.19.0</gax.version>
