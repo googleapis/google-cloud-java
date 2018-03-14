@@ -84,7 +84,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
         BigtableStubSettings.newBuilder()
             .setTransportChannelProvider(settings.getTransportChannelProvider())
             .setEndpoint(settings.getEndpoint())
-            .setCredentialsProvider(settings.getCredentialsProvider());
+            .setCredentialsProvider(settings.getCredentialsProvider())
+            .setStreamWatchdogProvider(settings.getStreamWatchdogProvider())
+            .setStreamWatchdogCheckInterval(settings.getStreamWatchdogCheckInterval());
 
     // ReadRow retries are handled in the overlay: disable retries in the base layer (but make
     // sure to preserve the exception callable settings).
@@ -92,7 +94,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .readRowsSettings()
         .setSimpleTimeoutNoRetries(Duration.ofHours(2))
         .setRetryableCodes(settings.readRowsSettings().getRetryableCodes())
-        .setTimeoutCheckInterval(Duration.ZERO)
         .setIdleTimeout(Duration.ZERO);
 
     // SampleRowKeys retries are handled in the overlay: disable retries in the base layer (but make
@@ -115,7 +116,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .mutateRowsSettings()
         .setSimpleTimeoutNoRetries(Duration.ofHours(2))
         .setRetryableCodes(settings.mutateRowsSettings().getRetryableCodes())
-        .setTimeoutCheckInterval(Duration.ZERO)
         .setIdleTimeout(Duration.ZERO);
 
     // CheckAndMutateRow is a simple passthrough
@@ -182,7 +182,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setResumptionStrategy(new ReadRowsResumptionStrategy<>(rowAdapter))
             .setRetryableCodes(settings.readRowsSettings().getRetryableCodes())
             .setRetrySettings(settings.readRowsSettings().getRetrySettings())
-            .setTimeoutCheckInterval(settings.readRowsSettings().getTimeoutCheckInterval())
             .setIdleTimeout(settings.readRowsSettings().getIdleTimeout())
             .build();
 
