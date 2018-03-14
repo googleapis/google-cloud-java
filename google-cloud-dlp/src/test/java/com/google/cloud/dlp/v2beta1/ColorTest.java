@@ -8,9 +8,19 @@ public class ColorTest {
 
   @Test
   public void asDlpColorTest() {
-    Color got = Colors.asDlpColor(java.awt.Color.GREEN);
-    Assert.assertEquals(got.getBlue(), 0, 0);
-    Assert.assertEquals(got.getGreen(), 255, 0);
-    Assert.assertEquals(got.getRed(), 0, 0);
+    Color got = Colors.asDlpColor(new java.awt.Color(1, 2, 3));
+    Assert.assertEquals(got.getBlue(), 3, 0);
+    Assert.assertEquals(got.getGreen(), 2, 0);
+    Assert.assertEquals(got.getRed(), 1, 0);
+  }
+
+  @Test
+  public void asAwtColorTest() {
+    java.awt.Color got =
+        Colors.asAwtColor(Color.newBuilder().setRed(1).setGreen(2).setBlue(3).build());
+
+    Assert.assertEquals(got.getBlue(), 3, 0);
+    Assert.assertEquals(got.getGreen(), 2, 0);
+    Assert.assertEquals(got.getRed(), 1, 0);
   }
 }

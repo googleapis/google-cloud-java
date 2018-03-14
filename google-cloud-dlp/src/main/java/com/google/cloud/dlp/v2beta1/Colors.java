@@ -28,4 +28,8 @@ public class Colors {
         .setRed(c.getRed())
         .build();
   }
+
+  public static final java.awt.Color asAwtColor(Color c) {
+    return new java.awt.Color(c.getRed() / 255, c.getGreen() / 255, c.getBlue() / 255);
+  }
 }
