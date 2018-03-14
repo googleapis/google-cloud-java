@@ -15,14 +15,11 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 
@@ -34,11 +31,11 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
  */
 @InternalApi
 public class MutateRowsUserFacingCallable extends UnaryCallable<RowMutation, Void> {
-  private final UnaryCallable<MutateRowsRequest, MutateRowsResponse> inner;
+  private final UnaryCallable<MutateRowsRequest, Void> inner;
   private final RequestContext requestContext;
 
   public MutateRowsUserFacingCallable(
-      UnaryCallable<MutateRowsRequest, MutateRowsResponse> inner, RequestContext requestContext) {
+      UnaryCallable<MutateRowsRequest, Void> inner, RequestContext requestContext) {
 
     this.inner = inner;
     this.requestContext = requestContext;
@@ -46,16 +43,6 @@ public class MutateRowsUserFacingCallable extends UnaryCallable<RowMutation, Voi
 
   @Override
   public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
-    ApiFuture<MutateRowsResponse> rawResponse =
-        inner.futureCall(request.toBulkProto(requestContext), context);
-
-    return ApiFutures.transform(
-        rawResponse,
-        new ApiFunction<MutateRowsResponse, Void>() {
-          @Override
-          public Void apply(MutateRowsResponse mutateRowsResponse) {
-            return null;
-          }
-        });
+    return inner.futureCall(request.toBulkProto(requestContext), context);
   }
 }
