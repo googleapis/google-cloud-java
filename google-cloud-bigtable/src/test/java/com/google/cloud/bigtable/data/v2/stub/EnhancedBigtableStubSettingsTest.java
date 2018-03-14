@@ -393,9 +393,8 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   private void verifyRetrySettingAreSane(Set<Code> retryCodes, RetrySettings retrySettings) {
-    assertThat(retryCodes).containsAllOf(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED);
+    assertThat(retryCodes).containsAllOf(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
 
-    assertThat(retrySettings.getMaxAttempts()).isGreaterThan(1);
     assertThat(retrySettings.getTotalTimeout()).isGreaterThan(Duration.ZERO);
 
     assertThat(retrySettings.getInitialRetryDelay()).isGreaterThan(Duration.ZERO);
