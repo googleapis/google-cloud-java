@@ -122,12 +122,10 @@ public class Subscriber extends AbstractApiService {
   private final List<Channel> channels;
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
-  private final List<PollingSubscriberConnection> pollingSubscriberConnections;
   private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
       new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
-  private final boolean useStreaming;
   private ScheduledFuture<?> ackDeadlineUpdater;
 
   private Subscriber(Builder builder) {
@@ -195,8 +193,6 @@ public class Subscriber extends AbstractApiService {
     numChannels = builder.parallelPullCount;
     channels = new ArrayList<>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
-    pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
-    useStreaming = builder.useStreaming;
   }
 
   /**
@@ -310,11 +306,7 @@ public class Subscriber extends AbstractApiService {
               @Override
               public void run() {
                 try {
-                  if (useStreaming) {
                     startStreamingConnections();
-                  } else {
-                    startPollingConnections();
-                  }
                   notifyStarted();
                 } catch (Throwable t) {
                   notifyFailed(t);
@@ -327,7 +319,6 @@ public class Subscriber extends AbstractApiService {
   @Override
   protected void doStop() {
     // stop connection is no-op if connections haven't been started.
-    stopAllPollingConnections();
     stopAllStreamingConnections();
     try {
       for (AutoCloseable closeable : closeables) {
@@ -336,64 +327,6 @@ public class Subscriber extends AbstractApiService {
       notifyStopped();
     } catch (Exception e) {
       notifyFailed(e);
-    }
-  }
-
-  private void startPollingConnections() throws IOException {
-    synchronized (pollingSubscriberConnections) {
-      Credentials credentials = credentialsProvider.getCredentials();
-      CallCredentials callCredentials =
-          credentials == null ? null : MoreCallCredentials.from(credentials);
-
-      SubscriberGrpc.SubscriberBlockingStub getSubStub =
-          SubscriberGrpc.newBlockingStub(channels.get(0))
-              .withDeadlineAfter(
-                  PollingSubscriberConnection.DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS);
-      if (callCredentials != null) {
-        getSubStub = getSubStub.withCallCredentials(callCredentials);
-      }
-      Subscription subscriptionInfo =
-          getSubStub.getSubscription(
-              GetSubscriptionRequest.newBuilder().setSubscription(subscriptionName).build());
-
-      for (Channel channel : channels) {
-        SubscriberFutureStub stub = SubscriberGrpc.newFutureStub(channel);
-        if (callCredentials != null) {
-          stub = stub.withCallCredentials(callCredentials);
-        }
-        pollingSubscriberConnections.add(
-            new PollingSubscriberConnection(
-                subscriptionInfo,
-                receiver,
-                ackExpirationPadding,
-                maxAckExtensionPeriod,
-                ackLatencyDistribution,
-                stub,
-                flowController,
-                flowControlSettings.getMaxOutstandingElementCount(),
-                outstandingMessageBatches,
-                executor,
-                alarmsExecutor,
-                clock));
-      }
-      startConnections(
-          pollingSubscriberConnections,
-          new Listener() {
-            @Override
-            public void failed(State from, Throwable failure) {
-              // If a connection failed is because of a fatal error, we should fail the
-              // whole subscriber.
-              stopAllPollingConnections();
-              try {
-                notifyFailed(failure);
-              } catch (IllegalStateException e) {
-                if (isRunning()) {
-                  throw e;
-                }
-                // It could happen that we are shutting down while some channels fail.
-              }
-            }
-          });
     }
   }
 
@@ -441,10 +374,6 @@ public class Subscriber extends AbstractApiService {
             }
           });
     }
-  }
-
-  private void stopAllPollingConnections() {
-    stopConnections(pollingSubscriberConnections);
   }
 
   private void stopAllStreamingConnections() {
@@ -525,7 +454,6 @@ public class Subscriber extends AbstractApiService {
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
-    boolean useStreaming = true;
     int parallelPullCount = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
 
     Builder(String subscriptionName, MessageReceiver receiver) {
@@ -630,7 +558,7 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Gives the ability to set a custom executor for polling and managing lease extensions. If none
+     * Gives the ability to set a custom executor for managing lease extensions. If none
      * is provided a shared one will be used by all {@link Subscriber} instances.
      */
     public Builder setSystemExecutorProvider(ExecutorProvider executorProvider) {
@@ -650,11 +578,6 @@ public class Subscriber extends AbstractApiService {
     /** Gives the ability to set a custom clock. */
     Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
-      return this;
-    }
-
-    Builder setUseStreaming(boolean useStreaming) {
-      this.useStreaming = useStreaming;
       return this;
     }
 
