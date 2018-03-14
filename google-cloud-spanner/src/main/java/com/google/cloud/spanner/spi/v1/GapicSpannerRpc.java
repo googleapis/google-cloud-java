@@ -48,10 +48,22 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
+import com.google.spanner.admin.database.v1.DropDatabaseRequest;
+import com.google.spanner.admin.database.v1.GetDatabaseDdlRequest;
+import com.google.spanner.admin.database.v1.GetDatabaseRequest;
+import com.google.spanner.admin.database.v1.ListDatabasesRequest;
+import com.google.spanner.admin.database.v1.ListDatabasesResponse;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
 import com.google.spanner.admin.instance.v1.CreateInstanceRequest;
+import com.google.spanner.admin.instance.v1.DeleteInstanceRequest;
+import com.google.spanner.admin.instance.v1.GetInstanceConfigRequest;
+import com.google.spanner.admin.instance.v1.GetInstanceRequest;
 import com.google.spanner.admin.instance.v1.Instance;
 import com.google.spanner.admin.instance.v1.InstanceConfig;
+import com.google.spanner.admin.instance.v1.ListInstanceConfigsRequest;
+import com.google.spanner.admin.instance.v1.ListInstanceConfigsResponse;
+import com.google.spanner.admin.instance.v1.ListInstancesRequest;
+import com.google.spanner.admin.instance.v1.ListInstancesResponse;
 import com.google.spanner.admin.instance.v1.UpdateInstanceRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
@@ -75,6 +87,7 @@ import javax.annotation.Nullable;
 
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
+
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
 
@@ -143,18 +156,45 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Override
   public Paginated<InstanceConfig> listInstanceConfigs(int pageSize, @Nullable String pageToken)
       throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    ListInstanceConfigsRequest.Builder requestBuilder = 
+        ListInstanceConfigsRequest.newBuilder().setParent(projectName).setPageSize(pageSize);
+    if (pageToken != null) {
+      requestBuilder.setPageToken(pageToken);
+    }
+    ListInstanceConfigsRequest request = requestBuilder.build();
+
+    // TODO: put projectName in metadata
+    ListInstanceConfigsResponse response = 
+        get(instanceStub.listInstanceConfigsCallable().futureCall(request));
+    return new Paginated<>(response.getInstanceConfigsList(), response.getNextPageToken());
   }
 
   @Override
   public InstanceConfig getInstanceConfig(String instanceConfigName) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    GetInstanceConfigRequest request = 
+        GetInstanceConfigRequest.newBuilder().setName(instanceConfigName).build();
+
+    // TODO: put projectName in metadata
+    return get(instanceStub.getInstanceConfigCallable().futureCall(request));
   }
 
   @Override
   public Paginated<Instance> listInstances(
       int pageSize, @Nullable String pageToken, @Nullable String filter) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    ListInstancesRequest.Builder requestBuilder =
+        ListInstancesRequest.newBuilder().setParent(projectName).setPageSize(pageSize);
+    if (pageToken != null) {
+      requestBuilder.setPageToken(pageToken);
+    }
+    if (filter != null) {
+      requestBuilder.setFilter(filter);
+    }
+    ListInstancesRequest request = requestBuilder.build();
+    
+    // TODO: put projectName in metadata
+    ListInstancesResponse response = 
+        get(instanceStub.listInstancesCallable().futureCall(request));
+    return new Paginated<>(response.getInstancesList(), response.getNextPageToken());
   }
 
   @Override
@@ -180,18 +220,35 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   @Override
   public Instance getInstance(String instanceName) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    GetInstanceRequest request = 
+        GetInstanceRequest.newBuilder().setName(instanceName).build();
+    
+    // TODO: put instanceName in metadata
+    return get(instanceStub.getInstanceCallable().futureCall(request));
   }
 
   @Override
   public void deleteInstance(String instanceName) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    DeleteInstanceRequest request = 
+        DeleteInstanceRequest.newBuilder().setName(instanceName).build();
+
+    // TODO: put instanceName in metadata
+    get(instanceStub.deleteInstanceCallable().futureCall(request));
   }
 
   @Override
   public Paginated<Database> listDatabases(
       String instanceName, int pageSize, @Nullable String pageToken) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    ListDatabasesRequest.Builder requestBuilder =
+        ListDatabasesRequest.newBuilder().setParent(instanceName).setPageSize(pageSize);
+    if (pageToken != null) {
+      requestBuilder.setPageToken(pageToken);
+    }
+    ListDatabasesRequest request = requestBuilder.build();
+    
+    // TODO: put instanceName in metadata
+    ListDatabasesResponse response = get(databaseStub.listDatabasesCallable().futureCall(request));
+    return new Paginated<>(response.getDatabasesList(), response.getNextPageToken());
   }
 
   @Override
@@ -222,17 +279,32 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   @Override
   public void dropDatabase(String databaseName) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    DropDatabaseRequest request =
+        DropDatabaseRequest.newBuilder().setDatabase(databaseName).build();
+    
+    // TODO: put databaseName in metadata
+    get(databaseStub.dropDatabaseCallable().futureCall(request));
   }
 
   @Override
   public Database getDatabase(String databaseName) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    GetDatabaseRequest request = 
+        GetDatabaseRequest.newBuilder()
+        .setName(databaseName)
+        .build();
+
+    // TODO: put databaseName in metadata
+    return get(databaseStub.getDatabaseCallable().futureCall(request));
   }
 
   @Override
   public List<String> getDatabaseDdl(String databaseName) throws SpannerException {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    GetDatabaseDdlRequest request = 
+        GetDatabaseDdlRequest.newBuilder().setDatabase(databaseName).build();
+
+    // TODO: put databaseName in metadata
+    return get(databaseStub.getDatabaseDdlCallable().futureCall(request))
+               .getStatementsList();
   }
 
   @Override
