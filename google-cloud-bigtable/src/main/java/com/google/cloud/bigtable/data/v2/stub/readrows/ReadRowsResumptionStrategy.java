@@ -57,7 +57,7 @@ public class ReadRowsResumptionStrategy<RowT>
   }
 
   @Override
-  public void onProgress(RowT response) {
+  public RowT processResponse(RowT response) {
     // Last key can come from both the last processed row key and a synthetic row marker. The
     // synthetic row marker is emitted when the server has read a lot of data that was filtered out.
     // The row marker can be used to trim the start of the scan, but does not contribute to the row
@@ -67,6 +67,7 @@ public class ReadRowsResumptionStrategy<RowT>
       // Only real rows count towards the rows limit.
       numProcessed++;
     }
+    return response;
   }
 
   /**
