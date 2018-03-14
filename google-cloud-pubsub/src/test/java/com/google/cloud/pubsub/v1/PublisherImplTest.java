@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
@@ -29,6 +30,7 @@ import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
+import com.google.api.gax.rpc.DataLossException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
@@ -231,6 +233,27 @@ public class PublisherImplTest {
   private ApiFuture<String> sendTestMessage(Publisher publisher, String data) {
     return publisher.publish(
         PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(data)).build());
+  }
+
+  @Test
+  public void testErrorPropagation() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .build())
+            .build();
+    testPublisherServiceImpl.addPublishError(Status.DATA_LOSS.asException());
+    try {
+      sendTestMessage(publisher, "A").get();
+      fail("should throw exception");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(DataLossException.class);
+    }
   }
 
   @Test
