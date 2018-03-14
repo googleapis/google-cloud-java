@@ -446,7 +446,7 @@ public class ITStorageTest {
       // Otherwise, expect one blob, since we only put in one above.
       if (!blobs.isEmpty()) {
         assertThat(blobs).hasSize(1);
-        return;
+        break;
       }
       Thread.sleep(500);
     }
