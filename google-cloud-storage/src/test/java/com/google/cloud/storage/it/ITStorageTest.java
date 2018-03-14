@@ -408,7 +408,7 @@ public class ITStorageTest {
     }
   }
 
-  @Test(timeout = 5000)
+  @Test(timeout = 7500)
   public void testListBlobRequesterPays() throws InterruptedException {
     BlobInfo blob1 =
         BlobInfo.newBuilder(BUCKET, "test-list-blobs-empty-selected-fields-blob1")
@@ -434,16 +434,19 @@ public class ITStorageTest {
     }
 
     String projectId = remoteStorageHelper.getOptions().getProjectId();
-    for (; ; ) {
+    while (true) {
       Page<Blob> page =
           storage.list(
               BUCKET,
               Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
               Storage.BlobListOption.fields(),
               Storage.BlobListOption.userProject(projectId));
-      int size = Iterators.size(page.iterateAll().iterator());
-      if (size == 1) {
-        break;
+      List<Blob> blobs = Lists.newArrayList(page.iterateAll());
+      // If the list is empty, maybe the blob isn't visible yet; wait and try again.
+      // Otherwise, expect one blob, since we only put in one above.
+      if (!blobs.isEmpty()) {
+        assertThat(blobs).hasSize(1);
+        return;
       }
       Thread.sleep(500);
     }
