@@ -91,19 +91,13 @@ class BatchingWriter {
         final WriteLogEntriesRequest request =
             requestPrototype.toBuilder().addAllEntries(accumulator.batch()).build();
         final long size = accumulator.bytes();
-        // Whoever calls send serializes the proto; so we do it off-thread.
+        send(request, size);
+        // TODO: Whoever calls send serializes the proto; consider doing it off-thread.
         // This gives better CPU utilization if there are few producer threads
         // on a many-core machine.
         //
-        // BUG(pongad): send() puts future in the map too late. To make flush work properly,
-        // we must guarantee adding future to map before this method returns.
-        executor.execute(
-            new Runnable() {
-              @Override
-              public void run() {
-                send(request, size);
-              }
-            });
+        // When doing this, make sure to put a future into the map before this method
+        // returns so flush works properly.
         accumulator.next();
       }
     }
