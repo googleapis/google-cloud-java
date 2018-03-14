@@ -88,9 +88,8 @@ import io.grpc.stub.AbstractStub;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
-import io.opencensus.trace.export.SampledSpanStore;
 import io.opencensus.trace.Tracing;
-
+import io.opencensus.trace.export.SampledSpanStore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -104,11 +103,11 @@ import javax.annotation.Nullable;
 
 /** Implementation of Cloud Spanner remote calls using gRPC. */
 public class GrpcSpannerRpc implements SpannerRpc {
-  
+
   static {
     setupTracingConfig();
   }
-  
+
   private static final Logger logger = Logger.getLogger(GrpcSpannerRpc.class.getName());
 
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
@@ -594,7 +593,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     }
   }
 
-  private static class LoggingInterceptor implements ClientInterceptor {
+  static class LoggingInterceptor implements ClientInterceptor {
     private final Level level;
 
     LoggingInterceptor(Level level) {
