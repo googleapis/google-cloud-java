@@ -30,11 +30,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.paging.AsyncPage;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.base.Function;
@@ -59,13 +59,10 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
-import com.google.logging.v2.LogName;
-import com.google.logging.v2.MetricName;
 import com.google.logging.v2.ProjectLogName;
 import com.google.logging.v2.ProjectMetricName;
 import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.ProjectSinkName;
-import com.google.logging.v2.SinkName;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
@@ -597,10 +594,10 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         WRITE_RESPONSE_TO_VOID_FUNCTION);
   }
 
-  private static ListLogEntriesRequest listLogEntriesRequest(LoggingOptions serviceOptions,
-      Map<Option.OptionType, ?> options) {
+  static ListLogEntriesRequest listLogEntriesRequest(
+      String projectId, Map<Option.OptionType, ?> options) {
     ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
-    builder.addProjectIds(serviceOptions.getProjectId());
+    builder.addProjectIds(projectId);
     Integer pageSize = PAGE_SIZE.get(options);
     if (pageSize != null) {
       builder.setPageSize(pageSize);
@@ -622,7 +619,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private static ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(
       final LoggingOptions serviceOptions, final Map<Option.OptionType, ?> options) {
-    final ListLogEntriesRequest request = listLogEntriesRequest(serviceOptions, options);
+    final ListLogEntriesRequest request =
+        listLogEntriesRequest(serviceOptions.getProjectId(), options);
     ApiFuture<ListLogEntriesResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(list, new Function<ListLogEntriesResponse, AsyncPage<LogEntry>>() {
       @Override

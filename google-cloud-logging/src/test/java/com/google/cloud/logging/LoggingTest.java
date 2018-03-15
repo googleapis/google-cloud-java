@@ -20,15 +20,15 @@ import static com.google.cloud.logging.Logging.EntryListOption;
 import static com.google.cloud.logging.Logging.SortingField;
 import static com.google.cloud.logging.Logging.SortingOrder;
 import static com.google.cloud.logging.Logging.WriteOption;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.ListOption;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
+import com.google.logging.v2.ListLogEntriesRequest;
 import java.util.Map;
+import org.junit.Test;
 
 public class LoggingTest {
 
@@ -56,11 +56,11 @@ public class LoggingTest {
   public void testEntryListOption() {
     EntryListOption listOption = EntryListOption.pageToken(PAGE_TOKEN);
     assertEquals(PAGE_TOKEN, listOption.getValue());
-    assertEquals(EntryListOption.OptionType.PAGE_TOKEN, listOption.getOptionType());
+    assertEquals(ListOption.OptionType.PAGE_TOKEN, listOption.getOptionType());
     // page size
     listOption = EntryListOption.pageSize(PAGE_SIZE);
     assertEquals(PAGE_SIZE, listOption.getValue());
-    assertEquals(EntryListOption.OptionType.PAGE_SIZE, listOption.getOptionType());
+    assertEquals(ListOption.OptionType.PAGE_SIZE, listOption.getOptionType());
     // filter
     listOption = EntryListOption.filter(FILTER);
     assertEquals(FILTER, listOption.getValue());
@@ -72,6 +72,14 @@ public class LoggingTest {
     listOption = EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.DESCENDING);
     assertEquals("timestamp desc", listOption.getValue());
     assertEquals(EntryListOption.OptionType.ORDER_BY, listOption.getOptionType());
+
+    ListLogEntriesRequest request =
+        LoggingImpl.listLogEntriesRequest(
+            "some-project-id",
+            LoggingImpl.optionMap(
+                EntryListOption.pageToken(PAGE_TOKEN), EntryListOption.pageSize(PAGE_SIZE)));
+    assertThat(request.getPageToken()).isEqualTo(PAGE_TOKEN);
+    assertThat(request.getPageSize()).isEqualTo(PAGE_SIZE);
   }
 
   @Test
