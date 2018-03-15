@@ -10,7 +10,7 @@ apply plugin: 'signing'
 
 description = 'GRPC library for grpc-google-iam-v1'
 group = "com.google.api.grpc"
-version = "0.4.0"
+version = "0.5.0"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
