@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.it;
 
-import static com.google.common.truth.Truth.*;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -24,7 +24,6 @@ import com.google.cloud.bigtable.data.v2.it.env.TestEnvRule;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.collect.Lists;
-import com.google.common.truth.Truth;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
