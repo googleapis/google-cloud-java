@@ -69,7 +69,7 @@ import javax.annotation.Generated;
  * <code>
  * ConfigSettings.Builder configSettingsBuilder =
  *     ConfigSettings.newBuilder();
- * configSettingsBuilder.getSinkSettings().getRetrySettingsBuilder()
+ * configSettingsBuilder.getSinkSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ConfigSettings configSettings = configSettingsBuilder.build();
  * </code>

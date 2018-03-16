@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <code>
  * ImageAnnotatorSettings.Builder imageAnnotatorSettingsBuilder =
  *     ImageAnnotatorSettings.newBuilder();
- * imageAnnotatorSettingsBuilder.batchAnnotateImagesSettings().getRetrySettingsBuilder()
+ * imageAnnotatorSettingsBuilder.batchAnnotateImagesSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ImageAnnotatorSettings imageAnnotatorSettings = imageAnnotatorSettingsBuilder.build();
  * </code>

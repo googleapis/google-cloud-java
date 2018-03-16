@@ -54,7 +54,7 @@ import javax.annotation.Generated;
  * <code>
  * JobControllerSettings.Builder jobControllerSettingsBuilder =
  *     JobControllerSettings.newBuilder();
- * jobControllerSettingsBuilder.submitJobSettings().getRetrySettingsBuilder()
+ * jobControllerSettingsBuilder.submitJobSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * JobControllerSettings jobControllerSettings = jobControllerSettingsBuilder.build();
  * </code>

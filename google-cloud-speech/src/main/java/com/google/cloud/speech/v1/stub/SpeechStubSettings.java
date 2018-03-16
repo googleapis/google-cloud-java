@@ -72,7 +72,7 @@ import org.threeten.bp.Duration;
  * <code>
  * SpeechStubSettings.Builder speechSettingsBuilder =
  *     SpeechStubSettings.newBuilder();
- * speechSettingsBuilder.recognizeSettings().getRetrySettingsBuilder()
+ * speechSettingsBuilder.recognizeSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * SpeechStubSettings speechSettings = speechSettingsBuilder.build();
  * </code>

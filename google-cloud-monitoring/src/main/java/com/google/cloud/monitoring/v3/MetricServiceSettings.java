@@ -69,7 +69,7 @@ import javax.annotation.Generated;
  * <code>
  * MetricServiceSettings.Builder metricServiceSettingsBuilder =
  *     MetricServiceSettings.newBuilder();
- * metricServiceSettingsBuilder.getMonitoredResourceDescriptorSettings().getRetrySettingsBuilder()
+ * metricServiceSettingsBuilder.getMonitoredResourceDescriptorSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * MetricServiceSettings metricServiceSettings = metricServiceSettingsBuilder.build();
  * </code>
