@@ -54,40 +54,39 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   private final int bufSize;
   private final ExecutorService exec;
   private final long size;
-  private List<WorkUnit> full = new ArrayList<>();
-  private WorkUnit fetching = null;
+  private final List<WorkUnit> full = new ArrayList<>();
+  private WorkUnit fetching;
   // total number of buffers
   private final static int BUF_COUNT = 2;
   // where we pretend to be, wrt returning bytes from read()
-  private long position = 0;
+  private long position;
   private boolean open;
   private Stopwatch betweenCallsToRead = Stopwatch.createUnstarted();
-  private static int prefetcherCount = 0;
-  private final int prefetcherIndex;
+  private static int prefetcherCount;
 
   // statistics, for profiling
   // time spent blocking the user because we're waiting on the network
-  public long msWaitingForData = 0;
+  public long msWaitingForData;
   // time spent blocking the user because we're copying bytes
-  public long msCopyingData = 0;
+  public long msCopyingData;
   // total number of bytes returned by read (if the user asks for the same bytes multiple times, they count)
-  public long bytesReturned = 0;
+  public long bytesReturned;
   // total number of bytes read over the network (whether returned to the user or not)
-  public long bytesRead = 0;
+  public long bytesRead ;
   // time spend in between calls to Read, ie. presumably while the user is processing the data we returned.
-  public long msBetweenCallsToRead = 0;
+  public long msBetweenCallsToRead ;
   // number of times we had the user's data already ready, didn't have to grab it from the net.
-  public long nbHit = 0;
+  public long nbHit;
   // number of times we had already started to prefetch the user's data (but it hadn't arrived yet).
-  public long nbNearHit = 0;
+  public long nbNearHit;
   // number of times we don't have what the user's asking for, we have to wait for a prefetch to finish,
   // and the prefetch didn't return what the user wanted (either they are going backward, or jumping forward)
-  public long nbMiss = 0;
+  public long nbMiss;
   // number of times the user asks for data with a lower index than what we already have
   // (so they're not following the expected pattern of increasing indexes)
-  public long nbGoingBack = 0;
+  public long nbGoingBack;
   // number of times the user asks for data past the end of the file
-  public long nbReadsPastEnd = 0;
+  public long nbReadsPastEnd;
   // timing statistics have an overhead, so only turn them on when debugging performance
   // issues.
   private static final boolean trackTime = false;
@@ -188,7 +187,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
       this.bufSize = bufSize;
     }
     this.open = true;
-    this.prefetcherIndex = (prefetcherCount++);
+    int prefetcherIndex = prefetcherCount++;
     // Make sure the prefetching thread's name indicate what it is and
     // which prefetcher it belongs to (for debugging purposes only, naturally).
     String nameFormat = "nio-prefetcher-" + prefetcherIndex + "-thread-%d";
@@ -202,7 +201,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
 
   public String getStatistics() {
     try {
-      double returnedPct = (bytesRead > 0 ? (100.0 * bytesReturned / bytesRead) : 100.0);
+      double returnedPct = (bytesRead > 0 ? 100.0 * bytesReturned / bytesRead : 100.0);
       return String
           .format("Bytes read: %12d\n  returned: %12d ( %3.2f %% )", bytesRead, bytesReturned,
               returnedPct)
@@ -306,7 +305,9 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
    */
   @Override
   public synchronized int read(ByteBuffer dst) throws IOException {
-    if (!open) throw new ClosedChannelException();
+    if (!open) {
+      throw new ClosedChannelException();
+    }
     try {
       if (trackTime) {
         msBetweenCallsToRead += betweenCallsToRead.elapsed(TimeUnit.MILLISECONDS);
@@ -337,8 +338,6 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
       if (trackTime) {
         copyingData = Stopwatch.createStarted();
       }
-      int bytesToCopy = dst.remaining();
-      byte[] array = src.array();
       // src.position is how far we've written into the array
       long blockIndex = position / bufSize;
       int offset = (int)(position - (blockIndex * bufSize));
@@ -353,6 +352,8 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
         nbReadsPastEnd++;
         return -1; // EOF
       }
+      int bytesToCopy = dst.remaining();
+      byte[] array = src.array();
       if (availableToCopy < bytesToCopy) {
         bytesToCopy = availableToCopy;
       }
