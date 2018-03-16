@@ -77,7 +77,7 @@ import org.threeten.bp.Duration;
  * <code>
  * ContextsStubSettings.Builder contextsSettingsBuilder =
  *     ContextsStubSettings.newBuilder();
- * contextsSettingsBuilder.getContextSettings().getRetrySettingsBuilder()
+ * contextsSettingsBuilder.getContextSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ContextsStubSettings contextsSettings = contextsSettingsBuilder.build();
  * </code>

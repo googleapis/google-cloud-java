@@ -7,7 +7,7 @@
   <name>Google Cloud Data Loss Prevention API</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-dlp</url>
   <description>
-    Java idiomatic client for Cloud Data Loss Prevention API v2beta1.
+    Java idiomatic client for Cloud Data Loss Prevention API v2.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -29,6 +29,10 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-dlp-v2beta1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-dlp-v2</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -66,6 +70,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-dlp-v2</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

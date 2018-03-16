@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * ReportErrorsServiceSettings.Builder reportErrorsServiceSettingsBuilder =
  *     ReportErrorsServiceSettings.newBuilder();
- * reportErrorsServiceSettingsBuilder.reportErrorEventSettings().getRetrySettingsBuilder()
+ * reportErrorsServiceSettingsBuilder.reportErrorEventSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ReportErrorsServiceSettings reportErrorsServiceSettings = reportErrorsServiceSettingsBuilder.build();
  * </code>

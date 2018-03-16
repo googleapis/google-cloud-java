@@ -85,7 +85,7 @@ import org.threeten.bp.Duration;
  * <code>
  * IntentsStubSettings.Builder intentsSettingsBuilder =
  *     IntentsStubSettings.newBuilder();
- * intentsSettingsBuilder.getIntentSettings().getRetrySettingsBuilder()
+ * intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * IntentsStubSettings intentsSettings = intentsSettingsBuilder.build();
  * </code>

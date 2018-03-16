@@ -69,7 +69,7 @@ import org.threeten.bp.Duration;
  * <code>
  * ImageAnnotatorStubSettings.Builder imageAnnotatorSettingsBuilder =
  *     ImageAnnotatorStubSettings.newBuilder();
- * imageAnnotatorSettingsBuilder.batchAnnotateImagesSettings().getRetrySettingsBuilder()
+ * imageAnnotatorSettingsBuilder.batchAnnotateImagesSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ImageAnnotatorStubSettings imageAnnotatorSettings = imageAnnotatorSettingsBuilder.build();
  * </code>

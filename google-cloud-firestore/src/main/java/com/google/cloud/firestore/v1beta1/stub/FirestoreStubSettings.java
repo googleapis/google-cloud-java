@@ -94,7 +94,7 @@ import org.threeten.bp.Duration;
  * <code>
  * FirestoreStubSettings.Builder firestoreSettingsBuilder =
  *     FirestoreStubSettings.newBuilder();
- * firestoreSettingsBuilder.updateDocumentSettings().getRetrySettingsBuilder()
+ * firestoreSettingsBuilder.updateDocumentSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * FirestoreStubSettings firestoreSettings = firestoreSettingsBuilder.build();
  * </code>

@@ -96,7 +96,7 @@ import org.threeten.bp.Duration;
  * <code>
  * DataTransferServiceStubSettings.Builder dataTransferServiceSettingsBuilder =
  *     DataTransferServiceStubSettings.newBuilder();
- * dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettingsBuilder()
+ * dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * DataTransferServiceStubSettings dataTransferServiceSettings = dataTransferServiceSettingsBuilder.build();
  * </code>

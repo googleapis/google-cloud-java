@@ -62,7 +62,7 @@ import org.threeten.bp.Duration;
  * <code>
  * ReportErrorsServiceStubSettings.Builder reportErrorsServiceSettingsBuilder =
  *     ReportErrorsServiceStubSettings.newBuilder();
- * reportErrorsServiceSettingsBuilder.reportErrorEventSettings().getRetrySettingsBuilder()
+ * reportErrorsServiceSettingsBuilder.reportErrorEventSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ReportErrorsServiceStubSettings reportErrorsServiceSettings = reportErrorsServiceSettingsBuilder.build();
  * </code>
