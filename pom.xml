@@ -138,7 +138,7 @@
     <site.installationModule>google-cloud</site.installationModule>
     <bom.version>0.39.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-pom:current} -->
     <api-client.version>1.23.0</api-client.version>
-    <gax.version>1.19.0</gax.version>
+    <gax.version>1.20.0</gax.version>
     <google.auth.version>0.9.0</google.auth.version>
     <grpc.version>1.9.0</grpc.version>
     <nettyssl.version>2.0.7.Final</nettyssl.version>
