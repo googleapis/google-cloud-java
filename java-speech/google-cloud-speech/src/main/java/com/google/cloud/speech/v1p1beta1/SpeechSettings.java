@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * SpeechSettings.Builder speechSettingsBuilder =
  *     SpeechSettings.newBuilder();
- * speechSettingsBuilder.recognizeSettings().getRetrySettingsBuilder()
+ * speechSettingsBuilder.recognizeSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * SpeechSettings speechSettings = speechSettingsBuilder.build();
  * </code>
