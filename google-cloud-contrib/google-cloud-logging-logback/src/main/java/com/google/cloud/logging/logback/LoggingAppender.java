@@ -67,12 +67,14 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   private volatile Logging logging;
   private List<LoggingEnhancer> loggingEnhancers;
+  private List<LoggingEventEnhancer> loggingEventEnhancers;
   private WriteOption[] defaultWriteOptions;
 
   private Level flushLevel;
   private String log;
   private String resourceType;
   private Set<String> enhancerClassNames = new HashSet<>();
+  private Set<String> loggingEventEnhancerClassNames = new HashSet<>();
 
   /**
    * Batched logging requests get immediately flushed for logs at or above this level.
@@ -114,6 +116,11 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   public void addEnhancer(String enhancerClassName) {
     this.enhancerClassNames.add(enhancerClassName);
   }
+  
+  public void addLoggingEventEnhancer(String enhancerClassName) {
+    this.loggingEventEnhancerClassNames.add(enhancerClassName);
+  }
+  
 
   Level getFlushLevel() {
     return (flushLevel != null) ? flushLevel : Level.ERROR;
@@ -128,11 +135,19 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   List<LoggingEnhancer> getLoggingEnhancers() {
-    List<LoggingEnhancer> loggingEnhancers = new ArrayList<>();
-    if (enhancerClassNames != null) {
-      for (String enhancerClassName : enhancerClassNames) {
+    return getEnhancers(enhancerClassNames);
+  }
+
+  List<LoggingEventEnhancer> getLoggingEventEnhancers() {
+    return getEnhancers(loggingEventEnhancerClassNames);
+  }
+
+  <T> List<T> getEnhancers(Set<String> classNames) {
+    List<T> loggingEnhancers = new ArrayList<>();
+    if (classNames != null) {
+      for (String enhancerClassName : classNames) {
         if (enhancerClassName != null) {
-          LoggingEnhancer enhancer = getEnhancer(enhancerClassName);
+          T enhancer = getEnhancer(enhancerClassName);
           if (enhancer != null) {
             loggingEnhancers.add(enhancer);
           }
@@ -142,10 +157,10 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     return loggingEnhancers;
   }
 
-  private LoggingEnhancer getEnhancer(String enhancerClassName) {
+  private <T> T getEnhancer(String enhancerClassName) {
     try {
-      Class<? extends LoggingEnhancer> clz =
-          (Class<? extends LoggingEnhancer>)
+      Class<T> clz =
+          (Class<T>)
               Loader.loadClass(enhancerClassName.trim());
       return clz.newInstance();
     } catch (Exception ex) {
@@ -170,6 +185,9 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     List<LoggingEnhancer> resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
     loggingEnhancers.addAll(resourceEnhancers);
     loggingEnhancers.addAll(getLoggingEnhancers());
+    loggingEventEnhancers = new ArrayList<>();
+    loggingEventEnhancers.addAll(getLoggingEventEnhancers());
+    
     super.start();
   }
 
@@ -224,6 +242,12 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     if (loggingEnhancers != null) {
       for (LoggingEnhancer enhancer : loggingEnhancers) {
         enhancer.enhanceLogEntry(builder);
+      }
+    }
+
+    if (loggingEventEnhancers != null) {
+      for (LoggingEventEnhancer enhancer : loggingEventEnhancers) {
+        enhancer.enhanceLogEntry(builder, e);
       }
     }
 
