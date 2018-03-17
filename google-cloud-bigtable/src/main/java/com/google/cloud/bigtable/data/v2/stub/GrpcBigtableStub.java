@@ -21,6 +21,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
@@ -35,9 +36,11 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
+import com.google.common.collect.ImmutableMap;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -136,28 +139,82 @@ public class GrpcBigtableStub extends BigtableStub {
     GrpcCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsTransportSettings =
         GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
             .setMethodDescriptor(readRowsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ReadRowsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ReadRowsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("table_name", String.valueOf(request.getTableName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<SampleRowKeysRequest, SampleRowKeysResponse> sampleRowKeysTransportSettings =
         GrpcCallSettings.<SampleRowKeysRequest, SampleRowKeysResponse>newBuilder()
             .setMethodDescriptor(sampleRowKeysMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SampleRowKeysRequest>() {
+                  @Override
+                  public Map<String, String> extract(SampleRowKeysRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("table_name", String.valueOf(request.getTableName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<MutateRowRequest, MutateRowResponse> mutateRowTransportSettings =
         GrpcCallSettings.<MutateRowRequest, MutateRowResponse>newBuilder()
             .setMethodDescriptor(mutateRowMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<MutateRowRequest>() {
+                  @Override
+                  public Map<String, String> extract(MutateRowRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("table_name", String.valueOf(request.getTableName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<MutateRowsRequest, MutateRowsResponse> mutateRowsTransportSettings =
         GrpcCallSettings.<MutateRowsRequest, MutateRowsResponse>newBuilder()
             .setMethodDescriptor(mutateRowsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<MutateRowsRequest>() {
+                  @Override
+                  public Map<String, String> extract(MutateRowsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("table_name", String.valueOf(request.getTableName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
         checkAndMutateRowTransportSettings =
             GrpcCallSettings.<CheckAndMutateRowRequest, CheckAndMutateRowResponse>newBuilder()
                 .setMethodDescriptor(checkAndMutateRowMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CheckAndMutateRowRequest>() {
+                      @Override
+                      public Map<String, String> extract(CheckAndMutateRowRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("table_name", String.valueOf(request.getTableName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
         readModifyWriteRowTransportSettings =
             GrpcCallSettings.<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>newBuilder()
                 .setMethodDescriptor(readModifyWriteRowMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ReadModifyWriteRowRequest>() {
+                      @Override
+                      public Map<String, String> extract(ReadModifyWriteRowRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("table_name", String.valueOf(request.getTableName()));
+                        return params.build();
+                      }
+                    })
                 .build();
 
     this.readRowsCallable =
