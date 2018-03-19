@@ -106,16 +106,11 @@ public class GapicSpannerRpc implements SpannerRpc {
             mergedHeaderProvider.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
 
-    // TODO(pongad): make pool work
+    // TODO(pongad): make channel pool work
 
-    // TODO(pongad): make interceptors work
-
-    // Channel channel =
-    //     ClientInterceptors.intercept(
-    //         options.getRpcChannels().get(0),
-    //         new GrpcSpannerRpc.LoggingInterceptor(Level.FINER),
-    //         WatchdogInterceptor.newDefaultWatchdogInterceptor(),
-    //         new SpannerErrorInterceptor());
+    // TODO(pongad): make RPC logging work (formerly LoggingInterceptor)
+    // TODO(pongad): add watchdog
+    // TODO(pongad): make error augmentation work (formerly SpannerErrorInterceptor)
 
     TransportChannelProvider channelProvider =
         FixedTransportChannelProvider.create(
