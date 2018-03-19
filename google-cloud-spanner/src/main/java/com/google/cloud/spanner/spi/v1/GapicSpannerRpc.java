@@ -98,6 +98,14 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final String projectName;
   private final SpannerMetadataProvider metadataProvider;
 
+  public static GapicSpannerRpc create(SpannerOptions options) {
+    try {
+      return new GapicSpannerRpc(options);
+    } catch (IOException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+
   public GapicSpannerRpc(SpannerOptions options) throws IOException {
     this.projectId = options.getProjectId();
     this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);

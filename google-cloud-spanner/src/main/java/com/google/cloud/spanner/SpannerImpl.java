@@ -36,6 +36,7 @@ import com.google.cloud.spanner.Operation.Parser;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
+import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
@@ -81,7 +82,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -135,6 +135,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   private final Random random = new Random();
   private final SpannerRpc rpc;
+  private final SpannerRpc gapicRpc;
   private final int defaultPrefetchChunks;
 
   @GuardedBy("this")
@@ -146,16 +147,23 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @GuardedBy("this")
   private boolean spannerIsClosed = false;
 
-  SpannerImpl(SpannerRpc rpc, int defaultPrefetchChunks, SpannerOptions options) {
+  SpannerImpl(
+      SpannerRpc rpc, SpannerRpc gapicRpc, int defaultPrefetchChunks, SpannerOptions options) {
     super(options);
     this.rpc = rpc;
+    this.gapicRpc = gapicRpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
-    this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), rpc);
-    this.instanceClient = new InstanceAdminClientImpl(options.getProjectId(), rpc, dbAdminClient);
+    this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
+    this.instanceClient =
+        new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
   }
 
   SpannerImpl(SpannerOptions options) {
-    this(options.getSpannerRpcV1(), options.getPrefetchChunks(), options);
+    this(
+        options.getSpannerRpcV1(),
+        GapicSpannerRpc.create(options),
+        options.getPrefetchChunks(),
+        options);
   }
 
   private static ExponentialBackOff newBackOff() {

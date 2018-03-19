@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -59,7 +59,7 @@ public final class BatchClientImplTest {
   public void setUp() {
     initMocks(this);
     DatabaseId db = DatabaseId.of(DB_NAME);
-    SpannerImpl spanner = new SpannerImpl(rpc, 1, spannerOptions);
+    SpannerImpl spanner = new SpannerImpl(rpc, rpc, 1, spannerOptions);
     client = new BatchClientImpl(db, spanner);
   }
 
