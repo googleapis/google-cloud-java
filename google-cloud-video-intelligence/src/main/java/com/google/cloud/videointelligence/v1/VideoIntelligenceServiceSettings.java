@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * VideoIntelligenceServiceSettings.Builder videoIntelligenceServiceSettingsBuilder =
  *     VideoIntelligenceServiceSettings.newBuilder();
- * videoIntelligenceServiceSettingsBuilder.annotateVideoSettings().getRetrySettingsBuilder()
+ * videoIntelligenceServiceSettingsBuilder.annotateVideoSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings = videoIntelligenceServiceSettingsBuilder.build();
  * </code>
