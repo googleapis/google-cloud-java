@@ -16,37 +16,45 @@
 
 package com.example.dlp;
 
-import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.core.SettableApiFuture;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.dlp.v2beta1.DlpServiceClient;
-import com.google.privacy.dlp.v2beta1.BigQueryOptions;
-import com.google.privacy.dlp.v2beta1.BigQueryTable;
-import com.google.privacy.dlp.v2beta1.CloudStorageOptions;
-import com.google.privacy.dlp.v2beta1.CloudStorageOptions.FileSet;
-import com.google.privacy.dlp.v2beta1.ContentItem;
-import com.google.privacy.dlp.v2beta1.DatastoreOptions;
-import com.google.privacy.dlp.v2beta1.Finding;
-import com.google.privacy.dlp.v2beta1.InfoType;
-import com.google.privacy.dlp.v2beta1.InspectConfig;
-import com.google.privacy.dlp.v2beta1.InspectContentRequest;
-import com.google.privacy.dlp.v2beta1.InspectContentResponse;
-import com.google.privacy.dlp.v2beta1.InspectOperationMetadata;
-import com.google.privacy.dlp.v2beta1.InspectOperationResult;
-import com.google.privacy.dlp.v2beta1.InspectResult;
-import com.google.privacy.dlp.v2beta1.KindExpression;
-import com.google.privacy.dlp.v2beta1.Likelihood;
-import com.google.privacy.dlp.v2beta1.OutputStorageConfig;
-import com.google.privacy.dlp.v2beta1.PartitionId;
-import com.google.privacy.dlp.v2beta1.ResultName;
-import com.google.privacy.dlp.v2beta1.StorageConfig;
+import com.google.cloud.dlp.v2.DlpServiceClient;
+import com.google.cloud.pubsub.v1.Subscriber;
+import com.google.privacy.dlp.v2.Action;
+import com.google.privacy.dlp.v2.BigQueryOptions;
+import com.google.privacy.dlp.v2.BigQueryTable;
+import com.google.privacy.dlp.v2.ByteContentItem;
+import com.google.privacy.dlp.v2.CloudStorageOptions;
+import com.google.privacy.dlp.v2.ContentItem;
+import com.google.privacy.dlp.v2.CreateDlpJobRequest;
+import com.google.privacy.dlp.v2.DatastoreOptions;
+import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.Finding;
+import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.InfoType;
+import com.google.privacy.dlp.v2.InfoTypeStats;
+import com.google.privacy.dlp.v2.InspectConfig;
+import com.google.privacy.dlp.v2.InspectConfig.FindingLimits;
+import com.google.privacy.dlp.v2.InspectContentRequest;
+import com.google.privacy.dlp.v2.InspectContentResponse;
+import com.google.privacy.dlp.v2.InspectDataSourceDetails;
+import com.google.privacy.dlp.v2.InspectJobConfig;
+import com.google.privacy.dlp.v2.InspectResult;
+import com.google.privacy.dlp.v2.KindExpression;
+import com.google.privacy.dlp.v2.Likelihood;
+import com.google.privacy.dlp.v2.PartitionId;
+import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.StorageConfig;
 import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 import java.net.URLConnection;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import javax.activation.MimetypesFileTypeMap;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -59,193 +67,57 @@ import org.apache.commons.cli.ParseException;
 
 public class Inspect {
 
+  /**
+   * [START dlp_inspect_string] Inspect a text for given InfoTypes
+   *
+   * @param string String to instpect
+   * @param minLikelihood The minimum likelihood required before returning a match
+   * @param maxFindings The maximum number of findings to report (0 = server maximum)
+   * @param infoTypes The infoTypes of information to match
+   * @param includeQuote Whether to include the matching string
+   * @param projectId Google Cloud project ID
+   */
   private static void inspectString(
       String string,
       Likelihood minLikelihood,
       int maxFindings,
       List<InfoType> infoTypes,
-      boolean includeQuote) {
-    // [START dlp_inspect_string]
+      boolean includeQuote,
+      String projectId) {
     // instantiate a client
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-
-      // The minimum likelihood required before returning a match
-      // minLikelihood = LIKELIHOOD_UNSPECIFIED;
-
-      // The maximum number of findings to report (0 = server maximum)
-      // maxFindings = 0;
-
-      // The infoTypes of information to match
-      // infoTypes = ['US_MALE_NAME', 'US_FEMALE_NAME'];
-
-      // Whether to include the matching string
-      // includeQuote = true;
+      FindingLimits findingLimits =
+          FindingLimits.newBuilder().setMaxFindingsPerRequest(maxFindings).build();
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addAllInfoTypes(infoTypes)
               .setMinLikelihood(minLikelihood)
-              .setMaxFindings(maxFindings)
+              .setLimits(findingLimits)
               .setIncludeQuote(includeQuote)
               .build();
 
-      // The string to inspect
-      // string = 'My name is Gary and my email is gary@example.com';
-      ContentItem contentItem =
-          ContentItem.newBuilder().setType("text/plain").setValue(string).build();
+      ByteContentItem byteContentItem =
+          ByteContentItem.newBuilder()
+              .setType(ByteContentItem.BytesType.TEXT_UTF8)
+              .setData(ByteString.copyFromUtf8(string))
+              .build();
+
+      ContentItem contentItem = ContentItem.newBuilder().setByteItem(byteContentItem).build();
 
       InspectContentRequest request =
           InspectContentRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
               .setInspectConfig(inspectConfig)
-              .addItems(contentItem)
+              .setItem(contentItem)
               .build();
       InspectContentResponse response = dlpServiceClient.inspectContent(request);
 
-      for (InspectResult result : response.getResultsList()) {
-        if (result.getFindingsCount() > 0) {
-          System.out.println("Findings: ");
-          for (Finding finding : result.getFindingsList()) {
-            if (includeQuote) {
-              System.out.print("Quote: " + finding.getQuote());
-            }
-            System.out.print("\tInfo type: " + finding.getInfoType().getName());
-            System.out.println("\tLikelihood: " + finding.getLikelihood());
-          }
-        } else {
-          System.out.println("No findings.");
-        }
-      }
-    } catch (Exception e) {
-      System.out.println("Error in inspectString: " + e.getMessage());
-    }
-    // [END dlp_inspect_string]
-  }
-
-  private static void inspectFile(
-      String filePath,
-      Likelihood minLikelihood,
-      int maxFindings,
-      List<InfoType> infoTypes,
-      boolean includeQuote) {
-    // [START dlp_inspect_file]
-    // Instantiates a client
-    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-      // The path to a local file to inspect. Can be a text, JPG, or PNG file.
-      // fileName = 'path/to/image.png';
-
-      // The minimum likelihood required before returning a match
-      // minLikelihood = LIKELIHOOD_UNSPECIFIED;
-
-      // The maximum number of findings to report (0 = server maximum)
-      // maxFindings = 0;
-
-      // The infoTypes of information to match
-      // infoTypes = ['US_MALE_NAME', 'US_FEMALE_NAME'];
-
-      // Whether to include the matching string
-      // includeQuote = true;
-      Path path = Paths.get(filePath);
-
-      // detect file mime type, default to application/octet-stream
-      String mimeType = URLConnection.guessContentTypeFromName(filePath);
-      if (mimeType == null) {
-        mimeType = MimetypesFileTypeMap.getDefaultFileTypeMap().getContentType(filePath);
-      }
-      if (mimeType == null) {
-        mimeType = "application/octet-stream";
-      }
-
-      byte[] data = Files.readAllBytes(path);
-      ContentItem contentItem =
-          ContentItem.newBuilder().setType(mimeType).setData(ByteString.copyFrom(data)).build();
-
-      InspectConfig inspectConfig =
-          InspectConfig.newBuilder()
-              .addAllInfoTypes(infoTypes)
-              .setMinLikelihood(minLikelihood)
-              .setMaxFindings(maxFindings)
-              .setIncludeQuote(includeQuote)
-              .build();
-
-      InspectContentRequest request =
-          InspectContentRequest.newBuilder()
-              .setInspectConfig(inspectConfig)
-              .addItems(contentItem)
-              .build();
-      InspectContentResponse response = dlpServiceClient.inspectContent(request);
-
-      for (InspectResult result : response.getResultsList()) {
-        if (result.getFindingsCount() > 0) {
-          System.out.println("Findings: ");
-          for (Finding finding : result.getFindingsList()) {
-            if (includeQuote) {
-              System.out.print("Quote: " + finding.getQuote());
-            }
-            System.out.print("\tInfo type: " + finding.getInfoType().getName());
-            System.out.println("\tLikelihood: " + finding.getLikelihood());
-          }
-        } else {
-          System.out.println("No findings.");
-        }
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
-      System.out.println("Error in inspectFile: " + e.getMessage());
-    }
-    // [END dlp_inspect_file]
-  }
-
-  private static void inspectGcsFile(
-      String bucketName, String fileName, Likelihood minLikelihood, List<InfoType> infoTypes)
-      throws Exception {
-    // [START dlp_inspect_gcs]
-    // Instantiates a client
-    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-      // The name of the bucket where the file resides.
-      // bucketName = 'YOUR-BUCKET';
-
-      // The path to the file within the bucket to inspect.
-      // Can contain wildcards, e.g. "my-image.*"
-      // fileName = 'my-image.png';
-
-      // The minimum likelihood required before returning a match
-      // minLikelihood = LIKELIHOOD_UNSPECIFIED;
-
-      // The maximum number of findings to report (0 = server maximum)
-      // maxFindings = 0;
-
-      // The infoTypes of information to match
-      // infoTypes = ['US_MALE_NAME', 'US_FEMALE_NAME'];
-
-      CloudStorageOptions cloudStorageOptions =
-          CloudStorageOptions.newBuilder()
-              .setFileSet(FileSet.newBuilder().setUrl("gs://" + bucketName + "/" + fileName))
-              .build();
-
-      StorageConfig storageConfig =
-          StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
-
-      InspectConfig inspectConfig =
-          InspectConfig.newBuilder()
-              .addAllInfoTypes(infoTypes)
-              .setMinLikelihood(minLikelihood)
-              .build();
-
-      // optionally provide an output configuration to store results, default : none
-      OutputStorageConfig outputConfig = OutputStorageConfig.getDefaultInstance();
-
-      // asynchronously submit an inspect operation
-      OperationFuture<InspectOperationResult, InspectOperationMetadata> responseFuture =
-          dlpServiceClient.createInspectOperationAsync(inspectConfig, storageConfig, outputConfig);
-
-      // ...
-      // block on response, returning job id of the operation
-      InspectOperationResult inspectOperationResult = responseFuture.get();
-      String resultName = inspectOperationResult.getName();
-      InspectResult inspectResult = dlpServiceClient.listInspectFindings(resultName).getResult();
-
-      if (inspectResult.getFindingsCount() > 0) {
+      if (response.getResult().getFindingsCount() > 0) {
         System.out.println("Findings: ");
-        for (Finding finding : inspectResult.getFindingsList()) {
+        for (Finding finding : response.getResult().getFindingsList()) {
+          if (includeQuote) {
+            System.out.print("\tQuote: " + finding.getQuote());
+          }
           System.out.print("\tInfo type: " + finding.getInfoType().getName());
           System.out.println("\tLikelihood: " + finding.getLikelihood());
         }
@@ -253,37 +125,249 @@ public class Inspect {
         System.out.println("No findings.");
       }
     } catch (Exception e) {
-      e.printStackTrace();
-      System.out.println("Error in inspectGCSFileAsync: " + e.getMessage());
+      System.out.println("Error in inspectString: " + e.getMessage());
     }
-    // [END dlp_inspect_gcs]
   }
+  // [END dlp_inspect_string]
 
+  // [START dlp_inspect_file]
+  /**
+   * Inspect a local file
+   *
+   * @param filePath The path to a local file to inspect. Can be a text, JPG, or PNG file.
+   * @param minLikelihood The minimum likelihood required before returning a match
+   * @param maxFindings The maximum number of findings to report (0 = server maximum)
+   * @param infoTypes The infoTypes of information to match
+   * @param includeQuote Whether to include the matching string
+   * @param projectId Google Cloud project ID
+   */
+  private static void inspectFile(
+      String filePath,
+      Likelihood minLikelihood,
+      int maxFindings,
+      List<InfoType> infoTypes,
+      boolean includeQuote,
+      String projectId) {
+    // Instantiates a client
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+      // detect file mime type, default to application/octet-stream
+      String mimeType = URLConnection.guessContentTypeFromName(filePath);
+      if (mimeType == null) {
+        mimeType = MimetypesFileTypeMap.getDefaultFileTypeMap().getContentType(filePath);
+      }
+
+      ByteContentItem.BytesType bytesType;
+      switch (mimeType) {
+        case "image/jpeg":
+          bytesType = ByteContentItem.BytesType.IMAGE_JPEG;
+          break;
+        case "image/bmp":
+          bytesType = ByteContentItem.BytesType.IMAGE_BMP;
+          break;
+        case "image/png":
+          bytesType = ByteContentItem.BytesType.IMAGE_PNG;
+          break;
+        case "image/svg":
+          bytesType = ByteContentItem.BytesType.IMAGE_SVG;
+          break;
+        default:
+          bytesType = ByteContentItem.BytesType.BYTES_TYPE_UNSPECIFIED;
+          break;
+      }
+
+      byte[] data = Files.readAllBytes(Paths.get(filePath));
+      ByteContentItem byteContentItem =
+          ByteContentItem.newBuilder()
+              .setType(bytesType)
+              .setData(ByteString.copyFrom(data))
+              .build();
+      ContentItem contentItem = ContentItem.newBuilder().setByteItem(byteContentItem).build();
+
+      FindingLimits findingLimits =
+          FindingLimits.newBuilder().setMaxFindingsPerRequest(maxFindings).build();
+
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setMinLikelihood(minLikelihood)
+              .setLimits(findingLimits)
+              .setIncludeQuote(includeQuote)
+              .build();
+
+      InspectContentRequest request =
+          InspectContentRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
+              .setInspectConfig(inspectConfig)
+              .setItem(contentItem)
+              .build();
+
+      InspectContentResponse response = dlpServiceClient.inspectContent(request);
+
+      InspectResult result = response.getResult();
+      if (result.getFindingsCount() > 0) {
+        System.out.println("Findings: ");
+        for (Finding finding : result.getFindingsList()) {
+          if (includeQuote) {
+            System.out.print("\tQuote: " + finding.getQuote());
+          }
+          System.out.print("\tInfo type: " + finding.getInfoType().getName());
+          System.out.println("\tLikelihood: " + finding.getLikelihood());
+        }
+      } else {
+        System.out.println("No findings.");
+      }
+    } catch (Exception e) {
+      System.out.println("Error in inspectFile: " + e.getMessage());
+    }
+  }
+  // [END dlp_inspect_file]
+
+  // [START dlp_inspect_gcs]
+  /**
+   * Inspect GCS file for Info types and wait on job completion using Google Cloud Pub/Sub
+   * notification
+   *
+   * @param bucketName The name of the bucket where the file resides.
+   * @param fileName The path to the file within the bucket to inspect (can include wildcards, eg.
+   *     my-image.*)
+   * @param minLikelihood The minimum likelihood required before returning a match
+   * @param infoTypes The infoTypes of information to match
+   * @param maxFindings The maximum number of findings to report (0 = server maximum)
+   * @param topicId Google Cloud Pub/Sub topic Id to notify of job status
+   * @param subscriptionId Google Cloud Subscription to above topic to listen for job status updates
+   * @param projectId Google Cloud project ID
+   */
+  private static void inspectGcsFile(
+      String bucketName,
+      String fileName,
+      Likelihood minLikelihood,
+      List<InfoType> infoTypes,
+      int maxFindings,
+      String topicId,
+      String subscriptionId,
+      String projectId)
+      throws Exception {
+    // Instantiates a client
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+
+      CloudStorageOptions cloudStorageOptions =
+          CloudStorageOptions.newBuilder()
+              .setFileSet(
+                  CloudStorageOptions.FileSet.newBuilder()
+                      .setUrl("gs://" + bucketName + "/" + fileName))
+              .build();
+
+      StorageConfig storageConfig =
+          StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
+
+      FindingLimits findingLimits =
+          FindingLimits.newBuilder().setMaxFindingsPerRequest(maxFindings).build();
+
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setMinLikelihood(minLikelihood)
+              .setLimits(findingLimits)
+              .build();
+
+      String pubSubTopic = String.format("projects/%s/topics/%s", projectId, topicId);
+      Action.PublishToPubSub publishToPubSub =
+          Action.PublishToPubSub.newBuilder().setTopic(pubSubTopic).build();
+
+      Action action = Action.newBuilder().setPubSub(publishToPubSub).build();
+
+      InspectJobConfig inspectJobConfig =
+          InspectJobConfig.newBuilder()
+              .setStorageConfig(storageConfig)
+              .setInspectConfig(inspectConfig)
+              .addActions(action)
+              .build();
+
+      // Semi-synchronously submit an inspect job, and wait on results
+      CreateDlpJobRequest createDlpJobRequest =
+          CreateDlpJobRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
+              .setInspectJob(inspectJobConfig)
+              .build();
+
+      DlpJob dlpJob = dlpServiceClient.createDlpJob(createDlpJobRequest);
+
+      System.out.println("Job created with ID:" + dlpJob.getName());
+
+      final SettableApiFuture<Boolean> done = SettableApiFuture.create();
+
+      // Set up a Pub/Sub subscriber to listen on the job completion status
+      Subscriber subscriber =
+          Subscriber.newBuilder(
+                  ProjectSubscriptionName.of(projectId, subscriptionId),
+            (pubsubMessage, ackReplyConsumer) -> {
+              if (pubsubMessage.getAttributesCount() > 0
+                  && pubsubMessage
+                      .getAttributesMap()
+                      .get("DlpJobName")
+                      .equals(dlpJob.getName())) {
+                // notify job completion
+                done.set(true);
+                ackReplyConsumer.ack();
+              }
+            })
+              .build();
+      subscriber.startAsync();
+
+      // Wait for job completion semi-synchronously
+      // For long jobs, consider using a truly asynchronous execution model such as Cloud Functions
+      try {
+        done.get(1, TimeUnit.MINUTES);
+        Thread.sleep(500); // Wait for the job to become available
+      } catch (Exception e) {
+        System.out.println("Unable to verify job completion.");
+      }
+
+      DlpJob completedJob =
+          dlpServiceClient.getDlpJob(
+              GetDlpJobRequest.newBuilder().setName(dlpJob.getName()).build());
+
+      System.out.println("Job status: " + completedJob.getState());
+      InspectDataSourceDetails inspectDataSourceDetails = completedJob.getInspectDetails();
+      InspectDataSourceDetails.Result result = inspectDataSourceDetails.getResult();
+      if (result.getInfoTypeStatsCount() > 0) {
+        System.out.println("Findings: ");
+        for (InfoTypeStats infoTypeStat : result.getInfoTypeStatsList()) {
+          System.out.print("\tInfo type: " + infoTypeStat.getInfoType().getName());
+          System.out.println("\tCount: " + infoTypeStat.getCount());
+        }
+      } else {
+        System.out.println("No findings.");
+      }
+    }
+  }
+  // [END dlp_inspect_gcs]
+
+  // [START dlp_inspect_datastore]
+  /**
+   * Inspect a Datastore kind
+   *
+   * @param projectId The project ID containing the target Datastore
+   * @param namespaceId The ID namespace of the Datastore document to inspect
+   * @param kind The kind of the Datastore entity to inspect
+   * @param minLikelihood The minimum likelihood required before returning a match
+   * @param infoTypes The infoTypes of information to match
+   * @param maxFindings max number of findings
+   * @param topicId Google Cloud Pub/Sub topic to notify job status updates
+   * @param subscriptionId Google Cloud Pub/Sub subscription to above topic to receive status
+   *     updates
+   */
   private static void inspectDatastore(
       String projectId,
       String namespaceId,
       String kind,
       Likelihood minLikelihood,
-      List<InfoType> infoTypes) {
-    // [START dlp_inspect_datastore]
+      List<InfoType> infoTypes,
+      int maxFindings,
+      String topicId,
+      String subscriptionId) {
     // Instantiates a client
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-
-      // (Optional) The project ID containing the target Datastore
-      // projectId =  my-project-id
-
-      // (Optional) The ID namespace of the Datastore document to inspect.
-      // To ignore Datastore namespaces, set this to an empty string ('')
-      // namespaceId = '';
-
-      // The kind of the Datastore entity to inspect.
-      // kind = 'Person';
-
-      // The minimum likelihood required before returning a match
-      // minLikelihood = LIKELIHOOD_UNSPECIFIED;
-
-      // The infoTypes of information to match
-      // infoTypes = ['US_MALE_NAME', 'US_FEMALE_NAME'];
 
       // Reference to the Datastore namespace
       PartitionId partitionId =
@@ -298,123 +382,217 @@ public class Inspect {
       StorageConfig storageConfig =
           StorageConfig.newBuilder().setDatastoreOptions(datastoreOptions).build();
 
+      FindingLimits findingLimits =
+          FindingLimits.newBuilder().setMaxFindingsPerRequest(maxFindings).build();
+
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addAllInfoTypes(infoTypes)
               .setMinLikelihood(minLikelihood)
+              .setLimits(findingLimits)
               .build();
 
-      // optionally provide an output configuration to store results, default : none
-      OutputStorageConfig outputConfig = OutputStorageConfig.getDefaultInstance();
+      String pubSubTopic = String.format("projects/%s/topics/%s", projectId, topicId);
+      Action.PublishToPubSub publishToPubSub =
+          Action.PublishToPubSub.newBuilder().setTopic(pubSubTopic).build();
 
-      // asynchronously submit an inspect operation
-      OperationFuture<InspectOperationResult, InspectOperationMetadata> responseFuture =
-          dlpServiceClient.createInspectOperationAsync(inspectConfig, storageConfig, outputConfig);
+      Action action = Action.newBuilder().setPubSub(publishToPubSub).build();
 
-      // ...
-      // block on response, returning job id of the operation
-      InspectOperationResult inspectOperationResult = responseFuture.get();
-      String resultName = inspectOperationResult.getName();
-      InspectResult inspectResult = dlpServiceClient.listInspectFindings(resultName).getResult();
+      InspectJobConfig inspectJobConfig =
+          InspectJobConfig.newBuilder()
+              .setStorageConfig(storageConfig)
+              .setInspectConfig(inspectConfig)
+              .addActions(action)
+              .build();
 
-      if (inspectResult.getFindingsCount() > 0) {
+      // Asynchronously submit an inspect job, and wait on results
+      CreateDlpJobRequest createDlpJobRequest =
+          CreateDlpJobRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
+              .setInspectJob(inspectJobConfig)
+              .build();
+
+      DlpJob dlpJob = dlpServiceClient.createDlpJob(createDlpJobRequest);
+
+      System.out.println("Job created with ID:" + dlpJob.getName());
+
+      final SettableApiFuture<Boolean> done = SettableApiFuture.create();
+
+      // Set up a Pub/Sub subscriber to listen on the job completion status
+      Subscriber subscriber =
+          Subscriber.newBuilder(
+                  ProjectSubscriptionName.of(projectId, subscriptionId),
+            (pubsubMessage, ackReplyConsumer) -> {
+              if (pubsubMessage.getAttributesCount() > 0
+                  && pubsubMessage
+                      .getAttributesMap()
+                      .get("DlpJobName")
+                      .equals(dlpJob.getName())) {
+                // notify job completion
+                done.set(true);
+                ackReplyConsumer.ack();
+              }
+            })
+              .build();
+      subscriber.startAsync();
+
+      // Wait for job completion semi-synchronously
+      // For long jobs, consider using a truly asynchronous execution model such as Cloud Functions
+      try {
+        done.get(1, TimeUnit.MINUTES);
+        Thread.sleep(500); // Wait for the job to become available
+      } catch (Exception e) {
+        System.out.println("Unable to verify job completion.");
+      }
+
+      DlpJob completedJob =
+          dlpServiceClient.getDlpJob(
+              GetDlpJobRequest.newBuilder().setName(dlpJob.getName()).build());
+
+      System.out.println("Job status: " + completedJob.getState());
+      InspectDataSourceDetails inspectDataSourceDetails = completedJob.getInspectDetails();
+      InspectDataSourceDetails.Result result = inspectDataSourceDetails.getResult();
+      if (result.getInfoTypeStatsCount() > 0) {
         System.out.println("Findings: ");
-        for (Finding finding : inspectResult.getFindingsList()) {
-          System.out.print("\tInfo type: " + finding.getInfoType().getName());
-          System.out.println("\tLikelihood: " + finding.getLikelihood());
+        for (InfoTypeStats infoTypeStat : result.getInfoTypeStatsList()) {
+          System.out.print("\tInfo type: " + infoTypeStat.getInfoType().getName());
+          System.out.println("\tCount: " + infoTypeStat.getCount());
         }
       } else {
         System.out.println("No findings.");
       }
     } catch (Exception e) {
-      e.printStackTrace();
-      System.out.println("Error in inspectDatastore: " + e.getMessage());
+      System.out.println("inspectDatastore Problems: " + e.getMessage());
     }
-    // [END dlp_inspect_datastore]
   }
+  // [END dlp_inspect_datastore]
 
+  // [START dlp_inspect_bigquery]
+  /**
+   * Inspect a BigQuery table
+   *
+   * @param projectId The project ID to run the API call under
+   * @param datasetId The ID of the dataset to inspect, e.g. 'my_dataset'
+   * @param tableId The ID of the table to inspect, e.g. 'my_table'
+   * @param minLikelihood The minimum likelihood required before returning a match
+   * @param infoTypes The infoTypes of information to match
+   * @param maxFindings The maximum number of findings to report (0 = server maximum)
+   * @param topicId Topic ID for pubsub.
+   * @param subscriptionId Subscription ID for pubsub.
+   */
   private static void inspectBigquery(
-          String projectId,
-          String datasetId,
-          String tableId,
-          Likelihood minLikelihood,
-          List<InfoType> infoTypes) {
-    // [START dlp_inspect_bigquery]
+      String projectId,
+      String datasetId,
+      String tableId,
+      Likelihood minLikelihood,
+      List<InfoType> infoTypes,
+      int maxFindings,
+      String topicId,
+      String subscriptionId) {
     // Instantiates a client
     try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-
-      // (Optional) The project ID to run the API call under
-      // projectId =  my-project-id
-
-      // The ID of the dataset to inspect, e.g. 'my_dataset'
-      // datasetId = "my_dataset";
-
-      // The ID of the table to inspect, e.g. 'my_table'
-      // tableId = "my_table";
-
-      // The minimum likelihood required before returning a match
-      // minLikelihood = LIKELIHOOD_UNSPECIFIED;
-
-      // The infoTypes of information to match
-      // infoTypes = ['US_MALE_NAME', 'US_FEMALE_NAME'];
-
       // Reference to the BigQuery table
       BigQueryTable tableReference =
-              BigQueryTable.newBuilder()
-                  .setProjectId(projectId)
-                  .setDatasetId(datasetId)
-                  .setTableId(tableId)
-                  .build();
+          BigQueryTable.newBuilder()
+              .setProjectId(projectId)
+              .setDatasetId(datasetId)
+              .setTableId(tableId)
+              .build();
       BigQueryOptions bigQueryOptions =
-              BigQueryOptions.newBuilder()
-                  .setTableReference(tableReference)
-                  .build();
+          BigQueryOptions.newBuilder().setTableReference(tableReference).build();
 
       // Construct BigQuery configuration to be inspected
       StorageConfig storageConfig =
-              StorageConfig.newBuilder()
-                  .setBigQueryOptions(bigQueryOptions)
-                  .build();
+          StorageConfig.newBuilder().setBigQueryOptions(bigQueryOptions).build();
+
+      FindingLimits findingLimits =
+          FindingLimits.newBuilder().setMaxFindingsPerRequest(maxFindings).build();
 
       InspectConfig inspectConfig =
-              InspectConfig.newBuilder()
-                      .addAllInfoTypes(infoTypes)
-                      .setMinLikelihood(minLikelihood)
-                      .build();
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setMinLikelihood(minLikelihood)
+              .setLimits(findingLimits)
+              .build();
 
-      // optionally provide an output configuration to store results, default : none
-      OutputStorageConfig outputConfig = OutputStorageConfig.getDefaultInstance();
+      ProjectTopicName topic = ProjectTopicName.of(projectId, topicId);
+      Action.PublishToPubSub publishToPubSub =
+          Action.PublishToPubSub.newBuilder().setTopic(topic.toString()).build();
 
-      // asynchronously submit an inspect operation
-      OperationFuture<InspectOperationResult, InspectOperationMetadata> responseFuture =
-              dlpServiceClient.createInspectOperationAsync(
-                  inspectConfig, storageConfig, outputConfig);
+      Action action = Action.newBuilder().setPubSub(publishToPubSub).build();
 
-      // ...
-      // block on response, returning job id of the operation
-      InspectOperationResult inspectOperationResult = responseFuture.get();
-      String resultName = inspectOperationResult.getName();
-      InspectResult inspectResult = dlpServiceClient.listInspectFindings(resultName).getResult();
+      InspectJobConfig inspectJobConfig =
+          InspectJobConfig.newBuilder()
+              .setStorageConfig(storageConfig)
+              .setInspectConfig(inspectConfig)
+              .addActions(action)
+              .build();
 
-      if (inspectResult.getFindingsCount() > 0) {
+      // Asynchronously submit an inspect job, and wait on results
+      CreateDlpJobRequest createDlpJobRequest =
+          CreateDlpJobRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
+              .setInspectJob(inspectJobConfig)
+              .build();
+
+      DlpJob dlpJob = dlpServiceClient.createDlpJob(createDlpJobRequest);
+
+      System.out.println("Job created with ID:" + dlpJob.getName());
+
+      // Wait for job completion semi-synchronously
+      // For long jobs, consider using a truly asynchronous execution model such as Cloud Functions
+      final SettableApiFuture<Boolean> done = SettableApiFuture.create();
+
+      // Set up a Pub/Sub subscriber to listen on the job completion status
+      Subscriber subscriber =
+          Subscriber.newBuilder(
+                  ProjectSubscriptionName.of(projectId, subscriptionId),
+            (pubsubMessage, ackReplyConsumer) -> {
+              if (pubsubMessage.getAttributesCount() > 0
+                  && pubsubMessage
+                      .getAttributesMap()
+                      .get("DlpJobName")
+                      .equals(dlpJob.getName())) {
+                // notify job completion
+                done.set(true);
+                ackReplyConsumer.ack();
+              }
+            })
+              .build();
+      subscriber.startAsync();
+
+      try {
+        done.get(1, TimeUnit.MINUTES);
+        Thread.sleep(500); // Wait for the job to become available
+      } catch (Exception e) {
+        System.out.println("Unable to verify job completion.");
+      }
+
+      DlpJob completedJob =
+          dlpServiceClient.getDlpJob(
+              GetDlpJobRequest.newBuilder().setName(dlpJob.getName()).build());
+
+      System.out.println("Job status: " + completedJob.getState());
+      InspectDataSourceDetails inspectDataSourceDetails = completedJob.getInspectDetails();
+      InspectDataSourceDetails.Result result = inspectDataSourceDetails.getResult();
+      if (result.getInfoTypeStatsCount() > 0) {
         System.out.println("Findings: ");
-        for (Finding finding : inspectResult.getFindingsList()) {
-          System.out.print("\tInfo type: " + finding.getInfoType().getName());
-          System.out.println("\tLikelihood: " + finding.getLikelihood());
+        for (InfoTypeStats infoTypeStat : result.getInfoTypeStatsList()) {
+          System.out.print("\tInfo type: " + infoTypeStat.getInfoType().getName());
+          System.out.println("\tCount: " + infoTypeStat.getCount());
         }
       } else {
         System.out.println("No findings.");
       }
     } catch (Exception e) {
-      e.printStackTrace();
-      System.out.println("Error in inspectBigguery: " + e.getMessage());
+      System.out.println("inspectBigquery Problems: " + e.getMessage());
     }
-    // [END dlp_inspect_bigquery]
   }
+  // [END dlp_inspect_bigquery]
 
   /**
-   * Command line application to inspect data using the Data Loss Prevention API.
-   * Supported data formats: string, file, text file on GCS, BigQuery table, and Datastore entity
+   * Command line application to inspect data using the Data Loss Prevention API. Supported data
+   * formats: string, file, text file on GCS, BigQuery table, and Datastore entity
    */
   public static void main(String[] args) throws Exception {
 
@@ -466,9 +644,15 @@ public class Inspect {
     Option tableIdOption = Option.builder("tableId").hasArg(true).required(false).build();
     commandLineOptions.addOption(tableIdOption);
 
-    Option projectIdOption =
-        Option.builder("projectId").hasArg(true).required(false).build();
+    Option projectIdOption = Option.builder("projectId").hasArg(true).required(false).build();
     commandLineOptions.addOption(projectIdOption);
+
+    Option topicIdOption = Option.builder("topicId").hasArg(true).required(false).build();
+    commandLineOptions.addOption(topicIdOption);
+
+    Option subscriptionIdOption =
+        Option.builder("subscriptionId").hasArg(true).required(false).build();
+    commandLineOptions.addOption(subscriptionIdOption);
 
     Option datastoreNamespaceOption =
         Option.builder("namespace").hasArg(true).required(false).build();
@@ -498,6 +682,11 @@ public class Inspect {
     boolean includeQuote =
         Boolean.parseBoolean(cmd.getOptionValue(includeQuoteOption.getOpt(), "true"));
 
+    String projectId =
+        cmd.getOptionValue(projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
+    String topicId = cmd.getOptionValue(topicIdOption.getOpt());
+    String subscriptionId = cmd.getOptionValue(subscriptionIdOption.getOpt());
+
     List<InfoType> infoTypesList = Collections.emptyList();
     if (cmd.hasOption(infoTypesOption.getOpt())) {
       infoTypesList = new ArrayList<>();
@@ -509,32 +698,50 @@ public class Inspect {
     // string inspection
     if (cmd.hasOption("s")) {
       String val = cmd.getOptionValue(stringOption.getOpt());
-      inspectString(val, minLikelihood, maxFindings, infoTypesList, includeQuote);
+      inspectString(val, minLikelihood, maxFindings, infoTypesList, includeQuote, projectId);
     } else if (cmd.hasOption("f")) {
       String filePath = cmd.getOptionValue(fileOption.getOpt());
-      inspectFile(filePath, minLikelihood, maxFindings, infoTypesList, includeQuote);
+      inspectFile(filePath, minLikelihood, maxFindings, infoTypesList, includeQuote, projectId);
       // gcs file inspection
     } else if (cmd.hasOption("gcs")) {
       String bucketName = cmd.getOptionValue(bucketNameOption.getOpt());
       String fileName = cmd.getOptionValue(gcsFileNameOption.getOpt());
-      inspectGcsFile(bucketName, fileName, minLikelihood, infoTypesList);
+      inspectGcsFile(
+          bucketName,
+          fileName,
+          minLikelihood,
+          infoTypesList,
+          maxFindings,
+          topicId,
+          subscriptionId,
+          projectId);
       // datastore kind inspection
     } else if (cmd.hasOption("ds")) {
       String namespaceId = cmd.getOptionValue(datastoreNamespaceOption.getOpt(), "");
       String kind = cmd.getOptionValue(datastoreKindOption.getOpt());
       // use default project id when project id is not specified
-      String projectId =
-          cmd.getOptionValue(
-              projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
-      inspectDatastore(projectId, namespaceId, kind, minLikelihood, infoTypesList);
+      inspectDatastore(
+          projectId,
+          namespaceId,
+          kind,
+          minLikelihood,
+          infoTypesList,
+          maxFindings,
+          topicId,
+          subscriptionId);
     } else if (cmd.hasOption("bq")) {
       String datasetId = cmd.getOptionValue(datasetIdOption.getOpt());
       String tableId = cmd.getOptionValue(tableIdOption.getOpt());
       // use default project id when project id is not specified
-      String projectId =
-              cmd.getOptionValue(
-                      projectIdOption.getOpt(), ServiceOptions.getDefaultProjectId());
-      inspectBigquery(projectId, datasetId, tableId, minLikelihood, infoTypesList);
+      inspectBigquery(
+          projectId,
+          datasetId,
+          tableId,
+          minLikelihood,
+          infoTypesList,
+          maxFindings,
+          topicId,
+          subscriptionId);
     }
   }
 }

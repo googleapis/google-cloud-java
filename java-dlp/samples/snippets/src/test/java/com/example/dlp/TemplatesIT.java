@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2018 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,15 @@
 package com.example.dlp;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,9 +34,9 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 // CHECKSTYLE OFF: AbbreviationAsWordInName
-public class RedactIT {
-
+public class TemplatesIT {
   // CHECKSTYLE ON: AbbreviationAsWordInName
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -45,31 +48,46 @@ public class RedactIT {
     assertNotNull(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
   }
 
-  @Test
-  public void testRedactImage() throws Exception {
-    // InspectIT Tests verify original has PII present
-    String outputFilePath = "src/test/resources/output.png";
-
-    // Restrict phone number, but not email
-    Redact.main(
-        new String[] {
-          "-f", "src/test/resources/test.png",
-          "-infoTypes", "PHONE_NUMBER",
-          "-o", outputFilePath
-        });
-    bout.reset();
-
-    // Verify that phone_number is missing but email is present
-    Inspect.main(
-        new String[] {"-f", outputFilePath, "-infoTypes", "PHONE_NUMBER", "EMAIL_ADDRESS"});
-    String output = bout.toString();
-    assertThat(output, not(containsString("PHONE_NUMBER")));
-    assertThat(output, containsString("EMAIL_ADDRESS"));
-  }
-
   @After
   public void tearDown() {
     System.setOut(null);
     bout.reset();
+  }
+
+  @Test
+  public void testCreateInspectTemplate() throws Exception {
+    Templates.main(
+        new String[] {
+          "-c",
+          "-displayName",
+          String.format("test-name-%s", UUID.randomUUID()),
+          "-templateId",
+          String.format("template%s", UUID.randomUUID()),
+          "-description",
+          String.format("description-%s", UUID.randomUUID())
+        });
+    String output = bout.toString();
+    assertThat(output, containsString("Template created: "));
+  }
+
+  @Test
+  public void testListInspectemplate() throws Exception {
+    Templates.main(new String[] {"-l"});
+    String output = bout.toString();
+    assertThat(output, containsString("Template name:"));
+  }
+
+  @Test
+  public void testDeleteInspectTemplate() throws Exception {
+    // Extract a Template ID
+    Templates.main(new String[] {"-l"});
+    String output = bout.toString();
+    Matcher templateIds = Pattern.compile("template(\\w|\\-)+").matcher(output);
+    assertTrue(templateIds.find());
+    String templateId = templateIds.group(0);
+    bout.reset();
+    Templates.main(new String[] {"-d", "-templateId", templateId});
+    output = bout.toString();
+    assertThat(output, containsString("Deleted template:"));
   }
 }

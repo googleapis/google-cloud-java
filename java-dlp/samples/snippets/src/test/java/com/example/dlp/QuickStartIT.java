@@ -16,8 +16,9 @@
 
 package com.example.dlp;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -28,9 +29,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-//CHECKSTYLE OFF: AbbreviationAsWordInName
+// CHECKSTYLE OFF: AbbreviationAsWordInName
 public class QuickStartIT {
-  //CHECKSTYLE ON: AbbreviationAsWordInName
+
+  // CHECKSTYLE ON: AbbreviationAsWordInName
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -46,7 +48,8 @@ public class QuickStartIT {
   public void testQuickStart() throws Exception {
     QuickStart.main(new String[] {});
     String output = bout.toString();
-    assertTrue(output.contains("US_MALE_NAME"));
+
+    assertThat(output, containsString("PERSON_NAME"));
   }
 
   @After

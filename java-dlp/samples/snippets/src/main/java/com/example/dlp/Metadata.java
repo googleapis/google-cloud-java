@@ -16,11 +16,10 @@
 
 package com.example.dlp;
 
-import com.google.cloud.dlp.v2beta1.DlpServiceClient;
-import com.google.privacy.dlp.v2beta1.CategoryDescription;
-import com.google.privacy.dlp.v2beta1.InfoTypeDescription;
-import com.google.privacy.dlp.v2beta1.ListInfoTypesResponse;
-import com.google.privacy.dlp.v2beta1.ListRootCategoriesResponse;
+import com.google.cloud.dlp.v2.DlpServiceClient;
+import com.google.privacy.dlp.v2.InfoTypeDescription;
+import com.google.privacy.dlp.v2.ListInfoTypesRequest;
+import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import java.util.List;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -32,48 +31,37 @@ import org.apache.commons.cli.ParseException;
 
 public class Metadata {
 
-  private static void listInfoTypes(String category, String languageCode) throws Exception {
-    // [START dlp_list_info_types]
+  // [START dlp_list_info_types]
+  /*
+   * List the types of sensitive information the DLP API supports.
+   *
+   * @param filter The filter to use, e.g. "supported_by=INSPECT"
+   * @param languageCode The BCP-47 language code to use, e.g. 'en-US'
+   */
+  private static void listInfoTypes(String filter, String languageCode) throws Exception {
+
     // Instantiate a DLP client
     try (DlpServiceClient dlpClient = DlpServiceClient.create()) {
-      // The category of info types to list, e.g. category = 'GOVERNMENT';
-      // Optional BCP-47 language code for localized info type friendly names, e.g. 'en-US'
-      ListInfoTypesResponse infoTypesResponse = dlpClient.listInfoTypes(category, languageCode);
+      ListInfoTypesRequest listInfoTypesRequest =
+          ListInfoTypesRequest.newBuilder().setFilter(filter).setLanguageCode(languageCode).build();
+      ListInfoTypesResponse infoTypesResponse = dlpClient.listInfoTypes(listInfoTypesRequest);
       List<InfoTypeDescription> infoTypeDescriptions = infoTypesResponse.getInfoTypesList();
       for (InfoTypeDescription infoTypeDescription : infoTypeDescriptions) {
         System.out.println("Name : " + infoTypeDescription.getName());
         System.out.println("Display name : " + infoTypeDescription.getDisplayName());
       }
     }
-    // [END dlp_list_info_types]
   }
-
-  private static void listRootCategories(String languageCode) throws Exception {
-    // [START dlp_list_categories]
-    // Instantiate a DLP client
-    try (DlpServiceClient dlpClient = DlpServiceClient.create()) {
-      // The BCP-47 language code to use, e.g. 'en-US'
-      // languageCode = 'en-US'
-      ListRootCategoriesResponse rootCategoriesResponse =
-          dlpClient.listRootCategories(languageCode);
-      for (CategoryDescription categoryDescription : rootCategoriesResponse.getCategoriesList()) {
-        System.out.println("Name : " + categoryDescription.getName());
-        System.out.println("Display name : " + categoryDescription.getDisplayName());
-      }
-    }
-    // [END dlp_list_categories]
-  }
+  // [END dlp_list_info_types]
 
   /** Retrieve infoTypes. */
   public static void main(String[] args) throws Exception {
     Options options = new Options();
-    Option languageCodeOption = new Option("language", null, true, "BCP-47 language code");
-    languageCodeOption.setRequired(false);
+    Option languageCodeOption = Option.builder("language").hasArg(true).required(false).build();
     options.addOption(languageCodeOption);
 
-    Option categoryOption = new Option("category", null, true, "Category of info types to list.");
-    categoryOption.setRequired(false);
-    options.addOption(categoryOption);
+    Option filterOption = Option.builder("filter").hasArg(true).required(false).build();
+    options.addOption(filterOption);
 
     CommandLineParser parser = new DefaultParser();
     HelpFormatter formatter = new HelpFormatter();
@@ -87,11 +75,8 @@ public class Metadata {
       return;
     }
     String languageCode = cmd.getOptionValue(languageCodeOption.getOpt(), "en-US");
-    if (cmd.hasOption(categoryOption.getOpt())) {
-      String category = cmd.getOptionValue(categoryOption.getOpt());
-      listInfoTypes(category, languageCode);
-    } else {
-      listRootCategories(languageCode);
-    }
+    String filter = cmd.getOptionValue(filterOption.getOpt(), "");
+
+    listInfoTypes(filter, languageCode);
   }
 }

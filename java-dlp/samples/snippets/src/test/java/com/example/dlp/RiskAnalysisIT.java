@@ -16,7 +16,9 @@
 
 package com.example.dlp;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
@@ -29,17 +31,21 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-//CHECKSTYLE OFF: AbbreviationAsWordInName
+// CHECKSTYLE OFF: AbbreviationAsWordInName
 public class RiskAnalysisIT {
-  //CHECKSTYLE ON: AbbreviationAsWordInName
+
+  // CHECKSTYLE ON: AbbreviationAsWordInName
   private ByteArrayOutputStream bout;
   private PrintStream out;
+
+  private String topicId = "dlp-tests";
+  private String subscriptionId = "dlp-test";
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
-    System.setOut(out); // TODO(b/64541432) DLP currently doesn't support GOOGLE DEFAULT AUTH
+    System.setOut(out);
     assertNotNull(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
     assertNotNull(System.getenv("DLP_DEID_WRAPPED_KEY"));
     assertNotNull(System.getenv("DLP_DEID_KEY_NAME"));
@@ -47,40 +53,63 @@ public class RiskAnalysisIT {
 
   @Test
   public void testNumericalStats() throws Exception {
-    RiskAnalysis.main(new String[] {
-        "-n",
-        "-datasetId", "integration_tests_dlp",
-        "-tableId", "harmful",
-        "-columnName", "Age"
-    });
+    RiskAnalysis.main(
+        new String[] {
+          "-n",
+          "-datasetId",
+          "integration_tests_dlp",
+          "-tableId",
+          "harmful",
+          "-columnName",
+          "Age",
+          "-topicId",
+          topicId,
+          "-subscriptionId",
+          subscriptionId
+        });
     String output = bout.toString();
-    assertTrue(Pattern.compile(
-        "Value at 0% quantile: integer_value: \\d{2}").matcher(output).find());
-    assertTrue(Pattern.compile(
-        "Value at \\d{2}% quantile: integer_value: \\d{2}").matcher(output).find());
+    assertThat(output, containsString("Value at "));
   }
 
   @Test
   public void testCategoricalStats() throws Exception {
-    RiskAnalysis.main(new String[] {
-        "-c",
-        "-datasetId", "integration_tests_dlp",
-        "-tableId", "harmful",
-        "-columnName", "Mystery"
-    });
+    RiskAnalysis.main(
+        new String[] {
+          "-c",
+          "-datasetId",
+          "integration_tests_dlp",
+          "-tableId",
+          "harmful",
+          "-columnName",
+          "Mystery",
+          "-topicId",
+          topicId,
+          "-subscriptionId",
+          subscriptionId
+        });
     String output = bout.toString();
-    assertTrue(Pattern.compile(
-        "Most common value occurs \\d time\\(s\\)").matcher(output).find());
+
+    assertTrue(Pattern.compile("Most common value occurs \\d time").matcher(output).find());
+    assertTrue(Pattern.compile("Least common value occurs \\d time").matcher(output).find());
   }
 
   @Test
   public void testKAnonymity() throws Exception {
-    RiskAnalysis.main(new String[] {
-        "-k",
-        "-datasetId", "integration_tests_dlp",
-        "-tableId", "harmful",
-        "-quasiIdColumnNames", "Age", "Mystery"
-    });
+    RiskAnalysis.main(
+        new String[] {
+          "-a",
+          "-datasetId",
+          "integration_tests_dlp",
+          "-tableId",
+          "harmful",
+          "-quasiIdColumnNames",
+          "Age",
+          "Mystery",
+          "-topicId",
+          topicId,
+          "-subscriptionId",
+          subscriptionId
+        });
     String output = bout.toString();
     assertTrue(Pattern.compile("Bucket size range: \\[\\d, \\d\\]").matcher(output).find());
     assertTrue(output.contains("Quasi-ID values: integer_value: 19"));
@@ -89,17 +118,56 @@ public class RiskAnalysisIT {
 
   @Test
   public void testLDiversity() throws Exception {
-    RiskAnalysis.main(new String[] {
-        "-l",
-        "-datasetId", "integration_tests_dlp",
-        "-tableId", "harmful",
-        "-sensitiveAttribute", "Name",
-        "-quasiIdColumnNames", "Age", "Mystery"
-    });
+    RiskAnalysis.main(
+        new String[] {
+          "-l",
+          "-datasetId",
+          "integration_tests_dlp",
+          "-tableId",
+          "harmful",
+          "-sensitiveAttribute",
+          "Name",
+          "-quasiIdColumnNames",
+          "Age",
+          "Mystery",
+          "-topicId",
+          topicId,
+          "-subscriptionId",
+          subscriptionId
+        });
     String output = bout.toString();
     assertTrue(output.contains("Quasi-ID values: integer_value: 19"));
     assertTrue(output.contains("Class size: 1"));
     assertTrue(output.contains("Sensitive value string_value: \"James\""));
+  }
+
+  @Test
+  public void testKMap() throws Exception {
+    RiskAnalysis.main(
+        new String[] {
+          "-m",
+          "-datasetId",
+          "integration_tests_dlp",
+          "-tableId",
+          "harmful",
+          "-topicId",
+          topicId,
+          "-subscriptionId",
+          subscriptionId,
+          "-regionCode",
+          "US",
+          "-quasiIdColumnNames",
+          "Age",
+          "Gender",
+          "-infoTypes",
+          "AGE",
+          "GENDER"
+        });
+    String output = bout.toString();
+
+    assertTrue(Pattern.compile("Anonymity range: \\[\\d, \\d]").matcher(output).find());
+    assertTrue(Pattern.compile("Size: \\d").matcher(output).find());
+    assertTrue(Pattern.compile("Values: \\{\\d{2}, \"Female\"\\}").matcher(output).find());
   }
 
   @After

@@ -16,14 +16,17 @@
 
 package com.example.dlp;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.regex.Pattern;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,9 +34,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-//CHECKSTYLE OFF: AbbreviationAsWordInName
+// CHECKSTYLE OFF: AbbreviationAsWordInName
 public class DeIdentificationIT {
-  //CHECKSTYLE ON: AbbreviationAsWordInName
+
+  // CHECKSTYLE ON: AbbreviationAsWordInName
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -47,7 +51,7 @@ public class DeIdentificationIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
-    System.setOut(out); // TODO(b/64541432) DLP currently doesn't support GOOGLE DEFAULT AUTH
+    System.setOut(out);
     assertNotNull(System.getenv("GOOGLE_APPLICATION_CREDENTIALS"));
     assertNotNull(System.getenv("DLP_DEID_WRAPPED_KEY"));
     assertNotNull(System.getenv("DLP_DEID_KEY_NAME"));
@@ -56,26 +60,88 @@ public class DeIdentificationIT {
   @Test
   public void testDeidStringMasksCharacters() throws Exception {
     String text = "\"My SSN is 372819127\"";
-    DeIdentification.main(new String[] {
-        "-m", text,
-        "-maskingCharacter", "x",
-        "-numberToMask", "5"
-    });
+    DeIdentification.main(
+        new String[] {
+          "-m", text,
+          "-maskingCharacter", "x",
+          "-numberToMask", "5"
+        });
     String output = bout.toString();
-    assertEquals(output, "My SSN is xxxxx9127\n");
+    assertThat(output, containsString("My SSN is xxxxx9127"));
   }
 
   @Test
-  public void testDeidStringPerformsFpe() throws Exception {
-    String text = "\"My SSN is 372819127\"";
-    DeIdentification.main(new String[] {
-        "-f", text,
-        "-wrappedKey", wrappedKey,
-        "-keyName", keyName
-    });
+  public void testDeidReidFpe() throws Exception {
+
+    // Test DeID
+    String text = "My SSN is 372819127";
+    DeIdentification.main(
+        new String[] {
+          "-f",
+          "\"" + text + "\"",
+          "-wrappedKey",
+          wrappedKey,
+          "-keyName",
+          keyName,
+          "-commonAlphabet",
+          "NUMERIC",
+          "-surrogateType",
+          "SSN_TOKEN"
+        });
+    String deidOutput = bout.toString();
+    assertFalse("Response contains original SSN.", deidOutput.contains("372819127"));
+    assertTrue(deidOutput.matches("My SSN is SSN_TOKEN\\(9\\):\\d+\n"));
+
+    // Test ReID
+    bout.flush();
+    DeIdentification.main(
+        new String[] {
+          "-r",
+          deidOutput.toString().trim(),
+          "-wrappedKey",
+          wrappedKey,
+          "-keyName",
+          keyName,
+          "-commonAlphabet",
+          "NUMERIC",
+          "-surrogateType",
+          "SSN_TOKEN"
+        });
+    String reidOutput = bout.toString();
+    assertThat(reidOutput, containsString(text));
+  }
+
+  @Test
+  public void testDeidentifyWithDateShift() throws Exception {
+    String outputPath = "src/test/resources/results.temp.csv";
+    DeIdentification.main(
+        new String[] {
+          "-d",
+          "-inputCsvPath",
+          "src/test/resources/dates.csv",
+          "-outputCsvPath",
+          outputPath,
+          "-dateFields",
+          "birth_date,register_date",
+          "-lowerBoundDays",
+          "5",
+          "-upperBoundDays",
+          "5",
+          "-contextField",
+          "name",
+          "-wrappedKey",
+          wrappedKey,
+          "-keyName",
+          keyName
+        });
     String output = bout.toString();
-    assertFalse(output.contains(text));
-    assertTrue(Pattern.compile("My SSN is \\w+").matcher(output).find());
+    assertThat(output, containsString("Successfully saved date-shift output to: results.temp.csv"));
+
+    // Compare the result against an expected output file
+    byte[] resultCsv = Files.readAllBytes(Paths.get(outputPath));
+    byte[] correctCsv = Files.readAllBytes(Paths.get("src/test/resources/results.correct.csv"));
+
+    assertTrue(Arrays.equals(resultCsv, correctCsv));
   }
 
   @After
