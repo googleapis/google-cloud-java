@@ -43,8 +43,6 @@ import java.util.concurrent.TimeoutException;
  * </ul>
  */
 public class ProdEnv implements TestEnv {
-  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
-  private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_PROPERTY_NAME = "bigtable.table";
 
   private TableName tableName;
@@ -54,11 +52,10 @@ public class ProdEnv implements TestEnv {
   private BigtableDataClient dataClient;
 
   static ProdEnv fromSystemProperties() {
-    String projectId = getRequiredProperty(PROJECT_PROPERTY_NAME);
-    String instanceId = getRequiredProperty(INSTANCE_PROPERTY_NAME);
-    String tableId = getRequiredProperty(TABLE_PROPERTY_NAME);
+    String tableNameStr = getRequiredProperty(TABLE_PROPERTY_NAME);
+    TableName tableName = TableName.parse(tableNameStr);
 
-    return new ProdEnv(TableName.of(projectId, instanceId, tableId));
+    return new ProdEnv(tableName);
   }
 
   ProdEnv(TableName tableName) {
@@ -67,13 +64,8 @@ public class ProdEnv implements TestEnv {
 
   @Override
   public void start() throws IOException {
-    String projectId = getRequiredProperty(PROJECT_PROPERTY_NAME);
-    String instanceId = getRequiredProperty(INSTANCE_PROPERTY_NAME);
-    String tableId = getRequiredProperty(TABLE_PROPERTY_NAME);
-
-    tableName = TableName.of(projectId, instanceId, tableId);
     rowPrefix = UUID.randomUUID() + "-";
-    dataClient = BigtableDataClient.create(InstanceName.of(projectId, instanceId));
+    dataClient = BigtableDataClient.create(InstanceName.of(tableName.getProject(), tableName.getInstance()));
   }
 
   @Override
