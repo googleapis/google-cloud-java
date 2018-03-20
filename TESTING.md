@@ -52,12 +52,17 @@ To use the `emulator` environment, please install the gcloud sdk and use it to i
 `cbtemulator` via `gcloud components install bigtable`.
 
 To use the `prod` environment:
-1. Create a table with a column family named `cf`.
+1. Setup the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
 2. Download the [JSON service account credentials file][create-service-account] from the Google 
    Developer's Console.
 3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
-4. Set the system properties `bigtable.project`, `bigtable.instance` and `bigtable.table` to the
-   table you created earlier.
+4. Set the system property `bigtable.env=prod` and `bigtable.table` to the full table name you 
+    created earlier. Example: 
+    ```shell
+    mvn verify -am -pl google-cloud-bigtable \
+      -Dbigtable.env=prod \
+      -Dbigtable.table=projects/my-project/instances/my-instance/tables/my-table
+    ```
 
 
 ### Testing code that uses Compute
