@@ -218,11 +218,6 @@ public class Subscriber extends AbstractApiService {
   }
 
   /** Subscription which the subscriber is subscribed to. */
-  public ProjectSubscriptionName getSubscriptionName() {
-    return ProjectSubscriptionName.parse(subscriptionName);
-  }
-
-  /** Subscription which the subscriber is subscribed to. */
   public String getSubscriptionNameString() {
     return subscriptionName;
   }
