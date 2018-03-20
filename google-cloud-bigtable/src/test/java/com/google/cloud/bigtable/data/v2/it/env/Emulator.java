@@ -54,6 +54,7 @@ class Emulator {
 
   private final Path executable;
   private Process process;
+  private boolean isStopped = true;
   private ManagedChannel channel;
   private BigtableTableAdminClient tableAdminClient;
   private BigtableDataClient dataClient;
@@ -92,6 +93,7 @@ class Emulator {
     process = Runtime.getRuntime().exec(executable + " -port " + "" + availablePort);
     pipeStreamToLog(process.getInputStream(), Level.INFO);
     pipeStreamToLog(process.getErrorStream(), Level.WARNING);
+    isStopped = false;
 
     waitForPort(availablePort);
 
@@ -105,6 +107,16 @@ class Emulator {
         BigtableDataClient.create(
             configureClient(BigtableDataSettings.newBuilder().setInstanceName(INSTANCE_NAME))
                 .build());
+
+    Runtime.getRuntime().addShutdownHook(new Thread() {
+      @Override
+      public void run() {
+        if (!isStopped) {
+          isStopped = true;
+          process.destroy();
+        }
+      }
+    });
   }
 
   void stop() throws Exception {
@@ -114,6 +126,7 @@ class Emulator {
       channel.shutdownNow();
       channel.awaitTermination(1, TimeUnit.MINUTES);
     } finally {
+      isStopped = true;
       process.destroy();
     }
   }
