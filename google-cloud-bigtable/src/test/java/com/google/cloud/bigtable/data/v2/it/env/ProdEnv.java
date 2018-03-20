@@ -18,7 +18,7 @@ package com.google.cloud.bigtable.data.v2.it.env;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Query;

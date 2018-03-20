@@ -19,7 +19,7 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
-import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
