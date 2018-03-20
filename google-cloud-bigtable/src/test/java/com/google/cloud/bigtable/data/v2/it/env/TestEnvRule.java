@@ -52,12 +52,10 @@ public class TestEnvRule extends ExternalResource {
         testEnv = ProdEnv.fromSystemProperties();
         break;
       default:
-        throw new RuntimeException(
-            "Unknown env: "
-                + env
-                + ". Please set the system propert "
-                + ENV_PROPERTY
-                + " to either 'emulator' or 'prod'.");
+        throw new IllegalArgumentException(
+            String.format(
+                "Unknown env: %s. Please set the system property %s to either 'emulator' or 'prod'.",
+                env, ENV_PROPERTY));
     }
     testEnv.start();
   }

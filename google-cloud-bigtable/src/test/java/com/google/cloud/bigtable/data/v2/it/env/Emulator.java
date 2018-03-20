@@ -202,7 +202,9 @@ class Emulator {
               public void run() {
                 try {
                   String line;
-                  while ((line = reader.readLine()) != null) LOGGER.log(level, line);
+                  while ((line = reader.readLine()) != null) {
+                    LOGGER.log(level, line);
+                  }
                 } catch (IOException e) {
                   LOGGER.log(Level.WARNING, "Failed to read process stream", e);
                 }

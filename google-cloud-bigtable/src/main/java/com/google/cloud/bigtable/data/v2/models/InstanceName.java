@@ -58,18 +58,11 @@ public class InstanceName implements ResourceName {
   }
 
   public static InstanceName of(String project, String instance) {
-    return newBuilder()
-      .setProject(project)
-      .setInstance(instance)
-      .build();
+    return newBuilder().setProject(project).setInstance(instance).build();
   }
 
   public static String format(String project, String instance) {
-    return newBuilder()
-      .setProject(project)
-      .setInstance(instance)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setInstance(instance).build().toString();
   }
 
   public static InstanceName parse(String formattedString) {
@@ -77,7 +70,8 @@ public class InstanceName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "InstanceName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "InstanceName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("instance"));
   }
 
@@ -123,9 +117,7 @@ public class InstanceName implements ResourceName {
     return getFieldValuesMap().get(fieldName);
   }
 
-  /**
-   * @deprecated This method is only present to satisfy the ResourceName interface.
-   */
+  /** @deprecated This method is only present to satisfy the ResourceName interface. */
   @Deprecated
   public ResourceNameType getType() {
     throw new UnsupportedOperationException("InstanceName.getType() not supported");
@@ -160,8 +152,7 @@ public class InstanceName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(InstanceName instanceName) {
       project = instanceName.project;
@@ -180,8 +171,7 @@ public class InstanceName implements ResourceName {
     }
     if (o instanceof InstanceName) {
       InstanceName that = (InstanceName) o;
-      return (this.project.equals(that.project))
-          && (this.instance.equals(that.instance));
+      return (this.project.equals(that.project)) && (this.instance.equals(that.instance));
     }
     return false;
   }
@@ -196,4 +186,3 @@ public class InstanceName implements ResourceName {
     return h;
   }
 }
-

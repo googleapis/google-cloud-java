@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Setup a table to use for integration tests.
+# Set up a table to use for integration tests.
 
 set -x
 

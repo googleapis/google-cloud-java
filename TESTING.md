@@ -52,7 +52,7 @@ To use the `emulator` environment, please install the gcloud sdk and use it to i
 `cbtemulator` via `gcloud components install bigtable`.
 
 To use the `prod` environment:
-1. Setup the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
+1. Set up the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
 2. Download the [JSON service account credentials file][create-service-account] from the Google 
    Developer's Console.
 3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
