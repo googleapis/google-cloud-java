@@ -89,7 +89,7 @@ jobs:
       - run:
           <<: *anchor_run_decrypt
       - run:
-          name: Run integration tests for google-cloud-bigquery
+          name: Run integration tests for google-cloud-bigtable
           command: ./utilities/verify_single_it.sh google-cloud-bigtable -Dbigtable.env=prod -Dbigtable.table=projects/gcloud-devel/instances/google-cloud-bigtable/tables/integration-tests
 
   compute_it:
@@ -230,6 +230,10 @@ workflows:
       - openjdk_8
       - mac_openjdk_8
       - bigquery_it:
+          filters:
+            branches:
+              only: master
+      - bigtable_it:
           filters:
             branches:
               only: master
