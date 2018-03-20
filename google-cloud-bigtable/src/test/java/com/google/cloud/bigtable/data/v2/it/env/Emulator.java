@@ -108,15 +108,17 @@ class Emulator {
             configureClient(BigtableDataSettings.newBuilder().setInstanceName(INSTANCE_NAME))
                 .build());
 
-    Runtime.getRuntime().addShutdownHook(new Thread() {
-      @Override
-      public void run() {
-        if (!isStopped) {
-          isStopped = true;
-          process.destroy();
-        }
-      }
-    });
+    Runtime.getRuntime()
+        .addShutdownHook(
+            new Thread() {
+              @Override
+              public void run() {
+                if (!isStopped) {
+                  isStopped = true;
+                  process.destroy();
+                }
+              }
+            });
   }
 
   void stop() throws Exception {

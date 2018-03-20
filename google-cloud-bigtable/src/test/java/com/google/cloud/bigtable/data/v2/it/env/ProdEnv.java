@@ -65,7 +65,8 @@ public class ProdEnv implements TestEnv {
   @Override
   public void start() throws IOException {
     rowPrefix = UUID.randomUUID() + "-";
-    dataClient = BigtableDataClient.create(InstanceName.of(tableName.getProject(), tableName.getInstance()));
+    dataClient =
+        BigtableDataClient.create(InstanceName.of(tableName.getProject(), tableName.getInstance()));
   }
 
   @Override
