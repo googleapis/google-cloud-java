@@ -90,12 +90,12 @@ publishers. Add the following imports at the top of your file:
 
 ```java
 import com.google.cloud.pubsub.v1.TopicAdminClient;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectTopicName;
 ```
 Then, to create the topic, use the following code:
 
 ```java
-TopicName topic = TopicName.create("test-project", "test-topic");
+ProjectTopicName topic = ProjectTopicName.of("test-project", "test-topic");
 try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
   topicAdminClient.createTopic(topic);
 }
@@ -115,13 +115,13 @@ Then, to publish messages asynchronously, use the following code:
 ```java
 Publisher publisher = null;
 try {
-  publisher = Publisher.defaultBuilder(topic).build();
+  publisher = Publisher.newBuilder(topic).build();
   ByteString data = ByteString.copyFromUtf8("my-message");
   PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
   ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
 } finally {
   if (publisher != null) {
-    publisher.shutdown();
+  publisher.shutdown();
   }
 }
 ```
@@ -133,14 +133,14 @@ single, specific topic. Add the following imports at the top of your file:
 ```java
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.PushConfig;
-import com.google.pubsub.v1.SubscriptionName;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 ```
 Then, to create the subscription, use the following code:
 
 ```java
-TopicName topic = TopicName.create("test-project", "test-topic");
-SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
+ProjectTopicName topic = ProjectTopicName.of("test-project", "test-topic");
+ProjectSubscriptionName subscription = ProjectSubscriptionName.of("test-project", "test-subscription");
 
 try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
   subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
@@ -157,32 +157,35 @@ import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.SubscriptionName;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 ```
 Then, to pull messages asynchronously, use the following code:
 
 ```java
+ProjectSubscriptionName subscription = ProjectSubscriptionName.of("test-project", "test-subscription");
+
 MessageReceiver receiver =
-    new MessageReceiver() {
-      @Override
-      public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-        System.out.println("got message: " + message.getData().toStringUtf8());
-        consumer.ack();
-      }
-    };
+  new MessageReceiver() {
+    @Override
+    public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
+      System.out.println("got message: " + message.getData().toStringUtf8());
+      consumer.ack();
+    }
+  };
+
 Subscriber subscriber = null;
 try {
-  subscriber = Subscriber.defaultBuilder(subscriptionName, receiver).build();
+  subscriber = Subscriber.newBuilder(subscription, receiver).build();
   subscriber.addListener(
-      new Subscriber.Listener() {
-        @Override
-        public void failed(Subscriber.State from, Throwable failure) {
-          // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
-          System.err.println(failure);
-        }
-      },
-      MoreExecutors.directExecutor());
+    new Subscriber.Listener() {
+      @Override
+      public void failed(Subscriber.State from, Throwable failure) {
+        // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
+        System.err.println(failure);
+      }
+    },
+    MoreExecutors.directExecutor());
   subscriber.startAsync().awaitRunning();
   //...
 } finally {
@@ -193,12 +196,7 @@ try {
 ```
 #### Complete source code
 
-In
-[CreateTopicAndPublishMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java)
-and
-[CreateSubscriptionAndConsumeMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndConsumeMessages.java)
-we put together all the code shown above into two programs. The programs assume that you are
-running on Compute Engine, App Engine Flexible or from your own desktop.
+In [CreateTopicAndPublishMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java) and [CreateSubscriptionAndConsumeMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndConsumeMessages.java) we put together all the code shown above into two programs. The programs assume that you are running on Compute Engine, App Engine Flexible or from your own desktop.
 
 Transport
 ---------
