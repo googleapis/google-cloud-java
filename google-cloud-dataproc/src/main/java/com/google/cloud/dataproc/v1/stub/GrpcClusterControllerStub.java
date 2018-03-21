@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -127,6 +127,8 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   private final OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
       diagnoseClusterOperationCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcClusterControllerStub create(ClusterControllerStubSettings settings)
       throws IOException {
     return new GrpcClusterControllerStub(settings, ClientContext.create(settings));
@@ -138,6 +140,12 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
         ClusterControllerStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcClusterControllerStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcClusterControllerStub(
+        ClusterControllerStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcClusterControllerStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -145,7 +153,21 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
    */
   protected GrpcClusterControllerStub(
       ClusterControllerStubSettings settings, ClientContext clientContext) throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcClusterControllerCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcClusterControllerStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcClusterControllerStub(
+      ClusterControllerStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -173,46 +195,46 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
             .build();
 
     this.createClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createClusterTransportSettings, settings.createClusterSettings(), clientContext);
     this.createClusterOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createClusterTransportSettings,
             settings.createClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.updateClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateClusterTransportSettings, settings.updateClusterSettings(), clientContext);
     this.updateClusterOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             updateClusterTransportSettings,
             settings.updateClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
     this.deleteClusterOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             deleteClusterTransportSettings,
             settings.deleteClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getClusterTransportSettings, settings.getClusterSettings(), clientContext);
     this.listClustersCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
     this.listClustersPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
     this.diagnoseClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             diagnoseClusterTransportSettings, settings.diagnoseClusterSettings(), clientContext);
     this.diagnoseClusterOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             diagnoseClusterTransportSettings,
             settings.diagnoseClusterOperationSettings(),
             clientContext,

@@ -23,7 +23,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.logging.v2.DeleteLogRequest;
@@ -121,6 +121,8 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
   private final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable;
   private final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcLoggingServiceV2Stub create(LoggingServiceV2StubSettings settings)
       throws IOException {
     return new GrpcLoggingServiceV2Stub(settings, ClientContext.create(settings));
@@ -132,6 +134,12 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
         LoggingServiceV2StubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcLoggingServiceV2Stub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcLoggingServiceV2Stub(
+        LoggingServiceV2StubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcLoggingServiceV2Stub, using the given settings. This is protected
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -139,6 +147,20 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
    */
   protected GrpcLoggingServiceV2Stub(
       LoggingServiceV2StubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcLoggingServiceV2CallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcLoggingServiceV2Stub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcLoggingServiceV2Stub(
+      LoggingServiceV2StubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<DeleteLogRequest, Empty> deleteLogTransportSettings =
         GrpcCallSettings.<DeleteLogRequest, Empty>newBuilder()
@@ -168,32 +190,32 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
             .build();
 
     this.deleteLogCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteLogTransportSettings, settings.deleteLogSettings(), clientContext);
     this.writeLogEntriesCallable =
-        GrpcCallableFactory.createBatchingCallable(
+        callableFactory.createBatchingCallable(
             writeLogEntriesTransportSettings, settings.writeLogEntriesSettings(), clientContext);
     this.listLogEntriesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listLogEntriesTransportSettings, settings.listLogEntriesSettings(), clientContext);
     this.listLogEntriesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listLogEntriesTransportSettings, settings.listLogEntriesSettings(), clientContext);
     this.listMonitoredResourceDescriptorsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listMonitoredResourceDescriptorsTransportSettings,
             settings.listMonitoredResourceDescriptorsSettings(),
             clientContext);
     this.listMonitoredResourceDescriptorsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listMonitoredResourceDescriptorsTransportSettings,
             settings.listMonitoredResourceDescriptorsSettings(),
             clientContext);
     this.listLogsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listLogsTransportSettings, settings.listLogsSettings(), clientContext);
     this.listLogsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listLogsTransportSettings, settings.listLogsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

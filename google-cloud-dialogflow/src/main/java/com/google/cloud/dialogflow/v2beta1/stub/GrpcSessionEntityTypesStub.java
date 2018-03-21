@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest;
@@ -117,6 +117,8 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
   private final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
       deleteSessionEntityTypeCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcSessionEntityTypesStub create(SessionEntityTypesStubSettings settings)
       throws IOException {
     return new GrpcSessionEntityTypesStub(settings, ClientContext.create(settings));
@@ -128,6 +130,12 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
         SessionEntityTypesStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcSessionEntityTypesStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcSessionEntityTypesStub(
+        SessionEntityTypesStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcSessionEntityTypesStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -135,6 +143,20 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
    */
   protected GrpcSessionEntityTypesStub(
       SessionEntityTypesStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcSessionEntityTypesCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcSessionEntityTypesStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcSessionEntityTypesStub(
+      SessionEntityTypesStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
         listSessionEntityTypesTransportSettings =
@@ -164,32 +186,32 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                 .build();
 
     this.listSessionEntityTypesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listSessionEntityTypesTransportSettings,
             settings.listSessionEntityTypesSettings(),
             clientContext);
     this.listSessionEntityTypesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listSessionEntityTypesTransportSettings,
             settings.listSessionEntityTypesSettings(),
             clientContext);
     this.getSessionEntityTypeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getSessionEntityTypeTransportSettings,
             settings.getSessionEntityTypeSettings(),
             clientContext);
     this.createSessionEntityTypeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createSessionEntityTypeTransportSettings,
             settings.createSessionEntityTypeSettings(),
             clientContext);
     this.updateSessionEntityTypeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateSessionEntityTypeTransportSettings,
             settings.updateSessionEntityTypeSettings(),
             clientContext);
     this.deleteSessionEntityTypeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteSessionEntityTypeTransportSettings,
             settings.deleteSessionEntityTypeSettings(),
             clientContext);

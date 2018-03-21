@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -161,6 +161,8 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final UnaryCallable<ListRootCategoriesRequest, ListRootCategoriesResponse>
       listRootCategoriesCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcDlpServiceStub create(DlpServiceStubSettings settings)
       throws IOException {
     return new GrpcDlpServiceStub(settings, ClientContext.create(settings));
@@ -170,6 +172,12 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return new GrpcDlpServiceStub(DlpServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcDlpServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcDlpServiceStub(
+        DlpServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcDlpServiceStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -177,7 +185,21 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
    */
   protected GrpcDlpServiceStub(DlpServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcDlpServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcDlpServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcDlpServiceStub(
+      DlpServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<InspectContentRequest, InspectContentResponse>
         inspectContentTransportSettings =
@@ -219,48 +241,48 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                 .build();
 
     this.inspectContentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             inspectContentTransportSettings, settings.inspectContentSettings(), clientContext);
     this.redactContentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             redactContentTransportSettings, settings.redactContentSettings(), clientContext);
     this.deidentifyContentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deidentifyContentTransportSettings,
             settings.deidentifyContentSettings(),
             clientContext);
     this.analyzeDataSourceRiskCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             analyzeDataSourceRiskTransportSettings,
             settings.analyzeDataSourceRiskSettings(),
             clientContext);
     this.analyzeDataSourceRiskOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             analyzeDataSourceRiskTransportSettings,
             settings.analyzeDataSourceRiskOperationSettings(),
             clientContext,
             this.operationsStub);
     this.createInspectOperationCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createInspectOperationTransportSettings,
             settings.createInspectOperationSettings(),
             clientContext);
     this.createInspectOperationOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createInspectOperationTransportSettings,
             settings.createInspectOperationOperationSettings(),
             clientContext,
             this.operationsStub);
     this.listInspectFindingsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listInspectFindingsTransportSettings,
             settings.listInspectFindingsSettings(),
             clientContext);
     this.listInfoTypesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listInfoTypesTransportSettings, settings.listInfoTypesSettings(), clientContext);
     this.listRootCategoriesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listRootCategoriesTransportSettings,
             settings.listRootCategoriesSettings(),
             clientContext);

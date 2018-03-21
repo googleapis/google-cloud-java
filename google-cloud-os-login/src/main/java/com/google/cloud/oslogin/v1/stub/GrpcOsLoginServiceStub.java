@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey;
@@ -114,6 +114,8 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
       importSshPublicKeyCallable;
   private final UnaryCallable<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeyCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcOsLoginServiceStub create(OsLoginServiceStubSettings settings)
       throws IOException {
     return new GrpcOsLoginServiceStub(settings, ClientContext.create(settings));
@@ -125,6 +127,12 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
         OsLoginServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcOsLoginServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcOsLoginServiceStub(
+        OsLoginServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcOsLoginServiceStub, using the given settings. This is protected
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -132,6 +140,20 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
    */
   protected GrpcOsLoginServiceStub(OsLoginServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcOsLoginServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcOsLoginServiceStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcOsLoginServiceStub(
+      OsLoginServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =
         GrpcCallSettings.<DeletePosixAccountRequest, Empty>newBuilder()
@@ -160,28 +182,28 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
             .build();
 
     this.deletePosixAccountCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deletePosixAccountTransportSettings,
             settings.deletePosixAccountSettings(),
             clientContext);
     this.deleteSshPublicKeyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteSshPublicKeyTransportSettings,
             settings.deleteSshPublicKeySettings(),
             clientContext);
     this.getLoginProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getLoginProfileTransportSettings, settings.getLoginProfileSettings(), clientContext);
     this.getSshPublicKeyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getSshPublicKeyTransportSettings, settings.getSshPublicKeySettings(), clientContext);
     this.importSshPublicKeyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             importSshPublicKeyTransportSettings,
             settings.importSshPublicKeySettings(),
             clientContext);
     this.updateSshPublicKeyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateSshPublicKeyTransportSettings,
             settings.updateSshPublicKeySettings(),
             clientContext);

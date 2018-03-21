@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.logging.v2.CreateLogMetricRequest;
@@ -104,6 +104,8 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
   private final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
   private final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcMetricsServiceV2Stub create(MetricsServiceV2StubSettings settings)
       throws IOException {
     return new GrpcMetricsServiceV2Stub(settings, ClientContext.create(settings));
@@ -115,6 +117,12 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
         MetricsServiceV2StubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcMetricsServiceV2Stub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcMetricsServiceV2Stub(
+        MetricsServiceV2StubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcMetricsServiceV2Stub, using the given settings. This is protected
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -122,6 +130,20 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
    */
   protected GrpcMetricsServiceV2Stub(
       MetricsServiceV2StubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcMetricsServiceV2CallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcMetricsServiceV2Stub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcMetricsServiceV2Stub(
+      MetricsServiceV2StubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ListLogMetricsRequest, ListLogMetricsResponse>
         listLogMetricsTransportSettings =
@@ -146,22 +168,22 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
             .build();
 
     this.listLogMetricsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listLogMetricsTransportSettings, settings.listLogMetricsSettings(), clientContext);
     this.listLogMetricsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listLogMetricsTransportSettings, settings.listLogMetricsSettings(), clientContext);
     this.getLogMetricCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getLogMetricTransportSettings, settings.getLogMetricSettings(), clientContext);
     this.createLogMetricCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createLogMetricTransportSettings, settings.createLogMetricSettings(), clientContext);
     this.updateLogMetricCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateLogMetricTransportSettings, settings.updateLogMetricSettings(), clientContext);
     this.deleteLogMetricCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteLogMetricTransportSettings, settings.deleteLogMetricSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

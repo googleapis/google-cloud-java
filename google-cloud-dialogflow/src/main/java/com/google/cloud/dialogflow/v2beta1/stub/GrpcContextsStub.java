@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.Context;
@@ -111,6 +111,8 @@ public class GrpcContextsStub extends ContextsStub {
   private final UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable;
   private final UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcContextsStub create(ContextsStubSettings settings) throws IOException {
     return new GrpcContextsStub(settings, ClientContext.create(settings));
   }
@@ -119,12 +121,31 @@ public class GrpcContextsStub extends ContextsStub {
     return new GrpcContextsStub(ContextsStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcContextsStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcContextsStub(
+        ContextsStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcContextsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected GrpcContextsStub(ContextsStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcContextsCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcContextsStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcContextsStub(
+      ContextsStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ListContextsRequest, ListContextsResponse> listContextsTransportSettings =
         GrpcCallSettings.<ListContextsRequest, ListContextsResponse>newBuilder()
@@ -152,25 +173,25 @@ public class GrpcContextsStub extends ContextsStub {
             .build();
 
     this.listContextsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listContextsTransportSettings, settings.listContextsSettings(), clientContext);
     this.listContextsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listContextsTransportSettings, settings.listContextsSettings(), clientContext);
     this.getContextCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getContextTransportSettings, settings.getContextSettings(), clientContext);
     this.createContextCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createContextTransportSettings, settings.createContextSettings(), clientContext);
     this.updateContextCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateContextTransportSettings, settings.updateContextSettings(), clientContext);
     this.deleteContextCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteContextTransportSettings, settings.deleteContextSettings(), clientContext);
     this.deleteAllContextsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteAllContextsTransportSettings,
             settings.deleteAllContextsSettings(),
             clientContext);

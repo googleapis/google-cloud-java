@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
@@ -211,6 +211,8 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
       listSnapshotsPagedCallable;
   private final UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcBigtableTableAdminStub create(BigtableTableAdminStubSettings settings)
       throws IOException {
     return new GrpcBigtableTableAdminStub(settings, ClientContext.create(settings));
@@ -222,6 +224,12 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
         BigtableTableAdminStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcBigtableTableAdminStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcBigtableTableAdminStub(
+        BigtableTableAdminStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcBigtableTableAdminStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -229,7 +237,21 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
    */
   protected GrpcBigtableTableAdminStub(
       BigtableTableAdminStubSettings settings, ClientContext clientContext) throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcBigtableTableAdminCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcBigtableTableAdminStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcBigtableTableAdminStub(
+      BigtableTableAdminStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateTableRequest, Table> createTableTransportSettings =
         GrpcCallSettings.<CreateTableRequest, Table>newBuilder()
@@ -406,67 +428,67 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             .build();
 
     this.createTableCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createTableTransportSettings, settings.createTableSettings(), clientContext);
     this.createTableFromSnapshotCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createTableFromSnapshotTransportSettings,
             settings.createTableFromSnapshotSettings(),
             clientContext);
     this.createTableFromSnapshotOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createTableFromSnapshotTransportSettings,
             settings.createTableFromSnapshotOperationSettings(),
             clientContext,
             this.operationsStub);
     this.listTablesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listTablesTransportSettings, settings.listTablesSettings(), clientContext);
     this.listTablesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listTablesTransportSettings, settings.listTablesSettings(), clientContext);
     this.getTableCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getTableTransportSettings, settings.getTableSettings(), clientContext);
     this.deleteTableCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteTableTransportSettings, settings.deleteTableSettings(), clientContext);
     this.modifyColumnFamiliesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             modifyColumnFamiliesTransportSettings,
             settings.modifyColumnFamiliesSettings(),
             clientContext);
     this.dropRowRangeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             dropRowRangeTransportSettings, settings.dropRowRangeSettings(), clientContext);
     this.generateConsistencyTokenCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             generateConsistencyTokenTransportSettings,
             settings.generateConsistencyTokenSettings(),
             clientContext);
     this.checkConsistencyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             checkConsistencyTransportSettings, settings.checkConsistencySettings(), clientContext);
     this.snapshotTableCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             snapshotTableTransportSettings, settings.snapshotTableSettings(), clientContext);
     this.snapshotTableOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             snapshotTableTransportSettings,
             settings.snapshotTableOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getSnapshotCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getSnapshotTransportSettings, settings.getSnapshotSettings(), clientContext);
     this.listSnapshotsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
     this.listSnapshotsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
     this.deleteSnapshotCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteSnapshotTransportSettings, settings.deleteSnapshotSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

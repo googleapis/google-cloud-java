@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
@@ -87,6 +87,8 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcErrorStatsServiceStub create(ErrorStatsServiceStubSettings settings)
       throws IOException {
     return new GrpcErrorStatsServiceStub(settings, ClientContext.create(settings));
@@ -98,6 +100,12 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
         ErrorStatsServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcErrorStatsServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcErrorStatsServiceStub(
+        ErrorStatsServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcErrorStatsServiceStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -105,6 +113,20 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
    */
   protected GrpcErrorStatsServiceStub(
       ErrorStatsServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcErrorStatsServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcErrorStatsServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcErrorStatsServiceStub(
+      ErrorStatsServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ListGroupStatsRequest, ListGroupStatsResponse>
         listGroupStatsTransportSettings =
@@ -121,19 +143,19 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
             .build();
 
     this.listGroupStatsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listGroupStatsTransportSettings, settings.listGroupStatsSettings(), clientContext);
     this.listGroupStatsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listGroupStatsTransportSettings, settings.listGroupStatsSettings(), clientContext);
     this.listEventsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listEventsTransportSettings, settings.listEventsSettings(), clientContext);
     this.listEventsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listEventsTransportSettings, settings.listEventsSettings(), clientContext);
     this.deleteEventsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteEventsTransportSettings, settings.deleteEventsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

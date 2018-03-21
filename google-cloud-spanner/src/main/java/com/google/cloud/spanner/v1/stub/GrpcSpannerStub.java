@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -183,6 +183,8 @@ public class GrpcSpannerStub extends SpannerStub {
   private final UnaryCallable<PartitionQueryRequest, PartitionResponse> partitionQueryCallable;
   private final UnaryCallable<PartitionReadRequest, PartitionResponse> partitionReadCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcSpannerStub create(SpannerStubSettings settings) throws IOException {
     return new GrpcSpannerStub(settings, ClientContext.create(settings));
   }
@@ -191,12 +193,31 @@ public class GrpcSpannerStub extends SpannerStub {
     return new GrpcSpannerStub(SpannerStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcSpannerStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcSpannerStub(
+        SpannerStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcSpannerStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected GrpcSpannerStub(SpannerStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcSpannerCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcSpannerStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcSpannerStub(
+      SpannerStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
         GrpcCallSettings.<CreateSessionRequest, Session>newBuilder()
@@ -252,48 +273,48 @@ public class GrpcSpannerStub extends SpannerStub {
             .build();
 
     this.createSessionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createSessionTransportSettings, settings.createSessionSettings(), clientContext);
     this.getSessionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getSessionTransportSettings, settings.getSessionSettings(), clientContext);
     this.listSessionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
     this.listSessionsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listSessionsTransportSettings, settings.listSessionsSettings(), clientContext);
     this.deleteSessionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteSessionTransportSettings, settings.deleteSessionSettings(), clientContext);
     this.executeSqlCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             executeSqlTransportSettings, settings.executeSqlSettings(), clientContext);
     this.executeStreamingSqlCallable =
-        GrpcCallableFactory.createServerStreamingCallable(
+        callableFactory.createServerStreamingCallable(
             executeStreamingSqlTransportSettings,
             settings.executeStreamingSqlSettings(),
             clientContext);
     this.readCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             readTransportSettings, settings.readSettings(), clientContext);
     this.streamingReadCallable =
-        GrpcCallableFactory.createServerStreamingCallable(
+        callableFactory.createServerStreamingCallable(
             streamingReadTransportSettings, settings.streamingReadSettings(), clientContext);
     this.beginTransactionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             beginTransactionTransportSettings, settings.beginTransactionSettings(), clientContext);
     this.commitCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             commitTransportSettings, settings.commitSettings(), clientContext);
     this.rollbackCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             rollbackTransportSettings, settings.rollbackSettings(), clientContext);
     this.partitionQueryCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             partitionQueryTransportSettings, settings.partitionQuerySettings(), clientContext);
     this.partitionReadCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             partitionReadTransportSettings, settings.partitionReadSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

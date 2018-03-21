@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.CancelJobRequest;
@@ -103,6 +103,8 @@ public class GrpcJobControllerStub extends JobControllerStub {
   private final UnaryCallable<CancelJobRequest, Job> cancelJobCallable;
   private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcJobControllerStub create(JobControllerStubSettings settings)
       throws IOException {
     return new GrpcJobControllerStub(settings, ClientContext.create(settings));
@@ -112,6 +114,12 @@ public class GrpcJobControllerStub extends JobControllerStub {
     return new GrpcJobControllerStub(JobControllerStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcJobControllerStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcJobControllerStub(
+        JobControllerStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcJobControllerStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -119,6 +127,20 @@ public class GrpcJobControllerStub extends JobControllerStub {
    */
   protected GrpcJobControllerStub(JobControllerStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcJobControllerCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcJobControllerStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcJobControllerStub(
+      JobControllerStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<SubmitJobRequest, Job> submitJobTransportSettings =
         GrpcCallSettings.<SubmitJobRequest, Job>newBuilder()
@@ -146,25 +168,25 @@ public class GrpcJobControllerStub extends JobControllerStub {
             .build();
 
     this.submitJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             submitJobTransportSettings, settings.submitJobSettings(), clientContext);
     this.getJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getJobTransportSettings, settings.getJobSettings(), clientContext);
     this.listJobsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
     this.listJobsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
     this.updateJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateJobTransportSettings, settings.updateJobSettings(), clientContext);
     this.cancelJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             cancelJobTransportSettings, settings.cancelJobSettings(), clientContext);
     this.deleteJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteJobTransportSettings, settings.deleteJobSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
