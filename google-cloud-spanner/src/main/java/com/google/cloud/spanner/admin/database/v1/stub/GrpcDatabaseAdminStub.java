@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -158,6 +158,8 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcDatabaseAdminStub create(DatabaseAdminStubSettings settings)
       throws IOException {
     return new GrpcDatabaseAdminStub(settings, ClientContext.create(settings));
@@ -167,6 +169,12 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
     return new GrpcDatabaseAdminStub(DatabaseAdminStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcDatabaseAdminStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcDatabaseAdminStub(
+        DatabaseAdminStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcDatabaseAdminStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -174,7 +182,21 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
    */
   protected GrpcDatabaseAdminStub(DatabaseAdminStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcDatabaseAdminCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcDatabaseAdminStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcDatabaseAdminStub(
+      DatabaseAdminStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
         GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
@@ -216,48 +238,48 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
                 .build();
 
     this.listDatabasesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
     this.listDatabasesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
     this.createDatabaseCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createDatabaseTransportSettings, settings.createDatabaseSettings(), clientContext);
     this.createDatabaseOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createDatabaseTransportSettings,
             settings.createDatabaseOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getDatabaseCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getDatabaseTransportSettings, settings.getDatabaseSettings(), clientContext);
     this.updateDatabaseDdlCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateDatabaseDdlTransportSettings,
             settings.updateDatabaseDdlSettings(),
             clientContext);
     this.updateDatabaseDdlOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             updateDatabaseDdlTransportSettings,
             settings.updateDatabaseDdlOperationSettings(),
             clientContext,
             this.operationsStub);
     this.dropDatabaseCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             dropDatabaseTransportSettings, settings.dropDatabaseSettings(), clientContext);
     this.getDatabaseDdlCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getDatabaseDdlTransportSettings, settings.getDatabaseDdlSettings(), clientContext);
     this.setIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.getIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);

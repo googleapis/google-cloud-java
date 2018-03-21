@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.monitoring.v3.CreateGroupRequest;
@@ -111,6 +111,8 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
   private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcGroupServiceStub create(GroupServiceStubSettings settings)
       throws IOException {
     return new GrpcGroupServiceStub(settings, ClientContext.create(settings));
@@ -120,6 +122,12 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
     return new GrpcGroupServiceStub(GroupServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcGroupServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcGroupServiceStub(
+        GroupServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcGroupServiceStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -127,6 +135,20 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
    */
   protected GrpcGroupServiceStub(GroupServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcGroupServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcGroupServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcGroupServiceStub(
+      GroupServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =
         GrpcCallSettings.<ListGroupsRequest, ListGroupsResponse>newBuilder()
@@ -155,28 +177,28 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                 .build();
 
     this.listGroupsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listGroupsTransportSettings, settings.listGroupsSettings(), clientContext);
     this.listGroupsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listGroupsTransportSettings, settings.listGroupsSettings(), clientContext);
     this.getGroupCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getGroupTransportSettings, settings.getGroupSettings(), clientContext);
     this.createGroupCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createGroupTransportSettings, settings.createGroupSettings(), clientContext);
     this.updateGroupCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
     this.deleteGroupCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteGroupTransportSettings, settings.deleteGroupSettings(), clientContext);
     this.listGroupMembersCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listGroupMembersTransportSettings, settings.listGroupMembersSettings(), clientContext);
     this.listGroupMembersPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listGroupMembersTransportSettings, settings.listGroupMembersSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -177,6 +177,8 @@ public class GrpcInstanceAdminStub extends InstanceAdminStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcInstanceAdminStub create(InstanceAdminStubSettings settings)
       throws IOException {
     return new GrpcInstanceAdminStub(settings, ClientContext.create(settings));
@@ -186,6 +188,12 @@ public class GrpcInstanceAdminStub extends InstanceAdminStub {
     return new GrpcInstanceAdminStub(InstanceAdminStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcInstanceAdminStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcInstanceAdminStub(
+        InstanceAdminStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcInstanceAdminStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -193,7 +201,21 @@ public class GrpcInstanceAdminStub extends InstanceAdminStub {
    */
   protected GrpcInstanceAdminStub(InstanceAdminStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcInstanceAdminCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcInstanceAdminStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcInstanceAdminStub(
+      InstanceAdminStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListInstanceConfigsRequest, ListInstanceConfigsResponse>
         listInstanceConfigsTransportSettings =
@@ -239,58 +261,58 @@ public class GrpcInstanceAdminStub extends InstanceAdminStub {
                 .build();
 
     this.listInstanceConfigsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listInstanceConfigsTransportSettings,
             settings.listInstanceConfigsSettings(),
             clientContext);
     this.listInstanceConfigsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listInstanceConfigsTransportSettings,
             settings.listInstanceConfigsSettings(),
             clientContext);
     this.getInstanceConfigCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getInstanceConfigTransportSettings,
             settings.getInstanceConfigSettings(),
             clientContext);
     this.listInstancesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
     this.listInstancesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
     this.getInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
     this.createInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
     this.createInstanceOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createInstanceTransportSettings,
             settings.createInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.updateInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateInstanceTransportSettings, settings.updateInstanceSettings(), clientContext);
     this.updateInstanceOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             updateInstanceTransportSettings,
             settings.updateInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
     this.setIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.getIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);

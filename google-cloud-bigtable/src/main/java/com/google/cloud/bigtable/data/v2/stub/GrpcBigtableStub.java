@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -121,6 +121,8 @@ public class GrpcBigtableStub extends BigtableStub {
   private final UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcBigtableStub create(BigtableStubSettings settings) throws IOException {
     return new GrpcBigtableStub(settings, ClientContext.create(settings));
   }
@@ -129,12 +131,31 @@ public class GrpcBigtableStub extends BigtableStub {
     return new GrpcBigtableStub(BigtableStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcBigtableStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcBigtableStub(
+        BigtableStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcBigtableStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected GrpcBigtableStub(BigtableStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcBigtableCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcBigtableStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcBigtableStub(
+      BigtableStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsTransportSettings =
         GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
@@ -218,24 +239,24 @@ public class GrpcBigtableStub extends BigtableStub {
                 .build();
 
     this.readRowsCallable =
-        GrpcCallableFactory.createServerStreamingCallable(
+        callableFactory.createServerStreamingCallable(
             readRowsTransportSettings, settings.readRowsSettings(), clientContext);
     this.sampleRowKeysCallable =
-        GrpcCallableFactory.createServerStreamingCallable(
+        callableFactory.createServerStreamingCallable(
             sampleRowKeysTransportSettings, settings.sampleRowKeysSettings(), clientContext);
     this.mutateRowCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             mutateRowTransportSettings, settings.mutateRowSettings(), clientContext);
     this.mutateRowsCallable =
-        GrpcCallableFactory.createServerStreamingCallable(
+        callableFactory.createServerStreamingCallable(
             mutateRowsTransportSettings, settings.mutateRowsSettings(), clientContext);
     this.checkAndMutateRowCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             checkAndMutateRowTransportSettings,
             settings.checkAndMutateRowSettings(),
             clientContext);
     this.readModifyWriteRowCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             readModifyWriteRowTransportSettings,
             settings.readModifyWriteRowSettings(),
             clientContext);

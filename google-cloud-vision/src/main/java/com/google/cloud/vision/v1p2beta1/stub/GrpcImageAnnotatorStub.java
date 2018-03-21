@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -78,6 +78,8 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
           AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesOperationCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcImageAnnotatorStub create(ImageAnnotatorStubSettings settings)
       throws IOException {
     return new GrpcImageAnnotatorStub(settings, ClientContext.create(settings));
@@ -89,6 +91,12 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
         ImageAnnotatorStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcImageAnnotatorStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcImageAnnotatorStub(
+        ImageAnnotatorStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcImageAnnotatorStub, using the given settings. This is protected
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -96,7 +104,21 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
    */
   protected GrpcImageAnnotatorStub(ImageAnnotatorStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcImageAnnotatorCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcImageAnnotatorStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcImageAnnotatorStub(
+      ImageAnnotatorStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesTransportSettings =
@@ -110,17 +132,17 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
                 .build();
 
     this.batchAnnotateImagesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchAnnotateImagesTransportSettings,
             settings.batchAnnotateImagesSettings(),
             clientContext);
     this.asyncBatchAnnotateFilesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             asyncBatchAnnotateFilesTransportSettings,
             settings.asyncBatchAnnotateFilesSettings(),
             clientContext);
     this.asyncBatchAnnotateFilesOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             asyncBatchAnnotateFilesTransportSettings,
             settings.asyncBatchAnnotateFilesOperationSettings(),
             clientContext,

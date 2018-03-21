@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
@@ -57,6 +57,8 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
   private final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcReportErrorsServiceStub create(ReportErrorsServiceStubSettings settings)
       throws IOException {
     return new GrpcReportErrorsServiceStub(settings, ClientContext.create(settings));
@@ -68,6 +70,12 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
         ReportErrorsServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcReportErrorsServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcReportErrorsServiceStub(
+        ReportErrorsServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcReportErrorsServiceStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -75,6 +83,20 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
    */
   protected GrpcReportErrorsServiceStub(
       ReportErrorsServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcReportErrorsServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcReportErrorsServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcReportErrorsServiceStub(
+      ReportErrorsServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ReportErrorEventRequest, ReportErrorEventResponse>
         reportErrorEventTransportSettings =
@@ -83,7 +105,7 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
                 .build();
 
     this.reportErrorEventCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             reportErrorEventTransportSettings, settings.reportErrorEventSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

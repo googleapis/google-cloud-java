@@ -24,7 +24,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
@@ -74,7 +74,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for DLP API.
+ * gRPC stub implementation for Cloud Data Loss Prevention (DLP) API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -357,6 +357,8 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable;
   private final UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcDlpServiceStub create(DlpServiceStubSettings settings)
       throws IOException {
     return new GrpcDlpServiceStub(settings, ClientContext.create(settings));
@@ -366,6 +368,12 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return new GrpcDlpServiceStub(DlpServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcDlpServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcDlpServiceStub(
+        DlpServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcDlpServiceStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -373,6 +381,20 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
    */
   protected GrpcDlpServiceStub(DlpServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcDlpServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcDlpServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcDlpServiceStub(
+      DlpServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<InspectContentRequest, InspectContentResponse>
         inspectContentTransportSettings =
@@ -490,119 +512,119 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             .build();
 
     this.inspectContentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             inspectContentTransportSettings, settings.inspectContentSettings(), clientContext);
     this.redactImageCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             redactImageTransportSettings, settings.redactImageSettings(), clientContext);
     this.deidentifyContentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deidentifyContentTransportSettings,
             settings.deidentifyContentSettings(),
             clientContext);
     this.reidentifyContentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             reidentifyContentTransportSettings,
             settings.reidentifyContentSettings(),
             clientContext);
     this.listInfoTypesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listInfoTypesTransportSettings, settings.listInfoTypesSettings(), clientContext);
     this.createInspectTemplateCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createInspectTemplateTransportSettings,
             settings.createInspectTemplateSettings(),
             clientContext);
     this.updateInspectTemplateCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateInspectTemplateTransportSettings,
             settings.updateInspectTemplateSettings(),
             clientContext);
     this.getInspectTemplateCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getInspectTemplateTransportSettings,
             settings.getInspectTemplateSettings(),
             clientContext);
     this.listInspectTemplatesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listInspectTemplatesTransportSettings,
             settings.listInspectTemplatesSettings(),
             clientContext);
     this.listInspectTemplatesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listInspectTemplatesTransportSettings,
             settings.listInspectTemplatesSettings(),
             clientContext);
     this.deleteInspectTemplateCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteInspectTemplateTransportSettings,
             settings.deleteInspectTemplateSettings(),
             clientContext);
     this.createDeidentifyTemplateCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createDeidentifyTemplateTransportSettings,
             settings.createDeidentifyTemplateSettings(),
             clientContext);
     this.updateDeidentifyTemplateCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateDeidentifyTemplateTransportSettings,
             settings.updateDeidentifyTemplateSettings(),
             clientContext);
     this.getDeidentifyTemplateCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getDeidentifyTemplateTransportSettings,
             settings.getDeidentifyTemplateSettings(),
             clientContext);
     this.listDeidentifyTemplatesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listDeidentifyTemplatesTransportSettings,
             settings.listDeidentifyTemplatesSettings(),
             clientContext);
     this.listDeidentifyTemplatesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listDeidentifyTemplatesTransportSettings,
             settings.listDeidentifyTemplatesSettings(),
             clientContext);
     this.deleteDeidentifyTemplateCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteDeidentifyTemplateTransportSettings,
             settings.deleteDeidentifyTemplateSettings(),
             clientContext);
     this.createDlpJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createDlpJobTransportSettings, settings.createDlpJobSettings(), clientContext);
     this.listDlpJobsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listDlpJobsTransportSettings, settings.listDlpJobsSettings(), clientContext);
     this.listDlpJobsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listDlpJobsTransportSettings, settings.listDlpJobsSettings(), clientContext);
     this.getDlpJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getDlpJobTransportSettings, settings.getDlpJobSettings(), clientContext);
     this.deleteDlpJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteDlpJobTransportSettings, settings.deleteDlpJobSettings(), clientContext);
     this.cancelDlpJobCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             cancelDlpJobTransportSettings, settings.cancelDlpJobSettings(), clientContext);
     this.listJobTriggersCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listJobTriggersTransportSettings, settings.listJobTriggersSettings(), clientContext);
     this.listJobTriggersPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listJobTriggersTransportSettings, settings.listJobTriggersSettings(), clientContext);
     this.getJobTriggerCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getJobTriggerTransportSettings, settings.getJobTriggerSettings(), clientContext);
     this.deleteJobTriggerCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteJobTriggerTransportSettings, settings.deleteJobTriggerSettings(), clientContext);
     this.updateJobTriggerCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateJobTriggerTransportSettings, settings.updateJobTriggerSettings(), clientContext);
     this.createJobTriggerCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createJobTriggerTransportSettings, settings.createJobTriggerSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

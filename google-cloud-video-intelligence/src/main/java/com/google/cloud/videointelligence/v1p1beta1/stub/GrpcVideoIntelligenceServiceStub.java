@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -63,6 +63,8 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
           AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcVideoIntelligenceServiceStub create(
       VideoIntelligenceServiceStubSettings settings) throws IOException {
     return new GrpcVideoIntelligenceServiceStub(settings, ClientContext.create(settings));
@@ -74,6 +76,12 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
         VideoIntelligenceServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcVideoIntelligenceServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcVideoIntelligenceServiceStub(
+        VideoIntelligenceServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcVideoIntelligenceServiceStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -82,7 +90,21 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
   protected GrpcVideoIntelligenceServiceStub(
       VideoIntelligenceServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcVideoIntelligenceServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcVideoIntelligenceServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcVideoIntelligenceServiceStub(
+      VideoIntelligenceServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<AnnotateVideoRequest, Operation> annotateVideoTransportSettings =
         GrpcCallSettings.<AnnotateVideoRequest, Operation>newBuilder()
@@ -90,10 +112,10 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
             .build();
 
     this.annotateVideoCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             annotateVideoTransportSettings, settings.annotateVideoSettings(), clientContext);
     this.annotateVideoOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             annotateVideoTransportSettings,
             settings.annotateVideoOperationSettings(),
             clientContext,

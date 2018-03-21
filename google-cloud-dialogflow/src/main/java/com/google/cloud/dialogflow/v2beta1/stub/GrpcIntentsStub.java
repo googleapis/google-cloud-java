@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -128,6 +128,8 @@ public class GrpcIntentsStub extends IntentsStub {
   private final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcIntentsStub create(IntentsStubSettings settings) throws IOException {
     return new GrpcIntentsStub(settings, ClientContext.create(settings));
   }
@@ -136,13 +138,32 @@ public class GrpcIntentsStub extends IntentsStub {
     return new GrpcIntentsStub(IntentsStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcIntentsStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcIntentsStub(
+        IntentsStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcIntentsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected GrpcIntentsStub(IntentsStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcIntentsCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcIntentsStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcIntentsStub(
+      IntentsStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListIntentsRequest, ListIntentsResponse> listIntentsTransportSettings =
         GrpcCallSettings.<ListIntentsRequest, ListIntentsResponse>newBuilder()
@@ -174,41 +195,41 @@ public class GrpcIntentsStub extends IntentsStub {
             .build();
 
     this.listIntentsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listIntentsTransportSettings, settings.listIntentsSettings(), clientContext);
     this.listIntentsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listIntentsTransportSettings, settings.listIntentsSettings(), clientContext);
     this.getIntentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getIntentTransportSettings, settings.getIntentSettings(), clientContext);
     this.createIntentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createIntentTransportSettings, settings.createIntentSettings(), clientContext);
     this.updateIntentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateIntentTransportSettings, settings.updateIntentSettings(), clientContext);
     this.deleteIntentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteIntentTransportSettings, settings.deleteIntentSettings(), clientContext);
     this.batchUpdateIntentsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchUpdateIntentsTransportSettings,
             settings.batchUpdateIntentsSettings(),
             clientContext);
     this.batchUpdateIntentsOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             batchUpdateIntentsTransportSettings,
             settings.batchUpdateIntentsOperationSettings(),
             clientContext,
             this.operationsStub);
     this.batchDeleteIntentsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchDeleteIntentsTransportSettings,
             settings.batchDeleteIntentsSettings(),
             clientContext);
     this.batchDeleteIntentsOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             batchDeleteIntentsTransportSettings,
             settings.batchDeleteIntentsOperationSettings(),
             clientContext,

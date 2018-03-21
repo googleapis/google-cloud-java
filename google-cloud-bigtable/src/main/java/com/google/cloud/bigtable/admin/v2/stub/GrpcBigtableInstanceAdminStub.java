@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
@@ -270,6 +270,8 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcBigtableInstanceAdminStub create(
       BigtableInstanceAdminStubSettings settings) throws IOException {
     return new GrpcBigtableInstanceAdminStub(settings, ClientContext.create(settings));
@@ -281,6 +283,12 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
         BigtableInstanceAdminStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcBigtableInstanceAdminStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcBigtableInstanceAdminStub(
+        BigtableInstanceAdminStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcBigtableInstanceAdminStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -288,7 +296,21 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
    */
   protected GrpcBigtableInstanceAdminStub(
       BigtableInstanceAdminStubSettings settings, ClientContext clientContext) throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcBigtableInstanceAdminCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcBigtableInstanceAdminStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcBigtableInstanceAdminStub(
+      BigtableInstanceAdminStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -531,93 +553,93 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                 .build();
 
     this.createInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
     this.createInstanceOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createInstanceTransportSettings,
             settings.createInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
     this.listInstancesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
     this.partialUpdateInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             partialUpdateInstanceTransportSettings,
             settings.partialUpdateInstanceSettings(),
             clientContext);
     this.partialUpdateInstanceOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             partialUpdateInstanceTransportSettings,
             settings.partialUpdateInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
     this.createClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createClusterTransportSettings, settings.createClusterSettings(), clientContext);
     this.createClusterOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createClusterTransportSettings,
             settings.createClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getClusterTransportSettings, settings.getClusterSettings(), clientContext);
     this.listClustersCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
     this.updateClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateClusterTransportSettings, settings.updateClusterSettings(), clientContext);
     this.updateClusterOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             updateClusterTransportSettings,
             settings.updateClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
     this.createAppProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createAppProfileTransportSettings, settings.createAppProfileSettings(), clientContext);
     this.getAppProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getAppProfileTransportSettings, settings.getAppProfileSettings(), clientContext);
     this.listAppProfilesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listAppProfilesTransportSettings, settings.listAppProfilesSettings(), clientContext);
     this.listAppProfilesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listAppProfilesTransportSettings, settings.listAppProfilesSettings(), clientContext);
     this.updateAppProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateAppProfileTransportSettings, settings.updateAppProfileSettings(), clientContext);
     this.updateAppProfileOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             updateAppProfileTransportSettings,
             settings.updateAppProfileOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteAppProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteAppProfileTransportSettings, settings.deleteAppProfileSettings(), clientContext);
     this.getIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.setIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);

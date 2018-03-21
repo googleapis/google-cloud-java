@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -253,6 +253,8 @@ public class GrpcSubscriberStub extends SubscriberStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcSubscriberStub create(SubscriberStubSettings settings)
       throws IOException {
     return new GrpcSubscriberStub(settings, ClientContext.create(settings));
@@ -262,6 +264,12 @@ public class GrpcSubscriberStub extends SubscriberStub {
     return new GrpcSubscriberStub(SubscriberStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcSubscriberStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcSubscriberStub(
+        SubscriberStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcSubscriberStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -269,6 +277,20 @@ public class GrpcSubscriberStub extends SubscriberStub {
    */
   protected GrpcSubscriberStub(SubscriberStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcSubscriberCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcSubscriberStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcSubscriberStub(
+      SubscriberStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<Subscription, Subscription> createSubscriptionTransportSettings =
         GrpcCallSettings.<Subscription, Subscription>newBuilder()
@@ -346,76 +368,76 @@ public class GrpcSubscriberStub extends SubscriberStub {
                 .build();
 
     this.createSubscriptionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createSubscriptionTransportSettings,
             settings.createSubscriptionSettings(),
             clientContext);
     this.getSubscriptionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getSubscriptionTransportSettings, settings.getSubscriptionSettings(), clientContext);
     this.updateSubscriptionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateSubscriptionTransportSettings,
             settings.updateSubscriptionSettings(),
             clientContext);
     this.listSubscriptionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listSubscriptionsTransportSettings,
             settings.listSubscriptionsSettings(),
             clientContext);
     this.listSubscriptionsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listSubscriptionsTransportSettings,
             settings.listSubscriptionsSettings(),
             clientContext);
     this.deleteSubscriptionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteSubscriptionTransportSettings,
             settings.deleteSubscriptionSettings(),
             clientContext);
     this.modifyAckDeadlineCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             modifyAckDeadlineTransportSettings,
             settings.modifyAckDeadlineSettings(),
             clientContext);
     this.acknowledgeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             acknowledgeTransportSettings, settings.acknowledgeSettings(), clientContext);
     this.pullCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             pullTransportSettings, settings.pullSettings(), clientContext);
     this.streamingPullCallable =
-        GrpcCallableFactory.createBidiStreamingCallable(
+        callableFactory.createBidiStreamingCallable(
             streamingPullTransportSettings, settings.streamingPullSettings(), clientContext);
     this.modifyPushConfigCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             modifyPushConfigTransportSettings, settings.modifyPushConfigSettings(), clientContext);
     this.listSnapshotsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
     this.listSnapshotsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
     this.createSnapshotCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createSnapshotTransportSettings, settings.createSnapshotSettings(), clientContext);
     this.updateSnapshotCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateSnapshotTransportSettings, settings.updateSnapshotSettings(), clientContext);
     this.deleteSnapshotCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteSnapshotTransportSettings, settings.deleteSnapshotSettings(), clientContext);
     this.seekCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             seekTransportSettings, settings.seekSettings(), clientContext);
     this.setIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.getIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
