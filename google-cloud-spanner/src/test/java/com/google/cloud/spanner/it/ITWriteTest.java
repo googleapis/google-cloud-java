@@ -34,6 +34,7 @@ import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.TimestampBound;
+import com.google.cloud.spanner.Value;
 import io.grpc.Context;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -97,8 +98,8 @@ public class ITWriteTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
   private String lastKey;
 
-  private void write(Mutation m) {
-    client.write(Arrays.asList(m));
+  private Timestamp write(Mutation m) {
+    return client.write(Arrays.asList(m));
   }
 
   private Mutation.WriteBuilder baseInsert() {
@@ -292,6 +293,14 @@ public class ITWriteTest {
     write(baseInsert().set("TimestampValue").to((Timestamp) null).build());
     Struct row = readLastRow("TimestampValue");
     assertThat(row.isNull(0)).isTrue();
+  }
+
+  @Test
+  public void writeCommitTimestamp() {
+    Timestamp commitTimestamp =
+        write(baseInsert().set("TimestampValue").to(Value.COMMIT_TIMESTAMP).build());
+    Struct row = readLastRow("TimestampValue");
+    assertThat(row.getTimestamp(0)).isEqualTo(commitTimestamp);
   }
 
   @Test
