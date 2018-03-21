@@ -52,7 +52,7 @@ public final class IamPolicyProto {
       "missionsRequest\022\020\n\010resource\030\001 \001(\t\022\023\n\013per" +
       "missions\030\002 \003(\t\"1\n\032TestIamPermissionsResp" +
       "onse\022\023\n\013permissions\030\001 \003(\t2\224\003\n\tIAMPolicy\022" +
-      "t\n\014SetIamPolicy\022\".google.iam.v1.SetIamPo",
+      "t\n\014SetIamPolicy\022\".google.iam.v1.SetIamPo" +
       "licyRequest\032\025.google.iam.v1.Policy\")\202\323\344\223" +
       "\002#\"\036/v1/{resource=**}:setIamPolicy:\001*\022t\n" +
       "\014GetIamPolicy\022\".google.iam.v1.GetIamPoli" +
@@ -62,7 +62,7 @@ public final class IamPolicyProto {
       "amPermissionsRequest\032).google.iam.v1.Tes" +
       "tIamPermissionsResponse\"/\202\323\344\223\002)\"$/v1/{re" +
       "source=**}:testIamPermissions:\001*B\206\001\n\021com" +
-      ".google.iam.v1B\016IamPolicyProtoP\001Z0google",
+      ".google.iam.v1B\016IamPolicyProtoP\001Z0google" +
       ".golang.org/genproto/googleapis/iam/v1;i" +
       "am\370\001\001\252\002\023Google.Cloud.Iam.V1\312\002\023Google\\Clo" +
       "ud\\Iam\\V1b\006proto3"

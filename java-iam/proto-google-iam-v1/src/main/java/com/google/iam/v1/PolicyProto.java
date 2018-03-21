@@ -52,7 +52,7 @@ public final class PolicyProto {
       "google.iam.v1.BindingDelta\"\227\001\n\014BindingDe" +
       "lta\0222\n\006action\030\001 \001(\0162\".google.iam.v1.Bind" +
       "ingDelta.Action\022\014\n\004role\030\002 \001(\t\022\016\n\006member\030" +
-      "\003 \001(\t\"5\n\006Action\022\026\n\022ACTION_UNSPECIFIED\020\000\022",
+      "\003 \001(\t\"5\n\006Action\022\026\n\022ACTION_UNSPECIFIED\020\000\022" +
       "\007\n\003ADD\020\001\022\n\n\006REMOVE\020\002B\203\001\n\021com.google.iam." +
       "v1B\013PolicyProtoP\001Z0google.golang.org/gen" +
       "proto/googleapis/iam/v1;iam\370\001\001\252\002\023Google." +
