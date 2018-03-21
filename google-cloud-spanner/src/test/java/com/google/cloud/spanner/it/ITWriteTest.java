@@ -78,7 +78,7 @@ public class ITWriteTest {
                     + "  Float64Value        FLOAT64,"
                     + "  StringValue         STRING(MAX),"
                     + "  BytesValue          BYTES(MAX),"
-                    + "  TimestampValue      TIMESTAMP,"
+                    + "  TimestampValue      TIMESTAMP OPTIONS (allow_commit_timestamp = true),"
                     + "  DateValue           DATE,"
                     + "  BoolArrayValue      ARRAY<BOOL>,"
                     + "  Int64ArrayValue     ARRAY<INT64>,"
