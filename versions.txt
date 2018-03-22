@@ -39,6 +39,7 @@ google-cloud-resourcemanager:0.40.0-alpha:0.40.1-alpha-SNAPSHOT
 google-cloud-spanner:0.40.0-beta:0.40.1-beta-SNAPSHOT
 google-cloud-speech:0.40.0-alpha:0.40.1-alpha-SNAPSHOT
 google-cloud-storage:1.22.0:1.22.1-SNAPSHOT
+google-cloud-texttospeech:0.40.0-beta:0.40.1-beta-SNAPSHOT
 google-cloud-testing:0.40.0-alpha:0.40.1-alpha-SNAPSHOT
 google-cloud-trace:0.40.0-beta:0.40.1-beta-SNAPSHOT
 google-cloud-translate:1.22.0:1.22.1-SNAPSHOT
