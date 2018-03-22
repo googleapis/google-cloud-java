@@ -4,10 +4,10 @@
   <artifactId>google-cloud-texttospeech</artifactId>
   <version>0.40.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
   <packaging>jar</packaging>
-  <name>Google Cloud Dialog Flow API</name>
+  <name>Google Cloud Text-to-Speech</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-texttospeech</url>
   <description>
-    Java idiomatic client for Google Cloud Text To Speech
+    Java idiomatic client for Google Cloud Text-to-Speech
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
