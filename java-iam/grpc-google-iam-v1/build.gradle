@@ -46,3 +46,4 @@ artifacts {
 }
 
 compileJava.options.encoding = "UTF-8"
+javadoc.options.encoding = "UTF-8"
