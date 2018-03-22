@@ -13,6 +13,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 - [Client Library Documentation][client-lib-docs]
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
+-  [BigQuery](google-cloud-bigquery) (GA)
 -  [Stackdriver Logging](google-cloud-logging) (GA)
 -  [Cloud Datastore](google-cloud-datastore) (GA)
 -  [Cloud Natural Language](google-cloud-language) (GA)
@@ -22,7 +23,6 @@ This library supports the following Google Cloud Platform services with clients 
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
--  [BigQuery](google-cloud-bigquery) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
 -  [Stackdriver Error Reporting](google-cloud-errorreporting) (Beta)
 -  [Cloud Firestore](google-cloud-firestore) (Beta)
