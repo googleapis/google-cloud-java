@@ -31,6 +31,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Spanner](google-cloud-spanner) (Beta)
 -  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
 -  [Stackdriver Trace](google-cloud-trace) (Beta)
+-  [Text-to-Speech](google-cloud-texttospeech) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
