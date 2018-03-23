@@ -111,7 +111,7 @@ Go to the [releases page](https://github.com/GoogleCloudPlatform/google-cloud-ja
 
 11. Create a new draft for the next release. Note any commits not included in the release that have been submitted before the release commit, to ensure they are documented in the next release.
 
-12. Run `python utilities/bump_versions next_snapshot patch` to include "-SNAPSHOT" in the current project version (Alternatively, update the versions in `versions.txt` to the correct versions for the next release.). Then, run `python utilities/replace_versions.py` to update the `pom.xml` files. (If you see updates in `README.md` files at this step, you probably did something wrong.)
+12. Run `python utilities/bump_versions.py next_snapshot patch` to include "-SNAPSHOT" in the current project version (Alternatively, update the versions in `versions.txt` to the correct versions for the next release.). Then, run `python utilities/replace_versions.py` to update the `pom.xml` files. (If you see updates in `README.md` files at this step, you probably did something wrong.)
 
 13. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/google-cloud-java/pull/227).
 
