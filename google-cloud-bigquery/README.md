@@ -12,9 +12,6 @@ Java idiomatic client for [Google Cloud BigQuery][cloud-bigquery].
 - [Product Documentation][bigquery-product-docs]
 - [Client Library Documentation][bigquery-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 [//]: # ({x-version-update-start:google-cloud-bigquery:released})
