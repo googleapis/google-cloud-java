@@ -244,6 +244,7 @@ public class ValueTest {
     Value v = Value.timestamp(t);
     assertThat(v.getType()).isEqualTo(Type.timestamp());
     assertThat(v.isNull()).isFalse();
+    assertThat(v.isCommitTimestamp()).isFalse();
     assertThat(v.getTimestamp()).isSameAs(t);
     assertThat(v.toString()).isEqualTo(timestamp);
   }
@@ -254,9 +255,26 @@ public class ValueTest {
     assertThat(v.getType()).isEqualTo(Type.timestamp());
     assertThat(v.isNull()).isTrue();
     assertThat(v.toString()).isEqualTo(NULL_STRING);
-
+    assertThat(v.isCommitTimestamp()).isFalse();
     expectedException.expect(IllegalStateException.class);
     expectedException.expectMessage("null value");
+    v.getTimestamp();
+  }
+
+  @Test
+  public void commitTimestamp() {
+    Value v = Value.timestamp(Value.COMMIT_TIMESTAMP);
+    assertThat(v.getType()).isEqualTo(Type.timestamp());
+    assertThat(v.isNull()).isFalse();
+    assertThat(v.isCommitTimestamp()).isTrue();
+    assertThat(v.toString()).isEqualTo("spanner.commit_timestamp()");
+    assertThat(v.toProto())
+        .isEqualTo(
+            com.google.protobuf.Value.newBuilder()
+                .setStringValue("spanner.commit_timestamp()")
+                .build());
+    expectedException.expect(IllegalStateException.class);
+    expectedException.expectMessage("Commit timestamp value");
     v.getTimestamp();
   }
 
@@ -661,6 +679,20 @@ public class ValueTest {
     tester.addEqualityGroup(Value.bytes(newByteArray("def")));
     tester.addEqualityGroup(Value.bytes(null));
 
+    tester.addEqualityGroup(Value.timestamp(null), Value.timestamp(null));
+    tester.addEqualityGroup(Value.timestamp(Value.COMMIT_TIMESTAMP),
+        Value.timestamp(Value.COMMIT_TIMESTAMP));
+    Timestamp now = Timestamp.now();
+    tester.addEqualityGroup(Value.timestamp(now), Value.timestamp(now));
+    tester.addEqualityGroup(Value.timestamp(Timestamp.ofTimeMicroseconds(0)));
+
+    tester.addEqualityGroup(Value.date(null), Value.date(null));
+    tester.addEqualityGroup(
+        Value.date(Date.fromYearMonthDay(2018, 2, 26)),
+        Value.date(Date.fromYearMonthDay(2018, 2, 26)));
+    tester.addEqualityGroup(
+        Value.date(Date.fromYearMonthDay(2018, 2, 27)));
+
     tester.addEqualityGroup(
         Value.boolArray(Arrays.asList(false, true)),
         Value.boolArray(new boolean[] {false, true}),
@@ -696,6 +728,18 @@ public class ValueTest {
     tester.addEqualityGroup(Value.bytesArray(Arrays.asList(newByteArray("c"))));
     tester.addEqualityGroup(Value.bytesArray(null));
 
+    tester.addEqualityGroup(Value.timestampArray(Arrays.asList(null, now)),
+        Value.timestampArray(Arrays.asList(null, now)));
+    tester.addEqualityGroup(Value.timestampArray(null));
+
+    tester.addEqualityGroup(
+        Value.dateArray(
+            Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))),
+        Value.dateArray(
+            Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))));
+    tester.addEqualityGroup(Value.dateArray(null));
+
+
     tester.testEquals();
   }
 
@@ -729,6 +773,16 @@ public class ValueTest {
     reserializeAndAssert(Value.float64Array(new double[] { .1, .2 }));
     reserializeAndAssert(Value.float64Array(BrokenSerializationList.of(.1, .2, .3)));
     reserializeAndAssert(Value.float64Array((Iterable<Double>) null));
+
+    reserializeAndAssert(Value.timestamp(null));
+    reserializeAndAssert(Value.timestamp(Value.COMMIT_TIMESTAMP));
+    reserializeAndAssert(Value.timestamp(Timestamp.now()));
+    reserializeAndAssert(Value.timestampArray(Arrays.asList(null, Timestamp.now())));
+
+    reserializeAndAssert(Value.date(null));
+    reserializeAndAssert(Value.date(Date.fromYearMonthDay(2018, 2, 26)));
+    reserializeAndAssert(Value.dateArray(Arrays.asList(null,
+        Date.fromYearMonthDay(2018, 2, 26))));
 
     BrokenSerializationList<String> of = BrokenSerializationList.of("a", "b");
     reserializeAndAssert(Value.stringArray(of));

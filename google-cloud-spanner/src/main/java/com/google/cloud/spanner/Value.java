@@ -52,6 +52,23 @@ import javax.annotation.concurrent.Immutable;
  */
 @Immutable
 public abstract class Value implements Serializable {
+
+  /**
+   * Placeholder value to be passed to a mutation to make Cloud Spanner store the commit timestamp
+   * in that column. The commit timestamp is the timestamp corresponding to when Cloud Spanner
+   * commits the transaction containing the mutation.
+   *
+   * <p>Note that this particular timestamp instance has no semantic meaning. In particular the
+   * value of seconds and nanoseconds in this timestamp are meaningless. This placeholder can only
+   * be used for columns that have set the option "(allow_commit_timestamp=true)" in the schema.
+   *
+   * <p>When reading the value stored in such a column, the value returned is an actual timestamp
+   * corresponding to the commit time of the transaction, which has no relation to this placeholder.
+   *
+   * @see https://cloud.google.com/spanner/docs/transactions#rw_transaction_semantics
+   */
+  public static final Timestamp COMMIT_TIMESTAMP = Timestamp.ofTimeMicroseconds(0L);
+
   private static final int MAX_DEBUG_STRING_LENGTH = 32;
   private static final String ELLIPSIS = "...";
   private static final String NULL_STRING = "NULL";
@@ -122,7 +139,7 @@ public abstract class Value implements Serializable {
 
   /** Returns a {@code TIMESTAMP} value. */
   public static Value timestamp(@Nullable Timestamp v) {
-    return new TimestampImpl(v == null, v);
+    return new TimestampImpl(v == null, v == Value.COMMIT_TIMESTAMP, v);
   }
 
   /**
@@ -327,9 +344,13 @@ public abstract class Value implements Serializable {
   /**
    * Returns the value of a {@code TIMESTAMP}-typed instance.
    *
-   * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type
+   * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type or
+   *     {@link #isCommitTimestamp()}.
    */
   public abstract Timestamp getTimestamp();
+
+  /** Returns true if this is a commit timestamp value. */
+  public abstract boolean isCommitTimestamp();
 
   /**
    * Returns the value of a {@code DATE}-typed instance.
@@ -574,6 +595,11 @@ public abstract class Value implements Serializable {
     @Override
     public final boolean isNull() {
       return isNull;
+    }
+
+    @Override
+    public boolean isCommitTimestamp() {
+      return false;
     }
 
     @Override
@@ -927,20 +953,63 @@ public abstract class Value implements Serializable {
 
   private static class TimestampImpl extends AbstractObjectValue<Timestamp> {
 
-    private TimestampImpl(boolean isNull, Timestamp value) {
+    private static final String COMMIT_TIMESTAMP_STRING = "spanner.commit_timestamp()";
+    private final boolean isCommitTimestamp;
+
+    private TimestampImpl(boolean isNull, boolean isCommitTimestamp, Timestamp value) {
       super(isNull, Type.timestamp(), value);
+      this.isCommitTimestamp = isCommitTimestamp;
     }
 
     @Override
     public Timestamp getTimestamp() {
       checkType(Type.timestamp());
       checkNotNull();
+      Preconditions.checkState(!isCommitTimestamp, "Commit timestamp value");
       return value;
     }
 
     @Override
+    public boolean isCommitTimestamp() {
+      return isCommitTimestamp;
+    }
+
+    @Override
+    com.google.protobuf.Value valueToProto() {
+      if (isCommitTimestamp) {
+        return com.google.protobuf.Value.newBuilder()
+            .setStringValue(COMMIT_TIMESTAMP_STRING)
+            .build();
+      }
+      return super.valueToProto();
+    }
+
+    @Override
     void valueToString(StringBuilder b) {
-      b.append(value);
+      if (isCommitTimestamp()) {
+        b.append(COMMIT_TIMESTAMP_STRING);
+      } else {
+        b.append(value);
+      }
+    }
+
+    @Override
+    boolean valueEquals(Value v) {
+      if (isCommitTimestamp) {
+        return v.isCommitTimestamp();
+      }
+      if (v.isCommitTimestamp()) {
+        return isCommitTimestamp;
+      }
+      return ((TimestampImpl) v).value.equals(value);
+    }
+
+    @Override
+    int valueHash() {
+      if (isCommitTimestamp) {
+        return Objects.hashCode(isCommitTimestamp);
+      }
+      return value.hashCode();
     }
   }
 
