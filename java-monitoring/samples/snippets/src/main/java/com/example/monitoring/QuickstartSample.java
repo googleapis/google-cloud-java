@@ -65,7 +65,7 @@ public class QuickstartSample {
     List<Point> pointList = new ArrayList<>();
     pointList.add(point);
 
-    ProjectName name = ProjectName.create(projectId);
+    ProjectName name = ProjectName.of(projectId);
 
     // Prepares the metric descriptor
     Map<String, String> metricLabels = new HashMap<String, String>();
@@ -93,7 +93,7 @@ public class QuickstartSample {
     timeSeriesList.add(timeSeries);
 
     CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()
-        .setNameWithProjectName(name)
+        .setName(name.toString())
         .addAllTimeSeries(timeSeriesList)
         .build();
 
