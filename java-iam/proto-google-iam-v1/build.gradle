@@ -8,7 +8,7 @@ apply plugin: 'java'
 
 description = 'PROTO library for proto-google-iam-v1'
 group = "com.google.api.grpc"
-version = "0.6.0"
+version = "0.7.0"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
@@ -49,4 +49,3 @@ artifacts {
 }
 
 compileJava.options.encoding = "UTF-8"
-javadoc.options.encoding = "UTF-8"
