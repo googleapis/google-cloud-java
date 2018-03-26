@@ -38,7 +38,7 @@ public class QuickStart {
 
     // Google Cloud Platform Project ID
     String projectId = (args.length > 0) ? args[0] : ServiceOptions.getDefaultProjectId();
-    ProjectName projectName = ProjectName.create(projectId);
+    ProjectName projectName = ProjectName.of(projectId);
 
     // Instantiate an Error Reporting Client
     try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
