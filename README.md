@@ -75,6 +75,12 @@ libraryDependencies += "com.google.cloud" % "google-cloud" % "0.41.0-alpha"
 It also works just as well to declare a dependency only on the specific clients that you need. See the README of
 each client for instructions.
 
+If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins: 
+* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries)
+* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries)
+
+Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
+
 These client libraries can be used on App Engine standard for Java 8 runtime, App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime, however, Datastore, Storage, and Bigquery should work.
 
 If you are running into problems with version conflicts, see [Version Management](#version-management).
