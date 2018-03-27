@@ -208,6 +208,8 @@ public class ConformanceTest {
       return convertMap((Map<String, Object>) data);
     } else if (data instanceof List) {
       return convertArray((List<Object>) data);
+    } else if ("NaN".equals(data)) {
+      return Double.NaN;
     } else if ("Delete".equals(data)) {
       return FieldValue.delete();
     } else if ("ServerTimestamp".equals(data)) {
