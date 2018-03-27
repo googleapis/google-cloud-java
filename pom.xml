@@ -887,9 +887,6 @@
               <includes>
                 <include>**/*SmokeTest.java</include>
               </includes>
-              <excludes>
-                <exclude>**/*IT.java</exclude>
-              </excludes>
             </configuration>
           </plugin>
           <plugin>
