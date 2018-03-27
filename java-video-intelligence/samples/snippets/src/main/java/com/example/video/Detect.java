@@ -22,13 +22,9 @@ import com.google.cloud.videointelligence.v1.AnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1.AnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1.Entity;
 import com.google.cloud.videointelligence.v1.ExplicitContentFrame;
-import com.google.cloud.videointelligence.v1.FaceAnnotation;
-import com.google.cloud.videointelligence.v1.FaceFrame;
-import com.google.cloud.videointelligence.v1.FaceSegment;
 import com.google.cloud.videointelligence.v1.Feature;
 import com.google.cloud.videointelligence.v1.LabelAnnotation;
 import com.google.cloud.videointelligence.v1.LabelSegment;
-import com.google.cloud.videointelligence.v1.NormalizedBoundingBox;
 import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
 import com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1.VideoSegment;
@@ -42,12 +38,10 @@ import org.apache.commons.codec.binary.Base64;
 
 public class Detect {
   /**
-   * Detects entities,sentiment and syntax in a document using the Natural Language API.
+   * Detects labels, shots, and explicit content in a video using the Video Intelligence API
    * @param args specifies features to detect and the path to the video on Google Cloud Storage.
-   *
-   * @throws IOException on Input/Output errors.
    */
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     try {
       argsHelper(args);
     } catch (Exception e) {
@@ -68,7 +62,7 @@ public class Detect {
       System.out.printf(
           "\tjava %s \"<command>\" \"<path-to-video>\"\n"
               + "Commands:\n"
-              + "\tfaces | labels | shots\n"
+              + "\tlabels | shots\n"
               + "Path:\n\tA URI for a Cloud Storage resource (gs://...)\n"
               + "Examples: ",
           Detect.class.getCanonicalName());
@@ -77,9 +71,6 @@ public class Detect {
     String command = args[0];
     String path = args.length > 1 ? args[1] : "";
 
-    if (command.equals("faces")) {
-      analyzeFaces(path);
-    }
     if (command.equals("labels")) {
       analyzeLabels(path);
     }
@@ -91,68 +82,6 @@ public class Detect {
     }
     if (command.equals("explicit-content")) {
       analyzeExplicitContent(path);
-    }
-  }
-
-  /**
-   * Performs facial analysis on the video at the provided Cloud Storage path.
-   *
-   * @param gcsUri the path to the video file to analyze.
-   */
-  public static void analyzeFaces(String gcsUri) throws Exception {
-    // [START detect_faces]
-    // Instantiate a com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient
-    try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
-      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-          .setInputUri(gcsUri)
-          .addFeatures(Feature.FACE_DETECTION)
-          .build();
-
-      // asynchronously perform facial analysis on videos
-      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> response =
-          client.annotateVideoAsync(request);
-
-      System.out.println("Waiting for operation to complete...");
-      boolean faceFound = false;
-      for (VideoAnnotationResults results : response.get().getAnnotationResultsList()) {
-        int faceCount = 0;
-        for (FaceAnnotation faceAnnotation : results.getFaceAnnotationsList()) {
-          faceFound = true;
-          System.out.println("Face: " + ++faceCount);
-          System.out.println("Thumbnail size: " + faceAnnotation.getThumbnail().size());
-          for (FaceSegment segment : faceAnnotation.getSegmentsList()) {
-            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
-                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
-            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
-                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
-            System.out.printf("Segment location : %.3f:%.3f\n", startTime, endTime);
-          }
-          try {
-            // printing info on the first frame
-            if (faceAnnotation.getFramesCount() > 0) {
-              System.out.println(faceAnnotation.getFramesList().get(0));
-              FaceFrame frame = faceAnnotation.getFrames(0);
-              double timeOffset = frame.getTimeOffset().getSeconds()
-                  + frame.getTimeOffset().getNanos() / 1e9;
-              System.out.printf("First frame time offset: %.3fs", timeOffset);
-              // print info on the first normalized bounding box
-              NormalizedBoundingBox box = frame.getNormalizedBoundingBoxesList().get(0);
-              System.out.printf("Left: %.3f\n", box.getLeft());
-              System.out.printf("Top: %.3f\n", box.getTop());
-              System.out.printf("Bottom: %.3f\n", box.getBottom());
-              System.out.printf("Right: %.3f\n", box.getRight());
-            } else {
-              System.out.println("No frames found in annotation");
-            }
-          } catch (IndexOutOfBoundsException ioe) {
-            System.out.println("Could not retrieve frame: " + ioe.getMessage());
-          }
-        }
-      }
-      if (!faceFound) {
-        System.out.println("No faces detected in " + gcsUri);
-      }
-      // [END detect_faces]
     }
   }
 

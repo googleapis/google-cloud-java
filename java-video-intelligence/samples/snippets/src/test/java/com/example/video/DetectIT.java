@@ -33,7 +33,6 @@ public class DetectIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  static final String FACES_FILE_LOCATION = "gs://demomaker/gbike.mp4";
   static final String LABEL_FILE_LOCATION = "gs://demomaker/cat.mp4";
   static final String SHOTS_FILE_LOCATION = "gs://demomaker/gbikes_dinosaur.mp4";
   static final String EXPLICIT_CONTENT_LOCATION =  "gs://demomaker/cat.mp4";
@@ -48,22 +47,6 @@ public class DetectIT {
   @After
   public void tearDown() {
     System.setOut(null);
-  }
-
-  @Test
-  public void testFaces() throws Exception {
-    String[] args = {"faces", FACES_FILE_LOCATION};
-    Detect.argsHelper(args);
-    String got = bout.toString();
-    // Model changes have caused the results from face detection to change to an
-    // empty response (e.g. no faces detected) so we check either for an empty
-    // response or that a response with face thumbnails was returned.
-    if (got.indexOf("No faces detected") == -1) {
-      assertThat(got).contains("Thumbnail size:");
-    } else {
-      // No faces detected, verify sample reports this.
-      assertThat(got).contains("No faces detected in " + FACES_FILE_LOCATION);
-    }
   }
 
   @Test
