@@ -290,7 +290,8 @@ public class Publisher {
     }
   }
 
-  private void publishAllOutstanding() {
+  /** publish any outstanding batches if non-empty */
+  public void publishAllOutstanding() {
     messagesBatchLock.lock();
     OutstandingBatch batchToSend;
     try {
