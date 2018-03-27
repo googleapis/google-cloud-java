@@ -173,8 +173,8 @@
     <gax.version>1.20.0</gax.version>
     <gax-grpc.version>1.20.0</gax-grpc.version>
     <gax-httpjson.version>0.37.0</gax-httpjson.version>
-    <generated-proto-beta.version>0.6.0</generated-proto-beta.version>
-    <generated-proto-ga.version>1.5.0</generated-proto-ga.version>
+    <generated-proto-beta.version>0.7.0</generated-proto-beta.version>
+    <generated-proto-ga.version>1.6.0</generated-proto-ga.version>
   </properties>
   <dependencyManagement>
     <dependencies>
