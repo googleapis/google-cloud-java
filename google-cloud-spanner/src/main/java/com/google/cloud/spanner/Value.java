@@ -65,7 +65,8 @@ public abstract class Value implements Serializable {
    * <p>When reading the value stored in such a column, the value returned is an actual timestamp
    * corresponding to the commit time of the transaction, which has no relation to this placeholder.
    *
-   * @see https://cloud.google.com/spanner/docs/transactions#rw_transaction_semantics
+   * @see <a href="https://cloud.google.com/spanner/docs/transactions#rw_transaction_semantics">
+   *   Transaction Semantics</a>
    */
   public static final Timestamp COMMIT_TIMESTAMP = Timestamp.ofTimeMicroseconds(0L);
 
