@@ -73,9 +73,9 @@ import javax.annotation.Nullable;
  * try {
  *   retryingFuture.get();
  * } catch(ExecutionException executionError) {
- *   MutateRowsException e = (MutateRowsException)executionError.getCause();
+ *   MutateRowsException e = (MutateRowsException) executionError.getCause();
  *
- *   for(FailedMutation m : e.getFailedMutations() {
+ *   for (FailedMutation m : e.getFailedMutations() {
  *     // handle permanent failures
  *   }
  * }
@@ -152,9 +152,9 @@ class MutateRowsAttemptCallable implements Callable<Void> {
    * Send the current request and the parent {@link RetryingFuture} with this attempt's future.
    *
    * <p>On RPC completion this method will preprocess all errors (both RPC level and entry level)
-   * and wrap them in a {@link MutateRowsException}. Please note that the results of RPC are only
-   * available in attempt future that is set on the parent {@link RetryingFuture} and the return of
-   * this method should just be ignored.
+   * and wrap them in a {@link MutateRowsException}. Please note that the results of the RPC are
+   * only available in the attempt future that is set on the parent {@link RetryingFuture} and the
+   * return of this method should just be ignored.
    */
   @Override
   public Void call() {
@@ -200,7 +200,7 @@ class MutateRowsAttemptCallable implements Callable<Void> {
   }
 
   /**
-   * Handle RPC level failure by generating a {@link FailedMutation} for each expected entry. The
+   * Handle an RPC level failure by generating a {@link FailedMutation} for each expected entry. The
    * newly generated {@link FailedMutation}s will be combined with the permanentFailures to give the
    * caller the whole picture since the first call. This method will always throw a {@link
    * MutateRowsException}.
@@ -225,7 +225,7 @@ class MutateRowsAttemptCallable implements Callable<Void> {
         permanentFailures.add(failedMutation);
       } else {
         // Schedule the mutation entry for the next RPC by adding it to the request builder and
-        // recording it's original index
+        // recording its original index
         newOriginalIndexes.add(origIndex);
         builder.addEntries(lastRequest.getEntries(i));
       }
