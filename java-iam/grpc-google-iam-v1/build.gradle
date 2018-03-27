@@ -7,7 +7,7 @@ buildscript {
 apply plugin: 'java'
 
 description = 'GRPC library for grpc-google-iam-v1'
-group = "com.google.api.grpc"
+group = 'com.google.api.grpc'
 version = "0.7.0"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -18,9 +18,9 @@ repositories {
 }
 
 dependencies {
-  compile "io.grpc:grpc-stub:1.9.0"
-  compile "io.grpc:grpc-protobuf:1.9.0"
-  compile project(":proto-google-iam-v1")
+  compile 'io.grpc:grpc-stub:1.9.0'
+  compile 'io.grpc:grpc-protobuf:1.9.0'
+  compile project(':proto-google-iam-v1')
 }
 
 sourceSets {
@@ -45,4 +45,5 @@ artifacts {
   archives javadocJar, sourcesJar
 }
 
-compileJava.options.encoding = "UTF-8"
+compileJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
