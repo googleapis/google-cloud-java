@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google LLC
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.contrib.nio;
 
+import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 
 import java.io.Closeable;
@@ -64,29 +65,29 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   private Stopwatch betweenCallsToRead = Stopwatch.createUnstarted();
   private static int prefetcherCount;
 
-  // statistics, for profiling
+  // statistics, for profiling.
   // time spent blocking the user because we're waiting on the network
-  public long msWaitingForData;
+  private long msWaitingForData;
   // time spent blocking the user because we're copying bytes
-  public long msCopyingData;
+  private long msCopyingData;
   // total number of bytes returned by read (if the user asks for the same bytes multiple times, they count)
-  public long bytesReturned;
+  private long bytesReturned;
   // total number of bytes read over the network (whether returned to the user or not)
-  public long bytesRead ;
+  private long bytesRead ;
   // time spend in between calls to Read, ie. presumably while the user is processing the data we returned.
-  public long msBetweenCallsToRead ;
+  private long msBetweenCallsToRead ;
   // number of times we had the user's data already ready, didn't have to grab it from the net.
-  public long nbHit;
+  private long nbHit;
   // number of times we had already started to prefetch the user's data (but it hadn't arrived yet).
-  public long nbNearHit;
+  private long nbNearHit;
   // number of times we don't have what the user's asking for, we have to wait for a prefetch to finish,
   // and the prefetch didn't return what the user wanted (either they are going backward, or jumping forward)
-  public long nbMiss;
+  private long nbMiss;
   // number of times the user asks for data with a lower index than what we already have
   // (so they're not following the expected pattern of increasing indexes)
-  public long nbGoingBack;
+  private long nbGoingBack;
   // number of times the user asks for data past the end of the file
-  public long nbReadsPastEnd;
+  private long nbReadsPastEnd;
   // timing statistics have an overhead, so only turn them on when debugging performance
   // issues.
   private static final boolean trackTime = false;
@@ -169,10 +170,9 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
    * @param bufSize buffer size in bytes
    * @param chan channel to wrap in the prefetcher
    */
-  public SeekableByteChannelPrefetcher(SeekableByteChannel chan, int bufSize) throws IOException {
-    if (chan instanceof SeekableByteChannelPrefetcher) {
-      throw new IllegalArgumentException("Cannot put two prefetchers on the same channel.");
-    }
+  private SeekableByteChannelPrefetcher(SeekableByteChannel chan, int bufSize) throws IOException {
+    Preconditions.checkArgument(!(chan instanceof SeekableByteChannelPrefetcher),"Cannot wrap a prefetcher with a prefetcher.");
+
     if (!chan.isOpen()) {
       throw new IllegalArgumentException("channel must be open");
     }
@@ -221,7 +221,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   // if we don't already have that block and the fetching thread is idle,
   // make sure it now goes looking for that block index.
   private void ensureFetching(long blockIndex) {
-    if (null != fetching) {
+    if (fetching != null) {
       if (fetching.futureBuf.isDone()) {
         full.add(fetching);
         fetching = null;
@@ -236,15 +236,13 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     }
     if (full.size() < BUF_COUNT) {
       fetching = new WorkUnit(chan, bufSize, blockIndex);
-      bytesRead += bufSize;
-      fetching.futureBuf = exec.submit(fetching);
     } else {
       // reuse the oldest full buffer
       fetching = full.remove(0);
       fetching.resetForIndex(blockIndex);
-      bytesRead += bufSize;
-      fetching.futureBuf = exec.submit(fetching);
     }
+    bytesRead += bufSize;
+    fetching.futureBuf = exec.submit(fetching);
   }
 
   // Return a buffer at this position, blocking if necessary.
