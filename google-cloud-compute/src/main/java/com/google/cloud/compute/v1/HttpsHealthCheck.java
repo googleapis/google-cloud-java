@@ -1,0 +1,570 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.compute.v1;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import javax.annotation.Generated;
+import javax.annotation.Nullable;
+
+@Generated("by GAPIC")
+@BetaApi
+public final class HttpsHealthCheck implements ApiMessage {
+  private final Integer checkIntervalSec;
+  private final String creationTimestamp;
+  private final String description;
+  private final Integer healthyThreshold;
+  private final String host;
+  private final String id;
+  private final String kind;
+  private final String name;
+  private final Integer port;
+  private final String requestPath;
+  private final String selfLink;
+  private final Integer timeoutSec;
+  private final Integer unhealthyThreshold;
+
+  private HttpsHealthCheck() {
+    this.checkIntervalSec = null;
+    this.creationTimestamp = null;
+    this.description = null;
+    this.healthyThreshold = null;
+    this.host = null;
+    this.id = null;
+    this.kind = null;
+    this.name = null;
+    this.port = null;
+    this.requestPath = null;
+    this.selfLink = null;
+    this.timeoutSec = null;
+    this.unhealthyThreshold = null;
+  }
+
+
+  private HttpsHealthCheck(
+      Integer checkIntervalSec,
+      String creationTimestamp,
+      String description,
+      Integer healthyThreshold,
+      String host,
+      String id,
+      String kind,
+      String name,
+      Integer port,
+      String requestPath,
+      String selfLink,
+      Integer timeoutSec,
+      Integer unhealthyThreshold
+      ) {
+    this.checkIntervalSec = checkIntervalSec;
+    this.creationTimestamp = creationTimestamp;
+    this.description = description;
+    this.healthyThreshold = healthyThreshold;
+    this.host = host;
+    this.id = id;
+    this.kind = kind;
+    this.name = name;
+    this.port = port;
+    this.requestPath = requestPath;
+    this.selfLink = selfLink;
+    this.timeoutSec = timeoutSec;
+    this.unhealthyThreshold = unhealthyThreshold;
+  }
+
+  @Override
+  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
+    Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("checkIntervalSec") && checkIntervalSec != null) {
+      fieldMap.put("checkIntervalSec", Collections.singletonList(String.valueOf(checkIntervalSec)));
+    }
+    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
+      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+    }
+    if (fieldNames.contains("description") && description != null) {
+      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
+    }
+    if (fieldNames.contains("healthyThreshold") && healthyThreshold != null) {
+      fieldMap.put("healthyThreshold", Collections.singletonList(String.valueOf(healthyThreshold)));
+    }
+    if (fieldNames.contains("host") && host != null) {
+      fieldMap.put("host", Collections.singletonList(String.valueOf(host)));
+    }
+    if (fieldNames.contains("id") && id != null) {
+      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("kind") && kind != null) {
+      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("name") && name != null) {
+      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("port") && port != null) {
+      fieldMap.put("port", Collections.singletonList(String.valueOf(port)));
+    }
+    if (fieldNames.contains("requestPath") && requestPath != null) {
+      fieldMap.put("requestPath", Collections.singletonList(String.valueOf(requestPath)));
+    }
+    if (fieldNames.contains("selfLink") && selfLink != null) {
+      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("timeoutSec") && timeoutSec != null) {
+      fieldMap.put("timeoutSec", Collections.singletonList(String.valueOf(timeoutSec)));
+    }
+    if (fieldNames.contains("unhealthyThreshold") && unhealthyThreshold != null) {
+      fieldMap.put("unhealthyThreshold", Collections.singletonList(String.valueOf(unhealthyThreshold)));
+    }
+    return fieldMap;
+  }
+
+  @Override
+  public String getFieldStringValue(String fieldName) {
+    if (fieldName.equals("checkIntervalSec")) {
+      return String.valueOf(checkIntervalSec);
+    }
+    if (fieldName.equals("creationTimestamp")) {
+      return String.valueOf(creationTimestamp);
+    }
+    if (fieldName.equals("description")) {
+      return String.valueOf(description);
+    }
+    if (fieldName.equals("healthyThreshold")) {
+      return String.valueOf(healthyThreshold);
+    }
+    if (fieldName.equals("host")) {
+      return String.valueOf(host);
+    }
+    if (fieldName.equals("id")) {
+      return String.valueOf(id);
+    }
+    if (fieldName.equals("kind")) {
+      return String.valueOf(kind);
+    }
+    if (fieldName.equals("name")) {
+      return String.valueOf(name);
+    }
+    if (fieldName.equals("port")) {
+      return String.valueOf(port);
+    }
+    if (fieldName.equals("requestPath")) {
+      return String.valueOf(requestPath);
+    }
+    if (fieldName.equals("selfLink")) {
+      return String.valueOf(selfLink);
+    }
+    if (fieldName.equals("timeoutSec")) {
+      return String.valueOf(timeoutSec);
+    }
+    if (fieldName.equals("unhealthyThreshold")) {
+      return String.valueOf(unhealthyThreshold);
+    }
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  public Integer getCheckIntervalSec() {
+    return checkIntervalSec;
+  }
+
+  public String getCreationTimestamp() {
+    return creationTimestamp;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public Integer getHealthyThreshold() {
+    return healthyThreshold;
+  }
+
+  public String getHost() {
+    return host;
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public String getKind() {
+    return kind;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public Integer getPort() {
+    return port;
+  }
+
+  public String getRequestPath() {
+    return requestPath;
+  }
+
+  public String getSelfLink() {
+    return selfLink;
+  }
+
+  public Integer getTimeoutSec() {
+    return timeoutSec;
+  }
+
+  public Integer getUnhealthyThreshold() {
+    return unhealthyThreshold;
+  }
+
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+  public static Builder newBuilder(HttpsHealthCheck prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  public static HttpsHealthCheck getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+  private static final HttpsHealthCheck DEFAULT_INSTANCE;
+  static {
+    DEFAULT_INSTANCE = new HttpsHealthCheck();
+  }
+
+  public static class Builder {
+    private Integer checkIntervalSec;
+    private String creationTimestamp;
+    private String description;
+    private Integer healthyThreshold;
+    private String host;
+    private String id;
+    private String kind;
+    private String name;
+    private Integer port;
+    private String requestPath;
+    private String selfLink;
+    private Integer timeoutSec;
+    private Integer unhealthyThreshold;
+
+    Builder() {}
+
+    public Builder mergeFrom(HttpsHealthCheck other) {
+      if (other == HttpsHealthCheck.getDefaultInstance()) return this;
+      if (other.getCheckIntervalSec() != null) {
+        this.checkIntervalSec = other.checkIntervalSec;
+      }
+      if (other.getCreationTimestamp() != null) {
+        this.creationTimestamp = other.creationTimestamp;
+      }
+      if (other.getDescription() != null) {
+        this.description = other.description;
+      }
+      if (other.getHealthyThreshold() != null) {
+        this.healthyThreshold = other.healthyThreshold;
+      }
+      if (other.getHost() != null) {
+        this.host = other.host;
+      }
+      if (other.getId() != null) {
+        this.id = other.id;
+      }
+      if (other.getKind() != null) {
+        this.kind = other.kind;
+      }
+      if (other.getName() != null) {
+        this.name = other.name;
+      }
+      if (other.getPort() != null) {
+        this.port = other.port;
+      }
+      if (other.getRequestPath() != null) {
+        this.requestPath = other.requestPath;
+      }
+      if (other.getSelfLink() != null) {
+        this.selfLink = other.selfLink;
+      }
+      if (other.getTimeoutSec() != null) {
+        this.timeoutSec = other.timeoutSec;
+      }
+      if (other.getUnhealthyThreshold() != null) {
+        this.unhealthyThreshold = other.unhealthyThreshold;
+      }
+      return this;
+    }
+
+    Builder(HttpsHealthCheck source) {
+      this.checkIntervalSec = source.checkIntervalSec;
+      this.creationTimestamp = source.creationTimestamp;
+      this.description = source.description;
+      this.healthyThreshold = source.healthyThreshold;
+      this.host = source.host;
+      this.id = source.id;
+      this.kind = source.kind;
+      this.name = source.name;
+      this.port = source.port;
+      this.requestPath = source.requestPath;
+      this.selfLink = source.selfLink;
+      this.timeoutSec = source.timeoutSec;
+      this.unhealthyThreshold = source.unhealthyThreshold;
+    }
+
+    public Integer getCheckIntervalSec() {
+      return checkIntervalSec;
+    }
+
+    public Builder setCheckIntervalSec(Integer checkIntervalSec) {
+      this.checkIntervalSec = checkIntervalSec;
+      return this;
+    }
+
+    public String getCreationTimestamp() {
+      return creationTimestamp;
+    }
+
+    public Builder setCreationTimestamp(String creationTimestamp) {
+      this.creationTimestamp = creationTimestamp;
+      return this;
+    }
+
+    public String getDescription() {
+      return description;
+    }
+
+    public Builder setDescription(String description) {
+      this.description = description;
+      return this;
+    }
+
+    public Integer getHealthyThreshold() {
+      return healthyThreshold;
+    }
+
+    public Builder setHealthyThreshold(Integer healthyThreshold) {
+      this.healthyThreshold = healthyThreshold;
+      return this;
+    }
+
+    public String getHost() {
+      return host;
+    }
+
+    public Builder setHost(String host) {
+      this.host = host;
+      return this;
+    }
+
+    public String getId() {
+      return id;
+    }
+
+    public Builder setId(String id) {
+      this.id = id;
+      return this;
+    }
+
+    public String getKind() {
+      return kind;
+    }
+
+    public Builder setKind(String kind) {
+      this.kind = kind;
+      return this;
+    }
+
+    public String getName() {
+      return name;
+    }
+
+    public Builder setName(String name) {
+      this.name = name;
+      return this;
+    }
+
+    public Integer getPort() {
+      return port;
+    }
+
+    public Builder setPort(Integer port) {
+      this.port = port;
+      return this;
+    }
+
+    public String getRequestPath() {
+      return requestPath;
+    }
+
+    public Builder setRequestPath(String requestPath) {
+      this.requestPath = requestPath;
+      return this;
+    }
+
+    public String getSelfLink() {
+      return selfLink;
+    }
+
+    public Builder setSelfLink(String selfLink) {
+      this.selfLink = selfLink;
+      return this;
+    }
+
+    public Integer getTimeoutSec() {
+      return timeoutSec;
+    }
+
+    public Builder setTimeoutSec(Integer timeoutSec) {
+      this.timeoutSec = timeoutSec;
+      return this;
+    }
+
+    public Integer getUnhealthyThreshold() {
+      return unhealthyThreshold;
+    }
+
+    public Builder setUnhealthyThreshold(Integer unhealthyThreshold) {
+      this.unhealthyThreshold = unhealthyThreshold;
+      return this;
+    }
+
+
+    public HttpsHealthCheck build() {
+
+
+
+
+
+
+
+
+
+
+
+
+      return new HttpsHealthCheck(
+        checkIntervalSec,
+        creationTimestamp,
+        description,
+        healthyThreshold,
+        host,
+        id,
+        kind,
+        name,
+        port,
+        requestPath,
+        selfLink,
+        timeoutSec,
+        unhealthyThreshold
+      );
+    }
+
+    public Builder clone() {
+      Builder newBuilder = new Builder();
+      newBuilder.setCheckIntervalSec(this.checkIntervalSec);
+      newBuilder.setCreationTimestamp(this.creationTimestamp);
+      newBuilder.setDescription(this.description);
+      newBuilder.setHealthyThreshold(this.healthyThreshold);
+      newBuilder.setHost(this.host);
+      newBuilder.setId(this.id);
+      newBuilder.setKind(this.kind);
+      newBuilder.setName(this.name);
+      newBuilder.setPort(this.port);
+      newBuilder.setRequestPath(this.requestPath);
+      newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setTimeoutSec(this.timeoutSec);
+      newBuilder.setUnhealthyThreshold(this.unhealthyThreshold);
+      return newBuilder;
+    }
+  }
+
+  @Override
+  public String toString() {
+    return "HttpsHealthCheck{"
+        + "checkIntervalSec=" + checkIntervalSec + ", "
+        + "creationTimestamp=" + creationTimestamp + ", "
+        + "description=" + description + ", "
+        + "healthyThreshold=" + healthyThreshold + ", "
+        + "host=" + host + ", "
+        + "id=" + id + ", "
+        + "kind=" + kind + ", "
+        + "name=" + name + ", "
+        + "port=" + port + ", "
+        + "requestPath=" + requestPath + ", "
+        + "selfLink=" + selfLink + ", "
+        + "timeoutSec=" + timeoutSec + ", "
+        + "unhealthyThreshold=" + unhealthyThreshold
+        + "}";
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o instanceof HttpsHealthCheck) {
+      HttpsHealthCheck that = (HttpsHealthCheck) o;
+      return
+          Objects.equals(this.checkIntervalSec, that.getCheckIntervalSec()) &&
+          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
+          Objects.equals(this.description, that.getDescription()) &&
+          Objects.equals(this.healthyThreshold, that.getHealthyThreshold()) &&
+          Objects.equals(this.host, that.getHost()) &&
+          Objects.equals(this.id, that.getId()) &&
+          Objects.equals(this.kind, that.getKind()) &&
+          Objects.equals(this.name, that.getName()) &&
+          Objects.equals(this.port, that.getPort()) &&
+          Objects.equals(this.requestPath, that.getRequestPath()) &&
+          Objects.equals(this.selfLink, that.getSelfLink()) &&
+          Objects.equals(this.timeoutSec, that.getTimeoutSec()) &&
+          Objects.equals(this.unhealthyThreshold, that.getUnhealthyThreshold())
+          ;
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+      checkIntervalSec,
+      creationTimestamp,
+      description,
+      healthyThreshold,
+      host,
+      id,
+      kind,
+      name,
+      port,
+      requestPath,
+      selfLink,
+      timeoutSec,
+      unhealthyThreshold
+    );
+  }
+}
