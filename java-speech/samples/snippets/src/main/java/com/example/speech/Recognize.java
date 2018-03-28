@@ -52,7 +52,7 @@ public class Recognize {
       System.out.printf(
           "\tjava %s \"<command>\" \"<path-to-image>\"\n"
           + "Commands:\n"
-          + "\tsyncrecognize | asyncrecognize | streamrecognize | wordoffsets\n"
+          + "\tsyncrecognize | asyncrecognize | streamrecognize | wordoffsets | model-selection\n"
           + "Path:\n\tA file path (ex: ./resources/audio.raw) or a URI "
           + "for a Cloud Storage resource (gs://...)\n",
           Recognize.class.getCanonicalName());
@@ -82,11 +82,11 @@ public class Recognize {
       }
     } else if (command.equals("streamrecognize")) {
       streamingRecognizeFile(path);
-    } else if (command.equals("video")) {
+    } else if (command.equals("model-selection")) {
       if (path.startsWith("gs://")) {
-        transcribeGcsVideoFile(path);
+        transcribeModelSelectionGcs(path);
       } else {
-        transcribeVideoFile(path);
+        transcribeModelSelection(path);
       }
     }
   }
@@ -420,10 +420,10 @@ public class Recognize {
   // [START speech_transcribe_model_selection]
   /**
    * Performs transcription of the given audio file synchronously with
-   * video as the original media type.
-   * @param fileName the path to a video file to transcribe
+   * the selected model.
+   * @param fileName the path to a audio file to transcribe
    */
-  public static void transcribeVideoFile(String fileName) throws Exception {
+  public static void transcribeModelSelection(String fileName) throws Exception {
     Path path = Paths.get(fileName);
     byte[] content = Files.readAllBytes(path);
 
@@ -456,11 +456,11 @@ public class Recognize {
 
   // [START speech_transcribe_model_selection_gcs]
   /**
-   * Performs transcription on remote video file and prints the transcription.
-   *
-   * @param gcsUri the path to the remote video file to transcribe.
+   * Performs transcription of the remote audio file asynchronously with
+   * the selected model.
+   * @param gcsUri the path to the remote audio file to transcribe.
    */
-  public static void transcribeGcsVideoFile(String gcsUri) throws Exception {
+  public static void transcribeModelSelectionGcs(String gcsUri) throws Exception {
     try (SpeechClient speech = SpeechClient.create()) {
 
       // Configure request with video media type

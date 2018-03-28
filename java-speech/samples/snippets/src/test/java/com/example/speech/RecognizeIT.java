@@ -110,16 +110,16 @@ public class RecognizeIT {
   }
 
   @Test
-  public void testVideoTranscription() throws Exception {
-    Recognize.transcribeVideoFile(videoFileName);
+  public void testModelSelection() throws Exception {
+    Recognize.transcribeModelSelection(videoFileName);
     String got = bout.toString();
     assertThat(got).contains("OK Google");
     assertThat(got).contains("the weather outside is sunny");
   }
 
   @Test
-  public void testGcsVideoTranscription() throws Exception {
-    Recognize.transcribeGcsVideoFile(gcsVideoPath);
+  public void testGcsModelSelection() throws Exception {
+    Recognize.transcribeModelSelectionGcs(gcsVideoPath);
     String got = bout.toString();
     assertThat(got).contains("OK Google");
     assertThat(got).contains("the weather outside is sunny");
