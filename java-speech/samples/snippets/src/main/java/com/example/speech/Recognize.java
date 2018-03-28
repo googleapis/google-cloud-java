@@ -349,6 +349,7 @@ public class Recognize {
           .setEncoding(AudioEncoding.LINEAR16)
           .setLanguageCode("en-US")
           .setSampleRateHertz(16000)
+          .setModel("default")
           .build();
       StreamingRecognitionConfig config = StreamingRecognitionConfig.newBuilder()
           .setConfig(recConfig)
