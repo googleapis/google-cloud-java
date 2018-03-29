@@ -20,6 +20,10 @@ import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.UnsafeByteOperations;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import javax.annotation.Nonnull;
 
 /**
@@ -44,7 +48,7 @@ import javax.annotation.Nonnull;
  * }</pre>
  */
 @InternalExtensionOnly
-public abstract class Range<T, R extends Range<T, R>> {
+public abstract class Range<T, R extends Range<T, R>> implements Serializable {
   public enum BoundType {
     OPEN,
     CLOSED,
@@ -179,6 +183,7 @@ public abstract class Range<T, R extends Range<T, R>> {
    * Abstract specialization of a {@link Range} for {@link ByteString}s. Allows for easy interop
    * with simple Strings.
    */
+  @InternalExtensionOnly
   abstract static class AbstractByteStringRange<R extends AbstractByteStringRange<R>>
       extends Range<ByteString, R> implements Cloneable {
     AbstractByteStringRange() {
@@ -274,7 +279,10 @@ public abstract class Range<T, R extends Range<T, R>> {
   }
 
   /** Concrete Range for timestamps */
-  public static final class TimestampRange extends AbstractTimestampRange<TimestampRange> {
+  public static final class TimestampRange extends AbstractTimestampRange<TimestampRange>
+      implements Serializable {
+    private static final long serialVersionUID = 198219379354720855L;
+
     public static TimestampRange unbounded() {
       return new TimestampRange(BoundType.UNBOUNDED, null, BoundType.UNBOUNDED, null);
     }
@@ -320,7 +328,8 @@ public abstract class Range<T, R extends Range<T, R>> {
   }
 
   /** Concrete Range for ByteStrings */
-  public static final class ByteStringRange extends AbstractByteStringRange<ByteStringRange> {
+  public static final class ByteStringRange extends AbstractByteStringRange<ByteStringRange>
+      implements Serializable {
     public static ByteStringRange prefix(String prefix) {
       return prefix(ByteString.copyFromUtf8(prefix));
     }
@@ -375,6 +384,14 @@ public abstract class Range<T, R extends Range<T, R>> {
     private ByteStringRange(
         BoundType startBound, ByteString start, BoundType endBound, ByteString end) {
       super(startBound, start, endBound, end);
+    }
+
+    private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+      input.defaultReadObject();
+    }
+
+    private void writeObject(ObjectOutputStream output) throws IOException {
+      output.defaultWriteObject();
     }
 
     @Override

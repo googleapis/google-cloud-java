@@ -19,6 +19,11 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -64,5 +69,27 @@ public class RowTest {
 
     // Comparator only cares about row keys
     assertThat(row2).isEquivalentAccordingToCompareTo(row2b);
+  }
+
+  @Test
+  public void serializationTest() throws IOException, ClassNotFoundException {
+    Row expected =
+        Row.create(
+            ByteString.copyFromUtf8("key1"),
+            ImmutableList.of(
+                RowCell.create(
+                    "family",
+                    ByteString.EMPTY,
+                    1000,
+                    ImmutableList.<String>of(),
+                    ByteString.copyFromUtf8("value"))));
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+    assertThat(ois.readObject()).isEqualTo(expected);
   }
 }

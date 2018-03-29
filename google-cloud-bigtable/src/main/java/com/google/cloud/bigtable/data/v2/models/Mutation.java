@@ -23,6 +23,10 @@ import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Nonnull;
 
@@ -31,8 +35,10 @@ import javax.annotation.Nonnull;
  * list of mutations. It used by {@link RowMutation} and {@link ConditionalRowMutation} to
  * encapsulate a list of mutations that will to be applied to a single row.
  */
-public final class Mutation implements MutationApi<Mutation> {
-  private final ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =
+public final class Mutation implements MutationApi<Mutation>, Serializable {
+  private static final long serialVersionUID = 5893216644683374339L;
+
+  private transient ImmutableList.Builder<com.google.bigtable.v2.Mutation> mutations =
       ImmutableList.builder();
 
   public static Mutation create() {
@@ -40,6 +46,20 @@ public final class Mutation implements MutationApi<Mutation> {
   }
 
   private Mutation() {}
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+
+    @SuppressWarnings("unchecked")
+    ImmutableList<com.google.bigtable.v2.Mutation> deserialized =
+        (ImmutableList<com.google.bigtable.v2.Mutation>) input.readObject();
+    this.mutations = ImmutableList.<com.google.bigtable.v2.Mutation>builder().addAll(deserialized);
+  }
+
+  private void writeObject(ObjectOutputStream output) throws IOException {
+    output.defaultWriteObject();
+    output.writeObject(mutations.build());
+  }
 
   @Override
   public Mutation setCell(
