@@ -204,6 +204,7 @@ public final class RowSetUtil {
     return results;
   }
 
+  /** Get the bounding range of a {@link RowSet}. */
   public static ByteStringRange getBound(RowSet rowSet) {
     // Find min & max keys
     ByteString minKey = null;
