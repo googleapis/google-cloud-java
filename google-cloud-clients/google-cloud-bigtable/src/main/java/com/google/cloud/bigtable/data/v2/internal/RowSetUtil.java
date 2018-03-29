@@ -271,7 +271,7 @@ public final class RowSetUtil {
       };
 
   /** Helper class to ease comparison of RowRange start points. */
-  private static class StartPoint implements Comparable<StartPoint> {
+  private static final class StartPoint implements Comparable<StartPoint> {
     private final ByteString value;
     private final boolean isClosed;
 
@@ -308,7 +308,7 @@ public final class RowSetUtil {
   }
 
   /** Helper class to ease comparison of RowRange endpoints. */
-  private static class EndPoint implements Comparable<EndPoint> {
+  private static final class EndPoint implements Comparable<EndPoint> {
     private final ByteString value;
     private final boolean isClosed;
 
