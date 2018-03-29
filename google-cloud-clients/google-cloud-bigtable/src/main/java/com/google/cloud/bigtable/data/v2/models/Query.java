@@ -22,7 +22,7 @@ import com.google.bigtable.v2.RowSet;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.internal.ShardUtil;
+import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSortedSet;
@@ -222,7 +222,7 @@ public final class Query implements Serializable {
   public List<Query> shard(SortedSet<ByteString> splitPoints) {
     Preconditions.checkState(builder.getRowsLimit() == 0, "Can't shard a query with a row limit");
 
-    List<RowSet> shardedRowSets = ShardUtil.shard(builder.getRows(), splitPoints);
+    List<RowSet> shardedRowSets = RowSetUtil.shard(builder.getRows(), splitPoints);
     List<Query> shards = Lists.newArrayListWithCapacity(shardedRowSets.size());
 
     for (RowSet rowSet : shardedRowSets) {
@@ -233,6 +233,11 @@ public final class Query implements Serializable {
     }
 
     return shards;
+  }
+
+  /** Get the minimal range that encloses all of the row keys and ranges in this Query. */
+  public ByteStringRange getBound() {
+    return RowSetUtil.getBound(builder.getRows());
   }
 
   /**

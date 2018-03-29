@@ -20,7 +20,7 @@ import com.google.api.gax.retrying.StreamResumptionStrategy;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsRequest.Builder;
 import com.google.bigtable.v2.RowSet;
-import com.google.cloud.bigtable.data.v2.internal.ShardUtil;
+import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
@@ -85,7 +85,7 @@ public class ReadRowsResumptionStrategy<RowT>
       return originalRequest;
     }
 
-    RowSet remaining = ShardUtil.getRemaining(originalRequest.getRows(), lastKey);
+    RowSet remaining = RowSetUtil.getRemaining(originalRequest.getRows(), lastKey);
 
     // Edge case: retrying a fulfilled request.
     // A fulfilled request is one that has had all of its row keys and ranges fulfilled, or if it

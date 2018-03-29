@@ -20,6 +20,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ComparisonChain;
@@ -40,11 +41,12 @@ import javax.annotation.Nullable;
  * applications.
  *
  * @see Query#shard(List)
+ * @see Query#getBound()
  * @see ReadRowsResumptionStrategy#getResumeRequest(ReadRowsRequest)
  */
 @InternalApi
-public final class ShardUtil {
-  private ShardUtil() {}
+public final class RowSetUtil {
+  private RowSetUtil() {}
 
   /**
    * Splits the provided {@link RowSet} on the provided split and returns the second segment. If the
@@ -202,6 +204,63 @@ public final class ShardUtil {
     return results;
   }
 
+  public static ByteStringRange getBound(RowSet rowSet) {
+    // Find min & max keys
+    ByteString minKey = null;
+    ByteString maxKey = null;
+
+    for (ByteString key : rowSet.getRowKeysList()) {
+      if (minKey == null || ByteStringComparator.INSTANCE.compare(minKey, key) > 0) {
+        minKey = key;
+      }
+      if (maxKey == null || ByteStringComparator.INSTANCE.compare(maxKey, key) < 0) {
+        maxKey = key;
+      }
+    }
+
+    // Convert min & max keys in start & end points for a range
+    StartPoint minStartPoint = null;
+    EndPoint maxEndPoint = null;
+    if (minKey != null) {
+      minStartPoint = new StartPoint(minKey, true);
+    }
+    if (maxKey != null) {
+      maxEndPoint = new EndPoint(maxKey, true);
+    }
+
+    // Expand the range using the RowSet ranges
+    for (RowRange rowRange : rowSet.getRowRangesList()) {
+      StartPoint currentStartPoint = StartPoint.extract(rowRange);
+      if (minStartPoint == null || minStartPoint.compareTo(currentStartPoint) > 0) {
+        minStartPoint = currentStartPoint;
+      }
+
+      EndPoint currentEndpoint = EndPoint.extract(rowRange);
+      if (maxEndPoint == null || maxEndPoint.compareTo(currentEndpoint) < 0) {
+        maxEndPoint = currentEndpoint;
+      }
+    }
+
+    // Build a range using the endpoints
+    ByteStringRange boundingRange = ByteStringRange.unbounded();
+    if (minStartPoint != null) {
+      if (minStartPoint.isClosed) {
+        boundingRange.startClosed(minStartPoint.value);
+      } else {
+        boundingRange.startOpen(minStartPoint.value);
+      }
+    }
+    if (maxEndPoint != null) {
+      if (maxEndPoint.isClosed) {
+        boundingRange.endClosed(maxEndPoint.value);
+      } else {
+        boundingRange.endOpen(maxEndPoint.value);
+      }
+    }
+
+    return boundingRange;
+  }
+
   private static final Comparator<RowRange> RANGE_START_COMPARATOR =
       new Comparator<RowRange>() {
         @Override
@@ -223,7 +282,8 @@ public final class ShardUtil {
         case START_KEY_CLOSED:
           return new StartPoint(rowRange.getStartKeyClosed(), true);
         case START_KEY_OPEN:
-          return new StartPoint(rowRange.getStartKeyOpen(), false);
+          // Take care to normalize an open empty start key to be closed.
+          return new StartPoint(rowRange.getStartKeyOpen(), rowRange.getStartKeyOpen().isEmpty());
         default:
           throw new IllegalArgumentException("Unknown startKeyCase: " + rowRange.getStartKeyCase());
       }
@@ -259,7 +319,8 @@ public final class ShardUtil {
         case END_KEY_CLOSED:
           return new EndPoint(rowRange.getEndKeyClosed(), true);
         case END_KEY_OPEN:
-          return new EndPoint(rowRange.getEndKeyOpen(), false);
+          // Take care to normalize an open empty end key to be closed.
+          return new EndPoint(rowRange.getEndKeyOpen(), rowRange.getEndKeyOpen().isEmpty());
         default:
           throw new IllegalArgumentException("Unknown endKeyCase: " + rowRange.getEndKeyCase());
       }

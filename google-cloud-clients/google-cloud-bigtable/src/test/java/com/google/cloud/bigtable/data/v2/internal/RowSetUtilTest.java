@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.common.collect.ImmutableSortedSet;
 import com.google.protobuf.ByteString;
 import java.util.List;
@@ -28,7 +29,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class ShardUtilTest {
+public class RowSetUtilTest {
   @Test
   public void splitEmptyTest() {
     RowSet rowSet = RowSet.newBuilder().build();
@@ -37,7 +38,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("a"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -64,7 +65,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("2-onSplit"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -90,7 +91,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("6-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -114,7 +115,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("5-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -140,7 +141,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("3-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -167,7 +168,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("5-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -195,7 +196,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("2-range-end"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -225,7 +226,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("3-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -252,7 +253,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("3-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -280,7 +281,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("5-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -310,7 +311,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("3-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -358,7 +359,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("o"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -432,7 +433,7 @@ public class ShardUtilTest {
             .add(ByteString.copyFromUtf8("5-split"))
             .build();
 
-    List<RowSet> actual = ShardUtil.split(rowSet, splitPoints, true);
+    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
 
     assertThat(actual)
         .containsExactly(
@@ -451,5 +452,122 @@ public class ShardUtilTest {
                         .setEndKeyOpen(ByteString.copyFromUtf8("9-range-1-end")))
                 .build())
         .inOrder();
+  }
+
+  @Test
+  public void emptyBoundTest() {
+    RowSet rowSet = RowSet.getDefaultInstance();
+
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded());
+  }
+
+  @Test
+  public void singleKeyBoundTest() {
+    RowSet rowSet = RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("a")).build();
+
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded().startClosed("a").endClosed("a"));
+  }
+
+  @Test
+  public void multiKeyBoundTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("a"))
+            .addRowKeys(ByteString.copyFromUtf8("d"))
+            .build();
+
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded().startClosed("a").endClosed("d"));
+  }
+
+  @Test
+  public void singleRange1BoundTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("a"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("b")))
+            .build();
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded().startClosed("a").endClosed("b"));
+  }
+
+  @Test
+  public void singleRange2BoundTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("a"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("b")))
+            .build();
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded().startClosed("a").endOpen("b"));
+  }
+
+  @Test
+  public void singleRange3BoundTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("a"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("b")))
+            .build();
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded().startOpen("a").endOpen("b"));
+  }
+
+  @Test
+  public void singleRange4BoundTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("a"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("b")))
+            .build();
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded().startOpen("a").endClosed("b"));
+  }
+
+  @Test
+  public void singleRangeUnbounded1BoundTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setStartKeyClosed(ByteString.copyFromUtf8("a")))
+            .build();
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded().startClosed("a"));
+  }
+
+  @Test
+  public void singleRangeUnbounded2BoundTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("z")))
+            .build();
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.unbounded().endClosed("z"));
+  }
+
+  @Test
+  public void multipleRangeBoundTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("a"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("m")))
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("q"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("z")))
+            .build();
+    ByteStringRange actual = RowSetUtil.getBound(rowSet);
+    assertThat(actual).isEqualTo(ByteStringRange.create("a", "z"));
   }
 }
