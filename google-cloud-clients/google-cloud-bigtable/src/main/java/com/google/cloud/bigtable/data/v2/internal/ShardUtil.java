@@ -240,7 +240,7 @@ public final class ShardUtil {
           // Empty string comes first
           .compareTrueFirst(value.isEmpty(), o.value.isEmpty())
           .compare(value, o.value, ByteStringComparator.INSTANCE)
-          // Closed start comes after open
+          // Closed start point comes before an open start point: [x,y] starts before (x,y].
           .compareTrueFirst(isClosed, o.isClosed)
           .result();
     }
@@ -276,7 +276,7 @@ public final class ShardUtil {
           // Empty string comes last
           .compareFalseFirst(value.isEmpty(), o.value.isEmpty())
           .compare(value, o.value, ByteStringComparator.INSTANCE)
-          // A closed end comes before an open end
+          // Open end point comes before a closed end point: [x,y) ends before [x,y].
           .compareFalseFirst(isClosed, o.isClosed)
           .result();
     }
