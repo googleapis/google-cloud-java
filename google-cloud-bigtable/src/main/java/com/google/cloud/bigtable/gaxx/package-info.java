@@ -13,11 +13,5 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- * General purpose utilities that might be moved to gax at some point in the future.
- *
- * <p>TransportProviderWrapper: Enables the use of crosscutting hacks like
- * ResourcePrefixInterceptor. It wraps a GRPC channel provider and decorates the provided channels
- * with interceptors.
- */
+/** General purpose utilities that might be moved to gax at some point in the future. */
 package com.google.cloud.bigtable.gaxx;
