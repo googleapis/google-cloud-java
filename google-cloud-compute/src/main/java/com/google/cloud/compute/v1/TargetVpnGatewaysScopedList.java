@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private TargetVpnGatewaysScopedList(
-      List<TargetVpnGateway> targetVpnGateways,
-      Warning warning
-      ) {
+  private TargetVpnGatewaysScopedList(List<TargetVpnGateway> targetVpnGateways, Warning warning) {
     this.targetVpnGateways = targetVpnGateways;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetVpnGatewaysScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetVpnGatewaysScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetVpnGatewaysScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetVpnGatewaysScopedList();
   }
@@ -158,13 +155,9 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
       return this;
     }
 
-
     public TargetVpnGatewaysScopedList build() {
 
-      return new TargetVpnGatewaysScopedList(
-        targetVpnGateways,
-        warning
-      );
+      return new TargetVpnGatewaysScopedList(targetVpnGateways, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "TargetVpnGatewaysScopedList{"
-        + "targetVpnGateways=" + targetVpnGateways + ", "
-        + "warning=" + warning
+        + "targetVpnGateways="
+        + targetVpnGateways
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
     }
     if (o instanceof TargetVpnGatewaysScopedList) {
       TargetVpnGatewaysScopedList that = (TargetVpnGatewaysScopedList) o;
-      return
-          Objects.equals(this.targetVpnGateways, that.getTargetVpnGatewaysList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.targetVpnGateways, that.getTargetVpnGatewaysList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      targetVpnGateways,
-      warning
-    );
+    return Objects.hash(targetVpnGateways, warning);
   }
 }

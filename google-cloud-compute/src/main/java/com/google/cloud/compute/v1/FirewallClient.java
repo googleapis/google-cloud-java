@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.FirewallStub;
 import com.google.cloud.compute.v1.stub.FirewallStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -58,34 +48,33 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the firewallClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the firewallClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of FirewallSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of FirewallSettings to create().
+ * For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,19 +104,14 @@ public class FirewallClient implements BackgroundResource {
   private final FirewallSettings settings;
   private final FirewallStub stub;
 
-
-
-  /**
-   * Constructs an instance of FirewallClient with default settings.
-   */
+  /** Constructs an instance of FirewallClient with default settings. */
   public static final FirewallClient create() throws IOException {
     return create(FirewallSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of FirewallClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of FirewallClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final FirewallClient create(FirewallSettings settings) throws IOException {
     return new FirewallClient(settings);
@@ -143,9 +127,8 @@ public class FirewallClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of FirewallClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of FirewallClient, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected FirewallClient(FirewallSettings settings) throws IOException {
     this.settings = settings;
@@ -167,12 +150,12 @@ public class FirewallClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified firewall.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -188,8 +171,8 @@ public class FirewallClient implements BackgroundResource {
 
     DeleteFirewallHttpRequest request =
         DeleteFirewallHttpRequest.newBuilder()
-        .setFirewall(firewall == null ? null : firewall.toString())
-        .build();
+            .setFirewall(firewall == null ? null : firewall.toString())
+            .build();
     return deleteFirewall(request);
   }
 
@@ -197,7 +180,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Deletes the specified firewall.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -212,9 +196,7 @@ public class FirewallClient implements BackgroundResource {
   public final Operation deleteFirewall(String firewall) {
 
     DeleteFirewallHttpRequest request =
-        DeleteFirewallHttpRequest.newBuilder()
-        .setFirewall(firewall)
-        .build();
+        DeleteFirewallHttpRequest.newBuilder().setFirewall(firewall).build();
     return deleteFirewall(request);
   }
 
@@ -222,7 +204,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Deletes the specified firewall.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -245,7 +228,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Deletes the specified firewall.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -267,7 +251,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Returns the specified firewall.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -283,8 +268,8 @@ public class FirewallClient implements BackgroundResource {
 
     GetFirewallHttpRequest request =
         GetFirewallHttpRequest.newBuilder()
-        .setFirewall(firewall == null ? null : firewall.toString())
-        .build();
+            .setFirewall(firewall == null ? null : firewall.toString())
+            .build();
     return getFirewall(request);
   }
 
@@ -292,7 +277,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Returns the specified firewall.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -307,9 +293,7 @@ public class FirewallClient implements BackgroundResource {
   public final Firewall getFirewall(String firewall) {
 
     GetFirewallHttpRequest request =
-        GetFirewallHttpRequest.newBuilder()
-        .setFirewall(firewall)
-        .build();
+        GetFirewallHttpRequest.newBuilder().setFirewall(firewall).build();
     return getFirewall(request);
   }
 
@@ -317,7 +301,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Returns the specified firewall.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -340,7 +325,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Returns the specified firewall.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -362,7 +348,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Creates a firewall rule in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -380,9 +367,9 @@ public class FirewallClient implements BackgroundResource {
 
     InsertFirewallHttpRequest request =
         InsertFirewallHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .setFirewallResource(firewallResource)
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .setFirewallResource(firewallResource)
+            .build();
     return insertFirewall(request);
   }
 
@@ -390,7 +377,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Creates a firewall rule in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -408,9 +396,9 @@ public class FirewallClient implements BackgroundResource {
 
     InsertFirewallHttpRequest request =
         InsertFirewallHttpRequest.newBuilder()
-        .setProject(project)
-        .setFirewallResource(firewallResource)
-        .build();
+            .setProject(project)
+            .setFirewallResource(firewallResource)
+            .build();
     return insertFirewall(request);
   }
 
@@ -418,7 +406,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Creates a firewall rule in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -443,7 +432,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Creates a firewall rule in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -467,7 +457,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -484,8 +475,8 @@ public class FirewallClient implements BackgroundResource {
   public final ListFirewallsPagedResponse listFirewalls(ProjectName project) {
     ListFirewallsHttpRequest request =
         ListFirewallsHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listFirewalls(request);
   }
 
@@ -493,7 +484,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -509,9 +501,7 @@ public class FirewallClient implements BackgroundResource {
   @BetaApi
   public final ListFirewallsPagedResponse listFirewalls(String project) {
     ListFirewallsHttpRequest request =
-        ListFirewallsHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListFirewallsHttpRequest.newBuilder().setProject(project).build();
     return listFirewalls(request);
   }
 
@@ -519,7 +509,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -537,15 +528,15 @@ public class FirewallClient implements BackgroundResource {
    */
   @BetaApi
   public final ListFirewallsPagedResponse listFirewalls(ListFirewallsHttpRequest request) {
-    return listFirewallsPagedCallable()
-        .call(request);
+    return listFirewallsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -561,7 +552,8 @@ public class FirewallClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListFirewallsHttpRequest, ListFirewallsPagedResponse> listFirewallsPagedCallable() {
+  public final UnaryCallable<ListFirewallsHttpRequest, ListFirewallsPagedResponse>
+      listFirewallsPagedCallable() {
     return stub.listFirewallsPagedCallable();
   }
 
@@ -569,7 +561,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Retrieves the list of firewall rules available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -598,9 +591,11 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified firewall rule with the data included in the request. This method supports patch semantics.
+   * Updates the specified firewall rule with the data included in the request. This method supports
+   * patch semantics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -618,17 +613,19 @@ public class FirewallClient implements BackgroundResource {
 
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
-        .setFirewall(firewall == null ? null : firewall.toString())
-        .setFirewallResource(firewallResource)
-        .build();
+            .setFirewall(firewall == null ? null : firewall.toString())
+            .setFirewallResource(firewallResource)
+            .build();
     return patchFirewall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified firewall rule with the data included in the request. This method supports patch semantics.
+   * Updates the specified firewall rule with the data included in the request. This method supports
+   * patch semantics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -646,17 +643,19 @@ public class FirewallClient implements BackgroundResource {
 
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
-        .setFirewall(firewall)
-        .setFirewallResource(firewallResource)
-        .build();
+            .setFirewall(firewall)
+            .setFirewallResource(firewallResource)
+            .build();
     return patchFirewall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified firewall rule with the data included in the request. This method supports patch semantics.
+   * Updates the specified firewall rule with the data included in the request. This method supports
+   * patch semantics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -679,9 +678,11 @@ public class FirewallClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified firewall rule with the data included in the request. This method supports patch semantics.
+   * Updates the specified firewall rule with the data included in the request. This method supports
+   * patch semantics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -705,7 +706,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Updates the specified firewall rule with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -723,9 +725,9 @@ public class FirewallClient implements BackgroundResource {
 
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
-        .setFirewall(firewall == null ? null : firewall.toString())
-        .setFirewallResource(firewallResource)
-        .build();
+            .setFirewall(firewall == null ? null : firewall.toString())
+            .setFirewallResource(firewallResource)
+            .build();
     return updateFirewall(request);
   }
 
@@ -733,7 +735,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Updates the specified firewall rule with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -751,9 +754,9 @@ public class FirewallClient implements BackgroundResource {
 
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
-        .setFirewall(firewall)
-        .setFirewallResource(firewallResource)
-        .build();
+            .setFirewall(firewall)
+            .setFirewallResource(firewallResource)
+            .build();
     return updateFirewall(request);
   }
 
@@ -761,7 +764,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Updates the specified firewall rule with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -786,7 +790,8 @@ public class FirewallClient implements BackgroundResource {
   /**
    * Updates the specified firewall rule with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
    *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
@@ -836,12 +841,13 @@ public class FirewallClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListFirewallsPagedResponse extends AbstractPagedListResponse<
-      ListFirewallsHttpRequest,
-      FirewallList,
-      Firewall,
-      ListFirewallsPage,
-      ListFirewallsFixedSizeCollection> {
+  public static class ListFirewallsPagedResponse
+      extends AbstractPagedListResponse<
+          ListFirewallsHttpRequest,
+          FirewallList,
+          Firewall,
+          ListFirewallsPage,
+          ListFirewallsFixedSizeCollection> {
 
     public static ApiFuture<ListFirewallsPagedResponse> createAsync(
         PageContext<ListFirewallsHttpRequest, FirewallList, Firewall> context,
@@ -861,15 +867,10 @@ public class FirewallClient implements BackgroundResource {
     private ListFirewallsPagedResponse(ListFirewallsPage page) {
       super(page, ListFirewallsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListFirewallsPage extends AbstractPage<
-      ListFirewallsHttpRequest,
-      FirewallList,
-      Firewall,
-      ListFirewallsPage> {
+  public static class ListFirewallsPage
+      extends AbstractPage<ListFirewallsHttpRequest, FirewallList, Firewall, ListFirewallsPage> {
 
     private ListFirewallsPage(
         PageContext<ListFirewallsHttpRequest, FirewallList, Firewall> context,
@@ -894,18 +895,15 @@ public class FirewallClient implements BackgroundResource {
         ApiFuture<FirewallList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListFirewallsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListFirewallsHttpRequest,
-      FirewallList,
-      Firewall,
-      ListFirewallsPage,
-      ListFirewallsFixedSizeCollection> {
+  public static class ListFirewallsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListFirewallsHttpRequest,
+          FirewallList,
+          Firewall,
+          ListFirewallsPage,
+          ListFirewallsFixedSizeCollection> {
 
     private ListFirewallsFixedSizeCollection(List<ListFirewallsPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -920,7 +918,5 @@ public class FirewallClient implements BackgroundResource {
         List<ListFirewallsPage> pages, int collectionSize) {
       return new ListFirewallsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

@@ -21,13 +21,8 @@ import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
@@ -36,7 +31,7 @@ public final class SslCertificateName implements ResourceName {
   private final String project;
   private final String sslCertificate;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/sslCertificates/{sslCertificate}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/sslCertificates/{sslCertificate}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -53,25 +48,12 @@ public final class SslCertificateName implements ResourceName {
     sslCertificate = Preconditions.checkNotNull(builder.getSslCertificate());
   }
 
-  public static SslCertificateName of(
-      String project,
-      String sslCertificate
-      ) {
-    return newBuilder()
-    .setProject(project)
-    .setSslCertificate(sslCertificate)
-      .build();
+  public static SslCertificateName of(String project, String sslCertificate) {
+    return newBuilder().setProject(project).setSslCertificate(sslCertificate).build();
   }
 
-  public static String format(
-      String project,
-      String sslCertificate
-      ) {
-    return of(
-        project,
-        sslCertificate
-        )
-        .toString();
+  public static String format(String project, String sslCertificate) {
+    return of(project, sslCertificate).toString();
   }
 
   public String getProject() {
@@ -81,7 +63,6 @@ public final class SslCertificateName implements ResourceName {
   public String getSslCertificate() {
     return sslCertificate;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -102,20 +83,19 @@ public final class SslCertificateName implements ResourceName {
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<SslCertificateName> newFactory() {
     return new ResourceNameFactory<SslCertificateName>() {
-      public SslCertificateName parse(String formattedString) {return SslCertificateName.parse(formattedString);}
+      public SslCertificateName parse(String formattedString) {
+        return SslCertificateName.parse(formattedString);
+      }
     };
   }
 
   public static SslCertificateName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "SslCertificateName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("project"),
-      matchMap.get("sslCertificate")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "SslCertificateName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("sslCertificate"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -129,6 +109,7 @@ public final class SslCertificateName implements ResourceName {
     public String getProject() {
       return project;
     }
+
     public String getSslCertificate() {
       return sslCertificate;
     }
@@ -137,6 +118,7 @@ public final class SslCertificateName implements ResourceName {
       this.project = project;
       return this;
     }
+
     public Builder setSslCertificate(String sslCertificate) {
       this.sslCertificate = sslCertificate;
       return this;
@@ -144,7 +126,7 @@ public final class SslCertificateName implements ResourceName {
 
     private Builder() {}
 
-    public Builder (SslCertificateName sslCertificateName) {
+    public Builder(SslCertificateName sslCertificateName) {
       project = sslCertificateName.project;
       sslCertificate = sslCertificateName.sslCertificate;
     }
@@ -158,8 +140,7 @@ public final class SslCertificateName implements ResourceName {
   public String toString() {
     return PATH_TEMPLATE.instantiate(
         "project", project,
-        "sslCertificate", sslCertificate
-        );
+        "sslCertificate", sslCertificate);
   }
 
   @Override
@@ -169,19 +150,14 @@ public final class SslCertificateName implements ResourceName {
     }
     if (o instanceof SslCertificateName) {
       SslCertificateName that = (SslCertificateName) o;
-      return
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.sslCertificate, that.getSslCertificate())
-          ;
+      return Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.sslCertificate, that.getSslCertificate());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      project,
-      sslCertificate
-    );
+    return Objects.hash(project, sslCertificate);
   }
 }

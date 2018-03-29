@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.RegionInstanceGroupManagerStub;
 import com.google.cloud.compute.v1.stub.RegionInstanceGroupManagerStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -59,34 +49,34 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the regionInstanceGroupManagerClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the regionInstanceGroupManagerClient object to clean up
+ * resources such as threads. In the example above, try-with-resources is used, which automatically
+ * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of RegionInstanceGroupManagerSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of
+ * RegionInstanceGroupManagerSettings to create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,27 +106,24 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   private final RegionInstanceGroupManagerSettings settings;
   private final RegionInstanceGroupManagerStub stub;
 
-
-
-  /**
-   * Constructs an instance of RegionInstanceGroupManagerClient with default settings.
-   */
+  /** Constructs an instance of RegionInstanceGroupManagerClient with default settings. */
   public static final RegionInstanceGroupManagerClient create() throws IOException {
     return create(RegionInstanceGroupManagerSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of RegionInstanceGroupManagerClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of RegionInstanceGroupManagerClient, using the given settings. The
+   * channels are created based on the settings passed in, or defaults for any settings that are not
+   * set.
    */
-  public static final RegionInstanceGroupManagerClient create(RegionInstanceGroupManagerSettings settings) throws IOException {
+  public static final RegionInstanceGroupManagerClient create(
+      RegionInstanceGroupManagerSettings settings) throws IOException {
     return new RegionInstanceGroupManagerClient(settings);
   }
 
   /**
-   * Constructs an instance of RegionInstanceGroupManagerClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use RegionInstanceGroupManagerSettings}.
+   * Constructs an instance of RegionInstanceGroupManagerClient, using the given stub for making
+   * calls. This is for advanced usage - prefer to use RegionInstanceGroupManagerSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionInstanceGroupManagerClient create(RegionInstanceGroupManagerStub stub) {
@@ -144,11 +131,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of RegionInstanceGroupManagerClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of RegionInstanceGroupManagerClient, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected RegionInstanceGroupManagerClient(RegionInstanceGroupManagerSettings settings) throws IOException {
+  protected RegionInstanceGroupManagerClient(RegionInstanceGroupManagerSettings settings)
+      throws IOException {
     this.settings = settings;
     this.stub = ((RegionInstanceGroupManagerStubSettings) settings.getStubSettings()).createStub();
   }
@@ -168,12 +156,18 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method.
+   * Schedules a group action to remove the specified instances from the managed instance group.
+   * Abandoning an instance does not delete the instance, but it does remove the instance from any
+   * target pools that are applied by the managed instance group. This method reduces the targetSize
+   * of the managed instance group by the number of instances that you abandon. This operation is
+   * marked as DONE when the action is scheduled even if the instances have not yet been removed
+   * from the group. You must separately verify the status of the abandoning action with the
+   * listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -187,21 +181,33 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation abandonInstancesRegionInstanceGroupManager(ProjectRegionInstanceGroupManagerName instanceGroupManager, RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource) {
+  public final Operation abandonInstancesRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagersAbandonInstancesRequest
+          regionInstanceGroupManagersAbandonInstancesRequestResource) {
 
     AbandonInstancesRegionInstanceGroupManagerHttpRequest request =
         AbandonInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .setRegionInstanceGroupManagersAbandonInstancesRequestResource(regionInstanceGroupManagersAbandonInstancesRequestResource)
-        .build();
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagersAbandonInstancesRequestResource(
+                regionInstanceGroupManagersAbandonInstancesRequestResource)
+            .build();
     return abandonInstancesRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method.
+   * Schedules a group action to remove the specified instances from the managed instance group.
+   * Abandoning an instance does not delete the instance, but it does remove the instance from any
+   * target pools that are applied by the managed instance group. This method reduces the targetSize
+   * of the managed instance group by the number of instances that you abandon. This operation is
+   * marked as DONE when the action is scheduled even if the instances have not yet been removed
+   * from the group. You must separately verify the status of the abandoning action with the
+   * listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -215,21 +221,32 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation abandonInstancesRegionInstanceGroupManager(String instanceGroupManager, RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource) {
+  public final Operation abandonInstancesRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagersAbandonInstancesRequest
+          regionInstanceGroupManagersAbandonInstancesRequestResource) {
 
     AbandonInstancesRegionInstanceGroupManagerHttpRequest request =
         AbandonInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager)
-        .setRegionInstanceGroupManagersAbandonInstancesRequestResource(regionInstanceGroupManagersAbandonInstancesRequestResource)
-        .build();
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagersAbandonInstancesRequestResource(
+                regionInstanceGroupManagersAbandonInstancesRequestResource)
+            .build();
     return abandonInstancesRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method.
+   * Schedules a group action to remove the specified instances from the managed instance group.
+   * Abandoning an instance does not delete the instance, but it does remove the instance from any
+   * target pools that are applied by the managed instance group. This method reduces the targetSize
+   * of the managed instance group by the number of instances that you abandon. This operation is
+   * marked as DONE when the action is scheduled even if the instances have not yet been removed
+   * from the group. You must separately verify the status of the abandoning action with the
+   * listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -246,15 +263,23 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation abandonInstancesRegionInstanceGroupManager(AbandonInstancesRegionInstanceGroupManagerHttpRequest request) {
+  public final Operation abandonInstancesRegionInstanceGroupManager(
+      AbandonInstancesRegionInstanceGroupManagerHttpRequest request) {
     return abandonInstancesRegionInstanceGroupManagerCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group. Abandoning an instance does not delete the instance, but it does remove the instance from any target pools that are applied by the managed instance group. This method reduces the targetSize of the managed instance group by the number of instances that you abandon. This operation is marked as DONE when the action is scheduled even if the instances have not yet been removed from the group. You must separately verify the status of the abandoning action with the listmanagedinstances method.
+   * Schedules a group action to remove the specified instances from the managed instance group.
+   * Abandoning an instance does not delete the instance, but it does remove the instance from any
+   * target pools that are applied by the managed instance group. This method reduces the targetSize
+   * of the managed instance group by the number of instances that you abandon. This operation is
+   * marked as DONE when the action is scheduled even if the instances have not yet been removed
+   * from the group. You must separately verify the status of the abandoning action with the
+   * listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -270,7 +295,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation> abandonInstancesRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      abandonInstancesRegionInstanceGroupManagerCallable() {
     return stub.abandonInstancesRegionInstanceGroupManagerCallable();
   }
 
@@ -278,7 +304,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Deletes the specified managed instance group and all of the instances in that group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -290,12 +317,14 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRegionInstanceGroupManager(ProjectRegionInstanceGroupManagerName instanceGroupManager) {
+  public final Operation deleteRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager) {
 
     DeleteRegionInstanceGroupManagerHttpRequest request =
         DeleteRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .build();
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .build();
     return deleteRegionInstanceGroupManager(request);
   }
 
@@ -303,7 +332,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Deletes the specified managed instance group and all of the instances in that group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -319,8 +349,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
     DeleteRegionInstanceGroupManagerHttpRequest request =
         DeleteRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager)
-        .build();
+            .setInstanceGroupManager(instanceGroupManager)
+            .build();
     return deleteRegionInstanceGroupManager(request);
   }
 
@@ -328,7 +358,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Deletes the specified managed instance group and all of the instances in that group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -343,7 +374,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRegionInstanceGroupManager(DeleteRegionInstanceGroupManagerHttpRequest request) {
+  public final Operation deleteRegionInstanceGroupManager(
+      DeleteRegionInstanceGroupManagerHttpRequest request) {
     return deleteRegionInstanceGroupManagerCallable().call(request);
   }
 
@@ -351,7 +383,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Deletes the specified managed instance group and all of the instances in that group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -365,15 +398,22 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteRegionInstanceGroupManagerHttpRequest, Operation> deleteRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
+      deleteRegionInstanceGroupManagerCallable() {
     return stub.deleteRegionInstanceGroupManagerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The instances are also removed from any target pools of which they were a member. This method reduces the targetSize of the managed instance group by the number of instances that you delete. This operation is marked as DONE when the action is scheduled even if the instances are still being deleted. You must separately verify the status of the deleting action with the listmanagedinstances method.
+   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * instances are also removed from any target pools of which they were a member. This method
+   * reduces the targetSize of the managed instance group by the number of instances that you
+   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
+   * still being deleted. You must separately verify the status of the deleting action with the
+   * listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -387,21 +427,32 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstancesRegionInstanceGroupManager(ProjectRegionInstanceGroupManagerName instanceGroupManager, RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource) {
+  public final Operation deleteInstancesRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagersDeleteInstancesRequest
+          regionInstanceGroupManagersDeleteInstancesRequestResource) {
 
     DeleteInstancesRegionInstanceGroupManagerHttpRequest request =
         DeleteInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .setRegionInstanceGroupManagersDeleteInstancesRequestResource(regionInstanceGroupManagersDeleteInstancesRequestResource)
-        .build();
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
+                regionInstanceGroupManagersDeleteInstancesRequestResource)
+            .build();
     return deleteInstancesRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The instances are also removed from any target pools of which they were a member. This method reduces the targetSize of the managed instance group by the number of instances that you delete. This operation is marked as DONE when the action is scheduled even if the instances are still being deleted. You must separately verify the status of the deleting action with the listmanagedinstances method.
+   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * instances are also removed from any target pools of which they were a member. This method
+   * reduces the targetSize of the managed instance group by the number of instances that you
+   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
+   * still being deleted. You must separately verify the status of the deleting action with the
+   * listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -415,21 +466,31 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstancesRegionInstanceGroupManager(String instanceGroupManager, RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource) {
+  public final Operation deleteInstancesRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagersDeleteInstancesRequest
+          regionInstanceGroupManagersDeleteInstancesRequestResource) {
 
     DeleteInstancesRegionInstanceGroupManagerHttpRequest request =
         DeleteInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager)
-        .setRegionInstanceGroupManagersDeleteInstancesRequestResource(regionInstanceGroupManagersDeleteInstancesRequestResource)
-        .build();
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
+                regionInstanceGroupManagersDeleteInstancesRequestResource)
+            .build();
     return deleteInstancesRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The instances are also removed from any target pools of which they were a member. This method reduces the targetSize of the managed instance group by the number of instances that you delete. This operation is marked as DONE when the action is scheduled even if the instances are still being deleted. You must separately verify the status of the deleting action with the listmanagedinstances method.
+   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * instances are also removed from any target pools of which they were a member. This method
+   * reduces the targetSize of the managed instance group by the number of instances that you
+   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
+   * still being deleted. You must separately verify the status of the deleting action with the
+   * listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -446,15 +507,22 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstancesRegionInstanceGroupManager(DeleteInstancesRegionInstanceGroupManagerHttpRequest request) {
+  public final Operation deleteInstancesRegionInstanceGroupManager(
+      DeleteInstancesRegionInstanceGroupManagerHttpRequest request) {
     return deleteInstancesRegionInstanceGroupManagerCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The instances are also removed from any target pools of which they were a member. This method reduces the targetSize of the managed instance group by the number of instances that you delete. This operation is marked as DONE when the action is scheduled even if the instances are still being deleted. You must separately verify the status of the deleting action with the listmanagedinstances method.
+   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * instances are also removed from any target pools of which they were a member. This method
+   * reduces the targetSize of the managed instance group by the number of instances that you
+   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
+   * still being deleted. You must separately verify the status of the deleting action with the
+   * listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -470,7 +538,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteInstancesRegionInstanceGroupManagerHttpRequest, Operation> deleteInstancesRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<DeleteInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      deleteInstancesRegionInstanceGroupManagerCallable() {
     return stub.deleteInstancesRegionInstanceGroupManagerCallable();
   }
 
@@ -478,7 +547,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Returns all of the details about the specified managed instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -490,12 +560,14 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final InstanceGroupManager getRegionInstanceGroupManager(ProjectRegionInstanceGroupManagerName instanceGroupManager) {
+  public final InstanceGroupManager getRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager) {
 
     GetRegionInstanceGroupManagerHttpRequest request =
         GetRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .build();
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .build();
     return getRegionInstanceGroupManager(request);
   }
 
@@ -503,7 +575,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Returns all of the details about the specified managed instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -519,8 +592,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
     GetRegionInstanceGroupManagerHttpRequest request =
         GetRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager)
-        .build();
+            .setInstanceGroupManager(instanceGroupManager)
+            .build();
     return getRegionInstanceGroupManager(request);
   }
 
@@ -528,7 +601,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Returns all of the details about the specified managed instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -543,7 +617,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final InstanceGroupManager getRegionInstanceGroupManager(GetRegionInstanceGroupManagerHttpRequest request) {
+  public final InstanceGroupManager getRegionInstanceGroupManager(
+      GetRegionInstanceGroupManagerHttpRequest request) {
     return getRegionInstanceGroupManagerCallable().call(request);
   }
 
@@ -551,7 +626,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Returns all of the details about the specified managed instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -565,15 +641,21 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetRegionInstanceGroupManagerHttpRequest, InstanceGroupManager> getRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<GetRegionInstanceGroupManagerHttpRequest, InstanceGroupManager>
+      getRegionInstanceGroupManagerCallable() {
     return stub.getRegionInstanceGroupManagerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a managed instance group using the information that you specify in the request. After the group is created, it schedules an action to create instances in the group using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method.
+   * Creates a managed instance group using the information that you specify in the request. After
+   * the group is created, it schedules an action to create instances in the group using the
+   * specified instance template. This operation is marked as DONE when the group is created even if
+   * the instances in the group have not yet been created. You must separately verify the status of
+   * the individual instances with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -587,21 +669,27 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionInstanceGroupManager(RegionName region, InstanceGroupManager instanceGroupManagerResource) {
+  public final Operation insertRegionInstanceGroupManager(
+      RegionName region, InstanceGroupManager instanceGroupManagerResource) {
 
     InsertRegionInstanceGroupManagerHttpRequest request =
         InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .setInstanceGroupManagerResource(instanceGroupManagerResource)
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .setInstanceGroupManagerResource(instanceGroupManagerResource)
+            .build();
     return insertRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a managed instance group using the information that you specify in the request. After the group is created, it schedules an action to create instances in the group using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method.
+   * Creates a managed instance group using the information that you specify in the request. After
+   * the group is created, it schedules an action to create instances in the group using the
+   * specified instance template. This operation is marked as DONE when the group is created even if
+   * the instances in the group have not yet been created. You must separately verify the status of
+   * the individual instances with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -615,21 +703,27 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionInstanceGroupManager(String region, InstanceGroupManager instanceGroupManagerResource) {
+  public final Operation insertRegionInstanceGroupManager(
+      String region, InstanceGroupManager instanceGroupManagerResource) {
 
     InsertRegionInstanceGroupManagerHttpRequest request =
         InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setRegion(region)
-        .setInstanceGroupManagerResource(instanceGroupManagerResource)
-        .build();
+            .setRegion(region)
+            .setInstanceGroupManagerResource(instanceGroupManagerResource)
+            .build();
     return insertRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a managed instance group using the information that you specify in the request. After the group is created, it schedules an action to create instances in the group using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method.
+   * Creates a managed instance group using the information that you specify in the request. After
+   * the group is created, it schedules an action to create instances in the group using the
+   * specified instance template. This operation is marked as DONE when the group is created even if
+   * the instances in the group have not yet been created. You must separately verify the status of
+   * the individual instances with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -646,15 +740,21 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionInstanceGroupManager(InsertRegionInstanceGroupManagerHttpRequest request) {
+  public final Operation insertRegionInstanceGroupManager(
+      InsertRegionInstanceGroupManagerHttpRequest request) {
     return insertRegionInstanceGroupManagerCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a managed instance group using the information that you specify in the request. After the group is created, it schedules an action to create instances in the group using the specified instance template. This operation is marked as DONE when the group is created even if the instances in the group have not yet been created. You must separately verify the status of the individual instances with the listmanagedinstances method.
+   * Creates a managed instance group using the information that you specify in the request. After
+   * the group is created, it schedules an action to create instances in the group using the
+   * specified instance template. This operation is marked as DONE when the group is created even if
+   * the instances in the group have not yet been created. You must separately verify the status of
+   * the individual instances with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -670,7 +770,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertRegionInstanceGroupManagerHttpRequest, Operation> insertRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<InsertRegionInstanceGroupManagerHttpRequest, Operation>
+      insertRegionInstanceGroupManagerCallable() {
     return stub.insertRegionInstanceGroupManagerCallable();
   }
 
@@ -678,7 +779,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -692,11 +794,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionInstanceGroupManagersPagedResponse listRegionInstanceGroupManagers(RegionName region) {
+  public final ListRegionInstanceGroupManagersPagedResponse listRegionInstanceGroupManagers(
+      RegionName region) {
     ListRegionInstanceGroupManagersHttpRequest request =
         ListRegionInstanceGroupManagersHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .build();
     return listRegionInstanceGroupManagers(request);
   }
 
@@ -704,7 +807,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -718,11 +822,10 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionInstanceGroupManagersPagedResponse listRegionInstanceGroupManagers(String region) {
+  public final ListRegionInstanceGroupManagersPagedResponse listRegionInstanceGroupManagers(
+      String region) {
     ListRegionInstanceGroupManagersHttpRequest request =
-        ListRegionInstanceGroupManagersHttpRequest.newBuilder()
-        .setRegion(region)
-        .build();
+        ListRegionInstanceGroupManagersHttpRequest.newBuilder().setRegion(region).build();
     return listRegionInstanceGroupManagers(request);
   }
 
@@ -730,7 +833,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -747,16 +851,17 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionInstanceGroupManagersPagedResponse listRegionInstanceGroupManagers(ListRegionInstanceGroupManagersHttpRequest request) {
-    return listRegionInstanceGroupManagersPagedCallable()
-        .call(request);
+  public final ListRegionInstanceGroupManagersPagedResponse listRegionInstanceGroupManagers(
+      ListRegionInstanceGroupManagersHttpRequest request) {
+    return listRegionInstanceGroupManagersPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -772,7 +877,9 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListRegionInstanceGroupManagersHttpRequest, ListRegionInstanceGroupManagersPagedResponse> listRegionInstanceGroupManagersPagedCallable() {
+  public final UnaryCallable<
+          ListRegionInstanceGroupManagersHttpRequest, ListRegionInstanceGroupManagersPagedResponse>
+      listRegionInstanceGroupManagersPagedCallable() {
     return stub.listRegionInstanceGroupManagersPagedCallable();
   }
 
@@ -780,7 +887,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Retrieves the list of managed instance groups that are contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -803,15 +911,19 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList> listRegionInstanceGroupManagersCallable() {
+  public final UnaryCallable<
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList>
+      listRegionInstanceGroupManagersCallable() {
     return stub.listRegionInstanceGroupManagersCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances.
+   * Lists the instances in the managed instance group and instances that are scheduled to be
+   * created. The list includes any current actions that the group has scheduled for its instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -823,20 +935,25 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RegionInstanceGroupManagersListInstancesResponse listManagedInstancesRegionInstanceGroupManagers(ProjectRegionInstanceGroupManagerName instanceGroupManager) {
+  public final RegionInstanceGroupManagersListInstancesResponse
+      listManagedInstancesRegionInstanceGroupManagers(
+          ProjectRegionInstanceGroupManagerName instanceGroupManager) {
 
     ListManagedInstancesRegionInstanceGroupManagersHttpRequest request =
         ListManagedInstancesRegionInstanceGroupManagersHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .build();
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .build();
     return listManagedInstancesRegionInstanceGroupManagers(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances.
+   * Lists the instances in the managed instance group and instances that are scheduled to be
+   * created. The list includes any current actions that the group has scheduled for its instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -848,20 +965,23 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RegionInstanceGroupManagersListInstancesResponse listManagedInstancesRegionInstanceGroupManagers(String instanceGroupManager) {
+  public final RegionInstanceGroupManagersListInstancesResponse
+      listManagedInstancesRegionInstanceGroupManagers(String instanceGroupManager) {
 
     ListManagedInstancesRegionInstanceGroupManagersHttpRequest request =
         ListManagedInstancesRegionInstanceGroupManagersHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager)
-        .build();
+            .setInstanceGroupManager(instanceGroupManager)
+            .build();
     return listManagedInstancesRegionInstanceGroupManagers(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances.
+   * Lists the instances in the managed instance group and instances that are scheduled to be
+   * created. The list includes any current actions that the group has scheduled for its instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -876,15 +996,19 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RegionInstanceGroupManagersListInstancesResponse listManagedInstancesRegionInstanceGroupManagers(ListManagedInstancesRegionInstanceGroupManagersHttpRequest request) {
+  public final RegionInstanceGroupManagersListInstancesResponse
+      listManagedInstancesRegionInstanceGroupManagers(
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest request) {
     return listManagedInstancesRegionInstanceGroupManagersCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances.
+   * Lists the instances in the managed instance group and instances that are scheduled to be
+   * created. The list includes any current actions that the group has scheduled for its instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -898,15 +1022,23 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListManagedInstancesRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagersListInstancesResponse> listManagedInstancesRegionInstanceGroupManagersCallable() {
+  public final UnaryCallable<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstancesResponse>
+      listManagedInstancesRegionInstanceGroupManagersCallable() {
     return stub.listManagedInstancesRegionInstanceGroupManagersCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The instances are deleted and recreated using the current instance template for the managed instance group. This operation is marked as DONE when the action is scheduled even if the instances have not yet been recreated. You must separately verify the status of the recreating action with the listmanagedinstances method.
+   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * instances are deleted and recreated using the current instance template for the managed
+   * instance group. This operation is marked as DONE when the action is scheduled even if the
+   * instances have not yet been recreated. You must separately verify the status of the recreating
+   * action with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -920,21 +1052,31 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation recreateInstancesRegionInstanceGroupManager(ProjectRegionInstanceGroupManagerName instanceGroupManager, RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource) {
+  public final Operation recreateInstancesRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagersRecreateRequest
+          regionInstanceGroupManagersRecreateRequestResource) {
 
     RecreateInstancesRegionInstanceGroupManagerHttpRequest request =
         RecreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .setRegionInstanceGroupManagersRecreateRequestResource(regionInstanceGroupManagersRecreateRequestResource)
-        .build();
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagersRecreateRequestResource(
+                regionInstanceGroupManagersRecreateRequestResource)
+            .build();
     return recreateInstancesRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The instances are deleted and recreated using the current instance template for the managed instance group. This operation is marked as DONE when the action is scheduled even if the instances have not yet been recreated. You must separately verify the status of the recreating action with the listmanagedinstances method.
+   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * instances are deleted and recreated using the current instance template for the managed
+   * instance group. This operation is marked as DONE when the action is scheduled even if the
+   * instances have not yet been recreated. You must separately verify the status of the recreating
+   * action with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -948,21 +1090,30 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation recreateInstancesRegionInstanceGroupManager(String instanceGroupManager, RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource) {
+  public final Operation recreateInstancesRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagersRecreateRequest
+          regionInstanceGroupManagersRecreateRequestResource) {
 
     RecreateInstancesRegionInstanceGroupManagerHttpRequest request =
         RecreateInstancesRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager)
-        .setRegionInstanceGroupManagersRecreateRequestResource(regionInstanceGroupManagersRecreateRequestResource)
-        .build();
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagersRecreateRequestResource(
+                regionInstanceGroupManagersRecreateRequestResource)
+            .build();
     return recreateInstancesRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The instances are deleted and recreated using the current instance template for the managed instance group. This operation is marked as DONE when the action is scheduled even if the instances have not yet been recreated. You must separately verify the status of the recreating action with the listmanagedinstances method.
+   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * instances are deleted and recreated using the current instance template for the managed
+   * instance group. This operation is marked as DONE when the action is scheduled even if the
+   * instances have not yet been recreated. You must separately verify the status of the recreating
+   * action with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -979,15 +1130,21 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation recreateInstancesRegionInstanceGroupManager(RecreateInstancesRegionInstanceGroupManagerHttpRequest request) {
+  public final Operation recreateInstancesRegionInstanceGroupManager(
+      RecreateInstancesRegionInstanceGroupManagerHttpRequest request) {
     return recreateInstancesRegionInstanceGroupManagerCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The instances are deleted and recreated using the current instance template for the managed instance group. This operation is marked as DONE when the action is scheduled even if the instances have not yet been recreated. You must separately verify the status of the recreating action with the listmanagedinstances method.
+   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * instances are deleted and recreated using the current instance template for the managed
+   * instance group. This operation is marked as DONE when the action is scheduled even if the
+   * instances have not yet been recreated. You must separately verify the status of the recreating
+   * action with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1003,15 +1160,22 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation> recreateInstancesRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      recreateInstancesRegionInstanceGroupManagerCallable() {
     return stub.recreateInstancesRegionInstanceGroupManagerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the intended size for the managed instance group. If you increase the size, the group schedules actions to create new instances using the current instance template. If you decrease the size, the group schedules delete actions on one or more instances. The resize operation is marked DONE when the resize actions are scheduled even if the group has not yet added or deleted any instances. You must separately verify the status of the creating or deleting actions with the listmanagedinstances method.
+   * Changes the intended size for the managed instance group. If you increase the size, the group
+   * schedules actions to create new instances using the current instance template. If you decrease
+   * the size, the group schedules delete actions on one or more instances. The resize operation is
+   * marked DONE when the resize actions are scheduled even if the group has not yet added or
+   * deleted any instances. You must separately verify the status of the creating or deleting
+   * actions with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   Integer size = 0;
@@ -1025,21 +1189,29 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resizeRegionInstanceGroupManager(Integer size, ProjectRegionInstanceGroupManagerName instanceGroupManager) {
+  public final Operation resizeRegionInstanceGroupManager(
+      Integer size, ProjectRegionInstanceGroupManagerName instanceGroupManager) {
 
     ResizeRegionInstanceGroupManagerHttpRequest request =
         ResizeRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setSize(size)
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .build();
+            .setSize(size)
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .build();
     return resizeRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the intended size for the managed instance group. If you increase the size, the group schedules actions to create new instances using the current instance template. If you decrease the size, the group schedules delete actions on one or more instances. The resize operation is marked DONE when the resize actions are scheduled even if the group has not yet added or deleted any instances. You must separately verify the status of the creating or deleting actions with the listmanagedinstances method.
+   * Changes the intended size for the managed instance group. If you increase the size, the group
+   * schedules actions to create new instances using the current instance template. If you decrease
+   * the size, the group schedules delete actions on one or more instances. The resize operation is
+   * marked DONE when the resize actions are scheduled even if the group has not yet added or
+   * deleted any instances. You must separately verify the status of the creating or deleting
+   * actions with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   Integer size = 0;
@@ -1053,21 +1225,28 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resizeRegionInstanceGroupManager(Integer size, String instanceGroupManager) {
+  public final Operation resizeRegionInstanceGroupManager(
+      Integer size, String instanceGroupManager) {
 
     ResizeRegionInstanceGroupManagerHttpRequest request =
         ResizeRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setSize(size)
-        .setInstanceGroupManager(instanceGroupManager)
-        .build();
+            .setSize(size)
+            .setInstanceGroupManager(instanceGroupManager)
+            .build();
     return resizeRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the intended size for the managed instance group. If you increase the size, the group schedules actions to create new instances using the current instance template. If you decrease the size, the group schedules delete actions on one or more instances. The resize operation is marked DONE when the resize actions are scheduled even if the group has not yet added or deleted any instances. You must separately verify the status of the creating or deleting actions with the listmanagedinstances method.
+   * Changes the intended size for the managed instance group. If you increase the size, the group
+   * schedules actions to create new instances using the current instance template. If you decrease
+   * the size, the group schedules delete actions on one or more instances. The resize operation is
+   * marked DONE when the resize actions are scheduled even if the group has not yet added or
+   * deleted any instances. You must separately verify the status of the creating or deleting
+   * actions with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   Integer size = 0;
@@ -1084,15 +1263,22 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resizeRegionInstanceGroupManager(ResizeRegionInstanceGroupManagerHttpRequest request) {
+  public final Operation resizeRegionInstanceGroupManager(
+      ResizeRegionInstanceGroupManagerHttpRequest request) {
     return resizeRegionInstanceGroupManagerCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the intended size for the managed instance group. If you increase the size, the group schedules actions to create new instances using the current instance template. If you decrease the size, the group schedules delete actions on one or more instances. The resize operation is marked DONE when the resize actions are scheduled even if the group has not yet added or deleted any instances. You must separately verify the status of the creating or deleting actions with the listmanagedinstances method.
+   * Changes the intended size for the managed instance group. If you increase the size, the group
+   * schedules actions to create new instances using the current instance template. If you decrease
+   * the size, the group schedules delete actions on one or more instances. The resize operation is
+   * marked DONE when the resize actions are scheduled even if the group has not yet added or
+   * deleted any instances. You must separately verify the status of the creating or deleting
+   * actions with the listmanagedinstances method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   Integer size = 0;
@@ -1108,15 +1294,18 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ResizeRegionInstanceGroupManagerHttpRequest, Operation> resizeRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<ResizeRegionInstanceGroupManagerHttpRequest, Operation>
+      resizeRegionInstanceGroupManagerCallable() {
     return stub.resizeRegionInstanceGroupManagerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the instance template to use when creating new instances or recreating instances in this group. Existing instances are not affected.
+   * Sets the instance template to use when creating new instances or recreating instances in this
+   * group. Existing instances are not affected.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1130,21 +1319,28 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setInstanceTemplateRegionInstanceGroupManager(ProjectRegionInstanceGroupManagerName instanceGroupManager, RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource) {
+  public final Operation setInstanceTemplateRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagersSetTemplateRequest
+          regionInstanceGroupManagersSetTemplateRequestResource) {
 
     SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .setRegionInstanceGroupManagersSetTemplateRequestResource(regionInstanceGroupManagersSetTemplateRequestResource)
-        .build();
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagersSetTemplateRequestResource(
+                regionInstanceGroupManagersSetTemplateRequestResource)
+            .build();
     return setInstanceTemplateRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the instance template to use when creating new instances or recreating instances in this group. Existing instances are not affected.
+   * Sets the instance template to use when creating new instances or recreating instances in this
+   * group. Existing instances are not affected.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1158,21 +1354,27 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setInstanceTemplateRegionInstanceGroupManager(String instanceGroupManager, RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource) {
+  public final Operation setInstanceTemplateRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagersSetTemplateRequest
+          regionInstanceGroupManagersSetTemplateRequestResource) {
 
     SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request =
         SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager)
-        .setRegionInstanceGroupManagersSetTemplateRequestResource(regionInstanceGroupManagersSetTemplateRequestResource)
-        .build();
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagersSetTemplateRequestResource(
+                regionInstanceGroupManagersSetTemplateRequestResource)
+            .build();
     return setInstanceTemplateRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the instance template to use when creating new instances or recreating instances in this group. Existing instances are not affected.
+   * Sets the instance template to use when creating new instances or recreating instances in this
+   * group. Existing instances are not affected.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1189,15 +1391,18 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setInstanceTemplateRegionInstanceGroupManager(SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request) {
+  public final Operation setInstanceTemplateRegionInstanceGroupManager(
+      SetInstanceTemplateRegionInstanceGroupManagerHttpRequest request) {
     return setInstanceTemplateRegionInstanceGroupManagerCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the instance template to use when creating new instances or recreating instances in this group. Existing instances are not affected.
+   * Sets the instance template to use when creating new instances or recreating instances in this
+   * group. Existing instances are not affected.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1213,15 +1418,18 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetInstanceTemplateRegionInstanceGroupManagerHttpRequest, Operation> setInstanceTemplateRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<SetInstanceTemplateRegionInstanceGroupManagerHttpRequest, Operation>
+      setInstanceTemplateRegionInstanceGroupManagerCallable() {
     return stub.setInstanceTemplateRegionInstanceGroupManagerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Modifies the target pools to which all new instances in this group are assigned. Existing instances in the group are not affected.
+   * Modifies the target pools to which all new instances in this group are assigned. Existing
+   * instances in the group are not affected.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1235,21 +1443,28 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setTargetPoolsRegionInstanceGroupManager(ProjectRegionInstanceGroupManagerName instanceGroupManager, RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource) {
+  public final Operation setTargetPoolsRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagersSetTargetPoolsRequest
+          regionInstanceGroupManagersSetTargetPoolsRequestResource) {
 
     SetTargetPoolsRegionInstanceGroupManagerHttpRequest request =
         SetTargetPoolsRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager == null ? null : instanceGroupManager.toString())
-        .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(regionInstanceGroupManagersSetTargetPoolsRequestResource)
-        .build();
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(
+                regionInstanceGroupManagersSetTargetPoolsRequestResource)
+            .build();
     return setTargetPoolsRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Modifies the target pools to which all new instances in this group are assigned. Existing instances in the group are not affected.
+   * Modifies the target pools to which all new instances in this group are assigned. Existing
+   * instances in the group are not affected.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1263,21 +1478,27 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setTargetPoolsRegionInstanceGroupManager(String instanceGroupManager, RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource) {
+  public final Operation setTargetPoolsRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagersSetTargetPoolsRequest
+          regionInstanceGroupManagersSetTargetPoolsRequestResource) {
 
     SetTargetPoolsRegionInstanceGroupManagerHttpRequest request =
         SetTargetPoolsRegionInstanceGroupManagerHttpRequest.newBuilder()
-        .setInstanceGroupManager(instanceGroupManager)
-        .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(regionInstanceGroupManagersSetTargetPoolsRequestResource)
-        .build();
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(
+                regionInstanceGroupManagersSetTargetPoolsRequestResource)
+            .build();
     return setTargetPoolsRegionInstanceGroupManager(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Modifies the target pools to which all new instances in this group are assigned. Existing instances in the group are not affected.
+   * Modifies the target pools to which all new instances in this group are assigned. Existing
+   * instances in the group are not affected.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1294,15 +1515,18 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setTargetPoolsRegionInstanceGroupManager(SetTargetPoolsRegionInstanceGroupManagerHttpRequest request) {
+  public final Operation setTargetPoolsRegionInstanceGroupManager(
+      SetTargetPoolsRegionInstanceGroupManagerHttpRequest request) {
     return setTargetPoolsRegionInstanceGroupManagerCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Modifies the target pools to which all new instances in this group are assigned. Existing instances in the group are not affected.
+   * Modifies the target pools to which all new instances in this group are assigned. Existing
+   * instances in the group are not affected.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
@@ -1318,7 +1542,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetTargetPoolsRegionInstanceGroupManagerHttpRequest, Operation> setTargetPoolsRegionInstanceGroupManagerCallable() {
+  public final UnaryCallable<SetTargetPoolsRegionInstanceGroupManagerHttpRequest, Operation>
+      setTargetPoolsRegionInstanceGroupManagerCallable() {
     return stub.setTargetPoolsRegionInstanceGroupManagerCallable();
   }
 
@@ -1352,23 +1577,31 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListRegionInstanceGroupManagersPagedResponse extends AbstractPagedListResponse<
-      ListRegionInstanceGroupManagersHttpRequest,
-      RegionInstanceGroupManagerList,
-      InstanceGroupManager,
-      ListRegionInstanceGroupManagersPage,
-      ListRegionInstanceGroupManagersFixedSizeCollection> {
+  public static class ListRegionInstanceGroupManagersPagedResponse
+      extends AbstractPagedListResponse<
+          ListRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagerList,
+          InstanceGroupManager,
+          ListRegionInstanceGroupManagersPage,
+          ListRegionInstanceGroupManagersFixedSizeCollection> {
 
     public static ApiFuture<ListRegionInstanceGroupManagersPagedResponse> createAsync(
-        PageContext<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList, InstanceGroupManager> context,
+        PageContext<
+                ListRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagerList,
+                InstanceGroupManager>
+            context,
         ApiFuture<RegionInstanceGroupManagerList> futureResponse) {
       ApiFuture<ListRegionInstanceGroupManagersPage> futurePage =
-          ListRegionInstanceGroupManagersPage.createEmptyPage().createPageAsync(context, futureResponse);
+          ListRegionInstanceGroupManagersPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListRegionInstanceGroupManagersPage, ListRegionInstanceGroupManagersPagedResponse>() {
+          new ApiFunction<
+              ListRegionInstanceGroupManagersPage, ListRegionInstanceGroupManagersPagedResponse>() {
             @Override
-            public ListRegionInstanceGroupManagersPagedResponse apply(ListRegionInstanceGroupManagersPage input) {
+            public ListRegionInstanceGroupManagersPagedResponse apply(
+                ListRegionInstanceGroupManagersPage input) {
               return new ListRegionInstanceGroupManagersPagedResponse(input);
             }
           });
@@ -1377,18 +1610,21 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     private ListRegionInstanceGroupManagersPagedResponse(ListRegionInstanceGroupManagersPage page) {
       super(page, ListRegionInstanceGroupManagersFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListRegionInstanceGroupManagersPage extends AbstractPage<
-      ListRegionInstanceGroupManagersHttpRequest,
-      RegionInstanceGroupManagerList,
-      InstanceGroupManager,
-      ListRegionInstanceGroupManagersPage> {
+  public static class ListRegionInstanceGroupManagersPage
+      extends AbstractPage<
+          ListRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagerList,
+          InstanceGroupManager,
+          ListRegionInstanceGroupManagersPage> {
 
     private ListRegionInstanceGroupManagersPage(
-        PageContext<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList, InstanceGroupManager> context,
+        PageContext<
+                ListRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagerList,
+                InstanceGroupManager>
+            context,
         RegionInstanceGroupManagerList response) {
       super(context, response);
     }
@@ -1399,31 +1635,37 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
     @Override
     protected ListRegionInstanceGroupManagersPage createPage(
-        PageContext<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList, InstanceGroupManager> context,
+        PageContext<
+                ListRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagerList,
+                InstanceGroupManager>
+            context,
         RegionInstanceGroupManagerList response) {
       return new ListRegionInstanceGroupManagersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRegionInstanceGroupManagersPage> createPageAsync(
-        PageContext<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList, InstanceGroupManager> context,
+        PageContext<
+                ListRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagerList,
+                InstanceGroupManager>
+            context,
         ApiFuture<RegionInstanceGroupManagerList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListRegionInstanceGroupManagersFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListRegionInstanceGroupManagersHttpRequest,
-      RegionInstanceGroupManagerList,
-      InstanceGroupManager,
-      ListRegionInstanceGroupManagersPage,
-      ListRegionInstanceGroupManagersFixedSizeCollection> {
+  public static class ListRegionInstanceGroupManagersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagerList,
+          InstanceGroupManager,
+          ListRegionInstanceGroupManagersPage,
+          ListRegionInstanceGroupManagersFixedSizeCollection> {
 
-    private ListRegionInstanceGroupManagersFixedSizeCollection(List<ListRegionInstanceGroupManagersPage> pages, int collectionSize) {
+    private ListRegionInstanceGroupManagersFixedSizeCollection(
+        List<ListRegionInstanceGroupManagersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1436,7 +1678,5 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
         List<ListRegionInstanceGroupManagersPage> pages, int collectionSize) {
       return new ListRegionInstanceGroupManagersFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }
