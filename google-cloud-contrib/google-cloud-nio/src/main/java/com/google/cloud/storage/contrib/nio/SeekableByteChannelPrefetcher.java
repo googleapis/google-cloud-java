@@ -92,6 +92,70 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   // issues.
   private static final boolean trackTime = false;
 
+
+  public static class Statistics {
+    // statistics, for profiling.
+    // time spent blocking the user because we're waiting on the network
+    public final long msWaitingForData;
+    // time spent blocking the user because we're copying bytes
+    public final long msCopyingData;
+    // total number of bytes returned by read (if the user asks for the same bytes multiple times, they count)
+    public final long bytesReturned;
+    // total number of bytes read over the network (whether returned to the user or not)
+    public final long bytesRead;
+    // time spend in between calls to Read, ie. presumably while the user is processing the data we returned.
+    public final long msBetweenCallsToRead;
+    // number of times we had the user's data already ready, didn't have to grab it from the net.
+    public final long nbHit;
+    // number of times we had already started to prefetch the user's data (but it hadn't arrived yet).
+    public final long nbNearHit;
+    // number of times we don't have what the user's asking for, we have to wait for a prefetch to finish,
+    // and the prefetch didn't return what the user wanted (either they are going backward, or jumping forward)
+    public final long nbMiss;
+    // number of times the user asks for data with a lower index than what we already have
+    // (so they're not following the expected pattern of increasing indexes)
+    public final long nbGoingBack;
+    // number of times the user asks for data past the end of the file
+    public final long nbReadsPastEnd;
+
+    private Statistics(long msWaitingForData, long msCopyingData, long bytesReturned,
+                       long bytesRead, long msBetweenCallsToRead, long nbHit,
+                       long nbNearHit, long nbMiss, long nbGoingBack, long nbReadsPastEnd) {
+      this.msWaitingForData = msWaitingForData;
+      this.msCopyingData = msCopyingData;
+      this.bytesReturned = bytesReturned;
+      this.bytesRead = bytesRead;
+      this.msBetweenCallsToRead = msBetweenCallsToRead;
+      this.nbHit = nbHit;
+      this.nbNearHit = nbNearHit;
+      this.nbMiss = nbMiss;
+      this.nbGoingBack = nbGoingBack;
+      this.nbReadsPastEnd = nbReadsPastEnd;
+    }
+
+    public String toString() {
+      try {
+        double returnedPct = (bytesRead > 0 ? 100.0 * bytesReturned / bytesRead : 100.0);
+        return String
+            .format("Bytes read: %12d\n  returned: %12d ( %3.2f %% )", bytesRead, bytesReturned,
+                returnedPct)
+            + String.format("\nReads past the end: %3d", nbReadsPastEnd)
+            + String.format("\nReads forcing re-fetching of an earlier block: %3d", nbGoingBack)
+            // A near-hit is when we're already fetching the data the user is asking for,
+            // but we're not done loading it in.
+            + String
+            .format("\nCache\n hits:      %12d\n near-hits: %12d\n misses:    %12d", nbHit,
+                nbNearHit, nbMiss);
+      } catch (UnknownFormatConversionException x) {
+        // let's not crash the whole program, instead just return no info
+        return "(error while formatting statistics)";
+      }
+    }
+
+
+  }
+
+
   /**
    * Wraps the provided SeekableByteChannel within a SeekableByteChannelPrefetcher, using the provided buffer size
    *
@@ -199,23 +263,10 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     exec = Executors.newFixedThreadPool(1, threadFactory);
   }
 
-  public String getStatistics() {
-    try {
-      double returnedPct = (bytesRead > 0 ? 100.0 * bytesReturned / bytesRead : 100.0);
-      return String
-          .format("Bytes read: %12d\n  returned: %12d ( %3.2f %% )", bytesRead, bytesReturned,
-              returnedPct)
-          + String.format("\nReads past the end: %3d", nbReadsPastEnd)
-          + String.format("\nReads forcing re-fetching of an earlier block: %3d", nbGoingBack)
-          // A near-hit is when we're already fetching the data the user is asking for,
-          // but we're not done loading it in.
-          + String
-          .format("\nCache\n hits:      %12d\n near-hits: %12d\n misses:    %12d", nbHit,
-              nbNearHit, nbMiss);
-    } catch (UnknownFormatConversionException x) {
-      // let's not crash the whole program, instead just return no info
-      return "(error while formatting statistics)";
-    }
+  public Statistics getStatistics() {
+    return new Statistics(msWaitingForData, msCopyingData, bytesReturned,
+        bytesRead, msBetweenCallsToRead, nbHit,
+        nbNearHit, nbMiss, nbGoingBack, nbReadsPastEnd);
   }
 
   // if we don't already have that block and the fetching thread is idle,
@@ -407,7 +458,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
    * the entity to grow to accommodate the new bytes; the values of any bytes
    * between the previous end-of-file and the newly-written bytes are
    * unspecified.
-   * <p>
+   *
    * <p> Setting the channel's position is not recommended when connected to
    * an entity, typically a file, that is opened with the {@link
    * java.nio.file.StandardOpenOption#APPEND APPEND} option. When opened for
