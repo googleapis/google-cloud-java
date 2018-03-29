@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -70,7 +71,9 @@ public class ForwardingRuleClientTest {
         ForwardingRuleSettings.newBuilder()
            .setTransportChannelProvider(
                ForwardingRuleSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build()).build();
+                   .setHttpTransport(mockService).build())
+           .setCredentialsProvider(NoCredentialsProvider.create())
+           .build();
     client =
        ForwardingRuleClient.create(clientSettings);
   }

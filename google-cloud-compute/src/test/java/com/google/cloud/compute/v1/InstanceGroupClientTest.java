@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -77,7 +78,9 @@ public class InstanceGroupClientTest {
         InstanceGroupSettings.newBuilder()
            .setTransportChannelProvider(
                InstanceGroupSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build()).build();
+                   .setHttpTransport(mockService).build())
+           .setCredentialsProvider(NoCredentialsProvider.create())
+           .build();
     client =
        InstanceGroupClient.create(clientSettings);
   }
