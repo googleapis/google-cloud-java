@@ -219,7 +219,6 @@ public final class ShardUtil {
     static StartPoint extract(@Nonnull RowRange rowRange) {
       switch (rowRange.getStartKeyCase()) {
         case STARTKEY_NOT_SET:
-          // Minimum point is inclusive
           return new StartPoint(ByteString.EMPTY, true);
         case START_KEY_CLOSED:
           return new StartPoint(rowRange.getStartKeyClosed(), true);
@@ -256,8 +255,7 @@ public final class ShardUtil {
     static EndPoint extract(@Nonnull RowRange rowRange) {
       switch (rowRange.getEndKeyCase()) {
         case ENDKEY_NOT_SET:
-          // Maximum point is exclusive
-          return new EndPoint(ByteString.EMPTY, false);
+          return new EndPoint(ByteString.EMPTY, true);
         case END_KEY_CLOSED:
           return new EndPoint(rowRange.getEndKeyClosed(), true);
         case END_KEY_OPEN:
