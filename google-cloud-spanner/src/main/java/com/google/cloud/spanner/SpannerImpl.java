@@ -36,6 +36,7 @@ import com.google.cloud.spanner.Operation.Parser;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
+import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
@@ -81,7 +82,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -134,7 +134,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private final Random random = new Random();
-  private final SpannerRpc rpc;
+  private final SpannerRpc rawGrpcRpc;
+  private final SpannerRpc gapicRpc;
   private final int defaultPrefetchChunks;
 
   @GuardedBy("this")
@@ -146,16 +147,26 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @GuardedBy("this")
   private boolean spannerIsClosed = false;
 
-  SpannerImpl(SpannerRpc rpc, int defaultPrefetchChunks, SpannerOptions options) {
+  SpannerImpl(
+      SpannerRpc rawGrpcRpc,
+      SpannerRpc gapicRpc,
+      int defaultPrefetchChunks,
+      SpannerOptions options) {
     super(options);
-    this.rpc = rpc;
+    this.rawGrpcRpc = rawGrpcRpc;
+    this.gapicRpc = gapicRpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
-    this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), rpc);
-    this.instanceClient = new InstanceAdminClientImpl(options.getProjectId(), rpc, dbAdminClient);
+    this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
+    this.instanceClient =
+        new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
   }
 
   SpannerImpl(SpannerOptions options) {
-    this(options.getSpannerRpcV1(), options.getPrefetchChunks(), options);
+    this(
+        options.getSpannerRpcV1(),
+        GapicSpannerRpc.create(options),
+        options.getPrefetchChunks(),
+        options);
   }
 
   private static ExponentialBackOff newBackOff() {
@@ -255,7 +266,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               new Callable<com.google.spanner.v1.Session>() {
                 @Override
                 public com.google.spanner.v1.Session call() throws Exception {
-                  return rpc.createSession(db.getName(), getOptions().getSessionLabels(), options);
+                  return rawGrpcRpc.createSession(
+                      db.getName(), getOptions().getSessionLabels(), options);
                 }
               });
       span.end();
@@ -794,7 +806,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 new Callable<CommitResponse>() {
                   @Override
                   public CommitResponse call() throws Exception {
-                    return rpc.commit(request, options);
+                    return rawGrpcRpc.commit(request, options);
                   }
                 });
         Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
@@ -816,7 +828,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public ReadContext singleUse(TimestampBound bound) {
-      return setActive(new SingleReadContext(this, bound, rpc, defaultPrefetchChunks));
+      return setActive(new SingleReadContext(this, bound, rawGrpcRpc, defaultPrefetchChunks));
     }
 
     @Override
@@ -826,7 +838,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
-      return setActive(new SingleUseReadOnlyTransaction(this, bound, rpc, defaultPrefetchChunks));
+      return setActive(
+          new SingleUseReadOnlyTransaction(this, bound, rawGrpcRpc, defaultPrefetchChunks));
     }
 
     @Override
@@ -836,12 +849,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-      return setActive(new MultiUseReadOnlyTransaction(this, bound, rpc, defaultPrefetchChunks));
+      return setActive(
+          new MultiUseReadOnlyTransaction(this, bound, rawGrpcRpc, defaultPrefetchChunks));
     }
 
     @Override
     public TransactionRunner readWriteTransaction() {
-      return setActive(new TransactionRunnerImpl(this, rpc, defaultPrefetchChunks));
+      return setActive(new TransactionRunnerImpl(this, rawGrpcRpc, defaultPrefetchChunks));
     }
 
     @Override
@@ -858,7 +872,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             new Callable<Void>() {
               @Override
               public Void call() throws Exception {
-                rpc.deleteSession(name, options);
+                rawGrpcRpc.deleteSession(name, options);
                 return null;
               }
             });
@@ -884,7 +898,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 new Callable<Transaction>() {
                   @Override
                   public Transaction call() throws Exception {
-                    return rpc.beginTransaction(request, options);
+                    return rawGrpcRpc.beginTransaction(request, options);
                   }
                 });
         if (txn.getId().isEmpty()) {
