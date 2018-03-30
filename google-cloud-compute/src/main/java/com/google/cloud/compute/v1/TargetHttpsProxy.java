@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -52,7 +51,6 @@ public final class TargetHttpsProxy implements ApiMessage {
     this.urlMap = null;
   }
 
-
   private TargetHttpsProxy(
       String creationTimestamp,
       String description,
@@ -61,8 +59,7 @@ public final class TargetHttpsProxy implements ApiMessage {
       String name,
       String selfLink,
       List<String> sslCertificates,
-      String urlMap
-      ) {
+      String urlMap) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -77,7 +74,8 @@ public final class TargetHttpsProxy implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -174,22 +172,24 @@ public final class TargetHttpsProxy implements ApiMessage {
     return urlMap;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetHttpsProxy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetHttpsProxy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetHttpsProxy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetHttpsProxy();
   }
@@ -326,25 +326,10 @@ public final class TargetHttpsProxy implements ApiMessage {
       return this;
     }
 
-
     public TargetHttpsProxy build() {
 
-
-
-
-
-
-
       return new TargetHttpsProxy(
-        creationTimestamp,
-        description,
-        id,
-        kind,
-        name,
-        selfLink,
-        sslCertificates,
-        urlMap
-      );
+          creationTimestamp, description, id, kind, name, selfLink, sslCertificates, urlMap);
     }
 
     public Builder clone() {
@@ -364,14 +349,29 @@ public final class TargetHttpsProxy implements ApiMessage {
   @Override
   public String toString() {
     return "TargetHttpsProxy{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "selfLink=" + selfLink + ", "
-        + "sslCertificates=" + sslCertificates + ", "
-        + "urlMap=" + urlMap
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "sslCertificates="
+        + sslCertificates
+        + ", "
+        + "urlMap="
+        + urlMap
         + "}";
   }
 
@@ -382,16 +382,14 @@ public final class TargetHttpsProxy implements ApiMessage {
     }
     if (o instanceof TargetHttpsProxy) {
       TargetHttpsProxy that = (TargetHttpsProxy) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.sslCertificates, that.getSslCertificatesList()) &&
-          Objects.equals(this.urlMap, that.getUrlMap())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.sslCertificates, that.getSslCertificatesList())
+          && Objects.equals(this.urlMap, that.getUrlMap());
     }
     return false;
   }
@@ -399,14 +397,6 @@ public final class TargetHttpsProxy implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      id,
-      kind,
-      name,
-      selfLink,
-      sslCertificates,
-      urlMap
-    );
+        creationTimestamp, description, id, kind, name, selfLink, sslCertificates, urlMap);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
     this.restarting = null;
   }
 
-
   private InstanceGroupManagerActionsSummary(
       Integer abandoning,
       Integer creating,
@@ -61,8 +57,7 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
       Integer none,
       Integer recreating,
       Integer refreshing,
-      Integer restarting
-      ) {
+      Integer restarting) {
     this.abandoning = abandoning;
     this.creating = creating;
     this.creatingWithoutRetries = creatingWithoutRetries;
@@ -83,7 +78,9 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
       fieldMap.put("creating", Collections.singletonList(String.valueOf(creating)));
     }
     if (fieldNames.contains("creatingWithoutRetries") && creatingWithoutRetries != null) {
-      fieldMap.put("creatingWithoutRetries", Collections.singletonList(String.valueOf(creatingWithoutRetries)));
+      fieldMap.put(
+          "creatingWithoutRetries",
+          Collections.singletonList(String.valueOf(creatingWithoutRetries)));
     }
     if (fieldNames.contains("deleting") && deleting != null) {
       fieldMap.put("deleting", Collections.singletonList(String.valueOf(deleting)));
@@ -170,22 +167,24 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
     return restarting;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupManagerActionsSummary prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupManagerActionsSummary getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupManagerActionsSummary DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupManagerActionsSummary();
   }
@@ -314,25 +313,17 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
       return this;
     }
 
-
     public InstanceGroupManagerActionsSummary build() {
 
-
-
-
-
-
-
       return new InstanceGroupManagerActionsSummary(
-        abandoning,
-        creating,
-        creatingWithoutRetries,
-        deleting,
-        none,
-        recreating,
-        refreshing,
-        restarting
-      );
+          abandoning,
+          creating,
+          creatingWithoutRetries,
+          deleting,
+          none,
+          recreating,
+          refreshing,
+          restarting);
     }
 
     public Builder clone() {
@@ -352,14 +343,29 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceGroupManagerActionsSummary{"
-        + "abandoning=" + abandoning + ", "
-        + "creating=" + creating + ", "
-        + "creatingWithoutRetries=" + creatingWithoutRetries + ", "
-        + "deleting=" + deleting + ", "
-        + "none=" + none + ", "
-        + "recreating=" + recreating + ", "
-        + "refreshing=" + refreshing + ", "
-        + "restarting=" + restarting
+        + "abandoning="
+        + abandoning
+        + ", "
+        + "creating="
+        + creating
+        + ", "
+        + "creatingWithoutRetries="
+        + creatingWithoutRetries
+        + ", "
+        + "deleting="
+        + deleting
+        + ", "
+        + "none="
+        + none
+        + ", "
+        + "recreating="
+        + recreating
+        + ", "
+        + "refreshing="
+        + refreshing
+        + ", "
+        + "restarting="
+        + restarting
         + "}";
   }
 
@@ -370,16 +376,14 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
     }
     if (o instanceof InstanceGroupManagerActionsSummary) {
       InstanceGroupManagerActionsSummary that = (InstanceGroupManagerActionsSummary) o;
-      return
-          Objects.equals(this.abandoning, that.getAbandoning()) &&
-          Objects.equals(this.creating, that.getCreating()) &&
-          Objects.equals(this.creatingWithoutRetries, that.getCreatingWithoutRetries()) &&
-          Objects.equals(this.deleting, that.getDeleting()) &&
-          Objects.equals(this.none, that.getNone()) &&
-          Objects.equals(this.recreating, that.getRecreating()) &&
-          Objects.equals(this.refreshing, that.getRefreshing()) &&
-          Objects.equals(this.restarting, that.getRestarting())
-          ;
+      return Objects.equals(this.abandoning, that.getAbandoning())
+          && Objects.equals(this.creating, that.getCreating())
+          && Objects.equals(this.creatingWithoutRetries, that.getCreatingWithoutRetries())
+          && Objects.equals(this.deleting, that.getDeleting())
+          && Objects.equals(this.none, that.getNone())
+          && Objects.equals(this.recreating, that.getRecreating())
+          && Objects.equals(this.refreshing, that.getRefreshing())
+          && Objects.equals(this.restarting, that.getRestarting());
     }
     return false;
   }
@@ -387,14 +391,13 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      abandoning,
-      creating,
-      creatingWithoutRetries,
-      deleting,
-      none,
-      recreating,
-      refreshing,
-      restarting
-    );
+        abandoning,
+        creating,
+        creatingWithoutRetries,
+        deleting,
+        none,
+        recreating,
+        refreshing,
+        restarting);
   }
 }

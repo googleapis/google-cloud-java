@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class TargetReference implements ApiMessage {
     this.target = null;
   }
 
-
-  private TargetReference(
-      String target
-      ) {
+  private TargetReference(String target) {
     this.target = target;
   }
 
@@ -72,22 +66,24 @@ public final class TargetReference implements ApiMessage {
     return target;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetReference prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetReference getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetReference DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetReference();
   }
@@ -118,11 +114,8 @@ public final class TargetReference implements ApiMessage {
       return this;
     }
 
-
     public TargetReference build() {
-      return new TargetReference(
-        target
-      );
+      return new TargetReference(target);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class TargetReference implements ApiMessage {
 
   @Override
   public String toString() {
-    return "TargetReference{"
-        + "target=" + target
-        + "}";
+    return "TargetReference{" + "target=" + target + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class TargetReference implements ApiMessage {
     }
     if (o instanceof TargetReference) {
       TargetReference that = (TargetReference) o;
-      return
-          Objects.equals(this.target, that.getTarget())
-          ;
+      return Objects.equals(this.target, that.getTarget());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      target
-    );
+    return Objects.hash(target);
   }
 }

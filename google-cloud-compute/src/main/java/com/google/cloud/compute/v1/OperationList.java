@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -46,14 +45,8 @@ public final class OperationList implements ApiMessage {
     this.selfLink = null;
   }
 
-
   private OperationList(
-      String id,
-      List<Operation> items,
-      String kind,
-      String nextPageToken,
-      String selfLink
-      ) {
+      String id, List<Operation> items, String kind, String nextPageToken, String selfLink) {
     this.id = id;
     this.items = items;
     this.kind = kind;
@@ -132,22 +125,24 @@ public final class OperationList implements ApiMessage {
     return selfLink;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(OperationList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static OperationList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final OperationList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new OperationList();
   }
@@ -242,19 +237,9 @@ public final class OperationList implements ApiMessage {
       return this;
     }
 
-
     public OperationList build() {
 
-
-
-
-      return new OperationList(
-        id,
-        items,
-        kind,
-        nextPageToken,
-        selfLink
-      );
+      return new OperationList(id, items, kind, nextPageToken, selfLink);
     }
 
     public Builder clone() {
@@ -271,11 +256,20 @@ public final class OperationList implements ApiMessage {
   @Override
   public String toString() {
     return "OperationList{"
-        + "id=" + id + ", "
-        + "items=" + items + ", "
-        + "kind=" + kind + ", "
-        + "nextPageToken=" + nextPageToken + ", "
-        + "selfLink=" + selfLink
+        + "id="
+        + id
+        + ", "
+        + "items="
+        + items
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "nextPageToken="
+        + nextPageToken
+        + ", "
+        + "selfLink="
+        + selfLink
         + "}";
   }
 
@@ -286,25 +280,17 @@ public final class OperationList implements ApiMessage {
     }
     if (o instanceof OperationList) {
       OperationList that = (OperationList) o;
-      return
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.items, that.getItemsList()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
-          ;
+      return Objects.equals(this.id, that.getId())
+          && Objects.equals(this.items, that.getItemsList())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.nextPageToken, that.getNextPageToken())
+          && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      id,
-      items,
-      kind,
-      nextPageToken,
-      selfLink
-    );
+    return Objects.hash(id, items, kind, nextPageToken, selfLink);
   }
 }

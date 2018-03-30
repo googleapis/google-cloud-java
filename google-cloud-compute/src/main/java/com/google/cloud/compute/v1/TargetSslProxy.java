@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -54,7 +53,6 @@ public final class TargetSslProxy implements ApiMessage {
     this.sslCertificates = null;
   }
 
-
   private TargetSslProxy(
       String creationTimestamp,
       String description,
@@ -64,8 +62,7 @@ public final class TargetSslProxy implements ApiMessage {
       String proxyHeader,
       String selfLink,
       String service,
-      List<String> sslCertificates
-      ) {
+      List<String> sslCertificates) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -81,7 +78,8 @@ public final class TargetSslProxy implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -188,22 +186,24 @@ public final class TargetSslProxy implements ApiMessage {
     return sslCertificates;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetSslProxy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetSslProxy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetSslProxy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetSslProxy();
   }
@@ -354,27 +354,18 @@ public final class TargetSslProxy implements ApiMessage {
       return this;
     }
 
-
     public TargetSslProxy build() {
 
-
-
-
-
-
-
-
       return new TargetSslProxy(
-        creationTimestamp,
-        description,
-        id,
-        kind,
-        name,
-        proxyHeader,
-        selfLink,
-        service,
-        sslCertificates
-      );
+          creationTimestamp,
+          description,
+          id,
+          kind,
+          name,
+          proxyHeader,
+          selfLink,
+          service,
+          sslCertificates);
     }
 
     public Builder clone() {
@@ -395,15 +386,32 @@ public final class TargetSslProxy implements ApiMessage {
   @Override
   public String toString() {
     return "TargetSslProxy{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "proxyHeader=" + proxyHeader + ", "
-        + "selfLink=" + selfLink + ", "
-        + "service=" + service + ", "
-        + "sslCertificates=" + sslCertificates
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "proxyHeader="
+        + proxyHeader
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "service="
+        + service
+        + ", "
+        + "sslCertificates="
+        + sslCertificates
         + "}";
   }
 
@@ -414,17 +422,15 @@ public final class TargetSslProxy implements ApiMessage {
     }
     if (o instanceof TargetSslProxy) {
       TargetSslProxy that = (TargetSslProxy) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.proxyHeader, that.getProxyHeader()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.service, that.getService()) &&
-          Objects.equals(this.sslCertificates, that.getSslCertificatesList())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.proxyHeader, that.getProxyHeader())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.service, that.getService())
+          && Objects.equals(this.sslCertificates, that.getSslCertificatesList());
     }
     return false;
   }
@@ -432,15 +438,14 @@ public final class TargetSslProxy implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      id,
-      kind,
-      name,
-      proxyHeader,
-      selfLink,
-      service,
-      sslCertificates
-    );
+        creationTimestamp,
+        description,
+        id,
+        kind,
+        name,
+        proxyHeader,
+        selfLink,
+        service,
+        sslCertificates);
   }
 }
