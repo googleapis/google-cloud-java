@@ -21,13 +21,8 @@ import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
@@ -36,7 +31,7 @@ public final class NetworkName implements ResourceName {
   private final String network;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/networks/{network}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/networks/{network}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -53,25 +48,12 @@ public final class NetworkName implements ResourceName {
     project = Preconditions.checkNotNull(builder.getProject());
   }
 
-  public static NetworkName of(
-      String network,
-      String project
-      ) {
-    return newBuilder()
-    .setNetwork(network)
-    .setProject(project)
-      .build();
+  public static NetworkName of(String network, String project) {
+    return newBuilder().setNetwork(network).setProject(project).build();
   }
 
-  public static String format(
-      String network,
-      String project
-      ) {
-    return of(
-        network,
-        project
-        )
-        .toString();
+  public static String format(String network, String project) {
+    return of(network, project).toString();
   }
 
   public String getNetwork() {
@@ -81,7 +63,6 @@ public final class NetworkName implements ResourceName {
   public String getProject() {
     return project;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -102,20 +83,19 @@ public final class NetworkName implements ResourceName {
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<NetworkName> newFactory() {
     return new ResourceNameFactory<NetworkName>() {
-      public NetworkName parse(String formattedString) {return NetworkName.parse(formattedString);}
+      public NetworkName parse(String formattedString) {
+        return NetworkName.parse(formattedString);
+      }
     };
   }
 
   public static NetworkName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "NetworkName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("network"),
-      matchMap.get("project")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "NetworkName.parse: formattedString not in valid format");
+    return of(matchMap.get("network"), matchMap.get("project"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -129,6 +109,7 @@ public final class NetworkName implements ResourceName {
     public String getNetwork() {
       return network;
     }
+
     public String getProject() {
       return project;
     }
@@ -137,6 +118,7 @@ public final class NetworkName implements ResourceName {
       this.network = network;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
@@ -144,7 +126,7 @@ public final class NetworkName implements ResourceName {
 
     private Builder() {}
 
-    public Builder (NetworkName networkName) {
+    public Builder(NetworkName networkName) {
       network = networkName.network;
       project = networkName.project;
     }
@@ -158,8 +140,7 @@ public final class NetworkName implements ResourceName {
   public String toString() {
     return PATH_TEMPLATE.instantiate(
         "network", network,
-        "project", project
-        );
+        "project", project);
   }
 
   @Override
@@ -169,19 +150,14 @@ public final class NetworkName implements ResourceName {
     }
     if (o instanceof NetworkName) {
       NetworkName that = (NetworkName) o;
-      return
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.project, that.getProject())
-          ;
+      return Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.project, that.getProject());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      network,
-      project
-    );
+    return Objects.hash(network, project);
   }
 }

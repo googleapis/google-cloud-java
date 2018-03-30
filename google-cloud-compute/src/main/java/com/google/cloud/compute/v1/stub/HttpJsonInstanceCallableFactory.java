@@ -15,78 +15,15 @@
  */
 package com.google.cloud.compute.v1.stub;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
-import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.core.BackgroundResourceAggregation;
-import com.google.api.gax.httpjson.ApiMessageHttpRequestFormatter;
-import com.google.api.gax.httpjson.ApiMessageHttpResponseParser;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientStreamingCallable;
-import com.google.api.gax.rpc.OperationCallSettings;
-import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.RequestParamsExtractor;
-import com.google.api.gax.rpc.ServerStreamingCallSettings;
-import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.compute.v1.AccessConfig;
-import com.google.cloud.compute.v1.AddAccessConfigInstanceHttpRequest;
-import com.google.cloud.compute.v1.AggregatedListInstancesHttpRequest;
-import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
-import com.google.cloud.compute.v1.AttachedDisk;
-import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
-import com.google.cloud.compute.v1.DeleteInstanceHttpRequest;
-import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
-import com.google.cloud.compute.v1.GetInstanceHttpRequest;
-import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
-import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
-import com.google.cloud.compute.v1.Instance;
-import com.google.cloud.compute.v1.InstanceAggregatedList;
-import static com.google.cloud.compute.v1.InstanceClient.AggregatedListInstancesPagedResponse;
-import static com.google.cloud.compute.v1.InstanceClient.ListInstancesPagedResponse;
-import com.google.cloud.compute.v1.InstanceList;
-import com.google.cloud.compute.v1.InstanceName;
-import com.google.cloud.compute.v1.InstanceSettings;
-import com.google.cloud.compute.v1.InstancesScopedList;
-import com.google.cloud.compute.v1.InstancesSetMachineTypeRequest;
-import com.google.cloud.compute.v1.InstancesSetServiceAccountRequest;
-import com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest;
-import com.google.cloud.compute.v1.ListInstancesHttpRequest;
-import com.google.cloud.compute.v1.Metadata;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
-import com.google.cloud.compute.v1.Scheduling;
-import com.google.cloud.compute.v1.SerialPortOutput;
-import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceHttpRequest;
-import com.google.cloud.compute.v1.SetMachineTypeInstanceHttpRequest;
-import com.google.cloud.compute.v1.SetMetadataInstanceHttpRequest;
-import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
-import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
-import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
-import com.google.cloud.compute.v1.StartInstanceHttpRequest;
-import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
-import com.google.cloud.compute.v1.StopInstanceHttpRequest;
-import com.google.cloud.compute.v1.Tags;
-import com.google.cloud.compute.v1.ZoneName;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Sets;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -103,16 +40,18 @@ public class HttpJsonInstanceCallableFactory implements HttpJsonStubCallableFact
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       UnaryCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
-    return HttpJsonCallableFactory.createUnaryCallable(httpJsonCallSettings, callSettings, clientContext);
+    return HttpJsonCallableFactory.createUnaryCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 
   @Override
   public <RequestT, ResponseT, PagedListResponseT>
       UnaryCallable<RequestT, PagedListResponseT> createPagedCallable(
-      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
-      PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
-      ClientContext clientContext) {
-    return HttpJsonCallableFactory.createPagedCallable(httpJsonCallSettings, pagedCallSettings, clientContext);
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+          PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
+          ClientContext clientContext) {
+    return HttpJsonCallableFactory.createPagedCallable(
+        httpJsonCallSettings, pagedCallSettings, clientContext);
   }
 
   @Override
@@ -120,6 +59,7 @@ public class HttpJsonInstanceCallableFactory implements HttpJsonStubCallableFact
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       BatchingCallSettings<RequestT, ResponseT> batchingCallSettings,
       ClientContext clientContext) {
-    return HttpJsonCallableFactory.createBatchingCallable(httpJsonCallSettings, batchingCallSettings, clientContext);
+    return HttpJsonCallableFactory.createBatchingCallable(
+        httpJsonCallSettings, batchingCallSettings, clientContext);
   }
 }

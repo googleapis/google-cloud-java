@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,12 +39,7 @@ public final class Errors implements ApiMessage {
     this.message = null;
   }
 
-
-  private Errors(
-      String code,
-      String location,
-      String message
-      ) {
+  private Errors(String code, String location, String message) {
     this.code = code;
     this.location = location;
     this.message = message;
@@ -100,22 +92,24 @@ public final class Errors implements ApiMessage {
     return message;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Errors prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Errors getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Errors DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Errors();
   }
@@ -174,15 +168,9 @@ public final class Errors implements ApiMessage {
       return this;
     }
 
-
     public Errors build() {
 
-
-      return new Errors(
-        code,
-        location,
-        message
-      );
+      return new Errors(code, location, message);
     }
 
     public Builder clone() {
@@ -197,9 +185,14 @@ public final class Errors implements ApiMessage {
   @Override
   public String toString() {
     return "Errors{"
-        + "code=" + code + ", "
-        + "location=" + location + ", "
-        + "message=" + message
+        + "code="
+        + code
+        + ", "
+        + "location="
+        + location
+        + ", "
+        + "message="
+        + message
         + "}";
   }
 
@@ -210,21 +203,15 @@ public final class Errors implements ApiMessage {
     }
     if (o instanceof Errors) {
       Errors that = (Errors) o;
-      return
-          Objects.equals(this.code, that.getCode()) &&
-          Objects.equals(this.location, that.getLocation()) &&
-          Objects.equals(this.message, that.getMessage())
-          ;
+      return Objects.equals(this.code, that.getCode())
+          && Objects.equals(this.location, that.getLocation())
+          && Objects.equals(this.message, that.getMessage());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      code,
-      location,
-      message
-    );
+    return Objects.hash(code, location, message);
   }
 }
