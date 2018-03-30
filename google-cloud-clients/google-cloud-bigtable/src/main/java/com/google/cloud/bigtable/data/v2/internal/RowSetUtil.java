@@ -49,14 +49,15 @@ public final class RowSetUtil {
   private RowSetUtil() {}
 
   /**
-   * Splits the provided {@link RowSet} on the provided split and returns the second segment. If the
-   * second segment is empty, then it will return null. Note that the split point represents the
-   * last row in the first segment.
+   * Splits the provided {@link RowSet} along the provided splitPoint and returns the second
+   * segment. The segment is represented by a {@link RowSet}, which will contain all keys that are
+   * strictly greater than the splitPoint and all {@link RowRange}s truncated to start right after
+   * the splitPoint.
    */
   @Nullable
-  public static RowSet getRemaining(@Nonnull RowSet rowSet, @Nonnull ByteString split) {
+  public static RowSet getRemaining(@Nonnull RowSet rowSet, @Nonnull ByteString splitPoint) {
     ImmutableSortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE).add(split).build();
+        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE).add(splitPoint).build();
     return split(rowSet, splitPoints, true).get(1);
   }
 
@@ -86,15 +87,22 @@ public final class RowSetUtil {
    * <p>Each segment is represented by a RowSet in the returned List. Each of the returned RowSets
    * will contain all of the {@link RowRange}s and keys that fall between the previous segment and
    * this segment's split point. If there are no {@link RowRange}s or keys that belong to a segment,
-   * then that segment will either be omitted or if {@code allowEmptySplit} is true, then it will be
-   * represented by a null value in the returned list.
+   * then that segment will either be omitted or if {@code preserveNullSegments} is true, then it
+   * will be represented by a null value in the returned list.
    *
-   * <p>The segments in the returned list are guaranteed to be sorted. If {@code allowEmptySplit} is
-   * true, then it will have exactly {@code splitPoints.size() + 1} items.
+   * <p>The segments in the returned list are guaranteed to be sorted. If {@code
+   * preserveNullSegments} is true, then it will have exactly {@code splitPoints.size() + 1} items.
+   * The extra segment will contain keys and {@link RowRange}s between the last splitPoint and the
+   * end of the table.
+   *
+   * <p>Please note that an empty {@link RowSet} is treated like a full table scan and each segment
+   * will contain a {@link RowRange} that covers the full extent of the segment.
    */
   @Nonnull
   static List<RowSet> split(
-      @Nonnull RowSet rowSet, @Nonnull SortedSet<ByteString> splitPoints, boolean allowEmptySplit) {
+      @Nonnull RowSet rowSet,
+      @Nonnull SortedSet<ByteString> splitPoints,
+      boolean preserveNullSegments) {
     // An empty RowSet represents a full table scan. Make that explicit so that there is RowRange to
     // split.
     if (RowSet.getDefaultInstance().equals(rowSet)) {
@@ -123,7 +131,7 @@ public final class RowSetUtil {
     for (ByteString splitPoint : splitPoints) {
       Preconditions.checkState(!splitPoint.isEmpty(), "Split point can't be empty");
 
-      // Consume all of the row keys that lie to the left of the split point. Consumption is
+      // Consume all of the row keys that lie on and to the left of the split point. Consumption is
       // designated by advancing rowKeysStart.
       for (int i = rowKeysStart; i < rowKeys.length; i++) {
         ByteString rowKey = rowKeys[i];
@@ -158,7 +166,11 @@ public final class RowSetUtil {
           // The range is fully contained in the segment.
           segment.addRowRanges(rowRange);
 
-          // Consume the range, but take care to shift partially consumed ranges.
+          // Consume the range, but take care to shift partially consumed ranges to fill the gap
+          // created by consuming the current range. For example if the list contained the following
+          // ranges: [a-z], [b-d], [f-z] and the split point was 'e'. Then after processing the
+          // split point, the list would contain: (d-z], GAP, [f-z]. So we fill the gap by shifting
+          // (d-z] over by one and advancing rowRangesStart.
           // Partially consumed ranges will only exist if the original RowSet had overlapping
           // ranges, this should be a rare occurrence.
           System.arraycopy(
@@ -181,7 +193,7 @@ public final class RowSetUtil {
         results.add(segment.build());
         isSegmentEmpty = true;
         segment = RowSet.newBuilder();
-      } else if (allowEmptySplit) {
+      } else if (preserveNullSegments) {
         results.add(null);
       }
     }
@@ -197,7 +209,7 @@ public final class RowSetUtil {
     }
     if (!isSegmentEmpty) {
       results.add(segment.build());
-    } else if (allowEmptySplit) {
+    } else if (preserveNullSegments) {
       results.add(null);
     }
 
@@ -283,8 +295,12 @@ public final class RowSetUtil {
         case START_KEY_CLOSED:
           return new StartPoint(rowRange.getStartKeyClosed(), true);
         case START_KEY_OPEN:
-          // Take care to normalize an open empty start key to be closed.
-          return new StartPoint(rowRange.getStartKeyOpen(), rowRange.getStartKeyOpen().isEmpty());
+          if (rowRange.getStartKeyOpen().isEmpty()) {
+            // Take care to normalize an open empty start key to be closed.
+            return new StartPoint(ByteString.EMPTY, true);
+          } else {
+            return new StartPoint(rowRange.getStartKeyOpen(), false);
+          }
         default:
           throw new IllegalArgumentException("Unknown startKeyCase: " + rowRange.getStartKeyCase());
       }
@@ -320,8 +336,12 @@ public final class RowSetUtil {
         case END_KEY_CLOSED:
           return new EndPoint(rowRange.getEndKeyClosed(), true);
         case END_KEY_OPEN:
-          // Take care to normalize an open empty end key to be closed.
-          return new EndPoint(rowRange.getEndKeyOpen(), rowRange.getEndKeyOpen().isEmpty());
+          if (rowRange.getEndKeyOpen().isEmpty()) {
+            // Take care to normalize an open empty end key to be closed.
+            return new EndPoint(ByteString.EMPTY, true);
+          } else {
+            return new EndPoint(rowRange.getEndKeyOpen(), false);
+          }
         default:
           throw new IllegalArgumentException("Unknown endKeyCase: " + rowRange.getEndKeyCase());
       }
