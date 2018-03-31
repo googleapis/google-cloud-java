@@ -330,6 +330,8 @@ public abstract class Range<T, R extends Range<T, R>> implements Serializable {
   /** Concrete Range for ByteStrings */
   public static final class ByteStringRange extends AbstractByteStringRange<ByteStringRange>
       implements Serializable {
+    private static final long serialVersionUID = 2199230324202930550L;
+
     public static ByteStringRange prefix(String prefix) {
       return prefix(ByteString.copyFromUtf8(prefix));
     }

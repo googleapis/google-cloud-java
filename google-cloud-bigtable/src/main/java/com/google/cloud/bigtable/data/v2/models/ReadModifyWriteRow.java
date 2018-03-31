@@ -30,6 +30,8 @@ import javax.annotation.Nonnull;
 
 /** Wraps a {@link ReadModifyWriteRowRequest}. */
 public final class ReadModifyWriteRow implements Serializable {
+  private static final long serialVersionUID = -8150045424541029193L;
+
   private final String tableId;
   private transient ReadModifyWriteRowRequest.Builder builder =
       ReadModifyWriteRowRequest.newBuilder();

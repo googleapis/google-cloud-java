@@ -30,6 +30,8 @@ import javax.annotation.Nonnull;
 
 /** Mutates a row atomically based on the output of a condition filter. */
 public final class ConditionalRowMutation implements Serializable {
+  private static final long serialVersionUID = -3699904745621909502L;
+  
   private final String tableId;
   private transient CheckAndMutateRowRequest.Builder builder =
       CheckAndMutateRowRequest.newBuilder();

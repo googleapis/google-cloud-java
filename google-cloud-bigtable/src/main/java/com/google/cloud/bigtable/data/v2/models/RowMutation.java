@@ -31,6 +31,8 @@ import javax.annotation.Nonnull;
  * for {@link com.google.cloud.bigtable.data.v2.BigtableDataClient#mutateRowAsync(RowMutation)}.
  */
 public final class RowMutation implements MutationApi<RowMutation>, Serializable {
+  private static final long serialVersionUID = 6529002234913236318L;
+
   private final String tableId;
   private final ByteString key;
   private final Mutation mutation;
