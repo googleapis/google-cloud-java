@@ -139,6 +139,7 @@ public class BigtableDataClient implements AutoCloseable {
    *   String tableId = "[TABLE]";
    *
    *   ApiFuture<Row> result = bigtableClient.readRow(tableId,  "key");
+   * }
    * }</pre>
    */
   public ApiFuture<Row> readRowAsync(String tableId, String rowKey) {
@@ -157,6 +158,7 @@ public class BigtableDataClient implements AutoCloseable {
    *   String tableId = "[TABLE]";
    *
    *   ApiFuture<Row> result = bigtableClient.readRow(tableId,  ByteString.copyFromUtf8("key"));
+   * }
    * }</pre>
    */
   public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey) {
