@@ -80,15 +80,13 @@ public class ITSystemTest {
 
   @Rule public TestName testName = new TestName();
 
- static private Firestore firestore;
+  private Firestore firestore;
   private CollectionReference randomColl;
   private DocumentReference randomDoc;
 
   @Before
   public void before() {
-    if (firestore == null) {
-      firestore = FirestoreOptions.getDefaultInstance().getService();
-    }
+    firestore = FirestoreOptions.getDefaultInstance().getService();
     randomColl =
         firestore.collection(
             String.format("java-%s-%s", testName.getMethodName(), LocalFirestoreHelper.autoId()));
