@@ -475,7 +475,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.19.1</version>
         <configuration>
-          <!-- Excludes integration tests when unit tests are run -->
+          <!-- Excludes integration tests and smoke tests when unit tests are run -->
           <excludes>
             <exclude>**/IT*.java</exclude>
             <exclude>**/*SmokeTest.java</exclude>
