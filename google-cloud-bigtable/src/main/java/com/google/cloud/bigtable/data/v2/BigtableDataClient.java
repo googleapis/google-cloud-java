@@ -32,6 +32,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
 
@@ -124,6 +125,42 @@ public class BigtableDataClient implements AutoCloseable {
   @InternalApi("Visible for testing")
   BigtableDataClient(EnhancedBigtableStub stub) {
     this.stub = stub;
+  }
+
+  /**
+   * Convenience method for asynchronously reading a single row. If the row does not exist, the
+   * future's value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   ApiFuture<Row> result = bigtableClient.readRow(tableId,  "key");
+   * }</pre>
+   */
+  public ApiFuture<Row> readRowAsync(String tableId, String rowKey) {
+    return readRowAsync(tableId, ByteString.copyFromUtf8(rowKey));
+  }
+
+  /**
+   * Convenience method for asynchronously reading a single row. If the row does not exist, the
+   * future's value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   ApiFuture<Row> result = bigtableClient.readRow(tableId,  ByteString.copyFromUtf8("key"));
+   * }</pre>
+   */
+  public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey) {
+    return readRowsCallable().first().futureCall(Query.create(tableId).rowKey(rowKey));
   }
 
   /**

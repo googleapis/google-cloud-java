@@ -12,9 +12,6 @@ Java idiomatic client for [Google Cloud BigQuery][cloud-bigquery].
 - [Product Documentation][bigquery-product-docs]
 - [Client Library Documentation][bigquery-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 [//]: # ({x-version-update-start:google-cloud-bigquery:released})
@@ -23,16 +20,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>1.22.0</version>
+  <version>1.24.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery:1.22.0'
+compile 'com.google.cloud:google-cloud-bigquery:1.24.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.22.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.24.0"
 ```
 [//]: # ({x-version-update-end})
 

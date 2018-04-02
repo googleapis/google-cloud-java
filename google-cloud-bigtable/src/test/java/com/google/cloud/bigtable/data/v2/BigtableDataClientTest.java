@@ -24,9 +24,13 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.RowSet;
+import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher.BulkMutationFailure;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -34,12 +38,15 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.protobuf.ByteString;
 import io.grpc.Status.Code;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Answers;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -48,7 +55,10 @@ import org.threeten.bp.Duration;
 @RunWith(MockitoJUnitRunner.class)
 public class BigtableDataClientTest {
   @Mock private EnhancedBigtableStub mockStub;
-  @Mock private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
+
+  @Mock(answer = Answers.RETURNS_DEEP_STUBS)
+  private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
+
   @Mock private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
   @Mock private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
   @Mock private UnaryCallable<ConditionalRowMutation, Boolean> mockCheckAndMutateRowCallable;
@@ -77,6 +87,44 @@ public class BigtableDataClientTest {
   @Test
   public void proxyReadRowsCallableTest() {
     assertThat(bigtableDataClient.readRowsCallable()).isSameAs(mockReadRowsCallable);
+  }
+
+  @Test
+  public void proxyReadRowAsyncTest() {
+    bigtableDataClient.readRowAsync("fake-table", ByteString.copyFromUtf8("fake-row-key"));
+
+    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
+    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
+
+    RequestContext ctx =
+        RequestContext.create(InstanceName.of("fake-project", "fake-instance"), "fake-profile");
+    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
+    assertThat(requestCaptor.getValue().toProto(ctx))
+        .isEqualTo(
+            ReadRowsRequest.newBuilder()
+                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
+                .setAppProfileId("fake-profile")
+                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
+                .build());
+  }
+
+  @Test
+  public void proxyReadRowStrAsyncTest() {
+    bigtableDataClient.readRowAsync("fake-table", "fake-row-key");
+
+    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
+    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
+
+    RequestContext ctx =
+        RequestContext.create(InstanceName.of("fake-project", "fake-instance"), "fake-profile");
+    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
+    assertThat(requestCaptor.getValue().toProto(ctx))
+        .isEqualTo(
+            ReadRowsRequest.newBuilder()
+                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
+                .setAppProfileId("fake-profile")
+                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
+                .build());
   }
 
   @Test
