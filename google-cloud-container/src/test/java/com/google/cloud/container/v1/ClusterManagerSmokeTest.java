@@ -19,11 +19,17 @@ import com.google.common.base.Preconditions;
 import com.google.container.v1.ListClustersResponse;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ClusterManagerSmokeTest {
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
+
+  @Test
+  public void run() {
+    main(null);
+  }
 
   public static void main(String args[]) {
     Logger.getLogger("").setLevel(Level.WARNING);

@@ -389,7 +389,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns sensitive information types DLP supports.
+   * Returns a list of the sensitive information types that the DLP API supports. For more
+   * information, see [Listing supported predefined infoTypes](/dlp/docs/listing-infotypes).
    *
    * <p>Sample code:
    *
@@ -409,7 +410,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns sensitive information types DLP supports.
+   * Returns a list of the sensitive information types that the DLP API supports. For more
+   * information, see [Listing supported predefined infoTypes](/dlp/docs/listing-infotypes).
    *
    * <p>Sample code:
    *

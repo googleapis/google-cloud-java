@@ -477,6 +477,7 @@
         <configuration>
           <!-- Excludes integration tests and smoke tests when unit tests are run -->
           <excludes>
+            <exclude>**/*SmokeTest.java</exclude>
             <exclude>**/IT*.java</exclude>
             <exclude>**/*SmokeTest.java</exclude>
           </excludes>
