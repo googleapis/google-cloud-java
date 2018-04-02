@@ -21,6 +21,7 @@ import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.common.collect.ImmutableSortedSet;
+import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import java.util.List;
 import java.util.SortedSet;
@@ -31,6 +32,23 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class RowSetUtilTest {
   @Test
+  public void noSplitTest() {
+    RowSet rowSet =
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("a"))
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("p"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("q")))
+            .build();
+
+    SortedSet<ByteString> splitPoints =
+        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE).build();
+
+    verifySplit(rowSet, splitPoints, rowSet);
+  }
+
+  @Test
   public void splitEmptyTest() {
     RowSet rowSet = RowSet.newBuilder().build();
     SortedSet<ByteString> splitPoints =
@@ -38,17 +56,15 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("a"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            RowSet.newBuilder()
-                .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
-                .build(),
-            RowSet.newBuilder()
-                .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("a")))
-                .build())
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
+            .build(),
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("a")))
+            .build());
   }
 
   @Test
@@ -65,16 +81,14 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("2-onSplit"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            RowSet.newBuilder()
-                .addRowKeys(ByteString.copyFromUtf8("1-beforeSplit"))
-                .addRowKeys(ByteString.copyFromUtf8("2-onSplit"))
-                .build(),
-            RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("3-afterSplit")).build())
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("1-beforeSplit"))
+            .addRowKeys(ByteString.copyFromUtf8("2-onSplit"))
+            .build(),
+        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("3-afterSplit")).build());
   }
 
   @Test
@@ -91,14 +105,12 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("6-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            null,
-            RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("5-test")).build(),
-            RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("8-test")).build())
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        null,
+        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("5-test")).build(),
+        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("8-test")).build());
   }
 
   @Test
@@ -115,14 +127,12 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("5-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("0-test")).build(),
-            RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("2-test")).build(),
-            null)
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("0-test")).build(),
+        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("2-test")).build(),
+        null);
   }
 
   @Test
@@ -141,19 +151,17 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("3-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            RowSet.newBuilder()
-                .addRowKeys(ByteString.copyFromUtf8("0-key"))
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyClosed(ByteString.copyFromUtf8("1-range-start"))
-                        .setEndKeyOpen(ByteString.copyFromUtf8("2-range-end")))
-                .build(),
-            null)
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("0-key"))
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("1-range-start"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("2-range-end")))
+            .build(),
+        null);
   }
 
   @Test
@@ -168,16 +176,14 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("5-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            RowSet.newBuilder()
-                .addRowRanges(
-                    RowRange.newBuilder().setEndKeyOpen(ByteString.copyFromUtf8("1-range-end")))
-                .build(),
-            null)
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setEndKeyOpen(ByteString.copyFromUtf8("1-range-end")))
+            .build(),
+        null);
   }
 
   @Test
@@ -196,19 +202,17 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("2-range-end"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            RowSet.newBuilder()
-                .addRowKeys(ByteString.copyFromUtf8("0-key"))
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyClosed(ByteString.copyFromUtf8("1-range-start"))
-                        .setEndKeyOpen(ByteString.copyFromUtf8("2-range-end")))
-                .build(),
-            null)
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("0-key"))
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("1-range-start"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("2-range-end")))
+            .build(),
+        null);
   }
 
   @Test
@@ -226,19 +230,17 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("3-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            null,
-            RowSet.newBuilder()
-                .addRowKeys(ByteString.copyFromUtf8("9-row-key"))
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyOpen(ByteString.copyFromUtf8("5-range-start"))
-                        .setEndKeyOpen(ByteString.copyFromUtf8("7-range-end")))
-                .build())
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        null,
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("9-row-key"))
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("5-range-start"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("7-range-end")))
+            .build());
   }
 
   @Test
@@ -253,16 +255,14 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("3-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            null,
-            RowSet.newBuilder()
-                .addRowRanges(
-                    RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("5-range-start")))
-                .build())
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        null,
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("5-range-start")))
+            .build());
   }
 
   @Test
@@ -281,20 +281,18 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("5-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            null,
-            RowSet.newBuilder()
-                .addRowKeys(ByteString.copyFromUtf8("5-split"))
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyOpen(ByteString.copyFromUtf8("3-split"))
-                        .setEndKeyClosed(ByteString.copyFromUtf8("5-split")))
-                .build(),
-            null)
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        null,
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("5-split"))
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("3-split"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("5-split")))
+            .build(),
+        null);
   }
 
   @Test
@@ -311,27 +309,27 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("3-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            RowSet.newBuilder()
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyClosed(ByteString.copyFromUtf8("3-split"))
-                        .setEndKeyClosed(ByteString.copyFromUtf8("3-split")))
-                .build(),
-            RowSet.newBuilder()
-                .addRowRanges(
-                    RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("3-split")))
-                .build())
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("3-split"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("3-split")))
+            .build(),
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("3-split")))
+            .build());
   }
 
   @Test
-  public void multipleRangesTest() {
+  public void mixedSplitTest() {
     RowSet rowSet =
         RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("0"))
+            .addRowKeys(ByteString.copyFromUtf8("a"))
+            .addRowKeys(ByteString.copyFromUtf8("c"))
             // Range 1: fully in "a" segment
             .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
             // Range 2: split between segment "a" & "d"
@@ -359,57 +357,58 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("o"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            // Split "a"
-            RowSet.newBuilder()
-                // Range 1
-                .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
-                // Range 2: part1
-                .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
-                .build(),
-            // Split "d"
-            RowSet.newBuilder()
-                // Range 2: part 2
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyOpen(ByteString.copyFromUtf8("a"))
-                        .setEndKeyClosed(ByteString.copyFromUtf8("b")))
-                // Range 3: part 1
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyOpen(ByteString.copyFromUtf8("c"))
-                        .setEndKeyClosed(ByteString.copyFromUtf8("d")))
-                .build(),
-            // Split "j"
-            RowSet.newBuilder()
-                // Range 3: part 2
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyOpen(ByteString.copyFromUtf8("d"))
-                        .setEndKeyClosed(ByteString.copyFromUtf8("e")))
-                // Range 4
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyOpen(ByteString.copyFromUtf8("d"))
-                        .setEndKeyClosed(ByteString.copyFromUtf8("f")))
-                .build(),
-            // Split "o"
-            RowSet.newBuilder()
-                // Range 5: part1
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyOpen(ByteString.copyFromUtf8("m"))
-                        .setEndKeyClosed(ByteString.copyFromUtf8("o")))
-                .build(),
-            // Remainder
-            RowSet.newBuilder()
-                // Range 5: part2
-                .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("o")))
-                .build())
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        // Split "a"
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("0"))
+            .addRowKeys(ByteString.copyFromUtf8("a"))
+            // Range 1
+            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
+            // Range 2: part1
+            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
+            .build(),
+        // Split "d"
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("c"))
+            // Range 2: part 2
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("a"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("b")))
+            // Range 3: part 1
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("c"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("d")))
+            .build(),
+        // Split "j"
+        RowSet.newBuilder()
+            // Range 3: part 2
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("d"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("e")))
+            // Range 4
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("d"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("f")))
+            .build(),
+        // Split "o"
+        RowSet.newBuilder()
+            // Range 5: part1
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(ByteString.copyFromUtf8("m"))
+                    .setEndKeyClosed(ByteString.copyFromUtf8("o")))
+            .build(),
+        // Remainder
+        RowSet.newBuilder()
+            // Range 5: part2
+            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("o")))
+            .build());
   }
 
   @Test
@@ -433,25 +432,23 @@ public class RowSetUtilTest {
             .add(ByteString.copyFromUtf8("5-split"))
             .build();
 
-    List<RowSet> actual = RowSetUtil.split(rowSet, splitPoints, true);
-
-    assertThat(actual)
-        .containsExactly(
-            RowSet.newBuilder()
-                .addRowKeys(ByteString.copyFromUtf8("2-row-key-2"))
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyClosed(ByteString.copyFromUtf8("3-range-2-start"))
-                        .setEndKeyOpen(ByteString.copyFromUtf8("4-range-2-end")))
-                .build(),
-            RowSet.newBuilder()
-                .addRowKeys(ByteString.copyFromUtf8("7-row-key-1"))
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyClosed(ByteString.copyFromUtf8("8-range-1-start"))
-                        .setEndKeyOpen(ByteString.copyFromUtf8("9-range-1-end")))
-                .build())
-        .inOrder();
+    verifySplit(
+        rowSet,
+        splitPoints,
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("2-row-key-2"))
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("3-range-2-start"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("4-range-2-end")))
+            .build(),
+        RowSet.newBuilder()
+            .addRowKeys(ByteString.copyFromUtf8("7-row-key-1"))
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("8-range-1-start"))
+                    .setEndKeyOpen(ByteString.copyFromUtf8("9-range-1-end")))
+            .build());
   }
 
   @Test
@@ -483,7 +480,7 @@ public class RowSetUtilTest {
   }
 
   @Test
-  public void singleRange1BoundTest() {
+  public void singleClosedClosedRangeBoundTest() {
     RowSet rowSet =
         RowSet.newBuilder()
             .addRowRanges(
@@ -496,7 +493,7 @@ public class RowSetUtilTest {
   }
 
   @Test
-  public void singleRange2BoundTest() {
+  public void singleClosedOpenRangeBoundTest() {
     RowSet rowSet =
         RowSet.newBuilder()
             .addRowRanges(
@@ -509,7 +506,7 @@ public class RowSetUtilTest {
   }
 
   @Test
-  public void singleRange3BoundTest() {
+  public void singleOpenOpenRangeBoundTest() {
     RowSet rowSet =
         RowSet.newBuilder()
             .addRowRanges(
@@ -522,7 +519,7 @@ public class RowSetUtilTest {
   }
 
   @Test
-  public void singleRange4BoundTest() {
+  public void singleRangeOpenClosedBoundTest() {
     RowSet rowSet =
         RowSet.newBuilder()
             .addRowRanges(
@@ -569,5 +566,20 @@ public class RowSetUtilTest {
             .build();
     ByteStringRange actual = RowSetUtil.getBound(rowSet);
     assertThat(actual).isEqualTo(ByteStringRange.create("a", "z"));
+  }
+
+  // Helpers
+  private static void verifySplit(RowSet input, SortedSet<ByteString> splits, RowSet... expected) {
+    List<RowSet> actualWithNull = RowSetUtil.split(input, splits, true);
+    assertThat(actualWithNull).containsExactly(expected).inOrder();
+
+    List<RowSet> actualNonnull = RowSetUtil.split(input, splits, false);
+    List<RowSet> expectedNonnull = Lists.newArrayList();
+    for (RowSet rowSet : expected) {
+      if (rowSet != null) {
+        expectedNonnull.add(rowSet);
+      }
+    }
+    assertThat(actualNonnull).containsExactlyElementsIn(expectedNonnull).inOrder();
   }
 }
