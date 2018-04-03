@@ -85,8 +85,7 @@ public class ConformanceTest {
   private interface ConformanceTestCase extends Test, Describable {}
 
   /** Excluded tests by test description. */
-  private final Set<String> excludedTests =
-      Collections.singleton("set: MergeAll cannot be specified with empty data."); // b/73495873
+  private final Set<String> excludedTests = Collections.emptySet();
 
   /** If non-empty, only runs tests included in this set. */
   private final Set<String> includedTests = Collections.emptySet();
