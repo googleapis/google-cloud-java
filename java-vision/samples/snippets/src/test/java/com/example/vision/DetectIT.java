@@ -238,7 +238,7 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Palace of Fine Arts Theatre");
+    assertThat(got).contains("Landmark");
     assertThat(got).contains("Best guess label: palace of fine arts");
   }
 
@@ -250,7 +250,7 @@ public class DetectIT {
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Palace of Fine Arts Theatre");
+    assertThat(got).contains("Landmark");
     assertThat(got).contains("Best guess label: palace of fine arts");
   }
 
@@ -272,7 +272,7 @@ public class DetectIT {
     Detect.argsHelper(args, out);
 
     String got = bout.toString();
-    assertThat(got).contains("Description: Palace of Fine Arts Theatre");
+    assertThat(got).contains("Description:");
   }
 
   @Test
@@ -294,7 +294,7 @@ public class DetectIT {
     Detect.argsHelper(args, out);
 
     String got = bout.toString();
-    assertThat(got).contains("Description: Palace of Fine Arts Theatre");
+    assertThat(got).contains("Description:");
   }
 
   @Test
