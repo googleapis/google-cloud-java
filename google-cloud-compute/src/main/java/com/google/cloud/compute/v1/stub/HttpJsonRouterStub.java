@@ -39,13 +39,13 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRouterHttpRequest;
 import com.google.cloud.compute.v1.PreviewRouterHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionName;
+import com.google.cloud.compute.v1.ProjectRegionRouterName;
 import com.google.cloud.compute.v1.Router;
 import com.google.cloud.compute.v1.RouterAggregatedList;
 import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
 import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
 import com.google.cloud.compute.v1.RouterList;
-import com.google.cloud.compute.v1.RouterName;
 import com.google.cloud.compute.v1.RouterSettings;
 import com.google.cloud.compute.v1.RouterStatusResponse;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
@@ -101,7 +101,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RouterName.newFactory())
+                  .setResourceNameFactory(ProjectRegionRouterName.newFactory())
                   .setResourceNameField("router")
                   .build())
           .setResponseParser(
@@ -120,7 +120,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers/{router}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(RouterName.newFactory())
+                  .setResourceNameFactory(ProjectRegionRouterName.newFactory())
                   .setResourceNameField("router")
                   .build())
           .setResponseParser(
@@ -139,7 +139,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers/{router}/getRouterStatus"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(RouterName.newFactory())
+                  .setResourceNameFactory(ProjectRegionRouterName.newFactory())
                   .setResourceNameField("router")
                   .build())
           .setResponseParser(
@@ -159,7 +159,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -179,7 +179,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -199,7 +199,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RouterName.newFactory())
+                  .setResourceNameFactory(ProjectRegionRouterName.newFactory())
                   .setResourceNameField("router")
                   .build())
           .setResponseParser(
@@ -218,7 +218,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers/{router}/preview"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(RouterName.newFactory())
+                  .setResourceNameFactory(ProjectRegionRouterName.newFactory())
                   .setResourceNameField("router")
                   .build())
           .setResponseParser(
@@ -238,7 +238,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RouterName.newFactory())
+                  .setResourceNameFactory(ProjectRegionRouterName.newFactory())
                   .setResourceNameField("router")
                   .build())
           .setResponseParser(

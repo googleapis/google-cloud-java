@@ -150,7 +150,7 @@ public class TargetVpnGatewayClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -159,7 +159,7 @@ public class TargetVpnGatewayClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -189,7 +189,7 @@ public class TargetVpnGatewayClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
+    ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
 
     Operation actualResponse =
         client.deleteTargetVpnGateway(requestId, targetVpnGateway);
@@ -212,7 +212,7 @@ public class TargetVpnGatewayClientTest {
 
     try {
       String requestId = "requestId37109963";
-      TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
+      ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
 
       client.deleteTargetVpnGateway(requestId, targetVpnGateway);
       Assert.fail("No exception raised");
@@ -229,8 +229,8 @@ public class TargetVpnGatewayClientTest {
     String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
     String status = "status-892481550";
     TargetVpnGateway expectedResponse = TargetVpnGateway.newBuilder()
@@ -246,7 +246,7 @@ public class TargetVpnGatewayClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
+    ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
 
     TargetVpnGateway actualResponse =
         client.getTargetVpnGateway(targetVpnGateway);
@@ -268,7 +268,7 @@ public class TargetVpnGatewayClientTest {
     mockService.addException(exception);
 
     try {
-      TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
+      ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
 
       client.getTargetVpnGateway(targetVpnGateway);
       Assert.fail("No exception raised");
@@ -288,7 +288,7 @@ public class TargetVpnGatewayClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -297,7 +297,7 @@ public class TargetVpnGatewayClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region2 = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -327,7 +327,7 @@ public class TargetVpnGatewayClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
 
     Operation actualResponse =
@@ -351,7 +351,7 @@ public class TargetVpnGatewayClientTest {
 
     try {
       String requestId = "requestId37109963";
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
 
       client.insertTargetVpnGateway(requestId, region, targetVpnGatewayResource);
@@ -379,7 +379,7 @@ public class TargetVpnGatewayClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
     ListTargetVpnGatewaysPagedResponse pagedListResponse = client.listTargetVpnGateways(region);
 
@@ -404,7 +404,7 @@ public class TargetVpnGatewayClientTest {
     mockService.addException(exception);
 
     try {
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listTargetVpnGateways(region);
       Assert.fail("No exception raised");

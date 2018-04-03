@@ -142,7 +142,7 @@ public class GlobalOperationClientTest {
   public void deleteGlobalOperationTest() {
     mockService.addNullResponse();
 
-    OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+    ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
 
     client.deleteGlobalOperation(operation);
 
@@ -162,7 +162,7 @@ public class GlobalOperationClientTest {
     mockService.addException(exception);
 
     try {
-      OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+      ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
 
       client.deleteGlobalOperation(operation);
       Assert.fail("No exception raised");
@@ -182,7 +182,7 @@ public class GlobalOperationClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -191,7 +191,7 @@ public class GlobalOperationClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -220,7 +220,7 @@ public class GlobalOperationClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+    ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
 
     Operation actualResponse =
         client.getGlobalOperation(operation);
@@ -242,7 +242,7 @@ public class GlobalOperationClientTest {
     mockService.addException(exception);
 
     try {
-      OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+      ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
 
       client.getGlobalOperation(operation);
       Assert.fail("No exception raised");

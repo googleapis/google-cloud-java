@@ -36,7 +36,6 @@ import static com.google.cloud.compute.v1.InstanceClient.ListInstancesPagedRespo
 import static com.google.cloud.compute.v1.InstanceClient.ListReferrersInstancesPagedResponse;
 import com.google.cloud.compute.v1.InstanceList;
 import com.google.cloud.compute.v1.InstanceListReferrers;
-import com.google.cloud.compute.v1.InstanceName;
 import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.InstancesSetLabelsRequest;
 import com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest;
@@ -51,6 +50,7 @@ import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.Scheduling;
@@ -71,7 +71,6 @@ import com.google.cloud.compute.v1.StopInstanceHttpRequest;
 import com.google.cloud.compute.v1.Tags;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
-import com.google.cloud.compute.v1.ZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

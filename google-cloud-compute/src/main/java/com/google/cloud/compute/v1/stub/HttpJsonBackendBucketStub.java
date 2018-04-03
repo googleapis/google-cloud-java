@@ -32,7 +32,6 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.BackendBucket;
 import static com.google.cloud.compute.v1.BackendBucketClient.ListBackendBucketsPagedResponse;
 import com.google.cloud.compute.v1.BackendBucketList;
-import com.google.cloud.compute.v1.BackendBucketName;
 import com.google.cloud.compute.v1.BackendBucketSettings;
 import com.google.cloud.compute.v1.DeleteBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.GetBackendBucketHttpRequest;
@@ -40,6 +39,7 @@ import com.google.cloud.compute.v1.InsertBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendBucketHttpRequest;
+import com.google.cloud.compute.v1.ProjectBackendBucketName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.UpdateBackendBucketHttpRequest;
 import com.google.common.collect.ImmutableMap;
@@ -72,7 +72,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(BackendBucketName.newFactory())
+                  .setResourceNameFactory(ProjectBackendBucketName.newFactory())
                   .setResourceNameField("backendBucket")
                   .build())
           .setResponseParser(
@@ -91,7 +91,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/backendBuckets/{backendBucket}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(BackendBucketName.newFactory())
+                  .setResourceNameFactory(ProjectBackendBucketName.newFactory())
                   .setResourceNameField("backendBucket")
                   .build())
           .setResponseParser(
@@ -151,7 +151,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(BackendBucketName.newFactory())
+                  .setResourceNameFactory(ProjectBackendBucketName.newFactory())
                   .setResourceNameField("backendBucket")
                   .build())
           .setResponseParser(
@@ -171,7 +171,7 @@ public class HttpJsonBackendBucketStub extends BackendBucketStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(BackendBucketName.newFactory())
+                  .setResourceNameFactory(ProjectBackendBucketName.newFactory())
                   .setResourceNameField("backendBucket")
                   .build())
           .setResponseParser(

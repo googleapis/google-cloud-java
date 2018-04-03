@@ -23,8 +23,8 @@ import com.google.cloud.compute.v1.GetZoneOperationHttpRequest;
 import com.google.cloud.compute.v1.ListZoneOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ProjectZoneOperationName;
-import com.google.cloud.compute.v1.ZoneName;
 import static com.google.cloud.compute.v1.ZoneOperationClient.ListZoneOperationsPagedResponse;
 import javax.annotation.Generated;
 

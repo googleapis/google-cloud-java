@@ -40,9 +40,9 @@ import com.google.cloud.compute.v1.ListRegionBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.ProjectRegionBackendServiceName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import static com.google.cloud.compute.v1.RegionBackendServiceClient.ListRegionBackendServicesPagedResponse;
 import com.google.cloud.compute.v1.RegionBackendServiceSettings;
-import com.google.cloud.compute.v1.RegionName;
 import com.google.cloud.compute.v1.ResourceGroupReference;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceHttpRequest;
 import com.google.common.collect.ImmutableMap;
@@ -133,7 +133,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -153,7 +153,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(

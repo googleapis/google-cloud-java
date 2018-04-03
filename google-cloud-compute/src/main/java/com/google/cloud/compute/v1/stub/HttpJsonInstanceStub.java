@@ -47,7 +47,6 @@ import static com.google.cloud.compute.v1.InstanceClient.ListInstancesPagedRespo
 import static com.google.cloud.compute.v1.InstanceClient.ListReferrersInstancesPagedResponse;
 import com.google.cloud.compute.v1.InstanceList;
 import com.google.cloud.compute.v1.InstanceListReferrers;
-import com.google.cloud.compute.v1.InstanceName;
 import com.google.cloud.compute.v1.InstanceSettings;
 import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.InstancesSetLabelsRequest;
@@ -63,6 +62,7 @@ import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.Scheduling;
@@ -83,7 +83,6 @@ import com.google.cloud.compute.v1.StopInstanceHttpRequest;
 import com.google.cloud.compute.v1.Tags;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
-import com.google.cloud.compute.v1.ZoneName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -114,7 +113,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "networkInterface",    "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -154,7 +153,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -174,7 +173,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -194,7 +193,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "accessConfig",    "networkInterface",    "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -214,7 +213,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "deviceName",    "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -233,7 +232,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -253,7 +252,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "port",    "start"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -273,7 +272,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -293,7 +292,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -313,7 +312,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -333,7 +332,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -373,7 +372,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "autoDelete",    "deviceName",    "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -393,7 +392,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -413,7 +412,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -433,7 +432,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -453,7 +452,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -473,7 +472,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -493,7 +492,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -513,7 +512,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -533,7 +532,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -553,7 +552,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -573,7 +572,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -593,7 +592,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -613,7 +612,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "networkInterface",    "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(
@@ -633,7 +632,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "networkInterface",    "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
                   .setResourceNameField("instance")
                   .build())
           .setResponseParser(

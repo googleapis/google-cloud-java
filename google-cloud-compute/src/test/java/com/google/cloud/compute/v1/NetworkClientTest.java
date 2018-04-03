@@ -102,7 +102,7 @@ public class NetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -111,7 +111,7 @@ public class NetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -141,7 +141,7 @@ public class NetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
     NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -165,7 +165,7 @@ public class NetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
       NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
 
       client.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
@@ -186,7 +186,7 @@ public class NetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -195,7 +195,7 @@ public class NetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -225,7 +225,7 @@ public class NetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
 
     Operation actualResponse =
         client.deleteNetwork(requestId, network);
@@ -248,7 +248,7 @@ public class NetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
 
       client.deleteNetwork(requestId, network);
       Assert.fail("No exception raised");
@@ -282,7 +282,7 @@ public class NetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
 
     Network actualResponse =
         client.getNetwork(network);
@@ -304,7 +304,7 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
-      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
 
       client.getNetwork(network);
       Assert.fail("No exception raised");
@@ -324,7 +324,7 @@ public class NetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -333,7 +333,7 @@ public class NetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -460,7 +460,7 @@ public class NetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -469,7 +469,7 @@ public class NetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -499,7 +499,7 @@ public class NetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
     Network networkResource = Network.newBuilder().build();
 
     Operation actualResponse =
@@ -523,7 +523,7 @@ public class NetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
       Network networkResource = Network.newBuilder().build();
 
       client.patchNetwork(requestId, network, networkResource);
@@ -544,7 +544,7 @@ public class NetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -553,7 +553,7 @@ public class NetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -583,7 +583,7 @@ public class NetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
     NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -607,7 +607,7 @@ public class NetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
       NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
 
       client.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
@@ -628,7 +628,7 @@ public class NetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -637,7 +637,7 @@ public class NetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -667,7 +667,7 @@ public class NetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
 
     Operation actualResponse =
         client.switchToCustomModeNetwork(requestId, network);
@@ -690,7 +690,7 @@ public class NetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
 
       client.switchToCustomModeNetwork(requestId, network);
       Assert.fail("No exception raised");

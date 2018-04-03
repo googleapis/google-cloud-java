@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
  *   String requestId = "";
- *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+ *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
  *   Operation response = healthCheckClient.deleteHealthCheck(requestId, healthCheck);
  * }
  * </code>
@@ -177,7 +177,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   Operation response = healthCheckClient.deleteHealthCheck(requestId, healthCheck);
    * }
    * </code></pre>
@@ -191,7 +191,7 @@ public class HealthCheckClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteHealthCheck(String requestId, HealthCheckName healthCheck) {
+  public final Operation deleteHealthCheck(String requestId, ProjectHealthCheckName healthCheck) {
 
     DeleteHealthCheckHttpRequest request =
         DeleteHealthCheckHttpRequest.newBuilder()
@@ -209,7 +209,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   Operation response = healthCheckClient.deleteHealthCheck(requestId, healthCheck.toString());
    * }
    * </code></pre>
@@ -241,7 +241,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   DeleteHealthCheckHttpRequest request = DeleteHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setHealthCheck(healthCheck.toString())
@@ -266,7 +266,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   DeleteHealthCheckHttpRequest request = DeleteHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setHealthCheck(healthCheck.toString())
@@ -289,7 +289,7 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck response = healthCheckClient.getHealthCheck(healthCheck);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class HealthCheckClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final HealthCheck getHealthCheck(HealthCheckName healthCheck) {
+  public final HealthCheck getHealthCheck(ProjectHealthCheckName healthCheck) {
 
     GetHealthCheckHttpRequest request =
         GetHealthCheckHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck response = healthCheckClient.getHealthCheck(healthCheck.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   GetHealthCheckHttpRequest request = GetHealthCheckHttpRequest.newBuilder()
    *     .setHealthCheck(healthCheck.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   GetHealthCheckHttpRequest request = GetHealthCheckHttpRequest.newBuilder()
    *     .setHealthCheck(healthCheck.toString())
    *     .build();
@@ -641,7 +641,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response = healthCheckClient.patchHealthCheck(requestId, healthCheck, healthCheckResource);
    * }
@@ -657,7 +657,7 @@ public class HealthCheckClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchHealthCheck(String requestId, HealthCheckName healthCheck, HealthCheck healthCheckResource) {
+  public final Operation patchHealthCheck(String requestId, ProjectHealthCheckName healthCheck, HealthCheck healthCheckResource) {
 
     PatchHealthCheckHttpRequest request =
         PatchHealthCheckHttpRequest.newBuilder()
@@ -676,7 +676,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response = healthCheckClient.patchHealthCheck(requestId, healthCheck.toString(), healthCheckResource);
    * }
@@ -711,7 +711,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   PatchHealthCheckHttpRequest request = PatchHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -738,7 +738,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   PatchHealthCheckHttpRequest request = PatchHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -764,7 +764,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response = healthCheckClient.updateHealthCheck(requestId, healthCheck, healthCheckResource);
    * }
@@ -780,7 +780,7 @@ public class HealthCheckClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateHealthCheck(String requestId, HealthCheckName healthCheck, HealthCheck healthCheckResource) {
+  public final Operation updateHealthCheck(String requestId, ProjectHealthCheckName healthCheck, HealthCheck healthCheckResource) {
 
     UpdateHealthCheckHttpRequest request =
         UpdateHealthCheckHttpRequest.newBuilder()
@@ -799,7 +799,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   Operation response = healthCheckClient.updateHealthCheck(requestId, healthCheck.toString(), healthCheckResource);
    * }
@@ -834,7 +834,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   UpdateHealthCheckHttpRequest request = UpdateHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -861,7 +861,7 @@ public class HealthCheckClient implements BackgroundResource {
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
    *   String requestId = "";
-   *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+   *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   UpdateHealthCheckHttpRequest request = UpdateHealthCheckHttpRequest.newBuilder()
    *     .setRequestId(requestId)

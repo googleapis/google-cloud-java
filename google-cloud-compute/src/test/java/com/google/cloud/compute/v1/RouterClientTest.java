@@ -158,7 +158,7 @@ public class RouterClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -167,7 +167,7 @@ public class RouterClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -196,7 +196,7 @@ public class RouterClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
     String requestId = "requestId37109963";
 
     Operation actualResponse =
@@ -219,7 +219,7 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
-      RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+      ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
       String requestId = "requestId37109963";
 
       client.deleteRouter(router, requestId);
@@ -237,8 +237,8 @@ public class RouterClientTest {
     String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
     Router expectedResponse = Router.newBuilder()
       .setKind(kind)
@@ -252,7 +252,7 @@ public class RouterClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
 
     Router actualResponse =
         client.getRouter(router);
@@ -274,7 +274,7 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
-      RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+      ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
 
       client.getRouter(router);
       Assert.fail("No exception raised");
@@ -292,7 +292,7 @@ public class RouterClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
 
     RouterStatusResponse actualResponse =
         client.getRouterStatusRouter(router);
@@ -314,7 +314,7 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
-      RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+      ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
 
       client.getRouterStatusRouter(router);
       Assert.fail("No exception raised");
@@ -334,7 +334,7 @@ public class RouterClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -343,7 +343,7 @@ public class RouterClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region2 = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -373,7 +373,7 @@ public class RouterClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Router routerResource = Router.newBuilder().build();
 
     Operation actualResponse =
@@ -397,7 +397,7 @@ public class RouterClientTest {
 
     try {
       String requestId = "requestId37109963";
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Router routerResource = Router.newBuilder().build();
 
       client.insertRouter(requestId, region, routerResource);
@@ -425,7 +425,7 @@ public class RouterClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
     ListRoutersPagedResponse pagedListResponse = client.listRouters(region);
 
@@ -450,7 +450,7 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listRouters(region);
       Assert.fail("No exception raised");
@@ -470,7 +470,7 @@ public class RouterClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -479,7 +479,7 @@ public class RouterClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -508,7 +508,7 @@ public class RouterClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
     String requestId = "requestId37109963";
     Router routerResource = Router.newBuilder().build();
 
@@ -532,7 +532,7 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
-      RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+      ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
       String requestId = "requestId37109963";
       Router routerResource = Router.newBuilder().build();
 
@@ -549,7 +549,7 @@ public class RouterClientTest {
     RoutersPreviewResponse expectedResponse = RoutersPreviewResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
     Router routerResource = Router.newBuilder().build();
 
     RoutersPreviewResponse actualResponse =
@@ -572,7 +572,7 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
-      RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+      ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
       Router routerResource = Router.newBuilder().build();
 
       client.previewRouter(router, routerResource);
@@ -593,7 +593,7 @@ public class RouterClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -602,7 +602,7 @@ public class RouterClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -631,7 +631,7 @@ public class RouterClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
     String requestId = "requestId37109963";
     Router routerResource = Router.newBuilder().build();
 
@@ -655,7 +655,7 @@ public class RouterClientTest {
     mockService.addException(exception);
 
     try {
-      RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+      ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
       String requestId = "requestId37109963";
       Router routerResource = Router.newBuilder().build();
 

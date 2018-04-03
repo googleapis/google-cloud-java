@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
- *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+ *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
  *   String requestId = "";
  *   Operation response = urlMapClient.deleteUrlMap(urlMap, requestId);
  * }
@@ -176,7 +176,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   Operation response = urlMapClient.deleteUrlMap(urlMap, requestId);
    * }
@@ -191,7 +191,7 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteUrlMap(UrlMapName urlMap, String requestId) {
+  public final Operation deleteUrlMap(ProjectUrlMapName urlMap, String requestId) {
 
     DeleteUrlMapHttpRequest request =
         DeleteUrlMapHttpRequest.newBuilder()
@@ -208,7 +208,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   Operation response = urlMapClient.deleteUrlMap(urlMap.toString(), requestId);
    * }
@@ -240,7 +240,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   DeleteUrlMapHttpRequest request = DeleteUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
@@ -265,7 +265,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   DeleteUrlMapHttpRequest request = DeleteUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
@@ -289,7 +289,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap response = urlMapClient.getUrlMap(urlMap);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final UrlMap getUrlMap(UrlMapName urlMap) {
+  public final UrlMap getUrlMap(ProjectUrlMapName urlMap) {
 
     GetUrlMapHttpRequest request =
         GetUrlMapHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap response = urlMapClient.getUrlMap(urlMap.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   GetUrlMapHttpRequest request = GetUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   GetUrlMapHttpRequest request = GetUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
    *     .build();
@@ -507,7 +507,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   Operation response = urlMapClient.invalidateCacheUrlMap(urlMap, requestId, cacheInvalidationRuleResource);
@@ -524,7 +524,7 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation invalidateCacheUrlMap(UrlMapName urlMap, String requestId, CacheInvalidationRule cacheInvalidationRuleResource) {
+  public final Operation invalidateCacheUrlMap(ProjectUrlMapName urlMap, String requestId, CacheInvalidationRule cacheInvalidationRuleResource) {
 
     InvalidateCacheUrlMapHttpRequest request =
         InvalidateCacheUrlMapHttpRequest.newBuilder()
@@ -542,7 +542,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   Operation response = urlMapClient.invalidateCacheUrlMap(urlMap.toString(), requestId, cacheInvalidationRuleResource);
@@ -577,7 +577,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   InvalidateCacheUrlMapHttpRequest request = InvalidateCacheUrlMapHttpRequest.newBuilder()
@@ -604,7 +604,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   InvalidateCacheUrlMapHttpRequest request = InvalidateCacheUrlMapHttpRequest.newBuilder()
@@ -763,7 +763,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapClient.patchUrlMap(urlMap, requestId, urlMapResource);
@@ -780,7 +780,7 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchUrlMap(UrlMapName urlMap, String requestId, UrlMap urlMapResource) {
+  public final Operation patchUrlMap(ProjectUrlMapName urlMap, String requestId, UrlMap urlMapResource) {
 
     PatchUrlMapHttpRequest request =
         PatchUrlMapHttpRequest.newBuilder()
@@ -798,7 +798,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapClient.patchUrlMap(urlMap.toString(), requestId, urlMapResource);
@@ -833,7 +833,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   PatchUrlMapHttpRequest request = PatchUrlMapHttpRequest.newBuilder()
@@ -860,7 +860,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   PatchUrlMapHttpRequest request = PatchUrlMapHttpRequest.newBuilder()
@@ -886,7 +886,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapClient.updateUrlMap(urlMap, requestId, urlMapResource);
@@ -903,7 +903,7 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateUrlMap(UrlMapName urlMap, String requestId, UrlMap urlMapResource) {
+  public final Operation updateUrlMap(ProjectUrlMapName urlMap, String requestId, UrlMap urlMapResource) {
 
     UpdateUrlMapHttpRequest request =
         UpdateUrlMapHttpRequest.newBuilder()
@@ -921,7 +921,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapClient.updateUrlMap(urlMap.toString(), requestId, urlMapResource);
@@ -956,7 +956,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   UpdateUrlMapHttpRequest request = UpdateUrlMapHttpRequest.newBuilder()
@@ -983,7 +983,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   UpdateUrlMapHttpRequest request = UpdateUrlMapHttpRequest.newBuilder()
@@ -1009,7 +1009,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   UrlMapsValidateResponse response = urlMapClient.validateUrlMap(urlMap, urlMapsValidateRequestResource);
    * }
@@ -1020,7 +1020,7 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final UrlMapsValidateResponse validateUrlMap(UrlMapName urlMap, UrlMapsValidateRequest urlMapsValidateRequestResource) {
+  public final UrlMapsValidateResponse validateUrlMap(ProjectUrlMapName urlMap, UrlMapsValidateRequest urlMapsValidateRequestResource) {
 
     ValidateUrlMapHttpRequest request =
         ValidateUrlMapHttpRequest.newBuilder()
@@ -1037,7 +1037,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   UrlMapsValidateResponse response = urlMapClient.validateUrlMap(urlMap.toString(), urlMapsValidateRequestResource);
    * }
@@ -1065,7 +1065,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   ValidateUrlMapHttpRequest request = ValidateUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
@@ -1090,7 +1090,7 @@ public class UrlMapClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   ValidateUrlMapHttpRequest request = ValidateUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())

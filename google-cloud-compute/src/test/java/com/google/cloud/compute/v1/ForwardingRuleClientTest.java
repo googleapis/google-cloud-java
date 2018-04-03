@@ -152,7 +152,7 @@ public class ForwardingRuleClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -161,7 +161,7 @@ public class ForwardingRuleClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -191,7 +191,7 @@ public class ForwardingRuleClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+    ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
 
     Operation actualResponse =
         client.deleteForwardingRule(requestId, forwardingRule);
@@ -214,7 +214,7 @@ public class ForwardingRuleClientTest {
 
     try {
       String requestId = "requestId37109963";
-      ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+      ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
 
       client.deleteForwardingRule(requestId, forwardingRule);
       Assert.fail("No exception raised");
@@ -229,19 +229,19 @@ public class ForwardingRuleClientTest {
     String portRange = "portRange217518079";
     String kind = "kind3292052";
     String iPProtocol = "iPProtocol323774237";
-    BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     String description = "description-1724546052";
     String loadBalancingScheme = "loadBalancingScheme1974502980";
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
     String target = "target-880905839";
     String ipVersion = "ipVersion-1315653184";
-    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String id = "id3355";
     String iPAddress = "iPAddress-551149873";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     ForwardingRule expectedResponse = ForwardingRule.newBuilder()
       .setPortRange(portRange)
       .setKind(kind)
@@ -262,7 +262,7 @@ public class ForwardingRuleClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+    ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
 
     ForwardingRule actualResponse =
         client.getForwardingRule(forwardingRule);
@@ -284,7 +284,7 @@ public class ForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
-      ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+      ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
 
       client.getForwardingRule(forwardingRule);
       Assert.fail("No exception raised");
@@ -304,7 +304,7 @@ public class ForwardingRuleClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -313,7 +313,7 @@ public class ForwardingRuleClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region2 = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -343,7 +343,7 @@ public class ForwardingRuleClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
     Operation actualResponse =
@@ -367,7 +367,7 @@ public class ForwardingRuleClientTest {
 
     try {
       String requestId = "requestId37109963";
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
       client.insertForwardingRule(requestId, region, forwardingRuleResource);
@@ -395,7 +395,7 @@ public class ForwardingRuleClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
     ListForwardingRulesPagedResponse pagedListResponse = client.listForwardingRules(region);
 
@@ -420,7 +420,7 @@ public class ForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listForwardingRules(region);
       Assert.fail("No exception raised");
@@ -440,7 +440,7 @@ public class ForwardingRuleClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -449,7 +449,7 @@ public class ForwardingRuleClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -479,7 +479,7 @@ public class ForwardingRuleClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+    ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
@@ -503,7 +503,7 @@ public class ForwardingRuleClientTest {
 
     try {
       String requestId = "requestId37109963";
-      ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+      ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
       client.setTargetForwardingRule(requestId, forwardingRule, targetReferenceResource);

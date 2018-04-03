@@ -36,6 +36,7 @@ import com.google.cloud.compute.v1.ListInstancesRegionInstanceGroupsHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectRegionInstanceGroupName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import static com.google.cloud.compute.v1.RegionInstanceGroupClient.ListInstancesRegionInstanceGroupsPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupClient.ListRegionInstanceGroupsPagedResponse;
 import com.google.cloud.compute.v1.RegionInstanceGroupList;
@@ -43,7 +44,6 @@ import com.google.cloud.compute.v1.RegionInstanceGroupSettings;
 import com.google.cloud.compute.v1.RegionInstanceGroupsListInstances;
 import com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest;
-import com.google.cloud.compute.v1.RegionName;
 import com.google.cloud.compute.v1.SetNamedPortsRegionInstanceGroupHttpRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -94,7 +94,7 @@ public class HttpJsonRegionInstanceGroupStub extends RegionInstanceGroupStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(

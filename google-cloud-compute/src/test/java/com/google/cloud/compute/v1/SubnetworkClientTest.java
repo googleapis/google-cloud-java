@@ -156,7 +156,7 @@ public class SubnetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -165,7 +165,7 @@ public class SubnetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -195,7 +195,7 @@ public class SubnetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
 
     Operation actualResponse =
         client.deleteSubnetwork(requestId, subnetwork);
@@ -218,7 +218,7 @@ public class SubnetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+      ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
 
       client.deleteSubnetwork(requestId, subnetwork);
       Assert.fail("No exception raised");
@@ -238,7 +238,7 @@ public class SubnetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -247,7 +247,7 @@ public class SubnetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -277,7 +277,7 @@ public class SubnetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -301,7 +301,7 @@ public class SubnetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+      ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
 
       client.expandIpCidrRangeSubnetwork(requestId, subnetwork, subnetworksExpandIpCidrRangeRequestResource);
@@ -317,14 +317,14 @@ public class SubnetworkClientTest {
     Boolean privateIpGoogleAccess = true;
     String kind = "kind3292052";
     String description = "description-1724546052";
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
     String creationTimestamp = "creationTimestamp567396278";
     String fingerprint = "fingerprint-1375934236";
     String name = "name3373707";
     String gatewayAddress = "gatewayAddress-77003527";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String ipCidrRange = "ipCidrRange-2049366326";
     Subnetwork expectedResponse = Subnetwork.newBuilder()
       .setPrivateIpGoogleAccess(privateIpGoogleAccess)
@@ -342,7 +342,7 @@ public class SubnetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
 
     Subnetwork actualResponse =
         client.getSubnetwork(subnetwork);
@@ -364,7 +364,7 @@ public class SubnetworkClientTest {
     mockService.addException(exception);
 
     try {
-      SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+      ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
 
       client.getSubnetwork(subnetwork);
       Assert.fail("No exception raised");
@@ -384,7 +384,7 @@ public class SubnetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -393,7 +393,7 @@ public class SubnetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region2 = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -423,7 +423,7 @@ public class SubnetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
 
     Operation actualResponse =
@@ -447,7 +447,7 @@ public class SubnetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
 
       client.insertSubnetwork(requestId, region, subnetworkResource);
@@ -475,7 +475,7 @@ public class SubnetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
     ListSubnetworksPagedResponse pagedListResponse = client.listSubnetworks(region);
 
@@ -500,7 +500,7 @@ public class SubnetworkClientTest {
     mockService.addException(exception);
 
     try {
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listSubnetworks(region);
       Assert.fail("No exception raised");
@@ -520,7 +520,7 @@ public class SubnetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -529,7 +529,7 @@ public class SubnetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -559,7 +559,7 @@ public class SubnetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
 
     Operation actualResponse =
@@ -583,7 +583,7 @@ public class SubnetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+      ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
       Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
 
       client.patchSubnetwork(requestId, subnetwork, subnetworkResource);
@@ -604,7 +604,7 @@ public class SubnetworkClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -613,7 +613,7 @@ public class SubnetworkClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -643,7 +643,7 @@ public class SubnetworkClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -667,7 +667,7 @@ public class SubnetworkClientTest {
 
     try {
       String requestId = "requestId37109963";
-      SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+      ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
       SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
 
       client.setPrivateIpGoogleAccessSubnetwork(requestId, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);

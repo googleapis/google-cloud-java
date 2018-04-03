@@ -34,12 +34,12 @@ import com.google.cloud.compute.v1.GetHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.HealthCheck;
 import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
 import com.google.cloud.compute.v1.HealthCheckList;
-import com.google.cloud.compute.v1.HealthCheckName;
 import com.google.cloud.compute.v1.HealthCheckSettings;
 import com.google.cloud.compute.v1.InsertHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchHealthCheckHttpRequest;
+import com.google.cloud.compute.v1.ProjectHealthCheckName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.UpdateHealthCheckHttpRequest;
 import com.google.common.collect.ImmutableMap;
@@ -72,7 +72,7 @@ public class HttpJsonHealthCheckStub extends HealthCheckStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(HealthCheckName.newFactory())
+                  .setResourceNameFactory(ProjectHealthCheckName.newFactory())
                   .setResourceNameField("healthCheck")
                   .build())
           .setResponseParser(
@@ -91,7 +91,7 @@ public class HttpJsonHealthCheckStub extends HealthCheckStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/healthChecks/{healthCheck}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(HealthCheckName.newFactory())
+                  .setResourceNameFactory(ProjectHealthCheckName.newFactory())
                   .setResourceNameField("healthCheck")
                   .build())
           .setResponseParser(
@@ -151,7 +151,7 @@ public class HttpJsonHealthCheckStub extends HealthCheckStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(HealthCheckName.newFactory())
+                  .setResourceNameFactory(ProjectHealthCheckName.newFactory())
                   .setResourceNameField("healthCheck")
                   .build())
           .setResponseParser(
@@ -171,7 +171,7 @@ public class HttpJsonHealthCheckStub extends HealthCheckStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(HealthCheckName.newFactory())
+                  .setResourceNameFactory(ProjectHealthCheckName.newFactory())
                   .setResourceNameField("healthCheck")
                   .build())
           .setResponseParser(

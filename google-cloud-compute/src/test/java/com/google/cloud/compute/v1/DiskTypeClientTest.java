@@ -139,7 +139,7 @@ public class DiskTypeClientTest {
   @SuppressWarnings("all")
   public void getDiskTypeTest() {
     String defaultDiskSizeGb = "defaultDiskSizeGb807490165";
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -160,7 +160,7 @@ public class DiskTypeClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    DiskTypeName diskType = DiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
+    ProjectZoneDiskTypeName diskType = ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
 
     DiskType actualResponse =
         client.getDiskType(diskType);
@@ -182,7 +182,7 @@ public class DiskTypeClientTest {
     mockService.addException(exception);
 
     try {
-      DiskTypeName diskType = DiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
+      ProjectZoneDiskTypeName diskType = ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
 
       client.getDiskType(diskType);
       Assert.fail("No exception raised");
@@ -209,7 +209,7 @@ public class DiskTypeClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
     ListDiskTypesPagedResponse pagedListResponse = client.listDiskTypes(zone);
 
@@ -234,7 +234,7 @@ public class DiskTypeClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.listDiskTypes(zone);
       Assert.fail("No exception raised");

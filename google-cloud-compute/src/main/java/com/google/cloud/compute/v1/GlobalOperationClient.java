@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
- *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+ *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
  *   globalOperationClient.deleteGlobalOperation(operation);
  * }
  * </code>
@@ -308,7 +308,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+   *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
    *   globalOperationClient.deleteGlobalOperation(operation);
    * }
    * </code></pre>
@@ -317,7 +317,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final void deleteGlobalOperation(OperationName operation) {
+  public final void deleteGlobalOperation(ProjectOperationName operation) {
 
     DeleteGlobalOperationHttpRequest request =
         DeleteGlobalOperationHttpRequest.newBuilder()
@@ -333,7 +333,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+   *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
    *   globalOperationClient.deleteGlobalOperation(operation.toString());
    * }
    * </code></pre>
@@ -358,7 +358,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+   *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
    *   DeleteGlobalOperationHttpRequest request = DeleteGlobalOperationHttpRequest.newBuilder()
    *     .setOperation(operation.toString())
    *     .build();
@@ -381,7 +381,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+   *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
    *   DeleteGlobalOperationHttpRequest request = DeleteGlobalOperationHttpRequest.newBuilder()
    *     .setOperation(operation.toString())
    *     .build();
@@ -403,7 +403,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+   *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
    *   Operation response = globalOperationClient.getGlobalOperation(operation);
    * }
    * </code></pre>
@@ -412,7 +412,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation getGlobalOperation(OperationName operation) {
+  public final Operation getGlobalOperation(ProjectOperationName operation) {
 
     GetGlobalOperationHttpRequest request =
         GetGlobalOperationHttpRequest.newBuilder()
@@ -428,7 +428,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+   *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
    *   Operation response = globalOperationClient.getGlobalOperation(operation.toString());
    * }
    * </code></pre>
@@ -453,7 +453,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+   *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
    *   GetGlobalOperationHttpRequest request = GetGlobalOperationHttpRequest.newBuilder()
    *     .setOperation(operation.toString())
    *     .build();
@@ -476,7 +476,7 @@ public class GlobalOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
-   *   OperationName operation = OperationName.of("[PROJECT]", "[OPERATION]");
+   *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
    *   GetGlobalOperationHttpRequest request = GetGlobalOperationHttpRequest.newBuilder()
    *     .setOperation(operation.toString())
    *     .build();

@@ -21,10 +21,10 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetZoneHttpRequest;
 import com.google.cloud.compute.v1.ListZonesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.Zone;
 import static com.google.cloud.compute.v1.ZoneClient.ListZonesPagedResponse;
 import com.google.cloud.compute.v1.ZoneList;
-import com.google.cloud.compute.v1.ZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

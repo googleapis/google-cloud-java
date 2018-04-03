@@ -98,7 +98,7 @@ public class BackendBucketClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -107,7 +107,7 @@ public class BackendBucketClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -136,7 +136,7 @@ public class BackendBucketClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+    ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
     String requestId = "requestId37109963";
 
     Operation actualResponse =
@@ -159,7 +159,7 @@ public class BackendBucketClientTest {
     mockService.addException(exception);
 
     try {
-      BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+      ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
       String requestId = "requestId37109963";
 
       client.deleteBackendBucket(backendBucket, requestId);
@@ -192,7 +192,7 @@ public class BackendBucketClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+    ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
 
     BackendBucket actualResponse =
         client.getBackendBucket(backendBucket);
@@ -214,7 +214,7 @@ public class BackendBucketClientTest {
     mockService.addException(exception);
 
     try {
-      BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+      ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
 
       client.getBackendBucket(backendBucket);
       Assert.fail("No exception raised");
@@ -234,7 +234,7 @@ public class BackendBucketClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -243,7 +243,7 @@ public class BackendBucketClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -370,7 +370,7 @@ public class BackendBucketClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -379,7 +379,7 @@ public class BackendBucketClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -408,7 +408,7 @@ public class BackendBucketClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+    ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
     String requestId = "requestId37109963";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
@@ -432,7 +432,7 @@ public class BackendBucketClientTest {
     mockService.addException(exception);
 
     try {
-      BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+      ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
       String requestId = "requestId37109963";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
@@ -454,7 +454,7 @@ public class BackendBucketClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -463,7 +463,7 @@ public class BackendBucketClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -492,7 +492,7 @@ public class BackendBucketClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+    ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
     String requestId = "requestId37109963";
     BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 
@@ -516,7 +516,7 @@ public class BackendBucketClientTest {
     mockService.addException(exception);
 
     try {
-      BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+      ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
       String requestId = "requestId37109963";
       BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
 

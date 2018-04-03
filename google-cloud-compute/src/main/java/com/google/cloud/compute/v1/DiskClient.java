@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DiskClient diskClient = DiskClient.create()) {
- *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+ *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
  *   String requestId = "";
  *   Boolean guestFlush = false;
  *   Snapshot snapshotResource = Snapshot.newBuilder().build();
@@ -311,7 +311,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
@@ -330,7 +330,7 @@ public class DiskClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation createSnapshotDisk(DiskName disk, String requestId, Boolean guestFlush, Snapshot snapshotResource) {
+  public final Operation createSnapshotDisk(ProjectZoneDiskName disk, String requestId, Boolean guestFlush, Snapshot snapshotResource) {
 
     CreateSnapshotDiskHttpRequest request =
         CreateSnapshotDiskHttpRequest.newBuilder()
@@ -349,7 +349,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
@@ -387,7 +387,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
@@ -416,7 +416,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
@@ -444,7 +444,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   Operation response = diskClient.deleteDisk(disk, requestId);
    * }
@@ -459,7 +459,7 @@ public class DiskClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteDisk(DiskName disk, String requestId) {
+  public final Operation deleteDisk(ProjectZoneDiskName disk, String requestId) {
 
     DeleteDiskHttpRequest request =
         DeleteDiskHttpRequest.newBuilder()
@@ -476,7 +476,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   Operation response = diskClient.deleteDisk(disk.toString(), requestId);
    * }
@@ -508,7 +508,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   DeleteDiskHttpRequest request = DeleteDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
@@ -533,7 +533,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   DeleteDiskHttpRequest request = DeleteDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
@@ -557,7 +557,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   Disk response = diskClient.getDisk(disk);
    * }
    * </code></pre>
@@ -566,7 +566,7 @@ public class DiskClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Disk getDisk(DiskName disk) {
+  public final Disk getDisk(ProjectZoneDiskName disk) {
 
     GetDiskHttpRequest request =
         GetDiskHttpRequest.newBuilder()
@@ -582,7 +582,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   Disk response = diskClient.getDisk(disk.toString());
    * }
    * </code></pre>
@@ -607,7 +607,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   GetDiskHttpRequest request = GetDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
    *     .build();
@@ -630,7 +630,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   GetDiskHttpRequest request = GetDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
    *     .build();
@@ -652,7 +652,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   String sourceImage = "";
    *   Disk diskResource = Disk.newBuilder().build();
@@ -671,7 +671,7 @@ public class DiskClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertDisk(ZoneName zone, String requestId, String sourceImage, Disk diskResource) {
+  public final Operation insertDisk(ProjectZoneName zone, String requestId, String sourceImage, Disk diskResource) {
 
     InsertDiskHttpRequest request =
         InsertDiskHttpRequest.newBuilder()
@@ -690,7 +690,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   String sourceImage = "";
    *   Disk diskResource = Disk.newBuilder().build();
@@ -728,7 +728,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   String sourceImage = "";
    *   Disk diskResource = Disk.newBuilder().build();
@@ -757,7 +757,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   String sourceImage = "";
    *   Disk diskResource = Disk.newBuilder().build();
@@ -785,7 +785,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (Disk element : diskClient.listDisks(zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -796,7 +796,7 @@ public class DiskClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListDisksPagedResponse listDisks(ZoneName zone) {
+  public final ListDisksPagedResponse listDisks(ProjectZoneName zone) {
     ListDisksHttpRequest request =
         ListDisksHttpRequest.newBuilder()
         .setZone(zone == null ? null : zone.toString())
@@ -811,7 +811,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (Disk element : diskClient.listDisks(zone.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -837,7 +837,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListDisksHttpRequest request = ListDisksHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -863,7 +863,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListDisksHttpRequest request = ListDisksHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -887,7 +887,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListDisksHttpRequest request = ListDisksHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -918,7 +918,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   Operation response = diskClient.resizeDisk(disk, requestId, disksResizeRequestResource);
@@ -935,7 +935,7 @@ public class DiskClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resizeDisk(DiskName disk, String requestId, DisksResizeRequest disksResizeRequestResource) {
+  public final Operation resizeDisk(ProjectZoneDiskName disk, String requestId, DisksResizeRequest disksResizeRequestResource) {
 
     ResizeDiskHttpRequest request =
         ResizeDiskHttpRequest.newBuilder()
@@ -953,7 +953,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   Operation response = diskClient.resizeDisk(disk.toString(), requestId, disksResizeRequestResource);
@@ -988,7 +988,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   ResizeDiskHttpRequest request = ResizeDiskHttpRequest.newBuilder()
@@ -1015,7 +1015,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   ResizeDiskHttpRequest request = ResizeDiskHttpRequest.newBuilder()
@@ -1041,7 +1041,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ProjectZoneDiskName resource = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
    *   Operation response = diskClient.setLabelsDisk(resource, requestId, zoneSetLabelsRequestResource);
@@ -1058,7 +1058,7 @@ public class DiskClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setLabelsDisk(ResourceName resource, String requestId, ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
+  public final Operation setLabelsDisk(ProjectZoneDiskName resource, String requestId, ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
 
     SetLabelsDiskHttpRequest request =
         SetLabelsDiskHttpRequest.newBuilder()
@@ -1076,7 +1076,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ProjectZoneDiskName resource = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
    *   Operation response = diskClient.setLabelsDisk(resource.toString(), requestId, zoneSetLabelsRequestResource);
@@ -1111,7 +1111,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ProjectZoneDiskName resource = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
    *   SetLabelsDiskHttpRequest request = SetLabelsDiskHttpRequest.newBuilder()
@@ -1138,7 +1138,7 @@ public class DiskClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
-   *   ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ProjectZoneDiskName resource = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
    *   String requestId = "";
    *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
    *   SetLabelsDiskHttpRequest request = SetLabelsDiskHttpRequest.newBuilder()

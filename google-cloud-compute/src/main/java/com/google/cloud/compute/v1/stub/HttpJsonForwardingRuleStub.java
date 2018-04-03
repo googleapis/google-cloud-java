@@ -36,7 +36,6 @@ import com.google.cloud.compute.v1.ForwardingRuleAggregatedList;
 import static com.google.cloud.compute.v1.ForwardingRuleClient.AggregatedListForwardingRulesPagedResponse;
 import static com.google.cloud.compute.v1.ForwardingRuleClient.ListForwardingRulesPagedResponse;
 import com.google.cloud.compute.v1.ForwardingRuleList;
-import com.google.cloud.compute.v1.ForwardingRuleName;
 import com.google.cloud.compute.v1.ForwardingRuleSettings;
 import com.google.cloud.compute.v1.ForwardingRulesScopedList;
 import com.google.cloud.compute.v1.GetForwardingRuleHttpRequest;
@@ -44,7 +43,8 @@ import com.google.cloud.compute.v1.InsertForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ListForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionForwardingRuleName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.SetTargetForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.TargetReference;
 import com.google.common.collect.ImmutableMap;
@@ -97,7 +97,7 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ForwardingRuleName.newFactory())
+                  .setResourceNameFactory(ProjectRegionForwardingRuleName.newFactory())
                   .setResourceNameField("forwardingRule")
                   .build())
           .setResponseParser(
@@ -116,7 +116,7 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/forwardingRules/{forwardingRule}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(ForwardingRuleName.newFactory())
+                  .setResourceNameFactory(ProjectRegionForwardingRuleName.newFactory())
                   .setResourceNameField("forwardingRule")
                   .build())
           .setResponseParser(
@@ -136,7 +136,7 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -156,7 +156,7 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -176,7 +176,7 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ForwardingRuleName.newFactory())
+                  .setResourceNameFactory(ProjectRegionForwardingRuleName.newFactory())
                   .setResourceNameField("forwardingRule")
                   .build())
           .setResponseParser(

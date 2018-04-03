@@ -34,8 +34,8 @@ import com.google.cloud.compute.v1.GetZoneOperationHttpRequest;
 import com.google.cloud.compute.v1.ListZoneOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ProjectZoneOperationName;
-import com.google.cloud.compute.v1.ZoneName;
 import static com.google.cloud.compute.v1.ZoneOperationClient.ListZoneOperationsPagedResponse;
 import com.google.cloud.compute.v1.ZoneOperationSettings;
 import com.google.common.collect.ImmutableMap;
@@ -102,7 +102,7 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(

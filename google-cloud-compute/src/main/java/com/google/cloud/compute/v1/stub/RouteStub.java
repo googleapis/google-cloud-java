@@ -24,10 +24,10 @@ import com.google.cloud.compute.v1.InsertRouteHttpRequest;
 import com.google.cloud.compute.v1.ListRoutesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectRouteName;
 import com.google.cloud.compute.v1.Route;
 import static com.google.cloud.compute.v1.RouteClient.ListRoutesPagedResponse;
 import com.google.cloud.compute.v1.RouteList;
-import com.google.cloud.compute.v1.RouteName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

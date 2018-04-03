@@ -154,7 +154,7 @@ public class AutoscalerClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -163,7 +163,7 @@ public class AutoscalerClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -192,7 +192,7 @@ public class AutoscalerClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+    ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
     String requestId = "requestId37109963";
 
     Operation actualResponse =
@@ -215,7 +215,7 @@ public class AutoscalerClientTest {
     mockService.addException(exception);
 
     try {
-      AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+      ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
       String requestId = "requestId37109963";
 
       client.deleteAutoscaler(autoscaler, requestId);
@@ -228,13 +228,13 @@ public class AutoscalerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAutoscalerTest() {
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     String status = "status-892481550";
     String target = "target-880905839";
@@ -252,7 +252,7 @@ public class AutoscalerClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+    ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
 
     Autoscaler actualResponse =
         client.getAutoscaler(autoscaler);
@@ -274,7 +274,7 @@ public class AutoscalerClientTest {
     mockService.addException(exception);
 
     try {
-      AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+      ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
 
       client.getAutoscaler(autoscaler);
       Assert.fail("No exception raised");
@@ -294,7 +294,7 @@ public class AutoscalerClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone2 = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone2 = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -303,7 +303,7 @@ public class AutoscalerClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -332,7 +332,7 @@ public class AutoscalerClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String requestId = "requestId37109963";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
@@ -356,7 +356,7 @@ public class AutoscalerClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
       String requestId = "requestId37109963";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
@@ -385,7 +385,7 @@ public class AutoscalerClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
     ListAutoscalersPagedResponse pagedListResponse = client.listAutoscalers(zone);
 
@@ -410,7 +410,7 @@ public class AutoscalerClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.listAutoscalers(zone);
       Assert.fail("No exception raised");
@@ -430,7 +430,7 @@ public class AutoscalerClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone2 = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone2 = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -439,7 +439,7 @@ public class AutoscalerClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -469,7 +469,7 @@ public class AutoscalerClientTest {
     mockService.addResponse(expectedResponse);
 
     String autoscaler = "autoscaler517258967";
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String requestId = "requestId37109963";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
@@ -494,7 +494,7 @@ public class AutoscalerClientTest {
 
     try {
       String autoscaler = "autoscaler517258967";
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
       String requestId = "requestId37109963";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
@@ -516,7 +516,7 @@ public class AutoscalerClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone2 = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone2 = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -525,7 +525,7 @@ public class AutoscalerClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -555,7 +555,7 @@ public class AutoscalerClientTest {
     mockService.addResponse(expectedResponse);
 
     String autoscaler = "autoscaler517258967";
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String requestId = "requestId37109963";
     Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 
@@ -580,7 +580,7 @@ public class AutoscalerClientTest {
 
     try {
       String autoscaler = "autoscaler517258967";
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
       String requestId = "requestId37109963";
       Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
 

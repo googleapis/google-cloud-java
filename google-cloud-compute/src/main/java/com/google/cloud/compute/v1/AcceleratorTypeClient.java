@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
- *   AcceleratorTypeName acceleratorType = AcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+ *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
  *   AcceleratorType response = acceleratorTypeClient.getAcceleratorType(acceleratorType);
  * }
  * </code>
@@ -308,7 +308,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   AcceleratorTypeName acceleratorType = AcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+   *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
    *   AcceleratorType response = acceleratorTypeClient.getAcceleratorType(acceleratorType);
    * }
    * </code></pre>
@@ -317,7 +317,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AcceleratorType getAcceleratorType(AcceleratorTypeName acceleratorType) {
+  public final AcceleratorType getAcceleratorType(ProjectZoneAcceleratorTypeName acceleratorType) {
 
     GetAcceleratorTypeHttpRequest request =
         GetAcceleratorTypeHttpRequest.newBuilder()
@@ -333,7 +333,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   AcceleratorTypeName acceleratorType = AcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+   *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
    *   AcceleratorType response = acceleratorTypeClient.getAcceleratorType(acceleratorType.toString());
    * }
    * </code></pre>
@@ -358,7 +358,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   AcceleratorTypeName acceleratorType = AcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+   *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
    *   GetAcceleratorTypeHttpRequest request = GetAcceleratorTypeHttpRequest.newBuilder()
    *     .setAcceleratorType(acceleratorType.toString())
    *     .build();
@@ -381,7 +381,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   AcceleratorTypeName acceleratorType = AcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+   *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
    *   GetAcceleratorTypeHttpRequest request = GetAcceleratorTypeHttpRequest.newBuilder()
    *     .setAcceleratorType(acceleratorType.toString())
    *     .build();
@@ -403,7 +403,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (AcceleratorType element : acceleratorTypeClient.listAcceleratorTypes(zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -414,7 +414,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListAcceleratorTypesPagedResponse listAcceleratorTypes(ZoneName zone) {
+  public final ListAcceleratorTypesPagedResponse listAcceleratorTypes(ProjectZoneName zone) {
     ListAcceleratorTypesHttpRequest request =
         ListAcceleratorTypesHttpRequest.newBuilder()
         .setZone(zone == null ? null : zone.toString())
@@ -429,7 +429,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (AcceleratorType element : acceleratorTypeClient.listAcceleratorTypes(zone.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -455,7 +455,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListAcceleratorTypesHttpRequest request = ListAcceleratorTypesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -481,7 +481,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListAcceleratorTypesHttpRequest request = ListAcceleratorTypesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -505,7 +505,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListAcceleratorTypesHttpRequest request = ListAcceleratorTypesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();

@@ -33,13 +33,13 @@ import com.google.cloud.compute.v1.DeleteFirewallHttpRequest;
 import com.google.cloud.compute.v1.Firewall;
 import static com.google.cloud.compute.v1.FirewallClient.ListFirewallsPagedResponse;
 import com.google.cloud.compute.v1.FirewallList;
-import com.google.cloud.compute.v1.FirewallName;
 import com.google.cloud.compute.v1.FirewallSettings;
 import com.google.cloud.compute.v1.GetFirewallHttpRequest;
 import com.google.cloud.compute.v1.InsertFirewallHttpRequest;
 import com.google.cloud.compute.v1.ListFirewallsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchFirewallHttpRequest;
+import com.google.cloud.compute.v1.ProjectFirewallName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.UpdateFirewallHttpRequest;
 import com.google.common.collect.ImmutableMap;
@@ -72,7 +72,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(FirewallName.newFactory())
+                  .setResourceNameFactory(ProjectFirewallName.newFactory())
                   .setResourceNameField("firewall")
                   .build())
           .setResponseParser(
@@ -91,7 +91,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/firewalls/{firewall}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(FirewallName.newFactory())
+                  .setResourceNameFactory(ProjectFirewallName.newFactory())
                   .setResourceNameField("firewall")
                   .build())
           .setResponseParser(
@@ -151,7 +151,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(FirewallName.newFactory())
+                  .setResourceNameFactory(ProjectFirewallName.newFactory())
                   .setResourceNameField("firewall")
                   .build())
           .setResponseParser(
@@ -171,7 +171,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(FirewallName.newFactory())
+                  .setResourceNameFactory(ProjectFirewallName.newFactory())
                   .setResourceNameField("firewall")
                   .build())
           .setResponseParser(

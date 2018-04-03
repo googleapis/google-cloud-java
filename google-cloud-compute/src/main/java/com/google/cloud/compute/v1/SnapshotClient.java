@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
  *   String requestId = "";
- *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+ *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
  *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
  * }
  * </code>
@@ -179,7 +179,7 @@ public class SnapshotClient implements BackgroundResource {
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   String requestId = "";
-   *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
    * }
    * </code></pre>
@@ -193,7 +193,7 @@ public class SnapshotClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSnapshot(String requestId, SnapshotName snapshot) {
+  public final Operation deleteSnapshot(String requestId, ProjectSnapshotName snapshot) {
 
     DeleteSnapshotHttpRequest request =
         DeleteSnapshotHttpRequest.newBuilder()
@@ -213,7 +213,7 @@ public class SnapshotClient implements BackgroundResource {
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   String requestId = "";
-   *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot.toString());
    * }
    * </code></pre>
@@ -247,7 +247,7 @@ public class SnapshotClient implements BackgroundResource {
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   String requestId = "";
-   *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setSnapshot(snapshot.toString())
@@ -274,7 +274,7 @@ public class SnapshotClient implements BackgroundResource {
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   String requestId = "";
-   *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setSnapshot(snapshot.toString())
@@ -297,7 +297,7 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   Snapshot response = snapshotClient.getSnapshot(snapshot);
    * }
    * </code></pre>
@@ -306,7 +306,7 @@ public class SnapshotClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Snapshot getSnapshot(SnapshotName snapshot) {
+  public final Snapshot getSnapshot(ProjectSnapshotName snapshot) {
 
     GetSnapshotHttpRequest request =
         GetSnapshotHttpRequest.newBuilder()
@@ -322,7 +322,7 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   Snapshot response = snapshotClient.getSnapshot(snapshot.toString());
    * }
    * </code></pre>
@@ -347,7 +347,7 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   GetSnapshotHttpRequest request = GetSnapshotHttpRequest.newBuilder()
    *     .setSnapshot(snapshot.toString())
    *     .build();
@@ -370,7 +370,7 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   GetSnapshotHttpRequest request = GetSnapshotHttpRequest.newBuilder()
    *     .setSnapshot(snapshot.toString())
    *     .build();
@@ -525,7 +525,7 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response = snapshotClient.setLabelsSnapshot(resource, globalSetLabelsRequestResource);
    * }
@@ -553,7 +553,7 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response = snapshotClient.setLabelsSnapshot(resource.toString(), globalSetLabelsRequestResource);
    * }
@@ -581,7 +581,7 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsSnapshotHttpRequest request = SetLabelsSnapshotHttpRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -606,7 +606,7 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsSnapshotHttpRequest request = SetLabelsSnapshotHttpRequest.newBuilder()
    *     .setResource(resource.toString())

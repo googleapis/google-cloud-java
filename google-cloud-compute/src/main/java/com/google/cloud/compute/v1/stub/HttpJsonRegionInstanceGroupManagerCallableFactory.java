@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManage
 import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectRegionInstanceGroupManagerName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagerList;
@@ -60,7 +61,6 @@ import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesRespo
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest;
-import com.google.cloud.compute.v1.RegionName;
 import com.google.cloud.compute.v1.ResizeRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerHttpRequest;

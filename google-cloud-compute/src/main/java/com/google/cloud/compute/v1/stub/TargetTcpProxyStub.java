@@ -24,6 +24,7 @@ import com.google.cloud.compute.v1.InsertTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetTcpProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectTargetTcpProxyName;
 import com.google.cloud.compute.v1.SetBackendServiceTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest;
@@ -31,7 +32,6 @@ import com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest;
 import com.google.cloud.compute.v1.TargetTcpProxy;
 import static com.google.cloud.compute.v1.TargetTcpProxyClient.ListTargetTcpProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
-import com.google.cloud.compute.v1.TargetTcpProxyName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
  *   String requestId = "";
- *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+ *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
  *   Operation response = forwardingRuleClient.deleteForwardingRule(requestId, forwardingRule);
  * }
  * </code>
@@ -310,7 +310,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   Operation response = forwardingRuleClient.deleteForwardingRule(requestId, forwardingRule);
    * }
    * </code></pre>
@@ -324,7 +324,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteForwardingRule(String requestId, ForwardingRuleName forwardingRule) {
+  public final Operation deleteForwardingRule(String requestId, ProjectRegionForwardingRuleName forwardingRule) {
 
     DeleteForwardingRuleHttpRequest request =
         DeleteForwardingRuleHttpRequest.newBuilder()
@@ -342,7 +342,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   Operation response = forwardingRuleClient.deleteForwardingRule(requestId, forwardingRule.toString());
    * }
    * </code></pre>
@@ -374,7 +374,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   DeleteForwardingRuleHttpRequest request = DeleteForwardingRuleHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
@@ -399,7 +399,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   DeleteForwardingRuleHttpRequest request = DeleteForwardingRuleHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setForwardingRule(forwardingRule.toString())
@@ -422,7 +422,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   ForwardingRule response = forwardingRuleClient.getForwardingRule(forwardingRule);
    * }
    * </code></pre>
@@ -431,7 +431,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ForwardingRule getForwardingRule(ForwardingRuleName forwardingRule) {
+  public final ForwardingRule getForwardingRule(ProjectRegionForwardingRuleName forwardingRule) {
 
     GetForwardingRuleHttpRequest request =
         GetForwardingRuleHttpRequest.newBuilder()
@@ -447,7 +447,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   ForwardingRule response = forwardingRuleClient.getForwardingRule(forwardingRule.toString());
    * }
    * </code></pre>
@@ -472,7 +472,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   GetForwardingRuleHttpRequest request = GetForwardingRuleHttpRequest.newBuilder()
    *     .setForwardingRule(forwardingRule.toString())
    *     .build();
@@ -495,7 +495,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   GetForwardingRuleHttpRequest request = GetForwardingRuleHttpRequest.newBuilder()
    *     .setForwardingRule(forwardingRule.toString())
    *     .build();
@@ -518,7 +518,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   Operation response = forwardingRuleClient.insertForwardingRule(requestId, region, forwardingRuleResource);
    * }
@@ -534,7 +534,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertForwardingRule(String requestId, RegionName region, ForwardingRule forwardingRuleResource) {
+  public final Operation insertForwardingRule(String requestId, ProjectRegionName region, ForwardingRule forwardingRuleResource) {
 
     InsertForwardingRuleHttpRequest request =
         InsertForwardingRuleHttpRequest.newBuilder()
@@ -553,7 +553,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   Operation response = forwardingRuleClient.insertForwardingRule(requestId, region.toString(), forwardingRuleResource);
    * }
@@ -588,7 +588,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   InsertForwardingRuleHttpRequest request = InsertForwardingRuleHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -615,7 +615,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   InsertForwardingRuleHttpRequest request = InsertForwardingRuleHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -640,7 +640,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (ForwardingRule element : forwardingRuleClient.listForwardingRules(region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -651,7 +651,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListForwardingRulesPagedResponse listForwardingRules(RegionName region) {
+  public final ListForwardingRulesPagedResponse listForwardingRules(ProjectRegionName region) {
     ListForwardingRulesHttpRequest request =
         ListForwardingRulesHttpRequest.newBuilder()
         .setRegion(region == null ? null : region.toString())
@@ -666,7 +666,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (ForwardingRule element : forwardingRuleClient.listForwardingRules(region.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -692,7 +692,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListForwardingRulesHttpRequest request = ListForwardingRulesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -718,7 +718,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListForwardingRulesHttpRequest request = ListForwardingRulesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -742,7 +742,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListForwardingRulesHttpRequest request = ListForwardingRulesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -774,7 +774,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   Operation response = forwardingRuleClient.setTargetForwardingRule(requestId, forwardingRule, targetReferenceResource);
    * }
@@ -790,7 +790,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setTargetForwardingRule(String requestId, ForwardingRuleName forwardingRule, TargetReference targetReferenceResource) {
+  public final Operation setTargetForwardingRule(String requestId, ProjectRegionForwardingRuleName forwardingRule, TargetReference targetReferenceResource) {
 
     SetTargetForwardingRuleHttpRequest request =
         SetTargetForwardingRuleHttpRequest.newBuilder()
@@ -809,7 +809,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   Operation response = forwardingRuleClient.setTargetForwardingRule(requestId, forwardingRule.toString(), targetReferenceResource);
    * }
@@ -844,7 +844,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetTargetForwardingRuleHttpRequest request = SetTargetForwardingRuleHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -871,7 +871,7 @@ public class ForwardingRuleClient implements BackgroundResource {
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
-   *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
+   *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetTargetForwardingRuleHttpRequest request = SetTargetForwardingRuleHttpRequest.newBuilder()
    *     .setRequestId(requestId)

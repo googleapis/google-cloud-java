@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (NetworkClient networkClient = NetworkClient.create()) {
  *   String requestId = "";
- *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+ *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
  *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
  *   Operation response = networkClient.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
  * }
@@ -178,7 +178,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   Operation response = networkClient.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
    * }
@@ -194,7 +194,7 @@ public class NetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addPeeringNetwork(String requestId, NetworkName network, NetworksAddPeeringRequest networksAddPeeringRequestResource) {
+  public final Operation addPeeringNetwork(String requestId, ProjectNetworkName network, NetworksAddPeeringRequest networksAddPeeringRequestResource) {
 
     AddPeeringNetworkHttpRequest request =
         AddPeeringNetworkHttpRequest.newBuilder()
@@ -213,7 +213,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   Operation response = networkClient.addPeeringNetwork(requestId, network.toString(), networksAddPeeringRequestResource);
    * }
@@ -248,7 +248,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   AddPeeringNetworkHttpRequest request = AddPeeringNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -275,7 +275,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   AddPeeringNetworkHttpRequest request = AddPeeringNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -301,7 +301,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Operation response = networkClient.deleteNetwork(requestId, network);
    * }
    * </code></pre>
@@ -315,7 +315,7 @@ public class NetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteNetwork(String requestId, NetworkName network) {
+  public final Operation deleteNetwork(String requestId, ProjectNetworkName network) {
 
     DeleteNetworkHttpRequest request =
         DeleteNetworkHttpRequest.newBuilder()
@@ -333,7 +333,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Operation response = networkClient.deleteNetwork(requestId, network.toString());
    * }
    * </code></pre>
@@ -365,7 +365,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   DeleteNetworkHttpRequest request = DeleteNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setNetwork(network.toString())
@@ -390,7 +390,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   DeleteNetworkHttpRequest request = DeleteNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setNetwork(network.toString())
@@ -413,7 +413,7 @@ public class NetworkClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network response = networkClient.getNetwork(network);
    * }
    * </code></pre>
@@ -422,7 +422,7 @@ public class NetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Network getNetwork(NetworkName network) {
+  public final Network getNetwork(ProjectNetworkName network) {
 
     GetNetworkHttpRequest request =
         GetNetworkHttpRequest.newBuilder()
@@ -438,7 +438,7 @@ public class NetworkClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network response = networkClient.getNetwork(network.toString());
    * }
    * </code></pre>
@@ -463,7 +463,7 @@ public class NetworkClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   GetNetworkHttpRequest request = GetNetworkHttpRequest.newBuilder()
    *     .setNetwork(network.toString())
    *     .build();
@@ -486,7 +486,7 @@ public class NetworkClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   GetNetworkHttpRequest request = GetNetworkHttpRequest.newBuilder()
    *     .setNetwork(network.toString())
    *     .build();
@@ -765,7 +765,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   Operation response = networkClient.patchNetwork(requestId, network, networkResource);
    * }
@@ -781,7 +781,7 @@ public class NetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchNetwork(String requestId, NetworkName network, Network networkResource) {
+  public final Operation patchNetwork(String requestId, ProjectNetworkName network, Network networkResource) {
 
     PatchNetworkHttpRequest request =
         PatchNetworkHttpRequest.newBuilder()
@@ -800,7 +800,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   Operation response = networkClient.patchNetwork(requestId, network.toString(), networkResource);
    * }
@@ -835,7 +835,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   PatchNetworkHttpRequest request = PatchNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -862,7 +862,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   PatchNetworkHttpRequest request = PatchNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -888,7 +888,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   Operation response = networkClient.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
    * }
@@ -904,7 +904,7 @@ public class NetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removePeeringNetwork(String requestId, NetworkName network, NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
+  public final Operation removePeeringNetwork(String requestId, ProjectNetworkName network, NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
 
     RemovePeeringNetworkHttpRequest request =
         RemovePeeringNetworkHttpRequest.newBuilder()
@@ -923,7 +923,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   Operation response = networkClient.removePeeringNetwork(requestId, network.toString(), networksRemovePeeringRequestResource);
    * }
@@ -958,7 +958,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   RemovePeeringNetworkHttpRequest request = RemovePeeringNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -985,7 +985,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   RemovePeeringNetworkHttpRequest request = RemovePeeringNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -1011,7 +1011,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Operation response = networkClient.switchToCustomModeNetwork(requestId, network);
    * }
    * </code></pre>
@@ -1025,7 +1025,7 @@ public class NetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation switchToCustomModeNetwork(String requestId, NetworkName network) {
+  public final Operation switchToCustomModeNetwork(String requestId, ProjectNetworkName network) {
 
     SwitchToCustomModeNetworkHttpRequest request =
         SwitchToCustomModeNetworkHttpRequest.newBuilder()
@@ -1043,7 +1043,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Operation response = networkClient.switchToCustomModeNetwork(requestId, network.toString());
    * }
    * </code></pre>
@@ -1075,7 +1075,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   SwitchToCustomModeNetworkHttpRequest request = SwitchToCustomModeNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setNetwork(network.toString())
@@ -1100,7 +1100,7 @@ public class NetworkClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
    *   SwitchToCustomModeNetworkHttpRequest request = SwitchToCustomModeNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setNetwork(network.toString())

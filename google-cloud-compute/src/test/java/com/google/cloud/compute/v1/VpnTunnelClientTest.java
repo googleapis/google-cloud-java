@@ -150,7 +150,7 @@ public class VpnTunnelClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -159,7 +159,7 @@ public class VpnTunnelClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -189,7 +189,7 @@ public class VpnTunnelClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    VpnTunnelName vpnTunnel = VpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
+    ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
 
     Operation actualResponse =
         client.deleteVpnTunnel(requestId, vpnTunnel);
@@ -212,7 +212,7 @@ public class VpnTunnelClientTest {
 
     try {
       String requestId = "requestId37109963";
-      VpnTunnelName vpnTunnel = VpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
+      ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
 
       client.deleteVpnTunnel(requestId, vpnTunnel);
       Assert.fail("No exception raised");
@@ -229,15 +229,15 @@ public class VpnTunnelClientTest {
     String description = "description-1724546052";
     Integer ikeVersion = 1292118044;
     String selfLink = "selfLink-1691268851";
-    RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
     String detailedStatus = "detailedStatus-740240799";
     String peerIp = "peerIp-690492124";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String sharedSecret = "sharedSecret-154938422";
-    TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
+    ProjectRegionTargetVpnGatewayName targetVpnGateway = ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
     String status = "status-892481550";
     VpnTunnel expectedResponse = VpnTunnel.newBuilder()
       .setSharedSecretHash(sharedSecretHash)
@@ -258,7 +258,7 @@ public class VpnTunnelClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    VpnTunnelName vpnTunnel = VpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
+    ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
 
     VpnTunnel actualResponse =
         client.getVpnTunnel(vpnTunnel);
@@ -280,7 +280,7 @@ public class VpnTunnelClientTest {
     mockService.addException(exception);
 
     try {
-      VpnTunnelName vpnTunnel = VpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
+      ProjectRegionVpnTunnelName vpnTunnel = ProjectRegionVpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
 
       client.getVpnTunnel(vpnTunnel);
       Assert.fail("No exception raised");
@@ -300,7 +300,7 @@ public class VpnTunnelClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -309,7 +309,7 @@ public class VpnTunnelClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region2 = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -339,7 +339,7 @@ public class VpnTunnelClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
 
     Operation actualResponse =
@@ -363,7 +363,7 @@ public class VpnTunnelClientTest {
 
     try {
       String requestId = "requestId37109963";
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
 
       client.insertVpnTunnel(requestId, region, vpnTunnelResource);
@@ -391,7 +391,7 @@ public class VpnTunnelClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
     ListVpnTunnelsPagedResponse pagedListResponse = client.listVpnTunnels(region);
 
@@ -416,7 +416,7 @@ public class VpnTunnelClientTest {
     mockService.addException(exception);
 
     try {
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listVpnTunnels(region);
       Assert.fail("No exception raised");

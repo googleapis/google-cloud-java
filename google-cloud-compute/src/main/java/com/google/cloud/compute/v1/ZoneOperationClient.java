@@ -365,7 +365,7 @@ public class ZoneOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (Operation element : zoneOperationClient.listZoneOperations(zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -376,7 +376,7 @@ public class ZoneOperationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListZoneOperationsPagedResponse listZoneOperations(ZoneName zone) {
+  public final ListZoneOperationsPagedResponse listZoneOperations(ProjectZoneName zone) {
     ListZoneOperationsHttpRequest request =
         ListZoneOperationsHttpRequest.newBuilder()
         .setZone(zone == null ? null : zone.toString())
@@ -391,7 +391,7 @@ public class ZoneOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (Operation element : zoneOperationClient.listZoneOperations(zone.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -417,7 +417,7 @@ public class ZoneOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListZoneOperationsHttpRequest request = ListZoneOperationsHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -443,7 +443,7 @@ public class ZoneOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListZoneOperationsHttpRequest request = ListZoneOperationsHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -467,7 +467,7 @@ public class ZoneOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListZoneOperationsHttpRequest request = ListZoneOperationsHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();

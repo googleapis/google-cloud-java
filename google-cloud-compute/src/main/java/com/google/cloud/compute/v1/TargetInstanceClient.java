@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
  *   String requestId = "";
- *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+ *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
  *   Operation response = targetInstanceClient.deleteTargetInstance(requestId, targetInstance);
  * }
  * </code>
@@ -310,7 +310,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   String requestId = "";
-   *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   Operation response = targetInstanceClient.deleteTargetInstance(requestId, targetInstance);
    * }
    * </code></pre>
@@ -324,7 +324,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetInstance(String requestId, TargetInstanceName targetInstance) {
+  public final Operation deleteTargetInstance(String requestId, ProjectZoneTargetInstanceName targetInstance) {
 
     DeleteTargetInstanceHttpRequest request =
         DeleteTargetInstanceHttpRequest.newBuilder()
@@ -342,7 +342,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   String requestId = "";
-   *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   Operation response = targetInstanceClient.deleteTargetInstance(requestId, targetInstance.toString());
    * }
    * </code></pre>
@@ -374,7 +374,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   String requestId = "";
-   *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   DeleteTargetInstanceHttpRequest request = DeleteTargetInstanceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setTargetInstance(targetInstance.toString())
@@ -399,7 +399,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   String requestId = "";
-   *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   DeleteTargetInstanceHttpRequest request = DeleteTargetInstanceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setTargetInstance(targetInstance.toString())
@@ -422,7 +422,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   TargetInstance response = targetInstanceClient.getTargetInstance(targetInstance);
    * }
    * </code></pre>
@@ -431,7 +431,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetInstance getTargetInstance(TargetInstanceName targetInstance) {
+  public final TargetInstance getTargetInstance(ProjectZoneTargetInstanceName targetInstance) {
 
     GetTargetInstanceHttpRequest request =
         GetTargetInstanceHttpRequest.newBuilder()
@@ -447,7 +447,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   TargetInstance response = targetInstanceClient.getTargetInstance(targetInstance.toString());
    * }
    * </code></pre>
@@ -472,7 +472,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   GetTargetInstanceHttpRequest request = GetTargetInstanceHttpRequest.newBuilder()
    *     .setTargetInstance(targetInstance.toString())
    *     .build();
@@ -495,7 +495,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+   *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
    *   GetTargetInstanceHttpRequest request = GetTargetInstanceHttpRequest.newBuilder()
    *     .setTargetInstance(targetInstance.toString())
    *     .build();
@@ -517,7 +517,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   Operation response = targetInstanceClient.insertTargetInstance(zone, requestId, targetInstanceResource);
@@ -534,7 +534,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetInstance(ZoneName zone, String requestId, TargetInstance targetInstanceResource) {
+  public final Operation insertTargetInstance(ProjectZoneName zone, String requestId, TargetInstance targetInstanceResource) {
 
     InsertTargetInstanceHttpRequest request =
         InsertTargetInstanceHttpRequest.newBuilder()
@@ -552,7 +552,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   Operation response = targetInstanceClient.insertTargetInstance(zone.toString(), requestId, targetInstanceResource);
@@ -587,7 +587,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   InsertTargetInstanceHttpRequest request = InsertTargetInstanceHttpRequest.newBuilder()
@@ -614,7 +614,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   InsertTargetInstanceHttpRequest request = InsertTargetInstanceHttpRequest.newBuilder()
@@ -640,7 +640,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (TargetInstance element : targetInstanceClient.listTargetInstances(zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -651,7 +651,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListTargetInstancesPagedResponse listTargetInstances(ZoneName zone) {
+  public final ListTargetInstancesPagedResponse listTargetInstances(ProjectZoneName zone) {
     ListTargetInstancesHttpRequest request =
         ListTargetInstancesHttpRequest.newBuilder()
         .setZone(zone == null ? null : zone.toString())
@@ -666,7 +666,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (TargetInstance element : targetInstanceClient.listTargetInstances(zone.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -692,7 +692,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListTargetInstancesHttpRequest request = ListTargetInstancesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -718,7 +718,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListTargetInstancesHttpRequest request = ListTargetInstancesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -742,7 +742,7 @@ public class TargetInstanceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListTargetInstancesHttpRequest request = ListTargetInstancesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();

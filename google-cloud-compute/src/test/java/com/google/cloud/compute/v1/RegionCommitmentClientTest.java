@@ -147,7 +147,7 @@ public class RegionCommitmentClientTest {
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String endTimestamp = "endTimestamp1004967602";
     String plan = "plan3443497";
     String startTimestamp = "startTimestamp-1526966919";
@@ -168,7 +168,7 @@ public class RegionCommitmentClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    CommitmentName commitment = CommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+    ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
 
     Commitment actualResponse =
         client.getRegionCommitment(commitment);
@@ -190,7 +190,7 @@ public class RegionCommitmentClientTest {
     mockService.addException(exception);
 
     try {
-      CommitmentName commitment = CommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+      ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
 
       client.getRegionCommitment(commitment);
       Assert.fail("No exception raised");
@@ -210,7 +210,7 @@ public class RegionCommitmentClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -219,7 +219,7 @@ public class RegionCommitmentClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region2 = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -249,7 +249,7 @@ public class RegionCommitmentClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Commitment commitmentResource = Commitment.newBuilder().build();
 
     Operation actualResponse =
@@ -273,7 +273,7 @@ public class RegionCommitmentClientTest {
 
     try {
       String requestId = "requestId37109963";
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Commitment commitmentResource = Commitment.newBuilder().build();
 
       client.insertRegionCommitment(requestId, region, commitmentResource);
@@ -301,7 +301,7 @@ public class RegionCommitmentClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
     ListRegionCommitmentsPagedResponse pagedListResponse = client.listRegionCommitments(region);
 
@@ -326,7 +326,7 @@ public class RegionCommitmentClientTest {
     mockService.addException(exception);
 
     try {
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listRegionCommitments(region);
       Assert.fail("No exception raised");

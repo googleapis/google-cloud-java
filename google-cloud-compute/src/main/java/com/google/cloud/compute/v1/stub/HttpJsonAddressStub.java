@@ -34,7 +34,6 @@ import com.google.cloud.compute.v1.AddressAggregatedList;
 import static com.google.cloud.compute.v1.AddressClient.AggregatedListAddressesPagedResponse;
 import static com.google.cloud.compute.v1.AddressClient.ListAddressesPagedResponse;
 import com.google.cloud.compute.v1.AddressList;
-import com.google.cloud.compute.v1.AddressName;
 import com.google.cloud.compute.v1.AddressSettings;
 import com.google.cloud.compute.v1.AddressesScopedList;
 import com.google.cloud.compute.v1.AggregatedListAddressesHttpRequest;
@@ -44,7 +43,8 @@ import com.google.cloud.compute.v1.InsertAddressHttpRequest;
 import com.google.cloud.compute.v1.ListAddressesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionAddressName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -95,7 +95,7 @@ public class HttpJsonAddressStub extends AddressStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(AddressName.newFactory())
+                  .setResourceNameFactory(ProjectRegionAddressName.newFactory())
                   .setResourceNameField("address")
                   .build())
           .setResponseParser(
@@ -114,7 +114,7 @@ public class HttpJsonAddressStub extends AddressStub {
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/addresses/{address}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(AddressName.newFactory())
+                  .setResourceNameFactory(ProjectRegionAddressName.newFactory())
                   .setResourceNameField("address")
                   .build())
           .setResponseParser(
@@ -134,7 +134,7 @@ public class HttpJsonAddressStub extends AddressStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -154,7 +154,7 @@ public class HttpJsonAddressStub extends AddressStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(

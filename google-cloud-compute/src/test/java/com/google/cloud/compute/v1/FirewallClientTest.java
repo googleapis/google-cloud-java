@@ -98,7 +98,7 @@ public class FirewallClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -107,7 +107,7 @@ public class FirewallClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -136,7 +136,7 @@ public class FirewallClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+    ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
     String requestId = "requestId37109963";
 
     Operation actualResponse =
@@ -159,7 +159,7 @@ public class FirewallClientTest {
     mockService.addException(exception);
 
     try {
-      FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+      ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
       String requestId = "requestId37109963";
 
       client.deleteFirewall(firewall, requestId);
@@ -175,7 +175,7 @@ public class FirewallClientTest {
     String kind = "kind3292052";
     String description = "description-1724546052";
     Integer priority = 1165461084;
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -194,7 +194,7 @@ public class FirewallClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+    ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
 
     Firewall actualResponse =
         client.getFirewall(firewall);
@@ -216,7 +216,7 @@ public class FirewallClientTest {
     mockService.addException(exception);
 
     try {
-      FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+      ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
 
       client.getFirewall(firewall);
       Assert.fail("No exception raised");
@@ -236,7 +236,7 @@ public class FirewallClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -245,7 +245,7 @@ public class FirewallClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -372,7 +372,7 @@ public class FirewallClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -381,7 +381,7 @@ public class FirewallClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -410,7 +410,7 @@ public class FirewallClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+    ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
     String requestId = "requestId37109963";
     Firewall firewallResource = Firewall.newBuilder().build();
 
@@ -434,7 +434,7 @@ public class FirewallClientTest {
     mockService.addException(exception);
 
     try {
-      FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+      ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
       String requestId = "requestId37109963";
       Firewall firewallResource = Firewall.newBuilder().build();
 
@@ -456,7 +456,7 @@ public class FirewallClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -465,7 +465,7 @@ public class FirewallClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -494,7 +494,7 @@ public class FirewallClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+    ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
     String requestId = "requestId37109963";
     Firewall firewallResource = Firewall.newBuilder().build();
 
@@ -518,7 +518,7 @@ public class FirewallClientTest {
     mockService.addException(exception);
 
     try {
-      FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+      ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
       String requestId = "requestId37109963";
       Firewall firewallResource = Firewall.newBuilder().build();
 

@@ -31,8 +31,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetLicenseHttpRequest;
 import com.google.cloud.compute.v1.License;
-import com.google.cloud.compute.v1.LicenseName;
 import com.google.cloud.compute.v1.LicenseSettings;
+import com.google.cloud.compute.v1.ProjectLicenseName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -62,7 +62,7 @@ public class HttpJsonLicenseStub extends LicenseStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/licenses/{license}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(LicenseName.newFactory())
+                  .setResourceNameFactory(ProjectLicenseName.newFactory())
                   .setResourceNameField("license")
                   .build())
           .setResponseParser(

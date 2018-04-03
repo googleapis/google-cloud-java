@@ -47,7 +47,6 @@ import static com.google.cloud.compute.v1.BackendServiceClient.AggregatedListBac
 import static com.google.cloud.compute.v1.BackendServiceClient.ListBackendServicesPagedResponse;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
-import com.google.cloud.compute.v1.BackendServiceName;
 import com.google.cloud.compute.v1.BackendServiceSettings;
 import com.google.cloud.compute.v1.BackendServicesScopedList;
 import com.google.cloud.compute.v1.DeleteBackendServiceHttpRequest;
@@ -57,6 +56,7 @@ import com.google.cloud.compute.v1.InsertBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.ListBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceHttpRequest;
+import com.google.cloud.compute.v1.ProjectBackendServiceName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ResourceGroupReference;
 import com.google.cloud.compute.v1.UpdateBackendServiceHttpRequest;

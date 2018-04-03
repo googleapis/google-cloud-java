@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (RegionClient regionClient = RegionClient.create()) {
- *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+ *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
  *   Region response = regionClient.getRegion(region);
  * }
  * </code>
@@ -175,7 +175,7 @@ public class RegionClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Region response = regionClient.getRegion(region);
    * }
    * </code></pre>
@@ -184,7 +184,7 @@ public class RegionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Region getRegion(RegionName region) {
+  public final Region getRegion(ProjectRegionName region) {
 
     GetRegionHttpRequest request =
         GetRegionHttpRequest.newBuilder()
@@ -200,7 +200,7 @@ public class RegionClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Region response = regionClient.getRegion(region.toString());
    * }
    * </code></pre>
@@ -225,7 +225,7 @@ public class RegionClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   GetRegionHttpRequest request = GetRegionHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -248,7 +248,7 @@ public class RegionClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   GetRegionHttpRequest request = GetRegionHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();

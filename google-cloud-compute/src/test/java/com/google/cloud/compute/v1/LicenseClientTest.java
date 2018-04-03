@@ -91,7 +91,7 @@ public class LicenseClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
+    ProjectLicenseName license = ProjectLicenseName.of("[PROJECT]", "[LICENSE]");
 
     License actualResponse =
         client.getLicense(license);
@@ -113,7 +113,7 @@ public class LicenseClientTest {
     mockService.addException(exception);
 
     try {
-      LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
+      ProjectLicenseName license = ProjectLicenseName.of("[PROJECT]", "[LICENSE]");
 
       client.getLicense(license);
       Assert.fail("No exception raised");

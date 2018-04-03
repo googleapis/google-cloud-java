@@ -25,14 +25,14 @@ import com.google.cloud.compute.v1.InsertTargetInstanceHttpRequest;
 import com.google.cloud.compute.v1.ListTargetInstancesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneName;
+import com.google.cloud.compute.v1.ProjectZoneTargetInstanceName;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
 import static com.google.cloud.compute.v1.TargetInstanceClient.AggregatedListTargetInstancesPagedResponse;
 import static com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
 import com.google.cloud.compute.v1.TargetInstanceList;
-import com.google.cloud.compute.v1.TargetInstanceName;
 import com.google.cloud.compute.v1.TargetInstancesScopedList;
-import com.google.cloud.compute.v1.ZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

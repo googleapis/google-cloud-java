@@ -37,13 +37,13 @@ import com.google.cloud.compute.v1.ListNetworksHttpRequest;
 import com.google.cloud.compute.v1.Network;
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
 import com.google.cloud.compute.v1.NetworkList;
-import com.google.cloud.compute.v1.NetworkName;
 import com.google.cloud.compute.v1.NetworkSettings;
 import com.google.cloud.compute.v1.NetworksAddPeeringRequest;
 import com.google.cloud.compute.v1.NetworksRemovePeeringRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectNetworkName;
 import com.google.cloud.compute.v1.RemovePeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkHttpRequest;
 import com.google.common.collect.ImmutableMap;
@@ -76,7 +76,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameFactory(ProjectNetworkName.newFactory())
                   .setResourceNameField("network")
                   .build())
           .setResponseParser(
@@ -96,7 +96,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameFactory(ProjectNetworkName.newFactory())
                   .setResourceNameField("network")
                   .build())
           .setResponseParser(
@@ -115,7 +115,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameFactory(ProjectNetworkName.newFactory())
                   .setResourceNameField("network")
                   .build())
           .setResponseParser(
@@ -175,7 +175,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameFactory(ProjectNetworkName.newFactory())
                   .setResourceNameField("network")
                   .build())
           .setResponseParser(
@@ -195,7 +195,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameFactory(ProjectNetworkName.newFactory())
                   .setResourceNameField("network")
                   .build())
           .setResponseParser(
@@ -215,7 +215,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameFactory(ProjectNetworkName.newFactory())
                   .setResourceNameField("network")
                   .build())
           .setResponseParser(

@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.InsertTargetSslProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetSslProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectTargetSslProxyName;
 import com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyHttpRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetSslProxyHttpRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyHttpRequest;
@@ -44,7 +45,6 @@ import com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest;
 import com.google.cloud.compute.v1.TargetSslProxy;
 import static com.google.cloud.compute.v1.TargetSslProxyClient.ListTargetSslProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetSslProxyList;
-import com.google.cloud.compute.v1.TargetSslProxyName;
 import com.google.cloud.compute.v1.TargetSslProxySettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -76,7 +76,7 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetSslProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetSslProxyName.newFactory())
                   .setResourceNameField("targetSslProxy")
                   .build())
           .setResponseParser(
@@ -95,7 +95,7 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/targetSslProxies/{targetSslProxy}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(TargetSslProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetSslProxyName.newFactory())
                   .setResourceNameField("targetSslProxy")
                   .build())
           .setResponseParser(
@@ -155,7 +155,7 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetSslProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetSslProxyName.newFactory())
                   .setResourceNameField("targetSslProxy")
                   .build())
           .setResponseParser(
@@ -175,7 +175,7 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetSslProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetSslProxyName.newFactory())
                   .setResourceNameField("targetSslProxy")
                   .build())
           .setResponseParser(
@@ -195,7 +195,7 @@ public class HttpJsonTargetSslProxyStub extends TargetSslProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetSslProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetSslProxyName.newFactory())
                   .setResourceNameField("targetSslProxy")
                   .build())
           .setResponseParser(

@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
- *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+ *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
  *   String requestId = "";
  *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate, requestId);
  * }
@@ -176,7 +176,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   String requestId = "";
    *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate, requestId);
    * }
@@ -191,7 +191,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstanceTemplate(InstanceTemplateName instanceTemplate, String requestId) {
+  public final Operation deleteInstanceTemplate(ProjectInstanceTemplateName instanceTemplate, String requestId) {
 
     DeleteInstanceTemplateHttpRequest request =
         DeleteInstanceTemplateHttpRequest.newBuilder()
@@ -208,7 +208,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   String requestId = "";
    *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate.toString(), requestId);
    * }
@@ -240,7 +240,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   String requestId = "";
    *   DeleteInstanceTemplateHttpRequest request = DeleteInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
@@ -265,7 +265,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   String requestId = "";
    *   DeleteInstanceTemplateHttpRequest request = DeleteInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
@@ -289,7 +289,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   InstanceTemplate response = instanceTemplateClient.getInstanceTemplate(instanceTemplate);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final InstanceTemplate getInstanceTemplate(InstanceTemplateName instanceTemplate) {
+  public final InstanceTemplate getInstanceTemplate(ProjectInstanceTemplateName instanceTemplate) {
 
     GetInstanceTemplateHttpRequest request =
         GetInstanceTemplateHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   InstanceTemplate response = instanceTemplateClient.getInstanceTemplate(instanceTemplate.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   GetInstanceTemplateHttpRequest request = GetInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class InstanceTemplateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   GetInstanceTemplateHttpRequest request = GetInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
    *     .build();

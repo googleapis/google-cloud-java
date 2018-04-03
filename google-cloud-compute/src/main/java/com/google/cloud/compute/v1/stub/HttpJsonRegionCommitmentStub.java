@@ -33,17 +33,17 @@ import com.google.cloud.compute.v1.AggregatedListRegionCommitmentsHttpRequest;
 import com.google.cloud.compute.v1.Commitment;
 import com.google.cloud.compute.v1.CommitmentAggregatedList;
 import com.google.cloud.compute.v1.CommitmentList;
-import com.google.cloud.compute.v1.CommitmentName;
 import com.google.cloud.compute.v1.CommitmentsScopedList;
 import com.google.cloud.compute.v1.GetRegionCommitmentHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionCommitmentHttpRequest;
 import com.google.cloud.compute.v1.ListRegionCommitmentsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectRegionCommitmentName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import static com.google.cloud.compute.v1.RegionCommitmentClient.AggregatedListRegionCommitmentsPagedResponse;
 import static com.google.cloud.compute.v1.RegionCommitmentClient.ListRegionCommitmentsPagedResponse;
 import com.google.cloud.compute.v1.RegionCommitmentSettings;
-import com.google.cloud.compute.v1.RegionName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -93,7 +93,7 @@ public class HttpJsonRegionCommitmentStub extends RegionCommitmentStub {
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/commitments/{commitment}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(CommitmentName.newFactory())
+                  .setResourceNameFactory(ProjectRegionCommitmentName.newFactory())
                   .setResourceNameField("commitment")
                   .build())
           .setResponseParser(
@@ -113,7 +113,7 @@ public class HttpJsonRegionCommitmentStub extends RegionCommitmentStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -133,7 +133,7 @@ public class HttpJsonRegionCommitmentStub extends RegionCommitmentStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(

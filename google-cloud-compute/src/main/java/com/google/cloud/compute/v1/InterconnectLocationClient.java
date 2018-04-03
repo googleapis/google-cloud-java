@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
- *   InterconnectLocationName interconnectLocation = InterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+ *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
  *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(interconnectLocation);
  * }
  * </code>
@@ -175,7 +175,7 @@ public class InterconnectLocationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   InterconnectLocationName interconnectLocation = InterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(interconnectLocation);
    * }
    * </code></pre>
@@ -184,7 +184,7 @@ public class InterconnectLocationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final InterconnectLocation getInterconnectLocation(InterconnectLocationName interconnectLocation) {
+  public final InterconnectLocation getInterconnectLocation(ProjectInterconnectLocationName interconnectLocation) {
 
     GetInterconnectLocationHttpRequest request =
         GetInterconnectLocationHttpRequest.newBuilder()
@@ -200,7 +200,7 @@ public class InterconnectLocationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   InterconnectLocationName interconnectLocation = InterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(interconnectLocation.toString());
    * }
    * </code></pre>
@@ -225,7 +225,7 @@ public class InterconnectLocationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   InterconnectLocationName interconnectLocation = InterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   GetInterconnectLocationHttpRequest request = GetInterconnectLocationHttpRequest.newBuilder()
    *     .setInterconnectLocation(interconnectLocation.toString())
    *     .build();
@@ -248,7 +248,7 @@ public class InterconnectLocationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   InterconnectLocationName interconnectLocation = InterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   GetInterconnectLocationHttpRequest request = GetInterconnectLocationHttpRequest.newBuilder()
    *     .setInterconnectLocation(interconnectLocation.toString())
    *     .build();

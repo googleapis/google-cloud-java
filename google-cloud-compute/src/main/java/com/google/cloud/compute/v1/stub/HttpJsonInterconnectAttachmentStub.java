@@ -38,13 +38,13 @@ import com.google.cloud.compute.v1.InterconnectAttachmentAggregatedList;
 import static com.google.cloud.compute.v1.InterconnectAttachmentClient.AggregatedListInterconnectAttachmentsPagedResponse;
 import static com.google.cloud.compute.v1.InterconnectAttachmentClient.ListInterconnectAttachmentsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectAttachmentList;
-import com.google.cloud.compute.v1.InterconnectAttachmentName;
 import com.google.cloud.compute.v1.InterconnectAttachmentSettings;
 import com.google.cloud.compute.v1.InterconnectAttachmentsScopedList;
 import com.google.cloud.compute.v1.ListInterconnectAttachmentsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionInterconnectAttachmentName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -95,7 +95,7 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InterconnectAttachmentName.newFactory())
+                  .setResourceNameFactory(ProjectRegionInterconnectAttachmentName.newFactory())
                   .setResourceNameField("interconnectAttachment")
                   .build())
           .setResponseParser(
@@ -114,7 +114,7 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(InterconnectAttachmentName.newFactory())
+                  .setResourceNameFactory(ProjectRegionInterconnectAttachmentName.newFactory())
                   .setResourceNameField("interconnectAttachment")
                   .build())
           .setResponseParser(
@@ -134,7 +134,7 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -154,7 +154,7 @@ public class HttpJsonInterconnectAttachmentStub extends InterconnectAttachmentSt
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(

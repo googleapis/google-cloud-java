@@ -35,7 +35,6 @@ import com.google.cloud.compute.v1.AutoscalerAggregatedList;
 import static com.google.cloud.compute.v1.AutoscalerClient.AggregatedListAutoscalersPagedResponse;
 import static com.google.cloud.compute.v1.AutoscalerClient.ListAutoscalersPagedResponse;
 import com.google.cloud.compute.v1.AutoscalerList;
-import com.google.cloud.compute.v1.AutoscalerName;
 import com.google.cloud.compute.v1.AutoscalerSettings;
 import com.google.cloud.compute.v1.AutoscalersScopedList;
 import com.google.cloud.compute.v1.DeleteAutoscalerHttpRequest;
@@ -45,8 +44,9 @@ import com.google.cloud.compute.v1.ListAutoscalersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchAutoscalerHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneAutoscalerName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.UpdateAutoscalerHttpRequest;
-import com.google.cloud.compute.v1.ZoneName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -97,7 +97,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(AutoscalerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneAutoscalerName.newFactory())
                   .setResourceNameField("autoscaler")
                   .build())
           .setResponseParser(
@@ -116,7 +116,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers/{autoscaler}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(AutoscalerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneAutoscalerName.newFactory())
                   .setResourceNameField("autoscaler")
                   .build())
           .setResponseParser(
@@ -136,7 +136,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -156,7 +156,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -176,7 +176,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "autoscaler",    "requestId"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -196,7 +196,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "autoscaler",    "requestId"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(

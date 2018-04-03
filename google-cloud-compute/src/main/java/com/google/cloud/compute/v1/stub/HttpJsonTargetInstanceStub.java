@@ -36,15 +36,15 @@ import com.google.cloud.compute.v1.InsertTargetInstanceHttpRequest;
 import com.google.cloud.compute.v1.ListTargetInstancesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneName;
+import com.google.cloud.compute.v1.ProjectZoneTargetInstanceName;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
 import static com.google.cloud.compute.v1.TargetInstanceClient.AggregatedListTargetInstancesPagedResponse;
 import static com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
 import com.google.cloud.compute.v1.TargetInstanceList;
-import com.google.cloud.compute.v1.TargetInstanceName;
 import com.google.cloud.compute.v1.TargetInstanceSettings;
 import com.google.cloud.compute.v1.TargetInstancesScopedList;
-import com.google.cloud.compute.v1.ZoneName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -95,7 +95,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetInstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneTargetInstanceName.newFactory())
                   .setResourceNameField("targetInstance")
                   .build())
           .setResponseParser(
@@ -114,7 +114,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/targetInstances/{targetInstance}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(TargetInstanceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneTargetInstanceName.newFactory())
                   .setResourceNameField("targetInstance")
                   .build())
           .setResponseParser(
@@ -134,7 +134,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -154,7 +154,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(

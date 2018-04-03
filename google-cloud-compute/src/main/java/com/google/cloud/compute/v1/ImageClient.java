@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ImageClient imageClient = ImageClient.create()) {
- *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+ *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
  *   String requestId = "";
  *   Operation response = imageClient.deleteImage(image, requestId);
  * }
@@ -176,7 +176,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   Operation response = imageClient.deleteImage(image, requestId);
    * }
@@ -191,7 +191,7 @@ public class ImageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteImage(ImageName image, String requestId) {
+  public final Operation deleteImage(ProjectImageName image, String requestId) {
 
     DeleteImageHttpRequest request =
         DeleteImageHttpRequest.newBuilder()
@@ -208,7 +208,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   Operation response = imageClient.deleteImage(image.toString(), requestId);
    * }
@@ -240,7 +240,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeleteImageHttpRequest request = DeleteImageHttpRequest.newBuilder()
    *     .setImage(image.toString())
@@ -265,7 +265,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeleteImageHttpRequest request = DeleteImageHttpRequest.newBuilder()
    *     .setImage(image.toString())
@@ -291,7 +291,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   Operation response = imageClient.deprecateImage(image, requestId, deprecationStatusResource);
@@ -308,7 +308,7 @@ public class ImageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deprecateImage(ImageName image, String requestId, DeprecationStatus deprecationStatusResource) {
+  public final Operation deprecateImage(ProjectImageName image, String requestId, DeprecationStatus deprecationStatusResource) {
 
     DeprecateImageHttpRequest request =
         DeprecateImageHttpRequest.newBuilder()
@@ -328,7 +328,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   Operation response = imageClient.deprecateImage(image.toString(), requestId, deprecationStatusResource);
@@ -365,7 +365,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   DeprecateImageHttpRequest request = DeprecateImageHttpRequest.newBuilder()
@@ -394,7 +394,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   DeprecateImageHttpRequest request = DeprecateImageHttpRequest.newBuilder()
@@ -420,7 +420,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   Image response = imageClient.getImage(image);
    * }
    * </code></pre>
@@ -429,7 +429,7 @@ public class ImageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Image getImage(ImageName image) {
+  public final Image getImage(ProjectImageName image) {
 
     GetImageHttpRequest request =
         GetImageHttpRequest.newBuilder()
@@ -445,7 +445,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   Image response = imageClient.getImage(image.toString());
    * }
    * </code></pre>
@@ -470,7 +470,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   GetImageHttpRequest request = GetImageHttpRequest.newBuilder()
    *     .setImage(image.toString())
    *     .build();
@@ -493,7 +493,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   GetImageHttpRequest request = GetImageHttpRequest.newBuilder()
    *     .setImage(image.toString())
    *     .build();
@@ -515,7 +515,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   FamilyName family = FamilyName.of("[PROJECT]", "[FAMILY]");
+   *   ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
    *   Image response = imageClient.getFromFamilyImage(family);
    * }
    * </code></pre>
@@ -524,7 +524,7 @@ public class ImageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Image getFromFamilyImage(FamilyName family) {
+  public final Image getFromFamilyImage(ProjectFamilyName family) {
 
     GetFromFamilyImageHttpRequest request =
         GetFromFamilyImageHttpRequest.newBuilder()
@@ -540,7 +540,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   FamilyName family = FamilyName.of("[PROJECT]", "[FAMILY]");
+   *   ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
    *   Image response = imageClient.getFromFamilyImage(family.toString());
    * }
    * </code></pre>
@@ -565,7 +565,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   FamilyName family = FamilyName.of("[PROJECT]", "[FAMILY]");
+   *   ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
    *   GetFromFamilyImageHttpRequest request = GetFromFamilyImageHttpRequest.newBuilder()
    *     .setFamily(family.toString())
    *     .build();
@@ -588,7 +588,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   FamilyName family = FamilyName.of("[PROJECT]", "[FAMILY]");
+   *   ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
    *   GetFromFamilyImageHttpRequest request = GetFromFamilyImageHttpRequest.newBuilder()
    *     .setFamily(family.toString())
    *     .build();
@@ -876,7 +876,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[RESOURCE]");
+   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response = imageClient.setLabelsImage(resource, globalSetLabelsRequestResource);
    * }
@@ -904,7 +904,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[RESOURCE]");
+   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response = imageClient.setLabelsImage(resource.toString(), globalSetLabelsRequestResource);
    * }
@@ -932,7 +932,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[RESOURCE]");
+   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsImageHttpRequest request = SetLabelsImageHttpRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -957,7 +957,7 @@ public class ImageClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[RESOURCE]");
+   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsImageHttpRequest request = SetLabelsImageHttpRequest.newBuilder()
    *     .setResource(resource.toString())

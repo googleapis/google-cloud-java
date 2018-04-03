@@ -51,7 +51,8 @@ import com.google.cloud.compute.v1.InstanceReference;
 import com.google.cloud.compute.v1.ListTargetPoolsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionName;
+import com.google.cloud.compute.v1.ProjectRegionTargetPoolName;
 import com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolHttpRequest;
 import com.google.cloud.compute.v1.RemoveInstanceTargetPoolHttpRequest;
 import com.google.cloud.compute.v1.SetBackupTargetPoolHttpRequest;
@@ -61,7 +62,6 @@ import static com.google.cloud.compute.v1.TargetPoolClient.AggregatedListTargetP
 import static com.google.cloud.compute.v1.TargetPoolClient.ListTargetPoolsPagedResponse;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
 import com.google.cloud.compute.v1.TargetPoolList;
-import com.google.cloud.compute.v1.TargetPoolName;
 import com.google.cloud.compute.v1.TargetPoolSettings;
 import com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest;
 import com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest;

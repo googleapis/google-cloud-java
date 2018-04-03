@@ -38,14 +38,14 @@ import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionName;
+import com.google.cloud.compute.v1.ProjectRegionSubnetworkName;
 import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
 import static com.google.cloud.compute.v1.SubnetworkClient.ListSubnetworksPagedResponse;
 import com.google.cloud.compute.v1.SubnetworkList;
-import com.google.cloud.compute.v1.SubnetworkName;
 import com.google.cloud.compute.v1.SubnetworkSettings;
 import com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest;
 import com.google.cloud.compute.v1.SubnetworksScopedList;
@@ -100,7 +100,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(SubnetworkName.newFactory())
+                  .setResourceNameFactory(ProjectRegionSubnetworkName.newFactory())
                   .setResourceNameField("subnetwork")
                   .build())
           .setResponseParser(
@@ -120,7 +120,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(SubnetworkName.newFactory())
+                  .setResourceNameFactory(ProjectRegionSubnetworkName.newFactory())
                   .setResourceNameField("subnetwork")
                   .build())
           .setResponseParser(
@@ -139,7 +139,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/subnetworks/{subnetwork}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(SubnetworkName.newFactory())
+                  .setResourceNameFactory(ProjectRegionSubnetworkName.newFactory())
                   .setResourceNameField("subnetwork")
                   .build())
           .setResponseParser(
@@ -159,7 +159,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -179,7 +179,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(
@@ -199,7 +199,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(SubnetworkName.newFactory())
+                  .setResourceNameFactory(ProjectRegionSubnetworkName.newFactory())
                   .setResourceNameField("subnetwork")
                   .build())
           .setResponseParser(
@@ -219,7 +219,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(SubnetworkName.newFactory())
+                  .setResourceNameFactory(ProjectRegionSubnetworkName.newFactory())
                   .setResourceNameField("subnetwork")
                   .build())
           .setResponseParser(

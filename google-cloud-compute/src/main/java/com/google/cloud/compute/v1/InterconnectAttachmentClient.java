@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
  *   String requestId = "";
- *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+ *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
  *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(requestId, interconnectAttachment);
  * }
  * </code>
@@ -310,7 +310,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
    *   String requestId = "";
-   *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(requestId, interconnectAttachment);
    * }
    * </code></pre>
@@ -324,7 +324,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInterconnectAttachment(String requestId, InterconnectAttachmentName interconnectAttachment) {
+  public final Operation deleteInterconnectAttachment(String requestId, ProjectRegionInterconnectAttachmentName interconnectAttachment) {
 
     DeleteInterconnectAttachmentHttpRequest request =
         DeleteInterconnectAttachmentHttpRequest.newBuilder()
@@ -342,7 +342,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
    *   String requestId = "";
-   *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(requestId, interconnectAttachment.toString());
    * }
    * </code></pre>
@@ -374,7 +374,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
    *   String requestId = "";
-   *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   DeleteInterconnectAttachmentHttpRequest request = DeleteInterconnectAttachmentHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setInterconnectAttachment(interconnectAttachment.toString())
@@ -399,7 +399,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
    *   String requestId = "";
-   *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   DeleteInterconnectAttachmentHttpRequest request = DeleteInterconnectAttachmentHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setInterconnectAttachment(interconnectAttachment.toString())
@@ -422,7 +422,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   InterconnectAttachment response = interconnectAttachmentClient.getInterconnectAttachment(interconnectAttachment);
    * }
    * </code></pre>
@@ -431,7 +431,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final InterconnectAttachment getInterconnectAttachment(InterconnectAttachmentName interconnectAttachment) {
+  public final InterconnectAttachment getInterconnectAttachment(ProjectRegionInterconnectAttachmentName interconnectAttachment) {
 
     GetInterconnectAttachmentHttpRequest request =
         GetInterconnectAttachmentHttpRequest.newBuilder()
@@ -447,7 +447,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   InterconnectAttachment response = interconnectAttachmentClient.getInterconnectAttachment(interconnectAttachment.toString());
    * }
    * </code></pre>
@@ -472,7 +472,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   GetInterconnectAttachmentHttpRequest request = GetInterconnectAttachmentHttpRequest.newBuilder()
    *     .setInterconnectAttachment(interconnectAttachment.toString())
    *     .build();
@@ -495,7 +495,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+   *   ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
    *   GetInterconnectAttachmentHttpRequest request = GetInterconnectAttachmentHttpRequest.newBuilder()
    *     .setInterconnectAttachment(interconnectAttachment.toString())
    *     .build();
@@ -518,7 +518,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(requestId, region, interconnectAttachmentResource);
    * }
@@ -534,7 +534,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInterconnectAttachment(String requestId, RegionName region, InterconnectAttachment interconnectAttachmentResource) {
+  public final Operation insertInterconnectAttachment(String requestId, ProjectRegionName region, InterconnectAttachment interconnectAttachmentResource) {
 
     InsertInterconnectAttachmentHttpRequest request =
         InsertInterconnectAttachmentHttpRequest.newBuilder()
@@ -553,7 +553,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   Operation response = interconnectAttachmentClient.insertInterconnectAttachment(requestId, region.toString(), interconnectAttachmentResource);
    * }
@@ -588,7 +588,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   InsertInterconnectAttachmentHttpRequest request = InsertInterconnectAttachmentHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -615,7 +615,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   InsertInterconnectAttachmentHttpRequest request = InsertInterconnectAttachmentHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -640,7 +640,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (InterconnectAttachment element : interconnectAttachmentClient.listInterconnectAttachments(region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -651,7 +651,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInterconnectAttachmentsPagedResponse listInterconnectAttachments(RegionName region) {
+  public final ListInterconnectAttachmentsPagedResponse listInterconnectAttachments(ProjectRegionName region) {
     ListInterconnectAttachmentsHttpRequest request =
         ListInterconnectAttachmentsHttpRequest.newBuilder()
         .setRegion(region == null ? null : region.toString())
@@ -666,7 +666,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (InterconnectAttachment element : interconnectAttachmentClient.listInterconnectAttachments(region.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -692,7 +692,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListInterconnectAttachmentsHttpRequest request = ListInterconnectAttachmentsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -718,7 +718,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListInterconnectAttachmentsHttpRequest request = ListInterconnectAttachmentsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -742,7 +742,7 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListInterconnectAttachmentsHttpRequest request = ListInterconnectAttachmentsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();

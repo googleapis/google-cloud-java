@@ -40,7 +40,6 @@ import com.google.cloud.compute.v1.InstanceGroupManagerAggregatedList;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 import com.google.cloud.compute.v1.InstanceGroupManagerList;
-import com.google.cloud.compute.v1.InstanceGroupManagerName;
 import com.google.cloud.compute.v1.InstanceGroupManagerSettings;
 import com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest;
 import com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest;
@@ -53,11 +52,12 @@ import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneInstanceGroupManagerName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsInstanceGroupManagerHttpRequest;
-import com.google.cloud.compute.v1.ZoneName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -88,7 +88,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(
@@ -128,7 +128,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(
@@ -148,7 +148,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(
@@ -167,7 +167,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(
@@ -187,7 +187,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -207,7 +207,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -227,7 +227,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "order_by",    "pageToken"
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(
@@ -247,7 +247,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(
@@ -267,7 +267,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId",    "size"
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(
@@ -287,7 +287,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(
@@ -307,7 +307,7 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceGroupManagerName.newFactory())
+                  .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
                   .build())
           .setResponseParser(

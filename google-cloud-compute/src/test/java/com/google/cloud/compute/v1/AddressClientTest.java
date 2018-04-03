@@ -150,7 +150,7 @@ public class AddressClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -159,7 +159,7 @@ public class AddressClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -188,7 +188,7 @@ public class AddressClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+    ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
     String requestId = "requestId37109963";
 
     Operation actualResponse =
@@ -211,7 +211,7 @@ public class AddressClientTest {
     mockService.addException(exception);
 
     try {
-      AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+      ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
       String requestId = "requestId37109963";
 
       client.deleteAddress(address, requestId);
@@ -230,11 +230,11 @@ public class AddressClientTest {
     String description = "description-1724546052";
     String selfLink = "selfLink-1691268851";
     String ipVersion = "ipVersion-1315653184";
-    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String status = "status-892481550";
     Address expectedResponse = Address.newBuilder()
       .setAddress(address2.toString())
@@ -252,7 +252,7 @@ public class AddressClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+    ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
 
     Address actualResponse =
         client.getAddress(address);
@@ -274,7 +274,7 @@ public class AddressClientTest {
     mockService.addException(exception);
 
     try {
-      AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+      ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
 
       client.getAddress(address);
       Assert.fail("No exception raised");
@@ -294,7 +294,7 @@ public class AddressClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -303,7 +303,7 @@ public class AddressClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region2 = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -333,7 +333,7 @@ public class AddressClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     Address addressResource = Address.newBuilder().build();
 
     Operation actualResponse =
@@ -357,7 +357,7 @@ public class AddressClientTest {
 
     try {
       String requestId = "requestId37109963";
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       Address addressResource = Address.newBuilder().build();
 
       client.insertAddress(requestId, region, addressResource);
@@ -385,7 +385,7 @@ public class AddressClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
     ListAddressesPagedResponse pagedListResponse = client.listAddresses(region);
 
@@ -410,7 +410,7 @@ public class AddressClientTest {
     mockService.addException(exception);
 
     try {
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listAddresses(region);
       Assert.fail("No exception raised");

@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
  *   String requestId = "";
- *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+ *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
  *   Operation response = interconnectClient.deleteInterconnect(requestId, interconnect);
  * }
  * </code>
@@ -177,7 +177,7 @@ public class InterconnectClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   String requestId = "";
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Operation response = interconnectClient.deleteInterconnect(requestId, interconnect);
    * }
    * </code></pre>
@@ -191,7 +191,7 @@ public class InterconnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInterconnect(String requestId, InterconnectName interconnect) {
+  public final Operation deleteInterconnect(String requestId, ProjectInterconnectName interconnect) {
 
     DeleteInterconnectHttpRequest request =
         DeleteInterconnectHttpRequest.newBuilder()
@@ -209,7 +209,7 @@ public class InterconnectClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   String requestId = "";
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Operation response = interconnectClient.deleteInterconnect(requestId, interconnect.toString());
    * }
    * </code></pre>
@@ -241,7 +241,7 @@ public class InterconnectClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   String requestId = "";
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   DeleteInterconnectHttpRequest request = DeleteInterconnectHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setInterconnect(interconnect.toString())
@@ -266,7 +266,7 @@ public class InterconnectClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   String requestId = "";
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   DeleteInterconnectHttpRequest request = DeleteInterconnectHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setInterconnect(interconnect.toString())
@@ -289,7 +289,7 @@ public class InterconnectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect response = interconnectClient.getInterconnect(interconnect);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class InterconnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Interconnect getInterconnect(InterconnectName interconnect) {
+  public final Interconnect getInterconnect(ProjectInterconnectName interconnect) {
 
     GetInterconnectHttpRequest request =
         GetInterconnectHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class InterconnectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect response = interconnectClient.getInterconnect(interconnect.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class InterconnectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   GetInterconnectHttpRequest request = GetInterconnectHttpRequest.newBuilder()
    *     .setInterconnect(interconnect.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class InterconnectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   GetInterconnectHttpRequest request = GetInterconnectHttpRequest.newBuilder()
    *     .setInterconnect(interconnect.toString())
    *     .build();
@@ -641,7 +641,7 @@ public class InterconnectClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   String requestId = "";
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   Operation response = interconnectClient.patchInterconnect(requestId, interconnect, interconnectResource);
    * }
@@ -657,7 +657,7 @@ public class InterconnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchInterconnect(String requestId, InterconnectName interconnect, Interconnect interconnectResource) {
+  public final Operation patchInterconnect(String requestId, ProjectInterconnectName interconnect, Interconnect interconnectResource) {
 
     PatchInterconnectHttpRequest request =
         PatchInterconnectHttpRequest.newBuilder()
@@ -676,7 +676,7 @@ public class InterconnectClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   String requestId = "";
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   Operation response = interconnectClient.patchInterconnect(requestId, interconnect.toString(), interconnectResource);
    * }
@@ -711,7 +711,7 @@ public class InterconnectClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   String requestId = "";
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   PatchInterconnectHttpRequest request = PatchInterconnectHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -738,7 +738,7 @@ public class InterconnectClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
    *   String requestId = "";
-   *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   PatchInterconnectHttpRequest request = PatchInterconnectHttpRequest.newBuilder()
    *     .setRequestId(requestId)

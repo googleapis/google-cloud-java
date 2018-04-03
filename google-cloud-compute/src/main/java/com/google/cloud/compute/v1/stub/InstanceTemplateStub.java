@@ -24,9 +24,9 @@ import com.google.cloud.compute.v1.InsertInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
 import static com.google.cloud.compute.v1.InstanceTemplateClient.ListInstanceTemplatesPagedResponse;
 import com.google.cloud.compute.v1.InstanceTemplateList;
-import com.google.cloud.compute.v1.InstanceTemplateName;
 import com.google.cloud.compute.v1.ListInstanceTemplatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectInstanceTemplateName;
 import com.google.cloud.compute.v1.ProjectName;
 import javax.annotation.Generated;
 

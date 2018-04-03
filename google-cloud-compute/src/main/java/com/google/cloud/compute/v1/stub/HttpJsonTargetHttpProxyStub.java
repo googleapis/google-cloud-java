@@ -35,11 +35,11 @@ import com.google.cloud.compute.v1.InsertTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetHttpProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectTargetHttpProxyName;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetHttpProxy;
 import static com.google.cloud.compute.v1.TargetHttpProxyClient.ListTargetHttpProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetHttpProxyList;
-import com.google.cloud.compute.v1.TargetHttpProxyName;
 import com.google.cloud.compute.v1.TargetHttpProxySettings;
 import com.google.cloud.compute.v1.UrlMapReference;
 import com.google.common.collect.ImmutableMap;
@@ -72,7 +72,7 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetHttpProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetHttpProxyName.newFactory())
                   .setResourceNameField("targetHttpProxy")
                   .build())
           .setResponseParser(
@@ -91,7 +91,7 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/targetHttpProxies/{targetHttpProxy}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(TargetHttpProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetHttpProxyName.newFactory())
                   .setResourceNameField("targetHttpProxy")
                   .build())
           .setResponseParser(
@@ -151,7 +151,7 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetHttpProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetHttpProxyName.newFactory())
                   .setResourceNameField("targetHttpProxy")
                   .build())
           .setResponseParser(

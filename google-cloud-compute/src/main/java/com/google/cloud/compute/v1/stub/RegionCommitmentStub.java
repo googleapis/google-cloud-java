@@ -22,16 +22,16 @@ import com.google.cloud.compute.v1.AggregatedListRegionCommitmentsHttpRequest;
 import com.google.cloud.compute.v1.Commitment;
 import com.google.cloud.compute.v1.CommitmentAggregatedList;
 import com.google.cloud.compute.v1.CommitmentList;
-import com.google.cloud.compute.v1.CommitmentName;
 import com.google.cloud.compute.v1.CommitmentsScopedList;
 import com.google.cloud.compute.v1.GetRegionCommitmentHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionCommitmentHttpRequest;
 import com.google.cloud.compute.v1.ListRegionCommitmentsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectRegionCommitmentName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import static com.google.cloud.compute.v1.RegionCommitmentClient.AggregatedListRegionCommitmentsPagedResponse;
 import static com.google.cloud.compute.v1.RegionCommitmentClient.ListRegionCommitmentsPagedResponse;
-import com.google.cloud.compute.v1.RegionName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

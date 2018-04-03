@@ -156,7 +156,7 @@ public class DiskClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -165,7 +165,7 @@ public class DiskClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -194,7 +194,7 @@ public class DiskClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
     String requestId = "requestId37109963";
     Boolean guestFlush = false;
     Snapshot snapshotResource = Snapshot.newBuilder().build();
@@ -219,7 +219,7 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
-      DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
       String requestId = "requestId37109963";
       Boolean guestFlush = false;
       Snapshot snapshotResource = Snapshot.newBuilder().build();
@@ -242,7 +242,7 @@ public class DiskClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -251,7 +251,7 @@ public class DiskClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -280,7 +280,7 @@ public class DiskClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
     String requestId = "requestId37109963";
 
     Operation actualResponse =
@@ -303,7 +303,7 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
-      DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
       String requestId = "requestId37109963";
 
       client.deleteDisk(disk, requestId);
@@ -323,7 +323,7 @@ public class DiskClientTest {
     String sourceSnapshot = "sourceSnapshot-947679896";
     String type = "type3575610";
     String labelFingerprint = "labelFingerprint714995737";
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String creationTimestamp = "creationTimestamp567396278";
     String options = "options-1249474914";
     String id = "id3355";
@@ -356,7 +356,7 @@ public class DiskClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
 
     Disk actualResponse =
         client.getDisk(disk);
@@ -378,7 +378,7 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
-      DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
 
       client.getDisk(disk);
       Assert.fail("No exception raised");
@@ -398,7 +398,7 @@ public class DiskClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone2 = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone2 = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -407,7 +407,7 @@ public class DiskClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -436,7 +436,7 @@ public class DiskClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String requestId = "requestId37109963";
     String sourceImage = "sourceImage1661056055";
     Disk diskResource = Disk.newBuilder().build();
@@ -461,7 +461,7 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
       String requestId = "requestId37109963";
       String sourceImage = "sourceImage1661056055";
       Disk diskResource = Disk.newBuilder().build();
@@ -491,7 +491,7 @@ public class DiskClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
     ListDisksPagedResponse pagedListResponse = client.listDisks(zone);
 
@@ -516,7 +516,7 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.listDisks(zone);
       Assert.fail("No exception raised");
@@ -536,7 +536,7 @@ public class DiskClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -545,7 +545,7 @@ public class DiskClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -574,7 +574,7 @@ public class DiskClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
     String requestId = "requestId37109963";
     DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
 
@@ -598,7 +598,7 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
-      DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      ProjectZoneDiskName disk = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
       String requestId = "requestId37109963";
       DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
 
@@ -620,7 +620,7 @@ public class DiskClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -629,7 +629,7 @@ public class DiskClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -658,7 +658,7 @@ public class DiskClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+    ProjectZoneDiskName resource = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
     String requestId = "requestId37109963";
     ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
 
@@ -682,7 +682,7 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
-      ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+      ProjectZoneDiskName resource = ProjectZoneDiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
       String requestId = "requestId37109963";
       ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
 

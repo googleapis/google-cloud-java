@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ZoneClient zoneClient = ZoneClient.create()) {
- *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+ *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
  *   Zone response = zoneClient.getZone(zone);
  * }
  * </code>
@@ -175,7 +175,7 @@ public class ZoneClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneClient zoneClient = ZoneClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   Zone response = zoneClient.getZone(zone);
    * }
    * </code></pre>
@@ -184,7 +184,7 @@ public class ZoneClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Zone getZone(ZoneName zone) {
+  public final Zone getZone(ProjectZoneName zone) {
 
     GetZoneHttpRequest request =
         GetZoneHttpRequest.newBuilder()
@@ -200,7 +200,7 @@ public class ZoneClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneClient zoneClient = ZoneClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   Zone response = zoneClient.getZone(zone.toString());
    * }
    * </code></pre>
@@ -225,7 +225,7 @@ public class ZoneClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneClient zoneClient = ZoneClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   GetZoneHttpRequest request = GetZoneHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -248,7 +248,7 @@ public class ZoneClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ZoneClient zoneClient = ZoneClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   GetZoneHttpRequest request = GetZoneHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();

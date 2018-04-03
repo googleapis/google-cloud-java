@@ -38,11 +38,11 @@ import com.google.cloud.compute.v1.ListUrlMapsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchUrlMapHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectUrlMapName;
 import com.google.cloud.compute.v1.UpdateUrlMapHttpRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import static com.google.cloud.compute.v1.UrlMapClient.ListUrlMapsPagedResponse;
 import com.google.cloud.compute.v1.UrlMapList;
-import com.google.cloud.compute.v1.UrlMapName;
 import com.google.cloud.compute.v1.UrlMapSettings;
 import com.google.cloud.compute.v1.UrlMapsValidateRequest;
 import com.google.cloud.compute.v1.UrlMapsValidateResponse;
@@ -77,7 +77,7 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(UrlMapName.newFactory())
+                  .setResourceNameFactory(ProjectUrlMapName.newFactory())
                   .setResourceNameField("urlMap")
                   .build())
           .setResponseParser(
@@ -96,7 +96,7 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/urlMaps/{urlMap}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(UrlMapName.newFactory())
+                  .setResourceNameFactory(ProjectUrlMapName.newFactory())
                   .setResourceNameField("urlMap")
                   .build())
           .setResponseParser(
@@ -136,7 +136,7 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(UrlMapName.newFactory())
+                  .setResourceNameFactory(ProjectUrlMapName.newFactory())
                   .setResourceNameField("urlMap")
                   .build())
           .setResponseParser(
@@ -176,7 +176,7 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(UrlMapName.newFactory())
+                  .setResourceNameFactory(ProjectUrlMapName.newFactory())
                   .setResourceNameField("urlMap")
                   .build())
           .setResponseParser(
@@ -196,7 +196,7 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(UrlMapName.newFactory())
+                  .setResourceNameFactory(ProjectUrlMapName.newFactory())
                   .setResourceNameField("urlMap")
                   .build())
           .setResponseParser(
@@ -215,7 +215,7 @@ public class HttpJsonUrlMapStub extends UrlMapStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/urlMaps/{urlMap}/validate"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(UrlMapName.newFactory())
+                  .setResourceNameFactory(ProjectUrlMapName.newFactory())
                   .setResourceNameField("urlMap")
                   .build())
           .setResponseParser(

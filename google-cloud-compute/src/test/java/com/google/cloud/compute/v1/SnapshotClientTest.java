@@ -94,7 +94,7 @@ public class SnapshotClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -103,7 +103,7 @@ public class SnapshotClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -133,7 +133,7 @@ public class SnapshotClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+    ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
     Operation actualResponse =
         client.deleteSnapshot(requestId, snapshot);
@@ -156,7 +156,7 @@ public class SnapshotClientTest {
 
     try {
       String requestId = "requestId37109963";
-      SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+      ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
       client.deleteSnapshot(requestId, snapshot);
       Assert.fail("No exception raised");
@@ -198,7 +198,7 @@ public class SnapshotClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+    ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
     Snapshot actualResponse =
         client.getSnapshot(snapshot);
@@ -220,7 +220,7 @@ public class SnapshotClientTest {
     mockService.addException(exception);
 
     try {
-      SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+      ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
       client.getSnapshot(snapshot);
       Assert.fail("No exception raised");
@@ -292,7 +292,7 @@ public class SnapshotClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -301,7 +301,7 @@ public class SnapshotClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -330,7 +330,7 @@ public class SnapshotClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+    ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
     GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -353,7 +353,7 @@ public class SnapshotClientTest {
     mockService.addException(exception);
 
     try {
-      ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+      ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
       GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
 
       client.setLabelsSnapshot(resource, globalSetLabelsRequestResource);

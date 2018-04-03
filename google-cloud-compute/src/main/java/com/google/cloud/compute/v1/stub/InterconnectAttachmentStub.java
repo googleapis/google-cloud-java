@@ -27,12 +27,12 @@ import com.google.cloud.compute.v1.InterconnectAttachmentAggregatedList;
 import static com.google.cloud.compute.v1.InterconnectAttachmentClient.AggregatedListInterconnectAttachmentsPagedResponse;
 import static com.google.cloud.compute.v1.InterconnectAttachmentClient.ListInterconnectAttachmentsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectAttachmentList;
-import com.google.cloud.compute.v1.InterconnectAttachmentName;
 import com.google.cloud.compute.v1.InterconnectAttachmentsScopedList;
 import com.google.cloud.compute.v1.ListInterconnectAttachmentsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionInterconnectAttachmentName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

@@ -100,7 +100,7 @@ public class ImageClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -109,7 +109,7 @@ public class ImageClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -138,7 +138,7 @@ public class ImageClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+    ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
     String requestId = "requestId37109963";
 
     Operation actualResponse =
@@ -161,7 +161,7 @@ public class ImageClientTest {
     mockService.addException(exception);
 
     try {
-      ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+      ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
       String requestId = "requestId37109963";
 
       client.deleteImage(image, requestId);
@@ -182,7 +182,7 @@ public class ImageClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -191,7 +191,7 @@ public class ImageClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -220,7 +220,7 @@ public class ImageClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+    ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
     String requestId = "requestId37109963";
     DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
 
@@ -244,7 +244,7 @@ public class ImageClientTest {
     mockService.addException(exception);
 
     try {
-      ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+      ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
       String requestId = "requestId37109963";
       DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
 
@@ -273,7 +273,7 @@ public class ImageClientTest {
     String name = "name3373707";
     String archiveSizeBytes = "archiveSizeBytes-1766390198";
     String sourceImage = "sourceImage1661056055";
-    FamilyName family = FamilyName.of("[PROJECT]", "[FAMILY]");
+    ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
     String diskSizeGb = "diskSizeGb-757478089";
     String status = "status-892481550";
     Image expectedResponse = Image.newBuilder()
@@ -298,7 +298,7 @@ public class ImageClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+    ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
 
     Image actualResponse =
         client.getImage(image);
@@ -320,7 +320,7 @@ public class ImageClientTest {
     mockService.addException(exception);
 
     try {
-      ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+      ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
 
       client.getImage(image);
       Assert.fail("No exception raised");
@@ -347,7 +347,7 @@ public class ImageClientTest {
     String name = "name3373707";
     String archiveSizeBytes = "archiveSizeBytes-1766390198";
     String sourceImage = "sourceImage1661056055";
-    FamilyName family2 = FamilyName.of("[PROJECT]", "[FAMILY]");
+    ProjectFamilyName family2 = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
     String diskSizeGb = "diskSizeGb-757478089";
     String status = "status-892481550";
     Image expectedResponse = Image.newBuilder()
@@ -372,7 +372,7 @@ public class ImageClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    FamilyName family = FamilyName.of("[PROJECT]", "[FAMILY]");
+    ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
 
     Image actualResponse =
         client.getFromFamilyImage(family);
@@ -394,7 +394,7 @@ public class ImageClientTest {
     mockService.addException(exception);
 
     try {
-      FamilyName family = FamilyName.of("[PROJECT]", "[FAMILY]");
+      ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
 
       client.getFromFamilyImage(family);
       Assert.fail("No exception raised");
@@ -414,7 +414,7 @@ public class ImageClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -423,7 +423,7 @@ public class ImageClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -552,7 +552,7 @@ public class ImageClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -561,7 +561,7 @@ public class ImageClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -590,7 +590,7 @@ public class ImageClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[RESOURCE]");
+    ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
     GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -613,7 +613,7 @@ public class ImageClientTest {
     mockService.addException(exception);
 
     try {
-      ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[RESOURCE]");
+      ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
       GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
 
       client.setLabelsImage(resource, globalSetLabelsRequestResource);

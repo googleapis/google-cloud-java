@@ -40,7 +40,6 @@ import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
 import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
 import com.google.cloud.compute.v1.SnapshotList;
-import com.google.cloud.compute.v1.SnapshotName;
 import com.google.cloud.compute.v1.SnapshotSettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -72,7 +71,7 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(SnapshotName.newFactory())
+                  .setResourceNameFactory(ProjectSnapshotName.newFactory())
                   .setResourceNameField("snapshot")
                   .build())
           .setResponseParser(
@@ -91,7 +90,7 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/snapshots/{snapshot}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(SnapshotName.newFactory())
+                  .setResourceNameFactory(ProjectSnapshotName.newFactory())
                   .setResourceNameField("snapshot")
                   .build())
           .setResponseParser(

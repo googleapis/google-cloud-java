@@ -96,7 +96,7 @@ public class TargetHttpProxyClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -105,7 +105,7 @@ public class TargetHttpProxyClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -135,7 +135,7 @@ public class TargetHttpProxyClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    TargetHttpProxyName targetHttpProxy = TargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+    ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
 
     Operation actualResponse =
         client.deleteTargetHttpProxy(requestId, targetHttpProxy);
@@ -158,7 +158,7 @@ public class TargetHttpProxyClientTest {
 
     try {
       String requestId = "requestId37109963";
-      TargetHttpProxyName targetHttpProxy = TargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+      ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
 
       client.deleteTargetHttpProxy(requestId, targetHttpProxy);
       Assert.fail("No exception raised");
@@ -170,7 +170,7 @@ public class TargetHttpProxyClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTargetHttpProxyTest() {
-    UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
+    ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
     String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -188,7 +188,7 @@ public class TargetHttpProxyClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    TargetHttpProxyName targetHttpProxy = TargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+    ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
 
     TargetHttpProxy actualResponse =
         client.getTargetHttpProxy(targetHttpProxy);
@@ -210,7 +210,7 @@ public class TargetHttpProxyClientTest {
     mockService.addException(exception);
 
     try {
-      TargetHttpProxyName targetHttpProxy = TargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+      ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
 
       client.getTargetHttpProxy(targetHttpProxy);
       Assert.fail("No exception raised");
@@ -230,7 +230,7 @@ public class TargetHttpProxyClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -239,7 +239,7 @@ public class TargetHttpProxyClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -366,7 +366,7 @@ public class TargetHttpProxyClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -375,7 +375,7 @@ public class TargetHttpProxyClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -405,7 +405,7 @@ public class TargetHttpProxyClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    TargetHttpProxyName targetHttpProxy = TargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+    ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
     UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
 
     Operation actualResponse =
@@ -429,7 +429,7 @@ public class TargetHttpProxyClientTest {
 
     try {
       String requestId = "requestId37109963";
-      TargetHttpProxyName targetHttpProxy = TargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+      ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
       UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
 
       client.setUrlMapTargetHttpProxy(requestId, targetHttpProxy, urlMapReferenceResource);

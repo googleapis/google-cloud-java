@@ -21,10 +21,10 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetRegionHttpRequest;
 import com.google.cloud.compute.v1.ListRegionsHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.Region;
 import static com.google.cloud.compute.v1.RegionClient.ListRegionsPagedResponse;
 import com.google.cloud.compute.v1.RegionList;
-import com.google.cloud.compute.v1.RegionName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

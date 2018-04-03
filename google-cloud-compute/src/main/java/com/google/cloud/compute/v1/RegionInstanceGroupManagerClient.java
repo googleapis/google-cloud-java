@@ -666,7 +666,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   Operation response = regionInstanceGroupManagerClient.insertRegionInstanceGroupManager(requestId, region, instanceGroupManagerResource);
    * }
@@ -682,7 +682,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionInstanceGroupManager(String requestId, RegionName region, InstanceGroupManager instanceGroupManagerResource) {
+  public final Operation insertRegionInstanceGroupManager(String requestId, ProjectRegionName region, InstanceGroupManager instanceGroupManagerResource) {
 
     InsertRegionInstanceGroupManagerHttpRequest request =
         InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
@@ -703,7 +703,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   Operation response = regionInstanceGroupManagerClient.insertRegionInstanceGroupManager(requestId, region.toString(), instanceGroupManagerResource);
    * }
@@ -740,7 +740,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   InsertRegionInstanceGroupManagerHttpRequest request = InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -769,7 +769,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   InsertRegionInstanceGroupManagerHttpRequest request = InsertRegionInstanceGroupManagerHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -794,7 +794,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (InstanceGroupManager element : regionInstanceGroupManagerClient.listRegionInstanceGroupManagers(region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -805,7 +805,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionInstanceGroupManagersPagedResponse listRegionInstanceGroupManagers(RegionName region) {
+  public final ListRegionInstanceGroupManagersPagedResponse listRegionInstanceGroupManagers(ProjectRegionName region) {
     ListRegionInstanceGroupManagersHttpRequest request =
         ListRegionInstanceGroupManagersHttpRequest.newBuilder()
         .setRegion(region == null ? null : region.toString())
@@ -820,7 +820,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (InstanceGroupManager element : regionInstanceGroupManagerClient.listRegionInstanceGroupManagers(region.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -846,7 +846,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionInstanceGroupManagersHttpRequest request = ListRegionInstanceGroupManagersHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -872,7 +872,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionInstanceGroupManagersHttpRequest request = ListRegionInstanceGroupManagersHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -896,7 +896,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionInstanceGroupManagersHttpRequest request = ListRegionInstanceGroupManagersHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();

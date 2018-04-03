@@ -23,13 +23,13 @@ import com.google.cloud.compute.v1.AcceleratorTypeAggregatedList;
 import static com.google.cloud.compute.v1.AcceleratorTypeClient.AggregatedListAcceleratorTypesPagedResponse;
 import static com.google.cloud.compute.v1.AcceleratorTypeClient.ListAcceleratorTypesPagedResponse;
 import com.google.cloud.compute.v1.AcceleratorTypeList;
-import com.google.cloud.compute.v1.AcceleratorTypeName;
 import com.google.cloud.compute.v1.AcceleratorTypesScopedList;
 import com.google.cloud.compute.v1.AggregatedListAcceleratorTypesHttpRequest;
 import com.google.cloud.compute.v1.GetAcceleratorTypeHttpRequest;
 import com.google.cloud.compute.v1.ListAcceleratorTypesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ZoneName;
+import com.google.cloud.compute.v1.ProjectZoneAcceleratorTypeName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
- *   MachineTypeName machineType = MachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+ *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
  *   MachineType response = machineTypeClient.getMachineType(machineType);
  * }
  * </code>
@@ -308,7 +308,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   MachineTypeName machineType = MachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+   *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
    *   MachineType response = machineTypeClient.getMachineType(machineType);
    * }
    * </code></pre>
@@ -317,7 +317,7 @@ public class MachineTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final MachineType getMachineType(MachineTypeName machineType) {
+  public final MachineType getMachineType(ProjectZoneMachineTypeName machineType) {
 
     GetMachineTypeHttpRequest request =
         GetMachineTypeHttpRequest.newBuilder()
@@ -333,7 +333,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   MachineTypeName machineType = MachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+   *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
    *   MachineType response = machineTypeClient.getMachineType(machineType.toString());
    * }
    * </code></pre>
@@ -358,7 +358,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   MachineTypeName machineType = MachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+   *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
    *   GetMachineTypeHttpRequest request = GetMachineTypeHttpRequest.newBuilder()
    *     .setMachineType(machineType.toString())
    *     .build();
@@ -381,7 +381,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   MachineTypeName machineType = MachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+   *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
    *   GetMachineTypeHttpRequest request = GetMachineTypeHttpRequest.newBuilder()
    *     .setMachineType(machineType.toString())
    *     .build();
@@ -403,7 +403,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (MachineType element : machineTypeClient.listMachineTypes(zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -414,7 +414,7 @@ public class MachineTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListMachineTypesPagedResponse listMachineTypes(ZoneName zone) {
+  public final ListMachineTypesPagedResponse listMachineTypes(ProjectZoneName zone) {
     ListMachineTypesHttpRequest request =
         ListMachineTypesHttpRequest.newBuilder()
         .setZone(zone == null ? null : zone.toString())
@@ -429,7 +429,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (MachineType element : machineTypeClient.listMachineTypes(zone.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -455,7 +455,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListMachineTypesHttpRequest request = ListMachineTypesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -481,7 +481,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListMachineTypesHttpRequest request = ListMachineTypesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -505,7 +505,7 @@ public class MachineTypeClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListMachineTypesHttpRequest request = ListMachineTypesHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();

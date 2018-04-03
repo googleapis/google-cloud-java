@@ -29,7 +29,6 @@ import static com.google.cloud.compute.v1.InstanceGroupClient.AggregatedListInst
 import static com.google.cloud.compute.v1.InstanceGroupClient.ListInstanceGroupsPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupClient.ListInstancesInstanceGroupsPagedResponse;
 import com.google.cloud.compute.v1.InstanceGroupList;
-import com.google.cloud.compute.v1.InstanceGroupName;
 import com.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest;
 import com.google.cloud.compute.v1.InstanceGroupsListInstances;
 import com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest;
@@ -41,9 +40,10 @@ import com.google.cloud.compute.v1.ListInstanceGroupsHttpRequest;
 import com.google.cloud.compute.v1.ListInstancesInstanceGroupsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneInstanceGroupName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.RemoveInstancesInstanceGroupHttpRequest;
 import com.google.cloud.compute.v1.SetNamedPortsInstanceGroupHttpRequest;
-import com.google.cloud.compute.v1.ZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

@@ -150,7 +150,7 @@ public class TargetInstanceClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -159,7 +159,7 @@ public class TargetInstanceClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -189,7 +189,7 @@ public class TargetInstanceClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+    ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
 
     Operation actualResponse =
         client.deleteTargetInstance(requestId, targetInstance);
@@ -212,7 +212,7 @@ public class TargetInstanceClientTest {
 
     try {
       String requestId = "requestId37109963";
-      TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+      ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
 
       client.deleteTargetInstance(requestId, targetInstance);
       Assert.fail("No exception raised");
@@ -224,8 +224,8 @@ public class TargetInstanceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTargetInstanceTest() {
-    InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneInstanceName instance = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -246,7 +246,7 @@ public class TargetInstanceClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+    ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
 
     TargetInstance actualResponse =
         client.getTargetInstance(targetInstance);
@@ -268,7 +268,7 @@ public class TargetInstanceClientTest {
     mockService.addException(exception);
 
     try {
-      TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
+      ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
 
       client.getTargetInstance(targetInstance);
       Assert.fail("No exception raised");
@@ -288,7 +288,7 @@ public class TargetInstanceClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone2 = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone2 = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -297,7 +297,7 @@ public class TargetInstanceClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -326,7 +326,7 @@ public class TargetInstanceClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String requestId = "requestId37109963";
     TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
 
@@ -350,7 +350,7 @@ public class TargetInstanceClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
       String requestId = "requestId37109963";
       TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
 
@@ -379,7 +379,7 @@ public class TargetInstanceClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
     ListTargetInstancesPagedResponse pagedListResponse = client.listTargetInstances(zone);
 
@@ -404,7 +404,7 @@ public class TargetInstanceClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.listTargetInstances(zone);
       Assert.fail("No exception raised");

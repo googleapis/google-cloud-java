@@ -365,7 +365,7 @@ public class RegionOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (Operation element : regionOperationClient.listRegionOperations(region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -376,7 +376,7 @@ public class RegionOperationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionOperationsPagedResponse listRegionOperations(RegionName region) {
+  public final ListRegionOperationsPagedResponse listRegionOperations(ProjectRegionName region) {
     ListRegionOperationsHttpRequest request =
         ListRegionOperationsHttpRequest.newBuilder()
         .setRegion(region == null ? null : region.toString())
@@ -391,7 +391,7 @@ public class RegionOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (Operation element : regionOperationClient.listRegionOperations(region.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -417,7 +417,7 @@ public class RegionOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionOperationsHttpRequest request = ListRegionOperationsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -443,7 +443,7 @@ public class RegionOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionOperationsHttpRequest request = ListRegionOperationsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -467,7 +467,7 @@ public class RegionOperationClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionOperationsHttpRequest request = ListRegionOperationsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();

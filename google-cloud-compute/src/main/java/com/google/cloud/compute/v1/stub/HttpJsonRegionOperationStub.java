@@ -34,8 +34,8 @@ import com.google.cloud.compute.v1.GetRegionOperationHttpRequest;
 import com.google.cloud.compute.v1.ListRegionOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.ProjectRegionOperationName;
-import com.google.cloud.compute.v1.RegionName;
 import static com.google.cloud.compute.v1.RegionOperationClient.ListRegionOperationsPagedResponse;
 import com.google.cloud.compute.v1.RegionOperationSettings;
 import com.google.common.collect.ImmutableMap;
@@ -102,7 +102,7 @@ public class HttpJsonRegionOperationStub extends RegionOperationStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(

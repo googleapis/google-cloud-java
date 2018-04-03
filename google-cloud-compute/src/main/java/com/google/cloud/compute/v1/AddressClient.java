@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AddressClient addressClient = AddressClient.create()) {
- *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+ *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
  *   String requestId = "";
  *   Operation response = addressClient.deleteAddress(address, requestId);
  * }
@@ -309,7 +309,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
    *   String requestId = "";
    *   Operation response = addressClient.deleteAddress(address, requestId);
    * }
@@ -324,7 +324,7 @@ public class AddressClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteAddress(AddressName address, String requestId) {
+  public final Operation deleteAddress(ProjectRegionAddressName address, String requestId) {
 
     DeleteAddressHttpRequest request =
         DeleteAddressHttpRequest.newBuilder()
@@ -341,7 +341,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
    *   String requestId = "";
    *   Operation response = addressClient.deleteAddress(address.toString(), requestId);
    * }
@@ -373,7 +373,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
    *   String requestId = "";
    *   DeleteAddressHttpRequest request = DeleteAddressHttpRequest.newBuilder()
    *     .setAddress(address.toString())
@@ -398,7 +398,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
    *   String requestId = "";
    *   DeleteAddressHttpRequest request = DeleteAddressHttpRequest.newBuilder()
    *     .setAddress(address.toString())
@@ -422,7 +422,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
    *   Address response = addressClient.getAddress(address);
    * }
    * </code></pre>
@@ -431,7 +431,7 @@ public class AddressClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Address getAddress(AddressName address) {
+  public final Address getAddress(ProjectRegionAddressName address) {
 
     GetAddressHttpRequest request =
         GetAddressHttpRequest.newBuilder()
@@ -447,7 +447,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
    *   Address response = addressClient.getAddress(address.toString());
    * }
    * </code></pre>
@@ -472,7 +472,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
    *   GetAddressHttpRequest request = GetAddressHttpRequest.newBuilder()
    *     .setAddress(address.toString())
    *     .build();
@@ -495,7 +495,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
    *   GetAddressHttpRequest request = GetAddressHttpRequest.newBuilder()
    *     .setAddress(address.toString())
    *     .build();
@@ -518,7 +518,7 @@ public class AddressClient implements BackgroundResource {
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Address addressResource = Address.newBuilder().build();
    *   Operation response = addressClient.insertAddress(requestId, region, addressResource);
    * }
@@ -534,7 +534,7 @@ public class AddressClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertAddress(String requestId, RegionName region, Address addressResource) {
+  public final Operation insertAddress(String requestId, ProjectRegionName region, Address addressResource) {
 
     InsertAddressHttpRequest request =
         InsertAddressHttpRequest.newBuilder()
@@ -553,7 +553,7 @@ public class AddressClient implements BackgroundResource {
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Address addressResource = Address.newBuilder().build();
    *   Operation response = addressClient.insertAddress(requestId, region.toString(), addressResource);
    * }
@@ -588,7 +588,7 @@ public class AddressClient implements BackgroundResource {
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Address addressResource = Address.newBuilder().build();
    *   InsertAddressHttpRequest request = InsertAddressHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -615,7 +615,7 @@ public class AddressClient implements BackgroundResource {
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Address addressResource = Address.newBuilder().build();
    *   InsertAddressHttpRequest request = InsertAddressHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -640,7 +640,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (Address element : addressClient.listAddresses(region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -651,7 +651,7 @@ public class AddressClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListAddressesPagedResponse listAddresses(RegionName region) {
+  public final ListAddressesPagedResponse listAddresses(ProjectRegionName region) {
     ListAddressesHttpRequest request =
         ListAddressesHttpRequest.newBuilder()
         .setRegion(region == null ? null : region.toString())
@@ -666,7 +666,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (Address element : addressClient.listAddresses(region.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -692,7 +692,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListAddressesHttpRequest request = ListAddressesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -718,7 +718,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListAddressesHttpRequest request = ListAddressesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -742,7 +742,7 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListAddressesHttpRequest request = ListAddressesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();

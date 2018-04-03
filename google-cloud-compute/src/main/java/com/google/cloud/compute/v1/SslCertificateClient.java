@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
- *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+ *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
  *   String requestId = "";
  *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate, requestId);
  * }
@@ -176,7 +176,7 @@ public class SslCertificateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   String requestId = "";
    *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate, requestId);
    * }
@@ -191,7 +191,7 @@ public class SslCertificateClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSslCertificate(SslCertificateName sslCertificate, String requestId) {
+  public final Operation deleteSslCertificate(ProjectSslCertificateName sslCertificate, String requestId) {
 
     DeleteSslCertificateHttpRequest request =
         DeleteSslCertificateHttpRequest.newBuilder()
@@ -208,7 +208,7 @@ public class SslCertificateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   String requestId = "";
    *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate.toString(), requestId);
    * }
@@ -240,7 +240,7 @@ public class SslCertificateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   String requestId = "";
    *   DeleteSslCertificateHttpRequest request = DeleteSslCertificateHttpRequest.newBuilder()
    *     .setSslCertificate(sslCertificate.toString())
@@ -265,7 +265,7 @@ public class SslCertificateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   String requestId = "";
    *   DeleteSslCertificateHttpRequest request = DeleteSslCertificateHttpRequest.newBuilder()
    *     .setSslCertificate(sslCertificate.toString())
@@ -289,7 +289,7 @@ public class SslCertificateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   SslCertificate response = sslCertificateClient.getSslCertificate(sslCertificate);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class SslCertificateClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final SslCertificate getSslCertificate(SslCertificateName sslCertificate) {
+  public final SslCertificate getSslCertificate(ProjectSslCertificateName sslCertificate) {
 
     GetSslCertificateHttpRequest request =
         GetSslCertificateHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class SslCertificateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   SslCertificate response = sslCertificateClient.getSslCertificate(sslCertificate.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class SslCertificateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   GetSslCertificateHttpRequest request = GetSslCertificateHttpRequest.newBuilder()
    *     .setSslCertificate(sslCertificate.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class SslCertificateClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   GetSslCertificateHttpRequest request = GetSslCertificateHttpRequest.newBuilder()
    *     .setSslCertificate(sslCertificate.toString())
    *     .build();

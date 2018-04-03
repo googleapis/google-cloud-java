@@ -25,13 +25,13 @@ import com.google.cloud.compute.v1.InsertVpnTunnelHttpRequest;
 import com.google.cloud.compute.v1.ListVpnTunnelsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionName;
+import com.google.cloud.compute.v1.ProjectRegionVpnTunnelName;
 import com.google.cloud.compute.v1.VpnTunnel;
 import com.google.cloud.compute.v1.VpnTunnelAggregatedList;
 import static com.google.cloud.compute.v1.VpnTunnelClient.AggregatedListVpnTunnelsPagedResponse;
 import static com.google.cloud.compute.v1.VpnTunnelClient.ListVpnTunnelsPagedResponse;
 import com.google.cloud.compute.v1.VpnTunnelList;
-import com.google.cloud.compute.v1.VpnTunnelName;
 import com.google.cloud.compute.v1.VpnTunnelsScopedList;
 import javax.annotation.Generated;
 

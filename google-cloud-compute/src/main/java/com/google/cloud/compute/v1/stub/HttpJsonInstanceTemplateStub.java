@@ -35,10 +35,10 @@ import com.google.cloud.compute.v1.InsertInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
 import static com.google.cloud.compute.v1.InstanceTemplateClient.ListInstanceTemplatesPagedResponse;
 import com.google.cloud.compute.v1.InstanceTemplateList;
-import com.google.cloud.compute.v1.InstanceTemplateName;
 import com.google.cloud.compute.v1.InstanceTemplateSettings;
 import com.google.cloud.compute.v1.ListInstanceTemplatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectInstanceTemplateName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -70,7 +70,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InstanceTemplateName.newFactory())
+                  .setResourceNameFactory(ProjectInstanceTemplateName.newFactory())
                   .setResourceNameField("instanceTemplate")
                   .build())
           .setResponseParser(
@@ -89,7 +89,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates/{instanceTemplate}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(InstanceTemplateName.newFactory())
+                  .setResourceNameFactory(ProjectInstanceTemplateName.newFactory())
                   .setResourceNameField("instanceTemplate")
                   .build())
           .setResponseParser(

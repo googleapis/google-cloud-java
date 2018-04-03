@@ -35,13 +35,13 @@ import com.google.cloud.compute.v1.DiskTypeAggregatedList;
 import static com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
 import static com.google.cloud.compute.v1.DiskTypeClient.ListDiskTypesPagedResponse;
 import com.google.cloud.compute.v1.DiskTypeList;
-import com.google.cloud.compute.v1.DiskTypeName;
 import com.google.cloud.compute.v1.DiskTypeSettings;
 import com.google.cloud.compute.v1.DiskTypesScopedList;
 import com.google.cloud.compute.v1.GetDiskTypeHttpRequest;
 import com.google.cloud.compute.v1.ListDiskTypesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ZoneName;
+import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -91,7 +91,7 @@ public class HttpJsonDiskTypeStub extends DiskTypeStub {
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/diskTypes/{diskType}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(DiskTypeName.newFactory())
+                  .setResourceNameFactory(ProjectZoneDiskTypeName.newFactory())
                   .setResourceNameField("diskType")
                   .build())
           .setResponseParser(
@@ -111,7 +111,7 @@ public class HttpJsonDiskTypeStub extends DiskTypeStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(

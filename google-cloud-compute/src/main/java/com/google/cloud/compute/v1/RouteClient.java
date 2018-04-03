@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (RouteClient routeClient = RouteClient.create()) {
- *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+ *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
  *   String requestId = "";
  *   Operation response = routeClient.deleteRoute(route, requestId);
  * }
@@ -176,7 +176,7 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
    *   String requestId = "";
    *   Operation response = routeClient.deleteRoute(route, requestId);
    * }
@@ -191,7 +191,7 @@ public class RouteClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRoute(RouteName route, String requestId) {
+  public final Operation deleteRoute(ProjectRouteName route, String requestId) {
 
     DeleteRouteHttpRequest request =
         DeleteRouteHttpRequest.newBuilder()
@@ -208,7 +208,7 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
    *   String requestId = "";
    *   Operation response = routeClient.deleteRoute(route.toString(), requestId);
    * }
@@ -240,7 +240,7 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
    *   String requestId = "";
    *   DeleteRouteHttpRequest request = DeleteRouteHttpRequest.newBuilder()
    *     .setRoute(route.toString())
@@ -265,7 +265,7 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
    *   String requestId = "";
    *   DeleteRouteHttpRequest request = DeleteRouteHttpRequest.newBuilder()
    *     .setRoute(route.toString())
@@ -289,7 +289,7 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
    *   Route response = routeClient.getRoute(route);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class RouteClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Route getRoute(RouteName route) {
+  public final Route getRoute(ProjectRouteName route) {
 
     GetRouteHttpRequest request =
         GetRouteHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
    *   Route response = routeClient.getRoute(route.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
    *   GetRouteHttpRequest request = GetRouteHttpRequest.newBuilder()
    *     .setRoute(route.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
-   *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
    *   GetRouteHttpRequest request = GetRouteHttpRequest.newBuilder()
    *     .setRoute(route.toString())
    *     .build();

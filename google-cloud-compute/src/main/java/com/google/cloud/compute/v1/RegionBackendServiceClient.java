@@ -490,7 +490,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   Operation response = regionBackendServiceClient.insertRegionBackendService(requestId, region, backendServiceResource);
    * }
@@ -506,7 +506,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionBackendService(String requestId, RegionName region, BackendService backendServiceResource) {
+  public final Operation insertRegionBackendService(String requestId, ProjectRegionName region, BackendService backendServiceResource) {
 
     InsertRegionBackendServiceHttpRequest request =
         InsertRegionBackendServiceHttpRequest.newBuilder()
@@ -525,7 +525,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   Operation response = regionBackendServiceClient.insertRegionBackendService(requestId, region.toString(), backendServiceResource);
    * }
@@ -560,7 +560,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   InsertRegionBackendServiceHttpRequest request = InsertRegionBackendServiceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -587,7 +587,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   InsertRegionBackendServiceHttpRequest request = InsertRegionBackendServiceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -612,7 +612,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (BackendService element : regionBackendServiceClient.listRegionBackendServices(region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -623,7 +623,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionBackendServicesPagedResponse listRegionBackendServices(RegionName region) {
+  public final ListRegionBackendServicesPagedResponse listRegionBackendServices(ProjectRegionName region) {
     ListRegionBackendServicesHttpRequest request =
         ListRegionBackendServicesHttpRequest.newBuilder()
         .setRegion(region == null ? null : region.toString())
@@ -638,7 +638,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (BackendService element : regionBackendServiceClient.listRegionBackendServices(region.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -664,7 +664,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionBackendServicesHttpRequest request = ListRegionBackendServicesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -690,7 +690,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionBackendServicesHttpRequest request = ListRegionBackendServicesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -714,7 +714,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionBackendServicesHttpRequest request = ListRegionBackendServicesHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();

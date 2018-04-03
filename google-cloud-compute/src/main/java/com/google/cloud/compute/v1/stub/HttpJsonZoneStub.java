@@ -32,10 +32,10 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetZoneHttpRequest;
 import com.google.cloud.compute.v1.ListZonesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.Zone;
 import static com.google.cloud.compute.v1.ZoneClient.ListZonesPagedResponse;
 import com.google.cloud.compute.v1.ZoneList;
-import com.google.cloud.compute.v1.ZoneName;
 import com.google.cloud.compute.v1.ZoneSettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -66,7 +66,7 @@ public class HttpJsonZoneStub extends ZoneStub {
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(

@@ -23,8 +23,8 @@ import com.google.cloud.compute.v1.GetRegionOperationHttpRequest;
 import com.google.cloud.compute.v1.ListRegionOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.ProjectRegionOperationName;
-import com.google.cloud.compute.v1.RegionName;
 import static com.google.cloud.compute.v1.RegionOperationClient.ListRegionOperationsPagedResponse;
 import javax.annotation.Generated;
 

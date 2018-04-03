@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.InsertTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetTcpProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectTargetTcpProxyName;
 import com.google.cloud.compute.v1.SetBackendServiceTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest;
@@ -42,7 +43,6 @@ import com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest;
 import com.google.cloud.compute.v1.TargetTcpProxy;
 import static com.google.cloud.compute.v1.TargetTcpProxyClient.ListTargetTcpProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
-import com.google.cloud.compute.v1.TargetTcpProxyName;
 import com.google.cloud.compute.v1.TargetTcpProxySettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -74,7 +74,7 @@ public class HttpJsonTargetTcpProxyStub extends TargetTcpProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetTcpProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetTcpProxyName.newFactory())
                   .setResourceNameField("targetTcpProxy")
                   .build())
           .setResponseParser(
@@ -93,7 +93,7 @@ public class HttpJsonTargetTcpProxyStub extends TargetTcpProxyStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/targetTcpProxies/{targetTcpProxy}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(TargetTcpProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetTcpProxyName.newFactory())
                   .setResourceNameField("targetTcpProxy")
                   .build())
           .setResponseParser(
@@ -153,7 +153,7 @@ public class HttpJsonTargetTcpProxyStub extends TargetTcpProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetTcpProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetTcpProxyName.newFactory())
                   .setResourceNameField("targetTcpProxy")
                   .build())
           .setResponseParser(
@@ -173,7 +173,7 @@ public class HttpJsonTargetTcpProxyStub extends TargetTcpProxyStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(TargetTcpProxyName.newFactory())
+                  .setResourceNameFactory(ProjectTargetTcpProxyName.newFactory())
                   .setResourceNameField("targetTcpProxy")
                   .build())
           .setResponseParser(

@@ -35,10 +35,10 @@ import com.google.cloud.compute.v1.InsertRouteHttpRequest;
 import com.google.cloud.compute.v1.ListRoutesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectRouteName;
 import com.google.cloud.compute.v1.Route;
 import static com.google.cloud.compute.v1.RouteClient.ListRoutesPagedResponse;
 import com.google.cloud.compute.v1.RouteList;
-import com.google.cloud.compute.v1.RouteName;
 import com.google.cloud.compute.v1.RouteSettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -70,7 +70,7 @@ public class HttpJsonRouteStub extends RouteStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(RouteName.newFactory())
+                  .setResourceNameFactory(ProjectRouteName.newFactory())
                   .setResourceNameField("route")
                   .build())
           .setResponseParser(
@@ -89,7 +89,7 @@ public class HttpJsonRouteStub extends RouteStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/routes/{route}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(RouteName.newFactory())
+                  .setResourceNameFactory(ProjectRouteName.newFactory())
                   .setResourceNameField("route")
                   .build())
           .setResponseParser(

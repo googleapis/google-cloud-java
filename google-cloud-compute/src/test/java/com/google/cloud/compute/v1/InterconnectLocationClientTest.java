@@ -112,7 +112,7 @@ public class InterconnectLocationClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    InterconnectLocationName interconnectLocation = InterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+    ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
 
     InterconnectLocation actualResponse =
         client.getInterconnectLocation(interconnectLocation);
@@ -134,7 +134,7 @@ public class InterconnectLocationClientTest {
     mockService.addException(exception);
 
     try {
-      InterconnectLocationName interconnectLocation = InterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+      ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
 
       client.getInterconnectLocation(interconnectLocation);
       Assert.fail("No exception raised");

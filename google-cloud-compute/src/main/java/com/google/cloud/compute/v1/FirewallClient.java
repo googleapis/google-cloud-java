@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (FirewallClient firewallClient = FirewallClient.create()) {
- *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+ *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
  *   String requestId = "";
  *   Operation response = firewallClient.deleteFirewall(firewall, requestId);
  * }
@@ -176,7 +176,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Operation response = firewallClient.deleteFirewall(firewall, requestId);
    * }
@@ -191,7 +191,7 @@ public class FirewallClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteFirewall(FirewallName firewall, String requestId) {
+  public final Operation deleteFirewall(ProjectFirewallName firewall, String requestId) {
 
     DeleteFirewallHttpRequest request =
         DeleteFirewallHttpRequest.newBuilder()
@@ -208,7 +208,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Operation response = firewallClient.deleteFirewall(firewall.toString(), requestId);
    * }
@@ -240,7 +240,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   DeleteFirewallHttpRequest request = DeleteFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
@@ -265,7 +265,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   DeleteFirewallHttpRequest request = DeleteFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
@@ -289,7 +289,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall response = firewallClient.getFirewall(firewall);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class FirewallClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Firewall getFirewall(FirewallName firewall) {
+  public final Firewall getFirewall(ProjectFirewallName firewall) {
 
     GetFirewallHttpRequest request =
         GetFirewallHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   Firewall response = firewallClient.getFirewall(firewall.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   GetFirewallHttpRequest request = GetFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   GetFirewallHttpRequest request = GetFirewallHttpRequest.newBuilder()
    *     .setFirewall(firewall.toString())
    *     .build();
@@ -640,7 +640,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   Operation response = firewallClient.patchFirewall(firewall, requestId, firewallResource);
@@ -657,7 +657,7 @@ public class FirewallClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchFirewall(FirewallName firewall, String requestId, Firewall firewallResource) {
+  public final Operation patchFirewall(ProjectFirewallName firewall, String requestId, Firewall firewallResource) {
 
     PatchFirewallHttpRequest request =
         PatchFirewallHttpRequest.newBuilder()
@@ -675,7 +675,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   Operation response = firewallClient.patchFirewall(firewall.toString(), requestId, firewallResource);
@@ -710,7 +710,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
@@ -737,7 +737,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   PatchFirewallHttpRequest request = PatchFirewallHttpRequest.newBuilder()
@@ -763,7 +763,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   Operation response = firewallClient.updateFirewall(firewall, requestId, firewallResource);
@@ -780,7 +780,7 @@ public class FirewallClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateFirewall(FirewallName firewall, String requestId, Firewall firewallResource) {
+  public final Operation updateFirewall(ProjectFirewallName firewall, String requestId, Firewall firewallResource) {
 
     UpdateFirewallHttpRequest request =
         UpdateFirewallHttpRequest.newBuilder()
@@ -798,7 +798,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   Operation response = firewallClient.updateFirewall(firewall.toString(), requestId, firewallResource);
@@ -833,7 +833,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()
@@ -860,7 +860,7 @@ public class FirewallClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (FirewallClient firewallClient = FirewallClient.create()) {
-   *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
+   *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
    *   String requestId = "";
    *   Firewall firewallResource = Firewall.newBuilder().build();
    *   UpdateFirewallHttpRequest request = UpdateFirewallHttpRequest.newBuilder()

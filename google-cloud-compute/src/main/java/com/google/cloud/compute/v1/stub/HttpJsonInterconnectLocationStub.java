@@ -33,9 +33,9 @@ import com.google.cloud.compute.v1.GetInterconnectLocationHttpRequest;
 import com.google.cloud.compute.v1.InterconnectLocation;
 import static com.google.cloud.compute.v1.InterconnectLocationClient.ListInterconnectLocationsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectLocationList;
-import com.google.cloud.compute.v1.InterconnectLocationName;
 import com.google.cloud.compute.v1.InterconnectLocationSettings;
 import com.google.cloud.compute.v1.ListInterconnectLocationsHttpRequest;
+import com.google.cloud.compute.v1.ProjectInterconnectLocationName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -66,7 +66,7 @@ public class HttpJsonInterconnectLocationStub extends InterconnectLocationStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/interconnectLocations/{interconnectLocation}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(InterconnectLocationName.newFactory())
+                  .setResourceNameFactory(ProjectInterconnectLocationName.newFactory())
                   .setResourceNameField("interconnectLocation")
                   .build())
           .setResponseParser(

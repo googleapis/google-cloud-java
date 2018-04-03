@@ -39,9 +39,9 @@ import com.google.cloud.compute.v1.ListGlobalOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationAggregatedList;
 import com.google.cloud.compute.v1.OperationList;
-import com.google.cloud.compute.v1.OperationName;
 import com.google.cloud.compute.v1.OperationsScopedList;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectOperationName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -91,7 +91,7 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/operations/{operation}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(OperationName.newFactory())
+                  .setResourceNameFactory(ProjectOperationName.newFactory())
                   .setResourceNameField("operation")
                   .build())
           .build();
@@ -106,7 +106,7 @@ public class HttpJsonGlobalOperationStub extends GlobalOperationStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/operations/{operation}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(OperationName.newFactory())
+                  .setResourceNameFactory(ProjectOperationName.newFactory())
                   .setResourceNameField("operation")
                   .build())
           .setResponseParser(

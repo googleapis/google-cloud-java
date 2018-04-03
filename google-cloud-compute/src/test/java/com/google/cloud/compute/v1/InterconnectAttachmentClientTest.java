@@ -150,7 +150,7 @@ public class InterconnectAttachmentClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -159,7 +159,7 @@ public class InterconnectAttachmentClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -189,7 +189,7 @@ public class InterconnectAttachmentClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+    ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
 
     Operation actualResponse =
         client.deleteInterconnectAttachment(requestId, interconnectAttachment);
@@ -212,7 +212,7 @@ public class InterconnectAttachmentClientTest {
 
     try {
       String requestId = "requestId37109963";
-      InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+      ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
 
       client.deleteInterconnectAttachment(requestId, interconnectAttachment);
       Assert.fail("No exception raised");
@@ -229,14 +229,14 @@ public class InterconnectAttachmentClientTest {
     String kind = "kind3292052";
     String googleReferenceId = "googleReferenceId534944469";
     String description = "description-1724546052";
-    InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+    ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
     String customerRouterIpAddress = "customerRouterIpAddress-741266063";
     String selfLink = "selfLink-1691268851";
-    RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+    ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     InterconnectAttachment expectedResponse = InterconnectAttachment.newBuilder()
       .setCloudRouterIpAddress(cloudRouterIpAddress)
       .setOperationalStatus(operationalStatus)
@@ -254,7 +254,7 @@ public class InterconnectAttachmentClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+    ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
 
     InterconnectAttachment actualResponse =
         client.getInterconnectAttachment(interconnectAttachment);
@@ -276,7 +276,7 @@ public class InterconnectAttachmentClientTest {
     mockService.addException(exception);
 
     try {
-      InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+      ProjectRegionInterconnectAttachmentName interconnectAttachment = ProjectRegionInterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
 
       client.getInterconnectAttachment(interconnectAttachment);
       Assert.fail("No exception raised");
@@ -296,7 +296,7 @@ public class InterconnectAttachmentClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -305,7 +305,7 @@ public class InterconnectAttachmentClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region2 = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -335,7 +335,7 @@ public class InterconnectAttachmentClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
 
     Operation actualResponse =
@@ -359,7 +359,7 @@ public class InterconnectAttachmentClientTest {
 
     try {
       String requestId = "requestId37109963";
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
       InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
 
       client.insertInterconnectAttachment(requestId, region, interconnectAttachmentResource);
@@ -387,7 +387,7 @@ public class InterconnectAttachmentClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
     ListInterconnectAttachmentsPagedResponse pagedListResponse = client.listInterconnectAttachments(region);
 
@@ -412,7 +412,7 @@ public class InterconnectAttachmentClientTest {
     mockService.addException(exception);
 
     try {
-      RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+      ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listInterconnectAttachments(region);
       Assert.fail("No exception raised");

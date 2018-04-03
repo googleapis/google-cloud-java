@@ -33,6 +33,8 @@ import com.google.cloud.compute.v1.DiskTypeSettings;
 import com.google.cloud.compute.v1.DiskTypesScopedList;
 import com.google.cloud.compute.v1.ListDiskTypesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ZoneName;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -75,7 +77,8 @@ public class ITComputeTest {
 
   @Test
   public void testGetDiskType() {
-    DiskType diskType = diskTypeClient.getDiskType(DiskTypeName.of(DISK_TYPE, DEFAULT_PROJECT, ZONE));
+    DiskType diskType = diskTypeClient.getDiskType(
+        ProjectZoneDiskTypeName.of(DISK_TYPE, DEFAULT_PROJECT, ZONE));
     DiskTypeName returnDiskName = DiskTypeName.parse(trimUrl(diskType.getSelfLink()));
     assertEquals(ZONE, returnDiskName.getZone());
     assertEquals(DISK_TYPE, returnDiskName.getDiskType());
@@ -87,7 +90,7 @@ public class ITComputeTest {
 
   @Test
   public void testListDiskTypes() {
-    Page<DiskType> diskPage = diskTypeClient.listDiskTypes(ZoneName.of(DEFAULT_PROJECT, ZONE)).getPage();
+    Page<DiskType> diskPage = diskTypeClient.listDiskTypes(ProjectZoneName.of(DEFAULT_PROJECT, ZONE)).getPage();
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {

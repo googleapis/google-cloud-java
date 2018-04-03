@@ -98,7 +98,7 @@ public class TargetTcpProxyClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -107,7 +107,7 @@ public class TargetTcpProxyClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -137,7 +137,7 @@ public class TargetTcpProxyClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+    ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
 
     Operation actualResponse =
         client.deleteTargetTcpProxy(requestId, targetTcpProxy);
@@ -160,7 +160,7 @@ public class TargetTcpProxyClientTest {
 
     try {
       String requestId = "requestId37109963";
-      TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+      ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
 
       client.deleteTargetTcpProxy(requestId, targetTcpProxy);
       Assert.fail("No exception raised");
@@ -192,7 +192,7 @@ public class TargetTcpProxyClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+    ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
 
     TargetTcpProxy actualResponse =
         client.getTargetTcpProxy(targetTcpProxy);
@@ -214,7 +214,7 @@ public class TargetTcpProxyClientTest {
     mockService.addException(exception);
 
     try {
-      TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+      ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
 
       client.getTargetTcpProxy(targetTcpProxy);
       Assert.fail("No exception raised");
@@ -234,7 +234,7 @@ public class TargetTcpProxyClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -243,7 +243,7 @@ public class TargetTcpProxyClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -370,7 +370,7 @@ public class TargetTcpProxyClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -379,7 +379,7 @@ public class TargetTcpProxyClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -409,7 +409,7 @@ public class TargetTcpProxyClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+    ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
     TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -433,7 +433,7 @@ public class TargetTcpProxyClientTest {
 
     try {
       String requestId = "requestId37109963";
-      TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+      ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
       TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
 
       client.setBackendServiceTargetTcpProxy(requestId, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
@@ -454,7 +454,7 @@ public class TargetTcpProxyClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -463,7 +463,7 @@ public class TargetTcpProxyClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -493,7 +493,7 @@ public class TargetTcpProxyClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+    ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
     TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
 
     Operation actualResponse =
@@ -517,7 +517,7 @@ public class TargetTcpProxyClientTest {
 
     try {
       String requestId = "requestId37109963";
-      TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+      ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
       TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
 
       client.setProxyHeaderTargetTcpProxy(requestId, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);

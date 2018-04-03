@@ -35,7 +35,7 @@ public final class ProjectImageName implements com.google.api.resourcenames.Reso
   private final String project;
   private final String resource;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/images/{resource}");
+        PathTemplate.createWithoutUrlEncoding("projects/{project}/images/{image}");
 
   private volatile Map<String, String> fieldValuesMap;
 

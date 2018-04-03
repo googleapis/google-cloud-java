@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (LicenseClient licenseClient = LicenseClient.create()) {
- *   LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
+ *   ProjectLicenseName license = ProjectLicenseName.of("[PROJECT]", "[LICENSE]");
  *   License response = licenseClient.getLicense(license);
  * }
  * </code>
@@ -175,7 +175,7 @@ public class LicenseClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
+   *   ProjectLicenseName license = ProjectLicenseName.of("[PROJECT]", "[LICENSE]");
    *   License response = licenseClient.getLicense(license);
    * }
    * </code></pre>
@@ -184,7 +184,7 @@ public class LicenseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final License getLicense(LicenseName license) {
+  public final License getLicense(ProjectLicenseName license) {
 
     GetLicenseHttpRequest request =
         GetLicenseHttpRequest.newBuilder()
@@ -200,7 +200,7 @@ public class LicenseClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
+   *   ProjectLicenseName license = ProjectLicenseName.of("[PROJECT]", "[LICENSE]");
    *   License response = licenseClient.getLicense(license.toString());
    * }
    * </code></pre>
@@ -225,7 +225,7 @@ public class LicenseClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
+   *   ProjectLicenseName license = ProjectLicenseName.of("[PROJECT]", "[LICENSE]");
    *   GetLicenseHttpRequest request = GetLicenseHttpRequest.newBuilder()
    *     .setLicense(license.toString())
    *     .build();
@@ -248,7 +248,7 @@ public class LicenseClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
-   *   LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
+   *   ProjectLicenseName license = ProjectLicenseName.of("[PROJECT]", "[LICENSE]");
    *   GetLicenseHttpRequest request = GetLicenseHttpRequest.newBuilder()
    *     .setLicense(license.toString())
    *     .build();

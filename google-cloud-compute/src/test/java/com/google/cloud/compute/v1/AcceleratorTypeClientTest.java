@@ -138,7 +138,7 @@ public class AcceleratorTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAcceleratorTypeTest() {
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -158,7 +158,7 @@ public class AcceleratorTypeClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    AcceleratorTypeName acceleratorType = AcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+    ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
 
     AcceleratorType actualResponse =
         client.getAcceleratorType(acceleratorType);
@@ -180,7 +180,7 @@ public class AcceleratorTypeClientTest {
     mockService.addException(exception);
 
     try {
-      AcceleratorTypeName acceleratorType = AcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+      ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
 
       client.getAcceleratorType(acceleratorType);
       Assert.fail("No exception raised");
@@ -207,7 +207,7 @@ public class AcceleratorTypeClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
     ListAcceleratorTypesPagedResponse pagedListResponse = client.listAcceleratorTypes(zone);
 
@@ -232,7 +232,7 @@ public class AcceleratorTypeClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.listAcceleratorTypes(zone);
       Assert.fail("No exception raised");

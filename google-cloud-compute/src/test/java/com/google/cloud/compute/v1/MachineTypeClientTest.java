@@ -146,7 +146,7 @@ public class MachineTypeClientTest {
     Integer memoryMb = 1726613907;
     Integer maximumPersistentDisks = 1033091853;
     String maximumPersistentDisksSizeGb = "maximumPersistentDisksSizeGb-1993209177";
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String id = "id3355";
@@ -168,7 +168,7 @@ public class MachineTypeClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    MachineTypeName machineType = MachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+    ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
 
     MachineType actualResponse =
         client.getMachineType(machineType);
@@ -190,7 +190,7 @@ public class MachineTypeClientTest {
     mockService.addException(exception);
 
     try {
-      MachineTypeName machineType = MachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
+      ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
 
       client.getMachineType(machineType);
       Assert.fail("No exception raised");
@@ -217,7 +217,7 @@ public class MachineTypeClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
     ListMachineTypesPagedResponse pagedListResponse = client.listMachineTypes(zone);
 
@@ -242,7 +242,7 @@ public class MachineTypeClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.listMachineTypes(zone);
       Assert.fail("No exception raised");

@@ -35,10 +35,10 @@ import com.google.cloud.compute.v1.InsertSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.ListSslCertificatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectSslCertificateName;
 import com.google.cloud.compute.v1.SslCertificate;
 import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
 import com.google.cloud.compute.v1.SslCertificateList;
-import com.google.cloud.compute.v1.SslCertificateName;
 import com.google.cloud.compute.v1.SslCertificateSettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -70,7 +70,7 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(SslCertificateName.newFactory())
+                  .setResourceNameFactory(ProjectSslCertificateName.newFactory())
                   .setResourceNameField("sslCertificate")
                   .build())
           .setResponseParser(
@@ -89,7 +89,7 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/sslCertificates/{sslCertificate}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(SslCertificateName.newFactory())
+                  .setResourceNameFactory(ProjectSslCertificateName.newFactory())
                   .setResourceNameField("sslCertificate")
                   .build())
           .setResponseParser(

@@ -96,7 +96,7 @@ public class InterconnectClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -105,7 +105,7 @@ public class InterconnectClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -135,7 +135,7 @@ public class InterconnectClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+    ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
     Operation actualResponse =
         client.deleteInterconnect(requestId, interconnect);
@@ -158,7 +158,7 @@ public class InterconnectClientTest {
 
     try {
       String requestId = "requestId37109963";
-      InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+      ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
       client.deleteInterconnect(requestId, interconnect);
       Assert.fail("No exception raised");
@@ -210,7 +210,7 @@ public class InterconnectClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+    ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
     Interconnect actualResponse =
         client.getInterconnect(interconnect);
@@ -232,7 +232,7 @@ public class InterconnectClientTest {
     mockService.addException(exception);
 
     try {
-      InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+      ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
       client.getInterconnect(interconnect);
       Assert.fail("No exception raised");
@@ -252,7 +252,7 @@ public class InterconnectClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -261,7 +261,7 @@ public class InterconnectClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -388,7 +388,7 @@ public class InterconnectClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -397,7 +397,7 @@ public class InterconnectClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -427,7 +427,7 @@ public class InterconnectClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+    ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
     Operation actualResponse =
@@ -451,7 +451,7 @@ public class InterconnectClientTest {
 
     try {
       String requestId = "requestId37109963";
-      InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+      ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
       Interconnect interconnectResource = Interconnect.newBuilder().build();
 
       client.patchInterconnect(requestId, interconnect, interconnectResource);

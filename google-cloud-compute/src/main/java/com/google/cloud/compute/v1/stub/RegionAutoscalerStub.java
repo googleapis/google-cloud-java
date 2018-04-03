@@ -26,9 +26,9 @@ import com.google.cloud.compute.v1.ListRegionAutoscalersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionAutoscalerHttpRequest;
 import com.google.cloud.compute.v1.ProjectRegionAutoscalerName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import static com.google.cloud.compute.v1.RegionAutoscalerClient.ListRegionAutoscalersPagedResponse;
 import com.google.cloud.compute.v1.RegionAutoscalerList;
-import com.google.cloud.compute.v1.RegionName;
 import com.google.cloud.compute.v1.UpdateRegionAutoscalerHttpRequest;
 import javax.annotation.Generated;
 

@@ -35,7 +35,7 @@ public final class ProjectSnapshotName implements com.google.api.resourcenames.R
   private final String project;
   private final String resource;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/snapshots/{resource}");
+        PathTemplate.createWithoutUrlEncoding("projects/{project}/snapshots/{snapshot}");
 
   private volatile Map<String, String> fieldValuesMap;
 

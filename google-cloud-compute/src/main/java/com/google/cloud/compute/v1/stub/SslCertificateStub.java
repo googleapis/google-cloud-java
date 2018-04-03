@@ -24,10 +24,10 @@ import com.google.cloud.compute.v1.InsertSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.ListSslCertificatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectSslCertificateName;
 import com.google.cloud.compute.v1.SslCertificate;
 import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
 import com.google.cloud.compute.v1.SslCertificateList;
-import com.google.cloud.compute.v1.SslCertificateName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

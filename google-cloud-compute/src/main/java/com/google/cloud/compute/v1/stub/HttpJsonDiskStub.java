@@ -37,7 +37,6 @@ import com.google.cloud.compute.v1.DiskAggregatedList;
 import static com.google.cloud.compute.v1.DiskClient.AggregatedListDisksPagedResponse;
 import static com.google.cloud.compute.v1.DiskClient.ListDisksPagedResponse;
 import com.google.cloud.compute.v1.DiskList;
-import com.google.cloud.compute.v1.DiskName;
 import com.google.cloud.compute.v1.DiskSettings;
 import com.google.cloud.compute.v1.DisksResizeRequest;
 import com.google.cloud.compute.v1.DisksScopedList;
@@ -46,11 +45,11 @@ import com.google.cloud.compute.v1.InsertDiskHttpRequest;
 import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneDiskName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
-import com.google.cloud.compute.v1.ResourceName;
 import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
-import com.google.cloud.compute.v1.ZoneName;
 import com.google.cloud.compute.v1.ZoneSetLabelsRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -102,7 +101,7 @@ public class HttpJsonDiskStub extends DiskStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "guestFlush",    "requestId"
                                      ))
-                  .setResourceNameFactory(DiskName.newFactory())
+                  .setResourceNameFactory(ProjectZoneDiskName.newFactory())
                   .setResourceNameField("disk")
                   .build())
           .setResponseParser(
@@ -122,7 +121,7 @@ public class HttpJsonDiskStub extends DiskStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(DiskName.newFactory())
+                  .setResourceNameFactory(ProjectZoneDiskName.newFactory())
                   .setResourceNameField("disk")
                   .build())
           .setResponseParser(
@@ -141,7 +140,7 @@ public class HttpJsonDiskStub extends DiskStub {
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/disks/{disk}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(DiskName.newFactory())
+                  .setResourceNameFactory(ProjectZoneDiskName.newFactory())
                   .setResourceNameField("disk")
                   .build())
           .setResponseParser(
@@ -161,7 +160,7 @@ public class HttpJsonDiskStub extends DiskStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId",    "sourceImage"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -181,7 +180,7 @@ public class HttpJsonDiskStub extends DiskStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "filter",    "maxResults",    "orderBy",    "pageToken"
                                      ))
-                  .setResourceNameFactory(ZoneName.newFactory())
+                  .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
           .setResponseParser(
@@ -201,7 +200,7 @@ public class HttpJsonDiskStub extends DiskStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(DiskName.newFactory())
+                  .setResourceNameFactory(ProjectZoneDiskName.newFactory())
                   .setResourceNameField("disk")
                   .build())
           .setResponseParser(
@@ -221,7 +220,7 @@ public class HttpJsonDiskStub extends DiskStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ResourceName.newFactory())
+                  .setResourceNameFactory(ProjectZoneDiskName.newFactory())
                   .setResourceNameField("resource")
                   .build())
           .setResponseParser(

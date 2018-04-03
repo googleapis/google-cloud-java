@@ -32,10 +32,10 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetRegionHttpRequest;
 import com.google.cloud.compute.v1.ListRegionsHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.Region;
 import static com.google.cloud.compute.v1.RegionClient.ListRegionsPagedResponse;
 import com.google.cloud.compute.v1.RegionList;
-import com.google.cloud.compute.v1.RegionName;
 import com.google.cloud.compute.v1.RegionSettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -66,7 +66,7 @@ public class HttpJsonRegionStub extends RegionStub {
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(RegionName.newFactory())
+                  .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
           .setResponseParser(

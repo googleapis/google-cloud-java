@@ -51,7 +51,6 @@ import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
 import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
 import com.google.cloud.compute.v1.SnapshotList;
-import com.google.cloud.compute.v1.SnapshotName;
 import com.google.cloud.compute.v1.SnapshotSettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;

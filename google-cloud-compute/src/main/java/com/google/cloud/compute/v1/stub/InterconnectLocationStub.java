@@ -22,8 +22,8 @@ import com.google.cloud.compute.v1.GetInterconnectLocationHttpRequest;
 import com.google.cloud.compute.v1.InterconnectLocation;
 import static com.google.cloud.compute.v1.InterconnectLocationClient.ListInterconnectLocationsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectLocationList;
-import com.google.cloud.compute.v1.InterconnectLocationName;
 import com.google.cloud.compute.v1.ListInterconnectLocationsHttpRequest;
+import com.google.cloud.compute.v1.ProjectInterconnectLocationName;
 import com.google.cloud.compute.v1.ProjectName;
 import javax.annotation.Generated;
 

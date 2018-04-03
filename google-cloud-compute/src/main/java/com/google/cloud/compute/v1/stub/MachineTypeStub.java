@@ -26,10 +26,10 @@ import com.google.cloud.compute.v1.MachineTypeAggregatedList;
 import static com.google.cloud.compute.v1.MachineTypeClient.AggregatedListMachineTypesPagedResponse;
 import static com.google.cloud.compute.v1.MachineTypeClient.ListMachineTypesPagedResponse;
 import com.google.cloud.compute.v1.MachineTypeList;
-import com.google.cloud.compute.v1.MachineTypeName;
 import com.google.cloud.compute.v1.MachineTypesScopedList;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ZoneName;
+import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

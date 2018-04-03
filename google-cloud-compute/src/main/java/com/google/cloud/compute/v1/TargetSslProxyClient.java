@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
- *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+ *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
  *   String requestId = "";
  *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy, requestId);
  * }
@@ -176,7 +176,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy, requestId);
    * }
@@ -191,7 +191,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetSslProxy(TargetSslProxyName targetSslProxy, String requestId) {
+  public final Operation deleteTargetSslProxy(ProjectTargetSslProxyName targetSslProxy, String requestId) {
 
     DeleteTargetSslProxyHttpRequest request =
         DeleteTargetSslProxyHttpRequest.newBuilder()
@@ -208,7 +208,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy.toString(), requestId);
    * }
@@ -240,7 +240,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   DeleteTargetSslProxyHttpRequest request = DeleteTargetSslProxyHttpRequest.newBuilder()
    *     .setTargetSslProxy(targetSslProxy.toString())
@@ -265,7 +265,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   DeleteTargetSslProxyHttpRequest request = DeleteTargetSslProxyHttpRequest.newBuilder()
    *     .setTargetSslProxy(targetSslProxy.toString())
@@ -289,7 +289,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   TargetSslProxy response = targetSslProxyClient.getTargetSslProxy(targetSslProxy);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetSslProxy getTargetSslProxy(TargetSslProxyName targetSslProxy) {
+  public final TargetSslProxy getTargetSslProxy(ProjectTargetSslProxyName targetSslProxy) {
 
     GetTargetSslProxyHttpRequest request =
         GetTargetSslProxyHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   TargetSslProxy response = targetSslProxyClient.getTargetSslProxy(targetSslProxy.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   GetTargetSslProxyHttpRequest request = GetTargetSslProxyHttpRequest.newBuilder()
    *     .setTargetSslProxy(targetSslProxy.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   GetTargetSslProxyHttpRequest request = GetTargetSslProxyHttpRequest.newBuilder()
    *     .setTargetSslProxy(targetSslProxy.toString())
    *     .build();
@@ -640,7 +640,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setBackendServiceTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetBackendServiceRequestResource);
@@ -657,7 +657,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackendServiceTargetSslProxy(TargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
+  public final Operation setBackendServiceTargetSslProxy(ProjectTargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
 
     SetBackendServiceTargetSslProxyHttpRequest request =
         SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
@@ -675,7 +675,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setBackendServiceTargetSslProxy(targetSslProxy.toString(), requestId, targetSslProxiesSetBackendServiceRequestResource);
@@ -710,7 +710,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   SetBackendServiceTargetSslProxyHttpRequest request = SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
@@ -737,7 +737,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   SetBackendServiceTargetSslProxyHttpRequest request = SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
@@ -763,7 +763,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setProxyHeaderTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetProxyHeaderRequestResource);
@@ -780,7 +780,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setProxyHeaderTargetSslProxy(TargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
+  public final Operation setProxyHeaderTargetSslProxy(ProjectTargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
 
     SetProxyHeaderTargetSslProxyHttpRequest request =
         SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
@@ -798,7 +798,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setProxyHeaderTargetSslProxy(targetSslProxy.toString(), requestId, targetSslProxiesSetProxyHeaderRequestResource);
@@ -833,7 +833,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   SetProxyHeaderTargetSslProxyHttpRequest request = SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
@@ -860,7 +860,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   SetProxyHeaderTargetSslProxyHttpRequest request = SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
@@ -886,7 +886,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setSslCertificatesTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetSslCertificatesRequestResource);
@@ -903,7 +903,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setSslCertificatesTargetSslProxy(TargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
+  public final Operation setSslCertificatesTargetSslProxy(ProjectTargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
 
     SetSslCertificatesTargetSslProxyHttpRequest request =
         SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()
@@ -921,7 +921,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setSslCertificatesTargetSslProxy(targetSslProxy.toString(), requestId, targetSslProxiesSetSslCertificatesRequestResource);
@@ -956,7 +956,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   SetSslCertificatesTargetSslProxyHttpRequest request = SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()
@@ -983,7 +983,7 @@ public class TargetSslProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   SetSslCertificatesTargetSslProxyHttpRequest request = SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()

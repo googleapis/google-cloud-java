@@ -87,7 +87,7 @@ public class ZoneClientTest {
     String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     String status = "status-892481550";
     Zone expectedResponse = Zone.newBuilder()
@@ -102,7 +102,7 @@ public class ZoneClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
     Zone actualResponse =
         client.getZone(zone);
@@ -124,7 +124,7 @@ public class ZoneClientTest {
     mockService.addException(exception);
 
     try {
-      ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
 
       client.getZone(zone);
       Assert.fail("No exception raised");

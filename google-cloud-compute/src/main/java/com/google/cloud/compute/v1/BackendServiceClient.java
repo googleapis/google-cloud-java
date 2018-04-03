@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
  *   String requestId = "";
- *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+ *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
  *   Operation response = backendServiceClient.deleteBackendService(requestId, backendService);
  * }
  * </code>
@@ -310,7 +310,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   Operation response = backendServiceClient.deleteBackendService(requestId, backendService);
    * }
    * </code></pre>
@@ -324,7 +324,7 @@ public class BackendServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteBackendService(String requestId, BackendServiceName backendService) {
+  public final Operation deleteBackendService(String requestId, ProjectBackendServiceName backendService) {
 
     DeleteBackendServiceHttpRequest request =
         DeleteBackendServiceHttpRequest.newBuilder()
@@ -342,7 +342,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   Operation response = backendServiceClient.deleteBackendService(requestId, backendService.toString());
    * }
    * </code></pre>
@@ -374,7 +374,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   DeleteBackendServiceHttpRequest request = DeleteBackendServiceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
@@ -399,7 +399,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   DeleteBackendServiceHttpRequest request = DeleteBackendServiceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
@@ -422,7 +422,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService response = backendServiceClient.getBackendService(backendService);
    * }
    * </code></pre>
@@ -431,7 +431,7 @@ public class BackendServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final BackendService getBackendService(BackendServiceName backendService) {
+  public final BackendService getBackendService(ProjectBackendServiceName backendService) {
 
     GetBackendServiceHttpRequest request =
         GetBackendServiceHttpRequest.newBuilder()
@@ -447,7 +447,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService response = backendServiceClient.getBackendService(backendService.toString());
    * }
    * </code></pre>
@@ -472,7 +472,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   GetBackendServiceHttpRequest request = GetBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .build();
@@ -495,7 +495,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   GetBackendServiceHttpRequest request = GetBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
    *     .build();
@@ -517,7 +517,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
    *   BackendServiceGroupHealth response = backendServiceClient.getHealthBackendService(backendService, resourceGroupReferenceResource);
    * }
@@ -528,7 +528,7 @@ public class BackendServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final BackendServiceGroupHealth getHealthBackendService(BackendServiceName backendService, ResourceGroupReference resourceGroupReferenceResource) {
+  public final BackendServiceGroupHealth getHealthBackendService(ProjectBackendServiceName backendService, ResourceGroupReference resourceGroupReferenceResource) {
 
     GetHealthBackendServiceHttpRequest request =
         GetHealthBackendServiceHttpRequest.newBuilder()
@@ -545,7 +545,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
    *   BackendServiceGroupHealth response = backendServiceClient.getHealthBackendService(backendService.toString(), resourceGroupReferenceResource);
    * }
@@ -573,7 +573,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
    *   GetHealthBackendServiceHttpRequest request = GetHealthBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
@@ -598,7 +598,7 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
    *   GetHealthBackendServiceHttpRequest request = GetHealthBackendServiceHttpRequest.newBuilder()
    *     .setBackendService(backendService.toString())
@@ -879,7 +879,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   Operation response = backendServiceClient.patchBackendService(requestId, backendService, backendServiceResource);
    * }
@@ -895,7 +895,7 @@ public class BackendServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchBackendService(String requestId, BackendServiceName backendService, BackendService backendServiceResource) {
+  public final Operation patchBackendService(String requestId, ProjectBackendServiceName backendService, BackendService backendServiceResource) {
 
     PatchBackendServiceHttpRequest request =
         PatchBackendServiceHttpRequest.newBuilder()
@@ -914,7 +914,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   Operation response = backendServiceClient.patchBackendService(requestId, backendService.toString(), backendServiceResource);
    * }
@@ -949,7 +949,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   PatchBackendServiceHttpRequest request = PatchBackendServiceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -976,7 +976,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   PatchBackendServiceHttpRequest request = PatchBackendServiceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -1002,7 +1002,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   Operation response = backendServiceClient.updateBackendService(requestId, backendService, backendServiceResource);
    * }
@@ -1018,7 +1018,7 @@ public class BackendServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateBackendService(String requestId, BackendServiceName backendService, BackendService backendServiceResource) {
+  public final Operation updateBackendService(String requestId, ProjectBackendServiceName backendService, BackendService backendServiceResource) {
 
     UpdateBackendServiceHttpRequest request =
         UpdateBackendServiceHttpRequest.newBuilder()
@@ -1037,7 +1037,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   Operation response = backendServiceClient.updateBackendService(requestId, backendService.toString(), backendServiceResource);
    * }
@@ -1072,7 +1072,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   UpdateBackendServiceHttpRequest request = UpdateBackendServiceHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -1099,7 +1099,7 @@ public class BackendServiceClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
    *   String requestId = "";
-   *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+   *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   UpdateBackendServiceHttpRequest request = UpdateBackendServiceHttpRequest.newBuilder()
    *     .setRequestId(requestId)

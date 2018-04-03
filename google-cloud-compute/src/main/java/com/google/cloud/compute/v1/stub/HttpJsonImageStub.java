@@ -32,18 +32,17 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteImageHttpRequest;
 import com.google.cloud.compute.v1.DeprecateImageHttpRequest;
 import com.google.cloud.compute.v1.DeprecationStatus;
-import com.google.cloud.compute.v1.FamilyName;
 import com.google.cloud.compute.v1.GetFromFamilyImageHttpRequest;
 import com.google.cloud.compute.v1.GetImageHttpRequest;
 import com.google.cloud.compute.v1.GlobalSetLabelsRequest;
 import com.google.cloud.compute.v1.Image;
 import static com.google.cloud.compute.v1.ImageClient.ListImagesPagedResponse;
 import com.google.cloud.compute.v1.ImageList;
-import com.google.cloud.compute.v1.ImageName;
 import com.google.cloud.compute.v1.ImageSettings;
 import com.google.cloud.compute.v1.InsertImageHttpRequest;
 import com.google.cloud.compute.v1.ListImagesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectFamilyName;
 import com.google.cloud.compute.v1.ProjectImageName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.SetLabelsImageHttpRequest;
@@ -77,7 +76,7 @@ public class HttpJsonImageStub extends ImageStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ImageName.newFactory())
+                  .setResourceNameFactory(ProjectImageName.newFactory())
                   .setResourceNameField("image")
                   .build())
           .setResponseParser(
@@ -97,7 +96,7 @@ public class HttpJsonImageStub extends ImageStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(ImageName.newFactory())
+                  .setResourceNameFactory(ProjectImageName.newFactory())
                   .setResourceNameField("image")
                   .build())
           .setResponseParser(
@@ -116,7 +115,7 @@ public class HttpJsonImageStub extends ImageStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/images/{image}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(ImageName.newFactory())
+                  .setResourceNameFactory(ProjectImageName.newFactory())
                   .setResourceNameField("image")
                   .build())
           .setResponseParser(
@@ -135,7 +134,7 @@ public class HttpJsonImageStub extends ImageStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/images/family/{family}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(FamilyName.newFactory())
+                  .setResourceNameFactory(ProjectFamilyName.newFactory())
                   .setResourceNameField("family")
                   .build())
           .setResponseParser(

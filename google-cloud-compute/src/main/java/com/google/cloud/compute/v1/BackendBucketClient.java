@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
- *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+ *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
  *   String requestId = "";
  *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket, requestId);
  * }
@@ -176,7 +176,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket, requestId);
    * }
@@ -191,7 +191,7 @@ public class BackendBucketClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteBackendBucket(BackendBucketName backendBucket, String requestId) {
+  public final Operation deleteBackendBucket(ProjectBackendBucketName backendBucket, String requestId) {
 
     DeleteBackendBucketHttpRequest request =
         DeleteBackendBucketHttpRequest.newBuilder()
@@ -208,7 +208,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket.toString(), requestId);
    * }
@@ -240,7 +240,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   DeleteBackendBucketHttpRequest request = DeleteBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
@@ -265,7 +265,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   DeleteBackendBucketHttpRequest request = DeleteBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
@@ -289,7 +289,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket response = backendBucketClient.getBackendBucket(backendBucket);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class BackendBucketClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final BackendBucket getBackendBucket(BackendBucketName backendBucket) {
+  public final BackendBucket getBackendBucket(ProjectBackendBucketName backendBucket) {
 
     GetBackendBucketHttpRequest request =
         GetBackendBucketHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   BackendBucket response = backendBucketClient.getBackendBucket(backendBucket.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   GetBackendBucketHttpRequest request = GetBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   GetBackendBucketHttpRequest request = GetBackendBucketHttpRequest.newBuilder()
    *     .setBackendBucket(backendBucket.toString())
    *     .build();
@@ -640,7 +640,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   Operation response = backendBucketClient.patchBackendBucket(backendBucket, requestId, backendBucketResource);
@@ -657,7 +657,7 @@ public class BackendBucketClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchBackendBucket(BackendBucketName backendBucket, String requestId, BackendBucket backendBucketResource) {
+  public final Operation patchBackendBucket(ProjectBackendBucketName backendBucket, String requestId, BackendBucket backendBucketResource) {
 
     PatchBackendBucketHttpRequest request =
         PatchBackendBucketHttpRequest.newBuilder()
@@ -675,7 +675,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   Operation response = backendBucketClient.patchBackendBucket(backendBucket.toString(), requestId, backendBucketResource);
@@ -710,7 +710,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   PatchBackendBucketHttpRequest request = PatchBackendBucketHttpRequest.newBuilder()
@@ -737,7 +737,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   PatchBackendBucketHttpRequest request = PatchBackendBucketHttpRequest.newBuilder()
@@ -763,7 +763,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   Operation response = backendBucketClient.updateBackendBucket(backendBucket, requestId, backendBucketResource);
@@ -780,7 +780,7 @@ public class BackendBucketClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateBackendBucket(BackendBucketName backendBucket, String requestId, BackendBucket backendBucketResource) {
+  public final Operation updateBackendBucket(ProjectBackendBucketName backendBucket, String requestId, BackendBucket backendBucketResource) {
 
     UpdateBackendBucketHttpRequest request =
         UpdateBackendBucketHttpRequest.newBuilder()
@@ -798,7 +798,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   Operation response = backendBucketClient.updateBackendBucket(backendBucket.toString(), requestId, backendBucketResource);
@@ -833,7 +833,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   UpdateBackendBucketHttpRequest request = UpdateBackendBucketHttpRequest.newBuilder()
@@ -860,7 +860,7 @@ public class BackendBucketClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
-   *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+   *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
    *   String requestId = "";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   UpdateBackendBucketHttpRequest request = UpdateBackendBucketHttpRequest.newBuilder()

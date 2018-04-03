@@ -23,7 +23,6 @@ import com.google.cloud.compute.v1.AddressAggregatedList;
 import static com.google.cloud.compute.v1.AddressClient.AggregatedListAddressesPagedResponse;
 import static com.google.cloud.compute.v1.AddressClient.ListAddressesPagedResponse;
 import com.google.cloud.compute.v1.AddressList;
-import com.google.cloud.compute.v1.AddressName;
 import com.google.cloud.compute.v1.AddressesScopedList;
 import com.google.cloud.compute.v1.AggregatedListAddressesHttpRequest;
 import com.google.cloud.compute.v1.DeleteAddressHttpRequest;
@@ -32,7 +31,8 @@ import com.google.cloud.compute.v1.InsertAddressHttpRequest;
 import com.google.cloud.compute.v1.ListAddressesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.ProjectRegionAddressName;
+import com.google.cloud.compute.v1.ProjectRegionName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

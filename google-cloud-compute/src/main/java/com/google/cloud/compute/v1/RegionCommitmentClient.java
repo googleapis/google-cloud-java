@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
- *   CommitmentName commitment = CommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+ *   ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
  *   Commitment response = regionCommitmentClient.getRegionCommitment(commitment);
  * }
  * </code>
@@ -308,7 +308,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   CommitmentName commitment = CommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+   *   ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
    *   Commitment response = regionCommitmentClient.getRegionCommitment(commitment);
    * }
    * </code></pre>
@@ -317,7 +317,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Commitment getRegionCommitment(CommitmentName commitment) {
+  public final Commitment getRegionCommitment(ProjectRegionCommitmentName commitment) {
 
     GetRegionCommitmentHttpRequest request =
         GetRegionCommitmentHttpRequest.newBuilder()
@@ -333,7 +333,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   CommitmentName commitment = CommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+   *   ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
    *   Commitment response = regionCommitmentClient.getRegionCommitment(commitment.toString());
    * }
    * </code></pre>
@@ -358,7 +358,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   CommitmentName commitment = CommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+   *   ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
    *   GetRegionCommitmentHttpRequest request = GetRegionCommitmentHttpRequest.newBuilder()
    *     .setCommitment(commitment.toString())
    *     .build();
@@ -381,7 +381,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   CommitmentName commitment = CommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+   *   ProjectRegionCommitmentName commitment = ProjectRegionCommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
    *   GetRegionCommitmentHttpRequest request = GetRegionCommitmentHttpRequest.newBuilder()
    *     .setCommitment(commitment.toString())
    *     .build();
@@ -404,7 +404,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   Operation response = regionCommitmentClient.insertRegionCommitment(requestId, region, commitmentResource);
    * }
@@ -422,7 +422,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRegionCommitment(String requestId, RegionName region, Commitment commitmentResource) {
+  public final Operation insertRegionCommitment(String requestId, ProjectRegionName region, Commitment commitmentResource) {
 
     InsertRegionCommitmentHttpRequest request =
         InsertRegionCommitmentHttpRequest.newBuilder()
@@ -441,7 +441,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   Operation response = regionCommitmentClient.insertRegionCommitment(requestId, region.toString(), commitmentResource);
    * }
@@ -478,7 +478,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   InsertRegionCommitmentHttpRequest request = InsertRegionCommitmentHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -505,7 +505,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   InsertRegionCommitmentHttpRequest request = InsertRegionCommitmentHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -530,7 +530,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (Commitment element : regionCommitmentClient.listRegionCommitments(region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -541,7 +541,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionCommitmentsPagedResponse listRegionCommitments(RegionName region) {
+  public final ListRegionCommitmentsPagedResponse listRegionCommitments(ProjectRegionName region) {
     ListRegionCommitmentsHttpRequest request =
         ListRegionCommitmentsHttpRequest.newBuilder()
         .setRegion(region == null ? null : region.toString())
@@ -556,7 +556,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (Commitment element : regionCommitmentClient.listRegionCommitments(region.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -582,7 +582,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionCommitmentsHttpRequest request = ListRegionCommitmentsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -608,7 +608,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionCommitmentsHttpRequest request = ListRegionCommitmentsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -632,7 +632,7 @@ public class RegionCommitmentClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRegionCommitmentsHttpRequest request = ListRegionCommitmentsHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();

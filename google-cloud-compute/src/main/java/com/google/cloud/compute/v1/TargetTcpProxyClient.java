@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
  *   String requestId = "";
- *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+ *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
  *   Operation response = targetTcpProxyClient.deleteTargetTcpProxy(requestId, targetTcpProxy);
  * }
  * </code>
@@ -177,7 +177,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   Operation response = targetTcpProxyClient.deleteTargetTcpProxy(requestId, targetTcpProxy);
    * }
    * </code></pre>
@@ -191,7 +191,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetTcpProxy(String requestId, TargetTcpProxyName targetTcpProxy) {
+  public final Operation deleteTargetTcpProxy(String requestId, ProjectTargetTcpProxyName targetTcpProxy) {
 
     DeleteTargetTcpProxyHttpRequest request =
         DeleteTargetTcpProxyHttpRequest.newBuilder()
@@ -209,7 +209,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   Operation response = targetTcpProxyClient.deleteTargetTcpProxy(requestId, targetTcpProxy.toString());
    * }
    * </code></pre>
@@ -241,7 +241,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   DeleteTargetTcpProxyHttpRequest request = DeleteTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setTargetTcpProxy(targetTcpProxy.toString())
@@ -266,7 +266,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   DeleteTargetTcpProxyHttpRequest request = DeleteTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setTargetTcpProxy(targetTcpProxy.toString())
@@ -289,7 +289,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxy response = targetTcpProxyClient.getTargetTcpProxy(targetTcpProxy);
    * }
    * </code></pre>
@@ -298,7 +298,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetTcpProxy getTargetTcpProxy(TargetTcpProxyName targetTcpProxy) {
+  public final TargetTcpProxy getTargetTcpProxy(ProjectTargetTcpProxyName targetTcpProxy) {
 
     GetTargetTcpProxyHttpRequest request =
         GetTargetTcpProxyHttpRequest.newBuilder()
@@ -314,7 +314,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxy response = targetTcpProxyClient.getTargetTcpProxy(targetTcpProxy.toString());
    * }
    * </code></pre>
@@ -339,7 +339,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   GetTargetTcpProxyHttpRequest request = GetTargetTcpProxyHttpRequest.newBuilder()
    *     .setTargetTcpProxy(targetTcpProxy.toString())
    *     .build();
@@ -362,7 +362,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   GetTargetTcpProxyHttpRequest request = GetTargetTcpProxyHttpRequest.newBuilder()
    *     .setTargetTcpProxy(targetTcpProxy.toString())
    *     .build();
@@ -641,7 +641,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   Operation response = targetTcpProxyClient.setBackendServiceTargetTcpProxy(requestId, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
    * }
@@ -657,7 +657,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackendServiceTargetTcpProxy(String requestId, TargetTcpProxyName targetTcpProxy, TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
+  public final Operation setBackendServiceTargetTcpProxy(String requestId, ProjectTargetTcpProxyName targetTcpProxy, TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
 
     SetBackendServiceTargetTcpProxyHttpRequest request =
         SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
@@ -676,7 +676,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   Operation response = targetTcpProxyClient.setBackendServiceTargetTcpProxy(requestId, targetTcpProxy.toString(), targetTcpProxiesSetBackendServiceRequestResource);
    * }
@@ -711,7 +711,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   SetBackendServiceTargetTcpProxyHttpRequest request = SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -738,7 +738,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   SetBackendServiceTargetTcpProxyHttpRequest request = SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -764,7 +764,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   Operation response = targetTcpProxyClient.setProxyHeaderTargetTcpProxy(requestId, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
    * }
@@ -780,7 +780,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setProxyHeaderTargetTcpProxy(String requestId, TargetTcpProxyName targetTcpProxy, TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource) {
+  public final Operation setProxyHeaderTargetTcpProxy(String requestId, ProjectTargetTcpProxyName targetTcpProxy, TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource) {
 
     SetProxyHeaderTargetTcpProxyHttpRequest request =
         SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
@@ -799,7 +799,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   Operation response = targetTcpProxyClient.setProxyHeaderTargetTcpProxy(requestId, targetTcpProxy.toString(), targetTcpProxiesSetProxyHeaderRequestResource);
    * }
@@ -834,7 +834,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   SetProxyHeaderTargetTcpProxyHttpRequest request = SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -861,7 +861,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   SetProxyHeaderTargetTcpProxyHttpRequest request = SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)

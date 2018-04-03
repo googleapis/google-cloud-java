@@ -24,13 +24,13 @@ import com.google.cloud.compute.v1.InsertTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetHttpsProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectTargetHttpsProxyName;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest;
 import com.google.cloud.compute.v1.TargetHttpsProxy;
 import static com.google.cloud.compute.v1.TargetHttpsProxyClient.ListTargetHttpsProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetHttpsProxyList;
-import com.google.cloud.compute.v1.TargetHttpsProxyName;
 import com.google.cloud.compute.v1.UrlMapReference;
 import javax.annotation.Generated;
 

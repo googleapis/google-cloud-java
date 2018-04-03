@@ -35,11 +35,11 @@ import com.google.cloud.compute.v1.InsertInterconnectHttpRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import static com.google.cloud.compute.v1.InterconnectClient.ListInterconnectsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectList;
-import com.google.cloud.compute.v1.InterconnectName;
 import com.google.cloud.compute.v1.InterconnectSettings;
 import com.google.cloud.compute.v1.ListInterconnectsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectHttpRequest;
+import com.google.cloud.compute.v1.ProjectInterconnectName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -71,7 +71,7 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InterconnectName.newFactory())
+                  .setResourceNameFactory(ProjectInterconnectName.newFactory())
                   .setResourceNameField("interconnect")
                   .build())
           .setResponseParser(
@@ -90,7 +90,7 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
                   .setPathTemplate(PathTemplate.create("{project}/global/interconnects/{interconnect}"))
                   .setQueryParams(Sets.<String>newHashSet(
                                      ))
-                  .setResourceNameFactory(InterconnectName.newFactory())
+                  .setResourceNameFactory(ProjectInterconnectName.newFactory())
                   .setResourceNameField("interconnect")
                   .build())
           .setResponseParser(
@@ -150,7 +150,7 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
                   .setQueryParams(Sets.<String>newHashSet(
                                      "requestId"
                                      ))
-                  .setResourceNameFactory(InterconnectName.newFactory())
+                  .setResourceNameFactory(ProjectInterconnectName.newFactory())
                   .setResourceNameField("interconnect")
                   .build())
           .setResponseParser(

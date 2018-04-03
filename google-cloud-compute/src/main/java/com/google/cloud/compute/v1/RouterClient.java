@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (RouterClient routerClient = RouterClient.create()) {
- *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+ *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
  *   String requestId = "";
  *   Operation response = routerClient.deleteRouter(router, requestId);
  * }
@@ -309,7 +309,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Operation response = routerClient.deleteRouter(router, requestId);
    * }
@@ -324,7 +324,7 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRouter(RouterName router, String requestId) {
+  public final Operation deleteRouter(ProjectRegionRouterName router, String requestId) {
 
     DeleteRouterHttpRequest request =
         DeleteRouterHttpRequest.newBuilder()
@@ -341,7 +341,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Operation response = routerClient.deleteRouter(router.toString(), requestId);
    * }
@@ -373,7 +373,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   DeleteRouterHttpRequest request = DeleteRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
@@ -398,7 +398,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   DeleteRouterHttpRequest request = DeleteRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
@@ -422,7 +422,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router response = routerClient.getRouter(router);
    * }
    * </code></pre>
@@ -431,7 +431,7 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Router getRouter(RouterName router) {
+  public final Router getRouter(ProjectRegionRouterName router) {
 
     GetRouterHttpRequest request =
         GetRouterHttpRequest.newBuilder()
@@ -447,7 +447,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router response = routerClient.getRouter(router.toString());
    * }
    * </code></pre>
@@ -472,7 +472,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetRouterHttpRequest request = GetRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
    *     .build();
@@ -495,7 +495,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetRouterHttpRequest request = GetRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
    *     .build();
@@ -517,7 +517,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   RouterStatusResponse response = routerClient.getRouterStatusRouter(router);
    * }
    * </code></pre>
@@ -526,7 +526,7 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RouterStatusResponse getRouterStatusRouter(RouterName router) {
+  public final RouterStatusResponse getRouterStatusRouter(ProjectRegionRouterName router) {
 
     GetRouterStatusRouterHttpRequest request =
         GetRouterStatusRouterHttpRequest.newBuilder()
@@ -542,7 +542,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   RouterStatusResponse response = routerClient.getRouterStatusRouter(router.toString());
    * }
    * </code></pre>
@@ -567,7 +567,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetRouterStatusRouterHttpRequest request = GetRouterStatusRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
    *     .build();
@@ -590,7 +590,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   GetRouterStatusRouterHttpRequest request = GetRouterStatusRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
    *     .build();
@@ -613,7 +613,7 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routerClient.insertRouter(requestId, region, routerResource);
    * }
@@ -629,7 +629,7 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRouter(String requestId, RegionName region, Router routerResource) {
+  public final Operation insertRouter(String requestId, ProjectRegionName region, Router routerResource) {
 
     InsertRouterHttpRequest request =
         InsertRouterHttpRequest.newBuilder()
@@ -648,7 +648,7 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routerClient.insertRouter(requestId, region.toString(), routerResource);
    * }
@@ -683,7 +683,7 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
    *   InsertRouterHttpRequest request = InsertRouterHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -710,7 +710,7 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   String requestId = "";
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
    *   InsertRouterHttpRequest request = InsertRouterHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -735,7 +735,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (Router element : routerClient.listRouters(region).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -746,7 +746,7 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRoutersPagedResponse listRouters(RegionName region) {
+  public final ListRoutersPagedResponse listRouters(ProjectRegionName region) {
     ListRoutersHttpRequest request =
         ListRoutersHttpRequest.newBuilder()
         .setRegion(region == null ? null : region.toString())
@@ -761,7 +761,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   for (Router element : routerClient.listRouters(region.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -787,7 +787,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRoutersHttpRequest request = ListRoutersHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -813,7 +813,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRoutersHttpRequest request = ListRoutersHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -837,7 +837,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+   *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
    *   ListRoutersHttpRequest request = ListRoutersHttpRequest.newBuilder()
    *     .setRegion(region.toString())
    *     .build();
@@ -868,7 +868,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routerClient.patchRouter(router, requestId, routerResource);
@@ -885,7 +885,7 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchRouter(RouterName router, String requestId, Router routerResource) {
+  public final Operation patchRouter(ProjectRegionRouterName router, String requestId, Router routerResource) {
 
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
@@ -903,7 +903,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routerClient.patchRouter(router.toString(), requestId, routerResource);
@@ -938,7 +938,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   PatchRouterHttpRequest request = PatchRouterHttpRequest.newBuilder()
@@ -965,7 +965,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   PatchRouterHttpRequest request = PatchRouterHttpRequest.newBuilder()
@@ -991,7 +991,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   RoutersPreviewResponse response = routerClient.previewRouter(router, routerResource);
    * }
@@ -1002,7 +1002,7 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RoutersPreviewResponse previewRouter(RouterName router, Router routerResource) {
+  public final RoutersPreviewResponse previewRouter(ProjectRegionRouterName router, Router routerResource) {
 
     PreviewRouterHttpRequest request =
         PreviewRouterHttpRequest.newBuilder()
@@ -1019,7 +1019,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   RoutersPreviewResponse response = routerClient.previewRouter(router.toString(), routerResource);
    * }
@@ -1047,7 +1047,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   PreviewRouterHttpRequest request = PreviewRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
@@ -1072,7 +1072,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   Router routerResource = Router.newBuilder().build();
    *   PreviewRouterHttpRequest request = PreviewRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
@@ -1096,7 +1096,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routerClient.updateRouter(router, requestId, routerResource);
@@ -1113,7 +1113,7 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateRouter(RouterName router, String requestId, Router routerResource) {
+  public final Operation updateRouter(ProjectRegionRouterName router, String requestId, Router routerResource) {
 
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
@@ -1131,7 +1131,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   Operation response = routerClient.updateRouter(router.toString(), requestId, routerResource);
@@ -1166,7 +1166,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   UpdateRouterHttpRequest request = UpdateRouterHttpRequest.newBuilder()
@@ -1193,7 +1193,7 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
-   *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
    *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   UpdateRouterHttpRequest request = UpdateRouterHttpRequest.newBuilder()

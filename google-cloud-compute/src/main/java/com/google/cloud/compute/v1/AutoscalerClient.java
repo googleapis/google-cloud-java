@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
- *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+ *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
  *   String requestId = "";
  *   Operation response = autoscalerClient.deleteAutoscaler(autoscaler, requestId);
  * }
@@ -309,7 +309,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+   *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
    *   String requestId = "";
    *   Operation response = autoscalerClient.deleteAutoscaler(autoscaler, requestId);
    * }
@@ -324,7 +324,7 @@ public class AutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteAutoscaler(AutoscalerName autoscaler, String requestId) {
+  public final Operation deleteAutoscaler(ProjectZoneAutoscalerName autoscaler, String requestId) {
 
     DeleteAutoscalerHttpRequest request =
         DeleteAutoscalerHttpRequest.newBuilder()
@@ -341,7 +341,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+   *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
    *   String requestId = "";
    *   Operation response = autoscalerClient.deleteAutoscaler(autoscaler.toString(), requestId);
    * }
@@ -373,7 +373,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+   *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
    *   String requestId = "";
    *   DeleteAutoscalerHttpRequest request = DeleteAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler.toString())
@@ -398,7 +398,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+   *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
    *   String requestId = "";
    *   DeleteAutoscalerHttpRequest request = DeleteAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler.toString())
@@ -422,7 +422,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+   *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
    *   Autoscaler response = autoscalerClient.getAutoscaler(autoscaler);
    * }
    * </code></pre>
@@ -431,7 +431,7 @@ public class AutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Autoscaler getAutoscaler(AutoscalerName autoscaler) {
+  public final Autoscaler getAutoscaler(ProjectZoneAutoscalerName autoscaler) {
 
     GetAutoscalerHttpRequest request =
         GetAutoscalerHttpRequest.newBuilder()
@@ -447,7 +447,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+   *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
    *   Autoscaler response = autoscalerClient.getAutoscaler(autoscaler.toString());
    * }
    * </code></pre>
@@ -472,7 +472,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+   *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
    *   GetAutoscalerHttpRequest request = GetAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler.toString())
    *     .build();
@@ -495,7 +495,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
+   *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
    *   GetAutoscalerHttpRequest request = GetAutoscalerHttpRequest.newBuilder()
    *     .setAutoscaler(autoscaler.toString())
    *     .build();
@@ -517,7 +517,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   Operation response = autoscalerClient.insertAutoscaler(zone, requestId, autoscalerResource);
@@ -534,7 +534,7 @@ public class AutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertAutoscaler(ZoneName zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation insertAutoscaler(ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
 
     InsertAutoscalerHttpRequest request =
         InsertAutoscalerHttpRequest.newBuilder()
@@ -552,7 +552,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   Operation response = autoscalerClient.insertAutoscaler(zone.toString(), requestId, autoscalerResource);
@@ -587,7 +587,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   InsertAutoscalerHttpRequest request = InsertAutoscalerHttpRequest.newBuilder()
@@ -614,7 +614,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   InsertAutoscalerHttpRequest request = InsertAutoscalerHttpRequest.newBuilder()
@@ -640,7 +640,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (Autoscaler element : autoscalerClient.listAutoscalers(zone).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -651,7 +651,7 @@ public class AutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListAutoscalersPagedResponse listAutoscalers(ZoneName zone) {
+  public final ListAutoscalersPagedResponse listAutoscalers(ProjectZoneName zone) {
     ListAutoscalersHttpRequest request =
         ListAutoscalersHttpRequest.newBuilder()
         .setZone(zone == null ? null : zone.toString())
@@ -666,7 +666,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   for (Autoscaler element : autoscalerClient.listAutoscalers(zone.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -692,7 +692,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListAutoscalersHttpRequest request = ListAutoscalersHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -718,7 +718,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListAutoscalersHttpRequest request = ListAutoscalersHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -742,7 +742,7 @@ public class AutoscalerClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   ListAutoscalersHttpRequest request = ListAutoscalersHttpRequest.newBuilder()
    *     .setZone(zone.toString())
    *     .build();
@@ -774,7 +774,7 @@ public class AutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   Operation response = autoscalerClient.patchAutoscaler(autoscaler, zone, requestId, autoscalerResource);
@@ -792,7 +792,7 @@ public class AutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchAutoscaler(String autoscaler, ZoneName zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation patchAutoscaler(String autoscaler, ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
 
     PatchAutoscalerHttpRequest request =
         PatchAutoscalerHttpRequest.newBuilder()
@@ -812,7 +812,7 @@ public class AutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   Operation response = autoscalerClient.patchAutoscaler(autoscaler, zone.toString(), requestId, autoscalerResource);
@@ -850,7 +850,7 @@ public class AutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   PatchAutoscalerHttpRequest request = PatchAutoscalerHttpRequest.newBuilder()
@@ -879,7 +879,7 @@ public class AutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   PatchAutoscalerHttpRequest request = PatchAutoscalerHttpRequest.newBuilder()
@@ -907,7 +907,7 @@ public class AutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   Operation response = autoscalerClient.updateAutoscaler(autoscaler, zone, requestId, autoscalerResource);
@@ -925,7 +925,7 @@ public class AutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateAutoscaler(String autoscaler, ZoneName zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation updateAutoscaler(String autoscaler, ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
 
     UpdateAutoscalerHttpRequest request =
         UpdateAutoscalerHttpRequest.newBuilder()
@@ -945,7 +945,7 @@ public class AutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   Operation response = autoscalerClient.updateAutoscaler(autoscaler, zone.toString(), requestId, autoscalerResource);
@@ -983,7 +983,7 @@ public class AutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   UpdateAutoscalerHttpRequest request = UpdateAutoscalerHttpRequest.newBuilder()
@@ -1012,7 +1012,7 @@ public class AutoscalerClient implements BackgroundResource {
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
-   *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
    *   String requestId = "";
    *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   UpdateAutoscalerHttpRequest request = UpdateAutoscalerHttpRequest.newBuilder()

@@ -24,12 +24,12 @@ import com.google.cloud.compute.v1.DiskTypeAggregatedList;
 import static com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
 import static com.google.cloud.compute.v1.DiskTypeClient.ListDiskTypesPagedResponse;
 import com.google.cloud.compute.v1.DiskTypeList;
-import com.google.cloud.compute.v1.DiskTypeName;
 import com.google.cloud.compute.v1.DiskTypesScopedList;
 import com.google.cloud.compute.v1.GetDiskTypeHttpRequest;
 import com.google.cloud.compute.v1.ListDiskTypesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ZoneName;
+import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
+import com.google.cloud.compute.v1.ProjectZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS

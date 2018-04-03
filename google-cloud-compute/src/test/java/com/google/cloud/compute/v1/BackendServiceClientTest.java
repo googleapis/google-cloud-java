@@ -156,7 +156,7 @@ public class BackendServiceClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -165,7 +165,7 @@ public class BackendServiceClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -195,7 +195,7 @@ public class BackendServiceClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
     Operation actualResponse =
         client.deleteBackendService(requestId, backendService);
@@ -218,7 +218,7 @@ public class BackendServiceClientTest {
 
     try {
       String requestId = "requestId37109963";
-      BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
       client.deleteBackendService(requestId, backendService);
       Assert.fail("No exception raised");
@@ -245,7 +245,7 @@ public class BackendServiceClientTest {
     String fingerprint = "fingerprint-1375934236";
     String name = "name3373707";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     BackendService expectedResponse = BackendService.newBuilder()
       .setAffinityCookieTtlSec(affinityCookieTtlSec)
       .setKind(kind)
@@ -266,7 +266,7 @@ public class BackendServiceClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
     BackendService actualResponse =
         client.getBackendService(backendService);
@@ -288,7 +288,7 @@ public class BackendServiceClientTest {
     mockService.addException(exception);
 
     try {
-      BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
       client.getBackendService(backendService);
       Assert.fail("No exception raised");
@@ -306,7 +306,7 @@ public class BackendServiceClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
-    BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
 
     BackendServiceGroupHealth actualResponse =
@@ -329,7 +329,7 @@ public class BackendServiceClientTest {
     mockService.addException(exception);
 
     try {
-      BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
       ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
 
       client.getHealthBackendService(backendService, resourceGroupReferenceResource);
@@ -350,7 +350,7 @@ public class BackendServiceClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -359,7 +359,7 @@ public class BackendServiceClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -486,7 +486,7 @@ public class BackendServiceClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -495,7 +495,7 @@ public class BackendServiceClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -525,7 +525,7 @@ public class BackendServiceClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
@@ -549,7 +549,7 @@ public class BackendServiceClientTest {
 
     try {
       String requestId = "requestId37109963";
-      BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
 
       client.patchBackendService(requestId, backendService, backendServiceResource);
@@ -570,7 +570,7 @@ public class BackendServiceClientTest {
     String selfLink = "selfLink-1691268851";
     String insertTime = "insertTime-103148397";
     Integer httpErrorStatusCode = 1386087020;
-    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String targetLink = "targetLink-2084812312";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -579,7 +579,7 @@ public class BackendServiceClientTest {
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     String id = "id3355";
-    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
@@ -609,7 +609,7 @@ public class BackendServiceClientTest {
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
@@ -633,7 +633,7 @@ public class BackendServiceClientTest {
 
     try {
       String requestId = "requestId37109963";
-      BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
 
       client.updateBackendService(requestId, backendService, backendServiceResource);

@@ -24,10 +24,10 @@ import com.google.cloud.compute.v1.InsertInterconnectHttpRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import static com.google.cloud.compute.v1.InterconnectClient.ListInterconnectsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectList;
-import com.google.cloud.compute.v1.InterconnectName;
 import com.google.cloud.compute.v1.ListInterconnectsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectHttpRequest;
+import com.google.cloud.compute.v1.ProjectInterconnectName;
 import com.google.cloud.compute.v1.ProjectName;
 import javax.annotation.Generated;
 
