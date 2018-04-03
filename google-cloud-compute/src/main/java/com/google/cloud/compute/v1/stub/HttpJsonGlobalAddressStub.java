@@ -68,6 +68,7 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
                   .setRequestInstance(DeleteGlobalAddressHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/addresses/{address}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectAddressName.newFactory())
                   .setResourceNameField("address")
@@ -106,6 +107,7 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
                   .setRequestInstance(InsertGlobalAddressHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/addresses"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")

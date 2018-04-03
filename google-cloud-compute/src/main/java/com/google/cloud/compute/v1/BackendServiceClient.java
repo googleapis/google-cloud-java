@@ -52,8 +52,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+ *   String requestId = "";
  *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
- *   Operation response = backendServiceClient.deleteBackendService(backendService);
+ *   Operation response = backendServiceClient.deleteBackendService(requestId, backendService);
  * }
  * </code>
  * </pre>
@@ -308,19 +309,26 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-   *   Operation response = backendServiceClient.deleteBackendService(backendService);
+   *   Operation response = backendServiceClient.deleteBackendService(requestId, backendService);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteBackendService(BackendServiceName backendService) {
+  public final Operation deleteBackendService(String requestId, BackendServiceName backendService) {
 
     DeleteBackendServiceHttpRequest request =
         DeleteBackendServiceHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setBackendService(backendService == null ? null : backendService.toString())
         .build();
     return deleteBackendService(request);
@@ -333,19 +341,26 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-   *   Operation response = backendServiceClient.deleteBackendService(backendService.toString());
+   *   Operation response = backendServiceClient.deleteBackendService(requestId, backendService.toString());
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteBackendService(String backendService) {
+  public final Operation deleteBackendService(String requestId, String backendService) {
 
     DeleteBackendServiceHttpRequest request =
         DeleteBackendServiceHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setBackendService(backendService)
         .build();
     return deleteBackendService(request);
@@ -358,8 +373,10 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   DeleteBackendServiceHttpRequest request = DeleteBackendServiceHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .build();
    *   Operation response = backendServiceClient.deleteBackendService(request);
@@ -381,8 +398,10 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   DeleteBackendServiceHttpRequest request = DeleteBackendServiceHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendServiceClient.deleteBackendServiceCallable().futureCall(request);
@@ -603,21 +622,28 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.insertBackendService(project, backendServiceResource);
+   *   Operation response = backendServiceClient.insertBackendService(requestId, project, backendServiceResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity.
+   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertBackendService(ProjectName project, BackendService backendServiceResource) {
+  public final Operation insertBackendService(String requestId, ProjectName project, BackendService backendServiceResource) {
 
     InsertBackendServiceHttpRequest request =
         InsertBackendServiceHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project == null ? null : project.toString())
         .setBackendServiceResource(backendServiceResource)
         .build();
@@ -631,21 +657,28 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.insertBackendService(project.toString(), backendServiceResource);
+   *   Operation response = backendServiceClient.insertBackendService(requestId, project.toString(), backendServiceResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity.
+   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertBackendService(String project, BackendService backendServiceResource) {
+  public final Operation insertBackendService(String requestId, String project, BackendService backendServiceResource) {
 
     InsertBackendServiceHttpRequest request =
         InsertBackendServiceHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project)
         .setBackendServiceResource(backendServiceResource)
         .build();
@@ -659,9 +692,11 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   InsertBackendServiceHttpRequest request = InsertBackendServiceHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -684,9 +719,11 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   InsertBackendServiceHttpRequest request = InsertBackendServiceHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -836,26 +873,33 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports patch semantics.
+   * Patches the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.patchBackendService(backendService, backendServiceResource);
+   *   Operation response = backendServiceClient.patchBackendService(requestId, backendService, backendServiceResource);
    * }
    * </code></pre>
    *
-   * @param backendService Name of the BackendService resource to update.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param backendService Name of the BackendService resource to patch.
+   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchBackendService(BackendServiceName backendService, BackendService backendServiceResource) {
+  public final Operation patchBackendService(String requestId, BackendServiceName backendService, BackendService backendServiceResource) {
 
     PatchBackendServiceHttpRequest request =
         PatchBackendServiceHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setBackendService(backendService == null ? null : backendService.toString())
         .setBackendServiceResource(backendServiceResource)
         .build();
@@ -864,26 +908,33 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports patch semantics.
+   * Patches the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.patchBackendService(backendService.toString(), backendServiceResource);
+   *   Operation response = backendServiceClient.patchBackendService(requestId, backendService.toString(), backendServiceResource);
    * }
    * </code></pre>
    *
-   * @param backendService Name of the BackendService resource to update.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param backendService Name of the BackendService resource to patch.
+   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchBackendService(String backendService, BackendService backendServiceResource) {
+  public final Operation patchBackendService(String requestId, String backendService, BackendService backendServiceResource) {
 
     PatchBackendServiceHttpRequest request =
         PatchBackendServiceHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setBackendService(backendService)
         .setBackendServiceResource(backendServiceResource)
         .build();
@@ -892,14 +943,16 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports patch semantics.
+   * Patches the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   PatchBackendServiceHttpRequest request = PatchBackendServiceHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -917,14 +970,16 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports patch semantics.
+   * Patches the specified BackendService resource with the data included in the request. There are several restrictions and guidelines to keep in mind when updating a backend service. Read  Restrictions and Guidelines for more information. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   PatchBackendServiceHttpRequest request = PatchBackendServiceHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -946,21 +1001,28 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.updateBackendService(backendService, backendServiceResource);
+   *   Operation response = backendServiceClient.updateBackendService(requestId, backendService, backendServiceResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to update.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity.
+   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateBackendService(BackendServiceName backendService, BackendService backendServiceResource) {
+  public final Operation updateBackendService(String requestId, BackendServiceName backendService, BackendService backendServiceResource) {
 
     UpdateBackendServiceHttpRequest request =
         UpdateBackendServiceHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setBackendService(backendService == null ? null : backendService.toString())
         .setBackendServiceResource(backendServiceResource)
         .build();
@@ -974,21 +1036,28 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
-   *   Operation response = backendServiceClient.updateBackendService(backendService.toString(), backendServiceResource);
+   *   Operation response = backendServiceClient.updateBackendService(requestId, backendService.toString(), backendServiceResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param backendService Name of the BackendService resource to update.
-   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity.
+   * @param backendServiceResource A BackendService resource. This resource defines a group of backend virtual machines and their serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateBackendService(String backendService, BackendService backendServiceResource) {
+  public final Operation updateBackendService(String requestId, String backendService, BackendService backendServiceResource) {
 
     UpdateBackendServiceHttpRequest request =
         UpdateBackendServiceHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setBackendService(backendService)
         .setBackendServiceResource(backendServiceResource)
         .build();
@@ -1002,9 +1071,11 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   UpdateBackendServiceHttpRequest request = UpdateBackendServiceHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();
@@ -1027,9 +1098,11 @@ public class BackendServiceClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+   *   String requestId = "";
    *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   UpdateBackendServiceHttpRequest request = UpdateBackendServiceHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setBackendService(backendService.toString())
    *     .setBackendServiceResource(backendServiceResource)
    *     .build();

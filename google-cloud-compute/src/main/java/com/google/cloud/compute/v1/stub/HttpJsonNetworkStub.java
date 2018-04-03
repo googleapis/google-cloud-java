@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AddPeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.DeleteNetworkHttpRequest;
 import com.google.cloud.compute.v1.GetNetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertNetworkHttpRequest;
@@ -38,8 +39,12 @@ import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedRespons
 import com.google.cloud.compute.v1.NetworkList;
 import com.google.cloud.compute.v1.NetworkName;
 import com.google.cloud.compute.v1.NetworkSettings;
+import com.google.cloud.compute.v1.NetworksAddPeeringRequest;
+import com.google.cloud.compute.v1.NetworksRemovePeeringRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNetworkHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.RemovePeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkHttpRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -60,6 +65,26 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonNetworkStub extends NetworkStub {
   @InternalApi
+  public static final ApiMethodDescriptor<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkMethodDescriptor =
+      ApiMethodDescriptor.<AddPeeringNetworkHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.networks.addPeering")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<AddPeeringNetworkHttpRequest>newBuilder()
+                  .setRequestInstance(AddPeeringNetworkHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}/addPeering"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameField("network")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
   public static final ApiMethodDescriptor<DeleteNetworkHttpRequest, Operation> deleteNetworkMethodDescriptor =
       ApiMethodDescriptor.<DeleteNetworkHttpRequest, Operation>newBuilder()
           .setFullMethodName("compute.networks.delete")
@@ -69,6 +94,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setRequestInstance(DeleteNetworkHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(NetworkName.newFactory())
                   .setResourceNameField("network")
@@ -107,6 +133,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setRequestInstance(InsertNetworkHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/networks"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -137,6 +164,46 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .build())
           .build();
   @InternalApi
+  public static final ApiMethodDescriptor<PatchNetworkHttpRequest, Operation> patchNetworkMethodDescriptor =
+      ApiMethodDescriptor.<PatchNetworkHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.networks.patch")
+          .setHttpMethod(HttpMethods.PATCH)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<PatchNetworkHttpRequest>newBuilder()
+                  .setRequestInstance(PatchNetworkHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameField("network")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkMethodDescriptor =
+      ApiMethodDescriptor.<RemovePeeringNetworkHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.networks.removePeering")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<RemovePeeringNetworkHttpRequest>newBuilder()
+                  .setRequestInstance(RemovePeeringNetworkHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}/removePeering"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(NetworkName.newFactory())
+                  .setResourceNameField("network")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
   public static final ApiMethodDescriptor<SwitchToCustomModeNetworkHttpRequest, Operation> switchToCustomModeNetworkMethodDescriptor =
       ApiMethodDescriptor.<SwitchToCustomModeNetworkHttpRequest, Operation>newBuilder()
           .setFullMethodName("compute.networks.switchToCustomMode")
@@ -146,6 +213,7 @@ public class HttpJsonNetworkStub extends NetworkStub {
                   .setRequestInstance(SwitchToCustomModeNetworkHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/networks/{network}/switchToCustomMode"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(NetworkName.newFactory())
                   .setResourceNameField("network")
@@ -157,11 +225,14 @@ public class HttpJsonNetworkStub extends NetworkStub {
           .build();
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkCallable;
   private final UnaryCallable<DeleteNetworkHttpRequest, Operation> deleteNetworkCallable;
   private final UnaryCallable<GetNetworkHttpRequest, Network> getNetworkCallable;
   private final UnaryCallable<InsertNetworkHttpRequest, Operation> insertNetworkCallable;
   private final UnaryCallable<ListNetworksHttpRequest, NetworkList> listNetworksCallable;
   private final UnaryCallable<ListNetworksHttpRequest, ListNetworksPagedResponse> listNetworksPagedCallable;
+  private final UnaryCallable<PatchNetworkHttpRequest, Operation> patchNetworkCallable;
+  private final UnaryCallable<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkCallable;
   private final UnaryCallable<SwitchToCustomModeNetworkHttpRequest, Operation> switchToCustomModeNetworkCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
@@ -194,6 +265,10 @@ public class HttpJsonNetworkStub extends NetworkStub {
   protected HttpJsonNetworkStub(NetworkStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkTransportSettings =
+        HttpJsonCallSettings.<AddPeeringNetworkHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(addPeeringNetworkMethodDescriptor)
+            .build();
     HttpJsonCallSettings<DeleteNetworkHttpRequest, Operation> deleteNetworkTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteNetworkMethodDescriptor)
@@ -210,19 +285,35 @@ public class HttpJsonNetworkStub extends NetworkStub {
         HttpJsonCallSettings.<ListNetworksHttpRequest, NetworkList>newBuilder()
             .setMethodDescriptor(listNetworksMethodDescriptor)
             .build();
+    HttpJsonCallSettings<PatchNetworkHttpRequest, Operation> patchNetworkTransportSettings =
+        HttpJsonCallSettings.<PatchNetworkHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(patchNetworkMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkTransportSettings =
+        HttpJsonCallSettings.<RemovePeeringNetworkHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(removePeeringNetworkMethodDescriptor)
+            .build();
     HttpJsonCallSettings<SwitchToCustomModeNetworkHttpRequest, Operation> switchToCustomModeNetworkTransportSettings =
         HttpJsonCallSettings.<SwitchToCustomModeNetworkHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(switchToCustomModeNetworkMethodDescriptor)
             .build();
 
+    this.addPeeringNetworkCallable = callableFactory.createUnaryCallable(addPeeringNetworkTransportSettings,settings.addPeeringNetworkSettings(), clientContext);
     this.deleteNetworkCallable = callableFactory.createUnaryCallable(deleteNetworkTransportSettings,settings.deleteNetworkSettings(), clientContext);
     this.getNetworkCallable = callableFactory.createUnaryCallable(getNetworkTransportSettings,settings.getNetworkSettings(), clientContext);
     this.insertNetworkCallable = callableFactory.createUnaryCallable(insertNetworkTransportSettings,settings.insertNetworkSettings(), clientContext);
     this.listNetworksCallable = callableFactory.createUnaryCallable(listNetworksTransportSettings,settings.listNetworksSettings(), clientContext);
     this.listNetworksPagedCallable = callableFactory.createPagedCallable(listNetworksTransportSettings,settings.listNetworksSettings(), clientContext);
+    this.patchNetworkCallable = callableFactory.createUnaryCallable(patchNetworkTransportSettings,settings.patchNetworkSettings(), clientContext);
+    this.removePeeringNetworkCallable = callableFactory.createUnaryCallable(removePeeringNetworkTransportSettings,settings.removePeeringNetworkSettings(), clientContext);
     this.switchToCustomModeNetworkCallable = callableFactory.createUnaryCallable(switchToCustomModeNetworkTransportSettings,settings.switchToCustomModeNetworkSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi
+  public UnaryCallable<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkCallable() {
+    return addPeeringNetworkCallable;
   }
 
   @BetaApi
@@ -248,6 +339,16 @@ public class HttpJsonNetworkStub extends NetworkStub {
   @BetaApi
   public UnaryCallable<ListNetworksHttpRequest, NetworkList> listNetworksCallable() {
     return listNetworksCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchNetworkHttpRequest, Operation> patchNetworkCallable() {
+    return patchNetworkCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkCallable() {
+    return removePeeringNetworkCallable;
   }
 
   @BetaApi

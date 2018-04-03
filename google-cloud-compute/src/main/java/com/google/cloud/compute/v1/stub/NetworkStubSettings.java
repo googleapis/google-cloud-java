@@ -42,6 +42,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.auth.Credentials;
+import com.google.cloud.compute.v1.AddPeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.DeleteNetworkHttpRequest;
 import com.google.cloud.compute.v1.GetNetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertNetworkHttpRequest;
@@ -50,6 +51,8 @@ import com.google.cloud.compute.v1.Network;
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
 import com.google.cloud.compute.v1.NetworkList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNetworkHttpRequest;
+import com.google.cloud.compute.v1.RemovePeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -77,13 +80,13 @@ import org.threeten.bp.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders.
  * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of deleteNetwork to 30 seconds:
+ * object. For example, to set the total timeout of addPeeringNetwork to 30 seconds:
  *
  * <pre>
  * <code>
  * NetworkStubSettings.Builder networkSettingsBuilder =
  *     NetworkStubSettings.newBuilder();
- * networkSettingsBuilder.deleteNetworkSettings().getRetrySettings().toBuilder()
+ * networkSettingsBuilder.addPeeringNetworkSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * NetworkStubSettings networkSettings = networkSettingsBuilder.build();
  * </code>
@@ -104,11 +107,21 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
       .add("https://www.googleapis.com/auth/devstorage.read_write")
       .build();
 
+  private final UnaryCallSettings<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkSettings;
   private final UnaryCallSettings<DeleteNetworkHttpRequest, Operation> deleteNetworkSettings;
   private final UnaryCallSettings<GetNetworkHttpRequest, Network> getNetworkSettings;
   private final UnaryCallSettings<InsertNetworkHttpRequest, Operation> insertNetworkSettings;
   private final PagedCallSettings<ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse> listNetworksSettings;
+  private final UnaryCallSettings<PatchNetworkHttpRequest, Operation> patchNetworkSettings;
+  private final UnaryCallSettings<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkSettings;
   private final UnaryCallSettings<SwitchToCustomModeNetworkHttpRequest, Operation> switchToCustomModeNetworkSettings;
+
+  /**
+   * Returns the object with the settings used for calls to addPeeringNetwork.
+   */
+  public UnaryCallSettings<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkSettings() {
+    return addPeeringNetworkSettings;
+  }
 
   /**
    * Returns the object with the settings used for calls to deleteNetwork.
@@ -136,6 +149,20 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
    */
   public PagedCallSettings<ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse> listNetworksSettings() {
     return listNetworksSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to patchNetwork.
+   */
+  public UnaryCallSettings<PatchNetworkHttpRequest, Operation> patchNetworkSettings() {
+    return patchNetworkSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to removePeeringNetwork.
+   */
+  public UnaryCallSettings<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkSettings() {
+    return removePeeringNetworkSettings;
   }
 
   /**
@@ -237,10 +264,13 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
   protected NetworkStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    addPeeringNetworkSettings = settingsBuilder.addPeeringNetworkSettings().build();
     deleteNetworkSettings = settingsBuilder.deleteNetworkSettings().build();
     getNetworkSettings = settingsBuilder.getNetworkSettings().build();
     insertNetworkSettings = settingsBuilder.insertNetworkSettings().build();
     listNetworksSettings = settingsBuilder.listNetworksSettings().build();
+    patchNetworkSettings = settingsBuilder.patchNetworkSettings().build();
+    removePeeringNetworkSettings = settingsBuilder.removePeeringNetworkSettings().build();
     switchToCustomModeNetworkSettings = settingsBuilder.switchToCustomModeNetworkSettings().build();
   }
 
@@ -299,10 +329,13 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
   public static class Builder extends StubSettings.Builder<NetworkStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkSettings;
     private final UnaryCallSettings.Builder<DeleteNetworkHttpRequest, Operation> deleteNetworkSettings;
     private final UnaryCallSettings.Builder<GetNetworkHttpRequest, Network> getNetworkSettings;
     private final UnaryCallSettings.Builder<InsertNetworkHttpRequest, Operation> insertNetworkSettings;
     private final PagedCallSettings.Builder<ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse> listNetworksSettings;
+    private final UnaryCallSettings.Builder<PatchNetworkHttpRequest, Operation> patchNetworkSettings;
+    private final UnaryCallSettings.Builder<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkSettings;
     private final UnaryCallSettings.Builder<SwitchToCustomModeNetworkHttpRequest, Operation> switchToCustomModeNetworkSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>> RETRYABLE_CODE_DEFINITIONS;
@@ -343,6 +376,8 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      addPeeringNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       deleteNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -352,13 +387,20 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
       listNetworksSettings = PagedCallSettings.newBuilder(
           LIST_NETWORKS_PAGE_STR_FACT);
 
+      patchNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      removePeeringNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       switchToCustomModeNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+          addPeeringNetworkSettings,
           deleteNetworkSettings,
           getNetworkSettings,
           insertNetworkSettings,
           listNetworksSettings,
+          patchNetworkSettings,
+          removePeeringNetworkSettings,
           switchToCustomModeNetworkSettings
       );
 
@@ -376,6 +418,10 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
 
     private static Builder initDefaults(Builder builder) {
 
+      builder.addPeeringNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       builder.deleteNetworkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -392,6 +438,14 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder.patchNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder.removePeeringNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       builder.switchToCustomModeNetworkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -402,17 +456,23 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
     protected Builder(NetworkStubSettings settings) {
       super(settings);
 
+      addPeeringNetworkSettings = settings.addPeeringNetworkSettings.toBuilder();
       deleteNetworkSettings = settings.deleteNetworkSettings.toBuilder();
       getNetworkSettings = settings.getNetworkSettings.toBuilder();
       insertNetworkSettings = settings.insertNetworkSettings.toBuilder();
       listNetworksSettings = settings.listNetworksSettings.toBuilder();
+      patchNetworkSettings = settings.patchNetworkSettings.toBuilder();
+      removePeeringNetworkSettings = settings.removePeeringNetworkSettings.toBuilder();
       switchToCustomModeNetworkSettings = settings.switchToCustomModeNetworkSettings.toBuilder();
 
       unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+          addPeeringNetworkSettings,
           deleteNetworkSettings,
           getNetworkSettings,
           insertNetworkSettings,
           listNetworksSettings,
+          patchNetworkSettings,
+          removePeeringNetworkSettings,
           switchToCustomModeNetworkSettings
       );
     }
@@ -429,6 +489,13 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to addPeeringNetwork.
+     */
+    public UnaryCallSettings.Builder<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkSettings() {
+      return addPeeringNetworkSettings;
     }
 
     /**
@@ -457,6 +524,20 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
      */
     public PagedCallSettings.Builder<ListNetworksHttpRequest, NetworkList, ListNetworksPagedResponse> listNetworksSettings() {
       return listNetworksSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to patchNetwork.
+     */
+    public UnaryCallSettings.Builder<PatchNetworkHttpRequest, Operation> patchNetworkSettings() {
+      return patchNetworkSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to removePeeringNetwork.
+     */
+    public UnaryCallSettings.Builder<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkSettings() {
+      return removePeeringNetworkSettings;
     }
 
     /**

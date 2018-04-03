@@ -25,8 +25,8 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.stub.HttpJsonLicensStub.getLicensMethodDescriptor;
-import com.google.cloud.compute.v1.stub.LicensStubSettings;
+import static com.google.cloud.compute.v1.stub.HttpJsonLicenseStub.getLicenseMethodDescriptor;
+import com.google.cloud.compute.v1.stub.LicenseStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -41,29 +41,29 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class LicensClientTest {
+public class LicenseClientTest {
 
    private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
         Lists.<ApiMethodDescriptor>newArrayList(
-          getLicensMethodDescriptor
+          getLicenseMethodDescriptor
         ));
   private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, LicensStubSettings.getDefaultEndpoint());
+      = new MockHttpService(METHOD_DESCRIPTORS, LicenseStubSettings.getDefaultEndpoint());
 
-  private static LicensClient client;
-  private static LicensSettings clientSettings;
+  private static LicenseClient client;
+  private static LicenseSettings clientSettings;
 
   @BeforeClass
   public static void setUp() throws IOException {
     clientSettings =
-        LicensSettings.newBuilder()
+        LicenseSettings.newBuilder()
            .setTransportChannelProvider(
-               LicensSettings.defaultHttpJsonTransportProviderBuilder()
+               LicenseSettings.defaultHttpJsonTransportProviderBuilder()
                    .setHttpTransport(mockService).build())
            .setCredentialsProvider(NoCredentialsProvider.create())
            .build();
     client =
-       LicensClient.create(clientSettings);
+       LicenseClient.create(clientSettings);
   }
 
   @After
@@ -78,7 +78,7 @@ public class LicensClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getLicensTest() {
+  public void getLicenseTest() {
     Boolean chargesUseFee = true;
     String kind = "kind3292052";
     String name = "name3373707";
@@ -94,7 +94,7 @@ public class LicensClientTest {
     LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
 
     License actualResponse =
-        client.getLicens(license);
+        client.getLicense(license);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -108,14 +108,14 @@ public class LicensClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getLicensExceptionTest() throws Exception {
+  public void getLicenseExceptionTest() throws Exception {
     ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
 
-      client.getLicens(license);
+      client.getLicense(license);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

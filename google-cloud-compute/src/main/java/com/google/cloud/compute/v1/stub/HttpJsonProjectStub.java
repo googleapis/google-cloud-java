@@ -29,19 +29,34 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.DisableXpnHostProjectHttpRequest;
+import com.google.cloud.compute.v1.DisableXpnResourceProjectHttpRequest;
 import com.google.cloud.compute.v1.DiskMoveRequest;
+import com.google.cloud.compute.v1.EnableXpnHostProjectHttpRequest;
+import com.google.cloud.compute.v1.EnableXpnResourceProjectHttpRequest;
 import com.google.cloud.compute.v1.GetProjectHttpRequest;
+import com.google.cloud.compute.v1.GetXpnHostProjectHttpRequest;
+import com.google.cloud.compute.v1.GetXpnResourcesProjectsHttpRequest;
 import com.google.cloud.compute.v1.InstanceMoveRequest;
+import com.google.cloud.compute.v1.ListXpnHostsProjectsHttpRequest;
 import com.google.cloud.compute.v1.Metadata;
 import com.google.cloud.compute.v1.MoveDiskProjectHttpRequest;
 import com.google.cloud.compute.v1.MoveInstanceProjectHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Project;
+import static com.google.cloud.compute.v1.ProjectClient.GetXpnResourcesProjectsPagedResponse;
+import static com.google.cloud.compute.v1.ProjectClient.ListXpnHostsProjectsPagedResponse;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectSettings;
+import com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequest;
+import com.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest;
+import com.google.cloud.compute.v1.ProjectsGetXpnResources;
+import com.google.cloud.compute.v1.ProjectsListXpnHostsRequest;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectHttpRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectHttpRequest;
 import com.google.cloud.compute.v1.UsageExportLocation;
+import com.google.cloud.compute.v1.XpnHostList;
+import com.google.cloud.compute.v1.XpnResourceId;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -60,6 +75,86 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonProjectStub extends ProjectStub {
+  @InternalApi
+  public static final ApiMethodDescriptor<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectMethodDescriptor =
+      ApiMethodDescriptor.<DisableXpnHostProjectHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.projects.disableXpnHost")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<DisableXpnHostProjectHttpRequest>newBuilder()
+                  .setRequestInstance(DisableXpnHostProjectHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/disableXpnHost"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(ProjectName.newFactory())
+                  .setResourceNameField("project")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectMethodDescriptor =
+      ApiMethodDescriptor.<DisableXpnResourceProjectHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.projects.disableXpnResource")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<DisableXpnResourceProjectHttpRequest>newBuilder()
+                  .setRequestInstance(DisableXpnResourceProjectHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/disableXpnResource"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(ProjectName.newFactory())
+                  .setResourceNameField("project")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectMethodDescriptor =
+      ApiMethodDescriptor.<EnableXpnHostProjectHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.projects.enableXpnHost")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<EnableXpnHostProjectHttpRequest>newBuilder()
+                  .setRequestInstance(EnableXpnHostProjectHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/enableXpnHost"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(ProjectName.newFactory())
+                  .setResourceNameField("project")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectMethodDescriptor =
+      ApiMethodDescriptor.<EnableXpnResourceProjectHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.projects.enableXpnResource")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<EnableXpnResourceProjectHttpRequest>newBuilder()
+                  .setRequestInstance(EnableXpnResourceProjectHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/enableXpnResource"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(ProjectName.newFactory())
+                  .setResourceNameField("project")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
   @InternalApi
   public static final ApiMethodDescriptor<GetProjectHttpRequest, Project> getProjectMethodDescriptor =
       ApiMethodDescriptor.<GetProjectHttpRequest, Project>newBuilder()
@@ -80,6 +175,65 @@ public class HttpJsonProjectStub extends ProjectStub {
                   .build())
           .build();
   @InternalApi
+  public static final ApiMethodDescriptor<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectMethodDescriptor =
+      ApiMethodDescriptor.<GetXpnHostProjectHttpRequest, Project>newBuilder()
+          .setFullMethodName("compute.projects.getXpnHost")
+          .setHttpMethod(HttpMethods.GET)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<GetXpnHostProjectHttpRequest>newBuilder()
+                  .setRequestInstance(GetXpnHostProjectHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/getXpnHost"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     ))
+                  .setResourceNameFactory(ProjectName.newFactory())
+                  .setResourceNameField("project")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Project>newBuilder()
+                  .setResponseInstance(Project.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources> getXpnResourcesProjectsMethodDescriptor =
+      ApiMethodDescriptor.<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources>newBuilder()
+          .setFullMethodName("compute.projects.getXpnResources")
+          .setHttpMethod(HttpMethods.GET)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<GetXpnResourcesProjectsHttpRequest>newBuilder()
+                  .setRequestInstance(GetXpnResourcesProjectsHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/getXpnResources"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "filter",    "maxResults",    "order_by",    "pageToken"
+                                     ))
+                  .setResourceNameFactory(ProjectName.newFactory())
+                  .setResourceNameField("project")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<ProjectsGetXpnResources>newBuilder()
+                  .setResponseInstance(ProjectsGetXpnResources.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<ListXpnHostsProjectsHttpRequest, XpnHostList> listXpnHostsProjectsMethodDescriptor =
+      ApiMethodDescriptor.<ListXpnHostsProjectsHttpRequest, XpnHostList>newBuilder()
+          .setFullMethodName("compute.projects.listXpnHosts")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<ListXpnHostsProjectsHttpRequest>newBuilder()
+                  .setRequestInstance(ListXpnHostsProjectsHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/listXpnHosts"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "filter",    "maxResults",    "order_by",    "pageToken"
+                                     ))
+                  .setResourceNameFactory(ProjectName.newFactory())
+                  .setResourceNameField("project")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<XpnHostList>newBuilder()
+                  .setResponseInstance(XpnHostList.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
   public static final ApiMethodDescriptor<MoveDiskProjectHttpRequest, Operation> moveDiskProjectMethodDescriptor =
       ApiMethodDescriptor.<MoveDiskProjectHttpRequest, Operation>newBuilder()
           .setFullMethodName("compute.projects.moveDisk")
@@ -89,6 +243,7 @@ public class HttpJsonProjectStub extends ProjectStub {
                   .setRequestInstance(MoveDiskProjectHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/moveDisk"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -108,6 +263,7 @@ public class HttpJsonProjectStub extends ProjectStub {
                   .setRequestInstance(MoveInstanceProjectHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/moveInstance"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -127,6 +283,7 @@ public class HttpJsonProjectStub extends ProjectStub {
                   .setRequestInstance(SetCommonInstanceMetadataProjectHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/setCommonInstanceMetadata"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -146,6 +303,7 @@ public class HttpJsonProjectStub extends ProjectStub {
                   .setRequestInstance(SetUsageExportBucketProjectHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/setUsageExportBucket"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -157,7 +315,16 @@ public class HttpJsonProjectStub extends ProjectStub {
           .build();
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectCallable;
+  private final UnaryCallable<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectCallable;
+  private final UnaryCallable<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectCallable;
+  private final UnaryCallable<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectCallable;
   private final UnaryCallable<GetProjectHttpRequest, Project> getProjectCallable;
+  private final UnaryCallable<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectCallable;
+  private final UnaryCallable<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources> getXpnResourcesProjectsCallable;
+  private final UnaryCallable<GetXpnResourcesProjectsHttpRequest, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsPagedCallable;
+  private final UnaryCallable<ListXpnHostsProjectsHttpRequest, XpnHostList> listXpnHostsProjectsCallable;
+  private final UnaryCallable<ListXpnHostsProjectsHttpRequest, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsPagedCallable;
   private final UnaryCallable<MoveDiskProjectHttpRequest, Operation> moveDiskProjectCallable;
   private final UnaryCallable<MoveInstanceProjectHttpRequest, Operation> moveInstanceProjectCallable;
   private final UnaryCallable<SetCommonInstanceMetadataProjectHttpRequest, Operation> setCommonInstanceMetadataProjectCallable;
@@ -193,9 +360,37 @@ public class HttpJsonProjectStub extends ProjectStub {
   protected HttpJsonProjectStub(ProjectStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectTransportSettings =
+        HttpJsonCallSettings.<DisableXpnHostProjectHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(disableXpnHostProjectMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectTransportSettings =
+        HttpJsonCallSettings.<DisableXpnResourceProjectHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(disableXpnResourceProjectMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectTransportSettings =
+        HttpJsonCallSettings.<EnableXpnHostProjectHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(enableXpnHostProjectMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectTransportSettings =
+        HttpJsonCallSettings.<EnableXpnResourceProjectHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(enableXpnResourceProjectMethodDescriptor)
+            .build();
     HttpJsonCallSettings<GetProjectHttpRequest, Project> getProjectTransportSettings =
         HttpJsonCallSettings.<GetProjectHttpRequest, Project>newBuilder()
             .setMethodDescriptor(getProjectMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectTransportSettings =
+        HttpJsonCallSettings.<GetXpnHostProjectHttpRequest, Project>newBuilder()
+            .setMethodDescriptor(getXpnHostProjectMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources> getXpnResourcesProjectsTransportSettings =
+        HttpJsonCallSettings.<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources>newBuilder()
+            .setMethodDescriptor(getXpnResourcesProjectsMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<ListXpnHostsProjectsHttpRequest, XpnHostList> listXpnHostsProjectsTransportSettings =
+        HttpJsonCallSettings.<ListXpnHostsProjectsHttpRequest, XpnHostList>newBuilder()
+            .setMethodDescriptor(listXpnHostsProjectsMethodDescriptor)
             .build();
     HttpJsonCallSettings<MoveDiskProjectHttpRequest, Operation> moveDiskProjectTransportSettings =
         HttpJsonCallSettings.<MoveDiskProjectHttpRequest, Operation>newBuilder()
@@ -214,7 +409,16 @@ public class HttpJsonProjectStub extends ProjectStub {
             .setMethodDescriptor(setUsageExportBucketProjectMethodDescriptor)
             .build();
 
+    this.disableXpnHostProjectCallable = callableFactory.createUnaryCallable(disableXpnHostProjectTransportSettings,settings.disableXpnHostProjectSettings(), clientContext);
+    this.disableXpnResourceProjectCallable = callableFactory.createUnaryCallable(disableXpnResourceProjectTransportSettings,settings.disableXpnResourceProjectSettings(), clientContext);
+    this.enableXpnHostProjectCallable = callableFactory.createUnaryCallable(enableXpnHostProjectTransportSettings,settings.enableXpnHostProjectSettings(), clientContext);
+    this.enableXpnResourceProjectCallable = callableFactory.createUnaryCallable(enableXpnResourceProjectTransportSettings,settings.enableXpnResourceProjectSettings(), clientContext);
     this.getProjectCallable = callableFactory.createUnaryCallable(getProjectTransportSettings,settings.getProjectSettings(), clientContext);
+    this.getXpnHostProjectCallable = callableFactory.createUnaryCallable(getXpnHostProjectTransportSettings,settings.getXpnHostProjectSettings(), clientContext);
+    this.getXpnResourcesProjectsCallable = callableFactory.createUnaryCallable(getXpnResourcesProjectsTransportSettings,settings.getXpnResourcesProjectsSettings(), clientContext);
+    this.getXpnResourcesProjectsPagedCallable = callableFactory.createPagedCallable(getXpnResourcesProjectsTransportSettings,settings.getXpnResourcesProjectsSettings(), clientContext);
+    this.listXpnHostsProjectsCallable = callableFactory.createUnaryCallable(listXpnHostsProjectsTransportSettings,settings.listXpnHostsProjectsSettings(), clientContext);
+    this.listXpnHostsProjectsPagedCallable = callableFactory.createPagedCallable(listXpnHostsProjectsTransportSettings,settings.listXpnHostsProjectsSettings(), clientContext);
     this.moveDiskProjectCallable = callableFactory.createUnaryCallable(moveDiskProjectTransportSettings,settings.moveDiskProjectSettings(), clientContext);
     this.moveInstanceProjectCallable = callableFactory.createUnaryCallable(moveInstanceProjectTransportSettings,settings.moveInstanceProjectSettings(), clientContext);
     this.setCommonInstanceMetadataProjectCallable = callableFactory.createUnaryCallable(setCommonInstanceMetadataProjectTransportSettings,settings.setCommonInstanceMetadataProjectSettings(), clientContext);
@@ -224,8 +428,53 @@ public class HttpJsonProjectStub extends ProjectStub {
   }
 
   @BetaApi
+  public UnaryCallable<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectCallable() {
+    return disableXpnHostProjectCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectCallable() {
+    return disableXpnResourceProjectCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectCallable() {
+    return enableXpnHostProjectCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectCallable() {
+    return enableXpnResourceProjectCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<GetProjectHttpRequest, Project> getProjectCallable() {
     return getProjectCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectCallable() {
+    return getXpnHostProjectCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetXpnResourcesProjectsHttpRequest, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsPagedCallable() {
+    return getXpnResourcesProjectsPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources> getXpnResourcesProjectsCallable() {
+    return getXpnResourcesProjectsCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<ListXpnHostsProjectsHttpRequest, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsPagedCallable() {
+    return listXpnHostsProjectsPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<ListXpnHostsProjectsHttpRequest, XpnHostList> listXpnHostsProjectsCallable() {
+    return listXpnHostsProjectsCallable;
   }
 
   @BetaApi

@@ -35,6 +35,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.getDiskMethodDes
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.insertDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.listDisksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.resizeDiskMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.setLabelsDiskMethodDescriptor;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -59,7 +60,8 @@ public class DiskClientTest {
           getDiskMethodDescriptor,
           insertDiskMethodDescriptor,
           listDisksMethodDescriptor,
-          resizeDiskMethodDescriptor
+          resizeDiskMethodDescriptor,
+          setLabelsDiskMethodDescriptor
         ));
   private static final MockHttpService mockService
       = new MockHttpService(METHOD_DESCRIPTORS, DiskStubSettings.getDefaultEndpoint());
@@ -193,10 +195,12 @@ public class DiskClientTest {
     mockService.addResponse(expectedResponse);
 
     DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    String requestId = "requestId37109963";
+    Boolean guestFlush = false;
     Snapshot snapshotResource = Snapshot.newBuilder().build();
 
     Operation actualResponse =
-        client.createSnapshotDisk(disk, snapshotResource);
+        client.createSnapshotDisk(disk, requestId, guestFlush, snapshotResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -216,9 +220,11 @@ public class DiskClientTest {
 
     try {
       DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      String requestId = "requestId37109963";
+      Boolean guestFlush = false;
       Snapshot snapshotResource = Snapshot.newBuilder().build();
 
-      client.createSnapshotDisk(disk, snapshotResource);
+      client.createSnapshotDisk(disk, requestId, guestFlush, snapshotResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -275,9 +281,10 @@ public class DiskClientTest {
     mockService.addResponse(expectedResponse);
 
     DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    String requestId = "requestId37109963";
 
     Operation actualResponse =
-        client.deleteDisk(disk);
+        client.deleteDisk(disk, requestId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -297,8 +304,9 @@ public class DiskClientTest {
 
     try {
       DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      String requestId = "requestId37109963";
 
-      client.deleteDisk(disk);
+      client.deleteDisk(disk, requestId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -310,37 +318,39 @@ public class DiskClientTest {
   public void getDiskTest() {
     String sizeGb = "sizeGb2105542105";
     String sourceSnapshotId = "sourceSnapshotId-1511650478";
-    String sourceImageId = "sourceImageId-2092155357";
     String lastDetachTimestamp = "lastDetachTimestamp-480399885";
-    String kind = "kind3292052";
     String description = "description-1724546052";
     String sourceSnapshot = "sourceSnapshot-947679896";
     String type = "type3575610";
-    String lastAttachTimestamp = "lastAttachTimestamp-2105323995";
-    String selfLink = "selfLink-1691268851";
+    String labelFingerprint = "labelFingerprint714995737";
     ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String options = "options-1249474914";
     String id = "id3355";
+    String sourceImageId = "sourceImageId-2092155357";
+    String kind = "kind3292052";
+    String lastAttachTimestamp = "lastAttachTimestamp-2105323995";
+    String selfLink = "selfLink-1691268851";
+    String name = "name3373707";
     String sourceImage = "sourceImage1661056055";
     String status = "status-892481550";
     Disk expectedResponse = Disk.newBuilder()
       .setSizeGb(sizeGb)
       .setSourceSnapshotId(sourceSnapshotId)
-      .setSourceImageId(sourceImageId)
       .setLastDetachTimestamp(lastDetachTimestamp)
-      .setKind(kind)
       .setDescription(description)
       .setSourceSnapshot(sourceSnapshot)
       .setType(type)
-      .setLastAttachTimestamp(lastAttachTimestamp)
-      .setSelfLink(selfLink)
+      .setLabelFingerprint(labelFingerprint)
       .setZone(zone.toString())
       .setCreationTimestamp(creationTimestamp)
-      .setName(name)
       .setOptions(options)
       .setId(id)
+      .setSourceImageId(sourceImageId)
+      .setKind(kind)
+      .setLastAttachTimestamp(lastAttachTimestamp)
+      .setSelfLink(selfLink)
+      .setName(name)
       .setSourceImage(sourceImage)
       .setStatus(status)
       .build();
@@ -427,11 +437,12 @@ public class DiskClientTest {
     mockService.addResponse(expectedResponse);
 
     ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    String requestId = "requestId37109963";
     String sourceImage = "sourceImage1661056055";
     Disk diskResource = Disk.newBuilder().build();
 
     Operation actualResponse =
-        client.insertDisk(zone, sourceImage, diskResource);
+        client.insertDisk(zone, requestId, sourceImage, diskResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -451,10 +462,11 @@ public class DiskClientTest {
 
     try {
       ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+      String requestId = "requestId37109963";
       String sourceImage = "sourceImage1661056055";
       Disk diskResource = Disk.newBuilder().build();
 
-      client.insertDisk(zone, sourceImage, diskResource);
+      client.insertDisk(zone, requestId, sourceImage, diskResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -563,10 +575,11 @@ public class DiskClientTest {
     mockService.addResponse(expectedResponse);
 
     DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+    String requestId = "requestId37109963";
     DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.resizeDisk(disk, disksResizeRequestResource);
+        client.resizeDisk(disk, requestId, disksResizeRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -586,9 +599,94 @@ public class DiskClientTest {
 
     try {
       DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+      String requestId = "requestId37109963";
       DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
 
-      client.resizeDisk(disk, disksResizeRequestResource);
+      client.resizeDisk(disk, requestId, disksResizeRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setLabelsDiskTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse = Operation.newBuilder()
+      .setHttpErrorMessage(httpErrorMessage)
+      .setTargetId(targetId)
+      .setKind(kind)
+      .setDescription(description)
+      .setStatusMessage(statusMessage)
+      .setSelfLink(selfLink)
+      .setInsertTime(insertTime)
+      .setHttpErrorStatusCode(httpErrorStatusCode)
+      .setZone(zone.toString())
+      .setTargetLink(targetLink)
+      .setCreationTimestamp(creationTimestamp)
+      .setName(name)
+      .setProgress(progress)
+      .setOperationType(operationType)
+      .setStartTime(startTime)
+      .setEndTime(endTime)
+      .setId(id)
+      .setRegion(region.toString())
+      .setClientOperationId(clientOperationId)
+      .setUser(user)
+      .setStatus(status)
+      .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+    String requestId = "requestId37109963";
+    ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.setLabelsDisk(resource, requestId, zoneSetLabelsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey = mockService.getRequestHeaders()
+        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
+    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+        .matcher(apiClientHeaderKey).matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setLabelsDiskExceptionTest() throws Exception {
+    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+      String requestId = "requestId37109963";
+      ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
+
+      client.setLabelsDisk(resource, requestId, zoneSetLabelsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -70,6 +70,7 @@ public class HttpJsonGlobalForwardingRuleStub extends GlobalForwardingRuleStub {
                   .setRequestInstance(DeleteGlobalForwardingRuleHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/forwardingRules/{forwardingRule}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectForwardingRuleName.newFactory())
                   .setResourceNameField("forwardingRule")
@@ -108,6 +109,7 @@ public class HttpJsonGlobalForwardingRuleStub extends GlobalForwardingRuleStub {
                   .setRequestInstance(InsertGlobalForwardingRuleHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/forwardingRules"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -147,6 +149,7 @@ public class HttpJsonGlobalForwardingRuleStub extends GlobalForwardingRuleStub {
                   .setRequestInstance(SetTargetGlobalForwardingRuleHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/forwardingRules/{forwardingRule}/setTarget"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectForwardingRuleName.newFactory())
                   .setResourceNameField("forwardingRule")

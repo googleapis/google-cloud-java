@@ -52,8 +52,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ProjectClient projectClient = ProjectClient.create()) {
+ *   String requestId = "";
  *   ProjectName project = ProjectName.of("[PROJECT]");
- *   Project response = projectClient.getProject(project);
+ *   Operation response = projectClient.disableXpnHostProject(requestId, project);
  * }
  * </code>
  * </pre>
@@ -170,6 +171,478 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Disable this project as a shared VPC host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   Operation response = projectClient.disableXpnHostProject(requestId, project);
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation disableXpnHostProject(String requestId, ProjectName project) {
+
+    DisableXpnHostProjectHttpRequest request =
+        DisableXpnHostProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
+        .setProject(project == null ? null : project.toString())
+        .build();
+    return disableXpnHostProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Disable this project as a shared VPC host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   Operation response = projectClient.disableXpnHostProject(requestId, project.toString());
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation disableXpnHostProject(String requestId, String project) {
+
+    DisableXpnHostProjectHttpRequest request =
+        DisableXpnHostProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
+        .setProject(project)
+        .build();
+    return disableXpnHostProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Disable this project as a shared VPC host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   DisableXpnHostProjectHttpRequest request = DisableXpnHostProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
+   *     .setProject(project.toString())
+   *     .build();
+   *   Operation response = projectClient.disableXpnHostProject(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation disableXpnHostProject(DisableXpnHostProjectHttpRequest request) {
+    return disableXpnHostProjectCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Disable this project as a shared VPC host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   DisableXpnHostProjectHttpRequest request = DisableXpnHostProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
+   *     .setProject(project.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = projectClient.disableXpnHostProjectCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectCallable() {
+    return stub.disableXpnHostProjectCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Disable a serivce resource (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource = ProjectsDisableXpnResourceRequest.newBuilder().build();
+   *   Operation response = projectClient.disableXpnResourceProject(requestId, project, projectsDisableXpnResourceRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param project Project ID for this request.
+   * @param projectsDisableXpnResourceRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation disableXpnResourceProject(String requestId, ProjectName project, ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource) {
+
+    DisableXpnResourceProjectHttpRequest request =
+        DisableXpnResourceProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
+        .setProject(project == null ? null : project.toString())
+        .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
+        .build();
+    return disableXpnResourceProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Disable a serivce resource (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource = ProjectsDisableXpnResourceRequest.newBuilder().build();
+   *   Operation response = projectClient.disableXpnResourceProject(requestId, project.toString(), projectsDisableXpnResourceRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param project Project ID for this request.
+   * @param projectsDisableXpnResourceRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation disableXpnResourceProject(String requestId, String project, ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource) {
+
+    DisableXpnResourceProjectHttpRequest request =
+        DisableXpnResourceProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
+        .setProject(project)
+        .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
+        .build();
+    return disableXpnResourceProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Disable a serivce resource (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource = ProjectsDisableXpnResourceRequest.newBuilder().build();
+   *   DisableXpnResourceProjectHttpRequest request = DisableXpnResourceProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
+   *     .setProject(project.toString())
+   *     .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
+   *     .build();
+   *   Operation response = projectClient.disableXpnResourceProject(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation disableXpnResourceProject(DisableXpnResourceProjectHttpRequest request) {
+    return disableXpnResourceProjectCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Disable a serivce resource (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource = ProjectsDisableXpnResourceRequest.newBuilder().build();
+   *   DisableXpnResourceProjectHttpRequest request = DisableXpnResourceProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
+   *     .setProject(project.toString())
+   *     .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = projectClient.disableXpnResourceProjectCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectCallable() {
+    return stub.disableXpnResourceProjectCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Enable this project as a shared VPC host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   Operation response = projectClient.enableXpnHostProject(requestId, project);
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation enableXpnHostProject(String requestId, ProjectName project) {
+
+    EnableXpnHostProjectHttpRequest request =
+        EnableXpnHostProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
+        .setProject(project == null ? null : project.toString())
+        .build();
+    return enableXpnHostProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Enable this project as a shared VPC host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   Operation response = projectClient.enableXpnHostProject(requestId, project.toString());
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation enableXpnHostProject(String requestId, String project) {
+
+    EnableXpnHostProjectHttpRequest request =
+        EnableXpnHostProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
+        .setProject(project)
+        .build();
+    return enableXpnHostProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Enable this project as a shared VPC host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   EnableXpnHostProjectHttpRequest request = EnableXpnHostProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
+   *     .setProject(project.toString())
+   *     .build();
+   *   Operation response = projectClient.enableXpnHostProject(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation enableXpnHostProject(EnableXpnHostProjectHttpRequest request) {
+    return enableXpnHostProjectCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Enable this project as a shared VPC host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   EnableXpnHostProjectHttpRequest request = EnableXpnHostProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
+   *     .setProject(project.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = projectClient.enableXpnHostProjectCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectCallable() {
+    return stub.enableXpnHostProjectCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Enable service resource (a.k.a service project) for a host project, so that subnets in the host project can be used by instances in the service project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource = ProjectsEnableXpnResourceRequest.newBuilder().build();
+   *   Operation response = projectClient.enableXpnResourceProject(requestId, project, projectsEnableXpnResourceRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param project Project ID for this request.
+   * @param projectsEnableXpnResourceRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation enableXpnResourceProject(String requestId, ProjectName project, ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource) {
+
+    EnableXpnResourceProjectHttpRequest request =
+        EnableXpnResourceProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
+        .setProject(project == null ? null : project.toString())
+        .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
+        .build();
+    return enableXpnResourceProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Enable service resource (a.k.a service project) for a host project, so that subnets in the host project can be used by instances in the service project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource = ProjectsEnableXpnResourceRequest.newBuilder().build();
+   *   Operation response = projectClient.enableXpnResourceProject(requestId, project.toString(), projectsEnableXpnResourceRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param project Project ID for this request.
+   * @param projectsEnableXpnResourceRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation enableXpnResourceProject(String requestId, String project, ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource) {
+
+    EnableXpnResourceProjectHttpRequest request =
+        EnableXpnResourceProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
+        .setProject(project)
+        .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
+        .build();
+    return enableXpnResourceProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Enable service resource (a.k.a service project) for a host project, so that subnets in the host project can be used by instances in the service project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource = ProjectsEnableXpnResourceRequest.newBuilder().build();
+   *   EnableXpnResourceProjectHttpRequest request = EnableXpnResourceProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
+   *     .setProject(project.toString())
+   *     .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
+   *     .build();
+   *   Operation response = projectClient.enableXpnResourceProject(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation enableXpnResourceProject(EnableXpnResourceProjectHttpRequest request) {
+    return enableXpnResourceProjectCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Enable service resource (a.k.a service project) for a host project, so that subnets in the host project can be used by instances in the service project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource = ProjectsEnableXpnResourceRequest.newBuilder().build();
+   *   EnableXpnResourceProjectHttpRequest request = EnableXpnResourceProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
+   *     .setProject(project.toString())
+   *     .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = projectClient.enableXpnResourceProjectCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectCallable() {
+    return stub.enableXpnResourceProjectCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Returns the specified Project resource.
    *
    * Sample code:
@@ -265,26 +738,406 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Moves a persistent disk from one zone to another.
+   * Get the shared VPC host project that this project links to. May be empty if no link exists.
    *
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
-   *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
-   *   Operation response = projectClient.moveDiskProject(project, diskMoveRequestResource);
+   *   Project response = projectClient.getXpnHostProject(project);
    * }
    * </code></pre>
    *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Project getXpnHostProject(ProjectName project) {
+
+    GetXpnHostProjectHttpRequest request =
+        GetXpnHostProjectHttpRequest.newBuilder()
+        .setProject(project == null ? null : project.toString())
+        .build();
+    return getXpnHostProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get the shared VPC host project that this project links to. May be empty if no link exists.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   Project response = projectClient.getXpnHostProject(project.toString());
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Project getXpnHostProject(String project) {
+
+    GetXpnHostProjectHttpRequest request =
+        GetXpnHostProjectHttpRequest.newBuilder()
+        .setProject(project)
+        .build();
+    return getXpnHostProject(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get the shared VPC host project that this project links to. May be empty if no link exists.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   GetXpnHostProjectHttpRequest request = GetXpnHostProjectHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .build();
+   *   Project response = projectClient.getXpnHostProject(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  private final Project getXpnHostProject(GetXpnHostProjectHttpRequest request) {
+    return getXpnHostProjectCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get the shared VPC host project that this project links to. May be empty if no link exists.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   GetXpnHostProjectHttpRequest request = GetXpnHostProjectHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .build();
+   *   ApiFuture&lt;Project&gt; future = projectClient.getXpnHostProjectCallable().futureCall(request);
+   *   // Do something
+   *   Project response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectCallable() {
+    return stub.getXpnHostProjectCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get service resources (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   for (XpnResourceId element : projectClient.getXpnResourcesProjects(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final GetXpnResourcesProjectsPagedResponse getXpnResourcesProjects(ProjectName project) {
+    GetXpnResourcesProjectsHttpRequest request =
+        GetXpnResourcesProjectsHttpRequest.newBuilder()
+        .setProject(project == null ? null : project.toString())
+        .build();
+    return getXpnResourcesProjects(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get service resources (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   for (XpnResourceId element : projectClient.getXpnResourcesProjects(project.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final GetXpnResourcesProjectsPagedResponse getXpnResourcesProjects(String project) {
+    GetXpnResourcesProjectsHttpRequest request =
+        GetXpnResourcesProjectsHttpRequest.newBuilder()
+        .setProject(project)
+        .build();
+    return getXpnResourcesProjects(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get service resources (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   GetXpnResourcesProjectsHttpRequest request = GetXpnResourcesProjectsHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .build();
+   *   for (XpnResourceId element : projectClient.getXpnResourcesProjects(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final GetXpnResourcesProjectsPagedResponse getXpnResourcesProjects(GetXpnResourcesProjectsHttpRequest request) {
+    return getXpnResourcesProjectsPagedCallable()
+        .call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get service resources (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   GetXpnResourcesProjectsHttpRequest request = GetXpnResourcesProjectsHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .build();
+   *   ApiFuture&lt;GetXpnResourcesProjectsPagedResponse&gt; future = projectClient.getXpnResourcesProjectsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (XpnResourceId element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetXpnResourcesProjectsHttpRequest, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsPagedCallable() {
+    return stub.getXpnResourcesProjectsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Get service resources (a.k.a service project) associated with this host project.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   GetXpnResourcesProjectsHttpRequest request = GetXpnResourcesProjectsHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .build();
+   *   while (true) {
+   *     ProjectsGetXpnResources response = projectClient.getXpnResourcesProjectsCallable().call(request);
+   *     for (XpnResourceId element : response.getResourcesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources> getXpnResourcesProjectsCallable() {
+    return stub.getXpnResourcesProjectsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List all shared VPC host projects visible to the user in an organization.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
+   *   for (Project element : projectClient.listXpnHostsProjects(project, projectsListXpnHostsRequestResource).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param projectsListXpnHostsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListXpnHostsProjectsPagedResponse listXpnHostsProjects(ProjectName project, ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource) {
+    ListXpnHostsProjectsHttpRequest request =
+        ListXpnHostsProjectsHttpRequest.newBuilder()
+        .setProject(project == null ? null : project.toString())
+        .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
+        .build();
+    return listXpnHostsProjects(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List all shared VPC host projects visible to the user in an organization.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
+   *   for (Project element : projectClient.listXpnHostsProjects(project.toString(), projectsListXpnHostsRequestResource).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param project Project ID for this request.
+   * @param projectsListXpnHostsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListXpnHostsProjectsPagedResponse listXpnHostsProjects(String project, ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource) {
+    ListXpnHostsProjectsHttpRequest request =
+        ListXpnHostsProjectsHttpRequest.newBuilder()
+        .setProject(project)
+        .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
+        .build();
+    return listXpnHostsProjects(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List all shared VPC host projects visible to the user in an organization.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
+   *   ListXpnHostsProjectsHttpRequest request = ListXpnHostsProjectsHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
+   *     .build();
+   *   for (Project element : projectClient.listXpnHostsProjects(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListXpnHostsProjectsPagedResponse listXpnHostsProjects(ListXpnHostsProjectsHttpRequest request) {
+    return listXpnHostsProjectsPagedCallable()
+        .call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List all shared VPC host projects visible to the user in an organization.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
+   *   ListXpnHostsProjectsHttpRequest request = ListXpnHostsProjectsHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;ListXpnHostsProjectsPagedResponse&gt; future = projectClient.listXpnHostsProjectsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Project element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<ListXpnHostsProjectsHttpRequest, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsPagedCallable() {
+    return stub.listXpnHostsProjectsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List all shared VPC host projects visible to the user in an organization.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
+   *   ListXpnHostsProjectsHttpRequest request = ListXpnHostsProjectsHttpRequest.newBuilder()
+   *     .setProject(project.toString())
+   *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
+   *     .build();
+   *   while (true) {
+   *     XpnHostList response = projectClient.listXpnHostsProjectsCallable().call(request);
+   *     for (Project element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<ListXpnHostsProjectsHttpRequest, XpnHostList> listXpnHostsProjectsCallable() {
+    return stub.listXpnHostsProjectsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Moves a persistent disk from one zone to another.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
+   *   ProjectName project = ProjectName.of("[PROJECT]");
+   *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
+   *   Operation response = projectClient.moveDiskProject(requestId, project, diskMoveRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param diskMoveRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation moveDiskProject(ProjectName project, DiskMoveRequest diskMoveRequestResource) {
+  public final Operation moveDiskProject(String requestId, ProjectName project, DiskMoveRequest diskMoveRequestResource) {
 
     MoveDiskProjectHttpRequest request =
         MoveDiskProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project == null ? null : project.toString())
         .setDiskMoveRequestResource(diskMoveRequestResource)
         .build();
@@ -298,21 +1151,28 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
-   *   Operation response = projectClient.moveDiskProject(project.toString(), diskMoveRequestResource);
+   *   Operation response = projectClient.moveDiskProject(requestId, project.toString(), diskMoveRequestResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param diskMoveRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation moveDiskProject(String project, DiskMoveRequest diskMoveRequestResource) {
+  public final Operation moveDiskProject(String requestId, String project, DiskMoveRequest diskMoveRequestResource) {
 
     MoveDiskProjectHttpRequest request =
         MoveDiskProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project)
         .setDiskMoveRequestResource(diskMoveRequestResource)
         .build();
@@ -326,9 +1186,11 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
    *   MoveDiskProjectHttpRequest request = MoveDiskProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setDiskMoveRequestResource(diskMoveRequestResource)
    *     .build();
@@ -351,9 +1213,11 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
    *   MoveDiskProjectHttpRequest request = MoveDiskProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setDiskMoveRequestResource(diskMoveRequestResource)
    *     .build();
@@ -375,21 +1239,28 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
-   *   Operation response = projectClient.moveInstanceProject(project, instanceMoveRequestResource);
+   *   Operation response = projectClient.moveInstanceProject(requestId, project, instanceMoveRequestResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param instanceMoveRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation moveInstanceProject(ProjectName project, InstanceMoveRequest instanceMoveRequestResource) {
+  public final Operation moveInstanceProject(String requestId, ProjectName project, InstanceMoveRequest instanceMoveRequestResource) {
 
     MoveInstanceProjectHttpRequest request =
         MoveInstanceProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project == null ? null : project.toString())
         .setInstanceMoveRequestResource(instanceMoveRequestResource)
         .build();
@@ -403,21 +1274,28 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
-   *   Operation response = projectClient.moveInstanceProject(project.toString(), instanceMoveRequestResource);
+   *   Operation response = projectClient.moveInstanceProject(requestId, project.toString(), instanceMoveRequestResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param instanceMoveRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation moveInstanceProject(String project, InstanceMoveRequest instanceMoveRequestResource) {
+  public final Operation moveInstanceProject(String requestId, String project, InstanceMoveRequest instanceMoveRequestResource) {
 
     MoveInstanceProjectHttpRequest request =
         MoveInstanceProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project)
         .setInstanceMoveRequestResource(instanceMoveRequestResource)
         .build();
@@ -431,9 +1309,11 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
    *   MoveInstanceProjectHttpRequest request = MoveInstanceProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setInstanceMoveRequestResource(instanceMoveRequestResource)
    *     .build();
@@ -456,9 +1336,11 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
    *   MoveInstanceProjectHttpRequest request = MoveInstanceProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setInstanceMoveRequestResource(instanceMoveRequestResource)
    *     .build();
@@ -480,21 +1362,28 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Metadata metadataResource = Metadata.newBuilder().build();
-   *   Operation response = projectClient.setCommonInstanceMetadataProject(project, metadataResource);
+   *   Operation response = projectClient.setCommonInstanceMetadataProject(requestId, project, metadataResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param metadataResource A metadata key/value entry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setCommonInstanceMetadataProject(ProjectName project, Metadata metadataResource) {
+  public final Operation setCommonInstanceMetadataProject(String requestId, ProjectName project, Metadata metadataResource) {
 
     SetCommonInstanceMetadataProjectHttpRequest request =
         SetCommonInstanceMetadataProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project == null ? null : project.toString())
         .setMetadataResource(metadataResource)
         .build();
@@ -508,21 +1397,28 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Metadata metadataResource = Metadata.newBuilder().build();
-   *   Operation response = projectClient.setCommonInstanceMetadataProject(project.toString(), metadataResource);
+   *   Operation response = projectClient.setCommonInstanceMetadataProject(requestId, project.toString(), metadataResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param metadataResource A metadata key/value entry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setCommonInstanceMetadataProject(String project, Metadata metadataResource) {
+  public final Operation setCommonInstanceMetadataProject(String requestId, String project, Metadata metadataResource) {
 
     SetCommonInstanceMetadataProjectHttpRequest request =
         SetCommonInstanceMetadataProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project)
         .setMetadataResource(metadataResource)
         .build();
@@ -536,9 +1432,11 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   SetCommonInstanceMetadataProjectHttpRequest request = SetCommonInstanceMetadataProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setMetadataResource(metadataResource)
    *     .build();
@@ -561,9 +1459,11 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   SetCommonInstanceMetadataProjectHttpRequest request = SetCommonInstanceMetadataProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setMetadataResource(metadataResource)
    *     .build();
@@ -585,21 +1485,28 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
-   *   Operation response = projectClient.setUsageExportBucketProject(project, usageExportLocationResource);
+   *   Operation response = projectClient.setUsageExportBucketProject(requestId, project, usageExportLocationResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param usageExportLocationResource The location in Cloud Storage and naming method of the daily usage report. Contains bucket_name and report_name prefix.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setUsageExportBucketProject(ProjectName project, UsageExportLocation usageExportLocationResource) {
+  public final Operation setUsageExportBucketProject(String requestId, ProjectName project, UsageExportLocation usageExportLocationResource) {
 
     SetUsageExportBucketProjectHttpRequest request =
         SetUsageExportBucketProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project == null ? null : project.toString())
         .setUsageExportLocationResource(usageExportLocationResource)
         .build();
@@ -613,21 +1520,28 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
-   *   Operation response = projectClient.setUsageExportBucketProject(project.toString(), usageExportLocationResource);
+   *   Operation response = projectClient.setUsageExportBucketProject(requestId, project.toString(), usageExportLocationResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param usageExportLocationResource The location in Cloud Storage and naming method of the daily usage report. Contains bucket_name and report_name prefix.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setUsageExportBucketProject(String project, UsageExportLocation usageExportLocationResource) {
+  public final Operation setUsageExportBucketProject(String requestId, String project, UsageExportLocation usageExportLocationResource) {
 
     SetUsageExportBucketProjectHttpRequest request =
         SetUsageExportBucketProjectHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project)
         .setUsageExportLocationResource(usageExportLocationResource)
         .build();
@@ -641,9 +1555,11 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
    *   SetUsageExportBucketProjectHttpRequest request = SetUsageExportBucketProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setUsageExportLocationResource(usageExportLocationResource)
    *     .build();
@@ -666,9 +1582,11 @@ public class ProjectClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (ProjectClient projectClient = ProjectClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
    *   SetUsageExportBucketProjectHttpRequest request = SetUsageExportBucketProjectHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setUsageExportLocationResource(usageExportLocationResource)
    *     .build();
@@ -713,5 +1631,178 @@ public class ProjectClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
+  public static class GetXpnResourcesProjectsPagedResponse extends AbstractPagedListResponse<
+      GetXpnResourcesProjectsHttpRequest,
+      ProjectsGetXpnResources,
+      XpnResourceId,
+      GetXpnResourcesProjectsPage,
+      GetXpnResourcesProjectsFixedSizeCollection> {
 
+    public static ApiFuture<GetXpnResourcesProjectsPagedResponse> createAsync(
+        PageContext<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId> context,
+        ApiFuture<ProjectsGetXpnResources> futureResponse) {
+      ApiFuture<GetXpnResourcesProjectsPage> futurePage =
+          GetXpnResourcesProjectsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<GetXpnResourcesProjectsPage, GetXpnResourcesProjectsPagedResponse>() {
+            @Override
+            public GetXpnResourcesProjectsPagedResponse apply(GetXpnResourcesProjectsPage input) {
+              return new GetXpnResourcesProjectsPagedResponse(input);
+            }
+          });
+    }
+
+    private GetXpnResourcesProjectsPagedResponse(GetXpnResourcesProjectsPage page) {
+      super(page, GetXpnResourcesProjectsFixedSizeCollection.createEmptyCollection());
+    }
+
+
+  }
+
+  public static class GetXpnResourcesProjectsPage extends AbstractPage<
+      GetXpnResourcesProjectsHttpRequest,
+      ProjectsGetXpnResources,
+      XpnResourceId,
+      GetXpnResourcesProjectsPage> {
+
+    private GetXpnResourcesProjectsPage(
+        PageContext<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId> context,
+        ProjectsGetXpnResources response) {
+      super(context, response);
+    }
+
+    private static GetXpnResourcesProjectsPage createEmptyPage() {
+      return new GetXpnResourcesProjectsPage(null, null);
+    }
+
+    @Override
+    protected GetXpnResourcesProjectsPage createPage(
+        PageContext<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId> context,
+        ProjectsGetXpnResources response) {
+      return new GetXpnResourcesProjectsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<GetXpnResourcesProjectsPage> createPageAsync(
+        PageContext<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId> context,
+        ApiFuture<ProjectsGetXpnResources> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+
+
+
+
+  }
+
+  public static class GetXpnResourcesProjectsFixedSizeCollection extends AbstractFixedSizeCollection<
+      GetXpnResourcesProjectsHttpRequest,
+      ProjectsGetXpnResources,
+      XpnResourceId,
+      GetXpnResourcesProjectsPage,
+      GetXpnResourcesProjectsFixedSizeCollection> {
+
+    private GetXpnResourcesProjectsFixedSizeCollection(List<GetXpnResourcesProjectsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static GetXpnResourcesProjectsFixedSizeCollection createEmptyCollection() {
+      return new GetXpnResourcesProjectsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected GetXpnResourcesProjectsFixedSizeCollection createCollection(
+        List<GetXpnResourcesProjectsPage> pages, int collectionSize) {
+      return new GetXpnResourcesProjectsFixedSizeCollection(pages, collectionSize);
+    }
+
+
+  }
+  public static class ListXpnHostsProjectsPagedResponse extends AbstractPagedListResponse<
+      ListXpnHostsProjectsHttpRequest,
+      XpnHostList,
+      Project,
+      ListXpnHostsProjectsPage,
+      ListXpnHostsProjectsFixedSizeCollection> {
+
+    public static ApiFuture<ListXpnHostsProjectsPagedResponse> createAsync(
+        PageContext<ListXpnHostsProjectsHttpRequest, XpnHostList, Project> context,
+        ApiFuture<XpnHostList> futureResponse) {
+      ApiFuture<ListXpnHostsProjectsPage> futurePage =
+          ListXpnHostsProjectsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListXpnHostsProjectsPage, ListXpnHostsProjectsPagedResponse>() {
+            @Override
+            public ListXpnHostsProjectsPagedResponse apply(ListXpnHostsProjectsPage input) {
+              return new ListXpnHostsProjectsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListXpnHostsProjectsPagedResponse(ListXpnHostsProjectsPage page) {
+      super(page, ListXpnHostsProjectsFixedSizeCollection.createEmptyCollection());
+    }
+
+
+  }
+
+  public static class ListXpnHostsProjectsPage extends AbstractPage<
+      ListXpnHostsProjectsHttpRequest,
+      XpnHostList,
+      Project,
+      ListXpnHostsProjectsPage> {
+
+    private ListXpnHostsProjectsPage(
+        PageContext<ListXpnHostsProjectsHttpRequest, XpnHostList, Project> context,
+        XpnHostList response) {
+      super(context, response);
+    }
+
+    private static ListXpnHostsProjectsPage createEmptyPage() {
+      return new ListXpnHostsProjectsPage(null, null);
+    }
+
+    @Override
+    protected ListXpnHostsProjectsPage createPage(
+        PageContext<ListXpnHostsProjectsHttpRequest, XpnHostList, Project> context,
+        XpnHostList response) {
+      return new ListXpnHostsProjectsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListXpnHostsProjectsPage> createPageAsync(
+        PageContext<ListXpnHostsProjectsHttpRequest, XpnHostList, Project> context,
+        ApiFuture<XpnHostList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+
+
+
+
+  }
+
+  public static class ListXpnHostsProjectsFixedSizeCollection extends AbstractFixedSizeCollection<
+      ListXpnHostsProjectsHttpRequest,
+      XpnHostList,
+      Project,
+      ListXpnHostsProjectsPage,
+      ListXpnHostsProjectsFixedSizeCollection> {
+
+    private ListXpnHostsProjectsFixedSizeCollection(List<ListXpnHostsProjectsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListXpnHostsProjectsFixedSizeCollection createEmptyCollection() {
+      return new ListXpnHostsProjectsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListXpnHostsProjectsFixedSizeCollection createCollection(
+        List<ListXpnHostsProjectsPage> pages, int collectionSize) {
+      return new ListXpnHostsProjectsFixedSizeCollection(pages, collectionSize);
+    }
+
+
+  }
 }

@@ -70,6 +70,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                   .setRequestInstance(DeleteFirewallHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/firewalls/{firewall}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(FirewallName.newFactory())
                   .setResourceNameField("firewall")
@@ -108,6 +109,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                   .setRequestInstance(InsertFirewallHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/firewalls"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -147,6 +149,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                   .setRequestInstance(PatchFirewallHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/firewalls/{firewall}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(FirewallName.newFactory())
                   .setResourceNameField("firewall")
@@ -166,6 +169,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                   .setRequestInstance(UpdateFirewallHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/firewalls/{firewall}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(FirewallName.newFactory())
                   .setResourceNameField("firewall")

@@ -70,6 +70,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
                   .setRequestInstance(DeleteRegionAutoscalerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/autoscalers/{autoscaler}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionAutoscalerName.newFactory())
                   .setResourceNameField("autoscaler")
@@ -108,6 +109,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
                   .setRequestInstance(InsertRegionAutoscalerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/autoscalers"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")
@@ -147,7 +149,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
                   .setRequestInstance(PatchRegionAutoscalerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/autoscalers"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "autoscaler"
+                                     "autoscaler",    "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")
@@ -167,7 +169,7 @@ public class HttpJsonRegionAutoscalerStub extends RegionAutoscalerStub {
                   .setRequestInstance(UpdateRegionAutoscalerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/autoscalers"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "autoscaler"
+                                     "autoscaler",    "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")

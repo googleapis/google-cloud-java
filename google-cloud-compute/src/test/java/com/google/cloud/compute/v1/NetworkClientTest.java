@@ -26,10 +26,13 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.addPeeringNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.deleteNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.getNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.insertNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.listNetworksMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.patchNetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.removePeeringNetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.switchToCustomModeNetworkMethodDescriptor;
 import com.google.cloud.compute.v1.stub.NetworkStubSettings;
 import com.google.common.collect.ImmutableList;
@@ -50,10 +53,13 @@ public class NetworkClientTest {
 
    private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
         Lists.<ApiMethodDescriptor>newArrayList(
+          addPeeringNetworkMethodDescriptor,
           deleteNetworkMethodDescriptor,
           getNetworkMethodDescriptor,
           insertNetworkMethodDescriptor,
           listNetworksMethodDescriptor,
+          patchNetworkMethodDescriptor,
+          removePeeringNetworkMethodDescriptor,
           switchToCustomModeNetworkMethodDescriptor
         ));
   private static final MockHttpService mockService
@@ -83,6 +89,90 @@ public class NetworkClientTest {
   @AfterClass
   public static void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addPeeringNetworkTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse = Operation.newBuilder()
+      .setHttpErrorMessage(httpErrorMessage)
+      .setTargetId(targetId)
+      .setKind(kind)
+      .setDescription(description)
+      .setStatusMessage(statusMessage)
+      .setSelfLink(selfLink)
+      .setInsertTime(insertTime)
+      .setHttpErrorStatusCode(httpErrorStatusCode)
+      .setZone(zone.toString())
+      .setTargetLink(targetLink)
+      .setCreationTimestamp(creationTimestamp)
+      .setName(name)
+      .setProgress(progress)
+      .setOperationType(operationType)
+      .setStartTime(startTime)
+      .setEndTime(endTime)
+      .setId(id)
+      .setRegion(region.toString())
+      .setClientOperationId(clientOperationId)
+      .setUser(user)
+      .setStatus(status)
+      .build();
+    mockService.addResponse(expectedResponse);
+
+    String requestId = "requestId37109963";
+    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey = mockService.getRequestHeaders()
+        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
+    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+        .matcher(apiClientHeaderKey).matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void addPeeringNetworkExceptionTest() throws Exception {
+    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String requestId = "requestId37109963";
+      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
+
+      client.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -134,10 +224,11 @@ public class NetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
 
     Operation actualResponse =
-        client.deleteNetwork(network);
+        client.deleteNetwork(requestId, network);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -156,9 +247,10 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
 
-      client.deleteNetwork(network);
+      client.deleteNetwork(requestId, network);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -270,11 +362,12 @@ public class NetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Network networkResource = Network.newBuilder().build();
 
     Operation actualResponse =
-        client.insertNetwork(project, networkResource);
+        client.insertNetwork(requestId, project, networkResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -293,10 +386,11 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Network networkResource = Network.newBuilder().build();
 
-      client.insertNetwork(project, networkResource);
+      client.insertNetwork(requestId, project, networkResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -357,6 +451,174 @@ public class NetworkClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void patchNetworkTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse = Operation.newBuilder()
+      .setHttpErrorMessage(httpErrorMessage)
+      .setTargetId(targetId)
+      .setKind(kind)
+      .setDescription(description)
+      .setStatusMessage(statusMessage)
+      .setSelfLink(selfLink)
+      .setInsertTime(insertTime)
+      .setHttpErrorStatusCode(httpErrorStatusCode)
+      .setZone(zone.toString())
+      .setTargetLink(targetLink)
+      .setCreationTimestamp(creationTimestamp)
+      .setName(name)
+      .setProgress(progress)
+      .setOperationType(operationType)
+      .setStartTime(startTime)
+      .setEndTime(endTime)
+      .setId(id)
+      .setRegion(region.toString())
+      .setClientOperationId(clientOperationId)
+      .setUser(user)
+      .setStatus(status)
+      .build();
+    mockService.addResponse(expectedResponse);
+
+    String requestId = "requestId37109963";
+    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    Network networkResource = Network.newBuilder().build();
+
+    Operation actualResponse =
+        client.patchNetwork(requestId, network, networkResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey = mockService.getRequestHeaders()
+        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
+    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+        .matcher(apiClientHeaderKey).matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void patchNetworkExceptionTest() throws Exception {
+    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String requestId = "requestId37109963";
+      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      Network networkResource = Network.newBuilder().build();
+
+      client.patchNetwork(requestId, network, networkResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void removePeeringNetworkTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse = Operation.newBuilder()
+      .setHttpErrorMessage(httpErrorMessage)
+      .setTargetId(targetId)
+      .setKind(kind)
+      .setDescription(description)
+      .setStatusMessage(statusMessage)
+      .setSelfLink(selfLink)
+      .setInsertTime(insertTime)
+      .setHttpErrorStatusCode(httpErrorStatusCode)
+      .setZone(zone.toString())
+      .setTargetLink(targetLink)
+      .setCreationTimestamp(creationTimestamp)
+      .setName(name)
+      .setProgress(progress)
+      .setOperationType(operationType)
+      .setStartTime(startTime)
+      .setEndTime(endTime)
+      .setId(id)
+      .setRegion(region.toString())
+      .setClientOperationId(clientOperationId)
+      .setUser(user)
+      .setStatus(status)
+      .build();
+    mockService.addResponse(expectedResponse);
+
+    String requestId = "requestId37109963";
+    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey = mockService.getRequestHeaders()
+        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
+    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+        .matcher(apiClientHeaderKey).matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void removePeeringNetworkExceptionTest() throws Exception {
+    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String requestId = "requestId37109963";
+      NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+      NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
+
+      client.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void switchToCustomModeNetworkTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -404,10 +666,11 @@ public class NetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
 
     Operation actualResponse =
-        client.switchToCustomModeNetwork(network);
+        client.switchToCustomModeNetwork(requestId, network);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -426,9 +689,10 @@ public class NetworkClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
 
-      client.switchToCustomModeNetwork(network);
+      client.switchToCustomModeNetwork(requestId, network);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

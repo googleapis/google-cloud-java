@@ -20,9 +20,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotHttpRequest;
 import com.google.cloud.compute.v1.GetSnapshotHttpRequest;
+import com.google.cloud.compute.v1.GlobalSetLabelsRequest;
 import com.google.cloud.compute.v1.ListSnapshotsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectSnapshotName;
+import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
 import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
 import com.google.cloud.compute.v1.SnapshotList;
@@ -58,6 +61,11 @@ public abstract class SnapshotStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListSnapshotsHttpRequest, SnapshotList> listSnapshotsCallable() {
     throw new UnsupportedOperationException("Not implemented: listSnapshotsCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsSnapshotCallable()");
   }
 
 }

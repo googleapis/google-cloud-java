@@ -44,6 +44,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.auth.Credentials;
 import static com.google.cloud.compute.v1.InstanceClient.AggregatedListInstancesPagedResponse;
 import static com.google.cloud.compute.v1.InstanceClient.ListInstancesPagedResponse;
+import static com.google.cloud.compute.v1.InstanceClient.ListReferrersInstancesPagedResponse;
 import com.google.cloud.compute.v1.stub.InstanceStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -157,6 +158,13 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
   }
 
   /**
+   * Returns the object with the settings used for calls to listReferrersInstances.
+   */
+  public PagedCallSettings<ListReferrersInstancesHttpRequest, InstanceListReferrers, ListReferrersInstancesPagedResponse> listReferrersInstancesSettings() {
+    return ((InstanceStubSettings) getStubSettings()).listReferrersInstancesSettings();
+  }
+
+  /**
    * Returns the object with the settings used for calls to resetInstance.
    */
   public UnaryCallSettings<ResetInstanceHttpRequest, Operation> resetInstanceSettings() {
@@ -164,10 +172,31 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
   }
 
   /**
+   * Returns the object with the settings used for calls to setDeletionProtectionInstance.
+   */
+  public UnaryCallSettings<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).setDeletionProtectionInstanceSettings();
+  }
+
+  /**
    * Returns the object with the settings used for calls to setDiskAutoDeleteInstance.
    */
   public UnaryCallSettings<SetDiskAutoDeleteInstanceHttpRequest, Operation> setDiskAutoDeleteInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).setDiskAutoDeleteInstanceSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to setLabelsInstance.
+   */
+  public UnaryCallSettings<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).setLabelsInstanceSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to setMachineResourcesInstance.
+   */
+  public UnaryCallSettings<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).setMachineResourcesInstanceSettings();
   }
 
   /**
@@ -182,6 +211,13 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
    */
   public UnaryCallSettings<SetMetadataInstanceHttpRequest, Operation> setMetadataInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).setMetadataInstanceSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to setMinCpuPlatformInstance.
+   */
+  public UnaryCallSettings<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).setMinCpuPlatformInstanceSettings();
   }
 
   /**
@@ -224,6 +260,20 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
    */
   public UnaryCallSettings<StopInstanceHttpRequest, Operation> stopInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).stopInstanceSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateAccessConfigInstance.
+   */
+  public UnaryCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).updateAccessConfigInstanceSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateNetworkInterfaceInstance.
+   */
+  public UnaryCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).updateNetworkInterfaceInstanceSettings();
   }
 
 
@@ -416,6 +466,13 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     }
 
     /**
+     * Returns the builder for the settings used for calls to listReferrersInstances.
+     */
+    public PagedCallSettings.Builder<ListReferrersInstancesHttpRequest, InstanceListReferrers, ListReferrersInstancesPagedResponse> listReferrersInstancesSettings() {
+      return getStubSettingsBuilder().listReferrersInstancesSettings();
+    }
+
+    /**
      * Returns the builder for the settings used for calls to resetInstance.
      */
     public UnaryCallSettings.Builder<ResetInstanceHttpRequest, Operation> resetInstanceSettings() {
@@ -423,10 +480,31 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     }
 
     /**
+     * Returns the builder for the settings used for calls to setDeletionProtectionInstance.
+     */
+    public UnaryCallSettings.Builder<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceSettings() {
+      return getStubSettingsBuilder().setDeletionProtectionInstanceSettings();
+    }
+
+    /**
      * Returns the builder for the settings used for calls to setDiskAutoDeleteInstance.
      */
     public UnaryCallSettings.Builder<SetDiskAutoDeleteInstanceHttpRequest, Operation> setDiskAutoDeleteInstanceSettings() {
       return getStubSettingsBuilder().setDiskAutoDeleteInstanceSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setLabelsInstance.
+     */
+    public UnaryCallSettings.Builder<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceSettings() {
+      return getStubSettingsBuilder().setLabelsInstanceSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setMachineResourcesInstance.
+     */
+    public UnaryCallSettings.Builder<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceSettings() {
+      return getStubSettingsBuilder().setMachineResourcesInstanceSettings();
     }
 
     /**
@@ -441,6 +519,13 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
      */
     public UnaryCallSettings.Builder<SetMetadataInstanceHttpRequest, Operation> setMetadataInstanceSettings() {
       return getStubSettingsBuilder().setMetadataInstanceSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setMinCpuPlatformInstance.
+     */
+    public UnaryCallSettings.Builder<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceSettings() {
+      return getStubSettingsBuilder().setMinCpuPlatformInstanceSettings();
     }
 
     /**
@@ -483,6 +568,20 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
      */
     public UnaryCallSettings.Builder<StopInstanceHttpRequest, Operation> stopInstanceSettings() {
       return getStubSettingsBuilder().stopInstanceSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateAccessConfigInstance.
+     */
+    public UnaryCallSettings.Builder<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceSettings() {
+      return getStubSettingsBuilder().updateAccessConfigInstanceSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateNetworkInterfaceInstance.
+     */
+    public UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceSettings() {
+      return getStubSettingsBuilder().updateNetworkInterfaceInstanceSettings();
     }
 
     @Override

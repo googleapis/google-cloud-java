@@ -170,7 +170,7 @@ public class LicensClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified License resource. Get a list of available licenses by making a list() request.
+   * Returns the specified License resource.
    *
    * Sample code:
    * <pre><code>
@@ -195,7 +195,7 @@ public class LicensClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified License resource. Get a list of available licenses by making a list() request.
+   * Returns the specified License resource.
    *
    * Sample code:
    * <pre><code>
@@ -220,7 +220,7 @@ public class LicensClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified License resource. Get a list of available licenses by making a list() request.
+   * Returns the specified License resource.
    *
    * Sample code:
    * <pre><code>
@@ -243,7 +243,7 @@ public class LicensClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified License resource. Get a list of available licenses by making a list() request.
+   * Returns the specified License resource.
    *
    * Sample code:
    * <pre><code>

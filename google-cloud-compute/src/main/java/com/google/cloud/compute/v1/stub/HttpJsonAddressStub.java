@@ -93,6 +93,7 @@ public class HttpJsonAddressStub extends AddressStub {
                   .setRequestInstance(DeleteAddressHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/addresses/{address}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(AddressName.newFactory())
                   .setResourceNameField("address")
@@ -131,6 +132,7 @@ public class HttpJsonAddressStub extends AddressStub {
                   .setRequestInstance(InsertAddressHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/addresses"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")

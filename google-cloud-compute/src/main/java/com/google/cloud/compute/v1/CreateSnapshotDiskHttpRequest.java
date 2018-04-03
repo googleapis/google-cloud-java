@@ -36,9 +36,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
   private final String callback;
   private final String disk;
   private final String fields;
+  private final Boolean guestFlush;
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final Snapshot snapshotResource;
   private final String userIp;
 
@@ -47,9 +49,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     this.callback = null;
     this.disk = null;
     this.fields = null;
+    this.guestFlush = null;
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.snapshotResource = null;
     this.userIp = null;
   }
@@ -60,9 +64,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       String callback,
       String disk,
       String fields,
+      Boolean guestFlush,
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       Snapshot snapshotResource,
       String userIp
       ) {
@@ -70,9 +76,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     this.callback = callback;
     this.disk = disk;
     this.fields = fields;
+    this.guestFlush = guestFlush;
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.snapshotResource = snapshotResource;
     this.userIp = userIp;
   }
@@ -92,6 +100,9 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
+    if (fieldNames.contains("guestFlush") && guestFlush != null) {
+      fieldMap.put("guestFlush", Collections.singletonList(String.valueOf(guestFlush)));
+    }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
     }
@@ -100,6 +111,9 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("snapshotResource") && snapshotResource != null) {
       fieldMap.put("snapshotResource", Collections.singletonList(String.valueOf(snapshotResource)));
@@ -124,6 +138,9 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     if (fieldName.equals("fields")) {
       return String.valueOf(fields);
     }
+    if (fieldName.equals("guestFlush")) {
+      return String.valueOf(guestFlush);
+    }
     if (fieldName.equals("key")) {
       return String.valueOf(key);
     }
@@ -132,6 +149,9 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("snapshotResource")) {
       return String.valueOf(snapshotResource);
@@ -164,6 +184,10 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     return fields;
   }
 
+  public Boolean getGuestFlush() {
+    return guestFlush;
+  }
+
   public String getKey() {
     return key;
   }
@@ -174,6 +198,10 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
 
   public String getQuotaUser() {
     return quotaUser;
+  }
+
+  public String getRequestId() {
+    return requestId;
   }
 
   public Snapshot getSnapshotResource() {
@@ -209,9 +237,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     private String callback;
     private String disk;
     private String fields;
+    private Boolean guestFlush;
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private Snapshot snapshotResource;
     private String userIp;
 
@@ -231,6 +261,9 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       if (other.getFields() != null) {
         this.fields = other.fields;
       }
+      if (other.getGuestFlush() != null) {
+        this.guestFlush = other.guestFlush;
+      }
       if (other.getKey() != null) {
         this.key = other.key;
       }
@@ -239,6 +272,9 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       }
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
+      }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
       }
       if (other.getSnapshotResource() != null) {
         this.snapshotResource = other.snapshotResource;
@@ -254,9 +290,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       this.callback = source.callback;
       this.disk = source.disk;
       this.fields = source.fields;
+      this.guestFlush = source.guestFlush;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.snapshotResource = source.snapshotResource;
       this.userIp = source.userIp;
     }
@@ -297,6 +335,15 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       return this;
     }
 
+    public Boolean getGuestFlush() {
+      return guestFlush;
+    }
+
+    public Builder setGuestFlush(Boolean guestFlush) {
+      this.guestFlush = guestFlush;
+      return this;
+    }
+
     public String getKey() {
       return key;
     }
@@ -321,6 +368,15 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
 
     public Builder setQuotaUser(String quotaUser) {
       this.quotaUser = quotaUser;
+      return this;
+    }
+
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
       return this;
     }
 
@@ -356,6 +412,8 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
 
 
 
+
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -364,9 +422,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
         callback,
         disk,
         fields,
+        guestFlush,
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         snapshotResource,
         userIp
       );
@@ -378,9 +438,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       newBuilder.setCallback(this.callback);
       newBuilder.setDisk(this.disk);
       newBuilder.setFields(this.fields);
+      newBuilder.setGuestFlush(this.guestFlush);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setSnapshotResource(this.snapshotResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -394,9 +456,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
         + "callback=" + callback + ", "
         + "disk=" + disk + ", "
         + "fields=" + fields + ", "
+        + "guestFlush=" + guestFlush + ", "
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "snapshotResource=" + snapshotResource + ", "
         + "userIp=" + userIp
         + "}";
@@ -414,9 +478,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
           Objects.equals(this.callback, that.getCallback()) &&
           Objects.equals(this.disk, that.getDisk()) &&
           Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.guestFlush, that.getGuestFlush()) &&
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.snapshotResource, that.getSnapshotResource()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
@@ -431,9 +497,11 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       callback,
       disk,
       fields,
+      guestFlush,
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       snapshotResource,
       userIp
     );

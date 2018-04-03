@@ -39,6 +39,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final Scheduling schedulingResource;
   private final String userIp;
 
@@ -50,6 +51,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.schedulingResource = null;
     this.userIp = null;
   }
@@ -63,6 +65,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       Scheduling schedulingResource,
       String userIp
       ) {
@@ -73,6 +76,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.schedulingResource = schedulingResource;
     this.userIp = userIp;
   }
@@ -100,6 +104,9 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("schedulingResource") && schedulingResource != null) {
       fieldMap.put("schedulingResource", Collections.singletonList(String.valueOf(schedulingResource)));
@@ -132,6 +139,9 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("schedulingResource")) {
       return String.valueOf(schedulingResource);
@@ -176,6 +186,10 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public Scheduling getSchedulingResource() {
     return schedulingResource;
   }
@@ -212,6 +226,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private Scheduling schedulingResource;
     private String userIp;
 
@@ -240,6 +255,9 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getSchedulingResource() != null) {
         this.schedulingResource = other.schedulingResource;
       }
@@ -257,6 +275,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.schedulingResource = source.schedulingResource;
       this.userIp = source.userIp;
     }
@@ -324,6 +343,15 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public Scheduling getSchedulingResource() {
       return schedulingResource;
     }
@@ -356,6 +384,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
 
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -367,6 +396,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         schedulingResource,
         userIp
       );
@@ -381,6 +411,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setSchedulingResource(this.schedulingResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -397,6 +428,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "schedulingResource=" + schedulingResource + ", "
         + "userIp=" + userIp
         + "}";
@@ -417,6 +449,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.schedulingResource, that.getSchedulingResource()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
@@ -434,6 +467,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       schedulingResource,
       userIp
     );

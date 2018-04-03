@@ -40,6 +40,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
   private final String prettyPrint;
   private final String quotaUser;
   private final RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource;
+  private final String requestId;
   private final String userIp;
 
   private AbandonInstancesRegionInstanceGroupManagerHttpRequest() {
@@ -51,6 +52,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     this.prettyPrint = null;
     this.quotaUser = null;
     this.regionInstanceGroupManagersAbandonInstancesRequestResource = null;
+    this.requestId = null;
     this.userIp = null;
   }
 
@@ -64,6 +66,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       String prettyPrint,
       String quotaUser,
       RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource,
+      String requestId,
       String userIp
       ) {
     this.access_token = access_token;
@@ -74,6 +77,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.regionInstanceGroupManagersAbandonInstancesRequestResource = regionInstanceGroupManagersAbandonInstancesRequestResource;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -103,6 +107,9 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     }
     if (fieldNames.contains("regionInstanceGroupManagersAbandonInstancesRequestResource") && regionInstanceGroupManagersAbandonInstancesRequestResource != null) {
       fieldMap.put("regionInstanceGroupManagersAbandonInstancesRequestResource", Collections.singletonList(String.valueOf(regionInstanceGroupManagersAbandonInstancesRequestResource)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -135,6 +142,9 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     }
     if (fieldName.equals("regionInstanceGroupManagersAbandonInstancesRequestResource")) {
       return String.valueOf(regionInstanceGroupManagersAbandonInstancesRequestResource);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -180,6 +190,10 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     return regionInstanceGroupManagersAbandonInstancesRequestResource;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -213,6 +227,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     private String prettyPrint;
     private String quotaUser;
     private RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -243,6 +258,9 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       if (other.getRegionInstanceGroupManagersAbandonInstancesRequestResource() != null) {
         this.regionInstanceGroupManagersAbandonInstancesRequestResource = other.regionInstanceGroupManagersAbandonInstancesRequestResource;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -258,6 +276,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.regionInstanceGroupManagersAbandonInstancesRequestResource = source.regionInstanceGroupManagersAbandonInstancesRequestResource;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -333,6 +352,15 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -356,6 +384,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
 
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -368,6 +397,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
         prettyPrint,
         quotaUser,
         regionInstanceGroupManagersAbandonInstancesRequestResource,
+        requestId,
         userIp
       );
     }
@@ -382,6 +412,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRegionInstanceGroupManagersAbandonInstancesRequestResource(this.regionInstanceGroupManagersAbandonInstancesRequestResource);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -398,6 +429,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
         + "regionInstanceGroupManagersAbandonInstancesRequestResource=" + regionInstanceGroupManagersAbandonInstancesRequestResource + ", "
+        + "requestId=" + requestId + ", "
         + "userIp=" + userIp
         + "}";
   }
@@ -418,6 +450,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
           Objects.equals(this.regionInstanceGroupManagersAbandonInstancesRequestResource, that.getRegionInstanceGroupManagersAbandonInstancesRequestResource()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
     }
@@ -435,6 +468,7 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       prettyPrint,
       quotaUser,
       regionInstanceGroupManagersAbandonInstancesRequestResource,
+      requestId,
       userIp
     );
   }

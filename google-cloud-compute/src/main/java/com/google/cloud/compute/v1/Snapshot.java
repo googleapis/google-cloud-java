@@ -37,6 +37,8 @@ public final class Snapshot implements ApiMessage {
   private final String diskSizeGb;
   private final String id;
   private final String kind;
+  private final String labelFingerprint;
+  private final Map<String, String> labels;
   private final List<String> licenses;
   private final String name;
   private final String selfLink;
@@ -54,6 +56,8 @@ public final class Snapshot implements ApiMessage {
     this.diskSizeGb = null;
     this.id = null;
     this.kind = null;
+    this.labelFingerprint = null;
+    this.labels = null;
     this.licenses = null;
     this.name = null;
     this.selfLink = null;
@@ -73,6 +77,8 @@ public final class Snapshot implements ApiMessage {
       String diskSizeGb,
       String id,
       String kind,
+      String labelFingerprint,
+      Map<String, String> labels,
       List<String> licenses,
       String name,
       String selfLink,
@@ -89,6 +95,8 @@ public final class Snapshot implements ApiMessage {
     this.diskSizeGb = diskSizeGb;
     this.id = id;
     this.kind = kind;
+    this.labelFingerprint = labelFingerprint;
+    this.labels = labels;
     this.licenses = licenses;
     this.name = name;
     this.selfLink = selfLink;
@@ -118,6 +126,12 @@ public final class Snapshot implements ApiMessage {
     }
     if (fieldNames.contains("kind") && kind != null) {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
+    }
+    if (fieldNames.contains("labelFingerprint") && labelFingerprint != null) {
+      fieldMap.put("labelFingerprint", Collections.singletonList(String.valueOf(labelFingerprint)));
+    }
+    if (fieldNames.contains("labels") && labels != null) {
+      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
     }
     if (fieldNames.contains("licenses") && licenses != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -172,6 +186,12 @@ public final class Snapshot implements ApiMessage {
     }
     if (fieldName.equals("kind")) {
       return String.valueOf(kind);
+    }
+    if (fieldName.equals("labelFingerprint")) {
+      return String.valueOf(labelFingerprint);
+    }
+    if (fieldName.equals("labels")) {
+      return String.valueOf(labels);
     }
     if (fieldName.equals("licenses")) {
       return String.valueOf(licenses);
@@ -230,6 +250,14 @@ public final class Snapshot implements ApiMessage {
 
   public String getKind() {
     return kind;
+  }
+
+  public String getLabelFingerprint() {
+    return labelFingerprint;
+  }
+
+  public Map<String, String> getLabelsMap() {
+    return labels;
   }
 
   public List<String> getLicensesList() {
@@ -298,6 +326,8 @@ public final class Snapshot implements ApiMessage {
     private String diskSizeGb;
     private String id;
     private String kind;
+    private String labelFingerprint;
+    private Map<String, String> labels;
     private List<String> licenses;
     private String name;
     private String selfLink;
@@ -327,6 +357,12 @@ public final class Snapshot implements ApiMessage {
       }
       if (other.getKind() != null) {
         this.kind = other.kind;
+      }
+      if (other.getLabelFingerprint() != null) {
+        this.labelFingerprint = other.labelFingerprint;
+      }
+      if (other.getLabelsMap() != null) {
+        this.labels = other.labels;
       }
       if (other.getLicensesList() != null) {
         this.licenses = other.licenses;
@@ -367,6 +403,8 @@ public final class Snapshot implements ApiMessage {
       this.diskSizeGb = source.diskSizeGb;
       this.id = source.id;
       this.kind = source.kind;
+      this.labelFingerprint = source.labelFingerprint;
+      this.labels = source.labels;
       this.licenses = source.licenses;
       this.name = source.name;
       this.selfLink = source.selfLink;
@@ -421,6 +459,24 @@ public final class Snapshot implements ApiMessage {
 
     public Builder setKind(String kind) {
       this.kind = kind;
+      return this;
+    }
+
+    public String getLabelFingerprint() {
+      return labelFingerprint;
+    }
+
+    public Builder setLabelFingerprint(String labelFingerprint) {
+      this.labelFingerprint = labelFingerprint;
+      return this;
+    }
+
+    public Map<String, String> getLabelsMap() {
+      return labels;
+    }
+
+    public Builder putAllLabels(Map<String, String> labels) {
+      this.labels = labels;
       return this;
     }
 
@@ -538,12 +594,16 @@ public final class Snapshot implements ApiMessage {
 
 
 
+
+
       return new Snapshot(
         creationTimestamp,
         description,
         diskSizeGb,
         id,
         kind,
+        labelFingerprint,
+        labels,
         licenses,
         name,
         selfLink,
@@ -564,6 +624,8 @@ public final class Snapshot implements ApiMessage {
       newBuilder.setDiskSizeGb(this.diskSizeGb);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
+      newBuilder.setLabelFingerprint(this.labelFingerprint);
+      newBuilder.putAllLabels(this.labels);
       newBuilder.addAllLicenses(this.licenses);
       newBuilder.setName(this.name);
       newBuilder.setSelfLink(this.selfLink);
@@ -586,6 +648,8 @@ public final class Snapshot implements ApiMessage {
         + "diskSizeGb=" + diskSizeGb + ", "
         + "id=" + id + ", "
         + "kind=" + kind + ", "
+        + "labelFingerprint=" + labelFingerprint + ", "
+        + "labels=" + labels + ", "
         + "licenses=" + licenses + ", "
         + "name=" + name + ", "
         + "selfLink=" + selfLink + ", "
@@ -612,6 +676,8 @@ public final class Snapshot implements ApiMessage {
           Objects.equals(this.diskSizeGb, that.getDiskSizeGb()) &&
           Objects.equals(this.id, that.getId()) &&
           Objects.equals(this.kind, that.getKind()) &&
+          Objects.equals(this.labelFingerprint, that.getLabelFingerprint()) &&
+          Objects.equals(this.labels, that.getLabelsMap()) &&
           Objects.equals(this.licenses, that.getLicensesList()) &&
           Objects.equals(this.name, that.getName()) &&
           Objects.equals(this.selfLink, that.getSelfLink()) &&
@@ -635,6 +701,8 @@ public final class Snapshot implements ApiMessage {
       diskSizeGb,
       id,
       kind,
+      labelFingerprint,
+      labels,
       licenses,
       name,
       selfLink,

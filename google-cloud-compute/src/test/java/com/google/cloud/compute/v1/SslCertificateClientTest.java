@@ -133,9 +133,10 @@ public class SslCertificateClientTest {
     mockService.addResponse(expectedResponse);
 
     SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+    String requestId = "requestId37109963";
 
     Operation actualResponse =
-        client.deleteSslCertificate(sslCertificate);
+        client.deleteSslCertificate(sslCertificate, requestId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -155,8 +156,9 @@ public class SslCertificateClientTest {
 
     try {
       SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+      String requestId = "requestId37109963";
 
-      client.deleteSslCertificate(sslCertificate);
+      client.deleteSslCertificate(sslCertificate, requestId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -266,11 +268,12 @@ public class SslCertificateClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
 
     Operation actualResponse =
-        client.insertSslCertificate(project, sslCertificateResource);
+        client.insertSslCertificate(requestId, project, sslCertificateResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -289,10 +292,11 @@ public class SslCertificateClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
 
-      client.insertSslCertificate(project, sslCertificateResource);
+      client.insertSslCertificate(requestId, project, sslCertificateResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

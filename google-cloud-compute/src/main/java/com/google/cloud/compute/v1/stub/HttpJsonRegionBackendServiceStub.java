@@ -73,6 +73,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
                   .setRequestInstance(DeleteRegionBackendServiceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/backendServices/{backendService}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionBackendServiceName.newFactory())
                   .setResourceNameField("backendService")
@@ -130,6 +131,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
                   .setRequestInstance(InsertRegionBackendServiceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/backendServices"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")
@@ -169,6 +171,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
                   .setRequestInstance(PatchRegionBackendServiceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/backendServices/{backendService}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionBackendServiceName.newFactory())
                   .setResourceNameField("backendService")
@@ -188,6 +191,7 @@ public class HttpJsonRegionBackendServiceStub extends RegionBackendServiceStub {
                   .setRequestInstance(UpdateRegionBackendServiceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/backendServices/{backendService}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionBackendServiceName.newFactory())
                   .setResourceNameField("backendService")

@@ -37,6 +37,7 @@ public final class AddressAggregatedList implements ApiMessage {
   private final String kind;
   private final String nextPageToken;
   private final String selfLink;
+  private final Warning warning;
 
   private AddressAggregatedList() {
     this.id = null;
@@ -44,6 +45,7 @@ public final class AddressAggregatedList implements ApiMessage {
     this.kind = null;
     this.nextPageToken = null;
     this.selfLink = null;
+    this.warning = null;
   }
 
 
@@ -52,13 +54,15 @@ public final class AddressAggregatedList implements ApiMessage {
       Map<String, AddressesScopedList> items,
       String kind,
       String nextPageToken,
-      String selfLink
+      String selfLink,
+      Warning warning
       ) {
     this.id = id;
     this.items = items;
     this.kind = kind;
     this.nextPageToken = nextPageToken;
     this.selfLink = selfLink;
+    this.warning = warning;
   }
 
   @Override
@@ -79,6 +83,9 @@ public final class AddressAggregatedList implements ApiMessage {
     if (fieldNames.contains("selfLink") && selfLink != null) {
       fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
     }
+    if (fieldNames.contains("warning") && warning != null) {
+      fieldMap.put("warning", Collections.singletonList(String.valueOf(warning)));
+    }
     return fieldMap;
   }
 
@@ -98,6 +105,9 @@ public final class AddressAggregatedList implements ApiMessage {
     }
     if (fieldName.equals("selfLink")) {
       return String.valueOf(selfLink);
+    }
+    if (fieldName.equals("warning")) {
+      return String.valueOf(warning);
     }
     return null;
   }
@@ -128,6 +138,10 @@ public final class AddressAggregatedList implements ApiMessage {
     return selfLink;
   }
 
+  public Warning getWarning() {
+    return warning;
+  }
+
 
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -154,6 +168,7 @@ public final class AddressAggregatedList implements ApiMessage {
     private String kind;
     private String nextPageToken;
     private String selfLink;
+    private Warning warning;
 
     Builder() {}
 
@@ -174,6 +189,9 @@ public final class AddressAggregatedList implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getWarning() != null) {
+        this.warning = other.warning;
+      }
       return this;
     }
 
@@ -183,6 +201,7 @@ public final class AddressAggregatedList implements ApiMessage {
       this.kind = source.kind;
       this.nextPageToken = source.nextPageToken;
       this.selfLink = source.selfLink;
+      this.warning = source.warning;
     }
 
     public String getId() {
@@ -230,8 +249,18 @@ public final class AddressAggregatedList implements ApiMessage {
       return this;
     }
 
+    public Warning getWarning() {
+      return warning;
+    }
+
+    public Builder setWarning(Warning warning) {
+      this.warning = warning;
+      return this;
+    }
+
 
     public AddressAggregatedList build() {
+
 
 
 
@@ -241,7 +270,8 @@ public final class AddressAggregatedList implements ApiMessage {
         items,
         kind,
         nextPageToken,
-        selfLink
+        selfLink,
+        warning
       );
     }
 
@@ -252,6 +282,7 @@ public final class AddressAggregatedList implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setNextPageToken(this.nextPageToken);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setWarning(this.warning);
       return newBuilder;
     }
   }
@@ -263,7 +294,8 @@ public final class AddressAggregatedList implements ApiMessage {
         + "items=" + items + ", "
         + "kind=" + kind + ", "
         + "nextPageToken=" + nextPageToken + ", "
-        + "selfLink=" + selfLink
+        + "selfLink=" + selfLink + ", "
+        + "warning=" + warning
         + "}";
   }
 
@@ -279,7 +311,8 @@ public final class AddressAggregatedList implements ApiMessage {
           Objects.equals(this.items, that.getItemsMap()) &&
           Objects.equals(this.kind, that.getKind()) &&
           Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
+          Objects.equals(this.selfLink, that.getSelfLink()) &&
+          Objects.equals(this.warning, that.getWarning())
           ;
     }
     return false;
@@ -292,7 +325,8 @@ public final class AddressAggregatedList implements ApiMessage {
       items,
       kind,
       nextPageToken,
-      selfLink
+      selfLink,
+      warning
     );
   }
 }

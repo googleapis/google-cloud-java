@@ -53,7 +53,8 @@ import javax.annotation.Generated;
  * <code>
  * try (AddressClient addressClient = AddressClient.create()) {
  *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
- *   Operation response = addressClient.deleteAddress(address);
+ *   String requestId = "";
+ *   Operation response = addressClient.deleteAddress(address, requestId);
  * }
  * </code>
  * </pre>
@@ -309,19 +310,26 @@ public class AddressClient implements BackgroundResource {
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
-   *   Operation response = addressClient.deleteAddress(address);
+   *   String requestId = "";
+   *   Operation response = addressClient.deleteAddress(address, requestId);
    * }
    * </code></pre>
    *
    * @param address Name of the address resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteAddress(AddressName address) {
+  public final Operation deleteAddress(AddressName address, String requestId) {
 
     DeleteAddressHttpRequest request =
         DeleteAddressHttpRequest.newBuilder()
         .setAddress(address == null ? null : address.toString())
+        .setRequestId(requestId)
         .build();
     return deleteAddress(request);
   }
@@ -334,19 +342,26 @@ public class AddressClient implements BackgroundResource {
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
-   *   Operation response = addressClient.deleteAddress(address.toString());
+   *   String requestId = "";
+   *   Operation response = addressClient.deleteAddress(address.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param address Name of the address resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteAddress(String address) {
+  public final Operation deleteAddress(String address, String requestId) {
 
     DeleteAddressHttpRequest request =
         DeleteAddressHttpRequest.newBuilder()
         .setAddress(address)
+        .setRequestId(requestId)
         .build();
     return deleteAddress(request);
   }
@@ -359,8 +374,10 @@ public class AddressClient implements BackgroundResource {
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   String requestId = "";
    *   DeleteAddressHttpRequest request = DeleteAddressHttpRequest.newBuilder()
    *     .setAddress(address.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = addressClient.deleteAddress(request);
    * }
@@ -382,8 +399,10 @@ public class AddressClient implements BackgroundResource {
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
+   *   String requestId = "";
    *   DeleteAddressHttpRequest request = DeleteAddressHttpRequest.newBuilder()
    *     .setAddress(address.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = addressClient.deleteAddressCallable().futureCall(request);
    *   // Do something
@@ -498,21 +517,28 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   Address addressResource = Address.newBuilder().build();
-   *   Operation response = addressClient.insertAddress(region, addressResource);
+   *   Operation response = addressClient.insertAddress(requestId, region, addressResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
-   * @param addressResource A reserved address resource.
+   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertAddress(RegionName region, Address addressResource) {
+  public final Operation insertAddress(String requestId, RegionName region, Address addressResource) {
 
     InsertAddressHttpRequest request =
         InsertAddressHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setRegion(region == null ? null : region.toString())
         .setAddressResource(addressResource)
         .build();
@@ -526,21 +552,28 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   Address addressResource = Address.newBuilder().build();
-   *   Operation response = addressClient.insertAddress(region.toString(), addressResource);
+   *   Operation response = addressClient.insertAddress(requestId, region.toString(), addressResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
-   * @param addressResource A reserved address resource.
+   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertAddress(String region, Address addressResource) {
+  public final Operation insertAddress(String requestId, String region, Address addressResource) {
 
     InsertAddressHttpRequest request =
         InsertAddressHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setRegion(region)
         .setAddressResource(addressResource)
         .build();
@@ -554,9 +587,11 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   Address addressResource = Address.newBuilder().build();
    *   InsertAddressHttpRequest request = InsertAddressHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setAddressResource(addressResource)
    *     .build();
@@ -579,9 +614,11 @@ public class AddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   Address addressResource = Address.newBuilder().build();
    *   InsertAddressHttpRequest request = InsertAddressHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setAddressResource(addressResource)
    *     .build();

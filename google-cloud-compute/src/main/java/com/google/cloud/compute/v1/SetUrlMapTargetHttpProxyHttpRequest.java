@@ -38,6 +38,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String targetHttpProxy;
   private final UrlMapReference urlMapReferenceResource;
   private final String userIp;
@@ -49,6 +50,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.targetHttpProxy = null;
     this.urlMapReferenceResource = null;
     this.userIp = null;
@@ -62,6 +64,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String targetHttpProxy,
       UrlMapReference urlMapReferenceResource,
       String userIp
@@ -72,6 +75,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.targetHttpProxy = targetHttpProxy;
     this.urlMapReferenceResource = urlMapReferenceResource;
     this.userIp = userIp;
@@ -97,6 +101,9 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("targetHttpProxy") && targetHttpProxy != null) {
       fieldMap.put("targetHttpProxy", Collections.singletonList(String.valueOf(targetHttpProxy)));
@@ -129,6 +136,9 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("targetHttpProxy")) {
       return String.valueOf(targetHttpProxy);
@@ -172,6 +182,10 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getTargetHttpProxy() {
     return targetHttpProxy;
   }
@@ -211,6 +225,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String targetHttpProxy;
     private UrlMapReference urlMapReferenceResource;
     private String userIp;
@@ -237,6 +252,9 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getTargetHttpProxy() != null) {
         this.targetHttpProxy = other.targetHttpProxy;
       }
@@ -256,6 +274,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.targetHttpProxy = source.targetHttpProxy;
       this.urlMapReferenceResource = source.urlMapReferenceResource;
       this.userIp = source.userIp;
@@ -315,6 +334,15 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getTargetHttpProxy() {
       return targetHttpProxy;
     }
@@ -351,6 +379,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
 
 
 
+
       if (targetHttpProxy == null) {
         missing += " targetHttpProxy";
       }
@@ -366,6 +395,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         targetHttpProxy,
         urlMapReferenceResource,
         userIp
@@ -380,6 +410,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setTargetHttpProxy(this.targetHttpProxy);
       newBuilder.setUrlMapReferenceResource(this.urlMapReferenceResource);
       newBuilder.setUserIp(this.userIp);
@@ -396,6 +427,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "targetHttpProxy=" + targetHttpProxy + ", "
         + "urlMapReferenceResource=" + urlMapReferenceResource + ", "
         + "userIp=" + userIp
@@ -416,6 +448,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.targetHttpProxy, that.getTargetHttpProxy()) &&
           Objects.equals(this.urlMapReferenceResource, that.getUrlMapReferenceResource()) &&
           Objects.equals(this.userIp, that.getUserIp())
@@ -433,6 +466,7 @@ public final class SetUrlMapTargetHttpProxyHttpRequest implements ApiMessage {
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       targetHttpProxy,
       urlMapReferenceResource,
       userIp

@@ -35,17 +35,23 @@ public final class Instance implements ApiMessage {
   private final Boolean canIpForward;
   private final String cpuPlatform;
   private final String creationTimestamp;
+  private final Boolean deletionProtection;
   private final String description;
   private final List<AttachedDisk> disks;
+  private final List<AcceleratorConfig> guestAccelerators;
   private final String id;
   private final String kind;
+  private final String labelFingerprint;
+  private final Map<String, String> labels;
   private final String machineType;
   private final Metadata metadata;
+  private final String minCpuPlatform;
   private final String name;
   private final List<NetworkInterface> networkInterfaces;
   private final Scheduling scheduling;
   private final String selfLink;
   private final List<ServiceAccount> serviceAccounts;
+  private final Boolean startRestricted;
   private final String status;
   private final String statusMessage;
   private final Tags tags;
@@ -55,17 +61,23 @@ public final class Instance implements ApiMessage {
     this.canIpForward = null;
     this.cpuPlatform = null;
     this.creationTimestamp = null;
+    this.deletionProtection = null;
     this.description = null;
     this.disks = null;
+    this.guestAccelerators = null;
     this.id = null;
     this.kind = null;
+    this.labelFingerprint = null;
+    this.labels = null;
     this.machineType = null;
     this.metadata = null;
+    this.minCpuPlatform = null;
     this.name = null;
     this.networkInterfaces = null;
     this.scheduling = null;
     this.selfLink = null;
     this.serviceAccounts = null;
+    this.startRestricted = null;
     this.status = null;
     this.statusMessage = null;
     this.tags = null;
@@ -77,17 +89,23 @@ public final class Instance implements ApiMessage {
       Boolean canIpForward,
       String cpuPlatform,
       String creationTimestamp,
+      Boolean deletionProtection,
       String description,
       List<AttachedDisk> disks,
+      List<AcceleratorConfig> guestAccelerators,
       String id,
       String kind,
+      String labelFingerprint,
+      Map<String, String> labels,
       String machineType,
       Metadata metadata,
+      String minCpuPlatform,
       String name,
       List<NetworkInterface> networkInterfaces,
       Scheduling scheduling,
       String selfLink,
       List<ServiceAccount> serviceAccounts,
+      Boolean startRestricted,
       String status,
       String statusMessage,
       Tags tags,
@@ -96,17 +114,23 @@ public final class Instance implements ApiMessage {
     this.canIpForward = canIpForward;
     this.cpuPlatform = cpuPlatform;
     this.creationTimestamp = creationTimestamp;
+    this.deletionProtection = deletionProtection;
     this.description = description;
     this.disks = disks;
+    this.guestAccelerators = guestAccelerators;
     this.id = id;
     this.kind = kind;
+    this.labelFingerprint = labelFingerprint;
+    this.labels = labels;
     this.machineType = machineType;
     this.metadata = metadata;
+    this.minCpuPlatform = minCpuPlatform;
     this.name = name;
     this.networkInterfaces = networkInterfaces;
     this.scheduling = scheduling;
     this.selfLink = selfLink;
     this.serviceAccounts = serviceAccounts;
+    this.startRestricted = startRestricted;
     this.status = status;
     this.statusMessage = statusMessage;
     this.tags = tags;
@@ -125,6 +149,9 @@ public final class Instance implements ApiMessage {
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
       fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
+    if (fieldNames.contains("deletionProtection") && deletionProtection != null) {
+      fieldMap.put("deletionProtection", Collections.singletonList(String.valueOf(deletionProtection)));
+    }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
     }
@@ -135,17 +162,33 @@ public final class Instance implements ApiMessage {
       }
       fieldMap.put("disks", stringList.build());
     }
+    if (fieldNames.contains("guestAccelerators") && guestAccelerators != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (AcceleratorConfig item : guestAccelerators) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("guestAccelerators", stringList.build());
+    }
     if (fieldNames.contains("id") && id != null) {
       fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
     }
     if (fieldNames.contains("kind") && kind != null) {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
     }
+    if (fieldNames.contains("labelFingerprint") && labelFingerprint != null) {
+      fieldMap.put("labelFingerprint", Collections.singletonList(String.valueOf(labelFingerprint)));
+    }
+    if (fieldNames.contains("labels") && labels != null) {
+      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
+    }
     if (fieldNames.contains("machineType") && machineType != null) {
       fieldMap.put("machineType", Collections.singletonList(String.valueOf(machineType)));
     }
     if (fieldNames.contains("metadata") && metadata != null) {
       fieldMap.put("metadata", Collections.singletonList(String.valueOf(metadata)));
+    }
+    if (fieldNames.contains("minCpuPlatform") && minCpuPlatform != null) {
+      fieldMap.put("minCpuPlatform", Collections.singletonList(String.valueOf(minCpuPlatform)));
     }
     if (fieldNames.contains("name") && name != null) {
       fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
@@ -169,6 +212,9 @@ public final class Instance implements ApiMessage {
         stringList.add(item.toString());
       }
       fieldMap.put("serviceAccounts", stringList.build());
+    }
+    if (fieldNames.contains("startRestricted") && startRestricted != null) {
+      fieldMap.put("startRestricted", Collections.singletonList(String.valueOf(startRestricted)));
     }
     if (fieldNames.contains("status") && status != null) {
       fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
@@ -196,11 +242,17 @@ public final class Instance implements ApiMessage {
     if (fieldName.equals("creationTimestamp")) {
       return String.valueOf(creationTimestamp);
     }
+    if (fieldName.equals("deletionProtection")) {
+      return String.valueOf(deletionProtection);
+    }
     if (fieldName.equals("description")) {
       return String.valueOf(description);
     }
     if (fieldName.equals("disks")) {
       return String.valueOf(disks);
+    }
+    if (fieldName.equals("guestAccelerators")) {
+      return String.valueOf(guestAccelerators);
     }
     if (fieldName.equals("id")) {
       return String.valueOf(id);
@@ -208,11 +260,20 @@ public final class Instance implements ApiMessage {
     if (fieldName.equals("kind")) {
       return String.valueOf(kind);
     }
+    if (fieldName.equals("labelFingerprint")) {
+      return String.valueOf(labelFingerprint);
+    }
+    if (fieldName.equals("labels")) {
+      return String.valueOf(labels);
+    }
     if (fieldName.equals("machineType")) {
       return String.valueOf(machineType);
     }
     if (fieldName.equals("metadata")) {
       return String.valueOf(metadata);
+    }
+    if (fieldName.equals("minCpuPlatform")) {
+      return String.valueOf(minCpuPlatform);
     }
     if (fieldName.equals("name")) {
       return String.valueOf(name);
@@ -228,6 +289,9 @@ public final class Instance implements ApiMessage {
     }
     if (fieldName.equals("serviceAccounts")) {
       return String.valueOf(serviceAccounts);
+    }
+    if (fieldName.equals("startRestricted")) {
+      return String.valueOf(startRestricted);
     }
     if (fieldName.equals("status")) {
       return String.valueOf(status);
@@ -262,12 +326,20 @@ public final class Instance implements ApiMessage {
     return creationTimestamp;
   }
 
+  public Boolean getDeletionProtection() {
+    return deletionProtection;
+  }
+
   public String getDescription() {
     return description;
   }
 
   public List<AttachedDisk> getDisksList() {
     return disks;
+  }
+
+  public List<AcceleratorConfig> getGuestAcceleratorsList() {
+    return guestAccelerators;
   }
 
   public String getId() {
@@ -278,12 +350,24 @@ public final class Instance implements ApiMessage {
     return kind;
   }
 
+  public String getLabelFingerprint() {
+    return labelFingerprint;
+  }
+
+  public Map<String, String> getLabelsMap() {
+    return labels;
+  }
+
   public String getMachineType() {
     return machineType;
   }
 
   public Metadata getMetadata() {
     return metadata;
+  }
+
+  public String getMinCpuPlatform() {
+    return minCpuPlatform;
   }
 
   public String getName() {
@@ -304,6 +388,10 @@ public final class Instance implements ApiMessage {
 
   public List<ServiceAccount> getServiceAccountsList() {
     return serviceAccounts;
+  }
+
+  public Boolean getStartRestricted() {
+    return startRestricted;
   }
 
   public String getStatus() {
@@ -346,17 +434,23 @@ public final class Instance implements ApiMessage {
     private Boolean canIpForward;
     private String cpuPlatform;
     private String creationTimestamp;
+    private Boolean deletionProtection;
     private String description;
     private List<AttachedDisk> disks;
+    private List<AcceleratorConfig> guestAccelerators;
     private String id;
     private String kind;
+    private String labelFingerprint;
+    private Map<String, String> labels;
     private String machineType;
     private Metadata metadata;
+    private String minCpuPlatform;
     private String name;
     private List<NetworkInterface> networkInterfaces;
     private Scheduling scheduling;
     private String selfLink;
     private List<ServiceAccount> serviceAccounts;
+    private Boolean startRestricted;
     private String status;
     private String statusMessage;
     private Tags tags;
@@ -375,11 +469,17 @@ public final class Instance implements ApiMessage {
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
       }
+      if (other.getDeletionProtection() != null) {
+        this.deletionProtection = other.deletionProtection;
+      }
       if (other.getDescription() != null) {
         this.description = other.description;
       }
       if (other.getDisksList() != null) {
         this.disks = other.disks;
+      }
+      if (other.getGuestAcceleratorsList() != null) {
+        this.guestAccelerators = other.guestAccelerators;
       }
       if (other.getId() != null) {
         this.id = other.id;
@@ -387,11 +487,20 @@ public final class Instance implements ApiMessage {
       if (other.getKind() != null) {
         this.kind = other.kind;
       }
+      if (other.getLabelFingerprint() != null) {
+        this.labelFingerprint = other.labelFingerprint;
+      }
+      if (other.getLabelsMap() != null) {
+        this.labels = other.labels;
+      }
       if (other.getMachineType() != null) {
         this.machineType = other.machineType;
       }
       if (other.getMetadata() != null) {
         this.metadata = other.metadata;
+      }
+      if (other.getMinCpuPlatform() != null) {
+        this.minCpuPlatform = other.minCpuPlatform;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -407,6 +516,9 @@ public final class Instance implements ApiMessage {
       }
       if (other.getServiceAccountsList() != null) {
         this.serviceAccounts = other.serviceAccounts;
+      }
+      if (other.getStartRestricted() != null) {
+        this.startRestricted = other.startRestricted;
       }
       if (other.getStatus() != null) {
         this.status = other.status;
@@ -427,17 +539,23 @@ public final class Instance implements ApiMessage {
       this.canIpForward = source.canIpForward;
       this.cpuPlatform = source.cpuPlatform;
       this.creationTimestamp = source.creationTimestamp;
+      this.deletionProtection = source.deletionProtection;
       this.description = source.description;
       this.disks = source.disks;
+      this.guestAccelerators = source.guestAccelerators;
       this.id = source.id;
       this.kind = source.kind;
+      this.labelFingerprint = source.labelFingerprint;
+      this.labels = source.labels;
       this.machineType = source.machineType;
       this.metadata = source.metadata;
+      this.minCpuPlatform = source.minCpuPlatform;
       this.name = source.name;
       this.networkInterfaces = source.networkInterfaces;
       this.scheduling = source.scheduling;
       this.selfLink = source.selfLink;
       this.serviceAccounts = source.serviceAccounts;
+      this.startRestricted = source.startRestricted;
       this.status = source.status;
       this.statusMessage = source.statusMessage;
       this.tags = source.tags;
@@ -471,6 +589,15 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    public Boolean getDeletionProtection() {
+      return deletionProtection;
+    }
+
+    public Builder setDeletionProtection(Boolean deletionProtection) {
+      this.deletionProtection = deletionProtection;
+      return this;
+    }
+
     public String getDescription() {
       return description;
     }
@@ -497,6 +624,23 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    public List<AcceleratorConfig> getGuestAcceleratorsList() {
+      return guestAccelerators;
+    }
+
+    public Builder addAllGuestAccelerators(List<AcceleratorConfig> guestAccelerators) {
+      if (this.guestAccelerators == null) {
+        this.guestAccelerators = new ArrayList<>(guestAccelerators.size());
+      }
+      this.guestAccelerators.addAll(guestAccelerators);
+      return this;
+    }
+
+    public Builder addGuestAccelerators(AcceleratorConfig guestAccelerators) {
+      this.guestAccelerators.add(guestAccelerators);
+      return this;
+    }
+
     public String getId() {
       return id;
     }
@@ -515,6 +659,24 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    public String getLabelFingerprint() {
+      return labelFingerprint;
+    }
+
+    public Builder setLabelFingerprint(String labelFingerprint) {
+      this.labelFingerprint = labelFingerprint;
+      return this;
+    }
+
+    public Map<String, String> getLabelsMap() {
+      return labels;
+    }
+
+    public Builder putAllLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
     public String getMachineType() {
       return machineType;
     }
@@ -530,6 +692,15 @@ public final class Instance implements ApiMessage {
 
     public Builder setMetadata(Metadata metadata) {
       this.metadata = metadata;
+      return this;
+    }
+
+    public String getMinCpuPlatform() {
+      return minCpuPlatform;
+    }
+
+    public Builder setMinCpuPlatform(String minCpuPlatform) {
+      this.minCpuPlatform = minCpuPlatform;
       return this;
     }
 
@@ -594,6 +765,15 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    public Boolean getStartRestricted() {
+      return startRestricted;
+    }
+
+    public Builder setStartRestricted(Boolean startRestricted) {
+      this.startRestricted = startRestricted;
+      return this;
+    }
+
     public String getStatus() {
       return status;
     }
@@ -649,21 +829,33 @@ public final class Instance implements ApiMessage {
 
 
 
+
+
+
+
+
+
       return new Instance(
         canIpForward,
         cpuPlatform,
         creationTimestamp,
+        deletionProtection,
         description,
         disks,
+        guestAccelerators,
         id,
         kind,
+        labelFingerprint,
+        labels,
         machineType,
         metadata,
+        minCpuPlatform,
         name,
         networkInterfaces,
         scheduling,
         selfLink,
         serviceAccounts,
+        startRestricted,
         status,
         statusMessage,
         tags,
@@ -676,17 +868,23 @@ public final class Instance implements ApiMessage {
       newBuilder.setCanIpForward(this.canIpForward);
       newBuilder.setCpuPlatform(this.cpuPlatform);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
+      newBuilder.setDeletionProtection(this.deletionProtection);
       newBuilder.setDescription(this.description);
       newBuilder.addAllDisks(this.disks);
+      newBuilder.addAllGuestAccelerators(this.guestAccelerators);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
+      newBuilder.setLabelFingerprint(this.labelFingerprint);
+      newBuilder.putAllLabels(this.labels);
       newBuilder.setMachineType(this.machineType);
       newBuilder.setMetadata(this.metadata);
+      newBuilder.setMinCpuPlatform(this.minCpuPlatform);
       newBuilder.setName(this.name);
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
       newBuilder.setScheduling(this.scheduling);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.addAllServiceAccounts(this.serviceAccounts);
+      newBuilder.setStartRestricted(this.startRestricted);
       newBuilder.setStatus(this.status);
       newBuilder.setStatusMessage(this.statusMessage);
       newBuilder.setTags(this.tags);
@@ -701,17 +899,23 @@ public final class Instance implements ApiMessage {
         + "canIpForward=" + canIpForward + ", "
         + "cpuPlatform=" + cpuPlatform + ", "
         + "creationTimestamp=" + creationTimestamp + ", "
+        + "deletionProtection=" + deletionProtection + ", "
         + "description=" + description + ", "
         + "disks=" + disks + ", "
+        + "guestAccelerators=" + guestAccelerators + ", "
         + "id=" + id + ", "
         + "kind=" + kind + ", "
+        + "labelFingerprint=" + labelFingerprint + ", "
+        + "labels=" + labels + ", "
         + "machineType=" + machineType + ", "
         + "metadata=" + metadata + ", "
+        + "minCpuPlatform=" + minCpuPlatform + ", "
         + "name=" + name + ", "
         + "networkInterfaces=" + networkInterfaces + ", "
         + "scheduling=" + scheduling + ", "
         + "selfLink=" + selfLink + ", "
         + "serviceAccounts=" + serviceAccounts + ", "
+        + "startRestricted=" + startRestricted + ", "
         + "status=" + status + ", "
         + "statusMessage=" + statusMessage + ", "
         + "tags=" + tags + ", "
@@ -730,17 +934,23 @@ public final class Instance implements ApiMessage {
           Objects.equals(this.canIpForward, that.getCanIpForward()) &&
           Objects.equals(this.cpuPlatform, that.getCpuPlatform()) &&
           Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
+          Objects.equals(this.deletionProtection, that.getDeletionProtection()) &&
           Objects.equals(this.description, that.getDescription()) &&
           Objects.equals(this.disks, that.getDisksList()) &&
+          Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList()) &&
           Objects.equals(this.id, that.getId()) &&
           Objects.equals(this.kind, that.getKind()) &&
+          Objects.equals(this.labelFingerprint, that.getLabelFingerprint()) &&
+          Objects.equals(this.labels, that.getLabelsMap()) &&
           Objects.equals(this.machineType, that.getMachineType()) &&
           Objects.equals(this.metadata, that.getMetadata()) &&
+          Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform()) &&
           Objects.equals(this.name, that.getName()) &&
           Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList()) &&
           Objects.equals(this.scheduling, that.getScheduling()) &&
           Objects.equals(this.selfLink, that.getSelfLink()) &&
           Objects.equals(this.serviceAccounts, that.getServiceAccountsList()) &&
+          Objects.equals(this.startRestricted, that.getStartRestricted()) &&
           Objects.equals(this.status, that.getStatus()) &&
           Objects.equals(this.statusMessage, that.getStatusMessage()) &&
           Objects.equals(this.tags, that.getTags()) &&
@@ -756,17 +966,23 @@ public final class Instance implements ApiMessage {
       canIpForward,
       cpuPlatform,
       creationTimestamp,
+      deletionProtection,
       description,
       disks,
+      guestAccelerators,
       id,
       kind,
+      labelFingerprint,
+      labels,
       machineType,
       metadata,
+      minCpuPlatform,
       name,
       networkInterfaces,
       scheduling,
       selfLink,
       serviceAccounts,
+      startRestricted,
       status,
       statusMessage,
       tags,

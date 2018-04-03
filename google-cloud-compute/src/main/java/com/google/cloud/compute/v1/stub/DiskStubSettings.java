@@ -56,6 +56,7 @@ import com.google.cloud.compute.v1.InsertDiskHttpRequest;
 import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
+import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -116,6 +117,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
   private final UnaryCallSettings<InsertDiskHttpRequest, Operation> insertDiskSettings;
   private final PagedCallSettings<ListDisksHttpRequest, DiskList, ListDisksPagedResponse> listDisksSettings;
   private final UnaryCallSettings<ResizeDiskHttpRequest, Operation> resizeDiskSettings;
+  private final UnaryCallSettings<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings;
 
   /**
    * Returns the object with the settings used for calls to aggregatedListDisks.
@@ -164,6 +166,13 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
    */
   public UnaryCallSettings<ResizeDiskHttpRequest, Operation> resizeDiskSettings() {
     return resizeDiskSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to setLabelsDisk.
+   */
+  public UnaryCallSettings<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings() {
+    return setLabelsDiskSettings;
   }
 
 
@@ -265,6 +274,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     insertDiskSettings = settingsBuilder.insertDiskSettings().build();
     listDisksSettings = settingsBuilder.listDisksSettings().build();
     resizeDiskSettings = settingsBuilder.resizeDiskSettings().build();
+    setLabelsDiskSettings = settingsBuilder.setLabelsDiskSettings().build();
   }
 
   private static final PagedListDescriptor<AggregatedListDisksHttpRequest, DiskAggregatedList, DisksScopedList> AGGREGATED_LIST_DISKS_PAGE_STR_DESC =
@@ -377,6 +387,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     private final UnaryCallSettings.Builder<InsertDiskHttpRequest, Operation> insertDiskSettings;
     private final PagedCallSettings.Builder<ListDisksHttpRequest, DiskList, ListDisksPagedResponse> listDisksSettings;
     private final UnaryCallSettings.Builder<ResizeDiskHttpRequest, Operation> resizeDiskSettings;
+    private final UnaryCallSettings.Builder<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -432,6 +443,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
       resizeDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setLabelsDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
           aggregatedListDisksSettings,
           createSnapshotDiskSettings,
@@ -439,7 +452,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           getDiskSettings,
           insertDiskSettings,
           listDisksSettings,
-          resizeDiskSettings
+          resizeDiskSettings,
+          setLabelsDiskSettings
       );
 
       initDefaults(this);
@@ -484,6 +498,10 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder.setLabelsDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -497,6 +515,7 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
       insertDiskSettings = settings.insertDiskSettings.toBuilder();
       listDisksSettings = settings.listDisksSettings.toBuilder();
       resizeDiskSettings = settings.resizeDiskSettings.toBuilder();
+      setLabelsDiskSettings = settings.setLabelsDiskSettings.toBuilder();
 
       unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
           aggregatedListDisksSettings,
@@ -505,7 +524,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           getDiskSettings,
           insertDiskSettings,
           listDisksSettings,
-          resizeDiskSettings
+          resizeDiskSettings,
+          setLabelsDiskSettings
       );
     }
 
@@ -570,6 +590,13 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
      */
     public UnaryCallSettings.Builder<ResizeDiskHttpRequest, Operation> resizeDiskSettings() {
       return resizeDiskSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setLabelsDisk.
+     */
+    public UnaryCallSettings.Builder<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings() {
+      return setLabelsDiskSettings;
     }
 
     @Override

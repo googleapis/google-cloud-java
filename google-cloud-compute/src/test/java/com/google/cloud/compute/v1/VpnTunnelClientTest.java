@@ -188,10 +188,11 @@ public class VpnTunnelClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     VpnTunnelName vpnTunnel = VpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
 
     Operation actualResponse =
-        client.deleteVpnTunnel(vpnTunnel);
+        client.deleteVpnTunnel(requestId, vpnTunnel);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -210,9 +211,10 @@ public class VpnTunnelClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       VpnTunnelName vpnTunnel = VpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
 
-      client.deleteVpnTunnel(vpnTunnel);
+      client.deleteVpnTunnel(requestId, vpnTunnel);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -336,11 +338,12 @@ public class VpnTunnelClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     RegionName region = RegionName.of("[PROJECT]", "[REGION]");
     VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
 
     Operation actualResponse =
-        client.insertVpnTunnel(region, vpnTunnelResource);
+        client.insertVpnTunnel(requestId, region, vpnTunnelResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -359,10 +362,11 @@ public class VpnTunnelClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       RegionName region = RegionName.of("[PROJECT]", "[REGION]");
       VpnTunnel vpnTunnelResource = VpnTunnel.newBuilder().build();
 
-      client.insertVpnTunnel(region, vpnTunnelResource);
+      client.insertVpnTunnel(requestId, region, vpnTunnelResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

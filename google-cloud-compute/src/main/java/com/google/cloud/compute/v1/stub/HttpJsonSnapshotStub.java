@@ -31,9 +31,12 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteSnapshotHttpRequest;
 import com.google.cloud.compute.v1.GetSnapshotHttpRequest;
+import com.google.cloud.compute.v1.GlobalSetLabelsRequest;
 import com.google.cloud.compute.v1.ListSnapshotsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectSnapshotName;
+import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
 import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
 import com.google.cloud.compute.v1.SnapshotList;
@@ -67,6 +70,7 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
                   .setRequestInstance(DeleteSnapshotHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/snapshots/{snapshot}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(SnapshotName.newFactory())
                   .setResourceNameField("snapshot")
@@ -115,12 +119,32 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
                   .setResponseInstance(SnapshotList.getDefaultInstance())
                   .build())
           .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotMethodDescriptor =
+      ApiMethodDescriptor.<SetLabelsSnapshotHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.snapshots.setLabels")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<SetLabelsSnapshotHttpRequest>newBuilder()
+                  .setRequestInstance(SetLabelsSnapshotHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/global/snapshots/{resource}/setLabels"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     ))
+                  .setResourceNameFactory(ProjectSnapshotName.newFactory())
+                  .setResourceNameField("resource")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteSnapshotHttpRequest, Operation> deleteSnapshotCallable;
   private final UnaryCallable<GetSnapshotHttpRequest, Snapshot> getSnapshotCallable;
   private final UnaryCallable<ListSnapshotsHttpRequest, SnapshotList> listSnapshotsCallable;
   private final UnaryCallable<ListSnapshotsHttpRequest, ListSnapshotsPagedResponse> listSnapshotsPagedCallable;
+  private final UnaryCallable<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
   public static final HttpJsonSnapshotStub create(SnapshotStubSettings settings) throws IOException {
@@ -164,11 +188,16 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
         HttpJsonCallSettings.<ListSnapshotsHttpRequest, SnapshotList>newBuilder()
             .setMethodDescriptor(listSnapshotsMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotTransportSettings =
+        HttpJsonCallSettings.<SetLabelsSnapshotHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsSnapshotMethodDescriptor)
+            .build();
 
     this.deleteSnapshotCallable = callableFactory.createUnaryCallable(deleteSnapshotTransportSettings,settings.deleteSnapshotSettings(), clientContext);
     this.getSnapshotCallable = callableFactory.createUnaryCallable(getSnapshotTransportSettings,settings.getSnapshotSettings(), clientContext);
     this.listSnapshotsCallable = callableFactory.createUnaryCallable(listSnapshotsTransportSettings,settings.listSnapshotsSettings(), clientContext);
     this.listSnapshotsPagedCallable = callableFactory.createPagedCallable(listSnapshotsTransportSettings,settings.listSnapshotsSettings(), clientContext);
+    this.setLabelsSnapshotCallable = callableFactory.createUnaryCallable(setLabelsSnapshotTransportSettings,settings.setLabelsSnapshotSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -191,6 +220,11 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
   @BetaApi
   public UnaryCallable<ListSnapshotsHttpRequest, SnapshotList> listSnapshotsCallable() {
     return listSnapshotsCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotCallable() {
+    return setLabelsSnapshotCallable;
   }
 
   @Override

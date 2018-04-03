@@ -68,6 +68,7 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
                   .setRequestInstance(DeleteSslCertificateHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/sslCertificates/{sslCertificate}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(SslCertificateName.newFactory())
                   .setResourceNameField("sslCertificate")
@@ -106,6 +107,7 @@ public class HttpJsonSslCertificateStub extends SslCertificateStub {
                   .setRequestInstance(InsertSslCertificateHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/sslCertificates"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")

@@ -70,6 +70,7 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
                   .setRequestInstance(DeleteTargetHttpProxyHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/targetHttpProxies/{targetHttpProxy}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetHttpProxyName.newFactory())
                   .setResourceNameField("targetHttpProxy")
@@ -108,6 +109,7 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
                   .setRequestInstance(InsertTargetHttpProxyHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/targetHttpProxies"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -147,6 +149,7 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
                   .setRequestInstance(SetUrlMapTargetHttpProxyHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/targetHttpProxies/{targetHttpProxy}/setUrlMap"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetHttpProxyName.newFactory())
                   .setResourceNameField("targetHttpProxy")

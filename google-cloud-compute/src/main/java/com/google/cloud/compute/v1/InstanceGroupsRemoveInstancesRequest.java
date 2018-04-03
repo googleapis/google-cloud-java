@@ -18,7 +18,9 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +38,10 @@ public final class InstanceGroupsRemoveInstancesRequest implements ApiMessage {
     this.instances = null;
   }
 
-  private InstanceGroupsRemoveInstancesRequest(List<InstanceReference> instances) {
+
+  private InstanceGroupsRemoveInstancesRequest(
+      List<InstanceReference> instances
+      ) {
     this.instances = instances;
   }
 
@@ -71,24 +76,22 @@ public final class InstanceGroupsRemoveInstancesRequest implements ApiMessage {
     return instances;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(InstanceGroupsRemoveInstancesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupsRemoveInstancesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final InstanceGroupsRemoveInstancesRequest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new InstanceGroupsRemoveInstancesRequest();
   }
@@ -127,8 +130,11 @@ public final class InstanceGroupsRemoveInstancesRequest implements ApiMessage {
       return this;
     }
 
+
     public InstanceGroupsRemoveInstancesRequest build() {
-      return new InstanceGroupsRemoveInstancesRequest(instances);
+      return new InstanceGroupsRemoveInstancesRequest(
+        instances
+      );
     }
 
     public Builder clone() {
@@ -140,7 +146,9 @@ public final class InstanceGroupsRemoveInstancesRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "InstanceGroupsRemoveInstancesRequest{" + "instances=" + instances + "}";
+    return "InstanceGroupsRemoveInstancesRequest{"
+        + "instances=" + instances
+        + "}";
   }
 
   @Override
@@ -150,13 +158,17 @@ public final class InstanceGroupsRemoveInstancesRequest implements ApiMessage {
     }
     if (o instanceof InstanceGroupsRemoveInstancesRequest) {
       InstanceGroupsRemoveInstancesRequest that = (InstanceGroupsRemoveInstancesRequest) o;
-      return Objects.equals(this.instances, that.getInstancesList());
+      return
+          Objects.equals(this.instances, that.getInstancesList())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(instances);
+    return Objects.hash(
+      instances
+    );
   }
 }

@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +39,7 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String userIp;
 
   private DeleteGlobalAddressHttpRequest() {
@@ -46,8 +50,10 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.userIp = null;
   }
+
 
   private DeleteGlobalAddressHttpRequest(
       String access_token,
@@ -57,7 +63,9 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
-      String userIp) {
+      String requestId,
+      String userIp
+      ) {
     this.access_token = access_token;
     this.address = address;
     this.callback = callback;
@@ -65,6 +73,7 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -91,6 +100,9 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -120,6 +132,9 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -161,28 +176,30 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(DeleteGlobalAddressHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeleteGlobalAddressHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final DeleteGlobalAddressHttpRequest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new DeleteGlobalAddressHttpRequest();
   }
@@ -195,6 +212,7 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -222,6 +240,9 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -236,6 +257,7 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -302,6 +324,15 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -311,6 +342,7 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
       return this;
     }
 
+
     public DeleteGlobalAddressHttpRequest build() {
       String missing = "";
 
@@ -318,11 +350,26 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
         missing += " address";
       }
 
+
+
+
+
+
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new DeleteGlobalAddressHttpRequest(
-          access_token, address, callback, fields, key, prettyPrint, quotaUser, userIp);
+        access_token,
+        address,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp
+      );
     }
 
     public Builder clone() {
@@ -334,6 +381,7 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -342,29 +390,15 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "DeleteGlobalAddressHttpRequest{"
-        + "access_token="
-        + access_token
-        + ", "
-        + "address="
-        + address
-        + ", "
-        + "callback="
-        + callback
-        + ", "
-        + "fields="
-        + fields
-        + ", "
-        + "key="
-        + key
-        + ", "
-        + "prettyPrint="
-        + prettyPrint
-        + ", "
-        + "quotaUser="
-        + quotaUser
-        + ", "
-        + "userIp="
-        + userIp
+        + "access_token=" + access_token + ", "
+        + "address=" + address + ", "
+        + "callback=" + callback + ", "
+        + "fields=" + fields + ", "
+        + "key=" + key + ", "
+        + "prettyPrint=" + prettyPrint + ", "
+        + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
+        + "userIp=" + userIp
         + "}";
   }
 
@@ -375,14 +409,17 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
     }
     if (o instanceof DeleteGlobalAddressHttpRequest) {
       DeleteGlobalAddressHttpRequest that = (DeleteGlobalAddressHttpRequest) o;
-      return Objects.equals(this.access_token, that.getAccessToken())
-          && Objects.equals(this.address, that.getAddress())
-          && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fields, that.getFields())
-          && Objects.equals(this.key, that.getKey())
-          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
-          && Objects.equals(this.quotaUser, that.getQuotaUser())
-          && Objects.equals(this.userIp, that.getUserIp());
+      return
+          Objects.equals(this.access_token, that.getAccessToken()) &&
+          Objects.equals(this.address, that.getAddress()) &&
+          Objects.equals(this.callback, that.getCallback()) &&
+          Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.key, that.getKey()) &&
+          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
+          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
+          Objects.equals(this.userIp, that.getUserIp())
+          ;
     }
     return false;
   }
@@ -390,6 +427,15 @@ public final class DeleteGlobalAddressHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        access_token, address, callback, fields, key, prettyPrint, quotaUser, userIp);
+      access_token,
+      address,
+      callback,
+      fields,
+      key,
+      prettyPrint,
+      quotaUser,
+      requestId,
+      userIp
+    );
   }
 }

@@ -40,6 +40,8 @@ public final class Autoscaler implements ApiMessage {
   private final String name;
   private final String region;
   private final String selfLink;
+  private final String status;
+  private final List<AutoscalerStatusDetails> statusDetails;
   private final String target;
   private final String zone;
 
@@ -52,6 +54,8 @@ public final class Autoscaler implements ApiMessage {
     this.name = null;
     this.region = null;
     this.selfLink = null;
+    this.status = null;
+    this.statusDetails = null;
     this.target = null;
     this.zone = null;
   }
@@ -66,6 +70,8 @@ public final class Autoscaler implements ApiMessage {
       String name,
       String region,
       String selfLink,
+      String status,
+      List<AutoscalerStatusDetails> statusDetails,
       String target,
       String zone
       ) {
@@ -77,6 +83,8 @@ public final class Autoscaler implements ApiMessage {
     this.name = name;
     this.region = region;
     this.selfLink = selfLink;
+    this.status = status;
+    this.statusDetails = statusDetails;
     this.target = target;
     this.zone = zone;
   }
@@ -107,6 +115,16 @@ public final class Autoscaler implements ApiMessage {
     }
     if (fieldNames.contains("selfLink") && selfLink != null) {
       fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
+    }
+    if (fieldNames.contains("status") && status != null) {
+      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
+    }
+    if (fieldNames.contains("statusDetails") && statusDetails != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (AutoscalerStatusDetails item : statusDetails) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("statusDetails", stringList.build());
     }
     if (fieldNames.contains("target") && target != null) {
       fieldMap.put("target", Collections.singletonList(String.valueOf(target)));
@@ -142,6 +160,12 @@ public final class Autoscaler implements ApiMessage {
     }
     if (fieldName.equals("selfLink")) {
       return String.valueOf(selfLink);
+    }
+    if (fieldName.equals("status")) {
+      return String.valueOf(status);
+    }
+    if (fieldName.equals("statusDetails")) {
+      return String.valueOf(statusDetails);
     }
     if (fieldName.equals("target")) {
       return String.valueOf(target);
@@ -190,6 +214,14 @@ public final class Autoscaler implements ApiMessage {
     return selfLink;
   }
 
+  public String getStatus() {
+    return status;
+  }
+
+  public List<AutoscalerStatusDetails> getStatusDetailsList() {
+    return statusDetails;
+  }
+
   public String getTarget() {
     return target;
   }
@@ -227,6 +259,8 @@ public final class Autoscaler implements ApiMessage {
     private String name;
     private String region;
     private String selfLink;
+    private String status;
+    private List<AutoscalerStatusDetails> statusDetails;
     private String target;
     private String zone;
 
@@ -258,6 +292,12 @@ public final class Autoscaler implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getStatus() != null) {
+        this.status = other.status;
+      }
+      if (other.getStatusDetailsList() != null) {
+        this.statusDetails = other.statusDetails;
+      }
       if (other.getTarget() != null) {
         this.target = other.target;
       }
@@ -276,6 +316,8 @@ public final class Autoscaler implements ApiMessage {
       this.name = source.name;
       this.region = source.region;
       this.selfLink = source.selfLink;
+      this.status = source.status;
+      this.statusDetails = source.statusDetails;
       this.target = source.target;
       this.zone = source.zone;
     }
@@ -352,6 +394,32 @@ public final class Autoscaler implements ApiMessage {
       return this;
     }
 
+    public String getStatus() {
+      return status;
+    }
+
+    public Builder setStatus(String status) {
+      this.status = status;
+      return this;
+    }
+
+    public List<AutoscalerStatusDetails> getStatusDetailsList() {
+      return statusDetails;
+    }
+
+    public Builder addAllStatusDetails(List<AutoscalerStatusDetails> statusDetails) {
+      if (this.statusDetails == null) {
+        this.statusDetails = new ArrayList<>(statusDetails.size());
+      }
+      this.statusDetails.addAll(statusDetails);
+      return this;
+    }
+
+    public Builder addStatusDetails(AutoscalerStatusDetails statusDetails) {
+      this.statusDetails.add(statusDetails);
+      return this;
+    }
+
     public String getTarget() {
       return target;
     }
@@ -381,6 +449,8 @@ public final class Autoscaler implements ApiMessage {
 
 
 
+
+
       return new Autoscaler(
         autoscalingPolicy,
         creationTimestamp,
@@ -390,6 +460,8 @@ public final class Autoscaler implements ApiMessage {
         name,
         region,
         selfLink,
+        status,
+        statusDetails,
         target,
         zone
       );
@@ -405,6 +477,8 @@ public final class Autoscaler implements ApiMessage {
       newBuilder.setName(this.name);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setStatus(this.status);
+      newBuilder.addAllStatusDetails(this.statusDetails);
       newBuilder.setTarget(this.target);
       newBuilder.setZone(this.zone);
       return newBuilder;
@@ -422,6 +496,8 @@ public final class Autoscaler implements ApiMessage {
         + "name=" + name + ", "
         + "region=" + region + ", "
         + "selfLink=" + selfLink + ", "
+        + "status=" + status + ", "
+        + "statusDetails=" + statusDetails + ", "
         + "target=" + target + ", "
         + "zone=" + zone
         + "}";
@@ -443,6 +519,8 @@ public final class Autoscaler implements ApiMessage {
           Objects.equals(this.name, that.getName()) &&
           Objects.equals(this.region, that.getRegion()) &&
           Objects.equals(this.selfLink, that.getSelfLink()) &&
+          Objects.equals(this.status, that.getStatus()) &&
+          Objects.equals(this.statusDetails, that.getStatusDetailsList()) &&
           Objects.equals(this.target, that.getTarget()) &&
           Objects.equals(this.zone, that.getZone())
           ;
@@ -461,6 +539,8 @@ public final class Autoscaler implements ApiMessage {
       name,
       region,
       selfLink,
+      status,
+      statusDetails,
       target,
       zone
     );

@@ -53,7 +53,8 @@ import javax.annotation.Generated;
  * <code>
  * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
  *   ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
- *   Operation response = globalAddressClient.deleteGlobalAddress(address);
+ *   String requestId = "";
+ *   Operation response = globalAddressClient.deleteGlobalAddress(address, requestId);
  * }
  * </code>
  * </pre>
@@ -176,19 +177,26 @@ public class GlobalAddressClient implements BackgroundResource {
    * <pre><code>
    * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
    *   ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
-   *   Operation response = globalAddressClient.deleteGlobalAddress(address);
+   *   String requestId = "";
+   *   Operation response = globalAddressClient.deleteGlobalAddress(address, requestId);
    * }
    * </code></pre>
    *
    * @param address Name of the address resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteGlobalAddress(ProjectAddressName address) {
+  public final Operation deleteGlobalAddress(ProjectAddressName address, String requestId) {
 
     DeleteGlobalAddressHttpRequest request =
         DeleteGlobalAddressHttpRequest.newBuilder()
         .setAddress(address == null ? null : address.toString())
+        .setRequestId(requestId)
         .build();
     return deleteGlobalAddress(request);
   }
@@ -201,19 +209,26 @@ public class GlobalAddressClient implements BackgroundResource {
    * <pre><code>
    * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
    *   ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
-   *   Operation response = globalAddressClient.deleteGlobalAddress(address.toString());
+   *   String requestId = "";
+   *   Operation response = globalAddressClient.deleteGlobalAddress(address.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param address Name of the address resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteGlobalAddress(String address) {
+  public final Operation deleteGlobalAddress(String address, String requestId) {
 
     DeleteGlobalAddressHttpRequest request =
         DeleteGlobalAddressHttpRequest.newBuilder()
         .setAddress(address)
+        .setRequestId(requestId)
         .build();
     return deleteGlobalAddress(request);
   }
@@ -226,8 +241,10 @@ public class GlobalAddressClient implements BackgroundResource {
    * <pre><code>
    * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
    *   ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
+   *   String requestId = "";
    *   DeleteGlobalAddressHttpRequest request = DeleteGlobalAddressHttpRequest.newBuilder()
    *     .setAddress(address.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = globalAddressClient.deleteGlobalAddress(request);
    * }
@@ -249,8 +266,10 @@ public class GlobalAddressClient implements BackgroundResource {
    * <pre><code>
    * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
    *   ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
+   *   String requestId = "";
    *   DeleteGlobalAddressHttpRequest request = DeleteGlobalAddressHttpRequest.newBuilder()
    *     .setAddress(address.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = globalAddressClient.deleteGlobalAddressCallable().futureCall(request);
    *   // Do something
@@ -365,21 +384,28 @@ public class GlobalAddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Address addressResource = Address.newBuilder().build();
-   *   Operation response = globalAddressClient.insertGlobalAddress(project, addressResource);
+   *   Operation response = globalAddressClient.insertGlobalAddress(requestId, project, addressResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param addressResource A reserved address resource.
+   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertGlobalAddress(ProjectName project, Address addressResource) {
+  public final Operation insertGlobalAddress(String requestId, ProjectName project, Address addressResource) {
 
     InsertGlobalAddressHttpRequest request =
         InsertGlobalAddressHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project == null ? null : project.toString())
         .setAddressResource(addressResource)
         .build();
@@ -393,21 +419,28 @@ public class GlobalAddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Address addressResource = Address.newBuilder().build();
-   *   Operation response = globalAddressClient.insertGlobalAddress(project.toString(), addressResource);
+   *   Operation response = globalAddressClient.insertGlobalAddress(requestId, project.toString(), addressResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param addressResource A reserved address resource.
+   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertGlobalAddress(String project, Address addressResource) {
+  public final Operation insertGlobalAddress(String requestId, String project, Address addressResource) {
 
     InsertGlobalAddressHttpRequest request =
         InsertGlobalAddressHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project)
         .setAddressResource(addressResource)
         .build();
@@ -421,9 +454,11 @@ public class GlobalAddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Address addressResource = Address.newBuilder().build();
    *   InsertGlobalAddressHttpRequest request = InsertGlobalAddressHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setAddressResource(addressResource)
    *     .build();
@@ -446,9 +481,11 @@ public class GlobalAddressClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Address addressResource = Address.newBuilder().build();
    *   InsertGlobalAddressHttpRequest request = InsertGlobalAddressHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setAddressResource(addressResource)
    *     .build();

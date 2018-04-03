@@ -127,6 +127,13 @@ public class ImageSettings extends ClientSettings<ImageSettings> {
     return ((ImageStubSettings) getStubSettings()).listImagesSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to setLabelsImage.
+   */
+  public UnaryCallSettings<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings() {
+    return ((ImageStubSettings) getStubSettings()).setLabelsImageSettings();
+  }
+
 
   public static final ImageSettings create(ImageStubSettings stub) throws IOException {
     return new ImageSettings.Builder(stub.toBuilder()).build();
@@ -286,6 +293,13 @@ public class ImageSettings extends ClientSettings<ImageSettings> {
      */
     public PagedCallSettings.Builder<ListImagesHttpRequest, ImageList, ListImagesPagedResponse> listImagesSettings() {
       return getStubSettingsBuilder().listImagesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setLabelsImage.
+     */
+    public UnaryCallSettings.Builder<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings() {
+      return getStubSettingsBuilder().setLabelsImageSettings();
     }
 
     @Override

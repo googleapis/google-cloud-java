@@ -128,6 +128,20 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
     return ((SubnetworkStubSettings) getStubSettings()).listSubnetworksSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to patchSubnetwork.
+   */
+  public UnaryCallSettings<PatchSubnetworkHttpRequest, Operation> patchSubnetworkSettings() {
+    return ((SubnetworkStubSettings) getStubSettings()).patchSubnetworkSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to setPrivateIpGoogleAccessSubnetwork.
+   */
+  public UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation> setPrivateIpGoogleAccessSubnetworkSettings() {
+    return ((SubnetworkStubSettings) getStubSettings()).setPrivateIpGoogleAccessSubnetworkSettings();
+  }
+
 
   public static final SubnetworkSettings create(SubnetworkStubSettings stub) throws IOException {
     return new SubnetworkSettings.Builder(stub.toBuilder()).build();
@@ -287,6 +301,20 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
      */
     public PagedCallSettings.Builder<ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse> listSubnetworksSettings() {
       return getStubSettingsBuilder().listSubnetworksSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to patchSubnetwork.
+     */
+    public UnaryCallSettings.Builder<PatchSubnetworkHttpRequest, Operation> patchSubnetworkSettings() {
+      return getStubSettingsBuilder().patchSubnetworkSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setPrivateIpGoogleAccessSubnetwork.
+     */
+    public UnaryCallSettings.Builder<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation> setPrivateIpGoogleAccessSubnetworkSettings() {
+      return getStubSettingsBuilder().setPrivateIpGoogleAccessSubnetworkSettings();
     }
 
     @Override

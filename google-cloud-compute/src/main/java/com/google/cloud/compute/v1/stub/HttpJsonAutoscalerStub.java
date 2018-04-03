@@ -95,6 +95,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setRequestInstance(DeleteAutoscalerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers/{autoscaler}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(AutoscalerName.newFactory())
                   .setResourceNameField("autoscaler")
@@ -133,6 +134,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setRequestInstance(InsertAutoscalerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ZoneName.newFactory())
                   .setResourceNameField("zone")
@@ -172,7 +174,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setRequestInstance(PatchAutoscalerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "autoscaler"
+                                     "autoscaler",    "requestId"
                                      ))
                   .setResourceNameFactory(ZoneName.newFactory())
                   .setResourceNameField("zone")
@@ -192,7 +194,7 @@ public class HttpJsonAutoscalerStub extends AutoscalerStub {
                   .setRequestInstance(UpdateAutoscalerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/autoscalers"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "autoscaler"
+                                     "autoscaler",    "requestId"
                                      ))
                   .setResourceNameFactory(ZoneName.newFactory())
                   .setResourceNameField("zone")

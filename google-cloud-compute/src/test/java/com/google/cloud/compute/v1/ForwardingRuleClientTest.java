@@ -190,10 +190,11 @@ public class ForwardingRuleClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
 
     Operation actualResponse =
-        client.deleteForwardingRule(forwardingRule);
+        client.deleteForwardingRule(requestId, forwardingRule);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -212,9 +213,10 @@ public class ForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
 
-      client.deleteForwardingRule(forwardingRule);
+      client.deleteForwardingRule(requestId, forwardingRule);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -233,6 +235,7 @@ public class ForwardingRuleClientTest {
     NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
     String target = "target-880905839";
+    String ipVersion = "ipVersion-1315653184";
     SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
@@ -249,6 +252,7 @@ public class ForwardingRuleClientTest {
       .setNetwork(network.toString())
       .setSelfLink(selfLink)
       .setTarget(target)
+      .setIpVersion(ipVersion)
       .setSubnetwork(subnetwork.toString())
       .setCreationTimestamp(creationTimestamp)
       .setName(name)
@@ -338,11 +342,12 @@ public class ForwardingRuleClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     RegionName region = RegionName.of("[PROJECT]", "[REGION]");
     ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
     Operation actualResponse =
-        client.insertForwardingRule(region, forwardingRuleResource);
+        client.insertForwardingRule(requestId, region, forwardingRuleResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -361,10 +366,11 @@ public class ForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       RegionName region = RegionName.of("[PROJECT]", "[REGION]");
       ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
 
-      client.insertForwardingRule(region, forwardingRuleResource);
+      client.insertForwardingRule(requestId, region, forwardingRuleResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -472,11 +478,12 @@ public class ForwardingRuleClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
     TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
     Operation actualResponse =
-        client.setTargetForwardingRule(forwardingRule, targetReferenceResource);
+        client.setTargetForwardingRule(requestId, forwardingRule, targetReferenceResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -495,10 +502,11 @@ public class ForwardingRuleClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
       TargetReference targetReferenceResource = TargetReference.newBuilder().build();
 
-      client.setTargetForwardingRule(forwardingRule, targetReferenceResource);
+      client.setTargetForwardingRule(requestId, forwardingRule, targetReferenceResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -35,6 +35,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
   private final String diskName;
   private final String diskSizeGb;
   private final String diskType;
+  private final Map<String, String> labels;
   private final String sourceImage;
   private final CustomerEncryptionKey sourceImageEncryptionKey;
 
@@ -42,6 +43,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     this.diskName = null;
     this.diskSizeGb = null;
     this.diskType = null;
+    this.labels = null;
     this.sourceImage = null;
     this.sourceImageEncryptionKey = null;
   }
@@ -51,12 +53,14 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       String diskName,
       String diskSizeGb,
       String diskType,
+      Map<String, String> labels,
       String sourceImage,
       CustomerEncryptionKey sourceImageEncryptionKey
       ) {
     this.diskName = diskName;
     this.diskSizeGb = diskSizeGb;
     this.diskType = diskType;
+    this.labels = labels;
     this.sourceImage = sourceImage;
     this.sourceImageEncryptionKey = sourceImageEncryptionKey;
   }
@@ -72,6 +76,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     }
     if (fieldNames.contains("diskType") && diskType != null) {
       fieldMap.put("diskType", Collections.singletonList(String.valueOf(diskType)));
+    }
+    if (fieldNames.contains("labels") && labels != null) {
+      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
     }
     if (fieldNames.contains("sourceImage") && sourceImage != null) {
       fieldMap.put("sourceImage", Collections.singletonList(String.valueOf(sourceImage)));
@@ -92,6 +99,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     }
     if (fieldName.equals("diskType")) {
       return String.valueOf(diskType);
+    }
+    if (fieldName.equals("labels")) {
+      return String.valueOf(labels);
     }
     if (fieldName.equals("sourceImage")) {
       return String.valueOf(sourceImage);
@@ -118,6 +128,10 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
   public String getDiskType() {
     return diskType;
+  }
+
+  public Map<String, String> getLabelsMap() {
+    return labels;
   }
 
   public String getSourceImage() {
@@ -152,6 +166,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
     private String diskName;
     private String diskSizeGb;
     private String diskType;
+    private Map<String, String> labels;
     private String sourceImage;
     private CustomerEncryptionKey sourceImageEncryptionKey;
 
@@ -168,6 +183,9 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       if (other.getDiskType() != null) {
         this.diskType = other.diskType;
       }
+      if (other.getLabelsMap() != null) {
+        this.labels = other.labels;
+      }
       if (other.getSourceImage() != null) {
         this.sourceImage = other.sourceImage;
       }
@@ -181,6 +199,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       this.diskName = source.diskName;
       this.diskSizeGb = source.diskSizeGb;
       this.diskType = source.diskType;
+      this.labels = source.labels;
       this.sourceImage = source.sourceImage;
       this.sourceImageEncryptionKey = source.sourceImageEncryptionKey;
     }
@@ -212,6 +231,15 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       return this;
     }
 
+    public Map<String, String> getLabelsMap() {
+      return labels;
+    }
+
+    public Builder putAllLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
     public String getSourceImage() {
       return sourceImage;
     }
@@ -236,10 +264,12 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
 
 
+
       return new AttachedDiskInitializeParams(
         diskName,
         diskSizeGb,
         diskType,
+        labels,
         sourceImage,
         sourceImageEncryptionKey
       );
@@ -250,6 +280,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       newBuilder.setDiskName(this.diskName);
       newBuilder.setDiskSizeGb(this.diskSizeGb);
       newBuilder.setDiskType(this.diskType);
+      newBuilder.putAllLabels(this.labels);
       newBuilder.setSourceImage(this.sourceImage);
       newBuilder.setSourceImageEncryptionKey(this.sourceImageEncryptionKey);
       return newBuilder;
@@ -262,6 +293,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
         + "diskName=" + diskName + ", "
         + "diskSizeGb=" + diskSizeGb + ", "
         + "diskType=" + diskType + ", "
+        + "labels=" + labels + ", "
         + "sourceImage=" + sourceImage + ", "
         + "sourceImageEncryptionKey=" + sourceImageEncryptionKey
         + "}";
@@ -278,6 +310,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
           Objects.equals(this.diskName, that.getDiskName()) &&
           Objects.equals(this.diskSizeGb, that.getDiskSizeGb()) &&
           Objects.equals(this.diskType, that.getDiskType()) &&
+          Objects.equals(this.labels, that.getLabelsMap()) &&
           Objects.equals(this.sourceImage, that.getSourceImage()) &&
           Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey())
           ;
@@ -291,6 +324,7 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
       diskName,
       diskSizeGb,
       diskType,
+      labels,
       sourceImage,
       sourceImageEncryptionKey
     );

@@ -33,6 +33,8 @@ import javax.annotation.Nullable;
 @BetaApi
 public final class NetworkInterface implements ApiMessage {
   private final List<AccessConfig> accessConfigs;
+  private final List<AliasIpRange> aliasIpRanges;
+  private final String fingerprint;
   private final String kind;
   private final String name;
   private final String network;
@@ -41,6 +43,8 @@ public final class NetworkInterface implements ApiMessage {
 
   private NetworkInterface() {
     this.accessConfigs = null;
+    this.aliasIpRanges = null;
+    this.fingerprint = null;
     this.kind = null;
     this.name = null;
     this.network = null;
@@ -51,6 +55,8 @@ public final class NetworkInterface implements ApiMessage {
 
   private NetworkInterface(
       List<AccessConfig> accessConfigs,
+      List<AliasIpRange> aliasIpRanges,
+      String fingerprint,
       String kind,
       String name,
       String network,
@@ -58,6 +64,8 @@ public final class NetworkInterface implements ApiMessage {
       String subnetwork
       ) {
     this.accessConfigs = accessConfigs;
+    this.aliasIpRanges = aliasIpRanges;
+    this.fingerprint = fingerprint;
     this.kind = kind;
     this.name = name;
     this.network = network;
@@ -74,6 +82,16 @@ public final class NetworkInterface implements ApiMessage {
         stringList.add(item.toString());
       }
       fieldMap.put("accessConfigs", stringList.build());
+    }
+    if (fieldNames.contains("aliasIpRanges") && aliasIpRanges != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (AliasIpRange item : aliasIpRanges) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("aliasIpRanges", stringList.build());
+    }
+    if (fieldNames.contains("fingerprint") && fingerprint != null) {
+      fieldMap.put("fingerprint", Collections.singletonList(String.valueOf(fingerprint)));
     }
     if (fieldNames.contains("kind") && kind != null) {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
@@ -97,6 +115,12 @@ public final class NetworkInterface implements ApiMessage {
   public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("accessConfigs")) {
       return String.valueOf(accessConfigs);
+    }
+    if (fieldName.equals("aliasIpRanges")) {
+      return String.valueOf(aliasIpRanges);
+    }
+    if (fieldName.equals("fingerprint")) {
+      return String.valueOf(fingerprint);
     }
     if (fieldName.equals("kind")) {
       return String.valueOf(kind);
@@ -124,6 +148,14 @@ public final class NetworkInterface implements ApiMessage {
 
   public List<AccessConfig> getAccessConfigsList() {
     return accessConfigs;
+  }
+
+  public List<AliasIpRange> getAliasIpRangesList() {
+    return aliasIpRanges;
+  }
+
+  public String getFingerprint() {
+    return fingerprint;
   }
 
   public String getKind() {
@@ -168,6 +200,8 @@ public final class NetworkInterface implements ApiMessage {
 
   public static class Builder {
     private List<AccessConfig> accessConfigs;
+    private List<AliasIpRange> aliasIpRanges;
+    private String fingerprint;
     private String kind;
     private String name;
     private String network;
@@ -180,6 +214,12 @@ public final class NetworkInterface implements ApiMessage {
       if (other == NetworkInterface.getDefaultInstance()) return this;
       if (other.getAccessConfigsList() != null) {
         this.accessConfigs = other.accessConfigs;
+      }
+      if (other.getAliasIpRangesList() != null) {
+        this.aliasIpRanges = other.aliasIpRanges;
+      }
+      if (other.getFingerprint() != null) {
+        this.fingerprint = other.fingerprint;
       }
       if (other.getKind() != null) {
         this.kind = other.kind;
@@ -201,6 +241,8 @@ public final class NetworkInterface implements ApiMessage {
 
     Builder(NetworkInterface source) {
       this.accessConfigs = source.accessConfigs;
+      this.aliasIpRanges = source.aliasIpRanges;
+      this.fingerprint = source.fingerprint;
       this.kind = source.kind;
       this.name = source.name;
       this.network = source.network;
@@ -222,6 +264,32 @@ public final class NetworkInterface implements ApiMessage {
 
     public Builder addAccessConfigs(AccessConfig accessConfigs) {
       this.accessConfigs.add(accessConfigs);
+      return this;
+    }
+
+    public List<AliasIpRange> getAliasIpRangesList() {
+      return aliasIpRanges;
+    }
+
+    public Builder addAllAliasIpRanges(List<AliasIpRange> aliasIpRanges) {
+      if (this.aliasIpRanges == null) {
+        this.aliasIpRanges = new ArrayList<>(aliasIpRanges.size());
+      }
+      this.aliasIpRanges.addAll(aliasIpRanges);
+      return this;
+    }
+
+    public Builder addAliasIpRanges(AliasIpRange aliasIpRanges) {
+      this.aliasIpRanges.add(aliasIpRanges);
+      return this;
+    }
+
+    public String getFingerprint() {
+      return fingerprint;
+    }
+
+    public Builder setFingerprint(String fingerprint) {
+      this.fingerprint = fingerprint;
       return this;
     }
 
@@ -277,8 +345,12 @@ public final class NetworkInterface implements ApiMessage {
 
 
 
+
+
       return new NetworkInterface(
         accessConfigs,
+        aliasIpRanges,
+        fingerprint,
         kind,
         name,
         network,
@@ -290,6 +362,8 @@ public final class NetworkInterface implements ApiMessage {
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.addAllAccessConfigs(this.accessConfigs);
+      newBuilder.addAllAliasIpRanges(this.aliasIpRanges);
+      newBuilder.setFingerprint(this.fingerprint);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
@@ -303,6 +377,8 @@ public final class NetworkInterface implements ApiMessage {
   public String toString() {
     return "NetworkInterface{"
         + "accessConfigs=" + accessConfigs + ", "
+        + "aliasIpRanges=" + aliasIpRanges + ", "
+        + "fingerprint=" + fingerprint + ", "
         + "kind=" + kind + ", "
         + "name=" + name + ", "
         + "network=" + network + ", "
@@ -320,6 +396,8 @@ public final class NetworkInterface implements ApiMessage {
       NetworkInterface that = (NetworkInterface) o;
       return
           Objects.equals(this.accessConfigs, that.getAccessConfigsList()) &&
+          Objects.equals(this.aliasIpRanges, that.getAliasIpRangesList()) &&
+          Objects.equals(this.fingerprint, that.getFingerprint()) &&
           Objects.equals(this.kind, that.getKind()) &&
           Objects.equals(this.name, that.getName()) &&
           Objects.equals(this.network, that.getNetwork()) &&
@@ -334,6 +412,8 @@ public final class NetworkInterface implements ApiMessage {
   public int hashCode() {
     return Objects.hash(
       accessConfigs,
+      aliasIpRanges,
+      fingerprint,
       kind,
       name,
       network,

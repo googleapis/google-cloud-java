@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +52,7 @@ public final class GetSubnetworkHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
+
   private GetSubnetworkHttpRequest(
       String access_token,
       String callback,
@@ -57,7 +61,8 @@ public final class GetSubnetworkHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String subnetwork,
-      String userIp) {
+      String userIp
+      ) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -165,24 +170,22 @@ public final class GetSubnetworkHttpRequest implements ApiMessage {
     return userIp;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(GetSubnetworkHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetSubnetworkHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final GetSubnetworkHttpRequest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new GetSubnetworkHttpRequest();
   }
@@ -311,8 +314,14 @@ public final class GetSubnetworkHttpRequest implements ApiMessage {
       return this;
     }
 
+
     public GetSubnetworkHttpRequest build() {
       String missing = "";
+
+
+
+
+
 
       if (subnetwork == null) {
         missing += " subnetwork";
@@ -322,7 +331,15 @@ public final class GetSubnetworkHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetSubnetworkHttpRequest(
-          access_token, callback, fields, key, prettyPrint, quotaUser, subnetwork, userIp);
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        subnetwork,
+        userIp
+      );
     }
 
     public Builder clone() {
@@ -342,29 +359,14 @@ public final class GetSubnetworkHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "GetSubnetworkHttpRequest{"
-        + "access_token="
-        + access_token
-        + ", "
-        + "callback="
-        + callback
-        + ", "
-        + "fields="
-        + fields
-        + ", "
-        + "key="
-        + key
-        + ", "
-        + "prettyPrint="
-        + prettyPrint
-        + ", "
-        + "quotaUser="
-        + quotaUser
-        + ", "
-        + "subnetwork="
-        + subnetwork
-        + ", "
-        + "userIp="
-        + userIp
+        + "access_token=" + access_token + ", "
+        + "callback=" + callback + ", "
+        + "fields=" + fields + ", "
+        + "key=" + key + ", "
+        + "prettyPrint=" + prettyPrint + ", "
+        + "quotaUser=" + quotaUser + ", "
+        + "subnetwork=" + subnetwork + ", "
+        + "userIp=" + userIp
         + "}";
   }
 
@@ -375,14 +377,16 @@ public final class GetSubnetworkHttpRequest implements ApiMessage {
     }
     if (o instanceof GetSubnetworkHttpRequest) {
       GetSubnetworkHttpRequest that = (GetSubnetworkHttpRequest) o;
-      return Objects.equals(this.access_token, that.getAccessToken())
-          && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fields, that.getFields())
-          && Objects.equals(this.key, that.getKey())
-          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
-          && Objects.equals(this.quotaUser, that.getQuotaUser())
-          && Objects.equals(this.subnetwork, that.getSubnetwork())
-          && Objects.equals(this.userIp, that.getUserIp());
+      return
+          Objects.equals(this.access_token, that.getAccessToken()) &&
+          Objects.equals(this.callback, that.getCallback()) &&
+          Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.key, that.getKey()) &&
+          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
+          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.subnetwork, that.getSubnetwork()) &&
+          Objects.equals(this.userIp, that.getUserIp())
+          ;
     }
     return false;
   }
@@ -390,6 +394,14 @@ public final class GetSubnetworkHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        access_token, callback, fields, key, prettyPrint, quotaUser, subnetwork, userIp);
+      access_token,
+      callback,
+      fields,
+      key,
+      prettyPrint,
+      quotaUser,
+      subnetwork,
+      userIp
+    );
   }
 }

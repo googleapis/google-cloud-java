@@ -39,6 +39,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
   private final String prettyPrint;
   private final String quotaUser;
   private final String region;
+  private final String requestId;
   private final Subnetwork subnetworkResource;
   private final String userIp;
 
@@ -50,6 +51,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
     this.prettyPrint = null;
     this.quotaUser = null;
     this.region = null;
+    this.requestId = null;
     this.subnetworkResource = null;
     this.userIp = null;
   }
@@ -63,6 +65,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String region,
+      String requestId,
       Subnetwork subnetworkResource,
       String userIp
       ) {
@@ -73,6 +76,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.region = region;
+    this.requestId = requestId;
     this.subnetworkResource = subnetworkResource;
     this.userIp = userIp;
   }
@@ -100,6 +104,9 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("region") && region != null) {
       fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("subnetworkResource") && subnetworkResource != null) {
       fieldMap.put("subnetworkResource", Collections.singletonList(String.valueOf(subnetworkResource)));
@@ -132,6 +139,9 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("region")) {
       return String.valueOf(region);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("subnetworkResource")) {
       return String.valueOf(subnetworkResource);
@@ -176,6 +186,10 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
     return region;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public Subnetwork getSubnetworkResource() {
     return subnetworkResource;
   }
@@ -212,6 +226,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
     private String prettyPrint;
     private String quotaUser;
     private String region;
+    private String requestId;
     private Subnetwork subnetworkResource;
     private String userIp;
 
@@ -240,6 +255,9 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
       if (other.getRegion() != null) {
         this.region = other.region;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getSubnetworkResource() != null) {
         this.subnetworkResource = other.subnetworkResource;
       }
@@ -257,6 +275,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.region = source.region;
+      this.requestId = source.requestId;
       this.subnetworkResource = source.subnetworkResource;
       this.userIp = source.userIp;
     }
@@ -324,6 +343,15 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public Subnetwork getSubnetworkResource() {
       return subnetworkResource;
     }
@@ -356,6 +384,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
       }
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -367,6 +396,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
         prettyPrint,
         quotaUser,
         region,
+        requestId,
         subnetworkResource,
         userIp
       );
@@ -381,6 +411,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRegion(this.region);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setSubnetworkResource(this.subnetworkResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -397,6 +428,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
         + "region=" + region + ", "
+        + "requestId=" + requestId + ", "
         + "subnetworkResource=" + subnetworkResource + ", "
         + "userIp=" + userIp
         + "}";
@@ -417,6 +449,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
           Objects.equals(this.region, that.getRegion()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.subnetworkResource, that.getSubnetworkResource()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
@@ -434,6 +467,7 @@ public final class InsertSubnetworkHttpRequest implements ApiMessage {
       prettyPrint,
       quotaUser,
       region,
+      requestId,
       subnetworkResource,
       userIp
     );

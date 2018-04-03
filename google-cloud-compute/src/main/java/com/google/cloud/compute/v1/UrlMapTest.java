@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -41,7 +44,13 @@ public final class UrlMapTest implements ApiMessage {
     this.service = null;
   }
 
-  private UrlMapTest(String description, String host, String path, String service) {
+
+  private UrlMapTest(
+      String description,
+      String host,
+      String path,
+      String service
+      ) {
     this.description = description;
     this.host = host;
     this.path = path;
@@ -105,24 +114,22 @@ public final class UrlMapTest implements ApiMessage {
     return service;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(UrlMapTest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static UrlMapTest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final UrlMapTest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new UrlMapTest();
   }
@@ -195,9 +202,17 @@ public final class UrlMapTest implements ApiMessage {
       return this;
     }
 
+
     public UrlMapTest build() {
 
-      return new UrlMapTest(description, host, path, service);
+
+
+      return new UrlMapTest(
+        description,
+        host,
+        path,
+        service
+      );
     }
 
     public Builder clone() {
@@ -213,17 +228,10 @@ public final class UrlMapTest implements ApiMessage {
   @Override
   public String toString() {
     return "UrlMapTest{"
-        + "description="
-        + description
-        + ", "
-        + "host="
-        + host
-        + ", "
-        + "path="
-        + path
-        + ", "
-        + "service="
-        + service
+        + "description=" + description + ", "
+        + "host=" + host + ", "
+        + "path=" + path + ", "
+        + "service=" + service
         + "}";
   }
 
@@ -234,16 +242,23 @@ public final class UrlMapTest implements ApiMessage {
     }
     if (o instanceof UrlMapTest) {
       UrlMapTest that = (UrlMapTest) o;
-      return Objects.equals(this.description, that.getDescription())
-          && Objects.equals(this.host, that.getHost())
-          && Objects.equals(this.path, that.getPath())
-          && Objects.equals(this.service, that.getService());
+      return
+          Objects.equals(this.description, that.getDescription()) &&
+          Objects.equals(this.host, that.getHost()) &&
+          Objects.equals(this.path, that.getPath()) &&
+          Objects.equals(this.service, that.getService())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, host, path, service);
+    return Objects.hash(
+      description,
+      host,
+      path,
+      service
+    );
   }
 }

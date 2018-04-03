@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +50,7 @@ public final class InstanceTemplate implements ApiMessage {
     this.selfLink = null;
   }
 
+
   private InstanceTemplate(
       String creationTimestamp,
       String description,
@@ -54,7 +58,8 @@ public final class InstanceTemplate implements ApiMessage {
       String kind,
       String name,
       InstanceProperties properties,
-      String selfLink) {
+      String selfLink
+      ) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -68,8 +73,7 @@ public final class InstanceTemplate implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -152,24 +156,22 @@ public final class InstanceTemplate implements ApiMessage {
     return selfLink;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(InstanceTemplate prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceTemplate getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final InstanceTemplate DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new InstanceTemplate();
   }
@@ -284,10 +286,23 @@ public final class InstanceTemplate implements ApiMessage {
       return this;
     }
 
+
     public InstanceTemplate build() {
 
+
+
+
+
+
       return new InstanceTemplate(
-          creationTimestamp, description, id, kind, name, properties, selfLink);
+        creationTimestamp,
+        description,
+        id,
+        kind,
+        name,
+        properties,
+        selfLink
+      );
     }
 
     public Builder clone() {
@@ -306,26 +321,13 @@ public final class InstanceTemplate implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceTemplate{"
-        + "creationTimestamp="
-        + creationTimestamp
-        + ", "
-        + "description="
-        + description
-        + ", "
-        + "id="
-        + id
-        + ", "
-        + "kind="
-        + kind
-        + ", "
-        + "name="
-        + name
-        + ", "
-        + "properties="
-        + properties
-        + ", "
-        + "selfLink="
-        + selfLink
+        + "creationTimestamp=" + creationTimestamp + ", "
+        + "description=" + description + ", "
+        + "id=" + id + ", "
+        + "kind=" + kind + ", "
+        + "name=" + name + ", "
+        + "properties=" + properties + ", "
+        + "selfLink=" + selfLink
         + "}";
   }
 
@@ -336,19 +338,29 @@ public final class InstanceTemplate implements ApiMessage {
     }
     if (o instanceof InstanceTemplate) {
       InstanceTemplate that = (InstanceTemplate) o;
-      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
-          && Objects.equals(this.description, that.getDescription())
-          && Objects.equals(this.id, that.getId())
-          && Objects.equals(this.kind, that.getKind())
-          && Objects.equals(this.name, that.getName())
-          && Objects.equals(this.properties, that.getProperties())
-          && Objects.equals(this.selfLink, that.getSelfLink());
+      return
+          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
+          Objects.equals(this.description, that.getDescription()) &&
+          Objects.equals(this.id, that.getId()) &&
+          Objects.equals(this.kind, that.getKind()) &&
+          Objects.equals(this.name, that.getName()) &&
+          Objects.equals(this.properties, that.getProperties()) &&
+          Objects.equals(this.selfLink, that.getSelfLink())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(creationTimestamp, description, id, kind, name, properties, selfLink);
+    return Objects.hash(
+      creationTimestamp,
+      description,
+      id,
+      kind,
+      name,
+      properties,
+      selfLink
+    );
   }
 }

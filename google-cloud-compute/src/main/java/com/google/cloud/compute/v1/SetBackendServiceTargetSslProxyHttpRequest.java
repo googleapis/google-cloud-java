@@ -38,6 +38,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource;
   private final String targetSslProxy;
   private final String userIp;
@@ -49,6 +50,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.targetSslProxiesSetBackendServiceRequestResource = null;
     this.targetSslProxy = null;
     this.userIp = null;
@@ -62,6 +64,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource,
       String targetSslProxy,
       String userIp
@@ -72,6 +75,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.targetSslProxiesSetBackendServiceRequestResource = targetSslProxiesSetBackendServiceRequestResource;
     this.targetSslProxy = targetSslProxy;
     this.userIp = userIp;
@@ -97,6 +101,9 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("targetSslProxiesSetBackendServiceRequestResource") && targetSslProxiesSetBackendServiceRequestResource != null) {
       fieldMap.put("targetSslProxiesSetBackendServiceRequestResource", Collections.singletonList(String.valueOf(targetSslProxiesSetBackendServiceRequestResource)));
@@ -129,6 +136,9 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("targetSslProxiesSetBackendServiceRequestResource")) {
       return String.valueOf(targetSslProxiesSetBackendServiceRequestResource);
@@ -172,6 +182,10 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public TargetSslProxiesSetBackendServiceRequest getTargetSslProxiesSetBackendServiceRequestResource() {
     return targetSslProxiesSetBackendServiceRequestResource;
   }
@@ -211,6 +225,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource;
     private String targetSslProxy;
     private String userIp;
@@ -237,6 +252,9 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getTargetSslProxiesSetBackendServiceRequestResource() != null) {
         this.targetSslProxiesSetBackendServiceRequestResource = other.targetSslProxiesSetBackendServiceRequestResource;
       }
@@ -256,6 +274,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.targetSslProxiesSetBackendServiceRequestResource = source.targetSslProxiesSetBackendServiceRequestResource;
       this.targetSslProxy = source.targetSslProxy;
       this.userIp = source.userIp;
@@ -315,6 +334,15 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public TargetSslProxiesSetBackendServiceRequest getTargetSslProxiesSetBackendServiceRequestResource() {
       return targetSslProxiesSetBackendServiceRequestResource;
     }
@@ -352,6 +380,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
 
 
 
+
       if (targetSslProxy == null) {
         missing += " targetSslProxy";
       }
@@ -366,6 +395,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         targetSslProxiesSetBackendServiceRequestResource,
         targetSslProxy,
         userIp
@@ -380,6 +410,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setTargetSslProxiesSetBackendServiceRequestResource(this.targetSslProxiesSetBackendServiceRequestResource);
       newBuilder.setTargetSslProxy(this.targetSslProxy);
       newBuilder.setUserIp(this.userIp);
@@ -396,6 +427,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "targetSslProxiesSetBackendServiceRequestResource=" + targetSslProxiesSetBackendServiceRequestResource + ", "
         + "targetSslProxy=" + targetSslProxy + ", "
         + "userIp=" + userIp
@@ -416,6 +448,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.targetSslProxiesSetBackendServiceRequestResource, that.getTargetSslProxiesSetBackendServiceRequestResource()) &&
           Objects.equals(this.targetSslProxy, that.getTargetSslProxy()) &&
           Objects.equals(this.userIp, that.getUserIp())
@@ -433,6 +466,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       targetSslProxiesSetBackendServiceRequestResource,
       targetSslProxy,
       userIp

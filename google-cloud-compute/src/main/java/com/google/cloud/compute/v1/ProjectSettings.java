@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
@@ -26,15 +27,23 @@ import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.auth.Credentials;
+import static com.google.cloud.compute.v1.ProjectClient.GetXpnResourcesProjectsPagedResponse;
+import static com.google.cloud.compute.v1.ProjectClient.ListXpnHostsProjectsPagedResponse;
 import com.google.cloud.compute.v1.stub.ProjectStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -62,13 +71,13 @@ import org.threeten.bp.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders.
  * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of getProject to 30 seconds:
+ * object. For example, to set the total timeout of disableXpnHostProject to 30 seconds:
  *
  * <pre>
  * <code>
  * ProjectSettings.Builder projectSettingsBuilder =
  *     ProjectSettings.newBuilder();
- * projectSettingsBuilder.getProjectSettings().getRetrySettings().toBuilder()
+ * projectSettingsBuilder.disableXpnHostProjectSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ProjectSettings projectSettings = projectSettingsBuilder.build();
  * </code>
@@ -78,10 +87,59 @@ import org.threeten.bp.Duration;
 @BetaApi
 public class ProjectSettings extends ClientSettings<ProjectSettings> {
   /**
+   * Returns the object with the settings used for calls to disableXpnHostProject.
+   */
+  public UnaryCallSettings<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectSettings() {
+    return ((ProjectStubSettings) getStubSettings()).disableXpnHostProjectSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableXpnResourceProject.
+   */
+  public UnaryCallSettings<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectSettings() {
+    return ((ProjectStubSettings) getStubSettings()).disableXpnResourceProjectSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to enableXpnHostProject.
+   */
+  public UnaryCallSettings<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectSettings() {
+    return ((ProjectStubSettings) getStubSettings()).enableXpnHostProjectSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to enableXpnResourceProject.
+   */
+  public UnaryCallSettings<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectSettings() {
+    return ((ProjectStubSettings) getStubSettings()).enableXpnResourceProjectSettings();
+  }
+
+  /**
    * Returns the object with the settings used for calls to getProject.
    */
   public UnaryCallSettings<GetProjectHttpRequest, Project> getProjectSettings() {
     return ((ProjectStubSettings) getStubSettings()).getProjectSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getXpnHostProject.
+   */
+  public UnaryCallSettings<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectSettings() {
+    return ((ProjectStubSettings) getStubSettings()).getXpnHostProjectSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getXpnResourcesProjects.
+   */
+  public PagedCallSettings<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsSettings() {
+    return ((ProjectStubSettings) getStubSettings()).getXpnResourcesProjectsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listXpnHostsProjects.
+   */
+  public PagedCallSettings<ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsSettings() {
+    return ((ProjectStubSettings) getStubSettings()).listXpnHostsProjectsSettings();
   }
 
   /**
@@ -232,10 +290,59 @@ public class ProjectSettings extends ClientSettings<ProjectSettings> {
     }
 
     /**
+     * Returns the builder for the settings used for calls to disableXpnHostProject.
+     */
+    public UnaryCallSettings.Builder<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectSettings() {
+      return getStubSettingsBuilder().disableXpnHostProjectSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to disableXpnResourceProject.
+     */
+    public UnaryCallSettings.Builder<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectSettings() {
+      return getStubSettingsBuilder().disableXpnResourceProjectSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to enableXpnHostProject.
+     */
+    public UnaryCallSettings.Builder<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectSettings() {
+      return getStubSettingsBuilder().enableXpnHostProjectSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to enableXpnResourceProject.
+     */
+    public UnaryCallSettings.Builder<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectSettings() {
+      return getStubSettingsBuilder().enableXpnResourceProjectSettings();
+    }
+
+    /**
      * Returns the builder for the settings used for calls to getProject.
      */
     public UnaryCallSettings.Builder<GetProjectHttpRequest, Project> getProjectSettings() {
       return getStubSettingsBuilder().getProjectSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getXpnHostProject.
+     */
+    public UnaryCallSettings.Builder<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectSettings() {
+      return getStubSettingsBuilder().getXpnHostProjectSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getXpnResourcesProjects.
+     */
+    public PagedCallSettings.Builder<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsSettings() {
+      return getStubSettingsBuilder().getXpnResourcesProjectsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listXpnHostsProjects.
+     */
+    public PagedCallSettings.Builder<ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsSettings() {
+      return getStubSettingsBuilder().listXpnHostsProjectsSettings();
     }
 
     /**

@@ -15,11 +15,11 @@
  */
 package com.google.cloud.compute.v1.stub;
 
-import static com.google.cloud.compute.v1.ImageClient.ListImagesPagedResponse;
-
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -30,6 +30,8 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -39,21 +41,26 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.auth.Credentials;
 import com.google.cloud.compute.v1.DeleteImageHttpRequest;
 import com.google.cloud.compute.v1.DeprecateImageHttpRequest;
 import com.google.cloud.compute.v1.GetFromFamilyImageHttpRequest;
 import com.google.cloud.compute.v1.GetImageHttpRequest;
 import com.google.cloud.compute.v1.Image;
+import static com.google.cloud.compute.v1.ImageClient.ListImagesPagedResponse;
 import com.google.cloud.compute.v1.ImageList;
 import com.google.cloud.compute.v1.InsertImageHttpRequest;
 import com.google.cloud.compute.v1.ListImagesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.SetLabelsImageHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -64,15 +71,15 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default port (443)
+ * are used.
+ * <li>Credentials are acquired automatically through Application Default Credentials.
+ * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteImage to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders.
+ * When build() is called, the tree of builders is called to create the complete settings
+ * object. For example, to set the total timeout of deleteImage to 30 seconds:
  *
  * <pre>
  * <code>
@@ -87,55 +94,75 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class ImageStubSettings extends StubSettings<ImageStubSettings> {
-  /** The default scopes of the service. */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
-          .add("https://www.googleapis.com/auth/devstorage.full_control")
-          .add("https://www.googleapis.com/auth/devstorage.read_only")
-          .add("https://www.googleapis.com/auth/devstorage.read_write")
-          .build();
+  /**
+   * The default scopes of the service.
+   */
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES = ImmutableList.<String>builder()
+      .add("https://www.googleapis.com/auth/cloud-platform")
+      .add("https://www.googleapis.com/auth/compute")
+      .add("https://www.googleapis.com/auth/compute.readonly")
+      .add("https://www.googleapis.com/auth/devstorage.full_control")
+      .add("https://www.googleapis.com/auth/devstorage.read_only")
+      .add("https://www.googleapis.com/auth/devstorage.read_write")
+      .build();
 
   private final UnaryCallSettings<DeleteImageHttpRequest, Operation> deleteImageSettings;
   private final UnaryCallSettings<DeprecateImageHttpRequest, Operation> deprecateImageSettings;
   private final UnaryCallSettings<GetImageHttpRequest, Image> getImageSettings;
   private final UnaryCallSettings<GetFromFamilyImageHttpRequest, Image> getFromFamilyImageSettings;
   private final UnaryCallSettings<InsertImageHttpRequest, Operation> insertImageSettings;
-  private final PagedCallSettings<ListImagesHttpRequest, ImageList, ListImagesPagedResponse>
-      listImagesSettings;
+  private final PagedCallSettings<ListImagesHttpRequest, ImageList, ListImagesPagedResponse> listImagesSettings;
+  private final UnaryCallSettings<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings;
 
-  /** Returns the object with the settings used for calls to deleteImage. */
+  /**
+   * Returns the object with the settings used for calls to deleteImage.
+   */
   public UnaryCallSettings<DeleteImageHttpRequest, Operation> deleteImageSettings() {
     return deleteImageSettings;
   }
 
-  /** Returns the object with the settings used for calls to deprecateImage. */
+  /**
+   * Returns the object with the settings used for calls to deprecateImage.
+   */
   public UnaryCallSettings<DeprecateImageHttpRequest, Operation> deprecateImageSettings() {
     return deprecateImageSettings;
   }
 
-  /** Returns the object with the settings used for calls to getImage. */
+  /**
+   * Returns the object with the settings used for calls to getImage.
+   */
   public UnaryCallSettings<GetImageHttpRequest, Image> getImageSettings() {
     return getImageSettings;
   }
 
-  /** Returns the object with the settings used for calls to getFromFamilyImage. */
+  /**
+   * Returns the object with the settings used for calls to getFromFamilyImage.
+   */
   public UnaryCallSettings<GetFromFamilyImageHttpRequest, Image> getFromFamilyImageSettings() {
     return getFromFamilyImageSettings;
   }
 
-  /** Returns the object with the settings used for calls to insertImage. */
+  /**
+   * Returns the object with the settings used for calls to insertImage.
+   */
   public UnaryCallSettings<InsertImageHttpRequest, Operation> insertImageSettings() {
     return insertImageSettings;
   }
 
-  /** Returns the object with the settings used for calls to listImages. */
-  public PagedCallSettings<ListImagesHttpRequest, ImageList, ListImagesPagedResponse>
-      listImagesSettings() {
+  /**
+   * Returns the object with the settings used for calls to listImages.
+   */
+  public PagedCallSettings<ListImagesHttpRequest, ImageList, ListImagesPagedResponse> listImagesSettings() {
     return listImagesSettings;
   }
+
+  /**
+   * Returns the object with the settings used for calls to setLabelsImage.
+   */
+  public UnaryCallSettings<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings() {
+    return setLabelsImageSettings;
+  }
+
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ImageStub createStub() throws IOException {
@@ -149,34 +176,47 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
     }
   }
 
-  /** Returns a builder for the default ExecutorProvider for this service. */
+  /**
+   * Returns a builder for the default ExecutorProvider for this service.
+   */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /** Returns the default service endpoint. */
+  /**
+   * Returns the default service endpoint.
+   */
   public static String getDefaultEndpoint() {
     return "https://www.googleapis.com/compute/v1/projects/";
   }
 
-  /** Returns the default service port. */
+  /**
+   * Returns the default service port.
+   */
   public static int getDefaultServicePort() {
     return 443;
   }
 
-  /** Returns the default service scopes. */
+
+  /**
+   * Returns the default service scopes.
+   */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-  /** Returns a builder for the default credentials for this service. */
+
+  /**
+   * Returns a builder for the default credentials for this service.
+   */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+    return GoogleCredentialsProvider.newBuilder()
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        ;
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingHttpJsonChannelProvider.Builder
-      defaultHttpJsonTransportProviderBuilder() {
+  public static InstantiatingHttpJsonChannelProvider.Builder defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
@@ -188,22 +228,26 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(ImageStubSettings.class))
-        .setTransportToken(
-            GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+        .setTransportToken(GaxHttpJsonProperties.getHttpJsonTokenName(), GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  /** Returns a new builder for this class. */
+  /**
+   * Returns a new builder for this class.
+   */
   public static Builder newBuilder() {
     return Builder.createDefault();
   }
 
-  /** Returns a new builder for this class. */
+  /**
+   * Returns a new builder for this class.
+   */
   public static Builder newBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
-  /** Returns a builder containing all the values of this settings class. */
+  /**
+   * Returns a builder containing all the values of this settings class.
+   */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -217,87 +261,82 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
     getFromFamilyImageSettings = settingsBuilder.getFromFamilyImageSettings().build();
     insertImageSettings = settingsBuilder.insertImageSettings().build();
     listImagesSettings = settingsBuilder.listImagesSettings().build();
+    setLabelsImageSettings = settingsBuilder.setLabelsImageSettings().build();
   }
 
-  private static final PagedListDescriptor<ListImagesHttpRequest, ImageList, Image>
-      LIST_IMAGES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListImagesHttpRequest, ImageList, Image>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
+  private static final PagedListDescriptor<ListImagesHttpRequest, ImageList, Image> LIST_IMAGES_PAGE_STR_DESC =
+      new PagedListDescriptor<ListImagesHttpRequest, ImageList, Image>() {
+        @Override
+        public String emptyToken() {
+          return "";
+        }
+        @Override
+        public ListImagesHttpRequest injectToken(ListImagesHttpRequest payload, String token) {
+          return ListImagesHttpRequest
+            .newBuilder(payload)
+            .setPageToken(token)
+            .build();
+        }
+        @Override
+        public ListImagesHttpRequest injectPageSize(ListImagesHttpRequest payload, int pageSize) {
+          return ListImagesHttpRequest
+            .newBuilder(payload)
+            .setMaxResults(pageSize)
+            .build();
+        }
+        @Override
+        public Integer extractPageSize(ListImagesHttpRequest payload) {
+          return payload.getMaxResults();
+        }
+        @Override
+        public String extractNextToken(ImageList payload) {
+          return payload.getNextPageToken();
+        }
+        @Override
+        public Iterable<Image> extractResources(ImageList payload) {
+          return payload.getItemsList();
+        }
+      };
 
-            @Override
-            public ListImagesHttpRequest injectToken(ListImagesHttpRequest payload, String token) {
-              return ListImagesHttpRequest.newBuilder(payload).setPageToken(token).build();
-            }
+  private static final PagedListResponseFactory<ListImagesHttpRequest, ImageList, ListImagesPagedResponse> LIST_IMAGES_PAGE_STR_FACT =
+      new PagedListResponseFactory<ListImagesHttpRequest, ImageList, ListImagesPagedResponse>() {
+        @Override
+        public ApiFuture<ListImagesPagedResponse> getFuturePagedResponse(
+            UnaryCallable<ListImagesHttpRequest, ImageList> callable,
+            ListImagesHttpRequest request,
+            ApiCallContext context,
+            ApiFuture<ImageList> futureResponse) {
+          PageContext<ListImagesHttpRequest, ImageList, Image> pageContext =
+              PageContext.create(callable, LIST_IMAGES_PAGE_STR_DESC, request, context);
+          return ListImagesPagedResponse.createAsync(pageContext, futureResponse);
+        }
+      };
 
-            @Override
-            public ListImagesHttpRequest injectPageSize(
-                ListImagesHttpRequest payload, int pageSize) {
-              return ListImagesHttpRequest.newBuilder(payload).setMaxResults(pageSize).build();
-            }
 
-            @Override
-            public Integer extractPageSize(ListImagesHttpRequest payload) {
-              return payload.getMaxResults();
-            }
-
-            @Override
-            public String extractNextToken(ImageList payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Image> extractResources(ImageList payload) {
-              return payload.getItemsList();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListImagesHttpRequest, ImageList, ListImagesPagedResponse>
-      LIST_IMAGES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListImagesHttpRequest, ImageList, ListImagesPagedResponse>() {
-            @Override
-            public ApiFuture<ListImagesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListImagesHttpRequest, ImageList> callable,
-                ListImagesHttpRequest request,
-                ApiCallContext context,
-                ApiFuture<ImageList> futureResponse) {
-              PageContext<ListImagesHttpRequest, ImageList, Image> pageContext =
-                  PageContext.create(callable, LIST_IMAGES_PAGE_STR_DESC, request, context);
-              return ListImagesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  /** Builder for ImageStubSettings. */
+  /**
+   * Builder for ImageStubSettings.
+   */
   public static class Builder extends StubSettings.Builder<ImageStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<DeleteImageHttpRequest, Operation> deleteImageSettings;
-    private final UnaryCallSettings.Builder<DeprecateImageHttpRequest, Operation>
-        deprecateImageSettings;
+    private final UnaryCallSettings.Builder<DeprecateImageHttpRequest, Operation> deprecateImageSettings;
     private final UnaryCallSettings.Builder<GetImageHttpRequest, Image> getImageSettings;
-    private final UnaryCallSettings.Builder<GetFromFamilyImageHttpRequest, Image>
-        getFromFamilyImageSettings;
+    private final UnaryCallSettings.Builder<GetFromFamilyImageHttpRequest, Image> getFromFamilyImageSettings;
     private final UnaryCallSettings.Builder<InsertImageHttpRequest, Operation> insertImageSettings;
-    private final PagedCallSettings.Builder<
-            ListImagesHttpRequest, ImageList, ListImagesPagedResponse>
-        listImagesSettings;
+    private final PagedCallSettings.Builder<ListImagesHttpRequest, ImageList, ListImagesPagedResponse> listImagesSettings;
+    private final UnaryCallSettings.Builder<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
-        RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>> RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
-          ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions = ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "non_idempotent",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -306,16 +345,15 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
+      settings = RetrySettings.newBuilder()
+          .setInitialRetryDelay(Duration.ofMillis(100L))
+          .setRetryDelayMultiplier(1.3)
+          .setMaxRetryDelay(Duration.ofMillis(60000L))
+          .setInitialRpcTimeout(Duration.ofMillis(20000L))
+          .setRpcTimeoutMultiplier(1.0)
+          .setMaxRpcTimeout(Duration.ofMillis(20000L))
+          .setTotalTimeout(Duration.ofMillis(600000L))
+          .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
@@ -337,16 +375,20 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
 
       insertImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listImagesSettings = PagedCallSettings.newBuilder(LIST_IMAGES_PAGE_STR_FACT);
+      listImagesSettings = PagedCallSettings.newBuilder(
+          LIST_IMAGES_PAGE_STR_FACT);
 
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteImageSettings,
-              deprecateImageSettings,
-              getImageSettings,
-              getFromFamilyImageSettings,
-              insertImageSettings,
-              listImagesSettings);
+      setLabelsImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+          deleteImageSettings,
+          deprecateImageSettings,
+          getImageSettings,
+          getFromFamilyImageSettings,
+          insertImageSettings,
+          listImagesSettings,
+          setLabelsImageSettings
+      );
 
       initDefaults(this);
     }
@@ -362,34 +404,32 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
 
     private static Builder initDefaults(Builder builder) {
 
-      builder
-          .deleteImageSettings()
+      builder.deleteImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .deprecateImageSettings()
+      builder.deprecateImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .getImageSettings()
+      builder.getImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .getFromFamilyImageSettings()
+      builder.getFromFamilyImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .insertImageSettings()
+      builder.insertImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .listImagesSettings()
+      builder.listImagesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder.setLabelsImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -404,24 +444,25 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
       getFromFamilyImageSettings = settings.getFromFamilyImageSettings.toBuilder();
       insertImageSettings = settings.insertImageSettings.toBuilder();
       listImagesSettings = settings.listImagesSettings.toBuilder();
+      setLabelsImageSettings = settings.setLabelsImageSettings.toBuilder();
 
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteImageSettings,
-              deprecateImageSettings,
-              getImageSettings,
-              getFromFamilyImageSettings,
-              insertImageSettings,
-              listImagesSettings);
+      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+          deleteImageSettings,
+          deprecateImageSettings,
+          getImageSettings,
+          getFromFamilyImageSettings,
+          insertImageSettings,
+          listImagesSettings,
+          setLabelsImageSettings
+      );
     }
 
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
-     * <p>Note: This method does not support applying settings to streaming methods.
+     * Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+    public Builder applyToAllUnaryMethods(ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -430,37 +471,53 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to deleteImage. */
+    /**
+     * Returns the builder for the settings used for calls to deleteImage.
+     */
     public UnaryCallSettings.Builder<DeleteImageHttpRequest, Operation> deleteImageSettings() {
       return deleteImageSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deprecateImage. */
-    public UnaryCallSettings.Builder<DeprecateImageHttpRequest, Operation>
-        deprecateImageSettings() {
+    /**
+     * Returns the builder for the settings used for calls to deprecateImage.
+     */
+    public UnaryCallSettings.Builder<DeprecateImageHttpRequest, Operation> deprecateImageSettings() {
       return deprecateImageSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getImage. */
+    /**
+     * Returns the builder for the settings used for calls to getImage.
+     */
     public UnaryCallSettings.Builder<GetImageHttpRequest, Image> getImageSettings() {
       return getImageSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getFromFamilyImage. */
-    public UnaryCallSettings.Builder<GetFromFamilyImageHttpRequest, Image>
-        getFromFamilyImageSettings() {
+    /**
+     * Returns the builder for the settings used for calls to getFromFamilyImage.
+     */
+    public UnaryCallSettings.Builder<GetFromFamilyImageHttpRequest, Image> getFromFamilyImageSettings() {
       return getFromFamilyImageSettings;
     }
 
-    /** Returns the builder for the settings used for calls to insertImage. */
+    /**
+     * Returns the builder for the settings used for calls to insertImage.
+     */
     public UnaryCallSettings.Builder<InsertImageHttpRequest, Operation> insertImageSettings() {
       return insertImageSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listImages. */
-    public PagedCallSettings.Builder<ListImagesHttpRequest, ImageList, ListImagesPagedResponse>
-        listImagesSettings() {
+    /**
+     * Returns the builder for the settings used for calls to listImages.
+     */
+    public PagedCallSettings.Builder<ListImagesHttpRequest, ImageList, ListImagesPagedResponse> listImagesSettings() {
       return listImagesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setLabelsImage.
+     */
+    public UnaryCallSettings.Builder<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings() {
+      return setLabelsImageSettings;
     }
 
     @Override

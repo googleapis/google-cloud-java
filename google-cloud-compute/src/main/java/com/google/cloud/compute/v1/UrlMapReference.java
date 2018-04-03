@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +38,10 @@ public final class UrlMapReference implements ApiMessage {
     this.urlMap = null;
   }
 
-  private UrlMapReference(String urlMap) {
+
+  private UrlMapReference(
+      String urlMap
+      ) {
     this.urlMap = urlMap;
   }
 
@@ -66,24 +72,22 @@ public final class UrlMapReference implements ApiMessage {
     return urlMap;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(UrlMapReference prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static UrlMapReference getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final UrlMapReference DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new UrlMapReference();
   }
@@ -114,8 +118,11 @@ public final class UrlMapReference implements ApiMessage {
       return this;
     }
 
+
     public UrlMapReference build() {
-      return new UrlMapReference(urlMap);
+      return new UrlMapReference(
+        urlMap
+      );
     }
 
     public Builder clone() {
@@ -127,7 +134,9 @@ public final class UrlMapReference implements ApiMessage {
 
   @Override
   public String toString() {
-    return "UrlMapReference{" + "urlMap=" + urlMap + "}";
+    return "UrlMapReference{"
+        + "urlMap=" + urlMap
+        + "}";
   }
 
   @Override
@@ -137,13 +146,17 @@ public final class UrlMapReference implements ApiMessage {
     }
     if (o instanceof UrlMapReference) {
       UrlMapReference that = (UrlMapReference) o;
-      return Objects.equals(this.urlMap, that.getUrlMap());
+      return
+          Objects.equals(this.urlMap, that.getUrlMap())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(urlMap);
+    return Objects.hash(
+      urlMap
+    );
   }
 }

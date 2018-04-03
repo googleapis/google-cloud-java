@@ -72,6 +72,7 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
                   .setRequestInstance(DeleteTargetHttpsProxyHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/targetHttpsProxies/{targetHttpsProxy}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetHttpsProxyName.newFactory())
                   .setResourceNameField("targetHttpsProxy")
@@ -110,6 +111,7 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
                   .setRequestInstance(InsertTargetHttpsProxyHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/targetHttpsProxies"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -149,6 +151,7 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
                   .setRequestInstance(SetSslCertificatesTargetHttpsProxyHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/targetHttpsProxies/{targetHttpsProxy}/setSslCertificates"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetHttpsProxyName.newFactory())
                   .setResourceNameField("targetHttpsProxy")
@@ -168,6 +171,7 @@ public class HttpJsonTargetHttpsProxyStub extends TargetHttpsProxyStub {
                   .setRequestInstance(SetUrlMapTargetHttpsProxyHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/targetHttpsProxies/{targetHttpsProxy}/setUrlMap"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetHttpsProxyName.newFactory())
                   .setResourceNameField("targetHttpsProxy")

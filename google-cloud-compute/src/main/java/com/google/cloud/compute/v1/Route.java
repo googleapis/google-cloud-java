@@ -43,6 +43,7 @@ public final class Route implements ApiMessage {
   private final String nextHopInstance;
   private final String nextHopIp;
   private final String nextHopNetwork;
+  private final String nextHopPeering;
   private final String nextHopVpnTunnel;
   private final Integer priority;
   private final String selfLink;
@@ -61,6 +62,7 @@ public final class Route implements ApiMessage {
     this.nextHopInstance = null;
     this.nextHopIp = null;
     this.nextHopNetwork = null;
+    this.nextHopPeering = null;
     this.nextHopVpnTunnel = null;
     this.priority = null;
     this.selfLink = null;
@@ -81,6 +83,7 @@ public final class Route implements ApiMessage {
       String nextHopInstance,
       String nextHopIp,
       String nextHopNetwork,
+      String nextHopPeering,
       String nextHopVpnTunnel,
       Integer priority,
       String selfLink,
@@ -98,6 +101,7 @@ public final class Route implements ApiMessage {
     this.nextHopInstance = nextHopInstance;
     this.nextHopIp = nextHopIp;
     this.nextHopNetwork = nextHopNetwork;
+    this.nextHopPeering = nextHopPeering;
     this.nextHopVpnTunnel = nextHopVpnTunnel;
     this.priority = priority;
     this.selfLink = selfLink;
@@ -140,6 +144,9 @@ public final class Route implements ApiMessage {
     }
     if (fieldNames.contains("nextHopNetwork") && nextHopNetwork != null) {
       fieldMap.put("nextHopNetwork", Collections.singletonList(String.valueOf(nextHopNetwork)));
+    }
+    if (fieldNames.contains("nextHopPeering") && nextHopPeering != null) {
+      fieldMap.put("nextHopPeering", Collections.singletonList(String.valueOf(nextHopPeering)));
     }
     if (fieldNames.contains("nextHopVpnTunnel") && nextHopVpnTunnel != null) {
       fieldMap.put("nextHopVpnTunnel", Collections.singletonList(String.valueOf(nextHopVpnTunnel)));
@@ -201,6 +208,9 @@ public final class Route implements ApiMessage {
     }
     if (fieldName.equals("nextHopNetwork")) {
       return String.valueOf(nextHopNetwork);
+    }
+    if (fieldName.equals("nextHopPeering")) {
+      return String.valueOf(nextHopPeering);
     }
     if (fieldName.equals("nextHopVpnTunnel")) {
       return String.valueOf(nextHopVpnTunnel);
@@ -270,6 +280,10 @@ public final class Route implements ApiMessage {
     return nextHopNetwork;
   }
 
+  public String getNextHopPeering() {
+    return nextHopPeering;
+  }
+
   public String getNextHopVpnTunnel() {
     return nextHopVpnTunnel;
   }
@@ -322,6 +336,7 @@ public final class Route implements ApiMessage {
     private String nextHopInstance;
     private String nextHopIp;
     private String nextHopNetwork;
+    private String nextHopPeering;
     private String nextHopVpnTunnel;
     private Integer priority;
     private String selfLink;
@@ -365,6 +380,9 @@ public final class Route implements ApiMessage {
       if (other.getNextHopNetwork() != null) {
         this.nextHopNetwork = other.nextHopNetwork;
       }
+      if (other.getNextHopPeering() != null) {
+        this.nextHopPeering = other.nextHopPeering;
+      }
       if (other.getNextHopVpnTunnel() != null) {
         this.nextHopVpnTunnel = other.nextHopVpnTunnel;
       }
@@ -395,6 +413,7 @@ public final class Route implements ApiMessage {
       this.nextHopInstance = source.nextHopInstance;
       this.nextHopIp = source.nextHopIp;
       this.nextHopNetwork = source.nextHopNetwork;
+      this.nextHopPeering = source.nextHopPeering;
       this.nextHopVpnTunnel = source.nextHopVpnTunnel;
       this.priority = source.priority;
       this.selfLink = source.selfLink;
@@ -501,6 +520,15 @@ public final class Route implements ApiMessage {
       return this;
     }
 
+    public String getNextHopPeering() {
+      return nextHopPeering;
+    }
+
+    public Builder setNextHopPeering(String nextHopPeering) {
+      this.nextHopPeering = nextHopPeering;
+      return this;
+    }
+
     public String getNextHopVpnTunnel() {
       return nextHopVpnTunnel;
     }
@@ -579,6 +607,7 @@ public final class Route implements ApiMessage {
 
 
 
+
       return new Route(
         creationTimestamp,
         description,
@@ -591,6 +620,7 @@ public final class Route implements ApiMessage {
         nextHopInstance,
         nextHopIp,
         nextHopNetwork,
+        nextHopPeering,
         nextHopVpnTunnel,
         priority,
         selfLink,
@@ -612,6 +642,7 @@ public final class Route implements ApiMessage {
       newBuilder.setNextHopInstance(this.nextHopInstance);
       newBuilder.setNextHopIp(this.nextHopIp);
       newBuilder.setNextHopNetwork(this.nextHopNetwork);
+      newBuilder.setNextHopPeering(this.nextHopPeering);
       newBuilder.setNextHopVpnTunnel(this.nextHopVpnTunnel);
       newBuilder.setPriority(this.priority);
       newBuilder.setSelfLink(this.selfLink);
@@ -635,6 +666,7 @@ public final class Route implements ApiMessage {
         + "nextHopInstance=" + nextHopInstance + ", "
         + "nextHopIp=" + nextHopIp + ", "
         + "nextHopNetwork=" + nextHopNetwork + ", "
+        + "nextHopPeering=" + nextHopPeering + ", "
         + "nextHopVpnTunnel=" + nextHopVpnTunnel + ", "
         + "priority=" + priority + ", "
         + "selfLink=" + selfLink + ", "
@@ -662,6 +694,7 @@ public final class Route implements ApiMessage {
           Objects.equals(this.nextHopInstance, that.getNextHopInstance()) &&
           Objects.equals(this.nextHopIp, that.getNextHopIp()) &&
           Objects.equals(this.nextHopNetwork, that.getNextHopNetwork()) &&
+          Objects.equals(this.nextHopPeering, that.getNextHopPeering()) &&
           Objects.equals(this.nextHopVpnTunnel, that.getNextHopVpnTunnel()) &&
           Objects.equals(this.priority, that.getPriority()) &&
           Objects.equals(this.selfLink, that.getSelfLink()) &&
@@ -686,6 +719,7 @@ public final class Route implements ApiMessage {
       nextHopInstance,
       nextHopIp,
       nextHopNetwork,
+      nextHopPeering,
       nextHopVpnTunnel,
       priority,
       selfLink,

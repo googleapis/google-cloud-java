@@ -38,6 +38,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource;
   private final String targetHttpsProxy;
   private final String userIp;
@@ -49,6 +50,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.targetHttpsProxiesSetSslCertificatesRequestResource = null;
     this.targetHttpsProxy = null;
     this.userIp = null;
@@ -62,6 +64,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource,
       String targetHttpsProxy,
       String userIp
@@ -72,6 +75,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.targetHttpsProxiesSetSslCertificatesRequestResource = targetHttpsProxiesSetSslCertificatesRequestResource;
     this.targetHttpsProxy = targetHttpsProxy;
     this.userIp = userIp;
@@ -97,6 +101,9 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("targetHttpsProxiesSetSslCertificatesRequestResource") && targetHttpsProxiesSetSslCertificatesRequestResource != null) {
       fieldMap.put("targetHttpsProxiesSetSslCertificatesRequestResource", Collections.singletonList(String.valueOf(targetHttpsProxiesSetSslCertificatesRequestResource)));
@@ -129,6 +136,9 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("targetHttpsProxiesSetSslCertificatesRequestResource")) {
       return String.valueOf(targetHttpsProxiesSetSslCertificatesRequestResource);
@@ -172,6 +182,10 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public TargetHttpsProxiesSetSslCertificatesRequest getTargetHttpsProxiesSetSslCertificatesRequestResource() {
     return targetHttpsProxiesSetSslCertificatesRequestResource;
   }
@@ -211,6 +225,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource;
     private String targetHttpsProxy;
     private String userIp;
@@ -237,6 +252,9 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getTargetHttpsProxiesSetSslCertificatesRequestResource() != null) {
         this.targetHttpsProxiesSetSslCertificatesRequestResource = other.targetHttpsProxiesSetSslCertificatesRequestResource;
       }
@@ -256,6 +274,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.targetHttpsProxiesSetSslCertificatesRequestResource = source.targetHttpsProxiesSetSslCertificatesRequestResource;
       this.targetHttpsProxy = source.targetHttpsProxy;
       this.userIp = source.userIp;
@@ -315,6 +334,15 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public TargetHttpsProxiesSetSslCertificatesRequest getTargetHttpsProxiesSetSslCertificatesRequestResource() {
       return targetHttpsProxiesSetSslCertificatesRequestResource;
     }
@@ -352,6 +380,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
 
 
 
+
       if (targetHttpsProxy == null) {
         missing += " targetHttpsProxy";
       }
@@ -366,6 +395,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         targetHttpsProxiesSetSslCertificatesRequestResource,
         targetHttpsProxy,
         userIp
@@ -380,6 +410,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setTargetHttpsProxiesSetSslCertificatesRequestResource(this.targetHttpsProxiesSetSslCertificatesRequestResource);
       newBuilder.setTargetHttpsProxy(this.targetHttpsProxy);
       newBuilder.setUserIp(this.userIp);
@@ -396,6 +427,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "targetHttpsProxiesSetSslCertificatesRequestResource=" + targetHttpsProxiesSetSslCertificatesRequestResource + ", "
         + "targetHttpsProxy=" + targetHttpsProxy + ", "
         + "userIp=" + userIp
@@ -416,6 +448,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.targetHttpsProxiesSetSslCertificatesRequestResource, that.getTargetHttpsProxiesSetSslCertificatesRequestResource()) &&
           Objects.equals(this.targetHttpsProxy, that.getTargetHttpsProxy()) &&
           Objects.equals(this.userIp, that.getUserIp())
@@ -433,6 +466,7 @@ public final class SetSslCertificatesTargetHttpsProxyHttpRequest implements ApiM
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       targetHttpsProxiesSetSslCertificatesRequestResource,
       targetHttpsProxy,
       userIp

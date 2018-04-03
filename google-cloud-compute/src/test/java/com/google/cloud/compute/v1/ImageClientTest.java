@@ -32,6 +32,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.getFromFamilyIm
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.getImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.insertImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.listImagesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.setLabelsImageMethodDescriptor;
 import com.google.cloud.compute.v1.stub.ImageStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -56,7 +57,8 @@ public class ImageClientTest {
           getImageMethodDescriptor,
           getFromFamilyImageMethodDescriptor,
           insertImageMethodDescriptor,
-          listImagesMethodDescriptor
+          listImagesMethodDescriptor,
+          setLabelsImageMethodDescriptor
         ));
   private static final MockHttpService mockService
       = new MockHttpService(METHOD_DESCRIPTORS, ImageStubSettings.getDefaultEndpoint());
@@ -137,9 +139,10 @@ public class ImageClientTest {
     mockService.addResponse(expectedResponse);
 
     ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+    String requestId = "requestId37109963";
 
     Operation actualResponse =
-        client.deleteImage(image);
+        client.deleteImage(image, requestId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -159,8 +162,9 @@ public class ImageClientTest {
 
     try {
       ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+      String requestId = "requestId37109963";
 
-      client.deleteImage(image);
+      client.deleteImage(image, requestId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -217,10 +221,11 @@ public class ImageClientTest {
     mockService.addResponse(expectedResponse);
 
     ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+    String requestId = "requestId37109963";
     DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
 
     Operation actualResponse =
-        client.deprecateImage(image, deprecationStatusResource);
+        client.deprecateImage(image, requestId, deprecationStatusResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -240,9 +245,10 @@ public class ImageClientTest {
 
     try {
       ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
+      String requestId = "requestId37109963";
       DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
 
-      client.deprecateImage(image, deprecationStatusResource);
+      client.deprecateImage(image, requestId, deprecationStatusResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -252,30 +258,40 @@ public class ImageClientTest {
   @Test
   @SuppressWarnings("all")
   public void getImageTest() {
+    String sourceSnapshotId = "sourceSnapshotId-1511650478";
+    String description = "description-1724546052";
+    String sourceSnapshot = "sourceSnapshot-947679896";
+    String labelFingerprint = "labelFingerprint714995737";
+    String creationTimestamp = "creationTimestamp567396278";
+    String id = "id3355";
     String sourceDisk = "sourceDisk-85117119";
     String sourceDiskId = "sourceDiskId-1693292839";
+    String sourceImageId = "sourceImageId-2092155357";
     String kind = "kind3292052";
-    String description = "description-1724546052";
     String selfLink = "selfLink-1691268851";
     String sourceType = "sourceType-84625186";
-    String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String archiveSizeBytes = "archiveSizeBytes-1766390198";
-    String id = "id3355";
+    String sourceImage = "sourceImage1661056055";
     FamilyName family = FamilyName.of("[PROJECT]", "[FAMILY]");
     String diskSizeGb = "diskSizeGb-757478089";
     String status = "status-892481550";
     Image expectedResponse = Image.newBuilder()
+      .setSourceSnapshotId(sourceSnapshotId)
+      .setDescription(description)
+      .setSourceSnapshot(sourceSnapshot)
+      .setLabelFingerprint(labelFingerprint)
+      .setCreationTimestamp(creationTimestamp)
+      .setId(id)
       .setSourceDisk(sourceDisk)
       .setSourceDiskId(sourceDiskId)
+      .setSourceImageId(sourceImageId)
       .setKind(kind)
-      .setDescription(description)
       .setSelfLink(selfLink)
       .setSourceType(sourceType)
-      .setCreationTimestamp(creationTimestamp)
       .setName(name)
       .setArchiveSizeBytes(archiveSizeBytes)
-      .setId(id)
+      .setSourceImage(sourceImage)
       .setFamily(family.toString())
       .setDiskSizeGb(diskSizeGb)
       .setStatus(status)
@@ -316,30 +332,40 @@ public class ImageClientTest {
   @Test
   @SuppressWarnings("all")
   public void getFromFamilyImageTest() {
+    String sourceSnapshotId = "sourceSnapshotId-1511650478";
+    String description = "description-1724546052";
+    String sourceSnapshot = "sourceSnapshot-947679896";
+    String labelFingerprint = "labelFingerprint714995737";
+    String creationTimestamp = "creationTimestamp567396278";
+    String id = "id3355";
     String sourceDisk = "sourceDisk-85117119";
     String sourceDiskId = "sourceDiskId-1693292839";
+    String sourceImageId = "sourceImageId-2092155357";
     String kind = "kind3292052";
-    String description = "description-1724546052";
     String selfLink = "selfLink-1691268851";
     String sourceType = "sourceType-84625186";
-    String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String archiveSizeBytes = "archiveSizeBytes-1766390198";
-    String id = "id3355";
+    String sourceImage = "sourceImage1661056055";
     FamilyName family2 = FamilyName.of("[PROJECT]", "[FAMILY]");
     String diskSizeGb = "diskSizeGb-757478089";
     String status = "status-892481550";
     Image expectedResponse = Image.newBuilder()
+      .setSourceSnapshotId(sourceSnapshotId)
+      .setDescription(description)
+      .setSourceSnapshot(sourceSnapshot)
+      .setLabelFingerprint(labelFingerprint)
+      .setCreationTimestamp(creationTimestamp)
+      .setId(id)
       .setSourceDisk(sourceDisk)
       .setSourceDiskId(sourceDiskId)
+      .setSourceImageId(sourceImageId)
       .setKind(kind)
-      .setDescription(description)
       .setSelfLink(selfLink)
       .setSourceType(sourceType)
-      .setCreationTimestamp(creationTimestamp)
       .setName(name)
       .setArchiveSizeBytes(archiveSizeBytes)
-      .setId(id)
+      .setSourceImage(sourceImage)
       .setFamily(family2.toString())
       .setDiskSizeGb(diskSizeGb)
       .setStatus(status)
@@ -426,11 +452,13 @@ public class ImageClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    Boolean forceCreate = true;
+    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Image imageResource = Image.newBuilder().build();
 
     Operation actualResponse =
-        client.insertImage(project, imageResource);
+        client.insertImage(forceCreate, requestId, project, imageResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -449,10 +477,12 @@ public class ImageClientTest {
     mockService.addException(exception);
 
     try {
+      Boolean forceCreate = true;
+      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Image imageResource = Image.newBuilder().build();
 
-      client.insertImage(project, imageResource);
+      client.insertImage(forceCreate, requestId, project, imageResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -505,6 +535,88 @@ public class ImageClientTest {
       ProjectName project = ProjectName.of("[PROJECT]");
 
       client.listImages(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setLabelsImageTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse = Operation.newBuilder()
+      .setHttpErrorMessage(httpErrorMessage)
+      .setTargetId(targetId)
+      .setKind(kind)
+      .setDescription(description)
+      .setStatusMessage(statusMessage)
+      .setSelfLink(selfLink)
+      .setInsertTime(insertTime)
+      .setHttpErrorStatusCode(httpErrorStatusCode)
+      .setZone(zone.toString())
+      .setTargetLink(targetLink)
+      .setCreationTimestamp(creationTimestamp)
+      .setName(name)
+      .setProgress(progress)
+      .setOperationType(operationType)
+      .setStartTime(startTime)
+      .setEndTime(endTime)
+      .setId(id)
+      .setRegion(region.toString())
+      .setClientOperationId(clientOperationId)
+      .setUser(user)
+      .setStatus(status)
+      .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[RESOURCE]");
+    GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.setLabelsImage(resource, globalSetLabelsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey = mockService.getRequestHeaders()
+        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
+    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+        .matcher(apiClientHeaderKey).matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setLabelsImageExceptionTest() throws Exception {
+    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[RESOURCE]");
+      GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+
+      client.setLabelsImage(resource, globalSetLabelsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

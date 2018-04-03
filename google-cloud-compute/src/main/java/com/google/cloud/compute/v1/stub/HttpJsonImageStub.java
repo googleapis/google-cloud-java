@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.DeprecationStatus;
 import com.google.cloud.compute.v1.FamilyName;
 import com.google.cloud.compute.v1.GetFromFamilyImageHttpRequest;
 import com.google.cloud.compute.v1.GetImageHttpRequest;
+import com.google.cloud.compute.v1.GlobalSetLabelsRequest;
 import com.google.cloud.compute.v1.Image;
 import static com.google.cloud.compute.v1.ImageClient.ListImagesPagedResponse;
 import com.google.cloud.compute.v1.ImageList;
@@ -43,7 +44,9 @@ import com.google.cloud.compute.v1.ImageSettings;
 import com.google.cloud.compute.v1.InsertImageHttpRequest;
 import com.google.cloud.compute.v1.ListImagesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectImageName;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.SetLabelsImageHttpRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -72,6 +75,7 @@ public class HttpJsonImageStub extends ImageStub {
                   .setRequestInstance(DeleteImageHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/images/{image}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ImageName.newFactory())
                   .setResourceNameField("image")
@@ -91,6 +95,7 @@ public class HttpJsonImageStub extends ImageStub {
                   .setRequestInstance(DeprecateImageHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/images/{image}/deprecate"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ImageName.newFactory())
                   .setResourceNameField("image")
@@ -148,6 +153,7 @@ public class HttpJsonImageStub extends ImageStub {
                   .setRequestInstance(InsertImageHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/images"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "forceCreate",    "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -177,6 +183,25 @@ public class HttpJsonImageStub extends ImageStub {
                   .setResponseInstance(ImageList.getDefaultInstance())
                   .build())
           .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<SetLabelsImageHttpRequest, Operation> setLabelsImageMethodDescriptor =
+      ApiMethodDescriptor.<SetLabelsImageHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.images.setLabels")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<SetLabelsImageHttpRequest>newBuilder()
+                  .setRequestInstance(SetLabelsImageHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/global/images/{resource}/setLabels"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     ))
+                  .setResourceNameFactory(ProjectImageName.newFactory())
+                  .setResourceNameField("resource")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteImageHttpRequest, Operation> deleteImageCallable;
@@ -186,6 +211,7 @@ public class HttpJsonImageStub extends ImageStub {
   private final UnaryCallable<InsertImageHttpRequest, Operation> insertImageCallable;
   private final UnaryCallable<ListImagesHttpRequest, ImageList> listImagesCallable;
   private final UnaryCallable<ListImagesHttpRequest, ListImagesPagedResponse> listImagesPagedCallable;
+  private final UnaryCallable<SetLabelsImageHttpRequest, Operation> setLabelsImageCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
   public static final HttpJsonImageStub create(ImageStubSettings settings) throws IOException {
@@ -241,6 +267,10 @@ public class HttpJsonImageStub extends ImageStub {
         HttpJsonCallSettings.<ListImagesHttpRequest, ImageList>newBuilder()
             .setMethodDescriptor(listImagesMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SetLabelsImageHttpRequest, Operation> setLabelsImageTransportSettings =
+        HttpJsonCallSettings.<SetLabelsImageHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsImageMethodDescriptor)
+            .build();
 
     this.deleteImageCallable = callableFactory.createUnaryCallable(deleteImageTransportSettings,settings.deleteImageSettings(), clientContext);
     this.deprecateImageCallable = callableFactory.createUnaryCallable(deprecateImageTransportSettings,settings.deprecateImageSettings(), clientContext);
@@ -249,6 +279,7 @@ public class HttpJsonImageStub extends ImageStub {
     this.insertImageCallable = callableFactory.createUnaryCallable(insertImageTransportSettings,settings.insertImageSettings(), clientContext);
     this.listImagesCallable = callableFactory.createUnaryCallable(listImagesTransportSettings,settings.listImagesSettings(), clientContext);
     this.listImagesPagedCallable = callableFactory.createPagedCallable(listImagesTransportSettings,settings.listImagesSettings(), clientContext);
+    this.setLabelsImageCallable = callableFactory.createUnaryCallable(setLabelsImageTransportSettings,settings.setLabelsImageSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -286,6 +317,11 @@ public class HttpJsonImageStub extends ImageStub {
   @BetaApi
   public UnaryCallable<ListImagesHttpRequest, ImageList> listImagesCallable() {
     return listImagesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetLabelsImageHttpRequest, Operation> setLabelsImageCallable() {
+    return setLabelsImageCallable;
   }
 
   @Override

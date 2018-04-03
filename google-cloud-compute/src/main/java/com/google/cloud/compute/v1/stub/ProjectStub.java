@@ -18,18 +18,33 @@ package com.google.cloud.compute.v1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.DisableXpnHostProjectHttpRequest;
+import com.google.cloud.compute.v1.DisableXpnResourceProjectHttpRequest;
 import com.google.cloud.compute.v1.DiskMoveRequest;
+import com.google.cloud.compute.v1.EnableXpnHostProjectHttpRequest;
+import com.google.cloud.compute.v1.EnableXpnResourceProjectHttpRequest;
 import com.google.cloud.compute.v1.GetProjectHttpRequest;
+import com.google.cloud.compute.v1.GetXpnHostProjectHttpRequest;
+import com.google.cloud.compute.v1.GetXpnResourcesProjectsHttpRequest;
 import com.google.cloud.compute.v1.InstanceMoveRequest;
+import com.google.cloud.compute.v1.ListXpnHostsProjectsHttpRequest;
 import com.google.cloud.compute.v1.Metadata;
 import com.google.cloud.compute.v1.MoveDiskProjectHttpRequest;
 import com.google.cloud.compute.v1.MoveInstanceProjectHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Project;
+import static com.google.cloud.compute.v1.ProjectClient.GetXpnResourcesProjectsPagedResponse;
+import static com.google.cloud.compute.v1.ProjectClient.ListXpnHostsProjectsPagedResponse;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequest;
+import com.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest;
+import com.google.cloud.compute.v1.ProjectsGetXpnResources;
+import com.google.cloud.compute.v1.ProjectsListXpnHostsRequest;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectHttpRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectHttpRequest;
 import com.google.cloud.compute.v1.UsageExportLocation;
+import com.google.cloud.compute.v1.XpnHostList;
+import com.google.cloud.compute.v1.XpnResourceId;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -44,8 +59,53 @@ public abstract class ProjectStub implements BackgroundResource {
 
 
   @BetaApi
+  public UnaryCallable<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectCallable() {
+    throw new UnsupportedOperationException("Not implemented: disableXpnHostProjectCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectCallable() {
+    throw new UnsupportedOperationException("Not implemented: disableXpnResourceProjectCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectCallable() {
+    throw new UnsupportedOperationException("Not implemented: enableXpnHostProjectCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectCallable() {
+    throw new UnsupportedOperationException("Not implemented: enableXpnResourceProjectCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<GetProjectHttpRequest, Project> getProjectCallable() {
     throw new UnsupportedOperationException("Not implemented: getProjectCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectCallable() {
+    throw new UnsupportedOperationException("Not implemented: getXpnHostProjectCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<GetXpnResourcesProjectsHttpRequest, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: getXpnResourcesProjectsPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources> getXpnResourcesProjectsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getXpnResourcesProjectsCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListXpnHostsProjectsHttpRequest, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listXpnHostsProjectsPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListXpnHostsProjectsHttpRequest, XpnHostList> listXpnHostsProjectsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listXpnHostsProjectsCallable()");
   }
 
   @BetaApi

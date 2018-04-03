@@ -38,6 +38,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String snapshot;
   private final String userIp;
 
@@ -48,6 +49,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.snapshot = null;
     this.userIp = null;
   }
@@ -60,6 +62,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String snapshot,
       String userIp
       ) {
@@ -69,6 +72,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.snapshot = snapshot;
     this.userIp = userIp;
   }
@@ -93,6 +97,9 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("snapshot") && snapshot != null) {
       fieldMap.put("snapshot", Collections.singletonList(String.valueOf(snapshot)));
@@ -122,6 +129,9 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("snapshot")) {
       return String.valueOf(snapshot);
@@ -162,6 +172,10 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getSnapshot() {
     return snapshot;
   }
@@ -197,6 +211,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String snapshot;
     private String userIp;
 
@@ -222,6 +237,9 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getSnapshot() != null) {
         this.snapshot = other.snapshot;
       }
@@ -238,6 +256,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.snapshot = source.snapshot;
       this.userIp = source.userIp;
     }
@@ -296,6 +315,15 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getSnapshot() {
       return snapshot;
     }
@@ -323,6 +351,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
 
 
 
+
       if (snapshot == null) {
         missing += " snapshot";
       }
@@ -337,6 +366,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         snapshot,
         userIp
       );
@@ -350,6 +380,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setSnapshot(this.snapshot);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -365,6 +396,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "snapshot=" + snapshot + ", "
         + "userIp=" + userIp
         + "}";
@@ -384,6 +416,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.snapshot, that.getSnapshot()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
@@ -400,6 +433,7 @@ public final class DeleteSnapshotHttpRequest implements ApiMessage {
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       snapshot,
       userIp
     );

@@ -35,8 +35,11 @@ public final class InstanceProperties implements ApiMessage {
   private final Boolean canIpForward;
   private final String description;
   private final List<AttachedDisk> disks;
+  private final List<AcceleratorConfig> guestAccelerators;
+  private final Map<String, String> labels;
   private final String machineType;
   private final Metadata metadata;
+  private final String minCpuPlatform;
   private final List<NetworkInterface> networkInterfaces;
   private final Scheduling scheduling;
   private final List<ServiceAccount> serviceAccounts;
@@ -46,8 +49,11 @@ public final class InstanceProperties implements ApiMessage {
     this.canIpForward = null;
     this.description = null;
     this.disks = null;
+    this.guestAccelerators = null;
+    this.labels = null;
     this.machineType = null;
     this.metadata = null;
+    this.minCpuPlatform = null;
     this.networkInterfaces = null;
     this.scheduling = null;
     this.serviceAccounts = null;
@@ -59,8 +65,11 @@ public final class InstanceProperties implements ApiMessage {
       Boolean canIpForward,
       String description,
       List<AttachedDisk> disks,
+      List<AcceleratorConfig> guestAccelerators,
+      Map<String, String> labels,
       String machineType,
       Metadata metadata,
+      String minCpuPlatform,
       List<NetworkInterface> networkInterfaces,
       Scheduling scheduling,
       List<ServiceAccount> serviceAccounts,
@@ -69,8 +78,11 @@ public final class InstanceProperties implements ApiMessage {
     this.canIpForward = canIpForward;
     this.description = description;
     this.disks = disks;
+    this.guestAccelerators = guestAccelerators;
+    this.labels = labels;
     this.machineType = machineType;
     this.metadata = metadata;
+    this.minCpuPlatform = minCpuPlatform;
     this.networkInterfaces = networkInterfaces;
     this.scheduling = scheduling;
     this.serviceAccounts = serviceAccounts;
@@ -93,11 +105,24 @@ public final class InstanceProperties implements ApiMessage {
       }
       fieldMap.put("disks", stringList.build());
     }
+    if (fieldNames.contains("guestAccelerators") && guestAccelerators != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (AcceleratorConfig item : guestAccelerators) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("guestAccelerators", stringList.build());
+    }
+    if (fieldNames.contains("labels") && labels != null) {
+      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
+    }
     if (fieldNames.contains("machineType") && machineType != null) {
       fieldMap.put("machineType", Collections.singletonList(String.valueOf(machineType)));
     }
     if (fieldNames.contains("metadata") && metadata != null) {
       fieldMap.put("metadata", Collections.singletonList(String.valueOf(metadata)));
+    }
+    if (fieldNames.contains("minCpuPlatform") && minCpuPlatform != null) {
+      fieldMap.put("minCpuPlatform", Collections.singletonList(String.valueOf(minCpuPlatform)));
     }
     if (fieldNames.contains("networkInterfaces") && networkInterfaces != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -133,11 +158,20 @@ public final class InstanceProperties implements ApiMessage {
     if (fieldName.equals("disks")) {
       return String.valueOf(disks);
     }
+    if (fieldName.equals("guestAccelerators")) {
+      return String.valueOf(guestAccelerators);
+    }
+    if (fieldName.equals("labels")) {
+      return String.valueOf(labels);
+    }
     if (fieldName.equals("machineType")) {
       return String.valueOf(machineType);
     }
     if (fieldName.equals("metadata")) {
       return String.valueOf(metadata);
+    }
+    if (fieldName.equals("minCpuPlatform")) {
+      return String.valueOf(minCpuPlatform);
     }
     if (fieldName.equals("networkInterfaces")) {
       return String.valueOf(networkInterfaces);
@@ -172,12 +206,24 @@ public final class InstanceProperties implements ApiMessage {
     return disks;
   }
 
+  public List<AcceleratorConfig> getGuestAcceleratorsList() {
+    return guestAccelerators;
+  }
+
+  public Map<String, String> getLabelsMap() {
+    return labels;
+  }
+
   public String getMachineType() {
     return machineType;
   }
 
   public Metadata getMetadata() {
     return metadata;
+  }
+
+  public String getMinCpuPlatform() {
+    return minCpuPlatform;
   }
 
   public List<NetworkInterface> getNetworkInterfacesList() {
@@ -220,8 +266,11 @@ public final class InstanceProperties implements ApiMessage {
     private Boolean canIpForward;
     private String description;
     private List<AttachedDisk> disks;
+    private List<AcceleratorConfig> guestAccelerators;
+    private Map<String, String> labels;
     private String machineType;
     private Metadata metadata;
+    private String minCpuPlatform;
     private List<NetworkInterface> networkInterfaces;
     private Scheduling scheduling;
     private List<ServiceAccount> serviceAccounts;
@@ -240,11 +289,20 @@ public final class InstanceProperties implements ApiMessage {
       if (other.getDisksList() != null) {
         this.disks = other.disks;
       }
+      if (other.getGuestAcceleratorsList() != null) {
+        this.guestAccelerators = other.guestAccelerators;
+      }
+      if (other.getLabelsMap() != null) {
+        this.labels = other.labels;
+      }
       if (other.getMachineType() != null) {
         this.machineType = other.machineType;
       }
       if (other.getMetadata() != null) {
         this.metadata = other.metadata;
+      }
+      if (other.getMinCpuPlatform() != null) {
+        this.minCpuPlatform = other.minCpuPlatform;
       }
       if (other.getNetworkInterfacesList() != null) {
         this.networkInterfaces = other.networkInterfaces;
@@ -265,8 +323,11 @@ public final class InstanceProperties implements ApiMessage {
       this.canIpForward = source.canIpForward;
       this.description = source.description;
       this.disks = source.disks;
+      this.guestAccelerators = source.guestAccelerators;
+      this.labels = source.labels;
       this.machineType = source.machineType;
       this.metadata = source.metadata;
+      this.minCpuPlatform = source.minCpuPlatform;
       this.networkInterfaces = source.networkInterfaces;
       this.scheduling = source.scheduling;
       this.serviceAccounts = source.serviceAccounts;
@@ -308,6 +369,32 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    public List<AcceleratorConfig> getGuestAcceleratorsList() {
+      return guestAccelerators;
+    }
+
+    public Builder addAllGuestAccelerators(List<AcceleratorConfig> guestAccelerators) {
+      if (this.guestAccelerators == null) {
+        this.guestAccelerators = new ArrayList<>(guestAccelerators.size());
+      }
+      this.guestAccelerators.addAll(guestAccelerators);
+      return this;
+    }
+
+    public Builder addGuestAccelerators(AcceleratorConfig guestAccelerators) {
+      this.guestAccelerators.add(guestAccelerators);
+      return this;
+    }
+
+    public Map<String, String> getLabelsMap() {
+      return labels;
+    }
+
+    public Builder putAllLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
     public String getMachineType() {
       return machineType;
     }
@@ -323,6 +410,15 @@ public final class InstanceProperties implements ApiMessage {
 
     public Builder setMetadata(Metadata metadata) {
       this.metadata = metadata;
+      return this;
+    }
+
+    public String getMinCpuPlatform() {
+      return minCpuPlatform;
+    }
+
+    public Builder setMinCpuPlatform(String minCpuPlatform) {
+      this.minCpuPlatform = minCpuPlatform;
       return this;
     }
 
@@ -388,12 +484,18 @@ public final class InstanceProperties implements ApiMessage {
 
 
 
+
+
+
       return new InstanceProperties(
         canIpForward,
         description,
         disks,
+        guestAccelerators,
+        labels,
         machineType,
         metadata,
+        minCpuPlatform,
         networkInterfaces,
         scheduling,
         serviceAccounts,
@@ -406,8 +508,11 @@ public final class InstanceProperties implements ApiMessage {
       newBuilder.setCanIpForward(this.canIpForward);
       newBuilder.setDescription(this.description);
       newBuilder.addAllDisks(this.disks);
+      newBuilder.addAllGuestAccelerators(this.guestAccelerators);
+      newBuilder.putAllLabels(this.labels);
       newBuilder.setMachineType(this.machineType);
       newBuilder.setMetadata(this.metadata);
+      newBuilder.setMinCpuPlatform(this.minCpuPlatform);
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
       newBuilder.setScheduling(this.scheduling);
       newBuilder.addAllServiceAccounts(this.serviceAccounts);
@@ -422,8 +527,11 @@ public final class InstanceProperties implements ApiMessage {
         + "canIpForward=" + canIpForward + ", "
         + "description=" + description + ", "
         + "disks=" + disks + ", "
+        + "guestAccelerators=" + guestAccelerators + ", "
+        + "labels=" + labels + ", "
         + "machineType=" + machineType + ", "
         + "metadata=" + metadata + ", "
+        + "minCpuPlatform=" + minCpuPlatform + ", "
         + "networkInterfaces=" + networkInterfaces + ", "
         + "scheduling=" + scheduling + ", "
         + "serviceAccounts=" + serviceAccounts + ", "
@@ -442,8 +550,11 @@ public final class InstanceProperties implements ApiMessage {
           Objects.equals(this.canIpForward, that.getCanIpForward()) &&
           Objects.equals(this.description, that.getDescription()) &&
           Objects.equals(this.disks, that.getDisksList()) &&
+          Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList()) &&
+          Objects.equals(this.labels, that.getLabelsMap()) &&
           Objects.equals(this.machineType, that.getMachineType()) &&
           Objects.equals(this.metadata, that.getMetadata()) &&
+          Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform()) &&
           Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList()) &&
           Objects.equals(this.scheduling, that.getScheduling()) &&
           Objects.equals(this.serviceAccounts, that.getServiceAccountsList()) &&
@@ -459,8 +570,11 @@ public final class InstanceProperties implements ApiMessage {
       canIpForward,
       description,
       disks,
+      guestAccelerators,
+      labels,
       machineType,
       metadata,
+      minCpuPlatform,
       networkInterfaces,
       scheduling,
       serviceAccounts,

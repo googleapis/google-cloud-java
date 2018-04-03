@@ -35,12 +35,16 @@ public final class AccessConfig implements ApiMessage {
   private final String kind;
   private final String name;
   private final String natIP;
+  private final String publicPtrDomainName;
+  private final Boolean setPublicPtr;
   private final String type;
 
   private AccessConfig() {
     this.kind = null;
     this.name = null;
     this.natIP = null;
+    this.publicPtrDomainName = null;
+    this.setPublicPtr = null;
     this.type = null;
   }
 
@@ -49,11 +53,15 @@ public final class AccessConfig implements ApiMessage {
       String kind,
       String name,
       String natIP,
+      String publicPtrDomainName,
+      Boolean setPublicPtr,
       String type
       ) {
     this.kind = kind;
     this.name = name;
     this.natIP = natIP;
+    this.publicPtrDomainName = publicPtrDomainName;
+    this.setPublicPtr = setPublicPtr;
     this.type = type;
   }
 
@@ -68,6 +76,12 @@ public final class AccessConfig implements ApiMessage {
     }
     if (fieldNames.contains("natIP") && natIP != null) {
       fieldMap.put("natIP", Collections.singletonList(String.valueOf(natIP)));
+    }
+    if (fieldNames.contains("publicPtrDomainName") && publicPtrDomainName != null) {
+      fieldMap.put("publicPtrDomainName", Collections.singletonList(String.valueOf(publicPtrDomainName)));
+    }
+    if (fieldNames.contains("setPublicPtr") && setPublicPtr != null) {
+      fieldMap.put("setPublicPtr", Collections.singletonList(String.valueOf(setPublicPtr)));
     }
     if (fieldNames.contains("type") && type != null) {
       fieldMap.put("type", Collections.singletonList(String.valueOf(type)));
@@ -85,6 +99,12 @@ public final class AccessConfig implements ApiMessage {
     }
     if (fieldName.equals("natIP")) {
       return String.valueOf(natIP);
+    }
+    if (fieldName.equals("publicPtrDomainName")) {
+      return String.valueOf(publicPtrDomainName);
+    }
+    if (fieldName.equals("setPublicPtr")) {
+      return String.valueOf(setPublicPtr);
     }
     if (fieldName.equals("type")) {
       return String.valueOf(type);
@@ -108,6 +128,14 @@ public final class AccessConfig implements ApiMessage {
 
   public String getNatIP() {
     return natIP;
+  }
+
+  public String getPublicPtrDomainName() {
+    return publicPtrDomainName;
+  }
+
+  public Boolean getSetPublicPtr() {
+    return setPublicPtr;
   }
 
   public String getType() {
@@ -138,6 +166,8 @@ public final class AccessConfig implements ApiMessage {
     private String kind;
     private String name;
     private String natIP;
+    private String publicPtrDomainName;
+    private Boolean setPublicPtr;
     private String type;
 
     Builder() {}
@@ -153,6 +183,12 @@ public final class AccessConfig implements ApiMessage {
       if (other.getNatIP() != null) {
         this.natIP = other.natIP;
       }
+      if (other.getPublicPtrDomainName() != null) {
+        this.publicPtrDomainName = other.publicPtrDomainName;
+      }
+      if (other.getSetPublicPtr() != null) {
+        this.setPublicPtr = other.setPublicPtr;
+      }
       if (other.getType() != null) {
         this.type = other.type;
       }
@@ -163,6 +199,8 @@ public final class AccessConfig implements ApiMessage {
       this.kind = source.kind;
       this.name = source.name;
       this.natIP = source.natIP;
+      this.publicPtrDomainName = source.publicPtrDomainName;
+      this.setPublicPtr = source.setPublicPtr;
       this.type = source.type;
     }
 
@@ -193,6 +231,24 @@ public final class AccessConfig implements ApiMessage {
       return this;
     }
 
+    public String getPublicPtrDomainName() {
+      return publicPtrDomainName;
+    }
+
+    public Builder setPublicPtrDomainName(String publicPtrDomainName) {
+      this.publicPtrDomainName = publicPtrDomainName;
+      return this;
+    }
+
+    public Boolean getSetPublicPtr() {
+      return setPublicPtr;
+    }
+
+    public Builder setSetPublicPtr(Boolean setPublicPtr) {
+      this.setPublicPtr = setPublicPtr;
+      return this;
+    }
+
     public String getType() {
       return type;
     }
@@ -207,10 +263,14 @@ public final class AccessConfig implements ApiMessage {
 
 
 
+
+
       return new AccessConfig(
         kind,
         name,
         natIP,
+        publicPtrDomainName,
+        setPublicPtr,
         type
       );
     }
@@ -220,6 +280,8 @@ public final class AccessConfig implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
       newBuilder.setNatIP(this.natIP);
+      newBuilder.setPublicPtrDomainName(this.publicPtrDomainName);
+      newBuilder.setSetPublicPtr(this.setPublicPtr);
       newBuilder.setType(this.type);
       return newBuilder;
     }
@@ -231,6 +293,8 @@ public final class AccessConfig implements ApiMessage {
         + "kind=" + kind + ", "
         + "name=" + name + ", "
         + "natIP=" + natIP + ", "
+        + "publicPtrDomainName=" + publicPtrDomainName + ", "
+        + "setPublicPtr=" + setPublicPtr + ", "
         + "type=" + type
         + "}";
   }
@@ -246,6 +310,8 @@ public final class AccessConfig implements ApiMessage {
           Objects.equals(this.kind, that.getKind()) &&
           Objects.equals(this.name, that.getName()) &&
           Objects.equals(this.natIP, that.getNatIP()) &&
+          Objects.equals(this.publicPtrDomainName, that.getPublicPtrDomainName()) &&
+          Objects.equals(this.setPublicPtr, that.getSetPublicPtr()) &&
           Objects.equals(this.type, that.getType())
           ;
     }
@@ -258,6 +324,8 @@ public final class AccessConfig implements ApiMessage {
       kind,
       name,
       natIP,
+      publicPtrDomainName,
+      setPublicPtr,
       type
     );
   }

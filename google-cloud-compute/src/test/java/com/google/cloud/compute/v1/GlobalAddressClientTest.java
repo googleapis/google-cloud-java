@@ -133,9 +133,10 @@ public class GlobalAddressClientTest {
     mockService.addResponse(expectedResponse);
 
     ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
+    String requestId = "requestId37109963";
 
     Operation actualResponse =
-        client.deleteGlobalAddress(address);
+        client.deleteGlobalAddress(address, requestId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -155,8 +156,9 @@ public class GlobalAddressClientTest {
 
     try {
       ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
+      String requestId = "requestId37109963";
 
-      client.deleteGlobalAddress(address);
+      client.deleteGlobalAddress(address, requestId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -167,23 +169,29 @@ public class GlobalAddressClientTest {
   @SuppressWarnings("all")
   public void getGlobalAddressTest() {
     ProjectAddressName address2 = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
+    String addressType = "addressType264307877";
     String kind = "kind3292052";
+    String description = "description-1724546052";
+    String selfLink = "selfLink-1691268851";
+    String ipVersion = "ipVersion-1315653184";
+    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
-    String description = "description-1724546052";
     String id = "id3355";
     RegionName region = RegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
     String status = "status-892481550";
     Address expectedResponse = Address.newBuilder()
       .setAddress(address2.toString())
+      .setAddressType(addressType)
       .setKind(kind)
+      .setDescription(description)
+      .setSelfLink(selfLink)
+      .setIpVersion(ipVersion)
+      .setSubnetwork(subnetwork.toString())
       .setCreationTimestamp(creationTimestamp)
       .setName(name)
-      .setDescription(description)
       .setId(id)
       .setRegion(region.toString())
-      .setSelfLink(selfLink)
       .setStatus(status)
       .build();
     mockService.addResponse(expectedResponse);
@@ -268,11 +276,12 @@ public class GlobalAddressClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Address addressResource = Address.newBuilder().build();
 
     Operation actualResponse =
-        client.insertGlobalAddress(project, addressResource);
+        client.insertGlobalAddress(requestId, project, addressResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -291,10 +300,11 @@ public class GlobalAddressClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Address addressResource = Address.newBuilder().build();
 
-      client.insertGlobalAddress(project, addressResource);
+      client.insertGlobalAddress(requestId, project, addressResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

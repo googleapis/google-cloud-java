@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +39,7 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String targetPool;
   private final TargetReference targetReferenceResource;
   private final String userIp;
@@ -48,10 +52,12 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.targetPool = null;
     this.targetReferenceResource = null;
     this.userIp = null;
   }
+
 
   private SetBackupTargetPoolHttpRequest(
       String access_token,
@@ -61,9 +67,11 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String targetPool,
       TargetReference targetReferenceResource,
-      String userIp) {
+      String userIp
+      ) {
     this.access_token = access_token;
     this.callback = callback;
     this.failoverRatio = failoverRatio;
@@ -71,6 +79,7 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.targetPool = targetPool;
     this.targetReferenceResource = targetReferenceResource;
     this.userIp = userIp;
@@ -100,13 +109,14 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
     }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
+    }
     if (fieldNames.contains("targetPool") && targetPool != null) {
       fieldMap.put("targetPool", Collections.singletonList(String.valueOf(targetPool)));
     }
     if (fieldNames.contains("targetReferenceResource") && targetReferenceResource != null) {
-      fieldMap.put(
-          "targetReferenceResource",
-          Collections.singletonList(String.valueOf(targetReferenceResource)));
+      fieldMap.put("targetReferenceResource", Collections.singletonList(String.valueOf(targetReferenceResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -136,6 +146,9 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("targetPool")) {
       return String.valueOf(targetPool);
@@ -183,6 +196,10 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getTargetPool() {
     return targetPool;
   }
@@ -195,24 +212,22 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
     return userIp;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(SetBackupTargetPoolHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetBackupTargetPoolHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final SetBackupTargetPoolHttpRequest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new SetBackupTargetPoolHttpRequest();
   }
@@ -225,6 +240,7 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String targetPool;
     private TargetReference targetReferenceResource;
     private String userIp;
@@ -254,6 +270,9 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getTargetPool() != null) {
         this.targetPool = other.targetPool;
       }
@@ -274,6 +293,7 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.targetPool = source.targetPool;
       this.targetReferenceResource = source.targetReferenceResource;
       this.userIp = source.userIp;
@@ -342,6 +362,15 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getTargetPool() {
       return targetPool;
     }
@@ -369,27 +398,38 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
       return this;
     }
 
+
     public SetBackupTargetPoolHttpRequest build() {
       String missing = "";
+
+
+
+
+
+
+
 
       if (targetPool == null) {
         missing += " targetPool";
       }
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetBackupTargetPoolHttpRequest(
-          access_token,
-          callback,
-          failoverRatio,
-          fields,
-          key,
-          prettyPrint,
-          quotaUser,
-          targetPool,
-          targetReferenceResource,
-          userIp);
+        access_token,
+        callback,
+        failoverRatio,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetPool,
+        targetReferenceResource,
+        userIp
+      );
     }
 
     public Builder clone() {
@@ -401,6 +441,7 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setTargetPool(this.targetPool);
       newBuilder.setTargetReferenceResource(this.targetReferenceResource);
       newBuilder.setUserIp(this.userIp);
@@ -411,35 +452,17 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "SetBackupTargetPoolHttpRequest{"
-        + "access_token="
-        + access_token
-        + ", "
-        + "callback="
-        + callback
-        + ", "
-        + "failoverRatio="
-        + failoverRatio
-        + ", "
-        + "fields="
-        + fields
-        + ", "
-        + "key="
-        + key
-        + ", "
-        + "prettyPrint="
-        + prettyPrint
-        + ", "
-        + "quotaUser="
-        + quotaUser
-        + ", "
-        + "targetPool="
-        + targetPool
-        + ", "
-        + "targetReferenceResource="
-        + targetReferenceResource
-        + ", "
-        + "userIp="
-        + userIp
+        + "access_token=" + access_token + ", "
+        + "callback=" + callback + ", "
+        + "failoverRatio=" + failoverRatio + ", "
+        + "fields=" + fields + ", "
+        + "key=" + key + ", "
+        + "prettyPrint=" + prettyPrint + ", "
+        + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
+        + "targetPool=" + targetPool + ", "
+        + "targetReferenceResource=" + targetReferenceResource + ", "
+        + "userIp=" + userIp
         + "}";
   }
 
@@ -450,16 +473,19 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
     }
     if (o instanceof SetBackupTargetPoolHttpRequest) {
       SetBackupTargetPoolHttpRequest that = (SetBackupTargetPoolHttpRequest) o;
-      return Objects.equals(this.access_token, that.getAccessToken())
-          && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.failoverRatio, that.getFailoverRatio())
-          && Objects.equals(this.fields, that.getFields())
-          && Objects.equals(this.key, that.getKey())
-          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
-          && Objects.equals(this.quotaUser, that.getQuotaUser())
-          && Objects.equals(this.targetPool, that.getTargetPool())
-          && Objects.equals(this.targetReferenceResource, that.getTargetReferenceResource())
-          && Objects.equals(this.userIp, that.getUserIp());
+      return
+          Objects.equals(this.access_token, that.getAccessToken()) &&
+          Objects.equals(this.callback, that.getCallback()) &&
+          Objects.equals(this.failoverRatio, that.getFailoverRatio()) &&
+          Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.key, that.getKey()) &&
+          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
+          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
+          Objects.equals(this.targetPool, that.getTargetPool()) &&
+          Objects.equals(this.targetReferenceResource, that.getTargetReferenceResource()) &&
+          Objects.equals(this.userIp, that.getUserIp())
+          ;
     }
     return false;
   }
@@ -467,15 +493,17 @@ public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        access_token,
-        callback,
-        failoverRatio,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        targetPool,
-        targetReferenceResource,
-        userIp);
+      access_token,
+      callback,
+      failoverRatio,
+      fields,
+      key,
+      prettyPrint,
+      quotaUser,
+      requestId,
+      targetPool,
+      targetReferenceResource,
+      userIp
+    );
   }
 }

@@ -38,6 +38,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String subnetwork;
   private final SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource;
   private final String userIp;
@@ -49,6 +50,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.subnetwork = null;
     this.subnetworksExpandIpCidrRangeRequestResource = null;
     this.userIp = null;
@@ -62,6 +64,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String subnetwork,
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource,
       String userIp
@@ -72,6 +75,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.subnetwork = subnetwork;
     this.subnetworksExpandIpCidrRangeRequestResource = subnetworksExpandIpCidrRangeRequestResource;
     this.userIp = userIp;
@@ -97,6 +101,9 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("subnetwork") && subnetwork != null) {
       fieldMap.put("subnetwork", Collections.singletonList(String.valueOf(subnetwork)));
@@ -129,6 +136,9 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("subnetwork")) {
       return String.valueOf(subnetwork);
@@ -172,6 +182,10 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getSubnetwork() {
     return subnetwork;
   }
@@ -211,6 +225,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String subnetwork;
     private SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource;
     private String userIp;
@@ -237,6 +252,9 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getSubnetwork() != null) {
         this.subnetwork = other.subnetwork;
       }
@@ -256,6 +274,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.subnetwork = source.subnetwork;
       this.subnetworksExpandIpCidrRangeRequestResource = source.subnetworksExpandIpCidrRangeRequestResource;
       this.userIp = source.userIp;
@@ -315,6 +334,15 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getSubnetwork() {
       return subnetwork;
     }
@@ -351,6 +379,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
 
 
 
+
       if (subnetwork == null) {
         missing += " subnetwork";
       }
@@ -366,6 +395,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         subnetwork,
         subnetworksExpandIpCidrRangeRequestResource,
         userIp
@@ -380,6 +410,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setSubnetwork(this.subnetwork);
       newBuilder.setSubnetworksExpandIpCidrRangeRequestResource(this.subnetworksExpandIpCidrRangeRequestResource);
       newBuilder.setUserIp(this.userIp);
@@ -396,6 +427,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "subnetwork=" + subnetwork + ", "
         + "subnetworksExpandIpCidrRangeRequestResource=" + subnetworksExpandIpCidrRangeRequestResource + ", "
         + "userIp=" + userIp
@@ -416,6 +448,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.subnetwork, that.getSubnetwork()) &&
           Objects.equals(this.subnetworksExpandIpCidrRangeRequestResource, that.getSubnetworksExpandIpCidrRangeRequestResource()) &&
           Objects.equals(this.userIp, that.getUserIp())
@@ -433,6 +466,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       subnetwork,
       subnetworksExpandIpCidrRangeRequestResource,
       userIp

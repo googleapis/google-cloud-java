@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -43,8 +46,14 @@ public final class SerialPortOutput implements ApiMessage {
     this.start = null;
   }
 
+
   private SerialPortOutput(
-      String contents, String kind, String next, String selfLink, String start) {
+      String contents,
+      String kind,
+      String next,
+      String selfLink,
+      String start
+      ) {
     this.contents = contents;
     this.kind = kind;
     this.next = next;
@@ -119,24 +128,22 @@ public final class SerialPortOutput implements ApiMessage {
     return start;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(SerialPortOutput prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SerialPortOutput getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final SerialPortOutput DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new SerialPortOutput();
   }
@@ -223,9 +230,19 @@ public final class SerialPortOutput implements ApiMessage {
       return this;
     }
 
+
     public SerialPortOutput build() {
 
-      return new SerialPortOutput(contents, kind, next, selfLink, start);
+
+
+
+      return new SerialPortOutput(
+        contents,
+        kind,
+        next,
+        selfLink,
+        start
+      );
     }
 
     public Builder clone() {
@@ -242,20 +259,11 @@ public final class SerialPortOutput implements ApiMessage {
   @Override
   public String toString() {
     return "SerialPortOutput{"
-        + "contents="
-        + contents
-        + ", "
-        + "kind="
-        + kind
-        + ", "
-        + "next="
-        + next
-        + ", "
-        + "selfLink="
-        + selfLink
-        + ", "
-        + "start="
-        + start
+        + "contents=" + contents + ", "
+        + "kind=" + kind + ", "
+        + "next=" + next + ", "
+        + "selfLink=" + selfLink + ", "
+        + "start=" + start
         + "}";
   }
 
@@ -266,17 +274,25 @@ public final class SerialPortOutput implements ApiMessage {
     }
     if (o instanceof SerialPortOutput) {
       SerialPortOutput that = (SerialPortOutput) o;
-      return Objects.equals(this.contents, that.getContents())
-          && Objects.equals(this.kind, that.getKind())
-          && Objects.equals(this.next, that.getNext())
-          && Objects.equals(this.selfLink, that.getSelfLink())
-          && Objects.equals(this.start, that.getStart());
+      return
+          Objects.equals(this.contents, that.getContents()) &&
+          Objects.equals(this.kind, that.getKind()) &&
+          Objects.equals(this.next, that.getNext()) &&
+          Objects.equals(this.selfLink, that.getSelfLink()) &&
+          Objects.equals(this.start, that.getStart())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contents, kind, next, selfLink, start);
+    return Objects.hash(
+      contents,
+      kind,
+      next,
+      selfLink,
+      start
+    );
   }
 }

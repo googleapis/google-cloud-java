@@ -38,6 +38,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String urlMap;
   private final String userIp;
 
@@ -48,6 +49,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.urlMap = null;
     this.userIp = null;
   }
@@ -60,6 +62,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String urlMap,
       String userIp
       ) {
@@ -69,6 +72,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.urlMap = urlMap;
     this.userIp = userIp;
   }
@@ -93,6 +97,9 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("urlMap") && urlMap != null) {
       fieldMap.put("urlMap", Collections.singletonList(String.valueOf(urlMap)));
@@ -122,6 +129,9 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("urlMap")) {
       return String.valueOf(urlMap);
@@ -162,6 +172,10 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUrlMap() {
     return urlMap;
   }
@@ -197,6 +211,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String urlMap;
     private String userIp;
 
@@ -222,6 +237,9 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUrlMap() != null) {
         this.urlMap = other.urlMap;
       }
@@ -238,6 +256,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.urlMap = source.urlMap;
       this.userIp = source.userIp;
     }
@@ -296,6 +315,15 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUrlMap() {
       return urlMap;
     }
@@ -323,6 +351,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
 
 
 
+
       if (urlMap == null) {
         missing += " urlMap";
       }
@@ -337,6 +366,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         urlMap,
         userIp
       );
@@ -350,6 +380,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUrlMap(this.urlMap);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -365,6 +396,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "urlMap=" + urlMap + ", "
         + "userIp=" + userIp
         + "}";
@@ -384,6 +416,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.urlMap, that.getUrlMap()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
@@ -400,6 +433,7 @@ public final class DeleteUrlMapHttpRequest implements ApiMessage {
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       urlMap,
       userIp
     );

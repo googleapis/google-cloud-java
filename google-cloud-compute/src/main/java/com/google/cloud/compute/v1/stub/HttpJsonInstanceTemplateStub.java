@@ -68,6 +68,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
                   .setRequestInstance(DeleteInstanceTemplateHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates/{instanceTemplate}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceTemplateName.newFactory())
                   .setResourceNameField("instanceTemplate")
@@ -106,6 +107,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
                   .setRequestInstance(InsertInstanceTemplateHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")

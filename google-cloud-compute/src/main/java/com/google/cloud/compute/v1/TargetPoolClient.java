@@ -53,8 +53,9 @@ import javax.annotation.Generated;
  * <code>
  * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
  *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+ *   String requestId = "";
  *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
- *   Operation response = targetPoolClient.addHealthCheckTargetPool(targetPool, targetPoolsAddHealthCheckRequestResource);
+ *   Operation response = targetPoolClient.addHealthCheckTargetPool(targetPool, requestId, targetPoolsAddHealthCheckRequestResource);
  * }
  * </code>
  * </pre>
@@ -177,21 +178,28 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
-   *   Operation response = targetPoolClient.addHealthCheckTargetPool(targetPool, targetPoolsAddHealthCheckRequestResource);
+   *   Operation response = targetPoolClient.addHealthCheckTargetPool(targetPool, requestId, targetPoolsAddHealthCheckRequestResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the target pool to add a health check to.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsAddHealthCheckRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addHealthCheckTargetPool(TargetPoolName targetPool, TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
+  public final Operation addHealthCheckTargetPool(TargetPoolName targetPool, String requestId, TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
 
     AddHealthCheckTargetPoolHttpRequest request =
         AddHealthCheckTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool == null ? null : targetPool.toString())
+        .setRequestId(requestId)
         .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
         .build();
     return addHealthCheckTargetPool(request);
@@ -205,21 +213,28 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
-   *   Operation response = targetPoolClient.addHealthCheckTargetPool(targetPool.toString(), targetPoolsAddHealthCheckRequestResource);
+   *   Operation response = targetPoolClient.addHealthCheckTargetPool(targetPool.toString(), requestId, targetPoolsAddHealthCheckRequestResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the target pool to add a health check to.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsAddHealthCheckRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addHealthCheckTargetPool(String targetPool, TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
+  public final Operation addHealthCheckTargetPool(String targetPool, String requestId, TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
 
     AddHealthCheckTargetPoolHttpRequest request =
         AddHealthCheckTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool)
+        .setRequestId(requestId)
         .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
         .build();
     return addHealthCheckTargetPool(request);
@@ -233,9 +248,11 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
    *   AddHealthCheckTargetPoolHttpRequest request = AddHealthCheckTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
    *     .build();
    *   Operation response = targetPoolClient.addHealthCheckTargetPool(request);
@@ -258,9 +275,11 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
    *   AddHealthCheckTargetPoolHttpRequest request = AddHealthCheckTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolClient.addHealthCheckTargetPoolCallable().futureCall(request);
@@ -282,21 +301,28 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
-   *   Operation response = targetPoolClient.addInstanceTargetPool(targetPool, targetPoolsAddInstanceRequestResource);
+   *   Operation response = targetPoolClient.addInstanceTargetPool(targetPool, requestId, targetPoolsAddInstanceRequestResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to add instances to.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsAddInstanceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addInstanceTargetPool(TargetPoolName targetPool, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
+  public final Operation addInstanceTargetPool(TargetPoolName targetPool, String requestId, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
 
     AddInstanceTargetPoolHttpRequest request =
         AddInstanceTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool == null ? null : targetPool.toString())
+        .setRequestId(requestId)
         .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
         .build();
     return addInstanceTargetPool(request);
@@ -310,21 +336,28 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
-   *   Operation response = targetPoolClient.addInstanceTargetPool(targetPool.toString(), targetPoolsAddInstanceRequestResource);
+   *   Operation response = targetPoolClient.addInstanceTargetPool(targetPool.toString(), requestId, targetPoolsAddInstanceRequestResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to add instances to.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsAddInstanceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addInstanceTargetPool(String targetPool, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
+  public final Operation addInstanceTargetPool(String targetPool, String requestId, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
 
     AddInstanceTargetPoolHttpRequest request =
         AddInstanceTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool)
+        .setRequestId(requestId)
         .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
         .build();
     return addInstanceTargetPool(request);
@@ -338,9 +371,11 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
    *   AddInstanceTargetPoolHttpRequest request = AddInstanceTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
    *     .build();
    *   Operation response = targetPoolClient.addInstanceTargetPool(request);
@@ -363,9 +398,11 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
    *   AddInstanceTargetPoolHttpRequest request = AddInstanceTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolClient.addInstanceTargetPoolCallable().futureCall(request);
@@ -520,19 +557,26 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-   *   Operation response = targetPoolClient.deleteTargetPool(targetPool);
+   *   String requestId = "";
+   *   Operation response = targetPoolClient.deleteTargetPool(targetPool, requestId);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetPool(TargetPoolName targetPool) {
+  public final Operation deleteTargetPool(TargetPoolName targetPool, String requestId) {
 
     DeleteTargetPoolHttpRequest request =
         DeleteTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool == null ? null : targetPool.toString())
+        .setRequestId(requestId)
         .build();
     return deleteTargetPool(request);
   }
@@ -545,19 +589,26 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
-   *   Operation response = targetPoolClient.deleteTargetPool(targetPool.toString());
+   *   String requestId = "";
+   *   Operation response = targetPoolClient.deleteTargetPool(targetPool.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetPool(String targetPool) {
+  public final Operation deleteTargetPool(String targetPool, String requestId) {
 
     DeleteTargetPoolHttpRequest request =
         DeleteTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool)
+        .setRequestId(requestId)
         .build();
     return deleteTargetPool(request);
   }
@@ -570,8 +621,10 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   DeleteTargetPoolHttpRequest request = DeleteTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = targetPoolClient.deleteTargetPool(request);
    * }
@@ -593,8 +646,10 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   DeleteTargetPoolHttpRequest request = DeleteTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolClient.deleteTargetPoolCallable().futureCall(request);
    *   // Do something
@@ -814,21 +869,28 @@ public class TargetPoolClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
-   *   Operation response = targetPoolClient.insertTargetPool(region, targetPoolResource);
+   *   Operation response = targetPoolClient.insertTargetPool(requestId, region, targetPoolResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
-   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, associated HttpHealthCheck resources, and the fallback target pool.
+   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, an associated HttpHealthCheck resource, and the fallback target pool. (== resource_for beta.targetPools ==) (== resource_for v1.targetPools ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetPool(RegionName region, TargetPool targetPoolResource) {
+  public final Operation insertTargetPool(String requestId, RegionName region, TargetPool targetPoolResource) {
 
     InsertTargetPoolHttpRequest request =
         InsertTargetPoolHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setRegion(region == null ? null : region.toString())
         .setTargetPoolResource(targetPoolResource)
         .build();
@@ -842,21 +904,28 @@ public class TargetPoolClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
-   *   Operation response = targetPoolClient.insertTargetPool(region.toString(), targetPoolResource);
+   *   Operation response = targetPoolClient.insertTargetPool(requestId, region.toString(), targetPoolResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
-   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, associated HttpHealthCheck resources, and the fallback target pool.
+   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, an associated HttpHealthCheck resource, and the fallback target pool. (== resource_for beta.targetPools ==) (== resource_for v1.targetPools ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetPool(String region, TargetPool targetPoolResource) {
+  public final Operation insertTargetPool(String requestId, String region, TargetPool targetPoolResource) {
 
     InsertTargetPoolHttpRequest request =
         InsertTargetPoolHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setRegion(region)
         .setTargetPoolResource(targetPoolResource)
         .build();
@@ -870,9 +939,11 @@ public class TargetPoolClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
    *   InsertTargetPoolHttpRequest request = InsertTargetPoolHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setTargetPoolResource(targetPoolResource)
    *     .build();
@@ -895,9 +966,11 @@ public class TargetPoolClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
    *   InsertTargetPoolHttpRequest request = InsertTargetPoolHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setTargetPoolResource(targetPoolResource)
    *     .build();
@@ -1053,21 +1126,28 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
-   *   Operation response = targetPoolClient.removeHealthCheckTargetPool(targetPool, targetPoolsRemoveHealthCheckRequestResource);
+   *   Operation response = targetPoolClient.removeHealthCheckTargetPool(targetPool, requestId, targetPoolsRemoveHealthCheckRequestResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the target pool to remove health checks from.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsRemoveHealthCheckRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeHealthCheckTargetPool(TargetPoolName targetPool, TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
+  public final Operation removeHealthCheckTargetPool(TargetPoolName targetPool, String requestId, TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
 
     RemoveHealthCheckTargetPoolHttpRequest request =
         RemoveHealthCheckTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool == null ? null : targetPool.toString())
+        .setRequestId(requestId)
         .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
         .build();
     return removeHealthCheckTargetPool(request);
@@ -1081,21 +1161,28 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
-   *   Operation response = targetPoolClient.removeHealthCheckTargetPool(targetPool.toString(), targetPoolsRemoveHealthCheckRequestResource);
+   *   Operation response = targetPoolClient.removeHealthCheckTargetPool(targetPool.toString(), requestId, targetPoolsRemoveHealthCheckRequestResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the target pool to remove health checks from.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsRemoveHealthCheckRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeHealthCheckTargetPool(String targetPool, TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
+  public final Operation removeHealthCheckTargetPool(String targetPool, String requestId, TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
 
     RemoveHealthCheckTargetPoolHttpRequest request =
         RemoveHealthCheckTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool)
+        .setRequestId(requestId)
         .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
         .build();
     return removeHealthCheckTargetPool(request);
@@ -1109,9 +1196,11 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
    *   RemoveHealthCheckTargetPoolHttpRequest request = RemoveHealthCheckTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
    *     .build();
    *   Operation response = targetPoolClient.removeHealthCheckTargetPool(request);
@@ -1134,9 +1223,11 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
    *   RemoveHealthCheckTargetPoolHttpRequest request = RemoveHealthCheckTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolClient.removeHealthCheckTargetPoolCallable().futureCall(request);
@@ -1158,21 +1249,28 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
-   *   Operation response = targetPoolClient.removeInstanceTargetPool(targetPool, targetPoolsRemoveInstanceRequestResource);
+   *   Operation response = targetPoolClient.removeInstanceTargetPool(targetPool, requestId, targetPoolsRemoveInstanceRequestResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to remove instances from.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsRemoveInstanceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeInstanceTargetPool(TargetPoolName targetPool, TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
+  public final Operation removeInstanceTargetPool(TargetPoolName targetPool, String requestId, TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
 
     RemoveInstanceTargetPoolHttpRequest request =
         RemoveInstanceTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool == null ? null : targetPool.toString())
+        .setRequestId(requestId)
         .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
         .build();
     return removeInstanceTargetPool(request);
@@ -1186,21 +1284,28 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
-   *   Operation response = targetPoolClient.removeInstanceTargetPool(targetPool.toString(), targetPoolsRemoveInstanceRequestResource);
+   *   Operation response = targetPoolClient.removeInstanceTargetPool(targetPool.toString(), requestId, targetPoolsRemoveInstanceRequestResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to remove instances from.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsRemoveInstanceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeInstanceTargetPool(String targetPool, TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
+  public final Operation removeInstanceTargetPool(String targetPool, String requestId, TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
 
     RemoveInstanceTargetPoolHttpRequest request =
         RemoveInstanceTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool)
+        .setRequestId(requestId)
         .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
         .build();
     return removeInstanceTargetPool(request);
@@ -1214,9 +1319,11 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
    *   RemoveInstanceTargetPoolHttpRequest request = RemoveInstanceTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
    *     .build();
    *   Operation response = targetPoolClient.removeInstanceTargetPool(request);
@@ -1239,9 +1346,11 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
    *   RemoveInstanceTargetPoolHttpRequest request = RemoveInstanceTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolClient.removeInstanceTargetPoolCallable().futureCall(request);
@@ -1263,23 +1372,30 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   Float failoverRatio = 0;
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   Operation response = targetPoolClient.setBackupTargetPool(targetPool, failoverRatio, targetReferenceResource);
+   *   Operation response = targetPoolClient.setBackupTargetPool(targetPool, requestId, failoverRatio, targetReferenceResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to set a backup pool for.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param failoverRatio New failoverRatio value for the target pool.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackupTargetPool(TargetPoolName targetPool, Float failoverRatio, TargetReference targetReferenceResource) {
+  public final Operation setBackupTargetPool(TargetPoolName targetPool, String requestId, Float failoverRatio, TargetReference targetReferenceResource) {
 
     SetBackupTargetPoolHttpRequest request =
         SetBackupTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool == null ? null : targetPool.toString())
+        .setRequestId(requestId)
         .setFailoverRatio(failoverRatio)
         .setTargetReferenceResource(targetReferenceResource)
         .build();
@@ -1294,23 +1410,30 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   Float failoverRatio = 0;
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
-   *   Operation response = targetPoolClient.setBackupTargetPool(targetPool.toString(), failoverRatio, targetReferenceResource);
+   *   Operation response = targetPoolClient.setBackupTargetPool(targetPool.toString(), requestId, failoverRatio, targetReferenceResource);
    * }
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to set a backup pool for.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param failoverRatio New failoverRatio value for the target pool.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackupTargetPool(String targetPool, Float failoverRatio, TargetReference targetReferenceResource) {
+  public final Operation setBackupTargetPool(String targetPool, String requestId, Float failoverRatio, TargetReference targetReferenceResource) {
 
     SetBackupTargetPoolHttpRequest request =
         SetBackupTargetPoolHttpRequest.newBuilder()
         .setTargetPool(targetPool)
+        .setRequestId(requestId)
         .setFailoverRatio(failoverRatio)
         .setTargetReferenceResource(targetReferenceResource)
         .build();
@@ -1325,10 +1448,12 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   Float failoverRatio = 0;
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetBackupTargetPoolHttpRequest request = SetBackupTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setFailoverRatio(failoverRatio)
    *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();
@@ -1352,10 +1477,12 @@ public class TargetPoolClient implements BackgroundResource {
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+   *   String requestId = "";
    *   Float failoverRatio = 0;
    *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetBackupTargetPoolHttpRequest request = SetBackupTargetPoolHttpRequest.newBuilder()
    *     .setTargetPool(targetPool.toString())
+   *     .setRequestId(requestId)
    *     .setFailoverRatio(failoverRatio)
    *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();

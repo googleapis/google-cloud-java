@@ -53,8 +53,10 @@ import javax.annotation.Generated;
  * <code>
  * try (DiskClient diskClient = DiskClient.create()) {
  *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+ *   String requestId = "";
+ *   Boolean guestFlush = false;
  *   Snapshot snapshotResource = Snapshot.newBuilder().build();
- *   Operation response = diskClient.createSnapshotDisk(disk, snapshotResource);
+ *   Operation response = diskClient.createSnapshotDisk(disk, requestId, guestFlush, snapshotResource);
  * }
  * </code>
  * </pre>
@@ -310,21 +312,31 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
+   *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   Operation response = diskClient.createSnapshotDisk(disk, snapshotResource);
+   *   Operation response = diskClient.createSnapshotDisk(disk, requestId, guestFlush, snapshotResource);
    * }
    * </code></pre>
    *
    * @param disk Name of the persistent disk to snapshot.
-   * @param snapshotResource A persistent disk snapshot resource.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param guestFlush
+   * @param snapshotResource A persistent disk snapshot resource. (== resource_for beta.snapshots ==) (== resource_for v1.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation createSnapshotDisk(DiskName disk, Snapshot snapshotResource) {
+  public final Operation createSnapshotDisk(DiskName disk, String requestId, Boolean guestFlush, Snapshot snapshotResource) {
 
     CreateSnapshotDiskHttpRequest request =
         CreateSnapshotDiskHttpRequest.newBuilder()
         .setDisk(disk == null ? null : disk.toString())
+        .setRequestId(requestId)
+        .setGuestFlush(guestFlush)
         .setSnapshotResource(snapshotResource)
         .build();
     return createSnapshotDisk(request);
@@ -338,21 +350,31 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
+   *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
-   *   Operation response = diskClient.createSnapshotDisk(disk.toString(), snapshotResource);
+   *   Operation response = diskClient.createSnapshotDisk(disk.toString(), requestId, guestFlush, snapshotResource);
    * }
    * </code></pre>
    *
    * @param disk Name of the persistent disk to snapshot.
-   * @param snapshotResource A persistent disk snapshot resource.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param guestFlush
+   * @param snapshotResource A persistent disk snapshot resource. (== resource_for beta.snapshots ==) (== resource_for v1.snapshots ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation createSnapshotDisk(String disk, Snapshot snapshotResource) {
+  public final Operation createSnapshotDisk(String disk, String requestId, Boolean guestFlush, Snapshot snapshotResource) {
 
     CreateSnapshotDiskHttpRequest request =
         CreateSnapshotDiskHttpRequest.newBuilder()
         .setDisk(disk)
+        .setRequestId(requestId)
+        .setGuestFlush(guestFlush)
         .setSnapshotResource(snapshotResource)
         .build();
     return createSnapshotDisk(request);
@@ -366,9 +388,13 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
+   *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   CreateSnapshotDiskHttpRequest request = CreateSnapshotDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
+   *     .setRequestId(requestId)
+   *     .setGuestFlush(guestFlush)
    *     .setSnapshotResource(snapshotResource)
    *     .build();
    *   Operation response = diskClient.createSnapshotDisk(request);
@@ -391,9 +417,13 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
+   *   Boolean guestFlush = false;
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   CreateSnapshotDiskHttpRequest request = CreateSnapshotDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
+   *     .setRequestId(requestId)
+   *     .setGuestFlush(guestFlush)
    *     .setSnapshotResource(snapshotResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = diskClient.createSnapshotDiskCallable().futureCall(request);
@@ -415,19 +445,26 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
-   *   Operation response = diskClient.deleteDisk(disk);
+   *   String requestId = "";
+   *   Operation response = diskClient.deleteDisk(disk, requestId);
    * }
    * </code></pre>
    *
    * @param disk Name of the persistent disk to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteDisk(DiskName disk) {
+  public final Operation deleteDisk(DiskName disk, String requestId) {
 
     DeleteDiskHttpRequest request =
         DeleteDiskHttpRequest.newBuilder()
         .setDisk(disk == null ? null : disk.toString())
+        .setRequestId(requestId)
         .build();
     return deleteDisk(request);
   }
@@ -440,19 +477,26 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
-   *   Operation response = diskClient.deleteDisk(disk.toString());
+   *   String requestId = "";
+   *   Operation response = diskClient.deleteDisk(disk.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param disk Name of the persistent disk to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteDisk(String disk) {
+  public final Operation deleteDisk(String disk, String requestId) {
 
     DeleteDiskHttpRequest request =
         DeleteDiskHttpRequest.newBuilder()
         .setDisk(disk)
+        .setRequestId(requestId)
         .build();
     return deleteDisk(request);
   }
@@ -465,8 +509,10 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
    *   DeleteDiskHttpRequest request = DeleteDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = diskClient.deleteDisk(request);
    * }
@@ -488,8 +534,10 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
    *   DeleteDiskHttpRequest request = DeleteDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = diskClient.deleteDiskCallable().futureCall(request);
    *   // Do something
@@ -605,23 +653,30 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   String requestId = "";
    *   String sourceImage = "";
    *   Disk diskResource = Disk.newBuilder().build();
-   *   Operation response = diskClient.insertDisk(zone, sourceImage, diskResource);
+   *   Operation response = diskClient.insertDisk(zone, requestId, sourceImage, diskResource);
    * }
    * </code></pre>
    *
    * @param zone The name of the zone for this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param sourceImage Optional. Source image to restore onto a disk.
-   * @param diskResource A Disk resource.
+   * @param diskResource A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertDisk(ZoneName zone, String sourceImage, Disk diskResource) {
+  public final Operation insertDisk(ZoneName zone, String requestId, String sourceImage, Disk diskResource) {
 
     InsertDiskHttpRequest request =
         InsertDiskHttpRequest.newBuilder()
         .setZone(zone == null ? null : zone.toString())
+        .setRequestId(requestId)
         .setSourceImage(sourceImage)
         .setDiskResource(diskResource)
         .build();
@@ -636,23 +691,30 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   String requestId = "";
    *   String sourceImage = "";
    *   Disk diskResource = Disk.newBuilder().build();
-   *   Operation response = diskClient.insertDisk(zone.toString(), sourceImage, diskResource);
+   *   Operation response = diskClient.insertDisk(zone.toString(), requestId, sourceImage, diskResource);
    * }
    * </code></pre>
    *
    * @param zone The name of the zone for this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param sourceImage Optional. Source image to restore onto a disk.
-   * @param diskResource A Disk resource.
+   * @param diskResource A Disk resource. (== resource_for beta.disks ==) (== resource_for v1.disks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertDisk(String zone, String sourceImage, Disk diskResource) {
+  public final Operation insertDisk(String zone, String requestId, String sourceImage, Disk diskResource) {
 
     InsertDiskHttpRequest request =
         InsertDiskHttpRequest.newBuilder()
         .setZone(zone)
+        .setRequestId(requestId)
         .setSourceImage(sourceImage)
         .setDiskResource(diskResource)
         .build();
@@ -667,10 +729,12 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   String requestId = "";
    *   String sourceImage = "";
    *   Disk diskResource = Disk.newBuilder().build();
    *   InsertDiskHttpRequest request = InsertDiskHttpRequest.newBuilder()
    *     .setZone(zone.toString())
+   *     .setRequestId(requestId)
    *     .setSourceImage(sourceImage)
    *     .setDiskResource(diskResource)
    *     .build();
@@ -694,10 +758,12 @@ public class DiskClient implements BackgroundResource {
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   String requestId = "";
    *   String sourceImage = "";
    *   Disk diskResource = Disk.newBuilder().build();
    *   InsertDiskHttpRequest request = InsertDiskHttpRequest.newBuilder()
    *     .setZone(zone.toString())
+   *     .setRequestId(requestId)
    *     .setSourceImage(sourceImage)
    *     .setDiskResource(diskResource)
    *     .build();
@@ -847,27 +913,34 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified persistent disk.
+   * Resizes the specified persistent disk. You can only increase the size of the disk.
    *
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
-   *   Operation response = diskClient.resizeDisk(disk, disksResizeRequestResource);
+   *   Operation response = diskClient.resizeDisk(disk, requestId, disksResizeRequestResource);
    * }
    * </code></pre>
    *
    * @param disk The name of the persistent disk.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param disksResizeRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resizeDisk(DiskName disk, DisksResizeRequest disksResizeRequestResource) {
+  public final Operation resizeDisk(DiskName disk, String requestId, DisksResizeRequest disksResizeRequestResource) {
 
     ResizeDiskHttpRequest request =
         ResizeDiskHttpRequest.newBuilder()
         .setDisk(disk == null ? null : disk.toString())
+        .setRequestId(requestId)
         .setDisksResizeRequestResource(disksResizeRequestResource)
         .build();
     return resizeDisk(request);
@@ -875,27 +948,34 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified persistent disk.
+   * Resizes the specified persistent disk. You can only increase the size of the disk.
    *
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
-   *   Operation response = diskClient.resizeDisk(disk.toString(), disksResizeRequestResource);
+   *   Operation response = diskClient.resizeDisk(disk.toString(), requestId, disksResizeRequestResource);
    * }
    * </code></pre>
    *
    * @param disk The name of the persistent disk.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param disksResizeRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resizeDisk(String disk, DisksResizeRequest disksResizeRequestResource) {
+  public final Operation resizeDisk(String disk, String requestId, DisksResizeRequest disksResizeRequestResource) {
 
     ResizeDiskHttpRequest request =
         ResizeDiskHttpRequest.newBuilder()
         .setDisk(disk)
+        .setRequestId(requestId)
         .setDisksResizeRequestResource(disksResizeRequestResource)
         .build();
     return resizeDisk(request);
@@ -903,15 +983,17 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified persistent disk.
+   * Resizes the specified persistent disk. You can only increase the size of the disk.
    *
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   ResizeDiskHttpRequest request = ResizeDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
+   *     .setRequestId(requestId)
    *     .setDisksResizeRequestResource(disksResizeRequestResource)
    *     .build();
    *   Operation response = diskClient.resizeDisk(request);
@@ -928,15 +1010,17 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified persistent disk.
+   * Resizes the specified persistent disk. You can only increase the size of the disk.
    *
    * Sample code:
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
    *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+   *   String requestId = "";
    *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   ResizeDiskHttpRequest request = ResizeDiskHttpRequest.newBuilder()
    *     .setDisk(disk.toString())
+   *     .setRequestId(requestId)
    *     .setDisksResizeRequestResource(disksResizeRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = diskClient.resizeDiskCallable().futureCall(request);
@@ -948,6 +1032,129 @@ public class DiskClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<ResizeDiskHttpRequest, Operation> resizeDiskCallable() {
     return stub.resizeDiskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String requestId = "";
+   *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
+   *   Operation response = diskClient.setLabelsDisk(resource, requestId, zoneSetLabelsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name of the resource for this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param zoneSetLabelsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsDisk(ResourceName resource, String requestId, ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
+
+    SetLabelsDiskHttpRequest request =
+        SetLabelsDiskHttpRequest.newBuilder()
+        .setResource(resource == null ? null : resource.toString())
+        .setRequestId(requestId)
+        .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
+        .build();
+    return setLabelsDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String requestId = "";
+   *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
+   *   Operation response = diskClient.setLabelsDisk(resource.toString(), requestId, zoneSetLabelsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name of the resource for this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param zoneSetLabelsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsDisk(String resource, String requestId, ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
+
+    SetLabelsDiskHttpRequest request =
+        SetLabelsDiskHttpRequest.newBuilder()
+        .setResource(resource)
+        .setRequestId(requestId)
+        .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
+        .build();
+    return setLabelsDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String requestId = "";
+   *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
+   *   SetLabelsDiskHttpRequest request = SetLabelsDiskHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setRequestId(requestId)
+   *     .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
+   *     .build();
+   *   Operation response = diskClient.setLabelsDisk(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsDisk(SetLabelsDiskHttpRequest request) {
+    return setLabelsDiskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (DiskClient diskClient = DiskClient.create()) {
+   *   ResourceName resource = ResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String requestId = "";
+   *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
+   *   SetLabelsDiskHttpRequest request = SetLabelsDiskHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setRequestId(requestId)
+   *     .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = diskClient.setLabelsDiskCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetLabelsDiskHttpRequest, Operation> setLabelsDiskCallable() {
+    return stub.setLabelsDiskCallable();
   }
 
   @Override

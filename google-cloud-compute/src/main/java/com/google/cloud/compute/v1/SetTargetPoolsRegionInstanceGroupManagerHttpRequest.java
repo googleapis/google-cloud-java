@@ -40,6 +40,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
   private final String prettyPrint;
   private final String quotaUser;
   private final RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource;
+  private final String requestId;
   private final String userIp;
 
   private SetTargetPoolsRegionInstanceGroupManagerHttpRequest() {
@@ -51,6 +52,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
     this.prettyPrint = null;
     this.quotaUser = null;
     this.regionInstanceGroupManagersSetTargetPoolsRequestResource = null;
+    this.requestId = null;
     this.userIp = null;
   }
 
@@ -64,6 +66,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
       String prettyPrint,
       String quotaUser,
       RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource,
+      String requestId,
       String userIp
       ) {
     this.access_token = access_token;
@@ -74,6 +77,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.regionInstanceGroupManagersSetTargetPoolsRequestResource = regionInstanceGroupManagersSetTargetPoolsRequestResource;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -103,6 +107,9 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
     }
     if (fieldNames.contains("regionInstanceGroupManagersSetTargetPoolsRequestResource") && regionInstanceGroupManagersSetTargetPoolsRequestResource != null) {
       fieldMap.put("regionInstanceGroupManagersSetTargetPoolsRequestResource", Collections.singletonList(String.valueOf(regionInstanceGroupManagersSetTargetPoolsRequestResource)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -135,6 +142,9 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
     }
     if (fieldName.equals("regionInstanceGroupManagersSetTargetPoolsRequestResource")) {
       return String.valueOf(regionInstanceGroupManagersSetTargetPoolsRequestResource);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -180,6 +190,10 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
     return regionInstanceGroupManagersSetTargetPoolsRequestResource;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -213,6 +227,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
     private String prettyPrint;
     private String quotaUser;
     private RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -243,6 +258,9 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
       if (other.getRegionInstanceGroupManagersSetTargetPoolsRequestResource() != null) {
         this.regionInstanceGroupManagersSetTargetPoolsRequestResource = other.regionInstanceGroupManagersSetTargetPoolsRequestResource;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -258,6 +276,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.regionInstanceGroupManagersSetTargetPoolsRequestResource = source.regionInstanceGroupManagersSetTargetPoolsRequestResource;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -333,6 +352,15 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -356,6 +384,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
 
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -368,6 +397,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
         prettyPrint,
         quotaUser,
         regionInstanceGroupManagersSetTargetPoolsRequestResource,
+        requestId,
         userIp
       );
     }
@@ -382,6 +412,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRegionInstanceGroupManagersSetTargetPoolsRequestResource(this.regionInstanceGroupManagersSetTargetPoolsRequestResource);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -398,6 +429,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
         + "regionInstanceGroupManagersSetTargetPoolsRequestResource=" + regionInstanceGroupManagersSetTargetPoolsRequestResource + ", "
+        + "requestId=" + requestId + ", "
         + "userIp=" + userIp
         + "}";
   }
@@ -418,6 +450,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
           Objects.equals(this.regionInstanceGroupManagersSetTargetPoolsRequestResource, that.getRegionInstanceGroupManagersSetTargetPoolsRequestResource()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
     }
@@ -435,6 +468,7 @@ public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implement
       prettyPrint,
       quotaUser,
       regionInstanceGroupManagersSetTargetPoolsRequestResource,
+      requestId,
       userIp
     );
   }

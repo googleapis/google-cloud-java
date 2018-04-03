@@ -23,12 +23,22 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.paging.FixedSizeCollection;
+import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.TargetVpnGatewayStub;
 import com.google.cloud.compute.v1.stub.TargetVpnGatewayStubSettings;
+import com.google.common.base.Function;
+import com.google.common.collect.Iterables;
+import java.io.Closeable;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -42,40 +52,41 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+ *   String requestId = "";
  *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
- *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(targetVpnGateway);
+ *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(requestId, targetVpnGateway);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the targetVpnGatewayClient object to clean up resources
- * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * <p>Note: close() needs to be called on the targetVpnGatewayClient object to clean up resources such
+ * as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
+ * <li> A "flattened" method. With this type of method, the fields of the request type have been
+ * converted into function parameters. It may be the case that not all fields are available
+ * as parameters, and not every API method will have a flattened method entry point.
+ * <li> A "request object" method. This type of method only takes one parameter, a request
+ * object, which must be constructed before the call. Not every API method will have a request
+ * object method.
+ * <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ * API callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist with
- * these names, this class includes a format method for each type of name, and additionally a parse
- * method to extract the individual identifiers contained within names that are returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist
+ * with these names, this class includes a format method for each type of name, and additionally
+ * a parse method to extract the individual identifiers contained within names that are
+ * returned.
  *
  * <p>This class can be customized by passing in a custom instance of TargetVpnGatewaySettings to
  * create(). For example:
  *
- * <p>To customize credentials:
+ * To customize credentials:
  *
  * <pre>
  * <code>
@@ -105,23 +116,27 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   private final TargetVpnGatewaySettings settings;
   private final TargetVpnGatewayStub stub;
 
-  /** Constructs an instance of TargetVpnGatewayClient with default settings. */
+
+
+  /**
+   * Constructs an instance of TargetVpnGatewayClient with default settings.
+   */
   public static final TargetVpnGatewayClient create() throws IOException {
     return create(TargetVpnGatewaySettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of TargetVpnGatewayClient, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of TargetVpnGatewayClient, using the given settings.
+   * The channels are created based on the settings passed in, or defaults for any
+   * settings that are not set.
    */
-  public static final TargetVpnGatewayClient create(TargetVpnGatewaySettings settings)
-      throws IOException {
+  public static final TargetVpnGatewayClient create(TargetVpnGatewaySettings settings) throws IOException {
     return new TargetVpnGatewayClient(settings);
   }
 
   /**
-   * Constructs an instance of TargetVpnGatewayClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use TargetVpnGatewaySettings}.
+   * Constructs an instance of TargetVpnGatewayClient, using the given stub for making calls. This is for
+   * advanced usage - prefer to use TargetVpnGatewaySettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetVpnGatewayClient create(TargetVpnGatewayStub stub) {
@@ -129,9 +144,9 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of TargetVpnGatewayClient, using the given settings. This is protected
-   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
-   * preferred.
+   * Constructs an instance of TargetVpnGatewayClient, using the given settings.
+   * This is protected so that it is easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
    */
   protected TargetVpnGatewayClient(TargetVpnGatewaySettings settings) throws IOException {
     this.settings = settings;
@@ -153,12 +168,12 @@ public class TargetVpnGatewayClient implements BackgroundResource {
     return stub;
   }
 
+
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of target VPN gateways.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -172,12 +187,11 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetVpnGatewaysPagedResponse aggregatedListTargetVpnGateways(
-      ProjectName project) {
+  public final AggregatedListTargetVpnGatewaysPagedResponse aggregatedListTargetVpnGateways(ProjectName project) {
     AggregatedListTargetVpnGatewaysHttpRequest request =
         AggregatedListTargetVpnGatewaysHttpRequest.newBuilder()
-            .setProject(project == null ? null : project.toString())
-            .build();
+        .setProject(project == null ? null : project.toString())
+        .build();
     return aggregatedListTargetVpnGateways(request);
   }
 
@@ -185,8 +199,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target VPN gateways.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -200,10 +213,11 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetVpnGatewaysPagedResponse aggregatedListTargetVpnGateways(
-      String project) {
+  public final AggregatedListTargetVpnGatewaysPagedResponse aggregatedListTargetVpnGateways(String project) {
     AggregatedListTargetVpnGatewaysHttpRequest request =
-        AggregatedListTargetVpnGatewaysHttpRequest.newBuilder().setProject(project).build();
+        AggregatedListTargetVpnGatewaysHttpRequest.newBuilder()
+        .setProject(project)
+        .build();
     return aggregatedListTargetVpnGateways(request);
   }
 
@@ -211,8 +225,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target VPN gateways.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -229,17 +242,16 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetVpnGatewaysPagedResponse aggregatedListTargetVpnGateways(
-      AggregatedListTargetVpnGatewaysHttpRequest request) {
-    return aggregatedListTargetVpnGatewaysPagedCallable().call(request);
+  public final AggregatedListTargetVpnGatewaysPagedResponse aggregatedListTargetVpnGateways(AggregatedListTargetVpnGatewaysHttpRequest request) {
+    return aggregatedListTargetVpnGatewaysPagedCallable()
+        .call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of target VPN gateways.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -255,9 +267,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<
-          AggregatedListTargetVpnGatewaysHttpRequest, AggregatedListTargetVpnGatewaysPagedResponse>
-      aggregatedListTargetVpnGatewaysPagedCallable() {
+  public final UnaryCallable<AggregatedListTargetVpnGatewaysHttpRequest, AggregatedListTargetVpnGatewaysPagedResponse> aggregatedListTargetVpnGatewaysPagedCallable() {
     return stub.aggregatedListTargetVpnGatewaysPagedCallable();
   }
 
@@ -265,8 +275,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target VPN gateways.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -289,9 +298,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList>
-      aggregatedListTargetVpnGatewaysCallable() {
+  public final UnaryCallable<AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList> aggregatedListTargetVpnGatewaysCallable() {
     return stub.aggregatedListTargetVpnGatewaysCallable();
   }
 
@@ -299,25 +306,31 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Deletes the specified target VPN gateway.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+   *   String requestId = "";
    *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
-   *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(targetVpnGateway);
+   *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(requestId, targetVpnGateway);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetVpnGateway Name of the target VPN gateway to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetVpnGateway(TargetVpnGatewayName targetVpnGateway) {
+  public final Operation deleteTargetVpnGateway(String requestId, TargetVpnGatewayName targetVpnGateway) {
 
     DeleteTargetVpnGatewayHttpRequest request =
         DeleteTargetVpnGatewayHttpRequest.newBuilder()
-            .setTargetVpnGateway(targetVpnGateway == null ? null : targetVpnGateway.toString())
-            .build();
+        .setRequestId(requestId)
+        .setTargetVpnGateway(targetVpnGateway == null ? null : targetVpnGateway.toString())
+        .build();
     return deleteTargetVpnGateway(request);
   }
 
@@ -325,25 +338,31 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Deletes the specified target VPN gateway.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+   *   String requestId = "";
    *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
-   *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(targetVpnGateway.toString());
+   *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(requestId, targetVpnGateway.toString());
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param targetVpnGateway Name of the target VPN gateway to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetVpnGateway(String targetVpnGateway) {
+  public final Operation deleteTargetVpnGateway(String requestId, String targetVpnGateway) {
 
     DeleteTargetVpnGatewayHttpRequest request =
         DeleteTargetVpnGatewayHttpRequest.newBuilder()
-            .setTargetVpnGateway(targetVpnGateway)
-            .build();
+        .setRequestId(requestId)
+        .setTargetVpnGateway(targetVpnGateway)
+        .build();
     return deleteTargetVpnGateway(request);
   }
 
@@ -351,12 +370,13 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Deletes the specified target VPN gateway.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+   *   String requestId = "";
    *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
    *   DeleteTargetVpnGatewayHttpRequest request = DeleteTargetVpnGatewayHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setTargetVpnGateway(targetVpnGateway.toString())
    *     .build();
    *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(request);
@@ -375,12 +395,13 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Deletes the specified target VPN gateway.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+   *   String requestId = "";
    *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
    *   DeleteTargetVpnGatewayHttpRequest request = DeleteTargetVpnGatewayHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setTargetVpnGateway(targetVpnGateway.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetVpnGatewayClient.deleteTargetVpnGatewayCallable().futureCall(request);
@@ -390,18 +411,15 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteTargetVpnGatewayHttpRequest, Operation>
-      deleteTargetVpnGatewayCallable() {
+  public final UnaryCallable<DeleteTargetVpnGatewayHttpRequest, Operation> deleteTargetVpnGatewayCallable() {
     return stub.deleteTargetVpnGatewayCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified target VPN gateway. Get a list of available target VPN gateways by making
-   * a list() request.
+   * Returns the specified target VPN gateway. Get a list of available target VPN gateways by making a list() request.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
@@ -417,18 +435,16 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
     GetTargetVpnGatewayHttpRequest request =
         GetTargetVpnGatewayHttpRequest.newBuilder()
-            .setTargetVpnGateway(targetVpnGateway == null ? null : targetVpnGateway.toString())
-            .build();
+        .setTargetVpnGateway(targetVpnGateway == null ? null : targetVpnGateway.toString())
+        .build();
     return getTargetVpnGateway(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified target VPN gateway. Get a list of available target VPN gateways by making
-   * a list() request.
+   * Returns the specified target VPN gateway. Get a list of available target VPN gateways by making a list() request.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
@@ -443,17 +459,17 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   public final TargetVpnGateway getTargetVpnGateway(String targetVpnGateway) {
 
     GetTargetVpnGatewayHttpRequest request =
-        GetTargetVpnGatewayHttpRequest.newBuilder().setTargetVpnGateway(targetVpnGateway).build();
+        GetTargetVpnGatewayHttpRequest.newBuilder()
+        .setTargetVpnGateway(targetVpnGateway)
+        .build();
     return getTargetVpnGateway(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified target VPN gateway. Get a list of available target VPN gateways by making
-   * a list() request.
+   * Returns the specified target VPN gateway. Get a list of available target VPN gateways by making a list() request.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
@@ -474,11 +490,9 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified target VPN gateway. Get a list of available target VPN gateways by making
-   * a list() request.
+   * Returns the specified target VPN gateway. Get a list of available target VPN gateways by making a list() request.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
@@ -492,85 +506,92 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetTargetVpnGatewayHttpRequest, TargetVpnGateway>
-      getTargetVpnGatewayCallable() {
+  public final UnaryCallable<GetTargetVpnGatewayHttpRequest, TargetVpnGateway> getTargetVpnGatewayCallable() {
     return stub.getTargetVpnGatewayCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a target VPN gateway in the specified project and region using the data included in the
-   * request.
+   * Creates a target VPN gateway in the specified project and region using the data included in the request.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
-   *   Operation response = targetVpnGatewayClient.insertTargetVpnGateway(region, targetVpnGatewayResource);
+   *   Operation response = targetVpnGatewayClient.insertTargetVpnGateway(requestId, region, targetVpnGatewayResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
-   * @param targetVpnGatewayResource Represents a Target VPN gateway resource.
+   * @param targetVpnGatewayResource Represents a Target VPN gateway resource. (== resource_for beta.targetVpnGateways ==) (== resource_for v1.targetVpnGateways ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetVpnGateway(
-      RegionName region, TargetVpnGateway targetVpnGatewayResource) {
+  public final Operation insertTargetVpnGateway(String requestId, RegionName region, TargetVpnGateway targetVpnGatewayResource) {
 
     InsertTargetVpnGatewayHttpRequest request =
         InsertTargetVpnGatewayHttpRequest.newBuilder()
-            .setRegion(region == null ? null : region.toString())
-            .setTargetVpnGatewayResource(targetVpnGatewayResource)
-            .build();
+        .setRequestId(requestId)
+        .setRegion(region == null ? null : region.toString())
+        .setTargetVpnGatewayResource(targetVpnGatewayResource)
+        .build();
     return insertTargetVpnGateway(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a target VPN gateway in the specified project and region using the data included in the
-   * request.
+   * Creates a target VPN gateway in the specified project and region using the data included in the request.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
-   *   Operation response = targetVpnGatewayClient.insertTargetVpnGateway(region.toString(), targetVpnGatewayResource);
+   *   Operation response = targetVpnGatewayClient.insertTargetVpnGateway(requestId, region.toString(), targetVpnGatewayResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
-   * @param targetVpnGatewayResource Represents a Target VPN gateway resource.
+   * @param targetVpnGatewayResource Represents a Target VPN gateway resource. (== resource_for beta.targetVpnGateways ==) (== resource_for v1.targetVpnGateways ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetVpnGateway(
-      String region, TargetVpnGateway targetVpnGatewayResource) {
+  public final Operation insertTargetVpnGateway(String requestId, String region, TargetVpnGateway targetVpnGatewayResource) {
 
     InsertTargetVpnGatewayHttpRequest request =
         InsertTargetVpnGatewayHttpRequest.newBuilder()
-            .setRegion(region)
-            .setTargetVpnGatewayResource(targetVpnGatewayResource)
-            .build();
+        .setRequestId(requestId)
+        .setRegion(region)
+        .setTargetVpnGatewayResource(targetVpnGatewayResource)
+        .build();
     return insertTargetVpnGateway(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a target VPN gateway in the specified project and region using the data included in the
-   * request.
+   * Creates a target VPN gateway in the specified project and region using the data included in the request.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
    *   InsertTargetVpnGatewayHttpRequest request = InsertTargetVpnGatewayHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setTargetVpnGatewayResource(targetVpnGatewayResource)
    *     .build();
@@ -588,16 +609,16 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a target VPN gateway in the specified project and region using the data included in the
-   * request.
+   * Creates a target VPN gateway in the specified project and region using the data included in the request.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
    *   InsertTargetVpnGatewayHttpRequest request = InsertTargetVpnGatewayHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setTargetVpnGatewayResource(targetVpnGatewayResource)
    *     .build();
@@ -608,8 +629,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertTargetVpnGatewayHttpRequest, Operation>
-      insertTargetVpnGatewayCallable() {
+  public final UnaryCallable<InsertTargetVpnGatewayHttpRequest, Operation> insertTargetVpnGatewayCallable() {
     return stub.insertTargetVpnGatewayCallable();
   }
 
@@ -617,8 +637,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Retrieves a list of target VPN gateways available to the specified project and region.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -635,8 +654,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   public final ListTargetVpnGatewaysPagedResponse listTargetVpnGateways(RegionName region) {
     ListTargetVpnGatewaysHttpRequest request =
         ListTargetVpnGatewaysHttpRequest.newBuilder()
-            .setRegion(region == null ? null : region.toString())
-            .build();
+        .setRegion(region == null ? null : region.toString())
+        .build();
     return listTargetVpnGateways(request);
   }
 
@@ -644,8 +663,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Retrieves a list of target VPN gateways available to the specified project and region.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -661,7 +679,9 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   @BetaApi
   public final ListTargetVpnGatewaysPagedResponse listTargetVpnGateways(String region) {
     ListTargetVpnGatewaysHttpRequest request =
-        ListTargetVpnGatewaysHttpRequest.newBuilder().setRegion(region).build();
+        ListTargetVpnGatewaysHttpRequest.newBuilder()
+        .setRegion(region)
+        .build();
     return listTargetVpnGateways(request);
   }
 
@@ -669,8 +689,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Retrieves a list of target VPN gateways available to the specified project and region.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -687,17 +706,16 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListTargetVpnGatewaysPagedResponse listTargetVpnGateways(
-      ListTargetVpnGatewaysHttpRequest request) {
-    return listTargetVpnGatewaysPagedCallable().call(request);
+  public final ListTargetVpnGatewaysPagedResponse listTargetVpnGateways(ListTargetVpnGatewaysHttpRequest request) {
+    return listTargetVpnGatewaysPagedCallable()
+        .call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of target VPN gateways available to the specified project and region.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -713,8 +731,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetVpnGatewaysHttpRequest, ListTargetVpnGatewaysPagedResponse>
-      listTargetVpnGatewaysPagedCallable() {
+  public final UnaryCallable<ListTargetVpnGatewaysHttpRequest, ListTargetVpnGatewaysPagedResponse> listTargetVpnGatewaysPagedCallable() {
     return stub.listTargetVpnGatewaysPagedCallable();
   }
 
@@ -722,8 +739,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   /**
    * Retrieves a list of target VPN gateways available to the specified project and region.
    *
-   * <p>Sample code:
-   *
+   * Sample code:
    * <pre><code>
    * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
@@ -746,8 +762,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList>
-      listTargetVpnGatewaysCallable() {
+  public final UnaryCallable<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList> listTargetVpnGatewaysCallable() {
     return stub.listTargetVpnGatewaysCallable();
   }
 
@@ -781,31 +796,23 @@ public class TargetVpnGatewayClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListTargetVpnGatewaysPagedResponse
-      extends AbstractPagedListResponse<
-          AggregatedListTargetVpnGatewaysHttpRequest,
-          TargetVpnGatewayAggregatedList,
-          TargetVpnGatewaysScopedList,
-          AggregatedListTargetVpnGatewaysPage,
-          AggregatedListTargetVpnGatewaysFixedSizeCollection> {
+  public static class AggregatedListTargetVpnGatewaysPagedResponse extends AbstractPagedListResponse<
+      AggregatedListTargetVpnGatewaysHttpRequest,
+      TargetVpnGatewayAggregatedList,
+      TargetVpnGatewaysScopedList,
+      AggregatedListTargetVpnGatewaysPage,
+      AggregatedListTargetVpnGatewaysFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListTargetVpnGatewaysPagedResponse> createAsync(
-        PageContext<
-                AggregatedListTargetVpnGatewaysHttpRequest,
-                TargetVpnGatewayAggregatedList,
-                TargetVpnGatewaysScopedList>
-            context,
+        PageContext<AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList, TargetVpnGatewaysScopedList> context,
         ApiFuture<TargetVpnGatewayAggregatedList> futureResponse) {
       ApiFuture<AggregatedListTargetVpnGatewaysPage> futurePage =
-          AggregatedListTargetVpnGatewaysPage.createEmptyPage()
-              .createPageAsync(context, futureResponse);
+          AggregatedListTargetVpnGatewaysPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              AggregatedListTargetVpnGatewaysPage, AggregatedListTargetVpnGatewaysPagedResponse>() {
+          new ApiFunction<AggregatedListTargetVpnGatewaysPage, AggregatedListTargetVpnGatewaysPagedResponse>() {
             @Override
-            public AggregatedListTargetVpnGatewaysPagedResponse apply(
-                AggregatedListTargetVpnGatewaysPage input) {
+            public AggregatedListTargetVpnGatewaysPagedResponse apply(AggregatedListTargetVpnGatewaysPage input) {
               return new AggregatedListTargetVpnGatewaysPagedResponse(input);
             }
           });
@@ -814,21 +821,18 @@ public class TargetVpnGatewayClient implements BackgroundResource {
     private AggregatedListTargetVpnGatewaysPagedResponse(AggregatedListTargetVpnGatewaysPage page) {
       super(page, AggregatedListTargetVpnGatewaysFixedSizeCollection.createEmptyCollection());
     }
+
+
   }
 
-  public static class AggregatedListTargetVpnGatewaysPage
-      extends AbstractPage<
-          AggregatedListTargetVpnGatewaysHttpRequest,
-          TargetVpnGatewayAggregatedList,
-          TargetVpnGatewaysScopedList,
-          AggregatedListTargetVpnGatewaysPage> {
+  public static class AggregatedListTargetVpnGatewaysPage extends AbstractPage<
+      AggregatedListTargetVpnGatewaysHttpRequest,
+      TargetVpnGatewayAggregatedList,
+      TargetVpnGatewaysScopedList,
+      AggregatedListTargetVpnGatewaysPage> {
 
     private AggregatedListTargetVpnGatewaysPage(
-        PageContext<
-                AggregatedListTargetVpnGatewaysHttpRequest,
-                TargetVpnGatewayAggregatedList,
-                TargetVpnGatewaysScopedList>
-            context,
+        PageContext<AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList, TargetVpnGatewaysScopedList> context,
         TargetVpnGatewayAggregatedList response) {
       super(context, response);
     }
@@ -839,37 +843,31 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
     @Override
     protected AggregatedListTargetVpnGatewaysPage createPage(
-        PageContext<
-                AggregatedListTargetVpnGatewaysHttpRequest,
-                TargetVpnGatewayAggregatedList,
-                TargetVpnGatewaysScopedList>
-            context,
+        PageContext<AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList, TargetVpnGatewaysScopedList> context,
         TargetVpnGatewayAggregatedList response) {
       return new AggregatedListTargetVpnGatewaysPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListTargetVpnGatewaysPage> createPageAsync(
-        PageContext<
-                AggregatedListTargetVpnGatewaysHttpRequest,
-                TargetVpnGatewayAggregatedList,
-                TargetVpnGatewaysScopedList>
-            context,
+        PageContext<AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList, TargetVpnGatewaysScopedList> context,
         ApiFuture<TargetVpnGatewayAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
+
+
+
+
   }
 
-  public static class AggregatedListTargetVpnGatewaysFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          AggregatedListTargetVpnGatewaysHttpRequest,
-          TargetVpnGatewayAggregatedList,
-          TargetVpnGatewaysScopedList,
-          AggregatedListTargetVpnGatewaysPage,
-          AggregatedListTargetVpnGatewaysFixedSizeCollection> {
+  public static class AggregatedListTargetVpnGatewaysFixedSizeCollection extends AbstractFixedSizeCollection<
+      AggregatedListTargetVpnGatewaysHttpRequest,
+      TargetVpnGatewayAggregatedList,
+      TargetVpnGatewaysScopedList,
+      AggregatedListTargetVpnGatewaysPage,
+      AggregatedListTargetVpnGatewaysFixedSizeCollection> {
 
-    private AggregatedListTargetVpnGatewaysFixedSizeCollection(
-        List<AggregatedListTargetVpnGatewaysPage> pages, int collectionSize) {
+    private AggregatedListTargetVpnGatewaysFixedSizeCollection(List<AggregatedListTargetVpnGatewaysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -882,19 +880,18 @@ public class TargetVpnGatewayClient implements BackgroundResource {
         List<AggregatedListTargetVpnGatewaysPage> pages, int collectionSize) {
       return new AggregatedListTargetVpnGatewaysFixedSizeCollection(pages, collectionSize);
     }
-  }
 
-  public static class ListTargetVpnGatewaysPagedResponse
-      extends AbstractPagedListResponse<
-          ListTargetVpnGatewaysHttpRequest,
-          TargetVpnGatewayList,
-          TargetVpnGateway,
-          ListTargetVpnGatewaysPage,
-          ListTargetVpnGatewaysFixedSizeCollection> {
+
+  }
+  public static class ListTargetVpnGatewaysPagedResponse extends AbstractPagedListResponse<
+      ListTargetVpnGatewaysHttpRequest,
+      TargetVpnGatewayList,
+      TargetVpnGateway,
+      ListTargetVpnGatewaysPage,
+      ListTargetVpnGatewaysFixedSizeCollection> {
 
     public static ApiFuture<ListTargetVpnGatewaysPagedResponse> createAsync(
-        PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway>
-            context,
+        PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway> context,
         ApiFuture<TargetVpnGatewayList> futureResponse) {
       ApiFuture<ListTargetVpnGatewaysPage> futurePage =
           ListTargetVpnGatewaysPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -911,18 +908,18 @@ public class TargetVpnGatewayClient implements BackgroundResource {
     private ListTargetVpnGatewaysPagedResponse(ListTargetVpnGatewaysPage page) {
       super(page, ListTargetVpnGatewaysFixedSizeCollection.createEmptyCollection());
     }
+
+
   }
 
-  public static class ListTargetVpnGatewaysPage
-      extends AbstractPage<
-          ListTargetVpnGatewaysHttpRequest,
-          TargetVpnGatewayList,
-          TargetVpnGateway,
-          ListTargetVpnGatewaysPage> {
+  public static class ListTargetVpnGatewaysPage extends AbstractPage<
+      ListTargetVpnGatewaysHttpRequest,
+      TargetVpnGatewayList,
+      TargetVpnGateway,
+      ListTargetVpnGatewaysPage> {
 
     private ListTargetVpnGatewaysPage(
-        PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway>
-            context,
+        PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway> context,
         TargetVpnGatewayList response) {
       super(context, response);
     }
@@ -933,31 +930,31 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
     @Override
     protected ListTargetVpnGatewaysPage createPage(
-        PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway>
-            context,
+        PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway> context,
         TargetVpnGatewayList response) {
       return new ListTargetVpnGatewaysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTargetVpnGatewaysPage> createPageAsync(
-        PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway>
-            context,
+        PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway> context,
         ApiFuture<TargetVpnGatewayList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
+
+
+
+
   }
 
-  public static class ListTargetVpnGatewaysFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListTargetVpnGatewaysHttpRequest,
-          TargetVpnGatewayList,
-          TargetVpnGateway,
-          ListTargetVpnGatewaysPage,
-          ListTargetVpnGatewaysFixedSizeCollection> {
+  public static class ListTargetVpnGatewaysFixedSizeCollection extends AbstractFixedSizeCollection<
+      ListTargetVpnGatewaysHttpRequest,
+      TargetVpnGatewayList,
+      TargetVpnGateway,
+      ListTargetVpnGatewaysPage,
+      ListTargetVpnGatewaysFixedSizeCollection> {
 
-    private ListTargetVpnGatewaysFixedSizeCollection(
-        List<ListTargetVpnGatewaysPage> pages, int collectionSize) {
+    private ListTargetVpnGatewaysFixedSizeCollection(List<ListTargetVpnGatewaysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -970,5 +967,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
         List<ListTargetVpnGatewaysPage> pages, int collectionSize) {
       return new ListTargetVpnGatewaysFixedSizeCollection(pages, collectionSize);
     }
+
+
   }
 }

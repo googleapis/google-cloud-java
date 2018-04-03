@@ -41,6 +41,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
   private final String prettyPrint;
   private final String quotaUser;
   private final String region;
+  private final String requestId;
   private final String userIp;
 
   private PatchRegionAutoscalerHttpRequest() {
@@ -53,6 +54,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     this.prettyPrint = null;
     this.quotaUser = null;
     this.region = null;
+    this.requestId = null;
     this.userIp = null;
   }
 
@@ -67,6 +69,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String region,
+      String requestId,
       String userIp
       ) {
     this.access_token = access_token;
@@ -78,6 +81,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.region = region;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -110,6 +114,9 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("region") && region != null) {
       fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -145,6 +152,9 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("region")) {
       return String.valueOf(region);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -194,6 +204,10 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     return region;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -228,6 +242,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     private String prettyPrint;
     private String quotaUser;
     private String region;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -261,6 +276,9 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       if (other.getRegion() != null) {
         this.region = other.region;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -277,6 +295,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.region = source.region;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -361,6 +380,15 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -374,9 +402,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     public PatchRegionAutoscalerHttpRequest build() {
       String missing = "";
 
-      if (autoscaler == null) {
-        missing += " autoscaler";
-      }
+
 
 
 
@@ -386,6 +412,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       if (region == null) {
         missing += " region";
       }
+
 
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
@@ -400,6 +427,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
         prettyPrint,
         quotaUser,
         region,
+        requestId,
         userIp
       );
     }
@@ -415,6 +443,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRegion(this.region);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -432,6 +461,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
         + "region=" + region + ", "
+        + "requestId=" + requestId + ", "
         + "userIp=" + userIp
         + "}";
   }
@@ -453,6 +483,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
           Objects.equals(this.region, that.getRegion()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
     }
@@ -471,6 +502,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       prettyPrint,
       quotaUser,
       region,
+      requestId,
       userIp
     );
   }

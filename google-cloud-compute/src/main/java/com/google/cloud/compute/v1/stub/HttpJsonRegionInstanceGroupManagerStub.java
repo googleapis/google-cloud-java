@@ -81,6 +81,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                   .setRequestInstance(AbandonInstancesRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/abandonInstances"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
@@ -100,6 +101,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                   .setRequestInstance(DeleteRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
@@ -119,6 +121,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                   .setRequestInstance(DeleteInstancesRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deleteInstances"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
@@ -157,6 +160,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                   .setRequestInstance(InsertRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroupManagers"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")
@@ -216,6 +220,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                   .setRequestInstance(RecreateInstancesRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/recreateInstances"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
@@ -235,7 +240,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                   .setRequestInstance(ResizeRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/resize"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "size"
+                                     "requestId",    "size"
                                      ))
                   .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
@@ -255,6 +260,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                   .setRequestInstance(SetInstanceTemplateRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")
@@ -274,6 +280,7 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                   .setRequestInstance(SetTargetPoolsRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setTargetPools"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
                   .setResourceNameField("instanceGroupManager")

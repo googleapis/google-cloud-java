@@ -35,22 +35,26 @@ public final class InsertImageHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
   private final String fields;
+  private final Boolean forceCreate;
   private final Image imageResource;
   private final String key;
   private final String prettyPrint;
   private final String project;
   private final String quotaUser;
+  private final String requestId;
   private final String userIp;
 
   private InsertImageHttpRequest() {
     this.access_token = null;
     this.callback = null;
     this.fields = null;
+    this.forceCreate = null;
     this.imageResource = null;
     this.key = null;
     this.prettyPrint = null;
     this.project = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.userIp = null;
   }
 
@@ -59,21 +63,25 @@ public final class InsertImageHttpRequest implements ApiMessage {
       String access_token,
       String callback,
       String fields,
+      Boolean forceCreate,
       Image imageResource,
       String key,
       String prettyPrint,
       String project,
       String quotaUser,
+      String requestId,
       String userIp
       ) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
+    this.forceCreate = forceCreate;
     this.imageResource = imageResource;
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.project = project;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -89,6 +97,9 @@ public final class InsertImageHttpRequest implements ApiMessage {
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
+    if (fieldNames.contains("forceCreate") && forceCreate != null) {
+      fieldMap.put("forceCreate", Collections.singletonList(String.valueOf(forceCreate)));
+    }
     if (fieldNames.contains("imageResource") && imageResource != null) {
       fieldMap.put("imageResource", Collections.singletonList(String.valueOf(imageResource)));
     }
@@ -103,6 +114,9 @@ public final class InsertImageHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -121,6 +135,9 @@ public final class InsertImageHttpRequest implements ApiMessage {
     if (fieldName.equals("fields")) {
       return String.valueOf(fields);
     }
+    if (fieldName.equals("forceCreate")) {
+      return String.valueOf(forceCreate);
+    }
     if (fieldName.equals("imageResource")) {
       return String.valueOf(imageResource);
     }
@@ -135,6 +152,9 @@ public final class InsertImageHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -160,6 +180,10 @@ public final class InsertImageHttpRequest implements ApiMessage {
     return fields;
   }
 
+  public Boolean getForceCreate() {
+    return forceCreate;
+  }
+
   public Image getImageResource() {
     return imageResource;
   }
@@ -178,6 +202,10 @@ public final class InsertImageHttpRequest implements ApiMessage {
 
   public String getQuotaUser() {
     return quotaUser;
+  }
+
+  public String getRequestId() {
+    return requestId;
   }
 
   public String getUserIp() {
@@ -208,11 +236,13 @@ public final class InsertImageHttpRequest implements ApiMessage {
     private String access_token;
     private String callback;
     private String fields;
+    private Boolean forceCreate;
     private Image imageResource;
     private String key;
     private String prettyPrint;
     private String project;
     private String quotaUser;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -227,6 +257,9 @@ public final class InsertImageHttpRequest implements ApiMessage {
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
+      }
+      if (other.getForceCreate() != null) {
+        this.forceCreate = other.forceCreate;
       }
       if (other.getImageResource() != null) {
         this.imageResource = other.imageResource;
@@ -243,6 +276,9 @@ public final class InsertImageHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -253,11 +289,13 @@ public final class InsertImageHttpRequest implements ApiMessage {
       this.access_token = source.access_token;
       this.callback = source.callback;
       this.fields = source.fields;
+      this.forceCreate = source.forceCreate;
       this.imageResource = source.imageResource;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.project = source.project;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -285,6 +323,15 @@ public final class InsertImageHttpRequest implements ApiMessage {
 
     public Builder setFields(String fields) {
       this.fields = fields;
+      return this;
+    }
+
+    public Boolean getForceCreate() {
+      return forceCreate;
+    }
+
+    public Builder setForceCreate(Boolean forceCreate) {
+      this.forceCreate = forceCreate;
       return this;
     }
 
@@ -333,6 +380,15 @@ public final class InsertImageHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -351,9 +407,11 @@ public final class InsertImageHttpRequest implements ApiMessage {
 
 
 
+
       if (project == null) {
         missing += " project";
       }
+
 
 
       if (!missing.isEmpty()) {
@@ -363,11 +421,13 @@ public final class InsertImageHttpRequest implements ApiMessage {
         access_token,
         callback,
         fields,
+        forceCreate,
         imageResource,
         key,
         prettyPrint,
         project,
         quotaUser,
+        requestId,
         userIp
       );
     }
@@ -377,11 +437,13 @@ public final class InsertImageHttpRequest implements ApiMessage {
       newBuilder.setAccessToken(this.access_token);
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
+      newBuilder.setForceCreate(this.forceCreate);
       newBuilder.setImageResource(this.imageResource);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setProject(this.project);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -393,11 +455,13 @@ public final class InsertImageHttpRequest implements ApiMessage {
         + "access_token=" + access_token + ", "
         + "callback=" + callback + ", "
         + "fields=" + fields + ", "
+        + "forceCreate=" + forceCreate + ", "
         + "imageResource=" + imageResource + ", "
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "project=" + project + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "userIp=" + userIp
         + "}";
   }
@@ -413,11 +477,13 @@ public final class InsertImageHttpRequest implements ApiMessage {
           Objects.equals(this.access_token, that.getAccessToken()) &&
           Objects.equals(this.callback, that.getCallback()) &&
           Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.forceCreate, that.getForceCreate()) &&
           Objects.equals(this.imageResource, that.getImageResource()) &&
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.project, that.getProject()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
     }
@@ -430,11 +496,13 @@ public final class InsertImageHttpRequest implements ApiMessage {
       access_token,
       callback,
       fields,
+      forceCreate,
       imageResource,
       key,
       prettyPrint,
       project,
       quotaUser,
+      requestId,
       userIp
     );
   }

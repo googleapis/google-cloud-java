@@ -42,6 +42,8 @@ public final class Image implements ApiMessage {
   private final String id;
   private final CustomerEncryptionKey imageEncryptionKey;
   private final String kind;
+  private final String labelFingerprint;
+  private final Map<String, String> labels;
   private final List<String> licenses;
   private final String name;
   private final RawDisk rawDisk;
@@ -49,6 +51,12 @@ public final class Image implements ApiMessage {
   private final String sourceDisk;
   private final CustomerEncryptionKey sourceDiskEncryptionKey;
   private final String sourceDiskId;
+  private final String sourceImage;
+  private final CustomerEncryptionKey sourceImageEncryptionKey;
+  private final String sourceImageId;
+  private final String sourceSnapshot;
+  private final CustomerEncryptionKey sourceSnapshotEncryptionKey;
+  private final String sourceSnapshotId;
   private final String sourceType;
   private final String status;
 
@@ -63,6 +71,8 @@ public final class Image implements ApiMessage {
     this.id = null;
     this.imageEncryptionKey = null;
     this.kind = null;
+    this.labelFingerprint = null;
+    this.labels = null;
     this.licenses = null;
     this.name = null;
     this.rawDisk = null;
@@ -70,6 +80,12 @@ public final class Image implements ApiMessage {
     this.sourceDisk = null;
     this.sourceDiskEncryptionKey = null;
     this.sourceDiskId = null;
+    this.sourceImage = null;
+    this.sourceImageEncryptionKey = null;
+    this.sourceImageId = null;
+    this.sourceSnapshot = null;
+    this.sourceSnapshotEncryptionKey = null;
+    this.sourceSnapshotId = null;
     this.sourceType = null;
     this.status = null;
   }
@@ -86,6 +102,8 @@ public final class Image implements ApiMessage {
       String id,
       CustomerEncryptionKey imageEncryptionKey,
       String kind,
+      String labelFingerprint,
+      Map<String, String> labels,
       List<String> licenses,
       String name,
       RawDisk rawDisk,
@@ -93,6 +111,12 @@ public final class Image implements ApiMessage {
       String sourceDisk,
       CustomerEncryptionKey sourceDiskEncryptionKey,
       String sourceDiskId,
+      String sourceImage,
+      CustomerEncryptionKey sourceImageEncryptionKey,
+      String sourceImageId,
+      String sourceSnapshot,
+      CustomerEncryptionKey sourceSnapshotEncryptionKey,
+      String sourceSnapshotId,
       String sourceType,
       String status
       ) {
@@ -106,6 +130,8 @@ public final class Image implements ApiMessage {
     this.id = id;
     this.imageEncryptionKey = imageEncryptionKey;
     this.kind = kind;
+    this.labelFingerprint = labelFingerprint;
+    this.labels = labels;
     this.licenses = licenses;
     this.name = name;
     this.rawDisk = rawDisk;
@@ -113,6 +139,12 @@ public final class Image implements ApiMessage {
     this.sourceDisk = sourceDisk;
     this.sourceDiskEncryptionKey = sourceDiskEncryptionKey;
     this.sourceDiskId = sourceDiskId;
+    this.sourceImage = sourceImage;
+    this.sourceImageEncryptionKey = sourceImageEncryptionKey;
+    this.sourceImageId = sourceImageId;
+    this.sourceSnapshot = sourceSnapshot;
+    this.sourceSnapshotEncryptionKey = sourceSnapshotEncryptionKey;
+    this.sourceSnapshotId = sourceSnapshotId;
     this.sourceType = sourceType;
     this.status = status;
   }
@@ -154,6 +186,12 @@ public final class Image implements ApiMessage {
     if (fieldNames.contains("kind") && kind != null) {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
     }
+    if (fieldNames.contains("labelFingerprint") && labelFingerprint != null) {
+      fieldMap.put("labelFingerprint", Collections.singletonList(String.valueOf(labelFingerprint)));
+    }
+    if (fieldNames.contains("labels") && labels != null) {
+      fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
+    }
     if (fieldNames.contains("licenses") && licenses != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
       for (String item : licenses) {
@@ -178,6 +216,24 @@ public final class Image implements ApiMessage {
     }
     if (fieldNames.contains("sourceDiskId") && sourceDiskId != null) {
       fieldMap.put("sourceDiskId", Collections.singletonList(String.valueOf(sourceDiskId)));
+    }
+    if (fieldNames.contains("sourceImage") && sourceImage != null) {
+      fieldMap.put("sourceImage", Collections.singletonList(String.valueOf(sourceImage)));
+    }
+    if (fieldNames.contains("sourceImageEncryptionKey") && sourceImageEncryptionKey != null) {
+      fieldMap.put("sourceImageEncryptionKey", Collections.singletonList(String.valueOf(sourceImageEncryptionKey)));
+    }
+    if (fieldNames.contains("sourceImageId") && sourceImageId != null) {
+      fieldMap.put("sourceImageId", Collections.singletonList(String.valueOf(sourceImageId)));
+    }
+    if (fieldNames.contains("sourceSnapshot") && sourceSnapshot != null) {
+      fieldMap.put("sourceSnapshot", Collections.singletonList(String.valueOf(sourceSnapshot)));
+    }
+    if (fieldNames.contains("sourceSnapshotEncryptionKey") && sourceSnapshotEncryptionKey != null) {
+      fieldMap.put("sourceSnapshotEncryptionKey", Collections.singletonList(String.valueOf(sourceSnapshotEncryptionKey)));
+    }
+    if (fieldNames.contains("sourceSnapshotId") && sourceSnapshotId != null) {
+      fieldMap.put("sourceSnapshotId", Collections.singletonList(String.valueOf(sourceSnapshotId)));
     }
     if (fieldNames.contains("sourceType") && sourceType != null) {
       fieldMap.put("sourceType", Collections.singletonList(String.valueOf(sourceType)));
@@ -220,6 +276,12 @@ public final class Image implements ApiMessage {
     if (fieldName.equals("kind")) {
       return String.valueOf(kind);
     }
+    if (fieldName.equals("labelFingerprint")) {
+      return String.valueOf(labelFingerprint);
+    }
+    if (fieldName.equals("labels")) {
+      return String.valueOf(labels);
+    }
     if (fieldName.equals("licenses")) {
       return String.valueOf(licenses);
     }
@@ -240,6 +302,24 @@ public final class Image implements ApiMessage {
     }
     if (fieldName.equals("sourceDiskId")) {
       return String.valueOf(sourceDiskId);
+    }
+    if (fieldName.equals("sourceImage")) {
+      return String.valueOf(sourceImage);
+    }
+    if (fieldName.equals("sourceImageEncryptionKey")) {
+      return String.valueOf(sourceImageEncryptionKey);
+    }
+    if (fieldName.equals("sourceImageId")) {
+      return String.valueOf(sourceImageId);
+    }
+    if (fieldName.equals("sourceSnapshot")) {
+      return String.valueOf(sourceSnapshot);
+    }
+    if (fieldName.equals("sourceSnapshotEncryptionKey")) {
+      return String.valueOf(sourceSnapshotEncryptionKey);
+    }
+    if (fieldName.equals("sourceSnapshotId")) {
+      return String.valueOf(sourceSnapshotId);
     }
     if (fieldName.equals("sourceType")) {
       return String.valueOf(sourceType);
@@ -296,6 +376,14 @@ public final class Image implements ApiMessage {
     return kind;
   }
 
+  public String getLabelFingerprint() {
+    return labelFingerprint;
+  }
+
+  public Map<String, String> getLabelsMap() {
+    return labels;
+  }
+
   public List<String> getLicensesList() {
     return licenses;
   }
@@ -322,6 +410,30 @@ public final class Image implements ApiMessage {
 
   public String getSourceDiskId() {
     return sourceDiskId;
+  }
+
+  public String getSourceImage() {
+    return sourceImage;
+  }
+
+  public CustomerEncryptionKey getSourceImageEncryptionKey() {
+    return sourceImageEncryptionKey;
+  }
+
+  public String getSourceImageId() {
+    return sourceImageId;
+  }
+
+  public String getSourceSnapshot() {
+    return sourceSnapshot;
+  }
+
+  public CustomerEncryptionKey getSourceSnapshotEncryptionKey() {
+    return sourceSnapshotEncryptionKey;
+  }
+
+  public String getSourceSnapshotId() {
+    return sourceSnapshotId;
   }
 
   public String getSourceType() {
@@ -363,6 +475,8 @@ public final class Image implements ApiMessage {
     private String id;
     private CustomerEncryptionKey imageEncryptionKey;
     private String kind;
+    private String labelFingerprint;
+    private Map<String, String> labels;
     private List<String> licenses;
     private String name;
     private RawDisk rawDisk;
@@ -370,6 +484,12 @@ public final class Image implements ApiMessage {
     private String sourceDisk;
     private CustomerEncryptionKey sourceDiskEncryptionKey;
     private String sourceDiskId;
+    private String sourceImage;
+    private CustomerEncryptionKey sourceImageEncryptionKey;
+    private String sourceImageId;
+    private String sourceSnapshot;
+    private CustomerEncryptionKey sourceSnapshotEncryptionKey;
+    private String sourceSnapshotId;
     private String sourceType;
     private String status;
 
@@ -407,6 +527,12 @@ public final class Image implements ApiMessage {
       if (other.getKind() != null) {
         this.kind = other.kind;
       }
+      if (other.getLabelFingerprint() != null) {
+        this.labelFingerprint = other.labelFingerprint;
+      }
+      if (other.getLabelsMap() != null) {
+        this.labels = other.labels;
+      }
       if (other.getLicensesList() != null) {
         this.licenses = other.licenses;
       }
@@ -428,6 +554,24 @@ public final class Image implements ApiMessage {
       if (other.getSourceDiskId() != null) {
         this.sourceDiskId = other.sourceDiskId;
       }
+      if (other.getSourceImage() != null) {
+        this.sourceImage = other.sourceImage;
+      }
+      if (other.getSourceImageEncryptionKey() != null) {
+        this.sourceImageEncryptionKey = other.sourceImageEncryptionKey;
+      }
+      if (other.getSourceImageId() != null) {
+        this.sourceImageId = other.sourceImageId;
+      }
+      if (other.getSourceSnapshot() != null) {
+        this.sourceSnapshot = other.sourceSnapshot;
+      }
+      if (other.getSourceSnapshotEncryptionKey() != null) {
+        this.sourceSnapshotEncryptionKey = other.sourceSnapshotEncryptionKey;
+      }
+      if (other.getSourceSnapshotId() != null) {
+        this.sourceSnapshotId = other.sourceSnapshotId;
+      }
       if (other.getSourceType() != null) {
         this.sourceType = other.sourceType;
       }
@@ -448,6 +592,8 @@ public final class Image implements ApiMessage {
       this.id = source.id;
       this.imageEncryptionKey = source.imageEncryptionKey;
       this.kind = source.kind;
+      this.labelFingerprint = source.labelFingerprint;
+      this.labels = source.labels;
       this.licenses = source.licenses;
       this.name = source.name;
       this.rawDisk = source.rawDisk;
@@ -455,6 +601,12 @@ public final class Image implements ApiMessage {
       this.sourceDisk = source.sourceDisk;
       this.sourceDiskEncryptionKey = source.sourceDiskEncryptionKey;
       this.sourceDiskId = source.sourceDiskId;
+      this.sourceImage = source.sourceImage;
+      this.sourceImageEncryptionKey = source.sourceImageEncryptionKey;
+      this.sourceImageId = source.sourceImageId;
+      this.sourceSnapshot = source.sourceSnapshot;
+      this.sourceSnapshotEncryptionKey = source.sourceSnapshotEncryptionKey;
+      this.sourceSnapshotId = source.sourceSnapshotId;
       this.sourceType = source.sourceType;
       this.status = source.status;
     }
@@ -557,6 +709,24 @@ public final class Image implements ApiMessage {
       return this;
     }
 
+    public String getLabelFingerprint() {
+      return labelFingerprint;
+    }
+
+    public Builder setLabelFingerprint(String labelFingerprint) {
+      this.labelFingerprint = labelFingerprint;
+      return this;
+    }
+
+    public Map<String, String> getLabelsMap() {
+      return labels;
+    }
+
+    public Builder putAllLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
     public List<String> getLicensesList() {
       return licenses;
     }
@@ -628,6 +798,60 @@ public final class Image implements ApiMessage {
       return this;
     }
 
+    public String getSourceImage() {
+      return sourceImage;
+    }
+
+    public Builder setSourceImage(String sourceImage) {
+      this.sourceImage = sourceImage;
+      return this;
+    }
+
+    public CustomerEncryptionKey getSourceImageEncryptionKey() {
+      return sourceImageEncryptionKey;
+    }
+
+    public Builder setSourceImageEncryptionKey(CustomerEncryptionKey sourceImageEncryptionKey) {
+      this.sourceImageEncryptionKey = sourceImageEncryptionKey;
+      return this;
+    }
+
+    public String getSourceImageId() {
+      return sourceImageId;
+    }
+
+    public Builder setSourceImageId(String sourceImageId) {
+      this.sourceImageId = sourceImageId;
+      return this;
+    }
+
+    public String getSourceSnapshot() {
+      return sourceSnapshot;
+    }
+
+    public Builder setSourceSnapshot(String sourceSnapshot) {
+      this.sourceSnapshot = sourceSnapshot;
+      return this;
+    }
+
+    public CustomerEncryptionKey getSourceSnapshotEncryptionKey() {
+      return sourceSnapshotEncryptionKey;
+    }
+
+    public Builder setSourceSnapshotEncryptionKey(CustomerEncryptionKey sourceSnapshotEncryptionKey) {
+      this.sourceSnapshotEncryptionKey = sourceSnapshotEncryptionKey;
+      return this;
+    }
+
+    public String getSourceSnapshotId() {
+      return sourceSnapshotId;
+    }
+
+    public Builder setSourceSnapshotId(String sourceSnapshotId) {
+      this.sourceSnapshotId = sourceSnapshotId;
+      return this;
+    }
+
     public String getSourceType() {
       return sourceType;
     }
@@ -666,6 +890,14 @@ public final class Image implements ApiMessage {
 
 
 
+
+
+
+
+
+
+
+
       return new Image(
         archiveSizeBytes,
         creationTimestamp,
@@ -677,6 +909,8 @@ public final class Image implements ApiMessage {
         id,
         imageEncryptionKey,
         kind,
+        labelFingerprint,
+        labels,
         licenses,
         name,
         rawDisk,
@@ -684,6 +918,12 @@ public final class Image implements ApiMessage {
         sourceDisk,
         sourceDiskEncryptionKey,
         sourceDiskId,
+        sourceImage,
+        sourceImageEncryptionKey,
+        sourceImageId,
+        sourceSnapshot,
+        sourceSnapshotEncryptionKey,
+        sourceSnapshotId,
         sourceType,
         status
       );
@@ -701,6 +941,8 @@ public final class Image implements ApiMessage {
       newBuilder.setId(this.id);
       newBuilder.setImageEncryptionKey(this.imageEncryptionKey);
       newBuilder.setKind(this.kind);
+      newBuilder.setLabelFingerprint(this.labelFingerprint);
+      newBuilder.putAllLabels(this.labels);
       newBuilder.addAllLicenses(this.licenses);
       newBuilder.setName(this.name);
       newBuilder.setRawDisk(this.rawDisk);
@@ -708,6 +950,12 @@ public final class Image implements ApiMessage {
       newBuilder.setSourceDisk(this.sourceDisk);
       newBuilder.setSourceDiskEncryptionKey(this.sourceDiskEncryptionKey);
       newBuilder.setSourceDiskId(this.sourceDiskId);
+      newBuilder.setSourceImage(this.sourceImage);
+      newBuilder.setSourceImageEncryptionKey(this.sourceImageEncryptionKey);
+      newBuilder.setSourceImageId(this.sourceImageId);
+      newBuilder.setSourceSnapshot(this.sourceSnapshot);
+      newBuilder.setSourceSnapshotEncryptionKey(this.sourceSnapshotEncryptionKey);
+      newBuilder.setSourceSnapshotId(this.sourceSnapshotId);
       newBuilder.setSourceType(this.sourceType);
       newBuilder.setStatus(this.status);
       return newBuilder;
@@ -727,6 +975,8 @@ public final class Image implements ApiMessage {
         + "id=" + id + ", "
         + "imageEncryptionKey=" + imageEncryptionKey + ", "
         + "kind=" + kind + ", "
+        + "labelFingerprint=" + labelFingerprint + ", "
+        + "labels=" + labels + ", "
         + "licenses=" + licenses + ", "
         + "name=" + name + ", "
         + "rawDisk=" + rawDisk + ", "
@@ -734,6 +984,12 @@ public final class Image implements ApiMessage {
         + "sourceDisk=" + sourceDisk + ", "
         + "sourceDiskEncryptionKey=" + sourceDiskEncryptionKey + ", "
         + "sourceDiskId=" + sourceDiskId + ", "
+        + "sourceImage=" + sourceImage + ", "
+        + "sourceImageEncryptionKey=" + sourceImageEncryptionKey + ", "
+        + "sourceImageId=" + sourceImageId + ", "
+        + "sourceSnapshot=" + sourceSnapshot + ", "
+        + "sourceSnapshotEncryptionKey=" + sourceSnapshotEncryptionKey + ", "
+        + "sourceSnapshotId=" + sourceSnapshotId + ", "
         + "sourceType=" + sourceType + ", "
         + "status=" + status
         + "}";
@@ -757,6 +1013,8 @@ public final class Image implements ApiMessage {
           Objects.equals(this.id, that.getId()) &&
           Objects.equals(this.imageEncryptionKey, that.getImageEncryptionKey()) &&
           Objects.equals(this.kind, that.getKind()) &&
+          Objects.equals(this.labelFingerprint, that.getLabelFingerprint()) &&
+          Objects.equals(this.labels, that.getLabelsMap()) &&
           Objects.equals(this.licenses, that.getLicensesList()) &&
           Objects.equals(this.name, that.getName()) &&
           Objects.equals(this.rawDisk, that.getRawDisk()) &&
@@ -764,6 +1022,12 @@ public final class Image implements ApiMessage {
           Objects.equals(this.sourceDisk, that.getSourceDisk()) &&
           Objects.equals(this.sourceDiskEncryptionKey, that.getSourceDiskEncryptionKey()) &&
           Objects.equals(this.sourceDiskId, that.getSourceDiskId()) &&
+          Objects.equals(this.sourceImage, that.getSourceImage()) &&
+          Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey()) &&
+          Objects.equals(this.sourceImageId, that.getSourceImageId()) &&
+          Objects.equals(this.sourceSnapshot, that.getSourceSnapshot()) &&
+          Objects.equals(this.sourceSnapshotEncryptionKey, that.getSourceSnapshotEncryptionKey()) &&
+          Objects.equals(this.sourceSnapshotId, that.getSourceSnapshotId()) &&
           Objects.equals(this.sourceType, that.getSourceType()) &&
           Objects.equals(this.status, that.getStatus())
           ;
@@ -784,6 +1048,8 @@ public final class Image implements ApiMessage {
       id,
       imageEncryptionKey,
       kind,
+      labelFingerprint,
+      labels,
       licenses,
       name,
       rawDisk,
@@ -791,6 +1057,12 @@ public final class Image implements ApiMessage {
       sourceDisk,
       sourceDiskEncryptionKey,
       sourceDiskId,
+      sourceImage,
+      sourceImageEncryptionKey,
+      sourceImageId,
+      sourceSnapshot,
+      sourceSnapshotEncryptionKey,
+      sourceSnapshotId,
       sourceType,
       status
     );

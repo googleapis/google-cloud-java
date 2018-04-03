@@ -97,6 +97,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
                   .setRequestInstance(DeleteBackendServiceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/backendServices/{backendService}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(BackendServiceName.newFactory())
                   .setResourceNameField("backendService")
@@ -154,6 +155,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
                   .setRequestInstance(InsertBackendServiceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/backendServices"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -193,6 +195,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
                   .setRequestInstance(PatchBackendServiceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/backendServices/{backendService}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(BackendServiceName.newFactory())
                   .setResourceNameField("backendService")
@@ -212,6 +215,7 @@ public class HttpJsonBackendServiceStub extends BackendServiceStub {
                   .setRequestInstance(UpdateBackendServiceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/backendServices/{backendService}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(BackendServiceName.newFactory())
                   .setResourceNameField("backendService")

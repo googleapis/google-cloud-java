@@ -39,6 +39,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String sourceImage;
   private final String userIp;
   private final String zone;
@@ -51,6 +52,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.sourceImage = null;
     this.userIp = null;
     this.zone = null;
@@ -65,6 +67,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String sourceImage,
       String userIp,
       String zone
@@ -76,6 +79,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.sourceImage = sourceImage;
     this.userIp = userIp;
     this.zone = zone;
@@ -104,6 +108,9 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("sourceImage") && sourceImage != null) {
       fieldMap.put("sourceImage", Collections.singletonList(String.valueOf(sourceImage)));
@@ -139,6 +146,9 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("sourceImage")) {
       return String.valueOf(sourceImage);
@@ -186,6 +196,10 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getSourceImage() {
     return sourceImage;
   }
@@ -226,6 +240,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String sourceImage;
     private String userIp;
     private String zone;
@@ -255,6 +270,9 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getSourceImage() != null) {
         this.sourceImage = other.sourceImage;
       }
@@ -275,6 +293,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.sourceImage = source.sourceImage;
       this.userIp = source.userIp;
       this.zone = source.zone;
@@ -343,6 +362,15 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getSourceImage() {
       return sourceImage;
     }
@@ -382,6 +410,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
 
 
 
+
       if (zone == null) {
         missing += " zone";
       }
@@ -396,6 +425,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         sourceImage,
         userIp,
         zone
@@ -411,6 +441,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setSourceImage(this.sourceImage);
       newBuilder.setUserIp(this.userIp);
       newBuilder.setZone(this.zone);
@@ -428,6 +459,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "sourceImage=" + sourceImage + ", "
         + "userIp=" + userIp + ", "
         + "zone=" + zone
@@ -449,6 +481,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.sourceImage, that.getSourceImage()) &&
           Objects.equals(this.userIp, that.getUserIp()) &&
           Objects.equals(this.zone, that.getZone())
@@ -467,6 +500,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       sourceImage,
       userIp,
       zone

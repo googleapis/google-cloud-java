@@ -32,6 +32,7 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class Zone implements ApiMessage {
+  private final List<String> availableCpuPlatforms;
   private final String creationTimestamp;
   private final DeprecationStatus deprecated;
   private final String description;
@@ -43,6 +44,7 @@ public final class Zone implements ApiMessage {
   private final String status;
 
   private Zone() {
+    this.availableCpuPlatforms = null;
     this.creationTimestamp = null;
     this.deprecated = null;
     this.description = null;
@@ -56,6 +58,7 @@ public final class Zone implements ApiMessage {
 
 
   private Zone(
+      List<String> availableCpuPlatforms,
       String creationTimestamp,
       DeprecationStatus deprecated,
       String description,
@@ -66,6 +69,7 @@ public final class Zone implements ApiMessage {
       String selfLink,
       String status
       ) {
+    this.availableCpuPlatforms = availableCpuPlatforms;
     this.creationTimestamp = creationTimestamp;
     this.deprecated = deprecated;
     this.description = description;
@@ -80,6 +84,13 @@ public final class Zone implements ApiMessage {
   @Override
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("availableCpuPlatforms") && availableCpuPlatforms != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : availableCpuPlatforms) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("availableCpuPlatforms", stringList.build());
+    }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
       fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
@@ -112,6 +123,9 @@ public final class Zone implements ApiMessage {
 
   @Override
   public String getFieldStringValue(String fieldName) {
+    if (fieldName.equals("availableCpuPlatforms")) {
+      return String.valueOf(availableCpuPlatforms);
+    }
     if (fieldName.equals("creationTimestamp")) {
       return String.valueOf(creationTimestamp);
     }
@@ -146,6 +160,10 @@ public final class Zone implements ApiMessage {
   @Override
   public ApiMessage getApiMessageRequestBody() {
     return null;
+  }
+
+  public List<String> getAvailableCpuPlatformsList() {
+    return availableCpuPlatforms;
   }
 
   public String getCreationTimestamp() {
@@ -205,6 +223,7 @@ public final class Zone implements ApiMessage {
   }
 
   public static class Builder {
+    private List<String> availableCpuPlatforms;
     private String creationTimestamp;
     private DeprecationStatus deprecated;
     private String description;
@@ -219,6 +238,9 @@ public final class Zone implements ApiMessage {
 
     public Builder mergeFrom(Zone other) {
       if (other == Zone.getDefaultInstance()) return this;
+      if (other.getAvailableCpuPlatformsList() != null) {
+        this.availableCpuPlatforms = other.availableCpuPlatforms;
+      }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
       }
@@ -250,6 +272,7 @@ public final class Zone implements ApiMessage {
     }
 
     Builder(Zone source) {
+      this.availableCpuPlatforms = source.availableCpuPlatforms;
       this.creationTimestamp = source.creationTimestamp;
       this.deprecated = source.deprecated;
       this.description = source.description;
@@ -259,6 +282,23 @@ public final class Zone implements ApiMessage {
       this.region = source.region;
       this.selfLink = source.selfLink;
       this.status = source.status;
+    }
+
+    public List<String> getAvailableCpuPlatformsList() {
+      return availableCpuPlatforms;
+    }
+
+    public Builder addAllAvailableCpuPlatforms(List<String> availableCpuPlatforms) {
+      if (this.availableCpuPlatforms == null) {
+        this.availableCpuPlatforms = new ArrayList<>(availableCpuPlatforms.size());
+      }
+      this.availableCpuPlatforms.addAll(availableCpuPlatforms);
+      return this;
+    }
+
+    public Builder addAvailableCpuPlatforms(String availableCpuPlatforms) {
+      this.availableCpuPlatforms.add(availableCpuPlatforms);
+      return this;
     }
 
     public String getCreationTimestamp() {
@@ -352,7 +392,9 @@ public final class Zone implements ApiMessage {
 
 
 
+
       return new Zone(
+        availableCpuPlatforms,
         creationTimestamp,
         deprecated,
         description,
@@ -367,6 +409,7 @@ public final class Zone implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.addAllAvailableCpuPlatforms(this.availableCpuPlatforms);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDeprecated(this.deprecated);
       newBuilder.setDescription(this.description);
@@ -383,6 +426,7 @@ public final class Zone implements ApiMessage {
   @Override
   public String toString() {
     return "Zone{"
+        + "availableCpuPlatforms=" + availableCpuPlatforms + ", "
         + "creationTimestamp=" + creationTimestamp + ", "
         + "deprecated=" + deprecated + ", "
         + "description=" + description + ", "
@@ -403,6 +447,7 @@ public final class Zone implements ApiMessage {
     if (o instanceof Zone) {
       Zone that = (Zone) o;
       return
+          Objects.equals(this.availableCpuPlatforms, that.getAvailableCpuPlatformsList()) &&
           Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
           Objects.equals(this.deprecated, that.getDeprecated()) &&
           Objects.equals(this.description, that.getDescription()) &&
@@ -420,6 +465,7 @@ public final class Zone implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
+      availableCpuPlatforms,
       creationTimestamp,
       deprecated,
       description,

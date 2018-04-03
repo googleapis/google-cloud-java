@@ -53,7 +53,8 @@ import javax.annotation.Generated;
  * <code>
  * try (RouteClient routeClient = RouteClient.create()) {
  *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
- *   Operation response = routeClient.deleteRoute(route);
+ *   String requestId = "";
+ *   Operation response = routeClient.deleteRoute(route, requestId);
  * }
  * </code>
  * </pre>
@@ -176,19 +177,26 @@ public class RouteClient implements BackgroundResource {
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
    *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
-   *   Operation response = routeClient.deleteRoute(route);
+   *   String requestId = "";
+   *   Operation response = routeClient.deleteRoute(route, requestId);
    * }
    * </code></pre>
    *
    * @param route Name of the Route resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRoute(RouteName route) {
+  public final Operation deleteRoute(RouteName route, String requestId) {
 
     DeleteRouteHttpRequest request =
         DeleteRouteHttpRequest.newBuilder()
         .setRoute(route == null ? null : route.toString())
+        .setRequestId(requestId)
         .build();
     return deleteRoute(request);
   }
@@ -201,19 +209,26 @@ public class RouteClient implements BackgroundResource {
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
    *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
-   *   Operation response = routeClient.deleteRoute(route.toString());
+   *   String requestId = "";
+   *   Operation response = routeClient.deleteRoute(route.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param route Name of the Route resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRoute(String route) {
+  public final Operation deleteRoute(String route, String requestId) {
 
     DeleteRouteHttpRequest request =
         DeleteRouteHttpRequest.newBuilder()
         .setRoute(route)
+        .setRequestId(requestId)
         .build();
     return deleteRoute(request);
   }
@@ -226,8 +241,10 @@ public class RouteClient implements BackgroundResource {
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
    *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   String requestId = "";
    *   DeleteRouteHttpRequest request = DeleteRouteHttpRequest.newBuilder()
    *     .setRoute(route.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = routeClient.deleteRoute(request);
    * }
@@ -249,8 +266,10 @@ public class RouteClient implements BackgroundResource {
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
    *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+   *   String requestId = "";
    *   DeleteRouteHttpRequest request = DeleteRouteHttpRequest.newBuilder()
    *     .setRoute(route.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routeClient.deleteRouteCallable().futureCall(request);
    *   // Do something
@@ -365,25 +384,32 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Route routeResource = Route.newBuilder().build();
-   *   Operation response = routeClient.insertRoute(project, routeResource);
+   *   Operation response = routeClient.insertRoute(requestId, project, routeResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param routeResource Represents a Route resource. A route specifies how certain packets should be handled by the network. Routes are associated with instances by tags and the set of routes for a particular instance is called its routing table.
    *
-   * For each packet leaving a instance, the system searches that instance's routing table for a single best matching route. Routes match packets by destination IP address, preferring smaller or more specific ranges over larger ones. If there is a tie, the system selects the route with the smallest priority value. If there is still a tie, it uses the layer three and four packet headers to select just one of the remaining matching routes. The packet is then forwarded as specified by the nextHop field of the winning route - either to another instance destination, a instance gateway or a Google Compute Engine-operated gateway.
+   * For each packet leaving an instance, the system searches that instance's routing table for a single best matching route. Routes match packets by destination IP address, preferring smaller or more specific ranges over larger ones. If there is a tie, the system selects the route with the smallest priority value. If there is still a tie, it uses the layer three and four packet headers to select just one of the remaining matching routes. The packet is then forwarded as specified by the nextHop field of the winning route - either to another instance destination, an instance gateway, or a Google Compute Engine-operated gateway.
    *
-   * Packets that do not match any route in the sending instance's routing table are dropped.
+   * Packets that do not match any route in the sending instance's routing table are dropped. (== resource_for beta.routes ==) (== resource_for v1.routes ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRoute(ProjectName project, Route routeResource) {
+  public final Operation insertRoute(String requestId, ProjectName project, Route routeResource) {
 
     InsertRouteHttpRequest request =
         InsertRouteHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project == null ? null : project.toString())
         .setRouteResource(routeResource)
         .build();
@@ -397,25 +423,32 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Route routeResource = Route.newBuilder().build();
-   *   Operation response = routeClient.insertRoute(project.toString(), routeResource);
+   *   Operation response = routeClient.insertRoute(requestId, project.toString(), routeResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param routeResource Represents a Route resource. A route specifies how certain packets should be handled by the network. Routes are associated with instances by tags and the set of routes for a particular instance is called its routing table.
    *
-   * For each packet leaving a instance, the system searches that instance's routing table for a single best matching route. Routes match packets by destination IP address, preferring smaller or more specific ranges over larger ones. If there is a tie, the system selects the route with the smallest priority value. If there is still a tie, it uses the layer three and four packet headers to select just one of the remaining matching routes. The packet is then forwarded as specified by the nextHop field of the winning route - either to another instance destination, a instance gateway or a Google Compute Engine-operated gateway.
+   * For each packet leaving an instance, the system searches that instance's routing table for a single best matching route. Routes match packets by destination IP address, preferring smaller or more specific ranges over larger ones. If there is a tie, the system selects the route with the smallest priority value. If there is still a tie, it uses the layer three and four packet headers to select just one of the remaining matching routes. The packet is then forwarded as specified by the nextHop field of the winning route - either to another instance destination, an instance gateway, or a Google Compute Engine-operated gateway.
    *
-   * Packets that do not match any route in the sending instance's routing table are dropped.
+   * Packets that do not match any route in the sending instance's routing table are dropped. (== resource_for beta.routes ==) (== resource_for v1.routes ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRoute(String project, Route routeResource) {
+  public final Operation insertRoute(String requestId, String project, Route routeResource) {
 
     InsertRouteHttpRequest request =
         InsertRouteHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project)
         .setRouteResource(routeResource)
         .build();
@@ -429,9 +462,11 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Route routeResource = Route.newBuilder().build();
    *   InsertRouteHttpRequest request = InsertRouteHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setRouteResource(routeResource)
    *     .build();
@@ -454,9 +489,11 @@ public class RouteClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouteClient routeClient = RouteClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   Route routeResource = Route.newBuilder().build();
    *   InsertRouteHttpRequest request = InsertRouteHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setRouteResource(routeResource)
    *     .build();

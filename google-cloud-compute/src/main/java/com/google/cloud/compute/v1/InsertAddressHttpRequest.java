@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -37,6 +40,7 @@ public final class InsertAddressHttpRequest implements ApiMessage {
   private final String prettyPrint;
   private final String quotaUser;
   private final String region;
+  private final String requestId;
   private final String userIp;
 
   private InsertAddressHttpRequest() {
@@ -48,8 +52,10 @@ public final class InsertAddressHttpRequest implements ApiMessage {
     this.prettyPrint = null;
     this.quotaUser = null;
     this.region = null;
+    this.requestId = null;
     this.userIp = null;
   }
+
 
   private InsertAddressHttpRequest(
       String access_token,
@@ -60,7 +66,9 @@ public final class InsertAddressHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String region,
-      String userIp) {
+      String requestId,
+      String userIp
+      ) {
     this.access_token = access_token;
     this.addressResource = addressResource;
     this.callback = callback;
@@ -69,6 +77,7 @@ public final class InsertAddressHttpRequest implements ApiMessage {
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.region = region;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -98,6 +107,9 @@ public final class InsertAddressHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("region") && region != null) {
       fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -130,6 +142,9 @@ public final class InsertAddressHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("region")) {
       return String.valueOf(region);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -175,28 +190,30 @@ public final class InsertAddressHttpRequest implements ApiMessage {
     return region;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(InsertAddressHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertAddressHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final InsertAddressHttpRequest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new InsertAddressHttpRequest();
   }
@@ -210,6 +227,7 @@ public final class InsertAddressHttpRequest implements ApiMessage {
     private String prettyPrint;
     private String quotaUser;
     private String region;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -240,6 +258,9 @@ public final class InsertAddressHttpRequest implements ApiMessage {
       if (other.getRegion() != null) {
         this.region = other.region;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -255,6 +276,7 @@ public final class InsertAddressHttpRequest implements ApiMessage {
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.region = source.region;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -330,6 +352,15 @@ public final class InsertAddressHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -339,26 +370,36 @@ public final class InsertAddressHttpRequest implements ApiMessage {
       return this;
     }
 
+
     public InsertAddressHttpRequest build() {
       String missing = "";
+
+
+
+
+
+
 
       if (region == null) {
         missing += " region";
       }
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertAddressHttpRequest(
-          access_token,
-          addressResource,
-          callback,
-          fields,
-          key,
-          prettyPrint,
-          quotaUser,
-          region,
-          userIp);
+        access_token,
+        addressResource,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        region,
+        requestId,
+        userIp
+      );
     }
 
     public Builder clone() {
@@ -371,6 +412,7 @@ public final class InsertAddressHttpRequest implements ApiMessage {
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRegion(this.region);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -379,32 +421,16 @@ public final class InsertAddressHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertAddressHttpRequest{"
-        + "access_token="
-        + access_token
-        + ", "
-        + "addressResource="
-        + addressResource
-        + ", "
-        + "callback="
-        + callback
-        + ", "
-        + "fields="
-        + fields
-        + ", "
-        + "key="
-        + key
-        + ", "
-        + "prettyPrint="
-        + prettyPrint
-        + ", "
-        + "quotaUser="
-        + quotaUser
-        + ", "
-        + "region="
-        + region
-        + ", "
-        + "userIp="
-        + userIp
+        + "access_token=" + access_token + ", "
+        + "addressResource=" + addressResource + ", "
+        + "callback=" + callback + ", "
+        + "fields=" + fields + ", "
+        + "key=" + key + ", "
+        + "prettyPrint=" + prettyPrint + ", "
+        + "quotaUser=" + quotaUser + ", "
+        + "region=" + region + ", "
+        + "requestId=" + requestId + ", "
+        + "userIp=" + userIp
         + "}";
   }
 
@@ -415,15 +441,18 @@ public final class InsertAddressHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertAddressHttpRequest) {
       InsertAddressHttpRequest that = (InsertAddressHttpRequest) o;
-      return Objects.equals(this.access_token, that.getAccessToken())
-          && Objects.equals(this.addressResource, that.getAddressResource())
-          && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fields, that.getFields())
-          && Objects.equals(this.key, that.getKey())
-          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
-          && Objects.equals(this.quotaUser, that.getQuotaUser())
-          && Objects.equals(this.region, that.getRegion())
-          && Objects.equals(this.userIp, that.getUserIp());
+      return
+          Objects.equals(this.access_token, that.getAccessToken()) &&
+          Objects.equals(this.addressResource, that.getAddressResource()) &&
+          Objects.equals(this.callback, that.getCallback()) &&
+          Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.key, that.getKey()) &&
+          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
+          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.region, that.getRegion()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
+          Objects.equals(this.userIp, that.getUserIp())
+          ;
     }
     return false;
   }
@@ -431,14 +460,16 @@ public final class InsertAddressHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        access_token,
-        addressResource,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        region,
-        userIp);
+      access_token,
+      addressResource,
+      callback,
+      fields,
+      key,
+      prettyPrint,
+      quotaUser,
+      region,
+      requestId,
+      userIp
+    );
   }
 }

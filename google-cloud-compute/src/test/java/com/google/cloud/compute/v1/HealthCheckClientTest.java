@@ -136,10 +136,11 @@ public class HealthCheckClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
 
     Operation actualResponse =
-        client.deleteHealthCheck(healthCheck);
+        client.deleteHealthCheck(requestId, healthCheck);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -158,9 +159,10 @@ public class HealthCheckClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
 
-      client.deleteHealthCheck(healthCheck);
+      client.deleteHealthCheck(requestId, healthCheck);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -276,11 +278,12 @@ public class HealthCheckClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
     Operation actualResponse =
-        client.insertHealthCheck(project, healthCheckResource);
+        client.insertHealthCheck(requestId, project, healthCheckResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -299,10 +302,11 @@ public class HealthCheckClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
-      client.insertHealthCheck(project, healthCheckResource);
+      client.insertHealthCheck(requestId, project, healthCheckResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -410,11 +414,12 @@ public class HealthCheckClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
     Operation actualResponse =
-        client.patchHealthCheck(healthCheck, healthCheckResource);
+        client.patchHealthCheck(requestId, healthCheck, healthCheckResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -433,10 +438,11 @@ public class HealthCheckClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
-      client.patchHealthCheck(healthCheck, healthCheckResource);
+      client.patchHealthCheck(requestId, healthCheck, healthCheckResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -492,11 +498,12 @@ public class HealthCheckClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
     HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
     Operation actualResponse =
-        client.updateHealthCheck(healthCheck, healthCheckResource);
+        client.updateHealthCheck(requestId, healthCheck, healthCheckResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -515,10 +522,11 @@ public class HealthCheckClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
       HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
 
-      client.updateHealthCheck(healthCheck, healthCheckResource);
+      client.updateHealthCheck(requestId, healthCheck, healthCheckResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -44,23 +44,36 @@ import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
 import static com.google.cloud.compute.v1.InstanceClient.AggregatedListInstancesPagedResponse;
 import static com.google.cloud.compute.v1.InstanceClient.ListInstancesPagedResponse;
+import static com.google.cloud.compute.v1.InstanceClient.ListReferrersInstancesPagedResponse;
 import com.google.cloud.compute.v1.InstanceList;
+import com.google.cloud.compute.v1.InstanceListReferrers;
 import com.google.cloud.compute.v1.InstanceName;
 import com.google.cloud.compute.v1.InstanceSettings;
 import com.google.cloud.compute.v1.InstancesScopedList;
+import com.google.cloud.compute.v1.InstancesSetLabelsRequest;
+import com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest;
 import com.google.cloud.compute.v1.InstancesSetMachineTypeRequest;
+import com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest;
 import com.google.cloud.compute.v1.InstancesSetServiceAccountRequest;
 import com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest;
 import com.google.cloud.compute.v1.ListInstancesHttpRequest;
+import com.google.cloud.compute.v1.ListReferrersInstancesHttpRequest;
 import com.google.cloud.compute.v1.Metadata;
+import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneInstanceName;
+import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.Scheduling;
 import com.google.cloud.compute.v1.SerialPortOutput;
+import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetLabelsInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetMachineResourcesInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMachineTypeInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMetadataInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
@@ -68,6 +81,8 @@ import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
 import com.google.cloud.compute.v1.Tags;
+import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.cloud.compute.v1.ZoneName;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
@@ -97,7 +112,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(AddAccessConfigInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/addAccessConfig"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "networkInterface"
+                                     "networkInterface",    "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -137,6 +152,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(AttachDiskInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/attachDisk"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -156,6 +172,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(DeleteInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -175,7 +192,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(DeleteAccessConfigInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/deleteAccessConfig"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "accessConfig",    "networkInterface"
+                                     "accessConfig",    "networkInterface",    "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -195,7 +212,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(DetachDiskInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/detachDisk"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "deviceName"
+                                     "deviceName",    "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -254,6 +271,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(InsertInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ZoneName.newFactory())
                   .setResourceNameField("zone")
@@ -284,6 +302,26 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .build())
           .build();
   @InternalApi
+  public static final ApiMethodDescriptor<ListReferrersInstancesHttpRequest, InstanceListReferrers> listReferrersInstancesMethodDescriptor =
+      ApiMethodDescriptor.<ListReferrersInstancesHttpRequest, InstanceListReferrers>newBuilder()
+          .setFullMethodName("compute.instances.listReferrers")
+          .setHttpMethod(HttpMethods.GET)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<ListReferrersInstancesHttpRequest>newBuilder()
+                  .setRequestInstance(ListReferrersInstancesHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/referrers"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "filter",    "maxResults",    "orderBy",    "pageToken"
+                                     ))
+                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameField("instance")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<InstanceListReferrers>newBuilder()
+                  .setResponseInstance(InstanceListReferrers.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
   public static final ApiMethodDescriptor<ResetInstanceHttpRequest, Operation> resetInstanceMethodDescriptor =
       ApiMethodDescriptor.<ResetInstanceHttpRequest, Operation>newBuilder()
           .setFullMethodName("compute.instances.reset")
@@ -293,9 +331,30 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(ResetInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/reset"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceMethodDescriptor =
+      ApiMethodDescriptor.<SetDeletionProtectionInstanceHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.instances.setDeletionProtection")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<SetDeletionProtectionInstanceHttpRequest>newBuilder()
+                  .setRequestInstance(SetDeletionProtectionInstanceHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{resource}/setDeletionProtection"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "deletionProtection",    "requestId"
+                                     ))
+                  .setResourceNameFactory(ProjectZoneInstanceName.newFactory())
+                  .setResourceNameField("resource")
                   .build())
           .setResponseParser(
               ApiMessageHttpResponseParser.<Operation>newBuilder()
@@ -312,7 +371,47 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(SetDiskAutoDeleteInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setDiskAutoDelete"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "autoDelete",    "deviceName"
+                                     "autoDelete",    "deviceName",    "requestId"
+                                     ))
+                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameField("instance")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceMethodDescriptor =
+      ApiMethodDescriptor.<SetLabelsInstanceHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.instances.setLabels")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<SetLabelsInstanceHttpRequest>newBuilder()
+                  .setRequestInstance(SetLabelsInstanceHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setLabels"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameField("instance")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceMethodDescriptor =
+      ApiMethodDescriptor.<SetMachineResourcesInstanceHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.instances.setMachineResources")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<SetMachineResourcesInstanceHttpRequest>newBuilder()
+                  .setRequestInstance(SetMachineResourcesInstanceHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setMachineResources"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -332,6 +431,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(SetMachineTypeInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setMachineType"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -351,6 +451,27 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(SetMetadataInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setMetadata"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameField("instance")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceMethodDescriptor =
+      ApiMethodDescriptor.<SetMinCpuPlatformInstanceHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.instances.setMinCpuPlatform")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<SetMinCpuPlatformInstanceHttpRequest>newBuilder()
+                  .setRequestInstance(SetMinCpuPlatformInstanceHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setMinCpuPlatform"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -370,6 +491,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(SetSchedulingInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setScheduling"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -389,6 +511,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(SetServiceAccountInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setServiceAccount"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -408,6 +531,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(SetTagsInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/setTags"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -427,6 +551,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(StartInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/start"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -446,6 +571,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(StartWithEncryptionKeyInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/startWithEncryptionKey"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -465,6 +591,47 @@ public class HttpJsonInstanceStub extends InstanceStub {
                   .setRequestInstance(StopInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/stop"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameField("instance")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceMethodDescriptor =
+      ApiMethodDescriptor.<UpdateAccessConfigInstanceHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.instances.updateAccessConfig")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<UpdateAccessConfigInstanceHttpRequest>newBuilder()
+                  .setRequestInstance(UpdateAccessConfigInstanceHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/updateAccessConfig"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "networkInterface",    "requestId"
+                                     ))
+                  .setResourceNameFactory(InstanceName.newFactory())
+                  .setResourceNameField("instance")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceMethodDescriptor =
+      ApiMethodDescriptor.<UpdateNetworkInterfaceInstanceHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.instances.updateNetworkInterface")
+          .setHttpMethod(HttpMethods.PATCH)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<UpdateNetworkInterfaceInstanceHttpRequest>newBuilder()
+                  .setRequestInstance(UpdateNetworkInterfaceInstanceHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instances/{instance}/updateNetworkInterface"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "networkInterface",    "requestId"
                                      ))
                   .setResourceNameFactory(InstanceName.newFactory())
                   .setResourceNameField("instance")
@@ -488,16 +655,24 @@ public class HttpJsonInstanceStub extends InstanceStub {
   private final UnaryCallable<InsertInstanceHttpRequest, Operation> insertInstanceCallable;
   private final UnaryCallable<ListInstancesHttpRequest, InstanceList> listInstancesCallable;
   private final UnaryCallable<ListInstancesHttpRequest, ListInstancesPagedResponse> listInstancesPagedCallable;
+  private final UnaryCallable<ListReferrersInstancesHttpRequest, InstanceListReferrers> listReferrersInstancesCallable;
+  private final UnaryCallable<ListReferrersInstancesHttpRequest, ListReferrersInstancesPagedResponse> listReferrersInstancesPagedCallable;
   private final UnaryCallable<ResetInstanceHttpRequest, Operation> resetInstanceCallable;
+  private final UnaryCallable<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceCallable;
   private final UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation> setDiskAutoDeleteInstanceCallable;
+  private final UnaryCallable<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceCallable;
+  private final UnaryCallable<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceCallable;
   private final UnaryCallable<SetMachineTypeInstanceHttpRequest, Operation> setMachineTypeInstanceCallable;
   private final UnaryCallable<SetMetadataInstanceHttpRequest, Operation> setMetadataInstanceCallable;
+  private final UnaryCallable<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceCallable;
   private final UnaryCallable<SetSchedulingInstanceHttpRequest, Operation> setSchedulingInstanceCallable;
   private final UnaryCallable<SetServiceAccountInstanceHttpRequest, Operation> setServiceAccountInstanceCallable;
   private final UnaryCallable<SetTagsInstanceHttpRequest, Operation> setTagsInstanceCallable;
   private final UnaryCallable<StartInstanceHttpRequest, Operation> startInstanceCallable;
   private final UnaryCallable<StartWithEncryptionKeyInstanceHttpRequest, Operation> startWithEncryptionKeyInstanceCallable;
   private final UnaryCallable<StopInstanceHttpRequest, Operation> stopInstanceCallable;
+  private final UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceCallable;
+  private final UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
   public static final HttpJsonInstanceStub create(InstanceStubSettings settings) throws IOException {
@@ -569,13 +744,29 @@ public class HttpJsonInstanceStub extends InstanceStub {
         HttpJsonCallSettings.<ListInstancesHttpRequest, InstanceList>newBuilder()
             .setMethodDescriptor(listInstancesMethodDescriptor)
             .build();
+    HttpJsonCallSettings<ListReferrersInstancesHttpRequest, InstanceListReferrers> listReferrersInstancesTransportSettings =
+        HttpJsonCallSettings.<ListReferrersInstancesHttpRequest, InstanceListReferrers>newBuilder()
+            .setMethodDescriptor(listReferrersInstancesMethodDescriptor)
+            .build();
     HttpJsonCallSettings<ResetInstanceHttpRequest, Operation> resetInstanceTransportSettings =
         HttpJsonCallSettings.<ResetInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(resetInstanceMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceTransportSettings =
+        HttpJsonCallSettings.<SetDeletionProtectionInstanceHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(setDeletionProtectionInstanceMethodDescriptor)
+            .build();
     HttpJsonCallSettings<SetDiskAutoDeleteInstanceHttpRequest, Operation> setDiskAutoDeleteInstanceTransportSettings =
         HttpJsonCallSettings.<SetDiskAutoDeleteInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(setDiskAutoDeleteInstanceMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceTransportSettings =
+        HttpJsonCallSettings.<SetLabelsInstanceHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsInstanceMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceTransportSettings =
+        HttpJsonCallSettings.<SetMachineResourcesInstanceHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(setMachineResourcesInstanceMethodDescriptor)
             .build();
     HttpJsonCallSettings<SetMachineTypeInstanceHttpRequest, Operation> setMachineTypeInstanceTransportSettings =
         HttpJsonCallSettings.<SetMachineTypeInstanceHttpRequest, Operation>newBuilder()
@@ -584,6 +775,10 @@ public class HttpJsonInstanceStub extends InstanceStub {
     HttpJsonCallSettings<SetMetadataInstanceHttpRequest, Operation> setMetadataInstanceTransportSettings =
         HttpJsonCallSettings.<SetMetadataInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(setMetadataInstanceMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceTransportSettings =
+        HttpJsonCallSettings.<SetMinCpuPlatformInstanceHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(setMinCpuPlatformInstanceMethodDescriptor)
             .build();
     HttpJsonCallSettings<SetSchedulingInstanceHttpRequest, Operation> setSchedulingInstanceTransportSettings =
         HttpJsonCallSettings.<SetSchedulingInstanceHttpRequest, Operation>newBuilder()
@@ -609,6 +804,14 @@ public class HttpJsonInstanceStub extends InstanceStub {
         HttpJsonCallSettings.<StopInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(stopInstanceMethodDescriptor)
             .build();
+    HttpJsonCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceTransportSettings =
+        HttpJsonCallSettings.<UpdateAccessConfigInstanceHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAccessConfigInstanceMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceTransportSettings =
+        HttpJsonCallSettings.<UpdateNetworkInterfaceInstanceHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateNetworkInterfaceInstanceMethodDescriptor)
+            .build();
 
     this.addAccessConfigInstanceCallable = callableFactory.createUnaryCallable(addAccessConfigInstanceTransportSettings,settings.addAccessConfigInstanceSettings(), clientContext);
     this.aggregatedListInstancesCallable = callableFactory.createUnaryCallable(aggregatedListInstancesTransportSettings,settings.aggregatedListInstancesSettings(), clientContext);
@@ -622,16 +825,24 @@ public class HttpJsonInstanceStub extends InstanceStub {
     this.insertInstanceCallable = callableFactory.createUnaryCallable(insertInstanceTransportSettings,settings.insertInstanceSettings(), clientContext);
     this.listInstancesCallable = callableFactory.createUnaryCallable(listInstancesTransportSettings,settings.listInstancesSettings(), clientContext);
     this.listInstancesPagedCallable = callableFactory.createPagedCallable(listInstancesTransportSettings,settings.listInstancesSettings(), clientContext);
+    this.listReferrersInstancesCallable = callableFactory.createUnaryCallable(listReferrersInstancesTransportSettings,settings.listReferrersInstancesSettings(), clientContext);
+    this.listReferrersInstancesPagedCallable = callableFactory.createPagedCallable(listReferrersInstancesTransportSettings,settings.listReferrersInstancesSettings(), clientContext);
     this.resetInstanceCallable = callableFactory.createUnaryCallable(resetInstanceTransportSettings,settings.resetInstanceSettings(), clientContext);
+    this.setDeletionProtectionInstanceCallable = callableFactory.createUnaryCallable(setDeletionProtectionInstanceTransportSettings,settings.setDeletionProtectionInstanceSettings(), clientContext);
     this.setDiskAutoDeleteInstanceCallable = callableFactory.createUnaryCallable(setDiskAutoDeleteInstanceTransportSettings,settings.setDiskAutoDeleteInstanceSettings(), clientContext);
+    this.setLabelsInstanceCallable = callableFactory.createUnaryCallable(setLabelsInstanceTransportSettings,settings.setLabelsInstanceSettings(), clientContext);
+    this.setMachineResourcesInstanceCallable = callableFactory.createUnaryCallable(setMachineResourcesInstanceTransportSettings,settings.setMachineResourcesInstanceSettings(), clientContext);
     this.setMachineTypeInstanceCallable = callableFactory.createUnaryCallable(setMachineTypeInstanceTransportSettings,settings.setMachineTypeInstanceSettings(), clientContext);
     this.setMetadataInstanceCallable = callableFactory.createUnaryCallable(setMetadataInstanceTransportSettings,settings.setMetadataInstanceSettings(), clientContext);
+    this.setMinCpuPlatformInstanceCallable = callableFactory.createUnaryCallable(setMinCpuPlatformInstanceTransportSettings,settings.setMinCpuPlatformInstanceSettings(), clientContext);
     this.setSchedulingInstanceCallable = callableFactory.createUnaryCallable(setSchedulingInstanceTransportSettings,settings.setSchedulingInstanceSettings(), clientContext);
     this.setServiceAccountInstanceCallable = callableFactory.createUnaryCallable(setServiceAccountInstanceTransportSettings,settings.setServiceAccountInstanceSettings(), clientContext);
     this.setTagsInstanceCallable = callableFactory.createUnaryCallable(setTagsInstanceTransportSettings,settings.setTagsInstanceSettings(), clientContext);
     this.startInstanceCallable = callableFactory.createUnaryCallable(startInstanceTransportSettings,settings.startInstanceSettings(), clientContext);
     this.startWithEncryptionKeyInstanceCallable = callableFactory.createUnaryCallable(startWithEncryptionKeyInstanceTransportSettings,settings.startWithEncryptionKeyInstanceSettings(), clientContext);
     this.stopInstanceCallable = callableFactory.createUnaryCallable(stopInstanceTransportSettings,settings.stopInstanceSettings(), clientContext);
+    this.updateAccessConfigInstanceCallable = callableFactory.createUnaryCallable(updateAccessConfigInstanceTransportSettings,settings.updateAccessConfigInstanceSettings(), clientContext);
+    this.updateNetworkInterfaceInstanceCallable = callableFactory.createUnaryCallable(updateNetworkInterfaceInstanceTransportSettings,settings.updateNetworkInterfaceInstanceSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -697,13 +908,38 @@ public class HttpJsonInstanceStub extends InstanceStub {
   }
 
   @BetaApi
+  public UnaryCallable<ListReferrersInstancesHttpRequest, ListReferrersInstancesPagedResponse> listReferrersInstancesPagedCallable() {
+    return listReferrersInstancesPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<ListReferrersInstancesHttpRequest, InstanceListReferrers> listReferrersInstancesCallable() {
+    return listReferrersInstancesCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<ResetInstanceHttpRequest, Operation> resetInstanceCallable() {
     return resetInstanceCallable;
   }
 
   @BetaApi
+  public UnaryCallable<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceCallable() {
+    return setDeletionProtectionInstanceCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation> setDiskAutoDeleteInstanceCallable() {
     return setDiskAutoDeleteInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceCallable() {
+    return setLabelsInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceCallable() {
+    return setMachineResourcesInstanceCallable;
   }
 
   @BetaApi
@@ -714,6 +950,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
   @BetaApi
   public UnaryCallable<SetMetadataInstanceHttpRequest, Operation> setMetadataInstanceCallable() {
     return setMetadataInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceCallable() {
+    return setMinCpuPlatformInstanceCallable;
   }
 
   @BetaApi
@@ -744,6 +985,16 @@ public class HttpJsonInstanceStub extends InstanceStub {
   @BetaApi
   public UnaryCallable<StopInstanceHttpRequest, Operation> stopInstanceCallable() {
     return stopInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceCallable() {
+    return updateAccessConfigInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceCallable() {
+    return updateNetworkInterfaceInstanceCallable;
   }
 
   @Override

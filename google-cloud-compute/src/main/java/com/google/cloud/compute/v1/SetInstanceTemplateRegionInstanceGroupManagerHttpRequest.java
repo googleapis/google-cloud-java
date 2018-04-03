@@ -40,6 +40,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
   private final String prettyPrint;
   private final String quotaUser;
   private final RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource;
+  private final String requestId;
   private final String userIp;
 
   private SetInstanceTemplateRegionInstanceGroupManagerHttpRequest() {
@@ -51,6 +52,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
     this.prettyPrint = null;
     this.quotaUser = null;
     this.regionInstanceGroupManagersSetTemplateRequestResource = null;
+    this.requestId = null;
     this.userIp = null;
   }
 
@@ -64,6 +66,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
       String prettyPrint,
       String quotaUser,
       RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource,
+      String requestId,
       String userIp
       ) {
     this.access_token = access_token;
@@ -74,6 +77,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.regionInstanceGroupManagersSetTemplateRequestResource = regionInstanceGroupManagersSetTemplateRequestResource;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -103,6 +107,9 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
     }
     if (fieldNames.contains("regionInstanceGroupManagersSetTemplateRequestResource") && regionInstanceGroupManagersSetTemplateRequestResource != null) {
       fieldMap.put("regionInstanceGroupManagersSetTemplateRequestResource", Collections.singletonList(String.valueOf(regionInstanceGroupManagersSetTemplateRequestResource)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -135,6 +142,9 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
     }
     if (fieldName.equals("regionInstanceGroupManagersSetTemplateRequestResource")) {
       return String.valueOf(regionInstanceGroupManagersSetTemplateRequestResource);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -180,6 +190,10 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
     return regionInstanceGroupManagersSetTemplateRequestResource;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -213,6 +227,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
     private String prettyPrint;
     private String quotaUser;
     private RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -243,6 +258,9 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
       if (other.getRegionInstanceGroupManagersSetTemplateRequestResource() != null) {
         this.regionInstanceGroupManagersSetTemplateRequestResource = other.regionInstanceGroupManagersSetTemplateRequestResource;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -258,6 +276,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.regionInstanceGroupManagersSetTemplateRequestResource = source.regionInstanceGroupManagersSetTemplateRequestResource;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -333,6 +352,15 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -356,6 +384,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
 
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -368,6 +397,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
         prettyPrint,
         quotaUser,
         regionInstanceGroupManagersSetTemplateRequestResource,
+        requestId,
         userIp
       );
     }
@@ -382,6 +412,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRegionInstanceGroupManagersSetTemplateRequestResource(this.regionInstanceGroupManagersSetTemplateRequestResource);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -398,6 +429,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
         + "regionInstanceGroupManagersSetTemplateRequestResource=" + regionInstanceGroupManagersSetTemplateRequestResource + ", "
+        + "requestId=" + requestId + ", "
         + "userIp=" + userIp
         + "}";
   }
@@ -418,6 +450,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
           Objects.equals(this.regionInstanceGroupManagersSetTemplateRequestResource, that.getRegionInstanceGroupManagersSetTemplateRequestResource()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
     }
@@ -435,6 +468,7 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest impl
       prettyPrint,
       quotaUser,
       regionInstanceGroupManagersSetTemplateRequestResource,
+      requestId,
       userIp
     );
   }

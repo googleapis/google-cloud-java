@@ -95,6 +95,7 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
                   .setRequestInstance(DeleteForwardingRuleHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/forwardingRules/{forwardingRule}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ForwardingRuleName.newFactory())
                   .setResourceNameField("forwardingRule")
@@ -133,6 +134,7 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
                   .setRequestInstance(InsertForwardingRuleHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/forwardingRules"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")
@@ -172,6 +174,7 @@ public class HttpJsonForwardingRuleStub extends ForwardingRuleStub {
                   .setRequestInstance(SetTargetForwardingRuleHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/forwardingRules/{forwardingRule}/setTarget"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ForwardingRuleName.newFactory())
                   .setResourceNameField("forwardingRule")

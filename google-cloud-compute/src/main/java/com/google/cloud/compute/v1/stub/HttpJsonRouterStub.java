@@ -99,6 +99,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setRequestInstance(DeleteRouterHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers/{router}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RouterName.newFactory())
                   .setResourceNameField("router")
@@ -156,6 +157,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setRequestInstance(InsertRouterHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")
@@ -195,6 +197,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setRequestInstance(PatchRouterHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers/{router}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RouterName.newFactory())
                   .setResourceNameField("router")
@@ -233,6 +236,7 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setRequestInstance(UpdateRouterHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/routers/{router}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RouterName.newFactory())
                   .setResourceNameField("router")

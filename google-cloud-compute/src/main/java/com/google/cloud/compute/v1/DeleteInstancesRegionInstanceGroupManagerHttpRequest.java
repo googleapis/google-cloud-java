@@ -40,6 +40,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
   private final String prettyPrint;
   private final String quotaUser;
   private final RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource;
+  private final String requestId;
   private final String userIp;
 
   private DeleteInstancesRegionInstanceGroupManagerHttpRequest() {
@@ -51,6 +52,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     this.prettyPrint = null;
     this.quotaUser = null;
     this.regionInstanceGroupManagersDeleteInstancesRequestResource = null;
+    this.requestId = null;
     this.userIp = null;
   }
 
@@ -64,6 +66,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       String prettyPrint,
       String quotaUser,
       RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource,
+      String requestId,
       String userIp
       ) {
     this.access_token = access_token;
@@ -74,6 +77,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.regionInstanceGroupManagersDeleteInstancesRequestResource = regionInstanceGroupManagersDeleteInstancesRequestResource;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -103,6 +107,9 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     }
     if (fieldNames.contains("regionInstanceGroupManagersDeleteInstancesRequestResource") && regionInstanceGroupManagersDeleteInstancesRequestResource != null) {
       fieldMap.put("regionInstanceGroupManagersDeleteInstancesRequestResource", Collections.singletonList(String.valueOf(regionInstanceGroupManagersDeleteInstancesRequestResource)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -135,6 +142,9 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     }
     if (fieldName.equals("regionInstanceGroupManagersDeleteInstancesRequestResource")) {
       return String.valueOf(regionInstanceGroupManagersDeleteInstancesRequestResource);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -180,6 +190,10 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     return regionInstanceGroupManagersDeleteInstancesRequestResource;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -213,6 +227,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     private String prettyPrint;
     private String quotaUser;
     private RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -243,6 +258,9 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       if (other.getRegionInstanceGroupManagersDeleteInstancesRequestResource() != null) {
         this.regionInstanceGroupManagersDeleteInstancesRequestResource = other.regionInstanceGroupManagersDeleteInstancesRequestResource;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -258,6 +276,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.regionInstanceGroupManagersDeleteInstancesRequestResource = source.regionInstanceGroupManagersDeleteInstancesRequestResource;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -333,6 +352,15 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -356,6 +384,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
 
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -368,6 +397,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
         prettyPrint,
         quotaUser,
         regionInstanceGroupManagersDeleteInstancesRequestResource,
+        requestId,
         userIp
       );
     }
@@ -382,6 +412,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRegionInstanceGroupManagersDeleteInstancesRequestResource(this.regionInstanceGroupManagersDeleteInstancesRequestResource);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -398,6 +429,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
         + "regionInstanceGroupManagersDeleteInstancesRequestResource=" + regionInstanceGroupManagersDeleteInstancesRequestResource + ", "
+        + "requestId=" + requestId + ", "
         + "userIp=" + userIp
         + "}";
   }
@@ -418,6 +450,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
           Objects.equals(this.regionInstanceGroupManagersDeleteInstancesRequestResource, that.getRegionInstanceGroupManagersDeleteInstancesRequestResource()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
     }
@@ -435,6 +468,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       prettyPrint,
       quotaUser,
       regionInstanceGroupManagersDeleteInstancesRequestResource,
+      requestId,
       userIp
     );
   }

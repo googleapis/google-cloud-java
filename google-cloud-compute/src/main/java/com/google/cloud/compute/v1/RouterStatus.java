@@ -33,11 +33,13 @@ import javax.annotation.Nullable;
 @BetaApi
 public final class RouterStatus implements ApiMessage {
   private final List<Route> bestRoutes;
+  private final List<Route> bestRoutesForRouter;
   private final List<RouterStatusBgpPeerStatus> bgpPeerStatus;
   private final String network;
 
   private RouterStatus() {
     this.bestRoutes = null;
+    this.bestRoutesForRouter = null;
     this.bgpPeerStatus = null;
     this.network = null;
   }
@@ -45,10 +47,12 @@ public final class RouterStatus implements ApiMessage {
 
   private RouterStatus(
       List<Route> bestRoutes,
+      List<Route> bestRoutesForRouter,
       List<RouterStatusBgpPeerStatus> bgpPeerStatus,
       String network
       ) {
     this.bestRoutes = bestRoutes;
+    this.bestRoutesForRouter = bestRoutesForRouter;
     this.bgpPeerStatus = bgpPeerStatus;
     this.network = network;
   }
@@ -62,6 +66,13 @@ public final class RouterStatus implements ApiMessage {
         stringList.add(item.toString());
       }
       fieldMap.put("bestRoutes", stringList.build());
+    }
+    if (fieldNames.contains("bestRoutesForRouter") && bestRoutesForRouter != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (Route item : bestRoutesForRouter) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("bestRoutesForRouter", stringList.build());
     }
     if (fieldNames.contains("bgpPeerStatus") && bgpPeerStatus != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -81,6 +92,9 @@ public final class RouterStatus implements ApiMessage {
     if (fieldName.equals("bestRoutes")) {
       return String.valueOf(bestRoutes);
     }
+    if (fieldName.equals("bestRoutesForRouter")) {
+      return String.valueOf(bestRoutesForRouter);
+    }
     if (fieldName.equals("bgpPeerStatus")) {
       return String.valueOf(bgpPeerStatus);
     }
@@ -98,6 +112,10 @@ public final class RouterStatus implements ApiMessage {
 
   public List<Route> getBestRoutesList() {
     return bestRoutes;
+  }
+
+  public List<Route> getBestRoutesForRouterList() {
+    return bestRoutesForRouter;
   }
 
   public List<RouterStatusBgpPeerStatus> getBgpPeerStatusList() {
@@ -130,6 +148,7 @@ public final class RouterStatus implements ApiMessage {
 
   public static class Builder {
     private List<Route> bestRoutes;
+    private List<Route> bestRoutesForRouter;
     private List<RouterStatusBgpPeerStatus> bgpPeerStatus;
     private String network;
 
@@ -139,6 +158,9 @@ public final class RouterStatus implements ApiMessage {
       if (other == RouterStatus.getDefaultInstance()) return this;
       if (other.getBestRoutesList() != null) {
         this.bestRoutes = other.bestRoutes;
+      }
+      if (other.getBestRoutesForRouterList() != null) {
+        this.bestRoutesForRouter = other.bestRoutesForRouter;
       }
       if (other.getBgpPeerStatusList() != null) {
         this.bgpPeerStatus = other.bgpPeerStatus;
@@ -151,6 +173,7 @@ public final class RouterStatus implements ApiMessage {
 
     Builder(RouterStatus source) {
       this.bestRoutes = source.bestRoutes;
+      this.bestRoutesForRouter = source.bestRoutesForRouter;
       this.bgpPeerStatus = source.bgpPeerStatus;
       this.network = source.network;
     }
@@ -169,6 +192,23 @@ public final class RouterStatus implements ApiMessage {
 
     public Builder addBestRoutes(Route bestRoutes) {
       this.bestRoutes.add(bestRoutes);
+      return this;
+    }
+
+    public List<Route> getBestRoutesForRouterList() {
+      return bestRoutesForRouter;
+    }
+
+    public Builder addAllBestRoutesForRouter(List<Route> bestRoutesForRouter) {
+      if (this.bestRoutesForRouter == null) {
+        this.bestRoutesForRouter = new ArrayList<>(bestRoutesForRouter.size());
+      }
+      this.bestRoutesForRouter.addAll(bestRoutesForRouter);
+      return this;
+    }
+
+    public Builder addBestRoutesForRouter(Route bestRoutesForRouter) {
+      this.bestRoutesForRouter.add(bestRoutesForRouter);
       return this;
     }
 
@@ -202,8 +242,10 @@ public final class RouterStatus implements ApiMessage {
     public RouterStatus build() {
 
 
+
       return new RouterStatus(
         bestRoutes,
+        bestRoutesForRouter,
         bgpPeerStatus,
         network
       );
@@ -212,6 +254,7 @@ public final class RouterStatus implements ApiMessage {
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.addAllBestRoutes(this.bestRoutes);
+      newBuilder.addAllBestRoutesForRouter(this.bestRoutesForRouter);
       newBuilder.addAllBgpPeerStatus(this.bgpPeerStatus);
       newBuilder.setNetwork(this.network);
       return newBuilder;
@@ -222,6 +265,7 @@ public final class RouterStatus implements ApiMessage {
   public String toString() {
     return "RouterStatus{"
         + "bestRoutes=" + bestRoutes + ", "
+        + "bestRoutesForRouter=" + bestRoutesForRouter + ", "
         + "bgpPeerStatus=" + bgpPeerStatus + ", "
         + "network=" + network
         + "}";
@@ -236,6 +280,7 @@ public final class RouterStatus implements ApiMessage {
       RouterStatus that = (RouterStatus) o;
       return
           Objects.equals(this.bestRoutes, that.getBestRoutesList()) &&
+          Objects.equals(this.bestRoutesForRouter, that.getBestRoutesForRouterList()) &&
           Objects.equals(this.bgpPeerStatus, that.getBgpPeerStatusList()) &&
           Objects.equals(this.network, that.getNetwork())
           ;
@@ -247,6 +292,7 @@ public final class RouterStatus implements ApiMessage {
   public int hashCode() {
     return Objects.hash(
       bestRoutes,
+      bestRoutesForRouter,
       bgpPeerStatus,
       network
     );

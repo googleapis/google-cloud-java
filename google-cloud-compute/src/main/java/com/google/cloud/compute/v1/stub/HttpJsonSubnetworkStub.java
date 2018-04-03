@@ -36,8 +36,10 @@ import com.google.cloud.compute.v1.GetSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
@@ -47,6 +49,7 @@ import com.google.cloud.compute.v1.SubnetworkName;
 import com.google.cloud.compute.v1.SubnetworkSettings;
 import com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest;
 import com.google.cloud.compute.v1.SubnetworksScopedList;
+import com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -95,6 +98,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setRequestInstance(DeleteSubnetworkHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/subnetworks/{subnetwork}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(SubnetworkName.newFactory())
                   .setResourceNameField("subnetwork")
@@ -114,6 +118,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setRequestInstance(ExpandIpCidrRangeSubnetworkHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/subnetworks/{subnetwork}/expandIpCidrRange"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(SubnetworkName.newFactory())
                   .setResourceNameField("subnetwork")
@@ -152,6 +157,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setRequestInstance(InsertSubnetworkHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/subnetworks"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")
@@ -181,6 +187,46 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                   .setResponseInstance(SubnetworkList.getDefaultInstance())
                   .build())
           .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<PatchSubnetworkHttpRequest, Operation> patchSubnetworkMethodDescriptor =
+      ApiMethodDescriptor.<PatchSubnetworkHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.subnetworks.patch")
+          .setHttpMethod(HttpMethods.PATCH)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<PatchSubnetworkHttpRequest>newBuilder()
+                  .setRequestInstance(PatchSubnetworkHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/regions/{region}/subnetworks/{subnetwork}"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(SubnetworkName.newFactory())
+                  .setResourceNameField("subnetwork")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
+  @InternalApi
+  public static final ApiMethodDescriptor<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation> setPrivateIpGoogleAccessSubnetworkMethodDescriptor =
+      ApiMethodDescriptor.<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>newBuilder()
+          .setFullMethodName("compute.subnetworks.setPrivateIpGoogleAccess")
+          .setHttpMethod(HttpMethods.POST)
+          .setRequestFormatter(
+              ApiMessageHttpRequestFormatter.<SetPrivateIpGoogleAccessSubnetworkHttpRequest>newBuilder()
+                  .setRequestInstance(SetPrivateIpGoogleAccessSubnetworkHttpRequest.getDefaultInstance())
+                  .setPathTemplate(PathTemplate.create("{project}/regions/{region}/subnetworks/{subnetwork}/setPrivateIpGoogleAccess"))
+                  .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
+                                     ))
+                  .setResourceNameFactory(SubnetworkName.newFactory())
+                  .setResourceNameField("subnetwork")
+                  .build())
+          .setResponseParser(
+              ApiMessageHttpResponseParser.<Operation>newBuilder()
+                  .setResponseInstance(Operation.getDefaultInstance())
+                  .build())
+          .build();
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList> aggregatedListSubnetworksCallable;
@@ -191,6 +237,8 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
   private final UnaryCallable<InsertSubnetworkHttpRequest, Operation> insertSubnetworkCallable;
   private final UnaryCallable<ListSubnetworksHttpRequest, SubnetworkList> listSubnetworksCallable;
   private final UnaryCallable<ListSubnetworksHttpRequest, ListSubnetworksPagedResponse> listSubnetworksPagedCallable;
+  private final UnaryCallable<PatchSubnetworkHttpRequest, Operation> patchSubnetworkCallable;
+  private final UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation> setPrivateIpGoogleAccessSubnetworkCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
   public static final HttpJsonSubnetworkStub create(SubnetworkStubSettings settings) throws IOException {
@@ -246,6 +294,14 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
         HttpJsonCallSettings.<ListSubnetworksHttpRequest, SubnetworkList>newBuilder()
             .setMethodDescriptor(listSubnetworksMethodDescriptor)
             .build();
+    HttpJsonCallSettings<PatchSubnetworkHttpRequest, Operation> patchSubnetworkTransportSettings =
+        HttpJsonCallSettings.<PatchSubnetworkHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(patchSubnetworkMethodDescriptor)
+            .build();
+    HttpJsonCallSettings<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation> setPrivateIpGoogleAccessSubnetworkTransportSettings =
+        HttpJsonCallSettings.<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>newBuilder()
+            .setMethodDescriptor(setPrivateIpGoogleAccessSubnetworkMethodDescriptor)
+            .build();
 
     this.aggregatedListSubnetworksCallable = callableFactory.createUnaryCallable(aggregatedListSubnetworksTransportSettings,settings.aggregatedListSubnetworksSettings(), clientContext);
     this.aggregatedListSubnetworksPagedCallable = callableFactory.createPagedCallable(aggregatedListSubnetworksTransportSettings,settings.aggregatedListSubnetworksSettings(), clientContext);
@@ -255,6 +311,8 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
     this.insertSubnetworkCallable = callableFactory.createUnaryCallable(insertSubnetworkTransportSettings,settings.insertSubnetworkSettings(), clientContext);
     this.listSubnetworksCallable = callableFactory.createUnaryCallable(listSubnetworksTransportSettings,settings.listSubnetworksSettings(), clientContext);
     this.listSubnetworksPagedCallable = callableFactory.createPagedCallable(listSubnetworksTransportSettings,settings.listSubnetworksSettings(), clientContext);
+    this.patchSubnetworkCallable = callableFactory.createUnaryCallable(patchSubnetworkTransportSettings,settings.patchSubnetworkSettings(), clientContext);
+    this.setPrivateIpGoogleAccessSubnetworkCallable = callableFactory.createUnaryCallable(setPrivateIpGoogleAccessSubnetworkTransportSettings,settings.setPrivateIpGoogleAccessSubnetworkSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -297,6 +355,16 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
   @BetaApi
   public UnaryCallable<ListSubnetworksHttpRequest, SubnetworkList> listSubnetworksCallable() {
     return listSubnetworksCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchSubnetworkHttpRequest, Operation> patchSubnetworkCallable() {
+    return patchSubnetworkCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation> setPrivateIpGoogleAccessSubnetworkCallable() {
+    return setPrivateIpGoogleAccessSubnetworkCallable;
   }
 
   @Override

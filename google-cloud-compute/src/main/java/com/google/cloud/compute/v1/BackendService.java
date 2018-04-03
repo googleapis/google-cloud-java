@@ -34,12 +34,14 @@ import javax.annotation.Nullable;
 public final class BackendService implements ApiMessage {
   private final Integer affinityCookieTtlSec;
   private final List<Backend> backends;
+  private final BackendServiceCdnPolicy cdnPolicy;
   private final ConnectionDraining connectionDraining;
   private final String creationTimestamp;
   private final String description;
   private final Boolean enableCDN;
   private final String fingerprint;
   private final List<String> healthChecks;
+  private final BackendServiceIAP iap;
   private final String id;
   private final String kind;
   private final String loadBalancingScheme;
@@ -55,12 +57,14 @@ public final class BackendService implements ApiMessage {
   private BackendService() {
     this.affinityCookieTtlSec = null;
     this.backends = null;
+    this.cdnPolicy = null;
     this.connectionDraining = null;
     this.creationTimestamp = null;
     this.description = null;
     this.enableCDN = null;
     this.fingerprint = null;
     this.healthChecks = null;
+    this.iap = null;
     this.id = null;
     this.kind = null;
     this.loadBalancingScheme = null;
@@ -78,12 +82,14 @@ public final class BackendService implements ApiMessage {
   private BackendService(
       Integer affinityCookieTtlSec,
       List<Backend> backends,
+      BackendServiceCdnPolicy cdnPolicy,
       ConnectionDraining connectionDraining,
       String creationTimestamp,
       String description,
       Boolean enableCDN,
       String fingerprint,
       List<String> healthChecks,
+      BackendServiceIAP iap,
       String id,
       String kind,
       String loadBalancingScheme,
@@ -98,12 +104,14 @@ public final class BackendService implements ApiMessage {
       ) {
     this.affinityCookieTtlSec = affinityCookieTtlSec;
     this.backends = backends;
+    this.cdnPolicy = cdnPolicy;
     this.connectionDraining = connectionDraining;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.enableCDN = enableCDN;
     this.fingerprint = fingerprint;
     this.healthChecks = healthChecks;
+    this.iap = iap;
     this.id = id;
     this.kind = kind;
     this.loadBalancingScheme = loadBalancingScheme;
@@ -130,6 +138,9 @@ public final class BackendService implements ApiMessage {
       }
       fieldMap.put("backends", stringList.build());
     }
+    if (fieldNames.contains("cdnPolicy") && cdnPolicy != null) {
+      fieldMap.put("cdnPolicy", Collections.singletonList(String.valueOf(cdnPolicy)));
+    }
     if (fieldNames.contains("connectionDraining") && connectionDraining != null) {
       fieldMap.put("connectionDraining", Collections.singletonList(String.valueOf(connectionDraining)));
     }
@@ -151,6 +162,9 @@ public final class BackendService implements ApiMessage {
         stringList.add(item.toString());
       }
       fieldMap.put("healthChecks", stringList.build());
+    }
+    if (fieldNames.contains("iap") && iap != null) {
+      fieldMap.put("iap", Collections.singletonList(String.valueOf(iap)));
     }
     if (fieldNames.contains("id") && id != null) {
       fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
@@ -196,6 +210,9 @@ public final class BackendService implements ApiMessage {
     if (fieldName.equals("backends")) {
       return String.valueOf(backends);
     }
+    if (fieldName.equals("cdnPolicy")) {
+      return String.valueOf(cdnPolicy);
+    }
     if (fieldName.equals("connectionDraining")) {
       return String.valueOf(connectionDraining);
     }
@@ -213,6 +230,9 @@ public final class BackendService implements ApiMessage {
     }
     if (fieldName.equals("healthChecks")) {
       return String.valueOf(healthChecks);
+    }
+    if (fieldName.equals("iap")) {
+      return String.valueOf(iap);
     }
     if (fieldName.equals("id")) {
       return String.valueOf(id);
@@ -264,6 +284,10 @@ public final class BackendService implements ApiMessage {
     return backends;
   }
 
+  public BackendServiceCdnPolicy getCdnPolicy() {
+    return cdnPolicy;
+  }
+
   public ConnectionDraining getConnectionDraining() {
     return connectionDraining;
   }
@@ -286,6 +310,10 @@ public final class BackendService implements ApiMessage {
 
   public List<String> getHealthChecksList() {
     return healthChecks;
+  }
+
+  public BackendServiceIAP getIap() {
+    return iap;
   }
 
   public String getId() {
@@ -355,12 +383,14 @@ public final class BackendService implements ApiMessage {
   public static class Builder {
     private Integer affinityCookieTtlSec;
     private List<Backend> backends;
+    private BackendServiceCdnPolicy cdnPolicy;
     private ConnectionDraining connectionDraining;
     private String creationTimestamp;
     private String description;
     private Boolean enableCDN;
     private String fingerprint;
     private List<String> healthChecks;
+    private BackendServiceIAP iap;
     private String id;
     private String kind;
     private String loadBalancingScheme;
@@ -383,6 +413,9 @@ public final class BackendService implements ApiMessage {
       if (other.getBackendsList() != null) {
         this.backends = other.backends;
       }
+      if (other.getCdnPolicy() != null) {
+        this.cdnPolicy = other.cdnPolicy;
+      }
       if (other.getConnectionDraining() != null) {
         this.connectionDraining = other.connectionDraining;
       }
@@ -400,6 +433,9 @@ public final class BackendService implements ApiMessage {
       }
       if (other.getHealthChecksList() != null) {
         this.healthChecks = other.healthChecks;
+      }
+      if (other.getIap() != null) {
+        this.iap = other.iap;
       }
       if (other.getId() != null) {
         this.id = other.id;
@@ -440,12 +476,14 @@ public final class BackendService implements ApiMessage {
     Builder(BackendService source) {
       this.affinityCookieTtlSec = source.affinityCookieTtlSec;
       this.backends = source.backends;
+      this.cdnPolicy = source.cdnPolicy;
       this.connectionDraining = source.connectionDraining;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
       this.enableCDN = source.enableCDN;
       this.fingerprint = source.fingerprint;
       this.healthChecks = source.healthChecks;
+      this.iap = source.iap;
       this.id = source.id;
       this.kind = source.kind;
       this.loadBalancingScheme = source.loadBalancingScheme;
@@ -482,6 +520,15 @@ public final class BackendService implements ApiMessage {
 
     public Builder addBackends(Backend backends) {
       this.backends.add(backends);
+      return this;
+    }
+
+    public BackendServiceCdnPolicy getCdnPolicy() {
+      return cdnPolicy;
+    }
+
+    public Builder setCdnPolicy(BackendServiceCdnPolicy cdnPolicy) {
+      this.cdnPolicy = cdnPolicy;
       return this;
     }
 
@@ -544,6 +591,15 @@ public final class BackendService implements ApiMessage {
 
     public Builder addHealthChecks(String healthChecks) {
       this.healthChecks.add(healthChecks);
+      return this;
+    }
+
+    public BackendServiceIAP getIap() {
+      return iap;
+    }
+
+    public Builder setIap(BackendServiceIAP iap) {
+      this.iap = iap;
       return this;
     }
 
@@ -666,15 +722,19 @@ public final class BackendService implements ApiMessage {
 
 
 
+
+
       return new BackendService(
         affinityCookieTtlSec,
         backends,
+        cdnPolicy,
         connectionDraining,
         creationTimestamp,
         description,
         enableCDN,
         fingerprint,
         healthChecks,
+        iap,
         id,
         kind,
         loadBalancingScheme,
@@ -693,12 +753,14 @@ public final class BackendService implements ApiMessage {
       Builder newBuilder = new Builder();
       newBuilder.setAffinityCookieTtlSec(this.affinityCookieTtlSec);
       newBuilder.addAllBackends(this.backends);
+      newBuilder.setCdnPolicy(this.cdnPolicy);
       newBuilder.setConnectionDraining(this.connectionDraining);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
       newBuilder.setEnableCDN(this.enableCDN);
       newBuilder.setFingerprint(this.fingerprint);
       newBuilder.addAllHealthChecks(this.healthChecks);
+      newBuilder.setIap(this.iap);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setLoadBalancingScheme(this.loadBalancingScheme);
@@ -719,12 +781,14 @@ public final class BackendService implements ApiMessage {
     return "BackendService{"
         + "affinityCookieTtlSec=" + affinityCookieTtlSec + ", "
         + "backends=" + backends + ", "
+        + "cdnPolicy=" + cdnPolicy + ", "
         + "connectionDraining=" + connectionDraining + ", "
         + "creationTimestamp=" + creationTimestamp + ", "
         + "description=" + description + ", "
         + "enableCDN=" + enableCDN + ", "
         + "fingerprint=" + fingerprint + ", "
         + "healthChecks=" + healthChecks + ", "
+        + "iap=" + iap + ", "
         + "id=" + id + ", "
         + "kind=" + kind + ", "
         + "loadBalancingScheme=" + loadBalancingScheme + ", "
@@ -749,12 +813,14 @@ public final class BackendService implements ApiMessage {
       return
           Objects.equals(this.affinityCookieTtlSec, that.getAffinityCookieTtlSec()) &&
           Objects.equals(this.backends, that.getBackendsList()) &&
+          Objects.equals(this.cdnPolicy, that.getCdnPolicy()) &&
           Objects.equals(this.connectionDraining, that.getConnectionDraining()) &&
           Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
           Objects.equals(this.description, that.getDescription()) &&
           Objects.equals(this.enableCDN, that.getEnableCDN()) &&
           Objects.equals(this.fingerprint, that.getFingerprint()) &&
           Objects.equals(this.healthChecks, that.getHealthChecksList()) &&
+          Objects.equals(this.iap, that.getIap()) &&
           Objects.equals(this.id, that.getId()) &&
           Objects.equals(this.kind, that.getKind()) &&
           Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme()) &&
@@ -776,12 +842,14 @@ public final class BackendService implements ApiMessage {
     return Objects.hash(
       affinityCookieTtlSec,
       backends,
+      cdnPolicy,
       connectionDraining,
       creationTimestamp,
       description,
       enableCDN,
       fingerprint,
       healthChecks,
+      iap,
       id,
       kind,
       loadBalancingScheme,

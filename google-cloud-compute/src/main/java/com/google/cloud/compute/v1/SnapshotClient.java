@@ -52,8 +52,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+ *   String requestId = "";
  *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
- *   Operation response = snapshotClient.deleteSnapshot(snapshot);
+ *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
  * }
  * </code>
  * </pre>
@@ -177,19 +178,26 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   String requestId = "";
    *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
-   *   Operation response = snapshotClient.deleteSnapshot(snapshot);
+   *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param snapshot Name of the Snapshot resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSnapshot(SnapshotName snapshot) {
+  public final Operation deleteSnapshot(String requestId, SnapshotName snapshot) {
 
     DeleteSnapshotHttpRequest request =
         DeleteSnapshotHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setSnapshot(snapshot == null ? null : snapshot.toString())
         .build();
     return deleteSnapshot(request);
@@ -204,19 +212,26 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   String requestId = "";
    *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
-   *   Operation response = snapshotClient.deleteSnapshot(snapshot.toString());
+   *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot.toString());
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param snapshot Name of the Snapshot resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSnapshot(String snapshot) {
+  public final Operation deleteSnapshot(String requestId, String snapshot) {
 
     DeleteSnapshotHttpRequest request =
         DeleteSnapshotHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setSnapshot(snapshot)
         .build();
     return deleteSnapshot(request);
@@ -231,8 +246,10 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   String requestId = "";
    *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setSnapshot(snapshot.toString())
    *     .build();
    *   Operation response = snapshotClient.deleteSnapshot(request);
@@ -256,8 +273,10 @@ public class SnapshotClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   String requestId = "";
    *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setSnapshot(snapshot.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = snapshotClient.deleteSnapshotCallable().futureCall(request);
@@ -497,6 +516,111 @@ public class SnapshotClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<ListSnapshotsHttpRequest, SnapshotList> listSnapshotsCallable() {
     return stub.listSnapshotsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+   *   Operation response = snapshotClient.setLabelsSnapshot(resource, globalSetLabelsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name of the resource for this request.
+   * @param globalSetLabelsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsSnapshot(ProjectSnapshotName resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+
+    SetLabelsSnapshotHttpRequest request =
+        SetLabelsSnapshotHttpRequest.newBuilder()
+        .setResource(resource == null ? null : resource.toString())
+        .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+        .build();
+    return setLabelsSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+   *   Operation response = snapshotClient.setLabelsSnapshot(resource.toString(), globalSetLabelsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name of the resource for this request.
+   * @param globalSetLabelsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsSnapshot(String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+
+    SetLabelsSnapshotHttpRequest request =
+        SetLabelsSnapshotHttpRequest.newBuilder()
+        .setResource(resource)
+        .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+        .build();
+    return setLabelsSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+   *   SetLabelsSnapshotHttpRequest request = SetLabelsSnapshotHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+   *     .build();
+   *   Operation response = snapshotClient.setLabelsSnapshot(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsSnapshot(SetLabelsSnapshotHttpRequest request) {
+    return setLabelsSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+   *   SetLabelsSnapshotHttpRequest request = SetLabelsSnapshotHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = snapshotClient.setLabelsSnapshotCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotCallable() {
+    return stub.setLabelsSnapshotCallable();
   }
 
   @Override

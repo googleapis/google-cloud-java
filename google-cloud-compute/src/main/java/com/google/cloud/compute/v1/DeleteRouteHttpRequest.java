@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -35,6 +38,7 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String route;
   private final String userIp;
 
@@ -45,9 +49,11 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.route = null;
     this.userIp = null;
   }
+
 
   private DeleteRouteHttpRequest(
       String access_token,
@@ -56,14 +62,17 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String route,
-      String userIp) {
+      String userIp
+      ) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.route = route;
     this.userIp = userIp;
   }
@@ -88,6 +97,9 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("route") && route != null) {
       fieldMap.put("route", Collections.singletonList(String.valueOf(route)));
@@ -117,6 +129,9 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("route")) {
       return String.valueOf(route);
@@ -157,6 +172,10 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getRoute() {
     return route;
   }
@@ -165,24 +184,22 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
     return userIp;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(DeleteRouteHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeleteRouteHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final DeleteRouteHttpRequest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new DeleteRouteHttpRequest();
   }
@@ -194,6 +211,7 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String route;
     private String userIp;
 
@@ -219,6 +237,9 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getRoute() != null) {
         this.route = other.route;
       }
@@ -235,6 +256,7 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.route = source.route;
       this.userIp = source.userIp;
     }
@@ -293,6 +315,15 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getRoute() {
       return route;
     }
@@ -311,8 +342,15 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
       return this;
     }
 
+
     public DeleteRouteHttpRequest build() {
       String missing = "";
+
+
+
+
+
+
 
       if (route == null) {
         missing += " route";
@@ -322,7 +360,16 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new DeleteRouteHttpRequest(
-          access_token, callback, fields, key, prettyPrint, quotaUser, route, userIp);
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        route,
+        userIp
+      );
     }
 
     public Builder clone() {
@@ -333,6 +380,7 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setRoute(this.route);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -342,29 +390,15 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "DeleteRouteHttpRequest{"
-        + "access_token="
-        + access_token
-        + ", "
-        + "callback="
-        + callback
-        + ", "
-        + "fields="
-        + fields
-        + ", "
-        + "key="
-        + key
-        + ", "
-        + "prettyPrint="
-        + prettyPrint
-        + ", "
-        + "quotaUser="
-        + quotaUser
-        + ", "
-        + "route="
-        + route
-        + ", "
-        + "userIp="
-        + userIp
+        + "access_token=" + access_token + ", "
+        + "callback=" + callback + ", "
+        + "fields=" + fields + ", "
+        + "key=" + key + ", "
+        + "prettyPrint=" + prettyPrint + ", "
+        + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
+        + "route=" + route + ", "
+        + "userIp=" + userIp
         + "}";
   }
 
@@ -375,20 +409,33 @@ public final class DeleteRouteHttpRequest implements ApiMessage {
     }
     if (o instanceof DeleteRouteHttpRequest) {
       DeleteRouteHttpRequest that = (DeleteRouteHttpRequest) o;
-      return Objects.equals(this.access_token, that.getAccessToken())
-          && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fields, that.getFields())
-          && Objects.equals(this.key, that.getKey())
-          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
-          && Objects.equals(this.quotaUser, that.getQuotaUser())
-          && Objects.equals(this.route, that.getRoute())
-          && Objects.equals(this.userIp, that.getUserIp());
+      return
+          Objects.equals(this.access_token, that.getAccessToken()) &&
+          Objects.equals(this.callback, that.getCallback()) &&
+          Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.key, that.getKey()) &&
+          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
+          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
+          Objects.equals(this.route, that.getRoute()) &&
+          Objects.equals(this.userIp, that.getUserIp())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(access_token, callback, fields, key, prettyPrint, quotaUser, route, userIp);
+    return Objects.hash(
+      access_token,
+      callback,
+      fields,
+      key,
+      prettyPrint,
+      quotaUser,
+      requestId,
+      route,
+      userIp
+    );
   }
 }

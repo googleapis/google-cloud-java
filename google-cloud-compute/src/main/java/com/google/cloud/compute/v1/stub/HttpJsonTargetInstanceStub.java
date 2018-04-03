@@ -93,6 +93,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
                   .setRequestInstance(DeleteTargetInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/targetInstances/{targetInstance}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetInstanceName.newFactory())
                   .setResourceNameField("targetInstance")
@@ -131,6 +132,7 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
                   .setRequestInstance(InsertTargetInstanceHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/targetInstances"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ZoneName.newFactory())
                   .setResourceNameField("zone")

@@ -54,8 +54,9 @@ import javax.annotation.Generated;
  * try (InstanceClient instanceClient = InstanceClient.create()) {
  *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
  *   String networkInterface = "";
+ *   String requestId = "";
  *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
- *   Operation response = instanceClient.addAccessConfigInstance(instance, networkInterface, accessConfigResource);
+ *   Operation response = instanceClient.addAccessConfigInstance(instance, networkInterface, requestId, accessConfigResource);
  * }
  * </code>
  * </pre>
@@ -179,23 +180,30 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
+   *   String requestId = "";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-   *   Operation response = instanceClient.addAccessConfigInstance(instance, networkInterface, accessConfigResource);
+   *   Operation response = instanceClient.addAccessConfigInstance(instance, networkInterface, requestId, accessConfigResource);
    * }
    * </code></pre>
    *
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to add to this instance.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param accessConfigResource An access configuration attached to an instance's network interface. Only one access config per instance is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addAccessConfigInstance(InstanceName instance, String networkInterface, AccessConfig accessConfigResource) {
+  public final Operation addAccessConfigInstance(InstanceName instance, String networkInterface, String requestId, AccessConfig accessConfigResource) {
 
     AddAccessConfigInstanceHttpRequest request =
         AddAccessConfigInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
         .setNetworkInterface(networkInterface)
+        .setRequestId(requestId)
         .setAccessConfigResource(accessConfigResource)
         .build();
     return addAccessConfigInstance(request);
@@ -210,23 +218,30 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
+   *   String requestId = "";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
-   *   Operation response = instanceClient.addAccessConfigInstance(instance.toString(), networkInterface, accessConfigResource);
+   *   Operation response = instanceClient.addAccessConfigInstance(instance.toString(), networkInterface, requestId, accessConfigResource);
    * }
    * </code></pre>
    *
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to add to this instance.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param accessConfigResource An access configuration attached to an instance's network interface. Only one access config per instance is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addAccessConfigInstance(String instance, String networkInterface, AccessConfig accessConfigResource) {
+  public final Operation addAccessConfigInstance(String instance, String networkInterface, String requestId, AccessConfig accessConfigResource) {
 
     AddAccessConfigInstanceHttpRequest request =
         AddAccessConfigInstanceHttpRequest.newBuilder()
         .setInstance(instance)
         .setNetworkInterface(networkInterface)
+        .setRequestId(requestId)
         .setAccessConfigResource(accessConfigResource)
         .build();
     return addAccessConfigInstance(request);
@@ -241,10 +256,12 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
+   *   String requestId = "";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   AddAccessConfigInstanceHttpRequest request = AddAccessConfigInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
    *     .setNetworkInterface(networkInterface)
+   *     .setRequestId(requestId)
    *     .setAccessConfigResource(accessConfigResource)
    *     .build();
    *   Operation response = instanceClient.addAccessConfigInstance(request);
@@ -268,10 +285,12 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
+   *   String requestId = "";
    *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   AddAccessConfigInstanceHttpRequest request = AddAccessConfigInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
    *     .setNetworkInterface(networkInterface)
+   *     .setRequestId(requestId)
    *     .setAccessConfigResource(accessConfigResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.addAccessConfigInstanceCallable().futureCall(request);
@@ -420,27 +439,34 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Attaches a Disk resource to an instance.
+   * Attaches an existing Disk resource to an instance. You must first create the disk before you can attach it. It is not possible to create and attach a disk at the same time. For more information, read Adding a persistent disk to your instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
-   *   Operation response = instanceClient.attachDiskInstance(instance, attachedDiskResource);
+   *   Operation response = instanceClient.attachDiskInstance(instance, requestId, attachedDiskResource);
    * }
    * </code></pre>
    *
    * @param instance The instance name for this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation attachDiskInstance(InstanceName instance, AttachedDisk attachedDiskResource) {
+  public final Operation attachDiskInstance(InstanceName instance, String requestId, AttachedDisk attachedDiskResource) {
 
     AttachDiskInstanceHttpRequest request =
         AttachDiskInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setAttachedDiskResource(attachedDiskResource)
         .build();
     return attachDiskInstance(request);
@@ -448,27 +474,34 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Attaches a Disk resource to an instance.
+   * Attaches an existing Disk resource to an instance. You must first create the disk before you can attach it. It is not possible to create and attach a disk at the same time. For more information, read Adding a persistent disk to your instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
-   *   Operation response = instanceClient.attachDiskInstance(instance.toString(), attachedDiskResource);
+   *   Operation response = instanceClient.attachDiskInstance(instance.toString(), requestId, attachedDiskResource);
    * }
    * </code></pre>
    *
    * @param instance The instance name for this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation attachDiskInstance(String instance, AttachedDisk attachedDiskResource) {
+  public final Operation attachDiskInstance(String instance, String requestId, AttachedDisk attachedDiskResource) {
 
     AttachDiskInstanceHttpRequest request =
         AttachDiskInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setAttachedDiskResource(attachedDiskResource)
         .build();
     return attachDiskInstance(request);
@@ -476,15 +509,17 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Attaches a Disk resource to an instance.
+   * Attaches an existing Disk resource to an instance. You must first create the disk before you can attach it. It is not possible to create and attach a disk at the same time. For more information, read Adding a persistent disk to your instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   AttachDiskInstanceHttpRequest request = AttachDiskInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setAttachedDiskResource(attachedDiskResource)
    *     .build();
    *   Operation response = instanceClient.attachDiskInstance(request);
@@ -501,15 +536,17 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Attaches a Disk resource to an instance.
+   * Attaches an existing Disk resource to an instance. You must first create the disk before you can attach it. It is not possible to create and attach a disk at the same time. For more information, read Adding a persistent disk to your instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   AttachDiskInstanceHttpRequest request = AttachDiskInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setAttachedDiskResource(attachedDiskResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.attachDiskInstanceCallable().futureCall(request);
@@ -531,19 +568,26 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-   *   Operation response = instanceClient.deleteInstance(instance);
+   *   String requestId = "";
+   *   Operation response = instanceClient.deleteInstance(instance, requestId);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstance(InstanceName instance) {
+  public final Operation deleteInstance(InstanceName instance, String requestId) {
 
     DeleteInstanceHttpRequest request =
         DeleteInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .build();
     return deleteInstance(request);
   }
@@ -556,19 +600,26 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-   *   Operation response = instanceClient.deleteInstance(instance.toString());
+   *   String requestId = "";
+   *   Operation response = instanceClient.deleteInstance(instance.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstance(String instance) {
+  public final Operation deleteInstance(String instance, String requestId) {
 
     DeleteInstanceHttpRequest request =
         DeleteInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .build();
     return deleteInstance(request);
   }
@@ -581,8 +632,10 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   DeleteInstanceHttpRequest request = DeleteInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = instanceClient.deleteInstance(request);
    * }
@@ -604,8 +657,10 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   DeleteInstanceHttpRequest request = DeleteInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.deleteInstanceCallable().futureCall(request);
    *   // Do something
@@ -627,23 +682,30 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
+   *   String requestId = "";
    *   String accessConfig = "";
-   *   Operation response = instanceClient.deleteAccessConfigInstance(instance, networkInterface, accessConfig);
+   *   Operation response = instanceClient.deleteAccessConfigInstance(instance, networkInterface, requestId, accessConfig);
    * }
    * </code></pre>
    *
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param accessConfig The name of the access config to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteAccessConfigInstance(InstanceName instance, String networkInterface, String accessConfig) {
+  public final Operation deleteAccessConfigInstance(InstanceName instance, String networkInterface, String requestId, String accessConfig) {
 
     DeleteAccessConfigInstanceHttpRequest request =
         DeleteAccessConfigInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
         .setNetworkInterface(networkInterface)
+        .setRequestId(requestId)
         .setAccessConfig(accessConfig)
         .build();
     return deleteAccessConfigInstance(request);
@@ -658,23 +720,30 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
+   *   String requestId = "";
    *   String accessConfig = "";
-   *   Operation response = instanceClient.deleteAccessConfigInstance(instance.toString(), networkInterface, accessConfig);
+   *   Operation response = instanceClient.deleteAccessConfigInstance(instance.toString(), networkInterface, requestId, accessConfig);
    * }
    * </code></pre>
    *
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param accessConfig The name of the access config to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteAccessConfigInstance(String instance, String networkInterface, String accessConfig) {
+  public final Operation deleteAccessConfigInstance(String instance, String networkInterface, String requestId, String accessConfig) {
 
     DeleteAccessConfigInstanceHttpRequest request =
         DeleteAccessConfigInstanceHttpRequest.newBuilder()
         .setInstance(instance)
         .setNetworkInterface(networkInterface)
+        .setRequestId(requestId)
         .setAccessConfig(accessConfig)
         .build();
     return deleteAccessConfigInstance(request);
@@ -689,10 +758,12 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
+   *   String requestId = "";
    *   String accessConfig = "";
    *   DeleteAccessConfigInstanceHttpRequest request = DeleteAccessConfigInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
    *     .setNetworkInterface(networkInterface)
+   *     .setRequestId(requestId)
    *     .setAccessConfig(accessConfig)
    *     .build();
    *   Operation response = instanceClient.deleteAccessConfigInstance(request);
@@ -716,10 +787,12 @@ public class InstanceClient implements BackgroundResource {
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
    *   String networkInterface = "";
+   *   String requestId = "";
    *   String accessConfig = "";
    *   DeleteAccessConfigInstanceHttpRequest request = DeleteAccessConfigInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
    *     .setNetworkInterface(networkInterface)
+   *     .setRequestId(requestId)
    *     .setAccessConfig(accessConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.deleteAccessConfigInstanceCallable().futureCall(request);
@@ -741,21 +814,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   String deviceName = "";
-   *   Operation response = instanceClient.detachDiskInstance(instance, deviceName);
+   *   Operation response = instanceClient.detachDiskInstance(instance, requestId, deviceName);
    * }
    * </code></pre>
    *
    * @param instance Instance name.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param deviceName Disk device name to detach.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation detachDiskInstance(InstanceName instance, String deviceName) {
+  public final Operation detachDiskInstance(InstanceName instance, String requestId, String deviceName) {
 
     DetachDiskInstanceHttpRequest request =
         DetachDiskInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setDeviceName(deviceName)
         .build();
     return detachDiskInstance(request);
@@ -769,21 +849,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   String deviceName = "";
-   *   Operation response = instanceClient.detachDiskInstance(instance.toString(), deviceName);
+   *   Operation response = instanceClient.detachDiskInstance(instance.toString(), requestId, deviceName);
    * }
    * </code></pre>
    *
    * @param instance Instance name.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param deviceName Disk device name to detach.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation detachDiskInstance(String instance, String deviceName) {
+  public final Operation detachDiskInstance(String instance, String requestId, String deviceName) {
 
     DetachDiskInstanceHttpRequest request =
         DetachDiskInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setDeviceName(deviceName)
         .build();
     return detachDiskInstance(request);
@@ -797,9 +884,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   String deviceName = "";
    *   DetachDiskInstanceHttpRequest request = DetachDiskInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setDeviceName(deviceName)
    *     .build();
    *   Operation response = instanceClient.detachDiskInstance(request);
@@ -822,9 +911,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   String deviceName = "";
    *   DetachDiskInstanceHttpRequest request = DetachDiskInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setDeviceName(deviceName)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.detachDiskInstanceCallable().futureCall(request);
@@ -949,7 +1040,7 @@ public class InstanceClient implements BackgroundResource {
    *
    * @param instance Name of the instance scoping this request.
    * @param port Specifies which COM or serial port to retrieve data from.
-   * @param start For the initial request, leave this field unspecified. For subsequent calls, this field should be set to the next value that was returned in the previous call.
+   * @param start Returns output starting from a specific byte position. Use this to page through output when the output is too large to return in a single request. For the initial request, leave this field unspecified. For subsequent calls, this field should be set to the next value returned in the previous call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -980,7 +1071,7 @@ public class InstanceClient implements BackgroundResource {
    *
    * @param instance Name of the instance scoping this request.
    * @param port Specifies which COM or serial port to retrieve data from.
-   * @param start For the initial request, leave this field unspecified. For subsequent calls, this field should be set to the next value that was returned in the previous call.
+   * @param start Returns output starting from a specific byte position. Use this to page through output when the output is too large to return in a single request. For the initial request, leave this field unspecified. For subsequent calls, this field should be set to the next value returned in the previous call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1056,21 +1147,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   String requestId = "";
    *   Instance instanceResource = Instance.newBuilder().build();
-   *   Operation response = instanceClient.insertInstance(zone, instanceResource);
+   *   Operation response = instanceClient.insertInstance(zone, requestId, instanceResource);
    * }
    * </code></pre>
    *
    * @param zone The name of the zone for this request.
-   * @param instanceResource An Instance resource.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param instanceResource An Instance resource. (== resource_for beta.instances ==) (== resource_for v1.instances ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInstance(ZoneName zone, Instance instanceResource) {
+  public final Operation insertInstance(ZoneName zone, String requestId, Instance instanceResource) {
 
     InsertInstanceHttpRequest request =
         InsertInstanceHttpRequest.newBuilder()
         .setZone(zone == null ? null : zone.toString())
+        .setRequestId(requestId)
         .setInstanceResource(instanceResource)
         .build();
     return insertInstance(request);
@@ -1084,21 +1182,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   String requestId = "";
    *   Instance instanceResource = Instance.newBuilder().build();
-   *   Operation response = instanceClient.insertInstance(zone.toString(), instanceResource);
+   *   Operation response = instanceClient.insertInstance(zone.toString(), requestId, instanceResource);
    * }
    * </code></pre>
    *
    * @param zone The name of the zone for this request.
-   * @param instanceResource An Instance resource.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param instanceResource An Instance resource. (== resource_for beta.instances ==) (== resource_for v1.instances ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInstance(String zone, Instance instanceResource) {
+  public final Operation insertInstance(String zone, String requestId, Instance instanceResource) {
 
     InsertInstanceHttpRequest request =
         InsertInstanceHttpRequest.newBuilder()
         .setZone(zone)
+        .setRequestId(requestId)
         .setInstanceResource(instanceResource)
         .build();
     return insertInstance(request);
@@ -1112,9 +1217,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   String requestId = "";
    *   Instance instanceResource = Instance.newBuilder().build();
    *   InsertInstanceHttpRequest request = InsertInstanceHttpRequest.newBuilder()
    *     .setZone(zone.toString())
+   *     .setRequestId(requestId)
    *     .setInstanceResource(instanceResource)
    *     .build();
    *   Operation response = instanceClient.insertInstance(request);
@@ -1137,9 +1244,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+   *   String requestId = "";
    *   Instance instanceResource = Instance.newBuilder().build();
    *   InsertInstanceHttpRequest request = InsertInstanceHttpRequest.newBuilder()
    *     .setZone(zone.toString())
+   *     .setRequestId(requestId)
    *     .setInstanceResource(instanceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.insertInstanceCallable().futureCall(request);
@@ -1288,64 +1397,213 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a hard reset on the instance.
+   * Retrieves the list of referrers to instances contained within the specified zone.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-   *   Operation response = instanceClient.resetInstance(instance);
+   *   for (Reference element : instanceClient.listReferrersInstances(instance).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the target instance scoping this request, or '-' if the request should span over all instances in the container.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListReferrersInstancesPagedResponse listReferrersInstances(InstanceName instance) {
+    ListReferrersInstancesHttpRequest request =
+        ListReferrersInstancesHttpRequest.newBuilder()
+        .setInstance(instance == null ? null : instance.toString())
+        .build();
+    return listReferrersInstances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the list of referrers to instances contained within the specified zone.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   for (Reference element : instanceClient.listReferrersInstances(instance.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the target instance scoping this request, or '-' if the request should span over all instances in the container.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListReferrersInstancesPagedResponse listReferrersInstances(String instance) {
+    ListReferrersInstancesHttpRequest request =
+        ListReferrersInstancesHttpRequest.newBuilder()
+        .setInstance(instance)
+        .build();
+    return listReferrersInstances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the list of referrers to instances contained within the specified zone.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ListReferrersInstancesHttpRequest request = ListReferrersInstancesHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .build();
+   *   for (Reference element : instanceClient.listReferrersInstances(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListReferrersInstancesPagedResponse listReferrersInstances(ListReferrersInstancesHttpRequest request) {
+    return listReferrersInstancesPagedCallable()
+        .call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the list of referrers to instances contained within the specified zone.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ListReferrersInstancesHttpRequest request = ListReferrersInstancesHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .build();
+   *   ApiFuture&lt;ListReferrersInstancesPagedResponse&gt; future = instanceClient.listReferrersInstancesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Reference element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<ListReferrersInstancesHttpRequest, ListReferrersInstancesPagedResponse> listReferrersInstancesPagedCallable() {
+    return stub.listReferrersInstancesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the list of referrers to instances contained within the specified zone.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   ListReferrersInstancesHttpRequest request = ListReferrersInstancesHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .build();
+   *   while (true) {
+   *     InstanceListReferrers response = instanceClient.listReferrersInstancesCallable().call(request);
+   *     for (Reference element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<ListReferrersInstancesHttpRequest, InstanceListReferrers> listReferrersInstancesCallable() {
+    return stub.listReferrersInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Performs a reset on the instance. For more information, see Resetting an instance.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   Operation response = instanceClient.resetInstance(instance, requestId);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resetInstance(InstanceName instance) {
+  public final Operation resetInstance(InstanceName instance, String requestId) {
 
     ResetInstanceHttpRequest request =
         ResetInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .build();
     return resetInstance(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a hard reset on the instance.
+   * Performs a reset on the instance. For more information, see Resetting an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-   *   Operation response = instanceClient.resetInstance(instance.toString());
+   *   String requestId = "";
+   *   Operation response = instanceClient.resetInstance(instance.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation resetInstance(String instance) {
+  public final Operation resetInstance(String instance, String requestId) {
 
     ResetInstanceHttpRequest request =
         ResetInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .build();
     return resetInstance(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a hard reset on the instance.
+   * Performs a reset on the instance. For more information, see Resetting an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   ResetInstanceHttpRequest request = ResetInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = instanceClient.resetInstance(request);
    * }
@@ -1361,14 +1619,16 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a hard reset on the instance.
+   * Performs a reset on the instance. For more information, see Resetting an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   ResetInstanceHttpRequest request = ResetInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.resetInstanceCallable().futureCall(request);
    *   // Do something
@@ -1383,29 +1643,159 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets deletion protection on the instance.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName resource = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String requestId = "";
+   *   Boolean deletionProtection = false;
+   *   Operation response = instanceClient.setDeletionProtectionInstance(resource, requestId, deletionProtection);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name of the resource for this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param deletionProtection Whether the resource should be protected against deletion.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setDeletionProtectionInstance(ProjectZoneInstanceName resource, String requestId, Boolean deletionProtection) {
+
+    SetDeletionProtectionInstanceHttpRequest request =
+        SetDeletionProtectionInstanceHttpRequest.newBuilder()
+        .setResource(resource == null ? null : resource.toString())
+        .setRequestId(requestId)
+        .setDeletionProtection(deletionProtection)
+        .build();
+    return setDeletionProtectionInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets deletion protection on the instance.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName resource = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String requestId = "";
+   *   Boolean deletionProtection = false;
+   *   Operation response = instanceClient.setDeletionProtectionInstance(resource.toString(), requestId, deletionProtection);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name of the resource for this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param deletionProtection Whether the resource should be protected against deletion.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setDeletionProtectionInstance(String resource, String requestId, Boolean deletionProtection) {
+
+    SetDeletionProtectionInstanceHttpRequest request =
+        SetDeletionProtectionInstanceHttpRequest.newBuilder()
+        .setResource(resource)
+        .setRequestId(requestId)
+        .setDeletionProtection(deletionProtection)
+        .build();
+    return setDeletionProtectionInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets deletion protection on the instance.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName resource = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String requestId = "";
+   *   Boolean deletionProtection = false;
+   *   SetDeletionProtectionInstanceHttpRequest request = SetDeletionProtectionInstanceHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setRequestId(requestId)
+   *     .setDeletionProtection(deletionProtection)
+   *     .build();
+   *   Operation response = instanceClient.setDeletionProtectionInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setDeletionProtectionInstance(SetDeletionProtectionInstanceHttpRequest request) {
+    return setDeletionProtectionInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets deletion protection on the instance.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceName resource = ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   String requestId = "";
+   *   Boolean deletionProtection = false;
+   *   SetDeletionProtectionInstanceHttpRequest request = SetDeletionProtectionInstanceHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setRequestId(requestId)
+   *     .setDeletionProtection(deletionProtection)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.setDeletionProtectionInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceCallable() {
+    return stub.setDeletionProtectionInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Sets the auto-delete flag for a disk attached to an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Boolean autoDelete = false;
    *   String deviceName = "";
-   *   Operation response = instanceClient.setDiskAutoDeleteInstance(instance, autoDelete, deviceName);
+   *   Operation response = instanceClient.setDiskAutoDeleteInstance(instance, requestId, autoDelete, deviceName);
    * }
    * </code></pre>
    *
    * @param instance The instance name.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param autoDelete Whether to auto-delete the disk when the instance is deleted.
    * @param deviceName The device name of the disk to modify.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setDiskAutoDeleteInstance(InstanceName instance, Boolean autoDelete, String deviceName) {
+  public final Operation setDiskAutoDeleteInstance(InstanceName instance, String requestId, Boolean autoDelete, String deviceName) {
 
     SetDiskAutoDeleteInstanceHttpRequest request =
         SetDiskAutoDeleteInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setAutoDelete(autoDelete)
         .setDeviceName(deviceName)
         .build();
@@ -1420,23 +1810,30 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Boolean autoDelete = false;
    *   String deviceName = "";
-   *   Operation response = instanceClient.setDiskAutoDeleteInstance(instance.toString(), autoDelete, deviceName);
+   *   Operation response = instanceClient.setDiskAutoDeleteInstance(instance.toString(), requestId, autoDelete, deviceName);
    * }
    * </code></pre>
    *
    * @param instance The instance name.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param autoDelete Whether to auto-delete the disk when the instance is deleted.
    * @param deviceName The device name of the disk to modify.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setDiskAutoDeleteInstance(String instance, Boolean autoDelete, String deviceName) {
+  public final Operation setDiskAutoDeleteInstance(String instance, String requestId, Boolean autoDelete, String deviceName) {
 
     SetDiskAutoDeleteInstanceHttpRequest request =
         SetDiskAutoDeleteInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setAutoDelete(autoDelete)
         .setDeviceName(deviceName)
         .build();
@@ -1451,10 +1848,12 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Boolean autoDelete = false;
    *   String deviceName = "";
    *   SetDiskAutoDeleteInstanceHttpRequest request = SetDiskAutoDeleteInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setAutoDelete(autoDelete)
    *     .setDeviceName(deviceName)
    *     .build();
@@ -1478,10 +1877,12 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Boolean autoDelete = false;
    *   String deviceName = "";
    *   SetDiskAutoDeleteInstanceHttpRequest request = SetDiskAutoDeleteInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setAutoDelete(autoDelete)
    *     .setDeviceName(deviceName)
    *     .build();
@@ -1498,27 +1899,280 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets labels on an instance. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
+   *   Operation response = instanceClient.setLabelsInstance(instance, requestId, instancesSetLabelsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param instancesSetLabelsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsInstance(InstanceName instance, String requestId, InstancesSetLabelsRequest instancesSetLabelsRequestResource) {
+
+    SetLabelsInstanceHttpRequest request =
+        SetLabelsInstanceHttpRequest.newBuilder()
+        .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
+        .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
+        .build();
+    return setLabelsInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets labels on an instance. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
+   *   Operation response = instanceClient.setLabelsInstance(instance.toString(), requestId, instancesSetLabelsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param instancesSetLabelsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsInstance(String instance, String requestId, InstancesSetLabelsRequest instancesSetLabelsRequestResource) {
+
+    SetLabelsInstanceHttpRequest request =
+        SetLabelsInstanceHttpRequest.newBuilder()
+        .setInstance(instance)
+        .setRequestId(requestId)
+        .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
+        .build();
+    return setLabelsInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets labels on an instance. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
+   *   SetLabelsInstanceHttpRequest request = SetLabelsInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
+   *     .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
+   *     .build();
+   *   Operation response = instanceClient.setLabelsInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setLabelsInstance(SetLabelsInstanceHttpRequest request) {
+    return setLabelsInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets labels on an instance. To learn more about labels, read the Labeling Resources documentation.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
+   *   SetLabelsInstanceHttpRequest request = SetLabelsInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
+   *     .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.setLabelsInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceCallable() {
+    return stub.setLabelsInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes the number and/or type of accelerator for a stopped instance to the values specified in the request.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
+   *   Operation response = instanceClient.setMachineResourcesInstance(instance, requestId, instancesSetMachineResourcesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param instancesSetMachineResourcesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setMachineResourcesInstance(InstanceName instance, String requestId, InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource) {
+
+    SetMachineResourcesInstanceHttpRequest request =
+        SetMachineResourcesInstanceHttpRequest.newBuilder()
+        .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
+        .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
+        .build();
+    return setMachineResourcesInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes the number and/or type of accelerator for a stopped instance to the values specified in the request.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
+   *   Operation response = instanceClient.setMachineResourcesInstance(instance.toString(), requestId, instancesSetMachineResourcesRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param instancesSetMachineResourcesRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setMachineResourcesInstance(String instance, String requestId, InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource) {
+
+    SetMachineResourcesInstanceHttpRequest request =
+        SetMachineResourcesInstanceHttpRequest.newBuilder()
+        .setInstance(instance)
+        .setRequestId(requestId)
+        .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
+        .build();
+    return setMachineResourcesInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes the number and/or type of accelerator for a stopped instance to the values specified in the request.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
+   *   SetMachineResourcesInstanceHttpRequest request = SetMachineResourcesInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
+   *     .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
+   *     .build();
+   *   Operation response = instanceClient.setMachineResourcesInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setMachineResourcesInstance(SetMachineResourcesInstanceHttpRequest request) {
+    return setMachineResourcesInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes the number and/or type of accelerator for a stopped instance to the values specified in the request.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
+   *   SetMachineResourcesInstanceHttpRequest request = SetMachineResourcesInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
+   *     .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.setMachineResourcesInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceCallable() {
+    return stub.setMachineResourcesInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Changes the machine type for a stopped instance to the machine type specified in the request.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
-   *   Operation response = instanceClient.setMachineTypeInstance(instance, instancesSetMachineTypeRequestResource);
+   *   Operation response = instanceClient.setMachineTypeInstance(instance, requestId, instancesSetMachineTypeRequestResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param instancesSetMachineTypeRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setMachineTypeInstance(InstanceName instance, InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource) {
+  public final Operation setMachineTypeInstance(InstanceName instance, String requestId, InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource) {
 
     SetMachineTypeInstanceHttpRequest request =
         SetMachineTypeInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
         .build();
     return setMachineTypeInstance(request);
@@ -1532,21 +2186,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
-   *   Operation response = instanceClient.setMachineTypeInstance(instance.toString(), instancesSetMachineTypeRequestResource);
+   *   Operation response = instanceClient.setMachineTypeInstance(instance.toString(), requestId, instancesSetMachineTypeRequestResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param instancesSetMachineTypeRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setMachineTypeInstance(String instance, InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource) {
+  public final Operation setMachineTypeInstance(String instance, String requestId, InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource) {
 
     SetMachineTypeInstanceHttpRequest request =
         SetMachineTypeInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
         .build();
     return setMachineTypeInstance(request);
@@ -1560,9 +2221,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
    *   SetMachineTypeInstanceHttpRequest request = SetMachineTypeInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
    *     .build();
    *   Operation response = instanceClient.setMachineTypeInstance(request);
@@ -1585,9 +2248,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
    *   SetMachineTypeInstanceHttpRequest request = SetMachineTypeInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setMachineTypeInstanceCallable().futureCall(request);
@@ -1609,21 +2274,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Metadata metadataResource = Metadata.newBuilder().build();
-   *   Operation response = instanceClient.setMetadataInstance(instance, metadataResource);
+   *   Operation response = instanceClient.setMetadataInstance(instance, requestId, metadataResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param metadataResource A metadata key/value entry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setMetadataInstance(InstanceName instance, Metadata metadataResource) {
+  public final Operation setMetadataInstance(InstanceName instance, String requestId, Metadata metadataResource) {
 
     SetMetadataInstanceHttpRequest request =
         SetMetadataInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setMetadataResource(metadataResource)
         .build();
     return setMetadataInstance(request);
@@ -1637,21 +2309,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Metadata metadataResource = Metadata.newBuilder().build();
-   *   Operation response = instanceClient.setMetadataInstance(instance.toString(), metadataResource);
+   *   Operation response = instanceClient.setMetadataInstance(instance.toString(), requestId, metadataResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param metadataResource A metadata key/value entry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setMetadataInstance(String instance, Metadata metadataResource) {
+  public final Operation setMetadataInstance(String instance, String requestId, Metadata metadataResource) {
 
     SetMetadataInstanceHttpRequest request =
         SetMetadataInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setMetadataResource(metadataResource)
         .build();
     return setMetadataInstance(request);
@@ -1665,9 +2344,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   SetMetadataInstanceHttpRequest request = SetMetadataInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setMetadataResource(metadataResource)
    *     .build();
    *   Operation response = instanceClient.setMetadataInstance(request);
@@ -1690,9 +2371,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Metadata metadataResource = Metadata.newBuilder().build();
    *   SetMetadataInstanceHttpRequest request = SetMetadataInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setMetadataResource(metadataResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setMetadataInstanceCallable().futureCall(request);
@@ -1708,27 +2391,157 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Changes the minimum CPU platform that this instance should use. This method can only be called on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
+   *   Operation response = instanceClient.setMinCpuPlatformInstance(instance, requestId, instancesSetMinCpuPlatformRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param instancesSetMinCpuPlatformRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setMinCpuPlatformInstance(InstanceName instance, String requestId, InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource) {
+
+    SetMinCpuPlatformInstanceHttpRequest request =
+        SetMinCpuPlatformInstanceHttpRequest.newBuilder()
+        .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
+        .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
+        .build();
+    return setMinCpuPlatformInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes the minimum CPU platform that this instance should use. This method can only be called on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
+   *   Operation response = instanceClient.setMinCpuPlatformInstance(instance.toString(), requestId, instancesSetMinCpuPlatformRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param instancesSetMinCpuPlatformRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setMinCpuPlatformInstance(String instance, String requestId, InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource) {
+
+    SetMinCpuPlatformInstanceHttpRequest request =
+        SetMinCpuPlatformInstanceHttpRequest.newBuilder()
+        .setInstance(instance)
+        .setRequestId(requestId)
+        .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
+        .build();
+    return setMinCpuPlatformInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes the minimum CPU platform that this instance should use. This method can only be called on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
+   *   SetMinCpuPlatformInstanceHttpRequest request = SetMinCpuPlatformInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
+   *     .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
+   *     .build();
+   *   Operation response = instanceClient.setMinCpuPlatformInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setMinCpuPlatformInstance(SetMinCpuPlatformInstanceHttpRequest request) {
+    return setMinCpuPlatformInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Changes the minimum CPU platform that this instance should use. This method can only be called on a stopped instance. For more information, read Specifying a Minimum CPU Platform.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
+   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
+   *   SetMinCpuPlatformInstanceHttpRequest request = SetMinCpuPlatformInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
+   *     .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.setMinCpuPlatformInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceCallable() {
+    return stub.setMinCpuPlatformInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Sets an instance's scheduling options.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Scheduling schedulingResource = Scheduling.newBuilder().build();
-   *   Operation response = instanceClient.setSchedulingInstance(instance, schedulingResource);
+   *   Operation response = instanceClient.setSchedulingInstance(instance, requestId, schedulingResource);
    * }
    * </code></pre>
    *
    * @param instance Instance name.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param schedulingResource Sets the scheduling options for an Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setSchedulingInstance(InstanceName instance, Scheduling schedulingResource) {
+  public final Operation setSchedulingInstance(InstanceName instance, String requestId, Scheduling schedulingResource) {
 
     SetSchedulingInstanceHttpRequest request =
         SetSchedulingInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setSchedulingResource(schedulingResource)
         .build();
     return setSchedulingInstance(request);
@@ -1742,21 +2555,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Scheduling schedulingResource = Scheduling.newBuilder().build();
-   *   Operation response = instanceClient.setSchedulingInstance(instance.toString(), schedulingResource);
+   *   Operation response = instanceClient.setSchedulingInstance(instance.toString(), requestId, schedulingResource);
    * }
    * </code></pre>
    *
    * @param instance Instance name.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param schedulingResource Sets the scheduling options for an Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setSchedulingInstance(String instance, Scheduling schedulingResource) {
+  public final Operation setSchedulingInstance(String instance, String requestId, Scheduling schedulingResource) {
 
     SetSchedulingInstanceHttpRequest request =
         SetSchedulingInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setSchedulingResource(schedulingResource)
         .build();
     return setSchedulingInstance(request);
@@ -1770,9 +2590,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Scheduling schedulingResource = Scheduling.newBuilder().build();
    *   SetSchedulingInstanceHttpRequest request = SetSchedulingInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setSchedulingResource(schedulingResource)
    *     .build();
    *   Operation response = instanceClient.setSchedulingInstance(request);
@@ -1795,9 +2617,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Scheduling schedulingResource = Scheduling.newBuilder().build();
    *   SetSchedulingInstanceHttpRequest request = SetSchedulingInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setSchedulingResource(schedulingResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setSchedulingInstanceCallable().futureCall(request);
@@ -1813,27 +2637,34 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the service account on the instance.
+   * Sets the service account on the instance. For more information, read Changing the service account and access scopes for an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
-   *   Operation response = instanceClient.setServiceAccountInstance(instance, instancesSetServiceAccountRequestResource);
+   *   Operation response = instanceClient.setServiceAccountInstance(instance, requestId, instancesSetServiceAccountRequestResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to start.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param instancesSetServiceAccountRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setServiceAccountInstance(InstanceName instance, InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource) {
+  public final Operation setServiceAccountInstance(InstanceName instance, String requestId, InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource) {
 
     SetServiceAccountInstanceHttpRequest request =
         SetServiceAccountInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
         .build();
     return setServiceAccountInstance(request);
@@ -1841,27 +2672,34 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the service account on the instance.
+   * Sets the service account on the instance. For more information, read Changing the service account and access scopes for an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
-   *   Operation response = instanceClient.setServiceAccountInstance(instance.toString(), instancesSetServiceAccountRequestResource);
+   *   Operation response = instanceClient.setServiceAccountInstance(instance.toString(), requestId, instancesSetServiceAccountRequestResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to start.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param instancesSetServiceAccountRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setServiceAccountInstance(String instance, InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource) {
+  public final Operation setServiceAccountInstance(String instance, String requestId, InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource) {
 
     SetServiceAccountInstanceHttpRequest request =
         SetServiceAccountInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
         .build();
     return setServiceAccountInstance(request);
@@ -1869,15 +2707,17 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the service account on the instance.
+   * Sets the service account on the instance. For more information, read Changing the service account and access scopes for an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
    *   SetServiceAccountInstanceHttpRequest request = SetServiceAccountInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
    *     .build();
    *   Operation response = instanceClient.setServiceAccountInstance(request);
@@ -1894,15 +2734,17 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the service account on the instance.
+   * Sets the service account on the instance. For more information, read Changing the service account and access scopes for an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
    *   SetServiceAccountInstanceHttpRequest request = SetServiceAccountInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setServiceAccountInstanceCallable().futureCall(request);
@@ -1924,21 +2766,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Tags tagsResource = Tags.newBuilder().build();
-   *   Operation response = instanceClient.setTagsInstance(instance, tagsResource);
+   *   Operation response = instanceClient.setTagsInstance(instance, requestId, tagsResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param tagsResource A set of instance tags.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setTagsInstance(InstanceName instance, Tags tagsResource) {
+  public final Operation setTagsInstance(InstanceName instance, String requestId, Tags tagsResource) {
 
     SetTagsInstanceHttpRequest request =
         SetTagsInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setTagsResource(tagsResource)
         .build();
     return setTagsInstance(request);
@@ -1952,21 +2801,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Tags tagsResource = Tags.newBuilder().build();
-   *   Operation response = instanceClient.setTagsInstance(instance.toString(), tagsResource);
+   *   Operation response = instanceClient.setTagsInstance(instance.toString(), requestId, tagsResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance scoping this request.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param tagsResource A set of instance tags.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setTagsInstance(String instance, Tags tagsResource) {
+  public final Operation setTagsInstance(String instance, String requestId, Tags tagsResource) {
 
     SetTagsInstanceHttpRequest request =
         SetTagsInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setTagsResource(tagsResource)
         .build();
     return setTagsInstance(request);
@@ -1980,9 +2836,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Tags tagsResource = Tags.newBuilder().build();
    *   SetTagsInstanceHttpRequest request = SetTagsInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setTagsResource(tagsResource)
    *     .build();
    *   Operation response = instanceClient.setTagsInstance(request);
@@ -2005,9 +2863,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   Tags tagsResource = Tags.newBuilder().build();
    *   SetTagsInstanceHttpRequest request = SetTagsInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setTagsResource(tagsResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.setTagsInstanceCallable().futureCall(request);
@@ -2029,19 +2889,26 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-   *   Operation response = instanceClient.startInstance(instance);
+   *   String requestId = "";
+   *   Operation response = instanceClient.startInstance(instance, requestId);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to start.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation startInstance(InstanceName instance) {
+  public final Operation startInstance(InstanceName instance, String requestId) {
 
     StartInstanceHttpRequest request =
         StartInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .build();
     return startInstance(request);
   }
@@ -2054,19 +2921,26 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-   *   Operation response = instanceClient.startInstance(instance.toString());
+   *   String requestId = "";
+   *   Operation response = instanceClient.startInstance(instance.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to start.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation startInstance(String instance) {
+  public final Operation startInstance(String instance, String requestId) {
 
     StartInstanceHttpRequest request =
         StartInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .build();
     return startInstance(request);
   }
@@ -2079,8 +2953,10 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   StartInstanceHttpRequest request = StartInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = instanceClient.startInstance(request);
    * }
@@ -2102,8 +2978,10 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   StartInstanceHttpRequest request = StartInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.startInstanceCallable().futureCall(request);
    *   // Do something
@@ -2124,21 +3002,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
-   *   Operation response = instanceClient.startWithEncryptionKeyInstance(instance, instancesStartWithEncryptionKeyRequestResource);
+   *   Operation response = instanceClient.startWithEncryptionKeyInstance(instance, requestId, instancesStartWithEncryptionKeyRequestResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to start.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param instancesStartWithEncryptionKeyRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation startWithEncryptionKeyInstance(InstanceName instance, InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource) {
+  public final Operation startWithEncryptionKeyInstance(InstanceName instance, String requestId, InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource) {
 
     StartWithEncryptionKeyInstanceHttpRequest request =
         StartWithEncryptionKeyInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
         .build();
     return startWithEncryptionKeyInstance(request);
@@ -2152,21 +3037,28 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
-   *   Operation response = instanceClient.startWithEncryptionKeyInstance(instance.toString(), instancesStartWithEncryptionKeyRequestResource);
+   *   Operation response = instanceClient.startWithEncryptionKeyInstance(instance.toString(), requestId, instancesStartWithEncryptionKeyRequestResource);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to start.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param instancesStartWithEncryptionKeyRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation startWithEncryptionKeyInstance(String instance, InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource) {
+  public final Operation startWithEncryptionKeyInstance(String instance, String requestId, InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource) {
 
     StartWithEncryptionKeyInstanceHttpRequest request =
         StartWithEncryptionKeyInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
         .build();
     return startWithEncryptionKeyInstance(request);
@@ -2180,9 +3072,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
    *   StartWithEncryptionKeyInstanceHttpRequest request = StartWithEncryptionKeyInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
    *     .build();
    *   Operation response = instanceClient.startWithEncryptionKeyInstance(request);
@@ -2205,9 +3099,11 @@ public class InstanceClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
    *   StartWithEncryptionKeyInstanceHttpRequest request = StartWithEncryptionKeyInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.startWithEncryptionKeyInstanceCallable().futureCall(request);
@@ -2223,64 +3119,80 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur per-minute, virtual machine usage charges while they are stopped, but any resources that the virtual machine is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
+   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur VM usage charges while they are stopped. However, resources that the VM is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-   *   Operation response = instanceClient.stopInstance(instance);
+   *   String requestId = "";
+   *   Operation response = instanceClient.stopInstance(instance, requestId);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to stop.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation stopInstance(InstanceName instance) {
+  public final Operation stopInstance(InstanceName instance, String requestId) {
 
     StopInstanceHttpRequest request =
         StopInstanceHttpRequest.newBuilder()
         .setInstance(instance == null ? null : instance.toString())
+        .setRequestId(requestId)
         .build();
     return stopInstance(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur per-minute, virtual machine usage charges while they are stopped, but any resources that the virtual machine is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
+   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur VM usage charges while they are stopped. However, resources that the VM is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
-   *   Operation response = instanceClient.stopInstance(instance.toString());
+   *   String requestId = "";
+   *   Operation response = instanceClient.stopInstance(instance.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param instance Name of the instance resource to stop.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation stopInstance(String instance) {
+  public final Operation stopInstance(String instance, String requestId) {
 
     StopInstanceHttpRequest request =
         StopInstanceHttpRequest.newBuilder()
         .setInstance(instance)
+        .setRequestId(requestId)
         .build();
     return stopInstance(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur per-minute, virtual machine usage charges while they are stopped, but any resources that the virtual machine is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
+   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur VM usage charges while they are stopped. However, resources that the VM is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   StopInstanceHttpRequest request = StopInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = instanceClient.stopInstance(request);
    * }
@@ -2296,14 +3208,16 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur per-minute, virtual machine usage charges while they are stopped, but any resources that the virtual machine is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
+   * Stops a running instance, shutting it down cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur VM usage charges while they are stopped. However, resources that the VM is using, such as persistent disks and static IP addresses, will continue to be charged until they are deleted. For more information, see Stopping an instance.
    *
    * Sample code:
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String requestId = "";
    *   StopInstanceHttpRequest request = StopInstanceHttpRequest.newBuilder()
    *     .setInstance(instance.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceClient.stopInstanceCallable().futureCall(request);
    *   // Do something
@@ -2314,6 +3228,272 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<StopInstanceHttpRequest, Operation> stopInstanceCallable() {
     return stub.stopInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified access config from an instance's network interface with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String networkInterface = "";
+   *   String requestId = "";
+   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
+   *   Operation response = instanceClient.updateAccessConfigInstance(instance, networkInterface, requestId, accessConfigResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance The instance name for this request.
+   * @param networkInterface The name of the network interface where the access config is attached.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param accessConfigResource An access configuration attached to an instance's network interface. Only one access config per instance is supported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateAccessConfigInstance(InstanceName instance, String networkInterface, String requestId, AccessConfig accessConfigResource) {
+
+    UpdateAccessConfigInstanceHttpRequest request =
+        UpdateAccessConfigInstanceHttpRequest.newBuilder()
+        .setInstance(instance == null ? null : instance.toString())
+        .setNetworkInterface(networkInterface)
+        .setRequestId(requestId)
+        .setAccessConfigResource(accessConfigResource)
+        .build();
+    return updateAccessConfigInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified access config from an instance's network interface with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String networkInterface = "";
+   *   String requestId = "";
+   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
+   *   Operation response = instanceClient.updateAccessConfigInstance(instance.toString(), networkInterface, requestId, accessConfigResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance The instance name for this request.
+   * @param networkInterface The name of the network interface where the access config is attached.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param accessConfigResource An access configuration attached to an instance's network interface. Only one access config per instance is supported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateAccessConfigInstance(String instance, String networkInterface, String requestId, AccessConfig accessConfigResource) {
+
+    UpdateAccessConfigInstanceHttpRequest request =
+        UpdateAccessConfigInstanceHttpRequest.newBuilder()
+        .setInstance(instance)
+        .setNetworkInterface(networkInterface)
+        .setRequestId(requestId)
+        .setAccessConfigResource(accessConfigResource)
+        .build();
+    return updateAccessConfigInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified access config from an instance's network interface with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String networkInterface = "";
+   *   String requestId = "";
+   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
+   *   UpdateAccessConfigInstanceHttpRequest request = UpdateAccessConfigInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setNetworkInterface(networkInterface)
+   *     .setRequestId(requestId)
+   *     .setAccessConfigResource(accessConfigResource)
+   *     .build();
+   *   Operation response = instanceClient.updateAccessConfigInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateAccessConfigInstance(UpdateAccessConfigInstanceHttpRequest request) {
+    return updateAccessConfigInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified access config from an instance's network interface with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String networkInterface = "";
+   *   String requestId = "";
+   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
+   *   UpdateAccessConfigInstanceHttpRequest request = UpdateAccessConfigInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setNetworkInterface(networkInterface)
+   *     .setRequestId(requestId)
+   *     .setAccessConfigResource(accessConfigResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.updateAccessConfigInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceCallable() {
+    return stub.updateAccessConfigInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an instance's network interface. This method follows PATCH semantics.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String networkInterface = "";
+   *   String requestId = "";
+   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+   *   Operation response = instanceClient.updateNetworkInterfaceInstance(instance, networkInterface, requestId, networkInterfaceResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance The instance name for this request.
+   * @param networkInterface The name of the network interface to update.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param networkInterfaceResource A network interface resource attached to an instance.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateNetworkInterfaceInstance(InstanceName instance, String networkInterface, String requestId, NetworkInterface networkInterfaceResource) {
+
+    UpdateNetworkInterfaceInstanceHttpRequest request =
+        UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
+        .setInstance(instance == null ? null : instance.toString())
+        .setNetworkInterface(networkInterface)
+        .setRequestId(requestId)
+        .setNetworkInterfaceResource(networkInterfaceResource)
+        .build();
+    return updateNetworkInterfaceInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an instance's network interface. This method follows PATCH semantics.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String networkInterface = "";
+   *   String requestId = "";
+   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+   *   Operation response = instanceClient.updateNetworkInterfaceInstance(instance.toString(), networkInterface, requestId, networkInterfaceResource);
+   * }
+   * </code></pre>
+   *
+   * @param instance The instance name for this request.
+   * @param networkInterface The name of the network interface to update.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param networkInterfaceResource A network interface resource attached to an instance.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateNetworkInterfaceInstance(String instance, String networkInterface, String requestId, NetworkInterface networkInterfaceResource) {
+
+    UpdateNetworkInterfaceInstanceHttpRequest request =
+        UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
+        .setInstance(instance)
+        .setNetworkInterface(networkInterface)
+        .setRequestId(requestId)
+        .setNetworkInterfaceResource(networkInterfaceResource)
+        .build();
+    return updateNetworkInterfaceInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an instance's network interface. This method follows PATCH semantics.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String networkInterface = "";
+   *   String requestId = "";
+   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+   *   UpdateNetworkInterfaceInstanceHttpRequest request = UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setNetworkInterface(networkInterface)
+   *     .setRequestId(requestId)
+   *     .setNetworkInterfaceResource(networkInterfaceResource)
+   *     .build();
+   *   Operation response = instanceClient.updateNetworkInterfaceInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updateNetworkInterfaceInstance(UpdateNetworkInterfaceInstanceHttpRequest request) {
+    return updateNetworkInterfaceInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an instance's network interface. This method follows PATCH semantics.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
+   *   String networkInterface = "";
+   *   String requestId = "";
+   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+   *   UpdateNetworkInterfaceInstanceHttpRequest request = UpdateNetworkInterfaceInstanceHttpRequest.newBuilder()
+   *     .setInstance(instance.toString())
+   *     .setNetworkInterface(networkInterface)
+   *     .setRequestId(requestId)
+   *     .setNetworkInterfaceResource(networkInterfaceResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceClient.updateNetworkInterfaceInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceCallable() {
+    return stub.updateNetworkInterfaceInstanceCallable();
   }
 
   @Override
@@ -2516,6 +3696,93 @@ public class InstanceClient implements BackgroundResource {
     protected ListInstancesFixedSizeCollection createCollection(
         List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
+    }
+
+
+  }
+  public static class ListReferrersInstancesPagedResponse extends AbstractPagedListResponse<
+      ListReferrersInstancesHttpRequest,
+      InstanceListReferrers,
+      Reference,
+      ListReferrersInstancesPage,
+      ListReferrersInstancesFixedSizeCollection> {
+
+    public static ApiFuture<ListReferrersInstancesPagedResponse> createAsync(
+        PageContext<ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference> context,
+        ApiFuture<InstanceListReferrers> futureResponse) {
+      ApiFuture<ListReferrersInstancesPage> futurePage =
+          ListReferrersInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListReferrersInstancesPage, ListReferrersInstancesPagedResponse>() {
+            @Override
+            public ListReferrersInstancesPagedResponse apply(ListReferrersInstancesPage input) {
+              return new ListReferrersInstancesPagedResponse(input);
+            }
+          });
+    }
+
+    private ListReferrersInstancesPagedResponse(ListReferrersInstancesPage page) {
+      super(page, ListReferrersInstancesFixedSizeCollection.createEmptyCollection());
+    }
+
+
+  }
+
+  public static class ListReferrersInstancesPage extends AbstractPage<
+      ListReferrersInstancesHttpRequest,
+      InstanceListReferrers,
+      Reference,
+      ListReferrersInstancesPage> {
+
+    private ListReferrersInstancesPage(
+        PageContext<ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference> context,
+        InstanceListReferrers response) {
+      super(context, response);
+    }
+
+    private static ListReferrersInstancesPage createEmptyPage() {
+      return new ListReferrersInstancesPage(null, null);
+    }
+
+    @Override
+    protected ListReferrersInstancesPage createPage(
+        PageContext<ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference> context,
+        InstanceListReferrers response) {
+      return new ListReferrersInstancesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListReferrersInstancesPage> createPageAsync(
+        PageContext<ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference> context,
+        ApiFuture<InstanceListReferrers> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+
+
+
+
+  }
+
+  public static class ListReferrersInstancesFixedSizeCollection extends AbstractFixedSizeCollection<
+      ListReferrersInstancesHttpRequest,
+      InstanceListReferrers,
+      Reference,
+      ListReferrersInstancesPage,
+      ListReferrersInstancesFixedSizeCollection> {
+
+    private ListReferrersInstancesFixedSizeCollection(List<ListReferrersInstancesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListReferrersInstancesFixedSizeCollection createEmptyCollection() {
+      return new ListReferrersInstancesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListReferrersInstancesFixedSizeCollection createCollection(
+        List<ListReferrersInstancesPage> pages, int collectionSize) {
+      return new ListReferrersInstancesFixedSizeCollection(pages, collectionSize);
     }
 
 

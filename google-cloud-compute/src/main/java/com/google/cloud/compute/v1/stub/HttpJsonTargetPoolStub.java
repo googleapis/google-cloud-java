@@ -86,6 +86,7 @@ public class HttpJsonTargetPoolStub extends TargetPoolStub {
                   .setRequestInstance(AddHealthCheckTargetPoolHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetPools/{targetPool}/addHealthCheck"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetPoolName.newFactory())
                   .setResourceNameField("targetPool")
@@ -105,6 +106,7 @@ public class HttpJsonTargetPoolStub extends TargetPoolStub {
                   .setRequestInstance(AddInstanceTargetPoolHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetPools/{targetPool}/addInstance"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetPoolName.newFactory())
                   .setResourceNameField("targetPool")
@@ -144,6 +146,7 @@ public class HttpJsonTargetPoolStub extends TargetPoolStub {
                   .setRequestInstance(DeleteTargetPoolHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetPools/{targetPool}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetPoolName.newFactory())
                   .setResourceNameField("targetPool")
@@ -201,6 +204,7 @@ public class HttpJsonTargetPoolStub extends TargetPoolStub {
                   .setRequestInstance(InsertTargetPoolHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetPools"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")
@@ -240,6 +244,7 @@ public class HttpJsonTargetPoolStub extends TargetPoolStub {
                   .setRequestInstance(RemoveHealthCheckTargetPoolHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetPools/{targetPool}/removeHealthCheck"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetPoolName.newFactory())
                   .setResourceNameField("targetPool")
@@ -259,6 +264,7 @@ public class HttpJsonTargetPoolStub extends TargetPoolStub {
                   .setRequestInstance(RemoveInstanceTargetPoolHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetPools/{targetPool}/removeInstance"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetPoolName.newFactory())
                   .setResourceNameField("targetPool")
@@ -278,7 +284,7 @@ public class HttpJsonTargetPoolStub extends TargetPoolStub {
                   .setRequestInstance(SetBackupTargetPoolHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetPools/{targetPool}/setBackup"))
                   .setQueryParams(Sets.<String>newHashSet(
-                                     "failoverRatio"
+                                     "failoverRatio",    "requestId"
                                      ))
                   .setResourceNameFactory(TargetPoolName.newFactory())
                   .setResourceNameField("targetPool")

@@ -84,6 +84,7 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
                   .setRequestInstance(AddInstancesInstanceGroupHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instanceGroups/{instanceGroup}/addInstances"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceGroupName.newFactory())
                   .setResourceNameField("instanceGroup")
@@ -123,6 +124,7 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
                   .setRequestInstance(DeleteInstanceGroupHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instanceGroups/{instanceGroup}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceGroupName.newFactory())
                   .setResourceNameField("instanceGroup")
@@ -161,6 +163,7 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
                   .setRequestInstance(InsertInstanceGroupHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instanceGroups"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ZoneName.newFactory())
                   .setResourceNameField("zone")
@@ -220,6 +223,7 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
                   .setRequestInstance(RemoveInstancesInstanceGroupHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instanceGroups/{instanceGroup}/removeInstances"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceGroupName.newFactory())
                   .setResourceNameField("instanceGroup")
@@ -239,6 +243,7 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
                   .setRequestInstance(SetNamedPortsInstanceGroupHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instanceGroups/{instanceGroup}/setNamedPorts"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(InstanceGroupName.newFactory())
                   .setResourceNameField("instanceGroup")

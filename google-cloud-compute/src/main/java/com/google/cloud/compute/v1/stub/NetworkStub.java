@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddPeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.DeleteNetworkHttpRequest;
 import com.google.cloud.compute.v1.GetNetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertNetworkHttpRequest;
@@ -26,8 +27,12 @@ import com.google.cloud.compute.v1.Network;
 import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
 import com.google.cloud.compute.v1.NetworkList;
 import com.google.cloud.compute.v1.NetworkName;
+import com.google.cloud.compute.v1.NetworksAddPeeringRequest;
+import com.google.cloud.compute.v1.NetworksRemovePeeringRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNetworkHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.RemovePeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkHttpRequest;
 import javax.annotation.Generated;
 
@@ -41,6 +46,11 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class NetworkStub implements BackgroundResource {
 
+
+  @BetaApi
+  public UnaryCallable<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: addPeeringNetworkCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<DeleteNetworkHttpRequest, Operation> deleteNetworkCallable() {
@@ -65,6 +75,16 @@ public abstract class NetworkStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListNetworksHttpRequest, NetworkList> listNetworksCallable() {
     throw new UnsupportedOperationException("Not implemented: listNetworksCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchNetworkHttpRequest, Operation> patchNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchNetworkCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: removePeeringNetworkCallable()");
   }
 
   @BetaApi

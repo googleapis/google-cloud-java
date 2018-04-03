@@ -39,6 +39,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
   private final String prettyPrint;
   private final String project;
   private final String quotaUser;
+  private final String requestId;
   private final Route routeResource;
   private final String userIp;
 
@@ -50,6 +51,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
     this.prettyPrint = null;
     this.project = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.routeResource = null;
     this.userIp = null;
   }
@@ -63,6 +65,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
       String prettyPrint,
       String project,
       String quotaUser,
+      String requestId,
       Route routeResource,
       String userIp
       ) {
@@ -73,6 +76,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
     this.prettyPrint = prettyPrint;
     this.project = project;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.routeResource = routeResource;
     this.userIp = userIp;
   }
@@ -100,6 +104,9 @@ public final class InsertRouteHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("routeResource") && routeResource != null) {
       fieldMap.put("routeResource", Collections.singletonList(String.valueOf(routeResource)));
@@ -132,6 +139,9 @@ public final class InsertRouteHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("routeResource")) {
       return String.valueOf(routeResource);
@@ -176,6 +186,10 @@ public final class InsertRouteHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public Route getRouteResource() {
     return routeResource;
   }
@@ -212,6 +226,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
     private String prettyPrint;
     private String project;
     private String quotaUser;
+    private String requestId;
     private Route routeResource;
     private String userIp;
 
@@ -240,6 +255,9 @@ public final class InsertRouteHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getRouteResource() != null) {
         this.routeResource = other.routeResource;
       }
@@ -257,6 +275,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
       this.prettyPrint = source.prettyPrint;
       this.project = source.project;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.routeResource = source.routeResource;
       this.userIp = source.userIp;
     }
@@ -324,6 +343,15 @@ public final class InsertRouteHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public Route getRouteResource() {
       return routeResource;
     }
@@ -356,6 +384,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
 
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -367,6 +396,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
         prettyPrint,
         project,
         quotaUser,
+        requestId,
         routeResource,
         userIp
       );
@@ -381,6 +411,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setProject(this.project);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setRouteResource(this.routeResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -397,6 +428,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
         + "prettyPrint=" + prettyPrint + ", "
         + "project=" + project + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "routeResource=" + routeResource + ", "
         + "userIp=" + userIp
         + "}";
@@ -417,6 +449,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.project, that.getProject()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.routeResource, that.getRouteResource()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
@@ -434,6 +467,7 @@ public final class InsertRouteHttpRequest implements ApiMessage {
       prettyPrint,
       project,
       quotaUser,
+      requestId,
       routeResource,
       userIp
     );

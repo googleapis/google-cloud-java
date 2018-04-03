@@ -39,6 +39,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final Integer size;
   private final String userIp;
 
@@ -50,6 +51,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.size = null;
     this.userIp = null;
   }
@@ -63,6 +65,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       Integer size,
       String userIp
       ) {
@@ -73,6 +76,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.size = size;
     this.userIp = userIp;
   }
@@ -100,6 +104,9 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("size") && size != null) {
       fieldMap.put("size", Collections.singletonList(String.valueOf(size)));
@@ -132,6 +139,9 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("size")) {
       return String.valueOf(size);
@@ -176,6 +186,10 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public Integer getSize() {
     return size;
   }
@@ -212,6 +226,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private Integer size;
     private String userIp;
 
@@ -240,6 +255,9 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getSize() != null) {
         this.size = other.size;
       }
@@ -257,6 +275,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.size = source.size;
       this.userIp = source.userIp;
     }
@@ -324,6 +343,15 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public Integer getSize() {
       return size;
     }
@@ -354,6 +382,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
 
 
 
+
       if (size == null) {
         missing += " size";
       }
@@ -369,6 +398,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         size,
         userIp
       );
@@ -383,6 +413,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setSize(this.size);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -399,6 +430,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "size=" + size + ", "
         + "userIp=" + userIp
         + "}";
@@ -419,6 +451,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.size, that.getSize()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
@@ -436,6 +469,7 @@ public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       size,
       userIp
     );

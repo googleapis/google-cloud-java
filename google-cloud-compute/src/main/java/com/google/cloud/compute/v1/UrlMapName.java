@@ -17,21 +17,25 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class UrlMapName implements ResourceName {
+public final class UrlMapName implements com.google.api.resourcenames.ResourceName {
   private final String project;
   private final String urlMap;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/urlMaps/{urlMap}");
+        PathTemplate.createWithoutUrlEncoding("projects/{project}/urlMaps/{urlMap}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -48,12 +52,25 @@ public final class UrlMapName implements ResourceName {
     urlMap = Preconditions.checkNotNull(builder.getUrlMap());
   }
 
-  public static UrlMapName of(String project, String urlMap) {
-    return newBuilder().setProject(project).setUrlMap(urlMap).build();
+  public static UrlMapName of(
+      String project,
+      String urlMap
+      ) {
+    return newBuilder()
+    .setProject(project)
+    .setUrlMap(urlMap)
+      .build();
   }
 
-  public static String format(String project, String urlMap) {
-    return of(project, urlMap).toString();
+  public static String format(
+      String project,
+      String urlMap
+      ) {
+    return of(
+        project,
+        urlMap
+        )
+        .toString();
   }
 
   public String getProject() {
@@ -63,6 +80,7 @@ public final class UrlMapName implements ResourceName {
   public String getUrlMap() {
     return urlMap;
   }
+
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -83,19 +101,20 @@ public final class UrlMapName implements ResourceName {
     return getFieldValuesMap().get(fieldName);
   }
 
+
   public static ResourceNameFactory<UrlMapName> newFactory() {
     return new ResourceNameFactory<UrlMapName>() {
-      public UrlMapName parse(String formattedString) {
-        return UrlMapName.parse(formattedString);
-      }
+      public UrlMapName parse(String formattedString) {return UrlMapName.parse(formattedString);}
     };
   }
 
   public static UrlMapName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString, "UrlMapName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("urlMap"));
+        PATH_TEMPLATE.validatedMatch(formattedString, "UrlMapName.parse: formattedString not in valid format");
+    return of(
+      matchMap.get("project"),
+      matchMap.get("urlMap")
+    );
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -109,7 +128,6 @@ public final class UrlMapName implements ResourceName {
     public String getProject() {
       return project;
     }
-
     public String getUrlMap() {
       return urlMap;
     }
@@ -118,7 +136,6 @@ public final class UrlMapName implements ResourceName {
       this.project = project;
       return this;
     }
-
     public Builder setUrlMap(String urlMap) {
       this.urlMap = urlMap;
       return this;
@@ -126,7 +143,7 @@ public final class UrlMapName implements ResourceName {
 
     private Builder() {}
 
-    public Builder(UrlMapName urlMapName) {
+    public Builder (UrlMapName urlMapName) {
       project = urlMapName.project;
       urlMap = urlMapName.urlMap;
     }
@@ -140,7 +157,8 @@ public final class UrlMapName implements ResourceName {
   public String toString() {
     return PATH_TEMPLATE.instantiate(
         "project", project,
-        "urlMap", urlMap);
+        "urlMap", urlMap
+        );
   }
 
   @Override
@@ -150,14 +168,19 @@ public final class UrlMapName implements ResourceName {
     }
     if (o instanceof UrlMapName) {
       UrlMapName that = (UrlMapName) o;
-      return Objects.equals(this.project, that.getProject())
-          && Objects.equals(this.urlMap, that.getUrlMap());
+      return
+          Objects.equals(this.project, that.getProject()) &&
+          Objects.equals(this.urlMap, that.getUrlMap())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(project, urlMap);
+    return Objects.hash(
+      project,
+      urlMap
+    );
   }
 }

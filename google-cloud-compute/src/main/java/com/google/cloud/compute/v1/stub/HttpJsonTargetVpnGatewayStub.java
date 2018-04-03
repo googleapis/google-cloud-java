@@ -93,6 +93,7 @@ public class HttpJsonTargetVpnGatewayStub extends TargetVpnGatewayStub {
                   .setRequestInstance(DeleteTargetVpnGatewayHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetVpnGateways/{targetVpnGateway}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(TargetVpnGatewayName.newFactory())
                   .setResourceNameField("targetVpnGateway")
@@ -131,6 +132,7 @@ public class HttpJsonTargetVpnGatewayStub extends TargetVpnGatewayStub {
                   .setRequestInstance(InsertTargetVpnGatewayHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/targetVpnGateways"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")

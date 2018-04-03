@@ -70,6 +70,7 @@ public class HttpJsonHttpHealthCheckStub extends HttpHealthCheckStub {
                   .setRequestInstance(DeleteHttpHealthCheckHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/httpHealthChecks/{httpHealthCheck}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(HttpHealthCheckName.newFactory())
                   .setResourceNameField("httpHealthCheck")
@@ -108,6 +109,7 @@ public class HttpJsonHttpHealthCheckStub extends HttpHealthCheckStub {
                   .setRequestInstance(InsertHttpHealthCheckHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/httpHealthChecks"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectName.newFactory())
                   .setResourceNameField("project")
@@ -147,6 +149,7 @@ public class HttpJsonHttpHealthCheckStub extends HttpHealthCheckStub {
                   .setRequestInstance(PatchHttpHealthCheckHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/httpHealthChecks/{httpHealthCheck}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(HttpHealthCheckName.newFactory())
                   .setResourceNameField("httpHealthCheck")
@@ -166,6 +169,7 @@ public class HttpJsonHttpHealthCheckStub extends HttpHealthCheckStub {
                   .setRequestInstance(UpdateHttpHealthCheckHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/httpHealthChecks/{httpHealthCheck}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(HttpHealthCheckName.newFactory())
                   .setResourceNameField("httpHealthCheck")

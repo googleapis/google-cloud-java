@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -39,7 +40,11 @@ public final class DiskTypesScopedList implements ApiMessage {
     this.warning = null;
   }
 
-  private DiskTypesScopedList(List<DiskType> diskTypes, Warning warning) {
+
+  private DiskTypesScopedList(
+      List<DiskType> diskTypes,
+      Warning warning
+      ) {
     this.diskTypes = diskTypes;
     this.warning = warning;
   }
@@ -85,24 +90,22 @@ public final class DiskTypesScopedList implements ApiMessage {
     return warning;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(DiskTypesScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DiskTypesScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final DiskTypesScopedList DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new DiskTypesScopedList();
   }
@@ -155,9 +158,13 @@ public final class DiskTypesScopedList implements ApiMessage {
       return this;
     }
 
+
     public DiskTypesScopedList build() {
 
-      return new DiskTypesScopedList(diskTypes, warning);
+      return new DiskTypesScopedList(
+        diskTypes,
+        warning
+      );
     }
 
     public Builder clone() {
@@ -170,7 +177,10 @@ public final class DiskTypesScopedList implements ApiMessage {
 
   @Override
   public String toString() {
-    return "DiskTypesScopedList{" + "diskTypes=" + diskTypes + ", " + "warning=" + warning + "}";
+    return "DiskTypesScopedList{"
+        + "diskTypes=" + diskTypes + ", "
+        + "warning=" + warning
+        + "}";
   }
 
   @Override
@@ -180,14 +190,19 @@ public final class DiskTypesScopedList implements ApiMessage {
     }
     if (o instanceof DiskTypesScopedList) {
       DiskTypesScopedList that = (DiskTypesScopedList) o;
-      return Objects.equals(this.diskTypes, that.getDiskTypesList())
-          && Objects.equals(this.warning, that.getWarning());
+      return
+          Objects.equals(this.diskTypes, that.getDiskTypesList()) &&
+          Objects.equals(this.warning, that.getWarning())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(diskTypes, warning);
+    return Objects.hash(
+      diskTypes,
+      warning
+    );
   }
 }

@@ -52,8 +52,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+ *   String requestId = "";
  *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
- *   Operation response = healthCheckClient.deleteHealthCheck(healthCheck);
+ *   Operation response = healthCheckClient.deleteHealthCheck(requestId, healthCheck);
  * }
  * </code>
  * </pre>
@@ -175,19 +176,26 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
-   *   Operation response = healthCheckClient.deleteHealthCheck(healthCheck);
+   *   Operation response = healthCheckClient.deleteHealthCheck(requestId, healthCheck);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param healthCheck Name of the HealthCheck resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteHealthCheck(HealthCheckName healthCheck) {
+  public final Operation deleteHealthCheck(String requestId, HealthCheckName healthCheck) {
 
     DeleteHealthCheckHttpRequest request =
         DeleteHealthCheckHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
         .build();
     return deleteHealthCheck(request);
@@ -200,19 +208,26 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
-   *   Operation response = healthCheckClient.deleteHealthCheck(healthCheck.toString());
+   *   Operation response = healthCheckClient.deleteHealthCheck(requestId, healthCheck.toString());
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param healthCheck Name of the HealthCheck resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteHealthCheck(String healthCheck) {
+  public final Operation deleteHealthCheck(String requestId, String healthCheck) {
 
     DeleteHealthCheckHttpRequest request =
         DeleteHealthCheckHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setHealthCheck(healthCheck)
         .build();
     return deleteHealthCheck(request);
@@ -225,8 +240,10 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   DeleteHealthCheckHttpRequest request = DeleteHealthCheckHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setHealthCheck(healthCheck.toString())
    *     .build();
    *   Operation response = healthCheckClient.deleteHealthCheck(request);
@@ -248,8 +265,10 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   DeleteHealthCheckHttpRequest request = DeleteHealthCheckHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setHealthCheck(healthCheck.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = healthCheckClient.deleteHealthCheckCallable().futureCall(request);
@@ -365,21 +384,28 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.insertHealthCheck(project, healthCheckResource);
+   *   Operation response = healthCheckClient.insertHealthCheck(requestId, project, healthCheckResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how individual virtual machines should be checked for health, via one of the supported protocols.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertHealthCheck(ProjectName project, HealthCheck healthCheckResource) {
+  public final Operation insertHealthCheck(String requestId, ProjectName project, HealthCheck healthCheckResource) {
 
     InsertHealthCheckHttpRequest request =
         InsertHealthCheckHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project == null ? null : project.toString())
         .setHealthCheckResource(healthCheckResource)
         .build();
@@ -393,21 +419,28 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.insertHealthCheck(project.toString(), healthCheckResource);
+   *   Operation response = healthCheckClient.insertHealthCheck(requestId, project.toString(), healthCheckResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how individual virtual machines should be checked for health, via one of the supported protocols.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertHealthCheck(String project, HealthCheck healthCheckResource) {
+  public final Operation insertHealthCheck(String requestId, String project, HealthCheck healthCheckResource) {
 
     InsertHealthCheckHttpRequest request =
         InsertHealthCheckHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setProject(project)
         .setHealthCheckResource(healthCheckResource)
         .build();
@@ -421,9 +454,11 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   InsertHealthCheckHttpRequest request = InsertHealthCheckHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setHealthCheckResource(healthCheckResource)
    *     .build();
@@ -446,9 +481,11 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   ProjectName project = ProjectName.of("[PROJECT]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   InsertHealthCheckHttpRequest request = InsertHealthCheckHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setProject(project.toString())
    *     .setHealthCheckResource(healthCheckResource)
    *     .build();
@@ -598,26 +635,33 @@ public class HealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a HealthCheck resource in the specified project using the data included in the request. This method supports patch semantics.
+   * Updates a HealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.patchHealthCheck(healthCheck, healthCheckResource);
+   *   Operation response = healthCheckClient.patchHealthCheck(requestId, healthCheck, healthCheckResource);
    * }
    * </code></pre>
    *
-   * @param healthCheck Name of the HealthCheck resource to update.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param healthCheck Name of the HealthCheck resource to patch.
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how individual virtual machines should be checked for health, via one of the supported protocols.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchHealthCheck(HealthCheckName healthCheck, HealthCheck healthCheckResource) {
+  public final Operation patchHealthCheck(String requestId, HealthCheckName healthCheck, HealthCheck healthCheckResource) {
 
     PatchHealthCheckHttpRequest request =
         PatchHealthCheckHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
         .setHealthCheckResource(healthCheckResource)
         .build();
@@ -626,26 +670,33 @@ public class HealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a HealthCheck resource in the specified project using the data included in the request. This method supports patch semantics.
+   * Updates a HealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.patchHealthCheck(healthCheck.toString(), healthCheckResource);
+   *   Operation response = healthCheckClient.patchHealthCheck(requestId, healthCheck.toString(), healthCheckResource);
    * }
    * </code></pre>
    *
-   * @param healthCheck Name of the HealthCheck resource to update.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param healthCheck Name of the HealthCheck resource to patch.
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how individual virtual machines should be checked for health, via one of the supported protocols.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchHealthCheck(String healthCheck, HealthCheck healthCheckResource) {
+  public final Operation patchHealthCheck(String requestId, String healthCheck, HealthCheck healthCheckResource) {
 
     PatchHealthCheckHttpRequest request =
         PatchHealthCheckHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setHealthCheck(healthCheck)
         .setHealthCheckResource(healthCheckResource)
         .build();
@@ -654,14 +705,16 @@ public class HealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a HealthCheck resource in the specified project using the data included in the request. This method supports patch semantics.
+   * Updates a HealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   PatchHealthCheckHttpRequest request = PatchHealthCheckHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setHealthCheck(healthCheck.toString())
    *     .setHealthCheckResource(healthCheckResource)
    *     .build();
@@ -679,14 +732,16 @@ public class HealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a HealthCheck resource in the specified project using the data included in the request. This method supports patch semantics.
+   * Updates a HealthCheck resource in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   PatchHealthCheckHttpRequest request = PatchHealthCheckHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setHealthCheck(healthCheck.toString())
    *     .setHealthCheckResource(healthCheckResource)
    *     .build();
@@ -708,21 +763,28 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.updateHealthCheck(healthCheck, healthCheckResource);
+   *   Operation response = healthCheckClient.updateHealthCheck(requestId, healthCheck, healthCheckResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param healthCheck Name of the HealthCheck resource to update.
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how individual virtual machines should be checked for health, via one of the supported protocols.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateHealthCheck(HealthCheckName healthCheck, HealthCheck healthCheckResource) {
+  public final Operation updateHealthCheck(String requestId, HealthCheckName healthCheck, HealthCheck healthCheckResource) {
 
     UpdateHealthCheckHttpRequest request =
         UpdateHealthCheckHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setHealthCheck(healthCheck == null ? null : healthCheck.toString())
         .setHealthCheckResource(healthCheckResource)
         .build();
@@ -736,21 +798,28 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
-   *   Operation response = healthCheckClient.updateHealthCheck(healthCheck.toString(), healthCheckResource);
+   *   Operation response = healthCheckClient.updateHealthCheck(requestId, healthCheck.toString(), healthCheckResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param healthCheck Name of the HealthCheck resource to update.
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how individual virtual machines should be checked for health, via one of the supported protocols.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateHealthCheck(String healthCheck, HealthCheck healthCheckResource) {
+  public final Operation updateHealthCheck(String requestId, String healthCheck, HealthCheck healthCheckResource) {
 
     UpdateHealthCheckHttpRequest request =
         UpdateHealthCheckHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setHealthCheck(healthCheck)
         .setHealthCheckResource(healthCheckResource)
         .build();
@@ -764,9 +833,11 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   UpdateHealthCheckHttpRequest request = UpdateHealthCheckHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setHealthCheck(healthCheck.toString())
    *     .setHealthCheckResource(healthCheckResource)
    *     .build();
@@ -789,9 +860,11 @@ public class HealthCheckClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+   *   String requestId = "";
    *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
    *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   UpdateHealthCheckHttpRequest request = UpdateHealthCheckHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setHealthCheck(healthCheck.toString())
    *     .setHealthCheckResource(healthCheckResource)
    *     .build();

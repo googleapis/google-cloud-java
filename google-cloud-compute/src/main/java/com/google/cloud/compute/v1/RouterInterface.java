@@ -33,11 +33,13 @@ import javax.annotation.Nullable;
 @BetaApi
 public final class RouterInterface implements ApiMessage {
   private final String ipRange;
+  private final String linkedInterconnectAttachment;
   private final String linkedVpnTunnel;
   private final String name;
 
   private RouterInterface() {
     this.ipRange = null;
+    this.linkedInterconnectAttachment = null;
     this.linkedVpnTunnel = null;
     this.name = null;
   }
@@ -45,10 +47,12 @@ public final class RouterInterface implements ApiMessage {
 
   private RouterInterface(
       String ipRange,
+      String linkedInterconnectAttachment,
       String linkedVpnTunnel,
       String name
       ) {
     this.ipRange = ipRange;
+    this.linkedInterconnectAttachment = linkedInterconnectAttachment;
     this.linkedVpnTunnel = linkedVpnTunnel;
     this.name = name;
   }
@@ -58,6 +62,9 @@ public final class RouterInterface implements ApiMessage {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("ipRange") && ipRange != null) {
       fieldMap.put("ipRange", Collections.singletonList(String.valueOf(ipRange)));
+    }
+    if (fieldNames.contains("linkedInterconnectAttachment") && linkedInterconnectAttachment != null) {
+      fieldMap.put("linkedInterconnectAttachment", Collections.singletonList(String.valueOf(linkedInterconnectAttachment)));
     }
     if (fieldNames.contains("linkedVpnTunnel") && linkedVpnTunnel != null) {
       fieldMap.put("linkedVpnTunnel", Collections.singletonList(String.valueOf(linkedVpnTunnel)));
@@ -72,6 +79,9 @@ public final class RouterInterface implements ApiMessage {
   public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("ipRange")) {
       return String.valueOf(ipRange);
+    }
+    if (fieldName.equals("linkedInterconnectAttachment")) {
+      return String.valueOf(linkedInterconnectAttachment);
     }
     if (fieldName.equals("linkedVpnTunnel")) {
       return String.valueOf(linkedVpnTunnel);
@@ -90,6 +100,10 @@ public final class RouterInterface implements ApiMessage {
 
   public String getIpRange() {
     return ipRange;
+  }
+
+  public String getLinkedInterconnectAttachment() {
+    return linkedInterconnectAttachment;
   }
 
   public String getLinkedVpnTunnel() {
@@ -122,6 +136,7 @@ public final class RouterInterface implements ApiMessage {
 
   public static class Builder {
     private String ipRange;
+    private String linkedInterconnectAttachment;
     private String linkedVpnTunnel;
     private String name;
 
@@ -131,6 +146,9 @@ public final class RouterInterface implements ApiMessage {
       if (other == RouterInterface.getDefaultInstance()) return this;
       if (other.getIpRange() != null) {
         this.ipRange = other.ipRange;
+      }
+      if (other.getLinkedInterconnectAttachment() != null) {
+        this.linkedInterconnectAttachment = other.linkedInterconnectAttachment;
       }
       if (other.getLinkedVpnTunnel() != null) {
         this.linkedVpnTunnel = other.linkedVpnTunnel;
@@ -143,6 +161,7 @@ public final class RouterInterface implements ApiMessage {
 
     Builder(RouterInterface source) {
       this.ipRange = source.ipRange;
+      this.linkedInterconnectAttachment = source.linkedInterconnectAttachment;
       this.linkedVpnTunnel = source.linkedVpnTunnel;
       this.name = source.name;
     }
@@ -153,6 +172,15 @@ public final class RouterInterface implements ApiMessage {
 
     public Builder setIpRange(String ipRange) {
       this.ipRange = ipRange;
+      return this;
+    }
+
+    public String getLinkedInterconnectAttachment() {
+      return linkedInterconnectAttachment;
+    }
+
+    public Builder setLinkedInterconnectAttachment(String linkedInterconnectAttachment) {
+      this.linkedInterconnectAttachment = linkedInterconnectAttachment;
       return this;
     }
 
@@ -178,8 +206,10 @@ public final class RouterInterface implements ApiMessage {
     public RouterInterface build() {
 
 
+
       return new RouterInterface(
         ipRange,
+        linkedInterconnectAttachment,
         linkedVpnTunnel,
         name
       );
@@ -188,6 +218,7 @@ public final class RouterInterface implements ApiMessage {
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setIpRange(this.ipRange);
+      newBuilder.setLinkedInterconnectAttachment(this.linkedInterconnectAttachment);
       newBuilder.setLinkedVpnTunnel(this.linkedVpnTunnel);
       newBuilder.setName(this.name);
       return newBuilder;
@@ -198,6 +229,7 @@ public final class RouterInterface implements ApiMessage {
   public String toString() {
     return "RouterInterface{"
         + "ipRange=" + ipRange + ", "
+        + "linkedInterconnectAttachment=" + linkedInterconnectAttachment + ", "
         + "linkedVpnTunnel=" + linkedVpnTunnel + ", "
         + "name=" + name
         + "}";
@@ -212,6 +244,7 @@ public final class RouterInterface implements ApiMessage {
       RouterInterface that = (RouterInterface) o;
       return
           Objects.equals(this.ipRange, that.getIpRange()) &&
+          Objects.equals(this.linkedInterconnectAttachment, that.getLinkedInterconnectAttachment()) &&
           Objects.equals(this.linkedVpnTunnel, that.getLinkedVpnTunnel()) &&
           Objects.equals(this.name, that.getName())
           ;
@@ -223,6 +256,7 @@ public final class RouterInterface implements ApiMessage {
   public int hashCode() {
     return Objects.hash(
       ipRange,
+      linkedInterconnectAttachment,
       linkedVpnTunnel,
       name
     );

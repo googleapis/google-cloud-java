@@ -40,6 +40,8 @@ public final class Network implements ApiMessage {
   private final String id;
   private final String kind;
   private final String name;
+  private final List<NetworkPeering> peerings;
+  private final NetworkRoutingConfig routingConfig;
   private final String selfLink;
   private final List<String> subnetworks;
 
@@ -52,6 +54,8 @@ public final class Network implements ApiMessage {
     this.id = null;
     this.kind = null;
     this.name = null;
+    this.peerings = null;
+    this.routingConfig = null;
     this.selfLink = null;
     this.subnetworks = null;
   }
@@ -66,6 +70,8 @@ public final class Network implements ApiMessage {
       String id,
       String kind,
       String name,
+      List<NetworkPeering> peerings,
+      NetworkRoutingConfig routingConfig,
       String selfLink,
       List<String> subnetworks
       ) {
@@ -77,6 +83,8 @@ public final class Network implements ApiMessage {
     this.id = id;
     this.kind = kind;
     this.name = name;
+    this.peerings = peerings;
+    this.routingConfig = routingConfig;
     this.selfLink = selfLink;
     this.subnetworks = subnetworks;
   }
@@ -107,6 +115,16 @@ public final class Network implements ApiMessage {
     }
     if (fieldNames.contains("name") && name != null) {
       fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
+    }
+    if (fieldNames.contains("peerings") && peerings != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (NetworkPeering item : peerings) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("peerings", stringList.build());
+    }
+    if (fieldNames.contains("routingConfig") && routingConfig != null) {
+      fieldMap.put("routingConfig", Collections.singletonList(String.valueOf(routingConfig)));
     }
     if (fieldNames.contains("selfLink") && selfLink != null) {
       fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
@@ -146,6 +164,12 @@ public final class Network implements ApiMessage {
     }
     if (fieldName.equals("name")) {
       return String.valueOf(name);
+    }
+    if (fieldName.equals("peerings")) {
+      return String.valueOf(peerings);
+    }
+    if (fieldName.equals("routingConfig")) {
+      return String.valueOf(routingConfig);
     }
     if (fieldName.equals("selfLink")) {
       return String.valueOf(selfLink);
@@ -194,6 +218,14 @@ public final class Network implements ApiMessage {
     return name;
   }
 
+  public List<NetworkPeering> getPeeringsList() {
+    return peerings;
+  }
+
+  public NetworkRoutingConfig getRoutingConfig() {
+    return routingConfig;
+  }
+
   public String getSelfLink() {
     return selfLink;
   }
@@ -231,6 +263,8 @@ public final class Network implements ApiMessage {
     private String id;
     private String kind;
     private String name;
+    private List<NetworkPeering> peerings;
+    private NetworkRoutingConfig routingConfig;
     private String selfLink;
     private List<String> subnetworks;
 
@@ -262,6 +296,12 @@ public final class Network implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getPeeringsList() != null) {
+        this.peerings = other.peerings;
+      }
+      if (other.getRoutingConfig() != null) {
+        this.routingConfig = other.routingConfig;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -280,6 +320,8 @@ public final class Network implements ApiMessage {
       this.id = source.id;
       this.kind = source.kind;
       this.name = source.name;
+      this.peerings = source.peerings;
+      this.routingConfig = source.routingConfig;
       this.selfLink = source.selfLink;
       this.subnetworks = source.subnetworks;
     }
@@ -356,6 +398,32 @@ public final class Network implements ApiMessage {
       return this;
     }
 
+    public List<NetworkPeering> getPeeringsList() {
+      return peerings;
+    }
+
+    public Builder addAllPeerings(List<NetworkPeering> peerings) {
+      if (this.peerings == null) {
+        this.peerings = new ArrayList<>(peerings.size());
+      }
+      this.peerings.addAll(peerings);
+      return this;
+    }
+
+    public Builder addPeerings(NetworkPeering peerings) {
+      this.peerings.add(peerings);
+      return this;
+    }
+
+    public NetworkRoutingConfig getRoutingConfig() {
+      return routingConfig;
+    }
+
+    public Builder setRoutingConfig(NetworkRoutingConfig routingConfig) {
+      this.routingConfig = routingConfig;
+      return this;
+    }
+
     public String getSelfLink() {
       return selfLink;
     }
@@ -393,6 +461,8 @@ public final class Network implements ApiMessage {
 
 
 
+
+
       return new Network(
         autoCreateSubnetworks,
         creationTimestamp,
@@ -402,6 +472,8 @@ public final class Network implements ApiMessage {
         id,
         kind,
         name,
+        peerings,
+        routingConfig,
         selfLink,
         subnetworks
       );
@@ -417,6 +489,8 @@ public final class Network implements ApiMessage {
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
+      newBuilder.addAllPeerings(this.peerings);
+      newBuilder.setRoutingConfig(this.routingConfig);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.addAllSubnetworks(this.subnetworks);
       return newBuilder;
@@ -434,6 +508,8 @@ public final class Network implements ApiMessage {
         + "id=" + id + ", "
         + "kind=" + kind + ", "
         + "name=" + name + ", "
+        + "peerings=" + peerings + ", "
+        + "routingConfig=" + routingConfig + ", "
         + "selfLink=" + selfLink + ", "
         + "subnetworks=" + subnetworks
         + "}";
@@ -455,6 +531,8 @@ public final class Network implements ApiMessage {
           Objects.equals(this.id, that.getId()) &&
           Objects.equals(this.kind, that.getKind()) &&
           Objects.equals(this.name, that.getName()) &&
+          Objects.equals(this.peerings, that.getPeeringsList()) &&
+          Objects.equals(this.routingConfig, that.getRoutingConfig()) &&
           Objects.equals(this.selfLink, that.getSelfLink()) &&
           Objects.equals(this.subnetworks, that.getSubnetworksList())
           ;
@@ -473,6 +551,8 @@ public final class Network implements ApiMessage {
       id,
       kind,
       name,
+      peerings,
+      routingConfig,
       selfLink,
       subnetworks
     );

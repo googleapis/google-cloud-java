@@ -19,6 +19,22 @@
  *
  * The interfaces provided are listed below, along with usage samples.
  *
+ * =====================
+ * AcceleratorTypeClient
+ * =====================
+ *
+ * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * Sample for AcceleratorTypeClient:
+ * <pre>
+ * <code>
+ * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
+ *   AcceleratorTypeName acceleratorType = AcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+ *   AcceleratorType response = acceleratorTypeClient.getAcceleratorType(acceleratorType);
+ * }
+ * </code>
+ * </pre>
+ *
  * =============
  * AddressClient
  * =============
@@ -30,7 +46,8 @@
  * <code>
  * try (AddressClient addressClient = AddressClient.create()) {
  *   AddressName address = AddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
- *   Operation response = addressClient.deleteAddress(address);
+ *   String requestId = "";
+ *   Operation response = addressClient.deleteAddress(address, requestId);
  * }
  * </code>
  * </pre>
@@ -46,7 +63,25 @@
  * <code>
  * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
  *   AutoscalerName autoscaler = AutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
- *   Operation response = autoscalerClient.deleteAutoscaler(autoscaler);
+ *   String requestId = "";
+ *   Operation response = autoscalerClient.deleteAutoscaler(autoscaler, requestId);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ===================
+ * BackendBucketClient
+ * ===================
+ *
+ * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * Sample for BackendBucketClient:
+ * <pre>
+ * <code>
+ * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
+ *   BackendBucketName backendBucket = BackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+ *   String requestId = "";
+ *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket, requestId);
  * }
  * </code>
  * </pre>
@@ -61,8 +96,9 @@
  * <pre>
  * <code>
  * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
+ *   String requestId = "";
  *   BackendServiceName backendService = BackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
- *   Operation response = backendServiceClient.deleteBackendService(backendService);
+ *   Operation response = backendServiceClient.deleteBackendService(requestId, backendService);
  * }
  * </code>
  * </pre>
@@ -94,8 +130,10 @@
  * <code>
  * try (DiskClient diskClient = DiskClient.create()) {
  *   DiskName disk = DiskName.of("[PROJECT]", "[ZONE]", "[DISK]");
+ *   String requestId = "";
+ *   Boolean guestFlush = false;
  *   Snapshot snapshotResource = Snapshot.newBuilder().build();
- *   Operation response = diskClient.createSnapshotDisk(disk, snapshotResource);
+ *   Operation response = diskClient.createSnapshotDisk(disk, requestId, guestFlush, snapshotResource);
  * }
  * </code>
  * </pre>
@@ -111,7 +149,8 @@
  * <code>
  * try (FirewallClient firewallClient = FirewallClient.create()) {
  *   FirewallName firewall = FirewallName.of("[PROJECT]", "[FIREWALL]");
- *   Operation response = firewallClient.deleteFirewall(firewall);
+ *   String requestId = "";
+ *   Operation response = firewallClient.deleteFirewall(firewall, requestId);
  * }
  * </code>
  * </pre>
@@ -126,8 +165,9 @@
  * <pre>
  * <code>
  * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
+ *   String requestId = "";
  *   ForwardingRuleName forwardingRule = ForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
- *   Operation response = forwardingRuleClient.deleteForwardingRule(forwardingRule);
+ *   Operation response = forwardingRuleClient.deleteForwardingRule(requestId, forwardingRule);
  * }
  * </code>
  * </pre>
@@ -143,7 +183,8 @@
  * <code>
  * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
  *   ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
- *   Operation response = globalAddressClient.deleteGlobalAddress(address);
+ *   String requestId = "";
+ *   Operation response = globalAddressClient.deleteGlobalAddress(address, requestId);
  * }
  * </code>
  * </pre>
@@ -158,8 +199,9 @@
  * <pre>
  * <code>
  * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
+ *   String requestId = "";
  *   ProjectForwardingRuleName forwardingRule = ProjectForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
- *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(forwardingRule);
+ *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(requestId, forwardingRule);
  * }
  * </code>
  * </pre>
@@ -190,8 +232,9 @@
  * <pre>
  * <code>
  * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
+ *   String requestId = "";
  *   HealthCheckName healthCheck = HealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
- *   Operation response = healthCheckClient.deleteHealthCheck(healthCheck);
+ *   Operation response = healthCheckClient.deleteHealthCheck(requestId, healthCheck);
  * }
  * </code>
  * </pre>
@@ -206,8 +249,9 @@
  * <pre>
  * <code>
  * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
+ *   String requestId = "";
  *   HttpHealthCheckName httpHealthCheck = HttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
- *   Operation response = httpHealthCheckClient.deleteHttpHealthCheck(httpHealthCheck);
+ *   Operation response = httpHealthCheckClient.deleteHttpHealthCheck(requestId, httpHealthCheck);
  * }
  * </code>
  * </pre>
@@ -223,7 +267,8 @@
  * <code>
  * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
  *   HttpsHealthCheckName httpsHealthCheck = HttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
- *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck);
+ *   String requestId = "";
+ *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck, requestId);
  * }
  * </code>
  * </pre>
@@ -239,7 +284,8 @@
  * <code>
  * try (ImageClient imageClient = ImageClient.create()) {
  *   ImageName image = ImageName.of("[PROJECT]", "[IMAGE]");
- *   Operation response = imageClient.deleteImage(image);
+ *   String requestId = "";
+ *   Operation response = imageClient.deleteImage(image, requestId);
  * }
  * </code>
  * </pre>
@@ -254,9 +300,10 @@
  * <pre>
  * <code>
  * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+ *   String requestId = "";
  *   InstanceGroupManagerName instanceGroupManager = InstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
  *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
- *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(instanceGroupManager, instanceGroupManagersAbandonInstancesRequestResource);
+ *   Operation response = instanceGroupManagerClient.abandonInstancesInstanceGroupManager(requestId, instanceGroupManager, instanceGroupManagersAbandonInstancesRequestResource);
  * }
  * </code>
  * </pre>
@@ -271,9 +318,10 @@
  * <pre>
  * <code>
  * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
+ *   String requestId = "";
  *   InstanceGroupName instanceGroup = InstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
  *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
- *   Operation response = instanceGroupClient.addInstancesInstanceGroup(instanceGroup, instanceGroupsAddInstancesRequestResource);
+ *   Operation response = instanceGroupClient.addInstancesInstanceGroup(requestId, instanceGroup, instanceGroupsAddInstancesRequestResource);
  * }
  * </code>
  * </pre>
@@ -289,7 +337,8 @@
  * <code>
  * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
  *   InstanceTemplateName instanceTemplate = InstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
- *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate);
+ *   String requestId = "";
+ *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate, requestId);
  * }
  * </code>
  * </pre>
@@ -306,24 +355,75 @@
  * try (InstanceClient instanceClient = InstanceClient.create()) {
  *   InstanceName instance = InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
  *   String networkInterface = "";
+ *   String requestId = "";
  *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
- *   Operation response = instanceClient.addAccessConfigInstance(instance, networkInterface, accessConfigResource);
+ *   Operation response = instanceClient.addAccessConfigInstance(instance, networkInterface, requestId, accessConfigResource);
  * }
  * </code>
  * </pre>
  *
- * ============
- * LicensClient
- * ============
+ * ============================
+ * InterconnectAttachmentClient
+ * ============================
  *
  * Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for LicensClient:
+ * Sample for InterconnectAttachmentClient:
  * <pre>
  * <code>
- * try (LicensClient licensClient = LicensClient.create()) {
+ * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
+ *   String requestId = "";
+ *   InterconnectAttachmentName interconnectAttachment = InterconnectAttachmentName.of("[PROJECT]", "[REGION]", "[INTERCONNECT_ATTACHMENT]");
+ *   Operation response = interconnectAttachmentClient.deleteInterconnectAttachment(requestId, interconnectAttachment);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ==========================
+ * InterconnectLocationClient
+ * ==========================
+ *
+ * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * Sample for InterconnectLocationClient:
+ * <pre>
+ * <code>
+ * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
+ *   InterconnectLocationName interconnectLocation = InterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+ *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(interconnectLocation);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ==================
+ * InterconnectClient
+ * ==================
+ *
+ * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * Sample for InterconnectClient:
+ * <pre>
+ * <code>
+ * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+ *   String requestId = "";
+ *   InterconnectName interconnect = InterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+ *   Operation response = interconnectClient.deleteInterconnect(requestId, interconnect);
+ * }
+ * </code>
+ * </pre>
+ *
+ * =============
+ * LicenseClient
+ * =============
+ *
+ * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * Sample for LicenseClient:
+ * <pre>
+ * <code>
+ * try (LicenseClient licenseClient = LicenseClient.create()) {
  *   LicenseName license = LicenseName.of("[PROJECT]", "[LICENSE]");
- *   License response = licensClient.getLicens(license);
+ *   License response = licenseClient.getLicense(license);
  * }
  * </code>
  * </pre>
@@ -354,8 +454,10 @@
  * <pre>
  * <code>
  * try (NetworkClient networkClient = NetworkClient.create()) {
+ *   String requestId = "";
  *   NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
- *   Operation response = networkClient.deleteNetwork(network);
+ *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
+ *   Operation response = networkClient.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
  * }
  * </code>
  * </pre>
@@ -370,8 +472,9 @@
  * <pre>
  * <code>
  * try (ProjectClient projectClient = ProjectClient.create()) {
+ *   String requestId = "";
  *   ProjectName project = ProjectName.of("[PROJECT]");
- *   Project response = projectClient.getProject(project);
+ *   Operation response = projectClient.disableXpnHostProject(requestId, project);
  * }
  * </code>
  * </pre>
@@ -387,7 +490,8 @@
  * <code>
  * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
  *   ProjectRegionAutoscalerName autoscaler = ProjectRegionAutoscalerName.of("[PROJECT]", "[REGION]", "[AUTOSCALER]");
- *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(autoscaler);
+ *   String requestId = "";
+ *   Operation response = regionAutoscalerClient.deleteRegionAutoscaler(autoscaler, requestId);
  * }
  * </code>
  * </pre>
@@ -402,8 +506,25 @@
  * <pre>
  * <code>
  * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
+ *   String requestId = "";
  *   ProjectRegionBackendServiceName backendService = ProjectRegionBackendServiceName.of("[PROJECT]", "[REGION]", "[BACKEND_SERVICE]");
- *   Operation response = regionBackendServiceClient.deleteRegionBackendService(backendService);
+ *   Operation response = regionBackendServiceClient.deleteRegionBackendService(requestId, backendService);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ======================
+ * RegionCommitmentClient
+ * ======================
+ *
+ * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * Sample for RegionCommitmentClient:
+ * <pre>
+ * <code>
+ * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
+ *   CommitmentName commitment = CommitmentName.of("[PROJECT]", "[REGION]", "[COMMITMENT]");
+ *   Commitment response = regionCommitmentClient.getRegionCommitment(commitment);
  * }
  * </code>
  * </pre>
@@ -418,9 +539,10 @@
  * <pre>
  * <code>
  * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+ *   String requestId = "";
  *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
  *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
- *   Operation response = regionInstanceGroupManagerClient.abandonInstancesRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
+ *   Operation response = regionInstanceGroupManagerClient.abandonInstancesRegionInstanceGroupManager(requestId, instanceGroupManager, regionInstanceGroupManagersAbandonInstancesRequestResource);
  * }
  * </code>
  * </pre>
@@ -484,7 +606,8 @@
  * <code>
  * try (RouterClient routerClient = RouterClient.create()) {
  *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
- *   Operation response = routerClient.deleteRouter(router);
+ *   String requestId = "";
+ *   Operation response = routerClient.deleteRouter(router, requestId);
  * }
  * </code>
  * </pre>
@@ -500,7 +623,8 @@
  * <code>
  * try (RouteClient routeClient = RouteClient.create()) {
  *   RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
- *   Operation response = routeClient.deleteRoute(route);
+ *   String requestId = "";
+ *   Operation response = routeClient.deleteRoute(route, requestId);
  * }
  * </code>
  * </pre>
@@ -515,8 +639,9 @@
  * <pre>
  * <code>
  * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+ *   String requestId = "";
  *   SnapshotName snapshot = SnapshotName.of("[PROJECT]", "[SNAPSHOT]");
- *   Operation response = snapshotClient.deleteSnapshot(snapshot);
+ *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
  * }
  * </code>
  * </pre>
@@ -532,7 +657,8 @@
  * <code>
  * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
  *   SslCertificateName sslCertificate = SslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
- *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate);
+ *   String requestId = "";
+ *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate, requestId);
  * }
  * </code>
  * </pre>
@@ -547,8 +673,9 @@
  * <pre>
  * <code>
  * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+ *   String requestId = "";
  *   SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
- *   Operation response = subnetworkClient.deleteSubnetwork(subnetwork);
+ *   Operation response = subnetworkClient.deleteSubnetwork(requestId, subnetwork);
  * }
  * </code>
  * </pre>
@@ -563,8 +690,9 @@
  * <pre>
  * <code>
  * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
+ *   String requestId = "";
  *   TargetHttpProxyName targetHttpProxy = TargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
- *   Operation response = targetHttpProxyClient.deleteTargetHttpProxy(targetHttpProxy);
+ *   Operation response = targetHttpProxyClient.deleteTargetHttpProxy(requestId, targetHttpProxy);
  * }
  * </code>
  * </pre>
@@ -580,7 +708,8 @@
  * <code>
  * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
  *   TargetHttpsProxyName targetHttpsProxy = TargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
- *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy);
+ *   String requestId = "";
+ *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy, requestId);
  * }
  * </code>
  * </pre>
@@ -595,8 +724,9 @@
  * <pre>
  * <code>
  * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
+ *   String requestId = "";
  *   TargetInstanceName targetInstance = TargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
- *   Operation response = targetInstanceClient.deleteTargetInstance(targetInstance);
+ *   Operation response = targetInstanceClient.deleteTargetInstance(requestId, targetInstance);
  * }
  * </code>
  * </pre>
@@ -612,8 +742,9 @@
  * <code>
  * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
  *   TargetPoolName targetPool = TargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
+ *   String requestId = "";
  *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
- *   Operation response = targetPoolClient.addHealthCheckTargetPool(targetPool, targetPoolsAddHealthCheckRequestResource);
+ *   Operation response = targetPoolClient.addHealthCheckTargetPool(targetPool, requestId, targetPoolsAddHealthCheckRequestResource);
  * }
  * </code>
  * </pre>
@@ -629,7 +760,25 @@
  * <code>
  * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
  *   TargetSslProxyName targetSslProxy = TargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
- *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy);
+ *   String requestId = "";
+ *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy, requestId);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ====================
+ * TargetTcpProxyClient
+ * ====================
+ *
+ * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * Sample for TargetTcpProxyClient:
+ * <pre>
+ * <code>
+ * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
+ *   String requestId = "";
+ *   TargetTcpProxyName targetTcpProxy = TargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+ *   Operation response = targetTcpProxyClient.deleteTargetTcpProxy(requestId, targetTcpProxy);
  * }
  * </code>
  * </pre>
@@ -644,8 +793,9 @@
  * <pre>
  * <code>
  * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
+ *   String requestId = "";
  *   TargetVpnGatewayName targetVpnGateway = TargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
- *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(targetVpnGateway);
+ *   Operation response = targetVpnGatewayClient.deleteTargetVpnGateway(requestId, targetVpnGateway);
  * }
  * </code>
  * </pre>
@@ -661,7 +811,8 @@
  * <code>
  * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
  *   UrlMapName urlMap = UrlMapName.of("[PROJECT]", "[URL_MAP]");
- *   Operation response = urlMapClient.deleteUrlMap(urlMap);
+ *   String requestId = "";
+ *   Operation response = urlMapClient.deleteUrlMap(urlMap, requestId);
  * }
  * </code>
  * </pre>
@@ -676,8 +827,9 @@
  * <pre>
  * <code>
  * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
+ *   String requestId = "";
  *   VpnTunnelName vpnTunnel = VpnTunnelName.of("[PROJECT]", "[REGION]", "[VPN_TUNNEL]");
- *   Operation response = vpnTunnelClient.deleteVpnTunnel(vpnTunnel);
+ *   Operation response = vpnTunnelClient.deleteVpnTunnel(requestId, vpnTunnel);
  * }
  * </code>
  * </pre>

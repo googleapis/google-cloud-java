@@ -132,6 +132,7 @@ public class HttpJsonRegionInstanceGroupStub extends RegionInstanceGroupStub {
                   .setRequestInstance(SetNamedPortsRegionInstanceGroupHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/instanceGroups/{instanceGroup}/setNamedPorts"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(ProjectRegionInstanceGroupName.newFactory())
                   .setResourceNameField("instanceGroup")

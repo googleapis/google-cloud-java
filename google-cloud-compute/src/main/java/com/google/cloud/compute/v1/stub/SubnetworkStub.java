@@ -25,8 +25,10 @@ import com.google.cloud.compute.v1.GetSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.RegionName;
+import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
@@ -35,6 +37,7 @@ import com.google.cloud.compute.v1.SubnetworkList;
 import com.google.cloud.compute.v1.SubnetworkName;
 import com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest;
 import com.google.cloud.compute.v1.SubnetworksScopedList;
+import com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -86,6 +89,16 @@ public abstract class SubnetworkStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListSubnetworksHttpRequest, SubnetworkList> listSubnetworksCallable() {
     throw new UnsupportedOperationException("Not implemented: listSubnetworksCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchSubnetworkHttpRequest, Operation> patchSubnetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchSubnetworkCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation> setPrivateIpGoogleAccessSubnetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: setPrivateIpGoogleAccessSubnetworkCallable()");
   }
 
 }

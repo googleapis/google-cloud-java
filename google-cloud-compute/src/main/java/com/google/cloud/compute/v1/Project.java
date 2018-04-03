@@ -43,6 +43,7 @@ public final class Project implements ApiMessage {
   private final List<Quota> quotas;
   private final String selfLink;
   private final UsageExportLocation usageExportLocation;
+  private final String xpnProjectStatus;
 
   private Project() {
     this.commonInstanceMetadata = null;
@@ -56,6 +57,7 @@ public final class Project implements ApiMessage {
     this.quotas = null;
     this.selfLink = null;
     this.usageExportLocation = null;
+    this.xpnProjectStatus = null;
   }
 
 
@@ -70,7 +72,8 @@ public final class Project implements ApiMessage {
       String name,
       List<Quota> quotas,
       String selfLink,
-      UsageExportLocation usageExportLocation
+      UsageExportLocation usageExportLocation,
+      String xpnProjectStatus
       ) {
     this.commonInstanceMetadata = commonInstanceMetadata;
     this.creationTimestamp = creationTimestamp;
@@ -83,6 +86,7 @@ public final class Project implements ApiMessage {
     this.quotas = quotas;
     this.selfLink = selfLink;
     this.usageExportLocation = usageExportLocation;
+    this.xpnProjectStatus = xpnProjectStatus;
   }
 
   @Override
@@ -129,6 +133,9 @@ public final class Project implements ApiMessage {
     if (fieldNames.contains("usageExportLocation") && usageExportLocation != null) {
       fieldMap.put("usageExportLocation", Collections.singletonList(String.valueOf(usageExportLocation)));
     }
+    if (fieldNames.contains("xpnProjectStatus") && xpnProjectStatus != null) {
+      fieldMap.put("xpnProjectStatus", Collections.singletonList(String.valueOf(xpnProjectStatus)));
+    }
     return fieldMap;
   }
 
@@ -166,6 +173,9 @@ public final class Project implements ApiMessage {
     }
     if (fieldName.equals("usageExportLocation")) {
       return String.valueOf(usageExportLocation);
+    }
+    if (fieldName.equals("xpnProjectStatus")) {
+      return String.valueOf(xpnProjectStatus);
     }
     return null;
   }
@@ -220,6 +230,10 @@ public final class Project implements ApiMessage {
     return usageExportLocation;
   }
 
+  public String getXpnProjectStatus() {
+    return xpnProjectStatus;
+  }
+
 
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -252,6 +266,7 @@ public final class Project implements ApiMessage {
     private List<Quota> quotas;
     private String selfLink;
     private UsageExportLocation usageExportLocation;
+    private String xpnProjectStatus;
 
     Builder() {}
 
@@ -290,6 +305,9 @@ public final class Project implements ApiMessage {
       if (other.getUsageExportLocation() != null) {
         this.usageExportLocation = other.usageExportLocation;
       }
+      if (other.getXpnProjectStatus() != null) {
+        this.xpnProjectStatus = other.xpnProjectStatus;
+      }
       return this;
     }
 
@@ -305,6 +323,7 @@ public final class Project implements ApiMessage {
       this.quotas = source.quotas;
       this.selfLink = source.selfLink;
       this.usageExportLocation = source.usageExportLocation;
+      this.xpnProjectStatus = source.xpnProjectStatus;
     }
 
     public Metadata getCommonInstanceMetadata() {
@@ -422,8 +441,18 @@ public final class Project implements ApiMessage {
       return this;
     }
 
+    public String getXpnProjectStatus() {
+      return xpnProjectStatus;
+    }
+
+    public Builder setXpnProjectStatus(String xpnProjectStatus) {
+      this.xpnProjectStatus = xpnProjectStatus;
+      return this;
+    }
+
 
     public Project build() {
+
 
 
 
@@ -445,7 +474,8 @@ public final class Project implements ApiMessage {
         name,
         quotas,
         selfLink,
-        usageExportLocation
+        usageExportLocation,
+        xpnProjectStatus
       );
     }
 
@@ -462,6 +492,7 @@ public final class Project implements ApiMessage {
       newBuilder.addAllQuotas(this.quotas);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setUsageExportLocation(this.usageExportLocation);
+      newBuilder.setXpnProjectStatus(this.xpnProjectStatus);
       return newBuilder;
     }
   }
@@ -479,7 +510,8 @@ public final class Project implements ApiMessage {
         + "name=" + name + ", "
         + "quotas=" + quotas + ", "
         + "selfLink=" + selfLink + ", "
-        + "usageExportLocation=" + usageExportLocation
+        + "usageExportLocation=" + usageExportLocation + ", "
+        + "xpnProjectStatus=" + xpnProjectStatus
         + "}";
   }
 
@@ -501,7 +533,8 @@ public final class Project implements ApiMessage {
           Objects.equals(this.name, that.getName()) &&
           Objects.equals(this.quotas, that.getQuotasList()) &&
           Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.usageExportLocation, that.getUsageExportLocation())
+          Objects.equals(this.usageExportLocation, that.getUsageExportLocation()) &&
+          Objects.equals(this.xpnProjectStatus, that.getXpnProjectStatus())
           ;
     }
     return false;
@@ -520,7 +553,8 @@ public final class Project implements ApiMessage {
       name,
       quotas,
       selfLink,
-      usageExportLocation
+      usageExportLocation,
+      xpnProjectStatus
     );
   }
 }

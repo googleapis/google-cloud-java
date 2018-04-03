@@ -53,7 +53,8 @@ import javax.annotation.Generated;
  * <code>
  * try (RouterClient routerClient = RouterClient.create()) {
  *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
- *   Operation response = routerClient.deleteRouter(router);
+ *   String requestId = "";
+ *   Operation response = routerClient.deleteRouter(router, requestId);
  * }
  * </code>
  * </pre>
@@ -309,19 +310,26 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-   *   Operation response = routerClient.deleteRouter(router);
+   *   String requestId = "";
+   *   Operation response = routerClient.deleteRouter(router, requestId);
    * }
    * </code></pre>
    *
    * @param router Name of the Router resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRouter(RouterName router) {
+  public final Operation deleteRouter(RouterName router, String requestId) {
 
     DeleteRouterHttpRequest request =
         DeleteRouterHttpRequest.newBuilder()
         .setRouter(router == null ? null : router.toString())
+        .setRequestId(requestId)
         .build();
     return deleteRouter(request);
   }
@@ -334,19 +342,26 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-   *   Operation response = routerClient.deleteRouter(router.toString());
+   *   String requestId = "";
+   *   Operation response = routerClient.deleteRouter(router.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param router Name of the Router resource to delete.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteRouter(String router) {
+  public final Operation deleteRouter(String router, String requestId) {
 
     DeleteRouterHttpRequest request =
         DeleteRouterHttpRequest.newBuilder()
         .setRouter(router)
+        .setRequestId(requestId)
         .build();
     return deleteRouter(request);
   }
@@ -359,8 +374,10 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   DeleteRouterHttpRequest request = DeleteRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   Operation response = routerClient.deleteRouter(request);
    * }
@@ -382,8 +399,10 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   DeleteRouterHttpRequest request = DeleteRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
+   *     .setRequestId(requestId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routerClient.deleteRouterCallable().futureCall(request);
    *   // Do something
@@ -593,21 +612,28 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.insertRouter(region, routerResource);
+   *   Operation response = routerClient.insertRouter(requestId, region, routerResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRouter(RegionName region, Router routerResource) {
+  public final Operation insertRouter(String requestId, RegionName region, Router routerResource) {
 
     InsertRouterHttpRequest request =
         InsertRouterHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setRegion(region == null ? null : region.toString())
         .setRouterResource(routerResource)
         .build();
@@ -621,21 +647,28 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.insertRouter(region.toString(), routerResource);
+   *   Operation response = routerClient.insertRouter(requestId, region.toString(), routerResource);
    * }
    * </code></pre>
    *
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRouter(String region, Router routerResource) {
+  public final Operation insertRouter(String requestId, String region, Router routerResource) {
 
     InsertRouterHttpRequest request =
         InsertRouterHttpRequest.newBuilder()
+        .setRequestId(requestId)
         .setRegion(region)
         .setRouterResource(routerResource)
         .build();
@@ -649,9 +682,11 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
    *   InsertRouterHttpRequest request = InsertRouterHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setRouterResource(routerResource)
    *     .build();
@@ -674,9 +709,11 @@ public class RouterClient implements BackgroundResource {
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
+   *   String requestId = "";
    *   RegionName region = RegionName.of("[PROJECT]", "[REGION]");
    *   Router routerResource = Router.newBuilder().build();
    *   InsertRouterHttpRequest request = InsertRouterHttpRequest.newBuilder()
+   *     .setRequestId(requestId)
    *     .setRegion(region.toString())
    *     .setRouterResource(routerResource)
    *     .build();
@@ -826,27 +863,34 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified Router resource with the data included in the request. This method supports patch semantics.
+   * Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.patchRouter(router, routerResource);
+   *   Operation response = routerClient.patchRouter(router, requestId, routerResource);
    * }
    * </code></pre>
    *
-   * @param router Name of the Router resource to update.
+   * @param router Name of the Router resource to patch.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchRouter(RouterName router, Router routerResource) {
+  public final Operation patchRouter(RouterName router, String requestId, Router routerResource) {
 
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
         .setRouter(router == null ? null : router.toString())
+        .setRequestId(requestId)
         .setRouterResource(routerResource)
         .build();
     return patchRouter(request);
@@ -854,27 +898,34 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified Router resource with the data included in the request. This method supports patch semantics.
+   * Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.patchRouter(router.toString(), routerResource);
+   *   Operation response = routerClient.patchRouter(router.toString(), requestId, routerResource);
    * }
    * </code></pre>
    *
-   * @param router Name of the Router resource to update.
+   * @param router Name of the Router resource to patch.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchRouter(String router, Router routerResource) {
+  public final Operation patchRouter(String router, String requestId, Router routerResource) {
 
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
         .setRouter(router)
+        .setRequestId(requestId)
         .setRouterResource(routerResource)
         .build();
     return patchRouter(request);
@@ -882,15 +933,17 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified Router resource with the data included in the request. This method supports patch semantics.
+   * Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   PatchRouterHttpRequest request = PatchRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
+   *     .setRequestId(requestId)
    *     .setRouterResource(routerResource)
    *     .build();
    *   Operation response = routerClient.patchRouter(request);
@@ -907,15 +960,17 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified Router resource with the data included in the request. This method supports patch semantics.
+   * Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * Sample code:
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   PatchRouterHttpRequest request = PatchRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
+   *     .setRequestId(requestId)
    *     .setRouterResource(routerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routerClient.patchRouterCallable().futureCall(request);
@@ -1042,21 +1097,28 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.updateRouter(router, routerResource);
+   *   Operation response = routerClient.updateRouter(router, requestId, routerResource);
    * }
    * </code></pre>
    *
    * @param router Name of the Router resource to update.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateRouter(RouterName router, Router routerResource) {
+  public final Operation updateRouter(RouterName router, String requestId, Router routerResource) {
 
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
         .setRouter(router == null ? null : router.toString())
+        .setRequestId(requestId)
         .setRouterResource(routerResource)
         .build();
     return updateRouter(request);
@@ -1070,21 +1132,28 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
-   *   Operation response = routerClient.updateRouter(router.toString(), routerResource);
+   *   Operation response = routerClient.updateRouter(router.toString(), requestId, routerResource);
    * }
    * </code></pre>
    *
    * @param router Name of the Router resource to update.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateRouter(String router, Router routerResource) {
+  public final Operation updateRouter(String router, String requestId, Router routerResource) {
 
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
         .setRouter(router)
+        .setRequestId(requestId)
         .setRouterResource(routerResource)
         .build();
     return updateRouter(request);
@@ -1098,9 +1167,11 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   UpdateRouterHttpRequest request = UpdateRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
+   *     .setRequestId(requestId)
    *     .setRouterResource(routerResource)
    *     .build();
    *   Operation response = routerClient.updateRouter(request);
@@ -1123,9 +1194,11 @@ public class RouterClient implements BackgroundResource {
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   RouterName router = RouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   String requestId = "";
    *   Router routerResource = Router.newBuilder().build();
    *   UpdateRouterHttpRequest request = UpdateRouterHttpRequest.newBuilder()
    *     .setRouter(router.toString())
+   *     .setRequestId(requestId)
    *     .setRouterResource(routerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routerClient.updateRouterCallable().futureCall(request);

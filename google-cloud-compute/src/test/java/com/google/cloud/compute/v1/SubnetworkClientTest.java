@@ -33,6 +33,8 @@ import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.expandIpCi
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.getSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.insertSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.listSubnetworksMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.patchSubnetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.setPrivateIpGoogleAccessSubnetworkMethodDescriptor;
 import com.google.cloud.compute.v1.stub.SubnetworkStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -57,7 +59,9 @@ public class SubnetworkClientTest {
           expandIpCidrRangeSubnetworkMethodDescriptor,
           getSubnetworkMethodDescriptor,
           insertSubnetworkMethodDescriptor,
-          listSubnetworksMethodDescriptor
+          listSubnetworksMethodDescriptor,
+          patchSubnetworkMethodDescriptor,
+          setPrivateIpGoogleAccessSubnetworkMethodDescriptor
         ));
   private static final MockHttpService mockService
       = new MockHttpService(METHOD_DESCRIPTORS, SubnetworkStubSettings.getDefaultEndpoint());
@@ -190,10 +194,11 @@ public class SubnetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
 
     Operation actualResponse =
-        client.deleteSubnetwork(subnetwork);
+        client.deleteSubnetwork(requestId, subnetwork);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -212,9 +217,10 @@ public class SubnetworkClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
 
-      client.deleteSubnetwork(subnetwork);
+      client.deleteSubnetwork(requestId, subnetwork);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -270,11 +276,12 @@ public class SubnetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.expandIpCidrRangeSubnetwork(subnetwork, subnetworksExpandIpCidrRangeRequestResource);
+        client.expandIpCidrRangeSubnetwork(requestId, subnetwork, subnetworksExpandIpCidrRangeRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -293,10 +300,11 @@ public class SubnetworkClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
 
-      client.expandIpCidrRangeSubnetwork(subnetwork, subnetworksExpandIpCidrRangeRequestResource);
+      client.expandIpCidrRangeSubnetwork(requestId, subnetwork, subnetworksExpandIpCidrRangeRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -306,27 +314,31 @@ public class SubnetworkClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSubnetworkTest() {
+    Boolean privateIpGoogleAccess = true;
     String kind = "kind3292052";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String description = "description-1724546052";
+    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
+    String selfLink = "selfLink-1691268851";
+    String creationTimestamp = "creationTimestamp567396278";
+    String fingerprint = "fingerprint-1375934236";
+    String name = "name3373707";
     String gatewayAddress = "gatewayAddress-77003527";
     String id = "id3355";
     RegionName region = RegionName.of("[PROJECT]", "[REGION]");
     String ipCidrRange = "ipCidrRange-2049366326";
-    NetworkName network = NetworkName.of("[PROJECT]", "[NETWORK]");
-    String selfLink = "selfLink-1691268851";
     Subnetwork expectedResponse = Subnetwork.newBuilder()
+      .setPrivateIpGoogleAccess(privateIpGoogleAccess)
       .setKind(kind)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
       .setDescription(description)
+      .setNetwork(network.toString())
+      .setSelfLink(selfLink)
+      .setCreationTimestamp(creationTimestamp)
+      .setFingerprint(fingerprint)
+      .setName(name)
       .setGatewayAddress(gatewayAddress)
       .setId(id)
       .setRegion(region.toString())
       .setIpCidrRange(ipCidrRange)
-      .setNetwork(network.toString())
-      .setSelfLink(selfLink)
       .build();
     mockService.addResponse(expectedResponse);
 
@@ -410,11 +422,12 @@ public class SubnetworkClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     RegionName region = RegionName.of("[PROJECT]", "[REGION]");
     Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
 
     Operation actualResponse =
-        client.insertSubnetwork(region, subnetworkResource);
+        client.insertSubnetwork(requestId, region, subnetworkResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -433,10 +446,11 @@ public class SubnetworkClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       RegionName region = RegionName.of("[PROJECT]", "[REGION]");
       Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
 
-      client.insertSubnetwork(region, subnetworkResource);
+      client.insertSubnetwork(requestId, region, subnetworkResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -489,6 +503,174 @@ public class SubnetworkClientTest {
       RegionName region = RegionName.of("[PROJECT]", "[REGION]");
 
       client.listSubnetworks(region);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void patchSubnetworkTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse = Operation.newBuilder()
+      .setHttpErrorMessage(httpErrorMessage)
+      .setTargetId(targetId)
+      .setKind(kind)
+      .setDescription(description)
+      .setStatusMessage(statusMessage)
+      .setSelfLink(selfLink)
+      .setInsertTime(insertTime)
+      .setHttpErrorStatusCode(httpErrorStatusCode)
+      .setZone(zone.toString())
+      .setTargetLink(targetLink)
+      .setCreationTimestamp(creationTimestamp)
+      .setName(name)
+      .setProgress(progress)
+      .setOperationType(operationType)
+      .setStartTime(startTime)
+      .setEndTime(endTime)
+      .setId(id)
+      .setRegion(region.toString())
+      .setClientOperationId(clientOperationId)
+      .setUser(user)
+      .setStatus(status)
+      .build();
+    mockService.addResponse(expectedResponse);
+
+    String requestId = "requestId37109963";
+    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
+
+    Operation actualResponse =
+        client.patchSubnetwork(requestId, subnetwork, subnetworkResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey = mockService.getRequestHeaders()
+        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
+    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+        .matcher(apiClientHeaderKey).matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void patchSubnetworkExceptionTest() throws Exception {
+    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String requestId = "requestId37109963";
+      SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+      Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
+
+      client.patchSubnetwork(requestId, subnetwork, subnetworkResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setPrivateIpGoogleAccessSubnetworkTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ZoneName zone = ZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    RegionName region = RegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse = Operation.newBuilder()
+      .setHttpErrorMessage(httpErrorMessage)
+      .setTargetId(targetId)
+      .setKind(kind)
+      .setDescription(description)
+      .setStatusMessage(statusMessage)
+      .setSelfLink(selfLink)
+      .setInsertTime(insertTime)
+      .setHttpErrorStatusCode(httpErrorStatusCode)
+      .setZone(zone.toString())
+      .setTargetLink(targetLink)
+      .setCreationTimestamp(creationTimestamp)
+      .setName(name)
+      .setProgress(progress)
+      .setOperationType(operationType)
+      .setStartTime(startTime)
+      .setEndTime(endTime)
+      .setId(id)
+      .setRegion(region.toString())
+      .setClientOperationId(clientOperationId)
+      .setUser(user)
+      .setStatus(status)
+      .build();
+    mockService.addResponse(expectedResponse);
+
+    String requestId = "requestId37109963";
+    SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+    SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.setPrivateIpGoogleAccessSubnetwork(requestId, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey = mockService.getRequestHeaders()
+        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
+    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+        .matcher(apiClientHeaderKey).matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setPrivateIpGoogleAccessSubnetworkExceptionTest() throws Exception {
+    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String requestId = "requestId37109963";
+      SubnetworkName subnetwork = SubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
+      SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
+
+      client.setPrivateIpGoogleAccessSubnetwork(requestId, subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

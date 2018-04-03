@@ -33,22 +33,35 @@ import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
 import static com.google.cloud.compute.v1.InstanceClient.AggregatedListInstancesPagedResponse;
 import static com.google.cloud.compute.v1.InstanceClient.ListInstancesPagedResponse;
+import static com.google.cloud.compute.v1.InstanceClient.ListReferrersInstancesPagedResponse;
 import com.google.cloud.compute.v1.InstanceList;
+import com.google.cloud.compute.v1.InstanceListReferrers;
 import com.google.cloud.compute.v1.InstanceName;
 import com.google.cloud.compute.v1.InstancesScopedList;
+import com.google.cloud.compute.v1.InstancesSetLabelsRequest;
+import com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest;
 import com.google.cloud.compute.v1.InstancesSetMachineTypeRequest;
+import com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest;
 import com.google.cloud.compute.v1.InstancesSetServiceAccountRequest;
 import com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest;
 import com.google.cloud.compute.v1.ListInstancesHttpRequest;
+import com.google.cloud.compute.v1.ListReferrersInstancesHttpRequest;
 import com.google.cloud.compute.v1.Metadata;
+import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.ProjectZoneInstanceName;
+import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.Scheduling;
 import com.google.cloud.compute.v1.SerialPortOutput;
+import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetLabelsInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetMachineResourcesInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMachineTypeInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMetadataInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
@@ -56,6 +69,8 @@ import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
 import com.google.cloud.compute.v1.Tags;
+import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.cloud.compute.v1.ZoneName;
 import javax.annotation.Generated;
 
@@ -131,13 +146,38 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<ListReferrersInstancesHttpRequest, ListReferrersInstancesPagedResponse> listReferrersInstancesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listReferrersInstancesPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListReferrersInstancesHttpRequest, InstanceListReferrers> listReferrersInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listReferrersInstancesCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<ResetInstanceHttpRequest, Operation> resetInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: resetInstanceCallable()");
   }
 
   @BetaApi
+  public UnaryCallable<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: setDeletionProtectionInstanceCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation> setDiskAutoDeleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setDiskAutoDeleteInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: setMachineResourcesInstanceCallable()");
   }
 
   @BetaApi
@@ -148,6 +188,11 @@ public abstract class InstanceStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<SetMetadataInstanceHttpRequest, Operation> setMetadataInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setMetadataInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: setMinCpuPlatformInstanceCallable()");
   }
 
   @BetaApi
@@ -178,6 +223,16 @@ public abstract class InstanceStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<StopInstanceHttpRequest, Operation> stopInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: stopInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAccessConfigInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNetworkInterfaceInstanceCallable()");
   }
 
 }

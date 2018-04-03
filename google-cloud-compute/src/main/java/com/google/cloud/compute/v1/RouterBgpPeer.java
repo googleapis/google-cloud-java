@@ -32,6 +32,9 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class RouterBgpPeer implements ApiMessage {
+  private final String advertiseMode;
+  private final List<String> advertisedGroups;
+  private final List<RouterAdvertisedIpRange> advertisedIpRanges;
   private final Integer advertisedRoutePriority;
   private final String interfaceName;
   private final String ipAddress;
@@ -40,6 +43,9 @@ public final class RouterBgpPeer implements ApiMessage {
   private final String peerIpAddress;
 
   private RouterBgpPeer() {
+    this.advertiseMode = null;
+    this.advertisedGroups = null;
+    this.advertisedIpRanges = null;
     this.advertisedRoutePriority = null;
     this.interfaceName = null;
     this.ipAddress = null;
@@ -50,6 +56,9 @@ public final class RouterBgpPeer implements ApiMessage {
 
 
   private RouterBgpPeer(
+      String advertiseMode,
+      List<String> advertisedGroups,
+      List<RouterAdvertisedIpRange> advertisedIpRanges,
       Integer advertisedRoutePriority,
       String interfaceName,
       String ipAddress,
@@ -57,6 +66,9 @@ public final class RouterBgpPeer implements ApiMessage {
       Integer peerAsn,
       String peerIpAddress
       ) {
+    this.advertiseMode = advertiseMode;
+    this.advertisedGroups = advertisedGroups;
+    this.advertisedIpRanges = advertisedIpRanges;
     this.advertisedRoutePriority = advertisedRoutePriority;
     this.interfaceName = interfaceName;
     this.ipAddress = ipAddress;
@@ -68,6 +80,23 @@ public final class RouterBgpPeer implements ApiMessage {
   @Override
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
+    if (fieldNames.contains("advertiseMode") && advertiseMode != null) {
+      fieldMap.put("advertiseMode", Collections.singletonList(String.valueOf(advertiseMode)));
+    }
+    if (fieldNames.contains("advertisedGroups") && advertisedGroups != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : advertisedGroups) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("advertisedGroups", stringList.build());
+    }
+    if (fieldNames.contains("advertisedIpRanges") && advertisedIpRanges != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (RouterAdvertisedIpRange item : advertisedIpRanges) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("advertisedIpRanges", stringList.build());
+    }
     if (fieldNames.contains("advertisedRoutePriority") && advertisedRoutePriority != null) {
       fieldMap.put("advertisedRoutePriority", Collections.singletonList(String.valueOf(advertisedRoutePriority)));
     }
@@ -91,6 +120,15 @@ public final class RouterBgpPeer implements ApiMessage {
 
   @Override
   public String getFieldStringValue(String fieldName) {
+    if (fieldName.equals("advertiseMode")) {
+      return String.valueOf(advertiseMode);
+    }
+    if (fieldName.equals("advertisedGroups")) {
+      return String.valueOf(advertisedGroups);
+    }
+    if (fieldName.equals("advertisedIpRanges")) {
+      return String.valueOf(advertisedIpRanges);
+    }
     if (fieldName.equals("advertisedRoutePriority")) {
       return String.valueOf(advertisedRoutePriority);
     }
@@ -116,6 +154,18 @@ public final class RouterBgpPeer implements ApiMessage {
   @Override
   public ApiMessage getApiMessageRequestBody() {
     return null;
+  }
+
+  public String getAdvertiseMode() {
+    return advertiseMode;
+  }
+
+  public List<String> getAdvertisedGroupsList() {
+    return advertisedGroups;
+  }
+
+  public List<RouterAdvertisedIpRange> getAdvertisedIpRangesList() {
+    return advertisedIpRanges;
   }
 
   public Integer getAdvertisedRoutePriority() {
@@ -163,6 +213,9 @@ public final class RouterBgpPeer implements ApiMessage {
   }
 
   public static class Builder {
+    private String advertiseMode;
+    private List<String> advertisedGroups;
+    private List<RouterAdvertisedIpRange> advertisedIpRanges;
     private Integer advertisedRoutePriority;
     private String interfaceName;
     private String ipAddress;
@@ -174,6 +227,15 @@ public final class RouterBgpPeer implements ApiMessage {
 
     public Builder mergeFrom(RouterBgpPeer other) {
       if (other == RouterBgpPeer.getDefaultInstance()) return this;
+      if (other.getAdvertiseMode() != null) {
+        this.advertiseMode = other.advertiseMode;
+      }
+      if (other.getAdvertisedGroupsList() != null) {
+        this.advertisedGroups = other.advertisedGroups;
+      }
+      if (other.getAdvertisedIpRangesList() != null) {
+        this.advertisedIpRanges = other.advertisedIpRanges;
+      }
       if (other.getAdvertisedRoutePriority() != null) {
         this.advertisedRoutePriority = other.advertisedRoutePriority;
       }
@@ -196,12 +258,58 @@ public final class RouterBgpPeer implements ApiMessage {
     }
 
     Builder(RouterBgpPeer source) {
+      this.advertiseMode = source.advertiseMode;
+      this.advertisedGroups = source.advertisedGroups;
+      this.advertisedIpRanges = source.advertisedIpRanges;
       this.advertisedRoutePriority = source.advertisedRoutePriority;
       this.interfaceName = source.interfaceName;
       this.ipAddress = source.ipAddress;
       this.name = source.name;
       this.peerAsn = source.peerAsn;
       this.peerIpAddress = source.peerIpAddress;
+    }
+
+    public String getAdvertiseMode() {
+      return advertiseMode;
+    }
+
+    public Builder setAdvertiseMode(String advertiseMode) {
+      this.advertiseMode = advertiseMode;
+      return this;
+    }
+
+    public List<String> getAdvertisedGroupsList() {
+      return advertisedGroups;
+    }
+
+    public Builder addAllAdvertisedGroups(List<String> advertisedGroups) {
+      if (this.advertisedGroups == null) {
+        this.advertisedGroups = new ArrayList<>(advertisedGroups.size());
+      }
+      this.advertisedGroups.addAll(advertisedGroups);
+      return this;
+    }
+
+    public Builder addAdvertisedGroups(String advertisedGroups) {
+      this.advertisedGroups.add(advertisedGroups);
+      return this;
+    }
+
+    public List<RouterAdvertisedIpRange> getAdvertisedIpRangesList() {
+      return advertisedIpRanges;
+    }
+
+    public Builder addAllAdvertisedIpRanges(List<RouterAdvertisedIpRange> advertisedIpRanges) {
+      if (this.advertisedIpRanges == null) {
+        this.advertisedIpRanges = new ArrayList<>(advertisedIpRanges.size());
+      }
+      this.advertisedIpRanges.addAll(advertisedIpRanges);
+      return this;
+    }
+
+    public Builder addAdvertisedIpRanges(RouterAdvertisedIpRange advertisedIpRanges) {
+      this.advertisedIpRanges.add(advertisedIpRanges);
+      return this;
     }
 
     public Integer getAdvertisedRoutePriority() {
@@ -265,7 +373,13 @@ public final class RouterBgpPeer implements ApiMessage {
 
 
 
+
+
+
       return new RouterBgpPeer(
+        advertiseMode,
+        advertisedGroups,
+        advertisedIpRanges,
         advertisedRoutePriority,
         interfaceName,
         ipAddress,
@@ -277,6 +391,9 @@ public final class RouterBgpPeer implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setAdvertiseMode(this.advertiseMode);
+      newBuilder.addAllAdvertisedGroups(this.advertisedGroups);
+      newBuilder.addAllAdvertisedIpRanges(this.advertisedIpRanges);
       newBuilder.setAdvertisedRoutePriority(this.advertisedRoutePriority);
       newBuilder.setInterfaceName(this.interfaceName);
       newBuilder.setIpAddress(this.ipAddress);
@@ -290,6 +407,9 @@ public final class RouterBgpPeer implements ApiMessage {
   @Override
   public String toString() {
     return "RouterBgpPeer{"
+        + "advertiseMode=" + advertiseMode + ", "
+        + "advertisedGroups=" + advertisedGroups + ", "
+        + "advertisedIpRanges=" + advertisedIpRanges + ", "
         + "advertisedRoutePriority=" + advertisedRoutePriority + ", "
         + "interfaceName=" + interfaceName + ", "
         + "ipAddress=" + ipAddress + ", "
@@ -307,6 +427,9 @@ public final class RouterBgpPeer implements ApiMessage {
     if (o instanceof RouterBgpPeer) {
       RouterBgpPeer that = (RouterBgpPeer) o;
       return
+          Objects.equals(this.advertiseMode, that.getAdvertiseMode()) &&
+          Objects.equals(this.advertisedGroups, that.getAdvertisedGroupsList()) &&
+          Objects.equals(this.advertisedIpRanges, that.getAdvertisedIpRangesList()) &&
           Objects.equals(this.advertisedRoutePriority, that.getAdvertisedRoutePriority()) &&
           Objects.equals(this.interfaceName, that.getInterfaceName()) &&
           Objects.equals(this.ipAddress, that.getIpAddress()) &&
@@ -321,6 +444,9 @@ public final class RouterBgpPeer implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
+      advertiseMode,
+      advertisedGroups,
+      advertisedIpRanges,
       advertisedRoutePriority,
       interfaceName,
       ipAddress,

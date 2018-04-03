@@ -41,6 +41,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
   private final String networkInterface;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String userIp;
 
   private AddAccessConfigInstanceHttpRequest() {
@@ -53,6 +54,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     this.networkInterface = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.userIp = null;
   }
 
@@ -67,6 +69,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
       String networkInterface,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String userIp
       ) {
     this.accessConfigResource = accessConfigResource;
@@ -78,6 +81,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     this.networkInterface = networkInterface;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -110,6 +114,9 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -145,6 +152,9 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -194,6 +204,10 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -228,6 +242,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     private String networkInterface;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -261,6 +276,9 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -277,6 +295,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
       this.networkInterface = source.networkInterface;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -361,6 +380,15 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -387,6 +415,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
 
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -400,6 +429,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
         networkInterface,
         prettyPrint,
         quotaUser,
+        requestId,
         userIp
       );
     }
@@ -415,6 +445,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
       newBuilder.setNetworkInterface(this.networkInterface);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -432,6 +463,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
         + "networkInterface=" + networkInterface + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "userIp=" + userIp
         + "}";
   }
@@ -453,6 +485,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
           Objects.equals(this.networkInterface, that.getNetworkInterface()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
     }
@@ -471,6 +504,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
       networkInterface,
       prettyPrint,
       quotaUser,
+      requestId,
       userIp
     );
   }

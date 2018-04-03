@@ -38,6 +38,7 @@ public final class ForwardingRule implements ApiMessage {
   private final String iPAddress;
   private final String iPProtocol;
   private final String id;
+  private final String ipVersion;
   private final String kind;
   private final String loadBalancingScheme;
   private final String name;
@@ -56,6 +57,7 @@ public final class ForwardingRule implements ApiMessage {
     this.iPAddress = null;
     this.iPProtocol = null;
     this.id = null;
+    this.ipVersion = null;
     this.kind = null;
     this.loadBalancingScheme = null;
     this.name = null;
@@ -76,6 +78,7 @@ public final class ForwardingRule implements ApiMessage {
       String iPAddress,
       String iPProtocol,
       String id,
+      String ipVersion,
       String kind,
       String loadBalancingScheme,
       String name,
@@ -93,6 +96,7 @@ public final class ForwardingRule implements ApiMessage {
     this.iPAddress = iPAddress;
     this.iPProtocol = iPProtocol;
     this.id = id;
+    this.ipVersion = ipVersion;
     this.kind = kind;
     this.loadBalancingScheme = loadBalancingScheme;
     this.name = name;
@@ -125,6 +129,9 @@ public final class ForwardingRule implements ApiMessage {
     }
     if (fieldNames.contains("id") && id != null) {
       fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
+    }
+    if (fieldNames.contains("ipVersion") && ipVersion != null) {
+      fieldMap.put("ipVersion", Collections.singletonList(String.valueOf(ipVersion)));
     }
     if (fieldNames.contains("kind") && kind != null) {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
@@ -182,6 +189,9 @@ public final class ForwardingRule implements ApiMessage {
     }
     if (fieldName.equals("id")) {
       return String.valueOf(id);
+    }
+    if (fieldName.equals("ipVersion")) {
+      return String.valueOf(ipVersion);
     }
     if (fieldName.equals("kind")) {
       return String.valueOf(kind);
@@ -244,6 +254,10 @@ public final class ForwardingRule implements ApiMessage {
 
   public String getId() {
     return id;
+  }
+
+  public String getIpVersion() {
+    return ipVersion;
   }
 
   public String getKind() {
@@ -313,6 +327,7 @@ public final class ForwardingRule implements ApiMessage {
     private String iPAddress;
     private String iPProtocol;
     private String id;
+    private String ipVersion;
     private String kind;
     private String loadBalancingScheme;
     private String name;
@@ -345,6 +360,9 @@ public final class ForwardingRule implements ApiMessage {
       }
       if (other.getId() != null) {
         this.id = other.id;
+      }
+      if (other.getIpVersion() != null) {
+        this.ipVersion = other.ipVersion;
       }
       if (other.getKind() != null) {
         this.kind = other.kind;
@@ -386,6 +404,7 @@ public final class ForwardingRule implements ApiMessage {
       this.iPAddress = source.iPAddress;
       this.iPProtocol = source.iPProtocol;
       this.id = source.id;
+      this.ipVersion = source.ipVersion;
       this.kind = source.kind;
       this.loadBalancingScheme = source.loadBalancingScheme;
       this.name = source.name;
@@ -449,6 +468,15 @@ public final class ForwardingRule implements ApiMessage {
 
     public Builder setId(String id) {
       this.id = id;
+      return this;
+    }
+
+    public String getIpVersion() {
+      return ipVersion;
+    }
+
+    public Builder setIpVersion(String ipVersion) {
+      this.ipVersion = ipVersion;
       return this;
     }
 
@@ -567,6 +595,7 @@ public final class ForwardingRule implements ApiMessage {
 
 
 
+
       return new ForwardingRule(
         backendService,
         creationTimestamp,
@@ -574,6 +603,7 @@ public final class ForwardingRule implements ApiMessage {
         iPAddress,
         iPProtocol,
         id,
+        ipVersion,
         kind,
         loadBalancingScheme,
         name,
@@ -595,6 +625,7 @@ public final class ForwardingRule implements ApiMessage {
       newBuilder.setIPAddress(this.iPAddress);
       newBuilder.setIPProtocol(this.iPProtocol);
       newBuilder.setId(this.id);
+      newBuilder.setIpVersion(this.ipVersion);
       newBuilder.setKind(this.kind);
       newBuilder.setLoadBalancingScheme(this.loadBalancingScheme);
       newBuilder.setName(this.name);
@@ -618,6 +649,7 @@ public final class ForwardingRule implements ApiMessage {
         + "iPAddress=" + iPAddress + ", "
         + "iPProtocol=" + iPProtocol + ", "
         + "id=" + id + ", "
+        + "ipVersion=" + ipVersion + ", "
         + "kind=" + kind + ", "
         + "loadBalancingScheme=" + loadBalancingScheme + ", "
         + "name=" + name + ", "
@@ -645,6 +677,7 @@ public final class ForwardingRule implements ApiMessage {
           Objects.equals(this.iPAddress, that.getIPAddress()) &&
           Objects.equals(this.iPProtocol, that.getIPProtocol()) &&
           Objects.equals(this.id, that.getId()) &&
+          Objects.equals(this.ipVersion, that.getIpVersion()) &&
           Objects.equals(this.kind, that.getKind()) &&
           Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme()) &&
           Objects.equals(this.name, that.getName()) &&
@@ -669,6 +702,7 @@ public final class ForwardingRule implements ApiMessage {
       iPAddress,
       iPProtocol,
       id,
+      ipVersion,
       kind,
       loadBalancingScheme,
       name,

@@ -36,6 +36,7 @@ public final class AttachedDisk implements ApiMessage {
   private final Boolean boot;
   private final String deviceName;
   private final CustomerEncryptionKey diskEncryptionKey;
+  private final List<GuestOsFeature> guestOsFeatures;
   private final Integer index;
   private final AttachedDiskInitializeParams initializeParams;
   private final String interface2;
@@ -50,6 +51,7 @@ public final class AttachedDisk implements ApiMessage {
     this.boot = null;
     this.deviceName = null;
     this.diskEncryptionKey = null;
+    this.guestOsFeatures = null;
     this.index = null;
     this.initializeParams = null;
     this.interface2 = null;
@@ -66,6 +68,7 @@ public final class AttachedDisk implements ApiMessage {
       Boolean boot,
       String deviceName,
       CustomerEncryptionKey diskEncryptionKey,
+      List<GuestOsFeature> guestOsFeatures,
       Integer index,
       AttachedDiskInitializeParams initializeParams,
       String interface2,
@@ -79,6 +82,7 @@ public final class AttachedDisk implements ApiMessage {
     this.boot = boot;
     this.deviceName = deviceName;
     this.diskEncryptionKey = diskEncryptionKey;
+    this.guestOsFeatures = guestOsFeatures;
     this.index = index;
     this.initializeParams = initializeParams;
     this.interface2 = interface2;
@@ -103,6 +107,13 @@ public final class AttachedDisk implements ApiMessage {
     }
     if (fieldNames.contains("diskEncryptionKey") && diskEncryptionKey != null) {
       fieldMap.put("diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
+    }
+    if (fieldNames.contains("guestOsFeatures") && guestOsFeatures != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (GuestOsFeature item : guestOsFeatures) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("guestOsFeatures", stringList.build());
     }
     if (fieldNames.contains("index") && index != null) {
       fieldMap.put("index", Collections.singletonList(String.valueOf(index)));
@@ -148,6 +159,9 @@ public final class AttachedDisk implements ApiMessage {
     }
     if (fieldName.equals("diskEncryptionKey")) {
       return String.valueOf(diskEncryptionKey);
+    }
+    if (fieldName.equals("guestOsFeatures")) {
+      return String.valueOf(guestOsFeatures);
     }
     if (fieldName.equals("index")) {
       return String.valueOf(index);
@@ -196,6 +210,10 @@ public final class AttachedDisk implements ApiMessage {
 
   public CustomerEncryptionKey getDiskEncryptionKey() {
     return diskEncryptionKey;
+  }
+
+  public List<GuestOsFeature> getGuestOsFeaturesList() {
+    return guestOsFeatures;
   }
 
   public Integer getIndex() {
@@ -255,6 +273,7 @@ public final class AttachedDisk implements ApiMessage {
     private Boolean boot;
     private String deviceName;
     private CustomerEncryptionKey diskEncryptionKey;
+    private List<GuestOsFeature> guestOsFeatures;
     private Integer index;
     private AttachedDiskInitializeParams initializeParams;
     private String interface2;
@@ -279,6 +298,9 @@ public final class AttachedDisk implements ApiMessage {
       }
       if (other.getDiskEncryptionKey() != null) {
         this.diskEncryptionKey = other.diskEncryptionKey;
+      }
+      if (other.getGuestOsFeaturesList() != null) {
+        this.guestOsFeatures = other.guestOsFeatures;
       }
       if (other.getIndex() != null) {
         this.index = other.index;
@@ -312,6 +334,7 @@ public final class AttachedDisk implements ApiMessage {
       this.boot = source.boot;
       this.deviceName = source.deviceName;
       this.diskEncryptionKey = source.diskEncryptionKey;
+      this.guestOsFeatures = source.guestOsFeatures;
       this.index = source.index;
       this.initializeParams = source.initializeParams;
       this.interface2 = source.interface2;
@@ -355,6 +378,23 @@ public final class AttachedDisk implements ApiMessage {
 
     public Builder setDiskEncryptionKey(CustomerEncryptionKey diskEncryptionKey) {
       this.diskEncryptionKey = diskEncryptionKey;
+      return this;
+    }
+
+    public List<GuestOsFeature> getGuestOsFeaturesList() {
+      return guestOsFeatures;
+    }
+
+    public Builder addAllGuestOsFeatures(List<GuestOsFeature> guestOsFeatures) {
+      if (this.guestOsFeatures == null) {
+        this.guestOsFeatures = new ArrayList<>(guestOsFeatures.size());
+      }
+      this.guestOsFeatures.addAll(guestOsFeatures);
+      return this;
+    }
+
+    public Builder addGuestOsFeatures(GuestOsFeature guestOsFeatures) {
+      this.guestOsFeatures.add(guestOsFeatures);
       return this;
     }
 
@@ -451,11 +491,13 @@ public final class AttachedDisk implements ApiMessage {
 
 
 
+
       return new AttachedDisk(
         autoDelete,
         boot,
         deviceName,
         diskEncryptionKey,
+        guestOsFeatures,
         index,
         initializeParams,
         interface2,
@@ -473,6 +515,7 @@ public final class AttachedDisk implements ApiMessage {
       newBuilder.setBoot(this.boot);
       newBuilder.setDeviceName(this.deviceName);
       newBuilder.setDiskEncryptionKey(this.diskEncryptionKey);
+      newBuilder.addAllGuestOsFeatures(this.guestOsFeatures);
       newBuilder.setIndex(this.index);
       newBuilder.setInitializeParams(this.initializeParams);
       newBuilder.setInterface(this.interface2);
@@ -492,6 +535,7 @@ public final class AttachedDisk implements ApiMessage {
         + "boot=" + boot + ", "
         + "deviceName=" + deviceName + ", "
         + "diskEncryptionKey=" + diskEncryptionKey + ", "
+        + "guestOsFeatures=" + guestOsFeatures + ", "
         + "index=" + index + ", "
         + "initializeParams=" + initializeParams + ", "
         + "interface2=" + interface2 + ", "
@@ -515,6 +559,7 @@ public final class AttachedDisk implements ApiMessage {
           Objects.equals(this.boot, that.getBoot()) &&
           Objects.equals(this.deviceName, that.getDeviceName()) &&
           Objects.equals(this.diskEncryptionKey, that.getDiskEncryptionKey()) &&
+          Objects.equals(this.guestOsFeatures, that.getGuestOsFeaturesList()) &&
           Objects.equals(this.index, that.getIndex()) &&
           Objects.equals(this.initializeParams, that.getInitializeParams()) &&
           Objects.equals(this.interface2, that.getInterface()) &&
@@ -535,6 +580,7 @@ public final class AttachedDisk implements ApiMessage {
       boot,
       deviceName,
       diskEncryptionKey,
+      guestOsFeatures,
       index,
       initializeParams,
       interface2,

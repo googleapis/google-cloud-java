@@ -106,6 +106,13 @@ public class SnapshotSettings extends ClientSettings<SnapshotSettings> {
     return ((SnapshotStubSettings) getStubSettings()).listSnapshotsSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to setLabelsSnapshot.
+   */
+  public UnaryCallSettings<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotSettings() {
+    return ((SnapshotStubSettings) getStubSettings()).setLabelsSnapshotSettings();
+  }
+
 
   public static final SnapshotSettings create(SnapshotStubSettings stub) throws IOException {
     return new SnapshotSettings.Builder(stub.toBuilder()).build();
@@ -244,6 +251,13 @@ public class SnapshotSettings extends ClientSettings<SnapshotSettings> {
      */
     public PagedCallSettings.Builder<ListSnapshotsHttpRequest, SnapshotList, ListSnapshotsPagedResponse> listSnapshotsSettings() {
       return getStubSettingsBuilder().listSnapshotsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setLabelsSnapshot.
+     */
+    public UnaryCallSettings.Builder<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotSettings() {
+      return getStubSettingsBuilder().setLabelsSnapshotSettings();
     }
 
     @Override

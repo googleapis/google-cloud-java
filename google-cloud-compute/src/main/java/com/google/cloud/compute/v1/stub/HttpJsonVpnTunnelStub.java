@@ -93,6 +93,7 @@ public class HttpJsonVpnTunnelStub extends VpnTunnelStub {
                   .setRequestInstance(DeleteVpnTunnelHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/vpnTunnels/{vpnTunnel}"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(VpnTunnelName.newFactory())
                   .setResourceNameField("vpnTunnel")
@@ -131,6 +132,7 @@ public class HttpJsonVpnTunnelStub extends VpnTunnelStub {
                   .setRequestInstance(InsertVpnTunnelHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}/vpnTunnels"))
                   .setQueryParams(Sets.<String>newHashSet(
+                                     "requestId"
                                      ))
                   .setResourceNameFactory(RegionName.newFactory())
                   .setResourceNameField("region")

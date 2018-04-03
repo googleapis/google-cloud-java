@@ -38,6 +38,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final TargetInstance targetInstanceResource;
   private final String userIp;
   private final String zone;
@@ -49,6 +50,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.targetInstanceResource = null;
     this.userIp = null;
     this.zone = null;
@@ -62,6 +64,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       TargetInstance targetInstanceResource,
       String userIp,
       String zone
@@ -72,6 +75,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.targetInstanceResource = targetInstanceResource;
     this.userIp = userIp;
     this.zone = zone;
@@ -97,6 +101,9 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("targetInstanceResource") && targetInstanceResource != null) {
       fieldMap.put("targetInstanceResource", Collections.singletonList(String.valueOf(targetInstanceResource)));
@@ -129,6 +136,9 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("targetInstanceResource")) {
       return String.valueOf(targetInstanceResource);
@@ -172,6 +182,10 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public TargetInstance getTargetInstanceResource() {
     return targetInstanceResource;
   }
@@ -211,6 +225,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private TargetInstance targetInstanceResource;
     private String userIp;
     private String zone;
@@ -237,6 +252,9 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getTargetInstanceResource() != null) {
         this.targetInstanceResource = other.targetInstanceResource;
       }
@@ -256,6 +274,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.targetInstanceResource = source.targetInstanceResource;
       this.userIp = source.userIp;
       this.zone = source.zone;
@@ -315,6 +334,15 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public TargetInstance getTargetInstanceResource() {
       return targetInstanceResource;
     }
@@ -353,6 +381,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
 
 
 
+
       if (zone == null) {
         missing += " zone";
       }
@@ -366,6 +395,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         targetInstanceResource,
         userIp,
         zone
@@ -380,6 +410,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setTargetInstanceResource(this.targetInstanceResource);
       newBuilder.setUserIp(this.userIp);
       newBuilder.setZone(this.zone);
@@ -396,6 +427,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "targetInstanceResource=" + targetInstanceResource + ", "
         + "userIp=" + userIp + ", "
         + "zone=" + zone
@@ -416,6 +448,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.targetInstanceResource, that.getTargetInstanceResource()) &&
           Objects.equals(this.userIp, that.getUserIp()) &&
           Objects.equals(this.zone, that.getZone())
@@ -433,6 +466,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       targetInstanceResource,
       userIp,
       zone

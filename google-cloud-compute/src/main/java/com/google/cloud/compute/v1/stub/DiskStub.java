@@ -35,8 +35,11 @@ import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
+import com.google.cloud.compute.v1.ResourceName;
+import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
 import com.google.cloud.compute.v1.ZoneName;
+import com.google.cloud.compute.v1.ZoneSetLabelsRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -93,6 +96,11 @@ public abstract class DiskStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ResizeDiskHttpRequest, Operation> resizeDiskCallable() {
     throw new UnsupportedOperationException("Not implemented: resizeDiskCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetLabelsDiskHttpRequest, Operation> setLabelsDiskCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsDiskCallable()");
   }
 
 }

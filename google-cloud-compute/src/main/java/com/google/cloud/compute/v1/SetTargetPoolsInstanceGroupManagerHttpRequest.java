@@ -40,6 +40,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String userIp;
 
   private SetTargetPoolsInstanceGroupManagerHttpRequest() {
@@ -51,6 +52,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.userIp = null;
   }
 
@@ -64,6 +66,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String userIp
       ) {
     this.access_token = access_token;
@@ -74,6 +77,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.userIp = userIp;
   }
 
@@ -103,6 +107,9 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -135,6 +142,9 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -180,6 +190,10 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -213,6 +227,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String userIp;
 
     Builder() {}
@@ -243,6 +258,9 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -258,6 +276,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
 
@@ -333,6 +352,15 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -356,6 +384,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
 
 
 
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
@@ -368,6 +397,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         userIp
       );
     }
@@ -382,6 +412,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -398,6 +429,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "userIp=" + userIp
         + "}";
   }
@@ -418,6 +450,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.userIp, that.getUserIp())
           ;
     }
@@ -435,6 +468,7 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       userIp
     );
   }

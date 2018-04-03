@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +39,7 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
   private final String prettyPrint;
   private final String quotaUser;
   private final String region;
+  private final String requestId;
   private final String userIp;
   private final VpnTunnel vpnTunnelResource;
 
@@ -47,9 +51,11 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     this.prettyPrint = null;
     this.quotaUser = null;
     this.region = null;
+    this.requestId = null;
     this.userIp = null;
     this.vpnTunnelResource = null;
   }
+
 
   private InsertVpnTunnelHttpRequest(
       String access_token,
@@ -59,8 +65,10 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String region,
+      String requestId,
       String userIp,
-      VpnTunnel vpnTunnelResource) {
+      VpnTunnel vpnTunnelResource
+      ) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -68,6 +76,7 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.region = region;
+    this.requestId = requestId;
     this.userIp = userIp;
     this.vpnTunnelResource = vpnTunnelResource;
   }
@@ -96,12 +105,14 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     if (fieldNames.contains("region") && region != null) {
       fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
     }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
+    }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
     }
     if (fieldNames.contains("vpnTunnelResource") && vpnTunnelResource != null) {
-      fieldMap.put(
-          "vpnTunnelResource", Collections.singletonList(String.valueOf(vpnTunnelResource)));
+      fieldMap.put("vpnTunnelResource", Collections.singletonList(String.valueOf(vpnTunnelResource)));
     }
     return fieldMap;
   }
@@ -128,6 +139,9 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("region")) {
       return String.valueOf(region);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -172,6 +186,10 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     return region;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -180,24 +198,22 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     return vpnTunnelResource;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(InsertVpnTunnelHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertVpnTunnelHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final InsertVpnTunnelHttpRequest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new InsertVpnTunnelHttpRequest();
   }
@@ -210,6 +226,7 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     private String prettyPrint;
     private String quotaUser;
     private String region;
+    private String requestId;
     private String userIp;
     private VpnTunnel vpnTunnelResource;
 
@@ -238,6 +255,9 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
       if (other.getRegion() != null) {
         this.region = other.region;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -255,6 +275,7 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.region = source.region;
+      this.requestId = source.requestId;
       this.userIp = source.userIp;
       this.vpnTunnelResource = source.vpnTunnelResource;
     }
@@ -322,6 +343,15 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -340,26 +370,36 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
       return this;
     }
 
+
     public InsertVpnTunnelHttpRequest build() {
       String missing = "";
+
+
+
+
+
 
       if (region == null) {
         missing += " region";
       }
 
+
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertVpnTunnelHttpRequest(
-          access_token,
-          callback,
-          fields,
-          key,
-          prettyPrint,
-          quotaUser,
-          region,
-          userIp,
-          vpnTunnelResource);
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        region,
+        requestId,
+        userIp,
+        vpnTunnelResource
+      );
     }
 
     public Builder clone() {
@@ -371,6 +411,7 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRegion(this.region);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       newBuilder.setVpnTunnelResource(this.vpnTunnelResource);
       return newBuilder;
@@ -380,32 +421,16 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertVpnTunnelHttpRequest{"
-        + "access_token="
-        + access_token
-        + ", "
-        + "callback="
-        + callback
-        + ", "
-        + "fields="
-        + fields
-        + ", "
-        + "key="
-        + key
-        + ", "
-        + "prettyPrint="
-        + prettyPrint
-        + ", "
-        + "quotaUser="
-        + quotaUser
-        + ", "
-        + "region="
-        + region
-        + ", "
-        + "userIp="
-        + userIp
-        + ", "
-        + "vpnTunnelResource="
-        + vpnTunnelResource
+        + "access_token=" + access_token + ", "
+        + "callback=" + callback + ", "
+        + "fields=" + fields + ", "
+        + "key=" + key + ", "
+        + "prettyPrint=" + prettyPrint + ", "
+        + "quotaUser=" + quotaUser + ", "
+        + "region=" + region + ", "
+        + "requestId=" + requestId + ", "
+        + "userIp=" + userIp + ", "
+        + "vpnTunnelResource=" + vpnTunnelResource
         + "}";
   }
 
@@ -416,15 +441,18 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertVpnTunnelHttpRequest) {
       InsertVpnTunnelHttpRequest that = (InsertVpnTunnelHttpRequest) o;
-      return Objects.equals(this.access_token, that.getAccessToken())
-          && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fields, that.getFields())
-          && Objects.equals(this.key, that.getKey())
-          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
-          && Objects.equals(this.quotaUser, that.getQuotaUser())
-          && Objects.equals(this.region, that.getRegion())
-          && Objects.equals(this.userIp, that.getUserIp())
-          && Objects.equals(this.vpnTunnelResource, that.getVpnTunnelResource());
+      return
+          Objects.equals(this.access_token, that.getAccessToken()) &&
+          Objects.equals(this.callback, that.getCallback()) &&
+          Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.key, that.getKey()) &&
+          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
+          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.region, that.getRegion()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
+          Objects.equals(this.userIp, that.getUserIp()) &&
+          Objects.equals(this.vpnTunnelResource, that.getVpnTunnelResource())
+          ;
     }
     return false;
   }
@@ -432,14 +460,16 @@ public final class InsertVpnTunnelHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        region,
-        userIp,
-        vpnTunnelResource);
+      access_token,
+      callback,
+      fields,
+      key,
+      prettyPrint,
+      quotaUser,
+      region,
+      requestId,
+      userIp,
+      vpnTunnelResource
+    );
   }
 }

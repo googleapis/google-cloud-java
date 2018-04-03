@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -36,6 +39,7 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
   private final String prettyPrint;
   private final String project;
   private final String quotaUser;
+  private final String requestId;
   private final UrlMap urlMapResource;
   private final String userIp;
 
@@ -47,9 +51,11 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     this.prettyPrint = null;
     this.project = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.urlMapResource = null;
     this.userIp = null;
   }
+
 
   private InsertUrlMapHttpRequest(
       String access_token,
@@ -59,8 +65,10 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
       String prettyPrint,
       String project,
       String quotaUser,
+      String requestId,
       UrlMap urlMapResource,
-      String userIp) {
+      String userIp
+      ) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -68,6 +76,7 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     this.prettyPrint = prettyPrint;
     this.project = project;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.urlMapResource = urlMapResource;
     this.userIp = userIp;
   }
@@ -95,6 +104,9 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("urlMapResource") && urlMapResource != null) {
       fieldMap.put("urlMapResource", Collections.singletonList(String.valueOf(urlMapResource)));
@@ -127,6 +139,9 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("urlMapResource")) {
       return String.valueOf(urlMapResource);
@@ -171,6 +186,10 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public UrlMap getUrlMapResource() {
     return urlMapResource;
   }
@@ -179,24 +198,22 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     return userIp;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(InsertUrlMapHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertUrlMapHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final InsertUrlMapHttpRequest DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new InsertUrlMapHttpRequest();
   }
@@ -209,6 +226,7 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     private String prettyPrint;
     private String project;
     private String quotaUser;
+    private String requestId;
     private UrlMap urlMapResource;
     private String userIp;
 
@@ -237,6 +255,9 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getUrlMapResource() != null) {
         this.urlMapResource = other.urlMapResource;
       }
@@ -254,6 +275,7 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
       this.prettyPrint = source.prettyPrint;
       this.project = source.project;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.urlMapResource = source.urlMapResource;
       this.userIp = source.userIp;
     }
@@ -321,6 +343,15 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public UrlMap getUrlMapResource() {
       return urlMapResource;
     }
@@ -339,26 +370,36 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
       return this;
     }
 
+
     public InsertUrlMapHttpRequest build() {
       String missing = "";
+
+
+
+
 
       if (project == null) {
         missing += " project";
       }
 
+
+
+
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertUrlMapHttpRequest(
-          access_token,
-          callback,
-          fields,
-          key,
-          prettyPrint,
-          project,
-          quotaUser,
-          urlMapResource,
-          userIp);
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        project,
+        quotaUser,
+        requestId,
+        urlMapResource,
+        userIp
+      );
     }
 
     public Builder clone() {
@@ -370,6 +411,7 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setProject(this.project);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setUrlMapResource(this.urlMapResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -379,32 +421,16 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertUrlMapHttpRequest{"
-        + "access_token="
-        + access_token
-        + ", "
-        + "callback="
-        + callback
-        + ", "
-        + "fields="
-        + fields
-        + ", "
-        + "key="
-        + key
-        + ", "
-        + "prettyPrint="
-        + prettyPrint
-        + ", "
-        + "project="
-        + project
-        + ", "
-        + "quotaUser="
-        + quotaUser
-        + ", "
-        + "urlMapResource="
-        + urlMapResource
-        + ", "
-        + "userIp="
-        + userIp
+        + "access_token=" + access_token + ", "
+        + "callback=" + callback + ", "
+        + "fields=" + fields + ", "
+        + "key=" + key + ", "
+        + "prettyPrint=" + prettyPrint + ", "
+        + "project=" + project + ", "
+        + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
+        + "urlMapResource=" + urlMapResource + ", "
+        + "userIp=" + userIp
         + "}";
   }
 
@@ -415,15 +441,18 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertUrlMapHttpRequest) {
       InsertUrlMapHttpRequest that = (InsertUrlMapHttpRequest) o;
-      return Objects.equals(this.access_token, that.getAccessToken())
-          && Objects.equals(this.callback, that.getCallback())
-          && Objects.equals(this.fields, that.getFields())
-          && Objects.equals(this.key, that.getKey())
-          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
-          && Objects.equals(this.project, that.getProject())
-          && Objects.equals(this.quotaUser, that.getQuotaUser())
-          && Objects.equals(this.urlMapResource, that.getUrlMapResource())
-          && Objects.equals(this.userIp, that.getUserIp());
+      return
+          Objects.equals(this.access_token, that.getAccessToken()) &&
+          Objects.equals(this.callback, that.getCallback()) &&
+          Objects.equals(this.fields, that.getFields()) &&
+          Objects.equals(this.key, that.getKey()) &&
+          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
+          Objects.equals(this.project, that.getProject()) &&
+          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
+          Objects.equals(this.urlMapResource, that.getUrlMapResource()) &&
+          Objects.equals(this.userIp, that.getUserIp())
+          ;
     }
     return false;
   }
@@ -431,14 +460,16 @@ public final class InsertUrlMapHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        project,
-        quotaUser,
-        urlMapResource,
-        userIp);
+      access_token,
+      callback,
+      fields,
+      key,
+      prettyPrint,
+      project,
+      quotaUser,
+      requestId,
+      urlMapResource,
+      userIp
+    );
   }
 }

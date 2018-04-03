@@ -38,6 +38,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
+  private final String requestId;
   private final String router;
   private final Router routerResource;
   private final String userIp;
@@ -49,6 +50,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     this.key = null;
     this.prettyPrint = null;
     this.quotaUser = null;
+    this.requestId = null;
     this.router = null;
     this.routerResource = null;
     this.userIp = null;
@@ -62,6 +64,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
+      String requestId,
       String router,
       Router routerResource,
       String userIp
@@ -72,6 +75,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
+    this.requestId = requestId;
     this.router = router;
     this.routerResource = routerResource;
     this.userIp = userIp;
@@ -97,6 +101,9 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
+    }
+    if (fieldNames.contains("requestId") && requestId != null) {
+      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("router") && router != null) {
       fieldMap.put("router", Collections.singletonList(String.valueOf(router)));
@@ -129,6 +136,9 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("quotaUser")) {
       return String.valueOf(quotaUser);
+    }
+    if (fieldName.equals("requestId")) {
+      return String.valueOf(requestId);
     }
     if (fieldName.equals("router")) {
       return String.valueOf(router);
@@ -172,6 +182,10 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     return quotaUser;
   }
 
+  public String getRequestId() {
+    return requestId;
+  }
+
   public String getRouter() {
     return router;
   }
@@ -211,6 +225,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
     private String key;
     private String prettyPrint;
     private String quotaUser;
+    private String requestId;
     private String router;
     private Router routerResource;
     private String userIp;
@@ -237,6 +252,9 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
       }
+      if (other.getRequestId() != null) {
+        this.requestId = other.requestId;
+      }
       if (other.getRouter() != null) {
         this.router = other.router;
       }
@@ -256,6 +274,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
+      this.requestId = source.requestId;
       this.router = source.router;
       this.routerResource = source.routerResource;
       this.userIp = source.userIp;
@@ -315,6 +334,15 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getRequestId() {
+      return requestId;
+    }
+
+    public Builder setRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+
     public String getRouter() {
       return router;
     }
@@ -351,6 +379,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
 
 
 
+
       if (router == null) {
         missing += " router";
       }
@@ -366,6 +395,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
         key,
         prettyPrint,
         quotaUser,
+        requestId,
         router,
         routerResource,
         userIp
@@ -380,6 +410,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
+      newBuilder.setRequestId(this.requestId);
       newBuilder.setRouter(this.router);
       newBuilder.setRouterResource(this.routerResource);
       newBuilder.setUserIp(this.userIp);
@@ -396,6 +427,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
         + "key=" + key + ", "
         + "prettyPrint=" + prettyPrint + ", "
         + "quotaUser=" + quotaUser + ", "
+        + "requestId=" + requestId + ", "
         + "router=" + router + ", "
         + "routerResource=" + routerResource + ", "
         + "userIp=" + userIp
@@ -416,6 +448,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
           Objects.equals(this.key, that.getKey()) &&
           Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
           Objects.equals(this.quotaUser, that.getQuotaUser()) &&
+          Objects.equals(this.requestId, that.getRequestId()) &&
           Objects.equals(this.router, that.getRouter()) &&
           Objects.equals(this.routerResource, that.getRouterResource()) &&
           Objects.equals(this.userIp, that.getUserIp())
@@ -433,6 +466,7 @@ public final class PatchRouterHttpRequest implements ApiMessage {
       key,
       prettyPrint,
       quotaUser,
+      requestId,
       router,
       routerResource,
       userIp

@@ -133,9 +133,10 @@ public class RouteClientTest {
     mockService.addResponse(expectedResponse);
 
     RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+    String requestId = "requestId37109963";
 
     Operation actualResponse =
-        client.deleteRoute(route);
+        client.deleteRoute(route, requestId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -155,8 +156,9 @@ public class RouteClientTest {
 
     try {
       RouteName route = RouteName.of("[PROJECT]", "[ROUTE]");
+      String requestId = "requestId37109963";
 
-      client.deleteRoute(route);
+      client.deleteRoute(route, requestId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -168,6 +170,7 @@ public class RouteClientTest {
   public void getRouteTest() {
     String nextHopGateway = "nextHopGateway-159695614";
     String kind = "kind3292052";
+    String nextHopPeering = "nextHopPeering-661059074";
     String description = "description-1724546052";
     Integer priority = 1165461084;
     String nextHopNetwork = "nextHopNetwork1872908524";
@@ -183,6 +186,7 @@ public class RouteClientTest {
     Route expectedResponse = Route.newBuilder()
       .setNextHopGateway(nextHopGateway)
       .setKind(kind)
+      .setNextHopPeering(nextHopPeering)
       .setDescription(description)
       .setPriority(priority)
       .setNextHopNetwork(nextHopNetwork)
@@ -278,11 +282,12 @@ public class RouteClientTest {
       .build();
     mockService.addResponse(expectedResponse);
 
+    String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Route routeResource = Route.newBuilder().build();
 
     Operation actualResponse =
-        client.insertRoute(project, routeResource);
+        client.insertRoute(requestId, project, routeResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -301,10 +306,11 @@ public class RouteClientTest {
     mockService.addException(exception);
 
     try {
+      String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
       Route routeResource = Route.newBuilder().build();
 
-      client.insertRoute(project, routeResource);
+      client.insertRoute(requestId, project, routeResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

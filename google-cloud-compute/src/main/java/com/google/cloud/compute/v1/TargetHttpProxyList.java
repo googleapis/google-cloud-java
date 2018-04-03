@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -36,6 +37,7 @@ public final class TargetHttpProxyList implements ApiMessage {
   private final String kind;
   private final String nextPageToken;
   private final String selfLink;
+  private final Warning warning;
 
   private TargetHttpProxyList() {
     this.id = null;
@@ -43,15 +45,24 @@ public final class TargetHttpProxyList implements ApiMessage {
     this.kind = null;
     this.nextPageToken = null;
     this.selfLink = null;
+    this.warning = null;
   }
 
+
   private TargetHttpProxyList(
-      String id, List<TargetHttpProxy> items, String kind, String nextPageToken, String selfLink) {
+      String id,
+      List<TargetHttpProxy> items,
+      String kind,
+      String nextPageToken,
+      String selfLink,
+      Warning warning
+      ) {
     this.id = id;
     this.items = items;
     this.kind = kind;
     this.nextPageToken = nextPageToken;
     this.selfLink = selfLink;
+    this.warning = warning;
   }
 
   @Override
@@ -76,6 +87,9 @@ public final class TargetHttpProxyList implements ApiMessage {
     if (fieldNames.contains("selfLink") && selfLink != null) {
       fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
     }
+    if (fieldNames.contains("warning") && warning != null) {
+      fieldMap.put("warning", Collections.singletonList(String.valueOf(warning)));
+    }
     return fieldMap;
   }
 
@@ -95,6 +109,9 @@ public final class TargetHttpProxyList implements ApiMessage {
     }
     if (fieldName.equals("selfLink")) {
       return String.valueOf(selfLink);
+    }
+    if (fieldName.equals("warning")) {
+      return String.valueOf(warning);
     }
     return null;
   }
@@ -125,24 +142,26 @@ public final class TargetHttpProxyList implements ApiMessage {
     return selfLink;
   }
 
+  public Warning getWarning() {
+    return warning;
+  }
+
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(TargetHttpProxyList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetHttpProxyList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final TargetHttpProxyList DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new TargetHttpProxyList();
   }
@@ -153,6 +172,7 @@ public final class TargetHttpProxyList implements ApiMessage {
     private String kind;
     private String nextPageToken;
     private String selfLink;
+    private Warning warning;
 
     Builder() {}
 
@@ -173,6 +193,9 @@ public final class TargetHttpProxyList implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getWarning() != null) {
+        this.warning = other.warning;
+      }
       return this;
     }
 
@@ -182,6 +205,7 @@ public final class TargetHttpProxyList implements ApiMessage {
       this.kind = source.kind;
       this.nextPageToken = source.nextPageToken;
       this.selfLink = source.selfLink;
+      this.warning = source.warning;
     }
 
     public String getId() {
@@ -237,9 +261,30 @@ public final class TargetHttpProxyList implements ApiMessage {
       return this;
     }
 
+    public Warning getWarning() {
+      return warning;
+    }
+
+    public Builder setWarning(Warning warning) {
+      this.warning = warning;
+      return this;
+    }
+
+
     public TargetHttpProxyList build() {
 
-      return new TargetHttpProxyList(id, items, kind, nextPageToken, selfLink);
+
+
+
+
+      return new TargetHttpProxyList(
+        id,
+        items,
+        kind,
+        nextPageToken,
+        selfLink,
+        warning
+      );
     }
 
     public Builder clone() {
@@ -249,6 +294,7 @@ public final class TargetHttpProxyList implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setNextPageToken(this.nextPageToken);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setWarning(this.warning);
       return newBuilder;
     }
   }
@@ -256,20 +302,12 @@ public final class TargetHttpProxyList implements ApiMessage {
   @Override
   public String toString() {
     return "TargetHttpProxyList{"
-        + "id="
-        + id
-        + ", "
-        + "items="
-        + items
-        + ", "
-        + "kind="
-        + kind
-        + ", "
-        + "nextPageToken="
-        + nextPageToken
-        + ", "
-        + "selfLink="
-        + selfLink
+        + "id=" + id + ", "
+        + "items=" + items + ", "
+        + "kind=" + kind + ", "
+        + "nextPageToken=" + nextPageToken + ", "
+        + "selfLink=" + selfLink + ", "
+        + "warning=" + warning
         + "}";
   }
 
@@ -280,17 +318,27 @@ public final class TargetHttpProxyList implements ApiMessage {
     }
     if (o instanceof TargetHttpProxyList) {
       TargetHttpProxyList that = (TargetHttpProxyList) o;
-      return Objects.equals(this.id, that.getId())
-          && Objects.equals(this.items, that.getItemsList())
-          && Objects.equals(this.kind, that.getKind())
-          && Objects.equals(this.nextPageToken, that.getNextPageToken())
-          && Objects.equals(this.selfLink, that.getSelfLink());
+      return
+          Objects.equals(this.id, that.getId()) &&
+          Objects.equals(this.items, that.getItemsList()) &&
+          Objects.equals(this.kind, that.getKind()) &&
+          Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
+          Objects.equals(this.selfLink, that.getSelfLink()) &&
+          Objects.equals(this.warning, that.getWarning())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, items, kind, nextPageToken, selfLink);
+    return Objects.hash(
+      id,
+      items,
+      kind,
+      nextPageToken,
+      selfLink,
+      warning
+    );
   }
 }

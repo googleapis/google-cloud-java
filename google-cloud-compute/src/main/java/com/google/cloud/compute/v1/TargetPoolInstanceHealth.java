@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -39,7 +40,11 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
     this.kind = null;
   }
 
-  private TargetPoolInstanceHealth(List<HealthStatus> healthStatus, String kind) {
+
+  private TargetPoolInstanceHealth(
+      List<HealthStatus> healthStatus,
+      String kind
+      ) {
     this.healthStatus = healthStatus;
     this.kind = kind;
   }
@@ -85,24 +90,22 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
     return kind;
   }
 
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(TargetPoolInstanceHealth prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetPoolInstanceHealth getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
   private static final TargetPoolInstanceHealth DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new TargetPoolInstanceHealth();
   }
@@ -155,9 +158,13 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
       return this;
     }
 
+
     public TargetPoolInstanceHealth build() {
 
-      return new TargetPoolInstanceHealth(healthStatus, kind);
+      return new TargetPoolInstanceHealth(
+        healthStatus,
+        kind
+      );
     }
 
     public Builder clone() {
@@ -171,11 +178,8 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
   @Override
   public String toString() {
     return "TargetPoolInstanceHealth{"
-        + "healthStatus="
-        + healthStatus
-        + ", "
-        + "kind="
-        + kind
+        + "healthStatus=" + healthStatus + ", "
+        + "kind=" + kind
         + "}";
   }
 
@@ -186,14 +190,19 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
     }
     if (o instanceof TargetPoolInstanceHealth) {
       TargetPoolInstanceHealth that = (TargetPoolInstanceHealth) o;
-      return Objects.equals(this.healthStatus, that.getHealthStatusList())
-          && Objects.equals(this.kind, that.getKind());
+      return
+          Objects.equals(this.healthStatus, that.getHealthStatusList()) &&
+          Objects.equals(this.kind, that.getKind())
+          ;
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(healthStatus, kind);
+    return Objects.hash(
+      healthStatus,
+      kind
+    );
   }
 }
