@@ -290,7 +290,11 @@ public class Publisher {
     }
   }
 
-  /** publish any outstanding batches if non-empty */
+  /**
+   * Publish any outstanding batches if non-empty.   This method sends buffered messages, but does
+   * not wait for the send operations to complete.  To wait for messages to send, call {@code get}
+   * on the futures returned from {@code publish}.
+   */
   public void publishAllOutstanding() {
     messagesBatchLock.lock();
     OutstandingBatch batchToSend;
