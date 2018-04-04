@@ -168,7 +168,7 @@ public class ITPubSubTest {
   }
 
   private MessageAndConsumer pollQueue(BlockingQueue<Object> queue) throws InterruptedException {
-    Object obj = queue.poll(1, TimeUnit.MINUTES);
+    Object obj = queue.poll(10, TimeUnit.MINUTES);
     if (obj == null) {
       return null;
     }
