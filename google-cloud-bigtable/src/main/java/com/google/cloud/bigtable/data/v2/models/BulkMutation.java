@@ -22,6 +22,10 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import javax.annotation.Nonnull;
 
 /**
@@ -31,9 +35,9 @@ import javax.annotation.Nonnull;
  * <p>This class is meant for manual batching, while {@link BulkMutationBatcher} is meant for
  * automatic batching with flow control.
  */
-public final class BulkMutation {
+public final class BulkMutation implements Serializable {
   private final String tableId;
-  private MutateRowsRequest.Builder builder;
+  private transient MutateRowsRequest.Builder builder;
 
   public static BulkMutation create(String tableId) {
     return new BulkMutation(tableId);
@@ -44,6 +48,16 @@ public final class BulkMutation {
 
     this.tableId = tableId;
     this.builder = MutateRowsRequest.newBuilder();
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    builder = MutateRowsRequest.newBuilder().mergeFrom(input);
+  }
+
+  private void writeObject(ObjectOutputStream output) throws IOException {
+    output.defaultWriteObject();
+    builder.build().writeTo(output);
   }
 
   /**
