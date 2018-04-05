@@ -72,7 +72,7 @@ import org.threeten.bp.Duration;
  * <code>
  * BigtableStubSettings.Builder baseBigtableDataSettingsBuilder =
  *     BigtableStubSettings.newBuilder();
- * baseBigtableDataSettingsBuilder.mutateRowSettings().getRetrySettingsBuilder()
+ * baseBigtableDataSettingsBuilder.mutateRowSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * BigtableStubSettings baseBigtableDataSettings = baseBigtableDataSettingsBuilder.build();
  * </code>

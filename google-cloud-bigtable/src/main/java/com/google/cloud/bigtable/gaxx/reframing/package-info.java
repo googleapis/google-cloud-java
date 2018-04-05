@@ -17,7 +17,7 @@
  * Mediates message flow between two {@link com.google.api.gax.rpc.ResponseObserver}s.
  *
  * <p>It is intended for situations when a stream needs to be transformed in such a way where the
- * incoming responses do not map 1:1 to the output responses. This is used to convert transform
+ * incoming responses do not map 1:1 to the output responses. This is used to transform
  * ReadRowsResponse chunks into logical rows, but is generic enough to be used for other purposes.
  */
 package com.google.cloud.bigtable.gaxx.reframing;

@@ -75,7 +75,7 @@ import javax.annotation.Generated;
  * <code>
  * InstanceAdminSettings.Builder instanceAdminSettingsBuilder =
  *     InstanceAdminSettings.newBuilder();
- * instanceAdminSettingsBuilder.getInstanceConfigSettings().getRetrySettingsBuilder()
+ * instanceAdminSettingsBuilder.getInstanceConfigSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * InstanceAdminSettings instanceAdminSettings = instanceAdminSettingsBuilder.build();
  * </code>

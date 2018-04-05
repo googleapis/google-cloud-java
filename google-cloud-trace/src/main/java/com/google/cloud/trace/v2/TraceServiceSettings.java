@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <code>
  * TraceServiceSettings.Builder traceServiceSettingsBuilder =
  *     TraceServiceSettings.newBuilder();
- * traceServiceSettingsBuilder.batchWriteSpansSettings().getRetrySettingsBuilder()
+ * traceServiceSettingsBuilder.batchWriteSpansSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * TraceServiceSettings traceServiceSettings = traceServiceSettingsBuilder.build();
  * </code>

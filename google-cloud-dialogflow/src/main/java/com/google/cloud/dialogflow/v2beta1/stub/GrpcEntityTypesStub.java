@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -182,6 +182,8 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
   private final OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcEntityTypesStub create(EntityTypesStubSettings settings)
       throws IOException {
     return new GrpcEntityTypesStub(settings, ClientContext.create(settings));
@@ -191,6 +193,12 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return new GrpcEntityTypesStub(EntityTypesStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcEntityTypesStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcEntityTypesStub(
+        EntityTypesStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcEntityTypesStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -198,7 +206,21 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
    */
   protected GrpcEntityTypesStub(EntityTypesStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcEntityTypesCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcEntityTypesStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcEntityTypesStub(
+      EntityTypesStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
         listEntityTypesTransportSettings =
@@ -245,74 +267,74 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
             .build();
 
     this.listEntityTypesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
     this.listEntityTypesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
     this.getEntityTypeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getEntityTypeTransportSettings, settings.getEntityTypeSettings(), clientContext);
     this.createEntityTypeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createEntityTypeTransportSettings, settings.createEntityTypeSettings(), clientContext);
     this.updateEntityTypeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateEntityTypeTransportSettings, settings.updateEntityTypeSettings(), clientContext);
     this.deleteEntityTypeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteEntityTypeTransportSettings, settings.deleteEntityTypeSettings(), clientContext);
     this.batchUpdateEntityTypesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchUpdateEntityTypesTransportSettings,
             settings.batchUpdateEntityTypesSettings(),
             clientContext);
     this.batchUpdateEntityTypesOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             batchUpdateEntityTypesTransportSettings,
             settings.batchUpdateEntityTypesOperationSettings(),
             clientContext,
             this.operationsStub);
     this.batchDeleteEntityTypesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchDeleteEntityTypesTransportSettings,
             settings.batchDeleteEntityTypesSettings(),
             clientContext);
     this.batchDeleteEntityTypesOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             batchDeleteEntityTypesTransportSettings,
             settings.batchDeleteEntityTypesOperationSettings(),
             clientContext,
             this.operationsStub);
     this.batchCreateEntitiesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchCreateEntitiesTransportSettings,
             settings.batchCreateEntitiesSettings(),
             clientContext);
     this.batchCreateEntitiesOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             batchCreateEntitiesTransportSettings,
             settings.batchCreateEntitiesOperationSettings(),
             clientContext,
             this.operationsStub);
     this.batchUpdateEntitiesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchUpdateEntitiesTransportSettings,
             settings.batchUpdateEntitiesSettings(),
             clientContext);
     this.batchUpdateEntitiesOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             batchUpdateEntitiesTransportSettings,
             settings.batchUpdateEntitiesOperationSettings(),
             clientContext,
             this.operationsStub);
     this.batchDeleteEntitiesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchDeleteEntitiesTransportSettings,
             settings.batchDeleteEntitiesSettings(),
             clientContext);
     this.batchDeleteEntitiesOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             batchDeleteEntitiesTransportSettings,
             settings.batchDeleteEntitiesOperationSettings(),
             clientContext,

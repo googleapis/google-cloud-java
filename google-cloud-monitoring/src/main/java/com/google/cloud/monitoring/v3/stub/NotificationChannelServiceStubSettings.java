@@ -81,7 +81,7 @@ import org.threeten.bp.Duration;
  * <code>
  * NotificationChannelServiceStubSettings.Builder notificationChannelServiceSettingsBuilder =
  *     NotificationChannelServiceStubSettings.newBuilder();
- * notificationChannelServiceSettingsBuilder.getNotificationChannelDescriptorSettings().getRetrySettingsBuilder()
+ * notificationChannelServiceSettingsBuilder.getNotificationChannelDescriptorSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * NotificationChannelServiceStubSettings notificationChannelServiceSettings = notificationChannelServiceSettingsBuilder.build();
  * </code>

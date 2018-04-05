@@ -50,7 +50,7 @@ import javax.annotation.Generated;
  * <code>
  * LanguageServiceSettings.Builder languageServiceSettingsBuilder =
  *     LanguageServiceSettings.newBuilder();
- * languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettingsBuilder()
+ * languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * LanguageServiceSettings languageServiceSettings = languageServiceSettingsBuilder.build();
  * </code>

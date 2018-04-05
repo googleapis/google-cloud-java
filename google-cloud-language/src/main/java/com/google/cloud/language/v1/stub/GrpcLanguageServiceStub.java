@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
@@ -123,6 +123,8 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
   private final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcLanguageServiceStub create(LanguageServiceStubSettings settings)
       throws IOException {
     return new GrpcLanguageServiceStub(settings, ClientContext.create(settings));
@@ -134,6 +136,12 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
         LanguageServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcLanguageServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcLanguageServiceStub(
+        LanguageServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcLanguageServiceStub, using the given settings. This is protected
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -141,6 +149,20 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
    */
   protected GrpcLanguageServiceStub(
       LanguageServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcLanguageServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcLanguageServiceStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcLanguageServiceStub(
+      LanguageServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
         analyzeSentimentTransportSettings =
@@ -172,24 +194,24 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
             .build();
 
     this.analyzeSentimentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             analyzeSentimentTransportSettings, settings.analyzeSentimentSettings(), clientContext);
     this.analyzeEntitiesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             analyzeEntitiesTransportSettings, settings.analyzeEntitiesSettings(), clientContext);
     this.analyzeEntitySentimentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             analyzeEntitySentimentTransportSettings,
             settings.analyzeEntitySentimentSettings(),
             clientContext);
     this.analyzeSyntaxCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             analyzeSyntaxTransportSettings, settings.analyzeSyntaxSettings(), clientContext);
     this.classifyTextCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             classifyTextTransportSettings, settings.classifyTextSettings(), clientContext);
     this.annotateTextCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             annotateTextTransportSettings, settings.annotateTextSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

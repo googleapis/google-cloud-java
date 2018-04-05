@@ -408,24 +408,13 @@ public class ITStorageTest {
     }
   }
 
-  @Test(timeout = 5000)
+  @Test(timeout = 7500)
   public void testListBlobRequesterPays() throws InterruptedException {
-    String[] blobNames = {"test-list-blobs-empty-selected-fields-blob1",
-        "test-list-blobs-empty-selected-fields-blob2"};
-    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0])
-        .setContentType(CONTENT_TYPE)
-        .build();
-    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
-        .setContentType(CONTENT_TYPE)
-        .build();
-    Blob remoteBlob1 = storage.create(blob1);
-    Blob remoteBlob2 = storage.create(blob2);
-    assertNotNull(remoteBlob1);
-    assertNotNull(remoteBlob2);
-
-    Page<Blob> page = storage.list(BUCKET,
-        Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
-        Storage.BlobListOption.fields());
+    BlobInfo blob1 =
+        BlobInfo.newBuilder(BUCKET, "test-list-blobs-empty-selected-fields-blob1")
+            .setContentType(CONTENT_TYPE)
+            .build();
+    assertNotNull(storage.create(blob1));
 
     // Test listing a Requester Pays bucket.
     Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
@@ -433,9 +422,9 @@ public class ITStorageTest {
     remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
     Bucket updatedBucket = storage.update(remoteBucket);
     assertTrue(updatedBucket.requesterPays());
-    String projectId = remoteStorageHelper.getOptions().getProjectId();
     try {
-      page = storage.list(BUCKET,
+      storage.list(
+          BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
           Storage.BlobListOption.fields(),
           Storage.BlobListOption.userProject("fakeBillingProjectId"));
@@ -443,12 +432,23 @@ public class ITStorageTest {
     } catch (StorageException e) {
       assertTrue(e.getMessage().contains("User project specified in the request is invalid"));
     }
-    while (Iterators.size(page.iterateAll().iterator()) != 2) {
+
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    while (true) {
+      Page<Blob> page =
+          storage.list(
+              BUCKET,
+              Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+              Storage.BlobListOption.fields(),
+              Storage.BlobListOption.userProject(projectId));
+      List<Blob> blobs = Lists.newArrayList(page.iterateAll());
+      // If the list is empty, maybe the blob isn't visible yet; wait and try again.
+      // Otherwise, expect one blob, since we only put in one above.
+      if (!blobs.isEmpty()) {
+        assertThat(blobs).hasSize(1);
+        break;
+      }
       Thread.sleep(500);
-      page = storage.list(BUCKET,
-          Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
-          Storage.BlobListOption.fields(),
-          Storage.BlobListOption.userProject(projectId));
     }
   }
 

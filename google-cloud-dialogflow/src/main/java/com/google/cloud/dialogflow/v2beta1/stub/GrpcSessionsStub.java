@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -69,6 +69,8 @@ public class GrpcSessionsStub extends SessionsStub {
   private final BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcSessionsStub create(SessionsStubSettings settings) throws IOException {
     return new GrpcSessionsStub(settings, ClientContext.create(settings));
   }
@@ -77,12 +79,31 @@ public class GrpcSessionsStub extends SessionsStub {
     return new GrpcSessionsStub(SessionsStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcSessionsStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcSessionsStub(
+        SessionsStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcSessionsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected GrpcSessionsStub(SessionsStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcSessionsCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcSessionsStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcSessionsStub(
+      SessionsStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<DetectIntentRequest, DetectIntentResponse> detectIntentTransportSettings =
         GrpcCallSettings.<DetectIntentRequest, DetectIntentResponse>newBuilder()
@@ -96,10 +117,10 @@ public class GrpcSessionsStub extends SessionsStub {
                 .build();
 
     this.detectIntentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             detectIntentTransportSettings, settings.detectIntentSettings(), clientContext);
     this.streamingDetectIntentCallable =
-        GrpcCallableFactory.createBidiStreamingCallable(
+        callableFactory.createBidiStreamingCallable(
             streamingDetectIntentTransportSettings,
             settings.streamingDetectIntentSettings(),
             clientContext);

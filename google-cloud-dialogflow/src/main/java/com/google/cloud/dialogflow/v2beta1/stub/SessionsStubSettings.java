@@ -64,7 +64,7 @@ import org.threeten.bp.Duration;
  * <code>
  * SessionsStubSettings.Builder sessionsSettingsBuilder =
  *     SessionsStubSettings.newBuilder();
- * sessionsSettingsBuilder.detectIntentSettings().getRetrySettingsBuilder()
+ * sessionsSettingsBuilder.detectIntentSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * SessionsStubSettings sessionsSettings = sessionsSettingsBuilder.build();
  * </code>

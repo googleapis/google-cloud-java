@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -117,6 +117,8 @@ public class GrpcAgentsStub extends AgentsStub {
   private final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable;
   private final OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcAgentsStub create(AgentsStubSettings settings) throws IOException {
     return new GrpcAgentsStub(settings, ClientContext.create(settings));
   }
@@ -125,13 +127,32 @@ public class GrpcAgentsStub extends AgentsStub {
     return new GrpcAgentsStub(AgentsStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcAgentsStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcAgentsStub(
+        AgentsStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcAgentsStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected GrpcAgentsStub(AgentsStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcAgentsCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcAgentsStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcAgentsStub(
+      AgentsStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
         GrpcCallSettings.<GetAgentRequest, Agent>newBuilder()
@@ -159,46 +180,46 @@ public class GrpcAgentsStub extends AgentsStub {
             .build();
 
     this.getAgentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getAgentTransportSettings, settings.getAgentSettings(), clientContext);
     this.searchAgentsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             searchAgentsTransportSettings, settings.searchAgentsSettings(), clientContext);
     this.searchAgentsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             searchAgentsTransportSettings, settings.searchAgentsSettings(), clientContext);
     this.trainAgentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             trainAgentTransportSettings, settings.trainAgentSettings(), clientContext);
     this.trainAgentOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             trainAgentTransportSettings,
             settings.trainAgentOperationSettings(),
             clientContext,
             this.operationsStub);
     this.exportAgentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             exportAgentTransportSettings, settings.exportAgentSettings(), clientContext);
     this.exportAgentOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             exportAgentTransportSettings,
             settings.exportAgentOperationSettings(),
             clientContext,
             this.operationsStub);
     this.importAgentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             importAgentTransportSettings, settings.importAgentSettings(), clientContext);
     this.importAgentOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             importAgentTransportSettings,
             settings.importAgentOperationSettings(),
             clientContext,
             this.operationsStub);
     this.restoreAgentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             restoreAgentTransportSettings, settings.restoreAgentSettings(), clientContext);
     this.restoreAgentOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             restoreAgentTransportSettings,
             settings.restoreAgentOperationSettings(),
             clientContext,

@@ -13,6 +13,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 - [Client Library Documentation][client-lib-docs]
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
+-  [BigQuery](google-cloud-bigquery) (GA)
 -  [Stackdriver Logging](google-cloud-logging) (GA)
 -  [Cloud Datastore](google-cloud-datastore) (GA)
 -  [Cloud Natural Language](google-cloud-language) (GA)
@@ -22,7 +23,6 @@ This library supports the following Google Cloud Platform services with clients 
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
--  [BigQuery](google-cloud-bigquery) (Beta)
 -  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
 -  [Stackdriver Error Reporting](google-cloud-errorreporting) (Beta)
 -  [Cloud Firestore](google-cloud-firestore) (Beta)
@@ -31,6 +31,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [Cloud Spanner](google-cloud-spanner) (Beta)
 -  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
 -  [Stackdriver Trace](google-cloud-trace) (Beta)
+-  [Text-to-Speech](google-cloud-texttospeech) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
@@ -58,21 +59,27 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.38.0-alpha</version>
+  <version>0.43.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.38.0-alpha'
+compile 'com.google.cloud:google-cloud:0.43.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.38.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.43.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
 It also works just as well to declare a dependency only on the specific clients that you need. See the README of
 each client for instructions.
+
+If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins: 
+* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries)
+* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries)
+
+Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
 
 These client libraries can be used on App Engine standard for Java 8 runtime, App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime, however, Datastore, Storage, and Bigquery should work.
 
@@ -285,7 +292,7 @@ The easiest way to solve version conflicts is to use google-cloud's BOM. In Mave
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.38.0-alpha</version>
+        <version>0.43.0-alpha</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

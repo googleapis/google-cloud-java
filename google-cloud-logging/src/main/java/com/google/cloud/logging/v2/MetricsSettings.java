@@ -61,7 +61,7 @@ import javax.annotation.Generated;
  * <code>
  * MetricsSettings.Builder metricsSettingsBuilder =
  *     MetricsSettings.newBuilder();
- * metricsSettingsBuilder.getLogMetricSettings().getRetrySettingsBuilder()
+ * metricsSettingsBuilder.getLogMetricSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * MetricsSettings metricsSettings = metricsSettingsBuilder.build();
  * </code>

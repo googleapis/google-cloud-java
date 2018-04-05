@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -155,12 +155,20 @@ public class GrpcPublisherStub extends PublisherStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcPublisherStub create(PublisherStubSettings settings) throws IOException {
     return new GrpcPublisherStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcPublisherStub create(ClientContext clientContext) throws IOException {
     return new GrpcPublisherStub(PublisherStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcPublisherStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcPublisherStub(
+        PublisherStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
@@ -170,6 +178,20 @@ public class GrpcPublisherStub extends PublisherStub {
    */
   protected GrpcPublisherStub(PublisherStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcPublisherCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcPublisherStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcPublisherStub(
+      PublisherStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<Topic, Topic> createTopicTransportSettings =
         GrpcCallSettings.<Topic, Topic>newBuilder()
@@ -216,44 +238,44 @@ public class GrpcPublisherStub extends PublisherStub {
                 .build();
 
     this.createTopicCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createTopicTransportSettings, settings.createTopicSettings(), clientContext);
     this.updateTopicCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateTopicTransportSettings, settings.updateTopicSettings(), clientContext);
     this.publishCallable =
-        GrpcCallableFactory.createBatchingCallable(
+        callableFactory.createBatchingCallable(
             publishTransportSettings, settings.publishSettings(), clientContext);
     this.getTopicCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getTopicTransportSettings, settings.getTopicSettings(), clientContext);
     this.listTopicsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listTopicsTransportSettings, settings.listTopicsSettings(), clientContext);
     this.listTopicsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listTopicsTransportSettings, settings.listTopicsSettings(), clientContext);
     this.listTopicSubscriptionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listTopicSubscriptionsTransportSettings,
             settings.listTopicSubscriptionsSettings(),
             clientContext);
     this.listTopicSubscriptionsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listTopicSubscriptionsTransportSettings,
             settings.listTopicSubscriptionsSettings(),
             clientContext);
     this.deleteTopicCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteTopicTransportSettings, settings.deleteTopicSettings(), clientContext);
     this.setIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.getIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);

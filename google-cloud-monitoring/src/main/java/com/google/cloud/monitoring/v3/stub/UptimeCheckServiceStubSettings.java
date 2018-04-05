@@ -80,7 +80,7 @@ import org.threeten.bp.Duration;
  * <code>
  * UptimeCheckServiceStubSettings.Builder uptimeCheckServiceSettingsBuilder =
  *     UptimeCheckServiceStubSettings.newBuilder();
- * uptimeCheckServiceSettingsBuilder.getUptimeCheckConfigSettings().getRetrySettingsBuilder()
+ * uptimeCheckServiceSettingsBuilder.getUptimeCheckConfigSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * UptimeCheckServiceStubSettings uptimeCheckServiceSettings = uptimeCheckServiceSettingsBuilder.build();
  * </code>

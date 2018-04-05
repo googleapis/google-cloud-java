@@ -46,6 +46,7 @@ import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotName;
+import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.common.collect.Lists;
@@ -168,7 +169,8 @@ public class BigtableTableAdminClientTest {
 
     InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
     String tableId = "tableId-895419604";
-    String sourceSnapshot = "sourceSnapshot-947679896";
+    SnapshotName sourceSnapshot =
+        SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
 
     Table actualResponse =
         client.createTableFromSnapshotAsync(parent, tableId, sourceSnapshot).get();
@@ -181,7 +183,7 @@ public class BigtableTableAdminClientTest {
 
     Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
     Assert.assertEquals(tableId, actualRequest.getTableId());
-    Assert.assertEquals(sourceSnapshot, actualRequest.getSourceSnapshot());
+    Assert.assertEquals(sourceSnapshot, SnapshotName.parse(actualRequest.getSourceSnapshot()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -197,7 +199,8 @@ public class BigtableTableAdminClientTest {
     try {
       InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
       String tableId = "tableId-895419604";
-      String sourceSnapshot = "sourceSnapshot-947679896";
+      SnapshotName sourceSnapshot =
+          SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
 
       client.createTableFromSnapshotAsync(parent, tableId, sourceSnapshot).get();
       Assert.fail("No exception raised");
@@ -460,13 +463,78 @@ public class BigtableTableAdminClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void snapshotTableTest() throws Exception {
+    SnapshotName name2 = SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
+    long dataSizeBytes = 2110122398L;
+    String description2 = "description2568623279";
+    Snapshot expectedResponse =
+        Snapshot.newBuilder()
+            .setName(name2.toString())
+            .setDataSizeBytes(dataSizeBytes)
+            .setDescription(description2)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("snapshotTableTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableTableAdmin.addResponse(resultOperation);
+
+    TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    ClusterName cluster = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    SnapshotName snapshotId = SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
+    String description = "description-1724546052";
+
+    Snapshot actualResponse =
+        client.snapshotTableAsync(name, cluster, snapshotId, description).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SnapshotTableRequest actualRequest = (SnapshotTableRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, TableName.parse(actualRequest.getName()));
+    Assert.assertEquals(cluster, ClusterName.parse(actualRequest.getCluster()));
+    Assert.assertEquals(snapshotId, SnapshotName.parse(actualRequest.getSnapshotId()));
+    Assert.assertEquals(description, actualRequest.getDescription());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void snapshotTableExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      ClusterName cluster = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+      SnapshotName snapshotId =
+          SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
+      String description = "description-1724546052";
+
+      client.snapshotTableAsync(name, cluster, snapshotId, description).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getSnapshotTest() {
-    String name2 = "name2-1052831874";
+    SnapshotName name2 = SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
     long dataSizeBytes = 2110122398L;
     String description = "description-1724546052";
     Snapshot expectedResponse =
         Snapshot.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDataSizeBytes(dataSizeBytes)
             .setDescription(description)
             .build();

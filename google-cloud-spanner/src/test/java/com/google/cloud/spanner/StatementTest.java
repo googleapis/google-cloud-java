@@ -116,6 +116,13 @@ public class StatementTest {
   }
 
   @Test
+  public void bindCommitTimestampFails() {
+    ValueBinder<Statement.Builder> binder = Statement.newBuilder("SELECT @v").bind("v");
+    expectedException.expect(IllegalArgumentException.class);
+    binder.to(Value.COMMIT_TIMESTAMP);
+  }
+
+  @Test
   public void gettersAreSnapshot() {
     Statement stmt =
         Statement.newBuilder("SELECT Name FROM Users WHERE Id = @id")
