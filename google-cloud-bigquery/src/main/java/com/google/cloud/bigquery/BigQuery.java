@@ -985,6 +985,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   Job getJob(String jobId, JobOption... options);
 
+  // TODO(pongad): document
+  Job getJob(String jobId, String location, JobOption... options);
+
   /**
    * Returns the requested job or {@code null} if not found.
    *
@@ -1038,6 +1041,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   boolean cancel(String jobId);
+
+  // TODO(pongad): document
+  boolean cancel(String jobId, String location);
 
   /**
    * Sends a job cancel request. This call will return immediately. The job status can then be

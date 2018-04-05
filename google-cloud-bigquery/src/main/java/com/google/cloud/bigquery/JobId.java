@@ -58,7 +58,7 @@ public abstract class JobId implements Serializable {
    * "EU".
    */
   @Nullable
-  abstract String getLocation();
+  public abstract String getLocation();
 
   public abstract Builder toBuilder();
 
@@ -77,7 +77,7 @@ public abstract class JobId implements Serializable {
       return setJob(UUID.randomUUID().toString());
     }
 
-    abstract Builder setLocation(String location);
+    public abstract Builder setLocation(String location);
 
     public abstract JobId build();
   }
