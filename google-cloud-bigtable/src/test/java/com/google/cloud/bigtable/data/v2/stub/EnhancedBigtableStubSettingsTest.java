@@ -286,7 +286,7 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   @Test
-  public void mutateRowsSettingsAreNotLostTest() {
+  public void bulkMutateRowsSettingsAreNotLostTest() {
     InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
 
     EnhancedBigtableStubSettings.Builder builder =
@@ -305,35 +305,36 @@ public class EnhancedBigtableStubSettingsTest {
     BatchingSettings batchingSettings = BatchingSettings.newBuilder().build();
 
     builder
-        .mutateRowsSettings()
+        .bulkMutateRowsSettings()
         .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
         .setRetrySettings(retrySettings)
         .setBatchingSettings(batchingSettings)
         .build();
 
-    assertThat(builder.mutateRowsSettings().getRetryableCodes())
+    assertThat(builder.bulkMutateRowsSettings().getRetryableCodes())
         .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
-    assertThat(builder.mutateRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
-    assertThat(builder.mutateRowsSettings().getBatchingSettings()).isSameAs(batchingSettings);
+    assertThat(builder.bulkMutateRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
+    assertThat(builder.bulkMutateRowsSettings().getBatchingSettings()).isSameAs(batchingSettings);
 
-    assertThat(builder.build().mutateRowsSettings().getRetryableCodes())
+    assertThat(builder.build().bulkMutateRowsSettings().getRetryableCodes())
         .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
-    assertThat(builder.build().mutateRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
-    assertThat(builder.build().mutateRowsSettings().getBatchingSettings())
+    assertThat(builder.build().bulkMutateRowsSettings().getRetrySettings())
+        .isEqualTo(retrySettings);
+    assertThat(builder.build().bulkMutateRowsSettings().getBatchingSettings())
         .isSameAs(batchingSettings);
 
-    assertThat(builder.build().toBuilder().mutateRowsSettings().getRetryableCodes())
+    assertThat(builder.build().toBuilder().bulkMutateRowsSettings().getRetryableCodes())
         .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
-    assertThat(builder.build().toBuilder().mutateRowsSettings().getRetrySettings())
+    assertThat(builder.build().toBuilder().bulkMutateRowsSettings().getRetrySettings())
         .isEqualTo(retrySettings);
-    assertThat(builder.build().toBuilder().mutateRowsSettings().getBatchingSettings())
+    assertThat(builder.build().toBuilder().bulkMutateRowsSettings().getBatchingSettings())
         .isSameAs(batchingSettings);
   }
 
   @Test
   public void mutateRowsHasSaneDefaultsTest() {
     BatchingCallSettings.Builder<RowMutation, Void> builder =
-        EnhancedBigtableStubSettings.newBuilder().mutateRowsSettings();
+        EnhancedBigtableStubSettings.newBuilder().bulkMutateRowsSettings();
 
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
 

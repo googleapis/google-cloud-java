@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
@@ -401,7 +402,50 @@ public class BigtableDataClient implements AutoCloseable {
    */
   @BetaApi("This surface is likely to change as the batching surface evolves.")
   public BulkMutationBatcher newBulkMutationBatcher() {
-    return new BulkMutationBatcher(stub.mutateRowsCallable());
+    return new BulkMutationBatcher(stub.bulkMutateRowsBatchingCallable());
+  }
+
+  /**
+   * Convenience method to mutate multiple rows in a batch. Each individual row is mutated
+   * atomically as in MutateRow, but the entire batch is not executed atomically. Unlike {@link
+   * #newBulkMutationBatcher()}, this method expects the mutations to be pre-batched.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   BulkMutation batch = BulkMutation.create("[TABLE]");
+   *   for (String someValue : someCollection) {
+   *     batch.add("[ROW KEY]", Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
+   *   }
+   *   ApiFuture<Void> result = bigtableClient.bulkMutateRowsAsync(batch);
+   * }
+   * }</pre>
+   */
+  public ApiFuture<Void> bulkMutateRowsAsync(BulkMutation mutation) {
+    return bulkMutationCallable().futureCall(mutation);
+  }
+
+  /**
+   * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
+   * but the entire batch is not executed atomically. Unlike {@link #newBulkMutationBatcher()}, this
+   * method expects the mutations to be pre-batched.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   *   BulkMutation batch = BulkMutation.create("[TABLE]");
+   *   for (String someValue : someCollection) {
+   *     batch.add("[ROW KEY]", Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
+   *   }
+   *   bigtableClient.bulkMutateRowsCallable().call(batch);
+   * }</pre>
+   */
+  public UnaryCallable<BulkMutation, Void> bulkMutationCallable() {
+    return stub.bulkMutateRowsCallable();
   }
 
   /**
@@ -420,7 +464,6 @@ public class BigtableDataClient implements AutoCloseable {
    *       );
    *
    *   ApiFuture<Boolean> future = bigtableClient.checkAndMutateRowAsync(mutation);
-   * }
    * }</pre>
    */
   public ApiFuture<Boolean> checkAndMutateRowAsync(ConditionalRowMutation mutation) {
