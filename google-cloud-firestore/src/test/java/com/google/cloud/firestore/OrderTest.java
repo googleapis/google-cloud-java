@@ -89,7 +89,7 @@ public class OrderTest {
     groups[38] =
         new Value[] {referenceValue("projects/p1/databases/dkkkkklkjnjkkk1/documents/c2/doc1")};
     groups[39] = new Value[] {referenceValue("projects/p2/databases/d2/documents/c1/doc1")};
-    groups[40] = new Value[] {referenceValue("projects/p2/databases/d2/documents/cl1-/doc1")};
+    groups[40] = new Value[] {referenceValue("projects/p2/databases/d2/documents/c1-/doc1")};
 
     // geo points
     groups[41] = new Value[] {geoPointValue(-90, -180)};

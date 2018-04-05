@@ -54,7 +54,7 @@ import javax.annotation.Generated;
  * <code>
  * ContextsSettings.Builder contextsSettingsBuilder =
  *     ContextsSettings.newBuilder();
- * contextsSettingsBuilder.getContextSettings().getRetrySettingsBuilder()
+ * contextsSettingsBuilder.getContextSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ContextsSettings contextsSettings = contextsSettingsBuilder.build();
  * </code>

@@ -107,8 +107,7 @@ public class Subscriber extends AbstractApiService {
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
-  private final ProjectSubscriptionName subscriptionName;
-  private final String cachedSubscriptionNameString;
+  private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
@@ -123,19 +122,16 @@ public class Subscriber extends AbstractApiService {
   private final List<Channel> channels;
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
-  private final List<PollingSubscriberConnection> pollingSubscriberConnections;
   private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
       new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
-  private final boolean useStreaming;
   private ScheduledFuture<?> ackDeadlineUpdater;
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
-    cachedSubscriptionNameString = subscriptionName.toString();
 
     Preconditions.checkArgument(
         builder.ackExpirationPadding.compareTo(Duration.ZERO) > 0, "padding must be positive");
@@ -197,26 +193,32 @@ public class Subscriber extends AbstractApiService {
     numChannels = builder.parallelPullCount;
     channels = new ArrayList<>(numChannels);
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
-    pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
-    useStreaming = builder.useStreaming;
   }
 
   /**
    * Constructs a new {@link Builder}.
-   *
-   * <p>Once {@link Builder#build} is called a gRPC stub will be created for use of the {@link
-   * Subscriber}.
    *
    * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
    * @param receiver an implementation of {@link MessageReceiver} used to process the received
    *     messages
    */
   public static Builder newBuilder(ProjectSubscriptionName subscription, MessageReceiver receiver) {
+    return newBuilder(subscription.toString(), receiver);
+  }
+
+  /**
+   * Constructs a new {@link Builder}.
+   *
+   * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
+   * @param receiver an implementation of {@link MessageReceiver} used to process the received
+   *     messages
+   */
+  public static Builder newBuilder(String subscription, MessageReceiver receiver) {
     return new Builder(subscription, receiver);
   }
 
   /** Subscription which the subscriber is subscribed to. */
-  public ProjectSubscriptionName getSubscriptionName() {
+  public String getSubscriptionNameString() {
     return subscriptionName;
   }
 
@@ -299,11 +301,7 @@ public class Subscriber extends AbstractApiService {
               @Override
               public void run() {
                 try {
-                  if (useStreaming) {
                     startStreamingConnections();
-                  } else {
-                    startPollingConnections();
-                  }
                   notifyStarted();
                 } catch (Throwable t) {
                   notifyFailed(t);
@@ -316,7 +314,6 @@ public class Subscriber extends AbstractApiService {
   @Override
   protected void doStop() {
     // stop connection is no-op if connections haven't been started.
-    stopAllPollingConnections();
     stopAllStreamingConnections();
     try {
       for (AutoCloseable closeable : closeables) {
@@ -325,66 +322,6 @@ public class Subscriber extends AbstractApiService {
       notifyStopped();
     } catch (Exception e) {
       notifyFailed(e);
-    }
-  }
-
-  private void startPollingConnections() throws IOException {
-    synchronized (pollingSubscriberConnections) {
-      Credentials credentials = credentialsProvider.getCredentials();
-      CallCredentials callCredentials =
-          credentials == null ? null : MoreCallCredentials.from(credentials);
-
-      SubscriberGrpc.SubscriberBlockingStub getSubStub =
-          SubscriberGrpc.newBlockingStub(channels.get(0))
-              .withDeadlineAfter(
-                  PollingSubscriberConnection.DEFAULT_TIMEOUT.toMillis(), TimeUnit.MILLISECONDS);
-      if (callCredentials != null) {
-        getSubStub = getSubStub.withCallCredentials(callCredentials);
-      }
-      Subscription subscriptionInfo =
-          getSubStub.getSubscription(
-              GetSubscriptionRequest.newBuilder()
-                  .setSubscription(cachedSubscriptionNameString)
-                  .build());
-
-      for (Channel channel : channels) {
-        SubscriberFutureStub stub = SubscriberGrpc.newFutureStub(channel);
-        if (callCredentials != null) {
-          stub = stub.withCallCredentials(callCredentials);
-        }
-        pollingSubscriberConnections.add(
-            new PollingSubscriberConnection(
-                subscriptionInfo,
-                receiver,
-                ackExpirationPadding,
-                maxAckExtensionPeriod,
-                ackLatencyDistribution,
-                stub,
-                flowController,
-                flowControlSettings.getMaxOutstandingElementCount(),
-                outstandingMessageBatches,
-                executor,
-                alarmsExecutor,
-                clock));
-      }
-      startConnections(
-          pollingSubscriberConnections,
-          new Listener() {
-            @Override
-            public void failed(State from, Throwable failure) {
-              // If a connection failed is because of a fatal error, we should fail the
-              // whole subscriber.
-              stopAllPollingConnections();
-              try {
-                notifyFailed(failure);
-              } catch (IllegalStateException e) {
-                if (isRunning()) {
-                  throw e;
-                }
-                // It could happen that we are shutting down while some channels fail.
-              }
-            }
-          });
     }
   }
 
@@ -401,7 +338,7 @@ public class Subscriber extends AbstractApiService {
         }
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
-                cachedSubscriptionNameString,
+                subscriptionName,
                 receiver,
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
@@ -432,10 +369,6 @@ public class Subscriber extends AbstractApiService {
             }
           });
     }
-  }
-
-  private void stopAllPollingConnections() {
-    stopConnections(pollingSubscriberConnections);
   }
 
   private void stopAllStreamingConnections() {
@@ -491,7 +424,7 @@ public class Subscriber extends AbstractApiService {
                     * Runtime.getRuntime().availableProcessors())
             .build();
 
-    ProjectSubscriptionName subscriptionName;
+    String subscriptionName;
     MessageReceiver receiver;
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
@@ -516,10 +449,9 @@ public class Subscriber extends AbstractApiService {
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
-    boolean useStreaming = true;
     int parallelPullCount = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
 
-    Builder(ProjectSubscriptionName subscriptionName, MessageReceiver receiver) {
+    Builder(String subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
       this.receiver = receiver;
     }
@@ -621,7 +553,7 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Gives the ability to set a custom executor for polling and managing lease extensions. If none
+     * Gives the ability to set a custom executor for managing lease extensions. If none
      * is provided a shared one will be used by all {@link Subscriber} instances.
      */
     public Builder setSystemExecutorProvider(ExecutorProvider executorProvider) {
@@ -641,11 +573,6 @@ public class Subscriber extends AbstractApiService {
     /** Gives the ability to set a custom clock. */
     Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
-      return this;
-    }
-
-    Builder setUseStreaming(boolean useStreaming) {
-      this.useStreaming = useStreaming;
       return this;
     }
 

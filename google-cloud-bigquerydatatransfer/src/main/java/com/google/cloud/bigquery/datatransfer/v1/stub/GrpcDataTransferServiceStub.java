@@ -24,7 +24,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest;
@@ -235,6 +235,8 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcDataTransferServiceStub create(DataTransferServiceStubSettings settings)
       throws IOException {
     return new GrpcDataTransferServiceStub(settings, ClientContext.create(settings));
@@ -246,6 +248,12 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
         DataTransferServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcDataTransferServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcDataTransferServiceStub(
+        DataTransferServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcDataTransferServiceStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -253,6 +261,20 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
    */
   protected GrpcDataTransferServiceStub(
       DataTransferServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcDataTransferServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcDataTransferServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcDataTransferServiceStub(
+      DataTransferServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<GetDataSourceRequest, DataSource> getDataSourceTransportSettings =
         GrpcCallSettings.<GetDataSourceRequest, DataSource>newBuilder()
@@ -316,71 +338,71 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                 .build();
 
     this.getDataSourceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getDataSourceTransportSettings, settings.getDataSourceSettings(), clientContext);
     this.listDataSourcesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listDataSourcesTransportSettings, settings.listDataSourcesSettings(), clientContext);
     this.listDataSourcesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listDataSourcesTransportSettings, settings.listDataSourcesSettings(), clientContext);
     this.createTransferConfigCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createTransferConfigTransportSettings,
             settings.createTransferConfigSettings(),
             clientContext);
     this.updateTransferConfigCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateTransferConfigTransportSettings,
             settings.updateTransferConfigSettings(),
             clientContext);
     this.deleteTransferConfigCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteTransferConfigTransportSettings,
             settings.deleteTransferConfigSettings(),
             clientContext);
     this.getTransferConfigCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getTransferConfigTransportSettings,
             settings.getTransferConfigSettings(),
             clientContext);
     this.listTransferConfigsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listTransferConfigsTransportSettings,
             settings.listTransferConfigsSettings(),
             clientContext);
     this.listTransferConfigsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listTransferConfigsTransportSettings,
             settings.listTransferConfigsSettings(),
             clientContext);
     this.scheduleTransferRunsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             scheduleTransferRunsTransportSettings,
             settings.scheduleTransferRunsSettings(),
             clientContext);
     this.getTransferRunCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getTransferRunTransportSettings, settings.getTransferRunSettings(), clientContext);
     this.deleteTransferRunCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteTransferRunTransportSettings,
             settings.deleteTransferRunSettings(),
             clientContext);
     this.listTransferRunsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listTransferRunsTransportSettings, settings.listTransferRunsSettings(), clientContext);
     this.listTransferRunsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listTransferRunsTransportSettings, settings.listTransferRunsSettings(), clientContext);
     this.listTransferLogsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listTransferLogsTransportSettings, settings.listTransferLogsSettings(), clientContext);
     this.listTransferLogsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listTransferLogsTransportSettings, settings.listTransferLogsSettings(), clientContext);
     this.checkValidCredsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

@@ -1032,7 +1032,7 @@ public class StorageSnippets {
    * Example of default auth
    */
   public Page<Bucket> authListBuckets() {
-    // [START authListBucket]
+    // [START auth_cloud_implicit]
     // If you don't specify credentials when constructing the client, the
     // client library will look for credentials in the environment.
 
@@ -1042,7 +1042,7 @@ public class StorageSnippets {
     for (Bucket bucket : buckets.iterateAll()) {
       // do something with the info
     }
-    // [END authListBucket]
+    // [END auth_cloud_implicit]
     return buckets;
   }
 

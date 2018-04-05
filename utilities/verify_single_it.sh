@@ -5,6 +5,7 @@
 set -e
 
 MODULE=$1
+ARGS=${@:2:99}
 
 if [ -z $MODULE ]; then
     echo "First arg (module) not provided, so we're exiting."
@@ -26,4 +27,4 @@ echo "----- building and installing shared modules -----"
 mvn -B -pl google-cloud-core,google-cloud-core-http,google-cloud-core-grpc,google-cloud-storage,google-cloud-pubsub install -DskipTests
 
 echo "----- running integration tests -----"
-mvn -B -pl $MODULE -DtrimStackTrace=false -fae verify
+mvn -B -pl $MODULE -DtrimStackTrace=false -fae verify ${ARGS}

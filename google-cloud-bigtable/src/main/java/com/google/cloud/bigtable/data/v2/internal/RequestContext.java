@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.data.v2.internal;
 
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
-import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 
 /**
  * Contains information necessary to construct Bigtable protobuf requests from user facing models.

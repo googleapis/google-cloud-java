@@ -21,9 +21,10 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.admin.v2.AppProfile;
 import com.google.bigtable.admin.v2.Cluster;
@@ -50,6 +51,7 @@ import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -61,6 +63,7 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -267,6 +270,8 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcBigtableInstanceAdminStub create(
       BigtableInstanceAdminStubSettings settings) throws IOException {
     return new GrpcBigtableInstanceAdminStub(settings, ClientContext.create(settings));
@@ -278,6 +283,12 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
         BigtableInstanceAdminStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcBigtableInstanceAdminStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcBigtableInstanceAdminStub(
+        BigtableInstanceAdminStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcBigtableInstanceAdminStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -285,172 +296,350 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
    */
   protected GrpcBigtableInstanceAdminStub(
       BigtableInstanceAdminStubSettings settings, ClientContext clientContext) throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcBigtableInstanceAdminCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcBigtableInstanceAdminStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcBigtableInstanceAdminStub(
+      BigtableInstanceAdminStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(createInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
             .setMethodDescriptor(getInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
             .setMethodDescriptor(listInstancesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListInstancesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListInstancesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<PartialUpdateInstanceRequest, Operation>
         partialUpdateInstanceTransportSettings =
             GrpcCallSettings.<PartialUpdateInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(partialUpdateInstanceMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PartialUpdateInstanceRequest>() {
+                      @Override
+                      public Map<String, String> extract(PartialUpdateInstanceRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "instance.name", String.valueOf(request.getInstance().getName()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<DeleteInstanceRequest, Empty> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createClusterMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateClusterRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateClusterRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
             .setMethodDescriptor(getClusterMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetClusterRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetClusterRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
         GrpcCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
             .setMethodDescriptor(listClustersMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListClustersRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListClustersRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<Cluster, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<Cluster, Operation>newBuilder()
             .setMethodDescriptor(updateClusterMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<Cluster>() {
+                  @Override
+                  public Map<String, String> extract(Cluster request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteClusterRequest, Empty> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteClusterRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteClusterRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateAppProfileRequest, AppProfile> createAppProfileTransportSettings =
         GrpcCallSettings.<CreateAppProfileRequest, AppProfile>newBuilder()
             .setMethodDescriptor(createAppProfileMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateAppProfileRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateAppProfileRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetAppProfileRequest, AppProfile> getAppProfileTransportSettings =
         GrpcCallSettings.<GetAppProfileRequest, AppProfile>newBuilder()
             .setMethodDescriptor(getAppProfileMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetAppProfileRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetAppProfileRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListAppProfilesRequest, ListAppProfilesResponse>
         listAppProfilesTransportSettings =
             GrpcCallSettings.<ListAppProfilesRequest, ListAppProfilesResponse>newBuilder()
                 .setMethodDescriptor(listAppProfilesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListAppProfilesRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListAppProfilesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<UpdateAppProfileRequest, Operation> updateAppProfileTransportSettings =
         GrpcCallSettings.<UpdateAppProfileRequest, Operation>newBuilder()
             .setMethodDescriptor(updateAppProfileMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateAppProfileRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateAppProfileRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put(
+                        "app_profile.name", String.valueOf(request.getAppProfile().getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteAppProfileRequest, Empty> deleteAppProfileTransportSettings =
         GrpcCallSettings.<DeleteAppProfileRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAppProfileMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteAppProfileRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteAppProfileRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
                 .build();
 
     this.createInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
     this.createInstanceOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createInstanceTransportSettings,
             settings.createInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
     this.listInstancesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
     this.partialUpdateInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             partialUpdateInstanceTransportSettings,
             settings.partialUpdateInstanceSettings(),
             clientContext);
     this.partialUpdateInstanceOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             partialUpdateInstanceTransportSettings,
             settings.partialUpdateInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteInstanceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
     this.createClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createClusterTransportSettings, settings.createClusterSettings(), clientContext);
     this.createClusterOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             createClusterTransportSettings,
             settings.createClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getClusterTransportSettings, settings.getClusterSettings(), clientContext);
     this.listClustersCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
     this.updateClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateClusterTransportSettings, settings.updateClusterSettings(), clientContext);
     this.updateClusterOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             updateClusterTransportSettings,
             settings.updateClusterOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
     this.createAppProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createAppProfileTransportSettings, settings.createAppProfileSettings(), clientContext);
     this.getAppProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getAppProfileTransportSettings, settings.getAppProfileSettings(), clientContext);
     this.listAppProfilesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listAppProfilesTransportSettings, settings.listAppProfilesSettings(), clientContext);
     this.listAppProfilesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listAppProfilesTransportSettings, settings.listAppProfilesSettings(), clientContext);
     this.updateAppProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateAppProfileTransportSettings, settings.updateAppProfileSettings(), clientContext);
     this.updateAppProfileOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             updateAppProfileTransportSettings,
             settings.updateAppProfileOperationSettings(),
             clientContext,
             this.operationsStub);
     this.deleteAppProfileCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteAppProfileTransportSettings, settings.deleteAppProfileSettings(), clientContext);
     this.getIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.setIamPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);

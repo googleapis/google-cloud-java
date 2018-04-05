@@ -15,10 +15,11 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetryingExecutor;
+import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
@@ -26,7 +27,6 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
@@ -40,13 +40,14 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
-import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsSpoolingCallable;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
+import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import java.io.IOException;
 import java.util.List;
 import org.threeten.bp.Duration;
@@ -84,7 +85,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
         BigtableStubSettings.newBuilder()
             .setTransportChannelProvider(settings.getTransportChannelProvider())
             .setEndpoint(settings.getEndpoint())
-            .setCredentialsProvider(settings.getCredentialsProvider());
+            .setCredentialsProvider(settings.getCredentialsProvider())
+            .setStreamWatchdogProvider(settings.getStreamWatchdogProvider())
+            .setStreamWatchdogCheckInterval(settings.getStreamWatchdogCheckInterval());
 
     // ReadRow retries are handled in the overlay: disable retries in the base layer (but make
     // sure to preserve the exception callable settings).
@@ -92,7 +95,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .readRowsSettings()
         .setSimpleTimeoutNoRetries(Duration.ofHours(2))
         .setRetryableCodes(settings.readRowsSettings().getRetryableCodes())
-        .setTimeoutCheckInterval(Duration.ZERO)
         .setIdleTimeout(Duration.ZERO);
 
     // SampleRowKeys retries are handled in the overlay: disable retries in the base layer (but make
@@ -115,7 +117,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .mutateRowsSettings()
         .setSimpleTimeoutNoRetries(Duration.ofHours(2))
         .setRetryableCodes(settings.mutateRowsSettings().getRetryableCodes())
-        .setTimeoutCheckInterval(Duration.ZERO)
         .setIdleTimeout(Duration.ZERO);
 
     // CheckAndMutateRow is a simple passthrough
@@ -182,7 +183,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setResumptionStrategy(new ReadRowsResumptionStrategy<>(rowAdapter))
             .setRetryableCodes(settings.readRowsSettings().getRetryableCodes())
             .setRetrySettings(settings.readRowsSettings().getRetrySettings())
-            .setTimeoutCheckInterval(settings.readRowsSettings().getTimeoutCheckInterval())
             .setIdleTimeout(settings.readRowsSettings().getIdleTimeout())
             .build();
 
@@ -252,28 +252,41 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Convert a {@link RowMutation} into a {@link MutateRowsRequest} with a single entry.
    *   <li>Using gax's {@link com.google.api.gax.rpc.BatchingCallable} to spool the requests and
    *       aggregate the {@link MutateRowsRequest.Entry}s.
-   *   <li>Spool the streamed responses.
+   *   <li>Process the response and schedule retries. At the end of each attempt, entries that have
+   *       been applied, are filtered from the next attempt. Also, any entries that failed with a
+   *       nontransient error, are filtered from the next attempt. This will continue until there
+   *       are no more entries or there are no more retry attempts left.
+   *   <li>Wrap batch failures in a {@link
+   *       com.google.cloud.bigtable.data.v2.models.MutateRowsException}.
    *   <li>Split the responses using {@link MutateRowsBatchingDescriptor}.
-   *   <li>Apply retries to individual mutations
    * </ul>
    */
   private UnaryCallable<RowMutation, Void> createMutateRowsCallable() {
-    MutateRowsSpoolingCallable spooling = new MutateRowsSpoolingCallable(stub.mutateRowsCallable());
+    RetryAlgorithm<Void> retryAlgorithm =
+        new RetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<Void>(),
+            new ExponentialRetryAlgorithm(
+                settings.mutateRowsSettings().getRetrySettings(), clientContext.getClock()));
+    RetryingExecutor<Void> retryingExecutor =
+        new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
+
+    UnaryCallable<MutateRowsRequest, Void> retrying =
+        new MutateRowsRetryingCallable(
+            clientContext.getDefaultCallContext(),
+            stub.mutateRowsCallable(),
+            retryingExecutor,
+            settings.mutateRowsSettings().getRetryableCodes());
 
     // recreate BatchingCallSettings with the correct descriptor
-    BatchingCallSettings.Builder<MutateRowsRequest, MutateRowsResponse> batchingCallSettings =
-        BatchingCallSettings.newBuilder(
-                new MutateRowsBatchingDescriptor(settings.mutateRowsSettings().getRetryableCodes()))
+    BatchingCallSettings.Builder<MutateRowsRequest, Void> batchingCallSettings =
+        BatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor())
             .setBatchingSettings(settings.mutateRowsSettings().getBatchingSettings());
 
-    UnaryCallable<MutateRowsRequest, MutateRowsResponse> batching =
-        Callables.batching(spooling, batchingCallSettings.build(), clientContext);
-
-    UnaryCallable<MutateRowsRequest, MutateRowsResponse> retrying =
-        Callables.retrying(batching, settings.mutateRowsSettings(), clientContext);
+    UnaryCallable<MutateRowsRequest, Void> batching =
+        Callables.batching(retrying, batchingCallSettings.build(), clientContext);
 
     MutateRowsUserFacingCallable userFacing =
-        new MutateRowsUserFacingCallable(retrying, requestContext);
+        new MutateRowsUserFacingCallable(batching, requestContext);
 
     return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
   }

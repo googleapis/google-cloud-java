@@ -141,7 +141,7 @@ public class SubscriberTest {
   }
 
   private Subscriber startSubscriber(Builder testSubscriberBuilder) throws Exception {
-    Subscriber subscriber = testSubscriberBuilder.setUseStreaming(true).build();
+    Subscriber subscriber = testSubscriberBuilder.build();
     subscriber.startAsync().awaitRunning();
     return subscriber;
   }

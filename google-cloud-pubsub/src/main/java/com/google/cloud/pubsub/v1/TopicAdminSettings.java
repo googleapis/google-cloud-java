@@ -71,7 +71,7 @@ import javax.annotation.Generated;
  * <code>
  * TopicAdminSettings.Builder topicAdminSettingsBuilder =
  *     TopicAdminSettings.newBuilder();
- * topicAdminSettingsBuilder.createTopicSettings().getRetrySettingsBuilder()
+ * topicAdminSettingsBuilder.createTopicSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * TopicAdminSettings topicAdminSettings = topicAdminSettingsBuilder.build();
  * </code>

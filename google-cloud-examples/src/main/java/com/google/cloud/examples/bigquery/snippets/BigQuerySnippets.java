@@ -25,6 +25,8 @@ package com.google.cloud.examples.bigquery.snippets;
 import com.google.api.client.util.Charsets;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.JobInfo.CreateDisposition;
+import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
@@ -379,6 +381,38 @@ public class BigQuerySnippets {
   }
 
   /**
+   * Example of loading a newline-delimited-json file with textual fields from GCS to a table.
+   */
+  // [TARGET create(JobInfo, JobOption...)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  public Long writeRemoteFileToTable(String datasetName, String tableName)
+      throws InterruptedException {
+    // [START bigquery_load_table_gcs_json]
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
+    TableId tableId = TableId.of(datasetName, tableName);
+    // Table field definition
+    Field[] fields = new Field[] {
+        Field.of("name", LegacySQLTypeName.STRING),
+        Field.of("post_abbr", LegacySQLTypeName.STRING)
+    };
+    // Table schema definition
+    Schema schema = Schema.of(fields);
+    LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
+        .setFormatOptions(FormatOptions.json())
+        .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+        .setSchema(schema)
+        .build();
+    // Load the table
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    remoteLoadJob = remoteLoadJob.waitFor();
+    // Check the table
+    System.out.println("State: " + remoteLoadJob.getStatus().getState());
+    return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
+    // [END bigquery_load_table_gcs_json]
+  }
+
+  /**
    * Example of inserting rows into a table without running a load job.
    */
   // [TARGET insertAll(InsertAllRequest)]
@@ -470,7 +504,9 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /** Example of listing table rows with schema. */
+  /**
+   * Example of listing table rows with schema.
+   */
   // [TARGET listTableData(String, String, Schema, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -488,7 +524,9 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /** Example of listing table rows with schema. */
+  /**
+   * Example of listing table rows with schema.
+   */
   // [TARGET listTableData(TableId, Schema, TableDataListOption...)]
   public FieldValueList listTableDataSchemaId() {
     // [START listTableDataSchemaId]
@@ -607,8 +645,10 @@ public class BigQuerySnippets {
     return success;
   }
 
-  /** Example of running a query. */
-  // [TARGET query(QueryJobConfiguration, QueryOption...)]
+  /**
+   * Example of running a query.
+   */
+  // [TARGET query(QueryJobConfiguration, JobOption...)]
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
   public void runQuery(String query) throws InterruptedException {
     // [START runQuery]
@@ -620,10 +660,11 @@ public class BigQuerySnippets {
     // [END runQuery]
   }
 
-  /** Example of running a query with query parameters. */
-  // [TARGET query(QueryJobConfiguration, QueryOption...)]
-  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where
-  // word_count > @wordCount"]
+  /**
+   * Example of running a query with query parameters.
+   */
+  // [TARGET query(QueryJobConfiguration, JobOption...)]
+  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
   public void runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
     // Note, standard SQL is required to use query parameters. Legacy SQL will not work.

@@ -20,8 +20,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -100,6 +100,9 @@ public final class Statement implements Serializable {
     private class Binder extends ValueBinder<Builder> {
       @Override
       Builder handle(Value value) {
+        Preconditions.checkArgument(
+            !value.isCommitTimestamp(),
+            "Mutation.COMMIT_TIMESTAMP cannot be bound as a query parameter");
         checkState(currentBinding != null, "No binding in progress");
         parameters.put(currentBinding, value);
         currentBinding = null;

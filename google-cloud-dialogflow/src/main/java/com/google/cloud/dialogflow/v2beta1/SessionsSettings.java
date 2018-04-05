@@ -51,7 +51,7 @@ import javax.annotation.Generated;
  * <code>
  * SessionsSettings.Builder sessionsSettingsBuilder =
  *     SessionsSettings.newBuilder();
- * sessionsSettingsBuilder.detectIntentSettings().getRetrySettingsBuilder()
+ * sessionsSettingsBuilder.detectIntentSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
  * </code>

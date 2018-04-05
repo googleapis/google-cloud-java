@@ -522,7 +522,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * } catch (BigQueryException e) {
    *   // the dataset was not created
    * }
-   * } </pre>
+   * }</pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -538,7 +538,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String fieldName = "string_field";
    * TableId tableId = TableId.of(datasetName, tableName);
    * // Table field definition
-   * Field field = Field.of(fieldName, Field.Type.string());
+   * Field field = Field.of(fieldName, LegacySQLTypeName.STRING);
    * // Table schema definition
    * Schema schema = Schema.of(field);
    * TableDefinition tableDefinition = StandardTableDefinition.of(schema);
@@ -552,6 +552,32 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Creates a new job.
+   *
+   * <p>Example of loading a newline-delimited-json file with textual fields from GCS to a table.
+   * <pre> {@code
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_table_name";
+   * String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
+   * TableId tableId = TableId.of(datasetName, tableName);
+   * // Table field definition
+   * Field[] fields = new Field[] {
+   *     Field.of("name", LegacySQLTypeName.STRING),
+   *     Field.of("post_abbr", LegacySQLTypeName.STRING)
+   * };
+   * // Table schema definition
+   * Schema schema = Schema.of(fields);
+   * LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
+   *     .setFormatOptions(FormatOptions.json())
+   *     .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+   *     .setSchema(schema)
+   *     .build();
+   * // Load the table
+   * Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+   * remoteLoadJob = remoteLoadJob.waitFor();
+   * // Check the table
+   * System.out.println("State: " + remoteLoadJob.getStatus().getState());
+   * return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
+   * }</pre>
    *
    * <p>Example of creating a query job.
    * <pre> {@code
@@ -861,8 +887,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the table's rows.
    *
    * <p>Example of listing table rows, specifying the page size.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
@@ -882,8 +907,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the table's rows.
    *
    * <p>Example of listing table rows, specifying the page size.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableIdObject = TableId.of(datasetName, tableName);
@@ -891,7 +915,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * // simply omit the option.
    * TableResult tableData =
    *     bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-   * for (FieldValueList row : rowIterator.hasNext()) {
+   * for (FieldValueList row : tableData.iterateAll()) {
    *   // do something with the row
    * }
    * }</pre>
@@ -904,17 +928,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the table's rows. If the {@code schema} is not {@code null}, it is available to the
    * {@link FieldValueList} iterated over.
    *
-   * <p>Example of listing table rows.
-   *
-   * <pre>{@code
+   * <p>Example of listing table rows with schema.
+   * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * Schema schema = ...;
-   * String field = "my_field";
+   * String field = "field";
    * TableResult tableData =
    *     bigquery.listTableData(datasetName, tableName, schema);
    * for (FieldValueList row : tableData.iterateAll()) {
-   *   row.get(field)
+   *   row.get(field);
    * }
    * }</pre>
    *
@@ -927,9 +950,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the table's rows. If the {@code schema} is not {@code null}, it is available to the
    * {@link FieldValueList} iterated over.
    *
-   * <p>Example of listing table rows.
-   *
-   * <pre>{@code
+   * <p>Example of listing table rows with schema.
+   * <pre> {@code
    * Schema schema =
    *     Schema.of(
    *         Field.of("word", LegacySQLTypeName.STRING),
@@ -1047,28 +1069,21 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * queries. Since dry-run queries are not actually executed, there's no way to retrieve results.
    *
    * <p>Example of running a query.
-   *
-   * <pre>{@code
-   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare`";
-   * QueryJobConfiguration queryConfig = QueryJobConfiguration.of(query);
-   *
-   * // To run the legacy syntax queries use the following code instead:
-   * //   String query = "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"
-   * //   QueryJobConfiguration queryConfig =
-   * //       QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-   *
+   * <pre> {@code
+   * String query = "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
+   * QueryJobConfiguration queryConfig =
+   *     QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
    * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   // do something with the data
    * }
    * }</pre>
    *
    * <p>Example of running a query with query parameters.
-   *
-   * <pre>{@code
-   * String query =
-   *     "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > ?";
+   * <pre> {@code
+   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount";
+   * // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
-   *     .addPositionalParameter(QueryParameterValue.int64(5))
+   *     .addNamedParameter("wordCount", QueryParameterValue.int64(5))
    *     .build();
    * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
    *   // do something with the data
@@ -1091,18 +1106,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>See {@link #query(QueryJobConfiguration, JobOption...)} for examples on populating a {@link
    * QueryJobConfiguration}.
-   *
-   * <p>The recommended way to create a randomly generated JobId is the following:
-   *
-   * <pre>{@code
-   * JobId jobId = JobId.of();
-   * }</pre>
-   *
-   * For a user specified job id with an optional prefix use the following:
-   *
-   * <pre>{@code
-   * JobId jobId = JobId.of("my_prefix-my_unique_job_id");
-   * }</pre>
    *
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query

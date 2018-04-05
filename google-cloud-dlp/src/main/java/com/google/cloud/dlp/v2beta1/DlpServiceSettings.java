@@ -70,7 +70,7 @@ import javax.annotation.Generated;
  * <code>
  * DlpServiceSettings.Builder dlpServiceSettingsBuilder =
  *     DlpServiceSettings.newBuilder();
- * dlpServiceSettingsBuilder.inspectContentSettings().getRetrySettingsBuilder()
+ * dlpServiceSettingsBuilder.inspectContentSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * DlpServiceSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
  * </code>

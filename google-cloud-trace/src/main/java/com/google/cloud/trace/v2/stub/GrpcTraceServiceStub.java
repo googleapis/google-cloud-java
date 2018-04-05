@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
@@ -63,6 +63,8 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
   private final UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable;
   private final UnaryCallable<Span, Span> createSpanCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcTraceServiceStub create(TraceServiceStubSettings settings)
       throws IOException {
     return new GrpcTraceServiceStub(settings, ClientContext.create(settings));
@@ -72,6 +74,12 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
     return new GrpcTraceServiceStub(TraceServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcTraceServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcTraceServiceStub(
+        TraceServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcTraceServiceStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -79,6 +87,20 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
    */
   protected GrpcTraceServiceStub(TraceServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcTraceServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcTraceServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcTraceServiceStub(
+      TraceServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansTransportSettings =
         GrpcCallSettings.<BatchWriteSpansRequest, Empty>newBuilder()
@@ -90,10 +112,10 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
             .build();
 
     this.batchWriteSpansCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             batchWriteSpansTransportSettings, settings.batchWriteSpansSettings(), clientContext);
     this.createSpanCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createSpanTransportSettings, settings.createSpanSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

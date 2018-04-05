@@ -82,7 +82,7 @@ import javax.annotation.Generated;
  * <code>
  * SubscriptionAdminSettings.Builder subscriptionAdminSettingsBuilder =
  *     SubscriptionAdminSettings.newBuilder();
- * subscriptionAdminSettingsBuilder.createSubscriptionSettings().getRetrySettingsBuilder()
+ * subscriptionAdminSettingsBuilder.createSubscriptionSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * SubscriptionAdminSettings subscriptionAdminSettings = subscriptionAdminSettingsBuilder.build();
  * </code>
