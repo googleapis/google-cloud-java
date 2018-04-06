@@ -124,4 +124,25 @@ public class RecognizeIT {
     assertThat(got).contains("OK Google");
     assertThat(got).contains("the weather outside is sunny");
   }
+
+  @Test
+  public void testAutoPunctuation() throws Exception {
+    Recognize.transcribeFileWithAutomaticPunctuation(audioFileName);
+    String got = bout.toString();
+    assertThat(got).contains("How old is the Brooklyn Bridge?");
+  }
+
+  @Test
+  public void testGcsAutoPunctuation() throws Exception {
+    Recognize.transcribeGcsWithAutomaticPunctuation(gcsAudioPath);
+    String got = bout.toString();
+    assertThat(got).contains("How old is the Brooklyn Bridge?");
+  }
+
+  @Test
+  public void testStreamAutoPunctuation() throws Exception {
+    Recognize.streamingTranscribeWithAutomaticPunctuation(audioFileName);
+    String got = bout.toString();
+    assertThat(got).contains("How old is the Brooklyn Bridge?");
+  }
 }

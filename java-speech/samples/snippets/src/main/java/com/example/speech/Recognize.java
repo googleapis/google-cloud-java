@@ -53,6 +53,7 @@ public class Recognize {
           "\tjava %s \"<command>\" \"<path-to-image>\"\n"
           + "Commands:\n"
           + "\tsyncrecognize | asyncrecognize | streamrecognize | wordoffsets | model-selection\n"
+          + "\t| auto-punctuation | stream-punctuation\n"
           + "Path:\n\tA file path (ex: ./resources/audio.raw) or a URI "
           + "for a Cloud Storage resource (gs://...)\n",
           Recognize.class.getCanonicalName());
@@ -88,6 +89,14 @@ public class Recognize {
       } else {
         transcribeModelSelection(path);
       }
+    } else if (command.equals("auto-punctuation")) {
+      if (path.startsWith("gs://")) {
+        transcribeGcsWithAutomaticPunctuation(path);
+      } else {
+        transcribeFileWithAutomaticPunctuation(path);
+      }
+    } else if (command.equals("stream-punctuation")) {
+      streamingTranscribeWithAutomaticPunctuation(path);
     }
   }
 
@@ -497,4 +506,176 @@ public class Recognize {
     }
     // [END speech_transcribe_model_selection_gcs]
   }
+
+  // [START speech_sync_recognize_punctuation]
+  /**
+   * Performs transcription with automatic punctuation on raw PCM audio data.
+   *
+   * @param fileName the path to a PCM audio file to transcribe.
+   */
+  public static void transcribeFileWithAutomaticPunctuation(String fileName) throws Exception {
+    Path path = Paths.get(fileName);
+    byte[] content = Files.readAllBytes(path);
+
+    try (SpeechClient speechClient = SpeechClient.create()) {
+      // Configure request with local raw PCM audio
+      RecognitionConfig recConfig = RecognitionConfig.newBuilder()
+          .setEncoding(AudioEncoding.LINEAR16)
+          .setLanguageCode("en-US")
+          .setSampleRateHertz(16000)
+          .setEnableAutomaticPunctuation(true)
+          .build();
+
+      // Get the contents of the local audio file
+      RecognitionAudio recognitionAudio = RecognitionAudio.newBuilder()
+          .setContent(ByteString.copyFrom(content))
+          .build();
+
+      // Perform the transcription request
+      RecognizeResponse recognizeResponse = speechClient.recognize(recConfig, recognitionAudio);
+
+      // Just print the first result here.
+      SpeechRecognitionResult result = recognizeResponse.getResultsList().get(0);
+
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+
+      // Print out the result
+      System.out.printf("Transcript : %s\n", alternative.getTranscript());
+    }
+  }
+  // [END speech_sync_recognize_punctuation]
+
+  // [START speech_async_recognize_gcs_punctuation]
+  /**
+   * Performs transcription on remote FLAC file and prints the transcription.
+   *
+   * @param gcsUri the path to the remote FLAC audio file to transcribe.
+   */
+  public static void transcribeGcsWithAutomaticPunctuation(String gcsUri) throws Exception {
+    try (SpeechClient speechClient = SpeechClient.create()) {
+      // Configure request with raw PCM audio
+      RecognitionConfig config = RecognitionConfig.newBuilder()
+          .setEncoding(AudioEncoding.FLAC)
+          .setLanguageCode("en-US")
+          .setSampleRateHertz(16000)
+          .setEnableAutomaticPunctuation(true)
+          .build();
+
+      // Set the remote path for the audio file
+      RecognitionAudio audio = RecognitionAudio.newBuilder()
+          .setUri(gcsUri)
+          .build();
+
+      // Use non-blocking call for getting file transcription
+      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
+          speechClient.longRunningRecognizeAsync(config, audio);
+
+      while (!response.isDone()) {
+        System.out.println("Waiting for response...");
+        Thread.sleep(10000);
+      }
+
+      // Just print the first result here.
+      SpeechRecognitionResult result = response.get().getResultsList().get(0);
+
+      // There can be several alternative transcripts for a given chunk of speech. Just use the
+      // first (most likely) one here.
+      SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+
+      // Print out the result
+      System.out.printf("Transcript : %s\n", alternative.getTranscript());
+    }
+  }
+  // [END speech_async_recognize_gcs_punctuation]
+
+  // [START speech_stream_recognize_punctuation]
+  /**
+   * Performs streaming speech recognition on raw PCM audio data.
+   *
+   * @param fileName the path to a PCM audio file to transcribe.
+   */
+  public static void streamingTranscribeWithAutomaticPunctuation(String fileName) throws Exception {
+    Path path = Paths.get(fileName);
+    byte[] data = Files.readAllBytes(path);
+
+    // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
+    try (SpeechClient speech = SpeechClient.create()) {
+
+      // Configure request with local raw PCM audio
+      RecognitionConfig recConfig = RecognitionConfig.newBuilder()
+          .setEncoding(AudioEncoding.LINEAR16)
+          .setLanguageCode("en-US")
+          .setSampleRateHertz(16000)
+          .setEnableAutomaticPunctuation(true)
+          .build();
+
+      // Build the streaming config with the audio config
+      StreamingRecognitionConfig config = StreamingRecognitionConfig.newBuilder()
+          .setConfig(recConfig)
+          .build();
+
+      class ResponseApiStreamingObserver<T> implements ApiStreamObserver<T> {
+        private final SettableFuture<List<T>> future = SettableFuture.create();
+        private final List<T> messages = new java.util.ArrayList<T>();
+
+        @Override
+        public void onNext(T message) {
+          messages.add(message);
+        }
+
+        @Override
+        public void onError(Throwable t) {
+          future.setException(t);
+        }
+
+        @Override
+        public void onCompleted() {
+          future.set(messages);
+        }
+
+        // Returns the SettableFuture object to get received messages / exceptions.
+        public SettableFuture<List<T>> future() {
+          return future;
+        }
+      }
+
+      ResponseApiStreamingObserver<StreamingRecognizeResponse> responseObserver =
+          new ResponseApiStreamingObserver<>();
+
+      BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
+          speech.streamingRecognizeCallable();
+
+      ApiStreamObserver<StreamingRecognizeRequest> requestObserver =
+          callable.bidiStreamingCall(responseObserver);
+
+      // The first request must **only** contain the audio configuration:
+      requestObserver.onNext(StreamingRecognizeRequest.newBuilder()
+          .setStreamingConfig(config)
+          .build());
+
+      // Subsequent requests must **only** contain the audio data.
+      requestObserver.onNext(StreamingRecognizeRequest.newBuilder()
+          .setAudioContent(ByteString.copyFrom(data))
+          .build());
+
+      // Mark transmission as completed after sending the data.
+      requestObserver.onCompleted();
+
+      List<StreamingRecognizeResponse> responses = responseObserver.future().get();
+
+      for (StreamingRecognizeResponse response : responses) {
+        // For streaming recognize, the results list has one is_final result (if available) followed
+        // by a number of in-progress results (if iterim_results is true) for subsequent utterances.
+        // Just print the first result here.
+        StreamingRecognitionResult result = response.getResultsList().get(0);
+        // There can be several alternative transcripts for a given chunk of speech. Just use the
+        // first (most likely) one here.
+        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+        System.out.printf("Transcript : %s\n", alternative.getTranscript());
+      }
+    }
+  }
+  // [END speech_stream_recognize_punctuation]
 }
