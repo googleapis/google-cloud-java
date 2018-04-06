@@ -34,7 +34,7 @@ public class DetectIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  static final String FACES_FILE_LOCATION =
+  static final String FILE_LOCATION =
       "gs://java-docs-samples-testing/video/googlework_short.mp4";
 
   @Before
@@ -50,26 +50,8 @@ public class DetectIT {
   }
 
   @Test
-  public void testFacesBoundingBoxes() throws Exception {
-    String[] args = {"faces-bounding-boxes", FACES_FILE_LOCATION};
-    Detect.argsHelper(args);
-    String got = bout.toString();
-
-    assertThat(got).contains("Top:");
-  }
-
-  @Test
-  public void testFacesEmotions() throws Exception {
-    String[] args = {"faces-emotions", FACES_FILE_LOCATION};
-    Detect.argsHelper(args);
-    String got = bout.toString();
-
-    assertThat(got).contains("CONCENTRATION");
-  }
-
-  @Test
   public void testSpeechTranscription() throws Exception {
-    String[] args = {"speech-transcription", FACES_FILE_LOCATION};
+    String[] args = {"speech-transcription", FILE_LOCATION};
     Detect.argsHelper(args);
     String got = bout.toString();
 
