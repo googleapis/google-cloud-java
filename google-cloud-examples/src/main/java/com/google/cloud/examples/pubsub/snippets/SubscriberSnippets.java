@@ -32,9 +32,9 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
-import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
 import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
+import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.ProjectSubscriptionName;
@@ -45,7 +45,7 @@ import com.google.pubsub.v1.ReceivedMessage;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 /** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
@@ -56,17 +56,13 @@ public class SubscriberSnippets {
 
   private final ApiFuture<Void> done;
 
-  private final Executor executor;
-
   public SubscriberSnippets(
       ProjectSubscriptionName subscriptionName,
       MessageReceiver receiver,
-      ApiFuture<Void> done,
-      Executor executor) {
+      ApiFuture<Void> done) {
     this.subscriptionName = subscriptionName;
     this.receiver = receiver;
     this.done = done;
-    this.executor = executor;
   }
 
   // [TARGET startAsync()]
@@ -78,7 +74,7 @@ public class SubscriberSnippets {
             // Handle error.
           }
         },
-        executor);
+        Executors.newCachedThreadPool());
     subscriber.startAsync();
 
     // Wait for a stop signal.
