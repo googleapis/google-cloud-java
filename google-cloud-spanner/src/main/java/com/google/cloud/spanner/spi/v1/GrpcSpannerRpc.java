@@ -20,6 +20,7 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.ServerStream;
@@ -33,9 +34,9 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.longrunning.GetOperationRequest;
-import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsGrpc;
 import com.google.protobuf.FieldMask;
+import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
 import com.google.spanner.admin.database.v1.DatabaseAdminGrpc;
@@ -43,7 +44,9 @@ import com.google.spanner.admin.database.v1.DropDatabaseRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseRequest;
 import com.google.spanner.admin.database.v1.ListDatabasesRequest;
+import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
+import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.CreateInstanceRequest;
 import com.google.spanner.admin.instance.v1.DeleteInstanceRequest;
 import com.google.spanner.admin.instance.v1.GetInstanceConfigRequest;
@@ -55,6 +58,7 @@ import com.google.spanner.admin.instance.v1.ListInstanceConfigsRequest;
 import com.google.spanner.admin.instance.v1.ListInstanceConfigsResponse;
 import com.google.spanner.admin.instance.v1.ListInstancesRequest;
 import com.google.spanner.admin.instance.v1.ListInstancesResponse;
+import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
@@ -101,6 +105,8 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
+
+import com.google.longrunning.Operation;
 
 /** Implementation of Cloud Spanner remote calls using gRPC. */
 public class GrpcSpannerRpc implements SpannerRpc {
@@ -223,23 +229,15 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public Operation createInstance(String parent, String instanceId, Instance instance)
-      throws SpannerException {
-    CreateInstanceRequest request =
-        CreateInstanceRequest.newBuilder()
-            .setParent(parent)
-            .setInstanceId(instanceId)
-            .setInstance(instance)
-            .build();
-    return get(doUnaryCall(InstanceAdminGrpc.METHOD_CREATE_INSTANCE, request, parent, null));
+  public OperationFuture<Instance, CreateInstanceMetadata> createInstance(
+      String parent, String instanceId, Instance instance) throws SpannerException {
+    throw new UnsupportedOperationException("Not implemented: createInstance");
   }
 
   @Override
-  public Operation updateInstance(Instance instance, FieldMask fieldMask) throws SpannerException {
-    UpdateInstanceRequest request =
-        UpdateInstanceRequest.newBuilder().setInstance(instance).setFieldMask(fieldMask).build();
-    return get(
-        doUnaryCall(InstanceAdminGrpc.METHOD_UPDATE_INSTANCE, request, instance.getName(), null));
+  public OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
+      Instance instance, FieldMask fieldMask) throws SpannerException {
+    throw new UnsupportedOperationException("Not implemented: createInstance");
   }
 
   @Override
@@ -278,30 +276,16 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public Operation createDatabase(
-      String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements)
-      throws SpannerException {
-    CreateDatabaseRequest request =
-        CreateDatabaseRequest.newBuilder()
-            .setParent(instanceName)
-            .setCreateStatement(createDatabaseStatement)
-            .addAllExtraStatements(additionalStatements)
-            .build();
-    return get(doUnaryCall(DatabaseAdminGrpc.METHOD_CREATE_DATABASE, request, instanceName, null));
+  public OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
+      String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements) {
+    throw new UnsupportedOperationException("Not Implemented: createDatabase");
   }
 
   @Override
-  public Operation updateDatabaseDdl(
+  public OperationFuture<Database, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
       String databaseName, Iterable<String> updateStatements, @Nullable String operationId)
       throws SpannerException {
-    UpdateDatabaseDdlRequest request =
-        UpdateDatabaseDdlRequest.newBuilder()
-            .setDatabase(databaseName)
-            .addAllStatements(updateStatements)
-            .setOperationId(MoreObjects.firstNonNull(operationId, ""))
-            .build();
-    return get(
-        doUnaryCall(DatabaseAdminGrpc.METHOD_UPDATE_DATABASE_DDL, request, databaseName, null));
+    throw new UnsupportedOperationException("Not Implemented: updateDatabaseDdl");
   }
 
   @Override
