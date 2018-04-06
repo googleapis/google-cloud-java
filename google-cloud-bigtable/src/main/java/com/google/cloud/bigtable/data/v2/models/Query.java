@@ -23,11 +23,17 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 /** A simple wrapper to construct a query for the ReadRows RPC. */
-public class Query {
+public final class Query implements Serializable {
+  private static final long serialVersionUID = -316972783499434755L;
+
   private final String tableId;
-  private final ReadRowsRequest.Builder builder = ReadRowsRequest.newBuilder();
+  private transient ReadRowsRequest.Builder builder = ReadRowsRequest.newBuilder();
 
   /**
    * Constructs a new Query object for the specified table id. The table id will be combined with
@@ -40,6 +46,16 @@ public class Query {
 
   private Query(String tableId) {
     this.tableId = tableId;
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    builder = ReadRowsRequest.newBuilder().mergeFrom(input);
+  }
+
+  private void writeObject(ObjectOutputStream output) throws IOException {
+    output.defaultWriteObject();
+    builder.build().writeTo(output);
   }
 
   /** Adds a key to looked up */

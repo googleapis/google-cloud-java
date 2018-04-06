@@ -21,6 +21,11 @@ import com.google.cloud.bigtable.data.v2.models.Range.BoundType;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -110,6 +115,21 @@ public class RangeTest {
     assertThat(r1).isEqualTo(r2);
     assertThat(r2).isEqualTo(r1);
     assertThat(r1).isNotEqualTo(r3);
+  }
+
+  @Test
+  public void timestampSerializationTest() throws IOException, ClassNotFoundException {
+    TimestampRange expected = TimestampRange.create(10, 20);
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+
+    TimestampRange actual = (TimestampRange) ois.readObject();
+    assertThat(actual).isEqualTo(expected);
   }
 
   @Test
@@ -270,5 +290,20 @@ public class RangeTest {
     assertThat(r1).isEqualTo(r2);
     assertThat(r2).isEqualTo(r1);
     assertThat(r1).isNotEqualTo(r3);
+  }
+
+  @Test
+  public void byteStringSerializationTest() throws IOException, ClassNotFoundException {
+    ByteStringRange expected = ByteStringRange.create("a", "z");
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+
+    ByteStringRange actual = (ByteStringRange) ois.readObject();
+    assertThat(actual).isEqualTo(expected);
   }
 }
