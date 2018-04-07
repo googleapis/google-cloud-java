@@ -108,8 +108,7 @@ public class ITPubSubSnippets {
         new SubscriberSnippets(
             subscriptionName,
             new MessageReceiverSnippets(queue).messageReceiver(),
-            done,
-            MoreExecutors.directExecutor());
+            done);
     new Thread(
             new Runnable() {
               @Override

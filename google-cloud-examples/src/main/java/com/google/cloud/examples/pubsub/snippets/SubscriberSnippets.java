@@ -45,6 +45,7 @@ import com.google.pubsub.v1.ReceivedMessage;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /** This class contains snippets for the {@link Subscriber} interface. */
@@ -68,13 +69,14 @@ public class SubscriberSnippets {
   // [TARGET startAsync()]
   public void startAndWait() throws Exception {
     Subscriber subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
+    ExecutorService pool = Executors.newCachedThreadPool();
     subscriber.addListener(
         new Subscriber.Listener() {
           public void failed(Subscriber.State from, Throwable failure) {
             // Handle error.
           }
         },
-        Executors.newCachedThreadPool());
+        pool);
     subscriber.startAsync();
 
     // Wait for a stop signal.
@@ -93,6 +95,7 @@ public class SubscriberSnippets {
     //   }
     // at the end of main() to previent the main thread from exiting.
     done.get();
+    pool.shutdown();
     subscriber.stopAsync().awaitTerminated();
   }
 
