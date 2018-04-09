@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -79,6 +80,7 @@ import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartitionQueryRequest;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.PartitionResponse;
+import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
@@ -391,16 +393,18 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public StreamingCall read(
+  public ServerStream<PartialResultSet> read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
     GrpcCallContext context = newCallContext(options, request.getSession());
-    throw new UnsupportedOperationException("not implemented yet");
+    return stub.streamingReadCallable().call(request, context);
   }
 
   @Override
-  public StreamingCall executeQuery(
+  public ServerStream<PartialResultSet> executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
-    throw new UnsupportedOperationException("Not implemented yet.");
+    GrpcCallContext context = GrpcCallContext.createDefault()
+        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue());
+    return stub.executeStreamingSqlCallable().call(request, context);
   }
 
   @Override

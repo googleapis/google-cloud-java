@@ -19,6 +19,8 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
+import com.google.api.gax.rpc.ServerStream;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
@@ -280,18 +282,15 @@ public class SessionImplTest {
   }
 
   private void mockRead(final PartialResultSet myResultSet) {
-    final ArgumentCaptor<SpannerRpc.ResultStreamConsumer> consumer =
-        ArgumentCaptor.forClass(SpannerRpc.ResultStreamConsumer.class);
-    Mockito.when(rpc.read(Mockito.<ReadRequest>any(), consumer.capture(), Mockito.eq(options)))
-        .then(
-            new Answer<SpannerRpc.StreamingCall>() {
-              @Override
-              public SpannerRpc.StreamingCall answer(InvocationOnMock invocation) throws Throwable {
-                consumer.getValue().onPartialResultSet(myResultSet);
-                consumer.getValue().onCompleted();
-                return new NoOpStreamingCall();
-              }
-            });
+    ServerStreamingCallable<ReadRequest, PartialResultSet> serverStreamingCallable =
+        new ServerStreamingStashCallable(Arrays.<PartialResultSet>asList(myResultSet));
+    final ServerStream<PartialResultSet> mockServerStream = serverStreamingCallable.call(null);
+    Mockito.when(
+        rpc.read(
+            Mockito.<ReadRequest>any(),
+            Mockito.<SpannerRpc.ResultStreamConsumer>any(),
+            Mockito.eq(options)))
+        .thenReturn(mockServerStream);
   }
 
   @Test

@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
@@ -197,10 +198,10 @@ public interface SpannerRpc extends ServiceRpc {
 
   void deleteSession(String sessionName, @Nullable Map<Option, ?> options) throws SpannerException;
 
-  StreamingCall read(
+  ServerStream<PartialResultSet> read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
 
-  StreamingCall executeQuery(
+  ServerStream<PartialResultSet> executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
 
   Transaction beginTransaction(BeginTransactionRequest request, @Nullable Map<Option, ?> options)
