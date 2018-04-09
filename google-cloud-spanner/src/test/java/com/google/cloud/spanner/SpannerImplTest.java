@@ -19,7 +19,6 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Before;
@@ -44,7 +43,7 @@ public class SpannerImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    impl = new SpannerImpl(rpc, 1, spannerOptions);
+    impl = new SpannerImpl(rpc, rpc, 1, spannerOptions);
   }
 
   @Test

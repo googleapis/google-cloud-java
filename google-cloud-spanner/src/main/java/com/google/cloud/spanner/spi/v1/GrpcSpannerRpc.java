@@ -22,6 +22,7 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
@@ -88,9 +89,8 @@ import io.grpc.stub.AbstractStub;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
-import io.opencensus.trace.export.SampledSpanStore;
 import io.opencensus.trace.Tracing;
-
+import io.opencensus.trace.export.SampledSpanStore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -104,11 +104,11 @@ import javax.annotation.Nullable;
 
 /** Implementation of Cloud Spanner remote calls using gRPC. */
 public class GrpcSpannerRpc implements SpannerRpc {
-  
+
   static {
     setupTracingConfig();
   }
-  
+
   private static final Logger logger = Logger.getLogger(GrpcSpannerRpc.class.getName());
 
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
@@ -367,25 +367,15 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public StreamingCall read(
+  public ServerStream<PartialResultSet> read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
-    return doStreamingCall(
-        SpannerGrpc.METHOD_STREAMING_READ,
-        request,
-        consumer,
-        request.getSession(),
-        Option.CHANNEL_HINT.getLong(options));
+    throw new UnsupportedOperationException("Not implemented: read");
   }
 
   @Override
-  public StreamingCall executeQuery(
+  public ServerStream<PartialResultSet> executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
-    return doStreamingCall(
-        SpannerGrpc.METHOD_EXECUTE_STREAMING_SQL,
-        request,
-        consumer,
-        request.getSession(),
-        Option.CHANNEL_HINT.getLong(options));
+    throw new UnsupportedOperationException("Not implemented: executeQuery");
   }
 
   @Override
@@ -594,7 +584,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     }
   }
 
-  private static class LoggingInterceptor implements ClientInterceptor {
+  static class LoggingInterceptor implements ClientInterceptor {
     private final Level level;
 
     LoggingInterceptor(Level level) {
