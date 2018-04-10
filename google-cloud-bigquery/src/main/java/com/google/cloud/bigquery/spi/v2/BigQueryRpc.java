@@ -207,7 +207,7 @@ public interface BigQueryRpc extends ServiceRpc {
   /**
    * Opens a resumable upload session to load data into a BigQuery table and returns an upload URI.
    *
-   * @param configuration load configuration
+   * @param job load job
    * @throws BigQueryException upon failure
    */
   String open(Job job);
