@@ -970,10 +970,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
   TableResult listTableData(TableId tableId, Schema schema, TableDataListOption... options);
 
   /**
-   * Returns the requested job or {@code null} if not found.
+   * Returns the requested job or {@code null} if not found. If the location of the job is not "US"
+   * or "EU", {@link #getJob(JobId, JobOption...)} must be used instead.
    *
    * <p>Example of getting a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String jobName = "my_job_name";
    * Job job = bigquery.getJob(jobName);
    * if (job == null) {
@@ -986,10 +988,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Job getJob(String jobId, JobOption... options);
 
   /**
-   * Returns the requested job or {@code null} if not found.
+   * Returns the requested job or {@code null} if not found. If the location of the job is not "US"
+   * or "EU", the {@code jobId} must specify the job location.
    *
    * <p>Example of getting a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String jobName = "my_job_name";
    * JobId jobIdObject = JobId.of(jobName);
    * Job job = bigquery.getJob(jobIdObject);
@@ -1019,11 +1023,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Sends a job cancel request. This call will return immediately. The job status can then be
-   * checked using either {@link #getJob(JobId, JobOption...)} or
-   * {@link #getJob(String, JobOption...)}).
+   * checked using either {@link #getJob(JobId, JobOption...)} or {@link #getJob(String,
+   * JobOption...)}).
+   *
+   * <p>If the location of the job is not "US" or "EU", {@link #cancel(JobId)} must be used instead.
    *
    * <p>Example of cancelling a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String jobName = "my_job_name";
    * boolean success = bigquery.cancel(jobName);
    * if (success) {
@@ -1041,11 +1048,15 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Sends a job cancel request. This call will return immediately. The job status can then be
-   * checked using either {@link #getJob(JobId, JobOption...)} or
-   * {@link #getJob(String, JobOption...)}).
+   * checked using either {@link #getJob(JobId, JobOption...)} or {@link #getJob(String,
+   * JobOption...)}).
+   *
+   * <p>If the location of the job is not "US" or "EU", the {@code jobId} must specify the job
+   * location.
    *
    * <p>Example of cancelling a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String jobName = "my_job_name";
    * JobId jobId = JobId.of(jobName);
    * boolean success = bigquery.cancel(jobId);
@@ -1065,11 +1076,15 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Runs the query associated with the request, using an internally-generated random JobId.
    *
+   * <p>If the location of the job is not "US" or "EU", {@link #query(QueryJobConfiguration, JobId,
+   * JobOption...)} must be used instead.
+   *
    * <p>This method cannot be used in conjuction with {@link QueryJobConfiguration#dryRun()}
    * queries. Since dry-run queries are not actually executed, there's no way to retrieve results.
    *
    * <p>Example of running a query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String query = "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
    * QueryJobConfiguration queryConfig =
    *     QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
@@ -1079,7 +1094,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }</pre>
    *
    * <p>Example of running a query with query parameters.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount";
    * // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
@@ -1100,6 +1116,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Runs the query associated with the request, using the given JobId.
+   *
+   * <p>If the location of the job is not "US" or "EU", the {@code jobId} must specify the job
+   * location.
    *
    * <p>This method cannot be used in conjuction with {@link QueryJobConfiguration#dryRun()}
    * queries. Since dry-run queries are not actually executed, there's no way to retrieve results.
@@ -1125,10 +1144,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Returns a channel to write data to be inserted into a BigQuery table. Data format and other
-   * options can be configured using the {@link WriteChannelConfiguration} parameter.
+   * options can be configured using the {@link WriteChannelConfiguration} parameter. If the job is
+   * not in "US" or "EU", {@link #writer(JobId, WriteChannelConfiguration)} must be used instead.
    *
    * <p>Example of creating a channel with which to write to a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String csvData = "StringValue1\nStringValue2\n";
@@ -1152,7 +1173,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }</pre>
    *
    * <p>Example of writing a local file to a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * Path csvPath = FileSystems.getDefault().getPath(".", "my-data.csv");
@@ -1177,6 +1199,37 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration);
 
-  // TODO(pongad): document
+  /**
+   * Returns a channel to write data to be inserted into a BigQuery table. Data format and other
+   * options can be configured using the {@link WriteChannelConfiguration} parameter. If the job is
+   * not in "US" or "EU", the {@code jobId} must contain the location of the job.
+   *
+   * <p>Example of creating a channel with which to write to a table.
+   *
+   * <pre>{@code
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_table_name";
+   * String csvData = "StringValue1\nStringValue2\n";
+   * String csvData = "StringValue1\nStringValue2\n";
+   * String location = "asia-northeast1";
+   * TableId tableId = TableId.of(datasetName, tableName);
+   * WriteChannelConfiguration writeChannelConfiguration =
+   *     WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
+   * // The location must be specified; other fields can be auto-detected.
+   * JobId jobId = JobId.newBuilder().setLocation(location).build();
+   * TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+   * // Write data to writer
+   * try {
+   *   writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   * } finally {
+   *   writer.close();
+   * }
+   * // Get load job
+   * Job job = writer.getJob();
+   * job = job.waitFor();
+   * LoadStatistics stats = job.getStatistics();
+   * return stats.getOutputRows();
+   * }</pre>
+   */
   TableDataWriteChannel writer(JobId jobId, WriteChannelConfiguration writeChannelConfiguration);
 }
