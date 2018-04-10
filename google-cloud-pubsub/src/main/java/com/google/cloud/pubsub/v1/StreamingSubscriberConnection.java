@@ -117,7 +117,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     lock.lock();
     try {
-      requestObserver.onError(Status.CANCELLED.asException());
+      // Don't onError; it appears erroring can cause gRPC to drop messages.
+      requestObserver.onCompleted();
     } finally {
       lock.unlock();
       notifyStopped();
