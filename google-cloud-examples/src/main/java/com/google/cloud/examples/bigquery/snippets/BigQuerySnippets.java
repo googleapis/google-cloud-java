@@ -25,9 +25,6 @@ package com.google.cloud.examples.bigquery.snippets;
 import com.google.api.client.util.Charsets;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.JobInfo.CreateDisposition;
-import com.google.cloud.bigquery.LoadJobConfiguration;
-import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
@@ -47,8 +44,10 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobConfiguration;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -58,6 +57,7 @@ import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -351,6 +351,36 @@ public class BigQuerySnippets {
       return stats.getOutputRows();
       // [END writeToTable]
     }
+
+  /** Example of creating a channel with which to write to a table. */
+  // [TARGET writer(WriteChannelConfiguration)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE "StringValue1\nStringValue2\n"]
+  // [VARIABLE "asia-northeast1"]
+  public long writeToTableLocation(
+      String datasetName, String tableName, String csvData, String location)
+      throws IOException, InterruptedException, TimeoutException {
+    // [START writeToTableLocation]
+    TableId tableId = TableId.of(datasetName, tableName);
+    WriteChannelConfiguration writeChannelConfiguration =
+        WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
+    // The location must be specified; other fields can be auto-detected.
+    JobId jobId = JobId.newBuilder().setLocation(location).build();
+    TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+    // Write data to writer
+    try {
+      writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+    } finally {
+      writer.close();
+    }
+    // Get load job
+    Job job = writer.getJob();
+    job = job.waitFor();
+    LoadStatistics stats = job.getStatistics();
+    return stats.getOutputRows();
+    // [END writeToTableLocation]
+  }
 
   /**
    * Example of writing a local file to a table.
