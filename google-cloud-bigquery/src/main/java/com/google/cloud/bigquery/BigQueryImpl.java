@@ -572,11 +572,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Job getJob(String jobId, String location, JobOption... options) {
-    return getJob(JobId.newBuilder().setJob(jobId).setLocation(location).build(), options);
-  }
-
-  @Override
   public Job getJob(JobId jobId, JobOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     final JobId completeJobId = jobId.setProjectId(getOptions().getProjectId());
@@ -632,11 +627,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public boolean cancel(String jobId) {
     return cancel(JobId.of(jobId));
-  }
-
-  @Override
-  public boolean cancel(String jobId, String location) {
-    return cancel(JobId.newBuilder().setJob(jobId).setLocation(location).build());
   }
 
   @Override
@@ -722,7 +712,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration) {
-    return new TableDataWriteChannel(getOptions(),
+    return writer(JobId.of(), writeChannelConfiguration);
+  }
+
+  @Override
+  public TableDataWriteChannel writer(
+      JobId jobId, WriteChannelConfiguration writeChannelConfiguration) {
+    return new TableDataWriteChannel(
+        getOptions(),
+        jobId.setProjectId(getOptions().getProjectId()),
         writeChannelConfiguration.setProjectId(getOptions().getProjectId()));
   }
 

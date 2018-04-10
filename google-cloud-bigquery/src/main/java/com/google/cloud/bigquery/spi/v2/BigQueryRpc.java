@@ -20,7 +20,6 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -211,7 +210,7 @@ public interface BigQueryRpc extends ServiceRpc {
    * @param configuration load configuration
    * @throws BigQueryException upon failure
    */
-  String open(JobConfiguration configuration);
+  String open(Job job);
 
   /**
    * Uploads the provided data to the resumable upload session at the specified position. This

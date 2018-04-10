@@ -38,7 +38,6 @@ import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
-import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
@@ -1369,19 +1368,6 @@ public class BigQueryImplTest {
             QUERY_RESULTS_OPTION_PAGE_TOKEN);
     assertEquals(true, response.getCompleted());
     assertEquals(null, response.getSchema());
-  }
-
-  @Test
-  public void testWriter() {
-    WriteChannelConfiguration writeChannelConfiguration = WriteChannelConfiguration.of(TABLE_ID);
-    EasyMock.expect(
-            bigqueryRpcMock.open(WriteChannelConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
-        .andReturn("upload-id");
-    EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.getService();
-    WriteChannel channel = bigquery.writer(writeChannelConfiguration);
-    assertNotNull(channel);
-    assertTrue(channel.isOpen());
   }
 
   @Test

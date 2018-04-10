@@ -1219,7 +1219,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testLocationRoundTrip() throws Exception {
+  public void testLocation() throws Exception {
     String location = "EU";
     String wrongLocation = "US";
 
@@ -1242,22 +1242,75 @@ public class ITBigQueryTest {
               table.getTableId().getProject(),
               table.getTableId().getDataset(),
               table.getTableId().getTable());
-      Job job =
-          bigquery.create(
-              JobInfo.of(
-                  JobId.newBuilder().setLocation(location).build(),
-                  QueryJobConfiguration.of(query)));
-      job = job.waitFor();
-      assertThat(job.getStatus().getError()).isNull();
 
-      assertThat(job.getJobId().getLocation()).isEqualTo(location);
+      // Test create/get
+      {
+        Job job =
+            bigquery.create(
+                JobInfo.of(
+                    JobId.newBuilder().setLocation(location).build(),
+                    QueryJobConfiguration.of(query)));
+        job = job.waitFor();
+        assertThat(job.getStatus().getError()).isNull();
 
-      // Roundtripped location in job id should work.
-      assertThat(bigquery.getJob(job.getJobId())).isNotNull();
+        assertThat(job.getJobId().getLocation()).isEqualTo(location);
 
-      // Wrong location shouldn't work.
-      assertThat(bigquery.getJob(job.getJobId().toBuilder().setLocation(wrongLocation).build()))
-          .isNull();
+        JobId jobId = job.getJobId();
+        JobId wrongId = jobId.toBuilder().setLocation(wrongLocation).build();
+
+        // Getting with location should work.
+        assertThat(bigquery.getJob(jobId)).isNotNull();
+        // Getting with wrong location shouldn't work.
+        assertThat(bigquery.getJob(wrongId)).isNull();
+
+        // Cancelling with location should work. (Cancelling already finished job is fine.)
+        assertThat(bigquery.cancel(jobId)).isTrue();
+        // Cancelling with wrong location shouldn't work.
+        assertThat(bigquery.cancel(wrongId)).isFalse();
+      }
+
+      // Test query
+      {
+        assertThat(
+                bigquery
+                    .query(
+                        QueryJobConfiguration.of(query),
+                        JobId.newBuilder().setLocation(location).build())
+                    .iterateAll())
+            .isEmpty();
+
+        try {
+          bigquery
+              .query(
+                  QueryJobConfiguration.of(query),
+                  JobId.newBuilder().setLocation(wrongLocation).build())
+              .iterateAll();
+          fail("querying a table with wrong location shouldn't work");
+        } catch (BigQueryException e) {
+          // Nothing to do
+        }
+      }
+
+      // Test write
+      {
+        WriteChannelConfiguration writeChannelConfiguration =
+            WriteChannelConfiguration.newBuilder(tableId)
+                .setFormatOptions(FormatOptions.csv())
+                .build();
+        try (TableDataWriteChannel writer =
+            bigquery.writer(
+                JobId.newBuilder().setLocation(location).build(), writeChannelConfiguration)) {
+          writer.write(ByteBuffer.wrap("foo".getBytes()));
+        }
+
+        try {
+          bigquery.writer(
+              JobId.newBuilder().setLocation(wrongLocation).build(), writeChannelConfiguration);
+          fail("writing to a table with wrong location shouldn't work");
+        } catch (BigQueryException e) {
+          // Nothing to do
+        }
+      }
     } finally {
       bigquery.delete(dataset.getDatasetId(), DatasetDeleteOption.deleteContents());
     }

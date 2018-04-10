@@ -39,7 +39,6 @@ import com.google.api.services.bigquery.model.DatasetList;
 import com.google.api.services.bigquery.model.DatasetReference;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobList;
 import com.google.api.services.bigquery.model.JobStatus;
 import com.google.api.services.bigquery.model.Table;
@@ -404,9 +403,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public String open(JobConfiguration configuration) {
+  public String open(Job loadJob) {
     try {
-      Job loadJob = new Job().setConfiguration(configuration);
       String builder = BASE_RESUMABLE_URI + options.getProjectId() + "/jobs";
       GenericUrl url = new GenericUrl(builder);
       url.set("uploadType", "resumable");
