@@ -1176,4 +1176,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration);
+
+  // TODO(pongad): document
+  TableDataWriteChannel writer(JobId jobId, WriteChannelConfiguration writeChannelConfiguration);
 }

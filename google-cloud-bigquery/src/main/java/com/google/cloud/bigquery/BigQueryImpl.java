@@ -577,13 +577,20 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     final JobId completeJobId = jobId.setProjectId(getOptions().getProjectId());
     try {
       com.google.api.services.bigquery.model.Job answer =
-          runWithRetries(new Callable<com.google.api.services.bigquery.model.Job>() {
-            @Override
-            public com.google.api.services.bigquery.model.Job call() {
-              return bigQueryRpc.getJob(completeJobId.getProject(), completeJobId.getJob(),
-                  optionsMap);
-            }
-          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+          runWithRetries(
+              new Callable<com.google.api.services.bigquery.model.Job>() {
+                @Override
+                public com.google.api.services.bigquery.model.Job call() {
+                  return bigQueryRpc.getJob(
+                      completeJobId.getProject(),
+                      completeJobId.getJob(),
+                      completeJobId.getLocation(),
+                      optionsMap);
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock());
       return answer == null ? null : Job.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -626,12 +633,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public boolean cancel(JobId jobId) {
     final JobId completeJobId = jobId.setProjectId(getOptions().getProjectId());
     try {
-      return runWithRetries(new Callable<Boolean>() {
-        @Override
-        public Boolean call() {
-          return bigQueryRpc.cancel(completeJobId.getProject(), completeJobId.getJob());
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      return runWithRetries(
+          new Callable<Boolean>() {
+            @Override
+            public Boolean call() {
+              return bigQueryRpc.cancel(
+                  completeJobId.getProject(), completeJobId.getJob(), completeJobId.getLocation());
+            }
+          },
+          getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -662,13 +674,22 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     final JobId completeJobId = jobId.setProjectId(serviceOptions.getProjectId());
     try {
       GetQueryResultsResponse results =
-          runWithRetries(new Callable<GetQueryResultsResponse>() {
-            @Override
-            public GetQueryResultsResponse call() {
-              return serviceOptions.getBigQueryRpcV2().getQueryResults(
-                  completeJobId.getProject(), completeJobId.getJob(), optionsMap);
-            }
-          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          runWithRetries(
+              new Callable<GetQueryResultsResponse>() {
+                @Override
+                public GetQueryResultsResponse call() {
+                  return serviceOptions
+                      .getBigQueryRpcV2()
+                      .getQueryResults(
+                          completeJobId.getProject(),
+                          completeJobId.getJob(),
+                          completeJobId.getLocation(),
+                          optionsMap);
+                }
+              },
+              serviceOptions.getRetrySettings(),
+              EXCEPTION_HANDLER,
+              serviceOptions.getClock());
       TableSchema schemaPb = results.getSchema();
 
       ImmutableList.Builder<BigQueryError> errors = ImmutableList.builder();
@@ -691,7 +712,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration) {
-    return new TableDataWriteChannel(getOptions(),
+    return writer(JobId.of(), writeChannelConfiguration);
+  }
+
+  @Override
+  public TableDataWriteChannel writer(
+      JobId jobId, WriteChannelConfiguration writeChannelConfiguration) {
+    return new TableDataWriteChannel(
+        getOptions(),
+        jobId.setProjectId(getOptions().getProjectId()),
         writeChannelConfiguration.setProjectId(getOptions().getProjectId()));
   }
 

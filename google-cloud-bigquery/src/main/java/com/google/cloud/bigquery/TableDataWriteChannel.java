@@ -22,7 +22,6 @@ import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
@@ -37,9 +36,9 @@ public class TableDataWriteChannel extends
 
   private Job job;
 
-  TableDataWriteChannel(BigQueryOptions options,
-      WriteChannelConfiguration writeChannelConfiguration) {
-    this(options, writeChannelConfiguration, open(options, writeChannelConfiguration));
+  TableDataWriteChannel(
+      BigQueryOptions options, JobId jobId, WriteChannelConfiguration writeChannelConfiguration) {
+    this(options, writeChannelConfiguration, open(options, jobId, writeChannelConfiguration));
   }
 
   TableDataWriteChannel(BigQueryOptions options, WriteChannelConfiguration config,
@@ -69,15 +68,26 @@ public class TableDataWriteChannel extends
     return StateImpl.builder(getOptions(), getEntity(), getUploadId(), job);
   }
 
-  private static String open(final BigQueryOptions options,
+  private static String open(
+      final BigQueryOptions options,
+      final JobId jobId,
       final WriteChannelConfiguration writeChannelConfiguration) {
     try {
-      return runWithRetries(new Callable<String>() {
-        @Override
-        public String call() {
-          return options.getBigQueryRpcV2().open(writeChannelConfiguration.toPb());
-        }
-      }, options.getRetrySettings(), BigQueryImpl.EXCEPTION_HANDLER, options.getClock());
+      return runWithRetries(
+          new Callable<String>() {
+            @Override
+            public String call() {
+              return options
+                  .getBigQueryRpcV2()
+                  .open(
+                      new com.google.api.services.bigquery.model.Job()
+                          .setConfiguration(writeChannelConfiguration.toPb())
+                          .setJobReference(jobId.toPb()));
+            }
+          },
+          options.getRetrySettings(),
+          BigQueryImpl.EXCEPTION_HANDLER,
+          options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
