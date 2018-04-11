@@ -161,10 +161,11 @@ public class SubscriberSnippets {
 
   private Subscriber createSubscriberWithCustomFlowSettings() throws Exception {
     // [START pubsub_subscriber_flow_settings]
-    long maxMessageCount = 10L;
-    // Configure max number of messages to be pulled
     FlowControlSettings flowControlSettings =
-        FlowControlSettings.newBuilder().setMaxOutstandingElementCount(maxMessageCount).build();
+        FlowControlSettings.newBuilder()
+            .setMaxOutstandingElementCount(10_000L)
+            .setMaxOutstandingRequestBytes(1_000_000_000L)
+            .build();
     Subscriber subscriber =
         Subscriber.newBuilder(subscriptionName, receiver)
             .setFlowControlSettings(flowControlSettings)

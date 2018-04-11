@@ -39,12 +39,9 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.SubscriberGrpc;
-import com.google.pubsub.v1.SubscriberGrpc.SubscriberFutureStub;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberStub;
-import com.google.pubsub.v1.Subscription;
 import io.grpc.CallCredentials;
 import io.grpc.Channel;
 import io.grpc.auth.MoreCallCredentials;
@@ -56,7 +53,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -96,7 +92,6 @@ import org.threeten.bp.Duration;
  */
 public class Subscriber extends AbstractApiService {
   private static final int THREADS_PER_CHANNEL = 5;
-  @InternalApi static final int CHANNELS_PER_CORE = 1;
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
   @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
@@ -414,13 +409,11 @@ public class Subscriber extends AbstractApiService {
     private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.ofMillis(100);
     private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
     private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
-    private static final long DEFAULT_MEMORY_PERCENTAGE = 20;
 
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
             .setExecutorThreadCount(
                 THREADS_PER_CHANNEL
-                    * CHANNELS_PER_CORE
                     * Runtime.getRuntime().availableProcessors())
             .build();
 
@@ -431,10 +424,7 @@ public class Subscriber extends AbstractApiService {
     Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
 
     FlowControlSettings flowControlSettings =
-        FlowControlSettings.newBuilder()
-            .setMaxOutstandingRequestBytes(
-                Runtime.getRuntime().maxMemory() * DEFAULT_MEMORY_PERCENTAGE / 100L)
-            .build();
+        FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     ExecutorProvider systemExecutorProvider = FixedExecutorProvider.create(SHARED_SYSTEM_EXECUTOR);
@@ -449,7 +439,7 @@ public class Subscriber extends AbstractApiService {
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
-    int parallelPullCount = Runtime.getRuntime().availableProcessors() * CHANNELS_PER_CORE;
+    int parallelPullCount = 1;
 
     Builder(String subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
@@ -500,7 +490,31 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
-    /** Sets the flow control settings. */
+    /**
+     * Sets the flow control settings.
+     *
+     * <p>In the example below, the {@Subscriber} will make sure that
+     *
+     * <ul>
+     *   <li>there are at most ten thousand outstanding messages, and
+     *   <li>the combined size of outstanding messages does not exceed 1GB.
+     * </ul>
+     *
+     * "Outstanding messages" here means the messages that have already been given to {@link
+     * MessageReceiver} but not yet {@code acked()} or {@code nacked()}.
+     *
+     * <pre>{@code
+     *    FlowControlSettings flowControlSettings =
+     *     FlowControlSettings.newBuilder()
+     *         .setMaxOutstandingElementCount(10_000L)
+     *         .setMaxOutstandingRequestBytes(1_000_000_000L)
+     *         .build();
+     * Subscriber subscriber =
+     *     Subscriber.newBuilder(subscriptionName, receiver)
+     *         .setFlowControlSettings(flowControlSettings)
+     *         .build();
+     * }</pre>
+     */
     public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
