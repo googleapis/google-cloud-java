@@ -249,6 +249,7 @@ public class AlertSample {
     return alertPolicies;
   }
 
+  // [START monitoring_alert_list_channels]
   private List<NotificationChannel> getNotificationChannels(String projectId) {
     List<NotificationChannel> notificationChannels = Lists.newArrayList();
     ListNotificationChannelsPagedResponse listNotificationChannelsResponse =
@@ -258,6 +259,7 @@ public class AlertSample {
     }
     return notificationChannels;
   }
+  // [END monitoring_alert_list_channels]
 
   private void writePoliciesBackupFile(String projectId,
                                        String filePath,
@@ -334,6 +336,7 @@ public class AlertSample {
     return newPolicies;
   }
 
+  // [START monitoring_alert_create_policy]
   private void restoreRevisedPolicies(String projectId,
                                       boolean isSameProject,
                                       List<AlertPolicy> policies) {
@@ -351,6 +354,7 @@ public class AlertSample {
       outputStream.println(String.format("Restored %s", policy.getName()));
     }
   }
+  // [END monitoring_alert_create_policy]
 
   private List<NotificationChannel> readNotificationChannelsJson(JsonObject backupContent) {
     if (backupContent.has("notification_channels")) {
@@ -361,6 +365,8 @@ public class AlertSample {
     return Lists.newArrayList();
   }
 
+  // [START monitoring_alert_create_channel]
+  // [START monitoring_alert_update_channel]
   private Map<String, String> restoreNotificationChannels(String projectId,
                                                           List<NotificationChannel> channels,
                                                           boolean isSameProject) {
@@ -392,7 +398,9 @@ public class AlertSample {
     }
     return newChannelNames;
   }
-
+  // [END monitoring_alert_create_channel]
+  // [END monitoring_alert_update_channel]
+  
   private JsonObject getPolicyJsonContents(String filePath, BufferedReader content, Gson gson) {
     try {
       return gson.fromJson(content, JsonObject.class);
