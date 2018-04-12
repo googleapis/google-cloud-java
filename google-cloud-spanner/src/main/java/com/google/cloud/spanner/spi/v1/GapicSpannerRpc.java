@@ -174,8 +174,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
     ListInstanceConfigsRequest request = requestBuilder.build();
 
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(projectName, projectName));
+    GrpcCallContext context = newCallContext(null, projectName);
     ListInstanceConfigsResponse response = 
         get(instanceStub.listInstanceConfigsCallable().futureCall(request, context));
     return new Paginated<>(response.getInstanceConfigsList(), response.getNextPageToken());
@@ -186,8 +185,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     GetInstanceConfigRequest request = 
         GetInstanceConfigRequest.newBuilder().setName(instanceConfigName).build();
 
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(projectName, projectName));
+    GrpcCallContext context = newCallContext(null, projectName);
     return get(instanceStub.getInstanceConfigCallable().futureCall(request, context));
   }
 
@@ -204,8 +202,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
     ListInstancesRequest request = requestBuilder.build();
     
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(projectName, projectName));
+    GrpcCallContext context = newCallContext(null, projectName);
     ListInstancesResponse response = 
         get(instanceStub.listInstancesCallable().futureCall(request, context));
     return new Paginated<>(response.getInstancesList(), response.getNextPageToken());
@@ -221,8 +218,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setInstance(instance)
             .build();
 
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(parent, projectName));
+    GrpcCallContext context = newCallContext(null, parent);
     return get(instanceStub.createInstanceCallable().futureCall(request, context));
   }
 
@@ -231,8 +227,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     UpdateInstanceRequest request =
         UpdateInstanceRequest.newBuilder().setInstance(instance).setFieldMask(fieldMask).build();
     
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(instance.getName(), projectName));
+    GrpcCallContext context = newCallContext(null, instance.getName());
     return get(instanceStub.updateInstanceCallable().futureCall(request, context));
   }
 
@@ -241,8 +236,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     GetInstanceRequest request = 
         GetInstanceRequest.newBuilder().setName(instanceName).build();
     
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(instanceName, projectName));
+    GrpcCallContext context = newCallContext(null, instanceName);
     return get(instanceStub.getInstanceCallable().futureCall(request, context));
   }
 
@@ -251,8 +245,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     DeleteInstanceRequest request = 
         DeleteInstanceRequest.newBuilder().setName(instanceName).build();
 
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(instanceName, projectName));
+    GrpcCallContext context = newCallContext(null, instanceName);
     get(instanceStub.deleteInstanceCallable().futureCall(request, context));
   }
 
@@ -266,8 +259,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
     ListDatabasesRequest request = requestBuilder.build();
     
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(instanceName, projectName));
+    GrpcCallContext context = newCallContext(null, instanceName);
     ListDatabasesResponse response = get(databaseStub.listDatabasesCallable()
         .futureCall(request, context));
     return new Paginated<>(response.getDatabasesList(), response.getNextPageToken());
@@ -282,8 +274,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setCreateStatement(createDatabaseStatement)
             .addAllExtraStatements(additionalStatements)
             .build();
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(instanceName, projectName));
+    GrpcCallContext context = newCallContext(null, instanceName);
     return get(databaseStub.createDatabaseCallable().futureCall(request, context));
   }
 
@@ -296,8 +287,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             .addAllStatements(updateDatabaseStatements)
             .setOperationId(MoreObjects.firstNonNull(updateId, ""))
             .build();
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(databaseName, projectName));
+    GrpcCallContext context = newCallContext(null, databaseName);
     return get(databaseStub.updateDatabaseDdlCallable().futureCall(request, context));
   }
 
@@ -306,8 +296,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     DropDatabaseRequest request =
         DropDatabaseRequest.newBuilder().setDatabase(databaseName).build();
     
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(databaseName, projectName));
+    GrpcCallContext context = newCallContext(null, databaseName);
     get(databaseStub.dropDatabaseCallable().futureCall(request, context));
   }
 
@@ -318,8 +307,7 @@ public class GapicSpannerRpc implements SpannerRpc {
         .setName(databaseName)
         .build();
 
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(databaseName, projectName));
+    GrpcCallContext context = newCallContext(null, databaseName);
     return get(databaseStub.getDatabaseCallable().futureCall(request, context));
   }
 
@@ -328,8 +316,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     GetDatabaseDdlRequest request = 
         GetDatabaseDdlRequest.newBuilder().setDatabase(databaseName).build();
 
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(databaseName, projectName));
+    GrpcCallContext context = newCallContext(null, databaseName);
     return get(databaseStub.getDatabaseDdlCallable().futureCall(request, context))
                .getStatementsList();
   }
@@ -337,8 +324,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Override
   public Operation getOperation(String name) throws SpannerException {
     GetOperationRequest request = GetOperationRequest.newBuilder().setName(name).build();
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withExtraHeaders(metadataProvider.newExtraHeaders(name, projectName));
+    GrpcCallContext context = newCallContext(null, name);
     return get(databaseStub.getOperationsStub().getOperationCallable()
         .futureCall(request, context));
   }
@@ -353,9 +339,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       requestBuilder.setSession(session);
     }
     CreateSessionRequest request = requestBuilder.build();
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue())
-        .withExtraHeaders(metadataProvider.newExtraHeaders(databaseName, projectName));
+    GrpcCallContext context = newCallContext(options, databaseName);
     return get(stub.createSessionCallable().futureCall(request, context));
   }
 
@@ -364,18 +348,14 @@ public class GapicSpannerRpc implements SpannerRpc {
       throws SpannerException {
     DeleteSessionRequest request =
         DeleteSessionRequest.newBuilder().setName(sessionName).build();
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue())
-        .withExtraHeaders(metadataProvider.newExtraHeaders(sessionName, projectName));
+    GrpcCallContext context = newCallContext(options, sessionName);
     get(stub.deleteSessionCallable().futureCall(request, context));
   }
 
   @Override
   public StreamingCall read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue())
-        .withExtraHeaders(metadataProvider.newExtraHeaders(request.getSession(), projectName));
+    GrpcCallContext context = newCallContext(options, request.getSession());
     throw new UnsupportedOperationException("not implemented yet");
   }
 
@@ -388,46 +368,35 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Override
   public Transaction beginTransaction(
       BeginTransactionRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue())
-        .withExtraHeaders(metadataProvider.newExtraHeaders(request.getSession(), projectName));
+    GrpcCallContext context = newCallContext(options, request.getSession());
     return get(stub.beginTransactionCallable().futureCall(request, context));
   }
 
   @Override
   public CommitResponse commit(CommitRequest commitRequest, @Nullable Map<Option, ?> options)
       throws SpannerException {
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue())
-        .withExtraHeaders(
-            metadataProvider.newExtraHeaders(commitRequest.getSession(), projectName));
+    GrpcCallContext context = newCallContext(options, commitRequest.getSession());
     return get(stub.commitCallable().futureCall(commitRequest, context));
   }
 
   @Override
   public void rollback(RollbackRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException {
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue())
-        .withExtraHeaders(metadataProvider.newExtraHeaders(request.getSession(), projectName));
+    GrpcCallContext context = newCallContext(options, request.getSession());
     get(stub.rollbackCallable().futureCall(request, context));
   }
 
   @Override
   public PartitionResponse partitionQuery(
       PartitionQueryRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue())
-        .withExtraHeaders(metadataProvider.newExtraHeaders(request.getSession(), projectName));
+    GrpcCallContext context = newCallContext(options, request.getSession());
     return get(stub.partitionQueryCallable().futureCall(request, context));
   }
 
   @Override
   public PartitionResponse partitionRead(
       PartitionReadRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue())
-        .withExtraHeaders(metadataProvider.newExtraHeaders(request.getSession(), projectName));
+    GrpcCallContext context = newCallContext(options, request.getSession());
     return get(stub.partitionReadCallable().futureCall(request, context));
   }
 
@@ -443,5 +412,15 @@ public class GapicSpannerRpc implements SpannerRpc {
     } catch (ExecutionException | CancellationException e) {
       throw newSpannerException(context, e);
     }
+  }
+
+  private GrpcCallContext newCallContext(@Nullable Map<Option, ?> options, String resource) {
+    GrpcCallContext context = GrpcCallContext.createDefault();
+    if (options != null) {
+      context = context.withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue());
+    }
+    context = context.withExtraHeaders(
+        metadataProvider.newExtraHeaders(resource, projectName));
+    return context;
   }
 }
