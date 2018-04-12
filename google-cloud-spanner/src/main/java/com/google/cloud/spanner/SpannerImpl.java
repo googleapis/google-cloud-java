@@ -898,13 +898,24 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
     }
 
-    private <T extends SessionTransaction> T setActive(@Nullable T ctx) {
+    TransactionContextImpl newTransaction() {
+      TransactionContextImpl txn = new TransactionContextImpl(this, readyTransactionId, rpc,
+          defaultPrefetchChunks);
+      return txn;
+    }
+    
+    <T extends SessionTransaction> T setActive(@Nullable T ctx) {
       if (activeTransaction != null) {
         activeTransaction.invalidate();
       }
       activeTransaction = ctx;
       readyTransactionId = null;
       return ctx;
+    }
+
+    @Override
+    public TransactionManager transactionManager() {
+      return new TransactionManagerImpl(this);
     }
   }
 
@@ -914,7 +925,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    * transactions, and read-write transactions. The defining characteristic is that a session may
    * only have one such transaction active at a time.
    */
-  private interface SessionTransaction {
+  static interface SessionTransaction {
     /** Invalidates the transaction, generally because a new one has been started on the session. */
     void invalidate();
   }
@@ -1217,10 +1228,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       this.session = session;
       this.sleeper = sleeper;
       this.span = Tracing.getTracer().getCurrentSpan();
-      ByteString transactionId = session.readyTransactionId;
-      session.readyTransactionId = null;
-      this.txn = new TransactionContextImpl(session, transactionId, rpc, defaultPrefetchChunks,
-          span);
+      this.txn = session.newTransaction();
     }
 
     TransactionRunnerImpl(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
@@ -1230,7 +1238,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Nullable
     @Override
     public <T> T run(TransactionCallable<T> callable) {
-      try {
+      try (Scope s = tracer.withSpan(span)) {
         return runInternal(callable);
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
@@ -1318,7 +1326,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     private void backoff(Context context, BackOff backoff) {
       long delay = txn.getRetryDelayInMillis(backoff);
-      txn = new TransactionContextImpl(session, null, txn.rpc, txn.defaultPrefetchChunks, span);
+      txn = session.newTransaction();
       span.addAnnotation("Backing off",
           ImmutableMap.of("Delay", AttributeValue.longAttributeValue(delay)));
       sleeper.backoffSleep(context, delay);
@@ -1344,9 +1352,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         SessionImpl session,
         @Nullable ByteString transactionId,
         SpannerRpc rpc,
-        int defaultPrefetchChunks,
-        Span span) {
-      super(session, rpc, defaultPrefetchChunks, span);
+        int defaultPrefetchChunks) {
+      super(session, rpc, defaultPrefetchChunks);
       this.transactionId = transactionId;
     }
 

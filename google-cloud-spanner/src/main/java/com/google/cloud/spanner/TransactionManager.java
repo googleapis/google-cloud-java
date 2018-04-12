@@ -1,3 +1,19 @@
+/*
+ * Copyright 2017 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
@@ -14,28 +30,31 @@ import com.google.cloud.Timestamp;
  * {@code ABORTED}, the manager is considered complete and no further transactions are allowed to be
  * created in it.
  * 
- * <p>Example
- * <pre><code>
- * try (TransactionManager manager : dbClient.transactionManager()) {
- *   TransactionContext txn = manager.begin();
- *   while (true) {
- *     String column = "FirstName";
- *     Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
- *     String name = row.getString(column);
- *     txn.buffer(
- *             Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
- *     try {
- *       manager.commit();
- *       break;
- *     } catch (AbortedException e) {
- *       Thread.sleep(e.getRetryDelayInMillis() / 1000);
- *       txn = manager.resetForRetry();
- *     }
- *   }
- * }
- * </code></pre>
+ * <p>Every {@code TransactionManager} should either be committed or rolled back. Failure to do so
+ * can cause resources to be leaked and deadlocks. Easiest way to guarantee this is by calling
+ * {@link #close()} in a finally block.
+ * 
+ * @see DatabaseClient#transactionManager()
  */
 public interface TransactionManager extends AutoCloseable {
+  
+  /**
+   * State of the transaction manager.
+   */
+  public enum TransactionState {
+    // Transaction has been started either by calling {@link #begin()} or via
+    // {@link resetForRetry()} but has not been commited or rolled back yet.
+    STARTED,
+    // Transaction was sucessfully committed. This is a terminal state.
+    COMMITTED,
+    // Transaction failed during commit with an error other than ABORTED. Transaction cannot be
+    // retried in this state. This is a terminal state.
+    COMMIT_FAILED,
+    // Transaction failed during commit with ABORTED and can be retried.
+    ABORTED,
+    // Transaction was rolled back. This is a terminal state.
+    ROLLED_BACK
+  }
   
   /**
    * Creates a new read write transaction. This must be called before doing any other operation and
@@ -70,6 +89,11 @@ public interface TransactionManager extends AutoCloseable {
    * {@code IllegalStateException}.
    */
   Timestamp getCommitTimestamp();
+  
+  /**
+   * Returns the state of the transaction.
+   */
+  TransactionState getState();
   
   /**
    * Closes the manager. If there is an active transaction, it will be rolled back. Underlying
