@@ -67,13 +67,12 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
     try {
       txn.commit();
       txnState = TransactionState.COMMITTED;
-    } catch (SpannerException e) {
-      if (!(e instanceof AbortedException)) {
-        txnState = TransactionState.COMMIT_FAILED;
-      } else {
-        txnState = TransactionState.ABORTED;
-      }
-      throw e;
+    } catch (AbortedException e1) {
+      txnState = TransactionState.ABORTED;
+      throw e1;
+    } catch (SpannerException e2) {
+      txnState = TransactionState.COMMIT_FAILED;
+      throw e2;
     }
   }
 
@@ -91,7 +90,7 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
   @Override
   public TransactionContext resetForRetry() {
     if (txn == null
-        || (!txn.isAborted() && txnState != TransactionState.ABORTED)) {
+        || !txn.isAborted() && txnState != TransactionState.ABORTED) {
       throw new IllegalStateException("resetForRetry can only be called if the previous attempt"
           + " aborted");
     }
