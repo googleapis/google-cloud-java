@@ -504,11 +504,11 @@ public class Subscriber extends AbstractApiService {
      * MessageReceiver} but not yet {@code acked()} or {@code nacked()}.
      *
      * <pre>{@code
-     *    FlowControlSettings flowControlSettings =
-     *     FlowControlSettings.newBuilder()
-     *         .setMaxOutstandingElementCount(10_000L)
-     *         .setMaxOutstandingRequestBytes(1_000_000_000L)
-     *         .build();
+     * FlowControlSettings flowControlSettings =
+     *  FlowControlSettings.newBuilder()
+     *      .setMaxOutstandingElementCount(10_000L)
+     *      .setMaxOutstandingRequestBytes(1_000_000_000L)
+     *      .build();
      * Subscriber subscriber =
      *     Subscriber.newBuilder(subscriptionName, receiver)
      *         .setFlowControlSettings(flowControlSettings)
