@@ -69,7 +69,7 @@ import org.threeten.bp.Duration;
  * <code>
  * OsLoginServiceStubSettings.Builder osLoginServiceSettingsBuilder =
  *     OsLoginServiceStubSettings.newBuilder();
- * osLoginServiceSettingsBuilder.deletePosixAccountSettings().getRetrySettingsBuilder()
+ * osLoginServiceSettingsBuilder.deletePosixAccountSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * OsLoginServiceStubSettings osLoginServiceSettings = osLoginServiceSettingsBuilder.build();
  * </code>

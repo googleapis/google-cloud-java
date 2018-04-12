@@ -25,7 +25,8 @@ import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.bigtable.admin.v2.InstanceName;
+import com.google.api.gax.rpc.WatchdogProvider;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -62,18 +63,42 @@ public class EnhancedBigtableStubSettingsTest {
     String appProfileId = "my-app-profile-id";
     String endpoint = "some.other.host:123";
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+    WatchdogProvider watchdogProvider = Mockito.mock(WatchdogProvider.class);
+    Duration watchdogInterval = Duration.ofSeconds(12);
 
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setInstanceName(instanceName)
             .setAppProfileId(appProfileId)
             .setEndpoint(endpoint)
-            .setCredentialsProvider(credentialsProvider);
+            .setCredentialsProvider(credentialsProvider)
+            .setStreamWatchdogProvider(watchdogProvider)
+            .setStreamWatchdogCheckInterval(watchdogInterval);
 
-    verifyBuilder(builder, instanceName, appProfileId, endpoint, credentialsProvider);
-    verifySettings(builder.build(), instanceName, appProfileId, endpoint, credentialsProvider);
     verifyBuilder(
-        builder.build().toBuilder(), instanceName, appProfileId, endpoint, credentialsProvider);
+        builder,
+        instanceName,
+        appProfileId,
+        endpoint,
+        credentialsProvider,
+        watchdogProvider,
+        watchdogInterval);
+    verifySettings(
+        builder.build(),
+        instanceName,
+        appProfileId,
+        endpoint,
+        credentialsProvider,
+        watchdogProvider,
+        watchdogInterval);
+    verifyBuilder(
+        builder.build().toBuilder(),
+        instanceName,
+        appProfileId,
+        endpoint,
+        credentialsProvider,
+        watchdogProvider,
+        watchdogInterval);
   }
 
   private void verifyBuilder(
@@ -81,11 +106,15 @@ public class EnhancedBigtableStubSettingsTest {
       InstanceName instanceName,
       String appProfileId,
       String endpoint,
-      CredentialsProvider credentialsProvider) {
+      CredentialsProvider credentialsProvider,
+      WatchdogProvider watchdogProvider,
+      Duration watchdogInterval) {
     assertThat(builder.getInstanceName()).isEqualTo(instanceName);
     assertThat(builder.getAppProfileId()).isEqualTo(appProfileId);
     assertThat(builder.getEndpoint()).isEqualTo(endpoint);
     assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
+    assertThat(builder.getStreamWatchdogProvider()).isSameAs(watchdogProvider);
+    assertThat(builder.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
   }
 
   private void verifySettings(
@@ -93,11 +122,15 @@ public class EnhancedBigtableStubSettingsTest {
       InstanceName instanceName,
       String appProfileId,
       String endpoint,
-      CredentialsProvider credentialsProvider) {
+      CredentialsProvider credentialsProvider,
+      WatchdogProvider watchdogProvider,
+      Duration watchdogInterval) {
     assertThat(settings.getInstanceName()).isEqualTo(instanceName);
     assertThat(settings.getAppProfileId()).isEqualTo(appProfileId);
     assertThat(settings.getEndpoint()).isEqualTo(endpoint);
     assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
+    assertThat(settings.getStreamWatchdogProvider()).isSameAs(watchdogProvider);
+    assertThat(settings.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
   }
 
   @Test
@@ -132,29 +165,22 @@ public class EnhancedBigtableStubSettingsTest {
 
     builder
         .readRowsSettings()
-        .setTimeoutCheckInterval(Duration.ofSeconds(10))
         .setIdleTimeout(Duration.ofMinutes(5))
         .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
         .setRetrySettings(retrySettings)
         .build();
 
-    assertThat(builder.readRowsSettings().getTimeoutCheckInterval())
-        .isEqualTo(Duration.ofSeconds(10));
     assertThat(builder.readRowsSettings().getIdleTimeout()).isEqualTo(Duration.ofMinutes(5));
     assertThat(builder.readRowsSettings().getRetryableCodes())
         .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
     assertThat(builder.readRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
 
-    assertThat(builder.build().readRowsSettings().getTimeoutCheckInterval())
-        .isEqualTo(Duration.ofSeconds(10));
     assertThat(builder.build().readRowsSettings().getIdleTimeout())
         .isEqualTo(Duration.ofMinutes(5));
     assertThat(builder.build().readRowsSettings().getRetryableCodes())
         .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
     assertThat(builder.build().readRowsSettings().getRetrySettings()).isEqualTo(retrySettings);
 
-    assertThat(builder.build().toBuilder().readRowsSettings().getTimeoutCheckInterval())
-        .isEqualTo(Duration.ofSeconds(10));
     assertThat(builder.build().toBuilder().readRowsSettings().getIdleTimeout())
         .isEqualTo(Duration.ofMinutes(5));
     assertThat(builder.build().toBuilder().readRowsSettings().getRetryableCodes())
@@ -367,9 +393,8 @@ public class EnhancedBigtableStubSettingsTest {
   }
 
   private void verifyRetrySettingAreSane(Set<Code> retryCodes, RetrySettings retrySettings) {
-    assertThat(retryCodes).containsAllOf(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED);
+    assertThat(retryCodes).containsAllOf(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
 
-    assertThat(retrySettings.getMaxAttempts()).isGreaterThan(1);
     assertThat(retrySettings.getTotalTimeout()).isGreaterThan(Duration.ZERO);
 
     assertThat(retrySettings.getInitialRetryDelay()).isGreaterThan(Duration.ZERO);

@@ -3,6 +3,7 @@
 This library provides tools to help write tests for code that uses the following google-cloud services:
 
 -  [BigQuery](#testing-code-that-uses-bigquery)
+-  [Bigtable](#testing-code-that-uses-bigtable)
 -  [Compute](#testing-code-that-uses-compute)
 -  [Datastore](#testing-code-that-uses-datastore)
 -  [DNS](#testing-code-that-uses-dns)
@@ -40,6 +41,29 @@ Here is an example that clears the dataset created in Step 3.
   ```java
   RemoteBigQueryHelper.forceDelete(bigquery, dataset);
   ```
+
+### Testing code that uses Bigtable
+
+Bigtable integration tests can either be run against an emulator or a real Bigtable table. The
+target environment can be selected via the `bigtable.env` system property. By default it is set to
+`emulator` and the other option is `prod`.
+
+To use the `emulator` environment, please install the gcloud sdk and use it to install the
+`cbtemulator` via `gcloud components install bigtable`.
+
+To use the `prod` environment:
+1. Set up the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
+2. Download the [JSON service account credentials file][create-service-account] from the Google 
+   Developer's Console.
+3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
+4. Set the system property `bigtable.env=prod` and `bigtable.table` to the full table name you 
+    created earlier. Example: 
+    ```shell
+    mvn verify -am -pl google-cloud-bigtable \
+      -Dbigtable.env=prod \
+      -Dbigtable.table=projects/my-project/instances/my-instance/tables/my-table
+    ```
+
 
 ### Testing code that uses Compute
 

@@ -77,7 +77,7 @@ import org.threeten.bp.Duration;
  * <code>
  * JobControllerStubSettings.Builder jobControllerSettingsBuilder =
  *     JobControllerStubSettings.newBuilder();
- * jobControllerSettingsBuilder.submitJobSettings().getRetrySettingsBuilder()
+ * jobControllerSettingsBuilder.submitJobSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * JobControllerStubSettings jobControllerSettings = jobControllerSettingsBuilder.build();
  * </code>

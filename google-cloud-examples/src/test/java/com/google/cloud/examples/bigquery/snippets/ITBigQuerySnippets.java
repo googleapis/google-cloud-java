@@ -20,6 +20,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.paging.Page;
@@ -48,6 +49,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -195,6 +197,24 @@ public class ITBigQuerySnippets {
     assertEquals("StringValue3", rowIterator.next().get(0).getStringValue());
     assertEquals("StringValue4", rowIterator.next().get(0).getStringValue());
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
+  }
+
+  @Test
+  public void testWriteRemoteJsonToTable() throws InterruptedException {
+    String datasetName = "test_dataset";
+    String tableName = "us_states";
+    Table table = bigquery.getTable(datasetName, tableName);
+    assertNull(table);
+
+    Long result = bigquerySnippets.writeRemoteFileToTable(datasetName, tableName);
+    table = bigquery.getTable(datasetName, tableName);
+    assertNotNull(table);
+    ArrayList<String> tableFieldNames = new ArrayList<>();
+    for (Field field: table.getDefinition().getSchema().getFields()) {
+      tableFieldNames.add(field.getName());
+    }
+    bigquery.delete(table.getTableId());
+    assertEquals(Long.valueOf(50), result);
   }
 
   @Test

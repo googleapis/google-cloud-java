@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.monitoring.v3.CreateNotificationChannelRequest;
@@ -167,6 +167,8 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
   private final UnaryCallable<DeleteNotificationChannelRequest, Empty>
       deleteNotificationChannelCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcNotificationChannelServiceStub create(
       NotificationChannelServiceStubSettings settings) throws IOException {
     return new GrpcNotificationChannelServiceStub(settings, ClientContext.create(settings));
@@ -178,6 +180,14 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
         NotificationChannelServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcNotificationChannelServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcNotificationChannelServiceStub(
+        NotificationChannelServiceStubSettings.newBuilder().build(),
+        clientContext,
+        callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcNotificationChannelServiceStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -186,6 +196,20 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
   protected GrpcNotificationChannelServiceStub(
       NotificationChannelServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcNotificationChannelServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcNotificationChannelServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcNotificationChannelServiceStub(
+      NotificationChannelServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<
             ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse>
@@ -231,47 +255,47 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                 .build();
 
     this.listNotificationChannelDescriptorsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listNotificationChannelDescriptorsTransportSettings,
             settings.listNotificationChannelDescriptorsSettings(),
             clientContext);
     this.listNotificationChannelDescriptorsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listNotificationChannelDescriptorsTransportSettings,
             settings.listNotificationChannelDescriptorsSettings(),
             clientContext);
     this.getNotificationChannelDescriptorCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getNotificationChannelDescriptorTransportSettings,
             settings.getNotificationChannelDescriptorSettings(),
             clientContext);
     this.listNotificationChannelsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listNotificationChannelsTransportSettings,
             settings.listNotificationChannelsSettings(),
             clientContext);
     this.listNotificationChannelsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listNotificationChannelsTransportSettings,
             settings.listNotificationChannelsSettings(),
             clientContext);
     this.getNotificationChannelCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getNotificationChannelTransportSettings,
             settings.getNotificationChannelSettings(),
             clientContext);
     this.createNotificationChannelCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createNotificationChannelTransportSettings,
             settings.createNotificationChannelSettings(),
             clientContext);
     this.updateNotificationChannelCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateNotificationChannelTransportSettings,
             settings.updateNotificationChannelSettings(),
             clientContext);
     this.deleteNotificationChannelCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteNotificationChannelTransportSettings,
             settings.deleteNotificationChannelSettings(),
             clientContext);

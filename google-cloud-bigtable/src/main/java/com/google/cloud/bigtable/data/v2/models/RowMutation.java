@@ -23,13 +23,16 @@ import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
+import java.io.Serializable;
 import javax.annotation.Nonnull;
 
 /**
  * Represents a list of mutations targeted at a single row. It's meant to be used as an parameter
  * for {@link com.google.cloud.bigtable.data.v2.BigtableDataClient#mutateRowAsync(RowMutation)}.
  */
-public final class RowMutation implements MutationApi<RowMutation> {
+public final class RowMutation implements MutationApi<RowMutation>, Serializable {
+  private static final long serialVersionUID = 6529002234913236318L;
+
   private final String tableId;
   private final ByteString key;
   private final Mutation mutation;

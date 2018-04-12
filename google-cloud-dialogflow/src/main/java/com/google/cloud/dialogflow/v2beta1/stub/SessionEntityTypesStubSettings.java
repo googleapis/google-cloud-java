@@ -76,7 +76,7 @@ import org.threeten.bp.Duration;
  * <code>
  * SessionEntityTypesStubSettings.Builder sessionEntityTypesSettingsBuilder =
  *     SessionEntityTypesStubSettings.newBuilder();
- * sessionEntityTypesSettingsBuilder.getSessionEntityTypeSettings().getRetrySettingsBuilder()
+ * sessionEntityTypesSettingsBuilder.getSessionEntityTypeSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * SessionEntityTypesStubSettings sessionEntityTypesSettings = sessionEntityTypesSettingsBuilder.build();
  * </code>

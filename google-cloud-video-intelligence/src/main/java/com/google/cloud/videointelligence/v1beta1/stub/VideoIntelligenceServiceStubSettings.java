@@ -68,7 +68,7 @@ import org.threeten.bp.Duration;
  * <code>
  * VideoIntelligenceServiceStubSettings.Builder videoIntelligenceServiceSettingsBuilder =
  *     VideoIntelligenceServiceStubSettings.newBuilder();
- * videoIntelligenceServiceSettingsBuilder.annotateVideoSettings().getRetrySettingsBuilder()
+ * videoIntelligenceServiceSettingsBuilder.annotateVideoSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * VideoIntelligenceServiceStubSettings videoIntelligenceServiceSettings = videoIntelligenceServiceSettingsBuilder.build();
  * </code>

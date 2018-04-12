@@ -21,7 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.monitoring.v3.AlertPolicy;
@@ -106,6 +106,8 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
   private final UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable;
   private final UnaryCallable<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcAlertPolicyServiceStub create(AlertPolicyServiceStubSettings settings)
       throws IOException {
     return new GrpcAlertPolicyServiceStub(settings, ClientContext.create(settings));
@@ -117,6 +119,12 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
         AlertPolicyServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcAlertPolicyServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcAlertPolicyServiceStub(
+        AlertPolicyServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcAlertPolicyServiceStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -124,6 +132,20 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
    */
   protected GrpcAlertPolicyServiceStub(
       AlertPolicyServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcAlertPolicyServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcAlertPolicyServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcAlertPolicyServiceStub(
+      AlertPolicyServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
         listAlertPoliciesTransportSettings =
@@ -148,30 +170,30 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
             .build();
 
     this.listAlertPoliciesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listAlertPoliciesTransportSettings,
             settings.listAlertPoliciesSettings(),
             clientContext);
     this.listAlertPoliciesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listAlertPoliciesTransportSettings,
             settings.listAlertPoliciesSettings(),
             clientContext);
     this.getAlertPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getAlertPolicyTransportSettings, settings.getAlertPolicySettings(), clientContext);
     this.createAlertPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createAlertPolicyTransportSettings,
             settings.createAlertPolicySettings(),
             clientContext);
     this.deleteAlertPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteAlertPolicyTransportSettings,
             settings.deleteAlertPolicySettings(),
             clientContext);
     this.updateAlertPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateAlertPolicyTransportSettings,
             settings.updateAlertPolicySettings(),
             clientContext);

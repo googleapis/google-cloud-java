@@ -16,15 +16,17 @@
 package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
 import com.google.protobuf.ByteString;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /** Default representation of a cell in a {@link Row}. */
+@InternalExtensionOnly
 @AutoValue
-public abstract class RowCell {
+public abstract class RowCell implements Serializable {
   /** Creates a new instance of the {@link RowCell}. */
   @InternalApi
   public static RowCell create(

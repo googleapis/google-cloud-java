@@ -78,7 +78,7 @@ import javax.annotation.Generated;
  * <code>
  * BigtableTableAdminSettings.Builder bigtableTableAdminSettingsBuilder =
  *     BigtableTableAdminSettings.newBuilder();
- * bigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettingsBuilder()
+ * bigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * BigtableTableAdminSettings bigtableTableAdminSettings = bigtableTableAdminSettingsBuilder.build();
  * </code>

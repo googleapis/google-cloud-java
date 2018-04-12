@@ -25,7 +25,6 @@ package com.google.cloud.examples.bigquery.snippets;
 import com.google.api.client.util.Charsets;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
@@ -45,8 +44,10 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobConfiguration;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -56,6 +57,7 @@ import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -350,6 +352,36 @@ public class BigQuerySnippets {
       // [END writeToTable]
     }
 
+  /** Example of creating a channel with which to write to a table. */
+  // [TARGET writer(WriteChannelConfiguration)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE "StringValue1\nStringValue2\n"]
+  // [VARIABLE "asia-northeast1"]
+  public long writeToTableLocation(
+      String datasetName, String tableName, String csvData, String location)
+      throws IOException, InterruptedException, TimeoutException {
+    // [START writeToTableLocation]
+    TableId tableId = TableId.of(datasetName, tableName);
+    WriteChannelConfiguration writeChannelConfiguration =
+        WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
+    // The location must be specified; other fields can be auto-detected.
+    JobId jobId = JobId.newBuilder().setLocation(location).build();
+    TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+    // Write data to writer
+    try {
+      writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+    } finally {
+      writer.close();
+    }
+    // Get load job
+    Job job = writer.getJob();
+    job = job.waitFor();
+    LoadStatistics stats = job.getStatistics();
+    return stats.getOutputRows();
+    // [END writeToTableLocation]
+  }
+
   /**
    * Example of writing a local file to a table.
    */
@@ -376,6 +408,38 @@ public class BigQuerySnippets {
     LoadStatistics stats = job.getStatistics();
     return stats.getOutputRows();
     // [END writeFileToTable]
+  }
+
+  /**
+   * Example of loading a newline-delimited-json file with textual fields from GCS to a table.
+   */
+  // [TARGET create(JobInfo, JobOption...)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  public Long writeRemoteFileToTable(String datasetName, String tableName)
+      throws InterruptedException {
+    // [START bigquery_load_table_gcs_json]
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
+    TableId tableId = TableId.of(datasetName, tableName);
+    // Table field definition
+    Field[] fields = new Field[] {
+        Field.of("name", LegacySQLTypeName.STRING),
+        Field.of("post_abbr", LegacySQLTypeName.STRING)
+    };
+    // Table schema definition
+    Schema schema = Schema.of(fields);
+    LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
+        .setFormatOptions(FormatOptions.json())
+        .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+        .setSchema(schema)
+        .build();
+    // Load the table
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    remoteLoadJob = remoteLoadJob.waitFor();
+    // Check the table
+    System.out.println("State: " + remoteLoadJob.getStatus().getState());
+    return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
+    // [END bigquery_load_table_gcs_json]
   }
 
   /**
@@ -470,7 +534,9 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /** Example of listing table rows with schema. */
+  /**
+   * Example of listing table rows with schema.
+   */
   // [TARGET listTableData(String, String, Schema, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -488,7 +554,9 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /** Example of listing table rows with schema. */
+  /**
+   * Example of listing table rows with schema.
+   */
   // [TARGET listTableData(TableId, Schema, TableDataListOption...)]
   public FieldValueList listTableDataSchemaId() {
     // [START listTableDataSchemaId]
@@ -607,8 +675,10 @@ public class BigQuerySnippets {
     return success;
   }
 
-  /** Example of running a query. */
-  // [TARGET query(QueryJobConfiguration, QueryOption...)]
+  /**
+   * Example of running a query.
+   */
+  // [TARGET query(QueryJobConfiguration, JobOption...)]
   // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
   public void runQuery(String query) throws InterruptedException {
     // [START runQuery]
@@ -620,10 +690,11 @@ public class BigQuerySnippets {
     // [END runQuery]
   }
 
-  /** Example of running a query with query parameters. */
-  // [TARGET query(QueryJobConfiguration, QueryOption...)]
-  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where
-  // word_count > @wordCount"]
+  /**
+   * Example of running a query with query parameters.
+   */
+  // [TARGET query(QueryJobConfiguration, JobOption...)]
+  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
   public void runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
     // Note, standard SQL is required to use query parameters. Legacy SQL will not work.

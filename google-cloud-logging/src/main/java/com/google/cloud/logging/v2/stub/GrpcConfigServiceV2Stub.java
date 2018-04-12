@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.logging.v2.CreateExclusionRequest;
@@ -154,6 +154,8 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable;
   private final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcConfigServiceV2Stub create(ConfigServiceV2StubSettings settings)
       throws IOException {
     return new GrpcConfigServiceV2Stub(settings, ClientContext.create(settings));
@@ -165,6 +167,12 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
         ConfigServiceV2StubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcConfigServiceV2Stub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcConfigServiceV2Stub(
+        ConfigServiceV2StubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcConfigServiceV2Stub, using the given settings. This is protected
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -172,6 +180,20 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
    */
   protected GrpcConfigServiceV2Stub(
       ConfigServiceV2StubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcConfigServiceV2CallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcConfigServiceV2Stub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcConfigServiceV2Stub(
+      ConfigServiceV2StubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ListSinksRequest, ListSinksResponse> listSinksTransportSettings =
         GrpcCallSettings.<ListSinksRequest, ListSinksResponse>newBuilder()
@@ -216,40 +238,40 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
             .build();
 
     this.listSinksCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listSinksTransportSettings, settings.listSinksSettings(), clientContext);
     this.listSinksPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listSinksTransportSettings, settings.listSinksSettings(), clientContext);
     this.getSinkCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getSinkTransportSettings, settings.getSinkSettings(), clientContext);
     this.createSinkCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createSinkTransportSettings, settings.createSinkSettings(), clientContext);
     this.updateSinkCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateSinkTransportSettings, settings.updateSinkSettings(), clientContext);
     this.deleteSinkCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteSinkTransportSettings, settings.deleteSinkSettings(), clientContext);
     this.listExclusionsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listExclusionsTransportSettings, settings.listExclusionsSettings(), clientContext);
     this.listExclusionsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listExclusionsTransportSettings, settings.listExclusionsSettings(), clientContext);
     this.getExclusionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getExclusionTransportSettings, settings.getExclusionSettings(), clientContext);
     this.createExclusionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createExclusionTransportSettings, settings.createExclusionSettings(), clientContext);
     this.updateExclusionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateExclusionTransportSettings, settings.updateExclusionSettings(), clientContext);
     this.deleteExclusionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteExclusionTransportSettings, settings.deleteExclusionSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

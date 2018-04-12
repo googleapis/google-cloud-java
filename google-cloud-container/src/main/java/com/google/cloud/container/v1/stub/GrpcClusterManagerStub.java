@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.container.v1.CancelOperationRequest;
@@ -376,6 +376,8 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<SetNetworkPolicyRequest, Operation> setNetworkPolicyCallable;
   private final UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcClusterManagerStub create(ClusterManagerStubSettings settings)
       throws IOException {
     return new GrpcClusterManagerStub(settings, ClientContext.create(settings));
@@ -387,6 +389,12 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
         ClusterManagerStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcClusterManagerStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcClusterManagerStub(
+        ClusterManagerStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcClusterManagerStub, using the given settings. This is protected
    * so that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -394,6 +402,20 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
    */
   protected GrpcClusterManagerStub(ClusterManagerStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcClusterManagerCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcClusterManagerStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcClusterManagerStub(
+      ClusterManagerStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
         GrpcCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
@@ -521,106 +543,106 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
             .build();
 
     this.listClustersCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
     this.getClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getClusterTransportSettings, settings.getClusterSettings(), clientContext);
     this.createClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createClusterTransportSettings, settings.createClusterSettings(), clientContext);
     this.updateClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateClusterTransportSettings, settings.updateClusterSettings(), clientContext);
     this.updateNodePoolCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateNodePoolTransportSettings, settings.updateNodePoolSettings(), clientContext);
     this.setNodePoolAutoscalingCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setNodePoolAutoscalingTransportSettings,
             settings.setNodePoolAutoscalingSettings(),
             clientContext);
     this.setLoggingServiceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setLoggingServiceTransportSettings,
             settings.setLoggingServiceSettings(),
             clientContext);
     this.setMonitoringServiceCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setMonitoringServiceTransportSettings,
             settings.setMonitoringServiceSettings(),
             clientContext);
     this.setAddonsConfigCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setAddonsConfigTransportSettings, settings.setAddonsConfigSettings(), clientContext);
     this.setLocationsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setLocationsTransportSettings, settings.setLocationsSettings(), clientContext);
     this.updateMasterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateMasterTransportSettings, settings.updateMasterSettings(), clientContext);
     this.setMasterAuthCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setMasterAuthTransportSettings, settings.setMasterAuthSettings(), clientContext);
     this.deleteClusterCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
     this.listOperationsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listOperationsTransportSettings, settings.listOperationsSettings(), clientContext);
     this.getOperationCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getOperationTransportSettings, settings.getOperationSettings(), clientContext);
     this.cancelOperationCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             cancelOperationTransportSettings, settings.cancelOperationSettings(), clientContext);
     this.getServerConfigCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getServerConfigTransportSettings, settings.getServerConfigSettings(), clientContext);
     this.listNodePoolsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listNodePoolsTransportSettings, settings.listNodePoolsSettings(), clientContext);
     this.getNodePoolCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getNodePoolTransportSettings, settings.getNodePoolSettings(), clientContext);
     this.createNodePoolCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createNodePoolTransportSettings, settings.createNodePoolSettings(), clientContext);
     this.deleteNodePoolCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteNodePoolTransportSettings, settings.deleteNodePoolSettings(), clientContext);
     this.rollbackNodePoolUpgradeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             rollbackNodePoolUpgradeTransportSettings,
             settings.rollbackNodePoolUpgradeSettings(),
             clientContext);
     this.setNodePoolManagementCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setNodePoolManagementTransportSettings,
             settings.setNodePoolManagementSettings(),
             clientContext);
     this.setLabelsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
     this.setLegacyAbacCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setLegacyAbacTransportSettings, settings.setLegacyAbacSettings(), clientContext);
     this.startIPRotationCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             startIPRotationTransportSettings, settings.startIPRotationSettings(), clientContext);
     this.completeIPRotationCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             completeIPRotationTransportSettings,
             settings.completeIPRotationSettings(),
             clientContext);
     this.setNodePoolSizeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setNodePoolSizeTransportSettings, settings.setNodePoolSizeSettings(), clientContext);
     this.setNetworkPolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setNetworkPolicyTransportSettings, settings.setNetworkPolicySettings(), clientContext);
     this.setMaintenancePolicyCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             setMaintenancePolicyTransportSettings,
             settings.setMaintenancePolicySettings(),
             clientContext);

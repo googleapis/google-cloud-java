@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.data.v2.models;
 import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsRequest.Builder;
 import com.google.bigtable.v2.RowFilter;
@@ -27,6 +26,11 @@ import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -119,6 +123,21 @@ public class QueryTest {
 
     ReadRowsRequest actualProto = query.toProto(requestContext);
     assertThat(actualProto).isEqualTo(expectedProto.build());
+  }
+
+  @Test
+  public void serializationTest() throws IOException, ClassNotFoundException {
+    Query expected = Query.create(TABLE_NAME.getTable()).filter(FILTERS.key().regex(".*"));
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+
+    Query actual = (Query) ois.readObject();
+    assertThat(actual.toProto(requestContext)).isEqualTo(expected.toProto(requestContext));
   }
 
   private static ReadRowsRequest.Builder expectedProtoBuilder() {

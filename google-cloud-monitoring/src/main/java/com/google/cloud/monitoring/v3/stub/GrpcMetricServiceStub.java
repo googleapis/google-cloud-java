@@ -25,7 +25,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
@@ -166,6 +166,8 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
       listTimeSeriesPagedCallable;
   private final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcMetricServiceStub create(MetricServiceStubSettings settings)
       throws IOException {
     return new GrpcMetricServiceStub(settings, ClientContext.create(settings));
@@ -175,6 +177,12 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
     return new GrpcMetricServiceStub(MetricServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcMetricServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcMetricServiceStub(
+        MetricServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcMetricServiceStub, using the given settings. This is protected so
    * that it is easy to make a subclass, but otherwise, the static factory methods should be
@@ -182,6 +190,20 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
    */
   protected GrpcMetricServiceStub(MetricServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcMetricServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcMetricServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcMetricServiceStub(
+      MetricServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
@@ -228,53 +250,53 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
             .build();
 
     this.listMonitoredResourceDescriptorsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listMonitoredResourceDescriptorsTransportSettings,
             settings.listMonitoredResourceDescriptorsSettings(),
             clientContext);
     this.listMonitoredResourceDescriptorsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listMonitoredResourceDescriptorsTransportSettings,
             settings.listMonitoredResourceDescriptorsSettings(),
             clientContext);
     this.getMonitoredResourceDescriptorCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getMonitoredResourceDescriptorTransportSettings,
             settings.getMonitoredResourceDescriptorSettings(),
             clientContext);
     this.listMetricDescriptorsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listMetricDescriptorsTransportSettings,
             settings.listMetricDescriptorsSettings(),
             clientContext);
     this.listMetricDescriptorsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listMetricDescriptorsTransportSettings,
             settings.listMetricDescriptorsSettings(),
             clientContext);
     this.getMetricDescriptorCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getMetricDescriptorTransportSettings,
             settings.getMetricDescriptorSettings(),
             clientContext);
     this.createMetricDescriptorCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createMetricDescriptorTransportSettings,
             settings.createMetricDescriptorSettings(),
             clientContext);
     this.deleteMetricDescriptorCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteMetricDescriptorTransportSettings,
             settings.deleteMetricDescriptorSettings(),
             clientContext);
     this.listTimeSeriesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listTimeSeriesTransportSettings, settings.listTimeSeriesSettings(), clientContext);
     this.listTimeSeriesPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listTimeSeriesTransportSettings, settings.listTimeSeriesSettings(), clientContext);
     this.createTimeSeriesCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createTimeSeriesTransportSettings, settings.createTimeSeriesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

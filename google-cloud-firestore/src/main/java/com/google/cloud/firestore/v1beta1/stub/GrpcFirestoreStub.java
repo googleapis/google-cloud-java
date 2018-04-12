@@ -22,7 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -200,12 +200,20 @@ public class GrpcFirestoreStub extends FirestoreStub {
   private final UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
       listCollectionIdsPagedCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcFirestoreStub create(FirestoreStubSettings settings) throws IOException {
     return new GrpcFirestoreStub(settings, ClientContext.create(settings));
   }
 
   public static final GrpcFirestoreStub create(ClientContext clientContext) throws IOException {
     return new GrpcFirestoreStub(FirestoreStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcFirestoreStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcFirestoreStub(
+        FirestoreStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
@@ -215,6 +223,20 @@ public class GrpcFirestoreStub extends FirestoreStub {
    */
   protected GrpcFirestoreStub(FirestoreStubSettings settings, ClientContext clientContext)
       throws IOException {
+    this(settings, clientContext, new GrpcFirestoreCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcFirestoreStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcFirestoreStub(
+      FirestoreStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =
         GrpcCallSettings.<GetDocumentRequest, Document>newBuilder()
@@ -273,53 +295,53 @@ public class GrpcFirestoreStub extends FirestoreStub {
                 .build();
 
     this.getDocumentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getDocumentTransportSettings, settings.getDocumentSettings(), clientContext);
     this.listDocumentsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listDocumentsTransportSettings, settings.listDocumentsSettings(), clientContext);
     this.listDocumentsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listDocumentsTransportSettings, settings.listDocumentsSettings(), clientContext);
     this.createDocumentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             createDocumentTransportSettings, settings.createDocumentSettings(), clientContext);
     this.updateDocumentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateDocumentTransportSettings, settings.updateDocumentSettings(), clientContext);
     this.deleteDocumentCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             deleteDocumentTransportSettings, settings.deleteDocumentSettings(), clientContext);
     this.batchGetDocumentsCallable =
-        GrpcCallableFactory.createServerStreamingCallable(
+        callableFactory.createServerStreamingCallable(
             batchGetDocumentsTransportSettings,
             settings.batchGetDocumentsSettings(),
             clientContext);
     this.beginTransactionCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             beginTransactionTransportSettings, settings.beginTransactionSettings(), clientContext);
     this.commitCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             commitTransportSettings, settings.commitSettings(), clientContext);
     this.rollbackCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             rollbackTransportSettings, settings.rollbackSettings(), clientContext);
     this.runQueryCallable =
-        GrpcCallableFactory.createServerStreamingCallable(
+        callableFactory.createServerStreamingCallable(
             runQueryTransportSettings, settings.runQuerySettings(), clientContext);
     this.writeCallable =
-        GrpcCallableFactory.createBidiStreamingCallable(
+        callableFactory.createBidiStreamingCallable(
             writeTransportSettings, settings.writeSettings(), clientContext);
     this.listenCallable =
-        GrpcCallableFactory.createBidiStreamingCallable(
+        callableFactory.createBidiStreamingCallable(
             listenTransportSettings, settings.listenSettings(), clientContext);
     this.listCollectionIdsCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             listCollectionIdsTransportSettings,
             settings.listCollectionIdsSettings(),
             clientContext);
     this.listCollectionIdsPagedCallable =
-        GrpcCallableFactory.createPagedCallable(
+        callableFactory.createPagedCallable(
             listCollectionIdsTransportSettings,
             settings.listCollectionIdsSettings(),
             clientContext);

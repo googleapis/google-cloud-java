@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
@@ -64,6 +64,8 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
   private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
   private final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcErrorGroupServiceStub create(ErrorGroupServiceStubSettings settings)
       throws IOException {
     return new GrpcErrorGroupServiceStub(settings, ClientContext.create(settings));
@@ -75,6 +77,12 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
         ErrorGroupServiceStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcErrorGroupServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcErrorGroupServiceStub(
+        ErrorGroupServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcErrorGroupServiceStub, using the given settings. This is
    * protected so that it is easy to make a subclass, but otherwise, the static factory methods
@@ -82,6 +90,20 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
    */
   protected GrpcErrorGroupServiceStub(
       ErrorGroupServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcErrorGroupServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcErrorGroupServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcErrorGroupServiceStub(
+      ErrorGroupServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
 
     GrpcCallSettings<GetGroupRequest, ErrorGroup> getGroupTransportSettings =
         GrpcCallSettings.<GetGroupRequest, ErrorGroup>newBuilder()
@@ -93,10 +115,10 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
             .build();
 
     this.getGroupCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             getGroupTransportSettings, settings.getGroupSettings(), clientContext);
     this.updateGroupCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());

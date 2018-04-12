@@ -18,12 +18,11 @@ package com.google.cloud.logging;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.paging.AsyncPage;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.Service;
 import com.google.common.collect.ImmutableMap;
-
 import java.util.Map;
 
 public interface Logging extends AutoCloseable, Service<LoggingOptions> {
@@ -147,7 +146,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     private static final long serialVersionUID = -1561159676386917050L;
 
     enum OptionType implements Option.OptionType {
-      PAGE_SIZE, PAGE_TOKEN, ORDER_BY, FILTER;
+      ORDER_BY,
+      FILTER;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
@@ -155,7 +155,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
       }
     }
 
-    private EntryListOption(OptionType option, Object value) {
+    private EntryListOption(Option.OptionType option, Object value) {
       super(option, value);
     }
 
@@ -163,14 +163,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      * Returns an option to specify the maximum number of log entries returned per page.
      */
     public static EntryListOption pageSize(int pageSize) {
-      return new EntryListOption(OptionType.PAGE_SIZE, pageSize);
+      return new EntryListOption(ListOption.OptionType.PAGE_SIZE, pageSize);
     }
 
     /**
      * Returns an option to specify the page token from which to start listing log entries.
      */
     public static EntryListOption pageToken(String pageToken) {
-      return new EntryListOption(OptionType.PAGE_TOKEN, pageToken);
+      return new EntryListOption(ListOption.OptionType.PAGE_TOKEN, pageToken);
     }
 
     /**

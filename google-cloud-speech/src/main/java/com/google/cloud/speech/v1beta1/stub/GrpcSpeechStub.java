@@ -19,7 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
@@ -90,6 +90,8 @@ public class GrpcSpeechStub extends SpeechStub {
   private final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
 
+  private final GrpcStubCallableFactory callableFactory;
+
   public static final GrpcSpeechStub create(SpeechStubSettings settings) throws IOException {
     return new GrpcSpeechStub(settings, ClientContext.create(settings));
   }
@@ -98,13 +100,32 @@ public class GrpcSpeechStub extends SpeechStub {
     return new GrpcSpeechStub(SpeechStubSettings.newBuilder().build(), clientContext);
   }
 
+  public static final GrpcSpeechStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcSpeechStub(
+        SpeechStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
   /**
    * Constructs an instance of GrpcSpeechStub, using the given settings. This is protected so that
    * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected GrpcSpeechStub(SpeechStubSettings settings, ClientContext clientContext)
       throws IOException {
-    this.operationsStub = GrpcOperationsStub.create(clientContext);
+    this(settings, clientContext, new GrpcSpeechCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcSpeechStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected GrpcSpeechStub(
+      SpeechStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeTransportSettings =
         GrpcCallSettings.<SyncRecognizeRequest, SyncRecognizeResponse>newBuilder()
@@ -121,19 +142,19 @@ public class GrpcSpeechStub extends SpeechStub {
                 .build();
 
     this.syncRecognizeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             syncRecognizeTransportSettings, settings.syncRecognizeSettings(), clientContext);
     this.asyncRecognizeCallable =
-        GrpcCallableFactory.createUnaryCallable(
+        callableFactory.createUnaryCallable(
             asyncRecognizeTransportSettings, settings.asyncRecognizeSettings(), clientContext);
     this.asyncRecognizeOperationCallable =
-        GrpcCallableFactory.createOperationCallable(
+        callableFactory.createOperationCallable(
             asyncRecognizeTransportSettings,
             settings.asyncRecognizeOperationSettings(),
             clientContext,
             this.operationsStub);
     this.streamingRecognizeCallable =
-        GrpcCallableFactory.createBidiStreamingCallable(
+        callableFactory.createBidiStreamingCallable(
             streamingRecognizeTransportSettings,
             settings.streamingRecognizeSettings(),
             clientContext);

@@ -274,7 +274,7 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
   /**
    * This does a linear scan which is simpler than a binary search. For a small collection size this
-   * still should be as fast a as binary search.
+   * still should be as fast as binary search.
    */
   private int findKeyOrInsertPosition(K key) {
     int newPos = 0;
@@ -286,7 +286,7 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
   /**
    * This does a linear scan which is simpler than a binary search. For a small collection size this
-   * still should be as fast a as binary search.
+   * still should be as fast as binary search.
    */
   private int findKey(K key) {
     int i = 0;

@@ -66,7 +66,7 @@ import javax.annotation.Generated;
  * <code>
  * NotificationChannelServiceSettings.Builder notificationChannelServiceSettingsBuilder =
  *     NotificationChannelServiceSettings.newBuilder();
- * notificationChannelServiceSettingsBuilder.getNotificationChannelDescriptorSettings().getRetrySettingsBuilder()
+ * notificationChannelServiceSettingsBuilder.getNotificationChannelDescriptorSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * NotificationChannelServiceSettings notificationChannelServiceSettings = notificationChannelServiceSettingsBuilder.build();
  * </code>

@@ -16,14 +16,21 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.TransportChannel;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
+import com.google.api.gax.rpc.DataLossException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
@@ -33,25 +40,14 @@ import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
-import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
-
-import java.io.IOException;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ScheduledExecutorService;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
@@ -62,53 +58,7 @@ public class PublisherImplTest {
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
 
   private static final TransportChannelProvider TEST_CHANNEL_PROVIDER =
-      new TransportChannelProvider() {
-        @Override
-        public boolean shouldAutoClose() {
-          return true;
-        }
-
-        @Override
-        public boolean needsExecutor() {
-          return false;
-        }
-
-        @Override
-        public TransportChannelProvider withExecutor(ScheduledExecutorService executor) {
-          return null;
-        }
-
-        @Override
-        public boolean needsHeaders() {
-          return false;
-        }
-
-        @Override
-        public TransportChannelProvider withHeaders(Map<String, String> headers) {
-          return null;
-        }
-
-        @Override
-        public boolean needsEndpoint() {
-          return false;
-        }
-
-        @Override
-        public TransportChannelProvider withEndpoint(String endpoint) {
-          return null;
-        }
-
-        @Override
-        public TransportChannel getTransportChannel() throws IOException {
-          return GrpcTransportChannel.create(InProcessChannelBuilder.forName("test-server").build());
-        }
-
-        @Override
-        public String getTransportName() {
-          return null;
-        }
-
-      };
+      LocalChannelProvider.create("test-server");
 
   private FakeScheduledExecutorService fakeExecutor;
 
@@ -286,6 +236,27 @@ public class PublisherImplTest {
   }
 
   @Test
+  public void testErrorPropagation() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .build())
+            .build();
+    testPublisherServiceImpl.addPublishError(Status.DATA_LOSS.asException());
+    try {
+      sendTestMessage(publisher, "A").get();
+      fail("should throw exception");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(DataLossException.class);
+    }
+  }
+
+  @Test
   public void testPublishFailureRetries() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
@@ -384,41 +355,6 @@ public class PublisherImplTest {
     publisher.shutdown();
   }
 
-  public void testPublishFailureRetries_exceededsRetryDuration() throws Exception {
-    Publisher publisher =
-        getTestPublisherBuilder()
-            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
-            .setRetrySettings(
-                Publisher.Builder.DEFAULT_RETRY_SETTINGS
-                    .toBuilder()
-                    .setTotalTimeout(Duration.ofSeconds(10))
-                    .build())
-            .setBatchingSettings(
-                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setElementCountThreshold(1L)
-                    .setDelayThreshold(Duration.ofSeconds(5))
-                    .build())
-            .build(); // To demonstrate that reaching duration will trigger publish
-
-    // With exponential backoff, starting at 5ms we should have no more than 11 retries
-    for (int i = 0; i < 11; ++i) {
-      testPublisherServiceImpl.addPublishError(new FakeException());
-    }
-    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-
-    try {
-      publishFuture1.get();
-    } catch (ExecutionException e) {
-      if (!(e.getCause() instanceof FakeException)) {
-        throw new IllegalStateException("unexpected exception", e);
-      }
-    } finally {
-      assertTrue(testPublisherServiceImpl.getCapturedRequests().size() >= 10);
-      publisher.shutdown();
-    }
-  }
-
   @Test(expected = ExecutionException.class)
   public void testPublishFailureRetries_nonRetryableFailsImmediately() throws Exception {
     Publisher publisher =
@@ -472,7 +408,7 @@ public class PublisherImplTest {
   @Test
   public void testBuilderParametersAndDefaults() {
     Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
-    assertEquals(TEST_TOPIC, builder.topicName);
+    assertEquals(TEST_TOPIC.toString(), builder.topicName);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
     assertEquals(
         Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
@@ -628,13 +564,6 @@ public class PublisherImplTest {
     return Publisher.newBuilder(TEST_TOPIC)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelProvider(TEST_CHANNEL_PROVIDER)
-        .setCredentialsProvider(NoCredentialsProvider.create())
-        .setLongRandom(
-            new Publisher.LongRandom() {
-              @Override
-              public long nextLong(long least, long bound) {
-                return bound - 1;
-              }
-            });
+        .setCredentialsProvider(NoCredentialsProvider.create());
   }
 }

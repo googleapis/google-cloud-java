@@ -56,7 +56,7 @@ import javax.annotation.Generated;
  * <code>
  * ClusterControllerSettings.Builder clusterControllerSettingsBuilder =
  *     ClusterControllerSettings.newBuilder();
- * clusterControllerSettingsBuilder.getClusterSettings().getRetrySettingsBuilder()
+ * clusterControllerSettingsBuilder.getClusterSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * ClusterControllerSettings clusterControllerSettings = clusterControllerSettingsBuilder.build();
  * </code>

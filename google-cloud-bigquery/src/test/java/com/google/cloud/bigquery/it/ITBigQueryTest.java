@@ -29,6 +29,7 @@ import static org.junit.Assert.fail;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
@@ -91,6 +92,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -1095,7 +1097,6 @@ public class ITBigQueryTest {
         .setDryRun(true)
         .build();
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
-    System.out.println("job (dryrun): " + remoteJob);
     assertNull(remoteJob.getJobId().getJob());
     assertEquals(DONE, remoteJob.getStatus().getState());
     assertNotNull(remoteJob.getConfiguration());
@@ -1215,5 +1216,103 @@ public class ITBigQueryTest {
     }
     assertEquals(2, rowCount);
     assertTrue(bigquery.delete(DATASET, destinationTableName));
+  }
+
+  @Test
+  public void testLocation() throws Exception {
+    String location = "EU";
+    String wrongLocation = "US";
+
+    assertThat(location).isNotEqualTo(wrongLocation);
+
+    Dataset dataset =
+        bigquery.create(
+            DatasetInfo.newBuilder("locationset_" + UUID.randomUUID().toString().replace("-", "_"))
+                .setLocation(location)
+                .build());
+    try {
+      TableId tableId = TableId.of(dataset.getDatasetId().getDataset(), "sometable");
+      Schema schema = Schema.of(Field.of("name", LegacySQLTypeName.STRING));
+      TableDefinition tableDef = StandardTableDefinition.of(schema);
+      Table table = bigquery.create(TableInfo.newBuilder(tableId, tableDef).build());
+
+      String query =
+          String.format(
+              "SELECT * FROM `%s.%s.%s`",
+              table.getTableId().getProject(),
+              table.getTableId().getDataset(),
+              table.getTableId().getTable());
+
+      // Test create/get
+      {
+        Job job =
+            bigquery.create(
+                JobInfo.of(
+                    JobId.newBuilder().setLocation(location).build(),
+                    QueryJobConfiguration.of(query)));
+        job = job.waitFor();
+        assertThat(job.getStatus().getError()).isNull();
+
+        assertThat(job.getJobId().getLocation()).isEqualTo(location);
+
+        JobId jobId = job.getJobId();
+        JobId wrongId = jobId.toBuilder().setLocation(wrongLocation).build();
+
+        // Getting with location should work.
+        assertThat(bigquery.getJob(jobId)).isNotNull();
+        // Getting with wrong location shouldn't work.
+        assertThat(bigquery.getJob(wrongId)).isNull();
+
+        // Cancelling with location should work. (Cancelling already finished job is fine.)
+        assertThat(bigquery.cancel(jobId)).isTrue();
+        // Cancelling with wrong location shouldn't work.
+        assertThat(bigquery.cancel(wrongId)).isFalse();
+      }
+
+      // Test query
+      {
+        assertThat(
+                bigquery
+                    .query(
+                        QueryJobConfiguration.of(query),
+                        JobId.newBuilder().setLocation(location).build())
+                    .iterateAll())
+            .isEmpty();
+
+        try {
+          bigquery
+              .query(
+                  QueryJobConfiguration.of(query),
+                  JobId.newBuilder().setLocation(wrongLocation).build())
+              .iterateAll();
+          fail("querying a table with wrong location shouldn't work");
+        } catch (BigQueryException e) {
+          // Nothing to do
+        }
+      }
+
+      // Test write
+      {
+        WriteChannelConfiguration writeChannelConfiguration =
+            WriteChannelConfiguration.newBuilder(tableId)
+                .setFormatOptions(FormatOptions.csv())
+                .build();
+        try (TableDataWriteChannel writer =
+            bigquery.writer(
+                JobId.newBuilder().setLocation(location).build(), writeChannelConfiguration)) {
+          writer.write(ByteBuffer.wrap("foo".getBytes()));
+        }
+
+        try {
+          bigquery.writer(
+              JobId.newBuilder().setLocation(wrongLocation).build(), writeChannelConfiguration);
+          fail("writing to a table with wrong location shouldn't work");
+        } catch (BigQueryException e) {
+          // Nothing to do
+        }
+      }
+    } finally {
+      bigquery.delete(dataset.getDatasetId(), DatasetDeleteOption.deleteContents());
+    }
   }
 }

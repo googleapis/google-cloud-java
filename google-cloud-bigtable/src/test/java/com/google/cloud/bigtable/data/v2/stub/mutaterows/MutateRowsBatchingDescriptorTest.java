@@ -23,21 +23,21 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.BatchedFuture;
 import com.google.api.gax.rpc.BatchedRequestIssuer;
-import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.rpc.DeadlineExceededException;
+import com.google.api.gax.rpc.UnavailableException;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsRequest.Entry;
 import com.google.bigtable.v2.MutateRowsRequest.Entry.Builder;
-import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.Mutation.SetCell;
 import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
+import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -50,14 +50,12 @@ import org.junit.runners.JUnit4;
 public class MutateRowsBatchingDescriptorTest {
   private static final TableName TABLE_NAME =
       TableName.of("fake-project", "fake-instance", "fake-table");
-  private static final Set<Code> RETRYABLE_CODES =
-      ImmutableSet.of(Code.UNAVAILABLE, Code.DEADLINE_EXCEEDED, Code.RESOURCE_EXHAUSTED);
 
   private MutateRowsBatchingDescriptor descriptor;
 
   @Before
-  public void setUp() throws Exception {
-    descriptor = new MutateRowsBatchingDescriptor(RETRYABLE_CODES);
+  public void setUp() {
+    descriptor = new MutateRowsBatchingDescriptor();
   }
 
   @Test
@@ -106,17 +104,14 @@ public class MutateRowsBatchingDescriptorTest {
   }
 
   @Test
-  public void splitExceptionTest() throws TimeoutException, InterruptedException {
-    BatchedFuture<MutateRowsResponse> result1 = BatchedFuture.create();
-    BatchedRequestIssuer<MutateRowsResponse> issuer1 = new BatchedRequestIssuer<>(result1, 1);
-    BatchedFuture<MutateRowsResponse> result2 = BatchedFuture.create();
-    BatchedRequestIssuer<MutateRowsResponse> issuer2 = new BatchedRequestIssuer<>(result2, 1);
+  public void splitRpcExceptionTest() throws Exception {
+    BatchedFuture<Void> result1 = BatchedFuture.create();
+    BatchedRequestIssuer<Void> issuer1 = new BatchedRequestIssuer<>(result1, 1);
+    BatchedFuture<Void> result2 = BatchedFuture.create();
+    BatchedRequestIssuer<Void> issuer2 = new BatchedRequestIssuer<>(result2, 1);
 
-    ImmutableList<BatchedRequestIssuer<MutateRowsResponse>> issuers =
-        new ImmutableList.Builder<BatchedRequestIssuer<MutateRowsResponse>>()
-            .add(issuer1)
-            .add(issuer2)
-            .build();
+    ImmutableList<BatchedRequestIssuer<Void>> issuers =
+        new ImmutableList.Builder<BatchedRequestIssuer<Void>>().add(issuer1).add(issuer2).build();
 
     ApiException serverError =
         new ApiException(null, GrpcStatusCode.of(Status.Code.UNAVAILABLE), true);
@@ -142,74 +137,30 @@ public class MutateRowsBatchingDescriptorTest {
   }
 
   @Test
-  public void splitResponseOkTest()
-      throws InterruptedException, ExecutionException, TimeoutException {
-    BatchedFuture<MutateRowsResponse> result1 = BatchedFuture.create();
-    BatchedRequestIssuer<MutateRowsResponse> issuer1 = new BatchedRequestIssuer<>(result1, 1);
-    BatchedFuture<MutateRowsResponse> result2 = BatchedFuture.create();
-    BatchedRequestIssuer<MutateRowsResponse> issuer2 = new BatchedRequestIssuer<>(result2, 1);
+  public void splitEntryErrorTest() throws Exception {
+    BatchedFuture<Void> result1 = BatchedFuture.create();
+    BatchedRequestIssuer<Void> issuer1 = new BatchedRequestIssuer<>(result1, 1);
+    BatchedFuture<Void> result2 = BatchedFuture.create();
+    BatchedRequestIssuer<Void> issuer2 = new BatchedRequestIssuer<>(result2, 1);
 
-    List<BatchedRequestIssuer<MutateRowsResponse>> issuers =
-        new ImmutableList.Builder<BatchedRequestIssuer<MutateRowsResponse>>()
-            .add(issuer1)
-            .add(issuer2)
-            .build();
+    List<BatchedRequestIssuer<Void>> issuers =
+        new ImmutableList.Builder<BatchedRequestIssuer<Void>>().add(issuer1).add(issuer2).build();
 
-    MutateRowsResponse.Entry.Builder okEntryBuilder =
-        MutateRowsResponse.Entry.newBuilder()
-            .setStatus(com.google.rpc.Status.newBuilder().setCode(com.google.rpc.Code.OK_VALUE));
+    MutateRowsException serverError =
+        new MutateRowsException(
+            null,
+            Lists.newArrayList(
+                FailedMutation.create(
+                    0,
+                    new UnavailableException(
+                        null, GrpcStatusCode.of(Status.Code.UNAVAILABLE), true)),
+                FailedMutation.create(
+                    1,
+                    new DeadlineExceededException(
+                        null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true))),
+            true);
 
-    MutateRowsResponse response =
-        MutateRowsResponse.newBuilder()
-            .addEntries(okEntryBuilder.setIndex(0).build())
-            .addEntries(okEntryBuilder.setIndex(1).build())
-            .build();
-
-    descriptor.splitResponse(response, issuers);
-    issuer1.sendResult();
-    issuer2.sendResult();
-
-    assertThat(result1.get(1, TimeUnit.SECONDS))
-        .isEqualTo(
-            MutateRowsResponse.newBuilder().addEntries(okEntryBuilder.setIndex(0).build()).build());
-
-    assertThat(result2.get(1, TimeUnit.SECONDS))
-        .isEqualTo(
-            MutateRowsResponse.newBuilder().addEntries(okEntryBuilder.setIndex(0).build()).build());
-  }
-
-  @Test
-  public void splitResponseErrorWrapTest()
-      throws InterruptedException, ExecutionException, TimeoutException {
-    MutateRowsResponse batchResponse =
-        MutateRowsResponse.newBuilder()
-            .addEntries(
-                MutateRowsResponse.Entry.newBuilder()
-                    .setIndex(0)
-                    .setStatus(
-                        com.google.rpc.Status.newBuilder()
-                            .setCode(com.google.rpc.Code.DEADLINE_EXCEEDED_VALUE)))
-            .addEntries(
-                MutateRowsResponse.Entry.newBuilder()
-                    .setIndex(1)
-                    .setStatus(
-                        com.google.rpc.Status.newBuilder()
-                            .setCode(com.google.rpc.Code.INTERNAL_VALUE)))
-            .build();
-
-    BatchedFuture<MutateRowsResponse> result1 = BatchedFuture.create();
-    BatchedRequestIssuer<MutateRowsResponse> issuer1 = new BatchedRequestIssuer<>(result1, 1);
-
-    BatchedFuture<MutateRowsResponse> result2 = BatchedFuture.create();
-    BatchedRequestIssuer<MutateRowsResponse> issuer2 = new BatchedRequestIssuer<>(result2, 1);
-
-    List<BatchedRequestIssuer<MutateRowsResponse>> issuers =
-        new ImmutableList.Builder<BatchedRequestIssuer<MutateRowsResponse>>()
-            .add(issuer1)
-            .add(issuer2)
-            .build();
-
-    descriptor.splitResponse(batchResponse, issuers);
+    descriptor.splitException(serverError, issuers);
     issuer1.sendResult();
     issuer2.sendResult();
 
@@ -220,13 +171,7 @@ public class MutateRowsBatchingDescriptorTest {
     } catch (ExecutionException e) {
       actualError1 = e.getCause();
     }
-
-    assertThat(actualError1).isInstanceOf(ApiException.class);
-    assertThat(((ApiException) actualError1).isRetryable()).isTrue();
-
-    assertThat(actualError1.getCause()).isInstanceOf(StatusRuntimeException.class);
-    assertThat(((StatusRuntimeException) actualError1.getCause()).getStatus().getCode())
-        .isEqualTo(Status.Code.DEADLINE_EXCEEDED);
+    assertThat(actualError1).isEqualTo(serverError.getFailedMutations().get(0).getError());
 
     Throwable actualError2 = null;
 
@@ -235,13 +180,27 @@ public class MutateRowsBatchingDescriptorTest {
     } catch (ExecutionException e) {
       actualError2 = e.getCause();
     }
+    assertThat(actualError2).isEqualTo(serverError.getFailedMutations().get(1).getError());
+  }
 
-    assertThat(actualError2).isInstanceOf(ApiException.class);
-    assertThat(((ApiException) actualError2).isRetryable()).isFalse();
+  @Test
+  public void splitResponseOkTest()
+      throws InterruptedException, ExecutionException, TimeoutException {
+    BatchedFuture<Void> result1 = BatchedFuture.create();
+    BatchedRequestIssuer<Void> issuer1 = new BatchedRequestIssuer<>(result1, 1);
+    BatchedFuture<Void> result2 = BatchedFuture.create();
+    BatchedRequestIssuer<Void> issuer2 = new BatchedRequestIssuer<>(result2, 1);
 
-    assertThat(actualError2.getCause()).isInstanceOf(StatusRuntimeException.class);
-    assertThat(((StatusRuntimeException) actualError2.getCause()).getStatus().getCode())
-        .isEqualTo(Status.Code.INTERNAL);
+    List<BatchedRequestIssuer<Void>> issuers =
+        new ImmutableList.Builder<BatchedRequestIssuer<Void>>().add(issuer1).add(issuer2).build();
+
+    descriptor.splitResponse(null, issuers);
+    issuer1.sendResult();
+    issuer2.sendResult();
+
+    assertThat(result1.get(1, TimeUnit.SECONDS)).isEqualTo(null);
+
+    assertThat(result2.get(1, TimeUnit.SECONDS)).isEqualTo(null);
   }
 
   private static MutateRowsRequest createRequest(int count) {

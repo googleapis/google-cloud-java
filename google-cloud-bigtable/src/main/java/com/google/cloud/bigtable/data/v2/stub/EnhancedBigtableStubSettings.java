@@ -26,7 +26,7 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.bigtable.admin.v2.InstanceName;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.DummyBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
@@ -80,16 +80,16 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final Set<Code> DEFAULT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED);
 
+  // Copy of default retrying settings in the yaml
   private static final RetrySettings DEFAULT_RETRY_SETTINGS =
       RetrySettings.newBuilder()
-          .setMaxAttempts(10)
-          .setTotalTimeout(Duration.ofHours(1))
-          .setInitialRetryDelay(Duration.ofMillis(100))
+          .setInitialRetryDelay(Duration.ofMillis(100L))
           .setRetryDelayMultiplier(1.3)
-          .setMaxRetryDelay(Duration.ofMinutes(1))
-          .setInitialRpcTimeout(Duration.ofSeconds(20))
-          .setRpcTimeoutMultiplier(1)
-          .setMaxRpcTimeout(Duration.ofSeconds(20))
+          .setMaxRetryDelay(Duration.ofMillis(60000L))
+          .setInitialRpcTimeout(Duration.ofMillis(20000L))
+          .setRpcTimeoutMultiplier(1.0)
+          .setMaxRpcTimeout(Duration.ofMillis(20000L))
+          .setTotalTimeout(Duration.ofMillis(600000L))
           .build();
 
   private final InstanceName instanceName;
@@ -201,14 +201,16 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
               .setChannelsPerCpu(2)
               .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
               .build());
+      setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
+      setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
 
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
       /* TODO: copy timeouts, retryCodes & retrySettings from baseSettings.readRows once it exists in GAPIC */
       readRowsSettings
           .setRetryableCodes(DEFAULT_RETRY_CODES)
-          .setRetrySettings(DEFAULT_RETRY_SETTINGS)
-          .setTimeoutCheckInterval(Duration.ofSeconds(10))
+          .setRetrySettings(
+              DEFAULT_RETRY_SETTINGS.toBuilder().setTotalTimeout(Duration.ofHours(1)).build())
           .setIdleTimeout(Duration.ofMinutes(5));
 
       sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -217,14 +219,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED)
           .setRetrySettings(DEFAULT_RETRY_SETTINGS);
 
-      // NOTE: This client enforces client side timestamps, which makes all mutations retryable.
-      // However, since the base GAPIC client allows for server side timestamps, it is not
-      // configured to enable retries. So the retry settings have to be defined here instead of
-      // being copied from the BigtableStubSettings.
       mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      mutateRowSettings
-          .setRetryableCodes(DEFAULT_RETRY_CODES)
-          .setRetrySettings(DEFAULT_RETRY_SETTINGS);
+      copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
 
       /* TODO: copy retryCodes & retrySettings from baseSettings.mutateRows once it exists in GAPIC */
       mutateRowsSettings =

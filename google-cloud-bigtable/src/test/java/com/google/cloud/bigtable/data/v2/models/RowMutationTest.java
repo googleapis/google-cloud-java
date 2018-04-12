@@ -17,12 +17,16 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -84,5 +88,22 @@ public class RowMutationTest {
 
     assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getTimestampMicros())
         .isIn(timestampRange);
+  }
+
+  @Test
+  public void serializationTest() throws IOException, ClassNotFoundException {
+    RowMutation expected =
+        RowMutation.create("fake-table", "fake-key")
+            .setCell("fake-family", "fake-qualifier", 10_000, "fake-value");
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+
+    RowMutation actual = (RowMutation) ois.readObject();
+    assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
   }
 }

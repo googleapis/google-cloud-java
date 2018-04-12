@@ -79,7 +79,7 @@ import javax.annotation.Generated;
  * <code>
  * FirestoreSettings.Builder firestoreSettingsBuilder =
  *     FirestoreSettings.newBuilder();
- * firestoreSettingsBuilder.updateDocumentSettings().getRetrySettingsBuilder()
+ * firestoreSettingsBuilder.updateDocumentSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * FirestoreSettings firestoreSettings = firestoreSettingsBuilder.build();
  * </code>

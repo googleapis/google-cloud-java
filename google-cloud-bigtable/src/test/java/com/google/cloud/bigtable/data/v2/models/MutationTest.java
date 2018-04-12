@@ -22,6 +22,11 @@ import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -155,5 +160,20 @@ public class MutationTest {
             com.google.bigtable.v2.Mutation.newBuilder()
                 .setDeleteFromRow(DeleteFromRow.newBuilder())
                 .build());
+  }
+
+  @Test
+  public void serializationTest() throws IOException, ClassNotFoundException {
+    Mutation expected = Mutation.create().setCell("cf", "q", "val");
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+
+    Mutation actual = (Mutation) ois.readObject();
+    assertThat(actual.getMutations()).isEqualTo(expected.getMutations());
   }
 }
