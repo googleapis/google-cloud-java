@@ -18,6 +18,7 @@ package com.google.cloud.spanner.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.Instance;
 import com.google.cloud.spanner.InstanceAdminClient;
 import com.google.cloud.spanner.InstanceConfig;
@@ -90,9 +91,9 @@ public class ITInstanceAdminTest {
             .setNodeCount(instance.getNodeCount() + 1)
             .build();
     // Only update display name
-    Operation<Instance, UpdateInstanceMetadata> op =
+    OperationFuture<Instance, UpdateInstanceMetadata> op =
         instanceClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME);
-    Instance newInstance = op.waitFor().getResult();
+    Instance newInstance = op.get();
     assertThat(newInstance.getNodeCount()).isEqualTo(instance.getNodeCount());
     assertThat(newInstance.getDisplayName()).isEqualTo(newDisplayName);
 
@@ -102,7 +103,7 @@ public class ITInstanceAdminTest {
 
     toUpdate =
         InstanceInfo.newBuilder(instance.getId()).setDisplayName(instance.getDisplayName()).build();
-    instanceClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME).waitFor();
+    instanceClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME).get();
   }
 
   @Test
@@ -118,9 +119,9 @@ public class ITInstanceAdminTest {
             .setNodeCount(instance.getNodeCount() + 1)
             .build();
     // Only update display name
-    Operation<Instance, UpdateInstanceMetadata> op =
+    OperationFuture<Instance, UpdateInstanceMetadata> op =
         toUpdate.update(InstanceInfo.InstanceField.DISPLAY_NAME);
-    Instance newInstance = op.waitFor().getResult();
+    Instance newInstance = op.get();
     assertThat(newInstance.getNodeCount()).isEqualTo(instance.getNodeCount());
     assertThat(newInstance.getDisplayName()).isEqualTo(newDisplayName);
 
@@ -128,6 +129,6 @@ public class ITInstanceAdminTest {
     assertThat(newInstanceFromGet).isEqualTo(newInstance);
 
     toUpdate = newInstance.toBuilder().setDisplayName(instance.getDisplayName()).build();
-    toUpdate.update(InstanceInfo.InstanceField.DISPLAY_NAME).waitFor();
+    toUpdate.update(InstanceInfo.InstanceField.DISPLAY_NAME).get();
   }
 }

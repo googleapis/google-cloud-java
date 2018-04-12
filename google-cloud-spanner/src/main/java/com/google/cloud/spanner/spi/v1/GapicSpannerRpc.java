@@ -51,6 +51,7 @@ import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.longrunning.GetOperationRequest;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
@@ -264,7 +265,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setInstance(instance)
             .build();
     GrpcCallContext context = newCallContext(null, parent);
-    return get(instanceStub.createInstanceCallable().futureCall(request, context));
+    return instanceStub.createInstanceOperationCallable().futureCall(request, context);
   }
 
   @Override
@@ -273,7 +274,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     UpdateInstanceRequest request =
         UpdateInstanceRequest.newBuilder().setInstance(instance).setFieldMask(fieldMask).build();
     GrpcCallContext context = newCallContext(null, instance.getName());
-    return get(instanceStub.updateInstanceCallable().futureCall(request, context));
+    return instanceStub.updateInstanceOperationCallable().futureCall(request, context);
   }
 
   @Override
@@ -320,11 +321,11 @@ public class GapicSpannerRpc implements SpannerRpc {
             .addAllExtraStatements(additionalStatements)
             .build();
     GrpcCallContext context = newCallContext(null, instanceName);
-    return get(databaseStub.createDatabaseCallable().futureCall(request, context));
+    return databaseStub.createDatabaseOperationCallable().futureCall(request, context);
   }
 
   @Override
-  public OperationFuture<Database, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
+  public OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
       String databaseName, Iterable<String> updateDatabaseStatements, @Nullable String updateId) throws SpannerException {
     UpdateDatabaseDdlRequest request =
         UpdateDatabaseDdlRequest.newBuilder()
@@ -333,7 +334,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setOperationId(MoreObjects.firstNonNull(updateId, ""))
             .build();
     GrpcCallContext context = newCallContext(null, databaseName);
-    return get(databaseStub.updateDatabaseDdlCallable().futureCall(request, context));
+    return databaseStub.updateDatabaseDdlOperationCallable().futureCall(request, context);
   }
 
   @Override

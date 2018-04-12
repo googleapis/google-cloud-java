@@ -17,10 +17,12 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.collect.ImmutableList;
@@ -100,22 +102,19 @@ public class InstanceAdminClientImplTest {
   }
 
   @Test
-  public void createInstance() {
+  public void createInstance() throws Exception {
+    OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
+        rawOperationFuture = createMockOperationFuture(true, getInstanceProto());
     when(rpc.createInstance("projects/" + PROJECT_ID, INSTANCE_ID, getInstanceProto()))
-        .thenReturn(
-            com.google.longrunning.Operation.newBuilder()
-                .setDone(true)
-                .setName(INSTANCE_NAME + "/operations/op")
-                .setResponse(DatabaseAdminClientImplTest.toAny(getInstanceProto()))
-                .build());
-    Operation<Instance, CreateInstanceMetadata> op =
+        .thenReturn(rawOperationFuture);
+    OperationFuture<Instance, CreateInstanceMetadata> op =
         client.createInstance(
             InstanceInfo.newBuilder(InstanceId.of(PROJECT_ID, INSTANCE_ID))
                 .setInstanceConfigId(InstanceConfigId.of(PROJECT_ID, CONFIG_ID))
                 .setNodeCount(1)
                 .build());
     assertThat(op.isDone()).isTrue();
-    assertThat(op.getResult().getId().getName()).isEqualTo(INSTANCE_NAME);
+    assertThat(op.get().getId().getName()).isEqualTo(INSTANCE_NAME);
   }
 
   @Test
@@ -131,29 +130,26 @@ public class InstanceAdminClientImplTest {
   }
 
   @Test
-  public void updateInstanceMetadata() {
+  public void updateInstanceMetadata() throws Exception {
     com.google.spanner.admin.instance.v1.Instance instance =
         com.google.spanner.admin.instance.v1.Instance.newBuilder()
             .setName(INSTANCE_NAME)
             .setConfig(CONFIG_NAME)
             .setNodeCount(2)
             .build();
+    OperationFuture<com.google.spanner.admin.instance.v1.Instance, UpdateInstanceMetadata>
+        rawOperationFuture = createMockOperationFuture(true, getInstanceProto());
     when(rpc.updateInstance(instance, FieldMask.newBuilder().addPaths("node_count").build()))
-        .thenReturn(
-            com.google.longrunning.Operation.newBuilder()
-                .setDone(true)
-                .setName(INSTANCE_NAME + "/operations/op")
-                .setResponse(DatabaseAdminClientImplTest.toAny(instance))
-                .build());
+        .thenReturn(rawOperationFuture);
     InstanceInfo instanceInfo =
         InstanceInfo.newBuilder(InstanceId.of(INSTANCE_NAME))
             .setInstanceConfigId(InstanceConfigId.of(CONFIG_NAME))
             .setNodeCount(2)
             .build();
-    Operation<Instance, UpdateInstanceMetadata> op =
+    OperationFuture<Instance, UpdateInstanceMetadata> op =
         client.updateInstance(instanceInfo, InstanceInfo.InstanceField.NODE_COUNT);
     assertThat(op.isDone()).isTrue();
-    assertThat(op.getResult().getId().getName()).isEqualTo(INSTANCE_NAME);
+    assertThat(op.get().getId().getName()).isEqualTo(INSTANCE_NAME);
   }
 
   @Test
@@ -174,5 +170,14 @@ public class InstanceAdminClientImplTest {
     assertThat(instances.get(0).getId().getName()).isEqualTo(INSTANCE_NAME);
     assertThat(instances.get(1).getId().getName()).isEqualTo(INSTANCE_NAME2);
     assertThat(instances.size()).isEqualTo(2);
+  }
+
+  private <ResponseT, MetadataT> OperationFuture<ResponseT, MetadataT> createMockOperationFuture(
+      final boolean done,
+      final ResponseT result) throws Exception {
+    OperationFuture<ResponseT, MetadataT> mockOperationFuture = mock(OperationFuture.class);
+    when(mockOperationFuture.isDone()).thenReturn(done);
+    when(mockOperationFuture.get()).thenReturn(result);
+    return mockOperationFuture;
   }
 }

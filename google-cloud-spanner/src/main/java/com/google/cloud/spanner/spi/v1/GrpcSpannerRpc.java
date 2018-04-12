@@ -35,6 +35,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.OperationsGrpc;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
@@ -282,7 +283,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public OperationFuture<Database, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
+  public OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
       String databaseName, Iterable<String> updateStatements, @Nullable String operationId)
       throws SpannerException {
     throw new UnsupportedOperationException("Not Implemented: updateDatabaseDdl");

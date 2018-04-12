@@ -23,6 +23,7 @@ import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.collect.ImmutableList;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.Database;
@@ -185,7 +186,7 @@ public interface SpannerRpc extends ServiceRpc {
       String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements)
       throws SpannerException;
 
-  OperationFuture<Database, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
+  OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
       String databaseName, Iterable<String> updateDatabaseStatements, @Nullable String updateId)
       throws SpannerException;
 
