@@ -232,23 +232,23 @@ public class DatabaseClientSnippets {
   // [VARIABLE my_singer_id]
   public void transactionManager(final long singerId) throws InterruptedException {
     // [START transactionManager]
-	  try (TransactionManager manager = dbClient.transactionManager()) {
-		  TransactionContext txn = manager.begin();
-		  while (true) {
-			  String column = "FirstName";
-			  Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
-			  String name = row.getString(column);
-			  txn.buffer(
-					  Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
-			  try {
-				  manager.commit();
-				  break;
-			  } catch (AbortedException e) {
-				  Thread.sleep(e.getRetryDelayInMillis() / 1000);
-				  txn = manager.resetForRetry();
-			  }
-		  }
-	  }
-	  // [END transactionManager]
+    try (TransactionManager manager = dbClient.transactionManager()) {
+      TransactionContext txn = manager.begin();
+      while (true) {
+        String column = "FirstName";
+        Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
+        String name = row.getString(column);
+        txn.buffer(
+            Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
+        try {
+          manager.commit();
+          break;
+        } catch (AbortedException e) {
+          Thread.sleep(e.getRetryDelayInMillis() / 1000);
+          txn = manager.resetForRetry();
+        }
+      }
+    }
+    // [END transactionManager]
   }
 }
