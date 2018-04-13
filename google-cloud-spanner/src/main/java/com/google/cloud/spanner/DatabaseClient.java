@@ -237,6 +237,56 @@ public interface DatabaseClient {
    *     });
    * </code></pre>
    *
+   * <p>Example of a read write transaction.
+   * <pre> {@code
+   * long singerId = my_singer_id;
+   * TransactionRunner runner = dbClient.readWriteTransaction();
+   * runner.run(
+   *     new TransactionCallable<Void>() {
+   * 
+   *       @Override
+   *       public Void run(TransactionContext transaction) throws Exception {
+   *         String column = "FirstName";
+   *         Struct row =
+   *             transaction.readRow("Singers", Key.of(singerId), Collections.singleton(column));
+   *         String name = row.getString(column);
+   *         transaction.buffer(
+   *             Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
+   *         return null;
+   *       }
+   *     });
+   * }</pre>
+   *
    */
   TransactionRunner readWriteTransaction();
+  
+  /**
+   * Returns a transaction manager which allows manual management of transaction lifecycle. This
+   * API is meant for advanced users. Most users should instead use the
+   * {@link #readWriteTransaction()} API instead.
+   *
+   * <p>Example of using {@link TransactionManager}.
+   * <pre> {@code
+   * long singerId = my_singer_id;
+   * try (TransactionManager manager = dbClient.transactionManager()) {
+   *   TransactionContext txn = manager.begin();
+   *   while (true) {
+   *     String column = "FirstName";
+   *     Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
+   *     String name = row.getString(column);
+   *     txn.buffer(
+   *         Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
+   *     try {
+   *       manager.commit();
+   *       break;
+   *     } catch (AbortedException e) {
+   *       Thread.sleep(e.getRetryDelayInMillis() / 1000);
+   *       txn = manager.resetForRetry();
+   *     }
+   *   }
+   * }
+   * }</pre>
+   *
+   */
+  TransactionManager transactionManager();
 }
