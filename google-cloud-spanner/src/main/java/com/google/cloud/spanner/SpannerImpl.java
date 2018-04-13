@@ -266,7 +266,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               new Callable<com.google.spanner.v1.Session>() {
                 @Override
                 public com.google.spanner.v1.Session call() throws Exception {
-                  return rawGrpcRpc.createSession(
+                  return gapicRpc.createSession(
                       db.getName(), getOptions().getSessionLabels(), options);
                 }
               });
@@ -806,7 +806,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 new Callable<CommitResponse>() {
                   @Override
                   public CommitResponse call() throws Exception {
-                    return rawGrpcRpc.commit(request, options);
+                    return gapicRpc.commit(request, options);
                   }
                 });
         Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
@@ -872,7 +872,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             new Callable<Void>() {
               @Override
               public Void call() throws Exception {
-                rawGrpcRpc.deleteSession(name, options);
+                gapicRpc.deleteSession(name, options);
                 return null;
               }
             });
@@ -898,7 +898,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 new Callable<Transaction>() {
                   @Override
                   public Transaction call() throws Exception {
-                    return rawGrpcRpc.beginTransaction(request, options);
+                    return gapicRpc.beginTransaction(request, options);
                   }
                 });
         if (txn.getId().isEmpty()) {

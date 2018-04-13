@@ -18,6 +18,8 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,7 +29,7 @@ import java.util.regex.Pattern;
  */
 class SpannerMetadataProvider {
   private final Map<Metadata.Key<String>, String> headers;
-  private final Key<String> resourceHeaderKey;
+  private final String resourceHeaderKey;
 
   private static final Pattern[] RESOURCE_TOKEN_PATTERNS = {
     Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?"),
@@ -35,7 +37,7 @@ class SpannerMetadataProvider {
   };
 
   private SpannerMetadataProvider(Map<String, String> headers, String resourceHeaderKey) {
-    this.resourceHeaderKey = Key.of(resourceHeaderKey, Metadata.ASCII_STRING_MARSHALLER);
+    this.resourceHeaderKey = resourceHeaderKey;
     this.headers = constructHeadersAsMetadata(headers);
   }
 
@@ -50,9 +52,19 @@ class SpannerMetadataProvider {
     }
 
     metadata.put(
-        resourceHeaderKey, getResourceHeaderValue(resourceTokenTemplate, defaultResourceToken));
+        Key.of(resourceHeaderKey, Metadata.ASCII_STRING_MARSHALLER),
+        getResourceHeaderValue(resourceTokenTemplate, defaultResourceToken));
 
     return metadata;
+  }
+
+  Map<String, List<String>> newExtraHeaders(String resourceTokenTemplate, String defaultResourceToken) {
+    return ImmutableMap.<String, List<String>>builder()
+        .put(
+            resourceHeaderKey,
+            Arrays.asList(getResourceHeaderValue(resourceTokenTemplate, defaultResourceToken)))
+        .build();
+
   }
 
   private Map<Metadata.Key<String>, String> constructHeadersAsMetadata(
