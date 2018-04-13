@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,15 +47,13 @@ public final class AutoscalingPolicy implements ApiMessage {
     this.minNumReplicas = null;
   }
 
-
   private AutoscalingPolicy(
       Integer coolDownPeriodSec,
       AutoscalingPolicyCpuUtilization cpuUtilization,
       List<AutoscalingPolicyCustomMetricUtilization> customMetricUtilizations,
       AutoscalingPolicyLoadBalancingUtilization loadBalancingUtilization,
       Integer maxNumReplicas,
-      Integer minNumReplicas
-      ) {
+      Integer minNumReplicas) {
     this.coolDownPeriodSec = coolDownPeriodSec;
     this.cpuUtilization = cpuUtilization;
     this.customMetricUtilizations = customMetricUtilizations;
@@ -69,7 +66,8 @@ public final class AutoscalingPolicy implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("coolDownPeriodSec") && coolDownPeriodSec != null) {
-      fieldMap.put("coolDownPeriodSec", Collections.singletonList(String.valueOf(coolDownPeriodSec)));
+      fieldMap.put(
+          "coolDownPeriodSec", Collections.singletonList(String.valueOf(coolDownPeriodSec)));
     }
     if (fieldNames.contains("cpuUtilization") && cpuUtilization != null) {
       fieldMap.put("cpuUtilization", Collections.singletonList(String.valueOf(cpuUtilization)));
@@ -82,7 +80,9 @@ public final class AutoscalingPolicy implements ApiMessage {
       fieldMap.put("customMetricUtilizations", stringList.build());
     }
     if (fieldNames.contains("loadBalancingUtilization") && loadBalancingUtilization != null) {
-      fieldMap.put("loadBalancingUtilization", Collections.singletonList(String.valueOf(loadBalancingUtilization)));
+      fieldMap.put(
+          "loadBalancingUtilization",
+          Collections.singletonList(String.valueOf(loadBalancingUtilization)));
     }
     if (fieldNames.contains("maxNumReplicas") && maxNumReplicas != null) {
       fieldMap.put("maxNumReplicas", Collections.singletonList(String.valueOf(maxNumReplicas)));
@@ -146,22 +146,24 @@ public final class AutoscalingPolicy implements ApiMessage {
     return minNumReplicas;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AutoscalingPolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AutoscalingPolicy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AutoscalingPolicy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AutoscalingPolicy();
   }
@@ -230,7 +232,8 @@ public final class AutoscalingPolicy implements ApiMessage {
       return customMetricUtilizations;
     }
 
-    public Builder addAllCustomMetricUtilizations(List<AutoscalingPolicyCustomMetricUtilization> customMetricUtilizations) {
+    public Builder addAllCustomMetricUtilizations(
+        List<AutoscalingPolicyCustomMetricUtilization> customMetricUtilizations) {
       if (this.customMetricUtilizations == null) {
         this.customMetricUtilizations = new ArrayList<>(customMetricUtilizations.size());
       }
@@ -238,7 +241,8 @@ public final class AutoscalingPolicy implements ApiMessage {
       return this;
     }
 
-    public Builder addCustomMetricUtilizations(AutoscalingPolicyCustomMetricUtilization customMetricUtilizations) {
+    public Builder addCustomMetricUtilizations(
+        AutoscalingPolicyCustomMetricUtilization customMetricUtilizations) {
       this.customMetricUtilizations.add(customMetricUtilizations);
       return this;
     }
@@ -247,7 +251,8 @@ public final class AutoscalingPolicy implements ApiMessage {
       return loadBalancingUtilization;
     }
 
-    public Builder setLoadBalancingUtilization(AutoscalingPolicyLoadBalancingUtilization loadBalancingUtilization) {
+    public Builder setLoadBalancingUtilization(
+        AutoscalingPolicyLoadBalancingUtilization loadBalancingUtilization) {
       this.loadBalancingUtilization = loadBalancingUtilization;
       return this;
     }
@@ -270,21 +275,15 @@ public final class AutoscalingPolicy implements ApiMessage {
       return this;
     }
 
-
     public AutoscalingPolicy build() {
 
-
-
-
-
       return new AutoscalingPolicy(
-        coolDownPeriodSec,
-        cpuUtilization,
-        customMetricUtilizations,
-        loadBalancingUtilization,
-        maxNumReplicas,
-        minNumReplicas
-      );
+          coolDownPeriodSec,
+          cpuUtilization,
+          customMetricUtilizations,
+          loadBalancingUtilization,
+          maxNumReplicas,
+          minNumReplicas);
     }
 
     public Builder clone() {
@@ -302,12 +301,23 @@ public final class AutoscalingPolicy implements ApiMessage {
   @Override
   public String toString() {
     return "AutoscalingPolicy{"
-        + "coolDownPeriodSec=" + coolDownPeriodSec + ", "
-        + "cpuUtilization=" + cpuUtilization + ", "
-        + "customMetricUtilizations=" + customMetricUtilizations + ", "
-        + "loadBalancingUtilization=" + loadBalancingUtilization + ", "
-        + "maxNumReplicas=" + maxNumReplicas + ", "
-        + "minNumReplicas=" + minNumReplicas
+        + "coolDownPeriodSec="
+        + coolDownPeriodSec
+        + ", "
+        + "cpuUtilization="
+        + cpuUtilization
+        + ", "
+        + "customMetricUtilizations="
+        + customMetricUtilizations
+        + ", "
+        + "loadBalancingUtilization="
+        + loadBalancingUtilization
+        + ", "
+        + "maxNumReplicas="
+        + maxNumReplicas
+        + ", "
+        + "minNumReplicas="
+        + minNumReplicas
         + "}";
   }
 
@@ -318,14 +328,12 @@ public final class AutoscalingPolicy implements ApiMessage {
     }
     if (o instanceof AutoscalingPolicy) {
       AutoscalingPolicy that = (AutoscalingPolicy) o;
-      return
-          Objects.equals(this.coolDownPeriodSec, that.getCoolDownPeriodSec()) &&
-          Objects.equals(this.cpuUtilization, that.getCpuUtilization()) &&
-          Objects.equals(this.customMetricUtilizations, that.getCustomMetricUtilizationsList()) &&
-          Objects.equals(this.loadBalancingUtilization, that.getLoadBalancingUtilization()) &&
-          Objects.equals(this.maxNumReplicas, that.getMaxNumReplicas()) &&
-          Objects.equals(this.minNumReplicas, that.getMinNumReplicas())
-          ;
+      return Objects.equals(this.coolDownPeriodSec, that.getCoolDownPeriodSec())
+          && Objects.equals(this.cpuUtilization, that.getCpuUtilization())
+          && Objects.equals(this.customMetricUtilizations, that.getCustomMetricUtilizationsList())
+          && Objects.equals(this.loadBalancingUtilization, that.getLoadBalancingUtilization())
+          && Objects.equals(this.maxNumReplicas, that.getMaxNumReplicas())
+          && Objects.equals(this.minNumReplicas, that.getMinNumReplicas());
     }
     return false;
   }
@@ -333,12 +341,11 @@ public final class AutoscalingPolicy implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      coolDownPeriodSec,
-      cpuUtilization,
-      customMetricUtilizations,
-      loadBalancingUtilization,
-      maxNumReplicas,
-      minNumReplicas
-    );
+        coolDownPeriodSec,
+        cpuUtilization,
+        customMetricUtilizations,
+        loadBalancingUtilization,
+        maxNumReplicas,
+        minNumReplicas);
   }
 }

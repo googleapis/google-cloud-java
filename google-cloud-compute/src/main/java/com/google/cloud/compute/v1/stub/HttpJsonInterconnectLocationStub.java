@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InterconnectLocationClient.ListInterconnectLocationsPagedResponse;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,23 +28,16 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetInterconnectLocationHttpRequest;
 import com.google.cloud.compute.v1.InterconnectLocation;
-import static com.google.cloud.compute.v1.InterconnectLocationClient.ListInterconnectLocationsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectLocationList;
-import com.google.cloud.compute.v1.InterconnectLocationSettings;
 import com.google.cloud.compute.v1.ListInterconnectLocationsHttpRequest;
-import com.google.cloud.compute.v1.ProjectInterconnectLocationName;
+import com.google.cloud.compute.v1.ProjectGlobalInterconnectLocationName;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -56,113 +51,154 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInterconnectLocationStub extends InterconnectLocationStub {
   @InternalApi
-  public static final ApiMethodDescriptor<GetInterconnectLocationHttpRequest, InterconnectLocation> getInterconnectLocationMethodDescriptor =
-      ApiMethodDescriptor.<GetInterconnectLocationHttpRequest, InterconnectLocation>newBuilder()
-          .setFullMethodName("compute.interconnectLocations.get")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<GetInterconnectLocationHttpRequest>newBuilder()
-                  .setRequestInstance(GetInterconnectLocationHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/interconnectLocations/{interconnectLocation}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
-                  .setResourceNameFactory(ProjectInterconnectLocationName.newFactory())
-                  .setResourceNameField("interconnectLocation")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<InterconnectLocation>newBuilder()
-                  .setResponseInstance(InterconnectLocation.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<GetInterconnectLocationHttpRequest, InterconnectLocation>
+      getInterconnectLocationMethodDescriptor =
+          ApiMethodDescriptor.<GetInterconnectLocationHttpRequest, InterconnectLocation>newBuilder()
+              .setFullMethodName("compute.interconnectLocations.get")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetInterconnectLocationHttpRequest>newBuilder()
+                      .setRequestInstance(GetInterconnectLocationHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/interconnectLocations/{interconnectLocation}"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalInterconnectLocationName.newFactory())
+                      .setResourceNameField("interconnectLocation")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<InterconnectLocation>newBuilder()
+                      .setResponseInstance(InterconnectLocation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<ListInterconnectLocationsHttpRequest, InterconnectLocationList> listInterconnectLocationsMethodDescriptor =
-      ApiMethodDescriptor.<ListInterconnectLocationsHttpRequest, InterconnectLocationList>newBuilder()
-          .setFullMethodName("compute.interconnectLocations.list")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<ListInterconnectLocationsHttpRequest>newBuilder()
-                  .setRequestInstance(ListInterconnectLocationsHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/interconnectLocations"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<InterconnectLocationList>newBuilder()
-                  .setResponseInstance(InterconnectLocationList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<
+          ListInterconnectLocationsHttpRequest, InterconnectLocationList>
+      listInterconnectLocationsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListInterconnectLocationsHttpRequest, InterconnectLocationList>newBuilder()
+              .setFullMethodName("compute.interconnectLocations.list")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListInterconnectLocationsHttpRequest>newBuilder()
+                      .setRequestInstance(ListInterconnectLocationsHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/interconnectLocations"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<InterconnectLocationList>newBuilder()
+                      .setResponseInstance(InterconnectLocationList.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<GetInterconnectLocationHttpRequest, InterconnectLocation> getInterconnectLocationCallable;
-  private final UnaryCallable<ListInterconnectLocationsHttpRequest, InterconnectLocationList> listInterconnectLocationsCallable;
-  private final UnaryCallable<ListInterconnectLocationsHttpRequest, ListInterconnectLocationsPagedResponse> listInterconnectLocationsPagedCallable;
+  private final UnaryCallable<GetInterconnectLocationHttpRequest, InterconnectLocation>
+      getInterconnectLocationCallable;
+  private final UnaryCallable<ListInterconnectLocationsHttpRequest, InterconnectLocationList>
+      listInterconnectLocationsCallable;
+  private final UnaryCallable<
+          ListInterconnectLocationsHttpRequest, ListInterconnectLocationsPagedResponse>
+      listInterconnectLocationsPagedCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
-  public static final HttpJsonInterconnectLocationStub create(InterconnectLocationStubSettings settings) throws IOException {
+
+  public static final HttpJsonInterconnectLocationStub create(
+      InterconnectLocationStubSettings settings) throws IOException {
     return new HttpJsonInterconnectLocationStub(settings, ClientContext.create(settings));
   }
 
-  public static final HttpJsonInterconnectLocationStub create(ClientContext clientContext) throws IOException {
-    return new HttpJsonInterconnectLocationStub(InterconnectLocationStubSettings.newBuilder().build(), clientContext);
+  public static final HttpJsonInterconnectLocationStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonInterconnectLocationStub(
+        InterconnectLocationStubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final HttpJsonInterconnectLocationStub create(ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
-    return new HttpJsonInterconnectLocationStub(InterconnectLocationStubSettings.newBuilder().build(), clientContext, callableFactory);
+  public static final HttpJsonInterconnectLocationStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonInterconnectLocationStub(
+        InterconnectLocationStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of HttpJsonInterconnectLocationStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonInterconnectLocationStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonInterconnectLocationStub(InterconnectLocationStubSettings settings, ClientContext clientContext) throws IOException {
+  protected HttpJsonInterconnectLocationStub(
+      InterconnectLocationStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new HttpJsonInterconnectLocationCallableFactory());
   }
 
   /**
-   * Constructs an instance of HttpJsonInterconnectLocationStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonInterconnectLocationStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonInterconnectLocationStub(InterconnectLocationStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+  protected HttpJsonInterconnectLocationStub(
+      InterconnectLocationStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
 
-    HttpJsonCallSettings<GetInterconnectLocationHttpRequest, InterconnectLocation> getInterconnectLocationTransportSettings =
-        HttpJsonCallSettings.<GetInterconnectLocationHttpRequest, InterconnectLocation>newBuilder()
-            .setMethodDescriptor(getInterconnectLocationMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<ListInterconnectLocationsHttpRequest, InterconnectLocationList> listInterconnectLocationsTransportSettings =
-        HttpJsonCallSettings.<ListInterconnectLocationsHttpRequest, InterconnectLocationList>newBuilder()
-            .setMethodDescriptor(listInterconnectLocationsMethodDescriptor)
-            .build();
+    HttpJsonCallSettings<GetInterconnectLocationHttpRequest, InterconnectLocation>
+        getInterconnectLocationTransportSettings =
+            HttpJsonCallSettings
+                .<GetInterconnectLocationHttpRequest, InterconnectLocation>newBuilder()
+                .setMethodDescriptor(getInterconnectLocationMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<ListInterconnectLocationsHttpRequest, InterconnectLocationList>
+        listInterconnectLocationsTransportSettings =
+            HttpJsonCallSettings
+                .<ListInterconnectLocationsHttpRequest, InterconnectLocationList>newBuilder()
+                .setMethodDescriptor(listInterconnectLocationsMethodDescriptor)
+                .build();
 
-    this.getInterconnectLocationCallable = callableFactory.createUnaryCallable(getInterconnectLocationTransportSettings,settings.getInterconnectLocationSettings(), clientContext);
-    this.listInterconnectLocationsCallable = callableFactory.createUnaryCallable(listInterconnectLocationsTransportSettings,settings.listInterconnectLocationsSettings(), clientContext);
-    this.listInterconnectLocationsPagedCallable = callableFactory.createPagedCallable(listInterconnectLocationsTransportSettings,settings.listInterconnectLocationsSettings(), clientContext);
+    this.getInterconnectLocationCallable =
+        callableFactory.createUnaryCallable(
+            getInterconnectLocationTransportSettings,
+            settings.getInterconnectLocationSettings(),
+            clientContext);
+    this.listInterconnectLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listInterconnectLocationsTransportSettings,
+            settings.listInterconnectLocationsSettings(),
+            clientContext);
+    this.listInterconnectLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listInterconnectLocationsTransportSettings,
+            settings.listInterconnectLocationsSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   @BetaApi
-  public UnaryCallable<GetInterconnectLocationHttpRequest, InterconnectLocation> getInterconnectLocationCallable() {
+  public UnaryCallable<GetInterconnectLocationHttpRequest, InterconnectLocation>
+      getInterconnectLocationCallable() {
     return getInterconnectLocationCallable;
   }
 
   @BetaApi
-  public UnaryCallable<ListInterconnectLocationsHttpRequest, ListInterconnectLocationsPagedResponse> listInterconnectLocationsPagedCallable() {
+  public UnaryCallable<ListInterconnectLocationsHttpRequest, ListInterconnectLocationsPagedResponse>
+      listInterconnectLocationsPagedCallable() {
     return listInterconnectLocationsPagedCallable;
   }
 
   @BetaApi
-  public UnaryCallable<ListInterconnectLocationsHttpRequest, InterconnectLocationList> listInterconnectLocationsCallable() {
+  public UnaryCallable<ListInterconnectLocationsHttpRequest, InterconnectLocationList>
+      listInterconnectLocationsCallable() {
     return listInterconnectLocationsCallable;
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
@@ -190,5 +226,4 @@ public class HttpJsonInterconnectLocationStub extends InterconnectLocationStub {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
-
 }

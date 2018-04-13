@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class GetVpnTunnelHttpRequest implements ApiMessage {
     this.vpnTunnel = null;
   }
 
-
   private GetVpnTunnelHttpRequest(
       String access_token,
       String callback,
@@ -61,8 +57,7 @@ public final class GetVpnTunnelHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String userIp,
-      String vpnTunnel
-      ) {
+      String vpnTunnel) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -170,22 +165,24 @@ public final class GetVpnTunnelHttpRequest implements ApiMessage {
     return vpnTunnel;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GetVpnTunnelHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetVpnTunnelHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GetVpnTunnelHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GetVpnTunnelHttpRequest();
   }
@@ -314,15 +311,8 @@ public final class GetVpnTunnelHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public GetVpnTunnelHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (vpnTunnel == null) {
         missing += " vpnTunnel";
@@ -331,15 +321,7 @@ public final class GetVpnTunnelHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetVpnTunnelHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        userIp,
-        vpnTunnel
-      );
+          access_token, callback, fields, key, prettyPrint, quotaUser, userIp, vpnTunnel);
     }
 
     public Builder clone() {
@@ -359,14 +341,29 @@ public final class GetVpnTunnelHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "GetVpnTunnelHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "userIp=" + userIp + ", "
-        + "vpnTunnel=" + vpnTunnel
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "userIp="
+        + userIp
+        + ", "
+        + "vpnTunnel="
+        + vpnTunnel
         + "}";
   }
 
@@ -377,16 +374,14 @@ public final class GetVpnTunnelHttpRequest implements ApiMessage {
     }
     if (o instanceof GetVpnTunnelHttpRequest) {
       GetVpnTunnelHttpRequest that = (GetVpnTunnelHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.userIp, that.getUserIp()) &&
-          Objects.equals(this.vpnTunnel, that.getVpnTunnel())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.userIp, that.getUserIp())
+          && Objects.equals(this.vpnTunnel, that.getVpnTunnel());
     }
     return false;
   }
@@ -394,14 +389,6 @@ public final class GetVpnTunnelHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      userIp,
-      vpnTunnel
-    );
+        access_token, callback, fields, key, prettyPrint, quotaUser, userIp, vpnTunnel);
   }
 }

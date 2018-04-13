@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -60,7 +59,6 @@ public final class Network implements ApiMessage {
     this.subnetworks = null;
   }
 
-
   private Network(
       Boolean autoCreateSubnetworks,
       String creationTimestamp,
@@ -73,8 +71,7 @@ public final class Network implements ApiMessage {
       List<NetworkPeering> peerings,
       NetworkRoutingConfig routingConfig,
       String selfLink,
-      List<String> subnetworks
-      ) {
+      List<String> subnetworks) {
     this.autoCreateSubnetworks = autoCreateSubnetworks;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -93,10 +90,13 @@ public final class Network implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("autoCreateSubnetworks") && autoCreateSubnetworks != null) {
-      fieldMap.put("autoCreateSubnetworks", Collections.singletonList(String.valueOf(autoCreateSubnetworks)));
+      fieldMap.put(
+          "autoCreateSubnetworks",
+          Collections.singletonList(String.valueOf(autoCreateSubnetworks)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -234,22 +234,24 @@ public final class Network implements ApiMessage {
     return subnetworks;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Network prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Network getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Network DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Network();
   }
@@ -450,33 +452,21 @@ public final class Network implements ApiMessage {
       return this;
     }
 
-
     public Network build() {
 
-
-
-
-
-
-
-
-
-
-
       return new Network(
-        autoCreateSubnetworks,
-        creationTimestamp,
-        description,
-        gatewayIPv4,
-        iPv4Range,
-        id,
-        kind,
-        name,
-        peerings,
-        routingConfig,
-        selfLink,
-        subnetworks
-      );
+          autoCreateSubnetworks,
+          creationTimestamp,
+          description,
+          gatewayIPv4,
+          iPv4Range,
+          id,
+          kind,
+          name,
+          peerings,
+          routingConfig,
+          selfLink,
+          subnetworks);
     }
 
     public Builder clone() {
@@ -500,18 +490,41 @@ public final class Network implements ApiMessage {
   @Override
   public String toString() {
     return "Network{"
-        + "autoCreateSubnetworks=" + autoCreateSubnetworks + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "gatewayIPv4=" + gatewayIPv4 + ", "
-        + "iPv4Range=" + iPv4Range + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "peerings=" + peerings + ", "
-        + "routingConfig=" + routingConfig + ", "
-        + "selfLink=" + selfLink + ", "
-        + "subnetworks=" + subnetworks
+        + "autoCreateSubnetworks="
+        + autoCreateSubnetworks
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "gatewayIPv4="
+        + gatewayIPv4
+        + ", "
+        + "iPv4Range="
+        + iPv4Range
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "peerings="
+        + peerings
+        + ", "
+        + "routingConfig="
+        + routingConfig
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "subnetworks="
+        + subnetworks
         + "}";
   }
 
@@ -522,20 +535,18 @@ public final class Network implements ApiMessage {
     }
     if (o instanceof Network) {
       Network that = (Network) o;
-      return
-          Objects.equals(this.autoCreateSubnetworks, that.getAutoCreateSubnetworks()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.gatewayIPv4, that.getGatewayIPv4()) &&
-          Objects.equals(this.iPv4Range, that.getIPv4Range()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.peerings, that.getPeeringsList()) &&
-          Objects.equals(this.routingConfig, that.getRoutingConfig()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.subnetworks, that.getSubnetworksList())
-          ;
+      return Objects.equals(this.autoCreateSubnetworks, that.getAutoCreateSubnetworks())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.gatewayIPv4, that.getGatewayIPv4())
+          && Objects.equals(this.iPv4Range, that.getIPv4Range())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.peerings, that.getPeeringsList())
+          && Objects.equals(this.routingConfig, that.getRoutingConfig())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.subnetworks, that.getSubnetworksList());
     }
     return false;
   }
@@ -543,18 +554,17 @@ public final class Network implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      autoCreateSubnetworks,
-      creationTimestamp,
-      description,
-      gatewayIPv4,
-      iPv4Range,
-      id,
-      kind,
-      name,
-      peerings,
-      routingConfig,
-      selfLink,
-      subnetworks
-    );
+        autoCreateSubnetworks,
+        creationTimestamp,
+        description,
+        gatewayIPv4,
+        iPv4Range,
+        id,
+        kind,
+        name,
+        peerings,
+        routingConfig,
+        selfLink,
+        subnetworks);
   }
 }

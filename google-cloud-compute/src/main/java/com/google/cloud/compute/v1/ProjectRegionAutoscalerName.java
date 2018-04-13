@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectRegionAutoscalerName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectRegionAutoscalerName implements ResourceName {
   private final String autoscaler;
   private final String project;
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/autoscalers/{autoscaler}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/autoscalers/{autoscaler}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -54,29 +51,12 @@ public final class ProjectRegionAutoscalerName implements com.google.api.resourc
     region = Preconditions.checkNotNull(builder.getRegion());
   }
 
-  public static ProjectRegionAutoscalerName of(
-      String autoscaler,
-      String project,
-      String region
-      ) {
-    return newBuilder()
-    .setAutoscaler(autoscaler)
-    .setProject(project)
-    .setRegion(region)
-      .build();
+  public static ProjectRegionAutoscalerName of(String autoscaler, String project, String region) {
+    return newBuilder().setAutoscaler(autoscaler).setProject(project).setRegion(region).build();
   }
 
-  public static String format(
-      String autoscaler,
-      String project,
-      String region
-      ) {
-    return of(
-        autoscaler,
-        project,
-        region
-        )
-        .toString();
+  public static String format(String autoscaler, String project, String region) {
+    return of(autoscaler, project, region).toString();
   }
 
   public String getAutoscaler() {
@@ -90,7 +70,6 @@ public final class ProjectRegionAutoscalerName implements com.google.api.resourc
   public String getRegion() {
     return region;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +91,20 @@ public final class ProjectRegionAutoscalerName implements com.google.api.resourc
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectRegionAutoscalerName> newFactory() {
     return new ResourceNameFactory<ProjectRegionAutoscalerName>() {
-      public ProjectRegionAutoscalerName parse(String formattedString) {return ProjectRegionAutoscalerName.parse(formattedString);}
+      public ProjectRegionAutoscalerName parse(String formattedString) {
+        return ProjectRegionAutoscalerName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectRegionAutoscalerName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRegionAutoscalerName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("autoscaler"),
-      matchMap.get("project"),
-      matchMap.get("region")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectRegionAutoscalerName.parse: formattedString not in valid format");
+    return of(matchMap.get("autoscaler"), matchMap.get("project"), matchMap.get("region"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +119,11 @@ public final class ProjectRegionAutoscalerName implements com.google.api.resourc
     public String getAutoscaler() {
       return autoscaler;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getRegion() {
       return region;
     }
@@ -152,10 +132,12 @@ public final class ProjectRegionAutoscalerName implements com.google.api.resourc
       this.autoscaler = autoscaler;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setRegion(String region) {
       this.region = region;
       return this;
@@ -163,7 +145,7 @@ public final class ProjectRegionAutoscalerName implements com.google.api.resourc
 
     private Builder() {}
 
-    public Builder (ProjectRegionAutoscalerName projectRegionAutoscalerName) {
+    public Builder(ProjectRegionAutoscalerName projectRegionAutoscalerName) {
       autoscaler = projectRegionAutoscalerName.autoscaler;
       project = projectRegionAutoscalerName.project;
       region = projectRegionAutoscalerName.region;
@@ -179,8 +161,7 @@ public final class ProjectRegionAutoscalerName implements com.google.api.resourc
     return PATH_TEMPLATE.instantiate(
         "autoscaler", autoscaler,
         "project", project,
-        "region", region
-        );
+        "region", region);
   }
 
   @Override
@@ -190,21 +171,15 @@ public final class ProjectRegionAutoscalerName implements com.google.api.resourc
     }
     if (o instanceof ProjectRegionAutoscalerName) {
       ProjectRegionAutoscalerName that = (ProjectRegionAutoscalerName) o;
-      return
-          Objects.equals(this.autoscaler, that.getAutoscaler()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.region, that.getRegion())
-          ;
+      return Objects.equals(this.autoscaler, that.getAutoscaler())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.region, that.getRegion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      autoscaler,
-      project,
-      region
-    );
+    return Objects.hash(autoscaler, project, region);
   }
 }

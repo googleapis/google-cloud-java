@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.InterconnectLocationStub;
 import com.google.cloud.compute.v1.stub.InterconnectLocationStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -52,40 +42,40 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
- *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+ *   ProjectGlobalInterconnectLocationName interconnectLocation = ProjectGlobalInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
  *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(interconnectLocation);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the interconnectLocationClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the interconnectLocationClient object to clean up
+ * resources such as threads. In the example above, try-with-resources is used, which automatically
+ * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of InterconnectLocationSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of InterconnectLocationSettings
+ * to create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,27 +105,23 @@ public class InterconnectLocationClient implements BackgroundResource {
   private final InterconnectLocationSettings settings;
   private final InterconnectLocationStub stub;
 
-
-
-  /**
-   * Constructs an instance of InterconnectLocationClient with default settings.
-   */
+  /** Constructs an instance of InterconnectLocationClient with default settings. */
   public static final InterconnectLocationClient create() throws IOException {
     return create(InterconnectLocationSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of InterconnectLocationClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of InterconnectLocationClient, using the given settings. The channels
+   * are created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final InterconnectLocationClient create(InterconnectLocationSettings settings) throws IOException {
+  public static final InterconnectLocationClient create(InterconnectLocationSettings settings)
+      throws IOException {
     return new InterconnectLocationClient(settings);
   }
 
   /**
-   * Constructs an instance of InterconnectLocationClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use InterconnectLocationSettings}.
+   * Constructs an instance of InterconnectLocationClient, using the given stub for making calls.
+   * This is for advanced usage - prefer to use InterconnectLocationSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InterconnectLocationClient create(InterconnectLocationStub stub) {
@@ -143,9 +129,9 @@ public class InterconnectLocationClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of InterconnectLocationClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of InterconnectLocationClient, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected InterconnectLocationClient(InterconnectLocationSettings settings) throws IOException {
     this.settings = settings;
@@ -167,15 +153,16 @@ public class InterconnectLocationClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the details for the specified interconnect location. Get a list of available interconnect locations by making a list() request.
+   * Returns the details for the specified interconnect location. Get a list of available
+   * interconnect locations by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   ProjectGlobalInterconnectLocationName interconnectLocation = ProjectGlobalInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(interconnectLocation);
    * }
    * </code></pre>
@@ -184,23 +171,27 @@ public class InterconnectLocationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final InterconnectLocation getInterconnectLocation(ProjectInterconnectLocationName interconnectLocation) {
+  public final InterconnectLocation getInterconnectLocation(
+      ProjectGlobalInterconnectLocationName interconnectLocation) {
 
     GetInterconnectLocationHttpRequest request =
         GetInterconnectLocationHttpRequest.newBuilder()
-        .setInterconnectLocation(interconnectLocation == null ? null : interconnectLocation.toString())
-        .build();
+            .setInterconnectLocation(
+                interconnectLocation == null ? null : interconnectLocation.toString())
+            .build();
     return getInterconnectLocation(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the details for the specified interconnect location. Get a list of available interconnect locations by making a list() request.
+   * Returns the details for the specified interconnect location. Get a list of available
+   * interconnect locations by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   ProjectGlobalInterconnectLocationName interconnectLocation = ProjectGlobalInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(interconnectLocation.toString());
    * }
    * </code></pre>
@@ -213,19 +204,21 @@ public class InterconnectLocationClient implements BackgroundResource {
 
     GetInterconnectLocationHttpRequest request =
         GetInterconnectLocationHttpRequest.newBuilder()
-        .setInterconnectLocation(interconnectLocation)
-        .build();
+            .setInterconnectLocation(interconnectLocation)
+            .build();
     return getInterconnectLocation(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the details for the specified interconnect location. Get a list of available interconnect locations by making a list() request.
+   * Returns the details for the specified interconnect location. Get a list of available
+   * interconnect locations by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   ProjectGlobalInterconnectLocationName interconnectLocation = ProjectGlobalInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   GetInterconnectLocationHttpRequest request = GetInterconnectLocationHttpRequest.newBuilder()
    *     .setInterconnectLocation(interconnectLocation.toString())
    *     .build();
@@ -237,18 +230,21 @@ public class InterconnectLocationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final InterconnectLocation getInterconnectLocation(GetInterconnectLocationHttpRequest request) {
+  public final InterconnectLocation getInterconnectLocation(
+      GetInterconnectLocationHttpRequest request) {
     return getInterconnectLocationCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the details for the specified interconnect location. Get a list of available interconnect locations by making a list() request.
+   * Returns the details for the specified interconnect location. Get a list of available
+   * interconnect locations by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
-   *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+   *   ProjectGlobalInterconnectLocationName interconnectLocation = ProjectGlobalInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
    *   GetInterconnectLocationHttpRequest request = GetInterconnectLocationHttpRequest.newBuilder()
    *     .setInterconnectLocation(interconnectLocation.toString())
    *     .build();
@@ -259,7 +255,8 @@ public class InterconnectLocationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetInterconnectLocationHttpRequest, InterconnectLocation> getInterconnectLocationCallable() {
+  public final UnaryCallable<GetInterconnectLocationHttpRequest, InterconnectLocation>
+      getInterconnectLocationCallable() {
     return stub.getInterconnectLocationCallable();
   }
 
@@ -267,7 +264,8 @@ public class InterconnectLocationClient implements BackgroundResource {
   /**
    * Retrieves the list of interconnect locations available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -281,11 +279,12 @@ public class InterconnectLocationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInterconnectLocationsPagedResponse listInterconnectLocations(ProjectName project) {
+  public final ListInterconnectLocationsPagedResponse listInterconnectLocations(
+      ProjectName project) {
     ListInterconnectLocationsHttpRequest request =
         ListInterconnectLocationsHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listInterconnectLocations(request);
   }
 
@@ -293,7 +292,8 @@ public class InterconnectLocationClient implements BackgroundResource {
   /**
    * Retrieves the list of interconnect locations available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -309,9 +309,7 @@ public class InterconnectLocationClient implements BackgroundResource {
   @BetaApi
   public final ListInterconnectLocationsPagedResponse listInterconnectLocations(String project) {
     ListInterconnectLocationsHttpRequest request =
-        ListInterconnectLocationsHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListInterconnectLocationsHttpRequest.newBuilder().setProject(project).build();
     return listInterconnectLocations(request);
   }
 
@@ -319,7 +317,8 @@ public class InterconnectLocationClient implements BackgroundResource {
   /**
    * Retrieves the list of interconnect locations available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -336,16 +335,17 @@ public class InterconnectLocationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInterconnectLocationsPagedResponse listInterconnectLocations(ListInterconnectLocationsHttpRequest request) {
-    return listInterconnectLocationsPagedCallable()
-        .call(request);
+  public final ListInterconnectLocationsPagedResponse listInterconnectLocations(
+      ListInterconnectLocationsHttpRequest request) {
+    return listInterconnectLocationsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of interconnect locations available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -361,7 +361,9 @@ public class InterconnectLocationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInterconnectLocationsHttpRequest, ListInterconnectLocationsPagedResponse> listInterconnectLocationsPagedCallable() {
+  public final UnaryCallable<
+          ListInterconnectLocationsHttpRequest, ListInterconnectLocationsPagedResponse>
+      listInterconnectLocationsPagedCallable() {
     return stub.listInterconnectLocationsPagedCallable();
   }
 
@@ -369,7 +371,8 @@ public class InterconnectLocationClient implements BackgroundResource {
   /**
    * Retrieves the list of interconnect locations available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -392,12 +395,13 @@ public class InterconnectLocationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInterconnectLocationsHttpRequest, InterconnectLocationList> listInterconnectLocationsCallable() {
+  public final UnaryCallable<ListInterconnectLocationsHttpRequest, InterconnectLocationList>
+      listInterconnectLocationsCallable() {
     return stub.listInterconnectLocationsCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -426,15 +430,16 @@ public class InterconnectLocationClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListInterconnectLocationsPagedResponse extends AbstractPagedListResponse<
-      ListInterconnectLocationsHttpRequest,
-      InterconnectLocationList,
-      InterconnectLocation,
-      ListInterconnectLocationsPage,
-      ListInterconnectLocationsFixedSizeCollection> {
+  public static class ListInterconnectLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation,
+          ListInterconnectLocationsPage, ListInterconnectLocationsFixedSizeCollection> {
 
     public static ApiFuture<ListInterconnectLocationsPagedResponse> createAsync(
-        PageContext<ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation> context,
+        PageContext<
+                ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                InterconnectLocation>
+            context,
         ApiFuture<InterconnectLocationList> futureResponse) {
       ApiFuture<ListInterconnectLocationsPage> futurePage =
           ListInterconnectLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -442,7 +447,8 @@ public class InterconnectLocationClient implements BackgroundResource {
           futurePage,
           new ApiFunction<ListInterconnectLocationsPage, ListInterconnectLocationsPagedResponse>() {
             @Override
-            public ListInterconnectLocationsPagedResponse apply(ListInterconnectLocationsPage input) {
+            public ListInterconnectLocationsPagedResponse apply(
+                ListInterconnectLocationsPage input) {
               return new ListInterconnectLocationsPagedResponse(input);
             }
           });
@@ -451,18 +457,18 @@ public class InterconnectLocationClient implements BackgroundResource {
     private ListInterconnectLocationsPagedResponse(ListInterconnectLocationsPage page) {
       super(page, ListInterconnectLocationsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListInterconnectLocationsPage extends AbstractPage<
-      ListInterconnectLocationsHttpRequest,
-      InterconnectLocationList,
-      InterconnectLocation,
-      ListInterconnectLocationsPage> {
+  public static class ListInterconnectLocationsPage
+      extends AbstractPage<
+          ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation,
+          ListInterconnectLocationsPage> {
 
     private ListInterconnectLocationsPage(
-        PageContext<ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation> context,
+        PageContext<
+                ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                InterconnectLocation>
+            context,
         InterconnectLocationList response) {
       super(context, response);
     }
@@ -473,31 +479,32 @@ public class InterconnectLocationClient implements BackgroundResource {
 
     @Override
     protected ListInterconnectLocationsPage createPage(
-        PageContext<ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation> context,
+        PageContext<
+                ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                InterconnectLocation>
+            context,
         InterconnectLocationList response) {
       return new ListInterconnectLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInterconnectLocationsPage> createPageAsync(
-        PageContext<ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation> context,
+        PageContext<
+                ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                InterconnectLocation>
+            context,
         ApiFuture<InterconnectLocationList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListInterconnectLocationsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListInterconnectLocationsHttpRequest,
-      InterconnectLocationList,
-      InterconnectLocation,
-      ListInterconnectLocationsPage,
-      ListInterconnectLocationsFixedSizeCollection> {
+  public static class ListInterconnectLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation,
+          ListInterconnectLocationsPage, ListInterconnectLocationsFixedSizeCollection> {
 
-    private ListInterconnectLocationsFixedSizeCollection(List<ListInterconnectLocationsPage> pages, int collectionSize) {
+    private ListInterconnectLocationsFixedSizeCollection(
+        List<ListInterconnectLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -510,7 +517,5 @@ public class InterconnectLocationClient implements BackgroundResource {
         List<ListInterconnectLocationsPage> pages, int collectionSize) {
       return new ListInterconnectLocationsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

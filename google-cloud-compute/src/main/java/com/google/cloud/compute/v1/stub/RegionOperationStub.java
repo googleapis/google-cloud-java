@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionOperationClient.ListRegionOperationsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -23,9 +25,6 @@ import com.google.cloud.compute.v1.GetRegionOperationHttpRequest;
 import com.google.cloud.compute.v1.ListRegionOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.ProjectRegionOperationName;
-import static com.google.cloud.compute.v1.RegionOperationClient.ListRegionOperationsPagedResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -38,7 +37,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RegionOperationStub implements BackgroundResource {
 
-
   @BetaApi
   public UnaryCallable<DeleteRegionOperationHttpRequest, Void> deleteRegionOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRegionOperationCallable()");
@@ -50,13 +48,17 @@ public abstract class RegionOperationStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionOperationsHttpRequest, ListRegionOperationsPagedResponse> listRegionOperationsPagedCallable() {
+  public UnaryCallable<ListRegionOperationsHttpRequest, ListRegionOperationsPagedResponse>
+      listRegionOperationsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionOperationsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionOperationsHttpRequest, OperationList> listRegionOperationsCallable() {
+  public UnaryCallable<ListRegionOperationsHttpRequest, OperationList>
+      listRegionOperationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionOperationsCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

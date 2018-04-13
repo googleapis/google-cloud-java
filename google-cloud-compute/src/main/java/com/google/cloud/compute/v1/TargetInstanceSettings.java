@@ -15,46 +15,24 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.TargetInstanceClient.AggregatedListTargetInstancesPagedResponse;
+import static com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
+
 import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.httpjson.GaxHttpJsonProperties;
-import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
-import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.PagedListDescriptor;
-import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallable;
-import com.google.auth.Credentials;
-import static com.google.cloud.compute.v1.TargetInstanceClient.AggregatedListTargetInstancesPagedResponse;
-import static com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
 import com.google.cloud.compute.v1.stub.TargetInstanceStubSettings;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -63,15 +41,15 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
+ *       port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of deleteTargetInstance to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of deleteTargetInstance to 30 seconds:
  *
  * <pre>
  * <code>
@@ -86,84 +64,71 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class TargetInstanceSettings extends ClientSettings<TargetInstanceSettings> {
-  /**
-   * Returns the object with the settings used for calls to aggregatedListTargetInstances.
-   */
-  public PagedCallSettings<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList, AggregatedListTargetInstancesPagedResponse> aggregatedListTargetInstancesSettings() {
+  /** Returns the object with the settings used for calls to aggregatedListTargetInstances. */
+  public PagedCallSettings<
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+          AggregatedListTargetInstancesPagedResponse>
+      aggregatedListTargetInstancesSettings() {
     return ((TargetInstanceStubSettings) getStubSettings()).aggregatedListTargetInstancesSettings();
   }
 
-  /**
-   * Returns the object with the settings used for calls to deleteTargetInstance.
-   */
-  public UnaryCallSettings<DeleteTargetInstanceHttpRequest, Operation> deleteTargetInstanceSettings() {
+  /** Returns the object with the settings used for calls to deleteTargetInstance. */
+  public UnaryCallSettings<DeleteTargetInstanceHttpRequest, Operation>
+      deleteTargetInstanceSettings() {
     return ((TargetInstanceStubSettings) getStubSettings()).deleteTargetInstanceSettings();
   }
 
-  /**
-   * Returns the object with the settings used for calls to getTargetInstance.
-   */
-  public UnaryCallSettings<GetTargetInstanceHttpRequest, TargetInstance> getTargetInstanceSettings() {
+  /** Returns the object with the settings used for calls to getTargetInstance. */
+  public UnaryCallSettings<GetTargetInstanceHttpRequest, TargetInstance>
+      getTargetInstanceSettings() {
     return ((TargetInstanceStubSettings) getStubSettings()).getTargetInstanceSettings();
   }
 
-  /**
-   * Returns the object with the settings used for calls to insertTargetInstance.
-   */
-  public UnaryCallSettings<InsertTargetInstanceHttpRequest, Operation> insertTargetInstanceSettings() {
+  /** Returns the object with the settings used for calls to insertTargetInstance. */
+  public UnaryCallSettings<InsertTargetInstanceHttpRequest, Operation>
+      insertTargetInstanceSettings() {
     return ((TargetInstanceStubSettings) getStubSettings()).insertTargetInstanceSettings();
   }
 
-  /**
-   * Returns the object with the settings used for calls to listTargetInstances.
-   */
-  public PagedCallSettings<ListTargetInstancesHttpRequest, TargetInstanceList, ListTargetInstancesPagedResponse> listTargetInstancesSettings() {
+  /** Returns the object with the settings used for calls to listTargetInstances. */
+  public PagedCallSettings<
+          ListTargetInstancesHttpRequest, TargetInstanceList, ListTargetInstancesPagedResponse>
+      listTargetInstancesSettings() {
     return ((TargetInstanceStubSettings) getStubSettings()).listTargetInstancesSettings();
   }
 
-
-  public static final TargetInstanceSettings create(TargetInstanceStubSettings stub) throws IOException {
+  public static final TargetInstanceSettings create(TargetInstanceStubSettings stub)
+      throws IOException {
     return new TargetInstanceSettings.Builder(stub.toBuilder()).build();
   }
 
-  /**
-   * Returns a builder for the default ExecutorProvider for this service.
-   */
+  /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return TargetInstanceStubSettings.defaultExecutorProviderBuilder();
   }
 
-  /**
-   * Returns the default service endpoint.
-   */
-   public static String getDefaultEndpoint() {
-     return TargetInstanceStubSettings.getDefaultEndpoint();
-   }
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return TargetInstanceStubSettings.getDefaultEndpoint();
+  }
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return TargetInstanceStubSettings.getDefaultServicePort();
   }
 
-
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return TargetInstanceStubSettings.getDefaultServiceScopes();
   }
 
-
-  /**
-   * Returns a builder for the default credentials for this service.
-   */
+  /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
     return TargetInstanceStubSettings.defaultCredentialsProviderBuilder();
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingHttpJsonChannelProvider.Builder defaultHttpJsonTransportProviderBuilder() {
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
     return TargetInstanceStubSettings.defaultHttpJsonTransportProviderBuilder();
   }
 
@@ -176,23 +141,17 @@ public class TargetInstanceSettings extends ClientSettings<TargetInstanceSetting
     return TargetInstanceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -201,9 +160,7 @@ public class TargetInstanceSettings extends ClientSettings<TargetInstanceSetting
     super(settingsBuilder);
   }
 
-  /**
-   * Builder for TargetInstanceSettings.
-   */
+  /** Builder for TargetInstanceSettings. */
   public static class Builder extends ClientSettings.Builder<TargetInstanceSettings, Builder> {
     protected Builder() throws IOException {
       this((ClientContext) null);
@@ -225,53 +182,53 @@ public class TargetInstanceSettings extends ClientSettings<TargetInstanceSetting
       super(stubSettings);
     }
 
-
     public TargetInstanceStubSettings.Builder getStubSettingsBuilder() {
       return ((TargetInstanceStubSettings.Builder) getStubSettings());
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
-     * Note: This method does not support applying settings to streaming methods.
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
-      super.applyToAllUnaryMethods(getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(
+          getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to aggregatedListTargetInstances.
-     */
-    public PagedCallSettings.Builder<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList, AggregatedListTargetInstancesPagedResponse> aggregatedListTargetInstancesSettings() {
+    /** Returns the builder for the settings used for calls to aggregatedListTargetInstances. */
+    public PagedCallSettings.Builder<
+            AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+            AggregatedListTargetInstancesPagedResponse>
+        aggregatedListTargetInstancesSettings() {
       return getStubSettingsBuilder().aggregatedListTargetInstancesSettings();
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteTargetInstance.
-     */
-    public UnaryCallSettings.Builder<DeleteTargetInstanceHttpRequest, Operation> deleteTargetInstanceSettings() {
+    /** Returns the builder for the settings used for calls to deleteTargetInstance. */
+    public UnaryCallSettings.Builder<DeleteTargetInstanceHttpRequest, Operation>
+        deleteTargetInstanceSettings() {
       return getStubSettingsBuilder().deleteTargetInstanceSettings();
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getTargetInstance.
-     */
-    public UnaryCallSettings.Builder<GetTargetInstanceHttpRequest, TargetInstance> getTargetInstanceSettings() {
+    /** Returns the builder for the settings used for calls to getTargetInstance. */
+    public UnaryCallSettings.Builder<GetTargetInstanceHttpRequest, TargetInstance>
+        getTargetInstanceSettings() {
       return getStubSettingsBuilder().getTargetInstanceSettings();
     }
 
-    /**
-     * Returns the builder for the settings used for calls to insertTargetInstance.
-     */
-    public UnaryCallSettings.Builder<InsertTargetInstanceHttpRequest, Operation> insertTargetInstanceSettings() {
+    /** Returns the builder for the settings used for calls to insertTargetInstance. */
+    public UnaryCallSettings.Builder<InsertTargetInstanceHttpRequest, Operation>
+        insertTargetInstanceSettings() {
       return getStubSettingsBuilder().insertTargetInstanceSettings();
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listTargetInstances.
-     */
-    public PagedCallSettings.Builder<ListTargetInstancesHttpRequest, TargetInstanceList, ListTargetInstancesPagedResponse> listTargetInstancesSettings() {
+    /** Returns the builder for the settings used for calls to listTargetInstances. */
+    public PagedCallSettings.Builder<
+            ListTargetInstancesHttpRequest, TargetInstanceList, ListTargetInstancesPagedResponse>
+        listTargetInstancesSettings() {
       return getStubSettingsBuilder().listTargetInstancesSettings();
     }
 

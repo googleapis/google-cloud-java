@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class Backend implements ApiMessage {
     this.maxUtilization = null;
   }
 
-
   private Backend(
       String balancingMode,
       Float capacityScaler,
@@ -64,8 +60,7 @@ public final class Backend implements ApiMessage {
       Integer maxConnectionsPerInstance,
       Integer maxRate,
       Float maxRatePerInstance,
-      Float maxUtilization
-      ) {
+      Float maxUtilization) {
     this.balancingMode = balancingMode;
     this.capacityScaler = capacityScaler;
     this.description = description;
@@ -96,13 +91,16 @@ public final class Backend implements ApiMessage {
       fieldMap.put("maxConnections", Collections.singletonList(String.valueOf(maxConnections)));
     }
     if (fieldNames.contains("maxConnectionsPerInstance") && maxConnectionsPerInstance != null) {
-      fieldMap.put("maxConnectionsPerInstance", Collections.singletonList(String.valueOf(maxConnectionsPerInstance)));
+      fieldMap.put(
+          "maxConnectionsPerInstance",
+          Collections.singletonList(String.valueOf(maxConnectionsPerInstance)));
     }
     if (fieldNames.contains("maxRate") && maxRate != null) {
       fieldMap.put("maxRate", Collections.singletonList(String.valueOf(maxRate)));
     }
     if (fieldNames.contains("maxRatePerInstance") && maxRatePerInstance != null) {
-      fieldMap.put("maxRatePerInstance", Collections.singletonList(String.valueOf(maxRatePerInstance)));
+      fieldMap.put(
+          "maxRatePerInstance", Collections.singletonList(String.valueOf(maxRatePerInstance)));
     }
     if (fieldNames.contains("maxUtilization") && maxUtilization != null) {
       fieldMap.put("maxUtilization", Collections.singletonList(String.valueOf(maxUtilization)));
@@ -184,22 +182,24 @@ public final class Backend implements ApiMessage {
     return maxUtilization;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Backend prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Backend getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Backend DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Backend();
   }
@@ -342,27 +342,18 @@ public final class Backend implements ApiMessage {
       return this;
     }
 
-
     public Backend build() {
 
-
-
-
-
-
-
-
       return new Backend(
-        balancingMode,
-        capacityScaler,
-        description,
-        group,
-        maxConnections,
-        maxConnectionsPerInstance,
-        maxRate,
-        maxRatePerInstance,
-        maxUtilization
-      );
+          balancingMode,
+          capacityScaler,
+          description,
+          group,
+          maxConnections,
+          maxConnectionsPerInstance,
+          maxRate,
+          maxRatePerInstance,
+          maxUtilization);
     }
 
     public Builder clone() {
@@ -383,15 +374,32 @@ public final class Backend implements ApiMessage {
   @Override
   public String toString() {
     return "Backend{"
-        + "balancingMode=" + balancingMode + ", "
-        + "capacityScaler=" + capacityScaler + ", "
-        + "description=" + description + ", "
-        + "group=" + group + ", "
-        + "maxConnections=" + maxConnections + ", "
-        + "maxConnectionsPerInstance=" + maxConnectionsPerInstance + ", "
-        + "maxRate=" + maxRate + ", "
-        + "maxRatePerInstance=" + maxRatePerInstance + ", "
-        + "maxUtilization=" + maxUtilization
+        + "balancingMode="
+        + balancingMode
+        + ", "
+        + "capacityScaler="
+        + capacityScaler
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "group="
+        + group
+        + ", "
+        + "maxConnections="
+        + maxConnections
+        + ", "
+        + "maxConnectionsPerInstance="
+        + maxConnectionsPerInstance
+        + ", "
+        + "maxRate="
+        + maxRate
+        + ", "
+        + "maxRatePerInstance="
+        + maxRatePerInstance
+        + ", "
+        + "maxUtilization="
+        + maxUtilization
         + "}";
   }
 
@@ -402,17 +410,15 @@ public final class Backend implements ApiMessage {
     }
     if (o instanceof Backend) {
       Backend that = (Backend) o;
-      return
-          Objects.equals(this.balancingMode, that.getBalancingMode()) &&
-          Objects.equals(this.capacityScaler, that.getCapacityScaler()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.group, that.getGroup()) &&
-          Objects.equals(this.maxConnections, that.getMaxConnections()) &&
-          Objects.equals(this.maxConnectionsPerInstance, that.getMaxConnectionsPerInstance()) &&
-          Objects.equals(this.maxRate, that.getMaxRate()) &&
-          Objects.equals(this.maxRatePerInstance, that.getMaxRatePerInstance()) &&
-          Objects.equals(this.maxUtilization, that.getMaxUtilization())
-          ;
+      return Objects.equals(this.balancingMode, that.getBalancingMode())
+          && Objects.equals(this.capacityScaler, that.getCapacityScaler())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.group, that.getGroup())
+          && Objects.equals(this.maxConnections, that.getMaxConnections())
+          && Objects.equals(this.maxConnectionsPerInstance, that.getMaxConnectionsPerInstance())
+          && Objects.equals(this.maxRate, that.getMaxRate())
+          && Objects.equals(this.maxRatePerInstance, that.getMaxRatePerInstance())
+          && Objects.equals(this.maxUtilization, that.getMaxUtilization());
     }
     return false;
   }
@@ -420,15 +426,14 @@ public final class Backend implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      balancingMode,
-      capacityScaler,
-      description,
-      group,
-      maxConnections,
-      maxConnectionsPerInstance,
-      maxRate,
-      maxRatePerInstance,
-      maxUtilization
-    );
+        balancingMode,
+        capacityScaler,
+        description,
+        group,
+        maxConnections,
+        maxConnectionsPerInstance,
+        maxRate,
+        maxRatePerInstance,
+        maxUtilization);
   }
 }

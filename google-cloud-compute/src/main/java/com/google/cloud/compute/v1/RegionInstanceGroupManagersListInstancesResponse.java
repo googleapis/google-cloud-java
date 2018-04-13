@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
     this.managedInstances = null;
   }
 
-
-  private RegionInstanceGroupManagersListInstancesResponse(
-      List<ManagedInstance> managedInstances
-      ) {
+  private RegionInstanceGroupManagersListInstancesResponse(List<ManagedInstance> managedInstances) {
     this.managedInstances = managedInstances;
   }
 
@@ -76,22 +71,24 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
     return managedInstances;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RegionInstanceGroupManagersListInstancesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RegionInstanceGroupManagersListInstancesResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RegionInstanceGroupManagersListInstancesResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RegionInstanceGroupManagersListInstancesResponse();
   }
@@ -102,7 +99,8 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
     Builder() {}
 
     public Builder mergeFrom(RegionInstanceGroupManagersListInstancesResponse other) {
-      if (other == RegionInstanceGroupManagersListInstancesResponse.getDefaultInstance()) return this;
+      if (other == RegionInstanceGroupManagersListInstancesResponse.getDefaultInstance())
+        return this;
       if (other.getManagedInstancesList() != null) {
         this.managedInstances = other.managedInstances;
       }
@@ -130,11 +128,8 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
       return this;
     }
 
-
     public RegionInstanceGroupManagersListInstancesResponse build() {
-      return new RegionInstanceGroupManagersListInstancesResponse(
-        managedInstances
-      );
+      return new RegionInstanceGroupManagersListInstancesResponse(managedInstances);
     }
 
     public Builder clone() {
@@ -147,7 +142,8 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
   @Override
   public String toString() {
     return "RegionInstanceGroupManagersListInstancesResponse{"
-        + "managedInstances=" + managedInstances
+        + "managedInstances="
+        + managedInstances
         + "}";
   }
 
@@ -157,18 +153,15 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
       return true;
     }
     if (o instanceof RegionInstanceGroupManagersListInstancesResponse) {
-      RegionInstanceGroupManagersListInstancesResponse that = (RegionInstanceGroupManagersListInstancesResponse) o;
-      return
-          Objects.equals(this.managedInstances, that.getManagedInstancesList())
-          ;
+      RegionInstanceGroupManagersListInstancesResponse that =
+          (RegionInstanceGroupManagersListInstancesResponse) o;
+      return Objects.equals(this.managedInstances, that.getManagedInstancesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      managedInstances
-    );
+    return Objects.hash(managedInstances);
   }
 }

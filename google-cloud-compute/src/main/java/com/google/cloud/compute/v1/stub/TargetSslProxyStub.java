@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetSslProxyClient.ListTargetSslProxiesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -23,16 +25,11 @@ import com.google.cloud.compute.v1.GetTargetSslProxyHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetSslProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetSslProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectTargetSslProxyName;
 import com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyHttpRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetSslProxyHttpRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyHttpRequest;
-import com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest;
-import com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest;
-import com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest;
+import com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetSslProxy;
-import static com.google.cloud.compute.v1.TargetSslProxyClient.ListTargetSslProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetSslProxyList;
 import javax.annotation.Generated;
 
@@ -45,7 +42,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TargetSslProxyStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteTargetSslProxyHttpRequest, Operation> deleteTargetSslProxyCallable() {
@@ -63,28 +59,45 @@ public abstract class TargetSslProxyStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetSslProxiesHttpRequest, ListTargetSslProxiesPagedResponse> listTargetSslProxiesPagedCallable() {
+  public UnaryCallable<ListTargetSslProxiesHttpRequest, ListTargetSslProxiesPagedResponse>
+      listTargetSslProxiesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetSslProxiesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetSslProxiesHttpRequest, TargetSslProxyList> listTargetSslProxiesCallable() {
+  public UnaryCallable<ListTargetSslProxiesHttpRequest, TargetSslProxyList>
+      listTargetSslProxiesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetSslProxiesCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetBackendServiceTargetSslProxyHttpRequest, Operation> setBackendServiceTargetSslProxyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setBackendServiceTargetSslProxyCallable()");
+  public UnaryCallable<SetBackendServiceTargetSslProxyHttpRequest, Operation>
+      setBackendServiceTargetSslProxyCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setBackendServiceTargetSslProxyCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetProxyHeaderTargetSslProxyHttpRequest, Operation> setProxyHeaderTargetSslProxyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setProxyHeaderTargetSslProxyCallable()");
+  public UnaryCallable<SetProxyHeaderTargetSslProxyHttpRequest, Operation>
+      setProxyHeaderTargetSslProxyCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setProxyHeaderTargetSslProxyCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetSslCertificatesTargetSslProxyHttpRequest, Operation> setSslCertificatesTargetSslProxyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setSslCertificatesTargetSslProxyCallable()");
+  public UnaryCallable<SetSslCertificatesTargetSslProxyHttpRequest, Operation>
+      setSslCertificatesTargetSslProxyCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSslCertificatesTargetSslProxyCallable()");
   }
 
+  @BetaApi
+  public UnaryCallable<SetSslPolicyTargetSslProxyHttpRequest, Operation>
+      setSslPolicyTargetSslProxyCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSslPolicyTargetSslProxyCallable()");
+  }
+
+  @Override
+  public abstract void close();
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class TargetTcpProxy implements ApiMessage {
     this.service = null;
   }
 
-
   private TargetTcpProxy(
       String creationTimestamp,
       String description,
@@ -61,8 +57,7 @@ public final class TargetTcpProxy implements ApiMessage {
       String name,
       String proxyHeader,
       String selfLink,
-      String service
-      ) {
+      String service) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -77,7 +72,8 @@ public final class TargetTcpProxy implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -170,22 +166,24 @@ public final class TargetTcpProxy implements ApiMessage {
     return service;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetTcpProxy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetTcpProxy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetTcpProxy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetTcpProxy();
   }
@@ -314,25 +312,10 @@ public final class TargetTcpProxy implements ApiMessage {
       return this;
     }
 
-
     public TargetTcpProxy build() {
 
-
-
-
-
-
-
       return new TargetTcpProxy(
-        creationTimestamp,
-        description,
-        id,
-        kind,
-        name,
-        proxyHeader,
-        selfLink,
-        service
-      );
+          creationTimestamp, description, id, kind, name, proxyHeader, selfLink, service);
     }
 
     public Builder clone() {
@@ -352,14 +335,29 @@ public final class TargetTcpProxy implements ApiMessage {
   @Override
   public String toString() {
     return "TargetTcpProxy{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "proxyHeader=" + proxyHeader + ", "
-        + "selfLink=" + selfLink + ", "
-        + "service=" + service
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "proxyHeader="
+        + proxyHeader
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "service="
+        + service
         + "}";
   }
 
@@ -370,16 +368,14 @@ public final class TargetTcpProxy implements ApiMessage {
     }
     if (o instanceof TargetTcpProxy) {
       TargetTcpProxy that = (TargetTcpProxy) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.proxyHeader, that.getProxyHeader()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.service, that.getService())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.proxyHeader, that.getProxyHeader())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.service, that.getService());
     }
     return false;
   }
@@ -387,14 +383,6 @@ public final class TargetTcpProxy implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      id,
-      kind,
-      name,
-      proxyHeader,
-      selfLink,
-      service
-    );
+        creationTimestamp, description, id, kind, name, proxyHeader, selfLink, service);
   }
 }

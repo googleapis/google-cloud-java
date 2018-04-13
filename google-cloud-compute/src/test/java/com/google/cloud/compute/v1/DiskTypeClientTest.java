@@ -15,6 +15,12 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
+import static com.google.cloud.compute.v1.DiskTypeClient.ListDiskTypesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskTypeStub.aggregatedListDiskTypesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskTypeStub.getDiskTypeMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskTypeStub.listDiskTypesMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,12 +31,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
-import static com.google.cloud.compute.v1.DiskTypeClient.ListDiskTypesPagedResponse;
 import com.google.cloud.compute.v1.stub.DiskTypeStubSettings;
-import static com.google.cloud.compute.v1.stub.HttpJsonDiskTypeStub.aggregatedListDiskTypesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonDiskTypeStub.getDiskTypeMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonDiskTypeStub.listDiskTypesMethodDescriptor;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -47,14 +48,14 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class DiskTypeClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          aggregatedListDiskTypesMethodDescriptor,
-          getDiskTypeMethodDescriptor,
-          listDiskTypesMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, DiskTypeStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              aggregatedListDiskTypesMethodDescriptor,
+              getDiskTypeMethodDescriptor,
+              listDiskTypesMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, DiskTypeStubSettings.getDefaultEndpoint());
 
   private static DiskTypeClient client;
   private static DiskTypeSettings clientSettings;
@@ -63,13 +64,13 @@ public class DiskTypeClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         DiskTypeSettings.newBuilder()
-           .setTransportChannelProvider(
-               DiskTypeSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       DiskTypeClient.create(clientSettings);
+            .setTransportChannelProvider(
+                DiskTypeSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = DiskTypeClient.create(clientSettings);
   }
 
   @After
@@ -92,37 +93,47 @@ public class DiskTypeClientTest {
     DiskTypesScopedList itemsItem = DiskTypesScopedList.newBuilder().build();
     Map<String, DiskTypesScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
-    DiskTypeAggregatedList expectedResponse = DiskTypeAggregatedList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .putAllItems(items)
-      .build();
+    DiskTypeAggregatedList expectedResponse =
+        DiskTypeAggregatedList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .putAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    AggregatedListDiskTypesPagedResponse pagedListResponse = client.aggregatedListDiskTypes(project);
+    AggregatedListDiskTypesPagedResponse pagedListResponse =
+        client.aggregatedListDiskTypes(project);
 
     List<DiskTypesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsMap().values().iterator().next(),
-        resources.get(0));
+    Assert.assertEquals(
+        expectedResponse.getItemsMap().values().iterator().next(), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void aggregatedListDiskTypesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -147,42 +158,52 @@ public class DiskTypeClientTest {
     String id = "id3355";
     String validDiskSize = "validDiskSize-1653521184";
     String selfLink = "selfLink-1691268851";
-    DiskType expectedResponse = DiskType.newBuilder()
-      .setDefaultDiskSizeGb(defaultDiskSizeGb)
-      .setZone(zone.toString())
-      .setKind(kind)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setDescription(description)
-      .setId(id)
-      .setValidDiskSize(validDiskSize)
-      .setSelfLink(selfLink)
-      .build();
+    DiskType expectedResponse =
+        DiskType.newBuilder()
+            .setDefaultDiskSizeGb(defaultDiskSizeGb)
+            .setZone(zone.toString())
+            .setKind(kind)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setDescription(description)
+            .setId(id)
+            .setValidDiskSize(validDiskSize)
+            .setSelfLink(selfLink)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectZoneDiskTypeName diskType = ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
+    ProjectZoneDiskTypeName diskType =
+        ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
 
-    DiskType actualResponse =
-        client.getDiskType(diskType);
+    DiskType actualResponse = client.getDiskType(diskType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getDiskTypeExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectZoneDiskTypeName diskType = ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
+      ProjectZoneDiskTypeName diskType =
+          ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
 
       client.getDiskType(diskType);
       Assert.fail("No exception raised");
@@ -200,13 +221,14 @@ public class DiskTypeClientTest {
     String selfLink = "selfLink-1691268851";
     DiskType itemsElement = DiskType.newBuilder().build();
     List<DiskType> items = Arrays.asList(itemsElement);
-    DiskTypeList expectedResponse = DiskTypeList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    DiskTypeList expectedResponse =
+        DiskTypeList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -215,22 +237,29 @@ public class DiskTypeClientTest {
 
     List<DiskType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listDiskTypesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -242,5 +271,4 @@ public class DiskTypeClientTest {
       // Expected exception
     }
   }
-
 }

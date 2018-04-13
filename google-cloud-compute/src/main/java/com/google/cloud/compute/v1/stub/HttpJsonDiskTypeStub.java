@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
+import static com.google.cloud.compute.v1.DiskTypeClient.ListDiskTypesPagedResponse;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,28 +29,19 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListDiskTypesHttpRequest;
 import com.google.cloud.compute.v1.DiskType;
 import com.google.cloud.compute.v1.DiskTypeAggregatedList;
-import static com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
-import static com.google.cloud.compute.v1.DiskTypeClient.ListDiskTypesPagedResponse;
 import com.google.cloud.compute.v1.DiskTypeList;
-import com.google.cloud.compute.v1.DiskTypeSettings;
-import com.google.cloud.compute.v1.DiskTypesScopedList;
 import com.google.cloud.compute.v1.GetDiskTypeHttpRequest;
 import com.google.cloud.compute.v1.ListDiskTypesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
 import com.google.cloud.compute.v1.ProjectZoneName;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -61,74 +55,86 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonDiskTypeStub extends DiskTypeStub {
   @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList> aggregatedListDiskTypesMethodDescriptor =
-      ApiMethodDescriptor.<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>newBuilder()
-          .setFullMethodName("compute.diskTypes.aggregatedList")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<AggregatedListDiskTypesHttpRequest>newBuilder()
-                  .setRequestInstance(AggregatedListDiskTypesHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/aggregated/diskTypes"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<DiskTypeAggregatedList>newBuilder()
-                  .setResponseInstance(DiskTypeAggregatedList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<
+          AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>
+      aggregatedListDiskTypesMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>newBuilder()
+              .setFullMethodName("compute.diskTypes.aggregatedList")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<AggregatedListDiskTypesHttpRequest>newBuilder()
+                      .setRequestInstance(AggregatedListDiskTypesHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/aggregated/diskTypes"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<DiskTypeAggregatedList>newBuilder()
+                      .setResponseInstance(DiskTypeAggregatedList.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<GetDiskTypeHttpRequest, DiskType> getDiskTypeMethodDescriptor =
-      ApiMethodDescriptor.<GetDiskTypeHttpRequest, DiskType>newBuilder()
-          .setFullMethodName("compute.diskTypes.get")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<GetDiskTypeHttpRequest>newBuilder()
-                  .setRequestInstance(GetDiskTypeHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/diskTypes/{diskType}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
-                  .setResourceNameFactory(ProjectZoneDiskTypeName.newFactory())
-                  .setResourceNameField("diskType")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<DiskType>newBuilder()
-                  .setResponseInstance(DiskType.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<GetDiskTypeHttpRequest, DiskType>
+      getDiskTypeMethodDescriptor =
+          ApiMethodDescriptor.<GetDiskTypeHttpRequest, DiskType>newBuilder()
+              .setFullMethodName("compute.diskTypes.get")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetDiskTypeHttpRequest>newBuilder()
+                      .setRequestInstance(GetDiskTypeHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/zones/{zone}/diskTypes/{diskType}"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneDiskTypeName.newFactory())
+                      .setResourceNameField("diskType")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<DiskType>newBuilder()
+                      .setResponseInstance(DiskType.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<ListDiskTypesHttpRequest, DiskTypeList> listDiskTypesMethodDescriptor =
-      ApiMethodDescriptor.<ListDiskTypesHttpRequest, DiskTypeList>newBuilder()
-          .setFullMethodName("compute.diskTypes.list")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<ListDiskTypesHttpRequest>newBuilder()
-                  .setRequestInstance(ListDiskTypesHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/diskTypes"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectZoneName.newFactory())
-                  .setResourceNameField("zone")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<DiskTypeList>newBuilder()
-                  .setResponseInstance(DiskTypeList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<ListDiskTypesHttpRequest, DiskTypeList>
+      listDiskTypesMethodDescriptor =
+          ApiMethodDescriptor.<ListDiskTypesHttpRequest, DiskTypeList>newBuilder()
+              .setFullMethodName("compute.diskTypes.list")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListDiskTypesHttpRequest>newBuilder()
+                      .setRequestInstance(ListDiskTypesHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/diskTypes"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectZoneName.newFactory())
+                      .setResourceNameField("zone")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<DiskTypeList>newBuilder()
+                      .setResponseInstance(DiskTypeList.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList> aggregatedListDiskTypesCallable;
-  private final UnaryCallable<AggregatedListDiskTypesHttpRequest, AggregatedListDiskTypesPagedResponse> aggregatedListDiskTypesPagedCallable;
+  private final UnaryCallable<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>
+      aggregatedListDiskTypesCallable;
+  private final UnaryCallable<
+          AggregatedListDiskTypesHttpRequest, AggregatedListDiskTypesPagedResponse>
+      aggregatedListDiskTypesPagedCallable;
   private final UnaryCallable<GetDiskTypeHttpRequest, DiskType> getDiskTypeCallable;
   private final UnaryCallable<ListDiskTypesHttpRequest, DiskTypeList> listDiskTypesCallable;
-  private final UnaryCallable<ListDiskTypesHttpRequest, ListDiskTypesPagedResponse> listDiskTypesPagedCallable;
+  private final UnaryCallable<ListDiskTypesHttpRequest, ListDiskTypesPagedResponse>
+      listDiskTypesPagedCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
-  public static final HttpJsonDiskTypeStub create(DiskTypeStubSettings settings) throws IOException {
+
+  public static final HttpJsonDiskTypeStub create(DiskTypeStubSettings settings)
+      throws IOException {
     return new HttpJsonDiskTypeStub(settings, ClientContext.create(settings));
   }
 
@@ -136,31 +142,40 @@ public class HttpJsonDiskTypeStub extends DiskTypeStub {
     return new HttpJsonDiskTypeStub(DiskTypeStubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final HttpJsonDiskTypeStub create(ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
-    return new HttpJsonDiskTypeStub(DiskTypeStubSettings.newBuilder().build(), clientContext, callableFactory);
+  public static final HttpJsonDiskTypeStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonDiskTypeStub(
+        DiskTypeStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of HttpJsonDiskTypeStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonDiskTypeStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected HttpJsonDiskTypeStub(DiskTypeStubSettings settings, ClientContext clientContext) throws IOException {
+  protected HttpJsonDiskTypeStub(DiskTypeStubSettings settings, ClientContext clientContext)
+      throws IOException {
     this(settings, clientContext, new HttpJsonDiskTypeCallableFactory());
   }
 
   /**
-   * Constructs an instance of HttpJsonDiskTypeStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonDiskTypeStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected HttpJsonDiskTypeStub(DiskTypeStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+  protected HttpJsonDiskTypeStub(
+      DiskTypeStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
 
-    HttpJsonCallSettings<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList> aggregatedListDiskTypesTransportSettings =
-        HttpJsonCallSettings.<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>newBuilder()
-            .setMethodDescriptor(aggregatedListDiskTypesMethodDescriptor)
-            .build();
+    HttpJsonCallSettings<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>
+        aggregatedListDiskTypesTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>newBuilder()
+                .setMethodDescriptor(aggregatedListDiskTypesMethodDescriptor)
+                .build();
     HttpJsonCallSettings<GetDiskTypeHttpRequest, DiskType> getDiskTypeTransportSettings =
         HttpJsonCallSettings.<GetDiskTypeHttpRequest, DiskType>newBuilder()
             .setMethodDescriptor(getDiskTypeMethodDescriptor)
@@ -170,22 +185,38 @@ public class HttpJsonDiskTypeStub extends DiskTypeStub {
             .setMethodDescriptor(listDiskTypesMethodDescriptor)
             .build();
 
-    this.aggregatedListDiskTypesCallable = callableFactory.createUnaryCallable(aggregatedListDiskTypesTransportSettings,settings.aggregatedListDiskTypesSettings(), clientContext);
-    this.aggregatedListDiskTypesPagedCallable = callableFactory.createPagedCallable(aggregatedListDiskTypesTransportSettings,settings.aggregatedListDiskTypesSettings(), clientContext);
-    this.getDiskTypeCallable = callableFactory.createUnaryCallable(getDiskTypeTransportSettings,settings.getDiskTypeSettings(), clientContext);
-    this.listDiskTypesCallable = callableFactory.createUnaryCallable(listDiskTypesTransportSettings,settings.listDiskTypesSettings(), clientContext);
-    this.listDiskTypesPagedCallable = callableFactory.createPagedCallable(listDiskTypesTransportSettings,settings.listDiskTypesSettings(), clientContext);
+    this.aggregatedListDiskTypesCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListDiskTypesTransportSettings,
+            settings.aggregatedListDiskTypesSettings(),
+            clientContext);
+    this.aggregatedListDiskTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListDiskTypesTransportSettings,
+            settings.aggregatedListDiskTypesSettings(),
+            clientContext);
+    this.getDiskTypeCallable =
+        callableFactory.createUnaryCallable(
+            getDiskTypeTransportSettings, settings.getDiskTypeSettings(), clientContext);
+    this.listDiskTypesCallable =
+        callableFactory.createUnaryCallable(
+            listDiskTypesTransportSettings, settings.listDiskTypesSettings(), clientContext);
+    this.listDiskTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDiskTypesTransportSettings, settings.listDiskTypesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListDiskTypesHttpRequest, AggregatedListDiskTypesPagedResponse> aggregatedListDiskTypesPagedCallable() {
+  public UnaryCallable<AggregatedListDiskTypesHttpRequest, AggregatedListDiskTypesPagedResponse>
+      aggregatedListDiskTypesPagedCallable() {
     return aggregatedListDiskTypesPagedCallable;
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList> aggregatedListDiskTypesCallable() {
+  public UnaryCallable<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>
+      aggregatedListDiskTypesCallable() {
     return aggregatedListDiskTypesCallable;
   }
 
@@ -195,7 +226,8 @@ public class HttpJsonDiskTypeStub extends DiskTypeStub {
   }
 
   @BetaApi
-  public UnaryCallable<ListDiskTypesHttpRequest, ListDiskTypesPagedResponse> listDiskTypesPagedCallable() {
+  public UnaryCallable<ListDiskTypesHttpRequest, ListDiskTypesPagedResponse>
+      listDiskTypesPagedCallable() {
     return listDiskTypesPagedCallable;
   }
 
@@ -205,7 +237,7 @@ public class HttpJsonDiskTypeStub extends DiskTypeStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
@@ -233,5 +265,4 @@ public class HttpJsonDiskTypeStub extends DiskTypeStub {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
-
 }

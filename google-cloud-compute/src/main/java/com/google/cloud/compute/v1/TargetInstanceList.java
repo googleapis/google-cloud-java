@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,15 +47,13 @@ public final class TargetInstanceList implements ApiMessage {
     this.warning = null;
   }
 
-
   private TargetInstanceList(
       String id,
       List<TargetInstance> items,
       String kind,
       String nextPageToken,
       String selfLink,
-      Warning warning
-      ) {
+      Warning warning) {
     this.id = id;
     this.items = items;
     this.kind = kind;
@@ -146,22 +143,24 @@ public final class TargetInstanceList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetInstanceList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetInstanceList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetInstanceList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetInstanceList();
   }
@@ -270,21 +269,9 @@ public final class TargetInstanceList implements ApiMessage {
       return this;
     }
 
-
     public TargetInstanceList build() {
 
-
-
-
-
-      return new TargetInstanceList(
-        id,
-        items,
-        kind,
-        nextPageToken,
-        selfLink,
-        warning
-      );
+      return new TargetInstanceList(id, items, kind, nextPageToken, selfLink, warning);
     }
 
     public Builder clone() {
@@ -302,12 +289,23 @@ public final class TargetInstanceList implements ApiMessage {
   @Override
   public String toString() {
     return "TargetInstanceList{"
-        + "id=" + id + ", "
-        + "items=" + items + ", "
-        + "kind=" + kind + ", "
-        + "nextPageToken=" + nextPageToken + ", "
-        + "selfLink=" + selfLink + ", "
-        + "warning=" + warning
+        + "id="
+        + id
+        + ", "
+        + "items="
+        + items
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "nextPageToken="
+        + nextPageToken
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -318,27 +316,18 @@ public final class TargetInstanceList implements ApiMessage {
     }
     if (o instanceof TargetInstanceList) {
       TargetInstanceList that = (TargetInstanceList) o;
-      return
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.items, that.getItemsList()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.id, that.getId())
+          && Objects.equals(this.items, that.getItemsList())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.nextPageToken, that.getNextPageToken())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      id,
-      items,
-      kind,
-      nextPageToken,
-      selfLink,
-      warning
-    );
+    return Objects.hash(id, items, kind, nextPageToken, selfLink, warning);
   }
 }

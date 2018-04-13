@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private SetLabelsSnapshotHttpRequest(
       String access_token,
       String callback,
@@ -64,8 +60,7 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String resource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -89,8 +84,11 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
-    if (fieldNames.contains("globalSetLabelsRequestResource") && globalSetLabelsRequestResource != null) {
-      fieldMap.put("globalSetLabelsRequestResource", Collections.singletonList(String.valueOf(globalSetLabelsRequestResource)));
+    if (fieldNames.contains("globalSetLabelsRequestResource")
+        && globalSetLabelsRequestResource != null) {
+      fieldMap.put(
+          "globalSetLabelsRequestResource",
+          Collections.singletonList(String.valueOf(globalSetLabelsRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -184,22 +182,24 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetLabelsSnapshotHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetLabelsSnapshotHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetLabelsSnapshotHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetLabelsSnapshotHttpRequest();
   }
@@ -292,7 +292,8 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
       return globalSetLabelsRequestResource;
     }
 
-    public Builder setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+    public Builder setGlobalSetLabelsRequestResource(
+        GlobalSetLabelsRequest globalSetLabelsRequestResource) {
       this.globalSetLabelsRequestResource = globalSetLabelsRequestResource;
       return this;
     }
@@ -342,15 +343,8 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public SetLabelsSnapshotHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (resource == null) {
         missing += " resource";
@@ -360,16 +354,15 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetLabelsSnapshotHttpRequest(
-        access_token,
-        callback,
-        fields,
-        globalSetLabelsRequestResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        resource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          globalSetLabelsRequestResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          resource,
+          userIp);
     }
 
     public Builder clone() {
@@ -390,15 +383,32 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "SetLabelsSnapshotHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "globalSetLabelsRequestResource=" + globalSetLabelsRequestResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "resource=" + resource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "globalSetLabelsRequestResource="
+        + globalSetLabelsRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "resource="
+        + resource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -409,17 +419,16 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
     }
     if (o instanceof SetLabelsSnapshotHttpRequest) {
       SetLabelsSnapshotHttpRequest that = (SetLabelsSnapshotHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.globalSetLabelsRequestResource, that.getGlobalSetLabelsRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.resource, that.getResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(
+              this.globalSetLabelsRequestResource, that.getGlobalSetLabelsRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.resource, that.getResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -427,15 +436,14 @@ public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      globalSetLabelsRequestResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      resource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        globalSetLabelsRequestResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        resource,
+        userIp);
   }
 }

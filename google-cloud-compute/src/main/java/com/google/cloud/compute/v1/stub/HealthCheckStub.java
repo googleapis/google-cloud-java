@@ -15,20 +15,19 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.HealthCheck;
-import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
 import com.google.cloud.compute.v1.HealthCheckList;
 import com.google.cloud.compute.v1.InsertHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchHealthCheckHttpRequest;
-import com.google.cloud.compute.v1.ProjectHealthCheckName;
-import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.UpdateHealthCheckHttpRequest;
 import javax.annotation.Generated;
 
@@ -41,7 +40,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class HealthCheckStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckCallable() {
@@ -59,7 +57,8 @@ public abstract class HealthCheckStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListHealthChecksHttpRequest, ListHealthChecksPagedResponse> listHealthChecksPagedCallable() {
+  public UnaryCallable<ListHealthChecksHttpRequest, ListHealthChecksPagedResponse>
+      listHealthChecksPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listHealthChecksPagedCallable()");
   }
 
@@ -78,4 +77,6 @@ public abstract class HealthCheckStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateHealthCheckCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertBackendBucketHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private InsertBackendBucketHttpRequest(
       String access_token,
       BackendBucket backendBucketResource,
@@ -67,8 +63,7 @@ public final class InsertBackendBucketHttpRequest implements ApiMessage {
       String project,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.backendBucketResource = backendBucketResource;
     this.callback = callback;
@@ -88,7 +83,9 @@ public final class InsertBackendBucketHttpRequest implements ApiMessage {
       fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
     }
     if (fieldNames.contains("backendBucketResource") && backendBucketResource != null) {
-      fieldMap.put("backendBucketResource", Collections.singletonList(String.valueOf(backendBucketResource)));
+      fieldMap.put(
+          "backendBucketResource",
+          Collections.singletonList(String.valueOf(backendBucketResource)));
     }
     if (fieldNames.contains("callback") && callback != null) {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
@@ -198,22 +195,24 @@ public final class InsertBackendBucketHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertBackendBucketHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertBackendBucketHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertBackendBucketHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertBackendBucketHttpRequest();
   }
@@ -370,36 +369,27 @@ public final class InsertBackendBucketHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertBackendBucketHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (project == null) {
         missing += " project";
       }
 
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertBackendBucketHttpRequest(
-        access_token,
-        backendBucketResource,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        project,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          backendBucketResource,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          project,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class InsertBackendBucketHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertBackendBucketHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "backendBucketResource=" + backendBucketResource + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "project=" + project + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "backendBucketResource="
+        + backendBucketResource
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "project="
+        + project
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class InsertBackendBucketHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertBackendBucketHttpRequest) {
       InsertBackendBucketHttpRequest that = (InsertBackendBucketHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.backendBucketResource, that.getBackendBucketResource()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.backendBucketResource, that.getBackendBucketResource())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class InsertBackendBucketHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      backendBucketResource,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      project,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        backendBucketResource,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        project,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

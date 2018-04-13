@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class RoutersScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private RoutersScopedList(
-      List<Router> routers,
-      Warning warning
-      ) {
+  private RoutersScopedList(List<Router> routers, Warning warning) {
     this.routers = routers;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class RoutersScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RoutersScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RoutersScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RoutersScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RoutersScopedList();
   }
@@ -158,13 +155,9 @@ public final class RoutersScopedList implements ApiMessage {
       return this;
     }
 
-
     public RoutersScopedList build() {
 
-      return new RoutersScopedList(
-        routers,
-        warning
-      );
+      return new RoutersScopedList(routers, warning);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class RoutersScopedList implements ApiMessage {
 
   @Override
   public String toString() {
-    return "RoutersScopedList{"
-        + "routers=" + routers + ", "
-        + "warning=" + warning
-        + "}";
+    return "RoutersScopedList{" + "routers=" + routers + ", " + "warning=" + warning + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class RoutersScopedList implements ApiMessage {
     }
     if (o instanceof RoutersScopedList) {
       RoutersScopedList that = (RoutersScopedList) o;
-      return
-          Objects.equals(this.routers, that.getRoutersList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.routers, that.getRoutersList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      routers,
-      warning
-    );
+    return Objects.hash(routers, warning);
   }
 }

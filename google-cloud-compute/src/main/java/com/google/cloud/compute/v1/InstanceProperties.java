@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -60,7 +59,6 @@ public final class InstanceProperties implements ApiMessage {
     this.tags = null;
   }
 
-
   private InstanceProperties(
       Boolean canIpForward,
       String description,
@@ -73,8 +71,7 @@ public final class InstanceProperties implements ApiMessage {
       List<NetworkInterface> networkInterfaces,
       Scheduling scheduling,
       List<ServiceAccount> serviceAccounts,
-      Tags tags
-      ) {
+      Tags tags) {
     this.canIpForward = canIpForward;
     this.description = description;
     this.disks = disks;
@@ -242,22 +239,24 @@ public final class InstanceProperties implements ApiMessage {
     return tags;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceProperties prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceProperties getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceProperties DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceProperties();
   }
@@ -474,33 +473,21 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
-
     public InstanceProperties build() {
 
-
-
-
-
-
-
-
-
-
-
       return new InstanceProperties(
-        canIpForward,
-        description,
-        disks,
-        guestAccelerators,
-        labels,
-        machineType,
-        metadata,
-        minCpuPlatform,
-        networkInterfaces,
-        scheduling,
-        serviceAccounts,
-        tags
-      );
+          canIpForward,
+          description,
+          disks,
+          guestAccelerators,
+          labels,
+          machineType,
+          metadata,
+          minCpuPlatform,
+          networkInterfaces,
+          scheduling,
+          serviceAccounts,
+          tags);
     }
 
     public Builder clone() {
@@ -524,18 +511,41 @@ public final class InstanceProperties implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceProperties{"
-        + "canIpForward=" + canIpForward + ", "
-        + "description=" + description + ", "
-        + "disks=" + disks + ", "
-        + "guestAccelerators=" + guestAccelerators + ", "
-        + "labels=" + labels + ", "
-        + "machineType=" + machineType + ", "
-        + "metadata=" + metadata + ", "
-        + "minCpuPlatform=" + minCpuPlatform + ", "
-        + "networkInterfaces=" + networkInterfaces + ", "
-        + "scheduling=" + scheduling + ", "
-        + "serviceAccounts=" + serviceAccounts + ", "
-        + "tags=" + tags
+        + "canIpForward="
+        + canIpForward
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "disks="
+        + disks
+        + ", "
+        + "guestAccelerators="
+        + guestAccelerators
+        + ", "
+        + "labels="
+        + labels
+        + ", "
+        + "machineType="
+        + machineType
+        + ", "
+        + "metadata="
+        + metadata
+        + ", "
+        + "minCpuPlatform="
+        + minCpuPlatform
+        + ", "
+        + "networkInterfaces="
+        + networkInterfaces
+        + ", "
+        + "scheduling="
+        + scheduling
+        + ", "
+        + "serviceAccounts="
+        + serviceAccounts
+        + ", "
+        + "tags="
+        + tags
         + "}";
   }
 
@@ -546,20 +556,18 @@ public final class InstanceProperties implements ApiMessage {
     }
     if (o instanceof InstanceProperties) {
       InstanceProperties that = (InstanceProperties) o;
-      return
-          Objects.equals(this.canIpForward, that.getCanIpForward()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.disks, that.getDisksList()) &&
-          Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList()) &&
-          Objects.equals(this.labels, that.getLabelsMap()) &&
-          Objects.equals(this.machineType, that.getMachineType()) &&
-          Objects.equals(this.metadata, that.getMetadata()) &&
-          Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform()) &&
-          Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList()) &&
-          Objects.equals(this.scheduling, that.getScheduling()) &&
-          Objects.equals(this.serviceAccounts, that.getServiceAccountsList()) &&
-          Objects.equals(this.tags, that.getTags())
-          ;
+      return Objects.equals(this.canIpForward, that.getCanIpForward())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.disks, that.getDisksList())
+          && Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList())
+          && Objects.equals(this.labels, that.getLabelsMap())
+          && Objects.equals(this.machineType, that.getMachineType())
+          && Objects.equals(this.metadata, that.getMetadata())
+          && Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform())
+          && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
+          && Objects.equals(this.scheduling, that.getScheduling())
+          && Objects.equals(this.serviceAccounts, that.getServiceAccountsList())
+          && Objects.equals(this.tags, that.getTags());
     }
     return false;
   }
@@ -567,18 +575,17 @@ public final class InstanceProperties implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      canIpForward,
-      description,
-      disks,
-      guestAccelerators,
-      labels,
-      machineType,
-      metadata,
-      minCpuPlatform,
-      networkInterfaces,
-      scheduling,
-      serviceAccounts,
-      tags
-    );
+        canIpForward,
+        description,
+        disks,
+        guestAccelerators,
+        labels,
+        machineType,
+        metadata,
+        minCpuPlatform,
+        networkInterfaces,
+        scheduling,
+        serviceAccounts,
+        tags);
   }
 }

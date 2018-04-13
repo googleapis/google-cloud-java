@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class ConnectionDraining implements ApiMessage {
     this.drainingTimeoutSec = null;
   }
 
-
-  private ConnectionDraining(
-      Integer drainingTimeoutSec
-      ) {
+  private ConnectionDraining(Integer drainingTimeoutSec) {
     this.drainingTimeoutSec = drainingTimeoutSec;
   }
 
@@ -49,7 +43,8 @@ public final class ConnectionDraining implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("drainingTimeoutSec") && drainingTimeoutSec != null) {
-      fieldMap.put("drainingTimeoutSec", Collections.singletonList(String.valueOf(drainingTimeoutSec)));
+      fieldMap.put(
+          "drainingTimeoutSec", Collections.singletonList(String.valueOf(drainingTimeoutSec)));
     }
     return fieldMap;
   }
@@ -72,22 +67,24 @@ public final class ConnectionDraining implements ApiMessage {
     return drainingTimeoutSec;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ConnectionDraining prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ConnectionDraining getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ConnectionDraining DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ConnectionDraining();
   }
@@ -118,11 +115,8 @@ public final class ConnectionDraining implements ApiMessage {
       return this;
     }
 
-
     public ConnectionDraining build() {
-      return new ConnectionDraining(
-        drainingTimeoutSec
-      );
+      return new ConnectionDraining(drainingTimeoutSec);
     }
 
     public Builder clone() {
@@ -134,9 +128,7 @@ public final class ConnectionDraining implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ConnectionDraining{"
-        + "drainingTimeoutSec=" + drainingTimeoutSec
-        + "}";
+    return "ConnectionDraining{" + "drainingTimeoutSec=" + drainingTimeoutSec + "}";
   }
 
   @Override
@@ -146,17 +138,13 @@ public final class ConnectionDraining implements ApiMessage {
     }
     if (o instanceof ConnectionDraining) {
       ConnectionDraining that = (ConnectionDraining) o;
-      return
-          Objects.equals(this.drainingTimeoutSec, that.getDrainingTimeoutSec())
-          ;
+      return Objects.equals(this.drainingTimeoutSec, that.getDrainingTimeoutSec());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      drainingTimeoutSec
-    );
+    return Objects.hash(drainingTimeoutSec);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
     this.portName = null;
   }
 
-
-  private RegionInstanceGroupsListInstancesRequest(
-      String instanceState,
-      String portName
-      ) {
+  private RegionInstanceGroupsListInstancesRequest(String instanceState, String portName) {
     this.instanceState = instanceState;
     this.portName = portName;
   }
@@ -86,22 +79,24 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
     return portName;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RegionInstanceGroupsListInstancesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RegionInstanceGroupsListInstancesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RegionInstanceGroupsListInstancesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RegionInstanceGroupsListInstancesRequest();
   }
@@ -146,13 +141,9 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
       return this;
     }
 
-
     public RegionInstanceGroupsListInstancesRequest build() {
 
-      return new RegionInstanceGroupsListInstancesRequest(
-        instanceState,
-        portName
-      );
+      return new RegionInstanceGroupsListInstancesRequest(instanceState, portName);
     }
 
     public Builder clone() {
@@ -166,8 +157,11 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
   @Override
   public String toString() {
     return "RegionInstanceGroupsListInstancesRequest{"
-        + "instanceState=" + instanceState + ", "
-        + "portName=" + portName
+        + "instanceState="
+        + instanceState
+        + ", "
+        + "portName="
+        + portName
         + "}";
   }
 
@@ -178,19 +172,14 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
     }
     if (o instanceof RegionInstanceGroupsListInstancesRequest) {
       RegionInstanceGroupsListInstancesRequest that = (RegionInstanceGroupsListInstancesRequest) o;
-      return
-          Objects.equals(this.instanceState, that.getInstanceState()) &&
-          Objects.equals(this.portName, that.getPortName())
-          ;
+      return Objects.equals(this.instanceState, that.getInstanceState())
+          && Objects.equals(this.portName, that.getPortName());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instanceState,
-      portName
-    );
+    return Objects.hash(instanceState, portName);
   }
 }

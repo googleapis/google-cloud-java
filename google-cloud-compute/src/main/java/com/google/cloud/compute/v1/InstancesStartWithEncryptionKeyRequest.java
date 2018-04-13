@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class InstancesStartWithEncryptionKeyRequest implements ApiMessage 
     this.disks = null;
   }
 
-
-  private InstancesStartWithEncryptionKeyRequest(
-      List<CustomerEncryptionKeyProtectedDisk> disks
-      ) {
+  private InstancesStartWithEncryptionKeyRequest(List<CustomerEncryptionKeyProtectedDisk> disks) {
     this.disks = disks;
   }
 
@@ -76,22 +71,24 @@ public final class InstancesStartWithEncryptionKeyRequest implements ApiMessage 
     return disks;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstancesStartWithEncryptionKeyRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstancesStartWithEncryptionKeyRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstancesStartWithEncryptionKeyRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstancesStartWithEncryptionKeyRequest();
   }
@@ -130,11 +127,8 @@ public final class InstancesStartWithEncryptionKeyRequest implements ApiMessage 
       return this;
     }
 
-
     public InstancesStartWithEncryptionKeyRequest build() {
-      return new InstancesStartWithEncryptionKeyRequest(
-        disks
-      );
+      return new InstancesStartWithEncryptionKeyRequest(disks);
     }
 
     public Builder clone() {
@@ -146,9 +140,7 @@ public final class InstancesStartWithEncryptionKeyRequest implements ApiMessage 
 
   @Override
   public String toString() {
-    return "InstancesStartWithEncryptionKeyRequest{"
-        + "disks=" + disks
-        + "}";
+    return "InstancesStartWithEncryptionKeyRequest{" + "disks=" + disks + "}";
   }
 
   @Override
@@ -158,17 +150,13 @@ public final class InstancesStartWithEncryptionKeyRequest implements ApiMessage 
     }
     if (o instanceof InstancesStartWithEncryptionKeyRequest) {
       InstancesStartWithEncryptionKeyRequest that = (InstancesStartWithEncryptionKeyRequest) o;
-      return
-          Objects.equals(this.disks, that.getDisksList())
-          ;
+      return Objects.equals(this.disks, that.getDisksList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      disks
-    );
+    return Objects.hash(disks);
   }
 }

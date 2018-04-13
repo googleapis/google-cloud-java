@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectRegionAddressName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectRegionAddressName implements ResourceName {
   private final String address;
   private final String project;
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/addresses/{address}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/addresses/{address}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -54,29 +51,12 @@ public final class ProjectRegionAddressName implements com.google.api.resourcena
     region = Preconditions.checkNotNull(builder.getRegion());
   }
 
-  public static ProjectRegionAddressName of(
-      String address,
-      String project,
-      String region
-      ) {
-    return newBuilder()
-    .setAddress(address)
-    .setProject(project)
-    .setRegion(region)
-      .build();
+  public static ProjectRegionAddressName of(String address, String project, String region) {
+    return newBuilder().setAddress(address).setProject(project).setRegion(region).build();
   }
 
-  public static String format(
-      String address,
-      String project,
-      String region
-      ) {
-    return of(
-        address,
-        project,
-        region
-        )
-        .toString();
+  public static String format(String address, String project, String region) {
+    return of(address, project, region).toString();
   }
 
   public String getAddress() {
@@ -90,7 +70,6 @@ public final class ProjectRegionAddressName implements com.google.api.resourcena
   public String getRegion() {
     return region;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +91,19 @@ public final class ProjectRegionAddressName implements com.google.api.resourcena
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectRegionAddressName> newFactory() {
     return new ResourceNameFactory<ProjectRegionAddressName>() {
-      public ProjectRegionAddressName parse(String formattedString) {return ProjectRegionAddressName.parse(formattedString);}
+      public ProjectRegionAddressName parse(String formattedString) {
+        return ProjectRegionAddressName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectRegionAddressName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRegionAddressName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("address"),
-      matchMap.get("project"),
-      matchMap.get("region")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectRegionAddressName.parse: formattedString not in valid format");
+    return of(matchMap.get("address"), matchMap.get("project"), matchMap.get("region"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +118,11 @@ public final class ProjectRegionAddressName implements com.google.api.resourcena
     public String getAddress() {
       return address;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getRegion() {
       return region;
     }
@@ -152,10 +131,12 @@ public final class ProjectRegionAddressName implements com.google.api.resourcena
       this.address = address;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setRegion(String region) {
       this.region = region;
       return this;
@@ -163,7 +144,7 @@ public final class ProjectRegionAddressName implements com.google.api.resourcena
 
     private Builder() {}
 
-    public Builder (ProjectRegionAddressName projectRegionAddressName) {
+    public Builder(ProjectRegionAddressName projectRegionAddressName) {
       address = projectRegionAddressName.address;
       project = projectRegionAddressName.project;
       region = projectRegionAddressName.region;
@@ -179,8 +160,7 @@ public final class ProjectRegionAddressName implements com.google.api.resourcena
     return PATH_TEMPLATE.instantiate(
         "address", address,
         "project", project,
-        "region", region
-        );
+        "region", region);
   }
 
   @Override
@@ -190,21 +170,15 @@ public final class ProjectRegionAddressName implements com.google.api.resourcena
     }
     if (o instanceof ProjectRegionAddressName) {
       ProjectRegionAddressName that = (ProjectRegionAddressName) o;
-      return
-          Objects.equals(this.address, that.getAddress()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.region, that.getRegion())
-          ;
+      return Objects.equals(this.address, that.getAddress())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.region, that.getRegion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      address,
-      project,
-      region
-    );
+    return Objects.hash(address, project, region);
   }
 }

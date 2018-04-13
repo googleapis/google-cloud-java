@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +37,8 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
   private final String quotaUser;
   private final String requestId;
   private final String subnetwork;
-  private final SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource;
+  private final SubnetworksSetPrivateIpGoogleAccessRequest
+      subnetworksSetPrivateIpGoogleAccessRequestResource;
   private final String userIp;
 
   private SetPrivateIpGoogleAccessSubnetworkHttpRequest() {
@@ -56,7 +54,6 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
     this.userIp = null;
   }
 
-
   private SetPrivateIpGoogleAccessSubnetworkHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +64,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
       String requestId,
       String subnetwork,
       SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -77,7 +73,8 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
     this.quotaUser = quotaUser;
     this.requestId = requestId;
     this.subnetwork = subnetwork;
-    this.subnetworksSetPrivateIpGoogleAccessRequestResource = subnetworksSetPrivateIpGoogleAccessRequestResource;
+    this.subnetworksSetPrivateIpGoogleAccessRequestResource =
+        subnetworksSetPrivateIpGoogleAccessRequestResource;
     this.userIp = userIp;
   }
 
@@ -108,8 +105,12 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
     if (fieldNames.contains("subnetwork") && subnetwork != null) {
       fieldMap.put("subnetwork", Collections.singletonList(String.valueOf(subnetwork)));
     }
-    if (fieldNames.contains("subnetworksSetPrivateIpGoogleAccessRequestResource") && subnetworksSetPrivateIpGoogleAccessRequestResource != null) {
-      fieldMap.put("subnetworksSetPrivateIpGoogleAccessRequestResource", Collections.singletonList(String.valueOf(subnetworksSetPrivateIpGoogleAccessRequestResource)));
+    if (fieldNames.contains("subnetworksSetPrivateIpGoogleAccessRequestResource")
+        && subnetworksSetPrivateIpGoogleAccessRequestResource != null) {
+      fieldMap.put(
+          "subnetworksSetPrivateIpGoogleAccessRequestResource",
+          Collections.singletonList(
+              String.valueOf(subnetworksSetPrivateIpGoogleAccessRequestResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -190,7 +191,8 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
     return subnetwork;
   }
 
-  public SubnetworksSetPrivateIpGoogleAccessRequest getSubnetworksSetPrivateIpGoogleAccessRequestResource() {
+  public SubnetworksSetPrivateIpGoogleAccessRequest
+      getSubnetworksSetPrivateIpGoogleAccessRequestResource() {
     return subnetworksSetPrivateIpGoogleAccessRequestResource;
   }
 
@@ -198,22 +200,24 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetPrivateIpGoogleAccessSubnetworkHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetPrivateIpGoogleAccessSubnetworkHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetPrivateIpGoogleAccessSubnetworkHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetPrivateIpGoogleAccessSubnetworkHttpRequest();
   }
@@ -227,7 +231,8 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
     private String quotaUser;
     private String requestId;
     private String subnetwork;
-    private SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource;
+    private SubnetworksSetPrivateIpGoogleAccessRequest
+        subnetworksSetPrivateIpGoogleAccessRequestResource;
     private String userIp;
 
     Builder() {}
@@ -259,7 +264,8 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
         this.subnetwork = other.subnetwork;
       }
       if (other.getSubnetworksSetPrivateIpGoogleAccessRequestResource() != null) {
-        this.subnetworksSetPrivateIpGoogleAccessRequestResource = other.subnetworksSetPrivateIpGoogleAccessRequestResource;
+        this.subnetworksSetPrivateIpGoogleAccessRequestResource =
+            other.subnetworksSetPrivateIpGoogleAccessRequestResource;
       }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
@@ -276,7 +282,8 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
       this.subnetwork = source.subnetwork;
-      this.subnetworksSetPrivateIpGoogleAccessRequestResource = source.subnetworksSetPrivateIpGoogleAccessRequestResource;
+      this.subnetworksSetPrivateIpGoogleAccessRequestResource =
+          source.subnetworksSetPrivateIpGoogleAccessRequestResource;
       this.userIp = source.userIp;
     }
 
@@ -352,12 +359,16 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
       return this;
     }
 
-    public SubnetworksSetPrivateIpGoogleAccessRequest getSubnetworksSetPrivateIpGoogleAccessRequestResource() {
+    public SubnetworksSetPrivateIpGoogleAccessRequest
+        getSubnetworksSetPrivateIpGoogleAccessRequestResource() {
       return subnetworksSetPrivateIpGoogleAccessRequestResource;
     }
 
-    public Builder setSubnetworksSetPrivateIpGoogleAccessRequestResource(SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource) {
-      this.subnetworksSetPrivateIpGoogleAccessRequestResource = subnetworksSetPrivateIpGoogleAccessRequestResource;
+    public Builder setSubnetworksSetPrivateIpGoogleAccessRequestResource(
+        SubnetworksSetPrivateIpGoogleAccessRequest
+            subnetworksSetPrivateIpGoogleAccessRequestResource) {
+      this.subnetworksSetPrivateIpGoogleAccessRequestResource =
+          subnetworksSetPrivateIpGoogleAccessRequestResource;
       return this;
     }
 
@@ -370,36 +381,27 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
       return this;
     }
 
-
     public SetPrivateIpGoogleAccessSubnetworkHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (subnetwork == null) {
         missing += " subnetwork";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetPrivateIpGoogleAccessSubnetworkHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        subnetwork,
-        subnetworksSetPrivateIpGoogleAccessRequestResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          subnetwork,
+          subnetworksSetPrivateIpGoogleAccessRequestResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -412,7 +414,8 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setSubnetwork(this.subnetwork);
-      newBuilder.setSubnetworksSetPrivateIpGoogleAccessRequestResource(this.subnetworksSetPrivateIpGoogleAccessRequestResource);
+      newBuilder.setSubnetworksSetPrivateIpGoogleAccessRequestResource(
+          this.subnetworksSetPrivateIpGoogleAccessRequestResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -421,16 +424,35 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
   @Override
   public String toString() {
     return "SetPrivateIpGoogleAccessSubnetworkHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "subnetwork=" + subnetwork + ", "
-        + "subnetworksSetPrivateIpGoogleAccessRequestResource=" + subnetworksSetPrivateIpGoogleAccessRequestResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "subnetwork="
+        + subnetwork
+        + ", "
+        + "subnetworksSetPrivateIpGoogleAccessRequestResource="
+        + subnetworksSetPrivateIpGoogleAccessRequestResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +462,20 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
       return true;
     }
     if (o instanceof SetPrivateIpGoogleAccessSubnetworkHttpRequest) {
-      SetPrivateIpGoogleAccessSubnetworkHttpRequest that = (SetPrivateIpGoogleAccessSubnetworkHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.subnetwork, that.getSubnetwork()) &&
-          Objects.equals(this.subnetworksSetPrivateIpGoogleAccessRequestResource, that.getSubnetworksSetPrivateIpGoogleAccessRequestResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      SetPrivateIpGoogleAccessSubnetworkHttpRequest that =
+          (SetPrivateIpGoogleAccessSubnetworkHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.subnetwork, that.getSubnetwork())
+          && Objects.equals(
+              this.subnetworksSetPrivateIpGoogleAccessRequestResource,
+              that.getSubnetworksSetPrivateIpGoogleAccessRequestResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +483,15 @@ public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiM
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      subnetwork,
-      subnetworksSetPrivateIpGoogleAccessRequestResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        subnetwork,
+        subnetworksSetPrivateIpGoogleAccessRequestResource,
+        userIp);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class ManagedInstanceLastAttempt implements ApiMessage {
     this.errors = null;
   }
 
-
-  private ManagedInstanceLastAttempt(
-      Errors errors
-      ) {
+  private ManagedInstanceLastAttempt(Errors errors) {
     this.errors = errors;
   }
 
@@ -72,22 +66,24 @@ public final class ManagedInstanceLastAttempt implements ApiMessage {
     return errors;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ManagedInstanceLastAttempt prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ManagedInstanceLastAttempt getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ManagedInstanceLastAttempt DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ManagedInstanceLastAttempt();
   }
@@ -118,11 +114,8 @@ public final class ManagedInstanceLastAttempt implements ApiMessage {
       return this;
     }
 
-
     public ManagedInstanceLastAttempt build() {
-      return new ManagedInstanceLastAttempt(
-        errors
-      );
+      return new ManagedInstanceLastAttempt(errors);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class ManagedInstanceLastAttempt implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ManagedInstanceLastAttempt{"
-        + "errors=" + errors
-        + "}";
+    return "ManagedInstanceLastAttempt{" + "errors=" + errors + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class ManagedInstanceLastAttempt implements ApiMessage {
     }
     if (o instanceof ManagedInstanceLastAttempt) {
       ManagedInstanceLastAttempt that = (ManagedInstanceLastAttempt) o;
-      return
-          Objects.equals(this.errors, that.getErrors())
-          ;
+      return Objects.equals(this.errors, that.getErrors());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      errors
-    );
+    return Objects.hash(errors);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
     this.userIp = null;
   }
 
-
   private SetProxyHeaderTargetSslProxyHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
       String requestId,
       TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource,
       String targetSslProxy,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -76,7 +71,8 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.requestId = requestId;
-    this.targetSslProxiesSetProxyHeaderRequestResource = targetSslProxiesSetProxyHeaderRequestResource;
+    this.targetSslProxiesSetProxyHeaderRequestResource =
+        targetSslProxiesSetProxyHeaderRequestResource;
     this.targetSslProxy = targetSslProxy;
     this.userIp = userIp;
   }
@@ -105,8 +101,11 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
     if (fieldNames.contains("requestId") && requestId != null) {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
-    if (fieldNames.contains("targetSslProxiesSetProxyHeaderRequestResource") && targetSslProxiesSetProxyHeaderRequestResource != null) {
-      fieldMap.put("targetSslProxiesSetProxyHeaderRequestResource", Collections.singletonList(String.valueOf(targetSslProxiesSetProxyHeaderRequestResource)));
+    if (fieldNames.contains("targetSslProxiesSetProxyHeaderRequestResource")
+        && targetSslProxiesSetProxyHeaderRequestResource != null) {
+      fieldMap.put(
+          "targetSslProxiesSetProxyHeaderRequestResource",
+          Collections.singletonList(String.valueOf(targetSslProxiesSetProxyHeaderRequestResource)));
     }
     if (fieldNames.contains("targetSslProxy") && targetSslProxy != null) {
       fieldMap.put("targetSslProxy", Collections.singletonList(String.valueOf(targetSslProxy)));
@@ -198,22 +197,24 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetProxyHeaderTargetSslProxyHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetProxyHeaderTargetSslProxyHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetProxyHeaderTargetSslProxyHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetProxyHeaderTargetSslProxyHttpRequest();
   }
@@ -256,7 +257,8 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
         this.requestId = other.requestId;
       }
       if (other.getTargetSslProxiesSetProxyHeaderRequestResource() != null) {
-        this.targetSslProxiesSetProxyHeaderRequestResource = other.targetSslProxiesSetProxyHeaderRequestResource;
+        this.targetSslProxiesSetProxyHeaderRequestResource =
+            other.targetSslProxiesSetProxyHeaderRequestResource;
       }
       if (other.getTargetSslProxy() != null) {
         this.targetSslProxy = other.targetSslProxy;
@@ -275,7 +277,8 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
-      this.targetSslProxiesSetProxyHeaderRequestResource = source.targetSslProxiesSetProxyHeaderRequestResource;
+      this.targetSslProxiesSetProxyHeaderRequestResource =
+          source.targetSslProxiesSetProxyHeaderRequestResource;
       this.targetSslProxy = source.targetSslProxy;
       this.userIp = source.userIp;
     }
@@ -343,12 +346,15 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
       return this;
     }
 
-    public TargetSslProxiesSetProxyHeaderRequest getTargetSslProxiesSetProxyHeaderRequestResource() {
+    public TargetSslProxiesSetProxyHeaderRequest
+        getTargetSslProxiesSetProxyHeaderRequestResource() {
       return targetSslProxiesSetProxyHeaderRequestResource;
     }
 
-    public Builder setTargetSslProxiesSetProxyHeaderRequestResource(TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
-      this.targetSslProxiesSetProxyHeaderRequestResource = targetSslProxiesSetProxyHeaderRequestResource;
+    public Builder setTargetSslProxiesSetProxyHeaderRequestResource(
+        TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
+      this.targetSslProxiesSetProxyHeaderRequestResource =
+          targetSslProxiesSetProxyHeaderRequestResource;
       return this;
     }
 
@@ -370,16 +376,8 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
       return this;
     }
 
-
     public SetProxyHeaderTargetSslProxyHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
 
       if (targetSslProxy == null) {
         missing += " targetSslProxy";
@@ -389,17 +387,16 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetProxyHeaderTargetSslProxyHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetSslProxiesSetProxyHeaderRequestResource,
-        targetSslProxy,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetSslProxiesSetProxyHeaderRequestResource,
+          targetSslProxy,
+          userIp);
     }
 
     public Builder clone() {
@@ -411,7 +408,8 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
-      newBuilder.setTargetSslProxiesSetProxyHeaderRequestResource(this.targetSslProxiesSetProxyHeaderRequestResource);
+      newBuilder.setTargetSslProxiesSetProxyHeaderRequestResource(
+          this.targetSslProxiesSetProxyHeaderRequestResource);
       newBuilder.setTargetSslProxy(this.targetSslProxy);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -421,16 +419,35 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
   @Override
   public String toString() {
     return "SetProxyHeaderTargetSslProxyHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetSslProxiesSetProxyHeaderRequestResource=" + targetSslProxiesSetProxyHeaderRequestResource + ", "
-        + "targetSslProxy=" + targetSslProxy + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetSslProxiesSetProxyHeaderRequestResource="
+        + targetSslProxiesSetProxyHeaderRequestResource
+        + ", "
+        + "targetSslProxy="
+        + targetSslProxy
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +458,18 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
     }
     if (o instanceof SetProxyHeaderTargetSslProxyHttpRequest) {
       SetProxyHeaderTargetSslProxyHttpRequest that = (SetProxyHeaderTargetSslProxyHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetSslProxiesSetProxyHeaderRequestResource, that.getTargetSslProxiesSetProxyHeaderRequestResource()) &&
-          Objects.equals(this.targetSslProxy, that.getTargetSslProxy()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(
+              this.targetSslProxiesSetProxyHeaderRequestResource,
+              that.getTargetSslProxiesSetProxyHeaderRequestResource())
+          && Objects.equals(this.targetSslProxy, that.getTargetSslProxy())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +477,15 @@ public final class SetProxyHeaderTargetSslProxyHttpRequest implements ApiMessage
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetSslProxiesSetProxyHeaderRequestResource,
-      targetSslProxy,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetSslProxiesSetProxyHeaderRequestResource,
+        targetSslProxy,
+        userIp);
   }
 }

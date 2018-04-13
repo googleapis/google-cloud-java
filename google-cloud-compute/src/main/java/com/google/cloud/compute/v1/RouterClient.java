@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.RouterStub;
 import com.google.cloud.compute.v1.stub.RouterStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -59,34 +49,33 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the routerClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the routerClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of RouterSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of RouterSettings to create().
+ * For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,19 +105,14 @@ public class RouterClient implements BackgroundResource {
   private final RouterSettings settings;
   private final RouterStub stub;
 
-
-
-  /**
-   * Constructs an instance of RouterClient with default settings.
-   */
+  /** Constructs an instance of RouterClient with default settings. */
   public static final RouterClient create() throws IOException {
     return create(RouterSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of RouterClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of RouterClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final RouterClient create(RouterSettings settings) throws IOException {
     return new RouterClient(settings);
@@ -144,9 +128,8 @@ public class RouterClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of RouterClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of RouterClient, using the given settings. This is protected so that it
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected RouterClient(RouterSettings settings) throws IOException {
     this.settings = settings;
@@ -168,12 +151,12 @@ public class RouterClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of routers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -190,8 +173,8 @@ public class RouterClient implements BackgroundResource {
   public final AggregatedListRoutersPagedResponse aggregatedListRouters(ProjectName project) {
     AggregatedListRoutersHttpRequest request =
         AggregatedListRoutersHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListRouters(request);
   }
 
@@ -199,7 +182,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of routers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -215,9 +199,7 @@ public class RouterClient implements BackgroundResource {
   @BetaApi
   public final AggregatedListRoutersPagedResponse aggregatedListRouters(String project) {
     AggregatedListRoutersHttpRequest request =
-        AggregatedListRoutersHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListRoutersHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListRouters(request);
   }
 
@@ -225,7 +207,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of routers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -242,16 +225,17 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListRoutersPagedResponse aggregatedListRouters(AggregatedListRoutersHttpRequest request) {
-    return aggregatedListRoutersPagedCallable()
-        .call(request);
+  public final AggregatedListRoutersPagedResponse aggregatedListRouters(
+      AggregatedListRoutersHttpRequest request) {
+    return aggregatedListRoutersPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of routers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -267,7 +251,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListRoutersHttpRequest, AggregatedListRoutersPagedResponse> aggregatedListRoutersPagedCallable() {
+  public final UnaryCallable<AggregatedListRoutersHttpRequest, AggregatedListRoutersPagedResponse>
+      aggregatedListRoutersPagedCallable() {
     return stub.aggregatedListRoutersPagedCallable();
   }
 
@@ -275,7 +260,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of routers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -298,7 +284,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListRoutersHttpRequest, RouterAggregatedList> aggregatedListRoutersCallable() {
+  public final UnaryCallable<AggregatedListRoutersHttpRequest, RouterAggregatedList>
+      aggregatedListRoutersCallable() {
     return stub.aggregatedListRoutersCallable();
   }
 
@@ -306,7 +293,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Deletes the specified Router resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -316,11 +304,15 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -328,9 +320,9 @@ public class RouterClient implements BackgroundResource {
 
     DeleteRouterHttpRequest request =
         DeleteRouterHttpRequest.newBuilder()
-        .setRouter(router == null ? null : router.toString())
-        .setRequestId(requestId)
-        .build();
+            .setRouter(router == null ? null : router.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteRouter(request);
   }
 
@@ -338,7 +330,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Deletes the specified Router resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -348,21 +341,22 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteRouter(String router, String requestId) {
 
     DeleteRouterHttpRequest request =
-        DeleteRouterHttpRequest.newBuilder()
-        .setRouter(router)
-        .setRequestId(requestId)
-        .build();
+        DeleteRouterHttpRequest.newBuilder().setRouter(router).setRequestId(requestId).build();
     return deleteRouter(request);
   }
 
@@ -370,7 +364,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Deletes the specified Router resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -395,7 +390,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Deletes the specified Router resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -417,9 +413,11 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Router resource. Get a list of available routers by making a list() request.
+   * Returns the specified Router resource. Get a list of available routers by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -435,16 +433,18 @@ public class RouterClient implements BackgroundResource {
 
     GetRouterHttpRequest request =
         GetRouterHttpRequest.newBuilder()
-        .setRouter(router == null ? null : router.toString())
-        .build();
+            .setRouter(router == null ? null : router.toString())
+            .build();
     return getRouter(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Router resource. Get a list of available routers by making a list() request.
+   * Returns the specified Router resource. Get a list of available routers by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -458,18 +458,17 @@ public class RouterClient implements BackgroundResource {
   @BetaApi
   public final Router getRouter(String router) {
 
-    GetRouterHttpRequest request =
-        GetRouterHttpRequest.newBuilder()
-        .setRouter(router)
-        .build();
+    GetRouterHttpRequest request = GetRouterHttpRequest.newBuilder().setRouter(router).build();
     return getRouter(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Router resource. Get a list of available routers by making a list() request.
+   * Returns the specified Router resource. Get a list of available routers by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -490,9 +489,11 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Router resource. Get a list of available routers by making a list() request.
+   * Returns the specified Router resource. Get a list of available routers by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -514,7 +515,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves runtime information of the specified router.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -530,8 +532,8 @@ public class RouterClient implements BackgroundResource {
 
     GetRouterStatusRouterHttpRequest request =
         GetRouterStatusRouterHttpRequest.newBuilder()
-        .setRouter(router == null ? null : router.toString())
-        .build();
+            .setRouter(router == null ? null : router.toString())
+            .build();
     return getRouterStatusRouter(request);
   }
 
@@ -539,7 +541,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves runtime information of the specified router.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -554,9 +557,7 @@ public class RouterClient implements BackgroundResource {
   public final RouterStatusResponse getRouterStatusRouter(String router) {
 
     GetRouterStatusRouterHttpRequest request =
-        GetRouterStatusRouterHttpRequest.newBuilder()
-        .setRouter(router)
-        .build();
+        GetRouterStatusRouterHttpRequest.newBuilder().setRouter(router).build();
     return getRouterStatusRouter(request);
   }
 
@@ -564,7 +565,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves runtime information of the specified router.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -579,7 +581,8 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RouterStatusResponse getRouterStatusRouter(GetRouterStatusRouterHttpRequest request) {
+  public final RouterStatusResponse getRouterStatusRouter(
+      GetRouterStatusRouterHttpRequest request) {
     return getRouterStatusRouterCallable().call(request);
   }
 
@@ -587,7 +590,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves runtime information of the specified router.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -601,15 +605,18 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetRouterStatusRouterHttpRequest, RouterStatusResponse> getRouterStatusRouterCallable() {
+  public final UnaryCallable<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
+      getRouterStatusRouterCallable() {
     return stub.getRouterStatusRouterCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Router resource in the specified project and region using the data included in the request.
+   * Creates a Router resource in the specified project and region using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   String requestId = "";
@@ -619,32 +626,39 @@ public class RouterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertRouter(String requestId, ProjectRegionName region, Router routerResource) {
+  public final Operation insertRouter(
+      String requestId, ProjectRegionName region, Router routerResource) {
 
     InsertRouterHttpRequest request =
         InsertRouterHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setRegion(region == null ? null : region.toString())
-        .setRouterResource(routerResource)
-        .build();
+            .setRequestId(requestId)
+            .setRegion(region == null ? null : region.toString())
+            .setRouterResource(routerResource)
+            .build();
     return insertRouter(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Router resource in the specified project and region using the data included in the request.
+   * Creates a Router resource in the specified project and region using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   String requestId = "";
@@ -654,11 +668,15 @@ public class RouterClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -668,18 +686,20 @@ public class RouterClient implements BackgroundResource {
 
     InsertRouterHttpRequest request =
         InsertRouterHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setRegion(region)
-        .setRouterResource(routerResource)
-        .build();
+            .setRequestId(requestId)
+            .setRegion(region)
+            .setRouterResource(routerResource)
+            .build();
     return insertRouter(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Router resource in the specified project and region using the data included in the request.
+   * Creates a Router resource in the specified project and region using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   String requestId = "";
@@ -704,9 +724,11 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Router resource in the specified project and region using the data included in the request.
+   * Creates a Router resource in the specified project and region using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   String requestId = "";
@@ -732,7 +754,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -749,8 +772,8 @@ public class RouterClient implements BackgroundResource {
   public final ListRoutersPagedResponse listRouters(ProjectRegionName region) {
     ListRoutersHttpRequest request =
         ListRoutersHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .build();
     return listRouters(request);
   }
 
@@ -758,7 +781,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -773,10 +797,7 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final ListRoutersPagedResponse listRouters(String region) {
-    ListRoutersHttpRequest request =
-        ListRoutersHttpRequest.newBuilder()
-        .setRegion(region)
-        .build();
+    ListRoutersHttpRequest request = ListRoutersHttpRequest.newBuilder().setRegion(region).build();
     return listRouters(request);
   }
 
@@ -784,7 +805,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -802,15 +824,15 @@ public class RouterClient implements BackgroundResource {
    */
   @BetaApi
   public final ListRoutersPagedResponse listRouters(ListRoutersHttpRequest request) {
-    return listRoutersPagedCallable()
-        .call(request);
+    return listRoutersPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -826,7 +848,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListRoutersHttpRequest, ListRoutersPagedResponse> listRoutersPagedCallable() {
+  public final UnaryCallable<ListRoutersHttpRequest, ListRoutersPagedResponse>
+      listRoutersPagedCallable() {
     return stub.listRoutersPagedCallable();
   }
 
@@ -834,7 +857,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Retrieves a list of Router resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -863,9 +887,11 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * Patches the specified Router resource with the data included in the request. This method
+   * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -876,31 +902,38 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchRouter(ProjectRegionRouterName router, String requestId, Router routerResource) {
+  public final Operation patchRouter(
+      ProjectRegionRouterName router, String requestId, Router routerResource) {
 
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
-        .setRouter(router == null ? null : router.toString())
-        .setRequestId(requestId)
-        .setRouterResource(routerResource)
-        .build();
+            .setRouter(router == null ? null : router.toString())
+            .setRequestId(requestId)
+            .setRouterResource(routerResource)
+            .build();
     return patchRouter(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * Patches the specified Router resource with the data included in the request. This method
+   * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -911,11 +944,15 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -924,18 +961,20 @@ public class RouterClient implements BackgroundResource {
 
     PatchRouterHttpRequest request =
         PatchRouterHttpRequest.newBuilder()
-        .setRouter(router)
-        .setRequestId(requestId)
-        .setRouterResource(routerResource)
-        .build();
+            .setRouter(router)
+            .setRequestId(requestId)
+            .setRouterResource(routerResource)
+            .build();
     return patchRouter(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * Patches the specified Router resource with the data included in the request. This method
+   * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -960,9 +999,11 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * Patches the specified Router resource with the data included in the request. This method
+   * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -986,9 +1027,11 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router.
+   * Preview fields auto-generated during router create and update operations. Calling this method
+   * does NOT create or update the router.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -1002,21 +1045,24 @@ public class RouterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final RoutersPreviewResponse previewRouter(ProjectRegionRouterName router, Router routerResource) {
+  public final RoutersPreviewResponse previewRouter(
+      ProjectRegionRouterName router, Router routerResource) {
 
     PreviewRouterHttpRequest request =
         PreviewRouterHttpRequest.newBuilder()
-        .setRouter(router == null ? null : router.toString())
-        .setRouterResource(routerResource)
-        .build();
+            .setRouter(router == null ? null : router.toString())
+            .setRouterResource(routerResource)
+            .build();
     return previewRouter(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router.
+   * Preview fields auto-generated during router create and update operations. Calling this method
+   * does NOT create or update the router.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -1034,17 +1080,19 @@ public class RouterClient implements BackgroundResource {
 
     PreviewRouterHttpRequest request =
         PreviewRouterHttpRequest.newBuilder()
-        .setRouter(router)
-        .setRouterResource(routerResource)
-        .build();
+            .setRouter(router)
+            .setRouterResource(routerResource)
+            .build();
     return previewRouter(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router.
+   * Preview fields auto-generated during router create and update operations. Calling this method
+   * does NOT create or update the router.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -1067,9 +1115,11 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router.
+   * Preview fields auto-generated during router create and update operations. Calling this method
+   * does NOT create or update the router.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -1085,7 +1135,8 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<PreviewRouterHttpRequest, RoutersPreviewResponse> previewRouterCallable() {
+  public final UnaryCallable<PreviewRouterHttpRequest, RoutersPreviewResponse>
+      previewRouterCallable() {
     return stub.previewRouterCallable();
   }
 
@@ -1093,7 +1144,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Updates the specified Router resource with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -1104,23 +1156,28 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateRouter(ProjectRegionRouterName router, String requestId, Router routerResource) {
+  public final Operation updateRouter(
+      ProjectRegionRouterName router, String requestId, Router routerResource) {
 
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
-        .setRouter(router == null ? null : router.toString())
-        .setRequestId(requestId)
-        .setRouterResource(routerResource)
-        .build();
+            .setRouter(router == null ? null : router.toString())
+            .setRequestId(requestId)
+            .setRouterResource(routerResource)
+            .build();
     return updateRouter(request);
   }
 
@@ -1128,7 +1185,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Updates the specified Router resource with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -1139,11 +1197,15 @@ public class RouterClient implements BackgroundResource {
    * </code></pre>
    *
    * @param router Name of the Router resource to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param routerResource Router resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1152,10 +1214,10 @@ public class RouterClient implements BackgroundResource {
 
     UpdateRouterHttpRequest request =
         UpdateRouterHttpRequest.newBuilder()
-        .setRouter(router)
-        .setRequestId(requestId)
-        .setRouterResource(routerResource)
-        .build();
+            .setRouter(router)
+            .setRequestId(requestId)
+            .setRouterResource(routerResource)
+            .build();
     return updateRouter(request);
   }
 
@@ -1163,7 +1225,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Updates the specified Router resource with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -1190,7 +1253,8 @@ public class RouterClient implements BackgroundResource {
   /**
    * Updates the specified Router resource with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RouterClient routerClient = RouterClient.create()) {
    *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
@@ -1213,7 +1277,7 @@ public class RouterClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -1242,15 +1306,14 @@ public class RouterClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListRoutersPagedResponse extends AbstractPagedListResponse<
-      AggregatedListRoutersHttpRequest,
-      RouterAggregatedList,
-      RoutersScopedList,
-      AggregatedListRoutersPage,
-      AggregatedListRoutersFixedSizeCollection> {
+  public static class AggregatedListRoutersPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList,
+          AggregatedListRoutersPage, AggregatedListRoutersFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListRoutersPagedResponse> createAsync(
-        PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList> context,
+        PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>
+            context,
         ApiFuture<RouterAggregatedList> futureResponse) {
       ApiFuture<AggregatedListRoutersPage> futurePage =
           AggregatedListRoutersPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -1267,18 +1330,16 @@ public class RouterClient implements BackgroundResource {
     private AggregatedListRoutersPagedResponse(AggregatedListRoutersPage page) {
       super(page, AggregatedListRoutersFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListRoutersPage extends AbstractPage<
-      AggregatedListRoutersHttpRequest,
-      RouterAggregatedList,
-      RoutersScopedList,
-      AggregatedListRoutersPage> {
+  public static class AggregatedListRoutersPage
+      extends AbstractPage<
+          AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList,
+          AggregatedListRoutersPage> {
 
     private AggregatedListRoutersPage(
-        PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList> context,
+        PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>
+            context,
         RouterAggregatedList response) {
       super(context, response);
     }
@@ -1289,31 +1350,28 @@ public class RouterClient implements BackgroundResource {
 
     @Override
     protected AggregatedListRoutersPage createPage(
-        PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList> context,
+        PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>
+            context,
         RouterAggregatedList response) {
       return new AggregatedListRoutersPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListRoutersPage> createPageAsync(
-        PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList> context,
+        PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>
+            context,
         ApiFuture<RouterAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListRoutersFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListRoutersHttpRequest,
-      RouterAggregatedList,
-      RoutersScopedList,
-      AggregatedListRoutersPage,
-      AggregatedListRoutersFixedSizeCollection> {
+  public static class AggregatedListRoutersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList,
+          AggregatedListRoutersPage, AggregatedListRoutersFixedSizeCollection> {
 
-    private AggregatedListRoutersFixedSizeCollection(List<AggregatedListRoutersPage> pages, int collectionSize) {
+    private AggregatedListRoutersFixedSizeCollection(
+        List<AggregatedListRoutersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1326,15 +1384,12 @@ public class RouterClient implements BackgroundResource {
         List<AggregatedListRoutersPage> pages, int collectionSize) {
       return new AggregatedListRoutersFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListRoutersPagedResponse extends AbstractPagedListResponse<
-      ListRoutersHttpRequest,
-      RouterList,
-      Router,
-      ListRoutersPage,
-      ListRoutersFixedSizeCollection> {
+
+  public static class ListRoutersPagedResponse
+      extends AbstractPagedListResponse<
+          ListRoutersHttpRequest, RouterList, Router, ListRoutersPage,
+          ListRoutersFixedSizeCollection> {
 
     public static ApiFuture<ListRoutersPagedResponse> createAsync(
         PageContext<ListRoutersHttpRequest, RouterList, Router> context,
@@ -1354,19 +1409,13 @@ public class RouterClient implements BackgroundResource {
     private ListRoutersPagedResponse(ListRoutersPage page) {
       super(page, ListRoutersFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListRoutersPage extends AbstractPage<
-      ListRoutersHttpRequest,
-      RouterList,
-      Router,
-      ListRoutersPage> {
+  public static class ListRoutersPage
+      extends AbstractPage<ListRoutersHttpRequest, RouterList, Router, ListRoutersPage> {
 
     private ListRoutersPage(
-        PageContext<ListRoutersHttpRequest, RouterList, Router> context,
-        RouterList response) {
+        PageContext<ListRoutersHttpRequest, RouterList, Router> context, RouterList response) {
       super(context, response);
     }
 
@@ -1376,8 +1425,7 @@ public class RouterClient implements BackgroundResource {
 
     @Override
     protected ListRoutersPage createPage(
-        PageContext<ListRoutersHttpRequest, RouterList, Router> context,
-        RouterList response) {
+        PageContext<ListRoutersHttpRequest, RouterList, Router> context, RouterList response) {
       return new ListRoutersPage(context, response);
     }
 
@@ -1387,18 +1435,12 @@ public class RouterClient implements BackgroundResource {
         ApiFuture<RouterList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListRoutersFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListRoutersHttpRequest,
-      RouterList,
-      Router,
-      ListRoutersPage,
-      ListRoutersFixedSizeCollection> {
+  public static class ListRoutersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRoutersHttpRequest, RouterList, Router, ListRoutersPage,
+          ListRoutersFixedSizeCollection> {
 
     private ListRoutersFixedSizeCollection(List<ListRoutersPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -1413,7 +1455,5 @@ public class RouterClient implements BackgroundResource {
         List<ListRoutersPage> pages, int collectionSize) {
       return new ListRoutersFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

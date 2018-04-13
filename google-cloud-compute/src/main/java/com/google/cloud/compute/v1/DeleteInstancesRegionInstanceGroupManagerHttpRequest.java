@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +36,8 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
-  private final RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource;
+  private final RegionInstanceGroupManagersDeleteInstancesRequest
+      regionInstanceGroupManagersDeleteInstancesRequestResource;
   private final String requestId;
   private final String userIp;
 
@@ -56,7 +54,6 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     this.userIp = null;
   }
 
-
   private DeleteInstancesRegionInstanceGroupManagerHttpRequest(
       String access_token,
       String callback,
@@ -65,10 +62,10 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       String key,
       String prettyPrint,
       String quotaUser,
-      RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource,
+      RegionInstanceGroupManagersDeleteInstancesRequest
+          regionInstanceGroupManagersDeleteInstancesRequestResource,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -76,7 +73,8 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
-    this.regionInstanceGroupManagersDeleteInstancesRequestResource = regionInstanceGroupManagersDeleteInstancesRequestResource;
+    this.regionInstanceGroupManagersDeleteInstancesRequestResource =
+        regionInstanceGroupManagersDeleteInstancesRequestResource;
     this.requestId = requestId;
     this.userIp = userIp;
   }
@@ -94,7 +92,8 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
     if (fieldNames.contains("instanceGroupManager") && instanceGroupManager != null) {
-      fieldMap.put("instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
+      fieldMap.put(
+          "instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -105,8 +104,12 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
     }
-    if (fieldNames.contains("regionInstanceGroupManagersDeleteInstancesRequestResource") && regionInstanceGroupManagersDeleteInstancesRequestResource != null) {
-      fieldMap.put("regionInstanceGroupManagersDeleteInstancesRequestResource", Collections.singletonList(String.valueOf(regionInstanceGroupManagersDeleteInstancesRequestResource)));
+    if (fieldNames.contains("regionInstanceGroupManagersDeleteInstancesRequestResource")
+        && regionInstanceGroupManagersDeleteInstancesRequestResource != null) {
+      fieldMap.put(
+          "regionInstanceGroupManagersDeleteInstancesRequestResource",
+          Collections.singletonList(
+              String.valueOf(regionInstanceGroupManagersDeleteInstancesRequestResource)));
     }
     if (fieldNames.contains("requestId") && requestId != null) {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
@@ -186,7 +189,8 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     return quotaUser;
   }
 
-  public RegionInstanceGroupManagersDeleteInstancesRequest getRegionInstanceGroupManagersDeleteInstancesRequestResource() {
+  public RegionInstanceGroupManagersDeleteInstancesRequest
+      getRegionInstanceGroupManagersDeleteInstancesRequestResource() {
     return regionInstanceGroupManagersDeleteInstancesRequestResource;
   }
 
@@ -198,22 +202,24 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DeleteInstancesRegionInstanceGroupManagerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeleteInstancesRegionInstanceGroupManagerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DeleteInstancesRegionInstanceGroupManagerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DeleteInstancesRegionInstanceGroupManagerHttpRequest();
   }
@@ -226,14 +232,16 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
     private String key;
     private String prettyPrint;
     private String quotaUser;
-    private RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource;
+    private RegionInstanceGroupManagersDeleteInstancesRequest
+        regionInstanceGroupManagersDeleteInstancesRequestResource;
     private String requestId;
     private String userIp;
 
     Builder() {}
 
     public Builder mergeFrom(DeleteInstancesRegionInstanceGroupManagerHttpRequest other) {
-      if (other == DeleteInstancesRegionInstanceGroupManagerHttpRequest.getDefaultInstance()) return this;
+      if (other == DeleteInstancesRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
+        return this;
       if (other.getAccessToken() != null) {
         this.access_token = other.access_token;
       }
@@ -256,7 +264,8 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
         this.quotaUser = other.quotaUser;
       }
       if (other.getRegionInstanceGroupManagersDeleteInstancesRequestResource() != null) {
-        this.regionInstanceGroupManagersDeleteInstancesRequestResource = other.regionInstanceGroupManagersDeleteInstancesRequestResource;
+        this.regionInstanceGroupManagersDeleteInstancesRequestResource =
+            other.regionInstanceGroupManagersDeleteInstancesRequestResource;
       }
       if (other.getRequestId() != null) {
         this.requestId = other.requestId;
@@ -275,7 +284,8 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
-      this.regionInstanceGroupManagersDeleteInstancesRequestResource = source.regionInstanceGroupManagersDeleteInstancesRequestResource;
+      this.regionInstanceGroupManagersDeleteInstancesRequestResource =
+          source.regionInstanceGroupManagersDeleteInstancesRequestResource;
       this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
@@ -343,12 +353,16 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       return this;
     }
 
-    public RegionInstanceGroupManagersDeleteInstancesRequest getRegionInstanceGroupManagersDeleteInstancesRequestResource() {
+    public RegionInstanceGroupManagersDeleteInstancesRequest
+        getRegionInstanceGroupManagersDeleteInstancesRequestResource() {
       return regionInstanceGroupManagersDeleteInstancesRequestResource;
     }
 
-    public Builder setRegionInstanceGroupManagersDeleteInstancesRequestResource(RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource) {
-      this.regionInstanceGroupManagersDeleteInstancesRequestResource = regionInstanceGroupManagersDeleteInstancesRequestResource;
+    public Builder setRegionInstanceGroupManagersDeleteInstancesRequestResource(
+        RegionInstanceGroupManagersDeleteInstancesRequest
+            regionInstanceGroupManagersDeleteInstancesRequestResource) {
+      this.regionInstanceGroupManagersDeleteInstancesRequestResource =
+          regionInstanceGroupManagersDeleteInstancesRequestResource;
       return this;
     }
 
@@ -370,36 +384,27 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       return this;
     }
 
-
     public DeleteInstancesRegionInstanceGroupManagerHttpRequest build() {
       String missing = "";
-
-
 
       if (instanceGroupManager == null) {
         missing += " instanceGroupManager";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new DeleteInstancesRegionInstanceGroupManagerHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroupManager,
-        key,
-        prettyPrint,
-        quotaUser,
-        regionInstanceGroupManagersDeleteInstancesRequestResource,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroupManager,
+          key,
+          prettyPrint,
+          quotaUser,
+          regionInstanceGroupManagersDeleteInstancesRequestResource,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -411,7 +416,8 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
-      newBuilder.setRegionInstanceGroupManagersDeleteInstancesRequestResource(this.regionInstanceGroupManagersDeleteInstancesRequestResource);
+      newBuilder.setRegionInstanceGroupManagersDeleteInstancesRequestResource(
+          this.regionInstanceGroupManagersDeleteInstancesRequestResource);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -421,16 +427,35 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
   @Override
   public String toString() {
     return "DeleteInstancesRegionInstanceGroupManagerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroupManager=" + instanceGroupManager + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "regionInstanceGroupManagersDeleteInstancesRequestResource=" + regionInstanceGroupManagersDeleteInstancesRequestResource + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroupManager="
+        + instanceGroupManager
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "regionInstanceGroupManagersDeleteInstancesRequestResource="
+        + regionInstanceGroupManagersDeleteInstancesRequestResource
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +465,20 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
       return true;
     }
     if (o instanceof DeleteInstancesRegionInstanceGroupManagerHttpRequest) {
-      DeleteInstancesRegionInstanceGroupManagerHttpRequest that = (DeleteInstancesRegionInstanceGroupManagerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.regionInstanceGroupManagersDeleteInstancesRequestResource, that.getRegionInstanceGroupManagersDeleteInstancesRequestResource()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      DeleteInstancesRegionInstanceGroupManagerHttpRequest that =
+          (DeleteInstancesRegionInstanceGroupManagerHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(
+              this.regionInstanceGroupManagersDeleteInstancesRequestResource,
+              that.getRegionInstanceGroupManagersDeleteInstancesRequestResource())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +486,15 @@ public final class DeleteInstancesRegionInstanceGroupManagerHttpRequest implemen
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroupManager,
-      key,
-      prettyPrint,
-      quotaUser,
-      regionInstanceGroupManagersDeleteInstancesRequestResource,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroupManager,
+        key,
+        prettyPrint,
+        quotaUser,
+        regionInstanceGroupManagersDeleteInstancesRequestResource,
+        requestId,
+        userIp);
   }
 }

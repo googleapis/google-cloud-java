@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,6 +41,7 @@ public final class Disk implements ApiMessage {
   private final Map<String, String> labels;
   private final String lastAttachTimestamp;
   private final String lastDetachTimestamp;
+  private final List<String> licenseCodes;
   private final List<String> licenses;
   private final String name;
   private final String options;
@@ -69,6 +69,7 @@ public final class Disk implements ApiMessage {
     this.labels = null;
     this.lastAttachTimestamp = null;
     this.lastDetachTimestamp = null;
+    this.licenseCodes = null;
     this.licenses = null;
     this.name = null;
     this.options = null;
@@ -86,7 +87,6 @@ public final class Disk implements ApiMessage {
     this.zone = null;
   }
 
-
   private Disk(
       String creationTimestamp,
       String description,
@@ -98,6 +98,7 @@ public final class Disk implements ApiMessage {
       Map<String, String> labels,
       String lastAttachTimestamp,
       String lastDetachTimestamp,
+      List<String> licenseCodes,
       List<String> licenses,
       String name,
       String options,
@@ -112,8 +113,7 @@ public final class Disk implements ApiMessage {
       String status,
       String type,
       List<String> users,
-      String zone
-      ) {
+      String zone) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.diskEncryptionKey = diskEncryptionKey;
@@ -124,6 +124,7 @@ public final class Disk implements ApiMessage {
     this.labels = labels;
     this.lastAttachTimestamp = lastAttachTimestamp;
     this.lastDetachTimestamp = lastDetachTimestamp;
+    this.licenseCodes = licenseCodes;
     this.licenses = licenses;
     this.name = name;
     this.options = options;
@@ -145,13 +146,15 @@ public final class Disk implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
     }
     if (fieldNames.contains("diskEncryptionKey") && diskEncryptionKey != null) {
-      fieldMap.put("diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
+      fieldMap.put(
+          "diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
     }
     if (fieldNames.contains("guestOsFeatures") && guestOsFeatures != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -173,10 +176,19 @@ public final class Disk implements ApiMessage {
       fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
     }
     if (fieldNames.contains("lastAttachTimestamp") && lastAttachTimestamp != null) {
-      fieldMap.put("lastAttachTimestamp", Collections.singletonList(String.valueOf(lastAttachTimestamp)));
+      fieldMap.put(
+          "lastAttachTimestamp", Collections.singletonList(String.valueOf(lastAttachTimestamp)));
     }
     if (fieldNames.contains("lastDetachTimestamp") && lastDetachTimestamp != null) {
-      fieldMap.put("lastDetachTimestamp", Collections.singletonList(String.valueOf(lastDetachTimestamp)));
+      fieldMap.put(
+          "lastDetachTimestamp", Collections.singletonList(String.valueOf(lastDetachTimestamp)));
+    }
+    if (fieldNames.contains("licenseCodes") && licenseCodes != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : licenseCodes) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("licenseCodes", stringList.build());
     }
     if (fieldNames.contains("licenses") && licenses != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -201,7 +213,9 @@ public final class Disk implements ApiMessage {
       fieldMap.put("sourceImage", Collections.singletonList(String.valueOf(sourceImage)));
     }
     if (fieldNames.contains("sourceImageEncryptionKey") && sourceImageEncryptionKey != null) {
-      fieldMap.put("sourceImageEncryptionKey", Collections.singletonList(String.valueOf(sourceImageEncryptionKey)));
+      fieldMap.put(
+          "sourceImageEncryptionKey",
+          Collections.singletonList(String.valueOf(sourceImageEncryptionKey)));
     }
     if (fieldNames.contains("sourceImageId") && sourceImageId != null) {
       fieldMap.put("sourceImageId", Collections.singletonList(String.valueOf(sourceImageId)));
@@ -210,7 +224,9 @@ public final class Disk implements ApiMessage {
       fieldMap.put("sourceSnapshot", Collections.singletonList(String.valueOf(sourceSnapshot)));
     }
     if (fieldNames.contains("sourceSnapshotEncryptionKey") && sourceSnapshotEncryptionKey != null) {
-      fieldMap.put("sourceSnapshotEncryptionKey", Collections.singletonList(String.valueOf(sourceSnapshotEncryptionKey)));
+      fieldMap.put(
+          "sourceSnapshotEncryptionKey",
+          Collections.singletonList(String.valueOf(sourceSnapshotEncryptionKey)));
     }
     if (fieldNames.contains("sourceSnapshotId") && sourceSnapshotId != null) {
       fieldMap.put("sourceSnapshotId", Collections.singletonList(String.valueOf(sourceSnapshotId)));
@@ -265,6 +281,9 @@ public final class Disk implements ApiMessage {
     }
     if (fieldName.equals("lastDetachTimestamp")) {
       return String.valueOf(lastDetachTimestamp);
+    }
+    if (fieldName.equals("licenseCodes")) {
+      return String.valueOf(licenseCodes);
     }
     if (fieldName.equals("licenses")) {
       return String.valueOf(licenses);
@@ -360,6 +379,10 @@ public final class Disk implements ApiMessage {
     return lastDetachTimestamp;
   }
 
+  public List<String> getLicenseCodesList() {
+    return licenseCodes;
+  }
+
   public List<String> getLicensesList() {
     return licenses;
   }
@@ -420,22 +443,24 @@ public final class Disk implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Disk prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Disk getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Disk DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Disk();
   }
@@ -451,6 +476,7 @@ public final class Disk implements ApiMessage {
     private Map<String, String> labels;
     private String lastAttachTimestamp;
     private String lastDetachTimestamp;
+    private List<String> licenseCodes;
     private List<String> licenses;
     private String name;
     private String options;
@@ -500,6 +526,9 @@ public final class Disk implements ApiMessage {
       }
       if (other.getLastDetachTimestamp() != null) {
         this.lastDetachTimestamp = other.lastDetachTimestamp;
+      }
+      if (other.getLicenseCodesList() != null) {
+        this.licenseCodes = other.licenseCodes;
       }
       if (other.getLicensesList() != null) {
         this.licenses = other.licenses;
@@ -560,6 +589,7 @@ public final class Disk implements ApiMessage {
       this.labels = source.labels;
       this.lastAttachTimestamp = source.lastAttachTimestamp;
       this.lastDetachTimestamp = source.lastDetachTimestamp;
+      this.licenseCodes = source.licenseCodes;
       this.licenses = source.licenses;
       this.name = source.name;
       this.options = source.options;
@@ -675,6 +705,23 @@ public final class Disk implements ApiMessage {
       return this;
     }
 
+    public List<String> getLicenseCodesList() {
+      return licenseCodes;
+    }
+
+    public Builder addAllLicenseCodes(List<String> licenseCodes) {
+      if (this.licenseCodes == null) {
+        this.licenseCodes = new ArrayList<>(licenseCodes.size());
+      }
+      this.licenseCodes.addAll(licenseCodes);
+      return this;
+    }
+
+    public Builder addLicenseCodes(String licenseCodes) {
+      this.licenseCodes.add(licenseCodes);
+      return this;
+    }
+
     public List<String> getLicensesList() {
       return licenses;
     }
@@ -768,7 +815,8 @@ public final class Disk implements ApiMessage {
       return sourceSnapshotEncryptionKey;
     }
 
-    public Builder setSourceSnapshotEncryptionKey(CustomerEncryptionKey sourceSnapshotEncryptionKey) {
+    public Builder setSourceSnapshotEncryptionKey(
+        CustomerEncryptionKey sourceSnapshotEncryptionKey) {
       this.sourceSnapshotEncryptionKey = sourceSnapshotEncryptionKey;
       return this;
     }
@@ -826,59 +874,35 @@ public final class Disk implements ApiMessage {
       return this;
     }
 
-
     public Disk build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new Disk(
-        creationTimestamp,
-        description,
-        diskEncryptionKey,
-        guestOsFeatures,
-        id,
-        kind,
-        labelFingerprint,
-        labels,
-        lastAttachTimestamp,
-        lastDetachTimestamp,
-        licenses,
-        name,
-        options,
-        selfLink,
-        sizeGb,
-        sourceImage,
-        sourceImageEncryptionKey,
-        sourceImageId,
-        sourceSnapshot,
-        sourceSnapshotEncryptionKey,
-        sourceSnapshotId,
-        status,
-        type,
-        users,
-        zone
-      );
+          creationTimestamp,
+          description,
+          diskEncryptionKey,
+          guestOsFeatures,
+          id,
+          kind,
+          labelFingerprint,
+          labels,
+          lastAttachTimestamp,
+          lastDetachTimestamp,
+          licenseCodes,
+          licenses,
+          name,
+          options,
+          selfLink,
+          sizeGb,
+          sourceImage,
+          sourceImageEncryptionKey,
+          sourceImageId,
+          sourceSnapshot,
+          sourceSnapshotEncryptionKey,
+          sourceSnapshotId,
+          status,
+          type,
+          users,
+          zone);
     }
 
     public Builder clone() {
@@ -893,6 +917,7 @@ public final class Disk implements ApiMessage {
       newBuilder.putAllLabels(this.labels);
       newBuilder.setLastAttachTimestamp(this.lastAttachTimestamp);
       newBuilder.setLastDetachTimestamp(this.lastDetachTimestamp);
+      newBuilder.addAllLicenseCodes(this.licenseCodes);
       newBuilder.addAllLicenses(this.licenses);
       newBuilder.setName(this.name);
       newBuilder.setOptions(this.options);
@@ -915,31 +940,83 @@ public final class Disk implements ApiMessage {
   @Override
   public String toString() {
     return "Disk{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "diskEncryptionKey=" + diskEncryptionKey + ", "
-        + "guestOsFeatures=" + guestOsFeatures + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "labelFingerprint=" + labelFingerprint + ", "
-        + "labels=" + labels + ", "
-        + "lastAttachTimestamp=" + lastAttachTimestamp + ", "
-        + "lastDetachTimestamp=" + lastDetachTimestamp + ", "
-        + "licenses=" + licenses + ", "
-        + "name=" + name + ", "
-        + "options=" + options + ", "
-        + "selfLink=" + selfLink + ", "
-        + "sizeGb=" + sizeGb + ", "
-        + "sourceImage=" + sourceImage + ", "
-        + "sourceImageEncryptionKey=" + sourceImageEncryptionKey + ", "
-        + "sourceImageId=" + sourceImageId + ", "
-        + "sourceSnapshot=" + sourceSnapshot + ", "
-        + "sourceSnapshotEncryptionKey=" + sourceSnapshotEncryptionKey + ", "
-        + "sourceSnapshotId=" + sourceSnapshotId + ", "
-        + "status=" + status + ", "
-        + "type=" + type + ", "
-        + "users=" + users + ", "
-        + "zone=" + zone
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "diskEncryptionKey="
+        + diskEncryptionKey
+        + ", "
+        + "guestOsFeatures="
+        + guestOsFeatures
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "labelFingerprint="
+        + labelFingerprint
+        + ", "
+        + "labels="
+        + labels
+        + ", "
+        + "lastAttachTimestamp="
+        + lastAttachTimestamp
+        + ", "
+        + "lastDetachTimestamp="
+        + lastDetachTimestamp
+        + ", "
+        + "licenseCodes="
+        + licenseCodes
+        + ", "
+        + "licenses="
+        + licenses
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "options="
+        + options
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "sizeGb="
+        + sizeGb
+        + ", "
+        + "sourceImage="
+        + sourceImage
+        + ", "
+        + "sourceImageEncryptionKey="
+        + sourceImageEncryptionKey
+        + ", "
+        + "sourceImageId="
+        + sourceImageId
+        + ", "
+        + "sourceSnapshot="
+        + sourceSnapshot
+        + ", "
+        + "sourceSnapshotEncryptionKey="
+        + sourceSnapshotEncryptionKey
+        + ", "
+        + "sourceSnapshotId="
+        + sourceSnapshotId
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "type="
+        + type
+        + ", "
+        + "users="
+        + users
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -950,33 +1027,32 @@ public final class Disk implements ApiMessage {
     }
     if (o instanceof Disk) {
       Disk that = (Disk) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.diskEncryptionKey, that.getDiskEncryptionKey()) &&
-          Objects.equals(this.guestOsFeatures, that.getGuestOsFeaturesList()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.labelFingerprint, that.getLabelFingerprint()) &&
-          Objects.equals(this.labels, that.getLabelsMap()) &&
-          Objects.equals(this.lastAttachTimestamp, that.getLastAttachTimestamp()) &&
-          Objects.equals(this.lastDetachTimestamp, that.getLastDetachTimestamp()) &&
-          Objects.equals(this.licenses, that.getLicensesList()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.options, that.getOptions()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.sizeGb, that.getSizeGb()) &&
-          Objects.equals(this.sourceImage, that.getSourceImage()) &&
-          Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey()) &&
-          Objects.equals(this.sourceImageId, that.getSourceImageId()) &&
-          Objects.equals(this.sourceSnapshot, that.getSourceSnapshot()) &&
-          Objects.equals(this.sourceSnapshotEncryptionKey, that.getSourceSnapshotEncryptionKey()) &&
-          Objects.equals(this.sourceSnapshotId, that.getSourceSnapshotId()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.type, that.getType()) &&
-          Objects.equals(this.users, that.getUsersList()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.diskEncryptionKey, that.getDiskEncryptionKey())
+          && Objects.equals(this.guestOsFeatures, that.getGuestOsFeaturesList())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.labelFingerprint, that.getLabelFingerprint())
+          && Objects.equals(this.labels, that.getLabelsMap())
+          && Objects.equals(this.lastAttachTimestamp, that.getLastAttachTimestamp())
+          && Objects.equals(this.lastDetachTimestamp, that.getLastDetachTimestamp())
+          && Objects.equals(this.licenseCodes, that.getLicenseCodesList())
+          && Objects.equals(this.licenses, that.getLicensesList())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.options, that.getOptions())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.sizeGb, that.getSizeGb())
+          && Objects.equals(this.sourceImage, that.getSourceImage())
+          && Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey())
+          && Objects.equals(this.sourceImageId, that.getSourceImageId())
+          && Objects.equals(this.sourceSnapshot, that.getSourceSnapshot())
+          && Objects.equals(this.sourceSnapshotEncryptionKey, that.getSourceSnapshotEncryptionKey())
+          && Objects.equals(this.sourceSnapshotId, that.getSourceSnapshotId())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.type, that.getType())
+          && Objects.equals(this.users, that.getUsersList())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -984,31 +1060,31 @@ public final class Disk implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      diskEncryptionKey,
-      guestOsFeatures,
-      id,
-      kind,
-      labelFingerprint,
-      labels,
-      lastAttachTimestamp,
-      lastDetachTimestamp,
-      licenses,
-      name,
-      options,
-      selfLink,
-      sizeGb,
-      sourceImage,
-      sourceImageEncryptionKey,
-      sourceImageId,
-      sourceSnapshot,
-      sourceSnapshotEncryptionKey,
-      sourceSnapshotId,
-      status,
-      type,
-      users,
-      zone
-    );
+        creationTimestamp,
+        description,
+        diskEncryptionKey,
+        guestOsFeatures,
+        id,
+        kind,
+        labelFingerprint,
+        labels,
+        lastAttachTimestamp,
+        lastDetachTimestamp,
+        licenseCodes,
+        licenses,
+        name,
+        options,
+        selfLink,
+        sizeGb,
+        sourceImage,
+        sourceImageEncryptionKey,
+        sourceImageId,
+        sourceSnapshot,
+        sourceSnapshotEncryptionKey,
+        sourceSnapshotId,
+        status,
+        type,
+        users,
+        zone);
   }
 }

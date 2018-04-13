@@ -15,6 +15,16 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.addPeeringNetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.deleteNetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.getNetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.insertNetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.listNetworksMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.patchNetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.removePeeringNetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.switchToCustomModeNetworkMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,23 +35,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.addPeeringNetworkMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.deleteNetworkMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.getNetworkMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.insertNetworkMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.listNetworksMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.patchNetworkMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.removePeeringNetworkMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonNetworkStub.switchToCustomModeNetworkMethodDescriptor;
 import com.google.cloud.compute.v1.stub.NetworkStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -51,19 +50,19 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class NetworkClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          addPeeringNetworkMethodDescriptor,
-          deleteNetworkMethodDescriptor,
-          getNetworkMethodDescriptor,
-          insertNetworkMethodDescriptor,
-          listNetworksMethodDescriptor,
-          patchNetworkMethodDescriptor,
-          removePeeringNetworkMethodDescriptor,
-          switchToCustomModeNetworkMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, NetworkStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              addPeeringNetworkMethodDescriptor,
+              deleteNetworkMethodDescriptor,
+              getNetworkMethodDescriptor,
+              insertNetworkMethodDescriptor,
+              listNetworksMethodDescriptor,
+              patchNetworkMethodDescriptor,
+              removePeeringNetworkMethodDescriptor,
+              switchToCustomModeNetworkMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, NetworkStubSettings.getDefaultEndpoint());
 
   private static NetworkClient client;
   private static NetworkSettings clientSettings;
@@ -72,13 +71,13 @@ public class NetworkClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         NetworkSettings.newBuilder()
-           .setTransportChannelProvider(
-               NetworkSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       NetworkClient.create(clientSettings);
+            .setTransportChannelProvider(
+                NetworkSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = NetworkClient.create(clientSettings);
   }
 
   @After
@@ -115,34 +114,36 @@ public class NetworkClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
-    NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+    NetworksAddPeeringRequest networksAddPeeringRequestResource =
+        NetworksAddPeeringRequest.newBuilder().build();
 
     Operation actualResponse =
         client.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
@@ -151,22 +152,31 @@ public class NetworkClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void addPeeringNetworkExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
-      NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
+      ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+      NetworksAddPeeringRequest networksAddPeeringRequestResource =
+          NetworksAddPeeringRequest.newBuilder().build();
 
       client.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
       Assert.fail("No exception raised");
@@ -199,56 +209,64 @@ public class NetworkClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
-    Operation actualResponse =
-        client.deleteNetwork(requestId, network);
+    Operation actualResponse = client.deleteNetwork(requestId, network);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteNetworkExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
       client.deleteNetwork(requestId, network);
       Assert.fail("No exception raised");
@@ -269,42 +287,50 @@ public class NetworkClientTest {
     String id = "id3355";
     String gatewayIPv4 = "gatewayIPv4-1431933859";
     String selfLink = "selfLink-1691268851";
-    Network expectedResponse = Network.newBuilder()
-      .setIPv4Range(iPv4Range)
-      .setKind(kind)
-      .setAutoCreateSubnetworks(autoCreateSubnetworks)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setDescription(description)
-      .setId(id)
-      .setGatewayIPv4(gatewayIPv4)
-      .setSelfLink(selfLink)
-      .build();
+    Network expectedResponse =
+        Network.newBuilder()
+            .setIPv4Range(iPv4Range)
+            .setKind(kind)
+            .setAutoCreateSubnetworks(autoCreateSubnetworks)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setDescription(description)
+            .setId(id)
+            .setGatewayIPv4(gatewayIPv4)
+            .setSelfLink(selfLink)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
-    Network actualResponse =
-        client.getNetwork(network);
+    Network actualResponse = client.getNetwork(network);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getNetworkExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
       client.getNetwork(network);
       Assert.fail("No exception raised");
@@ -337,52 +363,60 @@ public class NetworkClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Network networkResource = Network.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertNetwork(requestId, project, networkResource);
+    Operation actualResponse = client.insertNetwork(requestId, project, networkResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void insertNetworkExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -406,13 +440,14 @@ public class NetworkClientTest {
     String selfLink = "selfLink-1691268851";
     Network itemsElement = Network.newBuilder().build();
     List<Network> items = Arrays.asList(itemsElement);
-    NetworkList expectedResponse = NetworkList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    NetworkList expectedResponse =
+        NetworkList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -421,22 +456,29 @@ public class NetworkClientTest {
 
     List<Network> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listNetworksExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -473,57 +515,65 @@ public class NetworkClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     Network networkResource = Network.newBuilder().build();
 
-    Operation actualResponse =
-        client.patchNetwork(requestId, network, networkResource);
+    Operation actualResponse = client.patchNetwork(requestId, network, networkResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void patchNetworkExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
       Network networkResource = Network.newBuilder().build();
 
       client.patchNetwork(requestId, network, networkResource);
@@ -557,34 +607,36 @@ public class NetworkClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
-    NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+    NetworksRemovePeeringRequest networksRemovePeeringRequestResource =
+        NetworksRemovePeeringRequest.newBuilder().build();
 
     Operation actualResponse =
         client.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
@@ -593,22 +645,31 @@ public class NetworkClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void removePeeringNetworkExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
-      NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
+      ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+      NetworksRemovePeeringRequest networksRemovePeeringRequestResource =
+          NetworksRemovePeeringRequest.newBuilder().build();
 
       client.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
       Assert.fail("No exception raised");
@@ -641,56 +702,64 @@ public class NetworkClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
-    Operation actualResponse =
-        client.switchToCustomModeNetwork(requestId, network);
+    Operation actualResponse = client.switchToCustomModeNetwork(requestId, network);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void switchToCustomModeNetworkExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+      ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
 
       client.switchToCustomModeNetwork(requestId, network);
       Assert.fail("No exception raised");
@@ -698,5 +767,4 @@ public class NetworkClientTest {
       // Expected exception
     }
   }
-
 }

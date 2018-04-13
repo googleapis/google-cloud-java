@@ -15,6 +15,16 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.TargetSslProxyClient.ListTargetSslProxiesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.deleteTargetSslProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.getTargetSslProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.insertTargetSslProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.listTargetSslProxiesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.setBackendServiceTargetSslProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.setProxyHeaderTargetSslProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.setSslCertificatesTargetSslProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.setSslPolicyTargetSslProxyMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,22 +35,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.TargetSslProxyClient.ListTargetSslProxiesPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.deleteTargetSslProxyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.getTargetSslProxyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.insertTargetSslProxyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.listTargetSslProxiesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.setBackendServiceTargetSslProxyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.setProxyHeaderTargetSslProxyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetSslProxyStub.setSslCertificatesTargetSslProxyMethodDescriptor;
 import com.google.cloud.compute.v1.stub.TargetSslProxyStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -50,18 +50,19 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class TargetSslProxyClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          deleteTargetSslProxyMethodDescriptor,
-          getTargetSslProxyMethodDescriptor,
-          insertTargetSslProxyMethodDescriptor,
-          listTargetSslProxiesMethodDescriptor,
-          setBackendServiceTargetSslProxyMethodDescriptor,
-          setProxyHeaderTargetSslProxyMethodDescriptor,
-          setSslCertificatesTargetSslProxyMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, TargetSslProxyStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              deleteTargetSslProxyMethodDescriptor,
+              getTargetSslProxyMethodDescriptor,
+              insertTargetSslProxyMethodDescriptor,
+              listTargetSslProxiesMethodDescriptor,
+              setBackendServiceTargetSslProxyMethodDescriptor,
+              setProxyHeaderTargetSslProxyMethodDescriptor,
+              setSslCertificatesTargetSslProxyMethodDescriptor,
+              setSslPolicyTargetSslProxyMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, TargetSslProxyStubSettings.getDefaultEndpoint());
 
   private static TargetSslProxyClient client;
   private static TargetSslProxySettings clientSettings;
@@ -70,13 +71,13 @@ public class TargetSslProxyClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         TargetSslProxySettings.newBuilder()
-           .setTransportChannelProvider(
-               TargetSslProxySettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       TargetSslProxyClient.create(clientSettings);
+            .setTransportChannelProvider(
+                TargetSslProxySettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = TargetSslProxyClient.create(clientSettings);
   }
 
   @After
@@ -113,55 +114,65 @@ public class TargetSslProxyClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+    ProjectGlobalTargetSslProxyName targetSslProxy =
+        ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
     String requestId = "requestId37109963";
 
-    Operation actualResponse =
-        client.deleteTargetSslProxy(targetSslProxy, requestId);
+    Operation actualResponse = client.deleteTargetSslProxy(targetSslProxy, requestId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteTargetSslProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+      ProjectGlobalTargetSslProxyName targetSslProxy =
+          ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
       String requestId = "requestId37109963";
 
       client.deleteTargetSslProxy(targetSslProxy, requestId);
@@ -176,47 +187,60 @@ public class TargetSslProxyClientTest {
   public void getTargetSslProxyTest() {
     String kind = "kind3292052";
     String service = "service1984153269";
+    ProjectGlobalSslPolicyName sslPolicy =
+        ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
     String proxyHeader = "proxyHeader-1987109506";
     String selfLink = "selfLink-1691268851";
-    TargetSslProxy expectedResponse = TargetSslProxy.newBuilder()
-      .setKind(kind)
-      .setService(service)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setDescription(description)
-      .setId(id)
-      .setProxyHeader(proxyHeader)
-      .setSelfLink(selfLink)
-      .build();
+    TargetSslProxy expectedResponse =
+        TargetSslProxy.newBuilder()
+            .setKind(kind)
+            .setService(service)
+            .setSslPolicy(sslPolicy.toString())
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setDescription(description)
+            .setId(id)
+            .setProxyHeader(proxyHeader)
+            .setSelfLink(selfLink)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+    ProjectGlobalTargetSslProxyName targetSslProxy =
+        ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
 
-    TargetSslProxy actualResponse =
-        client.getTargetSslProxy(targetSslProxy);
+    TargetSslProxy actualResponse = client.getTargetSslProxy(targetSslProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getTargetSslProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+      ProjectGlobalTargetSslProxyName targetSslProxy =
+          ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
 
       client.getTargetSslProxy(targetSslProxy);
       Assert.fail("No exception raised");
@@ -249,29 +273,30 @@ public class TargetSslProxyClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
@@ -285,16 +310,24 @@ public class TargetSslProxyClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void insertTargetSslProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -318,13 +351,14 @@ public class TargetSslProxyClientTest {
     String selfLink = "selfLink-1691268851";
     TargetSslProxy itemsElement = TargetSslProxy.newBuilder().build();
     List<TargetSslProxy> items = Arrays.asList(itemsElement);
-    TargetSslProxyList expectedResponse = TargetSslProxyList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    TargetSslProxyList expectedResponse =
+        TargetSslProxyList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -333,22 +367,29 @@ public class TargetSslProxyClientTest {
 
     List<TargetSslProxy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listTargetSslProxiesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -385,60 +426,75 @@ public class TargetSslProxyClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+    ProjectGlobalTargetSslProxyName targetSslProxy =
+        ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
     String requestId = "requestId37109963";
-    TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
+    TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource =
+        TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setBackendServiceTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetBackendServiceRequestResource);
+        client.setBackendServiceTargetSslProxy(
+            targetSslProxy, requestId, targetSslProxiesSetBackendServiceRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void setBackendServiceTargetSslProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+      ProjectGlobalTargetSslProxyName targetSslProxy =
+          ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
       String requestId = "requestId37109963";
-      TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
+      TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource =
+          TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
 
-      client.setBackendServiceTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetBackendServiceRequestResource);
+      client.setBackendServiceTargetSslProxy(
+          targetSslProxy, requestId, targetSslProxiesSetBackendServiceRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -469,60 +525,75 @@ public class TargetSslProxyClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+    ProjectGlobalTargetSslProxyName targetSslProxy =
+        ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
     String requestId = "requestId37109963";
-    TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
+    TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource =
+        TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setProxyHeaderTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetProxyHeaderRequestResource);
+        client.setProxyHeaderTargetSslProxy(
+            targetSslProxy, requestId, targetSslProxiesSetProxyHeaderRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void setProxyHeaderTargetSslProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+      ProjectGlobalTargetSslProxyName targetSslProxy =
+          ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
       String requestId = "requestId37109963";
-      TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
+      TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource =
+          TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
 
-      client.setProxyHeaderTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetProxyHeaderRequestResource);
+      client.setProxyHeaderTargetSslProxy(
+          targetSslProxy, requestId, targetSslProxiesSetProxyHeaderRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -553,64 +624,173 @@ public class TargetSslProxyClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+    ProjectGlobalTargetSslProxyName targetSslProxy =
+        ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
     String requestId = "requestId37109963";
-    TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
+    TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource =
+        TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
 
     Operation actualResponse =
-        client.setSslCertificatesTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetSslCertificatesRequestResource);
+        client.setSslCertificatesTargetSslProxy(
+            targetSslProxy, requestId, targetSslProxiesSetSslCertificatesRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void setSslCertificatesTargetSslProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+      ProjectGlobalTargetSslProxyName targetSslProxy =
+          ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
       String requestId = "requestId37109963";
-      TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
+      TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource =
+          TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
 
-      client.setSslCertificatesTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetSslCertificatesRequestResource);
+      client.setSslCertificatesTargetSslProxy(
+          targetSslProxy, requestId, targetSslProxiesSetSslCertificatesRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
     }
   }
 
+  @Test
+  @SuppressWarnings("all")
+  public void setSslPolicyTargetSslProxyTest() {
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    String targetId = "targetId-815576439";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalTargetSslProxyName targetSslProxy =
+        ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+    String requestId = "requestId37109963";
+    SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
+
+    Operation actualResponse =
+        client.setSslPolicyTargetSslProxy(targetSslProxy, requestId, sslPolicyReferenceResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setSslPolicyTargetSslProxyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalTargetSslProxyName targetSslProxy =
+          ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+      String requestId = "requestId37109963";
+      SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
+
+      client.setSslPolicyTargetSslProxy(targetSslProxy, requestId, sslPolicyReferenceResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

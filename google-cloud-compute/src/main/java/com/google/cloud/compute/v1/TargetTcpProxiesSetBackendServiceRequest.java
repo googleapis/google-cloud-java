@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class TargetTcpProxiesSetBackendServiceRequest implements ApiMessag
     this.service = null;
   }
 
-
-  private TargetTcpProxiesSetBackendServiceRequest(
-      String service
-      ) {
+  private TargetTcpProxiesSetBackendServiceRequest(String service) {
     this.service = service;
   }
 
@@ -72,22 +66,24 @@ public final class TargetTcpProxiesSetBackendServiceRequest implements ApiMessag
     return service;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetTcpProxiesSetBackendServiceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetTcpProxiesSetBackendServiceRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetTcpProxiesSetBackendServiceRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetTcpProxiesSetBackendServiceRequest();
   }
@@ -118,11 +114,8 @@ public final class TargetTcpProxiesSetBackendServiceRequest implements ApiMessag
       return this;
     }
 
-
     public TargetTcpProxiesSetBackendServiceRequest build() {
-      return new TargetTcpProxiesSetBackendServiceRequest(
-        service
-      );
+      return new TargetTcpProxiesSetBackendServiceRequest(service);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class TargetTcpProxiesSetBackendServiceRequest implements ApiMessag
 
   @Override
   public String toString() {
-    return "TargetTcpProxiesSetBackendServiceRequest{"
-        + "service=" + service
-        + "}";
+    return "TargetTcpProxiesSetBackendServiceRequest{" + "service=" + service + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class TargetTcpProxiesSetBackendServiceRequest implements ApiMessag
     }
     if (o instanceof TargetTcpProxiesSetBackendServiceRequest) {
       TargetTcpProxiesSetBackendServiceRequest that = (TargetTcpProxiesSetBackendServiceRequest) o;
-      return
-          Objects.equals(this.service, that.getService())
-          ;
+      return Objects.equals(this.service, that.getService());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      service
-    );
+    return Objects.hash(service);
   }
 }

@@ -17,15 +17,14 @@
 /**
  * A client to Compute Engine API.
  *
- * The interfaces provided are listed below, along with usage samples.
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
- * =====================
- * AcceleratorTypeClient
- * =====================
+ * <p>===================== AcceleratorTypeClient =====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for AcceleratorTypeClient:
+ * <p>Sample for AcceleratorTypeClient:
+ *
  * <pre>
  * <code>
  * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
@@ -35,13 +34,12 @@
  * </code>
  * </pre>
  *
- * =============
- * AddressClient
- * =============
+ * ============= AddressClient =============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for AddressClient:
+ * <p>Sample for AddressClient:
+ *
  * <pre>
  * <code>
  * try (AddressClient addressClient = AddressClient.create()) {
@@ -52,13 +50,12 @@
  * </code>
  * </pre>
  *
- * ================
- * AutoscalerClient
- * ================
+ * ================ AutoscalerClient ================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for AutoscalerClient:
+ * <p>Sample for AutoscalerClient:
+ *
  * <pre>
  * <code>
  * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
@@ -69,47 +66,44 @@
  * </code>
  * </pre>
  *
- * ===================
- * BackendBucketClient
- * ===================
+ * =================== BackendBucketClient ===================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for BackendBucketClient:
+ * <p>Sample for BackendBucketClient:
+ *
  * <pre>
  * <code>
  * try (BackendBucketClient backendBucketClient = BackendBucketClient.create()) {
- *   ProjectBackendBucketName backendBucket = ProjectBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
+ *   ProjectGlobalBackendBucketName backendBucket = ProjectGlobalBackendBucketName.of("[PROJECT]", "[BACKEND_BUCKET]");
  *   String requestId = "";
  *   Operation response = backendBucketClient.deleteBackendBucket(backendBucket, requestId);
  * }
  * </code>
  * </pre>
  *
- * ====================
- * BackendServiceClient
- * ====================
+ * ==================== BackendServiceClient ====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for BackendServiceClient:
+ * <p>Sample for BackendServiceClient:
+ *
  * <pre>
  * <code>
  * try (BackendServiceClient backendServiceClient = BackendServiceClient.create()) {
  *   String requestId = "";
- *   ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+ *   ProjectGlobalBackendServiceName backendService = ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
  *   Operation response = backendServiceClient.deleteBackendService(requestId, backendService);
  * }
  * </code>
  * </pre>
  *
- * ==============
- * DiskTypeClient
- * ==============
+ * ============== DiskTypeClient ==============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for DiskTypeClient:
+ * <p>Sample for DiskTypeClient:
+ *
  * <pre>
  * <code>
  * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
@@ -119,13 +113,12 @@
  * </code>
  * </pre>
  *
- * ==========
- * DiskClient
- * ==========
+ * ========== DiskClient ==========
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for DiskClient:
+ * <p>Sample for DiskClient:
+ *
  * <pre>
  * <code>
  * try (DiskClient diskClient = DiskClient.create()) {
@@ -138,30 +131,28 @@
  * </code>
  * </pre>
  *
- * ==============
- * FirewallClient
- * ==============
+ * ============== FirewallClient ==============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for FirewallClient:
+ * <p>Sample for FirewallClient:
+ *
  * <pre>
  * <code>
  * try (FirewallClient firewallClient = FirewallClient.create()) {
- *   ProjectFirewallName firewall = ProjectFirewallName.of("[PROJECT]", "[FIREWALL]");
+ *   ProjectGlobalFirewallName firewall = ProjectGlobalFirewallName.of("[PROJECT]", "[FIREWALL]");
  *   String requestId = "";
  *   Operation response = firewallClient.deleteFirewall(firewall, requestId);
  * }
  * </code>
  * </pre>
  *
- * ====================
- * ForwardingRuleClient
- * ====================
+ * ==================== ForwardingRuleClient ====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for ForwardingRuleClient:
+ * <p>Sample for ForwardingRuleClient:
+ *
  * <pre>
  * <code>
  * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
@@ -172,131 +163,123 @@
  * </code>
  * </pre>
  *
- * ===================
- * GlobalAddressClient
- * ===================
+ * =================== GlobalAddressClient ===================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for GlobalAddressClient:
+ * <p>Sample for GlobalAddressClient:
+ *
  * <pre>
  * <code>
  * try (GlobalAddressClient globalAddressClient = GlobalAddressClient.create()) {
- *   ProjectAddressName address = ProjectAddressName.of("[PROJECT]", "[ADDRESS]");
+ *   ProjectGlobalAddressName address = ProjectGlobalAddressName.of("[PROJECT]", "[ADDRESS]");
  *   String requestId = "";
  *   Operation response = globalAddressClient.deleteGlobalAddress(address, requestId);
  * }
  * </code>
  * </pre>
  *
- * ==========================
- * GlobalForwardingRuleClient
- * ==========================
+ * ========================== GlobalForwardingRuleClient ==========================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for GlobalForwardingRuleClient:
+ * <p>Sample for GlobalForwardingRuleClient:
+ *
  * <pre>
  * <code>
  * try (GlobalForwardingRuleClient globalForwardingRuleClient = GlobalForwardingRuleClient.create()) {
  *   String requestId = "";
- *   ProjectForwardingRuleName forwardingRule = ProjectForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
+ *   ProjectGlobalForwardingRuleName forwardingRule = ProjectGlobalForwardingRuleName.of("[PROJECT]", "[FORWARDING_RULE]");
  *   Operation response = globalForwardingRuleClient.deleteGlobalForwardingRule(requestId, forwardingRule);
  * }
  * </code>
  * </pre>
  *
- * =====================
- * GlobalOperationClient
- * =====================
+ * ===================== GlobalOperationClient =====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for GlobalOperationClient:
+ * <p>Sample for GlobalOperationClient:
+ *
  * <pre>
  * <code>
  * try (GlobalOperationClient globalOperationClient = GlobalOperationClient.create()) {
- *   ProjectOperationName operation = ProjectOperationName.of("[PROJECT]", "[OPERATION]");
+ *   ProjectGlobalOperationName operation = ProjectGlobalOperationName.of("[PROJECT]", "[OPERATION]");
  *   globalOperationClient.deleteGlobalOperation(operation);
  * }
  * </code>
  * </pre>
  *
- * =================
- * HealthCheckClient
- * =================
+ * ================= HealthCheckClient =================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for HealthCheckClient:
+ * <p>Sample for HealthCheckClient:
+ *
  * <pre>
  * <code>
  * try (HealthCheckClient healthCheckClient = HealthCheckClient.create()) {
  *   String requestId = "";
- *   ProjectHealthCheckName healthCheck = ProjectHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
+ *   ProjectGlobalHealthCheckName healthCheck = ProjectGlobalHealthCheckName.of("[PROJECT]", "[HEALTH_CHECK]");
  *   Operation response = healthCheckClient.deleteHealthCheck(requestId, healthCheck);
  * }
  * </code>
  * </pre>
  *
- * =====================
- * HttpHealthCheckClient
- * =====================
+ * ===================== HttpHealthCheckClient =====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for HttpHealthCheckClient:
+ * <p>Sample for HttpHealthCheckClient:
+ *
  * <pre>
  * <code>
  * try (HttpHealthCheckClient httpHealthCheckClient = HttpHealthCheckClient.create()) {
  *   String requestId = "";
- *   ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+ *   ProjectGlobalHttpHealthCheckName httpHealthCheck = ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
  *   Operation response = httpHealthCheckClient.deleteHttpHealthCheck(requestId, httpHealthCheck);
  * }
  * </code>
  * </pre>
  *
- * ======================
- * HttpsHealthCheckClient
- * ======================
+ * ====================== HttpsHealthCheckClient ======================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for HttpsHealthCheckClient:
+ * <p>Sample for HttpsHealthCheckClient:
+ *
  * <pre>
  * <code>
  * try (HttpsHealthCheckClient httpsHealthCheckClient = HttpsHealthCheckClient.create()) {
- *   ProjectHttpsHealthCheckName httpsHealthCheck = ProjectHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
+ *   ProjectGlobalHttpsHealthCheckName httpsHealthCheck = ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
  *   String requestId = "";
  *   Operation response = httpsHealthCheckClient.deleteHttpsHealthCheck(httpsHealthCheck, requestId);
  * }
  * </code>
  * </pre>
  *
- * ===========
- * ImageClient
- * ===========
+ * =========== ImageClient ===========
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for ImageClient:
+ * <p>Sample for ImageClient:
+ *
  * <pre>
  * <code>
  * try (ImageClient imageClient = ImageClient.create()) {
- *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+ *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
  *   String requestId = "";
  *   Operation response = imageClient.deleteImage(image, requestId);
  * }
  * </code>
  * </pre>
  *
- * ==========================
- * InstanceGroupManagerClient
- * ==========================
+ * ========================== InstanceGroupManagerClient ==========================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for InstanceGroupManagerClient:
+ * <p>Sample for InstanceGroupManagerClient:
+ *
  * <pre>
  * <code>
  * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
@@ -308,13 +291,12 @@
  * </code>
  * </pre>
  *
- * ===================
- * InstanceGroupClient
- * ===================
+ * =================== InstanceGroupClient ===================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for InstanceGroupClient:
+ * <p>Sample for InstanceGroupClient:
+ *
  * <pre>
  * <code>
  * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
@@ -326,30 +308,28 @@
  * </code>
  * </pre>
  *
- * ======================
- * InstanceTemplateClient
- * ======================
+ * ====================== InstanceTemplateClient ======================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for InstanceTemplateClient:
+ * <p>Sample for InstanceTemplateClient:
+ *
  * <pre>
  * <code>
  * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
- *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+ *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
  *   String requestId = "";
  *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate, requestId);
  * }
  * </code>
  * </pre>
  *
- * ==============
- * InstanceClient
- * ==============
+ * ============== InstanceClient ==============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for InstanceClient:
+ * <p>Sample for InstanceClient:
+ *
  * <pre>
  * <code>
  * try (InstanceClient instanceClient = InstanceClient.create()) {
@@ -362,13 +342,12 @@
  * </code>
  * </pre>
  *
- * ============================
- * InterconnectAttachmentClient
- * ============================
+ * ============================ InterconnectAttachmentClient ============================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for InterconnectAttachmentClient:
+ * <p>Sample for InterconnectAttachmentClient:
+ *
  * <pre>
  * <code>
  * try (InterconnectAttachmentClient interconnectAttachmentClient = InterconnectAttachmentClient.create()) {
@@ -379,62 +358,74 @@
  * </code>
  * </pre>
  *
- * ==========================
- * InterconnectLocationClient
- * ==========================
+ * ========================== InterconnectLocationClient ==========================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for InterconnectLocationClient:
+ * <p>Sample for InterconnectLocationClient:
+ *
  * <pre>
  * <code>
  * try (InterconnectLocationClient interconnectLocationClient = InterconnectLocationClient.create()) {
- *   ProjectInterconnectLocationName interconnectLocation = ProjectInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
+ *   ProjectGlobalInterconnectLocationName interconnectLocation = ProjectGlobalInterconnectLocationName.of("[PROJECT]", "[INTERCONNECT_LOCATION]");
  *   InterconnectLocation response = interconnectLocationClient.getInterconnectLocation(interconnectLocation);
  * }
  * </code>
  * </pre>
  *
- * ==================
- * InterconnectClient
- * ==================
+ * ================== InterconnectClient ==================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for InterconnectClient:
+ * <p>Sample for InterconnectClient:
+ *
  * <pre>
  * <code>
  * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
  *   String requestId = "";
- *   ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+ *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
  *   Operation response = interconnectClient.deleteInterconnect(requestId, interconnect);
  * }
  * </code>
  * </pre>
  *
- * =============
- * LicenseClient
- * =============
+ * ================= LicenseCodeClient =================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for LicenseClient:
+ * <p>Sample for LicenseCodeClient:
+ *
  * <pre>
  * <code>
- * try (LicenseClient licenseClient = LicenseClient.create()) {
- *   ProjectLicenseName license = ProjectLicenseName.of("[PROJECT]", "[LICENSE]");
- *   License response = licenseClient.getLicense(license);
+ * try (LicenseCodeClient licenseCodeClient = LicenseCodeClient.create()) {
+ *   ProjectGlobalLicenseCodeName licenseCode = ProjectGlobalLicenseCodeName.of("[PROJECT]", "[LICENSE_CODE]");
+ *   LicenseCode response = licenseCodeClient.getLicenseCode(licenseCode);
  * }
  * </code>
  * </pre>
  *
- * =================
- * MachineTypeClient
- * =================
+ * ============= LicenseClient =============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for MachineTypeClient:
+ * <p>Sample for LicenseClient:
+ *
+ * <pre>
+ * <code>
+ * try (LicenseClient licenseClient = LicenseClient.create()) {
+ *   ProjectGlobalLicenseName license = ProjectGlobalLicenseName.of("[PROJECT]", "[LICENSE]");
+ *   String requestId = "";
+ *   Operation response = licenseClient.deleteLicense(license, requestId);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================= MachineTypeClient =================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for MachineTypeClient:
+ *
  * <pre>
  * <code>
  * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
@@ -444,31 +435,29 @@
  * </code>
  * </pre>
  *
- * =============
- * NetworkClient
- * =============
+ * ============= NetworkClient =============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for NetworkClient:
+ * <p>Sample for NetworkClient:
+ *
  * <pre>
  * <code>
  * try (NetworkClient networkClient = NetworkClient.create()) {
  *   String requestId = "";
- *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+ *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
  *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
  *   Operation response = networkClient.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
  * }
  * </code>
  * </pre>
  *
- * =============
- * ProjectClient
- * =============
+ * ============= ProjectClient =============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for ProjectClient:
+ * <p>Sample for ProjectClient:
+ *
  * <pre>
  * <code>
  * try (ProjectClient projectClient = ProjectClient.create()) {
@@ -479,13 +468,12 @@
  * </code>
  * </pre>
  *
- * ======================
- * RegionAutoscalerClient
- * ======================
+ * ====================== RegionAutoscalerClient ======================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RegionAutoscalerClient:
+ * <p>Sample for RegionAutoscalerClient:
+ *
  * <pre>
  * <code>
  * try (RegionAutoscalerClient regionAutoscalerClient = RegionAutoscalerClient.create()) {
@@ -496,13 +484,12 @@
  * </code>
  * </pre>
  *
- * ==========================
- * RegionBackendServiceClient
- * ==========================
+ * ========================== RegionBackendServiceClient ==========================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RegionBackendServiceClient:
+ * <p>Sample for RegionBackendServiceClient:
+ *
  * <pre>
  * <code>
  * try (RegionBackendServiceClient regionBackendServiceClient = RegionBackendServiceClient.create()) {
@@ -513,13 +500,12 @@
  * </code>
  * </pre>
  *
- * ======================
- * RegionCommitmentClient
- * ======================
+ * ====================== RegionCommitmentClient ======================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RegionCommitmentClient:
+ * <p>Sample for RegionCommitmentClient:
+ *
  * <pre>
  * <code>
  * try (RegionCommitmentClient regionCommitmentClient = RegionCommitmentClient.create()) {
@@ -529,13 +515,13 @@
  * </code>
  * </pre>
  *
- * ================================
- * RegionInstanceGroupManagerClient
+ * ================================ RegionInstanceGroupManagerClient
  * ================================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RegionInstanceGroupManagerClient:
+ * <p>Sample for RegionInstanceGroupManagerClient:
+ *
  * <pre>
  * <code>
  * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
@@ -547,13 +533,12 @@
  * </code>
  * </pre>
  *
- * =========================
- * RegionInstanceGroupClient
- * =========================
+ * ========================= RegionInstanceGroupClient =========================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RegionInstanceGroupClient:
+ * <p>Sample for RegionInstanceGroupClient:
+ *
  * <pre>
  * <code>
  * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
@@ -563,13 +548,12 @@
  * </code>
  * </pre>
  *
- * =====================
- * RegionOperationClient
- * =====================
+ * ===================== RegionOperationClient =====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RegionOperationClient:
+ * <p>Sample for RegionOperationClient:
+ *
  * <pre>
  * <code>
  * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
@@ -579,13 +563,12 @@
  * </code>
  * </pre>
  *
- * ============
- * RegionClient
- * ============
+ * ============ RegionClient ============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RegionClient:
+ * <p>Sample for RegionClient:
+ *
  * <pre>
  * <code>
  * try (RegionClient regionClient = RegionClient.create()) {
@@ -595,13 +578,12 @@
  * </code>
  * </pre>
  *
- * ============
- * RouterClient
- * ============
+ * ============ RouterClient ============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RouterClient:
+ * <p>Sample for RouterClient:
+ *
  * <pre>
  * <code>
  * try (RouterClient routerClient = RouterClient.create()) {
@@ -612,64 +594,76 @@
  * </code>
  * </pre>
  *
- * ===========
- * RouteClient
- * ===========
+ * =========== RouteClient ===========
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for RouteClient:
+ * <p>Sample for RouteClient:
+ *
  * <pre>
  * <code>
  * try (RouteClient routeClient = RouteClient.create()) {
- *   ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
+ *   ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
  *   String requestId = "";
  *   Operation response = routeClient.deleteRoute(route, requestId);
  * }
  * </code>
  * </pre>
  *
- * ==============
- * SnapshotClient
- * ==============
+ * ============== SnapshotClient ==============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for SnapshotClient:
+ * <p>Sample for SnapshotClient:
+ *
  * <pre>
  * <code>
  * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
  *   String requestId = "";
- *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+ *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
  *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
  * }
  * </code>
  * </pre>
  *
- * ====================
- * SslCertificateClient
- * ====================
+ * ==================== SslCertificateClient ====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for SslCertificateClient:
+ * <p>Sample for SslCertificateClient:
+ *
  * <pre>
  * <code>
  * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
- *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+ *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
  *   String requestId = "";
  *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate, requestId);
  * }
  * </code>
  * </pre>
  *
- * ================
- * SubnetworkClient
- * ================
+ * =============== SslPolicyClient ===============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for SubnetworkClient:
+ * <p>Sample for SslPolicyClient:
+ *
+ * <pre>
+ * <code>
+ * try (SslPolicyClient sslPolicyClient = SslPolicyClient.create()) {
+ *   String requestId = "";
+ *   ProjectGlobalSslPolicyName sslPolicy = ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
+ *   Operation response = sslPolicyClient.deleteSslPolicy(requestId, sslPolicy);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================ SubnetworkClient ================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for SubnetworkClient:
+ *
  * <pre>
  * <code>
  * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
@@ -680,47 +674,44 @@
  * </code>
  * </pre>
  *
- * =====================
- * TargetHttpProxyClient
- * =====================
+ * ===================== TargetHttpProxyClient =====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for TargetHttpProxyClient:
+ * <p>Sample for TargetHttpProxyClient:
+ *
  * <pre>
  * <code>
  * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
  *   String requestId = "";
- *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+ *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
  *   Operation response = targetHttpProxyClient.deleteTargetHttpProxy(requestId, targetHttpProxy);
  * }
  * </code>
  * </pre>
  *
- * ======================
- * TargetHttpsProxyClient
- * ======================
+ * ====================== TargetHttpsProxyClient ======================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for TargetHttpsProxyClient:
+ * <p>Sample for TargetHttpsProxyClient:
+ *
  * <pre>
  * <code>
  * try (TargetHttpsProxyClient targetHttpsProxyClient = TargetHttpsProxyClient.create()) {
- *   ProjectTargetHttpsProxyName targetHttpsProxy = ProjectTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
+ *   ProjectGlobalTargetHttpsProxyName targetHttpsProxy = ProjectGlobalTargetHttpsProxyName.of("[PROJECT]", "[TARGET_HTTPS_PROXY]");
  *   String requestId = "";
  *   Operation response = targetHttpsProxyClient.deleteTargetHttpsProxy(targetHttpsProxy, requestId);
  * }
  * </code>
  * </pre>
  *
- * ====================
- * TargetInstanceClient
- * ====================
+ * ==================== TargetInstanceClient ====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for TargetInstanceClient:
+ * <p>Sample for TargetInstanceClient:
+ *
  * <pre>
  * <code>
  * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
@@ -731,13 +722,12 @@
  * </code>
  * </pre>
  *
- * ================
- * TargetPoolClient
- * ================
+ * ================ TargetPoolClient ================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for TargetPoolClient:
+ * <p>Sample for TargetPoolClient:
+ *
  * <pre>
  * <code>
  * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
@@ -749,47 +739,44 @@
  * </code>
  * </pre>
  *
- * ====================
- * TargetSslProxyClient
- * ====================
+ * ==================== TargetSslProxyClient ====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for TargetSslProxyClient:
+ * <p>Sample for TargetSslProxyClient:
+ *
  * <pre>
  * <code>
  * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
- *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+ *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
  *   String requestId = "";
  *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy, requestId);
  * }
  * </code>
  * </pre>
  *
- * ====================
- * TargetTcpProxyClient
- * ====================
+ * ==================== TargetTcpProxyClient ====================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for TargetTcpProxyClient:
+ * <p>Sample for TargetTcpProxyClient:
+ *
  * <pre>
  * <code>
  * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
  *   String requestId = "";
- *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+ *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
  *   Operation response = targetTcpProxyClient.deleteTargetTcpProxy(requestId, targetTcpProxy);
  * }
  * </code>
  * </pre>
  *
- * ======================
- * TargetVpnGatewayClient
- * ======================
+ * ====================== TargetVpnGatewayClient ======================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for TargetVpnGatewayClient:
+ * <p>Sample for TargetVpnGatewayClient:
+ *
  * <pre>
  * <code>
  * try (TargetVpnGatewayClient targetVpnGatewayClient = TargetVpnGatewayClient.create()) {
@@ -800,30 +787,28 @@
  * </code>
  * </pre>
  *
- * ============
- * UrlMapClient
- * ============
+ * ============ UrlMapClient ============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for UrlMapClient:
+ * <p>Sample for UrlMapClient:
+ *
  * <pre>
  * <code>
  * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
- *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+ *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
  *   String requestId = "";
  *   Operation response = urlMapClient.deleteUrlMap(urlMap, requestId);
  * }
  * </code>
  * </pre>
  *
- * ===============
- * VpnTunnelClient
- * ===============
+ * =============== VpnTunnelClient ===============
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for VpnTunnelClient:
+ * <p>Sample for VpnTunnelClient:
+ *
  * <pre>
  * <code>
  * try (VpnTunnelClient vpnTunnelClient = VpnTunnelClient.create()) {
@@ -834,13 +819,12 @@
  * </code>
  * </pre>
  *
- * ===================
- * ZoneOperationClient
- * ===================
+ * =================== ZoneOperationClient ===================
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for ZoneOperationClient:
+ * <p>Sample for ZoneOperationClient:
+ *
  * <pre>
  * <code>
  * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
@@ -850,13 +834,12 @@
  * </code>
  * </pre>
  *
- * ==========
- * ZoneClient
- * ==========
+ * ========== ZoneClient ==========
  *
- * Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
  *
- * Sample for ZoneClient:
+ * <p>Sample for ZoneClient:
+ *
  * <pre>
  * <code>
  * try (ZoneClient zoneClient = ZoneClient.create()) {
@@ -865,7 +848,5 @@
  * }
  * </code>
  * </pre>
- *
  */
-
 package com.google.cloud.compute.v1;

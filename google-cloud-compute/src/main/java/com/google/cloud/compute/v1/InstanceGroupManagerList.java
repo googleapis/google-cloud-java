@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,15 +47,13 @@ public final class InstanceGroupManagerList implements ApiMessage {
     this.warning = null;
   }
 
-
   private InstanceGroupManagerList(
       String id,
       List<InstanceGroupManager> items,
       String kind,
       String nextPageToken,
       String selfLink,
-      Warning warning
-      ) {
+      Warning warning) {
     this.id = id;
     this.items = items;
     this.kind = kind;
@@ -146,22 +143,24 @@ public final class InstanceGroupManagerList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupManagerList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupManagerList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupManagerList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupManagerList();
   }
@@ -270,21 +269,9 @@ public final class InstanceGroupManagerList implements ApiMessage {
       return this;
     }
 
-
     public InstanceGroupManagerList build() {
 
-
-
-
-
-      return new InstanceGroupManagerList(
-        id,
-        items,
-        kind,
-        nextPageToken,
-        selfLink,
-        warning
-      );
+      return new InstanceGroupManagerList(id, items, kind, nextPageToken, selfLink, warning);
     }
 
     public Builder clone() {
@@ -302,12 +289,23 @@ public final class InstanceGroupManagerList implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceGroupManagerList{"
-        + "id=" + id + ", "
-        + "items=" + items + ", "
-        + "kind=" + kind + ", "
-        + "nextPageToken=" + nextPageToken + ", "
-        + "selfLink=" + selfLink + ", "
-        + "warning=" + warning
+        + "id="
+        + id
+        + ", "
+        + "items="
+        + items
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "nextPageToken="
+        + nextPageToken
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -318,27 +316,18 @@ public final class InstanceGroupManagerList implements ApiMessage {
     }
     if (o instanceof InstanceGroupManagerList) {
       InstanceGroupManagerList that = (InstanceGroupManagerList) o;
-      return
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.items, that.getItemsList()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.id, that.getId())
+          && Objects.equals(this.items, that.getItemsList())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.nextPageToken, that.getNextPageToken())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      id,
-      items,
-      kind,
-      nextPageToken,
-      selfLink,
-      warning
-    );
+    return Objects.hash(id, items, kind, nextPageToken, selfLink, warning);
   }
 }

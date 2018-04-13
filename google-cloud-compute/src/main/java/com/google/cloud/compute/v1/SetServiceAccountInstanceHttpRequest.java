@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private SetServiceAccountInstanceHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -96,8 +91,11 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
     if (fieldNames.contains("instance") && instance != null) {
       fieldMap.put("instance", Collections.singletonList(String.valueOf(instance)));
     }
-    if (fieldNames.contains("instancesSetServiceAccountRequestResource") && instancesSetServiceAccountRequestResource != null) {
-      fieldMap.put("instancesSetServiceAccountRequestResource", Collections.singletonList(String.valueOf(instancesSetServiceAccountRequestResource)));
+    if (fieldNames.contains("instancesSetServiceAccountRequestResource")
+        && instancesSetServiceAccountRequestResource != null) {
+      fieldMap.put(
+          "instancesSetServiceAccountRequestResource",
+          Collections.singletonList(String.valueOf(instancesSetServiceAccountRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -198,22 +196,24 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetServiceAccountInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetServiceAccountInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetServiceAccountInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetServiceAccountInstanceHttpRequest();
   }
@@ -247,7 +247,8 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
         this.instance = other.instance;
       }
       if (other.getInstancesSetServiceAccountRequestResource() != null) {
-        this.instancesSetServiceAccountRequestResource = other.instancesSetServiceAccountRequestResource;
+        this.instancesSetServiceAccountRequestResource =
+            other.instancesSetServiceAccountRequestResource;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -272,7 +273,8 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
       this.callback = source.callback;
       this.fields = source.fields;
       this.instance = source.instance;
-      this.instancesSetServiceAccountRequestResource = source.instancesSetServiceAccountRequestResource;
+      this.instancesSetServiceAccountRequestResource =
+          source.instancesSetServiceAccountRequestResource;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
@@ -320,7 +322,8 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
       return instancesSetServiceAccountRequestResource;
     }
 
-    public Builder setInstancesSetServiceAccountRequestResource(InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource) {
+    public Builder setInstancesSetServiceAccountRequestResource(
+        InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource) {
       this.instancesSetServiceAccountRequestResource = instancesSetServiceAccountRequestResource;
       return this;
     }
@@ -370,36 +373,27 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public SetServiceAccountInstanceHttpRequest build() {
       String missing = "";
-
-
 
       if (instance == null) {
         missing += " instance";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetServiceAccountInstanceHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instance,
-        instancesSetServiceAccountRequestResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instance,
+          instancesSetServiceAccountRequestResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -408,7 +402,8 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setInstance(this.instance);
-      newBuilder.setInstancesSetServiceAccountRequestResource(this.instancesSetServiceAccountRequestResource);
+      newBuilder.setInstancesSetServiceAccountRequestResource(
+          this.instancesSetServiceAccountRequestResource);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
@@ -421,16 +416,35 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "SetServiceAccountInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instance=" + instance + ", "
-        + "instancesSetServiceAccountRequestResource=" + instancesSetServiceAccountRequestResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "instancesSetServiceAccountRequestResource="
+        + instancesSetServiceAccountRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +455,18 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
     }
     if (o instanceof SetServiceAccountInstanceHttpRequest) {
       SetServiceAccountInstanceHttpRequest that = (SetServiceAccountInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.instancesSetServiceAccountRequestResource, that.getInstancesSetServiceAccountRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(
+              this.instancesSetServiceAccountRequestResource,
+              that.getInstancesSetServiceAccountRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +474,15 @@ public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instance,
-      instancesSetServiceAccountRequestResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instance,
+        instancesSetServiceAccountRequestResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class AcceleratorConfig implements ApiMessage {
     this.acceleratorType = null;
   }
 
-
-  private AcceleratorConfig(
-      Integer acceleratorCount,
-      String acceleratorType
-      ) {
+  private AcceleratorConfig(Integer acceleratorCount, String acceleratorType) {
     this.acceleratorCount = acceleratorCount;
     this.acceleratorType = acceleratorType;
   }
@@ -86,22 +79,24 @@ public final class AcceleratorConfig implements ApiMessage {
     return acceleratorType;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AcceleratorConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AcceleratorConfig getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AcceleratorConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AcceleratorConfig();
   }
@@ -146,13 +141,9 @@ public final class AcceleratorConfig implements ApiMessage {
       return this;
     }
 
-
     public AcceleratorConfig build() {
 
-      return new AcceleratorConfig(
-        acceleratorCount,
-        acceleratorType
-      );
+      return new AcceleratorConfig(acceleratorCount, acceleratorType);
     }
 
     public Builder clone() {
@@ -166,8 +157,11 @@ public final class AcceleratorConfig implements ApiMessage {
   @Override
   public String toString() {
     return "AcceleratorConfig{"
-        + "acceleratorCount=" + acceleratorCount + ", "
-        + "acceleratorType=" + acceleratorType
+        + "acceleratorCount="
+        + acceleratorCount
+        + ", "
+        + "acceleratorType="
+        + acceleratorType
         + "}";
   }
 
@@ -178,19 +172,14 @@ public final class AcceleratorConfig implements ApiMessage {
     }
     if (o instanceof AcceleratorConfig) {
       AcceleratorConfig that = (AcceleratorConfig) o;
-      return
-          Objects.equals(this.acceleratorCount, that.getAcceleratorCount()) &&
-          Objects.equals(this.acceleratorType, that.getAcceleratorType())
-          ;
+      return Objects.equals(this.acceleratorCount, that.getAcceleratorCount())
+          && Objects.equals(this.acceleratorType, that.getAcceleratorType());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      acceleratorCount,
-      acceleratorType
-    );
+    return Objects.hash(acceleratorCount, acceleratorType);
   }
 }

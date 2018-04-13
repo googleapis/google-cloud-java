@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private InsertBackendServiceHttpRequest(
       String access_token,
       BackendService backendServiceResource,
@@ -67,8 +63,7 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
       String project,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.backendServiceResource = backendServiceResource;
     this.callback = callback;
@@ -88,7 +83,9 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
       fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
     }
     if (fieldNames.contains("backendServiceResource") && backendServiceResource != null) {
-      fieldMap.put("backendServiceResource", Collections.singletonList(String.valueOf(backendServiceResource)));
+      fieldMap.put(
+          "backendServiceResource",
+          Collections.singletonList(String.valueOf(backendServiceResource)));
     }
     if (fieldNames.contains("callback") && callback != null) {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
@@ -198,22 +195,24 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertBackendServiceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertBackendServiceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertBackendServiceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertBackendServiceHttpRequest();
   }
@@ -370,36 +369,27 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertBackendServiceHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (project == null) {
         missing += " project";
       }
 
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertBackendServiceHttpRequest(
-        access_token,
-        backendServiceResource,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        project,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          backendServiceResource,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          project,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertBackendServiceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "backendServiceResource=" + backendServiceResource + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "project=" + project + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "backendServiceResource="
+        + backendServiceResource
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "project="
+        + project
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertBackendServiceHttpRequest) {
       InsertBackendServiceHttpRequest that = (InsertBackendServiceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.backendServiceResource, that.getBackendServiceResource()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.backendServiceResource, that.getBackendServiceResource())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class InsertBackendServiceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      backendServiceResource,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      project,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        backendServiceResource,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        project,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

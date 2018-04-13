@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     this.zone = null;
   }
 
-
   private InsertTargetInstanceHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       String requestId,
       TargetInstance targetInstanceResource,
       String userIp,
-      String zone
-      ) {
+      String zone) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -106,7 +101,9 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("targetInstanceResource") && targetInstanceResource != null) {
-      fieldMap.put("targetInstanceResource", Collections.singletonList(String.valueOf(targetInstanceResource)));
+      fieldMap.put(
+          "targetInstanceResource",
+          Collections.singletonList(String.valueOf(targetInstanceResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +195,24 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertTargetInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertTargetInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertTargetInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertTargetInstanceHttpRequest();
   }
@@ -370,17 +369,8 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertTargetInstanceHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
-
 
       if (zone == null) {
         missing += " zone";
@@ -389,17 +379,16 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertTargetInstanceHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetInstanceResource,
-        userIp,
-        zone
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetInstanceResource,
+          userIp,
+          zone);
     }
 
     public Builder clone() {
@@ -421,16 +410,35 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertTargetInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetInstanceResource=" + targetInstanceResource + ", "
-        + "userIp=" + userIp + ", "
-        + "zone=" + zone
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetInstanceResource="
+        + targetInstanceResource
+        + ", "
+        + "userIp="
+        + userIp
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -441,18 +449,16 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertTargetInstanceHttpRequest) {
       InsertTargetInstanceHttpRequest that = (InsertTargetInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetInstanceResource, that.getTargetInstanceResource()) &&
-          Objects.equals(this.userIp, that.getUserIp()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.targetInstanceResource, that.getTargetInstanceResource())
+          && Objects.equals(this.userIp, that.getUserIp())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -460,16 +466,15 @@ public final class InsertTargetInstanceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetInstanceResource,
-      userIp,
-      zone
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetInstanceResource,
+        userIp,
+        zone);
   }
 }

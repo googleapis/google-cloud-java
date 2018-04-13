@@ -15,6 +15,12 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.deleteSslCertificateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.getSslCertificateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.insertSslCertificateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.listSslCertificatesMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,19 +31,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.deleteSslCertificateMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.getSslCertificateMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.insertSslCertificateMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonSslCertificateStub.listSslCertificatesMethodDescriptor;
 import com.google.cloud.compute.v1.stub.SslCertificateStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -47,15 +46,15 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class SslCertificateClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          deleteSslCertificateMethodDescriptor,
-          getSslCertificateMethodDescriptor,
-          insertSslCertificateMethodDescriptor,
-          listSslCertificatesMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, SslCertificateStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              deleteSslCertificateMethodDescriptor,
+              getSslCertificateMethodDescriptor,
+              insertSslCertificateMethodDescriptor,
+              listSslCertificatesMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, SslCertificateStubSettings.getDefaultEndpoint());
 
   private static SslCertificateClient client;
   private static SslCertificateSettings clientSettings;
@@ -64,13 +63,13 @@ public class SslCertificateClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         SslCertificateSettings.newBuilder()
-           .setTransportChannelProvider(
-               SslCertificateSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       SslCertificateClient.create(clientSettings);
+            .setTransportChannelProvider(
+                SslCertificateSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = SslCertificateClient.create(clientSettings);
   }
 
   @After
@@ -107,55 +106,65 @@ public class SslCertificateClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+    ProjectGlobalSslCertificateName sslCertificate =
+        ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
     String requestId = "requestId37109963";
 
-    Operation actualResponse =
-        client.deleteSslCertificate(sslCertificate, requestId);
+    Operation actualResponse = client.deleteSslCertificate(sslCertificate, requestId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteSslCertificateExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+      ProjectGlobalSslCertificateName sslCertificate =
+          ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
       String requestId = "requestId37109963";
 
       client.deleteSslCertificate(sslCertificate, requestId);
@@ -176,41 +185,51 @@ public class SslCertificateClientTest {
     String description = "description-1724546052";
     String id = "id3355";
     String selfLink = "selfLink-1691268851";
-    SslCertificate expectedResponse = SslCertificate.newBuilder()
-      .setPrivateKey(privateKey)
-      .setKind(kind)
-      .setCertificate(certificate)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setDescription(description)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .build();
+    SslCertificate expectedResponse =
+        SslCertificate.newBuilder()
+            .setPrivateKey(privateKey)
+            .setKind(kind)
+            .setCertificate(certificate)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setDescription(description)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+    ProjectGlobalSslCertificateName sslCertificate =
+        ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
 
-    SslCertificate actualResponse =
-        client.getSslCertificate(sslCertificate);
+    SslCertificate actualResponse = client.getSslCertificate(sslCertificate);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getSslCertificateExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+      ProjectGlobalSslCertificateName sslCertificate =
+          ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
 
       client.getSslCertificate(sslCertificate);
       Assert.fail("No exception raised");
@@ -243,29 +262,30 @@ public class SslCertificateClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
@@ -279,16 +299,24 @@ public class SslCertificateClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void insertSslCertificateExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -312,13 +340,14 @@ public class SslCertificateClientTest {
     String selfLink = "selfLink-1691268851";
     SslCertificate itemsElement = SslCertificate.newBuilder().build();
     List<SslCertificate> items = Arrays.asList(itemsElement);
-    SslCertificateList expectedResponse = SslCertificateList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    SslCertificateList expectedResponse =
+        SslCertificateList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -327,22 +356,29 @@ public class SslCertificateClientTest {
 
     List<SslCertificate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listSslCertificatesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -354,5 +390,4 @@ public class SslCertificateClientTest {
       // Expected exception
     }
   }
-
 }

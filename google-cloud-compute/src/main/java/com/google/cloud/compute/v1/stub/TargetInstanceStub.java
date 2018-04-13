@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetInstanceClient.AggregatedListTargetInstancesPagedResponse;
+import static com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -24,15 +27,9 @@ import com.google.cloud.compute.v1.GetTargetInstanceHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetInstanceHttpRequest;
 import com.google.cloud.compute.v1.ListTargetInstancesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneName;
-import com.google.cloud.compute.v1.ProjectZoneTargetInstanceName;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
-import static com.google.cloud.compute.v1.TargetInstanceClient.AggregatedListTargetInstancesPagedResponse;
-import static com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
 import com.google.cloud.compute.v1.TargetInstanceList;
-import com.google.cloud.compute.v1.TargetInstancesScopedList;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -45,15 +42,19 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TargetInstanceStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListTargetInstancesHttpRequest, AggregatedListTargetInstancesPagedResponse> aggregatedListTargetInstancesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListTargetInstancesPagedCallable()");
+  public UnaryCallable<
+          AggregatedListTargetInstancesHttpRequest, AggregatedListTargetInstancesPagedResponse>
+      aggregatedListTargetInstancesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetInstancesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList> aggregatedListTargetInstancesCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListTargetInstancesCallable()");
+  public UnaryCallable<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>
+      aggregatedListTargetInstancesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetInstancesCallable()");
   }
 
   @BetaApi
@@ -72,13 +73,17 @@ public abstract class TargetInstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetInstancesHttpRequest, ListTargetInstancesPagedResponse> listTargetInstancesPagedCallable() {
+  public UnaryCallable<ListTargetInstancesHttpRequest, ListTargetInstancesPagedResponse>
+      listTargetInstancesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetInstancesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetInstancesHttpRequest, TargetInstanceList> listTargetInstancesCallable() {
+  public UnaryCallable<ListTargetInstancesHttpRequest, TargetInstanceList>
+      listTargetInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetInstancesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

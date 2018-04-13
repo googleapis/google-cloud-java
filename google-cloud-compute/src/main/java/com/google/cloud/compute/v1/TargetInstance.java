@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class TargetInstance implements ApiMessage {
     this.zone = null;
   }
 
-
   private TargetInstance(
       String creationTimestamp,
       String description,
@@ -64,8 +60,7 @@ public final class TargetInstance implements ApiMessage {
       String name,
       String natPolicy,
       String selfLink,
-      String zone
-      ) {
+      String zone) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -81,7 +76,8 @@ public final class TargetInstance implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -184,22 +180,24 @@ public final class TargetInstance implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetInstance prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetInstance getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetInstance DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetInstance();
   }
@@ -342,27 +340,10 @@ public final class TargetInstance implements ApiMessage {
       return this;
     }
 
-
     public TargetInstance build() {
 
-
-
-
-
-
-
-
       return new TargetInstance(
-        creationTimestamp,
-        description,
-        id,
-        instance,
-        kind,
-        name,
-        natPolicy,
-        selfLink,
-        zone
-      );
+          creationTimestamp, description, id, instance, kind, name, natPolicy, selfLink, zone);
     }
 
     public Builder clone() {
@@ -383,15 +364,32 @@ public final class TargetInstance implements ApiMessage {
   @Override
   public String toString() {
     return "TargetInstance{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "instance=" + instance + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "natPolicy=" + natPolicy + ", "
-        + "selfLink=" + selfLink + ", "
-        + "zone=" + zone
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "natPolicy="
+        + natPolicy
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -402,17 +400,15 @@ public final class TargetInstance implements ApiMessage {
     }
     if (o instanceof TargetInstance) {
       TargetInstance that = (TargetInstance) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.natPolicy, that.getNatPolicy()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.natPolicy, that.getNatPolicy())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -420,15 +416,6 @@ public final class TargetInstance implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      id,
-      instance,
-      kind,
-      name,
-      natPolicy,
-      selfLink,
-      zone
-    );
+        creationTimestamp, description, id, instance, kind, name, natPolicy, selfLink, zone);
   }
 }

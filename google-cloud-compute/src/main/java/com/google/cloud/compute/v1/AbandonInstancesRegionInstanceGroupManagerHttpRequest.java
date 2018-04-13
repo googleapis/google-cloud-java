@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +36,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
-  private final RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource;
+  private final RegionInstanceGroupManagersAbandonInstancesRequest
+      regionInstanceGroupManagersAbandonInstancesRequestResource;
   private final String requestId;
   private final String userIp;
 
@@ -56,7 +54,6 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     this.userIp = null;
   }
 
-
   private AbandonInstancesRegionInstanceGroupManagerHttpRequest(
       String access_token,
       String callback,
@@ -65,10 +62,10 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       String key,
       String prettyPrint,
       String quotaUser,
-      RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource,
+      RegionInstanceGroupManagersAbandonInstancesRequest
+          regionInstanceGroupManagersAbandonInstancesRequestResource,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -76,7 +73,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
-    this.regionInstanceGroupManagersAbandonInstancesRequestResource = regionInstanceGroupManagersAbandonInstancesRequestResource;
+    this.regionInstanceGroupManagersAbandonInstancesRequestResource =
+        regionInstanceGroupManagersAbandonInstancesRequestResource;
     this.requestId = requestId;
     this.userIp = userIp;
   }
@@ -94,7 +92,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
     if (fieldNames.contains("instanceGroupManager") && instanceGroupManager != null) {
-      fieldMap.put("instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
+      fieldMap.put(
+          "instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -105,8 +104,12 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
     }
-    if (fieldNames.contains("regionInstanceGroupManagersAbandonInstancesRequestResource") && regionInstanceGroupManagersAbandonInstancesRequestResource != null) {
-      fieldMap.put("regionInstanceGroupManagersAbandonInstancesRequestResource", Collections.singletonList(String.valueOf(regionInstanceGroupManagersAbandonInstancesRequestResource)));
+    if (fieldNames.contains("regionInstanceGroupManagersAbandonInstancesRequestResource")
+        && regionInstanceGroupManagersAbandonInstancesRequestResource != null) {
+      fieldMap.put(
+          "regionInstanceGroupManagersAbandonInstancesRequestResource",
+          Collections.singletonList(
+              String.valueOf(regionInstanceGroupManagersAbandonInstancesRequestResource)));
     }
     if (fieldNames.contains("requestId") && requestId != null) {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
@@ -186,7 +189,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     return quotaUser;
   }
 
-  public RegionInstanceGroupManagersAbandonInstancesRequest getRegionInstanceGroupManagersAbandonInstancesRequestResource() {
+  public RegionInstanceGroupManagersAbandonInstancesRequest
+      getRegionInstanceGroupManagersAbandonInstancesRequestResource() {
     return regionInstanceGroupManagersAbandonInstancesRequestResource;
   }
 
@@ -198,22 +202,25 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(AbandonInstancesRegionInstanceGroupManagerHttpRequest prototype) {
+
+  public static Builder newBuilder(
+      AbandonInstancesRegionInstanceGroupManagerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AbandonInstancesRegionInstanceGroupManagerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AbandonInstancesRegionInstanceGroupManagerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AbandonInstancesRegionInstanceGroupManagerHttpRequest();
   }
@@ -226,14 +233,16 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
     private String key;
     private String prettyPrint;
     private String quotaUser;
-    private RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource;
+    private RegionInstanceGroupManagersAbandonInstancesRequest
+        regionInstanceGroupManagersAbandonInstancesRequestResource;
     private String requestId;
     private String userIp;
 
     Builder() {}
 
     public Builder mergeFrom(AbandonInstancesRegionInstanceGroupManagerHttpRequest other) {
-      if (other == AbandonInstancesRegionInstanceGroupManagerHttpRequest.getDefaultInstance()) return this;
+      if (other == AbandonInstancesRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
+        return this;
       if (other.getAccessToken() != null) {
         this.access_token = other.access_token;
       }
@@ -256,7 +265,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
         this.quotaUser = other.quotaUser;
       }
       if (other.getRegionInstanceGroupManagersAbandonInstancesRequestResource() != null) {
-        this.regionInstanceGroupManagersAbandonInstancesRequestResource = other.regionInstanceGroupManagersAbandonInstancesRequestResource;
+        this.regionInstanceGroupManagersAbandonInstancesRequestResource =
+            other.regionInstanceGroupManagersAbandonInstancesRequestResource;
       }
       if (other.getRequestId() != null) {
         this.requestId = other.requestId;
@@ -275,7 +285,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
-      this.regionInstanceGroupManagersAbandonInstancesRequestResource = source.regionInstanceGroupManagersAbandonInstancesRequestResource;
+      this.regionInstanceGroupManagersAbandonInstancesRequestResource =
+          source.regionInstanceGroupManagersAbandonInstancesRequestResource;
       this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
@@ -343,12 +354,16 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       return this;
     }
 
-    public RegionInstanceGroupManagersAbandonInstancesRequest getRegionInstanceGroupManagersAbandonInstancesRequestResource() {
+    public RegionInstanceGroupManagersAbandonInstancesRequest
+        getRegionInstanceGroupManagersAbandonInstancesRequestResource() {
       return regionInstanceGroupManagersAbandonInstancesRequestResource;
     }
 
-    public Builder setRegionInstanceGroupManagersAbandonInstancesRequestResource(RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource) {
-      this.regionInstanceGroupManagersAbandonInstancesRequestResource = regionInstanceGroupManagersAbandonInstancesRequestResource;
+    public Builder setRegionInstanceGroupManagersAbandonInstancesRequestResource(
+        RegionInstanceGroupManagersAbandonInstancesRequest
+            regionInstanceGroupManagersAbandonInstancesRequestResource) {
+      this.regionInstanceGroupManagersAbandonInstancesRequestResource =
+          regionInstanceGroupManagersAbandonInstancesRequestResource;
       return this;
     }
 
@@ -370,36 +385,27 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       return this;
     }
 
-
     public AbandonInstancesRegionInstanceGroupManagerHttpRequest build() {
       String missing = "";
-
-
 
       if (instanceGroupManager == null) {
         missing += " instanceGroupManager";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new AbandonInstancesRegionInstanceGroupManagerHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroupManager,
-        key,
-        prettyPrint,
-        quotaUser,
-        regionInstanceGroupManagersAbandonInstancesRequestResource,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroupManager,
+          key,
+          prettyPrint,
+          quotaUser,
+          regionInstanceGroupManagersAbandonInstancesRequestResource,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -411,7 +417,8 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
-      newBuilder.setRegionInstanceGroupManagersAbandonInstancesRequestResource(this.regionInstanceGroupManagersAbandonInstancesRequestResource);
+      newBuilder.setRegionInstanceGroupManagersAbandonInstancesRequestResource(
+          this.regionInstanceGroupManagersAbandonInstancesRequestResource);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -421,16 +428,35 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
   @Override
   public String toString() {
     return "AbandonInstancesRegionInstanceGroupManagerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroupManager=" + instanceGroupManager + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "regionInstanceGroupManagersAbandonInstancesRequestResource=" + regionInstanceGroupManagersAbandonInstancesRequestResource + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroupManager="
+        + instanceGroupManager
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "regionInstanceGroupManagersAbandonInstancesRequestResource="
+        + regionInstanceGroupManagersAbandonInstancesRequestResource
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +466,20 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
       return true;
     }
     if (o instanceof AbandonInstancesRegionInstanceGroupManagerHttpRequest) {
-      AbandonInstancesRegionInstanceGroupManagerHttpRequest that = (AbandonInstancesRegionInstanceGroupManagerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.regionInstanceGroupManagersAbandonInstancesRequestResource, that.getRegionInstanceGroupManagersAbandonInstancesRequestResource()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      AbandonInstancesRegionInstanceGroupManagerHttpRequest that =
+          (AbandonInstancesRegionInstanceGroupManagerHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(
+              this.regionInstanceGroupManagersAbandonInstancesRequestResource,
+              that.getRegionInstanceGroupManagersAbandonInstancesRequestResource())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +487,15 @@ public final class AbandonInstancesRegionInstanceGroupManagerHttpRequest impleme
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroupManager,
-      key,
-      prettyPrint,
-      quotaUser,
-      regionInstanceGroupManagersAbandonInstancesRequestResource,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroupManager,
+        key,
+        prettyPrint,
+        quotaUser,
+        regionInstanceGroupManagersAbandonInstancesRequestResource,
+        requestId,
+        userIp);
   }
 }

@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
     this.guestAccelerators = null;
   }
 
-
-  private InstancesSetMachineResourcesRequest(
-      List<AcceleratorConfig> guestAccelerators
-      ) {
+  private InstancesSetMachineResourcesRequest(List<AcceleratorConfig> guestAccelerators) {
     this.guestAccelerators = guestAccelerators;
   }
 
@@ -76,22 +71,24 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
     return guestAccelerators;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstancesSetMachineResourcesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstancesSetMachineResourcesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstancesSetMachineResourcesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstancesSetMachineResourcesRequest();
   }
@@ -130,11 +127,8 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
       return this;
     }
 
-
     public InstancesSetMachineResourcesRequest build() {
-      return new InstancesSetMachineResourcesRequest(
-        guestAccelerators
-      );
+      return new InstancesSetMachineResourcesRequest(guestAccelerators);
     }
 
     public Builder clone() {
@@ -146,9 +140,7 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "InstancesSetMachineResourcesRequest{"
-        + "guestAccelerators=" + guestAccelerators
-        + "}";
+    return "InstancesSetMachineResourcesRequest{" + "guestAccelerators=" + guestAccelerators + "}";
   }
 
   @Override
@@ -158,17 +150,13 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
     }
     if (o instanceof InstancesSetMachineResourcesRequest) {
       InstancesSetMachineResourcesRequest that = (InstancesSetMachineResourcesRequest) o;
-      return
-          Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList())
-          ;
+      return Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      guestAccelerators
-    );
+    return Objects.hash(guestAccelerators);
   }
 }

@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class TargetPoolsRemoveInstanceRequest implements ApiMessage {
     this.instances = null;
   }
 
-
-  private TargetPoolsRemoveInstanceRequest(
-      List<InstanceReference> instances
-      ) {
+  private TargetPoolsRemoveInstanceRequest(List<InstanceReference> instances) {
     this.instances = instances;
   }
 
@@ -76,22 +71,24 @@ public final class TargetPoolsRemoveInstanceRequest implements ApiMessage {
     return instances;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetPoolsRemoveInstanceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetPoolsRemoveInstanceRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetPoolsRemoveInstanceRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetPoolsRemoveInstanceRequest();
   }
@@ -130,11 +127,8 @@ public final class TargetPoolsRemoveInstanceRequest implements ApiMessage {
       return this;
     }
 
-
     public TargetPoolsRemoveInstanceRequest build() {
-      return new TargetPoolsRemoveInstanceRequest(
-        instances
-      );
+      return new TargetPoolsRemoveInstanceRequest(instances);
     }
 
     public Builder clone() {
@@ -146,9 +140,7 @@ public final class TargetPoolsRemoveInstanceRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "TargetPoolsRemoveInstanceRequest{"
-        + "instances=" + instances
-        + "}";
+    return "TargetPoolsRemoveInstanceRequest{" + "instances=" + instances + "}";
   }
 
   @Override
@@ -158,17 +150,13 @@ public final class TargetPoolsRemoveInstanceRequest implements ApiMessage {
     }
     if (o instanceof TargetPoolsRemoveInstanceRequest) {
       TargetPoolsRemoveInstanceRequest that = (TargetPoolsRemoveInstanceRequest) o;
-      return
-          Objects.equals(this.instances, that.getInstancesList())
-          ;
+      return Objects.equals(this.instances, that.getInstancesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instances
-    );
+    return Objects.hash(instances);
   }
 }

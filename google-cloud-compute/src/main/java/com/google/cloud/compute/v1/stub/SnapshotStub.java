@@ -15,19 +15,17 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotHttpRequest;
 import com.google.cloud.compute.v1.GetSnapshotHttpRequest;
-import com.google.cloud.compute.v1.GlobalSetLabelsRequest;
 import com.google.cloud.compute.v1.ListSnapshotsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectSnapshotName;
 import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
-import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
 import com.google.cloud.compute.v1.SnapshotList;
 import javax.annotation.Generated;
 
@@ -41,7 +39,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class SnapshotStub implements BackgroundResource {
 
-
   @BetaApi
   public UnaryCallable<DeleteSnapshotHttpRequest, Operation> deleteSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSnapshotCallable()");
@@ -53,7 +50,8 @@ public abstract class SnapshotStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListSnapshotsHttpRequest, ListSnapshotsPagedResponse> listSnapshotsPagedCallable() {
+  public UnaryCallable<ListSnapshotsHttpRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSnapshotsPagedCallable()");
   }
 
@@ -67,4 +65,6 @@ public abstract class SnapshotStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setLabelsSnapshotCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

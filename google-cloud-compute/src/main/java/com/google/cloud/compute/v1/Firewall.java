@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -70,7 +69,6 @@ public final class Firewall implements ApiMessage {
     this.targetTags = null;
   }
 
-
   private Firewall(
       List<Allowed> allowed,
       String creationTimestamp,
@@ -88,8 +86,7 @@ public final class Firewall implements ApiMessage {
       List<String> sourceServiceAccounts,
       List<String> sourceTags,
       List<String> targetServiceAccounts,
-      List<String> targetTags
-      ) {
+      List<String> targetTags) {
     this.allowed = allowed;
     this.creationTimestamp = creationTimestamp;
     this.denied = denied;
@@ -120,7 +117,8 @@ public final class Firewall implements ApiMessage {
       fieldMap.put("allowed", stringList.build());
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("denied") && denied != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -328,22 +326,24 @@ public final class Firewall implements ApiMessage {
     return targetTags;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Firewall prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Firewall getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Firewall DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Firewall();
   }
@@ -662,43 +662,26 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
-
     public Firewall build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new Firewall(
-        allowed,
-        creationTimestamp,
-        denied,
-        description,
-        destinationRanges,
-        direction,
-        id,
-        kind,
-        name,
-        network,
-        priority,
-        selfLink,
-        sourceRanges,
-        sourceServiceAccounts,
-        sourceTags,
-        targetServiceAccounts,
-        targetTags
-      );
+          allowed,
+          creationTimestamp,
+          denied,
+          description,
+          destinationRanges,
+          direction,
+          id,
+          kind,
+          name,
+          network,
+          priority,
+          selfLink,
+          sourceRanges,
+          sourceServiceAccounts,
+          sourceTags,
+          targetServiceAccounts,
+          targetTags);
     }
 
     public Builder clone() {
@@ -727,23 +710,56 @@ public final class Firewall implements ApiMessage {
   @Override
   public String toString() {
     return "Firewall{"
-        + "allowed=" + allowed + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "denied=" + denied + ", "
-        + "description=" + description + ", "
-        + "destinationRanges=" + destinationRanges + ", "
-        + "direction=" + direction + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "network=" + network + ", "
-        + "priority=" + priority + ", "
-        + "selfLink=" + selfLink + ", "
-        + "sourceRanges=" + sourceRanges + ", "
-        + "sourceServiceAccounts=" + sourceServiceAccounts + ", "
-        + "sourceTags=" + sourceTags + ", "
-        + "targetServiceAccounts=" + targetServiceAccounts + ", "
-        + "targetTags=" + targetTags
+        + "allowed="
+        + allowed
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "denied="
+        + denied
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "destinationRanges="
+        + destinationRanges
+        + ", "
+        + "direction="
+        + direction
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "priority="
+        + priority
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "sourceRanges="
+        + sourceRanges
+        + ", "
+        + "sourceServiceAccounts="
+        + sourceServiceAccounts
+        + ", "
+        + "sourceTags="
+        + sourceTags
+        + ", "
+        + "targetServiceAccounts="
+        + targetServiceAccounts
+        + ", "
+        + "targetTags="
+        + targetTags
         + "}";
   }
 
@@ -754,25 +770,23 @@ public final class Firewall implements ApiMessage {
     }
     if (o instanceof Firewall) {
       Firewall that = (Firewall) o;
-      return
-          Objects.equals(this.allowed, that.getAllowedList()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.denied, that.getDeniedList()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.destinationRanges, that.getDestinationRangesList()) &&
-          Objects.equals(this.direction, that.getDirection()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.priority, that.getPriority()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.sourceRanges, that.getSourceRangesList()) &&
-          Objects.equals(this.sourceServiceAccounts, that.getSourceServiceAccountsList()) &&
-          Objects.equals(this.sourceTags, that.getSourceTagsList()) &&
-          Objects.equals(this.targetServiceAccounts, that.getTargetServiceAccountsList()) &&
-          Objects.equals(this.targetTags, that.getTargetTagsList())
-          ;
+      return Objects.equals(this.allowed, that.getAllowedList())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.denied, that.getDeniedList())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.destinationRanges, that.getDestinationRangesList())
+          && Objects.equals(this.direction, that.getDirection())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.priority, that.getPriority())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.sourceRanges, that.getSourceRangesList())
+          && Objects.equals(this.sourceServiceAccounts, that.getSourceServiceAccountsList())
+          && Objects.equals(this.sourceTags, that.getSourceTagsList())
+          && Objects.equals(this.targetServiceAccounts, that.getTargetServiceAccountsList())
+          && Objects.equals(this.targetTags, that.getTargetTagsList());
     }
     return false;
   }
@@ -780,23 +794,22 @@ public final class Firewall implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      allowed,
-      creationTimestamp,
-      denied,
-      description,
-      destinationRanges,
-      direction,
-      id,
-      kind,
-      name,
-      network,
-      priority,
-      selfLink,
-      sourceRanges,
-      sourceServiceAccounts,
-      sourceTags,
-      targetServiceAccounts,
-      targetTags
-    );
+        allowed,
+        creationTimestamp,
+        denied,
+        description,
+        destinationRanges,
+        direction,
+        id,
+        kind,
+        name,
+        network,
+        priority,
+        selfLink,
+        sourceRanges,
+        sourceServiceAccounts,
+        sourceTags,
+        targetServiceAccounts,
+        targetTags);
   }
 }

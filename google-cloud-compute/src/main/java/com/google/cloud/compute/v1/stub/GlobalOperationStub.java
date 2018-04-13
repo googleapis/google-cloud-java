@@ -15,21 +15,19 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.GlobalOperationClient.AggregatedListGlobalOperationsPagedResponse;
+import static com.google.cloud.compute.v1.GlobalOperationClient.ListGlobalOperationsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListGlobalOperationsHttpRequest;
 import com.google.cloud.compute.v1.DeleteGlobalOperationHttpRequest;
 import com.google.cloud.compute.v1.GetGlobalOperationHttpRequest;
-import static com.google.cloud.compute.v1.GlobalOperationClient.AggregatedListGlobalOperationsPagedResponse;
-import static com.google.cloud.compute.v1.GlobalOperationClient.ListGlobalOperationsPagedResponse;
 import com.google.cloud.compute.v1.ListGlobalOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationAggregatedList;
 import com.google.cloud.compute.v1.OperationList;
-import com.google.cloud.compute.v1.OperationsScopedList;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectOperationName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -42,15 +40,19 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class GlobalOperationStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListGlobalOperationsHttpRequest, AggregatedListGlobalOperationsPagedResponse> aggregatedListGlobalOperationsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListGlobalOperationsPagedCallable()");
+  public UnaryCallable<
+          AggregatedListGlobalOperationsHttpRequest, AggregatedListGlobalOperationsPagedResponse>
+      aggregatedListGlobalOperationsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListGlobalOperationsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList> aggregatedListGlobalOperationsCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListGlobalOperationsCallable()");
+  public UnaryCallable<AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList>
+      aggregatedListGlobalOperationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListGlobalOperationsCallable()");
   }
 
   @BetaApi
@@ -64,13 +66,17 @@ public abstract class GlobalOperationStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListGlobalOperationsHttpRequest, ListGlobalOperationsPagedResponse> listGlobalOperationsPagedCallable() {
+  public UnaryCallable<ListGlobalOperationsHttpRequest, ListGlobalOperationsPagedResponse>
+      listGlobalOperationsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listGlobalOperationsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListGlobalOperationsHttpRequest, OperationList> listGlobalOperationsCallable() {
+  public UnaryCallable<ListGlobalOperationsHttpRequest, OperationList>
+      listGlobalOperationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listGlobalOperationsCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

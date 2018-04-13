@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
     this.machineType = null;
   }
 
-
-  private InstancesSetMachineTypeRequest(
-      String machineType
-      ) {
+  private InstancesSetMachineTypeRequest(String machineType) {
     this.machineType = machineType;
   }
 
@@ -72,22 +66,24 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
     return machineType;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstancesSetMachineTypeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstancesSetMachineTypeRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstancesSetMachineTypeRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstancesSetMachineTypeRequest();
   }
@@ -118,11 +114,8 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
       return this;
     }
 
-
     public InstancesSetMachineTypeRequest build() {
-      return new InstancesSetMachineTypeRequest(
-        machineType
-      );
+      return new InstancesSetMachineTypeRequest(machineType);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "InstancesSetMachineTypeRequest{"
-        + "machineType=" + machineType
-        + "}";
+    return "InstancesSetMachineTypeRequest{" + "machineType=" + machineType + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
     }
     if (o instanceof InstancesSetMachineTypeRequest) {
       InstancesSetMachineTypeRequest that = (InstancesSetMachineTypeRequest) o;
-      return
-          Objects.equals(this.machineType, that.getMachineType())
-          ;
+      return Objects.equals(this.machineType, that.getMachineType());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      machineType
-    );
+    return Objects.hash(machineType);
   }
 }

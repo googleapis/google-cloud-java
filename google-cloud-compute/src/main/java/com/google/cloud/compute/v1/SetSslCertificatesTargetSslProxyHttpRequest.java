@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +36,8 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
   private final String prettyPrint;
   private final String quotaUser;
   private final String requestId;
-  private final TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource;
+  private final TargetSslProxiesSetSslCertificatesRequest
+      targetSslProxiesSetSslCertificatesRequestResource;
   private final String targetSslProxy;
   private final String userIp;
 
@@ -56,7 +54,6 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
     this.userIp = null;
   }
 
-
   private SetSslCertificatesTargetSslProxyHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +64,7 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
       String requestId,
       TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource,
       String targetSslProxy,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -76,7 +72,8 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.requestId = requestId;
-    this.targetSslProxiesSetSslCertificatesRequestResource = targetSslProxiesSetSslCertificatesRequestResource;
+    this.targetSslProxiesSetSslCertificatesRequestResource =
+        targetSslProxiesSetSslCertificatesRequestResource;
     this.targetSslProxy = targetSslProxy;
     this.userIp = userIp;
   }
@@ -105,8 +102,12 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
     if (fieldNames.contains("requestId") && requestId != null) {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
-    if (fieldNames.contains("targetSslProxiesSetSslCertificatesRequestResource") && targetSslProxiesSetSslCertificatesRequestResource != null) {
-      fieldMap.put("targetSslProxiesSetSslCertificatesRequestResource", Collections.singletonList(String.valueOf(targetSslProxiesSetSslCertificatesRequestResource)));
+    if (fieldNames.contains("targetSslProxiesSetSslCertificatesRequestResource")
+        && targetSslProxiesSetSslCertificatesRequestResource != null) {
+      fieldMap.put(
+          "targetSslProxiesSetSslCertificatesRequestResource",
+          Collections.singletonList(
+              String.valueOf(targetSslProxiesSetSslCertificatesRequestResource)));
     }
     if (fieldNames.contains("targetSslProxy") && targetSslProxy != null) {
       fieldMap.put("targetSslProxy", Collections.singletonList(String.valueOf(targetSslProxy)));
@@ -186,7 +187,8 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
     return requestId;
   }
 
-  public TargetSslProxiesSetSslCertificatesRequest getTargetSslProxiesSetSslCertificatesRequestResource() {
+  public TargetSslProxiesSetSslCertificatesRequest
+      getTargetSslProxiesSetSslCertificatesRequestResource() {
     return targetSslProxiesSetSslCertificatesRequestResource;
   }
 
@@ -198,22 +200,24 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetSslCertificatesTargetSslProxyHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetSslCertificatesTargetSslProxyHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetSslCertificatesTargetSslProxyHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetSslCertificatesTargetSslProxyHttpRequest();
   }
@@ -226,7 +230,8 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
     private String prettyPrint;
     private String quotaUser;
     private String requestId;
-    private TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource;
+    private TargetSslProxiesSetSslCertificatesRequest
+        targetSslProxiesSetSslCertificatesRequestResource;
     private String targetSslProxy;
     private String userIp;
 
@@ -256,7 +261,8 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
         this.requestId = other.requestId;
       }
       if (other.getTargetSslProxiesSetSslCertificatesRequestResource() != null) {
-        this.targetSslProxiesSetSslCertificatesRequestResource = other.targetSslProxiesSetSslCertificatesRequestResource;
+        this.targetSslProxiesSetSslCertificatesRequestResource =
+            other.targetSslProxiesSetSslCertificatesRequestResource;
       }
       if (other.getTargetSslProxy() != null) {
         this.targetSslProxy = other.targetSslProxy;
@@ -275,7 +281,8 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
-      this.targetSslProxiesSetSslCertificatesRequestResource = source.targetSslProxiesSetSslCertificatesRequestResource;
+      this.targetSslProxiesSetSslCertificatesRequestResource =
+          source.targetSslProxiesSetSslCertificatesRequestResource;
       this.targetSslProxy = source.targetSslProxy;
       this.userIp = source.userIp;
     }
@@ -343,12 +350,16 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
       return this;
     }
 
-    public TargetSslProxiesSetSslCertificatesRequest getTargetSslProxiesSetSslCertificatesRequestResource() {
+    public TargetSslProxiesSetSslCertificatesRequest
+        getTargetSslProxiesSetSslCertificatesRequestResource() {
       return targetSslProxiesSetSslCertificatesRequestResource;
     }
 
-    public Builder setTargetSslProxiesSetSslCertificatesRequestResource(TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
-      this.targetSslProxiesSetSslCertificatesRequestResource = targetSslProxiesSetSslCertificatesRequestResource;
+    public Builder setTargetSslProxiesSetSslCertificatesRequestResource(
+        TargetSslProxiesSetSslCertificatesRequest
+            targetSslProxiesSetSslCertificatesRequestResource) {
+      this.targetSslProxiesSetSslCertificatesRequestResource =
+          targetSslProxiesSetSslCertificatesRequestResource;
       return this;
     }
 
@@ -370,16 +381,8 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
       return this;
     }
 
-
     public SetSslCertificatesTargetSslProxyHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
 
       if (targetSslProxy == null) {
         missing += " targetSslProxy";
@@ -389,17 +392,16 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetSslCertificatesTargetSslProxyHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetSslProxiesSetSslCertificatesRequestResource,
-        targetSslProxy,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetSslProxiesSetSslCertificatesRequestResource,
+          targetSslProxy,
+          userIp);
     }
 
     public Builder clone() {
@@ -411,7 +413,8 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
-      newBuilder.setTargetSslProxiesSetSslCertificatesRequestResource(this.targetSslProxiesSetSslCertificatesRequestResource);
+      newBuilder.setTargetSslProxiesSetSslCertificatesRequestResource(
+          this.targetSslProxiesSetSslCertificatesRequestResource);
       newBuilder.setTargetSslProxy(this.targetSslProxy);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -421,16 +424,35 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
   @Override
   public String toString() {
     return "SetSslCertificatesTargetSslProxyHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetSslProxiesSetSslCertificatesRequestResource=" + targetSslProxiesSetSslCertificatesRequestResource + ", "
-        + "targetSslProxy=" + targetSslProxy + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetSslProxiesSetSslCertificatesRequestResource="
+        + targetSslProxiesSetSslCertificatesRequestResource
+        + ", "
+        + "targetSslProxy="
+        + targetSslProxy
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +462,20 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
       return true;
     }
     if (o instanceof SetSslCertificatesTargetSslProxyHttpRequest) {
-      SetSslCertificatesTargetSslProxyHttpRequest that = (SetSslCertificatesTargetSslProxyHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetSslProxiesSetSslCertificatesRequestResource, that.getTargetSslProxiesSetSslCertificatesRequestResource()) &&
-          Objects.equals(this.targetSslProxy, that.getTargetSslProxy()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      SetSslCertificatesTargetSslProxyHttpRequest that =
+          (SetSslCertificatesTargetSslProxyHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(
+              this.targetSslProxiesSetSslCertificatesRequestResource,
+              that.getTargetSslProxiesSetSslCertificatesRequestResource())
+          && Objects.equals(this.targetSslProxy, that.getTargetSslProxy())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +483,15 @@ public final class SetSslCertificatesTargetSslProxyHttpRequest implements ApiMes
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetSslProxiesSetSslCertificatesRequestResource,
-      targetSslProxy,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetSslProxiesSetSslCertificatesRequestResource,
+        targetSslProxy,
+        userIp);
   }
 }

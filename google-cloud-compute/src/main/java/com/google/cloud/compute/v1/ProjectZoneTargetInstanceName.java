@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectZoneTargetInstanceName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectZoneTargetInstanceName implements ResourceName {
   private final String project;
   private final String targetInstance;
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}/targetInstances/{targetInstance}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/zones/{zone}/targetInstances/{targetInstance}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -55,28 +52,12 @@ public final class ProjectZoneTargetInstanceName implements com.google.api.resou
   }
 
   public static ProjectZoneTargetInstanceName of(
-      String project,
-      String targetInstance,
-      String zone
-      ) {
-    return newBuilder()
-    .setProject(project)
-    .setTargetInstance(targetInstance)
-    .setZone(zone)
-      .build();
+      String project, String targetInstance, String zone) {
+    return newBuilder().setProject(project).setTargetInstance(targetInstance).setZone(zone).build();
   }
 
-  public static String format(
-      String project,
-      String targetInstance,
-      String zone
-      ) {
-    return of(
-        project,
-        targetInstance,
-        zone
-        )
-        .toString();
+  public static String format(String project, String targetInstance, String zone) {
+    return of(project, targetInstance, zone).toString();
   }
 
   public String getProject() {
@@ -90,7 +71,6 @@ public final class ProjectZoneTargetInstanceName implements com.google.api.resou
   public String getZone() {
     return zone;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +92,20 @@ public final class ProjectZoneTargetInstanceName implements com.google.api.resou
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectZoneTargetInstanceName> newFactory() {
     return new ResourceNameFactory<ProjectZoneTargetInstanceName>() {
-      public ProjectZoneTargetInstanceName parse(String formattedString) {return ProjectZoneTargetInstanceName.parse(formattedString);}
+      public ProjectZoneTargetInstanceName parse(String formattedString) {
+        return ProjectZoneTargetInstanceName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectZoneTargetInstanceName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectZoneTargetInstanceName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("project"),
-      matchMap.get("targetInstance"),
-      matchMap.get("zone")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectZoneTargetInstanceName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("targetInstance"), matchMap.get("zone"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +120,11 @@ public final class ProjectZoneTargetInstanceName implements com.google.api.resou
     public String getProject() {
       return project;
     }
+
     public String getTargetInstance() {
       return targetInstance;
     }
+
     public String getZone() {
       return zone;
     }
@@ -152,10 +133,12 @@ public final class ProjectZoneTargetInstanceName implements com.google.api.resou
       this.project = project;
       return this;
     }
+
     public Builder setTargetInstance(String targetInstance) {
       this.targetInstance = targetInstance;
       return this;
     }
+
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;
@@ -163,7 +146,7 @@ public final class ProjectZoneTargetInstanceName implements com.google.api.resou
 
     private Builder() {}
 
-    public Builder (ProjectZoneTargetInstanceName projectZoneTargetInstanceName) {
+    public Builder(ProjectZoneTargetInstanceName projectZoneTargetInstanceName) {
       project = projectZoneTargetInstanceName.project;
       targetInstance = projectZoneTargetInstanceName.targetInstance;
       zone = projectZoneTargetInstanceName.zone;
@@ -179,8 +162,7 @@ public final class ProjectZoneTargetInstanceName implements com.google.api.resou
     return PATH_TEMPLATE.instantiate(
         "project", project,
         "targetInstance", targetInstance,
-        "zone", zone
-        );
+        "zone", zone);
   }
 
   @Override
@@ -190,21 +172,15 @@ public final class ProjectZoneTargetInstanceName implements com.google.api.resou
     }
     if (o instanceof ProjectZoneTargetInstanceName) {
       ProjectZoneTargetInstanceName that = (ProjectZoneTargetInstanceName) o;
-      return
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.targetInstance, that.getTargetInstance()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.targetInstance, that.getTargetInstance())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      project,
-      targetInstance,
-      zone
-    );
+    return Objects.hash(project, targetInstance, zone);
   }
 }

@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,15 +47,13 @@ public final class SnapshotList implements ApiMessage {
     this.warning = null;
   }
 
-
   private SnapshotList(
       String id,
       List<Snapshot> items,
       String kind,
       String nextPageToken,
       String selfLink,
-      Warning warning
-      ) {
+      Warning warning) {
     this.id = id;
     this.items = items;
     this.kind = kind;
@@ -146,22 +143,24 @@ public final class SnapshotList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SnapshotList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SnapshotList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SnapshotList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SnapshotList();
   }
@@ -270,21 +269,9 @@ public final class SnapshotList implements ApiMessage {
       return this;
     }
 
-
     public SnapshotList build() {
 
-
-
-
-
-      return new SnapshotList(
-        id,
-        items,
-        kind,
-        nextPageToken,
-        selfLink,
-        warning
-      );
+      return new SnapshotList(id, items, kind, nextPageToken, selfLink, warning);
     }
 
     public Builder clone() {
@@ -302,12 +289,23 @@ public final class SnapshotList implements ApiMessage {
   @Override
   public String toString() {
     return "SnapshotList{"
-        + "id=" + id + ", "
-        + "items=" + items + ", "
-        + "kind=" + kind + ", "
-        + "nextPageToken=" + nextPageToken + ", "
-        + "selfLink=" + selfLink + ", "
-        + "warning=" + warning
+        + "id="
+        + id
+        + ", "
+        + "items="
+        + items
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "nextPageToken="
+        + nextPageToken
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -318,27 +316,18 @@ public final class SnapshotList implements ApiMessage {
     }
     if (o instanceof SnapshotList) {
       SnapshotList that = (SnapshotList) o;
-      return
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.items, that.getItemsList()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.id, that.getId())
+          && Objects.equals(this.items, that.getItemsList())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.nextPageToken, that.getNextPageToken())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      id,
-      items,
-      kind,
-      nextPageToken,
-      selfLink,
-      warning
-    );
+    return Objects.hash(id, items, kind, nextPageToken, selfLink, warning);
   }
 }

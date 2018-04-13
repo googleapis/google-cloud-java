@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -52,7 +51,6 @@ public final class NetworkInterface implements ApiMessage {
     this.subnetwork = null;
   }
 
-
   private NetworkInterface(
       List<AccessConfig> accessConfigs,
       List<AliasIpRange> aliasIpRanges,
@@ -61,8 +59,7 @@ public final class NetworkInterface implements ApiMessage {
       String name,
       String network,
       String networkIP,
-      String subnetwork
-      ) {
+      String subnetwork) {
     this.accessConfigs = accessConfigs;
     this.aliasIpRanges = aliasIpRanges;
     this.fingerprint = fingerprint;
@@ -178,22 +175,24 @@ public final class NetworkInterface implements ApiMessage {
     return subnetwork;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(NetworkInterface prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static NetworkInterface getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final NetworkInterface DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new NetworkInterface();
   }
@@ -338,25 +337,10 @@ public final class NetworkInterface implements ApiMessage {
       return this;
     }
 
-
     public NetworkInterface build() {
 
-
-
-
-
-
-
       return new NetworkInterface(
-        accessConfigs,
-        aliasIpRanges,
-        fingerprint,
-        kind,
-        name,
-        network,
-        networkIP,
-        subnetwork
-      );
+          accessConfigs, aliasIpRanges, fingerprint, kind, name, network, networkIP, subnetwork);
     }
 
     public Builder clone() {
@@ -376,14 +360,29 @@ public final class NetworkInterface implements ApiMessage {
   @Override
   public String toString() {
     return "NetworkInterface{"
-        + "accessConfigs=" + accessConfigs + ", "
-        + "aliasIpRanges=" + aliasIpRanges + ", "
-        + "fingerprint=" + fingerprint + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "network=" + network + ", "
-        + "networkIP=" + networkIP + ", "
-        + "subnetwork=" + subnetwork
+        + "accessConfigs="
+        + accessConfigs
+        + ", "
+        + "aliasIpRanges="
+        + aliasIpRanges
+        + ", "
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "networkIP="
+        + networkIP
+        + ", "
+        + "subnetwork="
+        + subnetwork
         + "}";
   }
 
@@ -394,16 +393,14 @@ public final class NetworkInterface implements ApiMessage {
     }
     if (o instanceof NetworkInterface) {
       NetworkInterface that = (NetworkInterface) o;
-      return
-          Objects.equals(this.accessConfigs, that.getAccessConfigsList()) &&
-          Objects.equals(this.aliasIpRanges, that.getAliasIpRangesList()) &&
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.networkIP, that.getNetworkIP()) &&
-          Objects.equals(this.subnetwork, that.getSubnetwork())
-          ;
+      return Objects.equals(this.accessConfigs, that.getAccessConfigsList())
+          && Objects.equals(this.aliasIpRanges, that.getAliasIpRangesList())
+          && Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.networkIP, that.getNetworkIP())
+          && Objects.equals(this.subnetwork, that.getSubnetwork());
     }
     return false;
   }
@@ -411,14 +408,6 @@ public final class NetworkInterface implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      accessConfigs,
-      aliasIpRanges,
-      fingerprint,
-      kind,
-      name,
-      network,
-      networkIP,
-      subnetwork
-    );
+        accessConfigs, aliasIpRanges, fingerprint, kind, name, network, networkIP, subnetwork);
   }
 }

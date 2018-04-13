@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
     this.rangeName = null;
   }
 
-
-  private SubnetworkSecondaryRange(
-      String ipCidrRange,
-      String rangeName
-      ) {
+  private SubnetworkSecondaryRange(String ipCidrRange, String rangeName) {
     this.ipCidrRange = ipCidrRange;
     this.rangeName = rangeName;
   }
@@ -86,22 +79,24 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
     return rangeName;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SubnetworkSecondaryRange prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SubnetworkSecondaryRange getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SubnetworkSecondaryRange DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SubnetworkSecondaryRange();
   }
@@ -146,13 +141,9 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
       return this;
     }
 
-
     public SubnetworkSecondaryRange build() {
 
-      return new SubnetworkSecondaryRange(
-        ipCidrRange,
-        rangeName
-      );
+      return new SubnetworkSecondaryRange(ipCidrRange, rangeName);
     }
 
     public Builder clone() {
@@ -166,8 +157,11 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
   @Override
   public String toString() {
     return "SubnetworkSecondaryRange{"
-        + "ipCidrRange=" + ipCidrRange + ", "
-        + "rangeName=" + rangeName
+        + "ipCidrRange="
+        + ipCidrRange
+        + ", "
+        + "rangeName="
+        + rangeName
         + "}";
   }
 
@@ -178,19 +172,14 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
     }
     if (o instanceof SubnetworkSecondaryRange) {
       SubnetworkSecondaryRange that = (SubnetworkSecondaryRange) o;
-      return
-          Objects.equals(this.ipCidrRange, that.getIpCidrRange()) &&
-          Objects.equals(this.rangeName, that.getRangeName())
-          ;
+      return Objects.equals(this.ipCidrRange, that.getIpCidrRange())
+          && Objects.equals(this.rangeName, that.getRangeName());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      ipCidrRange,
-      rangeName
-    );
+    return Objects.hash(ipCidrRange, rangeName);
   }
 }

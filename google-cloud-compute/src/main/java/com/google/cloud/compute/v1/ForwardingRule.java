@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -70,7 +69,6 @@ public final class ForwardingRule implements ApiMessage {
     this.target = null;
   }
 
-
   private ForwardingRule(
       String backendService,
       String creationTimestamp,
@@ -88,8 +86,7 @@ public final class ForwardingRule implements ApiMessage {
       String region,
       String selfLink,
       String subnetwork,
-      String target
-      ) {
+      String target) {
     this.backendService = backendService;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -116,7 +113,8 @@ public final class ForwardingRule implements ApiMessage {
       fieldMap.put("backendService", Collections.singletonList(String.valueOf(backendService)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -137,7 +135,8 @@ public final class ForwardingRule implements ApiMessage {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
     }
     if (fieldNames.contains("loadBalancingScheme") && loadBalancingScheme != null) {
-      fieldMap.put("loadBalancingScheme", Collections.singletonList(String.valueOf(loadBalancingScheme)));
+      fieldMap.put(
+          "loadBalancingScheme", Collections.singletonList(String.valueOf(loadBalancingScheme)));
     }
     if (fieldNames.contains("name") && name != null) {
       fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
@@ -300,22 +299,24 @@ public final class ForwardingRule implements ApiMessage {
     return target;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ForwardingRule prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ForwardingRule getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ForwardingRule DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ForwardingRule();
   }
@@ -578,43 +579,26 @@ public final class ForwardingRule implements ApiMessage {
       return this;
     }
 
-
     public ForwardingRule build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new ForwardingRule(
-        backendService,
-        creationTimestamp,
-        description,
-        iPAddress,
-        iPProtocol,
-        id,
-        ipVersion,
-        kind,
-        loadBalancingScheme,
-        name,
-        network,
-        portRange,
-        ports,
-        region,
-        selfLink,
-        subnetwork,
-        target
-      );
+          backendService,
+          creationTimestamp,
+          description,
+          iPAddress,
+          iPProtocol,
+          id,
+          ipVersion,
+          kind,
+          loadBalancingScheme,
+          name,
+          network,
+          portRange,
+          ports,
+          region,
+          selfLink,
+          subnetwork,
+          target);
     }
 
     public Builder clone() {
@@ -643,23 +627,56 @@ public final class ForwardingRule implements ApiMessage {
   @Override
   public String toString() {
     return "ForwardingRule{"
-        + "backendService=" + backendService + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "iPAddress=" + iPAddress + ", "
-        + "iPProtocol=" + iPProtocol + ", "
-        + "id=" + id + ", "
-        + "ipVersion=" + ipVersion + ", "
-        + "kind=" + kind + ", "
-        + "loadBalancingScheme=" + loadBalancingScheme + ", "
-        + "name=" + name + ", "
-        + "network=" + network + ", "
-        + "portRange=" + portRange + ", "
-        + "ports=" + ports + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "subnetwork=" + subnetwork + ", "
-        + "target=" + target
+        + "backendService="
+        + backendService
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "iPAddress="
+        + iPAddress
+        + ", "
+        + "iPProtocol="
+        + iPProtocol
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "ipVersion="
+        + ipVersion
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "loadBalancingScheme="
+        + loadBalancingScheme
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "portRange="
+        + portRange
+        + ", "
+        + "ports="
+        + ports
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "subnetwork="
+        + subnetwork
+        + ", "
+        + "target="
+        + target
         + "}";
   }
 
@@ -670,25 +687,23 @@ public final class ForwardingRule implements ApiMessage {
     }
     if (o instanceof ForwardingRule) {
       ForwardingRule that = (ForwardingRule) o;
-      return
-          Objects.equals(this.backendService, that.getBackendService()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.iPAddress, that.getIPAddress()) &&
-          Objects.equals(this.iPProtocol, that.getIPProtocol()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.ipVersion, that.getIpVersion()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.portRange, that.getPortRange()) &&
-          Objects.equals(this.ports, that.getPortsList()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.subnetwork, that.getSubnetwork()) &&
-          Objects.equals(this.target, that.getTarget())
-          ;
+      return Objects.equals(this.backendService, that.getBackendService())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.iPAddress, that.getIPAddress())
+          && Objects.equals(this.iPProtocol, that.getIPProtocol())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.ipVersion, that.getIpVersion())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.portRange, that.getPortRange())
+          && Objects.equals(this.ports, that.getPortsList())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.subnetwork, that.getSubnetwork())
+          && Objects.equals(this.target, that.getTarget());
     }
     return false;
   }
@@ -696,23 +711,22 @@ public final class ForwardingRule implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      backendService,
-      creationTimestamp,
-      description,
-      iPAddress,
-      iPProtocol,
-      id,
-      ipVersion,
-      kind,
-      loadBalancingScheme,
-      name,
-      network,
-      portRange,
-      ports,
-      region,
-      selfLink,
-      subnetwork,
-      target
-    );
+        backendService,
+        creationTimestamp,
+        description,
+        iPAddress,
+        iPProtocol,
+        id,
+        ipVersion,
+        kind,
+        loadBalancingScheme,
+        name,
+        network,
+        portRange,
+        ports,
+        region,
+        selfLink,
+        subnetwork,
+        target);
   }
 }

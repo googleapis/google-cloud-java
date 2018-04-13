@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class AutoscalerStatusDetails implements ApiMessage {
     this.type = null;
   }
 
-
-  private AutoscalerStatusDetails(
-      String message,
-      String type
-      ) {
+  private AutoscalerStatusDetails(String message, String type) {
     this.message = message;
     this.type = type;
   }
@@ -86,22 +79,24 @@ public final class AutoscalerStatusDetails implements ApiMessage {
     return type;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AutoscalerStatusDetails prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AutoscalerStatusDetails getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AutoscalerStatusDetails DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AutoscalerStatusDetails();
   }
@@ -146,13 +141,9 @@ public final class AutoscalerStatusDetails implements ApiMessage {
       return this;
     }
 
-
     public AutoscalerStatusDetails build() {
 
-      return new AutoscalerStatusDetails(
-        message,
-        type
-      );
+      return new AutoscalerStatusDetails(message, type);
     }
 
     public Builder clone() {
@@ -165,10 +156,7 @@ public final class AutoscalerStatusDetails implements ApiMessage {
 
   @Override
   public String toString() {
-    return "AutoscalerStatusDetails{"
-        + "message=" + message + ", "
-        + "type=" + type
-        + "}";
+    return "AutoscalerStatusDetails{" + "message=" + message + ", " + "type=" + type + "}";
   }
 
   @Override
@@ -178,19 +166,14 @@ public final class AutoscalerStatusDetails implements ApiMessage {
     }
     if (o instanceof AutoscalerStatusDetails) {
       AutoscalerStatusDetails that = (AutoscalerStatusDetails) o;
-      return
-          Objects.equals(this.message, that.getMessage()) &&
-          Objects.equals(this.type, that.getType())
-          ;
+      return Objects.equals(this.message, that.getMessage())
+          && Objects.equals(this.type, that.getType());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      message,
-      type
-    );
+    return Objects.hash(message, type);
   }
 }

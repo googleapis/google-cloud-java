@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class GetSnapshotHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private GetSnapshotHttpRequest(
       String access_token,
       String callback,
@@ -61,8 +57,7 @@ public final class GetSnapshotHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String snapshot,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -170,22 +165,24 @@ public final class GetSnapshotHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GetSnapshotHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetSnapshotHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GetSnapshotHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GetSnapshotHttpRequest();
   }
@@ -314,14 +311,8 @@ public final class GetSnapshotHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public GetSnapshotHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (snapshot == null) {
         missing += " snapshot";
@@ -331,15 +322,7 @@ public final class GetSnapshotHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetSnapshotHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        snapshot,
-        userIp
-      );
+          access_token, callback, fields, key, prettyPrint, quotaUser, snapshot, userIp);
     }
 
     public Builder clone() {
@@ -359,14 +342,29 @@ public final class GetSnapshotHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "GetSnapshotHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "snapshot=" + snapshot + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "snapshot="
+        + snapshot
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -377,16 +375,14 @@ public final class GetSnapshotHttpRequest implements ApiMessage {
     }
     if (o instanceof GetSnapshotHttpRequest) {
       GetSnapshotHttpRequest that = (GetSnapshotHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.snapshot, that.getSnapshot()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.snapshot, that.getSnapshot())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -394,14 +390,6 @@ public final class GetSnapshotHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      snapshot,
-      userIp
-    );
+        access_token, callback, fields, key, prettyPrint, quotaUser, snapshot, userIp);
   }
 }

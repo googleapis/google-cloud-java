@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.TargetInstanceStub;
 import com.google.cloud.compute.v1.stub.TargetInstanceStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -60,33 +50,32 @@ import javax.annotation.Generated;
  * </pre>
  *
  * <p>Note: close() needs to be called on the targetInstanceClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of TargetInstanceSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,27 +105,23 @@ public class TargetInstanceClient implements BackgroundResource {
   private final TargetInstanceSettings settings;
   private final TargetInstanceStub stub;
 
-
-
-  /**
-   * Constructs an instance of TargetInstanceClient with default settings.
-   */
+  /** Constructs an instance of TargetInstanceClient with default settings. */
   public static final TargetInstanceClient create() throws IOException {
     return create(TargetInstanceSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of TargetInstanceClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of TargetInstanceClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final TargetInstanceClient create(TargetInstanceSettings settings) throws IOException {
+  public static final TargetInstanceClient create(TargetInstanceSettings settings)
+      throws IOException {
     return new TargetInstanceClient(settings);
   }
 
   /**
-   * Constructs an instance of TargetInstanceClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use TargetInstanceSettings}.
+   * Constructs an instance of TargetInstanceClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use TargetInstanceSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetInstanceClient create(TargetInstanceStub stub) {
@@ -144,9 +129,9 @@ public class TargetInstanceClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of TargetInstanceClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of TargetInstanceClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected TargetInstanceClient(TargetInstanceSettings settings) throws IOException {
     this.settings = settings;
@@ -168,12 +153,12 @@ public class TargetInstanceClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of target instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -187,11 +172,12 @@ public class TargetInstanceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetInstancesPagedResponse aggregatedListTargetInstances(ProjectName project) {
+  public final AggregatedListTargetInstancesPagedResponse aggregatedListTargetInstances(
+      ProjectName project) {
     AggregatedListTargetInstancesHttpRequest request =
         AggregatedListTargetInstancesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListTargetInstances(request);
   }
 
@@ -199,7 +185,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -213,11 +200,10 @@ public class TargetInstanceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetInstancesPagedResponse aggregatedListTargetInstances(String project) {
+  public final AggregatedListTargetInstancesPagedResponse aggregatedListTargetInstances(
+      String project) {
     AggregatedListTargetInstancesHttpRequest request =
-        AggregatedListTargetInstancesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListTargetInstancesHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListTargetInstances(request);
   }
 
@@ -225,7 +211,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -242,16 +229,17 @@ public class TargetInstanceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetInstancesPagedResponse aggregatedListTargetInstances(AggregatedListTargetInstancesHttpRequest request) {
-    return aggregatedListTargetInstancesPagedCallable()
-        .call(request);
+  public final AggregatedListTargetInstancesPagedResponse aggregatedListTargetInstances(
+      AggregatedListTargetInstancesHttpRequest request) {
+    return aggregatedListTargetInstancesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of target instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -267,7 +255,9 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListTargetInstancesHttpRequest, AggregatedListTargetInstancesPagedResponse> aggregatedListTargetInstancesPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListTargetInstancesHttpRequest, AggregatedListTargetInstancesPagedResponse>
+      aggregatedListTargetInstancesPagedCallable() {
     return stub.aggregatedListTargetInstancesPagedCallable();
   }
 
@@ -275,7 +265,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target instances.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -298,7 +289,8 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList> aggregatedListTargetInstancesCallable() {
+  public final UnaryCallable<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>
+      aggregatedListTargetInstancesCallable() {
     return stub.aggregatedListTargetInstancesCallable();
   }
 
@@ -306,7 +298,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Deletes the specified TargetInstance resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   String requestId = "";
@@ -315,22 +308,27 @@ public class TargetInstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetInstance Name of the TargetInstance resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetInstance(String requestId, ProjectZoneTargetInstanceName targetInstance) {
+  public final Operation deleteTargetInstance(
+      String requestId, ProjectZoneTargetInstanceName targetInstance) {
 
     DeleteTargetInstanceHttpRequest request =
         DeleteTargetInstanceHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetInstance(targetInstance == null ? null : targetInstance.toString())
-        .build();
+            .setRequestId(requestId)
+            .setTargetInstance(targetInstance == null ? null : targetInstance.toString())
+            .build();
     return deleteTargetInstance(request);
   }
 
@@ -338,7 +336,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Deletes the specified TargetInstance resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   String requestId = "";
@@ -347,11 +346,15 @@ public class TargetInstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetInstance Name of the TargetInstance resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -360,9 +363,9 @@ public class TargetInstanceClient implements BackgroundResource {
 
     DeleteTargetInstanceHttpRequest request =
         DeleteTargetInstanceHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetInstance(targetInstance)
-        .build();
+            .setRequestId(requestId)
+            .setTargetInstance(targetInstance)
+            .build();
     return deleteTargetInstance(request);
   }
 
@@ -370,7 +373,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Deletes the specified TargetInstance resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   String requestId = "";
@@ -395,7 +399,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Deletes the specified TargetInstance resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   String requestId = "";
@@ -411,15 +416,18 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteTargetInstanceHttpRequest, Operation> deleteTargetInstanceCallable() {
+  public final UnaryCallable<DeleteTargetInstanceHttpRequest, Operation>
+      deleteTargetInstanceCallable() {
     return stub.deleteTargetInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetInstance resource. Get a list of available target instances by making a list() request.
+   * Returns the specified TargetInstance resource. Get a list of available target instances by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
@@ -435,16 +443,18 @@ public class TargetInstanceClient implements BackgroundResource {
 
     GetTargetInstanceHttpRequest request =
         GetTargetInstanceHttpRequest.newBuilder()
-        .setTargetInstance(targetInstance == null ? null : targetInstance.toString())
-        .build();
+            .setTargetInstance(targetInstance == null ? null : targetInstance.toString())
+            .build();
     return getTargetInstance(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetInstance resource. Get a list of available target instances by making a list() request.
+   * Returns the specified TargetInstance resource. Get a list of available target instances by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
@@ -459,17 +469,17 @@ public class TargetInstanceClient implements BackgroundResource {
   public final TargetInstance getTargetInstance(String targetInstance) {
 
     GetTargetInstanceHttpRequest request =
-        GetTargetInstanceHttpRequest.newBuilder()
-        .setTargetInstance(targetInstance)
-        .build();
+        GetTargetInstanceHttpRequest.newBuilder().setTargetInstance(targetInstance).build();
     return getTargetInstance(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetInstance resource. Get a list of available target instances by making a list() request.
+   * Returns the specified TargetInstance resource. Get a list of available target instances by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
@@ -490,9 +500,11 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetInstance resource. Get a list of available target instances by making a list() request.
+   * Returns the specified TargetInstance resource. Get a list of available target instances by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneTargetInstanceName targetInstance = ProjectZoneTargetInstanceName.of("[PROJECT]", "[ZONE]", "[TARGET_INSTANCE]");
@@ -506,15 +518,18 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetTargetInstanceHttpRequest, TargetInstance> getTargetInstanceCallable() {
+  public final UnaryCallable<GetTargetInstanceHttpRequest, TargetInstance>
+      getTargetInstanceCallable() {
     return stub.getTargetInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetInstance resource in the specified project and zone using the data included in the request.
+   * Creates a TargetInstance resource in the specified project and zone using the data included in
+   * the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -525,31 +540,40 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone Name of the zone scoping this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param targetInstanceResource A TargetInstance resource. This resource defines an endpoint instance that terminates traffic of certain protocols. (== resource_for beta.targetInstances ==) (== resource_for v1.targetInstances ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param targetInstanceResource A TargetInstance resource. This resource defines an endpoint
+   *     instance that terminates traffic of certain protocols. (== resource_for
+   *     beta.targetInstances ==) (== resource_for v1.targetInstances ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetInstance(ProjectZoneName zone, String requestId, TargetInstance targetInstanceResource) {
+  public final Operation insertTargetInstance(
+      ProjectZoneName zone, String requestId, TargetInstance targetInstanceResource) {
 
     InsertTargetInstanceHttpRequest request =
         InsertTargetInstanceHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .setRequestId(requestId)
-        .setTargetInstanceResource(targetInstanceResource)
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .setRequestId(requestId)
+            .setTargetInstanceResource(targetInstanceResource)
+            .build();
     return insertTargetInstance(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetInstance resource in the specified project and zone using the data included in the request.
+   * Creates a TargetInstance resource in the specified project and zone using the data included in
+   * the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -560,31 +584,40 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone Name of the zone scoping this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param targetInstanceResource A TargetInstance resource. This resource defines an endpoint instance that terminates traffic of certain protocols. (== resource_for beta.targetInstances ==) (== resource_for v1.targetInstances ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param targetInstanceResource A TargetInstance resource. This resource defines an endpoint
+   *     instance that terminates traffic of certain protocols. (== resource_for
+   *     beta.targetInstances ==) (== resource_for v1.targetInstances ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetInstance(String zone, String requestId, TargetInstance targetInstanceResource) {
+  public final Operation insertTargetInstance(
+      String zone, String requestId, TargetInstance targetInstanceResource) {
 
     InsertTargetInstanceHttpRequest request =
         InsertTargetInstanceHttpRequest.newBuilder()
-        .setZone(zone)
-        .setRequestId(requestId)
-        .setTargetInstanceResource(targetInstanceResource)
-        .build();
+            .setZone(zone)
+            .setRequestId(requestId)
+            .setTargetInstanceResource(targetInstanceResource)
+            .build();
     return insertTargetInstance(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetInstance resource in the specified project and zone using the data included in the request.
+   * Creates a TargetInstance resource in the specified project and zone using the data included in
+   * the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -609,9 +642,11 @@ public class TargetInstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetInstance resource in the specified project and zone using the data included in the request.
+   * Creates a TargetInstance resource in the specified project and zone using the data included in
+   * the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -629,7 +664,8 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertTargetInstanceHttpRequest, Operation> insertTargetInstanceCallable() {
+  public final UnaryCallable<InsertTargetInstanceHttpRequest, Operation>
+      insertTargetInstanceCallable() {
     return stub.insertTargetInstanceCallable();
   }
 
@@ -637,7 +673,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -654,8 +691,8 @@ public class TargetInstanceClient implements BackgroundResource {
   public final ListTargetInstancesPagedResponse listTargetInstances(ProjectZoneName zone) {
     ListTargetInstancesHttpRequest request =
         ListTargetInstancesHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .build();
     return listTargetInstances(request);
   }
 
@@ -663,7 +700,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -679,9 +717,7 @@ public class TargetInstanceClient implements BackgroundResource {
   @BetaApi
   public final ListTargetInstancesPagedResponse listTargetInstances(String zone) {
     ListTargetInstancesHttpRequest request =
-        ListTargetInstancesHttpRequest.newBuilder()
-        .setZone(zone)
-        .build();
+        ListTargetInstancesHttpRequest.newBuilder().setZone(zone).build();
     return listTargetInstances(request);
   }
 
@@ -689,7 +725,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -706,16 +743,17 @@ public class TargetInstanceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListTargetInstancesPagedResponse listTargetInstances(ListTargetInstancesHttpRequest request) {
-    return listTargetInstancesPagedCallable()
-        .call(request);
+  public final ListTargetInstancesPagedResponse listTargetInstances(
+      ListTargetInstancesHttpRequest request) {
+    return listTargetInstancesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -731,7 +769,8 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetInstancesHttpRequest, ListTargetInstancesPagedResponse> listTargetInstancesPagedCallable() {
+  public final UnaryCallable<ListTargetInstancesHttpRequest, ListTargetInstancesPagedResponse>
+      listTargetInstancesPagedCallable() {
     return stub.listTargetInstancesPagedCallable();
   }
 
@@ -739,7 +778,8 @@ public class TargetInstanceClient implements BackgroundResource {
   /**
    * Retrieves a list of TargetInstance resources available to the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetInstanceClient targetInstanceClient = TargetInstanceClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -762,12 +802,13 @@ public class TargetInstanceClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetInstancesHttpRequest, TargetInstanceList> listTargetInstancesCallable() {
+  public final UnaryCallable<ListTargetInstancesHttpRequest, TargetInstanceList>
+      listTargetInstancesCallable() {
     return stub.listTargetInstancesCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -796,23 +837,28 @@ public class TargetInstanceClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListTargetInstancesPagedResponse extends AbstractPagedListResponse<
-      AggregatedListTargetInstancesHttpRequest,
-      TargetInstanceAggregatedList,
-      TargetInstancesScopedList,
-      AggregatedListTargetInstancesPage,
-      AggregatedListTargetInstancesFixedSizeCollection> {
+  public static class AggregatedListTargetInstancesPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+          TargetInstancesScopedList, AggregatedListTargetInstancesPage,
+          AggregatedListTargetInstancesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListTargetInstancesPagedResponse> createAsync(
-        PageContext<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList, TargetInstancesScopedList> context,
+        PageContext<
+                AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+                TargetInstancesScopedList>
+            context,
         ApiFuture<TargetInstanceAggregatedList> futureResponse) {
       ApiFuture<AggregatedListTargetInstancesPage> futurePage =
-          AggregatedListTargetInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
+          AggregatedListTargetInstancesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListTargetInstancesPage, AggregatedListTargetInstancesPagedResponse>() {
+          new ApiFunction<
+              AggregatedListTargetInstancesPage, AggregatedListTargetInstancesPagedResponse>() {
             @Override
-            public AggregatedListTargetInstancesPagedResponse apply(AggregatedListTargetInstancesPage input) {
+            public AggregatedListTargetInstancesPagedResponse apply(
+                AggregatedListTargetInstancesPage input) {
               return new AggregatedListTargetInstancesPagedResponse(input);
             }
           });
@@ -821,18 +867,18 @@ public class TargetInstanceClient implements BackgroundResource {
     private AggregatedListTargetInstancesPagedResponse(AggregatedListTargetInstancesPage page) {
       super(page, AggregatedListTargetInstancesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListTargetInstancesPage extends AbstractPage<
-      AggregatedListTargetInstancesHttpRequest,
-      TargetInstanceAggregatedList,
-      TargetInstancesScopedList,
-      AggregatedListTargetInstancesPage> {
+  public static class AggregatedListTargetInstancesPage
+      extends AbstractPage<
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+          TargetInstancesScopedList, AggregatedListTargetInstancesPage> {
 
     private AggregatedListTargetInstancesPage(
-        PageContext<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList, TargetInstancesScopedList> context,
+        PageContext<
+                AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+                TargetInstancesScopedList>
+            context,
         TargetInstanceAggregatedList response) {
       super(context, response);
     }
@@ -843,31 +889,33 @@ public class TargetInstanceClient implements BackgroundResource {
 
     @Override
     protected AggregatedListTargetInstancesPage createPage(
-        PageContext<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList, TargetInstancesScopedList> context,
+        PageContext<
+                AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+                TargetInstancesScopedList>
+            context,
         TargetInstanceAggregatedList response) {
       return new AggregatedListTargetInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListTargetInstancesPage> createPageAsync(
-        PageContext<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList, TargetInstancesScopedList> context,
+        PageContext<
+                AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+                TargetInstancesScopedList>
+            context,
         ApiFuture<TargetInstanceAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListTargetInstancesFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListTargetInstancesHttpRequest,
-      TargetInstanceAggregatedList,
-      TargetInstancesScopedList,
-      AggregatedListTargetInstancesPage,
-      AggregatedListTargetInstancesFixedSizeCollection> {
+  public static class AggregatedListTargetInstancesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+          TargetInstancesScopedList, AggregatedListTargetInstancesPage,
+          AggregatedListTargetInstancesFixedSizeCollection> {
 
-    private AggregatedListTargetInstancesFixedSizeCollection(List<AggregatedListTargetInstancesPage> pages, int collectionSize) {
+    private AggregatedListTargetInstancesFixedSizeCollection(
+        List<AggregatedListTargetInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -880,15 +928,12 @@ public class TargetInstanceClient implements BackgroundResource {
         List<AggregatedListTargetInstancesPage> pages, int collectionSize) {
       return new AggregatedListTargetInstancesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListTargetInstancesPagedResponse extends AbstractPagedListResponse<
-      ListTargetInstancesHttpRequest,
-      TargetInstanceList,
-      TargetInstance,
-      ListTargetInstancesPage,
-      ListTargetInstancesFixedSizeCollection> {
+
+  public static class ListTargetInstancesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTargetInstancesHttpRequest, TargetInstanceList, TargetInstance,
+          ListTargetInstancesPage, ListTargetInstancesFixedSizeCollection> {
 
     public static ApiFuture<ListTargetInstancesPagedResponse> createAsync(
         PageContext<ListTargetInstancesHttpRequest, TargetInstanceList, TargetInstance> context,
@@ -908,15 +953,12 @@ public class TargetInstanceClient implements BackgroundResource {
     private ListTargetInstancesPagedResponse(ListTargetInstancesPage page) {
       super(page, ListTargetInstancesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListTargetInstancesPage extends AbstractPage<
-      ListTargetInstancesHttpRequest,
-      TargetInstanceList,
-      TargetInstance,
-      ListTargetInstancesPage> {
+  public static class ListTargetInstancesPage
+      extends AbstractPage<
+          ListTargetInstancesHttpRequest, TargetInstanceList, TargetInstance,
+          ListTargetInstancesPage> {
 
     private ListTargetInstancesPage(
         PageContext<ListTargetInstancesHttpRequest, TargetInstanceList, TargetInstance> context,
@@ -941,20 +983,15 @@ public class TargetInstanceClient implements BackgroundResource {
         ApiFuture<TargetInstanceList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListTargetInstancesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListTargetInstancesHttpRequest,
-      TargetInstanceList,
-      TargetInstance,
-      ListTargetInstancesPage,
-      ListTargetInstancesFixedSizeCollection> {
+  public static class ListTargetInstancesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTargetInstancesHttpRequest, TargetInstanceList, TargetInstance,
+          ListTargetInstancesPage, ListTargetInstancesFixedSizeCollection> {
 
-    private ListTargetInstancesFixedSizeCollection(List<ListTargetInstancesPage> pages, int collectionSize) {
+    private ListTargetInstancesFixedSizeCollection(
+        List<ListTargetInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -967,7 +1004,5 @@ public class TargetInstanceClient implements BackgroundResource {
         List<ListTargetInstancesPage> pages, int collectionSize) {
       return new ListTargetInstancesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

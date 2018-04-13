@@ -15,24 +15,20 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.ImageClient.ListImagesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteImageHttpRequest;
 import com.google.cloud.compute.v1.DeprecateImageHttpRequest;
-import com.google.cloud.compute.v1.DeprecationStatus;
 import com.google.cloud.compute.v1.GetFromFamilyImageHttpRequest;
 import com.google.cloud.compute.v1.GetImageHttpRequest;
-import com.google.cloud.compute.v1.GlobalSetLabelsRequest;
 import com.google.cloud.compute.v1.Image;
-import static com.google.cloud.compute.v1.ImageClient.ListImagesPagedResponse;
 import com.google.cloud.compute.v1.ImageList;
 import com.google.cloud.compute.v1.InsertImageHttpRequest;
 import com.google.cloud.compute.v1.ListImagesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectFamilyName;
-import com.google.cloud.compute.v1.ProjectImageName;
-import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.SetLabelsImageHttpRequest;
 import javax.annotation.Generated;
 
@@ -45,7 +41,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ImageStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteImageHttpRequest, Operation> deleteImageCallable() {
@@ -87,4 +82,6 @@ public abstract class ImageStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setLabelsImageCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

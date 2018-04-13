@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -58,7 +55,6 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
     this.userIp = null;
   }
 
-
   private UpdateNetworkInterfaceInstanceHttpRequest(
       String access_token,
       String callback,
@@ -70,8 +66,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -107,7 +102,9 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
       fieldMap.put("networkInterface", Collections.singletonList(String.valueOf(networkInterface)));
     }
     if (fieldNames.contains("networkInterfaceResource") && networkInterfaceResource != null) {
-      fieldMap.put("networkInterfaceResource", Collections.singletonList(String.valueOf(networkInterfaceResource)));
+      fieldMap.put(
+          "networkInterfaceResource",
+          Collections.singletonList(String.valueOf(networkInterfaceResource)));
     }
     if (fieldNames.contains("prettyPrint") && prettyPrint != null) {
       fieldMap.put("prettyPrint", Collections.singletonList(String.valueOf(prettyPrint)));
@@ -212,22 +209,24 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(UpdateNetworkInterfaceInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static UpdateNetworkInterfaceInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final UpdateNetworkInterfaceInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new UpdateNetworkInterfaceInstanceHttpRequest();
   }
@@ -398,11 +397,8 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
       return this;
     }
 
-
     public UpdateNetworkInterfaceInstanceHttpRequest build() {
       String missing = "";
-
-
 
       if (instance == null) {
         missing += " instance";
@@ -412,26 +408,21 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
         missing += " networkInterface";
       }
 
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new UpdateNetworkInterfaceInstanceHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instance,
-        key,
-        networkInterface,
-        networkInterfaceResource,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instance,
+          key,
+          networkInterface,
+          networkInterfaceResource,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -454,17 +445,38 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
   @Override
   public String toString() {
     return "UpdateNetworkInterfaceInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instance=" + instance + ", "
-        + "key=" + key + ", "
-        + "networkInterface=" + networkInterface + ", "
-        + "networkInterfaceResource=" + networkInterfaceResource + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "networkInterface="
+        + networkInterface
+        + ", "
+        + "networkInterfaceResource="
+        + networkInterfaceResource
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -474,20 +486,19 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
       return true;
     }
     if (o instanceof UpdateNetworkInterfaceInstanceHttpRequest) {
-      UpdateNetworkInterfaceInstanceHttpRequest that = (UpdateNetworkInterfaceInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.networkInterface, that.getNetworkInterface()) &&
-          Objects.equals(this.networkInterfaceResource, that.getNetworkInterfaceResource()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      UpdateNetworkInterfaceInstanceHttpRequest that =
+          (UpdateNetworkInterfaceInstanceHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.networkInterface, that.getNetworkInterface())
+          && Objects.equals(this.networkInterfaceResource, that.getNetworkInterfaceResource())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -495,17 +506,16 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instance,
-      key,
-      networkInterface,
-      networkInterfaceResource,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instance,
+        key,
+        networkInterface,
+        networkInterfaceResource,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

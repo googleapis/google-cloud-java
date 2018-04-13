@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectRegionInterconnectAttachmentName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectRegionInterconnectAttachmentName implements ResourceName {
   private final String interconnectAttachment;
   private final String project;
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/interconnectAttachments/{interconnectAttachment}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -55,28 +52,16 @@ public final class ProjectRegionInterconnectAttachmentName implements com.google
   }
 
   public static ProjectRegionInterconnectAttachmentName of(
-      String interconnectAttachment,
-      String project,
-      String region
-      ) {
+      String interconnectAttachment, String project, String region) {
     return newBuilder()
-    .setInterconnectAttachment(interconnectAttachment)
-    .setProject(project)
-    .setRegion(region)
-      .build();
+        .setInterconnectAttachment(interconnectAttachment)
+        .setProject(project)
+        .setRegion(region)
+        .build();
   }
 
-  public static String format(
-      String interconnectAttachment,
-      String project,
-      String region
-      ) {
-    return of(
-        interconnectAttachment,
-        project,
-        region
-        )
-        .toString();
+  public static String format(String interconnectAttachment, String project, String region) {
+    return of(interconnectAttachment, project, region).toString();
   }
 
   public String getInterconnectAttachment() {
@@ -90,7 +75,6 @@ public final class ProjectRegionInterconnectAttachmentName implements com.google
   public String getRegion() {
     return region;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +96,21 @@ public final class ProjectRegionInterconnectAttachmentName implements com.google
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectRegionInterconnectAttachmentName> newFactory() {
     return new ResourceNameFactory<ProjectRegionInterconnectAttachmentName>() {
-      public ProjectRegionInterconnectAttachmentName parse(String formattedString) {return ProjectRegionInterconnectAttachmentName.parse(formattedString);}
+      public ProjectRegionInterconnectAttachmentName parse(String formattedString) {
+        return ProjectRegionInterconnectAttachmentName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectRegionInterconnectAttachmentName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRegionInterconnectAttachmentName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectRegionInterconnectAttachmentName.parse: formattedString not in valid format");
     return of(
-      matchMap.get("interconnectAttachment"),
-      matchMap.get("project"),
-      matchMap.get("region")
-    );
+        matchMap.get("interconnectAttachment"), matchMap.get("project"), matchMap.get("region"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +125,11 @@ public final class ProjectRegionInterconnectAttachmentName implements com.google
     public String getInterconnectAttachment() {
       return interconnectAttachment;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getRegion() {
       return region;
     }
@@ -152,10 +138,12 @@ public final class ProjectRegionInterconnectAttachmentName implements com.google
       this.interconnectAttachment = interconnectAttachment;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setRegion(String region) {
       this.region = region;
       return this;
@@ -163,7 +151,8 @@ public final class ProjectRegionInterconnectAttachmentName implements com.google
 
     private Builder() {}
 
-    public Builder (ProjectRegionInterconnectAttachmentName projectRegionInterconnectAttachmentName) {
+    public Builder(
+        ProjectRegionInterconnectAttachmentName projectRegionInterconnectAttachmentName) {
       interconnectAttachment = projectRegionInterconnectAttachmentName.interconnectAttachment;
       project = projectRegionInterconnectAttachmentName.project;
       region = projectRegionInterconnectAttachmentName.region;
@@ -179,8 +168,7 @@ public final class ProjectRegionInterconnectAttachmentName implements com.google
     return PATH_TEMPLATE.instantiate(
         "interconnectAttachment", interconnectAttachment,
         "project", project,
-        "region", region
-        );
+        "region", region);
   }
 
   @Override
@@ -190,21 +178,15 @@ public final class ProjectRegionInterconnectAttachmentName implements com.google
     }
     if (o instanceof ProjectRegionInterconnectAttachmentName) {
       ProjectRegionInterconnectAttachmentName that = (ProjectRegionInterconnectAttachmentName) o;
-      return
-          Objects.equals(this.interconnectAttachment, that.getInterconnectAttachment()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.region, that.getRegion())
-          ;
+      return Objects.equals(this.interconnectAttachment, that.getInterconnectAttachment())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.region, that.getRegion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      interconnectAttachment,
-      project,
-      region
-    );
+    return Objects.hash(interconnectAttachment, project, region);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
     this.ipCidrRange = null;
   }
 
-
-  private SubnetworksExpandIpCidrRangeRequest(
-      String ipCidrRange
-      ) {
+  private SubnetworksExpandIpCidrRangeRequest(String ipCidrRange) {
     this.ipCidrRange = ipCidrRange;
   }
 
@@ -72,22 +66,24 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
     return ipCidrRange;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SubnetworksExpandIpCidrRangeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SubnetworksExpandIpCidrRangeRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SubnetworksExpandIpCidrRangeRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SubnetworksExpandIpCidrRangeRequest();
   }
@@ -118,11 +114,8 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
       return this;
     }
 
-
     public SubnetworksExpandIpCidrRangeRequest build() {
-      return new SubnetworksExpandIpCidrRangeRequest(
-        ipCidrRange
-      );
+      return new SubnetworksExpandIpCidrRangeRequest(ipCidrRange);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "SubnetworksExpandIpCidrRangeRequest{"
-        + "ipCidrRange=" + ipCidrRange
-        + "}";
+    return "SubnetworksExpandIpCidrRangeRequest{" + "ipCidrRange=" + ipCidrRange + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
     }
     if (o instanceof SubnetworksExpandIpCidrRangeRequest) {
       SubnetworksExpandIpCidrRangeRequest that = (SubnetworksExpandIpCidrRangeRequest) o;
-      return
-          Objects.equals(this.ipCidrRange, that.getIpCidrRange())
-          ;
+      return Objects.equals(this.ipCidrRange, that.getIpCidrRange());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      ipCidrRange
-    );
+    return Objects.hash(ipCidrRange);
   }
 }

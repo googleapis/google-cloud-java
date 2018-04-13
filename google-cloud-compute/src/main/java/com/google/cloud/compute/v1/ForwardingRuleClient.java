@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.ForwardingRuleStub;
 import com.google.cloud.compute.v1.stub.ForwardingRuleStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -60,33 +50,32 @@ import javax.annotation.Generated;
  * </pre>
  *
  * <p>Note: close() needs to be called on the forwardingRuleClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ForwardingRuleSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,27 +105,23 @@ public class ForwardingRuleClient implements BackgroundResource {
   private final ForwardingRuleSettings settings;
   private final ForwardingRuleStub stub;
 
-
-
-  /**
-   * Constructs an instance of ForwardingRuleClient with default settings.
-   */
+  /** Constructs an instance of ForwardingRuleClient with default settings. */
   public static final ForwardingRuleClient create() throws IOException {
     return create(ForwardingRuleSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of ForwardingRuleClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of ForwardingRuleClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ForwardingRuleClient create(ForwardingRuleSettings settings) throws IOException {
+  public static final ForwardingRuleClient create(ForwardingRuleSettings settings)
+      throws IOException {
     return new ForwardingRuleClient(settings);
   }
 
   /**
-   * Constructs an instance of ForwardingRuleClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use ForwardingRuleSettings}.
+   * Constructs an instance of ForwardingRuleClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use ForwardingRuleSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ForwardingRuleClient create(ForwardingRuleStub stub) {
@@ -144,9 +129,9 @@ public class ForwardingRuleClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of ForwardingRuleClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of ForwardingRuleClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected ForwardingRuleClient(ForwardingRuleSettings settings) throws IOException {
     this.settings = settings;
@@ -168,12 +153,12 @@ public class ForwardingRuleClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -187,11 +172,12 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListForwardingRulesPagedResponse aggregatedListForwardingRules(ProjectName project) {
+  public final AggregatedListForwardingRulesPagedResponse aggregatedListForwardingRules(
+      ProjectName project) {
     AggregatedListForwardingRulesHttpRequest request =
         AggregatedListForwardingRulesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListForwardingRules(request);
   }
 
@@ -199,7 +185,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -213,11 +200,10 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListForwardingRulesPagedResponse aggregatedListForwardingRules(String project) {
+  public final AggregatedListForwardingRulesPagedResponse aggregatedListForwardingRules(
+      String project) {
     AggregatedListForwardingRulesHttpRequest request =
-        AggregatedListForwardingRulesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListForwardingRulesHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListForwardingRules(request);
   }
 
@@ -225,7 +211,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -242,16 +229,17 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListForwardingRulesPagedResponse aggregatedListForwardingRules(AggregatedListForwardingRulesHttpRequest request) {
-    return aggregatedListForwardingRulesPagedCallable()
-        .call(request);
+  public final AggregatedListForwardingRulesPagedResponse aggregatedListForwardingRules(
+      AggregatedListForwardingRulesHttpRequest request) {
+    return aggregatedListForwardingRulesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -267,7 +255,9 @@ public class ForwardingRuleClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListForwardingRulesHttpRequest, AggregatedListForwardingRulesPagedResponse> aggregatedListForwardingRulesPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListForwardingRulesHttpRequest, AggregatedListForwardingRulesPagedResponse>
+      aggregatedListForwardingRulesPagedCallable() {
     return stub.aggregatedListForwardingRulesPagedCallable();
   }
 
@@ -275,7 +265,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of forwarding rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -298,7 +289,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList> aggregatedListForwardingRulesCallable() {
+  public final UnaryCallable<AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList>
+      aggregatedListForwardingRulesCallable() {
     return stub.aggregatedListForwardingRulesCallable();
   }
 
@@ -306,7 +298,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Deletes the specified ForwardingRule resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -315,22 +308,27 @@ public class ForwardingRuleClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteForwardingRule(String requestId, ProjectRegionForwardingRuleName forwardingRule) {
+  public final Operation deleteForwardingRule(
+      String requestId, ProjectRegionForwardingRuleName forwardingRule) {
 
     DeleteForwardingRuleHttpRequest request =
         DeleteForwardingRuleHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
-        .build();
+            .setRequestId(requestId)
+            .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
+            .build();
     return deleteForwardingRule(request);
   }
 
@@ -338,7 +336,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Deletes the specified ForwardingRule resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -347,11 +346,15 @@ public class ForwardingRuleClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -360,9 +363,9 @@ public class ForwardingRuleClient implements BackgroundResource {
 
     DeleteForwardingRuleHttpRequest request =
         DeleteForwardingRuleHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setForwardingRule(forwardingRule)
-        .build();
+            .setRequestId(requestId)
+            .setForwardingRule(forwardingRule)
+            .build();
     return deleteForwardingRule(request);
   }
 
@@ -370,7 +373,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Deletes the specified ForwardingRule resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -395,7 +399,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Deletes the specified ForwardingRule resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -411,7 +416,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteForwardingRuleHttpRequest, Operation> deleteForwardingRuleCallable() {
+  public final UnaryCallable<DeleteForwardingRuleHttpRequest, Operation>
+      deleteForwardingRuleCallable() {
     return stub.deleteForwardingRuleCallable();
   }
 
@@ -419,7 +425,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Returns the specified ForwardingRule resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
@@ -435,8 +442,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
     GetForwardingRuleHttpRequest request =
         GetForwardingRuleHttpRequest.newBuilder()
-        .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
-        .build();
+            .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
+            .build();
     return getForwardingRule(request);
   }
 
@@ -444,7 +451,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Returns the specified ForwardingRule resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
@@ -459,9 +467,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   public final ForwardingRule getForwardingRule(String forwardingRule) {
 
     GetForwardingRuleHttpRequest request =
-        GetForwardingRuleHttpRequest.newBuilder()
-        .setForwardingRule(forwardingRule)
-        .build();
+        GetForwardingRuleHttpRequest.newBuilder().setForwardingRule(forwardingRule).build();
     return getForwardingRule(request);
   }
 
@@ -469,7 +475,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Returns the specified ForwardingRule resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
@@ -492,7 +499,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Returns the specified ForwardingRule resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionForwardingRuleName forwardingRule = ProjectRegionForwardingRuleName.of("[PROJECT]", "[REGION]", "[FORWARDING_RULE]");
@@ -506,15 +514,18 @@ public class ForwardingRuleClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetForwardingRuleHttpRequest, ForwardingRule> getForwardingRuleCallable() {
+  public final UnaryCallable<GetForwardingRuleHttpRequest, ForwardingRule>
+      getForwardingRuleCallable() {
     return stub.getForwardingRuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
+   * Creates a ForwardingRule resource in the specified project and region using the data included
+   * in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -524,32 +535,44 @@ public class ForwardingRuleClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
-   * @param forwardingRuleResource A ForwardingRule resource. A ForwardingRule resource specifies which pool of target virtual machines to forward a packet to if it matches the given [IPAddress, IPProtocol, ports] tuple. (== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (== resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+   * @param forwardingRuleResource A ForwardingRule resource. A ForwardingRule resource specifies
+   *     which pool of target virtual machines to forward a packet to if it matches the given
+   *     [IPAddress, IPProtocol, ports] tuple. (== resource_for beta.forwardingRules ==) (==
+   *     resource_for v1.forwardingRules ==) (== resource_for beta.globalForwardingRules ==) (==
+   *     resource_for v1.globalForwardingRules ==) (== resource_for beta.regionForwardingRules ==)
+   *     (== resource_for v1.regionForwardingRules ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertForwardingRule(String requestId, ProjectRegionName region, ForwardingRule forwardingRuleResource) {
+  public final Operation insertForwardingRule(
+      String requestId, ProjectRegionName region, ForwardingRule forwardingRuleResource) {
 
     InsertForwardingRuleHttpRequest request =
         InsertForwardingRuleHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setRegion(region == null ? null : region.toString())
-        .setForwardingRuleResource(forwardingRuleResource)
-        .build();
+            .setRequestId(requestId)
+            .setRegion(region == null ? null : region.toString())
+            .setForwardingRuleResource(forwardingRuleResource)
+            .build();
     return insertForwardingRule(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
+   * Creates a ForwardingRule resource in the specified project and region using the data included
+   * in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -559,32 +582,44 @@ public class ForwardingRuleClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
-   * @param forwardingRuleResource A ForwardingRule resource. A ForwardingRule resource specifies which pool of target virtual machines to forward a packet to if it matches the given [IPAddress, IPProtocol, ports] tuple. (== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (== resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+   * @param forwardingRuleResource A ForwardingRule resource. A ForwardingRule resource specifies
+   *     which pool of target virtual machines to forward a packet to if it matches the given
+   *     [IPAddress, IPProtocol, ports] tuple. (== resource_for beta.forwardingRules ==) (==
+   *     resource_for v1.forwardingRules ==) (== resource_for beta.globalForwardingRules ==) (==
+   *     resource_for v1.globalForwardingRules ==) (== resource_for beta.regionForwardingRules ==)
+   *     (== resource_for v1.regionForwardingRules ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertForwardingRule(String requestId, String region, ForwardingRule forwardingRuleResource) {
+  public final Operation insertForwardingRule(
+      String requestId, String region, ForwardingRule forwardingRuleResource) {
 
     InsertForwardingRuleHttpRequest request =
         InsertForwardingRuleHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setRegion(region)
-        .setForwardingRuleResource(forwardingRuleResource)
-        .build();
+            .setRequestId(requestId)
+            .setRegion(region)
+            .setForwardingRuleResource(forwardingRuleResource)
+            .build();
     return insertForwardingRule(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
+   * Creates a ForwardingRule resource in the specified project and region using the data included
+   * in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -609,9 +644,11 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
+   * Creates a ForwardingRule resource in the specified project and region using the data included
+   * in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -629,7 +666,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertForwardingRuleHttpRequest, Operation> insertForwardingRuleCallable() {
+  public final UnaryCallable<InsertForwardingRuleHttpRequest, Operation>
+      insertForwardingRuleCallable() {
     return stub.insertForwardingRuleCallable();
   }
 
@@ -637,7 +675,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -654,8 +693,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   public final ListForwardingRulesPagedResponse listForwardingRules(ProjectRegionName region) {
     ListForwardingRulesHttpRequest request =
         ListForwardingRulesHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .build();
     return listForwardingRules(request);
   }
 
@@ -663,7 +702,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -679,9 +719,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   @BetaApi
   public final ListForwardingRulesPagedResponse listForwardingRules(String region) {
     ListForwardingRulesHttpRequest request =
-        ListForwardingRulesHttpRequest.newBuilder()
-        .setRegion(region)
-        .build();
+        ListForwardingRulesHttpRequest.newBuilder().setRegion(region).build();
     return listForwardingRules(request);
   }
 
@@ -689,7 +727,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -706,16 +745,17 @@ public class ForwardingRuleClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListForwardingRulesPagedResponse listForwardingRules(ListForwardingRulesHttpRequest request) {
-    return listForwardingRulesPagedCallable()
-        .call(request);
+  public final ListForwardingRulesPagedResponse listForwardingRules(
+      ListForwardingRulesHttpRequest request) {
+    return listForwardingRulesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -731,7 +771,8 @@ public class ForwardingRuleClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListForwardingRulesHttpRequest, ListForwardingRulesPagedResponse> listForwardingRulesPagedCallable() {
+  public final UnaryCallable<ListForwardingRulesHttpRequest, ListForwardingRulesPagedResponse>
+      listForwardingRulesPagedCallable() {
     return stub.listForwardingRulesPagedCallable();
   }
 
@@ -739,7 +780,8 @@ public class ForwardingRuleClient implements BackgroundResource {
   /**
    * Retrieves a list of ForwardingRule resources available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -762,15 +804,18 @@ public class ForwardingRuleClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListForwardingRulesHttpRequest, ForwardingRuleList> listForwardingRulesCallable() {
+  public final UnaryCallable<ListForwardingRulesHttpRequest, ForwardingRuleList>
+      listForwardingRulesCallable() {
     return stub.listForwardingRulesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes target URL for forwarding rule. The new target should be of the same type as the old target.
+   * Changes target URL for forwarding rule. The new target should be of the same type as the old
+   * target.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -780,32 +825,41 @@ public class ForwardingRuleClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource in which target is to be set.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setTargetForwardingRule(String requestId, ProjectRegionForwardingRuleName forwardingRule, TargetReference targetReferenceResource) {
+  public final Operation setTargetForwardingRule(
+      String requestId,
+      ProjectRegionForwardingRuleName forwardingRule,
+      TargetReference targetReferenceResource) {
 
     SetTargetForwardingRuleHttpRequest request =
         SetTargetForwardingRuleHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
-        .setTargetReferenceResource(targetReferenceResource)
-        .build();
+            .setRequestId(requestId)
+            .setForwardingRule(forwardingRule == null ? null : forwardingRule.toString())
+            .setTargetReferenceResource(targetReferenceResource)
+            .build();
     return setTargetForwardingRule(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes target URL for forwarding rule. The new target should be of the same type as the old target.
+   * Changes target URL for forwarding rule. The new target should be of the same type as the old
+   * target.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -815,32 +869,39 @@ public class ForwardingRuleClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param forwardingRule Name of the ForwardingRule resource in which target is to be set.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setTargetForwardingRule(String requestId, String forwardingRule, TargetReference targetReferenceResource) {
+  public final Operation setTargetForwardingRule(
+      String requestId, String forwardingRule, TargetReference targetReferenceResource) {
 
     SetTargetForwardingRuleHttpRequest request =
         SetTargetForwardingRuleHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setForwardingRule(forwardingRule)
-        .setTargetReferenceResource(targetReferenceResource)
-        .build();
+            .setRequestId(requestId)
+            .setForwardingRule(forwardingRule)
+            .setTargetReferenceResource(targetReferenceResource)
+            .build();
     return setTargetForwardingRule(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes target URL for forwarding rule. The new target should be of the same type as the old target.
+   * Changes target URL for forwarding rule. The new target should be of the same type as the old
+   * target.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -865,9 +926,11 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes target URL for forwarding rule. The new target should be of the same type as the old target.
+   * Changes target URL for forwarding rule. The new target should be of the same type as the old
+   * target.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ForwardingRuleClient forwardingRuleClient = ForwardingRuleClient.create()) {
    *   String requestId = "";
@@ -885,12 +948,13 @@ public class ForwardingRuleClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetTargetForwardingRuleHttpRequest, Operation> setTargetForwardingRuleCallable() {
+  public final UnaryCallable<SetTargetForwardingRuleHttpRequest, Operation>
+      setTargetForwardingRuleCallable() {
     return stub.setTargetForwardingRuleCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -919,23 +983,28 @@ public class ForwardingRuleClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListForwardingRulesPagedResponse extends AbstractPagedListResponse<
-      AggregatedListForwardingRulesHttpRequest,
-      ForwardingRuleAggregatedList,
-      ForwardingRulesScopedList,
-      AggregatedListForwardingRulesPage,
-      AggregatedListForwardingRulesFixedSizeCollection> {
+  public static class AggregatedListForwardingRulesPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          ForwardingRulesScopedList, AggregatedListForwardingRulesPage,
+          AggregatedListForwardingRulesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListForwardingRulesPagedResponse> createAsync(
-        PageContext<AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList, ForwardingRulesScopedList> context,
+        PageContext<
+                AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+                ForwardingRulesScopedList>
+            context,
         ApiFuture<ForwardingRuleAggregatedList> futureResponse) {
       ApiFuture<AggregatedListForwardingRulesPage> futurePage =
-          AggregatedListForwardingRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+          AggregatedListForwardingRulesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListForwardingRulesPage, AggregatedListForwardingRulesPagedResponse>() {
+          new ApiFunction<
+              AggregatedListForwardingRulesPage, AggregatedListForwardingRulesPagedResponse>() {
             @Override
-            public AggregatedListForwardingRulesPagedResponse apply(AggregatedListForwardingRulesPage input) {
+            public AggregatedListForwardingRulesPagedResponse apply(
+                AggregatedListForwardingRulesPage input) {
               return new AggregatedListForwardingRulesPagedResponse(input);
             }
           });
@@ -944,18 +1013,18 @@ public class ForwardingRuleClient implements BackgroundResource {
     private AggregatedListForwardingRulesPagedResponse(AggregatedListForwardingRulesPage page) {
       super(page, AggregatedListForwardingRulesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListForwardingRulesPage extends AbstractPage<
-      AggregatedListForwardingRulesHttpRequest,
-      ForwardingRuleAggregatedList,
-      ForwardingRulesScopedList,
-      AggregatedListForwardingRulesPage> {
+  public static class AggregatedListForwardingRulesPage
+      extends AbstractPage<
+          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          ForwardingRulesScopedList, AggregatedListForwardingRulesPage> {
 
     private AggregatedListForwardingRulesPage(
-        PageContext<AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList, ForwardingRulesScopedList> context,
+        PageContext<
+                AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+                ForwardingRulesScopedList>
+            context,
         ForwardingRuleAggregatedList response) {
       super(context, response);
     }
@@ -966,31 +1035,33 @@ public class ForwardingRuleClient implements BackgroundResource {
 
     @Override
     protected AggregatedListForwardingRulesPage createPage(
-        PageContext<AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList, ForwardingRulesScopedList> context,
+        PageContext<
+                AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+                ForwardingRulesScopedList>
+            context,
         ForwardingRuleAggregatedList response) {
       return new AggregatedListForwardingRulesPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListForwardingRulesPage> createPageAsync(
-        PageContext<AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList, ForwardingRulesScopedList> context,
+        PageContext<
+                AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+                ForwardingRulesScopedList>
+            context,
         ApiFuture<ForwardingRuleAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListForwardingRulesFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListForwardingRulesHttpRequest,
-      ForwardingRuleAggregatedList,
-      ForwardingRulesScopedList,
-      AggregatedListForwardingRulesPage,
-      AggregatedListForwardingRulesFixedSizeCollection> {
+  public static class AggregatedListForwardingRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          ForwardingRulesScopedList, AggregatedListForwardingRulesPage,
+          AggregatedListForwardingRulesFixedSizeCollection> {
 
-    private AggregatedListForwardingRulesFixedSizeCollection(List<AggregatedListForwardingRulesPage> pages, int collectionSize) {
+    private AggregatedListForwardingRulesFixedSizeCollection(
+        List<AggregatedListForwardingRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1003,15 +1074,12 @@ public class ForwardingRuleClient implements BackgroundResource {
         List<AggregatedListForwardingRulesPage> pages, int collectionSize) {
       return new AggregatedListForwardingRulesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListForwardingRulesPagedResponse extends AbstractPagedListResponse<
-      ListForwardingRulesHttpRequest,
-      ForwardingRuleList,
-      ForwardingRule,
-      ListForwardingRulesPage,
-      ListForwardingRulesFixedSizeCollection> {
+
+  public static class ListForwardingRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule,
+          ListForwardingRulesPage, ListForwardingRulesFixedSizeCollection> {
 
     public static ApiFuture<ListForwardingRulesPagedResponse> createAsync(
         PageContext<ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule> context,
@@ -1031,15 +1099,12 @@ public class ForwardingRuleClient implements BackgroundResource {
     private ListForwardingRulesPagedResponse(ListForwardingRulesPage page) {
       super(page, ListForwardingRulesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListForwardingRulesPage extends AbstractPage<
-      ListForwardingRulesHttpRequest,
-      ForwardingRuleList,
-      ForwardingRule,
-      ListForwardingRulesPage> {
+  public static class ListForwardingRulesPage
+      extends AbstractPage<
+          ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule,
+          ListForwardingRulesPage> {
 
     private ListForwardingRulesPage(
         PageContext<ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule> context,
@@ -1064,20 +1129,15 @@ public class ForwardingRuleClient implements BackgroundResource {
         ApiFuture<ForwardingRuleList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListForwardingRulesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListForwardingRulesHttpRequest,
-      ForwardingRuleList,
-      ForwardingRule,
-      ListForwardingRulesPage,
-      ListForwardingRulesFixedSizeCollection> {
+  public static class ListForwardingRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule,
+          ListForwardingRulesPage, ListForwardingRulesFixedSizeCollection> {
 
-    private ListForwardingRulesFixedSizeCollection(List<ListForwardingRulesPage> pages, int collectionSize) {
+    private ListForwardingRulesFixedSizeCollection(
+        List<ListForwardingRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1090,7 +1150,5 @@ public class ForwardingRuleClient implements BackgroundResource {
         List<ListForwardingRulesPage> pages, int collectionSize) {
       return new ListForwardingRulesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

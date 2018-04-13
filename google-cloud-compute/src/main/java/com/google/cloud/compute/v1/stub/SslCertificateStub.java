@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -23,10 +25,7 @@ import com.google.cloud.compute.v1.GetSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.InsertSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.ListSslCertificatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectSslCertificateName;
 import com.google.cloud.compute.v1.SslCertificate;
-import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
 import com.google.cloud.compute.v1.SslCertificateList;
 import javax.annotation.Generated;
 
@@ -39,7 +38,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class SslCertificateStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteSslCertificateHttpRequest, Operation> deleteSslCertificateCallable() {
@@ -57,13 +55,17 @@ public abstract class SslCertificateStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListSslCertificatesHttpRequest, ListSslCertificatesPagedResponse> listSslCertificatesPagedCallable() {
+  public UnaryCallable<ListSslCertificatesHttpRequest, ListSslCertificatesPagedResponse>
+      listSslCertificatesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSslCertificatesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListSslCertificatesHttpRequest, SslCertificateList> listSslCertificatesCallable() {
+  public UnaryCallable<ListSslCertificatesHttpRequest, SslCertificateList>
+      listSslCertificatesCallable() {
     throw new UnsupportedOperationException("Not implemented: listSslCertificatesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

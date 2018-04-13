@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class VpnTunnelsScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private VpnTunnelsScopedList(
-      List<VpnTunnel> vpnTunnels,
-      Warning warning
-      ) {
+  private VpnTunnelsScopedList(List<VpnTunnel> vpnTunnels, Warning warning) {
     this.vpnTunnels = vpnTunnels;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class VpnTunnelsScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(VpnTunnelsScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static VpnTunnelsScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final VpnTunnelsScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new VpnTunnelsScopedList();
   }
@@ -158,13 +155,9 @@ public final class VpnTunnelsScopedList implements ApiMessage {
       return this;
     }
 
-
     public VpnTunnelsScopedList build() {
 
-      return new VpnTunnelsScopedList(
-        vpnTunnels,
-        warning
-      );
+      return new VpnTunnelsScopedList(vpnTunnels, warning);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class VpnTunnelsScopedList implements ApiMessage {
 
   @Override
   public String toString() {
-    return "VpnTunnelsScopedList{"
-        + "vpnTunnels=" + vpnTunnels + ", "
-        + "warning=" + warning
-        + "}";
+    return "VpnTunnelsScopedList{" + "vpnTunnels=" + vpnTunnels + ", " + "warning=" + warning + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class VpnTunnelsScopedList implements ApiMessage {
     }
     if (o instanceof VpnTunnelsScopedList) {
       VpnTunnelsScopedList that = (VpnTunnelsScopedList) o;
-      return
-          Objects.equals(this.vpnTunnels, that.getVpnTunnelsList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.vpnTunnels, that.getVpnTunnelsList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      vpnTunnels,
-      warning
-    );
+    return Objects.hash(vpnTunnels, warning);
   }
 }

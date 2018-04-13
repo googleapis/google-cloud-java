@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private PatchBackendServiceHttpRequest(
       String access_token,
       String backendService,
@@ -67,8 +63,7 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.backendService = backendService;
     this.backendServiceResource = backendServiceResource;
@@ -91,7 +86,9 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
       fieldMap.put("backendService", Collections.singletonList(String.valueOf(backendService)));
     }
     if (fieldNames.contains("backendServiceResource") && backendServiceResource != null) {
-      fieldMap.put("backendServiceResource", Collections.singletonList(String.valueOf(backendServiceResource)));
+      fieldMap.put(
+          "backendServiceResource",
+          Collections.singletonList(String.valueOf(backendServiceResource)));
     }
     if (fieldNames.contains("callback") && callback != null) {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
@@ -198,22 +195,24 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(PatchBackendServiceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static PatchBackendServiceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final PatchBackendServiceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new PatchBackendServiceHttpRequest();
   }
@@ -370,7 +369,6 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public PatchBackendServiceHttpRequest build() {
       String missing = "";
 
@@ -378,28 +376,20 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
         missing += " backendService";
       }
 
-
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new PatchBackendServiceHttpRequest(
-        access_token,
-        backendService,
-        backendServiceResource,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          backendService,
+          backendServiceResource,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "PatchBackendServiceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "backendService=" + backendService + ", "
-        + "backendServiceResource=" + backendServiceResource + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "backendService="
+        + backendService
+        + ", "
+        + "backendServiceResource="
+        + backendServiceResource
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
     }
     if (o instanceof PatchBackendServiceHttpRequest) {
       PatchBackendServiceHttpRequest that = (PatchBackendServiceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.backendService, that.getBackendService()) &&
-          Objects.equals(this.backendServiceResource, that.getBackendServiceResource()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.backendService, that.getBackendService())
+          && Objects.equals(this.backendServiceResource, that.getBackendServiceResource())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      backendService,
-      backendServiceResource,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        backendService,
+        backendServiceResource,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

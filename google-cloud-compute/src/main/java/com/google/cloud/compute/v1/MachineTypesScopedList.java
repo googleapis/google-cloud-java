@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class MachineTypesScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private MachineTypesScopedList(
-      List<MachineType> machineTypes,
-      Warning warning
-      ) {
+  private MachineTypesScopedList(List<MachineType> machineTypes, Warning warning) {
     this.machineTypes = machineTypes;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class MachineTypesScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(MachineTypesScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static MachineTypesScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final MachineTypesScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new MachineTypesScopedList();
   }
@@ -158,13 +155,9 @@ public final class MachineTypesScopedList implements ApiMessage {
       return this;
     }
 
-
     public MachineTypesScopedList build() {
 
-      return new MachineTypesScopedList(
-        machineTypes,
-        warning
-      );
+      return new MachineTypesScopedList(machineTypes, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class MachineTypesScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "MachineTypesScopedList{"
-        + "machineTypes=" + machineTypes + ", "
-        + "warning=" + warning
+        + "machineTypes="
+        + machineTypes
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class MachineTypesScopedList implements ApiMessage {
     }
     if (o instanceof MachineTypesScopedList) {
       MachineTypesScopedList that = (MachineTypesScopedList) o;
-      return
-          Objects.equals(this.machineTypes, that.getMachineTypesList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.machineTypes, that.getMachineTypesList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      machineTypes,
-      warning
-    );
+    return Objects.hash(machineTypes, warning);
   }
 }

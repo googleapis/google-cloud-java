@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class RouterAdvertisedIpRange implements ApiMessage {
     this.range = null;
   }
 
-
-  private RouterAdvertisedIpRange(
-      String description,
-      String range
-      ) {
+  private RouterAdvertisedIpRange(String description, String range) {
     this.description = description;
     this.range = range;
   }
@@ -86,22 +79,24 @@ public final class RouterAdvertisedIpRange implements ApiMessage {
     return range;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RouterAdvertisedIpRange prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RouterAdvertisedIpRange getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RouterAdvertisedIpRange DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RouterAdvertisedIpRange();
   }
@@ -146,13 +141,9 @@ public final class RouterAdvertisedIpRange implements ApiMessage {
       return this;
     }
 
-
     public RouterAdvertisedIpRange build() {
 
-      return new RouterAdvertisedIpRange(
-        description,
-        range
-      );
+      return new RouterAdvertisedIpRange(description, range);
     }
 
     public Builder clone() {
@@ -166,8 +157,11 @@ public final class RouterAdvertisedIpRange implements ApiMessage {
   @Override
   public String toString() {
     return "RouterAdvertisedIpRange{"
-        + "description=" + description + ", "
-        + "range=" + range
+        + "description="
+        + description
+        + ", "
+        + "range="
+        + range
         + "}";
   }
 
@@ -178,19 +172,14 @@ public final class RouterAdvertisedIpRange implements ApiMessage {
     }
     if (o instanceof RouterAdvertisedIpRange) {
       RouterAdvertisedIpRange that = (RouterAdvertisedIpRange) o;
-      return
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.range, that.getRange())
-          ;
+      return Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.range, that.getRange());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      description,
-      range
-    );
+    return Objects.hash(description, range);
   }
 }

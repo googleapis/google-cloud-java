@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class XpnResourceId implements ApiMessage {
     this.type = null;
   }
 
-
-  private XpnResourceId(
-      String id,
-      String type
-      ) {
+  private XpnResourceId(String id, String type) {
     this.id = id;
     this.type = type;
   }
@@ -86,22 +79,24 @@ public final class XpnResourceId implements ApiMessage {
     return type;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(XpnResourceId prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static XpnResourceId getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final XpnResourceId DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new XpnResourceId();
   }
@@ -146,13 +141,9 @@ public final class XpnResourceId implements ApiMessage {
       return this;
     }
 
-
     public XpnResourceId build() {
 
-      return new XpnResourceId(
-        id,
-        type
-      );
+      return new XpnResourceId(id, type);
     }
 
     public Builder clone() {
@@ -165,10 +156,7 @@ public final class XpnResourceId implements ApiMessage {
 
   @Override
   public String toString() {
-    return "XpnResourceId{"
-        + "id=" + id + ", "
-        + "type=" + type
-        + "}";
+    return "XpnResourceId{" + "id=" + id + ", " + "type=" + type + "}";
   }
 
   @Override
@@ -178,19 +166,13 @@ public final class XpnResourceId implements ApiMessage {
     }
     if (o instanceof XpnResourceId) {
       XpnResourceId that = (XpnResourceId) o;
-      return
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.type, that.getType())
-          ;
+      return Objects.equals(this.id, that.getId()) && Objects.equals(this.type, that.getType());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      id,
-      type
-    );
+    return Objects.hash(id, type);
   }
 }

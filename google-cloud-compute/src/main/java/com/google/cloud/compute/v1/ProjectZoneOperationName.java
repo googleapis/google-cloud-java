@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectZoneOperationName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectZoneOperationName implements ResourceName {
   private final String operation;
   private final String project;
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}/operations/{operation}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/zones/{zone}/operations/{operation}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -54,29 +51,12 @@ public final class ProjectZoneOperationName implements com.google.api.resourcena
     zone = Preconditions.checkNotNull(builder.getZone());
   }
 
-  public static ProjectZoneOperationName of(
-      String operation,
-      String project,
-      String zone
-      ) {
-    return newBuilder()
-    .setOperation(operation)
-    .setProject(project)
-    .setZone(zone)
-      .build();
+  public static ProjectZoneOperationName of(String operation, String project, String zone) {
+    return newBuilder().setOperation(operation).setProject(project).setZone(zone).build();
   }
 
-  public static String format(
-      String operation,
-      String project,
-      String zone
-      ) {
-    return of(
-        operation,
-        project,
-        zone
-        )
-        .toString();
+  public static String format(String operation, String project, String zone) {
+    return of(operation, project, zone).toString();
   }
 
   public String getOperation() {
@@ -90,7 +70,6 @@ public final class ProjectZoneOperationName implements com.google.api.resourcena
   public String getZone() {
     return zone;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +91,19 @@ public final class ProjectZoneOperationName implements com.google.api.resourcena
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectZoneOperationName> newFactory() {
     return new ResourceNameFactory<ProjectZoneOperationName>() {
-      public ProjectZoneOperationName parse(String formattedString) {return ProjectZoneOperationName.parse(formattedString);}
+      public ProjectZoneOperationName parse(String formattedString) {
+        return ProjectZoneOperationName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectZoneOperationName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectZoneOperationName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("operation"),
-      matchMap.get("project"),
-      matchMap.get("zone")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectZoneOperationName.parse: formattedString not in valid format");
+    return of(matchMap.get("operation"), matchMap.get("project"), matchMap.get("zone"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +118,11 @@ public final class ProjectZoneOperationName implements com.google.api.resourcena
     public String getOperation() {
       return operation;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getZone() {
       return zone;
     }
@@ -152,10 +131,12 @@ public final class ProjectZoneOperationName implements com.google.api.resourcena
       this.operation = operation;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;
@@ -163,7 +144,7 @@ public final class ProjectZoneOperationName implements com.google.api.resourcena
 
     private Builder() {}
 
-    public Builder (ProjectZoneOperationName projectZoneOperationName) {
+    public Builder(ProjectZoneOperationName projectZoneOperationName) {
       operation = projectZoneOperationName.operation;
       project = projectZoneOperationName.project;
       zone = projectZoneOperationName.zone;
@@ -179,8 +160,7 @@ public final class ProjectZoneOperationName implements com.google.api.resourcena
     return PATH_TEMPLATE.instantiate(
         "operation", operation,
         "project", project,
-        "zone", zone
-        );
+        "zone", zone);
   }
 
   @Override
@@ -190,21 +170,15 @@ public final class ProjectZoneOperationName implements com.google.api.resourcena
     }
     if (o instanceof ProjectZoneOperationName) {
       ProjectZoneOperationName that = (ProjectZoneOperationName) o;
-      return
-          Objects.equals(this.operation, that.getOperation()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.operation, that.getOperation())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      operation,
-      project,
-      zone
-    );
+    return Objects.hash(operation, project, zone);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class GetUrlMapHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private GetUrlMapHttpRequest(
       String access_token,
       String callback,
@@ -61,8 +57,7 @@ public final class GetUrlMapHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String urlMap,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -170,22 +165,24 @@ public final class GetUrlMapHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GetUrlMapHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetUrlMapHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GetUrlMapHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GetUrlMapHttpRequest();
   }
@@ -314,14 +311,8 @@ public final class GetUrlMapHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public GetUrlMapHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (urlMap == null) {
         missing += " urlMap";
@@ -331,15 +322,7 @@ public final class GetUrlMapHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetUrlMapHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        urlMap,
-        userIp
-      );
+          access_token, callback, fields, key, prettyPrint, quotaUser, urlMap, userIp);
     }
 
     public Builder clone() {
@@ -359,14 +342,29 @@ public final class GetUrlMapHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "GetUrlMapHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "urlMap=" + urlMap + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "urlMap="
+        + urlMap
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -377,16 +375,14 @@ public final class GetUrlMapHttpRequest implements ApiMessage {
     }
     if (o instanceof GetUrlMapHttpRequest) {
       GetUrlMapHttpRequest that = (GetUrlMapHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.urlMap, that.getUrlMap()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.urlMap, that.getUrlMap())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -394,14 +390,6 @@ public final class GetUrlMapHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      urlMap,
-      userIp
-    );
+        access_token, callback, fields, key, prettyPrint, quotaUser, urlMap, userIp);
   }
 }

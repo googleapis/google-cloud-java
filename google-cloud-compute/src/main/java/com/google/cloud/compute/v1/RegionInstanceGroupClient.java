@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.RegionInstanceGroupStub;
 import com.google.cloud.compute.v1.stub.RegionInstanceGroupStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -58,34 +48,34 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the regionInstanceGroupClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
+ * <p>Note: close() needs to be called on the regionInstanceGroupClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of RegionInstanceGroupSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,27 +105,23 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   private final RegionInstanceGroupSettings settings;
   private final RegionInstanceGroupStub stub;
 
-
-
-  /**
-   * Constructs an instance of RegionInstanceGroupClient with default settings.
-   */
+  /** Constructs an instance of RegionInstanceGroupClient with default settings. */
   public static final RegionInstanceGroupClient create() throws IOException {
     return create(RegionInstanceGroupSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of RegionInstanceGroupClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of RegionInstanceGroupClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final RegionInstanceGroupClient create(RegionInstanceGroupSettings settings) throws IOException {
+  public static final RegionInstanceGroupClient create(RegionInstanceGroupSettings settings)
+      throws IOException {
     return new RegionInstanceGroupClient(settings);
   }
 
   /**
-   * Constructs an instance of RegionInstanceGroupClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use RegionInstanceGroupSettings}.
+   * Constructs an instance of RegionInstanceGroupClient, using the given stub for making calls.
+   * This is for advanced usage - prefer to use RegionInstanceGroupSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionInstanceGroupClient create(RegionInstanceGroupStub stub) {
@@ -143,9 +129,9 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of RegionInstanceGroupClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of RegionInstanceGroupClient, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
   protected RegionInstanceGroupClient(RegionInstanceGroupSettings settings) throws IOException {
     this.settings = settings;
@@ -167,12 +153,12 @@ public class RegionInstanceGroupClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance group resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -188,8 +174,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
     GetRegionInstanceGroupHttpRequest request =
         GetRegionInstanceGroupHttpRequest.newBuilder()
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .build();
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .build();
     return getRegionInstanceGroup(request);
   }
 
@@ -197,7 +183,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Returns the specified instance group resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -212,9 +199,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   public final InstanceGroup getRegionInstanceGroup(String instanceGroup) {
 
     GetRegionInstanceGroupHttpRequest request =
-        GetRegionInstanceGroupHttpRequest.newBuilder()
-        .setInstanceGroup(instanceGroup)
-        .build();
+        GetRegionInstanceGroupHttpRequest.newBuilder().setInstanceGroup(instanceGroup).build();
     return getRegionInstanceGroup(request);
   }
 
@@ -222,7 +207,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Returns the specified instance group resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -245,7 +231,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Returns the specified instance group resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -259,7 +246,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetRegionInstanceGroupHttpRequest, InstanceGroup> getRegionInstanceGroupCallable() {
+  public final UnaryCallable<GetRegionInstanceGroupHttpRequest, InstanceGroup>
+      getRegionInstanceGroupCallable() {
     return stub.getRegionInstanceGroupCallable();
   }
 
@@ -267,7 +255,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -281,11 +270,12 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionInstanceGroupsPagedResponse listRegionInstanceGroups(ProjectRegionName region) {
+  public final ListRegionInstanceGroupsPagedResponse listRegionInstanceGroups(
+      ProjectRegionName region) {
     ListRegionInstanceGroupsHttpRequest request =
         ListRegionInstanceGroupsHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .build();
     return listRegionInstanceGroups(request);
   }
 
@@ -293,7 +283,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -309,9 +300,7 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   @BetaApi
   public final ListRegionInstanceGroupsPagedResponse listRegionInstanceGroups(String region) {
     ListRegionInstanceGroupsHttpRequest request =
-        ListRegionInstanceGroupsHttpRequest.newBuilder()
-        .setRegion(region)
-        .build();
+        ListRegionInstanceGroupsHttpRequest.newBuilder().setRegion(region).build();
     return listRegionInstanceGroups(request);
   }
 
@@ -319,7 +308,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -336,16 +326,17 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionInstanceGroupsPagedResponse listRegionInstanceGroups(ListRegionInstanceGroupsHttpRequest request) {
-    return listRegionInstanceGroupsPagedCallable()
-        .call(request);
+  public final ListRegionInstanceGroupsPagedResponse listRegionInstanceGroups(
+      ListRegionInstanceGroupsHttpRequest request) {
+    return listRegionInstanceGroupsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -361,7 +352,9 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListRegionInstanceGroupsHttpRequest, ListRegionInstanceGroupsPagedResponse> listRegionInstanceGroupsPagedCallable() {
+  public final UnaryCallable<
+          ListRegionInstanceGroupsHttpRequest, ListRegionInstanceGroupsPagedResponse>
+      listRegionInstanceGroupsPagedCallable() {
     return stub.listRegionInstanceGroupsPagedCallable();
   }
 
@@ -369,7 +362,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance group resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -392,15 +386,19 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList> listRegionInstanceGroupsCallable() {
+  public final UnaryCallable<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList>
+      listRegionInstanceGroupsCallable() {
     return stub.listRegionInstanceGroupsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running.
+   * Lists the instances in the specified instance group and displays information about the named
+   * ports. Depending on the specified options, this method can list all instances or only the
+   * instances that are running.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -411,25 +409,32 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instanceGroup Name of the regional instance group for which we want to list the instances.
+   * @param instanceGroup Name of the regional instance group for which we want to list the
+   *     instances.
    * @param regionInstanceGroupsListInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInstancesRegionInstanceGroupsPagedResponse listInstancesRegionInstanceGroups(ProjectRegionInstanceGroupName instanceGroup, RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource) {
+  public final ListInstancesRegionInstanceGroupsPagedResponse listInstancesRegionInstanceGroups(
+      ProjectRegionInstanceGroupName instanceGroup,
+      RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource) {
     ListInstancesRegionInstanceGroupsHttpRequest request =
         ListInstancesRegionInstanceGroupsHttpRequest.newBuilder()
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .setRegionInstanceGroupsListInstancesRequestResource(regionInstanceGroupsListInstancesRequestResource)
-        .build();
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .setRegionInstanceGroupsListInstancesRequestResource(
+                regionInstanceGroupsListInstancesRequestResource)
+            .build();
     return listInstancesRegionInstanceGroups(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running.
+   * Lists the instances in the specified instance group and displays information about the named
+   * ports. Depending on the specified options, this method can list all instances or only the
+   * instances that are running.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -440,25 +445,32 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instanceGroup Name of the regional instance group for which we want to list the instances.
+   * @param instanceGroup Name of the regional instance group for which we want to list the
+   *     instances.
    * @param regionInstanceGroupsListInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInstancesRegionInstanceGroupsPagedResponse listInstancesRegionInstanceGroups(String instanceGroup, RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource) {
+  public final ListInstancesRegionInstanceGroupsPagedResponse listInstancesRegionInstanceGroups(
+      String instanceGroup,
+      RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource) {
     ListInstancesRegionInstanceGroupsHttpRequest request =
         ListInstancesRegionInstanceGroupsHttpRequest.newBuilder()
-        .setInstanceGroup(instanceGroup)
-        .setRegionInstanceGroupsListInstancesRequestResource(regionInstanceGroupsListInstancesRequestResource)
-        .build();
+            .setInstanceGroup(instanceGroup)
+            .setRegionInstanceGroupsListInstancesRequestResource(
+                regionInstanceGroupsListInstancesRequestResource)
+            .build();
     return listInstancesRegionInstanceGroups(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running.
+   * Lists the instances in the specified instance group and displays information about the named
+   * ports. Depending on the specified options, this method can list all instances or only the
+   * instances that are running.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -477,16 +489,19 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInstancesRegionInstanceGroupsPagedResponse listInstancesRegionInstanceGroups(ListInstancesRegionInstanceGroupsHttpRequest request) {
-    return listInstancesRegionInstanceGroupsPagedCallable()
-        .call(request);
+  public final ListInstancesRegionInstanceGroupsPagedResponse listInstancesRegionInstanceGroups(
+      ListInstancesRegionInstanceGroupsHttpRequest request) {
+    return listInstancesRegionInstanceGroupsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running.
+   * Lists the instances in the specified instance group and displays information about the named
+   * ports. Depending on the specified options, this method can list all instances or only the
+   * instances that are running.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -504,15 +519,21 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInstancesRegionInstanceGroupsHttpRequest, ListInstancesRegionInstanceGroupsPagedResponse> listInstancesRegionInstanceGroupsPagedCallable() {
+  public final UnaryCallable<
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          ListInstancesRegionInstanceGroupsPagedResponse>
+      listInstancesRegionInstanceGroupsPagedCallable() {
     return stub.listInstancesRegionInstanceGroupsPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group and displays information about the named ports. Depending on the specified options, this method can list all instances or only the instances that are running.
+   * Lists the instances in the specified instance group and displays information about the named
+   * ports. Depending on the specified options, this method can list all instances or only the
+   * instances that are running.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
@@ -537,7 +558,9 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances> listInstancesRegionInstanceGroupsCallable() {
+  public final UnaryCallable<
+          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances>
+      listInstancesRegionInstanceGroupsCallable() {
     return stub.listInstancesRegionInstanceGroupsCallable();
   }
 
@@ -545,7 +568,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Sets the named ports for the specified regional instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   String requestId = "";
@@ -555,24 +579,32 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the regional instance group where the named ports are updated.
    * @param regionInstanceGroupsSetNamedPortsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setNamedPortsRegionInstanceGroup(String requestId, ProjectRegionInstanceGroupName instanceGroup, RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource) {
+  public final Operation setNamedPortsRegionInstanceGroup(
+      String requestId,
+      ProjectRegionInstanceGroupName instanceGroup,
+      RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource) {
 
     SetNamedPortsRegionInstanceGroupHttpRequest request =
         SetNamedPortsRegionInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .setRegionInstanceGroupsSetNamedPortsRequestResource(regionInstanceGroupsSetNamedPortsRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .setRegionInstanceGroupsSetNamedPortsRequestResource(
+                regionInstanceGroupsSetNamedPortsRequestResource)
+            .build();
     return setNamedPortsRegionInstanceGroup(request);
   }
 
@@ -580,7 +612,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Sets the named ports for the specified regional instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   String requestId = "";
@@ -590,24 +623,32 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the regional instance group where the named ports are updated.
    * @param regionInstanceGroupsSetNamedPortsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setNamedPortsRegionInstanceGroup(String requestId, String instanceGroup, RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource) {
+  public final Operation setNamedPortsRegionInstanceGroup(
+      String requestId,
+      String instanceGroup,
+      RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource) {
 
     SetNamedPortsRegionInstanceGroupHttpRequest request =
         SetNamedPortsRegionInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup)
-        .setRegionInstanceGroupsSetNamedPortsRequestResource(regionInstanceGroupsSetNamedPortsRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup)
+            .setRegionInstanceGroupsSetNamedPortsRequestResource(
+                regionInstanceGroupsSetNamedPortsRequestResource)
+            .build();
     return setNamedPortsRegionInstanceGroup(request);
   }
 
@@ -615,7 +656,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Sets the named ports for the specified regional instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   String requestId = "";
@@ -634,7 +676,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setNamedPortsRegionInstanceGroup(SetNamedPortsRegionInstanceGroupHttpRequest request) {
+  public final Operation setNamedPortsRegionInstanceGroup(
+      SetNamedPortsRegionInstanceGroupHttpRequest request) {
     return setNamedPortsRegionInstanceGroupCallable().call(request);
   }
 
@@ -642,7 +685,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
   /**
    * Sets the named ports for the specified regional instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
    *   String requestId = "";
@@ -660,12 +704,13 @@ public class RegionInstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetNamedPortsRegionInstanceGroupHttpRequest, Operation> setNamedPortsRegionInstanceGroupCallable() {
+  public final UnaryCallable<SetNamedPortsRegionInstanceGroupHttpRequest, Operation>
+      setNamedPortsRegionInstanceGroupCallable() {
     return stub.setNamedPortsRegionInstanceGroupCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -694,15 +739,14 @@ public class RegionInstanceGroupClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListRegionInstanceGroupsPagedResponse extends AbstractPagedListResponse<
-      ListRegionInstanceGroupsHttpRequest,
-      RegionInstanceGroupList,
-      InstanceGroup,
-      ListRegionInstanceGroupsPage,
-      ListRegionInstanceGroupsFixedSizeCollection> {
+  public static class ListRegionInstanceGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup,
+          ListRegionInstanceGroupsPage, ListRegionInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListRegionInstanceGroupsPagedResponse> createAsync(
-        PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup> context,
+        PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup>
+            context,
         ApiFuture<RegionInstanceGroupList> futureResponse) {
       ApiFuture<ListRegionInstanceGroupsPage> futurePage =
           ListRegionInstanceGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -719,18 +763,16 @@ public class RegionInstanceGroupClient implements BackgroundResource {
     private ListRegionInstanceGroupsPagedResponse(ListRegionInstanceGroupsPage page) {
       super(page, ListRegionInstanceGroupsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListRegionInstanceGroupsPage extends AbstractPage<
-      ListRegionInstanceGroupsHttpRequest,
-      RegionInstanceGroupList,
-      InstanceGroup,
-      ListRegionInstanceGroupsPage> {
+  public static class ListRegionInstanceGroupsPage
+      extends AbstractPage<
+          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup,
+          ListRegionInstanceGroupsPage> {
 
     private ListRegionInstanceGroupsPage(
-        PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup> context,
+        PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup>
+            context,
         RegionInstanceGroupList response) {
       super(context, response);
     }
@@ -741,31 +783,28 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
     @Override
     protected ListRegionInstanceGroupsPage createPage(
-        PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup> context,
+        PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup>
+            context,
         RegionInstanceGroupList response) {
       return new ListRegionInstanceGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRegionInstanceGroupsPage> createPageAsync(
-        PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup> context,
+        PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup>
+            context,
         ApiFuture<RegionInstanceGroupList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListRegionInstanceGroupsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListRegionInstanceGroupsHttpRequest,
-      RegionInstanceGroupList,
-      InstanceGroup,
-      ListRegionInstanceGroupsPage,
-      ListRegionInstanceGroupsFixedSizeCollection> {
+  public static class ListRegionInstanceGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup,
+          ListRegionInstanceGroupsPage, ListRegionInstanceGroupsFixedSizeCollection> {
 
-    private ListRegionInstanceGroupsFixedSizeCollection(List<ListRegionInstanceGroupsPage> pages, int collectionSize) {
+    private ListRegionInstanceGroupsFixedSizeCollection(
+        List<ListRegionInstanceGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -778,46 +817,52 @@ public class RegionInstanceGroupClient implements BackgroundResource {
         List<ListRegionInstanceGroupsPage> pages, int collectionSize) {
       return new ListRegionInstanceGroupsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListInstancesRegionInstanceGroupsPagedResponse extends AbstractPagedListResponse<
-      ListInstancesRegionInstanceGroupsHttpRequest,
-      RegionInstanceGroupsListInstances,
-      InstanceWithNamedPorts,
-      ListInstancesRegionInstanceGroupsPage,
-      ListInstancesRegionInstanceGroupsFixedSizeCollection> {
+
+  public static class ListInstancesRegionInstanceGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+          InstanceWithNamedPorts, ListInstancesRegionInstanceGroupsPage,
+          ListInstancesRegionInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListInstancesRegionInstanceGroupsPagedResponse> createAsync(
-        PageContext<ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances, InstanceWithNamedPorts> context,
+        PageContext<
+                ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+                InstanceWithNamedPorts>
+            context,
         ApiFuture<RegionInstanceGroupsListInstances> futureResponse) {
       ApiFuture<ListInstancesRegionInstanceGroupsPage> futurePage =
-          ListInstancesRegionInstanceGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+          ListInstancesRegionInstanceGroupsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstancesRegionInstanceGroupsPage, ListInstancesRegionInstanceGroupsPagedResponse>() {
+          new ApiFunction<
+              ListInstancesRegionInstanceGroupsPage,
+              ListInstancesRegionInstanceGroupsPagedResponse>() {
             @Override
-            public ListInstancesRegionInstanceGroupsPagedResponse apply(ListInstancesRegionInstanceGroupsPage input) {
+            public ListInstancesRegionInstanceGroupsPagedResponse apply(
+                ListInstancesRegionInstanceGroupsPage input) {
               return new ListInstancesRegionInstanceGroupsPagedResponse(input);
             }
           });
     }
 
-    private ListInstancesRegionInstanceGroupsPagedResponse(ListInstancesRegionInstanceGroupsPage page) {
+    private ListInstancesRegionInstanceGroupsPagedResponse(
+        ListInstancesRegionInstanceGroupsPage page) {
       super(page, ListInstancesRegionInstanceGroupsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListInstancesRegionInstanceGroupsPage extends AbstractPage<
-      ListInstancesRegionInstanceGroupsHttpRequest,
-      RegionInstanceGroupsListInstances,
-      InstanceWithNamedPorts,
-      ListInstancesRegionInstanceGroupsPage> {
+  public static class ListInstancesRegionInstanceGroupsPage
+      extends AbstractPage<
+          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+          InstanceWithNamedPorts, ListInstancesRegionInstanceGroupsPage> {
 
     private ListInstancesRegionInstanceGroupsPage(
-        PageContext<ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances, InstanceWithNamedPorts> context,
+        PageContext<
+                ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+                InstanceWithNamedPorts>
+            context,
         RegionInstanceGroupsListInstances response) {
       super(context, response);
     }
@@ -828,31 +873,33 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
     @Override
     protected ListInstancesRegionInstanceGroupsPage createPage(
-        PageContext<ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances, InstanceWithNamedPorts> context,
+        PageContext<
+                ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+                InstanceWithNamedPorts>
+            context,
         RegionInstanceGroupsListInstances response) {
       return new ListInstancesRegionInstanceGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesRegionInstanceGroupsPage> createPageAsync(
-        PageContext<ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances, InstanceWithNamedPorts> context,
+        PageContext<
+                ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+                InstanceWithNamedPorts>
+            context,
         ApiFuture<RegionInstanceGroupsListInstances> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListInstancesRegionInstanceGroupsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListInstancesRegionInstanceGroupsHttpRequest,
-      RegionInstanceGroupsListInstances,
-      InstanceWithNamedPorts,
-      ListInstancesRegionInstanceGroupsPage,
-      ListInstancesRegionInstanceGroupsFixedSizeCollection> {
+  public static class ListInstancesRegionInstanceGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+          InstanceWithNamedPorts, ListInstancesRegionInstanceGroupsPage,
+          ListInstancesRegionInstanceGroupsFixedSizeCollection> {
 
-    private ListInstancesRegionInstanceGroupsFixedSizeCollection(List<ListInstancesRegionInstanceGroupsPage> pages, int collectionSize) {
+    private ListInstancesRegionInstanceGroupsFixedSizeCollection(
+        List<ListInstancesRegionInstanceGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -865,7 +912,5 @@ public class RegionInstanceGroupClient implements BackgroundResource {
         List<ListInstancesRegionInstanceGroupsPage> pages, int collectionSize) {
       return new ListInstancesRegionInstanceGroupsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

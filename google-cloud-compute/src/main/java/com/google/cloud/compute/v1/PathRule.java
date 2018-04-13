@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class PathRule implements ApiMessage {
     this.service = null;
   }
 
-
-  private PathRule(
-      List<String> paths,
-      String service
-      ) {
+  private PathRule(List<String> paths, String service) {
     this.paths = paths;
     this.service = service;
   }
@@ -90,22 +85,24 @@ public final class PathRule implements ApiMessage {
     return service;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(PathRule prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static PathRule getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final PathRule DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new PathRule();
   }
@@ -158,13 +155,9 @@ public final class PathRule implements ApiMessage {
       return this;
     }
 
-
     public PathRule build() {
 
-      return new PathRule(
-        paths,
-        service
-      );
+      return new PathRule(paths, service);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class PathRule implements ApiMessage {
 
   @Override
   public String toString() {
-    return "PathRule{"
-        + "paths=" + paths + ", "
-        + "service=" + service
-        + "}";
+    return "PathRule{" + "paths=" + paths + ", " + "service=" + service + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class PathRule implements ApiMessage {
     }
     if (o instanceof PathRule) {
       PathRule that = (PathRule) o;
-      return
-          Objects.equals(this.paths, that.getPathsList()) &&
-          Objects.equals(this.service, that.getService())
-          ;
+      return Objects.equals(this.paths, that.getPathsList())
+          && Objects.equals(this.service, that.getService());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      paths,
-      service
-    );
+    return Objects.hash(paths, service);
   }
 }

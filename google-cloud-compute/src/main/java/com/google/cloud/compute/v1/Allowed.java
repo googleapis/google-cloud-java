@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class Allowed implements ApiMessage {
     this.ports = null;
   }
 
-
-  private Allowed(
-      String iPProtocol,
-      List<String> ports
-      ) {
+  private Allowed(String iPProtocol, List<String> ports) {
     this.iPProtocol = iPProtocol;
     this.ports = ports;
   }
@@ -90,22 +85,24 @@ public final class Allowed implements ApiMessage {
     return ports;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Allowed prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Allowed getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Allowed DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Allowed();
   }
@@ -158,13 +155,9 @@ public final class Allowed implements ApiMessage {
       return this;
     }
 
-
     public Allowed build() {
 
-      return new Allowed(
-        iPProtocol,
-        ports
-      );
+      return new Allowed(iPProtocol, ports);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class Allowed implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Allowed{"
-        + "iPProtocol=" + iPProtocol + ", "
-        + "ports=" + ports
-        + "}";
+    return "Allowed{" + "iPProtocol=" + iPProtocol + ", " + "ports=" + ports + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class Allowed implements ApiMessage {
     }
     if (o instanceof Allowed) {
       Allowed that = (Allowed) o;
-      return
-          Objects.equals(this.iPProtocol, that.getIPProtocol()) &&
-          Objects.equals(this.ports, that.getPortsList())
-          ;
+      return Objects.equals(this.iPProtocol, that.getIPProtocol())
+          && Objects.equals(this.ports, that.getPortsList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      iPProtocol,
-      ports
-    );
+    return Objects.hash(iPProtocol, ports);
   }
 }

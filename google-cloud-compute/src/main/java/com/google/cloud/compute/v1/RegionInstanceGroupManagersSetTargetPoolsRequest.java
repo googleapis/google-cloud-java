@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
     this.targetPools = null;
   }
 
-
   private RegionInstanceGroupManagersSetTargetPoolsRequest(
-      String fingerprint,
-      List<String> targetPools
-      ) {
+      String fingerprint, List<String> targetPools) {
     this.fingerprint = fingerprint;
     this.targetPools = targetPools;
   }
@@ -90,22 +86,24 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
     return targetPools;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RegionInstanceGroupManagersSetTargetPoolsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RegionInstanceGroupManagersSetTargetPoolsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RegionInstanceGroupManagersSetTargetPoolsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RegionInstanceGroupManagersSetTargetPoolsRequest();
   }
@@ -117,7 +115,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
     Builder() {}
 
     public Builder mergeFrom(RegionInstanceGroupManagersSetTargetPoolsRequest other) {
-      if (other == RegionInstanceGroupManagersSetTargetPoolsRequest.getDefaultInstance()) return this;
+      if (other == RegionInstanceGroupManagersSetTargetPoolsRequest.getDefaultInstance())
+        return this;
       if (other.getFingerprint() != null) {
         this.fingerprint = other.fingerprint;
       }
@@ -158,13 +157,9 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
       return this;
     }
 
-
     public RegionInstanceGroupManagersSetTargetPoolsRequest build() {
 
-      return new RegionInstanceGroupManagersSetTargetPoolsRequest(
-        fingerprint,
-        targetPools
-      );
+      return new RegionInstanceGroupManagersSetTargetPoolsRequest(fingerprint, targetPools);
     }
 
     public Builder clone() {
@@ -178,8 +173,11 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
   @Override
   public String toString() {
     return "RegionInstanceGroupManagersSetTargetPoolsRequest{"
-        + "fingerprint=" + fingerprint + ", "
-        + "targetPools=" + targetPools
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "targetPools="
+        + targetPools
         + "}";
   }
 
@@ -189,20 +187,16 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
       return true;
     }
     if (o instanceof RegionInstanceGroupManagersSetTargetPoolsRequest) {
-      RegionInstanceGroupManagersSetTargetPoolsRequest that = (RegionInstanceGroupManagersSetTargetPoolsRequest) o;
-      return
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.targetPools, that.getTargetPoolsList())
-          ;
+      RegionInstanceGroupManagersSetTargetPoolsRequest that =
+          (RegionInstanceGroupManagersSetTargetPoolsRequest) o;
+      return Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.targetPools, that.getTargetPoolsList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      fingerprint,
-      targetPools
-    );
+    return Objects.hash(fingerprint, targetPools);
   }
 }

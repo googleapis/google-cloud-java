@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RouteClient.ListRoutesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -23,10 +25,7 @@ import com.google.cloud.compute.v1.GetRouteHttpRequest;
 import com.google.cloud.compute.v1.InsertRouteHttpRequest;
 import com.google.cloud.compute.v1.ListRoutesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRouteName;
 import com.google.cloud.compute.v1.Route;
-import static com.google.cloud.compute.v1.RouteClient.ListRoutesPagedResponse;
 import com.google.cloud.compute.v1.RouteList;
 import javax.annotation.Generated;
 
@@ -39,7 +38,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RouteStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteRouteHttpRequest, Operation> deleteRouteCallable() {
@@ -66,4 +64,6 @@ public abstract class RouteStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listRoutesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

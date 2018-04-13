@@ -15,11 +15,12 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
+import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -30,8 +31,6 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -41,7 +40,6 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.auth.Credentials;
 import com.google.cloud.compute.v1.AggregatedListRoutersHttpRequest;
 import com.google.cloud.compute.v1.DeleteRouterHttpRequest;
 import com.google.cloud.compute.v1.GetRouterHttpRequest;
@@ -53,8 +51,6 @@ import com.google.cloud.compute.v1.PatchRouterHttpRequest;
 import com.google.cloud.compute.v1.PreviewRouterHttpRequest;
 import com.google.cloud.compute.v1.Router;
 import com.google.cloud.compute.v1.RouterAggregatedList;
-import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
-import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
 import com.google.cloud.compute.v1.RouterList;
 import com.google.cloud.compute.v1.RouterStatusResponse;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
@@ -64,10 +60,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -78,15 +72,15 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
+ *       port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of deleteRouter to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of deleteRouter to 30 seconds:
  *
  * <pre>
  * <code>
@@ -101,91 +95,83 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class RouterStubSettings extends StubSettings<RouterStubSettings> {
-  /**
-   * The default scopes of the service.
-   */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES = ImmutableList.<String>builder()
-      .add("https://www.googleapis.com/auth/cloud-platform")
-      .add("https://www.googleapis.com/auth/compute")
-      .add("https://www.googleapis.com/auth/compute.readonly")
-      .add("https://www.googleapis.com/auth/devstorage.full_control")
-      .add("https://www.googleapis.com/auth/devstorage.read_only")
-      .add("https://www.googleapis.com/auth/devstorage.read_write")
-      .build();
+  /** The default scopes of the service. */
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/devstorage.full_control")
+          .add("https://www.googleapis.com/auth/devstorage.read_only")
+          .add("https://www.googleapis.com/auth/devstorage.read_write")
+          .build();
 
-  private final PagedCallSettings<AggregatedListRoutersHttpRequest, RouterAggregatedList, AggregatedListRoutersPagedResponse> aggregatedListRoutersSettings;
+  private final PagedCallSettings<
+          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersPagedResponse>
+      aggregatedListRoutersSettings;
   private final UnaryCallSettings<DeleteRouterHttpRequest, Operation> deleteRouterSettings;
   private final UnaryCallSettings<GetRouterHttpRequest, Router> getRouterSettings;
-  private final UnaryCallSettings<GetRouterStatusRouterHttpRequest, RouterStatusResponse> getRouterStatusRouterSettings;
+  private final UnaryCallSettings<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
+      getRouterStatusRouterSettings;
   private final UnaryCallSettings<InsertRouterHttpRequest, Operation> insertRouterSettings;
-  private final PagedCallSettings<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse> listRoutersSettings;
+  private final PagedCallSettings<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse>
+      listRoutersSettings;
   private final UnaryCallSettings<PatchRouterHttpRequest, Operation> patchRouterSettings;
-  private final UnaryCallSettings<PreviewRouterHttpRequest, RoutersPreviewResponse> previewRouterSettings;
+  private final UnaryCallSettings<PreviewRouterHttpRequest, RoutersPreviewResponse>
+      previewRouterSettings;
   private final UnaryCallSettings<UpdateRouterHttpRequest, Operation> updateRouterSettings;
 
-  /**
-   * Returns the object with the settings used for calls to aggregatedListRouters.
-   */
-  public PagedCallSettings<AggregatedListRoutersHttpRequest, RouterAggregatedList, AggregatedListRoutersPagedResponse> aggregatedListRoutersSettings() {
+  /** Returns the object with the settings used for calls to aggregatedListRouters. */
+  public PagedCallSettings<
+          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersPagedResponse>
+      aggregatedListRoutersSettings() {
     return aggregatedListRoutersSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to deleteRouter.
-   */
+  /** Returns the object with the settings used for calls to deleteRouter. */
   public UnaryCallSettings<DeleteRouterHttpRequest, Operation> deleteRouterSettings() {
     return deleteRouterSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getRouter.
-   */
+  /** Returns the object with the settings used for calls to getRouter. */
   public UnaryCallSettings<GetRouterHttpRequest, Router> getRouterSettings() {
     return getRouterSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getRouterStatusRouter.
-   */
-  public UnaryCallSettings<GetRouterStatusRouterHttpRequest, RouterStatusResponse> getRouterStatusRouterSettings() {
+  /** Returns the object with the settings used for calls to getRouterStatusRouter. */
+  public UnaryCallSettings<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
+      getRouterStatusRouterSettings() {
     return getRouterStatusRouterSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to insertRouter.
-   */
+  /** Returns the object with the settings used for calls to insertRouter. */
   public UnaryCallSettings<InsertRouterHttpRequest, Operation> insertRouterSettings() {
     return insertRouterSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listRouters.
-   */
-  public PagedCallSettings<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse> listRoutersSettings() {
+  /** Returns the object with the settings used for calls to listRouters. */
+  public PagedCallSettings<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse>
+      listRoutersSettings() {
     return listRoutersSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to patchRouter.
-   */
+  /** Returns the object with the settings used for calls to patchRouter. */
   public UnaryCallSettings<PatchRouterHttpRequest, Operation> patchRouterSettings() {
     return patchRouterSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to previewRouter.
-   */
-  public UnaryCallSettings<PreviewRouterHttpRequest, RoutersPreviewResponse> previewRouterSettings() {
+  /** Returns the object with the settings used for calls to previewRouter. */
+  public UnaryCallSettings<PreviewRouterHttpRequest, RoutersPreviewResponse>
+      previewRouterSettings() {
     return previewRouterSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to updateRouter.
-   */
+  /** Returns the object with the settings used for calls to updateRouter. */
   public UnaryCallSettings<UpdateRouterHttpRequest, Operation> updateRouterSettings() {
     return updateRouterSettings;
   }
-
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RouterStub createStub() throws IOException {
@@ -199,47 +185,34 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     }
   }
 
-  /**
-   * Returns a builder for the default ExecutorProvider for this service.
-   */
+  /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /**
-   * Returns the default service endpoint.
-   */
+  /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return "https://www.googleapis.com/compute/v1/projects/";
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return 443;
   }
 
-
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-
-  /**
-   * Returns a builder for the default credentials for this service.
-   */
+  /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder()
-        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
-        ;
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingHttpJsonChannelProvider.Builder defaultHttpJsonTransportProviderBuilder() {
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
@@ -251,26 +224,22 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(RouterStubSettings.class))
-        .setTransportToken(GaxHttpJsonProperties.getHttpJsonTokenName(), GaxHttpJsonProperties.getHttpJsonVersion());
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -289,129 +258,158 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     updateRouterSettings = settingsBuilder.updateRouterSettings().build();
   }
 
-  private static final PagedListDescriptor<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList> AGGREGATED_LIST_ROUTERS_PAGE_STR_DESC =
-      new PagedListDescriptor<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
-        @Override
-        public AggregatedListRoutersHttpRequest injectToken(AggregatedListRoutersHttpRequest payload, String token) {
-          return AggregatedListRoutersHttpRequest
-            .newBuilder(payload)
-            .setPageToken(token)
-            .build();
-        }
-        @Override
-        public AggregatedListRoutersHttpRequest injectPageSize(AggregatedListRoutersHttpRequest payload, int pageSize) {
-          return AggregatedListRoutersHttpRequest
-            .newBuilder(payload)
-            .setMaxResults(pageSize)
-            .build();
-        }
-        @Override
-        public Integer extractPageSize(AggregatedListRoutersHttpRequest payload) {
-          return payload.getMaxResults();
-        }
-        @Override
-        public String extractNextToken(RouterAggregatedList payload) {
-          return payload.getNextPageToken();
-        }
-        @Override
-        public Iterable<RoutersScopedList> extractResources(RouterAggregatedList payload) {
-          return payload.getItemsMap().values();
-        }
-      };
+  private static final PagedListDescriptor<
+          AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>
+      AGGREGATED_LIST_ROUTERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
 
-  private static final PagedListDescriptor<ListRoutersHttpRequest, RouterList, Router> LIST_ROUTERS_PAGE_STR_DESC =
-      new PagedListDescriptor<ListRoutersHttpRequest, RouterList, Router>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
-        @Override
-        public ListRoutersHttpRequest injectToken(ListRoutersHttpRequest payload, String token) {
-          return ListRoutersHttpRequest
-            .newBuilder(payload)
-            .setPageToken(token)
-            .build();
-        }
-        @Override
-        public ListRoutersHttpRequest injectPageSize(ListRoutersHttpRequest payload, int pageSize) {
-          return ListRoutersHttpRequest
-            .newBuilder(payload)
-            .setMaxResults(pageSize)
-            .build();
-        }
-        @Override
-        public Integer extractPageSize(ListRoutersHttpRequest payload) {
-          return payload.getMaxResults();
-        }
-        @Override
-        public String extractNextToken(RouterList payload) {
-          return payload.getNextPageToken();
-        }
-        @Override
-        public Iterable<Router> extractResources(RouterList payload) {
-          return payload.getItemsList();
-        }
-      };
+            @Override
+            public AggregatedListRoutersHttpRequest injectToken(
+                AggregatedListRoutersHttpRequest payload, String token) {
+              return AggregatedListRoutersHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
 
-  private static final PagedListResponseFactory<AggregatedListRoutersHttpRequest, RouterAggregatedList, AggregatedListRoutersPagedResponse> AGGREGATED_LIST_ROUTERS_PAGE_STR_FACT =
-      new PagedListResponseFactory<AggregatedListRoutersHttpRequest, RouterAggregatedList, AggregatedListRoutersPagedResponse>() {
-        @Override
-        public ApiFuture<AggregatedListRoutersPagedResponse> getFuturePagedResponse(
-            UnaryCallable<AggregatedListRoutersHttpRequest, RouterAggregatedList> callable,
-            AggregatedListRoutersHttpRequest request,
-            ApiCallContext context,
-            ApiFuture<RouterAggregatedList> futureResponse) {
-          PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList> pageContext =
-              PageContext.create(callable, AGGREGATED_LIST_ROUTERS_PAGE_STR_DESC, request, context);
-          return AggregatedListRoutersPagedResponse.createAsync(pageContext, futureResponse);
-        }
-      };
+            @Override
+            public AggregatedListRoutersHttpRequest injectPageSize(
+                AggregatedListRoutersHttpRequest payload, int pageSize) {
+              return AggregatedListRoutersHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
 
-  private static final PagedListResponseFactory<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse> LIST_ROUTERS_PAGE_STR_FACT =
-      new PagedListResponseFactory<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse>() {
-        @Override
-        public ApiFuture<ListRoutersPagedResponse> getFuturePagedResponse(
-            UnaryCallable<ListRoutersHttpRequest, RouterList> callable,
-            ListRoutersHttpRequest request,
-            ApiCallContext context,
-            ApiFuture<RouterList> futureResponse) {
-          PageContext<ListRoutersHttpRequest, RouterList, Router> pageContext =
-              PageContext.create(callable, LIST_ROUTERS_PAGE_STR_DESC, request, context);
-          return ListRoutersPagedResponse.createAsync(pageContext, futureResponse);
-        }
-      };
+            @Override
+            public Integer extractPageSize(AggregatedListRoutersHttpRequest payload) {
+              return payload.getMaxResults();
+            }
 
+            @Override
+            public String extractNextToken(RouterAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
 
-  /**
-   * Builder for RouterStubSettings.
-   */
+            @Override
+            public Iterable<RoutersScopedList> extractResources(RouterAggregatedList payload) {
+              return payload.getItemsMap().values();
+            }
+          };
+
+  private static final PagedListDescriptor<ListRoutersHttpRequest, RouterList, Router>
+      LIST_ROUTERS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListRoutersHttpRequest, RouterList, Router>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRoutersHttpRequest injectToken(
+                ListRoutersHttpRequest payload, String token) {
+              return ListRoutersHttpRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRoutersHttpRequest injectPageSize(
+                ListRoutersHttpRequest payload, int pageSize) {
+              return ListRoutersHttpRequest.newBuilder(payload).setMaxResults(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRoutersHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(RouterList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Router> extractResources(RouterList payload) {
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersPagedResponse>
+      AGGREGATED_LIST_ROUTERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListRoutersHttpRequest, RouterAggregatedList,
+              AggregatedListRoutersPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListRoutersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListRoutersHttpRequest, RouterAggregatedList> callable,
+                AggregatedListRoutersHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<RouterAggregatedList> futureResponse) {
+              PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>
+                  pageContext =
+                      PageContext.create(
+                          callable, AGGREGATED_LIST_ROUTERS_PAGE_STR_DESC, request, context);
+              return AggregatedListRoutersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse>
+      LIST_ROUTERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse>() {
+            @Override
+            public ApiFuture<ListRoutersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRoutersHttpRequest, RouterList> callable,
+                ListRoutersHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<RouterList> futureResponse) {
+              PageContext<ListRoutersHttpRequest, RouterList, Router> pageContext =
+                  PageContext.create(callable, LIST_ROUTERS_PAGE_STR_DESC, request, context);
+              return ListRoutersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Builder for RouterStubSettings. */
   public static class Builder extends StubSettings.Builder<RouterStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final PagedCallSettings.Builder<AggregatedListRoutersHttpRequest, RouterAggregatedList, AggregatedListRoutersPagedResponse> aggregatedListRoutersSettings;
-    private final UnaryCallSettings.Builder<DeleteRouterHttpRequest, Operation> deleteRouterSettings;
+    private final PagedCallSettings.Builder<
+            AggregatedListRoutersHttpRequest, RouterAggregatedList,
+            AggregatedListRoutersPagedResponse>
+        aggregatedListRoutersSettings;
+    private final UnaryCallSettings.Builder<DeleteRouterHttpRequest, Operation>
+        deleteRouterSettings;
     private final UnaryCallSettings.Builder<GetRouterHttpRequest, Router> getRouterSettings;
-    private final UnaryCallSettings.Builder<GetRouterStatusRouterHttpRequest, RouterStatusResponse> getRouterStatusRouterSettings;
-    private final UnaryCallSettings.Builder<InsertRouterHttpRequest, Operation> insertRouterSettings;
-    private final PagedCallSettings.Builder<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse> listRoutersSettings;
+    private final UnaryCallSettings.Builder<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
+        getRouterStatusRouterSettings;
+    private final UnaryCallSettings.Builder<InsertRouterHttpRequest, Operation>
+        insertRouterSettings;
+    private final PagedCallSettings.Builder<
+            ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse>
+        listRoutersSettings;
     private final UnaryCallSettings.Builder<PatchRouterHttpRequest, Operation> patchRouterSettings;
-    private final UnaryCallSettings.Builder<PreviewRouterHttpRequest, RoutersPreviewResponse> previewRouterSettings;
-    private final UnaryCallSettings.Builder<UpdateRouterHttpRequest, Operation> updateRouterSettings;
+    private final UnaryCallSettings.Builder<PreviewRouterHttpRequest, RoutersPreviewResponse>
+        previewRouterSettings;
+    private final UnaryCallSettings.Builder<UpdateRouterHttpRequest, Operation>
+        updateRouterSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -420,15 +418,16 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ofMillis(100L))
-          .setRetryDelayMultiplier(1.3)
-          .setMaxRetryDelay(Duration.ofMillis(60000L))
-          .setInitialRpcTimeout(Duration.ofMillis(20000L))
-          .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeout(Duration.ofMillis(20000L))
-          .setTotalTimeout(Duration.ofMillis(600000L))
-          .build();
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
@@ -440,8 +439,8 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      aggregatedListRoutersSettings = PagedCallSettings.newBuilder(
-          AGGREGATED_LIST_ROUTERS_PAGE_STR_FACT);
+      aggregatedListRoutersSettings =
+          PagedCallSettings.newBuilder(AGGREGATED_LIST_ROUTERS_PAGE_STR_FACT);
 
       deleteRouterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -451,8 +450,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
       insertRouterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listRoutersSettings = PagedCallSettings.newBuilder(
-          LIST_ROUTERS_PAGE_STR_FACT);
+      listRoutersSettings = PagedCallSettings.newBuilder(LIST_ROUTERS_PAGE_STR_FACT);
 
       patchRouterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -460,17 +458,17 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
       updateRouterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-          aggregatedListRoutersSettings,
-          deleteRouterSettings,
-          getRouterSettings,
-          getRouterStatusRouterSettings,
-          insertRouterSettings,
-          listRoutersSettings,
-          patchRouterSettings,
-          previewRouterSettings,
-          updateRouterSettings
-      );
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListRoutersSettings,
+              deleteRouterSettings,
+              getRouterSettings,
+              getRouterStatusRouterSettings,
+              insertRouterSettings,
+              listRoutersSettings,
+              patchRouterSettings,
+              previewRouterSettings,
+              updateRouterSettings);
 
       initDefaults(this);
     }
@@ -486,39 +484,48 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
     private static Builder initDefaults(Builder builder) {
 
-      builder.aggregatedListRoutersSettings()
+      builder
+          .aggregatedListRoutersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.deleteRouterSettings()
+      builder
+          .deleteRouterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.getRouterSettings()
+      builder
+          .getRouterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.getRouterStatusRouterSettings()
+      builder
+          .getRouterStatusRouterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.insertRouterSettings()
+      builder
+          .insertRouterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.listRoutersSettings()
+      builder
+          .listRoutersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.patchRouterSettings()
+      builder
+          .patchRouterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.previewRouterSettings()
+      builder
+          .previewRouterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.updateRouterSettings()
+      builder
+          .updateRouterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -538,25 +545,27 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
       previewRouterSettings = settings.previewRouterSettings.toBuilder();
       updateRouterSettings = settings.updateRouterSettings.toBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-          aggregatedListRoutersSettings,
-          deleteRouterSettings,
-          getRouterSettings,
-          getRouterStatusRouterSettings,
-          insertRouterSettings,
-          listRoutersSettings,
-          patchRouterSettings,
-          previewRouterSettings,
-          updateRouterSettings
-      );
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListRoutersSettings,
+              deleteRouterSettings,
+              getRouterSettings,
+              getRouterStatusRouterSettings,
+              insertRouterSettings,
+              listRoutersSettings,
+              patchRouterSettings,
+              previewRouterSettings,
+              updateRouterSettings);
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
-     * Note: This method does not support applying settings to streaming methods.
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -565,65 +574,53 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
       return unaryMethodSettingsBuilders;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to aggregatedListRouters.
-     */
-    public PagedCallSettings.Builder<AggregatedListRoutersHttpRequest, RouterAggregatedList, AggregatedListRoutersPagedResponse> aggregatedListRoutersSettings() {
+    /** Returns the builder for the settings used for calls to aggregatedListRouters. */
+    public PagedCallSettings.Builder<
+            AggregatedListRoutersHttpRequest, RouterAggregatedList,
+            AggregatedListRoutersPagedResponse>
+        aggregatedListRoutersSettings() {
       return aggregatedListRoutersSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteRouter.
-     */
+    /** Returns the builder for the settings used for calls to deleteRouter. */
     public UnaryCallSettings.Builder<DeleteRouterHttpRequest, Operation> deleteRouterSettings() {
       return deleteRouterSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getRouter.
-     */
+    /** Returns the builder for the settings used for calls to getRouter. */
     public UnaryCallSettings.Builder<GetRouterHttpRequest, Router> getRouterSettings() {
       return getRouterSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getRouterStatusRouter.
-     */
-    public UnaryCallSettings.Builder<GetRouterStatusRouterHttpRequest, RouterStatusResponse> getRouterStatusRouterSettings() {
+    /** Returns the builder for the settings used for calls to getRouterStatusRouter. */
+    public UnaryCallSettings.Builder<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
+        getRouterStatusRouterSettings() {
       return getRouterStatusRouterSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to insertRouter.
-     */
+    /** Returns the builder for the settings used for calls to insertRouter. */
     public UnaryCallSettings.Builder<InsertRouterHttpRequest, Operation> insertRouterSettings() {
       return insertRouterSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listRouters.
-     */
-    public PagedCallSettings.Builder<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse> listRoutersSettings() {
+    /** Returns the builder for the settings used for calls to listRouters. */
+    public PagedCallSettings.Builder<ListRoutersHttpRequest, RouterList, ListRoutersPagedResponse>
+        listRoutersSettings() {
       return listRoutersSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to patchRouter.
-     */
+    /** Returns the builder for the settings used for calls to patchRouter. */
     public UnaryCallSettings.Builder<PatchRouterHttpRequest, Operation> patchRouterSettings() {
       return patchRouterSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to previewRouter.
-     */
-    public UnaryCallSettings.Builder<PreviewRouterHttpRequest, RoutersPreviewResponse> previewRouterSettings() {
+    /** Returns the builder for the settings used for calls to previewRouter. */
+    public UnaryCallSettings.Builder<PreviewRouterHttpRequest, RoutersPreviewResponse>
+        previewRouterSettings() {
       return previewRouterSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to updateRouter.
-     */
+    /** Returns the builder for the settings used for calls to updateRouter. */
     public UnaryCallSettings.Builder<UpdateRouterHttpRequest, Operation> updateRouterSettings() {
       return updateRouterSettings;
     }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class PatchUrlMapHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private PatchUrlMapHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class PatchUrlMapHttpRequest implements ApiMessage {
       String requestId,
       String urlMap,
       UrlMap urlMapResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -198,22 +193,24 @@ public final class PatchUrlMapHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(PatchUrlMapHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static PatchUrlMapHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final PatchUrlMapHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new PatchUrlMapHttpRequest();
   }
@@ -370,36 +367,27 @@ public final class PatchUrlMapHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public PatchUrlMapHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (urlMap == null) {
         missing += " urlMap";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new PatchUrlMapHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        urlMap,
-        urlMapResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          urlMap,
+          urlMapResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +409,35 @@ public final class PatchUrlMapHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "PatchUrlMapHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "urlMap=" + urlMap + ", "
-        + "urlMapResource=" + urlMapResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "urlMap="
+        + urlMap
+        + ", "
+        + "urlMapResource="
+        + urlMapResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +448,16 @@ public final class PatchUrlMapHttpRequest implements ApiMessage {
     }
     if (o instanceof PatchUrlMapHttpRequest) {
       PatchUrlMapHttpRequest that = (PatchUrlMapHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.urlMap, that.getUrlMap()) &&
-          Objects.equals(this.urlMapResource, that.getUrlMapResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.urlMap, that.getUrlMap())
+          && Objects.equals(this.urlMapResource, that.getUrlMapResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +465,15 @@ public final class PatchUrlMapHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      urlMap,
-      urlMapResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        urlMap,
+        urlMapResource,
+        userIp);
   }
 }

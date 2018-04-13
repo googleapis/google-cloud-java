@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectZoneInstanceGroupName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectZoneInstanceGroupName implements ResourceName {
   private final String instanceGroup;
   private final String project;
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/zones/{zone}/instanceGroups/{instanceGroup}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -54,29 +51,12 @@ public final class ProjectZoneInstanceGroupName implements com.google.api.resour
     zone = Preconditions.checkNotNull(builder.getZone());
   }
 
-  public static ProjectZoneInstanceGroupName of(
-      String instanceGroup,
-      String project,
-      String zone
-      ) {
-    return newBuilder()
-    .setInstanceGroup(instanceGroup)
-    .setProject(project)
-    .setZone(zone)
-      .build();
+  public static ProjectZoneInstanceGroupName of(String instanceGroup, String project, String zone) {
+    return newBuilder().setInstanceGroup(instanceGroup).setProject(project).setZone(zone).build();
   }
 
-  public static String format(
-      String instanceGroup,
-      String project,
-      String zone
-      ) {
-    return of(
-        instanceGroup,
-        project,
-        zone
-        )
-        .toString();
+  public static String format(String instanceGroup, String project, String zone) {
+    return of(instanceGroup, project, zone).toString();
   }
 
   public String getInstanceGroup() {
@@ -90,7 +70,6 @@ public final class ProjectZoneInstanceGroupName implements com.google.api.resour
   public String getZone() {
     return zone;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +91,20 @@ public final class ProjectZoneInstanceGroupName implements com.google.api.resour
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectZoneInstanceGroupName> newFactory() {
     return new ResourceNameFactory<ProjectZoneInstanceGroupName>() {
-      public ProjectZoneInstanceGroupName parse(String formattedString) {return ProjectZoneInstanceGroupName.parse(formattedString);}
+      public ProjectZoneInstanceGroupName parse(String formattedString) {
+        return ProjectZoneInstanceGroupName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectZoneInstanceGroupName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectZoneInstanceGroupName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("instanceGroup"),
-      matchMap.get("project"),
-      matchMap.get("zone")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectZoneInstanceGroupName.parse: formattedString not in valid format");
+    return of(matchMap.get("instanceGroup"), matchMap.get("project"), matchMap.get("zone"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +119,11 @@ public final class ProjectZoneInstanceGroupName implements com.google.api.resour
     public String getInstanceGroup() {
       return instanceGroup;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getZone() {
       return zone;
     }
@@ -152,10 +132,12 @@ public final class ProjectZoneInstanceGroupName implements com.google.api.resour
       this.instanceGroup = instanceGroup;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;
@@ -163,7 +145,7 @@ public final class ProjectZoneInstanceGroupName implements com.google.api.resour
 
     private Builder() {}
 
-    public Builder (ProjectZoneInstanceGroupName projectZoneInstanceGroupName) {
+    public Builder(ProjectZoneInstanceGroupName projectZoneInstanceGroupName) {
       instanceGroup = projectZoneInstanceGroupName.instanceGroup;
       project = projectZoneInstanceGroupName.project;
       zone = projectZoneInstanceGroupName.zone;
@@ -179,8 +161,7 @@ public final class ProjectZoneInstanceGroupName implements com.google.api.resour
     return PATH_TEMPLATE.instantiate(
         "instanceGroup", instanceGroup,
         "project", project,
-        "zone", zone
-        );
+        "zone", zone);
   }
 
   @Override
@@ -190,21 +171,15 @@ public final class ProjectZoneInstanceGroupName implements com.google.api.resour
     }
     if (o instanceof ProjectZoneInstanceGroupName) {
       ProjectZoneInstanceGroupName that = (ProjectZoneInstanceGroupName) o;
-      return
-          Objects.equals(this.instanceGroup, that.getInstanceGroup()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.instanceGroup, that.getInstanceGroup())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instanceGroup,
-      project,
-      zone
-    );
+    return Objects.hash(instanceGroup, project, zone);
   }
 }

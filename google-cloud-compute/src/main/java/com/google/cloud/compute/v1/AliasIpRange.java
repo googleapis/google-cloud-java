@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class AliasIpRange implements ApiMessage {
     this.subnetworkRangeName = null;
   }
 
-
-  private AliasIpRange(
-      String ipCidrRange,
-      String subnetworkRangeName
-      ) {
+  private AliasIpRange(String ipCidrRange, String subnetworkRangeName) {
     this.ipCidrRange = ipCidrRange;
     this.subnetworkRangeName = subnetworkRangeName;
   }
@@ -56,7 +49,8 @@ public final class AliasIpRange implements ApiMessage {
       fieldMap.put("ipCidrRange", Collections.singletonList(String.valueOf(ipCidrRange)));
     }
     if (fieldNames.contains("subnetworkRangeName") && subnetworkRangeName != null) {
-      fieldMap.put("subnetworkRangeName", Collections.singletonList(String.valueOf(subnetworkRangeName)));
+      fieldMap.put(
+          "subnetworkRangeName", Collections.singletonList(String.valueOf(subnetworkRangeName)));
     }
     return fieldMap;
   }
@@ -86,22 +80,24 @@ public final class AliasIpRange implements ApiMessage {
     return subnetworkRangeName;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AliasIpRange prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AliasIpRange getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AliasIpRange DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AliasIpRange();
   }
@@ -146,13 +142,9 @@ public final class AliasIpRange implements ApiMessage {
       return this;
     }
 
-
     public AliasIpRange build() {
 
-      return new AliasIpRange(
-        ipCidrRange,
-        subnetworkRangeName
-      );
+      return new AliasIpRange(ipCidrRange, subnetworkRangeName);
     }
 
     public Builder clone() {
@@ -166,8 +158,11 @@ public final class AliasIpRange implements ApiMessage {
   @Override
   public String toString() {
     return "AliasIpRange{"
-        + "ipCidrRange=" + ipCidrRange + ", "
-        + "subnetworkRangeName=" + subnetworkRangeName
+        + "ipCidrRange="
+        + ipCidrRange
+        + ", "
+        + "subnetworkRangeName="
+        + subnetworkRangeName
         + "}";
   }
 
@@ -178,19 +173,14 @@ public final class AliasIpRange implements ApiMessage {
     }
     if (o instanceof AliasIpRange) {
       AliasIpRange that = (AliasIpRange) o;
-      return
-          Objects.equals(this.ipCidrRange, that.getIpCidrRange()) &&
-          Objects.equals(this.subnetworkRangeName, that.getSubnetworkRangeName())
-          ;
+      return Objects.equals(this.ipCidrRange, that.getIpCidrRange())
+          && Objects.equals(this.subnetworkRangeName, that.getSubnetworkRangeName());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      ipCidrRange,
-      subnetworkRangeName
-    );
+    return Objects.hash(ipCidrRange, subnetworkRangeName);
   }
 }

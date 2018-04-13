@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class Tags implements ApiMessage {
     this.items = null;
   }
 
-
-  private Tags(
-      String fingerprint,
-      List<String> items
-      ) {
+  private Tags(String fingerprint, List<String> items) {
     this.fingerprint = fingerprint;
     this.items = items;
   }
@@ -90,22 +85,24 @@ public final class Tags implements ApiMessage {
     return items;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Tags prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Tags getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Tags DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Tags();
   }
@@ -158,13 +155,9 @@ public final class Tags implements ApiMessage {
       return this;
     }
 
-
     public Tags build() {
 
-      return new Tags(
-        fingerprint,
-        items
-      );
+      return new Tags(fingerprint, items);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class Tags implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Tags{"
-        + "fingerprint=" + fingerprint + ", "
-        + "items=" + items
-        + "}";
+    return "Tags{" + "fingerprint=" + fingerprint + ", " + "items=" + items + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class Tags implements ApiMessage {
     }
     if (o instanceof Tags) {
       Tags that = (Tags) o;
-      return
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.items, that.getItemsList())
-          ;
+      return Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.items, that.getItemsList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      fingerprint,
-      items
-    );
+    return Objects.hash(fingerprint, items);
   }
 }

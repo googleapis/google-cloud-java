@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,7 +61,6 @@ public final class Commitment implements ApiMessage {
     this.statusMessage = null;
   }
 
-
   private Commitment(
       String creationTimestamp,
       String description,
@@ -76,8 +74,7 @@ public final class Commitment implements ApiMessage {
       String selfLink,
       String startTimestamp,
       String status,
-      String statusMessage
-      ) {
+      String statusMessage) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.endTimestamp = endTimestamp;
@@ -97,7 +94,8 @@ public final class Commitment implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -244,22 +242,24 @@ public final class Commitment implements ApiMessage {
     return statusMessage;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Commitment prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Commitment getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Commitment DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Commitment();
   }
@@ -466,35 +466,22 @@ public final class Commitment implements ApiMessage {
       return this;
     }
 
-
     public Commitment build() {
 
-
-
-
-
-
-
-
-
-
-
-
       return new Commitment(
-        creationTimestamp,
-        description,
-        endTimestamp,
-        id,
-        kind,
-        name,
-        plan,
-        region,
-        resources,
-        selfLink,
-        startTimestamp,
-        status,
-        statusMessage
-      );
+          creationTimestamp,
+          description,
+          endTimestamp,
+          id,
+          kind,
+          name,
+          plan,
+          region,
+          resources,
+          selfLink,
+          startTimestamp,
+          status,
+          statusMessage);
     }
 
     public Builder clone() {
@@ -519,19 +506,44 @@ public final class Commitment implements ApiMessage {
   @Override
   public String toString() {
     return "Commitment{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "endTimestamp=" + endTimestamp + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "plan=" + plan + ", "
-        + "region=" + region + ", "
-        + "resources=" + resources + ", "
-        + "selfLink=" + selfLink + ", "
-        + "startTimestamp=" + startTimestamp + ", "
-        + "status=" + status + ", "
-        + "statusMessage=" + statusMessage
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "endTimestamp="
+        + endTimestamp
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "plan="
+        + plan
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "resources="
+        + resources
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "startTimestamp="
+        + startTimestamp
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "statusMessage="
+        + statusMessage
         + "}";
   }
 
@@ -542,21 +554,19 @@ public final class Commitment implements ApiMessage {
     }
     if (o instanceof Commitment) {
       Commitment that = (Commitment) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.endTimestamp, that.getEndTimestamp()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.plan, that.getPlan()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.resources, that.getResourcesList()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.startTimestamp, that.getStartTimestamp()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.statusMessage, that.getStatusMessage())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.endTimestamp, that.getEndTimestamp())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.plan, that.getPlan())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.resources, that.getResourcesList())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.startTimestamp, that.getStartTimestamp())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.statusMessage, that.getStatusMessage());
     }
     return false;
   }
@@ -564,19 +574,18 @@ public final class Commitment implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      endTimestamp,
-      id,
-      kind,
-      name,
-      plan,
-      region,
-      resources,
-      selfLink,
-      startTimestamp,
-      status,
-      statusMessage
-    );
+        creationTimestamp,
+        description,
+        endTimestamp,
+        id,
+        kind,
+        name,
+        plan,
+        region,
+        resources,
+        selfLink,
+        startTimestamp,
+        status,
+        statusMessage);
   }
 }

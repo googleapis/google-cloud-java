@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectRegionTargetPoolName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectRegionTargetPoolName implements ResourceName {
   private final String project;
   private final String region;
   private final String targetPool;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/targetPools/{targetPool}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/targetPools/{targetPool}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -54,29 +51,12 @@ public final class ProjectRegionTargetPoolName implements com.google.api.resourc
     targetPool = Preconditions.checkNotNull(builder.getTargetPool());
   }
 
-  public static ProjectRegionTargetPoolName of(
-      String project,
-      String region,
-      String targetPool
-      ) {
-    return newBuilder()
-    .setProject(project)
-    .setRegion(region)
-    .setTargetPool(targetPool)
-      .build();
+  public static ProjectRegionTargetPoolName of(String project, String region, String targetPool) {
+    return newBuilder().setProject(project).setRegion(region).setTargetPool(targetPool).build();
   }
 
-  public static String format(
-      String project,
-      String region,
-      String targetPool
-      ) {
-    return of(
-        project,
-        region,
-        targetPool
-        )
-        .toString();
+  public static String format(String project, String region, String targetPool) {
+    return of(project, region, targetPool).toString();
   }
 
   public String getProject() {
@@ -90,7 +70,6 @@ public final class ProjectRegionTargetPoolName implements com.google.api.resourc
   public String getTargetPool() {
     return targetPool;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +91,20 @@ public final class ProjectRegionTargetPoolName implements com.google.api.resourc
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectRegionTargetPoolName> newFactory() {
     return new ResourceNameFactory<ProjectRegionTargetPoolName>() {
-      public ProjectRegionTargetPoolName parse(String formattedString) {return ProjectRegionTargetPoolName.parse(formattedString);}
+      public ProjectRegionTargetPoolName parse(String formattedString) {
+        return ProjectRegionTargetPoolName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectRegionTargetPoolName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRegionTargetPoolName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("project"),
-      matchMap.get("region"),
-      matchMap.get("targetPool")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectRegionTargetPoolName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("region"), matchMap.get("targetPool"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +119,11 @@ public final class ProjectRegionTargetPoolName implements com.google.api.resourc
     public String getProject() {
       return project;
     }
+
     public String getRegion() {
       return region;
     }
+
     public String getTargetPool() {
       return targetPool;
     }
@@ -152,10 +132,12 @@ public final class ProjectRegionTargetPoolName implements com.google.api.resourc
       this.project = project;
       return this;
     }
+
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
+
     public Builder setTargetPool(String targetPool) {
       this.targetPool = targetPool;
       return this;
@@ -163,7 +145,7 @@ public final class ProjectRegionTargetPoolName implements com.google.api.resourc
 
     private Builder() {}
 
-    public Builder (ProjectRegionTargetPoolName projectRegionTargetPoolName) {
+    public Builder(ProjectRegionTargetPoolName projectRegionTargetPoolName) {
       project = projectRegionTargetPoolName.project;
       region = projectRegionTargetPoolName.region;
       targetPool = projectRegionTargetPoolName.targetPool;
@@ -179,8 +161,7 @@ public final class ProjectRegionTargetPoolName implements com.google.api.resourc
     return PATH_TEMPLATE.instantiate(
         "project", project,
         "region", region,
-        "targetPool", targetPool
-        );
+        "targetPool", targetPool);
   }
 
   @Override
@@ -190,21 +171,15 @@ public final class ProjectRegionTargetPoolName implements com.google.api.resourc
     }
     if (o instanceof ProjectRegionTargetPoolName) {
       ProjectRegionTargetPoolName that = (ProjectRegionTargetPoolName) o;
-      return
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.targetPool, that.getTargetPool())
-          ;
+      return Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.targetPool, that.getTargetPool());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      project,
-      region,
-      targetPool
-    );
+    return Objects.hash(project, region, targetPool);
   }
 }

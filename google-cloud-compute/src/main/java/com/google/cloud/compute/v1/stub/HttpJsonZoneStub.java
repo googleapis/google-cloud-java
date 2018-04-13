@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.ZoneClient.ListZonesPagedResponse;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,7 +28,6 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetZoneHttpRequest;
@@ -34,15 +35,9 @@ import com.google.cloud.compute.v1.ListZonesHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.Zone;
-import static com.google.cloud.compute.v1.ZoneClient.ListZonesPagedResponse;
 import com.google.cloud.compute.v1.ZoneList;
-import com.google.cloud.compute.v1.ZoneSettings;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -64,8 +59,7 @@ public class HttpJsonZoneStub extends ZoneStub {
               ApiMessageHttpRequestFormatter.<GetZoneHttpRequest>newBuilder()
                   .setRequestInstance(GetZoneHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
+                  .setQueryParams(Sets.<String>newHashSet())
                   .setResourceNameFactory(ProjectZoneName.newFactory())
                   .setResourceNameField("zone")
                   .build())
@@ -74,26 +68,28 @@ public class HttpJsonZoneStub extends ZoneStub {
                   .setResponseInstance(Zone.getDefaultInstance())
                   .build())
           .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<ListZonesHttpRequest, ZoneList> listZonesMethodDescriptor =
-      ApiMethodDescriptor.<ListZonesHttpRequest, ZoneList>newBuilder()
-          .setFullMethodName("compute.zones.list")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<ListZonesHttpRequest>newBuilder()
-                  .setRequestInstance(ListZonesHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<ZoneList>newBuilder()
-                  .setResponseInstance(ZoneList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<ListZonesHttpRequest, ZoneList>
+      listZonesMethodDescriptor =
+          ApiMethodDescriptor.<ListZonesHttpRequest, ZoneList>newBuilder()
+              .setFullMethodName("compute.zones.list")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListZonesHttpRequest>newBuilder()
+                      .setRequestInstance(ListZonesHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/zones"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<ZoneList>newBuilder()
+                      .setResponseInstance(ZoneList.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetZoneHttpRequest, Zone> getZoneCallable;
@@ -101,6 +97,7 @@ public class HttpJsonZoneStub extends ZoneStub {
   private final UnaryCallable<ListZonesHttpRequest, ListZonesPagedResponse> listZonesPagedCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
+
   public static final HttpJsonZoneStub create(ZoneStubSettings settings) throws IOException {
     return new HttpJsonZoneStub(settings, ClientContext.create(settings));
   }
@@ -109,25 +106,30 @@ public class HttpJsonZoneStub extends ZoneStub {
     return new HttpJsonZoneStub(ZoneStubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final HttpJsonZoneStub create(ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
-    return new HttpJsonZoneStub(ZoneStubSettings.newBuilder().build(), clientContext, callableFactory);
+  public static final HttpJsonZoneStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonZoneStub(
+        ZoneStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of HttpJsonZoneStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonZoneStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected HttpJsonZoneStub(ZoneStubSettings settings, ClientContext clientContext) throws IOException {
+  protected HttpJsonZoneStub(ZoneStubSettings settings, ClientContext clientContext)
+      throws IOException {
     this(settings, clientContext, new HttpJsonZoneCallableFactory());
   }
 
   /**
-   * Constructs an instance of HttpJsonZoneStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonZoneStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected HttpJsonZoneStub(ZoneStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+  protected HttpJsonZoneStub(
+      ZoneStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
 
     HttpJsonCallSettings<GetZoneHttpRequest, Zone> getZoneTransportSettings =
@@ -139,9 +141,15 @@ public class HttpJsonZoneStub extends ZoneStub {
             .setMethodDescriptor(listZonesMethodDescriptor)
             .build();
 
-    this.getZoneCallable = callableFactory.createUnaryCallable(getZoneTransportSettings,settings.getZoneSettings(), clientContext);
-    this.listZonesCallable = callableFactory.createUnaryCallable(listZonesTransportSettings,settings.listZonesSettings(), clientContext);
-    this.listZonesPagedCallable = callableFactory.createPagedCallable(listZonesTransportSettings,settings.listZonesSettings(), clientContext);
+    this.getZoneCallable =
+        callableFactory.createUnaryCallable(
+            getZoneTransportSettings, settings.getZoneSettings(), clientContext);
+    this.listZonesCallable =
+        callableFactory.createUnaryCallable(
+            listZonesTransportSettings, settings.listZonesSettings(), clientContext);
+    this.listZonesPagedCallable =
+        callableFactory.createPagedCallable(
+            listZonesTransportSettings, settings.listZonesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -162,7 +170,7 @@ public class HttpJsonZoneStub extends ZoneStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
@@ -190,5 +198,4 @@ public class HttpJsonZoneStub extends ZoneStub {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
-
 }

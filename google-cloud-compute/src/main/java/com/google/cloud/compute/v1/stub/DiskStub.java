@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.DiskClient.AggregatedListDisksPagedResponse;
+import static com.google.cloud.compute.v1.DiskClient.ListDisksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -23,22 +26,13 @@ import com.google.cloud.compute.v1.CreateSnapshotDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteDiskHttpRequest;
 import com.google.cloud.compute.v1.Disk;
 import com.google.cloud.compute.v1.DiskAggregatedList;
-import static com.google.cloud.compute.v1.DiskClient.AggregatedListDisksPagedResponse;
-import static com.google.cloud.compute.v1.DiskClient.ListDisksPagedResponse;
 import com.google.cloud.compute.v1.DiskList;
-import com.google.cloud.compute.v1.DisksResizeRequest;
-import com.google.cloud.compute.v1.DisksScopedList;
 import com.google.cloud.compute.v1.GetDiskHttpRequest;
 import com.google.cloud.compute.v1.InsertDiskHttpRequest;
 import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneDiskName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
-import com.google.cloud.compute.v1.Snapshot;
-import com.google.cloud.compute.v1.ZoneSetLabelsRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -51,14 +45,15 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DiskStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListDisksHttpRequest, AggregatedListDisksPagedResponse> aggregatedListDisksPagedCallable() {
+  public UnaryCallable<AggregatedListDisksHttpRequest, AggregatedListDisksPagedResponse>
+      aggregatedListDisksPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListDisksPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListDisksHttpRequest, DiskAggregatedList> aggregatedListDisksCallable() {
+  public UnaryCallable<AggregatedListDisksHttpRequest, DiskAggregatedList>
+      aggregatedListDisksCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListDisksCallable()");
   }
 
@@ -102,4 +97,6 @@ public abstract class DiskStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setLabelsDiskCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

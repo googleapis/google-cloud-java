@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -60,7 +59,6 @@ public final class TargetPool implements ApiMessage {
     this.sessionAffinity = null;
   }
 
-
   private TargetPool(
       String backupPool,
       String creationTimestamp,
@@ -73,8 +71,7 @@ public final class TargetPool implements ApiMessage {
       String name,
       String region,
       String selfLink,
-      String sessionAffinity
-      ) {
+      String sessionAffinity) {
     this.backupPool = backupPool;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -96,7 +93,8 @@ public final class TargetPool implements ApiMessage {
       fieldMap.put("backupPool", Collections.singletonList(String.valueOf(backupPool)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -234,22 +232,24 @@ public final class TargetPool implements ApiMessage {
     return sessionAffinity;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetPool prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetPool getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetPool DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetPool();
   }
@@ -450,33 +450,21 @@ public final class TargetPool implements ApiMessage {
       return this;
     }
 
-
     public TargetPool build() {
 
-
-
-
-
-
-
-
-
-
-
       return new TargetPool(
-        backupPool,
-        creationTimestamp,
-        description,
-        failoverRatio,
-        healthChecks,
-        id,
-        instances,
-        kind,
-        name,
-        region,
-        selfLink,
-        sessionAffinity
-      );
+          backupPool,
+          creationTimestamp,
+          description,
+          failoverRatio,
+          healthChecks,
+          id,
+          instances,
+          kind,
+          name,
+          region,
+          selfLink,
+          sessionAffinity);
     }
 
     public Builder clone() {
@@ -500,18 +488,41 @@ public final class TargetPool implements ApiMessage {
   @Override
   public String toString() {
     return "TargetPool{"
-        + "backupPool=" + backupPool + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "failoverRatio=" + failoverRatio + ", "
-        + "healthChecks=" + healthChecks + ", "
-        + "id=" + id + ", "
-        + "instances=" + instances + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "sessionAffinity=" + sessionAffinity
+        + "backupPool="
+        + backupPool
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "failoverRatio="
+        + failoverRatio
+        + ", "
+        + "healthChecks="
+        + healthChecks
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "instances="
+        + instances
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "sessionAffinity="
+        + sessionAffinity
         + "}";
   }
 
@@ -522,20 +533,18 @@ public final class TargetPool implements ApiMessage {
     }
     if (o instanceof TargetPool) {
       TargetPool that = (TargetPool) o;
-      return
-          Objects.equals(this.backupPool, that.getBackupPool()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.failoverRatio, that.getFailoverRatio()) &&
-          Objects.equals(this.healthChecks, that.getHealthChecksList()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.instances, that.getInstancesList()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.sessionAffinity, that.getSessionAffinity())
-          ;
+      return Objects.equals(this.backupPool, that.getBackupPool())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.failoverRatio, that.getFailoverRatio())
+          && Objects.equals(this.healthChecks, that.getHealthChecksList())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.instances, that.getInstancesList())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.sessionAffinity, that.getSessionAffinity());
     }
     return false;
   }
@@ -543,18 +552,17 @@ public final class TargetPool implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      backupPool,
-      creationTimestamp,
-      description,
-      failoverRatio,
-      healthChecks,
-      id,
-      instances,
-      kind,
-      name,
-      region,
-      selfLink,
-      sessionAffinity
-    );
+        backupPool,
+        creationTimestamp,
+        description,
+        failoverRatio,
+        healthChecks,
+        id,
+        instances,
+        kind,
+        name,
+        region,
+        selfLink,
+        sessionAffinity);
   }
 }

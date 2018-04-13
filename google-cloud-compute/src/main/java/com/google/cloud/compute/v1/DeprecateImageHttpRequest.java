@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class DeprecateImageHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private DeprecateImageHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class DeprecateImageHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.deprecationStatusResource = deprecationStatusResource;
@@ -91,7 +86,9 @@ public final class DeprecateImageHttpRequest implements ApiMessage {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
     }
     if (fieldNames.contains("deprecationStatusResource") && deprecationStatusResource != null) {
-      fieldMap.put("deprecationStatusResource", Collections.singletonList(String.valueOf(deprecationStatusResource)));
+      fieldMap.put(
+          "deprecationStatusResource",
+          Collections.singletonList(String.valueOf(deprecationStatusResource)));
     }
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
@@ -198,22 +195,24 @@ public final class DeprecateImageHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DeprecateImageHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeprecateImageHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DeprecateImageHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DeprecateImageHttpRequest();
   }
@@ -370,36 +369,27 @@ public final class DeprecateImageHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public DeprecateImageHttpRequest build() {
       String missing = "";
-
-
-
 
       if (image == null) {
         missing += " image";
       }
 
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new DeprecateImageHttpRequest(
-        access_token,
-        callback,
-        deprecationStatusResource,
-        fields,
-        image,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          deprecationStatusResource,
+          fields,
+          image,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class DeprecateImageHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "DeprecateImageHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "deprecationStatusResource=" + deprecationStatusResource + ", "
-        + "fields=" + fields + ", "
-        + "image=" + image + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "deprecationStatusResource="
+        + deprecationStatusResource
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "image="
+        + image
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class DeprecateImageHttpRequest implements ApiMessage {
     }
     if (o instanceof DeprecateImageHttpRequest) {
       DeprecateImageHttpRequest that = (DeprecateImageHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.deprecationStatusResource, that.getDeprecationStatusResource()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.image, that.getImage()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.deprecationStatusResource, that.getDeprecationStatusResource())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.image, that.getImage())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class DeprecateImageHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      deprecationStatusResource,
-      fields,
-      image,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        deprecationStatusResource,
+        fields,
+        image,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

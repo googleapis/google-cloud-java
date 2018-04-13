@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.InstanceTemplateStub;
 import com.google.cloud.compute.v1.stub.InstanceTemplateStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -52,41 +42,41 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
- *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+ *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
  *   String requestId = "";
  *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate, requestId);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the instanceTemplateClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
+ * <p>Note: close() needs to be called on the instanceTemplateClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of InstanceTemplateSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,27 +106,23 @@ public class InstanceTemplateClient implements BackgroundResource {
   private final InstanceTemplateSettings settings;
   private final InstanceTemplateStub stub;
 
-
-
-  /**
-   * Constructs an instance of InstanceTemplateClient with default settings.
-   */
+  /** Constructs an instance of InstanceTemplateClient with default settings. */
   public static final InstanceTemplateClient create() throws IOException {
     return create(InstanceTemplateSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of InstanceTemplateClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of InstanceTemplateClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final InstanceTemplateClient create(InstanceTemplateSettings settings) throws IOException {
+  public static final InstanceTemplateClient create(InstanceTemplateSettings settings)
+      throws IOException {
     return new InstanceTemplateClient(settings);
   }
 
   /**
-   * Constructs an instance of InstanceTemplateClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use InstanceTemplateSettings}.
+   * Constructs an instance of InstanceTemplateClient, using the given stub for making calls. This
+   * is for advanced usage - prefer to use InstanceTemplateSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstanceTemplateClient create(InstanceTemplateStub stub) {
@@ -144,9 +130,9 @@ public class InstanceTemplateClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of InstanceTemplateClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of InstanceTemplateClient, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected InstanceTemplateClient(InstanceTemplateSettings settings) throws IOException {
     this.settings = settings;
@@ -168,58 +154,70 @@ public class InstanceTemplateClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone. It's not possible to delete templates which are in use by an instance group.
+   * Deletes the specified instance template. Deleting an instance template is permanent and cannot
+   * be undone. It's not possible to delete templates which are in use by an instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   String requestId = "";
    *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate, requestId);
    * }
    * </code></pre>
    *
    * @param instanceTemplate The name of the instance template to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstanceTemplate(ProjectInstanceTemplateName instanceTemplate, String requestId) {
+  public final Operation deleteInstanceTemplate(
+      ProjectGlobalInstanceTemplateName instanceTemplate, String requestId) {
 
     DeleteInstanceTemplateHttpRequest request =
         DeleteInstanceTemplateHttpRequest.newBuilder()
-        .setInstanceTemplate(instanceTemplate == null ? null : instanceTemplate.toString())
-        .setRequestId(requestId)
-        .build();
+            .setInstanceTemplate(instanceTemplate == null ? null : instanceTemplate.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteInstanceTemplate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone. It's not possible to delete templates which are in use by an instance group.
+   * Deletes the specified instance template. Deleting an instance template is permanent and cannot
+   * be undone. It's not possible to delete templates which are in use by an instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   String requestId = "";
    *   Operation response = instanceTemplateClient.deleteInstanceTemplate(instanceTemplate.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param instanceTemplate The name of the instance template to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -227,20 +225,22 @@ public class InstanceTemplateClient implements BackgroundResource {
 
     DeleteInstanceTemplateHttpRequest request =
         DeleteInstanceTemplateHttpRequest.newBuilder()
-        .setInstanceTemplate(instanceTemplate)
-        .setRequestId(requestId)
-        .build();
+            .setInstanceTemplate(instanceTemplate)
+            .setRequestId(requestId)
+            .build();
     return deleteInstanceTemplate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone. It's not possible to delete templates which are in use by an instance group.
+   * Deletes the specified instance template. Deleting an instance template is permanent and cannot
+   * be undone. It's not possible to delete templates which are in use by an instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   String requestId = "";
    *   DeleteInstanceTemplateHttpRequest request = DeleteInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
@@ -260,12 +260,14 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified instance template. Deleting an instance template is permanent and cannot be undone. It's not possible to delete templates which are in use by an instance group.
+   * Deletes the specified instance template. Deleting an instance template is permanent and cannot
+   * be undone. It's not possible to delete templates which are in use by an instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   String requestId = "";
    *   DeleteInstanceTemplateHttpRequest request = DeleteInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
@@ -278,18 +280,21 @@ public class InstanceTemplateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation> deleteInstanceTemplateCallable() {
+  public final UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation>
+      deleteInstanceTemplateCallable() {
     return stub.deleteInstanceTemplateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance template. Get a list of available instance templates by making a list() request.
+   * Returns the specified instance template. Get a list of available instance templates by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   InstanceTemplate response = instanceTemplateClient.getInstanceTemplate(instanceTemplate);
    * }
    * </code></pre>
@@ -298,23 +303,26 @@ public class InstanceTemplateClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final InstanceTemplate getInstanceTemplate(ProjectInstanceTemplateName instanceTemplate) {
+  public final InstanceTemplate getInstanceTemplate(
+      ProjectGlobalInstanceTemplateName instanceTemplate) {
 
     GetInstanceTemplateHttpRequest request =
         GetInstanceTemplateHttpRequest.newBuilder()
-        .setInstanceTemplate(instanceTemplate == null ? null : instanceTemplate.toString())
-        .build();
+            .setInstanceTemplate(instanceTemplate == null ? null : instanceTemplate.toString())
+            .build();
     return getInstanceTemplate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance template. Get a list of available instance templates by making a list() request.
+   * Returns the specified instance template. Get a list of available instance templates by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   InstanceTemplate response = instanceTemplateClient.getInstanceTemplate(instanceTemplate.toString());
    * }
    * </code></pre>
@@ -326,20 +334,20 @@ public class InstanceTemplateClient implements BackgroundResource {
   public final InstanceTemplate getInstanceTemplate(String instanceTemplate) {
 
     GetInstanceTemplateHttpRequest request =
-        GetInstanceTemplateHttpRequest.newBuilder()
-        .setInstanceTemplate(instanceTemplate)
-        .build();
+        GetInstanceTemplateHttpRequest.newBuilder().setInstanceTemplate(instanceTemplate).build();
     return getInstanceTemplate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance template. Get a list of available instance templates by making a list() request.
+   * Returns the specified instance template. Get a list of available instance templates by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   GetInstanceTemplateHttpRequest request = GetInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
    *     .build();
@@ -357,12 +365,14 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance template. Get a list of available instance templates by making a list() request.
+   * Returns the specified instance template. Get a list of available instance templates by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
-   *   ProjectInstanceTemplateName instanceTemplate = ProjectInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
+   *   ProjectGlobalInstanceTemplateName instanceTemplate = ProjectGlobalInstanceTemplateName.of("[PROJECT]", "[INSTANCE_TEMPLATE]");
    *   GetInstanceTemplateHttpRequest request = GetInstanceTemplateHttpRequest.newBuilder()
    *     .setInstanceTemplate(instanceTemplate.toString())
    *     .build();
@@ -373,15 +383,20 @@ public class InstanceTemplateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate> getInstanceTemplateCallable() {
+  public final UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate>
+      getInstanceTemplateCallable() {
     return stub.getInstanceTemplateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an instance template in the specified project using the data that is included in the request. If you are creating a new template to update an existing instance group, your new instance template must use the same network or, if applicable, the same subnetwork as the original template.
+   * Creates an instance template in the specified project using the data that is included in the
+   * request. If you are creating a new template to update an existing instance group, your new
+   * instance template must use the same network or, if applicable, the same subnetwork as the
+   * original template.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   String requestId = "";
@@ -391,32 +406,42 @@ public class InstanceTemplateClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param instanceTemplateResource An Instance Template resource. (== resource_for beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
+   * @param instanceTemplateResource An Instance Template resource. (== resource_for
+   *     beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInstanceTemplate(String requestId, ProjectName project, InstanceTemplate instanceTemplateResource) {
+  public final Operation insertInstanceTemplate(
+      String requestId, ProjectName project, InstanceTemplate instanceTemplateResource) {
 
     InsertInstanceTemplateHttpRequest request =
         InsertInstanceTemplateHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project == null ? null : project.toString())
-        .setInstanceTemplateResource(instanceTemplateResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project == null ? null : project.toString())
+            .setInstanceTemplateResource(instanceTemplateResource)
+            .build();
     return insertInstanceTemplate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an instance template in the specified project using the data that is included in the request. If you are creating a new template to update an existing instance group, your new instance template must use the same network or, if applicable, the same subnetwork as the original template.
+   * Creates an instance template in the specified project using the data that is included in the
+   * request. If you are creating a new template to update an existing instance group, your new
+   * instance template must use the same network or, if applicable, the same subnetwork as the
+   * original template.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   String requestId = "";
@@ -426,32 +451,42 @@ public class InstanceTemplateClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param instanceTemplateResource An Instance Template resource. (== resource_for beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
+   * @param instanceTemplateResource An Instance Template resource. (== resource_for
+   *     beta.instanceTemplates ==) (== resource_for v1.instanceTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInstanceTemplate(String requestId, String project, InstanceTemplate instanceTemplateResource) {
+  public final Operation insertInstanceTemplate(
+      String requestId, String project, InstanceTemplate instanceTemplateResource) {
 
     InsertInstanceTemplateHttpRequest request =
         InsertInstanceTemplateHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project)
-        .setInstanceTemplateResource(instanceTemplateResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project)
+            .setInstanceTemplateResource(instanceTemplateResource)
+            .build();
     return insertInstanceTemplate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an instance template in the specified project using the data that is included in the request. If you are creating a new template to update an existing instance group, your new instance template must use the same network or, if applicable, the same subnetwork as the original template.
+   * Creates an instance template in the specified project using the data that is included in the
+   * request. If you are creating a new template to update an existing instance group, your new
+   * instance template must use the same network or, if applicable, the same subnetwork as the
+   * original template.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   String requestId = "";
@@ -476,9 +511,13 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an instance template in the specified project using the data that is included in the request. If you are creating a new template to update an existing instance group, your new instance template must use the same network or, if applicable, the same subnetwork as the original template.
+   * Creates an instance template in the specified project using the data that is included in the
+   * request. If you are creating a new template to update an existing instance group, your new
+   * instance template must use the same network or, if applicable, the same subnetwork as the
+   * original template.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   String requestId = "";
@@ -496,15 +535,18 @@ public class InstanceTemplateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertInstanceTemplateHttpRequest, Operation> insertInstanceTemplateCallable() {
+  public final UnaryCallable<InsertInstanceTemplateHttpRequest, Operation>
+      insertInstanceTemplateCallable() {
     return stub.insertInstanceTemplateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and zone.
+   * Retrieves a list of instance templates that are contained within the specified project and
+   * zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -521,16 +563,18 @@ public class InstanceTemplateClient implements BackgroundResource {
   public final ListInstanceTemplatesPagedResponse listInstanceTemplates(ProjectName project) {
     ListInstanceTemplatesHttpRequest request =
         ListInstanceTemplatesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listInstanceTemplates(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and zone.
+   * Retrieves a list of instance templates that are contained within the specified project and
+   * zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -546,17 +590,17 @@ public class InstanceTemplateClient implements BackgroundResource {
   @BetaApi
   public final ListInstanceTemplatesPagedResponse listInstanceTemplates(String project) {
     ListInstanceTemplatesHttpRequest request =
-        ListInstanceTemplatesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListInstanceTemplatesHttpRequest.newBuilder().setProject(project).build();
     return listInstanceTemplates(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and zone.
+   * Retrieves a list of instance templates that are contained within the specified project and
+   * zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -573,16 +617,18 @@ public class InstanceTemplateClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInstanceTemplatesPagedResponse listInstanceTemplates(ListInstanceTemplatesHttpRequest request) {
-    return listInstanceTemplatesPagedCallable()
-        .call(request);
+  public final ListInstanceTemplatesPagedResponse listInstanceTemplates(
+      ListInstanceTemplatesHttpRequest request) {
+    return listInstanceTemplatesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and zone.
+   * Retrieves a list of instance templates that are contained within the specified project and
+   * zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -598,15 +644,18 @@ public class InstanceTemplateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse> listInstanceTemplatesPagedCallable() {
+  public final UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse>
+      listInstanceTemplatesPagedCallable() {
     return stub.listInstanceTemplatesPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and zone.
+   * Retrieves a list of instance templates that are contained within the specified project and
+   * zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -629,12 +678,13 @@ public class InstanceTemplateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList> listInstanceTemplatesCallable() {
+  public final UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
+      listInstanceTemplatesCallable() {
     return stub.listInstanceTemplatesCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -663,15 +713,14 @@ public class InstanceTemplateClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListInstanceTemplatesPagedResponse extends AbstractPagedListResponse<
-      ListInstanceTemplatesHttpRequest,
-      InstanceTemplateList,
-      InstanceTemplate,
-      ListInstanceTemplatesPage,
-      ListInstanceTemplatesFixedSizeCollection> {
+  public static class ListInstanceTemplatesPagedResponse
+      extends AbstractPagedListResponse<
+          ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate,
+          ListInstanceTemplatesPage, ListInstanceTemplatesFixedSizeCollection> {
 
     public static ApiFuture<ListInstanceTemplatesPagedResponse> createAsync(
-        PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate> context,
+        PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate>
+            context,
         ApiFuture<InstanceTemplateList> futureResponse) {
       ApiFuture<ListInstanceTemplatesPage> futurePage =
           ListInstanceTemplatesPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -688,18 +737,16 @@ public class InstanceTemplateClient implements BackgroundResource {
     private ListInstanceTemplatesPagedResponse(ListInstanceTemplatesPage page) {
       super(page, ListInstanceTemplatesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListInstanceTemplatesPage extends AbstractPage<
-      ListInstanceTemplatesHttpRequest,
-      InstanceTemplateList,
-      InstanceTemplate,
-      ListInstanceTemplatesPage> {
+  public static class ListInstanceTemplatesPage
+      extends AbstractPage<
+          ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate,
+          ListInstanceTemplatesPage> {
 
     private ListInstanceTemplatesPage(
-        PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate> context,
+        PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate>
+            context,
         InstanceTemplateList response) {
       super(context, response);
     }
@@ -710,31 +757,28 @@ public class InstanceTemplateClient implements BackgroundResource {
 
     @Override
     protected ListInstanceTemplatesPage createPage(
-        PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate> context,
+        PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate>
+            context,
         InstanceTemplateList response) {
       return new ListInstanceTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstanceTemplatesPage> createPageAsync(
-        PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate> context,
+        PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate>
+            context,
         ApiFuture<InstanceTemplateList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListInstanceTemplatesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListInstanceTemplatesHttpRequest,
-      InstanceTemplateList,
-      InstanceTemplate,
-      ListInstanceTemplatesPage,
-      ListInstanceTemplatesFixedSizeCollection> {
+  public static class ListInstanceTemplatesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate,
+          ListInstanceTemplatesPage, ListInstanceTemplatesFixedSizeCollection> {
 
-    private ListInstanceTemplatesFixedSizeCollection(List<ListInstanceTemplatesPage> pages, int collectionSize) {
+    private ListInstanceTemplatesFixedSizeCollection(
+        List<ListInstanceTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -747,7 +791,5 @@ public class InstanceTemplateClient implements BackgroundResource {
         List<ListInstanceTemplatesPage> pages, int collectionSize) {
       return new ListInstanceTemplatesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

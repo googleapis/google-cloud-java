@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.InstanceGroupStub;
 import com.google.cloud.compute.v1.stub.InstanceGroupStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -61,33 +51,32 @@ import javax.annotation.Generated;
  * </pre>
  *
  * <p>Note: close() needs to be called on the instanceGroupClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of InstanceGroupSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -117,27 +106,23 @@ public class InstanceGroupClient implements BackgroundResource {
   private final InstanceGroupSettings settings;
   private final InstanceGroupStub stub;
 
-
-
-  /**
-   * Constructs an instance of InstanceGroupClient with default settings.
-   */
+  /** Constructs an instance of InstanceGroupClient with default settings. */
   public static final InstanceGroupClient create() throws IOException {
     return create(InstanceGroupSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of InstanceGroupClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of InstanceGroupClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final InstanceGroupClient create(InstanceGroupSettings settings) throws IOException {
+  public static final InstanceGroupClient create(InstanceGroupSettings settings)
+      throws IOException {
     return new InstanceGroupClient(settings);
   }
 
   /**
-   * Constructs an instance of InstanceGroupClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use InstanceGroupSettings}.
+   * Constructs an instance of InstanceGroupClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use InstanceGroupSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstanceGroupClient create(InstanceGroupStub stub) {
@@ -145,9 +130,9 @@ public class InstanceGroupClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of InstanceGroupClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of InstanceGroupClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected InstanceGroupClient(InstanceGroupSettings settings) throws IOException {
     this.settings = settings;
@@ -169,12 +154,13 @@ public class InstanceGroupClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a list of instances to the specified instance group. All of the instances in the instance group must be in the same network/subnetwork. Read  Adding instances for more information.
+   * Adds a list of instances to the specified instance group. All of the instances in the instance
+   * group must be in the same network/subnetwork. Read Adding instances for more information.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -184,32 +170,41 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where you are adding instances.
    * @param instanceGroupsAddInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addInstancesInstanceGroup(String requestId, ProjectZoneInstanceGroupName instanceGroup, InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource) {
+  public final Operation addInstancesInstanceGroup(
+      String requestId,
+      ProjectZoneInstanceGroupName instanceGroup,
+      InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource) {
 
     AddInstancesInstanceGroupHttpRequest request =
         AddInstancesInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
+            .build();
     return addInstancesInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a list of instances to the specified instance group. All of the instances in the instance group must be in the same network/subnetwork. Read  Adding instances for more information.
+   * Adds a list of instances to the specified instance group. All of the instances in the instance
+   * group must be in the same network/subnetwork. Read Adding instances for more information.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -219,32 +214,41 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where you are adding instances.
    * @param instanceGroupsAddInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addInstancesInstanceGroup(String requestId, String instanceGroup, InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource) {
+  public final Operation addInstancesInstanceGroup(
+      String requestId,
+      String instanceGroup,
+      InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource) {
 
     AddInstancesInstanceGroupHttpRequest request =
         AddInstancesInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup)
-        .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup)
+            .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
+            .build();
     return addInstancesInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a list of instances to the specified instance group. All of the instances in the instance group must be in the same network/subnetwork. Read  Adding instances for more information.
+   * Adds a list of instances to the specified instance group. All of the instances in the instance
+   * group must be in the same network/subnetwork. Read Adding instances for more information.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -269,9 +273,11 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds a list of instances to the specified instance group. All of the instances in the instance group must be in the same network/subnetwork. Read  Adding instances for more information.
+   * Adds a list of instances to the specified instance group. All of the instances in the instance
+   * group must be in the same network/subnetwork. Read Adding instances for more information.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -289,7 +295,8 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AddInstancesInstanceGroupHttpRequest, Operation> addInstancesInstanceGroupCallable() {
+  public final UnaryCallable<AddInstancesInstanceGroupHttpRequest, Operation>
+      addInstancesInstanceGroupCallable() {
     return stub.addInstancesInstanceGroupCallable();
   }
 
@@ -297,7 +304,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -311,11 +319,12 @@ public class InstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListInstanceGroupsPagedResponse aggregatedListInstanceGroups(ProjectName project) {
+  public final AggregatedListInstanceGroupsPagedResponse aggregatedListInstanceGroups(
+      ProjectName project) {
     AggregatedListInstanceGroupsHttpRequest request =
         AggregatedListInstanceGroupsHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListInstanceGroups(request);
   }
 
@@ -323,7 +332,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -337,11 +347,10 @@ public class InstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListInstanceGroupsPagedResponse aggregatedListInstanceGroups(String project) {
+  public final AggregatedListInstanceGroupsPagedResponse aggregatedListInstanceGroups(
+      String project) {
     AggregatedListInstanceGroupsHttpRequest request =
-        AggregatedListInstanceGroupsHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListInstanceGroupsHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListInstanceGroups(request);
   }
 
@@ -349,7 +358,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -366,16 +376,17 @@ public class InstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListInstanceGroupsPagedResponse aggregatedListInstanceGroups(AggregatedListInstanceGroupsHttpRequest request) {
-    return aggregatedListInstanceGroupsPagedCallable()
-        .call(request);
+  public final AggregatedListInstanceGroupsPagedResponse aggregatedListInstanceGroups(
+      AggregatedListInstanceGroupsHttpRequest request) {
+    return aggregatedListInstanceGroupsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -391,7 +402,9 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListInstanceGroupsHttpRequest, AggregatedListInstanceGroupsPagedResponse> aggregatedListInstanceGroupsPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListInstanceGroupsHttpRequest, AggregatedListInstanceGroupsPagedResponse>
+      aggregatedListInstanceGroupsPagedCallable() {
     return stub.aggregatedListInstanceGroupsPagedCallable();
   }
 
@@ -399,7 +412,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance groups and sorts them by zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -422,15 +436,19 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList> aggregatedListInstanceGroupsCallable() {
+  public final UnaryCallable<AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList>
+      aggregatedListInstanceGroupsCallable() {
     return stub.aggregatedListInstanceGroupsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified instance group. The instances in the group are not deleted. Note that instance group must not belong to a backend service. Read  Deleting an instance group for more information.
+   * Deletes the specified instance group. The instances in the group are not deleted. Note that
+   * instance group must not belong to a backend service. Read Deleting an instance group for more
+   * information.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -439,30 +457,38 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteInstanceGroup(String requestId, ProjectZoneInstanceGroupName instanceGroup) {
+  public final Operation deleteInstanceGroup(
+      String requestId, ProjectZoneInstanceGroupName instanceGroup) {
 
     DeleteInstanceGroupHttpRequest request =
         DeleteInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .build();
     return deleteInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified instance group. The instances in the group are not deleted. Note that instance group must not belong to a backend service. Read  Deleting an instance group for more information.
+   * Deletes the specified instance group. The instances in the group are not deleted. Note that
+   * instance group must not belong to a backend service. Read Deleting an instance group for more
+   * information.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -471,11 +497,15 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -484,17 +514,20 @@ public class InstanceGroupClient implements BackgroundResource {
 
     DeleteInstanceGroupHttpRequest request =
         DeleteInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup)
+            .build();
     return deleteInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified instance group. The instances in the group are not deleted. Note that instance group must not belong to a backend service. Read  Deleting an instance group for more information.
+   * Deletes the specified instance group. The instances in the group are not deleted. Note that
+   * instance group must not belong to a backend service. Read Deleting an instance group for more
+   * information.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -517,9 +550,12 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified instance group. The instances in the group are not deleted. Note that instance group must not belong to a backend service. Read  Deleting an instance group for more information.
+   * Deletes the specified instance group. The instances in the group are not deleted. Note that
+   * instance group must not belong to a backend service. Read Deleting an instance group for more
+   * information.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -535,15 +571,18 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteInstanceGroupHttpRequest, Operation> deleteInstanceGroupCallable() {
+  public final UnaryCallable<DeleteInstanceGroupHttpRequest, Operation>
+      deleteInstanceGroupCallable() {
     return stub.deleteInstanceGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group. Get a list of available instance groups by making a list() request.
+   * Returns the specified instance group. Get a list of available instance groups by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -559,16 +598,18 @@ public class InstanceGroupClient implements BackgroundResource {
 
     GetInstanceGroupHttpRequest request =
         GetInstanceGroupHttpRequest.newBuilder()
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .build();
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .build();
     return getInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group. Get a list of available instance groups by making a list() request.
+   * Returns the specified instance group. Get a list of available instance groups by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -583,17 +624,17 @@ public class InstanceGroupClient implements BackgroundResource {
   public final InstanceGroup getInstanceGroup(String instanceGroup) {
 
     GetInstanceGroupHttpRequest request =
-        GetInstanceGroupHttpRequest.newBuilder()
-        .setInstanceGroup(instanceGroup)
-        .build();
+        GetInstanceGroupHttpRequest.newBuilder().setInstanceGroup(instanceGroup).build();
     return getInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group. Get a list of available instance groups by making a list() request.
+   * Returns the specified instance group. Get a list of available instance groups by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -614,9 +655,11 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance group. Get a list of available instance groups by making a list() request.
+   * Returns the specified instance group. Get a list of available instance groups by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -630,15 +673,18 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetInstanceGroupHttpRequest, InstanceGroup> getInstanceGroupCallable() {
+  public final UnaryCallable<GetInstanceGroupHttpRequest, InstanceGroup>
+      getInstanceGroupCallable() {
     return stub.getInstanceGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an instance group in the specified project using the parameters that are included in the request.
+   * Creates an instance group in the specified project using the parameters that are included in
+   * the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -649,31 +695,40 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone The name of the zone where you want to create the instance group.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param instanceGroupResource InstanceGroups (== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param instanceGroupResource InstanceGroups (== resource_for beta.instanceGroups ==) (==
+   *     resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (==
+   *     resource_for v1.regionInstanceGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInstanceGroup(ProjectZoneName zone, String requestId, InstanceGroup instanceGroupResource) {
+  public final Operation insertInstanceGroup(
+      ProjectZoneName zone, String requestId, InstanceGroup instanceGroupResource) {
 
     InsertInstanceGroupHttpRequest request =
         InsertInstanceGroupHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .setRequestId(requestId)
-        .setInstanceGroupResource(instanceGroupResource)
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .setRequestId(requestId)
+            .setInstanceGroupResource(instanceGroupResource)
+            .build();
     return insertInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an instance group in the specified project using the parameters that are included in the request.
+   * Creates an instance group in the specified project using the parameters that are included in
+   * the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -684,31 +739,40 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone The name of the zone where you want to create the instance group.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param instanceGroupResource InstanceGroups (== resource_for beta.instanceGroups ==) (== resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (== resource_for v1.regionInstanceGroups ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param instanceGroupResource InstanceGroups (== resource_for beta.instanceGroups ==) (==
+   *     resource_for v1.instanceGroups ==) (== resource_for beta.regionInstanceGroups ==) (==
+   *     resource_for v1.regionInstanceGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertInstanceGroup(String zone, String requestId, InstanceGroup instanceGroupResource) {
+  public final Operation insertInstanceGroup(
+      String zone, String requestId, InstanceGroup instanceGroupResource) {
 
     InsertInstanceGroupHttpRequest request =
         InsertInstanceGroupHttpRequest.newBuilder()
-        .setZone(zone)
-        .setRequestId(requestId)
-        .setInstanceGroupResource(instanceGroupResource)
-        .build();
+            .setZone(zone)
+            .setRequestId(requestId)
+            .setInstanceGroupResource(instanceGroupResource)
+            .build();
     return insertInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an instance group in the specified project using the parameters that are included in the request.
+   * Creates an instance group in the specified project using the parameters that are included in
+   * the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -733,9 +797,11 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an instance group in the specified project using the parameters that are included in the request.
+   * Creates an instance group in the specified project using the parameters that are included in
+   * the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -753,7 +819,8 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertInstanceGroupHttpRequest, Operation> insertInstanceGroupCallable() {
+  public final UnaryCallable<InsertInstanceGroupHttpRequest, Operation>
+      insertInstanceGroupCallable() {
     return stub.insertInstanceGroupCallable();
   }
 
@@ -761,7 +828,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance groups that are located in the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -778,8 +846,8 @@ public class InstanceGroupClient implements BackgroundResource {
   public final ListInstanceGroupsPagedResponse listInstanceGroups(ProjectZoneName zone) {
     ListInstanceGroupsHttpRequest request =
         ListInstanceGroupsHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .build();
     return listInstanceGroups(request);
   }
 
@@ -787,7 +855,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance groups that are located in the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -803,9 +872,7 @@ public class InstanceGroupClient implements BackgroundResource {
   @BetaApi
   public final ListInstanceGroupsPagedResponse listInstanceGroups(String zone) {
     ListInstanceGroupsHttpRequest request =
-        ListInstanceGroupsHttpRequest.newBuilder()
-        .setZone(zone)
-        .build();
+        ListInstanceGroupsHttpRequest.newBuilder().setZone(zone).build();
     return listInstanceGroups(request);
   }
 
@@ -813,7 +880,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance groups that are located in the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -830,16 +898,17 @@ public class InstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInstanceGroupsPagedResponse listInstanceGroups(ListInstanceGroupsHttpRequest request) {
-    return listInstanceGroupsPagedCallable()
-        .call(request);
+  public final ListInstanceGroupsPagedResponse listInstanceGroups(
+      ListInstanceGroupsHttpRequest request) {
+    return listInstanceGroupsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of instance groups that are located in the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -855,7 +924,8 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInstanceGroupsHttpRequest, ListInstanceGroupsPagedResponse> listInstanceGroupsPagedCallable() {
+  public final UnaryCallable<ListInstanceGroupsHttpRequest, ListInstanceGroupsPagedResponse>
+      listInstanceGroupsPagedCallable() {
     return stub.listInstanceGroupsPagedCallable();
   }
 
@@ -863,7 +933,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Retrieves the list of instance groups that are located in the specified project and zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -886,7 +957,8 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInstanceGroupsHttpRequest, InstanceGroupList> listInstanceGroupsCallable() {
+  public final UnaryCallable<ListInstanceGroupsHttpRequest, InstanceGroupList>
+      listInstanceGroupsCallable() {
     return stub.listInstanceGroupsCallable();
   }
 
@@ -894,7 +966,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -905,17 +978,21 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instanceGroup The name of the instance group from which you want to generate a list of included instances.
+   * @param instanceGroup The name of the instance group from which you want to generate a list of
+   *     included instances.
    * @param instanceGroupsListInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInstancesInstanceGroupsPagedResponse listInstancesInstanceGroups(ProjectZoneInstanceGroupName instanceGroup, InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource) {
+  public final ListInstancesInstanceGroupsPagedResponse listInstancesInstanceGroups(
+      ProjectZoneInstanceGroupName instanceGroup,
+      InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource) {
     ListInstancesInstanceGroupsHttpRequest request =
         ListInstancesInstanceGroupsHttpRequest.newBuilder()
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
-        .build();
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .setInstanceGroupsListInstancesRequestResource(
+                instanceGroupsListInstancesRequestResource)
+            .build();
     return listInstancesInstanceGroups(request);
   }
 
@@ -923,7 +1000,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -934,17 +1012,21 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instanceGroup The name of the instance group from which you want to generate a list of included instances.
+   * @param instanceGroup The name of the instance group from which you want to generate a list of
+   *     included instances.
    * @param instanceGroupsListInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInstancesInstanceGroupsPagedResponse listInstancesInstanceGroups(String instanceGroup, InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource) {
+  public final ListInstancesInstanceGroupsPagedResponse listInstancesInstanceGroups(
+      String instanceGroup,
+      InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource) {
     ListInstancesInstanceGroupsHttpRequest request =
         ListInstancesInstanceGroupsHttpRequest.newBuilder()
-        .setInstanceGroup(instanceGroup)
-        .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
-        .build();
+            .setInstanceGroup(instanceGroup)
+            .setInstanceGroupsListInstancesRequestResource(
+                instanceGroupsListInstancesRequestResource)
+            .build();
     return listInstancesInstanceGroups(request);
   }
 
@@ -952,7 +1034,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -971,16 +1054,17 @@ public class InstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListInstancesInstanceGroupsPagedResponse listInstancesInstanceGroups(ListInstancesInstanceGroupsHttpRequest request) {
-    return listInstancesInstanceGroupsPagedCallable()
-        .call(request);
+  public final ListInstancesInstanceGroupsPagedResponse listInstancesInstanceGroups(
+      ListInstancesInstanceGroupsHttpRequest request) {
+    return listInstancesInstanceGroupsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists the instances in the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -998,7 +1082,9 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInstancesInstanceGroupsHttpRequest, ListInstancesInstanceGroupsPagedResponse> listInstancesInstanceGroupsPagedCallable() {
+  public final UnaryCallable<
+          ListInstancesInstanceGroupsHttpRequest, ListInstancesInstanceGroupsPagedResponse>
+      listInstancesInstanceGroupsPagedCallable() {
     return stub.listInstancesInstanceGroupsPagedCallable();
   }
 
@@ -1006,7 +1092,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Lists the instances in the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   ProjectZoneInstanceGroupName instanceGroup = ProjectZoneInstanceGroupName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP]");
@@ -1031,17 +1118,22 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances> listInstancesInstanceGroupsCallable() {
+  public final UnaryCallable<ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances>
+      listInstancesInstanceGroupsCallable() {
     return stub.listInstancesInstanceGroupsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes one or more instances from the specified instance group, but does not delete those instances.
+   * Removes one or more instances from the specified instance group, but does not delete those
+   * instances.
    *
-   * If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration before the VM instance is removed or deleted.
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration before the VM instance is removed or
+   * deleted.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -1051,34 +1143,47 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param instanceGroup The name of the instance group where the specified instances will be removed.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param instanceGroup The name of the instance group where the specified instances will be
+   *     removed.
    * @param instanceGroupsRemoveInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeInstancesInstanceGroup(String requestId, ProjectZoneInstanceGroupName instanceGroup, InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
+  public final Operation removeInstancesInstanceGroup(
+      String requestId,
+      ProjectZoneInstanceGroupName instanceGroup,
+      InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
 
     RemoveInstancesInstanceGroupHttpRequest request =
         RemoveInstancesInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .setInstanceGroupsRemoveInstancesRequestResource(
+                instanceGroupsRemoveInstancesRequestResource)
+            .build();
     return removeInstancesInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes one or more instances from the specified instance group, but does not delete those instances.
+   * Removes one or more instances from the specified instance group, but does not delete those
+   * instances.
    *
-   * If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration before the VM instance is removed or deleted.
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration before the VM instance is removed or
+   * deleted.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -1088,34 +1193,47 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param instanceGroup The name of the instance group where the specified instances will be removed.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param instanceGroup The name of the instance group where the specified instances will be
+   *     removed.
    * @param instanceGroupsRemoveInstancesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeInstancesInstanceGroup(String requestId, String instanceGroup, InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
+  public final Operation removeInstancesInstanceGroup(
+      String requestId,
+      String instanceGroup,
+      InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
 
     RemoveInstancesInstanceGroupHttpRequest request =
         RemoveInstancesInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup)
-        .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup)
+            .setInstanceGroupsRemoveInstancesRequestResource(
+                instanceGroupsRemoveInstancesRequestResource)
+            .build();
     return removeInstancesInstanceGroup(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes one or more instances from the specified instance group, but does not delete those instances.
+   * Removes one or more instances from the specified instance group, but does not delete those
+   * instances.
    *
-   * If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration before the VM instance is removed or deleted.
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration before the VM instance is removed or
+   * deleted.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -1134,17 +1252,22 @@ public class InstanceGroupClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeInstancesInstanceGroup(RemoveInstancesInstanceGroupHttpRequest request) {
+  public final Operation removeInstancesInstanceGroup(
+      RemoveInstancesInstanceGroupHttpRequest request) {
     return removeInstancesInstanceGroupCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes one or more instances from the specified instance group, but does not delete those instances.
+   * Removes one or more instances from the specified instance group, but does not delete those
+   * instances.
    *
-   * If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration before the VM instance is removed or deleted.
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration before the VM instance is removed or
+   * deleted.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -1162,7 +1285,8 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<RemoveInstancesInstanceGroupHttpRequest, Operation> removeInstancesInstanceGroupCallable() {
+  public final UnaryCallable<RemoveInstancesInstanceGroupHttpRequest, Operation>
+      removeInstancesInstanceGroupCallable() {
     return stub.removeInstancesInstanceGroupCallable();
   }
 
@@ -1170,7 +1294,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Sets the named ports for the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -1180,24 +1305,32 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where the named ports are updated.
    * @param instanceGroupsSetNamedPortsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setNamedPortsInstanceGroup(String requestId, ProjectZoneInstanceGroupName instanceGroup, InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource) {
+  public final Operation setNamedPortsInstanceGroup(
+      String requestId,
+      ProjectZoneInstanceGroupName instanceGroup,
+      InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource) {
 
     SetNamedPortsInstanceGroupHttpRequest request =
         SetNamedPortsInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
-        .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup == null ? null : instanceGroup.toString())
+            .setInstanceGroupsSetNamedPortsRequestResource(
+                instanceGroupsSetNamedPortsRequestResource)
+            .build();
     return setNamedPortsInstanceGroup(request);
   }
 
@@ -1205,7 +1338,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Sets the named ports for the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -1215,24 +1349,32 @@ public class InstanceGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param instanceGroup The name of the instance group where the named ports are updated.
    * @param instanceGroupsSetNamedPortsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setNamedPortsInstanceGroup(String requestId, String instanceGroup, InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource) {
+  public final Operation setNamedPortsInstanceGroup(
+      String requestId,
+      String instanceGroup,
+      InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource) {
 
     SetNamedPortsInstanceGroupHttpRequest request =
         SetNamedPortsInstanceGroupHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setInstanceGroup(instanceGroup)
-        .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setInstanceGroup(instanceGroup)
+            .setInstanceGroupsSetNamedPortsRequestResource(
+                instanceGroupsSetNamedPortsRequestResource)
+            .build();
     return setNamedPortsInstanceGroup(request);
   }
 
@@ -1240,7 +1382,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Sets the named ports for the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -1267,7 +1410,8 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Sets the named ports for the specified instance group.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (InstanceGroupClient instanceGroupClient = InstanceGroupClient.create()) {
    *   String requestId = "";
@@ -1285,12 +1429,13 @@ public class InstanceGroupClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetNamedPortsInstanceGroupHttpRequest, Operation> setNamedPortsInstanceGroupCallable() {
+  public final UnaryCallable<SetNamedPortsInstanceGroupHttpRequest, Operation>
+      setNamedPortsInstanceGroupCallable() {
     return stub.setNamedPortsInstanceGroupCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -1319,23 +1464,28 @@ public class InstanceGroupClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListInstanceGroupsPagedResponse extends AbstractPagedListResponse<
-      AggregatedListInstanceGroupsHttpRequest,
-      InstanceGroupAggregatedList,
-      InstanceGroupsScopedList,
-      AggregatedListInstanceGroupsPage,
-      AggregatedListInstanceGroupsFixedSizeCollection> {
+  public static class AggregatedListInstanceGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+          InstanceGroupsScopedList, AggregatedListInstanceGroupsPage,
+          AggregatedListInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListInstanceGroupsPagedResponse> createAsync(
-        PageContext<AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList, InstanceGroupsScopedList> context,
+        PageContext<
+                AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                InstanceGroupsScopedList>
+            context,
         ApiFuture<InstanceGroupAggregatedList> futureResponse) {
       ApiFuture<AggregatedListInstanceGroupsPage> futurePage =
-          AggregatedListInstanceGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+          AggregatedListInstanceGroupsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListInstanceGroupsPage, AggregatedListInstanceGroupsPagedResponse>() {
+          new ApiFunction<
+              AggregatedListInstanceGroupsPage, AggregatedListInstanceGroupsPagedResponse>() {
             @Override
-            public AggregatedListInstanceGroupsPagedResponse apply(AggregatedListInstanceGroupsPage input) {
+            public AggregatedListInstanceGroupsPagedResponse apply(
+                AggregatedListInstanceGroupsPage input) {
               return new AggregatedListInstanceGroupsPagedResponse(input);
             }
           });
@@ -1344,18 +1494,18 @@ public class InstanceGroupClient implements BackgroundResource {
     private AggregatedListInstanceGroupsPagedResponse(AggregatedListInstanceGroupsPage page) {
       super(page, AggregatedListInstanceGroupsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListInstanceGroupsPage extends AbstractPage<
-      AggregatedListInstanceGroupsHttpRequest,
-      InstanceGroupAggregatedList,
-      InstanceGroupsScopedList,
-      AggregatedListInstanceGroupsPage> {
+  public static class AggregatedListInstanceGroupsPage
+      extends AbstractPage<
+          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+          InstanceGroupsScopedList, AggregatedListInstanceGroupsPage> {
 
     private AggregatedListInstanceGroupsPage(
-        PageContext<AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList, InstanceGroupsScopedList> context,
+        PageContext<
+                AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                InstanceGroupsScopedList>
+            context,
         InstanceGroupAggregatedList response) {
       super(context, response);
     }
@@ -1366,31 +1516,33 @@ public class InstanceGroupClient implements BackgroundResource {
 
     @Override
     protected AggregatedListInstanceGroupsPage createPage(
-        PageContext<AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList, InstanceGroupsScopedList> context,
+        PageContext<
+                AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                InstanceGroupsScopedList>
+            context,
         InstanceGroupAggregatedList response) {
       return new AggregatedListInstanceGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListInstanceGroupsPage> createPageAsync(
-        PageContext<AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList, InstanceGroupsScopedList> context,
+        PageContext<
+                AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                InstanceGroupsScopedList>
+            context,
         ApiFuture<InstanceGroupAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListInstanceGroupsFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListInstanceGroupsHttpRequest,
-      InstanceGroupAggregatedList,
-      InstanceGroupsScopedList,
-      AggregatedListInstanceGroupsPage,
-      AggregatedListInstanceGroupsFixedSizeCollection> {
+  public static class AggregatedListInstanceGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+          InstanceGroupsScopedList, AggregatedListInstanceGroupsPage,
+          AggregatedListInstanceGroupsFixedSizeCollection> {
 
-    private AggregatedListInstanceGroupsFixedSizeCollection(List<AggregatedListInstanceGroupsPage> pages, int collectionSize) {
+    private AggregatedListInstanceGroupsFixedSizeCollection(
+        List<AggregatedListInstanceGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1403,15 +1555,12 @@ public class InstanceGroupClient implements BackgroundResource {
         List<AggregatedListInstanceGroupsPage> pages, int collectionSize) {
       return new AggregatedListInstanceGroupsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListInstanceGroupsPagedResponse extends AbstractPagedListResponse<
-      ListInstanceGroupsHttpRequest,
-      InstanceGroupList,
-      InstanceGroup,
-      ListInstanceGroupsPage,
-      ListInstanceGroupsFixedSizeCollection> {
+
+  public static class ListInstanceGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListInstanceGroupsHttpRequest, InstanceGroupList, InstanceGroup, ListInstanceGroupsPage,
+          ListInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListInstanceGroupsPagedResponse> createAsync(
         PageContext<ListInstanceGroupsHttpRequest, InstanceGroupList, InstanceGroup> context,
@@ -1431,15 +1580,11 @@ public class InstanceGroupClient implements BackgroundResource {
     private ListInstanceGroupsPagedResponse(ListInstanceGroupsPage page) {
       super(page, ListInstanceGroupsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListInstanceGroupsPage extends AbstractPage<
-      ListInstanceGroupsHttpRequest,
-      InstanceGroupList,
-      InstanceGroup,
-      ListInstanceGroupsPage> {
+  public static class ListInstanceGroupsPage
+      extends AbstractPage<
+          ListInstanceGroupsHttpRequest, InstanceGroupList, InstanceGroup, ListInstanceGroupsPage> {
 
     private ListInstanceGroupsPage(
         PageContext<ListInstanceGroupsHttpRequest, InstanceGroupList, InstanceGroup> context,
@@ -1464,20 +1609,15 @@ public class InstanceGroupClient implements BackgroundResource {
         ApiFuture<InstanceGroupList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListInstanceGroupsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListInstanceGroupsHttpRequest,
-      InstanceGroupList,
-      InstanceGroup,
-      ListInstanceGroupsPage,
-      ListInstanceGroupsFixedSizeCollection> {
+  public static class ListInstanceGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListInstanceGroupsHttpRequest, InstanceGroupList, InstanceGroup, ListInstanceGroupsPage,
+          ListInstanceGroupsFixedSizeCollection> {
 
-    private ListInstanceGroupsFixedSizeCollection(List<ListInstanceGroupsPage> pages, int collectionSize) {
+    private ListInstanceGroupsFixedSizeCollection(
+        List<ListInstanceGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1490,26 +1630,30 @@ public class InstanceGroupClient implements BackgroundResource {
         List<ListInstanceGroupsPage> pages, int collectionSize) {
       return new ListInstanceGroupsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListInstancesInstanceGroupsPagedResponse extends AbstractPagedListResponse<
-      ListInstancesInstanceGroupsHttpRequest,
-      InstanceGroupsListInstances,
-      InstanceWithNamedPorts,
-      ListInstancesInstanceGroupsPage,
-      ListInstancesInstanceGroupsFixedSizeCollection> {
+
+  public static class ListInstancesInstanceGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+          InstanceWithNamedPorts, ListInstancesInstanceGroupsPage,
+          ListInstancesInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListInstancesInstanceGroupsPagedResponse> createAsync(
-        PageContext<ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances, InstanceWithNamedPorts> context,
+        PageContext<
+                ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                InstanceWithNamedPorts>
+            context,
         ApiFuture<InstanceGroupsListInstances> futureResponse) {
       ApiFuture<ListInstancesInstanceGroupsPage> futurePage =
-          ListInstancesInstanceGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+          ListInstancesInstanceGroupsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstancesInstanceGroupsPage, ListInstancesInstanceGroupsPagedResponse>() {
+          new ApiFunction<
+              ListInstancesInstanceGroupsPage, ListInstancesInstanceGroupsPagedResponse>() {
             @Override
-            public ListInstancesInstanceGroupsPagedResponse apply(ListInstancesInstanceGroupsPage input) {
+            public ListInstancesInstanceGroupsPagedResponse apply(
+                ListInstancesInstanceGroupsPage input) {
               return new ListInstancesInstanceGroupsPagedResponse(input);
             }
           });
@@ -1518,18 +1662,18 @@ public class InstanceGroupClient implements BackgroundResource {
     private ListInstancesInstanceGroupsPagedResponse(ListInstancesInstanceGroupsPage page) {
       super(page, ListInstancesInstanceGroupsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListInstancesInstanceGroupsPage extends AbstractPage<
-      ListInstancesInstanceGroupsHttpRequest,
-      InstanceGroupsListInstances,
-      InstanceWithNamedPorts,
-      ListInstancesInstanceGroupsPage> {
+  public static class ListInstancesInstanceGroupsPage
+      extends AbstractPage<
+          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+          InstanceWithNamedPorts, ListInstancesInstanceGroupsPage> {
 
     private ListInstancesInstanceGroupsPage(
-        PageContext<ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances, InstanceWithNamedPorts> context,
+        PageContext<
+                ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                InstanceWithNamedPorts>
+            context,
         InstanceGroupsListInstances response) {
       super(context, response);
     }
@@ -1540,31 +1684,33 @@ public class InstanceGroupClient implements BackgroundResource {
 
     @Override
     protected ListInstancesInstanceGroupsPage createPage(
-        PageContext<ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances, InstanceWithNamedPorts> context,
+        PageContext<
+                ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                InstanceWithNamedPorts>
+            context,
         InstanceGroupsListInstances response) {
       return new ListInstancesInstanceGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesInstanceGroupsPage> createPageAsync(
-        PageContext<ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances, InstanceWithNamedPorts> context,
+        PageContext<
+                ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                InstanceWithNamedPorts>
+            context,
         ApiFuture<InstanceGroupsListInstances> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListInstancesInstanceGroupsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListInstancesInstanceGroupsHttpRequest,
-      InstanceGroupsListInstances,
-      InstanceWithNamedPorts,
-      ListInstancesInstanceGroupsPage,
-      ListInstancesInstanceGroupsFixedSizeCollection> {
+  public static class ListInstancesInstanceGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+          InstanceWithNamedPorts, ListInstancesInstanceGroupsPage,
+          ListInstancesInstanceGroupsFixedSizeCollection> {
 
-    private ListInstancesInstanceGroupsFixedSizeCollection(List<ListInstancesInstanceGroupsPage> pages, int collectionSize) {
+    private ListInstancesInstanceGroupsFixedSizeCollection(
+        List<ListInstancesInstanceGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1577,7 +1723,5 @@ public class InstanceGroupClient implements BackgroundResource {
         List<ListInstancesInstanceGroupsPage> pages, int collectionSize) {
       return new ListInstancesInstanceGroupsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

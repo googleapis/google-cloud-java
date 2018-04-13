@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class SubnetworksScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private SubnetworksScopedList(
-      List<Subnetwork> subnetworks,
-      Warning warning
-      ) {
+  private SubnetworksScopedList(List<Subnetwork> subnetworks, Warning warning) {
     this.subnetworks = subnetworks;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class SubnetworksScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SubnetworksScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SubnetworksScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SubnetworksScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SubnetworksScopedList();
   }
@@ -158,13 +155,9 @@ public final class SubnetworksScopedList implements ApiMessage {
       return this;
     }
 
-
     public SubnetworksScopedList build() {
 
-      return new SubnetworksScopedList(
-        subnetworks,
-        warning
-      );
+      return new SubnetworksScopedList(subnetworks, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class SubnetworksScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "SubnetworksScopedList{"
-        + "subnetworks=" + subnetworks + ", "
-        + "warning=" + warning
+        + "subnetworks="
+        + subnetworks
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class SubnetworksScopedList implements ApiMessage {
     }
     if (o instanceof SubnetworksScopedList) {
       SubnetworksScopedList that = (SubnetworksScopedList) o;
-      return
-          Objects.equals(this.subnetworks, that.getSubnetworksList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.subnetworks, that.getSubnetworksList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      subnetworks,
-      warning
-    );
+    return Objects.hash(subnetworks, warning);
   }
 }

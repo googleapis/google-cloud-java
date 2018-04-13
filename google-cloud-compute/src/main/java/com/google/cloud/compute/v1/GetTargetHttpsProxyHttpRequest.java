@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class GetTargetHttpsProxyHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private GetTargetHttpsProxyHttpRequest(
       String access_token,
       String callback,
@@ -61,8 +57,7 @@ public final class GetTargetHttpsProxyHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String targetHttpsProxy,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -170,22 +165,24 @@ public final class GetTargetHttpsProxyHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GetTargetHttpsProxyHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetTargetHttpsProxyHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GetTargetHttpsProxyHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GetTargetHttpsProxyHttpRequest();
   }
@@ -314,14 +311,8 @@ public final class GetTargetHttpsProxyHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public GetTargetHttpsProxyHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (targetHttpsProxy == null) {
         missing += " targetHttpsProxy";
@@ -331,15 +322,7 @@ public final class GetTargetHttpsProxyHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetTargetHttpsProxyHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        targetHttpsProxy,
-        userIp
-      );
+          access_token, callback, fields, key, prettyPrint, quotaUser, targetHttpsProxy, userIp);
     }
 
     public Builder clone() {
@@ -359,14 +342,29 @@ public final class GetTargetHttpsProxyHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "GetTargetHttpsProxyHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "targetHttpsProxy=" + targetHttpsProxy + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "targetHttpsProxy="
+        + targetHttpsProxy
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -377,16 +375,14 @@ public final class GetTargetHttpsProxyHttpRequest implements ApiMessage {
     }
     if (o instanceof GetTargetHttpsProxyHttpRequest) {
       GetTargetHttpsProxyHttpRequest that = (GetTargetHttpsProxyHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.targetHttpsProxy, that.getTargetHttpsProxy()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.targetHttpsProxy, that.getTargetHttpsProxy())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -394,14 +390,6 @@ public final class GetTargetHttpsProxyHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      targetHttpsProxy,
-      userIp
-    );
+        access_token, callback, fields, key, prettyPrint, quotaUser, targetHttpsProxy, userIp);
   }
 }

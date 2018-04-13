@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -78,7 +77,6 @@ public final class Interconnect implements ApiMessage {
     this.selfLink = null;
   }
 
-
   private Interconnect(
       Boolean adminEnabled,
       List<InterconnectCircuitInfo> circuitInfos,
@@ -100,8 +98,7 @@ public final class Interconnect implements ApiMessage {
       String peerIpAddress,
       Integer provisionedLinkCount,
       Integer requestedLinkCount,
-      String selfLink
-      ) {
+      String selfLink) {
     this.adminEnabled = adminEnabled;
     this.circuitInfos = circuitInfos;
     this.creationTimestamp = creationTimestamp;
@@ -139,7 +136,8 @@ public final class Interconnect implements ApiMessage {
       fieldMap.put("circuitInfos", stringList.build());
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("customerName") && customerName != null) {
       fieldMap.put("customerName", Collections.singletonList(String.valueOf(customerName)));
@@ -158,7 +156,8 @@ public final class Interconnect implements ApiMessage {
       fieldMap.put("googleIpAddress", Collections.singletonList(String.valueOf(googleIpAddress)));
     }
     if (fieldNames.contains("googleReferenceId") && googleReferenceId != null) {
-      fieldMap.put("googleReferenceId", Collections.singletonList(String.valueOf(googleReferenceId)));
+      fieldMap.put(
+          "googleReferenceId", Collections.singletonList(String.valueOf(googleReferenceId)));
     }
     if (fieldNames.contains("id") && id != null) {
       fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
@@ -189,16 +188,19 @@ public final class Interconnect implements ApiMessage {
       fieldMap.put("nocContactEmail", Collections.singletonList(String.valueOf(nocContactEmail)));
     }
     if (fieldNames.contains("operationalStatus") && operationalStatus != null) {
-      fieldMap.put("operationalStatus", Collections.singletonList(String.valueOf(operationalStatus)));
+      fieldMap.put(
+          "operationalStatus", Collections.singletonList(String.valueOf(operationalStatus)));
     }
     if (fieldNames.contains("peerIpAddress") && peerIpAddress != null) {
       fieldMap.put("peerIpAddress", Collections.singletonList(String.valueOf(peerIpAddress)));
     }
     if (fieldNames.contains("provisionedLinkCount") && provisionedLinkCount != null) {
-      fieldMap.put("provisionedLinkCount", Collections.singletonList(String.valueOf(provisionedLinkCount)));
+      fieldMap.put(
+          "provisionedLinkCount", Collections.singletonList(String.valueOf(provisionedLinkCount)));
     }
     if (fieldNames.contains("requestedLinkCount") && requestedLinkCount != null) {
-      fieldMap.put("requestedLinkCount", Collections.singletonList(String.valueOf(requestedLinkCount)));
+      fieldMap.put(
+          "requestedLinkCount", Collections.singletonList(String.valueOf(requestedLinkCount)));
     }
     if (fieldNames.contains("selfLink") && selfLink != null) {
       fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
@@ -364,22 +366,24 @@ public final class Interconnect implements ApiMessage {
     return selfLink;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Interconnect prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Interconnect getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Interconnect DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Interconnect();
   }
@@ -714,51 +718,30 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
-
     public Interconnect build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new Interconnect(
-        adminEnabled,
-        circuitInfos,
-        creationTimestamp,
-        customerName,
-        description,
-        expectedOutages,
-        googleIpAddress,
-        googleReferenceId,
-        id,
-        interconnectAttachments,
-        interconnectType,
-        kind,
-        linkType,
-        location,
-        name,
-        nocContactEmail,
-        operationalStatus,
-        peerIpAddress,
-        provisionedLinkCount,
-        requestedLinkCount,
-        selfLink
-      );
+          adminEnabled,
+          circuitInfos,
+          creationTimestamp,
+          customerName,
+          description,
+          expectedOutages,
+          googleIpAddress,
+          googleReferenceId,
+          id,
+          interconnectAttachments,
+          interconnectType,
+          kind,
+          linkType,
+          location,
+          name,
+          nocContactEmail,
+          operationalStatus,
+          peerIpAddress,
+          provisionedLinkCount,
+          requestedLinkCount,
+          selfLink);
     }
 
     public Builder clone() {
@@ -791,27 +774,68 @@ public final class Interconnect implements ApiMessage {
   @Override
   public String toString() {
     return "Interconnect{"
-        + "adminEnabled=" + adminEnabled + ", "
-        + "circuitInfos=" + circuitInfos + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "customerName=" + customerName + ", "
-        + "description=" + description + ", "
-        + "expectedOutages=" + expectedOutages + ", "
-        + "googleIpAddress=" + googleIpAddress + ", "
-        + "googleReferenceId=" + googleReferenceId + ", "
-        + "id=" + id + ", "
-        + "interconnectAttachments=" + interconnectAttachments + ", "
-        + "interconnectType=" + interconnectType + ", "
-        + "kind=" + kind + ", "
-        + "linkType=" + linkType + ", "
-        + "location=" + location + ", "
-        + "name=" + name + ", "
-        + "nocContactEmail=" + nocContactEmail + ", "
-        + "operationalStatus=" + operationalStatus + ", "
-        + "peerIpAddress=" + peerIpAddress + ", "
-        + "provisionedLinkCount=" + provisionedLinkCount + ", "
-        + "requestedLinkCount=" + requestedLinkCount + ", "
-        + "selfLink=" + selfLink
+        + "adminEnabled="
+        + adminEnabled
+        + ", "
+        + "circuitInfos="
+        + circuitInfos
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "customerName="
+        + customerName
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "expectedOutages="
+        + expectedOutages
+        + ", "
+        + "googleIpAddress="
+        + googleIpAddress
+        + ", "
+        + "googleReferenceId="
+        + googleReferenceId
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "interconnectAttachments="
+        + interconnectAttachments
+        + ", "
+        + "interconnectType="
+        + interconnectType
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "linkType="
+        + linkType
+        + ", "
+        + "location="
+        + location
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "nocContactEmail="
+        + nocContactEmail
+        + ", "
+        + "operationalStatus="
+        + operationalStatus
+        + ", "
+        + "peerIpAddress="
+        + peerIpAddress
+        + ", "
+        + "provisionedLinkCount="
+        + provisionedLinkCount
+        + ", "
+        + "requestedLinkCount="
+        + requestedLinkCount
+        + ", "
+        + "selfLink="
+        + selfLink
         + "}";
   }
 
@@ -822,29 +846,27 @@ public final class Interconnect implements ApiMessage {
     }
     if (o instanceof Interconnect) {
       Interconnect that = (Interconnect) o;
-      return
-          Objects.equals(this.adminEnabled, that.getAdminEnabled()) &&
-          Objects.equals(this.circuitInfos, that.getCircuitInfosList()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.customerName, that.getCustomerName()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.expectedOutages, that.getExpectedOutagesList()) &&
-          Objects.equals(this.googleIpAddress, that.getGoogleIpAddress()) &&
-          Objects.equals(this.googleReferenceId, that.getGoogleReferenceId()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.interconnectAttachments, that.getInterconnectAttachmentsList()) &&
-          Objects.equals(this.interconnectType, that.getInterconnectType()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.linkType, that.getLinkType()) &&
-          Objects.equals(this.location, that.getLocation()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.nocContactEmail, that.getNocContactEmail()) &&
-          Objects.equals(this.operationalStatus, that.getOperationalStatus()) &&
-          Objects.equals(this.peerIpAddress, that.getPeerIpAddress()) &&
-          Objects.equals(this.provisionedLinkCount, that.getProvisionedLinkCount()) &&
-          Objects.equals(this.requestedLinkCount, that.getRequestedLinkCount()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
-          ;
+      return Objects.equals(this.adminEnabled, that.getAdminEnabled())
+          && Objects.equals(this.circuitInfos, that.getCircuitInfosList())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.customerName, that.getCustomerName())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.expectedOutages, that.getExpectedOutagesList())
+          && Objects.equals(this.googleIpAddress, that.getGoogleIpAddress())
+          && Objects.equals(this.googleReferenceId, that.getGoogleReferenceId())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.interconnectAttachments, that.getInterconnectAttachmentsList())
+          && Objects.equals(this.interconnectType, that.getInterconnectType())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.linkType, that.getLinkType())
+          && Objects.equals(this.location, that.getLocation())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.nocContactEmail, that.getNocContactEmail())
+          && Objects.equals(this.operationalStatus, that.getOperationalStatus())
+          && Objects.equals(this.peerIpAddress, that.getPeerIpAddress())
+          && Objects.equals(this.provisionedLinkCount, that.getProvisionedLinkCount())
+          && Objects.equals(this.requestedLinkCount, that.getRequestedLinkCount())
+          && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
   }
@@ -852,27 +874,26 @@ public final class Interconnect implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      adminEnabled,
-      circuitInfos,
-      creationTimestamp,
-      customerName,
-      description,
-      expectedOutages,
-      googleIpAddress,
-      googleReferenceId,
-      id,
-      interconnectAttachments,
-      interconnectType,
-      kind,
-      linkType,
-      location,
-      name,
-      nocContactEmail,
-      operationalStatus,
-      peerIpAddress,
-      provisionedLinkCount,
-      requestedLinkCount,
-      selfLink
-    );
+        adminEnabled,
+        circuitInfos,
+        creationTimestamp,
+        customerName,
+        description,
+        expectedOutages,
+        googleIpAddress,
+        googleReferenceId,
+        id,
+        interconnectAttachments,
+        interconnectType,
+        kind,
+        linkType,
+        location,
+        name,
+        nocContactEmail,
+        operationalStatus,
+        peerIpAddress,
+        provisionedLinkCount,
+        requestedLinkCount,
+        selfLink);
   }
 }

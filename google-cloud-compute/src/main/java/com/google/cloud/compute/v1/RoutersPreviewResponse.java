@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class RoutersPreviewResponse implements ApiMessage {
     this.resource = null;
   }
 
-
-  private RoutersPreviewResponse(
-      Router resource
-      ) {
+  private RoutersPreviewResponse(Router resource) {
     this.resource = resource;
   }
 
@@ -72,22 +66,24 @@ public final class RoutersPreviewResponse implements ApiMessage {
     return resource;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RoutersPreviewResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RoutersPreviewResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RoutersPreviewResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RoutersPreviewResponse();
   }
@@ -118,11 +114,8 @@ public final class RoutersPreviewResponse implements ApiMessage {
       return this;
     }
 
-
     public RoutersPreviewResponse build() {
-      return new RoutersPreviewResponse(
-        resource
-      );
+      return new RoutersPreviewResponse(resource);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class RoutersPreviewResponse implements ApiMessage {
 
   @Override
   public String toString() {
-    return "RoutersPreviewResponse{"
-        + "resource=" + resource
-        + "}";
+    return "RoutersPreviewResponse{" + "resource=" + resource + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class RoutersPreviewResponse implements ApiMessage {
     }
     if (o instanceof RoutersPreviewResponse) {
       RoutersPreviewResponse that = (RoutersPreviewResponse) o;
-      return
-          Objects.equals(this.resource, that.getResource())
-          ;
+      return Objects.equals(this.resource, that.getResource());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      resource
-    );
+    return Objects.hash(resource);
   }
 }

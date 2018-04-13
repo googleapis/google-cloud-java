@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     this.userIp = null;
   }
 
-
   private InsertInterconnectAttachmentHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
       String quotaUser,
       String region,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -93,8 +88,11 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
-    if (fieldNames.contains("interconnectAttachmentResource") && interconnectAttachmentResource != null) {
-      fieldMap.put("interconnectAttachmentResource", Collections.singletonList(String.valueOf(interconnectAttachmentResource)));
+    if (fieldNames.contains("interconnectAttachmentResource")
+        && interconnectAttachmentResource != null) {
+      fieldMap.put(
+          "interconnectAttachmentResource",
+          Collections.singletonList(String.valueOf(interconnectAttachmentResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -198,22 +196,24 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertInterconnectAttachmentHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertInterconnectAttachmentHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertInterconnectAttachmentHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertInterconnectAttachmentHttpRequest();
   }
@@ -311,7 +311,8 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
       return interconnectAttachmentResource;
     }
 
-    public Builder setInterconnectAttachmentResource(InterconnectAttachment interconnectAttachmentResource) {
+    public Builder setInterconnectAttachmentResource(
+        InterconnectAttachment interconnectAttachmentResource) {
       this.interconnectAttachmentResource = interconnectAttachmentResource;
       return this;
     }
@@ -370,36 +371,27 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
       return this;
     }
 
-
     public InsertInterconnectAttachmentHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (region == null) {
         missing += " region";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertInterconnectAttachmentHttpRequest(
-        access_token,
-        callback,
-        fields,
-        interconnectAttachmentResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        region,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          interconnectAttachmentResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          region,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +413,35 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
   @Override
   public String toString() {
     return "InsertInterconnectAttachmentHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "interconnectAttachmentResource=" + interconnectAttachmentResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "region=" + region + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "interconnectAttachmentResource="
+        + interconnectAttachmentResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +452,17 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
     }
     if (o instanceof InsertInterconnectAttachmentHttpRequest) {
       InsertInterconnectAttachmentHttpRequest that = (InsertInterconnectAttachmentHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.interconnectAttachmentResource, that.getInterconnectAttachmentResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(
+              this.interconnectAttachmentResource, that.getInterconnectAttachmentResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +470,15 @@ public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      interconnectAttachmentResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      region,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        interconnectAttachmentResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        region,
+        requestId,
+        userIp);
   }
 }

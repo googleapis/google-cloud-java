@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,12 +39,8 @@ public final class InterconnectCircuitInfo implements ApiMessage {
     this.googleDemarcId = null;
   }
 
-
   private InterconnectCircuitInfo(
-      String customerDemarcId,
-      String googleCircuitId,
-      String googleDemarcId
-      ) {
+      String customerDemarcId, String googleCircuitId, String googleDemarcId) {
     this.customerDemarcId = customerDemarcId;
     this.googleCircuitId = googleCircuitId;
     this.googleDemarcId = googleDemarcId;
@@ -100,22 +93,24 @@ public final class InterconnectCircuitInfo implements ApiMessage {
     return googleDemarcId;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InterconnectCircuitInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InterconnectCircuitInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InterconnectCircuitInfo DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InterconnectCircuitInfo();
   }
@@ -174,15 +169,9 @@ public final class InterconnectCircuitInfo implements ApiMessage {
       return this;
     }
 
-
     public InterconnectCircuitInfo build() {
 
-
-      return new InterconnectCircuitInfo(
-        customerDemarcId,
-        googleCircuitId,
-        googleDemarcId
-      );
+      return new InterconnectCircuitInfo(customerDemarcId, googleCircuitId, googleDemarcId);
     }
 
     public Builder clone() {
@@ -197,9 +186,14 @@ public final class InterconnectCircuitInfo implements ApiMessage {
   @Override
   public String toString() {
     return "InterconnectCircuitInfo{"
-        + "customerDemarcId=" + customerDemarcId + ", "
-        + "googleCircuitId=" + googleCircuitId + ", "
-        + "googleDemarcId=" + googleDemarcId
+        + "customerDemarcId="
+        + customerDemarcId
+        + ", "
+        + "googleCircuitId="
+        + googleCircuitId
+        + ", "
+        + "googleDemarcId="
+        + googleDemarcId
         + "}";
   }
 
@@ -210,21 +204,15 @@ public final class InterconnectCircuitInfo implements ApiMessage {
     }
     if (o instanceof InterconnectCircuitInfo) {
       InterconnectCircuitInfo that = (InterconnectCircuitInfo) o;
-      return
-          Objects.equals(this.customerDemarcId, that.getCustomerDemarcId()) &&
-          Objects.equals(this.googleCircuitId, that.getGoogleCircuitId()) &&
-          Objects.equals(this.googleDemarcId, that.getGoogleDemarcId())
-          ;
+      return Objects.equals(this.customerDemarcId, that.getCustomerDemarcId())
+          && Objects.equals(this.googleCircuitId, that.getGoogleCircuitId())
+          && Objects.equals(this.googleDemarcId, that.getGoogleDemarcId());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      customerDemarcId,
-      googleCircuitId,
-      googleDemarcId
-    );
+    return Objects.hash(customerDemarcId, googleCircuitId, googleDemarcId);
   }
 }

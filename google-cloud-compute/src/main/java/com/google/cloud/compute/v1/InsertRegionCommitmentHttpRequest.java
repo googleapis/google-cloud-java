@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private InsertRegionCommitmentHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
       String quotaUser,
       String region,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.commitmentResource = commitmentResource;
@@ -91,7 +86,8 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
     }
     if (fieldNames.contains("commitmentResource") && commitmentResource != null) {
-      fieldMap.put("commitmentResource", Collections.singletonList(String.valueOf(commitmentResource)));
+      fieldMap.put(
+          "commitmentResource", Collections.singletonList(String.valueOf(commitmentResource)));
     }
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
@@ -198,22 +194,24 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertRegionCommitmentHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertRegionCommitmentHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertRegionCommitmentHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertRegionCommitmentHttpRequest();
   }
@@ -370,36 +368,27 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertRegionCommitmentHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (region == null) {
         missing += " region";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertRegionCommitmentHttpRequest(
-        access_token,
-        callback,
-        commitmentResource,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        region,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          commitmentResource,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          region,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +410,35 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertRegionCommitmentHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "commitmentResource=" + commitmentResource + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "region=" + region + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "commitmentResource="
+        + commitmentResource
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +449,16 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertRegionCommitmentHttpRequest) {
       InsertRegionCommitmentHttpRequest that = (InsertRegionCommitmentHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.commitmentResource, that.getCommitmentResource()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.commitmentResource, that.getCommitmentResource())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +466,15 @@ public final class InsertRegionCommitmentHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      commitmentResource,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      region,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        commitmentResource,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        region,
+        requestId,
+        userIp);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
     this.userIp = null;
   }
 
-
   private SetMachineResourcesInstanceHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -96,8 +91,11 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
     if (fieldNames.contains("instance") && instance != null) {
       fieldMap.put("instance", Collections.singletonList(String.valueOf(instance)));
     }
-    if (fieldNames.contains("instancesSetMachineResourcesRequestResource") && instancesSetMachineResourcesRequestResource != null) {
-      fieldMap.put("instancesSetMachineResourcesRequestResource", Collections.singletonList(String.valueOf(instancesSetMachineResourcesRequestResource)));
+    if (fieldNames.contains("instancesSetMachineResourcesRequestResource")
+        && instancesSetMachineResourcesRequestResource != null) {
+      fieldMap.put(
+          "instancesSetMachineResourcesRequestResource",
+          Collections.singletonList(String.valueOf(instancesSetMachineResourcesRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -198,22 +196,24 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetMachineResourcesInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetMachineResourcesInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetMachineResourcesInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetMachineResourcesInstanceHttpRequest();
   }
@@ -247,7 +247,8 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
         this.instance = other.instance;
       }
       if (other.getInstancesSetMachineResourcesRequestResource() != null) {
-        this.instancesSetMachineResourcesRequestResource = other.instancesSetMachineResourcesRequestResource;
+        this.instancesSetMachineResourcesRequestResource =
+            other.instancesSetMachineResourcesRequestResource;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -272,7 +273,8 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
       this.callback = source.callback;
       this.fields = source.fields;
       this.instance = source.instance;
-      this.instancesSetMachineResourcesRequestResource = source.instancesSetMachineResourcesRequestResource;
+      this.instancesSetMachineResourcesRequestResource =
+          source.instancesSetMachineResourcesRequestResource;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
@@ -320,8 +322,10 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
       return instancesSetMachineResourcesRequestResource;
     }
 
-    public Builder setInstancesSetMachineResourcesRequestResource(InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource) {
-      this.instancesSetMachineResourcesRequestResource = instancesSetMachineResourcesRequestResource;
+    public Builder setInstancesSetMachineResourcesRequestResource(
+        InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource) {
+      this.instancesSetMachineResourcesRequestResource =
+          instancesSetMachineResourcesRequestResource;
       return this;
     }
 
@@ -370,36 +374,27 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
       return this;
     }
 
-
     public SetMachineResourcesInstanceHttpRequest build() {
       String missing = "";
-
-
 
       if (instance == null) {
         missing += " instance";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetMachineResourcesInstanceHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instance,
-        instancesSetMachineResourcesRequestResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instance,
+          instancesSetMachineResourcesRequestResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -408,7 +403,8 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setInstance(this.instance);
-      newBuilder.setInstancesSetMachineResourcesRequestResource(this.instancesSetMachineResourcesRequestResource);
+      newBuilder.setInstancesSetMachineResourcesRequestResource(
+          this.instancesSetMachineResourcesRequestResource);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
@@ -421,16 +417,35 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
   @Override
   public String toString() {
     return "SetMachineResourcesInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instance=" + instance + ", "
-        + "instancesSetMachineResourcesRequestResource=" + instancesSetMachineResourcesRequestResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "instancesSetMachineResourcesRequestResource="
+        + instancesSetMachineResourcesRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +456,18 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
     }
     if (o instanceof SetMachineResourcesInstanceHttpRequest) {
       SetMachineResourcesInstanceHttpRequest that = (SetMachineResourcesInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.instancesSetMachineResourcesRequestResource, that.getInstancesSetMachineResourcesRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(
+              this.instancesSetMachineResourcesRequestResource,
+              that.getInstancesSetMachineResourcesRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +475,15 @@ public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage 
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instance,
-      instancesSetMachineResourcesRequestResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instance,
+        instancesSetMachineResourcesRequestResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

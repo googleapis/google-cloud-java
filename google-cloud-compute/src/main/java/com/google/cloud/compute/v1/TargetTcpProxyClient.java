@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.TargetTcpProxyStub;
 import com.google.cloud.compute.v1.stub.TargetTcpProxyStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -53,40 +43,39 @@ import javax.annotation.Generated;
  * <code>
  * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
  *   String requestId = "";
- *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+ *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
  *   Operation response = targetTcpProxyClient.deleteTargetTcpProxy(requestId, targetTcpProxy);
  * }
  * </code>
  * </pre>
  *
  * <p>Note: close() needs to be called on the targetTcpProxyClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of TargetTcpProxySettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,27 +105,23 @@ public class TargetTcpProxyClient implements BackgroundResource {
   private final TargetTcpProxySettings settings;
   private final TargetTcpProxyStub stub;
 
-
-
-  /**
-   * Constructs an instance of TargetTcpProxyClient with default settings.
-   */
+  /** Constructs an instance of TargetTcpProxyClient with default settings. */
   public static final TargetTcpProxyClient create() throws IOException {
     return create(TargetTcpProxySettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of TargetTcpProxyClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of TargetTcpProxyClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final TargetTcpProxyClient create(TargetTcpProxySettings settings) throws IOException {
+  public static final TargetTcpProxyClient create(TargetTcpProxySettings settings)
+      throws IOException {
     return new TargetTcpProxyClient(settings);
   }
 
   /**
-   * Constructs an instance of TargetTcpProxyClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use TargetTcpProxySettings}.
+   * Constructs an instance of TargetTcpProxyClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use TargetTcpProxySettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetTcpProxyClient create(TargetTcpProxyStub stub) {
@@ -144,9 +129,9 @@ public class TargetTcpProxyClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of TargetTcpProxyClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of TargetTcpProxyClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected TargetTcpProxyClient(TargetTcpProxySettings settings) throws IOException {
     this.settings = settings;
@@ -168,36 +153,41 @@ public class TargetTcpProxyClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified TargetTcpProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   Operation response = targetTcpProxyClient.deleteTargetTcpProxy(requestId, targetTcpProxy);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetTcpProxy Name of the TargetTcpProxy resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetTcpProxy(String requestId, ProjectTargetTcpProxyName targetTcpProxy) {
+  public final Operation deleteTargetTcpProxy(
+      String requestId, ProjectGlobalTargetTcpProxyName targetTcpProxy) {
 
     DeleteTargetTcpProxyHttpRequest request =
         DeleteTargetTcpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
-        .build();
+            .setRequestId(requestId)
+            .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
+            .build();
     return deleteTargetTcpProxy(request);
   }
 
@@ -205,20 +195,25 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetTcpProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   Operation response = targetTcpProxyClient.deleteTargetTcpProxy(requestId, targetTcpProxy.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetTcpProxy Name of the TargetTcpProxy resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -227,9 +222,9 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
     DeleteTargetTcpProxyHttpRequest request =
         DeleteTargetTcpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetTcpProxy(targetTcpProxy)
-        .build();
+            .setRequestId(requestId)
+            .setTargetTcpProxy(targetTcpProxy)
+            .build();
     return deleteTargetTcpProxy(request);
   }
 
@@ -237,11 +232,12 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetTcpProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   DeleteTargetTcpProxyHttpRequest request = DeleteTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setTargetTcpProxy(targetTcpProxy.toString())
@@ -262,11 +258,12 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetTcpProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   DeleteTargetTcpProxyHttpRequest request = DeleteTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setTargetTcpProxy(targetTcpProxy.toString())
@@ -278,18 +275,21 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteTargetTcpProxyHttpRequest, Operation> deleteTargetTcpProxyCallable() {
+  public final UnaryCallable<DeleteTargetTcpProxyHttpRequest, Operation>
+      deleteTargetTcpProxyCallable() {
     return stub.deleteTargetTcpProxyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by making a list() request.
+   * Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxy response = targetTcpProxyClient.getTargetTcpProxy(targetTcpProxy);
    * }
    * </code></pre>
@@ -298,23 +298,25 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetTcpProxy getTargetTcpProxy(ProjectTargetTcpProxyName targetTcpProxy) {
+  public final TargetTcpProxy getTargetTcpProxy(ProjectGlobalTargetTcpProxyName targetTcpProxy) {
 
     GetTargetTcpProxyHttpRequest request =
         GetTargetTcpProxyHttpRequest.newBuilder()
-        .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
-        .build();
+            .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
+            .build();
     return getTargetTcpProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by making a list() request.
+   * Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxy response = targetTcpProxyClient.getTargetTcpProxy(targetTcpProxy.toString());
    * }
    * </code></pre>
@@ -326,20 +328,20 @@ public class TargetTcpProxyClient implements BackgroundResource {
   public final TargetTcpProxy getTargetTcpProxy(String targetTcpProxy) {
 
     GetTargetTcpProxyHttpRequest request =
-        GetTargetTcpProxyHttpRequest.newBuilder()
-        .setTargetTcpProxy(targetTcpProxy)
-        .build();
+        GetTargetTcpProxyHttpRequest.newBuilder().setTargetTcpProxy(targetTcpProxy).build();
     return getTargetTcpProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by making a list() request.
+   * Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   GetTargetTcpProxyHttpRequest request = GetTargetTcpProxyHttpRequest.newBuilder()
    *     .setTargetTcpProxy(targetTcpProxy.toString())
    *     .build();
@@ -357,12 +359,14 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by making a list() request.
+   * Returns the specified TargetTcpProxy resource. Get a list of available target TCP proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   GetTargetTcpProxyHttpRequest request = GetTargetTcpProxyHttpRequest.newBuilder()
    *     .setTargetTcpProxy(targetTcpProxy.toString())
    *     .build();
@@ -373,15 +377,18 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetTargetTcpProxyHttpRequest, TargetTcpProxy> getTargetTcpProxyCallable() {
+  public final UnaryCallable<GetTargetTcpProxyHttpRequest, TargetTcpProxy>
+      getTargetTcpProxyCallable() {
     return stub.getTargetTcpProxyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetTcpProxy resource in the specified project using the data included in the request.
+   * Creates a TargetTcpProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
@@ -391,32 +398,40 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param targetTcpProxyResource A TargetTcpProxy resource. This resource defines a TCP proxy. (== resource_for beta.targetTcpProxies ==) (== resource_for v1.targetTcpProxies ==)
+   * @param targetTcpProxyResource A TargetTcpProxy resource. This resource defines a TCP proxy. (==
+   *     resource_for beta.targetTcpProxies ==) (== resource_for v1.targetTcpProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetTcpProxy(String requestId, ProjectName project, TargetTcpProxy targetTcpProxyResource) {
+  public final Operation insertTargetTcpProxy(
+      String requestId, ProjectName project, TargetTcpProxy targetTcpProxyResource) {
 
     InsertTargetTcpProxyHttpRequest request =
         InsertTargetTcpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project == null ? null : project.toString())
-        .setTargetTcpProxyResource(targetTcpProxyResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project == null ? null : project.toString())
+            .setTargetTcpProxyResource(targetTcpProxyResource)
+            .build();
     return insertTargetTcpProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetTcpProxy resource in the specified project using the data included in the request.
+   * Creates a TargetTcpProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
@@ -426,32 +441,40 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param targetTcpProxyResource A TargetTcpProxy resource. This resource defines a TCP proxy. (== resource_for beta.targetTcpProxies ==) (== resource_for v1.targetTcpProxies ==)
+   * @param targetTcpProxyResource A TargetTcpProxy resource. This resource defines a TCP proxy. (==
+   *     resource_for beta.targetTcpProxies ==) (== resource_for v1.targetTcpProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetTcpProxy(String requestId, String project, TargetTcpProxy targetTcpProxyResource) {
+  public final Operation insertTargetTcpProxy(
+      String requestId, String project, TargetTcpProxy targetTcpProxyResource) {
 
     InsertTargetTcpProxyHttpRequest request =
         InsertTargetTcpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project)
-        .setTargetTcpProxyResource(targetTcpProxyResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project)
+            .setTargetTcpProxyResource(targetTcpProxyResource)
+            .build();
     return insertTargetTcpProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetTcpProxy resource in the specified project using the data included in the request.
+   * Creates a TargetTcpProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
@@ -476,9 +499,11 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetTcpProxy resource in the specified project using the data included in the request.
+   * Creates a TargetTcpProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
@@ -496,7 +521,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertTargetTcpProxyHttpRequest, Operation> insertTargetTcpProxyCallable() {
+  public final UnaryCallable<InsertTargetTcpProxyHttpRequest, Operation>
+      insertTargetTcpProxyCallable() {
     return stub.insertTargetTcpProxyCallable();
   }
 
@@ -504,7 +530,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -521,8 +548,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
   public final ListTargetTcpProxiesPagedResponse listTargetTcpProxies(ProjectName project) {
     ListTargetTcpProxiesHttpRequest request =
         ListTargetTcpProxiesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listTargetTcpProxies(request);
   }
 
@@ -530,7 +557,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -546,9 +574,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   @BetaApi
   public final ListTargetTcpProxiesPagedResponse listTargetTcpProxies(String project) {
     ListTargetTcpProxiesHttpRequest request =
-        ListTargetTcpProxiesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListTargetTcpProxiesHttpRequest.newBuilder().setProject(project).build();
     return listTargetTcpProxies(request);
   }
 
@@ -556,7 +582,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -573,16 +600,17 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListTargetTcpProxiesPagedResponse listTargetTcpProxies(ListTargetTcpProxiesHttpRequest request) {
-    return listTargetTcpProxiesPagedCallable()
-        .call(request);
+  public final ListTargetTcpProxiesPagedResponse listTargetTcpProxies(
+      ListTargetTcpProxiesHttpRequest request) {
+    return listTargetTcpProxiesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -598,7 +626,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetTcpProxiesHttpRequest, ListTargetTcpProxiesPagedResponse> listTargetTcpProxiesPagedCallable() {
+  public final UnaryCallable<ListTargetTcpProxiesHttpRequest, ListTargetTcpProxiesPagedResponse>
+      listTargetTcpProxiesPagedCallable() {
     return stub.listTargetTcpProxiesPagedCallable();
   }
 
@@ -606,7 +635,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetTcpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -629,7 +659,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetTcpProxiesHttpRequest, TargetTcpProxyList> listTargetTcpProxiesCallable() {
+  public final UnaryCallable<ListTargetTcpProxiesHttpRequest, TargetTcpProxyList>
+      listTargetTcpProxiesCallable() {
     return stub.listTargetTcpProxiesCallable();
   }
 
@@ -637,34 +668,44 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Changes the BackendService for TargetTcpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   Operation response = targetTcpProxyClient.setBackendServiceTargetTcpProxy(requestId, targetTcpProxy, targetTcpProxiesSetBackendServiceRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param targetTcpProxy Name of the TargetTcpProxy resource whose BackendService resource is to be set.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param targetTcpProxy Name of the TargetTcpProxy resource whose BackendService resource is to
+   *     be set.
    * @param targetTcpProxiesSetBackendServiceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackendServiceTargetTcpProxy(String requestId, ProjectTargetTcpProxyName targetTcpProxy, TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
+  public final Operation setBackendServiceTargetTcpProxy(
+      String requestId,
+      ProjectGlobalTargetTcpProxyName targetTcpProxy,
+      TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
 
     SetBackendServiceTargetTcpProxyHttpRequest request =
         SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
-        .setTargetTcpProxiesSetBackendServiceRequestResource(targetTcpProxiesSetBackendServiceRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
+            .setTargetTcpProxiesSetBackendServiceRequestResource(
+                targetTcpProxiesSetBackendServiceRequestResource)
+            .build();
     return setBackendServiceTargetTcpProxy(request);
   }
 
@@ -672,34 +713,44 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Changes the BackendService for TargetTcpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   Operation response = targetTcpProxyClient.setBackendServiceTargetTcpProxy(requestId, targetTcpProxy.toString(), targetTcpProxiesSetBackendServiceRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param targetTcpProxy Name of the TargetTcpProxy resource whose BackendService resource is to be set.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param targetTcpProxy Name of the TargetTcpProxy resource whose BackendService resource is to
+   *     be set.
    * @param targetTcpProxiesSetBackendServiceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackendServiceTargetTcpProxy(String requestId, String targetTcpProxy, TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
+  public final Operation setBackendServiceTargetTcpProxy(
+      String requestId,
+      String targetTcpProxy,
+      TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
 
     SetBackendServiceTargetTcpProxyHttpRequest request =
         SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetTcpProxy(targetTcpProxy)
-        .setTargetTcpProxiesSetBackendServiceRequestResource(targetTcpProxiesSetBackendServiceRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setTargetTcpProxy(targetTcpProxy)
+            .setTargetTcpProxiesSetBackendServiceRequestResource(
+                targetTcpProxiesSetBackendServiceRequestResource)
+            .build();
     return setBackendServiceTargetTcpProxy(request);
   }
 
@@ -707,11 +758,12 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Changes the BackendService for TargetTcpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   SetBackendServiceTargetTcpProxyHttpRequest request = SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -726,7 +778,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackendServiceTargetTcpProxy(SetBackendServiceTargetTcpProxyHttpRequest request) {
+  public final Operation setBackendServiceTargetTcpProxy(
+      SetBackendServiceTargetTcpProxyHttpRequest request) {
     return setBackendServiceTargetTcpProxyCallable().call(request);
   }
 
@@ -734,11 +787,12 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Changes the BackendService for TargetTcpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   SetBackendServiceTargetTcpProxyHttpRequest request = SetBackendServiceTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -752,7 +806,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetBackendServiceTargetTcpProxyHttpRequest, Operation> setBackendServiceTargetTcpProxyCallable() {
+  public final UnaryCallable<SetBackendServiceTargetTcpProxyHttpRequest, Operation>
+      setBackendServiceTargetTcpProxyCallable() {
     return stub.setBackendServiceTargetTcpProxyCallable();
   }
 
@@ -760,34 +815,43 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Changes the ProxyHeaderType for TargetTcpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   Operation response = targetTcpProxyClient.setProxyHeaderTargetTcpProxy(requestId, targetTcpProxy, targetTcpProxiesSetProxyHeaderRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetTcpProxy Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
    * @param targetTcpProxiesSetProxyHeaderRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setProxyHeaderTargetTcpProxy(String requestId, ProjectTargetTcpProxyName targetTcpProxy, TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource) {
+  public final Operation setProxyHeaderTargetTcpProxy(
+      String requestId,
+      ProjectGlobalTargetTcpProxyName targetTcpProxy,
+      TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource) {
 
     SetProxyHeaderTargetTcpProxyHttpRequest request =
         SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
-        .setTargetTcpProxiesSetProxyHeaderRequestResource(targetTcpProxiesSetProxyHeaderRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setTargetTcpProxy(targetTcpProxy == null ? null : targetTcpProxy.toString())
+            .setTargetTcpProxiesSetProxyHeaderRequestResource(
+                targetTcpProxiesSetProxyHeaderRequestResource)
+            .build();
     return setProxyHeaderTargetTcpProxy(request);
   }
 
@@ -795,34 +859,43 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Changes the ProxyHeaderType for TargetTcpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   Operation response = targetTcpProxyClient.setProxyHeaderTargetTcpProxy(requestId, targetTcpProxy.toString(), targetTcpProxiesSetProxyHeaderRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetTcpProxy Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
    * @param targetTcpProxiesSetProxyHeaderRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setProxyHeaderTargetTcpProxy(String requestId, String targetTcpProxy, TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource) {
+  public final Operation setProxyHeaderTargetTcpProxy(
+      String requestId,
+      String targetTcpProxy,
+      TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource) {
 
     SetProxyHeaderTargetTcpProxyHttpRequest request =
         SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetTcpProxy(targetTcpProxy)
-        .setTargetTcpProxiesSetProxyHeaderRequestResource(targetTcpProxiesSetProxyHeaderRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setTargetTcpProxy(targetTcpProxy)
+            .setTargetTcpProxiesSetProxyHeaderRequestResource(
+                targetTcpProxiesSetProxyHeaderRequestResource)
+            .build();
     return setProxyHeaderTargetTcpProxy(request);
   }
 
@@ -830,11 +903,12 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Changes the ProxyHeaderType for TargetTcpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   SetProxyHeaderTargetTcpProxyHttpRequest request = SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -849,7 +923,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setProxyHeaderTargetTcpProxy(SetProxyHeaderTargetTcpProxyHttpRequest request) {
+  public final Operation setProxyHeaderTargetTcpProxy(
+      SetProxyHeaderTargetTcpProxyHttpRequest request) {
     return setProxyHeaderTargetTcpProxyCallable().call(request);
   }
 
@@ -857,11 +932,12 @@ public class TargetTcpProxyClient implements BackgroundResource {
   /**
    * Changes the ProxyHeaderType for TargetTcpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetTcpProxyClient targetTcpProxyClient = TargetTcpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetTcpProxyName targetTcpProxy = ProjectTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
+   *   ProjectGlobalTargetTcpProxyName targetTcpProxy = ProjectGlobalTargetTcpProxyName.of("[PROJECT]", "[TARGET_TCP_PROXY]");
    *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   SetProxyHeaderTargetTcpProxyHttpRequest request = SetProxyHeaderTargetTcpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -875,12 +951,13 @@ public class TargetTcpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetProxyHeaderTargetTcpProxyHttpRequest, Operation> setProxyHeaderTargetTcpProxyCallable() {
+  public final UnaryCallable<SetProxyHeaderTargetTcpProxyHttpRequest, Operation>
+      setProxyHeaderTargetTcpProxyCallable() {
     return stub.setProxyHeaderTargetTcpProxyCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -909,12 +986,10 @@ public class TargetTcpProxyClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListTargetTcpProxiesPagedResponse extends AbstractPagedListResponse<
-      ListTargetTcpProxiesHttpRequest,
-      TargetTcpProxyList,
-      TargetTcpProxy,
-      ListTargetTcpProxiesPage,
-      ListTargetTcpProxiesFixedSizeCollection> {
+  public static class ListTargetTcpProxiesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy,
+          ListTargetTcpProxiesPage, ListTargetTcpProxiesFixedSizeCollection> {
 
     public static ApiFuture<ListTargetTcpProxiesPagedResponse> createAsync(
         PageContext<ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy> context,
@@ -934,15 +1009,12 @@ public class TargetTcpProxyClient implements BackgroundResource {
     private ListTargetTcpProxiesPagedResponse(ListTargetTcpProxiesPage page) {
       super(page, ListTargetTcpProxiesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListTargetTcpProxiesPage extends AbstractPage<
-      ListTargetTcpProxiesHttpRequest,
-      TargetTcpProxyList,
-      TargetTcpProxy,
-      ListTargetTcpProxiesPage> {
+  public static class ListTargetTcpProxiesPage
+      extends AbstractPage<
+          ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy,
+          ListTargetTcpProxiesPage> {
 
     private ListTargetTcpProxiesPage(
         PageContext<ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy> context,
@@ -967,20 +1039,15 @@ public class TargetTcpProxyClient implements BackgroundResource {
         ApiFuture<TargetTcpProxyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListTargetTcpProxiesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListTargetTcpProxiesHttpRequest,
-      TargetTcpProxyList,
-      TargetTcpProxy,
-      ListTargetTcpProxiesPage,
-      ListTargetTcpProxiesFixedSizeCollection> {
+  public static class ListTargetTcpProxiesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy,
+          ListTargetTcpProxiesPage, ListTargetTcpProxiesFixedSizeCollection> {
 
-    private ListTargetTcpProxiesFixedSizeCollection(List<ListTargetTcpProxiesPage> pages, int collectionSize) {
+    private ListTargetTcpProxiesFixedSizeCollection(
+        List<ListTargetTcpProxiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -993,7 +1060,5 @@ public class TargetTcpProxyClient implements BackgroundResource {
         List<ListTargetTcpProxiesPage> pages, int collectionSize) {
       return new ListTargetTcpProxiesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

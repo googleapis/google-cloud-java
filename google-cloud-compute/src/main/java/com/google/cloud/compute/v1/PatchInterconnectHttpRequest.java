@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private PatchInterconnectHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -97,7 +92,8 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
       fieldMap.put("interconnect", Collections.singletonList(String.valueOf(interconnect)));
     }
     if (fieldNames.contains("interconnectResource") && interconnectResource != null) {
-      fieldMap.put("interconnectResource", Collections.singletonList(String.valueOf(interconnectResource)));
+      fieldMap.put(
+          "interconnectResource", Collections.singletonList(String.valueOf(interconnectResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -198,22 +194,24 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(PatchInterconnectHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static PatchInterconnectHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final PatchInterconnectHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new PatchInterconnectHttpRequest();
   }
@@ -370,36 +368,27 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public PatchInterconnectHttpRequest build() {
       String missing = "";
-
-
 
       if (interconnect == null) {
         missing += " interconnect";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new PatchInterconnectHttpRequest(
-        access_token,
-        callback,
-        fields,
-        interconnect,
-        interconnectResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          interconnect,
+          interconnectResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +410,35 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "PatchInterconnectHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "interconnect=" + interconnect + ", "
-        + "interconnectResource=" + interconnectResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "interconnect="
+        + interconnect
+        + ", "
+        + "interconnectResource="
+        + interconnectResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +449,16 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
     }
     if (o instanceof PatchInterconnectHttpRequest) {
       PatchInterconnectHttpRequest that = (PatchInterconnectHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.interconnect, that.getInterconnect()) &&
-          Objects.equals(this.interconnectResource, that.getInterconnectResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.interconnect, that.getInterconnect())
+          && Objects.equals(this.interconnectResource, that.getInterconnectResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +466,15 @@ public final class PatchInterconnectHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      interconnect,
-      interconnectResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        interconnect,
+        interconnectResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

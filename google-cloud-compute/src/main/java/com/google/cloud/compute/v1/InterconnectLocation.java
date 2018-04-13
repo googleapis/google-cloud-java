@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -64,7 +63,6 @@ public final class InterconnectLocation implements ApiMessage {
     this.selfLink = null;
   }
 
-
   private InterconnectLocation(
       String address,
       String availabilityZone,
@@ -79,8 +77,7 @@ public final class InterconnectLocation implements ApiMessage {
       String name,
       String peeringdbFacilityId,
       List<InterconnectLocationRegionInfo> regionInfos,
-      String selfLink
-      ) {
+      String selfLink) {
     this.address = address;
     this.availabilityZone = availabilityZone;
     this.city = city;
@@ -113,7 +110,8 @@ public final class InterconnectLocation implements ApiMessage {
       fieldMap.put("continent", Collections.singletonList(String.valueOf(continent)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -122,7 +120,9 @@ public final class InterconnectLocation implements ApiMessage {
       fieldMap.put("facilityProvider", Collections.singletonList(String.valueOf(facilityProvider)));
     }
     if (fieldNames.contains("facilityProviderFacilityId") && facilityProviderFacilityId != null) {
-      fieldMap.put("facilityProviderFacilityId", Collections.singletonList(String.valueOf(facilityProviderFacilityId)));
+      fieldMap.put(
+          "facilityProviderFacilityId",
+          Collections.singletonList(String.valueOf(facilityProviderFacilityId)));
     }
     if (fieldNames.contains("id") && id != null) {
       fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
@@ -134,7 +134,8 @@ public final class InterconnectLocation implements ApiMessage {
       fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
     }
     if (fieldNames.contains("peeringdbFacilityId") && peeringdbFacilityId != null) {
-      fieldMap.put("peeringdbFacilityId", Collections.singletonList(String.valueOf(peeringdbFacilityId)));
+      fieldMap.put(
+          "peeringdbFacilityId", Collections.singletonList(String.valueOf(peeringdbFacilityId)));
     }
     if (fieldNames.contains("regionInfos") && regionInfos != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -258,22 +259,24 @@ public final class InterconnectLocation implements ApiMessage {
     return selfLink;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InterconnectLocation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InterconnectLocation getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InterconnectLocation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InterconnectLocation();
   }
@@ -494,37 +497,23 @@ public final class InterconnectLocation implements ApiMessage {
       return this;
     }
 
-
     public InterconnectLocation build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
       return new InterconnectLocation(
-        address,
-        availabilityZone,
-        city,
-        continent,
-        creationTimestamp,
-        description,
-        facilityProvider,
-        facilityProviderFacilityId,
-        id,
-        kind,
-        name,
-        peeringdbFacilityId,
-        regionInfos,
-        selfLink
-      );
+          address,
+          availabilityZone,
+          city,
+          continent,
+          creationTimestamp,
+          description,
+          facilityProvider,
+          facilityProviderFacilityId,
+          id,
+          kind,
+          name,
+          peeringdbFacilityId,
+          regionInfos,
+          selfLink);
     }
 
     public Builder clone() {
@@ -550,20 +539,47 @@ public final class InterconnectLocation implements ApiMessage {
   @Override
   public String toString() {
     return "InterconnectLocation{"
-        + "address=" + address + ", "
-        + "availabilityZone=" + availabilityZone + ", "
-        + "city=" + city + ", "
-        + "continent=" + continent + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "facilityProvider=" + facilityProvider + ", "
-        + "facilityProviderFacilityId=" + facilityProviderFacilityId + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "peeringdbFacilityId=" + peeringdbFacilityId + ", "
-        + "regionInfos=" + regionInfos + ", "
-        + "selfLink=" + selfLink
+        + "address="
+        + address
+        + ", "
+        + "availabilityZone="
+        + availabilityZone
+        + ", "
+        + "city="
+        + city
+        + ", "
+        + "continent="
+        + continent
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "facilityProvider="
+        + facilityProvider
+        + ", "
+        + "facilityProviderFacilityId="
+        + facilityProviderFacilityId
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "peeringdbFacilityId="
+        + peeringdbFacilityId
+        + ", "
+        + "regionInfos="
+        + regionInfos
+        + ", "
+        + "selfLink="
+        + selfLink
         + "}";
   }
 
@@ -574,22 +590,20 @@ public final class InterconnectLocation implements ApiMessage {
     }
     if (o instanceof InterconnectLocation) {
       InterconnectLocation that = (InterconnectLocation) o;
-      return
-          Objects.equals(this.address, that.getAddress()) &&
-          Objects.equals(this.availabilityZone, that.getAvailabilityZone()) &&
-          Objects.equals(this.city, that.getCity()) &&
-          Objects.equals(this.continent, that.getContinent()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.facilityProvider, that.getFacilityProvider()) &&
-          Objects.equals(this.facilityProviderFacilityId, that.getFacilityProviderFacilityId()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.peeringdbFacilityId, that.getPeeringdbFacilityId()) &&
-          Objects.equals(this.regionInfos, that.getRegionInfosList()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
-          ;
+      return Objects.equals(this.address, that.getAddress())
+          && Objects.equals(this.availabilityZone, that.getAvailabilityZone())
+          && Objects.equals(this.city, that.getCity())
+          && Objects.equals(this.continent, that.getContinent())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.facilityProvider, that.getFacilityProvider())
+          && Objects.equals(this.facilityProviderFacilityId, that.getFacilityProviderFacilityId())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.peeringdbFacilityId, that.getPeeringdbFacilityId())
+          && Objects.equals(this.regionInfos, that.getRegionInfosList())
+          && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
   }
@@ -597,20 +611,19 @@ public final class InterconnectLocation implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      address,
-      availabilityZone,
-      city,
-      continent,
-      creationTimestamp,
-      description,
-      facilityProvider,
-      facilityProviderFacilityId,
-      id,
-      kind,
-      name,
-      peeringdbFacilityId,
-      regionInfos,
-      selfLink
-    );
+        address,
+        availabilityZone,
+        city,
+        continent,
+        creationTimestamp,
+        description,
+        facilityProvider,
+        facilityProviderFacilityId,
+        id,
+        kind,
+        name,
+        peeringdbFacilityId,
+        regionInfos,
+        selfLink);
   }
 }

@@ -17,25 +17,22 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectTargetHttpsProxyName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectTargetHttpsProxyName implements ResourceName {
   private final String project;
   private final String targetHttpsProxy;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/targetHttpsProxies/{targetHttpsProxy}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/targetHttpsProxies/{targetHttpsProxy}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -52,25 +49,12 @@ public final class ProjectTargetHttpsProxyName implements com.google.api.resourc
     targetHttpsProxy = Preconditions.checkNotNull(builder.getTargetHttpsProxy());
   }
 
-  public static ProjectTargetHttpsProxyName of(
-      String project,
-      String targetHttpsProxy
-      ) {
-    return newBuilder()
-    .setProject(project)
-    .setTargetHttpsProxy(targetHttpsProxy)
-      .build();
+  public static ProjectTargetHttpsProxyName of(String project, String targetHttpsProxy) {
+    return newBuilder().setProject(project).setTargetHttpsProxy(targetHttpsProxy).build();
   }
 
-  public static String format(
-      String project,
-      String targetHttpsProxy
-      ) {
-    return of(
-        project,
-        targetHttpsProxy
-        )
-        .toString();
+  public static String format(String project, String targetHttpsProxy) {
+    return of(project, targetHttpsProxy).toString();
   }
 
   public String getProject() {
@@ -80,7 +64,6 @@ public final class ProjectTargetHttpsProxyName implements com.google.api.resourc
   public String getTargetHttpsProxy() {
     return targetHttpsProxy;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -101,20 +84,20 @@ public final class ProjectTargetHttpsProxyName implements com.google.api.resourc
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectTargetHttpsProxyName> newFactory() {
     return new ResourceNameFactory<ProjectTargetHttpsProxyName>() {
-      public ProjectTargetHttpsProxyName parse(String formattedString) {return ProjectTargetHttpsProxyName.parse(formattedString);}
+      public ProjectTargetHttpsProxyName parse(String formattedString) {
+        return ProjectTargetHttpsProxyName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectTargetHttpsProxyName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectTargetHttpsProxyName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("project"),
-      matchMap.get("targetHttpsProxy")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectTargetHttpsProxyName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("targetHttpsProxy"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -128,6 +111,7 @@ public final class ProjectTargetHttpsProxyName implements com.google.api.resourc
     public String getProject() {
       return project;
     }
+
     public String getTargetHttpsProxy() {
       return targetHttpsProxy;
     }
@@ -136,6 +120,7 @@ public final class ProjectTargetHttpsProxyName implements com.google.api.resourc
       this.project = project;
       return this;
     }
+
     public Builder setTargetHttpsProxy(String targetHttpsProxy) {
       this.targetHttpsProxy = targetHttpsProxy;
       return this;
@@ -143,7 +128,7 @@ public final class ProjectTargetHttpsProxyName implements com.google.api.resourc
 
     private Builder() {}
 
-    public Builder (ProjectTargetHttpsProxyName projectTargetHttpsProxyName) {
+    public Builder(ProjectTargetHttpsProxyName projectTargetHttpsProxyName) {
       project = projectTargetHttpsProxyName.project;
       targetHttpsProxy = projectTargetHttpsProxyName.targetHttpsProxy;
     }
@@ -157,8 +142,7 @@ public final class ProjectTargetHttpsProxyName implements com.google.api.resourc
   public String toString() {
     return PATH_TEMPLATE.instantiate(
         "project", project,
-        "targetHttpsProxy", targetHttpsProxy
-        );
+        "targetHttpsProxy", targetHttpsProxy);
   }
 
   @Override
@@ -168,19 +152,14 @@ public final class ProjectTargetHttpsProxyName implements com.google.api.resourc
     }
     if (o instanceof ProjectTargetHttpsProxyName) {
       ProjectTargetHttpsProxyName that = (ProjectTargetHttpsProxyName) o;
-      return
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.targetHttpsProxy, that.getTargetHttpsProxy())
-          ;
+      return Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.targetHttpsProxy, that.getTargetHttpsProxy());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      project,
-      targetHttpsProxy
-    );
+    return Objects.hash(project, targetHttpsProxy);
   }
 }

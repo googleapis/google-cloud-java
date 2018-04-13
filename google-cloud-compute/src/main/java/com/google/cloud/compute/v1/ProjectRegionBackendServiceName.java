@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectRegionBackendServiceName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectRegionBackendServiceName implements ResourceName {
   private final String backendService;
   private final String project;
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/backendServices/{backendService}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/backendServices/{backendService}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -55,28 +52,16 @@ public final class ProjectRegionBackendServiceName implements com.google.api.res
   }
 
   public static ProjectRegionBackendServiceName of(
-      String backendService,
-      String project,
-      String region
-      ) {
+      String backendService, String project, String region) {
     return newBuilder()
-    .setBackendService(backendService)
-    .setProject(project)
-    .setRegion(region)
-      .build();
+        .setBackendService(backendService)
+        .setProject(project)
+        .setRegion(region)
+        .build();
   }
 
-  public static String format(
-      String backendService,
-      String project,
-      String region
-      ) {
-    return of(
-        backendService,
-        project,
-        region
-        )
-        .toString();
+  public static String format(String backendService, String project, String region) {
+    return of(backendService, project, region).toString();
   }
 
   public String getBackendService() {
@@ -90,7 +75,6 @@ public final class ProjectRegionBackendServiceName implements com.google.api.res
   public String getRegion() {
     return region;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +96,20 @@ public final class ProjectRegionBackendServiceName implements com.google.api.res
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectRegionBackendServiceName> newFactory() {
     return new ResourceNameFactory<ProjectRegionBackendServiceName>() {
-      public ProjectRegionBackendServiceName parse(String formattedString) {return ProjectRegionBackendServiceName.parse(formattedString);}
+      public ProjectRegionBackendServiceName parse(String formattedString) {
+        return ProjectRegionBackendServiceName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectRegionBackendServiceName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRegionBackendServiceName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("backendService"),
-      matchMap.get("project"),
-      matchMap.get("region")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectRegionBackendServiceName.parse: formattedString not in valid format");
+    return of(matchMap.get("backendService"), matchMap.get("project"), matchMap.get("region"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +124,11 @@ public final class ProjectRegionBackendServiceName implements com.google.api.res
     public String getBackendService() {
       return backendService;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getRegion() {
       return region;
     }
@@ -152,10 +137,12 @@ public final class ProjectRegionBackendServiceName implements com.google.api.res
       this.backendService = backendService;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setRegion(String region) {
       this.region = region;
       return this;
@@ -163,7 +150,7 @@ public final class ProjectRegionBackendServiceName implements com.google.api.res
 
     private Builder() {}
 
-    public Builder (ProjectRegionBackendServiceName projectRegionBackendServiceName) {
+    public Builder(ProjectRegionBackendServiceName projectRegionBackendServiceName) {
       backendService = projectRegionBackendServiceName.backendService;
       project = projectRegionBackendServiceName.project;
       region = projectRegionBackendServiceName.region;
@@ -179,8 +166,7 @@ public final class ProjectRegionBackendServiceName implements com.google.api.res
     return PATH_TEMPLATE.instantiate(
         "backendService", backendService,
         "project", project,
-        "region", region
-        );
+        "region", region);
   }
 
   @Override
@@ -190,21 +176,15 @@ public final class ProjectRegionBackendServiceName implements com.google.api.res
     }
     if (o instanceof ProjectRegionBackendServiceName) {
       ProjectRegionBackendServiceName that = (ProjectRegionBackendServiceName) o;
-      return
-          Objects.equals(this.backendService, that.getBackendService()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.region, that.getRegion())
-          ;
+      return Objects.equals(this.backendService, that.getBackendService())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.region, that.getRegion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      backendService,
-      project,
-      region
-    );
+    return Objects.hash(backendService, project, region);
   }
 }

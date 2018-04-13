@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -60,7 +59,6 @@ public final class Project implements ApiMessage {
     this.xpnProjectStatus = null;
   }
 
-
   private Project(
       Metadata commonInstanceMetadata,
       String creationTimestamp,
@@ -73,8 +71,7 @@ public final class Project implements ApiMessage {
       List<Quota> quotas,
       String selfLink,
       UsageExportLocation usageExportLocation,
-      String xpnProjectStatus
-      ) {
+      String xpnProjectStatus) {
     this.commonInstanceMetadata = commonInstanceMetadata;
     this.creationTimestamp = creationTimestamp;
     this.defaultServiceAccount = defaultServiceAccount;
@@ -93,13 +90,18 @@ public final class Project implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("commonInstanceMetadata") && commonInstanceMetadata != null) {
-      fieldMap.put("commonInstanceMetadata", Collections.singletonList(String.valueOf(commonInstanceMetadata)));
+      fieldMap.put(
+          "commonInstanceMetadata",
+          Collections.singletonList(String.valueOf(commonInstanceMetadata)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("defaultServiceAccount") && defaultServiceAccount != null) {
-      fieldMap.put("defaultServiceAccount", Collections.singletonList(String.valueOf(defaultServiceAccount)));
+      fieldMap.put(
+          "defaultServiceAccount",
+          Collections.singletonList(String.valueOf(defaultServiceAccount)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -131,7 +133,8 @@ public final class Project implements ApiMessage {
       fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
     }
     if (fieldNames.contains("usageExportLocation") && usageExportLocation != null) {
-      fieldMap.put("usageExportLocation", Collections.singletonList(String.valueOf(usageExportLocation)));
+      fieldMap.put(
+          "usageExportLocation", Collections.singletonList(String.valueOf(usageExportLocation)));
     }
     if (fieldNames.contains("xpnProjectStatus") && xpnProjectStatus != null) {
       fieldMap.put("xpnProjectStatus", Collections.singletonList(String.valueOf(xpnProjectStatus)));
@@ -234,22 +237,24 @@ public final class Project implements ApiMessage {
     return xpnProjectStatus;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Project prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Project getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Project DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Project();
   }
@@ -450,33 +455,21 @@ public final class Project implements ApiMessage {
       return this;
     }
 
-
     public Project build() {
 
-
-
-
-
-
-
-
-
-
-
       return new Project(
-        commonInstanceMetadata,
-        creationTimestamp,
-        defaultServiceAccount,
-        description,
-        enabledFeatures,
-        id,
-        kind,
-        name,
-        quotas,
-        selfLink,
-        usageExportLocation,
-        xpnProjectStatus
-      );
+          commonInstanceMetadata,
+          creationTimestamp,
+          defaultServiceAccount,
+          description,
+          enabledFeatures,
+          id,
+          kind,
+          name,
+          quotas,
+          selfLink,
+          usageExportLocation,
+          xpnProjectStatus);
     }
 
     public Builder clone() {
@@ -500,18 +493,41 @@ public final class Project implements ApiMessage {
   @Override
   public String toString() {
     return "Project{"
-        + "commonInstanceMetadata=" + commonInstanceMetadata + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "defaultServiceAccount=" + defaultServiceAccount + ", "
-        + "description=" + description + ", "
-        + "enabledFeatures=" + enabledFeatures + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "quotas=" + quotas + ", "
-        + "selfLink=" + selfLink + ", "
-        + "usageExportLocation=" + usageExportLocation + ", "
-        + "xpnProjectStatus=" + xpnProjectStatus
+        + "commonInstanceMetadata="
+        + commonInstanceMetadata
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "defaultServiceAccount="
+        + defaultServiceAccount
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "enabledFeatures="
+        + enabledFeatures
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "quotas="
+        + quotas
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "usageExportLocation="
+        + usageExportLocation
+        + ", "
+        + "xpnProjectStatus="
+        + xpnProjectStatus
         + "}";
   }
 
@@ -522,20 +538,18 @@ public final class Project implements ApiMessage {
     }
     if (o instanceof Project) {
       Project that = (Project) o;
-      return
-          Objects.equals(this.commonInstanceMetadata, that.getCommonInstanceMetadata()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.defaultServiceAccount, that.getDefaultServiceAccount()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.enabledFeatures, that.getEnabledFeaturesList()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.quotas, that.getQuotasList()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.usageExportLocation, that.getUsageExportLocation()) &&
-          Objects.equals(this.xpnProjectStatus, that.getXpnProjectStatus())
-          ;
+      return Objects.equals(this.commonInstanceMetadata, that.getCommonInstanceMetadata())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.defaultServiceAccount, that.getDefaultServiceAccount())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.enabledFeatures, that.getEnabledFeaturesList())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.quotas, that.getQuotasList())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.usageExportLocation, that.getUsageExportLocation())
+          && Objects.equals(this.xpnProjectStatus, that.getXpnProjectStatus());
     }
     return false;
   }
@@ -543,18 +557,17 @@ public final class Project implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      commonInstanceMetadata,
-      creationTimestamp,
-      defaultServiceAccount,
-      description,
-      enabledFeatures,
-      id,
-      kind,
-      name,
-      quotas,
-      selfLink,
-      usageExportLocation,
-      xpnProjectStatus
-    );
+        commonInstanceMetadata,
+        creationTimestamp,
+        defaultServiceAccount,
+        description,
+        enabledFeatures,
+        id,
+        kind,
+        name,
+        quotas,
+        selfLink,
+        usageExportLocation,
+        xpnProjectStatus);
   }
 }

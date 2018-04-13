@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class ServiceAccount implements ApiMessage {
     this.scopes = null;
   }
 
-
-  private ServiceAccount(
-      String email,
-      List<String> scopes
-      ) {
+  private ServiceAccount(String email, List<String> scopes) {
     this.email = email;
     this.scopes = scopes;
   }
@@ -90,22 +85,24 @@ public final class ServiceAccount implements ApiMessage {
     return scopes;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ServiceAccount prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ServiceAccount getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ServiceAccount DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ServiceAccount();
   }
@@ -158,13 +155,9 @@ public final class ServiceAccount implements ApiMessage {
       return this;
     }
 
-
     public ServiceAccount build() {
 
-      return new ServiceAccount(
-        email,
-        scopes
-      );
+      return new ServiceAccount(email, scopes);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class ServiceAccount implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ServiceAccount{"
-        + "email=" + email + ", "
-        + "scopes=" + scopes
-        + "}";
+    return "ServiceAccount{" + "email=" + email + ", " + "scopes=" + scopes + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class ServiceAccount implements ApiMessage {
     }
     if (o instanceof ServiceAccount) {
       ServiceAccount that = (ServiceAccount) o;
-      return
-          Objects.equals(this.email, that.getEmail()) &&
-          Objects.equals(this.scopes, that.getScopesList())
-          ;
+      return Objects.equals(this.email, that.getEmail())
+          && Objects.equals(this.scopes, that.getScopesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      email,
-      scopes
-    );
+    return Objects.hash(email, scopes);
   }
 }

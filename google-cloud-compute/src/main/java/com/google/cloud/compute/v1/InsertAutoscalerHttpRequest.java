@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
     this.zone = null;
   }
 
-
   private InsertAutoscalerHttpRequest(
       String access_token,
       Autoscaler autoscalerResource,
@@ -67,8 +63,7 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
       String quotaUser,
       String requestId,
       String userIp,
-      String zone
-      ) {
+      String zone) {
     this.access_token = access_token;
     this.autoscalerResource = autoscalerResource;
     this.callback = callback;
@@ -88,7 +83,8 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
       fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
     }
     if (fieldNames.contains("autoscalerResource") && autoscalerResource != null) {
-      fieldMap.put("autoscalerResource", Collections.singletonList(String.valueOf(autoscalerResource)));
+      fieldMap.put(
+          "autoscalerResource", Collections.singletonList(String.valueOf(autoscalerResource)));
     }
     if (fieldNames.contains("callback") && callback != null) {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
@@ -198,22 +194,24 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertAutoscalerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertAutoscalerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertAutoscalerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertAutoscalerHttpRequest();
   }
@@ -370,17 +368,8 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertAutoscalerHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
-
 
       if (zone == null) {
         missing += " zone";
@@ -389,17 +378,16 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertAutoscalerHttpRequest(
-        access_token,
-        autoscalerResource,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp,
-        zone
-      );
+          access_token,
+          autoscalerResource,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp,
+          zone);
     }
 
     public Builder clone() {
@@ -421,16 +409,35 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertAutoscalerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "autoscalerResource=" + autoscalerResource + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp + ", "
-        + "zone=" + zone
+        + "access_token="
+        + access_token
+        + ", "
+        + "autoscalerResource="
+        + autoscalerResource
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -441,18 +448,16 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertAutoscalerHttpRequest) {
       InsertAutoscalerHttpRequest that = (InsertAutoscalerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.autoscalerResource, that.getAutoscalerResource()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.autoscalerResource, that.getAutoscalerResource())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -460,16 +465,15 @@ public final class InsertAutoscalerHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      autoscalerResource,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp,
-      zone
-    );
+        access_token,
+        autoscalerResource,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp,
+        zone);
   }
 }

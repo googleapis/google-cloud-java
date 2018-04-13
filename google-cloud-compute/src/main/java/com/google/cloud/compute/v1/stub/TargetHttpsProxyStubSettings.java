@@ -15,11 +15,11 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetHttpsProxyClient.ListTargetHttpsProxiesPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -30,8 +30,6 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -41,25 +39,22 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.auth.Credentials;
 import com.google.cloud.compute.v1.DeleteTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.GetTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetHttpsProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyHttpRequest;
+import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpsProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetHttpsProxy;
-import static com.google.cloud.compute.v1.TargetHttpsProxyClient.ListTargetHttpsProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetHttpsProxyList;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -70,15 +65,15 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
+ *       port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of deleteTargetHttpsProxy to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of deleteTargetHttpsProxy to 30 seconds:
  *
  * <pre>
  * <code>
@@ -93,67 +88,77 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyStubSettings> {
-  /**
-   * The default scopes of the service.
-   */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES = ImmutableList.<String>builder()
-      .add("https://www.googleapis.com/auth/cloud-platform")
-      .add("https://www.googleapis.com/auth/compute")
-      .add("https://www.googleapis.com/auth/compute.readonly")
-      .add("https://www.googleapis.com/auth/devstorage.full_control")
-      .add("https://www.googleapis.com/auth/devstorage.read_only")
-      .add("https://www.googleapis.com/auth/devstorage.read_write")
-      .build();
+  /** The default scopes of the service. */
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/devstorage.full_control")
+          .add("https://www.googleapis.com/auth/devstorage.read_only")
+          .add("https://www.googleapis.com/auth/devstorage.read_write")
+          .build();
 
-  private final UnaryCallSettings<DeleteTargetHttpsProxyHttpRequest, Operation> deleteTargetHttpsProxySettings;
-  private final UnaryCallSettings<GetTargetHttpsProxyHttpRequest, TargetHttpsProxy> getTargetHttpsProxySettings;
-  private final UnaryCallSettings<InsertTargetHttpsProxyHttpRequest, Operation> insertTargetHttpsProxySettings;
-  private final PagedCallSettings<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, ListTargetHttpsProxiesPagedResponse> listTargetHttpsProxiesSettings;
-  private final UnaryCallSettings<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation> setSslCertificatesTargetHttpsProxySettings;
-  private final UnaryCallSettings<SetUrlMapTargetHttpsProxyHttpRequest, Operation> setUrlMapTargetHttpsProxySettings;
+  private final UnaryCallSettings<DeleteTargetHttpsProxyHttpRequest, Operation>
+      deleteTargetHttpsProxySettings;
+  private final UnaryCallSettings<GetTargetHttpsProxyHttpRequest, TargetHttpsProxy>
+      getTargetHttpsProxySettings;
+  private final UnaryCallSettings<InsertTargetHttpsProxyHttpRequest, Operation>
+      insertTargetHttpsProxySettings;
+  private final PagedCallSettings<
+          ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
+          ListTargetHttpsProxiesPagedResponse>
+      listTargetHttpsProxiesSettings;
+  private final UnaryCallSettings<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
+      setSslCertificatesTargetHttpsProxySettings;
+  private final UnaryCallSettings<SetSslPolicyTargetHttpsProxyHttpRequest, Operation>
+      setSslPolicyTargetHttpsProxySettings;
+  private final UnaryCallSettings<SetUrlMapTargetHttpsProxyHttpRequest, Operation>
+      setUrlMapTargetHttpsProxySettings;
 
-  /**
-   * Returns the object with the settings used for calls to deleteTargetHttpsProxy.
-   */
-  public UnaryCallSettings<DeleteTargetHttpsProxyHttpRequest, Operation> deleteTargetHttpsProxySettings() {
+  /** Returns the object with the settings used for calls to deleteTargetHttpsProxy. */
+  public UnaryCallSettings<DeleteTargetHttpsProxyHttpRequest, Operation>
+      deleteTargetHttpsProxySettings() {
     return deleteTargetHttpsProxySettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getTargetHttpsProxy.
-   */
-  public UnaryCallSettings<GetTargetHttpsProxyHttpRequest, TargetHttpsProxy> getTargetHttpsProxySettings() {
+  /** Returns the object with the settings used for calls to getTargetHttpsProxy. */
+  public UnaryCallSettings<GetTargetHttpsProxyHttpRequest, TargetHttpsProxy>
+      getTargetHttpsProxySettings() {
     return getTargetHttpsProxySettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to insertTargetHttpsProxy.
-   */
-  public UnaryCallSettings<InsertTargetHttpsProxyHttpRequest, Operation> insertTargetHttpsProxySettings() {
+  /** Returns the object with the settings used for calls to insertTargetHttpsProxy. */
+  public UnaryCallSettings<InsertTargetHttpsProxyHttpRequest, Operation>
+      insertTargetHttpsProxySettings() {
     return insertTargetHttpsProxySettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listTargetHttpsProxies.
-   */
-  public PagedCallSettings<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, ListTargetHttpsProxiesPagedResponse> listTargetHttpsProxiesSettings() {
+  /** Returns the object with the settings used for calls to listTargetHttpsProxies. */
+  public PagedCallSettings<
+          ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
+          ListTargetHttpsProxiesPagedResponse>
+      listTargetHttpsProxiesSettings() {
     return listTargetHttpsProxiesSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to setSslCertificatesTargetHttpsProxy.
-   */
-  public UnaryCallSettings<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation> setSslCertificatesTargetHttpsProxySettings() {
+  /** Returns the object with the settings used for calls to setSslCertificatesTargetHttpsProxy. */
+  public UnaryCallSettings<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
+      setSslCertificatesTargetHttpsProxySettings() {
     return setSslCertificatesTargetHttpsProxySettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to setUrlMapTargetHttpsProxy.
-   */
-  public UnaryCallSettings<SetUrlMapTargetHttpsProxyHttpRequest, Operation> setUrlMapTargetHttpsProxySettings() {
-    return setUrlMapTargetHttpsProxySettings;
+  /** Returns the object with the settings used for calls to setSslPolicyTargetHttpsProxy. */
+  public UnaryCallSettings<SetSslPolicyTargetHttpsProxyHttpRequest, Operation>
+      setSslPolicyTargetHttpsProxySettings() {
+    return setSslPolicyTargetHttpsProxySettings;
   }
 
+  /** Returns the object with the settings used for calls to setUrlMapTargetHttpsProxy. */
+  public UnaryCallSettings<SetUrlMapTargetHttpsProxyHttpRequest, Operation>
+      setUrlMapTargetHttpsProxySettings() {
+    return setUrlMapTargetHttpsProxySettings;
+  }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TargetHttpsProxyStub createStub() throws IOException {
@@ -167,47 +172,34 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
     }
   }
 
-  /**
-   * Returns a builder for the default ExecutorProvider for this service.
-   */
+  /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /**
-   * Returns the default service endpoint.
-   */
+  /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return "https://www.googleapis.com/compute/v1/projects/";
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return 443;
   }
 
-
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-
-  /**
-   * Returns a builder for the default credentials for this service.
-   */
+  /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder()
-        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
-        ;
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingHttpJsonChannelProvider.Builder defaultHttpJsonTransportProviderBuilder() {
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
@@ -218,27 +210,24 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(TargetHttpsProxyStubSettings.class))
-        .setTransportToken(GaxHttpJsonProperties.getHttpJsonTokenName(), GaxHttpJsonProperties.getHttpJsonVersion());
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(TargetHttpsProxyStubSettings.class))
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -250,82 +239,110 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
     getTargetHttpsProxySettings = settingsBuilder.getTargetHttpsProxySettings().build();
     insertTargetHttpsProxySettings = settingsBuilder.insertTargetHttpsProxySettings().build();
     listTargetHttpsProxiesSettings = settingsBuilder.listTargetHttpsProxiesSettings().build();
-    setSslCertificatesTargetHttpsProxySettings = settingsBuilder.setSslCertificatesTargetHttpsProxySettings().build();
+    setSslCertificatesTargetHttpsProxySettings =
+        settingsBuilder.setSslCertificatesTargetHttpsProxySettings().build();
+    setSslPolicyTargetHttpsProxySettings =
+        settingsBuilder.setSslPolicyTargetHttpsProxySettings().build();
     setUrlMapTargetHttpsProxySettings = settingsBuilder.setUrlMapTargetHttpsProxySettings().build();
   }
 
-  private static final PagedListDescriptor<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, TargetHttpsProxy> LIST_TARGET_HTTPS_PROXIES_PAGE_STR_DESC =
-      new PagedListDescriptor<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, TargetHttpsProxy>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
-        @Override
-        public ListTargetHttpsProxiesHttpRequest injectToken(ListTargetHttpsProxiesHttpRequest payload, String token) {
-          return ListTargetHttpsProxiesHttpRequest
-            .newBuilder(payload)
-            .setPageToken(token)
-            .build();
-        }
-        @Override
-        public ListTargetHttpsProxiesHttpRequest injectPageSize(ListTargetHttpsProxiesHttpRequest payload, int pageSize) {
-          return ListTargetHttpsProxiesHttpRequest
-            .newBuilder(payload)
-            .setMaxResults(pageSize)
-            .build();
-        }
-        @Override
-        public Integer extractPageSize(ListTargetHttpsProxiesHttpRequest payload) {
-          return payload.getMaxResults();
-        }
-        @Override
-        public String extractNextToken(TargetHttpsProxyList payload) {
-          return payload.getNextPageToken();
-        }
-        @Override
-        public Iterable<TargetHttpsProxy> extractResources(TargetHttpsProxyList payload) {
-          return payload.getItemsList();
-        }
-      };
+  private static final PagedListDescriptor<
+          ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, TargetHttpsProxy>
+      LIST_TARGET_HTTPS_PROXIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, TargetHttpsProxy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
 
-  private static final PagedListResponseFactory<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, ListTargetHttpsProxiesPagedResponse> LIST_TARGET_HTTPS_PROXIES_PAGE_STR_FACT =
-      new PagedListResponseFactory<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, ListTargetHttpsProxiesPagedResponse>() {
-        @Override
-        public ApiFuture<ListTargetHttpsProxiesPagedResponse> getFuturePagedResponse(
-            UnaryCallable<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList> callable,
-            ListTargetHttpsProxiesHttpRequest request,
-            ApiCallContext context,
-            ApiFuture<TargetHttpsProxyList> futureResponse) {
-          PageContext<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, TargetHttpsProxy> pageContext =
-              PageContext.create(callable, LIST_TARGET_HTTPS_PROXIES_PAGE_STR_DESC, request, context);
-          return ListTargetHttpsProxiesPagedResponse.createAsync(pageContext, futureResponse);
-        }
-      };
+            @Override
+            public ListTargetHttpsProxiesHttpRequest injectToken(
+                ListTargetHttpsProxiesHttpRequest payload, String token) {
+              return ListTargetHttpsProxiesHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
 
+            @Override
+            public ListTargetHttpsProxiesHttpRequest injectPageSize(
+                ListTargetHttpsProxiesHttpRequest payload, int pageSize) {
+              return ListTargetHttpsProxiesHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
 
-  /**
-   * Builder for TargetHttpsProxyStubSettings.
-   */
+            @Override
+            public Integer extractPageSize(ListTargetHttpsProxiesHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(TargetHttpsProxyList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TargetHttpsProxy> extractResources(TargetHttpsProxyList payload) {
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
+          ListTargetHttpsProxiesPagedResponse>
+      LIST_TARGET_HTTPS_PROXIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
+              ListTargetHttpsProxiesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTargetHttpsProxiesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList> callable,
+                ListTargetHttpsProxiesHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<TargetHttpsProxyList> futureResponse) {
+              PageContext<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, TargetHttpsProxy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TARGET_HTTPS_PROXIES_PAGE_STR_DESC, request, context);
+              return ListTargetHttpsProxiesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Builder for TargetHttpsProxyStubSettings. */
   public static class Builder extends StubSettings.Builder<TargetHttpsProxyStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteTargetHttpsProxyHttpRequest, Operation> deleteTargetHttpsProxySettings;
-    private final UnaryCallSettings.Builder<GetTargetHttpsProxyHttpRequest, TargetHttpsProxy> getTargetHttpsProxySettings;
-    private final UnaryCallSettings.Builder<InsertTargetHttpsProxyHttpRequest, Operation> insertTargetHttpsProxySettings;
-    private final PagedCallSettings.Builder<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, ListTargetHttpsProxiesPagedResponse> listTargetHttpsProxiesSettings;
-    private final UnaryCallSettings.Builder<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation> setSslCertificatesTargetHttpsProxySettings;
-    private final UnaryCallSettings.Builder<SetUrlMapTargetHttpsProxyHttpRequest, Operation> setUrlMapTargetHttpsProxySettings;
+    private final UnaryCallSettings.Builder<DeleteTargetHttpsProxyHttpRequest, Operation>
+        deleteTargetHttpsProxySettings;
+    private final UnaryCallSettings.Builder<GetTargetHttpsProxyHttpRequest, TargetHttpsProxy>
+        getTargetHttpsProxySettings;
+    private final UnaryCallSettings.Builder<InsertTargetHttpsProxyHttpRequest, Operation>
+        insertTargetHttpsProxySettings;
+    private final PagedCallSettings.Builder<
+            ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
+            ListTargetHttpsProxiesPagedResponse>
+        listTargetHttpsProxiesSettings;
+    private final UnaryCallSettings.Builder<
+            SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
+        setSslCertificatesTargetHttpsProxySettings;
+    private final UnaryCallSettings.Builder<SetSslPolicyTargetHttpsProxyHttpRequest, Operation>
+        setSslPolicyTargetHttpsProxySettings;
+    private final UnaryCallSettings.Builder<SetUrlMapTargetHttpsProxyHttpRequest, Operation>
+        setUrlMapTargetHttpsProxySettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -334,15 +351,16 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ofMillis(100L))
-          .setRetryDelayMultiplier(1.3)
-          .setMaxRetryDelay(Duration.ofMillis(60000L))
-          .setInitialRpcTimeout(Duration.ofMillis(20000L))
-          .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeout(Duration.ofMillis(20000L))
-          .setTotalTimeout(Duration.ofMillis(600000L))
-          .build();
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
@@ -360,21 +378,24 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
 
       insertTargetHttpsProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listTargetHttpsProxiesSettings = PagedCallSettings.newBuilder(
-          LIST_TARGET_HTTPS_PROXIES_PAGE_STR_FACT);
+      listTargetHttpsProxiesSettings =
+          PagedCallSettings.newBuilder(LIST_TARGET_HTTPS_PROXIES_PAGE_STR_FACT);
 
       setSslCertificatesTargetHttpsProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setSslPolicyTargetHttpsProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setUrlMapTargetHttpsProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-          deleteTargetHttpsProxySettings,
-          getTargetHttpsProxySettings,
-          insertTargetHttpsProxySettings,
-          listTargetHttpsProxiesSettings,
-          setSslCertificatesTargetHttpsProxySettings,
-          setUrlMapTargetHttpsProxySettings
-      );
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteTargetHttpsProxySettings,
+              getTargetHttpsProxySettings,
+              insertTargetHttpsProxySettings,
+              listTargetHttpsProxiesSettings,
+              setSslCertificatesTargetHttpsProxySettings,
+              setSslPolicyTargetHttpsProxySettings,
+              setUrlMapTargetHttpsProxySettings);
 
       initDefaults(this);
     }
@@ -390,27 +411,38 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
 
     private static Builder initDefaults(Builder builder) {
 
-      builder.deleteTargetHttpsProxySettings()
+      builder
+          .deleteTargetHttpsProxySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.getTargetHttpsProxySettings()
+      builder
+          .getTargetHttpsProxySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.insertTargetHttpsProxySettings()
+      builder
+          .insertTargetHttpsProxySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.listTargetHttpsProxiesSettings()
+      builder
+          .listTargetHttpsProxiesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.setSslCertificatesTargetHttpsProxySettings()
+      builder
+          .setSslCertificatesTargetHttpsProxySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.setUrlMapTargetHttpsProxySettings()
+      builder
+          .setSslPolicyTargetHttpsProxySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setUrlMapTargetHttpsProxySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -424,25 +456,31 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
       getTargetHttpsProxySettings = settings.getTargetHttpsProxySettings.toBuilder();
       insertTargetHttpsProxySettings = settings.insertTargetHttpsProxySettings.toBuilder();
       listTargetHttpsProxiesSettings = settings.listTargetHttpsProxiesSettings.toBuilder();
-      setSslCertificatesTargetHttpsProxySettings = settings.setSslCertificatesTargetHttpsProxySettings.toBuilder();
+      setSslCertificatesTargetHttpsProxySettings =
+          settings.setSslCertificatesTargetHttpsProxySettings.toBuilder();
+      setSslPolicyTargetHttpsProxySettings =
+          settings.setSslPolicyTargetHttpsProxySettings.toBuilder();
       setUrlMapTargetHttpsProxySettings = settings.setUrlMapTargetHttpsProxySettings.toBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-          deleteTargetHttpsProxySettings,
-          getTargetHttpsProxySettings,
-          insertTargetHttpsProxySettings,
-          listTargetHttpsProxiesSettings,
-          setSslCertificatesTargetHttpsProxySettings,
-          setUrlMapTargetHttpsProxySettings
-      );
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteTargetHttpsProxySettings,
+              getTargetHttpsProxySettings,
+              insertTargetHttpsProxySettings,
+              listTargetHttpsProxiesSettings,
+              setSslCertificatesTargetHttpsProxySettings,
+              setSslPolicyTargetHttpsProxySettings,
+              setUrlMapTargetHttpsProxySettings);
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
-     * Note: This method does not support applying settings to streaming methods.
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -451,45 +489,49 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
       return unaryMethodSettingsBuilders;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteTargetHttpsProxy.
-     */
-    public UnaryCallSettings.Builder<DeleteTargetHttpsProxyHttpRequest, Operation> deleteTargetHttpsProxySettings() {
+    /** Returns the builder for the settings used for calls to deleteTargetHttpsProxy. */
+    public UnaryCallSettings.Builder<DeleteTargetHttpsProxyHttpRequest, Operation>
+        deleteTargetHttpsProxySettings() {
       return deleteTargetHttpsProxySettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getTargetHttpsProxy.
-     */
-    public UnaryCallSettings.Builder<GetTargetHttpsProxyHttpRequest, TargetHttpsProxy> getTargetHttpsProxySettings() {
+    /** Returns the builder for the settings used for calls to getTargetHttpsProxy. */
+    public UnaryCallSettings.Builder<GetTargetHttpsProxyHttpRequest, TargetHttpsProxy>
+        getTargetHttpsProxySettings() {
       return getTargetHttpsProxySettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to insertTargetHttpsProxy.
-     */
-    public UnaryCallSettings.Builder<InsertTargetHttpsProxyHttpRequest, Operation> insertTargetHttpsProxySettings() {
+    /** Returns the builder for the settings used for calls to insertTargetHttpsProxy. */
+    public UnaryCallSettings.Builder<InsertTargetHttpsProxyHttpRequest, Operation>
+        insertTargetHttpsProxySettings() {
       return insertTargetHttpsProxySettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listTargetHttpsProxies.
-     */
-    public PagedCallSettings.Builder<ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList, ListTargetHttpsProxiesPagedResponse> listTargetHttpsProxiesSettings() {
+    /** Returns the builder for the settings used for calls to listTargetHttpsProxies. */
+    public PagedCallSettings.Builder<
+            ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
+            ListTargetHttpsProxiesPagedResponse>
+        listTargetHttpsProxiesSettings() {
       return listTargetHttpsProxiesSettings;
     }
 
     /**
      * Returns the builder for the settings used for calls to setSslCertificatesTargetHttpsProxy.
      */
-    public UnaryCallSettings.Builder<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation> setSslCertificatesTargetHttpsProxySettings() {
+    public UnaryCallSettings.Builder<SetSslCertificatesTargetHttpsProxyHttpRequest, Operation>
+        setSslCertificatesTargetHttpsProxySettings() {
       return setSslCertificatesTargetHttpsProxySettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to setUrlMapTargetHttpsProxy.
-     */
-    public UnaryCallSettings.Builder<SetUrlMapTargetHttpsProxyHttpRequest, Operation> setUrlMapTargetHttpsProxySettings() {
+    /** Returns the builder for the settings used for calls to setSslPolicyTargetHttpsProxy. */
+    public UnaryCallSettings.Builder<SetSslPolicyTargetHttpsProxyHttpRequest, Operation>
+        setSslPolicyTargetHttpsProxySettings() {
+      return setSslPolicyTargetHttpsProxySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setUrlMapTargetHttpsProxy. */
+    public UnaryCallSettings.Builder<SetUrlMapTargetHttpsProxyHttpRequest, Operation>
+        setUrlMapTargetHttpsProxySettings() {
       return setUrlMapTargetHttpsProxySettings;
     }
 

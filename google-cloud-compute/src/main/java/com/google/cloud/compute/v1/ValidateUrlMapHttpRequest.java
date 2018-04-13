@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private ValidateUrlMapHttpRequest(
       String access_token,
       String callback,
@@ -64,8 +60,7 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
       String quotaUser,
       String urlMap,
       UrlMapsValidateRequest urlMapsValidateRequestResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -101,8 +96,11 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
     if (fieldNames.contains("urlMap") && urlMap != null) {
       fieldMap.put("urlMap", Collections.singletonList(String.valueOf(urlMap)));
     }
-    if (fieldNames.contains("urlMapsValidateRequestResource") && urlMapsValidateRequestResource != null) {
-      fieldMap.put("urlMapsValidateRequestResource", Collections.singletonList(String.valueOf(urlMapsValidateRequestResource)));
+    if (fieldNames.contains("urlMapsValidateRequestResource")
+        && urlMapsValidateRequestResource != null) {
+      fieldMap.put(
+          "urlMapsValidateRequestResource",
+          Collections.singletonList(String.valueOf(urlMapsValidateRequestResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -184,22 +182,24 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ValidateUrlMapHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ValidateUrlMapHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ValidateUrlMapHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ValidateUrlMapHttpRequest();
   }
@@ -328,7 +328,8 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
       return urlMapsValidateRequestResource;
     }
 
-    public Builder setUrlMapsValidateRequestResource(UrlMapsValidateRequest urlMapsValidateRequestResource) {
+    public Builder setUrlMapsValidateRequestResource(
+        UrlMapsValidateRequest urlMapsValidateRequestResource) {
       this.urlMapsValidateRequestResource = urlMapsValidateRequestResource;
       return this;
     }
@@ -342,34 +343,26 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public ValidateUrlMapHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (urlMap == null) {
         missing += " urlMap";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ValidateUrlMapHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        urlMap,
-        urlMapsValidateRequestResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          urlMap,
+          urlMapsValidateRequestResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -390,15 +383,32 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "ValidateUrlMapHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "urlMap=" + urlMap + ", "
-        + "urlMapsValidateRequestResource=" + urlMapsValidateRequestResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "urlMap="
+        + urlMap
+        + ", "
+        + "urlMapsValidateRequestResource="
+        + urlMapsValidateRequestResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -409,17 +419,16 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
     }
     if (o instanceof ValidateUrlMapHttpRequest) {
       ValidateUrlMapHttpRequest that = (ValidateUrlMapHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.urlMap, that.getUrlMap()) &&
-          Objects.equals(this.urlMapsValidateRequestResource, that.getUrlMapsValidateRequestResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.urlMap, that.getUrlMap())
+          && Objects.equals(
+              this.urlMapsValidateRequestResource, that.getUrlMapsValidateRequestResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -427,15 +436,14 @@ public final class ValidateUrlMapHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      urlMap,
-      urlMapsValidateRequestResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        urlMap,
+        urlMapsValidateRequestResource,
+        userIp);
   }
 }

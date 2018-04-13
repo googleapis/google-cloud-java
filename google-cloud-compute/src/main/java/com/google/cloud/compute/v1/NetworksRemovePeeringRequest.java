@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class NetworksRemovePeeringRequest implements ApiMessage {
     this.name = null;
   }
 
-
-  private NetworksRemovePeeringRequest(
-      String name
-      ) {
+  private NetworksRemovePeeringRequest(String name) {
     this.name = name;
   }
 
@@ -72,22 +66,24 @@ public final class NetworksRemovePeeringRequest implements ApiMessage {
     return name;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(NetworksRemovePeeringRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static NetworksRemovePeeringRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final NetworksRemovePeeringRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new NetworksRemovePeeringRequest();
   }
@@ -118,11 +114,8 @@ public final class NetworksRemovePeeringRequest implements ApiMessage {
       return this;
     }
 
-
     public NetworksRemovePeeringRequest build() {
-      return new NetworksRemovePeeringRequest(
-        name
-      );
+      return new NetworksRemovePeeringRequest(name);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class NetworksRemovePeeringRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "NetworksRemovePeeringRequest{"
-        + "name=" + name
-        + "}";
+    return "NetworksRemovePeeringRequest{" + "name=" + name + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class NetworksRemovePeeringRequest implements ApiMessage {
     }
     if (o instanceof NetworksRemovePeeringRequest) {
       NetworksRemovePeeringRequest that = (NetworksRemovePeeringRequest) o;
-      return
-          Objects.equals(this.name, that.getName())
-          ;
+      return Objects.equals(this.name, that.getName());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      name
-    );
+    return Objects.hash(name);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class UsageExportLocation implements ApiMessage {
     this.reportNamePrefix = null;
   }
 
-
-  private UsageExportLocation(
-      String bucketName,
-      String reportNamePrefix
-      ) {
+  private UsageExportLocation(String bucketName, String reportNamePrefix) {
     this.bucketName = bucketName;
     this.reportNamePrefix = reportNamePrefix;
   }
@@ -86,22 +79,24 @@ public final class UsageExportLocation implements ApiMessage {
     return reportNamePrefix;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(UsageExportLocation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static UsageExportLocation getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final UsageExportLocation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new UsageExportLocation();
   }
@@ -146,13 +141,9 @@ public final class UsageExportLocation implements ApiMessage {
       return this;
     }
 
-
     public UsageExportLocation build() {
 
-      return new UsageExportLocation(
-        bucketName,
-        reportNamePrefix
-      );
+      return new UsageExportLocation(bucketName, reportNamePrefix);
     }
 
     public Builder clone() {
@@ -166,8 +157,11 @@ public final class UsageExportLocation implements ApiMessage {
   @Override
   public String toString() {
     return "UsageExportLocation{"
-        + "bucketName=" + bucketName + ", "
-        + "reportNamePrefix=" + reportNamePrefix
+        + "bucketName="
+        + bucketName
+        + ", "
+        + "reportNamePrefix="
+        + reportNamePrefix
         + "}";
   }
 
@@ -178,19 +172,14 @@ public final class UsageExportLocation implements ApiMessage {
     }
     if (o instanceof UsageExportLocation) {
       UsageExportLocation that = (UsageExportLocation) o;
-      return
-          Objects.equals(this.bucketName, that.getBucketName()) &&
-          Objects.equals(this.reportNamePrefix, that.getReportNamePrefix())
-          ;
+      return Objects.equals(this.bucketName, that.getBucketName())
+          && Objects.equals(this.reportNamePrefix, that.getReportNamePrefix());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      bucketName,
-      reportNamePrefix
-    );
+    return Objects.hash(bucketName, reportNamePrefix);
   }
 }

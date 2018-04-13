@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
     this.tag8021q = null;
   }
 
-
-  private InterconnectAttachmentPrivateInfo(
-      Integer tag8021q
-      ) {
+  private InterconnectAttachmentPrivateInfo(Integer tag8021q) {
     this.tag8021q = tag8021q;
   }
 
@@ -72,22 +66,24 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
     return tag8021q;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InterconnectAttachmentPrivateInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InterconnectAttachmentPrivateInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InterconnectAttachmentPrivateInfo DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InterconnectAttachmentPrivateInfo();
   }
@@ -118,11 +114,8 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
       return this;
     }
 
-
     public InterconnectAttachmentPrivateInfo build() {
-      return new InterconnectAttachmentPrivateInfo(
-        tag8021q
-      );
+      return new InterconnectAttachmentPrivateInfo(tag8021q);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
 
   @Override
   public String toString() {
-    return "InterconnectAttachmentPrivateInfo{"
-        + "tag8021q=" + tag8021q
-        + "}";
+    return "InterconnectAttachmentPrivateInfo{" + "tag8021q=" + tag8021q + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
     }
     if (o instanceof InterconnectAttachmentPrivateInfo) {
       InterconnectAttachmentPrivateInfo that = (InterconnectAttachmentPrivateInfo) o;
-      return
-          Objects.equals(this.tag8021q, that.getTag8021q())
-          ;
+      return Objects.equals(this.tag8021q, that.getTag8021q());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      tag8021q
-    );
+    return Objects.hash(tag8021q);
   }
 }

@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class OperationsScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private OperationsScopedList(
-      List<Operation> operations,
-      Warning warning
-      ) {
+  private OperationsScopedList(List<Operation> operations, Warning warning) {
     this.operations = operations;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class OperationsScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(OperationsScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static OperationsScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final OperationsScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new OperationsScopedList();
   }
@@ -158,13 +155,9 @@ public final class OperationsScopedList implements ApiMessage {
       return this;
     }
 
-
     public OperationsScopedList build() {
 
-      return new OperationsScopedList(
-        operations,
-        warning
-      );
+      return new OperationsScopedList(operations, warning);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class OperationsScopedList implements ApiMessage {
 
   @Override
   public String toString() {
-    return "OperationsScopedList{"
-        + "operations=" + operations + ", "
-        + "warning=" + warning
-        + "}";
+    return "OperationsScopedList{" + "operations=" + operations + ", " + "warning=" + warning + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class OperationsScopedList implements ApiMessage {
     }
     if (o instanceof OperationsScopedList) {
       OperationsScopedList that = (OperationsScopedList) o;
-      return
-          Objects.equals(this.operations, that.getOperationsList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.operations, that.getOperationsList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      operations,
-      warning
-    );
+    return Objects.hash(operations, warning);
   }
 }

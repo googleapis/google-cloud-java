@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetPoolClient.AggregatedListTargetPoolsPagedResponse;
+import static com.google.cloud.compute.v1.TargetPoolClient.ListTargetPoolsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -25,27 +28,15 @@ import com.google.cloud.compute.v1.DeleteTargetPoolHttpRequest;
 import com.google.cloud.compute.v1.GetHealthTargetPoolHttpRequest;
 import com.google.cloud.compute.v1.GetTargetPoolHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.InstanceReference;
 import com.google.cloud.compute.v1.ListTargetPoolsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.ProjectRegionTargetPoolName;
 import com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolHttpRequest;
 import com.google.cloud.compute.v1.RemoveInstanceTargetPoolHttpRequest;
 import com.google.cloud.compute.v1.SetBackupTargetPoolHttpRequest;
 import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
-import static com.google.cloud.compute.v1.TargetPoolClient.AggregatedListTargetPoolsPagedResponse;
-import static com.google.cloud.compute.v1.TargetPoolClient.ListTargetPoolsPagedResponse;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
 import com.google.cloud.compute.v1.TargetPoolList;
-import com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest;
-import com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest;
-import com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest;
-import com.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest;
-import com.google.cloud.compute.v1.TargetPoolsScopedList;
-import com.google.cloud.compute.v1.TargetReference;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -58,24 +49,28 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TargetPoolStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AddHealthCheckTargetPoolHttpRequest, Operation> addHealthCheckTargetPoolCallable() {
+  public UnaryCallable<AddHealthCheckTargetPoolHttpRequest, Operation>
+      addHealthCheckTargetPoolCallable() {
     throw new UnsupportedOperationException("Not implemented: addHealthCheckTargetPoolCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AddInstanceTargetPoolHttpRequest, Operation> addInstanceTargetPoolCallable() {
+  public UnaryCallable<AddInstanceTargetPoolHttpRequest, Operation>
+      addInstanceTargetPoolCallable() {
     throw new UnsupportedOperationException("Not implemented: addInstanceTargetPoolCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListTargetPoolsHttpRequest, AggregatedListTargetPoolsPagedResponse> aggregatedListTargetPoolsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListTargetPoolsPagedCallable()");
+  public UnaryCallable<AggregatedListTargetPoolsHttpRequest, AggregatedListTargetPoolsPagedResponse>
+      aggregatedListTargetPoolsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetPoolsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList> aggregatedListTargetPoolsCallable() {
+  public UnaryCallable<AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList>
+      aggregatedListTargetPoolsCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListTargetPoolsCallable()");
   }
 
@@ -90,7 +85,8 @@ public abstract class TargetPoolStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<GetHealthTargetPoolHttpRequest, TargetPoolInstanceHealth> getHealthTargetPoolCallable() {
+  public UnaryCallable<GetHealthTargetPoolHttpRequest, TargetPoolInstanceHealth>
+      getHealthTargetPoolCallable() {
     throw new UnsupportedOperationException("Not implemented: getHealthTargetPoolCallable()");
   }
 
@@ -100,7 +96,8 @@ public abstract class TargetPoolStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetPoolsHttpRequest, ListTargetPoolsPagedResponse> listTargetPoolsPagedCallable() {
+  public UnaryCallable<ListTargetPoolsHttpRequest, ListTargetPoolsPagedResponse>
+      listTargetPoolsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetPoolsPagedCallable()");
   }
 
@@ -110,12 +107,15 @@ public abstract class TargetPoolStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<RemoveHealthCheckTargetPoolHttpRequest, Operation> removeHealthCheckTargetPoolCallable() {
-    throw new UnsupportedOperationException("Not implemented: removeHealthCheckTargetPoolCallable()");
+  public UnaryCallable<RemoveHealthCheckTargetPoolHttpRequest, Operation>
+      removeHealthCheckTargetPoolCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeHealthCheckTargetPoolCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<RemoveInstanceTargetPoolHttpRequest, Operation> removeInstanceTargetPoolCallable() {
+  public UnaryCallable<RemoveInstanceTargetPoolHttpRequest, Operation>
+      removeInstanceTargetPoolCallable() {
     throw new UnsupportedOperationException("Not implemented: removeInstanceTargetPoolCallable()");
   }
 
@@ -124,4 +124,6 @@ public abstract class TargetPoolStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setBackupTargetPoolCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +33,8 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
   private final String callback;
   private final String fields;
   private final String instance;
-  private final InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource;
+  private final InstancesStartWithEncryptionKeyRequest
+      instancesStartWithEncryptionKeyRequestResource;
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
@@ -56,7 +54,6 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
     this.userIp = null;
   }
 
-
   private StartWithEncryptionKeyInstanceHttpRequest(
       String access_token,
       String callback,
@@ -67,13 +64,13 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
     this.instance = instance;
-    this.instancesStartWithEncryptionKeyRequestResource = instancesStartWithEncryptionKeyRequestResource;
+    this.instancesStartWithEncryptionKeyRequestResource =
+        instancesStartWithEncryptionKeyRequestResource;
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
@@ -96,8 +93,12 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
     if (fieldNames.contains("instance") && instance != null) {
       fieldMap.put("instance", Collections.singletonList(String.valueOf(instance)));
     }
-    if (fieldNames.contains("instancesStartWithEncryptionKeyRequestResource") && instancesStartWithEncryptionKeyRequestResource != null) {
-      fieldMap.put("instancesStartWithEncryptionKeyRequestResource", Collections.singletonList(String.valueOf(instancesStartWithEncryptionKeyRequestResource)));
+    if (fieldNames.contains("instancesStartWithEncryptionKeyRequestResource")
+        && instancesStartWithEncryptionKeyRequestResource != null) {
+      fieldMap.put(
+          "instancesStartWithEncryptionKeyRequestResource",
+          Collections.singletonList(
+              String.valueOf(instancesStartWithEncryptionKeyRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -174,7 +175,8 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
     return instance;
   }
 
-  public InstancesStartWithEncryptionKeyRequest getInstancesStartWithEncryptionKeyRequestResource() {
+  public InstancesStartWithEncryptionKeyRequest
+      getInstancesStartWithEncryptionKeyRequestResource() {
     return instancesStartWithEncryptionKeyRequestResource;
   }
 
@@ -198,22 +200,24 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(StartWithEncryptionKeyInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static StartWithEncryptionKeyInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final StartWithEncryptionKeyInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new StartWithEncryptionKeyInstanceHttpRequest();
   }
@@ -247,7 +251,8 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
         this.instance = other.instance;
       }
       if (other.getInstancesStartWithEncryptionKeyRequestResource() != null) {
-        this.instancesStartWithEncryptionKeyRequestResource = other.instancesStartWithEncryptionKeyRequestResource;
+        this.instancesStartWithEncryptionKeyRequestResource =
+            other.instancesStartWithEncryptionKeyRequestResource;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -272,7 +277,8 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
       this.callback = source.callback;
       this.fields = source.fields;
       this.instance = source.instance;
-      this.instancesStartWithEncryptionKeyRequestResource = source.instancesStartWithEncryptionKeyRequestResource;
+      this.instancesStartWithEncryptionKeyRequestResource =
+          source.instancesStartWithEncryptionKeyRequestResource;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
@@ -316,12 +322,15 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
       return this;
     }
 
-    public InstancesStartWithEncryptionKeyRequest getInstancesStartWithEncryptionKeyRequestResource() {
+    public InstancesStartWithEncryptionKeyRequest
+        getInstancesStartWithEncryptionKeyRequestResource() {
       return instancesStartWithEncryptionKeyRequestResource;
     }
 
-    public Builder setInstancesStartWithEncryptionKeyRequestResource(InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource) {
-      this.instancesStartWithEncryptionKeyRequestResource = instancesStartWithEncryptionKeyRequestResource;
+    public Builder setInstancesStartWithEncryptionKeyRequestResource(
+        InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource) {
+      this.instancesStartWithEncryptionKeyRequestResource =
+          instancesStartWithEncryptionKeyRequestResource;
       return this;
     }
 
@@ -370,36 +379,27 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
       return this;
     }
 
-
     public StartWithEncryptionKeyInstanceHttpRequest build() {
       String missing = "";
-
-
 
       if (instance == null) {
         missing += " instance";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new StartWithEncryptionKeyInstanceHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instance,
-        instancesStartWithEncryptionKeyRequestResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instance,
+          instancesStartWithEncryptionKeyRequestResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -408,7 +408,8 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setInstance(this.instance);
-      newBuilder.setInstancesStartWithEncryptionKeyRequestResource(this.instancesStartWithEncryptionKeyRequestResource);
+      newBuilder.setInstancesStartWithEncryptionKeyRequestResource(
+          this.instancesStartWithEncryptionKeyRequestResource);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
@@ -421,16 +422,35 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
   @Override
   public String toString() {
     return "StartWithEncryptionKeyInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instance=" + instance + ", "
-        + "instancesStartWithEncryptionKeyRequestResource=" + instancesStartWithEncryptionKeyRequestResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "instancesStartWithEncryptionKeyRequestResource="
+        + instancesStartWithEncryptionKeyRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +460,20 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
       return true;
     }
     if (o instanceof StartWithEncryptionKeyInstanceHttpRequest) {
-      StartWithEncryptionKeyInstanceHttpRequest that = (StartWithEncryptionKeyInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.instancesStartWithEncryptionKeyRequestResource, that.getInstancesStartWithEncryptionKeyRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      StartWithEncryptionKeyInstanceHttpRequest that =
+          (StartWithEncryptionKeyInstanceHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(
+              this.instancesStartWithEncryptionKeyRequestResource,
+              that.getInstancesStartWithEncryptionKeyRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +481,15 @@ public final class StartWithEncryptionKeyInstanceHttpRequest implements ApiMessa
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instance,
-      instancesStartWithEncryptionKeyRequestResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instance,
+        instancesStartWithEncryptionKeyRequestResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

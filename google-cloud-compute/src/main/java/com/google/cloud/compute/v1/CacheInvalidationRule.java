@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class CacheInvalidationRule implements ApiMessage {
     this.path = null;
   }
 
-
-  private CacheInvalidationRule(
-      String host,
-      String path
-      ) {
+  private CacheInvalidationRule(String host, String path) {
     this.host = host;
     this.path = path;
   }
@@ -86,22 +79,24 @@ public final class CacheInvalidationRule implements ApiMessage {
     return path;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(CacheInvalidationRule prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static CacheInvalidationRule getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final CacheInvalidationRule DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new CacheInvalidationRule();
   }
@@ -146,13 +141,9 @@ public final class CacheInvalidationRule implements ApiMessage {
       return this;
     }
 
-
     public CacheInvalidationRule build() {
 
-      return new CacheInvalidationRule(
-        host,
-        path
-      );
+      return new CacheInvalidationRule(host, path);
     }
 
     public Builder clone() {
@@ -165,10 +156,7 @@ public final class CacheInvalidationRule implements ApiMessage {
 
   @Override
   public String toString() {
-    return "CacheInvalidationRule{"
-        + "host=" + host + ", "
-        + "path=" + path
-        + "}";
+    return "CacheInvalidationRule{" + "host=" + host + ", " + "path=" + path + "}";
   }
 
   @Override
@@ -178,19 +166,13 @@ public final class CacheInvalidationRule implements ApiMessage {
     }
     if (o instanceof CacheInvalidationRule) {
       CacheInvalidationRule that = (CacheInvalidationRule) o;
-      return
-          Objects.equals(this.host, that.getHost()) &&
-          Objects.equals(this.path, that.getPath())
-          ;
+      return Objects.equals(this.host, that.getHost()) && Objects.equals(this.path, that.getPath());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      host,
-      path
-    );
+    return Objects.hash(host, path);
   }
 }

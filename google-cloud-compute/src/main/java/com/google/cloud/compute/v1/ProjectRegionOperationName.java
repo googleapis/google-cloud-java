@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectRegionOperationName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectRegionOperationName implements ResourceName {
   private final String operation;
   private final String project;
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/operations/{operation}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/operations/{operation}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -54,29 +51,12 @@ public final class ProjectRegionOperationName implements com.google.api.resource
     region = Preconditions.checkNotNull(builder.getRegion());
   }
 
-  public static ProjectRegionOperationName of(
-      String operation,
-      String project,
-      String region
-      ) {
-    return newBuilder()
-    .setOperation(operation)
-    .setProject(project)
-    .setRegion(region)
-      .build();
+  public static ProjectRegionOperationName of(String operation, String project, String region) {
+    return newBuilder().setOperation(operation).setProject(project).setRegion(region).build();
   }
 
-  public static String format(
-      String operation,
-      String project,
-      String region
-      ) {
-    return of(
-        operation,
-        project,
-        region
-        )
-        .toString();
+  public static String format(String operation, String project, String region) {
+    return of(operation, project, region).toString();
   }
 
   public String getOperation() {
@@ -90,7 +70,6 @@ public final class ProjectRegionOperationName implements com.google.api.resource
   public String getRegion() {
     return region;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +91,20 @@ public final class ProjectRegionOperationName implements com.google.api.resource
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectRegionOperationName> newFactory() {
     return new ResourceNameFactory<ProjectRegionOperationName>() {
-      public ProjectRegionOperationName parse(String formattedString) {return ProjectRegionOperationName.parse(formattedString);}
+      public ProjectRegionOperationName parse(String formattedString) {
+        return ProjectRegionOperationName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectRegionOperationName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRegionOperationName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("operation"),
-      matchMap.get("project"),
-      matchMap.get("region")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectRegionOperationName.parse: formattedString not in valid format");
+    return of(matchMap.get("operation"), matchMap.get("project"), matchMap.get("region"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +119,11 @@ public final class ProjectRegionOperationName implements com.google.api.resource
     public String getOperation() {
       return operation;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getRegion() {
       return region;
     }
@@ -152,10 +132,12 @@ public final class ProjectRegionOperationName implements com.google.api.resource
       this.operation = operation;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setRegion(String region) {
       this.region = region;
       return this;
@@ -163,7 +145,7 @@ public final class ProjectRegionOperationName implements com.google.api.resource
 
     private Builder() {}
 
-    public Builder (ProjectRegionOperationName projectRegionOperationName) {
+    public Builder(ProjectRegionOperationName projectRegionOperationName) {
       operation = projectRegionOperationName.operation;
       project = projectRegionOperationName.project;
       region = projectRegionOperationName.region;
@@ -179,8 +161,7 @@ public final class ProjectRegionOperationName implements com.google.api.resource
     return PATH_TEMPLATE.instantiate(
         "operation", operation,
         "project", project,
-        "region", region
-        );
+        "region", region);
   }
 
   @Override
@@ -190,21 +171,15 @@ public final class ProjectRegionOperationName implements com.google.api.resource
     }
     if (o instanceof ProjectRegionOperationName) {
       ProjectRegionOperationName that = (ProjectRegionOperationName) o;
-      return
-          Objects.equals(this.operation, that.getOperation()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.region, that.getRegion())
-          ;
+      return Objects.equals(this.operation, that.getOperation())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.region, that.getRegion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      operation,
-      project,
-      region
-    );
+    return Objects.hash(operation, project, region);
   }
 }

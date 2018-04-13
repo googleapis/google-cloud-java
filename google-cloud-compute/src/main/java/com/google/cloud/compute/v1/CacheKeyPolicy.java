@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -46,14 +45,12 @@ public final class CacheKeyPolicy implements ApiMessage {
     this.queryStringWhitelist = null;
   }
 
-
   private CacheKeyPolicy(
       Boolean includeHost,
       Boolean includeProtocol,
       Boolean includeQueryString,
       List<String> queryStringBlacklist,
-      List<String> queryStringWhitelist
-      ) {
+      List<String> queryStringWhitelist) {
     this.includeHost = includeHost;
     this.includeProtocol = includeProtocol;
     this.includeQueryString = includeQueryString;
@@ -71,7 +68,8 @@ public final class CacheKeyPolicy implements ApiMessage {
       fieldMap.put("includeProtocol", Collections.singletonList(String.valueOf(includeProtocol)));
     }
     if (fieldNames.contains("includeQueryString") && includeQueryString != null) {
-      fieldMap.put("includeQueryString", Collections.singletonList(String.valueOf(includeQueryString)));
+      fieldMap.put(
+          "includeQueryString", Collections.singletonList(String.valueOf(includeQueryString)));
     }
     if (fieldNames.contains("queryStringBlacklist") && queryStringBlacklist != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -136,22 +134,24 @@ public final class CacheKeyPolicy implements ApiMessage {
     return queryStringWhitelist;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(CacheKeyPolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static CacheKeyPolicy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final CacheKeyPolicy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new CacheKeyPolicy();
   }
@@ -254,19 +254,14 @@ public final class CacheKeyPolicy implements ApiMessage {
       return this;
     }
 
-
     public CacheKeyPolicy build() {
 
-
-
-
       return new CacheKeyPolicy(
-        includeHost,
-        includeProtocol,
-        includeQueryString,
-        queryStringBlacklist,
-        queryStringWhitelist
-      );
+          includeHost,
+          includeProtocol,
+          includeQueryString,
+          queryStringBlacklist,
+          queryStringWhitelist);
     }
 
     public Builder clone() {
@@ -283,11 +278,20 @@ public final class CacheKeyPolicy implements ApiMessage {
   @Override
   public String toString() {
     return "CacheKeyPolicy{"
-        + "includeHost=" + includeHost + ", "
-        + "includeProtocol=" + includeProtocol + ", "
-        + "includeQueryString=" + includeQueryString + ", "
-        + "queryStringBlacklist=" + queryStringBlacklist + ", "
-        + "queryStringWhitelist=" + queryStringWhitelist
+        + "includeHost="
+        + includeHost
+        + ", "
+        + "includeProtocol="
+        + includeProtocol
+        + ", "
+        + "includeQueryString="
+        + includeQueryString
+        + ", "
+        + "queryStringBlacklist="
+        + queryStringBlacklist
+        + ", "
+        + "queryStringWhitelist="
+        + queryStringWhitelist
         + "}";
   }
 
@@ -298,13 +302,11 @@ public final class CacheKeyPolicy implements ApiMessage {
     }
     if (o instanceof CacheKeyPolicy) {
       CacheKeyPolicy that = (CacheKeyPolicy) o;
-      return
-          Objects.equals(this.includeHost, that.getIncludeHost()) &&
-          Objects.equals(this.includeProtocol, that.getIncludeProtocol()) &&
-          Objects.equals(this.includeQueryString, that.getIncludeQueryString()) &&
-          Objects.equals(this.queryStringBlacklist, that.getQueryStringBlacklistList()) &&
-          Objects.equals(this.queryStringWhitelist, that.getQueryStringWhitelistList())
-          ;
+      return Objects.equals(this.includeHost, that.getIncludeHost())
+          && Objects.equals(this.includeProtocol, that.getIncludeProtocol())
+          && Objects.equals(this.includeQueryString, that.getIncludeQueryString())
+          && Objects.equals(this.queryStringBlacklist, that.getQueryStringBlacklistList())
+          && Objects.equals(this.queryStringWhitelist, that.getQueryStringWhitelistList());
     }
     return false;
   }
@@ -312,11 +314,10 @@ public final class CacheKeyPolicy implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      includeHost,
-      includeProtocol,
-      includeQueryString,
-      queryStringBlacklist,
-      queryStringWhitelist
-    );
+        includeHost,
+        includeProtocol,
+        includeQueryString,
+        queryStringBlacklist,
+        queryStringWhitelist);
   }
 }

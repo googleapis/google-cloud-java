@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
     this.instances = null;
   }
 
-
-  private TargetPoolsAddInstanceRequest(
-      List<InstanceReference> instances
-      ) {
+  private TargetPoolsAddInstanceRequest(List<InstanceReference> instances) {
     this.instances = instances;
   }
 
@@ -76,22 +71,24 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
     return instances;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetPoolsAddInstanceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetPoolsAddInstanceRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetPoolsAddInstanceRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetPoolsAddInstanceRequest();
   }
@@ -130,11 +127,8 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
       return this;
     }
 
-
     public TargetPoolsAddInstanceRequest build() {
-      return new TargetPoolsAddInstanceRequest(
-        instances
-      );
+      return new TargetPoolsAddInstanceRequest(instances);
     }
 
     public Builder clone() {
@@ -146,9 +140,7 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "TargetPoolsAddInstanceRequest{"
-        + "instances=" + instances
-        + "}";
+    return "TargetPoolsAddInstanceRequest{" + "instances=" + instances + "}";
   }
 
   @Override
@@ -158,17 +150,13 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
     }
     if (o instanceof TargetPoolsAddInstanceRequest) {
       TargetPoolsAddInstanceRequest that = (TargetPoolsAddInstanceRequest) o;
-      return
-          Objects.equals(this.instances, that.getInstancesList())
-          ;
+      return Objects.equals(this.instances, that.getInstancesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instances
-    );
+    return Objects.hash(instances);
   }
 }

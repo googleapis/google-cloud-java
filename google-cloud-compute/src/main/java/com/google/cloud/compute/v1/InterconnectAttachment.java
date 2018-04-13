@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -64,7 +61,6 @@ public final class InterconnectAttachment implements ApiMessage {
     this.selfLink = null;
   }
 
-
   private InterconnectAttachment(
       String cloudRouterIpAddress,
       String creationTimestamp,
@@ -79,8 +75,7 @@ public final class InterconnectAttachment implements ApiMessage {
       InterconnectAttachmentPrivateInfo privateInterconnectInfo,
       String region,
       String router,
-      String selfLink
-      ) {
+      String selfLink) {
     this.cloudRouterIpAddress = cloudRouterIpAddress;
     this.creationTimestamp = creationTimestamp;
     this.customerRouterIpAddress = customerRouterIpAddress;
@@ -101,19 +96,24 @@ public final class InterconnectAttachment implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("cloudRouterIpAddress") && cloudRouterIpAddress != null) {
-      fieldMap.put("cloudRouterIpAddress", Collections.singletonList(String.valueOf(cloudRouterIpAddress)));
+      fieldMap.put(
+          "cloudRouterIpAddress", Collections.singletonList(String.valueOf(cloudRouterIpAddress)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("customerRouterIpAddress") && customerRouterIpAddress != null) {
-      fieldMap.put("customerRouterIpAddress", Collections.singletonList(String.valueOf(customerRouterIpAddress)));
+      fieldMap.put(
+          "customerRouterIpAddress",
+          Collections.singletonList(String.valueOf(customerRouterIpAddress)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
     }
     if (fieldNames.contains("googleReferenceId") && googleReferenceId != null) {
-      fieldMap.put("googleReferenceId", Collections.singletonList(String.valueOf(googleReferenceId)));
+      fieldMap.put(
+          "googleReferenceId", Collections.singletonList(String.valueOf(googleReferenceId)));
     }
     if (fieldNames.contains("id") && id != null) {
       fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
@@ -128,10 +128,13 @@ public final class InterconnectAttachment implements ApiMessage {
       fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
     }
     if (fieldNames.contains("operationalStatus") && operationalStatus != null) {
-      fieldMap.put("operationalStatus", Collections.singletonList(String.valueOf(operationalStatus)));
+      fieldMap.put(
+          "operationalStatus", Collections.singletonList(String.valueOf(operationalStatus)));
     }
     if (fieldNames.contains("privateInterconnectInfo") && privateInterconnectInfo != null) {
-      fieldMap.put("privateInterconnectInfo", Collections.singletonList(String.valueOf(privateInterconnectInfo)));
+      fieldMap.put(
+          "privateInterconnectInfo",
+          Collections.singletonList(String.valueOf(privateInterconnectInfo)));
     }
     if (fieldNames.contains("region") && region != null) {
       fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
@@ -254,22 +257,24 @@ public final class InterconnectAttachment implements ApiMessage {
     return selfLink;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InterconnectAttachment prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InterconnectAttachment getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InterconnectAttachment DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InterconnectAttachment();
   }
@@ -450,7 +455,8 @@ public final class InterconnectAttachment implements ApiMessage {
       return privateInterconnectInfo;
     }
 
-    public Builder setPrivateInterconnectInfo(InterconnectAttachmentPrivateInfo privateInterconnectInfo) {
+    public Builder setPrivateInterconnectInfo(
+        InterconnectAttachmentPrivateInfo privateInterconnectInfo) {
       this.privateInterconnectInfo = privateInterconnectInfo;
       return this;
     }
@@ -482,37 +488,23 @@ public final class InterconnectAttachment implements ApiMessage {
       return this;
     }
 
-
     public InterconnectAttachment build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
       return new InterconnectAttachment(
-        cloudRouterIpAddress,
-        creationTimestamp,
-        customerRouterIpAddress,
-        description,
-        googleReferenceId,
-        id,
-        interconnect,
-        kind,
-        name,
-        operationalStatus,
-        privateInterconnectInfo,
-        region,
-        router,
-        selfLink
-      );
+          cloudRouterIpAddress,
+          creationTimestamp,
+          customerRouterIpAddress,
+          description,
+          googleReferenceId,
+          id,
+          interconnect,
+          kind,
+          name,
+          operationalStatus,
+          privateInterconnectInfo,
+          region,
+          router,
+          selfLink);
     }
 
     public Builder clone() {
@@ -538,20 +530,47 @@ public final class InterconnectAttachment implements ApiMessage {
   @Override
   public String toString() {
     return "InterconnectAttachment{"
-        + "cloudRouterIpAddress=" + cloudRouterIpAddress + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "customerRouterIpAddress=" + customerRouterIpAddress + ", "
-        + "description=" + description + ", "
-        + "googleReferenceId=" + googleReferenceId + ", "
-        + "id=" + id + ", "
-        + "interconnect=" + interconnect + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "operationalStatus=" + operationalStatus + ", "
-        + "privateInterconnectInfo=" + privateInterconnectInfo + ", "
-        + "region=" + region + ", "
-        + "router=" + router + ", "
-        + "selfLink=" + selfLink
+        + "cloudRouterIpAddress="
+        + cloudRouterIpAddress
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "customerRouterIpAddress="
+        + customerRouterIpAddress
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "googleReferenceId="
+        + googleReferenceId
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "interconnect="
+        + interconnect
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "operationalStatus="
+        + operationalStatus
+        + ", "
+        + "privateInterconnectInfo="
+        + privateInterconnectInfo
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "router="
+        + router
+        + ", "
+        + "selfLink="
+        + selfLink
         + "}";
   }
 
@@ -562,22 +581,20 @@ public final class InterconnectAttachment implements ApiMessage {
     }
     if (o instanceof InterconnectAttachment) {
       InterconnectAttachment that = (InterconnectAttachment) o;
-      return
-          Objects.equals(this.cloudRouterIpAddress, that.getCloudRouterIpAddress()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.customerRouterIpAddress, that.getCustomerRouterIpAddress()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.googleReferenceId, that.getGoogleReferenceId()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.interconnect, that.getInterconnect()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.operationalStatus, that.getOperationalStatus()) &&
-          Objects.equals(this.privateInterconnectInfo, that.getPrivateInterconnectInfo()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.router, that.getRouter()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
-          ;
+      return Objects.equals(this.cloudRouterIpAddress, that.getCloudRouterIpAddress())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.customerRouterIpAddress, that.getCustomerRouterIpAddress())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.googleReferenceId, that.getGoogleReferenceId())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.interconnect, that.getInterconnect())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.operationalStatus, that.getOperationalStatus())
+          && Objects.equals(this.privateInterconnectInfo, that.getPrivateInterconnectInfo())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.router, that.getRouter())
+          && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
   }
@@ -585,20 +602,19 @@ public final class InterconnectAttachment implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      cloudRouterIpAddress,
-      creationTimestamp,
-      customerRouterIpAddress,
-      description,
-      googleReferenceId,
-      id,
-      interconnect,
-      kind,
-      name,
-      operationalStatus,
-      privateInterconnectInfo,
-      region,
-      router,
-      selfLink
-    );
+        cloudRouterIpAddress,
+        creationTimestamp,
+        customerRouterIpAddress,
+        description,
+        googleReferenceId,
+        id,
+        interconnect,
+        kind,
+        name,
+        operationalStatus,
+        privateInterconnectInfo,
+        region,
+        router,
+        selfLink);
   }
 }

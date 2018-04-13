@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class ForwardingRulesScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private ForwardingRulesScopedList(
-      List<ForwardingRule> forwardingRules,
-      Warning warning
-      ) {
+  private ForwardingRulesScopedList(List<ForwardingRule> forwardingRules, Warning warning) {
     this.forwardingRules = forwardingRules;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class ForwardingRulesScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ForwardingRulesScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ForwardingRulesScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ForwardingRulesScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ForwardingRulesScopedList();
   }
@@ -158,13 +155,9 @@ public final class ForwardingRulesScopedList implements ApiMessage {
       return this;
     }
 
-
     public ForwardingRulesScopedList build() {
 
-      return new ForwardingRulesScopedList(
-        forwardingRules,
-        warning
-      );
+      return new ForwardingRulesScopedList(forwardingRules, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class ForwardingRulesScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "ForwardingRulesScopedList{"
-        + "forwardingRules=" + forwardingRules + ", "
-        + "warning=" + warning
+        + "forwardingRules="
+        + forwardingRules
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class ForwardingRulesScopedList implements ApiMessage {
     }
     if (o instanceof ForwardingRulesScopedList) {
       ForwardingRulesScopedList that = (ForwardingRulesScopedList) o;
-      return
-          Objects.equals(this.forwardingRules, that.getForwardingRulesList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.forwardingRules, that.getForwardingRulesList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      forwardingRules,
-      warning
-    );
+    return Objects.hash(forwardingRules, warning);
   }
 }

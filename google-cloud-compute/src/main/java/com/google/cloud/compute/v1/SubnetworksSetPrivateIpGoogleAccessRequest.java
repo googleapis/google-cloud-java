@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest implements ApiMess
     this.privateIpGoogleAccess = null;
   }
 
-
-  private SubnetworksSetPrivateIpGoogleAccessRequest(
-      Boolean privateIpGoogleAccess
-      ) {
+  private SubnetworksSetPrivateIpGoogleAccessRequest(Boolean privateIpGoogleAccess) {
     this.privateIpGoogleAccess = privateIpGoogleAccess;
   }
 
@@ -49,7 +43,9 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest implements ApiMess
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("privateIpGoogleAccess") && privateIpGoogleAccess != null) {
-      fieldMap.put("privateIpGoogleAccess", Collections.singletonList(String.valueOf(privateIpGoogleAccess)));
+      fieldMap.put(
+          "privateIpGoogleAccess",
+          Collections.singletonList(String.valueOf(privateIpGoogleAccess)));
     }
     return fieldMap;
   }
@@ -72,22 +68,24 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest implements ApiMess
     return privateIpGoogleAccess;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SubnetworksSetPrivateIpGoogleAccessRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SubnetworksSetPrivateIpGoogleAccessRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SubnetworksSetPrivateIpGoogleAccessRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SubnetworksSetPrivateIpGoogleAccessRequest();
   }
@@ -118,11 +116,8 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest implements ApiMess
       return this;
     }
 
-
     public SubnetworksSetPrivateIpGoogleAccessRequest build() {
-      return new SubnetworksSetPrivateIpGoogleAccessRequest(
-        privateIpGoogleAccess
-      );
+      return new SubnetworksSetPrivateIpGoogleAccessRequest(privateIpGoogleAccess);
     }
 
     public Builder clone() {
@@ -135,7 +130,8 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest implements ApiMess
   @Override
   public String toString() {
     return "SubnetworksSetPrivateIpGoogleAccessRequest{"
-        + "privateIpGoogleAccess=" + privateIpGoogleAccess
+        + "privateIpGoogleAccess="
+        + privateIpGoogleAccess
         + "}";
   }
 
@@ -145,18 +141,15 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest implements ApiMess
       return true;
     }
     if (o instanceof SubnetworksSetPrivateIpGoogleAccessRequest) {
-      SubnetworksSetPrivateIpGoogleAccessRequest that = (SubnetworksSetPrivateIpGoogleAccessRequest) o;
-      return
-          Objects.equals(this.privateIpGoogleAccess, that.getPrivateIpGoogleAccess())
-          ;
+      SubnetworksSetPrivateIpGoogleAccessRequest that =
+          (SubnetworksSetPrivateIpGoogleAccessRequest) o;
+      return Objects.equals(this.privateIpGoogleAccess, that.getPrivateIpGoogleAccess());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      privateIpGoogleAccess
-    );
+    return Objects.hash(privateIpGoogleAccess);
   }
 }

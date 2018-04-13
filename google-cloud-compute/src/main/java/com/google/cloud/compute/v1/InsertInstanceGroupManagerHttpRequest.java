@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
     this.zone = null;
   }
 
-
   private InsertInstanceGroupManagerHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
       String quotaUser,
       String requestId,
       String userIp,
-      String zone
-      ) {
+      String zone) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -93,8 +88,11 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
-    if (fieldNames.contains("instanceGroupManagerResource") && instanceGroupManagerResource != null) {
-      fieldMap.put("instanceGroupManagerResource", Collections.singletonList(String.valueOf(instanceGroupManagerResource)));
+    if (fieldNames.contains("instanceGroupManagerResource")
+        && instanceGroupManagerResource != null) {
+      fieldMap.put(
+          "instanceGroupManagerResource",
+          Collections.singletonList(String.valueOf(instanceGroupManagerResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -198,22 +196,24 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertInstanceGroupManagerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertInstanceGroupManagerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertInstanceGroupManagerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertInstanceGroupManagerHttpRequest();
   }
@@ -311,7 +311,8 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
       return instanceGroupManagerResource;
     }
 
-    public Builder setInstanceGroupManagerResource(InstanceGroupManager instanceGroupManagerResource) {
+    public Builder setInstanceGroupManagerResource(
+        InstanceGroupManager instanceGroupManagerResource) {
       this.instanceGroupManagerResource = instanceGroupManagerResource;
       return this;
     }
@@ -370,17 +371,8 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertInstanceGroupManagerHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
-
 
       if (zone == null) {
         missing += " zone";
@@ -389,17 +381,16 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertInstanceGroupManagerHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroupManagerResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp,
-        zone
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroupManagerResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp,
+          zone);
     }
 
     public Builder clone() {
@@ -421,16 +412,35 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertInstanceGroupManagerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroupManagerResource=" + instanceGroupManagerResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp + ", "
-        + "zone=" + zone
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroupManagerResource="
+        + instanceGroupManagerResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -441,18 +451,17 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertInstanceGroupManagerHttpRequest) {
       InsertInstanceGroupManagerHttpRequest that = (InsertInstanceGroupManagerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroupManagerResource, that.getInstanceGroupManagerResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(
+              this.instanceGroupManagerResource, that.getInstanceGroupManagerResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -460,16 +469,15 @@ public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroupManagerResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp,
-      zone
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroupManagerResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp,
+        zone);
   }
 }

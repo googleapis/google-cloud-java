@@ -15,62 +15,15 @@
  */
 package com.google.cloud.compute.v1.stub;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
-import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.core.BackgroundResourceAggregation;
-import com.google.api.gax.httpjson.ApiMessageHttpRequestFormatter;
-import com.google.api.gax.httpjson.ApiMessageHttpResponseParser;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientStreamingCallable;
-import com.google.api.gax.rpc.OperationCallSettings;
-import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.RequestParamsExtractor;
-import com.google.api.gax.rpc.ServerStreamingCallSettings;
-import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerHttpRequest;
-import com.google.cloud.compute.v1.DeleteInstancesRegionInstanceGroupManagerHttpRequest;
-import com.google.cloud.compute.v1.DeleteRegionInstanceGroupManagerHttpRequest;
-import com.google.cloud.compute.v1.GetRegionInstanceGroupManagerHttpRequest;
-import com.google.cloud.compute.v1.InsertRegionInstanceGroupManagerHttpRequest;
-import com.google.cloud.compute.v1.InstanceGroupManager;
-import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManagersHttpRequest;
-import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectRegionInstanceGroupManagerName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
-import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagerList;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagerSettings;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest;
-import com.google.cloud.compute.v1.ResizeRegionInstanceGroupManagerHttpRequest;
-import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerHttpRequest;
-import com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerHttpRequest;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Sets;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -81,22 +34,25 @@ import javax.annotation.Generated;
  */
 @Generated("by GAPIC v0.0.5")
 @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-public class HttpJsonRegionInstanceGroupManagerCallableFactory implements HttpJsonStubCallableFactory {
+public class HttpJsonRegionInstanceGroupManagerCallableFactory
+    implements HttpJsonStubCallableFactory {
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       UnaryCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
-    return HttpJsonCallableFactory.createUnaryCallable(httpJsonCallSettings, callSettings, clientContext);
+    return HttpJsonCallableFactory.createUnaryCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 
   @Override
   public <RequestT, ResponseT, PagedListResponseT>
       UnaryCallable<RequestT, PagedListResponseT> createPagedCallable(
-      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
-      PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
-      ClientContext clientContext) {
-    return HttpJsonCallableFactory.createPagedCallable(httpJsonCallSettings, pagedCallSettings, clientContext);
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+          PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
+          ClientContext clientContext) {
+    return HttpJsonCallableFactory.createPagedCallable(
+        httpJsonCallSettings, pagedCallSettings, clientContext);
   }
 
   @Override
@@ -104,6 +60,7 @@ public class HttpJsonRegionInstanceGroupManagerCallableFactory implements HttpJs
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       BatchingCallSettings<RequestT, ResponseT> batchingCallSettings,
       ClientContext clientContext) {
-    return HttpJsonCallableFactory.createBatchingCallable(httpJsonCallSettings, batchingCallSettings, clientContext);
+    return HttpJsonCallableFactory.createBatchingCallable(
+        httpJsonCallSettings, batchingCallSettings, clientContext);
   }
 }

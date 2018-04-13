@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private EnableXpnResourceProjectHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
       ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -102,8 +97,11 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
     if (fieldNames.contains("project") && project != null) {
       fieldMap.put("project", Collections.singletonList(String.valueOf(project)));
     }
-    if (fieldNames.contains("projectsEnableXpnResourceRequestResource") && projectsEnableXpnResourceRequestResource != null) {
-      fieldMap.put("projectsEnableXpnResourceRequestResource", Collections.singletonList(String.valueOf(projectsEnableXpnResourceRequestResource)));
+    if (fieldNames.contains("projectsEnableXpnResourceRequestResource")
+        && projectsEnableXpnResourceRequestResource != null) {
+      fieldMap.put(
+          "projectsEnableXpnResourceRequestResource",
+          Collections.singletonList(String.valueOf(projectsEnableXpnResourceRequestResource)));
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
@@ -198,22 +196,24 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(EnableXpnResourceProjectHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static EnableXpnResourceProjectHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final EnableXpnResourceProjectHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new EnableXpnResourceProjectHttpRequest();
   }
@@ -253,7 +253,8 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
         this.project = other.project;
       }
       if (other.getProjectsEnableXpnResourceRequestResource() != null) {
-        this.projectsEnableXpnResourceRequestResource = other.projectsEnableXpnResourceRequestResource;
+        this.projectsEnableXpnResourceRequestResource =
+            other.projectsEnableXpnResourceRequestResource;
       }
       if (other.getQuotaUser() != null) {
         this.quotaUser = other.quotaUser;
@@ -274,7 +275,8 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.project = source.project;
-      this.projectsEnableXpnResourceRequestResource = source.projectsEnableXpnResourceRequestResource;
+      this.projectsEnableXpnResourceRequestResource =
+          source.projectsEnableXpnResourceRequestResource;
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
       this.userIp = source.userIp;
@@ -338,7 +340,8 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
       return projectsEnableXpnResourceRequestResource;
     }
 
-    public Builder setProjectsEnableXpnResourceRequestResource(ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource) {
+    public Builder setProjectsEnableXpnResourceRequestResource(
+        ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource) {
       this.projectsEnableXpnResourceRequestResource = projectsEnableXpnResourceRequestResource;
       return this;
     }
@@ -370,36 +373,27 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public EnableXpnResourceProjectHttpRequest build() {
       String missing = "";
-
-
-
-
 
       if (project == null) {
         missing += " project";
       }
 
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new EnableXpnResourceProjectHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        project,
-        projectsEnableXpnResourceRequestResource,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          project,
+          projectsEnableXpnResourceRequestResource,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -410,7 +404,8 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setProject(this.project);
-      newBuilder.setProjectsEnableXpnResourceRequestResource(this.projectsEnableXpnResourceRequestResource);
+      newBuilder.setProjectsEnableXpnResourceRequestResource(
+          this.projectsEnableXpnResourceRequestResource);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
@@ -421,16 +416,35 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "EnableXpnResourceProjectHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "project=" + project + ", "
-        + "projectsEnableXpnResourceRequestResource=" + projectsEnableXpnResourceRequestResource + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "project="
+        + project
+        + ", "
+        + "projectsEnableXpnResourceRequestResource="
+        + projectsEnableXpnResourceRequestResource
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +455,18 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
     }
     if (o instanceof EnableXpnResourceProjectHttpRequest) {
       EnableXpnResourceProjectHttpRequest that = (EnableXpnResourceProjectHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.projectsEnableXpnResourceRequestResource, that.getProjectsEnableXpnResourceRequestResource()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(
+              this.projectsEnableXpnResourceRequestResource,
+              that.getProjectsEnableXpnResourceRequestResource())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +474,15 @@ public final class EnableXpnResourceProjectHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      project,
-      projectsEnableXpnResourceRequestResource,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        project,
+        projectsEnableXpnResourceRequestResource,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

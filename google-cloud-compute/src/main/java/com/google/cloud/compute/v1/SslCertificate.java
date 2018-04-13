@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class SslCertificate implements ApiMessage {
     this.selfLink = null;
   }
 
-
   private SslCertificate(
       String certificate,
       String creationTimestamp,
@@ -61,8 +57,7 @@ public final class SslCertificate implements ApiMessage {
       String kind,
       String name,
       String privateKey,
-      String selfLink
-      ) {
+      String selfLink) {
     this.certificate = certificate;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -80,7 +75,8 @@ public final class SslCertificate implements ApiMessage {
       fieldMap.put("certificate", Collections.singletonList(String.valueOf(certificate)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -170,22 +166,24 @@ public final class SslCertificate implements ApiMessage {
     return selfLink;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SslCertificate prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SslCertificate getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SslCertificate DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SslCertificate();
   }
@@ -314,25 +312,10 @@ public final class SslCertificate implements ApiMessage {
       return this;
     }
 
-
     public SslCertificate build() {
 
-
-
-
-
-
-
       return new SslCertificate(
-        certificate,
-        creationTimestamp,
-        description,
-        id,
-        kind,
-        name,
-        privateKey,
-        selfLink
-      );
+          certificate, creationTimestamp, description, id, kind, name, privateKey, selfLink);
     }
 
     public Builder clone() {
@@ -352,14 +335,29 @@ public final class SslCertificate implements ApiMessage {
   @Override
   public String toString() {
     return "SslCertificate{"
-        + "certificate=" + certificate + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "privateKey=" + privateKey + ", "
-        + "selfLink=" + selfLink
+        + "certificate="
+        + certificate
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "privateKey="
+        + privateKey
+        + ", "
+        + "selfLink="
+        + selfLink
         + "}";
   }
 
@@ -370,16 +368,14 @@ public final class SslCertificate implements ApiMessage {
     }
     if (o instanceof SslCertificate) {
       SslCertificate that = (SslCertificate) o;
-      return
-          Objects.equals(this.certificate, that.getCertificate()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.privateKey, that.getPrivateKey()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
-          ;
+      return Objects.equals(this.certificate, that.getCertificate())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.privateKey, that.getPrivateKey())
+          && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
   }
@@ -387,14 +383,6 @@ public final class SslCertificate implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      certificate,
-      creationTimestamp,
-      description,
-      id,
-      kind,
-      name,
-      privateKey,
-      selfLink
-    );
+        certificate, creationTimestamp, description, id, kind, name, privateKey, selfLink);
   }
 }

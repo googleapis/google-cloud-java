@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.ForwardingRuleClient.AggregatedListForwardingRulesPagedResponse;
+import static com.google.cloud.compute.v1.ForwardingRuleClient.ListForwardingRulesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -22,19 +25,12 @@ import com.google.cloud.compute.v1.AggregatedListForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.DeleteForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ForwardingRule;
 import com.google.cloud.compute.v1.ForwardingRuleAggregatedList;
-import static com.google.cloud.compute.v1.ForwardingRuleClient.AggregatedListForwardingRulesPagedResponse;
-import static com.google.cloud.compute.v1.ForwardingRuleClient.ListForwardingRulesPagedResponse;
 import com.google.cloud.compute.v1.ForwardingRuleList;
-import com.google.cloud.compute.v1.ForwardingRulesScopedList;
 import com.google.cloud.compute.v1.GetForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.InsertForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ListForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionForwardingRuleName;
-import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.SetTargetForwardingRuleHttpRequest;
-import com.google.cloud.compute.v1.TargetReference;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -47,15 +43,19 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ForwardingRuleStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListForwardingRulesHttpRequest, AggregatedListForwardingRulesPagedResponse> aggregatedListForwardingRulesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListForwardingRulesPagedCallable()");
+  public UnaryCallable<
+          AggregatedListForwardingRulesHttpRequest, AggregatedListForwardingRulesPagedResponse>
+      aggregatedListForwardingRulesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListForwardingRulesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList> aggregatedListForwardingRulesCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListForwardingRulesCallable()");
+  public UnaryCallable<AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList>
+      aggregatedListForwardingRulesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListForwardingRulesCallable()");
   }
 
   @BetaApi
@@ -74,18 +74,23 @@ public abstract class ForwardingRuleStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListForwardingRulesHttpRequest, ListForwardingRulesPagedResponse> listForwardingRulesPagedCallable() {
+  public UnaryCallable<ListForwardingRulesHttpRequest, ListForwardingRulesPagedResponse>
+      listForwardingRulesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listForwardingRulesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListForwardingRulesHttpRequest, ForwardingRuleList> listForwardingRulesCallable() {
+  public UnaryCallable<ListForwardingRulesHttpRequest, ForwardingRuleList>
+      listForwardingRulesCallable() {
     throw new UnsupportedOperationException("Not implemented: listForwardingRulesCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetTargetForwardingRuleHttpRequest, Operation> setTargetForwardingRuleCallable() {
+  public UnaryCallable<SetTargetForwardingRuleHttpRequest, Operation>
+      setTargetForwardingRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: setTargetForwardingRuleCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private SetSchedulingInstanceHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       String quotaUser,
       String requestId,
       Scheduling schedulingResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -109,7 +104,8 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("schedulingResource") && schedulingResource != null) {
-      fieldMap.put("schedulingResource", Collections.singletonList(String.valueOf(schedulingResource)));
+      fieldMap.put(
+          "schedulingResource", Collections.singletonList(String.valueOf(schedulingResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +194,24 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetSchedulingInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetSchedulingInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetSchedulingInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetSchedulingInstanceHttpRequest();
   }
@@ -370,36 +368,27 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public SetSchedulingInstanceHttpRequest build() {
       String missing = "";
-
-
 
       if (instance == null) {
         missing += " instance";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetSchedulingInstanceHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instance,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        schedulingResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instance,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          schedulingResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +410,35 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "SetSchedulingInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instance=" + instance + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "schedulingResource=" + schedulingResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "schedulingResource="
+        + schedulingResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +449,16 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     }
     if (o instanceof SetSchedulingInstanceHttpRequest) {
       SetSchedulingInstanceHttpRequest that = (SetSchedulingInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.schedulingResource, that.getSchedulingResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.schedulingResource, that.getSchedulingResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +466,15 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instance,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      schedulingResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instance,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        schedulingResource,
+        userIp);
   }
 }

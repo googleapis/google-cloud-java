@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
     this.targetPools = null;
   }
 
-
-  private InstanceGroupManagersSetTargetPoolsRequest(
-      String fingerprint,
-      List<String> targetPools
-      ) {
+  private InstanceGroupManagersSetTargetPoolsRequest(String fingerprint, List<String> targetPools) {
     this.fingerprint = fingerprint;
     this.targetPools = targetPools;
   }
@@ -90,22 +85,24 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
     return targetPools;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupManagersSetTargetPoolsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupManagersSetTargetPoolsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupManagersSetTargetPoolsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupManagersSetTargetPoolsRequest();
   }
@@ -158,13 +155,9 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
       return this;
     }
 
-
     public InstanceGroupManagersSetTargetPoolsRequest build() {
 
-      return new InstanceGroupManagersSetTargetPoolsRequest(
-        fingerprint,
-        targetPools
-      );
+      return new InstanceGroupManagersSetTargetPoolsRequest(fingerprint, targetPools);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
   @Override
   public String toString() {
     return "InstanceGroupManagersSetTargetPoolsRequest{"
-        + "fingerprint=" + fingerprint + ", "
-        + "targetPools=" + targetPools
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "targetPools="
+        + targetPools
         + "}";
   }
 
@@ -189,20 +185,16 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
       return true;
     }
     if (o instanceof InstanceGroupManagersSetTargetPoolsRequest) {
-      InstanceGroupManagersSetTargetPoolsRequest that = (InstanceGroupManagersSetTargetPoolsRequest) o;
-      return
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.targetPools, that.getTargetPoolsList())
-          ;
+      InstanceGroupManagersSetTargetPoolsRequest that =
+          (InstanceGroupManagersSetTargetPoolsRequest) o;
+      return Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.targetPools, that.getTargetPoolsList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      fingerprint,
-      targetPools
-    );
+    return Objects.hash(fingerprint, targetPools);
   }
 }

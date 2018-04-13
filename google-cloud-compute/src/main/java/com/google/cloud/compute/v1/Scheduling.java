@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,12 +39,7 @@ public final class Scheduling implements ApiMessage {
     this.preemptible = null;
   }
 
-
-  private Scheduling(
-      Boolean automaticRestart,
-      String onHostMaintenance,
-      Boolean preemptible
-      ) {
+  private Scheduling(Boolean automaticRestart, String onHostMaintenance, Boolean preemptible) {
     this.automaticRestart = automaticRestart;
     this.onHostMaintenance = onHostMaintenance;
     this.preemptible = preemptible;
@@ -60,7 +52,8 @@ public final class Scheduling implements ApiMessage {
       fieldMap.put("automaticRestart", Collections.singletonList(String.valueOf(automaticRestart)));
     }
     if (fieldNames.contains("onHostMaintenance") && onHostMaintenance != null) {
-      fieldMap.put("onHostMaintenance", Collections.singletonList(String.valueOf(onHostMaintenance)));
+      fieldMap.put(
+          "onHostMaintenance", Collections.singletonList(String.valueOf(onHostMaintenance)));
     }
     if (fieldNames.contains("preemptible") && preemptible != null) {
       fieldMap.put("preemptible", Collections.singletonList(String.valueOf(preemptible)));
@@ -100,22 +93,24 @@ public final class Scheduling implements ApiMessage {
     return preemptible;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Scheduling prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Scheduling getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Scheduling DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Scheduling();
   }
@@ -174,15 +169,9 @@ public final class Scheduling implements ApiMessage {
       return this;
     }
 
-
     public Scheduling build() {
 
-
-      return new Scheduling(
-        automaticRestart,
-        onHostMaintenance,
-        preemptible
-      );
+      return new Scheduling(automaticRestart, onHostMaintenance, preemptible);
     }
 
     public Builder clone() {
@@ -197,9 +186,14 @@ public final class Scheduling implements ApiMessage {
   @Override
   public String toString() {
     return "Scheduling{"
-        + "automaticRestart=" + automaticRestart + ", "
-        + "onHostMaintenance=" + onHostMaintenance + ", "
-        + "preemptible=" + preemptible
+        + "automaticRestart="
+        + automaticRestart
+        + ", "
+        + "onHostMaintenance="
+        + onHostMaintenance
+        + ", "
+        + "preemptible="
+        + preemptible
         + "}";
   }
 
@@ -210,21 +204,15 @@ public final class Scheduling implements ApiMessage {
     }
     if (o instanceof Scheduling) {
       Scheduling that = (Scheduling) o;
-      return
-          Objects.equals(this.automaticRestart, that.getAutomaticRestart()) &&
-          Objects.equals(this.onHostMaintenance, that.getOnHostMaintenance()) &&
-          Objects.equals(this.preemptible, that.getPreemptible())
-          ;
+      return Objects.equals(this.automaticRestart, that.getAutomaticRestart())
+          && Objects.equals(this.onHostMaintenance, that.getOnHostMaintenance())
+          && Objects.equals(this.preemptible, that.getPreemptible());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      automaticRestart,
-      onHostMaintenance,
-      preemptible
-    );
+    return Objects.hash(automaticRestart, onHostMaintenance, preemptible);
   }
 }

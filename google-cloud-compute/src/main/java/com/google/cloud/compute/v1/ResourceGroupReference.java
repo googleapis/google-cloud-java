@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class ResourceGroupReference implements ApiMessage {
     this.group = null;
   }
 
-
-  private ResourceGroupReference(
-      String group
-      ) {
+  private ResourceGroupReference(String group) {
     this.group = group;
   }
 
@@ -72,22 +66,24 @@ public final class ResourceGroupReference implements ApiMessage {
     return group;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ResourceGroupReference prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ResourceGroupReference getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ResourceGroupReference DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ResourceGroupReference();
   }
@@ -118,11 +114,8 @@ public final class ResourceGroupReference implements ApiMessage {
       return this;
     }
 
-
     public ResourceGroupReference build() {
-      return new ResourceGroupReference(
-        group
-      );
+      return new ResourceGroupReference(group);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class ResourceGroupReference implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ResourceGroupReference{"
-        + "group=" + group
-        + "}";
+    return "ResourceGroupReference{" + "group=" + group + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class ResourceGroupReference implements ApiMessage {
     }
     if (o instanceof ResourceGroupReference) {
       ResourceGroupReference that = (ResourceGroupReference) o;
-      return
-          Objects.equals(this.group, that.getGroup())
-          ;
+      return Objects.equals(this.group, that.getGroup());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      group
-    );
+    return Objects.hash(group);
   }
 }

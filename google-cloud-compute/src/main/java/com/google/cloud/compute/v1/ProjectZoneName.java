@@ -17,25 +17,21 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectZoneName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectZoneName implements ResourceName {
   private final String project;
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -52,25 +48,12 @@ public final class ProjectZoneName implements com.google.api.resourcenames.Resou
     zone = Preconditions.checkNotNull(builder.getZone());
   }
 
-  public static ProjectZoneName of(
-      String project,
-      String zone
-      ) {
-    return newBuilder()
-    .setProject(project)
-    .setZone(zone)
-      .build();
+  public static ProjectZoneName of(String project, String zone) {
+    return newBuilder().setProject(project).setZone(zone).build();
   }
 
-  public static String format(
-      String project,
-      String zone
-      ) {
-    return of(
-        project,
-        zone
-        )
-        .toString();
+  public static String format(String project, String zone) {
+    return of(project, zone).toString();
   }
 
   public String getProject() {
@@ -80,7 +63,6 @@ public final class ProjectZoneName implements com.google.api.resourcenames.Resou
   public String getZone() {
     return zone;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -101,20 +83,19 @@ public final class ProjectZoneName implements com.google.api.resourcenames.Resou
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectZoneName> newFactory() {
     return new ResourceNameFactory<ProjectZoneName>() {
-      public ProjectZoneName parse(String formattedString) {return ProjectZoneName.parse(formattedString);}
+      public ProjectZoneName parse(String formattedString) {
+        return ProjectZoneName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectZoneName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectZoneName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("project"),
-      matchMap.get("zone")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectZoneName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("zone"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -128,6 +109,7 @@ public final class ProjectZoneName implements com.google.api.resourcenames.Resou
     public String getProject() {
       return project;
     }
+
     public String getZone() {
       return zone;
     }
@@ -136,6 +118,7 @@ public final class ProjectZoneName implements com.google.api.resourcenames.Resou
       this.project = project;
       return this;
     }
+
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;
@@ -143,7 +126,7 @@ public final class ProjectZoneName implements com.google.api.resourcenames.Resou
 
     private Builder() {}
 
-    public Builder (ProjectZoneName projectZoneName) {
+    public Builder(ProjectZoneName projectZoneName) {
       project = projectZoneName.project;
       zone = projectZoneName.zone;
     }
@@ -157,8 +140,7 @@ public final class ProjectZoneName implements com.google.api.resourcenames.Resou
   public String toString() {
     return PATH_TEMPLATE.instantiate(
         "project", project,
-        "zone", zone
-        );
+        "zone", zone);
   }
 
   @Override
@@ -168,19 +150,14 @@ public final class ProjectZoneName implements com.google.api.resourcenames.Resou
     }
     if (o instanceof ProjectZoneName) {
       ProjectZoneName that = (ProjectZoneName) o;
-      return
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      project,
-      zone
-    );
+    return Objects.hash(project, zone);
   }
 }

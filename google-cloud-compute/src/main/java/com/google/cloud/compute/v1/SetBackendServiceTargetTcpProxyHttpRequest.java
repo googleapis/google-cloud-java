@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +36,8 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
   private final String prettyPrint;
   private final String quotaUser;
   private final String requestId;
-  private final TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource;
+  private final TargetTcpProxiesSetBackendServiceRequest
+      targetTcpProxiesSetBackendServiceRequestResource;
   private final String targetTcpProxy;
   private final String userIp;
 
@@ -56,7 +54,6 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
     this.userIp = null;
   }
 
-
   private SetBackendServiceTargetTcpProxyHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +64,7 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
       String requestId,
       TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource,
       String targetTcpProxy,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -76,7 +72,8 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.requestId = requestId;
-    this.targetTcpProxiesSetBackendServiceRequestResource = targetTcpProxiesSetBackendServiceRequestResource;
+    this.targetTcpProxiesSetBackendServiceRequestResource =
+        targetTcpProxiesSetBackendServiceRequestResource;
     this.targetTcpProxy = targetTcpProxy;
     this.userIp = userIp;
   }
@@ -105,8 +102,12 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
     if (fieldNames.contains("requestId") && requestId != null) {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
-    if (fieldNames.contains("targetTcpProxiesSetBackendServiceRequestResource") && targetTcpProxiesSetBackendServiceRequestResource != null) {
-      fieldMap.put("targetTcpProxiesSetBackendServiceRequestResource", Collections.singletonList(String.valueOf(targetTcpProxiesSetBackendServiceRequestResource)));
+    if (fieldNames.contains("targetTcpProxiesSetBackendServiceRequestResource")
+        && targetTcpProxiesSetBackendServiceRequestResource != null) {
+      fieldMap.put(
+          "targetTcpProxiesSetBackendServiceRequestResource",
+          Collections.singletonList(
+              String.valueOf(targetTcpProxiesSetBackendServiceRequestResource)));
     }
     if (fieldNames.contains("targetTcpProxy") && targetTcpProxy != null) {
       fieldMap.put("targetTcpProxy", Collections.singletonList(String.valueOf(targetTcpProxy)));
@@ -186,7 +187,8 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
     return requestId;
   }
 
-  public TargetTcpProxiesSetBackendServiceRequest getTargetTcpProxiesSetBackendServiceRequestResource() {
+  public TargetTcpProxiesSetBackendServiceRequest
+      getTargetTcpProxiesSetBackendServiceRequestResource() {
     return targetTcpProxiesSetBackendServiceRequestResource;
   }
 
@@ -198,22 +200,24 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetBackendServiceTargetTcpProxyHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetBackendServiceTargetTcpProxyHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetBackendServiceTargetTcpProxyHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetBackendServiceTargetTcpProxyHttpRequest();
   }
@@ -226,7 +230,8 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
     private String prettyPrint;
     private String quotaUser;
     private String requestId;
-    private TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource;
+    private TargetTcpProxiesSetBackendServiceRequest
+        targetTcpProxiesSetBackendServiceRequestResource;
     private String targetTcpProxy;
     private String userIp;
 
@@ -256,7 +261,8 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
         this.requestId = other.requestId;
       }
       if (other.getTargetTcpProxiesSetBackendServiceRequestResource() != null) {
-        this.targetTcpProxiesSetBackendServiceRequestResource = other.targetTcpProxiesSetBackendServiceRequestResource;
+        this.targetTcpProxiesSetBackendServiceRequestResource =
+            other.targetTcpProxiesSetBackendServiceRequestResource;
       }
       if (other.getTargetTcpProxy() != null) {
         this.targetTcpProxy = other.targetTcpProxy;
@@ -275,7 +281,8 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
-      this.targetTcpProxiesSetBackendServiceRequestResource = source.targetTcpProxiesSetBackendServiceRequestResource;
+      this.targetTcpProxiesSetBackendServiceRequestResource =
+          source.targetTcpProxiesSetBackendServiceRequestResource;
       this.targetTcpProxy = source.targetTcpProxy;
       this.userIp = source.userIp;
     }
@@ -343,12 +350,15 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
       return this;
     }
 
-    public TargetTcpProxiesSetBackendServiceRequest getTargetTcpProxiesSetBackendServiceRequestResource() {
+    public TargetTcpProxiesSetBackendServiceRequest
+        getTargetTcpProxiesSetBackendServiceRequestResource() {
       return targetTcpProxiesSetBackendServiceRequestResource;
     }
 
-    public Builder setTargetTcpProxiesSetBackendServiceRequestResource(TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
-      this.targetTcpProxiesSetBackendServiceRequestResource = targetTcpProxiesSetBackendServiceRequestResource;
+    public Builder setTargetTcpProxiesSetBackendServiceRequestResource(
+        TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource) {
+      this.targetTcpProxiesSetBackendServiceRequestResource =
+          targetTcpProxiesSetBackendServiceRequestResource;
       return this;
     }
 
@@ -370,16 +380,8 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
       return this;
     }
 
-
     public SetBackendServiceTargetTcpProxyHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
 
       if (targetTcpProxy == null) {
         missing += " targetTcpProxy";
@@ -389,17 +391,16 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetBackendServiceTargetTcpProxyHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetTcpProxiesSetBackendServiceRequestResource,
-        targetTcpProxy,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetTcpProxiesSetBackendServiceRequestResource,
+          targetTcpProxy,
+          userIp);
     }
 
     public Builder clone() {
@@ -411,7 +412,8 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
-      newBuilder.setTargetTcpProxiesSetBackendServiceRequestResource(this.targetTcpProxiesSetBackendServiceRequestResource);
+      newBuilder.setTargetTcpProxiesSetBackendServiceRequestResource(
+          this.targetTcpProxiesSetBackendServiceRequestResource);
       newBuilder.setTargetTcpProxy(this.targetTcpProxy);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -421,16 +423,35 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
   @Override
   public String toString() {
     return "SetBackendServiceTargetTcpProxyHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetTcpProxiesSetBackendServiceRequestResource=" + targetTcpProxiesSetBackendServiceRequestResource + ", "
-        + "targetTcpProxy=" + targetTcpProxy + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetTcpProxiesSetBackendServiceRequestResource="
+        + targetTcpProxiesSetBackendServiceRequestResource
+        + ", "
+        + "targetTcpProxy="
+        + targetTcpProxy
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +461,20 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
       return true;
     }
     if (o instanceof SetBackendServiceTargetTcpProxyHttpRequest) {
-      SetBackendServiceTargetTcpProxyHttpRequest that = (SetBackendServiceTargetTcpProxyHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetTcpProxiesSetBackendServiceRequestResource, that.getTargetTcpProxiesSetBackendServiceRequestResource()) &&
-          Objects.equals(this.targetTcpProxy, that.getTargetTcpProxy()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      SetBackendServiceTargetTcpProxyHttpRequest that =
+          (SetBackendServiceTargetTcpProxyHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(
+              this.targetTcpProxiesSetBackendServiceRequestResource,
+              that.getTargetTcpProxiesSetBackendServiceRequestResource())
+          && Objects.equals(this.targetTcpProxy, that.getTargetTcpProxy())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +482,15 @@ public final class SetBackendServiceTargetTcpProxyHttpRequest implements ApiMess
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetTcpProxiesSetBackendServiceRequestResource,
-      targetTcpProxy,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetTcpProxiesSetBackendServiceRequestResource,
+        targetTcpProxy,
+        userIp);
   }
 }

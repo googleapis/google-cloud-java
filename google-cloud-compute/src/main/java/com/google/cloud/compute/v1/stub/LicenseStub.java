@@ -15,12 +15,20 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.LicenseClient.ListLicensesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.DeleteLicenseHttpRequest;
 import com.google.cloud.compute.v1.GetLicenseHttpRequest;
+import com.google.cloud.compute.v1.InsertLicenseHttpRequest;
 import com.google.cloud.compute.v1.License;
-import com.google.cloud.compute.v1.ProjectLicenseName;
+import com.google.cloud.compute.v1.LicensesListResponse;
+import com.google.cloud.compute.v1.ListLicensesHttpRequest;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.TestIamPermissionsLicenseHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -33,10 +41,38 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class LicenseStub implements BackgroundResource {
 
+  @BetaApi
+  public UnaryCallable<DeleteLicenseHttpRequest, Operation> deleteLicenseCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteLicenseCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<GetLicenseHttpRequest, License> getLicenseCallable() {
     throw new UnsupportedOperationException("Not implemented: getLicenseCallable()");
   }
 
+  @BetaApi
+  public UnaryCallable<InsertLicenseHttpRequest, Operation> insertLicenseCallable() {
+    throw new UnsupportedOperationException("Not implemented: insertLicenseCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListLicensesHttpRequest, ListLicensesPagedResponse>
+      listLicensesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLicensesPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<ListLicensesHttpRequest, LicensesListResponse> listLicensesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLicensesCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsLicenseHttpRequest, TestPermissionsResponse>
+      testIamPermissionsLicenseCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsLicenseCallable()");
+  }
+
+  @Override
+  public abstract void close();
 }

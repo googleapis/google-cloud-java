@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.RegionOperationStub;
 import com.google.cloud.compute.v1.stub.RegionOperationStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -58,34 +48,34 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the regionOperationClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
+ * <p>Note: close() needs to be called on the regionOperationClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of RegionOperationSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,27 +105,23 @@ public class RegionOperationClient implements BackgroundResource {
   private final RegionOperationSettings settings;
   private final RegionOperationStub stub;
 
-
-
-  /**
-   * Constructs an instance of RegionOperationClient with default settings.
-   */
+  /** Constructs an instance of RegionOperationClient with default settings. */
   public static final RegionOperationClient create() throws IOException {
     return create(RegionOperationSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of RegionOperationClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of RegionOperationClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final RegionOperationClient create(RegionOperationSettings settings) throws IOException {
+  public static final RegionOperationClient create(RegionOperationSettings settings)
+      throws IOException {
     return new RegionOperationClient(settings);
   }
 
   /**
-   * Constructs an instance of RegionOperationClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use RegionOperationSettings}.
+   * Constructs an instance of RegionOperationClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use RegionOperationSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionOperationClient create(RegionOperationStub stub) {
@@ -143,9 +129,9 @@ public class RegionOperationClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of RegionOperationClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of RegionOperationClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected RegionOperationClient(RegionOperationSettings settings) throws IOException {
     this.settings = settings;
@@ -167,12 +153,12 @@ public class RegionOperationClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified region-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
@@ -188,8 +174,8 @@ public class RegionOperationClient implements BackgroundResource {
 
     DeleteRegionOperationHttpRequest request =
         DeleteRegionOperationHttpRequest.newBuilder()
-        .setOperation(operation == null ? null : operation.toString())
-        .build();
+            .setOperation(operation == null ? null : operation.toString())
+            .build();
     deleteRegionOperation(request);
   }
 
@@ -197,7 +183,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Deletes the specified region-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
@@ -212,9 +199,7 @@ public class RegionOperationClient implements BackgroundResource {
   public final void deleteRegionOperation(String operation) {
 
     DeleteRegionOperationHttpRequest request =
-        DeleteRegionOperationHttpRequest.newBuilder()
-        .setOperation(operation)
-        .build();
+        DeleteRegionOperationHttpRequest.newBuilder().setOperation(operation).build();
     deleteRegionOperation(request);
   }
 
@@ -222,7 +207,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Deletes the specified region-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
@@ -245,7 +231,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Deletes the specified region-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
@@ -259,7 +246,8 @@ public class RegionOperationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteRegionOperationHttpRequest, Void> deleteRegionOperationCallable() {
+  public final UnaryCallable<DeleteRegionOperationHttpRequest, Void>
+      deleteRegionOperationCallable() {
     return stub.deleteRegionOperationCallable();
   }
 
@@ -267,7 +255,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Retrieves the specified region-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
@@ -283,8 +272,8 @@ public class RegionOperationClient implements BackgroundResource {
 
     GetRegionOperationHttpRequest request =
         GetRegionOperationHttpRequest.newBuilder()
-        .setOperation(operation == null ? null : operation.toString())
-        .build();
+            .setOperation(operation == null ? null : operation.toString())
+            .build();
     return getRegionOperation(request);
   }
 
@@ -292,7 +281,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Retrieves the specified region-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
@@ -307,9 +297,7 @@ public class RegionOperationClient implements BackgroundResource {
   public final Operation getRegionOperation(String operation) {
 
     GetRegionOperationHttpRequest request =
-        GetRegionOperationHttpRequest.newBuilder()
-        .setOperation(operation)
-        .build();
+        GetRegionOperationHttpRequest.newBuilder().setOperation(operation).build();
     return getRegionOperation(request);
   }
 
@@ -317,7 +305,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Retrieves the specified region-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
@@ -340,7 +329,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Retrieves the specified region-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionOperationName operation = ProjectRegionOperationName.of("[PROJECT]", "[REGION]", "[OPERATION]");
@@ -354,7 +344,8 @@ public class RegionOperationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetRegionOperationHttpRequest, Operation> getRegionOperationCallable() {
+  public final UnaryCallable<GetRegionOperationHttpRequest, Operation>
+      getRegionOperationCallable() {
     return stub.getRegionOperationCallable();
   }
 
@@ -362,7 +353,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -379,8 +371,8 @@ public class RegionOperationClient implements BackgroundResource {
   public final ListRegionOperationsPagedResponse listRegionOperations(ProjectRegionName region) {
     ListRegionOperationsHttpRequest request =
         ListRegionOperationsHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .build();
     return listRegionOperations(request);
   }
 
@@ -388,7 +380,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -404,9 +397,7 @@ public class RegionOperationClient implements BackgroundResource {
   @BetaApi
   public final ListRegionOperationsPagedResponse listRegionOperations(String region) {
     ListRegionOperationsHttpRequest request =
-        ListRegionOperationsHttpRequest.newBuilder()
-        .setRegion(region)
-        .build();
+        ListRegionOperationsHttpRequest.newBuilder().setRegion(region).build();
     return listRegionOperations(request);
   }
 
@@ -414,7 +405,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -431,16 +423,17 @@ public class RegionOperationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListRegionOperationsPagedResponse listRegionOperations(ListRegionOperationsHttpRequest request) {
-    return listRegionOperationsPagedCallable()
-        .call(request);
+  public final ListRegionOperationsPagedResponse listRegionOperations(
+      ListRegionOperationsHttpRequest request) {
+    return listRegionOperationsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -456,7 +449,8 @@ public class RegionOperationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListRegionOperationsHttpRequest, ListRegionOperationsPagedResponse> listRegionOperationsPagedCallable() {
+  public final UnaryCallable<ListRegionOperationsHttpRequest, ListRegionOperationsPagedResponse>
+      listRegionOperationsPagedCallable() {
     return stub.listRegionOperationsPagedCallable();
   }
 
@@ -464,7 +458,8 @@ public class RegionOperationClient implements BackgroundResource {
   /**
    * Retrieves a list of Operation resources contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionOperationClient regionOperationClient = RegionOperationClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -487,12 +482,13 @@ public class RegionOperationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListRegionOperationsHttpRequest, OperationList> listRegionOperationsCallable() {
+  public final UnaryCallable<ListRegionOperationsHttpRequest, OperationList>
+      listRegionOperationsCallable() {
     return stub.listRegionOperationsCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -521,12 +517,10 @@ public class RegionOperationClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListRegionOperationsPagedResponse extends AbstractPagedListResponse<
-      ListRegionOperationsHttpRequest,
-      OperationList,
-      Operation,
-      ListRegionOperationsPage,
-      ListRegionOperationsFixedSizeCollection> {
+  public static class ListRegionOperationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRegionOperationsHttpRequest, OperationList, Operation, ListRegionOperationsPage,
+          ListRegionOperationsFixedSizeCollection> {
 
     public static ApiFuture<ListRegionOperationsPagedResponse> createAsync(
         PageContext<ListRegionOperationsHttpRequest, OperationList, Operation> context,
@@ -546,15 +540,11 @@ public class RegionOperationClient implements BackgroundResource {
     private ListRegionOperationsPagedResponse(ListRegionOperationsPage page) {
       super(page, ListRegionOperationsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListRegionOperationsPage extends AbstractPage<
-      ListRegionOperationsHttpRequest,
-      OperationList,
-      Operation,
-      ListRegionOperationsPage> {
+  public static class ListRegionOperationsPage
+      extends AbstractPage<
+          ListRegionOperationsHttpRequest, OperationList, Operation, ListRegionOperationsPage> {
 
     private ListRegionOperationsPage(
         PageContext<ListRegionOperationsHttpRequest, OperationList, Operation> context,
@@ -579,20 +569,15 @@ public class RegionOperationClient implements BackgroundResource {
         ApiFuture<OperationList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListRegionOperationsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListRegionOperationsHttpRequest,
-      OperationList,
-      Operation,
-      ListRegionOperationsPage,
-      ListRegionOperationsFixedSizeCollection> {
+  public static class ListRegionOperationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRegionOperationsHttpRequest, OperationList, Operation, ListRegionOperationsPage,
+          ListRegionOperationsFixedSizeCollection> {
 
-    private ListRegionOperationsFixedSizeCollection(List<ListRegionOperationsPage> pages, int collectionSize) {
+    private ListRegionOperationsFixedSizeCollection(
+        List<ListRegionOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -605,7 +590,5 @@ public class RegionOperationClient implements BackgroundResource {
         List<ListRegionOperationsPage> pages, int collectionSize) {
       return new ListRegionOperationsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

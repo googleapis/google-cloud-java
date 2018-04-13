@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.UrlMapStub;
 import com.google.cloud.compute.v1.stub.UrlMapStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -52,41 +42,40 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
- *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+ *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
  *   String requestId = "";
  *   Operation response = urlMapClient.deleteUrlMap(urlMap, requestId);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the urlMapClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the urlMapClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of UrlMapSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of UrlMapSettings to create().
+ * For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,19 +105,14 @@ public class UrlMapClient implements BackgroundResource {
   private final UrlMapSettings settings;
   private final UrlMapStub stub;
 
-
-
-  /**
-   * Constructs an instance of UrlMapClient with default settings.
-   */
+  /** Constructs an instance of UrlMapClient with default settings. */
   public static final UrlMapClient create() throws IOException {
     return create(UrlMapSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of UrlMapClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of UrlMapClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final UrlMapClient create(UrlMapSettings settings) throws IOException {
     return new UrlMapClient(settings);
@@ -144,9 +128,8 @@ public class UrlMapClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of UrlMapClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of UrlMapClient, using the given settings. This is protected so that it
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected UrlMapClient(UrlMapSettings settings) throws IOException {
     this.settings = settings;
@@ -168,36 +151,40 @@ public class UrlMapClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified UrlMap resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   Operation response = urlMapClient.deleteUrlMap(urlMap, requestId);
    * }
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteUrlMap(ProjectUrlMapName urlMap, String requestId) {
+  public final Operation deleteUrlMap(ProjectGlobalUrlMapName urlMap, String requestId) {
 
     DeleteUrlMapHttpRequest request =
         DeleteUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap == null ? null : urlMap.toString())
-        .setRequestId(requestId)
-        .build();
+            .setUrlMap(urlMap == null ? null : urlMap.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteUrlMap(request);
   }
 
@@ -205,31 +192,33 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Deletes the specified UrlMap resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   Operation response = urlMapClient.deleteUrlMap(urlMap.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteUrlMap(String urlMap, String requestId) {
 
     DeleteUrlMapHttpRequest request =
-        DeleteUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap)
-        .setRequestId(requestId)
-        .build();
+        DeleteUrlMapHttpRequest.newBuilder().setUrlMap(urlMap).setRequestId(requestId).build();
     return deleteUrlMap(request);
   }
 
@@ -237,10 +226,11 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Deletes the specified UrlMap resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   DeleteUrlMapHttpRequest request = DeleteUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
@@ -262,10 +252,11 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Deletes the specified UrlMap resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   DeleteUrlMapHttpRequest request = DeleteUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
@@ -284,12 +275,14 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list() request.
+   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap response = urlMapClient.getUrlMap(urlMap);
    * }
    * </code></pre>
@@ -298,23 +291,25 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final UrlMap getUrlMap(ProjectUrlMapName urlMap) {
+  public final UrlMap getUrlMap(ProjectGlobalUrlMapName urlMap) {
 
     GetUrlMapHttpRequest request =
         GetUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap == null ? null : urlMap.toString())
-        .build();
+            .setUrlMap(urlMap == null ? null : urlMap.toString())
+            .build();
     return getUrlMap(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list() request.
+   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMap response = urlMapClient.getUrlMap(urlMap.toString());
    * }
    * </code></pre>
@@ -325,21 +320,20 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final UrlMap getUrlMap(String urlMap) {
 
-    GetUrlMapHttpRequest request =
-        GetUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap)
-        .build();
+    GetUrlMapHttpRequest request = GetUrlMapHttpRequest.newBuilder().setUrlMap(urlMap).build();
     return getUrlMap(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list() request.
+   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   GetUrlMapHttpRequest request = GetUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
    *     .build();
@@ -357,12 +351,14 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list() request.
+   * Returns the specified UrlMap resource. Get a list of available URL maps by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   GetUrlMapHttpRequest request = GetUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
    *     .build();
@@ -381,7 +377,8 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   String requestId = "";
@@ -391,24 +388,30 @@ public class UrlMapClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
+   *     BackendService resource, based on the "longest-match" of the URL's host and path.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertUrlMap(String requestId, ProjectName project, UrlMap urlMapResource) {
+  public final Operation insertUrlMap(
+      String requestId, ProjectName project, UrlMap urlMapResource) {
 
     InsertUrlMapHttpRequest request =
         InsertUrlMapHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project == null ? null : project.toString())
-        .setUrlMapResource(urlMapResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project == null ? null : project.toString())
+            .setUrlMapResource(urlMapResource)
+            .build();
     return insertUrlMap(request);
   }
 
@@ -416,7 +419,8 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   String requestId = "";
@@ -426,13 +430,18 @@ public class UrlMapClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
+   *     BackendService resource, based on the "longest-match" of the URL's host and path.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -440,10 +449,10 @@ public class UrlMapClient implements BackgroundResource {
 
     InsertUrlMapHttpRequest request =
         InsertUrlMapHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project)
-        .setUrlMapResource(urlMapResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project)
+            .setUrlMapResource(urlMapResource)
+            .build();
     return insertUrlMap(request);
   }
 
@@ -451,7 +460,8 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   String requestId = "";
@@ -478,7 +488,8 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Creates a UrlMap resource in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   String requestId = "";
@@ -502,12 +513,14 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the specified UrlMap.
+   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
+   * specified UrlMap.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   Operation response = urlMapClient.invalidateCacheUrlMap(urlMap, requestId, cacheInvalidationRuleResource);
@@ -515,34 +528,43 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap scoping this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param cacheInvalidationRuleResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation invalidateCacheUrlMap(ProjectUrlMapName urlMap, String requestId, CacheInvalidationRule cacheInvalidationRuleResource) {
+  public final Operation invalidateCacheUrlMap(
+      ProjectGlobalUrlMapName urlMap,
+      String requestId,
+      CacheInvalidationRule cacheInvalidationRuleResource) {
 
     InvalidateCacheUrlMapHttpRequest request =
         InvalidateCacheUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap == null ? null : urlMap.toString())
-        .setRequestId(requestId)
-        .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
-        .build();
+            .setUrlMap(urlMap == null ? null : urlMap.toString())
+            .setRequestId(requestId)
+            .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
+            .build();
     return invalidateCacheUrlMap(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the specified UrlMap.
+   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
+   * specified UrlMap.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   Operation response = urlMapClient.invalidateCacheUrlMap(urlMap.toString(), requestId, cacheInvalidationRuleResource);
@@ -550,34 +572,41 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap scoping this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param cacheInvalidationRuleResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation invalidateCacheUrlMap(String urlMap, String requestId, CacheInvalidationRule cacheInvalidationRuleResource) {
+  public final Operation invalidateCacheUrlMap(
+      String urlMap, String requestId, CacheInvalidationRule cacheInvalidationRuleResource) {
 
     InvalidateCacheUrlMapHttpRequest request =
         InvalidateCacheUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap)
-        .setRequestId(requestId)
-        .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
-        .build();
+            .setUrlMap(urlMap)
+            .setRequestId(requestId)
+            .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
+            .build();
     return invalidateCacheUrlMap(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the specified UrlMap.
+   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
+   * specified UrlMap.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   InvalidateCacheUrlMapHttpRequest request = InvalidateCacheUrlMapHttpRequest.newBuilder()
@@ -599,12 +628,14 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the specified UrlMap.
+   * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
+   * specified UrlMap.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   InvalidateCacheUrlMapHttpRequest request = InvalidateCacheUrlMapHttpRequest.newBuilder()
@@ -619,7 +650,8 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InvalidateCacheUrlMapHttpRequest, Operation> invalidateCacheUrlMapCallable() {
+  public final UnaryCallable<InvalidateCacheUrlMapHttpRequest, Operation>
+      invalidateCacheUrlMapCallable() {
     return stub.invalidateCacheUrlMapCallable();
   }
 
@@ -627,7 +659,8 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -644,8 +677,8 @@ public class UrlMapClient implements BackgroundResource {
   public final ListUrlMapsPagedResponse listUrlMaps(ProjectName project) {
     ListUrlMapsHttpRequest request =
         ListUrlMapsHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listUrlMaps(request);
   }
 
@@ -653,7 +686,8 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -669,9 +703,7 @@ public class UrlMapClient implements BackgroundResource {
   @BetaApi
   public final ListUrlMapsPagedResponse listUrlMaps(String project) {
     ListUrlMapsHttpRequest request =
-        ListUrlMapsHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListUrlMapsHttpRequest.newBuilder().setProject(project).build();
     return listUrlMaps(request);
   }
 
@@ -679,7 +711,8 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -697,15 +730,15 @@ public class UrlMapClient implements BackgroundResource {
    */
   @BetaApi
   public final ListUrlMapsPagedResponse listUrlMaps(ListUrlMapsHttpRequest request) {
-    return listUrlMapsPagedCallable()
-        .call(request);
+    return listUrlMapsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -721,7 +754,8 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListUrlMapsHttpRequest, ListUrlMapsPagedResponse> listUrlMapsPagedCallable() {
+  public final UnaryCallable<ListUrlMapsHttpRequest, ListUrlMapsPagedResponse>
+      listUrlMapsPagedCallable() {
     return stub.listUrlMapsPagedCallable();
   }
 
@@ -729,7 +763,8 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Retrieves the list of UrlMap resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -758,12 +793,14 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified UrlMap resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * Patches the specified UrlMap resource with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapClient.patchUrlMap(urlMap, requestId, urlMapResource);
@@ -771,34 +808,42 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
+   *     BackendService resource, based on the "longest-match" of the URL's host and path.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchUrlMap(ProjectUrlMapName urlMap, String requestId, UrlMap urlMapResource) {
+  public final Operation patchUrlMap(
+      ProjectGlobalUrlMapName urlMap, String requestId, UrlMap urlMapResource) {
 
     PatchUrlMapHttpRequest request =
         PatchUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap == null ? null : urlMap.toString())
-        .setRequestId(requestId)
-        .setUrlMapResource(urlMapResource)
-        .build();
+            .setUrlMap(urlMap == null ? null : urlMap.toString())
+            .setRequestId(requestId)
+            .setUrlMapResource(urlMapResource)
+            .build();
     return patchUrlMap(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified UrlMap resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * Patches the specified UrlMap resource with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapClient.patchUrlMap(urlMap.toString(), requestId, urlMapResource);
@@ -806,12 +851,17 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to patch.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
+   *     BackendService resource, based on the "longest-match" of the URL's host and path.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -819,21 +869,23 @@ public class UrlMapClient implements BackgroundResource {
 
     PatchUrlMapHttpRequest request =
         PatchUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap)
-        .setRequestId(requestId)
-        .setUrlMapResource(urlMapResource)
-        .build();
+            .setUrlMap(urlMap)
+            .setRequestId(requestId)
+            .setUrlMapResource(urlMapResource)
+            .build();
     return patchUrlMap(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified UrlMap resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * Patches the specified UrlMap resource with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   PatchUrlMapHttpRequest request = PatchUrlMapHttpRequest.newBuilder()
@@ -855,12 +907,14 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified UrlMap resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * Patches the specified UrlMap resource with the data included in the request. This method
+   * supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   PatchUrlMapHttpRequest request = PatchUrlMapHttpRequest.newBuilder()
@@ -883,10 +937,11 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapClient.updateUrlMap(urlMap, requestId, urlMapResource);
@@ -894,23 +949,29 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
+   *     BackendService resource, based on the "longest-match" of the URL's host and path.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateUrlMap(ProjectUrlMapName urlMap, String requestId, UrlMap urlMapResource) {
+  public final Operation updateUrlMap(
+      ProjectGlobalUrlMapName urlMap, String requestId, UrlMap urlMapResource) {
 
     UpdateUrlMapHttpRequest request =
         UpdateUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap == null ? null : urlMap.toString())
-        .setRequestId(requestId)
-        .setUrlMapResource(urlMapResource)
-        .build();
+            .setUrlMap(urlMap == null ? null : urlMap.toString())
+            .setRequestId(requestId)
+            .setUrlMapResource(urlMapResource)
+            .build();
     return updateUrlMap(request);
   }
 
@@ -918,10 +979,11 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   Operation response = urlMapClient.updateUrlMap(urlMap.toString(), requestId, urlMapResource);
@@ -929,12 +991,17 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    *
    * @param urlMap Name of the UrlMap resource to update.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the BackendService resource, based on the "longest-match" of the URL's host and path.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param urlMapResource A UrlMap resource. This resource defines the mapping from URL to the
+   *     BackendService resource, based on the "longest-match" of the URL's host and path.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -942,10 +1009,10 @@ public class UrlMapClient implements BackgroundResource {
 
     UpdateUrlMapHttpRequest request =
         UpdateUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap)
-        .setRequestId(requestId)
-        .setUrlMapResource(urlMapResource)
-        .build();
+            .setUrlMap(urlMap)
+            .setRequestId(requestId)
+            .setUrlMapResource(urlMapResource)
+            .build();
     return updateUrlMap(request);
   }
 
@@ -953,10 +1020,11 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   UpdateUrlMapHttpRequest request = UpdateUrlMapHttpRequest.newBuilder()
@@ -980,10 +1048,11 @@ public class UrlMapClient implements BackgroundResource {
   /**
    * Updates the specified UrlMap resource with the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   String requestId = "";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   UpdateUrlMapHttpRequest request = UpdateUrlMapHttpRequest.newBuilder()
@@ -1004,12 +1073,14 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
+   * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
+   * run. Calling this method does NOT create the UrlMap.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   UrlMapsValidateResponse response = urlMapClient.validateUrlMap(urlMap, urlMapsValidateRequestResource);
    * }
@@ -1020,24 +1091,27 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final UrlMapsValidateResponse validateUrlMap(ProjectUrlMapName urlMap, UrlMapsValidateRequest urlMapsValidateRequestResource) {
+  public final UrlMapsValidateResponse validateUrlMap(
+      ProjectGlobalUrlMapName urlMap, UrlMapsValidateRequest urlMapsValidateRequestResource) {
 
     ValidateUrlMapHttpRequest request =
         ValidateUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap == null ? null : urlMap.toString())
-        .setUrlMapsValidateRequestResource(urlMapsValidateRequestResource)
-        .build();
+            .setUrlMap(urlMap == null ? null : urlMap.toString())
+            .setUrlMapsValidateRequestResource(urlMapsValidateRequestResource)
+            .build();
     return validateUrlMap(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
+   * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
+   * run. Calling this method does NOT create the UrlMap.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   UrlMapsValidateResponse response = urlMapClient.validateUrlMap(urlMap.toString(), urlMapsValidateRequestResource);
    * }
@@ -1048,24 +1122,27 @@ public class UrlMapClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final UrlMapsValidateResponse validateUrlMap(String urlMap, UrlMapsValidateRequest urlMapsValidateRequestResource) {
+  public final UrlMapsValidateResponse validateUrlMap(
+      String urlMap, UrlMapsValidateRequest urlMapsValidateRequestResource) {
 
     ValidateUrlMapHttpRequest request =
         ValidateUrlMapHttpRequest.newBuilder()
-        .setUrlMap(urlMap)
-        .setUrlMapsValidateRequestResource(urlMapsValidateRequestResource)
-        .build();
+            .setUrlMap(urlMap)
+            .setUrlMapsValidateRequestResource(urlMapsValidateRequestResource)
+            .build();
     return validateUrlMap(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
+   * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
+   * run. Calling this method does NOT create the UrlMap.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   ValidateUrlMapHttpRequest request = ValidateUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
@@ -1085,12 +1162,14 @@ public class UrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
+   * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
+   * run. Calling this method does NOT create the UrlMap.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (UrlMapClient urlMapClient = UrlMapClient.create()) {
-   *   ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+   *   ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
    *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   ValidateUrlMapHttpRequest request = ValidateUrlMapHttpRequest.newBuilder()
    *     .setUrlMap(urlMap.toString())
@@ -1103,12 +1182,13 @@ public class UrlMapClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ValidateUrlMapHttpRequest, UrlMapsValidateResponse> validateUrlMapCallable() {
+  public final UnaryCallable<ValidateUrlMapHttpRequest, UrlMapsValidateResponse>
+      validateUrlMapCallable() {
     return stub.validateUrlMapCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -1137,12 +1217,10 @@ public class UrlMapClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListUrlMapsPagedResponse extends AbstractPagedListResponse<
-      ListUrlMapsHttpRequest,
-      UrlMapList,
-      UrlMap,
-      ListUrlMapsPage,
-      ListUrlMapsFixedSizeCollection> {
+  public static class ListUrlMapsPagedResponse
+      extends AbstractPagedListResponse<
+          ListUrlMapsHttpRequest, UrlMapList, UrlMap, ListUrlMapsPage,
+          ListUrlMapsFixedSizeCollection> {
 
     public static ApiFuture<ListUrlMapsPagedResponse> createAsync(
         PageContext<ListUrlMapsHttpRequest, UrlMapList, UrlMap> context,
@@ -1162,19 +1240,13 @@ public class UrlMapClient implements BackgroundResource {
     private ListUrlMapsPagedResponse(ListUrlMapsPage page) {
       super(page, ListUrlMapsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListUrlMapsPage extends AbstractPage<
-      ListUrlMapsHttpRequest,
-      UrlMapList,
-      UrlMap,
-      ListUrlMapsPage> {
+  public static class ListUrlMapsPage
+      extends AbstractPage<ListUrlMapsHttpRequest, UrlMapList, UrlMap, ListUrlMapsPage> {
 
     private ListUrlMapsPage(
-        PageContext<ListUrlMapsHttpRequest, UrlMapList, UrlMap> context,
-        UrlMapList response) {
+        PageContext<ListUrlMapsHttpRequest, UrlMapList, UrlMap> context, UrlMapList response) {
       super(context, response);
     }
 
@@ -1184,8 +1256,7 @@ public class UrlMapClient implements BackgroundResource {
 
     @Override
     protected ListUrlMapsPage createPage(
-        PageContext<ListUrlMapsHttpRequest, UrlMapList, UrlMap> context,
-        UrlMapList response) {
+        PageContext<ListUrlMapsHttpRequest, UrlMapList, UrlMap> context, UrlMapList response) {
       return new ListUrlMapsPage(context, response);
     }
 
@@ -1195,18 +1266,12 @@ public class UrlMapClient implements BackgroundResource {
         ApiFuture<UrlMapList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListUrlMapsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListUrlMapsHttpRequest,
-      UrlMapList,
-      UrlMap,
-      ListUrlMapsPage,
-      ListUrlMapsFixedSizeCollection> {
+  public static class ListUrlMapsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUrlMapsHttpRequest, UrlMapList, UrlMap, ListUrlMapsPage,
+          ListUrlMapsFixedSizeCollection> {
 
     private ListUrlMapsFixedSizeCollection(List<ListUrlMapsPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -1221,7 +1286,5 @@ public class UrlMapClient implements BackgroundResource {
         List<ListUrlMapsPage> pages, int collectionSize) {
       return new ListUrlMapsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

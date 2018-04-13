@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -70,7 +69,6 @@ public final class VpnTunnel implements ApiMessage {
     this.targetVpnGateway = null;
   }
 
-
   private VpnTunnel(
       String creationTimestamp,
       String description,
@@ -88,8 +86,7 @@ public final class VpnTunnel implements ApiMessage {
       String sharedSecret,
       String sharedSecretHash,
       String status,
-      String targetVpnGateway
-      ) {
+      String targetVpnGateway) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.detailedStatus = detailedStatus;
@@ -113,7 +110,8 @@ public final class VpnTunnel implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -304,22 +302,24 @@ public final class VpnTunnel implements ApiMessage {
     return targetVpnGateway;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(VpnTunnel prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static VpnTunnel getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final VpnTunnel DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new VpnTunnel();
   }
@@ -590,43 +590,26 @@ public final class VpnTunnel implements ApiMessage {
       return this;
     }
 
-
     public VpnTunnel build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new VpnTunnel(
-        creationTimestamp,
-        description,
-        detailedStatus,
-        id,
-        ikeVersion,
-        kind,
-        localTrafficSelector,
-        name,
-        peerIp,
-        region,
-        remoteTrafficSelector,
-        router,
-        selfLink,
-        sharedSecret,
-        sharedSecretHash,
-        status,
-        targetVpnGateway
-      );
+          creationTimestamp,
+          description,
+          detailedStatus,
+          id,
+          ikeVersion,
+          kind,
+          localTrafficSelector,
+          name,
+          peerIp,
+          region,
+          remoteTrafficSelector,
+          router,
+          selfLink,
+          sharedSecret,
+          sharedSecretHash,
+          status,
+          targetVpnGateway);
     }
 
     public Builder clone() {
@@ -655,23 +638,56 @@ public final class VpnTunnel implements ApiMessage {
   @Override
   public String toString() {
     return "VpnTunnel{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "detailedStatus=" + detailedStatus + ", "
-        + "id=" + id + ", "
-        + "ikeVersion=" + ikeVersion + ", "
-        + "kind=" + kind + ", "
-        + "localTrafficSelector=" + localTrafficSelector + ", "
-        + "name=" + name + ", "
-        + "peerIp=" + peerIp + ", "
-        + "region=" + region + ", "
-        + "remoteTrafficSelector=" + remoteTrafficSelector + ", "
-        + "router=" + router + ", "
-        + "selfLink=" + selfLink + ", "
-        + "sharedSecret=" + sharedSecret + ", "
-        + "sharedSecretHash=" + sharedSecretHash + ", "
-        + "status=" + status + ", "
-        + "targetVpnGateway=" + targetVpnGateway
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "detailedStatus="
+        + detailedStatus
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "ikeVersion="
+        + ikeVersion
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "localTrafficSelector="
+        + localTrafficSelector
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "peerIp="
+        + peerIp
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "remoteTrafficSelector="
+        + remoteTrafficSelector
+        + ", "
+        + "router="
+        + router
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "sharedSecret="
+        + sharedSecret
+        + ", "
+        + "sharedSecretHash="
+        + sharedSecretHash
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "targetVpnGateway="
+        + targetVpnGateway
         + "}";
   }
 
@@ -682,25 +698,23 @@ public final class VpnTunnel implements ApiMessage {
     }
     if (o instanceof VpnTunnel) {
       VpnTunnel that = (VpnTunnel) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.detailedStatus, that.getDetailedStatus()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.ikeVersion, that.getIkeVersion()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.localTrafficSelector, that.getLocalTrafficSelectorList()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.peerIp, that.getPeerIp()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.remoteTrafficSelector, that.getRemoteTrafficSelectorList()) &&
-          Objects.equals(this.router, that.getRouter()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.sharedSecret, that.getSharedSecret()) &&
-          Objects.equals(this.sharedSecretHash, that.getSharedSecretHash()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.targetVpnGateway, that.getTargetVpnGateway())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.detailedStatus, that.getDetailedStatus())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.ikeVersion, that.getIkeVersion())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.localTrafficSelector, that.getLocalTrafficSelectorList())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.peerIp, that.getPeerIp())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.remoteTrafficSelector, that.getRemoteTrafficSelectorList())
+          && Objects.equals(this.router, that.getRouter())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.sharedSecret, that.getSharedSecret())
+          && Objects.equals(this.sharedSecretHash, that.getSharedSecretHash())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.targetVpnGateway, that.getTargetVpnGateway());
     }
     return false;
   }
@@ -708,23 +722,22 @@ public final class VpnTunnel implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      detailedStatus,
-      id,
-      ikeVersion,
-      kind,
-      localTrafficSelector,
-      name,
-      peerIp,
-      region,
-      remoteTrafficSelector,
-      router,
-      selfLink,
-      sharedSecret,
-      sharedSecretHash,
-      status,
-      targetVpnGateway
-    );
+        creationTimestamp,
+        description,
+        detailedStatus,
+        id,
+        ikeVersion,
+        kind,
+        localTrafficSelector,
+        name,
+        peerIp,
+        region,
+        remoteTrafficSelector,
+        router,
+        selfLink,
+        sharedSecret,
+        sharedSecretHash,
+        status,
+        targetVpnGateway);
   }
 }

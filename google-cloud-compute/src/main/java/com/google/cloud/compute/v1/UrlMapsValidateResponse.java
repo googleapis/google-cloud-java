@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class UrlMapsValidateResponse implements ApiMessage {
     this.result = null;
   }
 
-
-  private UrlMapsValidateResponse(
-      UrlMapValidationResult result
-      ) {
+  private UrlMapsValidateResponse(UrlMapValidationResult result) {
     this.result = result;
   }
 
@@ -72,22 +66,24 @@ public final class UrlMapsValidateResponse implements ApiMessage {
     return result;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(UrlMapsValidateResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static UrlMapsValidateResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final UrlMapsValidateResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new UrlMapsValidateResponse();
   }
@@ -118,11 +114,8 @@ public final class UrlMapsValidateResponse implements ApiMessage {
       return this;
     }
 
-
     public UrlMapsValidateResponse build() {
-      return new UrlMapsValidateResponse(
-        result
-      );
+      return new UrlMapsValidateResponse(result);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class UrlMapsValidateResponse implements ApiMessage {
 
   @Override
   public String toString() {
-    return "UrlMapsValidateResponse{"
-        + "result=" + result
-        + "}";
+    return "UrlMapsValidateResponse{" + "result=" + result + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class UrlMapsValidateResponse implements ApiMessage {
     }
     if (o instanceof UrlMapsValidateResponse) {
       UrlMapsValidateResponse that = (UrlMapsValidateResponse) o;
-      return
-          Objects.equals(this.result, that.getResult())
-          ;
+      return Objects.equals(this.result, that.getResult());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      result
-    );
+    return Objects.hash(result);
   }
 }

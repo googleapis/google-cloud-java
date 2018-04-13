@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetVpnGatewayClient.AggregatedListTargetVpnGatewaysPagedResponse;
+import static com.google.cloud.compute.v1.TargetVpnGatewayClient.ListTargetVpnGatewaysPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -24,15 +27,9 @@ import com.google.cloud.compute.v1.GetTargetVpnGatewayHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetVpnGatewayHttpRequest;
 import com.google.cloud.compute.v1.ListTargetVpnGatewaysHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.ProjectRegionTargetVpnGatewayName;
 import com.google.cloud.compute.v1.TargetVpnGateway;
 import com.google.cloud.compute.v1.TargetVpnGatewayAggregatedList;
-import static com.google.cloud.compute.v1.TargetVpnGatewayClient.AggregatedListTargetVpnGatewaysPagedResponse;
-import static com.google.cloud.compute.v1.TargetVpnGatewayClient.ListTargetVpnGatewaysPagedResponse;
 import com.google.cloud.compute.v1.TargetVpnGatewayList;
-import com.google.cloud.compute.v1.TargetVpnGatewaysScopedList;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -45,40 +42,52 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TargetVpnGatewayStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListTargetVpnGatewaysHttpRequest, AggregatedListTargetVpnGatewaysPagedResponse> aggregatedListTargetVpnGatewaysPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListTargetVpnGatewaysPagedCallable()");
+  public UnaryCallable<
+          AggregatedListTargetVpnGatewaysHttpRequest, AggregatedListTargetVpnGatewaysPagedResponse>
+      aggregatedListTargetVpnGatewaysPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetVpnGatewaysPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList> aggregatedListTargetVpnGatewaysCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListTargetVpnGatewaysCallable()");
+  public UnaryCallable<AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList>
+      aggregatedListTargetVpnGatewaysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListTargetVpnGatewaysCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<DeleteTargetVpnGatewayHttpRequest, Operation> deleteTargetVpnGatewayCallable() {
+  public UnaryCallable<DeleteTargetVpnGatewayHttpRequest, Operation>
+      deleteTargetVpnGatewayCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTargetVpnGatewayCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetTargetVpnGatewayHttpRequest, TargetVpnGateway> getTargetVpnGatewayCallable() {
+  public UnaryCallable<GetTargetVpnGatewayHttpRequest, TargetVpnGateway>
+      getTargetVpnGatewayCallable() {
     throw new UnsupportedOperationException("Not implemented: getTargetVpnGatewayCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<InsertTargetVpnGatewayHttpRequest, Operation> insertTargetVpnGatewayCallable() {
+  public UnaryCallable<InsertTargetVpnGatewayHttpRequest, Operation>
+      insertTargetVpnGatewayCallable() {
     throw new UnsupportedOperationException("Not implemented: insertTargetVpnGatewayCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetVpnGatewaysHttpRequest, ListTargetVpnGatewaysPagedResponse> listTargetVpnGatewaysPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listTargetVpnGatewaysPagedCallable()");
+  public UnaryCallable<ListTargetVpnGatewaysHttpRequest, ListTargetVpnGatewaysPagedResponse>
+      listTargetVpnGatewaysPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listTargetVpnGatewaysPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList> listTargetVpnGatewaysCallable() {
+  public UnaryCallable<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList>
+      listTargetVpnGatewaysCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetVpnGatewaysCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

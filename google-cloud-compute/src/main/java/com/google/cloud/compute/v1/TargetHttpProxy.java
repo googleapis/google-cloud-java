@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -50,7 +47,6 @@ public final class TargetHttpProxy implements ApiMessage {
     this.urlMap = null;
   }
 
-
   private TargetHttpProxy(
       String creationTimestamp,
       String description,
@@ -58,8 +54,7 @@ public final class TargetHttpProxy implements ApiMessage {
       String kind,
       String name,
       String selfLink,
-      String urlMap
-      ) {
+      String urlMap) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -73,7 +68,8 @@ public final class TargetHttpProxy implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -156,22 +152,24 @@ public final class TargetHttpProxy implements ApiMessage {
     return urlMap;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetHttpProxy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetHttpProxy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetHttpProxy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetHttpProxy();
   }
@@ -286,23 +284,9 @@ public final class TargetHttpProxy implements ApiMessage {
       return this;
     }
 
-
     public TargetHttpProxy build() {
 
-
-
-
-
-
-      return new TargetHttpProxy(
-        creationTimestamp,
-        description,
-        id,
-        kind,
-        name,
-        selfLink,
-        urlMap
-      );
+      return new TargetHttpProxy(creationTimestamp, description, id, kind, name, selfLink, urlMap);
     }
 
     public Builder clone() {
@@ -321,13 +305,26 @@ public final class TargetHttpProxy implements ApiMessage {
   @Override
   public String toString() {
     return "TargetHttpProxy{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "selfLink=" + selfLink + ", "
-        + "urlMap=" + urlMap
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "urlMap="
+        + urlMap
         + "}";
   }
 
@@ -338,29 +335,19 @@ public final class TargetHttpProxy implements ApiMessage {
     }
     if (o instanceof TargetHttpProxy) {
       TargetHttpProxy that = (TargetHttpProxy) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.urlMap, that.getUrlMap())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.urlMap, that.getUrlMap());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      creationTimestamp,
-      description,
-      id,
-      kind,
-      name,
-      selfLink,
-      urlMap
-    );
+    return Objects.hash(creationTimestamp, description, id, kind, name, selfLink, urlMap);
   }
 }

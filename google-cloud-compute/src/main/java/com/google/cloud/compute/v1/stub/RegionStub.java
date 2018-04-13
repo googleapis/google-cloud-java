@@ -15,15 +15,14 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionClient.ListRegionsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetRegionHttpRequest;
 import com.google.cloud.compute.v1.ListRegionsHttpRequest;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.Region;
-import static com.google.cloud.compute.v1.RegionClient.ListRegionsPagedResponse;
 import com.google.cloud.compute.v1.RegionList;
 import javax.annotation.Generated;
 
@@ -37,14 +36,14 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RegionStub implements BackgroundResource {
 
-
   @BetaApi
   public UnaryCallable<GetRegionHttpRequest, Region> getRegionCallable() {
     throw new UnsupportedOperationException("Not implemented: getRegionCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionsHttpRequest, ListRegionsPagedResponse> listRegionsPagedCallable() {
+  public UnaryCallable<ListRegionsHttpRequest, ListRegionsPagedResponse>
+      listRegionsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionsPagedCallable()");
   }
 
@@ -53,4 +52,6 @@ public abstract class RegionStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listRegionsCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

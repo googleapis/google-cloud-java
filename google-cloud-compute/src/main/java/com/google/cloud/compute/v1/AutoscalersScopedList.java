@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class AutoscalersScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private AutoscalersScopedList(
-      List<Autoscaler> autoscalers,
-      Warning warning
-      ) {
+  private AutoscalersScopedList(List<Autoscaler> autoscalers, Warning warning) {
     this.autoscalers = autoscalers;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class AutoscalersScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AutoscalersScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AutoscalersScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AutoscalersScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AutoscalersScopedList();
   }
@@ -158,13 +155,9 @@ public final class AutoscalersScopedList implements ApiMessage {
       return this;
     }
 
-
     public AutoscalersScopedList build() {
 
-      return new AutoscalersScopedList(
-        autoscalers,
-        warning
-      );
+      return new AutoscalersScopedList(autoscalers, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class AutoscalersScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "AutoscalersScopedList{"
-        + "autoscalers=" + autoscalers + ", "
-        + "warning=" + warning
+        + "autoscalers="
+        + autoscalers
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class AutoscalersScopedList implements ApiMessage {
     }
     if (o instanceof AutoscalersScopedList) {
       AutoscalersScopedList that = (AutoscalersScopedList) o;
-      return
-          Objects.equals(this.autoscalers, that.getAutoscalersList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.autoscalers, that.getAutoscalersList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      autoscalers,
-      warning
-    );
+    return Objects.hash(autoscalers, warning);
   }
 }

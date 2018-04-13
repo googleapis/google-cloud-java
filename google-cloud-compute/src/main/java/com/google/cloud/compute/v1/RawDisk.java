@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,12 +39,7 @@ public final class RawDisk implements ApiMessage {
     this.source = null;
   }
 
-
-  private RawDisk(
-      String containerType,
-      String sha1Checksum,
-      String source
-      ) {
+  private RawDisk(String containerType, String sha1Checksum, String source) {
     this.containerType = containerType;
     this.sha1Checksum = sha1Checksum;
     this.source = source;
@@ -100,22 +92,24 @@ public final class RawDisk implements ApiMessage {
     return source;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RawDisk prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RawDisk getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RawDisk DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RawDisk();
   }
@@ -174,15 +168,9 @@ public final class RawDisk implements ApiMessage {
       return this;
     }
 
-
     public RawDisk build() {
 
-
-      return new RawDisk(
-        containerType,
-        sha1Checksum,
-        source
-      );
+      return new RawDisk(containerType, sha1Checksum, source);
     }
 
     public Builder clone() {
@@ -197,9 +185,14 @@ public final class RawDisk implements ApiMessage {
   @Override
   public String toString() {
     return "RawDisk{"
-        + "containerType=" + containerType + ", "
-        + "sha1Checksum=" + sha1Checksum + ", "
-        + "source=" + source
+        + "containerType="
+        + containerType
+        + ", "
+        + "sha1Checksum="
+        + sha1Checksum
+        + ", "
+        + "source="
+        + source
         + "}";
   }
 
@@ -210,21 +203,15 @@ public final class RawDisk implements ApiMessage {
     }
     if (o instanceof RawDisk) {
       RawDisk that = (RawDisk) o;
-      return
-          Objects.equals(this.containerType, that.getContainerType()) &&
-          Objects.equals(this.sha1Checksum, that.getSha1Checksum()) &&
-          Objects.equals(this.source, that.getSource())
-          ;
+      return Objects.equals(this.containerType, that.getContainerType())
+          && Objects.equals(this.sha1Checksum, that.getSha1Checksum())
+          && Objects.equals(this.source, that.getSource());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      containerType,
-      sha1Checksum,
-      source
-    );
+    return Objects.hash(containerType, sha1Checksum, source);
   }
 }

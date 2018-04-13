@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
     this.instanceTemplate = null;
   }
 
-
-  private RegionInstanceGroupManagersSetTemplateRequest(
-      String instanceTemplate
-      ) {
+  private RegionInstanceGroupManagersSetTemplateRequest(String instanceTemplate) {
     this.instanceTemplate = instanceTemplate;
   }
 
@@ -72,22 +66,24 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
     return instanceTemplate;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RegionInstanceGroupManagersSetTemplateRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RegionInstanceGroupManagersSetTemplateRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RegionInstanceGroupManagersSetTemplateRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RegionInstanceGroupManagersSetTemplateRequest();
   }
@@ -118,11 +114,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
       return this;
     }
 
-
     public RegionInstanceGroupManagersSetTemplateRequest build() {
-      return new RegionInstanceGroupManagersSetTemplateRequest(
-        instanceTemplate
-      );
+      return new RegionInstanceGroupManagersSetTemplateRequest(instanceTemplate);
     }
 
     public Builder clone() {
@@ -135,7 +128,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
   @Override
   public String toString() {
     return "RegionInstanceGroupManagersSetTemplateRequest{"
-        + "instanceTemplate=" + instanceTemplate
+        + "instanceTemplate="
+        + instanceTemplate
         + "}";
   }
 
@@ -145,18 +139,15 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
       return true;
     }
     if (o instanceof RegionInstanceGroupManagersSetTemplateRequest) {
-      RegionInstanceGroupManagersSetTemplateRequest that = (RegionInstanceGroupManagersSetTemplateRequest) o;
-      return
-          Objects.equals(this.instanceTemplate, that.getInstanceTemplate())
-          ;
+      RegionInstanceGroupManagersSetTemplateRequest that =
+          (RegionInstanceGroupManagersSetTemplateRequest) o;
+      return Objects.equals(this.instanceTemplate, that.getInstanceTemplate());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instanceTemplate
-    );
+    return Objects.hash(instanceTemplate);
   }
 }

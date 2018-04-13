@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class NetworkRoutingConfig implements ApiMessage {
     this.routingMode = null;
   }
 
-
-  private NetworkRoutingConfig(
-      String routingMode
-      ) {
+  private NetworkRoutingConfig(String routingMode) {
     this.routingMode = routingMode;
   }
 
@@ -72,22 +66,24 @@ public final class NetworkRoutingConfig implements ApiMessage {
     return routingMode;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(NetworkRoutingConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static NetworkRoutingConfig getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final NetworkRoutingConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new NetworkRoutingConfig();
   }
@@ -118,11 +114,8 @@ public final class NetworkRoutingConfig implements ApiMessage {
       return this;
     }
 
-
     public NetworkRoutingConfig build() {
-      return new NetworkRoutingConfig(
-        routingMode
-      );
+      return new NetworkRoutingConfig(routingMode);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class NetworkRoutingConfig implements ApiMessage {
 
   @Override
   public String toString() {
-    return "NetworkRoutingConfig{"
-        + "routingMode=" + routingMode
-        + "}";
+    return "NetworkRoutingConfig{" + "routingMode=" + routingMode + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class NetworkRoutingConfig implements ApiMessage {
     }
     if (o instanceof NetworkRoutingConfig) {
       NetworkRoutingConfig that = (NetworkRoutingConfig) o;
-      return
-          Objects.equals(this.routingMode, that.getRoutingMode())
-          ;
+      return Objects.equals(this.routingMode, that.getRoutingMode());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      routingMode
-    );
+    return Objects.hash(routingMode);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class DisksResizeRequest implements ApiMessage {
     this.sizeGb = null;
   }
 
-
-  private DisksResizeRequest(
-      String sizeGb
-      ) {
+  private DisksResizeRequest(String sizeGb) {
     this.sizeGb = sizeGb;
   }
 
@@ -72,22 +66,24 @@ public final class DisksResizeRequest implements ApiMessage {
     return sizeGb;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DisksResizeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DisksResizeRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DisksResizeRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DisksResizeRequest();
   }
@@ -118,11 +114,8 @@ public final class DisksResizeRequest implements ApiMessage {
       return this;
     }
 
-
     public DisksResizeRequest build() {
-      return new DisksResizeRequest(
-        sizeGb
-      );
+      return new DisksResizeRequest(sizeGb);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class DisksResizeRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "DisksResizeRequest{"
-        + "sizeGb=" + sizeGb
-        + "}";
+    return "DisksResizeRequest{" + "sizeGb=" + sizeGb + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class DisksResizeRequest implements ApiMessage {
     }
     if (o instanceof DisksResizeRequest) {
       DisksResizeRequest that = (DisksResizeRequest) o;
-      return
-          Objects.equals(this.sizeGb, that.getSizeGb())
-          ;
+      return Objects.equals(this.sizeGb, that.getSizeGb());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      sizeGb
-    );
+    return Objects.hash(sizeGb);
   }
 }

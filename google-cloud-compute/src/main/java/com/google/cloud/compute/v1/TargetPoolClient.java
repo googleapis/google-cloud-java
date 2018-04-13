@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.TargetPoolStub;
 import com.google.cloud.compute.v1.stub.TargetPoolStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -60,34 +50,33 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the targetPoolClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the targetPoolClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of TargetPoolSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -117,19 +106,14 @@ public class TargetPoolClient implements BackgroundResource {
   private final TargetPoolSettings settings;
   private final TargetPoolStub stub;
 
-
-
-  /**
-   * Constructs an instance of TargetPoolClient with default settings.
-   */
+  /** Constructs an instance of TargetPoolClient with default settings. */
   public static final TargetPoolClient create() throws IOException {
     return create(TargetPoolSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of TargetPoolClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of TargetPoolClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final TargetPoolClient create(TargetPoolSettings settings) throws IOException {
     return new TargetPoolClient(settings);
@@ -145,9 +129,8 @@ public class TargetPoolClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of TargetPoolClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of TargetPoolClient, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected TargetPoolClient(TargetPoolSettings settings) throws IOException {
     this.settings = settings;
@@ -169,12 +152,12 @@ public class TargetPoolClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds health check URLs to a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -185,23 +168,30 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the target pool to add a health check to.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsAddHealthCheckRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addHealthCheckTargetPool(ProjectRegionTargetPoolName targetPool, String requestId, TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
+  public final Operation addHealthCheckTargetPool(
+      ProjectRegionTargetPoolName targetPool,
+      String requestId,
+      TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
 
     AddHealthCheckTargetPoolHttpRequest request =
         AddHealthCheckTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool == null ? null : targetPool.toString())
-        .setRequestId(requestId)
-        .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
-        .build();
+            .setTargetPool(targetPool == null ? null : targetPool.toString())
+            .setRequestId(requestId)
+            .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
+            .build();
     return addHealthCheckTargetPool(request);
   }
 
@@ -209,7 +199,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Adds health check URLs to a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -220,23 +211,30 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the target pool to add a health check to.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsAddHealthCheckRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addHealthCheckTargetPool(String targetPool, String requestId, TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
+  public final Operation addHealthCheckTargetPool(
+      String targetPool,
+      String requestId,
+      TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource) {
 
     AddHealthCheckTargetPoolHttpRequest request =
         AddHealthCheckTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool)
-        .setRequestId(requestId)
-        .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
-        .build();
+            .setTargetPool(targetPool)
+            .setRequestId(requestId)
+            .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
+            .build();
     return addHealthCheckTargetPool(request);
   }
 
@@ -244,7 +242,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Adds health check URLs to a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -271,7 +270,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Adds health check URLs to a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -289,7 +289,8 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AddHealthCheckTargetPoolHttpRequest, Operation> addHealthCheckTargetPoolCallable() {
+  public final UnaryCallable<AddHealthCheckTargetPoolHttpRequest, Operation>
+      addHealthCheckTargetPoolCallable() {
     return stub.addHealthCheckTargetPoolCallable();
   }
 
@@ -297,7 +298,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Adds an instance to a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -308,23 +310,30 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to add instances to.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsAddInstanceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addInstanceTargetPool(ProjectRegionTargetPoolName targetPool, String requestId, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
+  public final Operation addInstanceTargetPool(
+      ProjectRegionTargetPoolName targetPool,
+      String requestId,
+      TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
 
     AddInstanceTargetPoolHttpRequest request =
         AddInstanceTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool == null ? null : targetPool.toString())
-        .setRequestId(requestId)
-        .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
-        .build();
+            .setTargetPool(targetPool == null ? null : targetPool.toString())
+            .setRequestId(requestId)
+            .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
+            .build();
     return addInstanceTargetPool(request);
   }
 
@@ -332,7 +341,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Adds an instance to a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -343,23 +353,30 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to add instances to.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsAddInstanceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addInstanceTargetPool(String targetPool, String requestId, TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
+  public final Operation addInstanceTargetPool(
+      String targetPool,
+      String requestId,
+      TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
 
     AddInstanceTargetPoolHttpRequest request =
         AddInstanceTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool)
-        .setRequestId(requestId)
-        .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
-        .build();
+            .setTargetPool(targetPool)
+            .setRequestId(requestId)
+            .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
+            .build();
     return addInstanceTargetPool(request);
   }
 
@@ -367,7 +384,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Adds an instance to a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -394,7 +412,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Adds an instance to a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -412,7 +431,8 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AddInstanceTargetPoolHttpRequest, Operation> addInstanceTargetPoolCallable() {
+  public final UnaryCallable<AddInstanceTargetPoolHttpRequest, Operation>
+      addInstanceTargetPoolCallable() {
     return stub.addInstanceTargetPoolCallable();
   }
 
@@ -420,7 +440,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target pools.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -434,11 +455,12 @@ public class TargetPoolClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetPoolsPagedResponse aggregatedListTargetPools(ProjectName project) {
+  public final AggregatedListTargetPoolsPagedResponse aggregatedListTargetPools(
+      ProjectName project) {
     AggregatedListTargetPoolsHttpRequest request =
         AggregatedListTargetPoolsHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListTargetPools(request);
   }
 
@@ -446,7 +468,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target pools.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -462,9 +485,7 @@ public class TargetPoolClient implements BackgroundResource {
   @BetaApi
   public final AggregatedListTargetPoolsPagedResponse aggregatedListTargetPools(String project) {
     AggregatedListTargetPoolsHttpRequest request =
-        AggregatedListTargetPoolsHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListTargetPoolsHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListTargetPools(request);
   }
 
@@ -472,7 +493,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target pools.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -489,16 +511,17 @@ public class TargetPoolClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListTargetPoolsPagedResponse aggregatedListTargetPools(AggregatedListTargetPoolsHttpRequest request) {
-    return aggregatedListTargetPoolsPagedCallable()
-        .call(request);
+  public final AggregatedListTargetPoolsPagedResponse aggregatedListTargetPools(
+      AggregatedListTargetPoolsHttpRequest request) {
+    return aggregatedListTargetPoolsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of target pools.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -514,7 +537,9 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListTargetPoolsHttpRequest, AggregatedListTargetPoolsPagedResponse> aggregatedListTargetPoolsPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListTargetPoolsHttpRequest, AggregatedListTargetPoolsPagedResponse>
+      aggregatedListTargetPoolsPagedCallable() {
     return stub.aggregatedListTargetPoolsPagedCallable();
   }
 
@@ -522,7 +547,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of target pools.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -545,7 +571,8 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList> aggregatedListTargetPoolsCallable() {
+  public final UnaryCallable<AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList>
+      aggregatedListTargetPoolsCallable() {
     return stub.aggregatedListTargetPoolsCallable();
   }
 
@@ -553,7 +580,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Deletes the specified target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -563,21 +591,26 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetPool(ProjectRegionTargetPoolName targetPool, String requestId) {
+  public final Operation deleteTargetPool(
+      ProjectRegionTargetPoolName targetPool, String requestId) {
 
     DeleteTargetPoolHttpRequest request =
         DeleteTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool == null ? null : targetPool.toString())
-        .setRequestId(requestId)
-        .build();
+            .setTargetPool(targetPool == null ? null : targetPool.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteTargetPool(request);
   }
 
@@ -585,7 +618,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Deletes the specified target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -595,11 +629,15 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -607,9 +645,9 @@ public class TargetPoolClient implements BackgroundResource {
 
     DeleteTargetPoolHttpRequest request =
         DeleteTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool)
-        .setRequestId(requestId)
-        .build();
+            .setTargetPool(targetPool)
+            .setRequestId(requestId)
+            .build();
     return deleteTargetPool(request);
   }
 
@@ -617,7 +655,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Deletes the specified target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -642,7 +681,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Deletes the specified target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -664,9 +704,11 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified target pool. Get a list of available target pools by making a list() request.
+   * Returns the specified target pool. Get a list of available target pools by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -682,16 +724,18 @@ public class TargetPoolClient implements BackgroundResource {
 
     GetTargetPoolHttpRequest request =
         GetTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool == null ? null : targetPool.toString())
-        .build();
+            .setTargetPool(targetPool == null ? null : targetPool.toString())
+            .build();
     return getTargetPool(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified target pool. Get a list of available target pools by making a list() request.
+   * Returns the specified target pool. Get a list of available target pools by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -706,17 +750,17 @@ public class TargetPoolClient implements BackgroundResource {
   public final TargetPool getTargetPool(String targetPool) {
 
     GetTargetPoolHttpRequest request =
-        GetTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool)
-        .build();
+        GetTargetPoolHttpRequest.newBuilder().setTargetPool(targetPool).build();
     return getTargetPool(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified target pool. Get a list of available target pools by making a list() request.
+   * Returns the specified target pool. Get a list of available target pools by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -737,9 +781,11 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified target pool. Get a list of available target pools by making a list() request.
+   * Returns the specified target pool. Get a list of available target pools by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -759,9 +805,11 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for each IP for the instance that is referenced by the given target pool.
+   * Gets the most recent health check results for each IP for the instance that is referenced by
+   * the given target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -775,21 +823,24 @@ public class TargetPoolClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetPoolInstanceHealth getHealthTargetPool(ProjectRegionTargetPoolName targetPool, InstanceReference instanceReferenceResource) {
+  public final TargetPoolInstanceHealth getHealthTargetPool(
+      ProjectRegionTargetPoolName targetPool, InstanceReference instanceReferenceResource) {
 
     GetHealthTargetPoolHttpRequest request =
         GetHealthTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool == null ? null : targetPool.toString())
-        .setInstanceReferenceResource(instanceReferenceResource)
-        .build();
+            .setTargetPool(targetPool == null ? null : targetPool.toString())
+            .setInstanceReferenceResource(instanceReferenceResource)
+            .build();
     return getHealthTargetPool(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for each IP for the instance that is referenced by the given target pool.
+   * Gets the most recent health check results for each IP for the instance that is referenced by
+   * the given target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -803,21 +854,24 @@ public class TargetPoolClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetPoolInstanceHealth getHealthTargetPool(String targetPool, InstanceReference instanceReferenceResource) {
+  public final TargetPoolInstanceHealth getHealthTargetPool(
+      String targetPool, InstanceReference instanceReferenceResource) {
 
     GetHealthTargetPoolHttpRequest request =
         GetHealthTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool)
-        .setInstanceReferenceResource(instanceReferenceResource)
-        .build();
+            .setTargetPool(targetPool)
+            .setInstanceReferenceResource(instanceReferenceResource)
+            .build();
     return getHealthTargetPool(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for each IP for the instance that is referenced by the given target pool.
+   * Gets the most recent health check results for each IP for the instance that is referenced by
+   * the given target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -834,15 +888,18 @@ public class TargetPoolClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetPoolInstanceHealth getHealthTargetPool(GetHealthTargetPoolHttpRequest request) {
+  public final TargetPoolInstanceHealth getHealthTargetPool(
+      GetHealthTargetPoolHttpRequest request) {
     return getHealthTargetPoolCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for each IP for the instance that is referenced by the given target pool.
+   * Gets the most recent health check results for each IP for the instance that is referenced by
+   * the given target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -858,15 +915,18 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetHealthTargetPoolHttpRequest, TargetPoolInstanceHealth> getHealthTargetPoolCallable() {
+  public final UnaryCallable<GetHealthTargetPoolHttpRequest, TargetPoolInstanceHealth>
+      getHealthTargetPoolCallable() {
     return stub.getHealthTargetPoolCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a target pool in the specified project and region using the data included in the request.
+   * Creates a target pool in the specified project and region using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   String requestId = "";
@@ -876,32 +936,41 @@ public class TargetPoolClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
-   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, an associated HttpHealthCheck resource, and the fallback target pool. (== resource_for beta.targetPools ==) (== resource_for v1.targetPools ==)
+   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, an
+   *     associated HttpHealthCheck resource, and the fallback target pool. (== resource_for
+   *     beta.targetPools ==) (== resource_for v1.targetPools ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetPool(String requestId, ProjectRegionName region, TargetPool targetPoolResource) {
+  public final Operation insertTargetPool(
+      String requestId, ProjectRegionName region, TargetPool targetPoolResource) {
 
     InsertTargetPoolHttpRequest request =
         InsertTargetPoolHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setRegion(region == null ? null : region.toString())
-        .setTargetPoolResource(targetPoolResource)
-        .build();
+            .setRequestId(requestId)
+            .setRegion(region == null ? null : region.toString())
+            .setTargetPoolResource(targetPoolResource)
+            .build();
     return insertTargetPool(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a target pool in the specified project and region using the data included in the request.
+   * Creates a target pool in the specified project and region using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   String requestId = "";
@@ -911,32 +980,41 @@ public class TargetPoolClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region scoping this request.
-   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, an associated HttpHealthCheck resource, and the fallback target pool. (== resource_for beta.targetPools ==) (== resource_for v1.targetPools ==)
+   * @param targetPoolResource A TargetPool resource. This resource defines a pool of instances, an
+   *     associated HttpHealthCheck resource, and the fallback target pool. (== resource_for
+   *     beta.targetPools ==) (== resource_for v1.targetPools ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetPool(String requestId, String region, TargetPool targetPoolResource) {
+  public final Operation insertTargetPool(
+      String requestId, String region, TargetPool targetPoolResource) {
 
     InsertTargetPoolHttpRequest request =
         InsertTargetPoolHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setRegion(region)
-        .setTargetPoolResource(targetPoolResource)
-        .build();
+            .setRequestId(requestId)
+            .setRegion(region)
+            .setTargetPoolResource(targetPoolResource)
+            .build();
     return insertTargetPool(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a target pool in the specified project and region using the data included in the request.
+   * Creates a target pool in the specified project and region using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   String requestId = "";
@@ -961,9 +1039,11 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a target pool in the specified project and region using the data included in the request.
+   * Creates a target pool in the specified project and region using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   String requestId = "";
@@ -989,7 +1069,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -1006,8 +1087,8 @@ public class TargetPoolClient implements BackgroundResource {
   public final ListTargetPoolsPagedResponse listTargetPools(ProjectRegionName region) {
     ListTargetPoolsHttpRequest request =
         ListTargetPoolsHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .build();
     return listTargetPools(request);
   }
 
@@ -1015,7 +1096,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -1031,9 +1113,7 @@ public class TargetPoolClient implements BackgroundResource {
   @BetaApi
   public final ListTargetPoolsPagedResponse listTargetPools(String region) {
     ListTargetPoolsHttpRequest request =
-        ListTargetPoolsHttpRequest.newBuilder()
-        .setRegion(region)
-        .build();
+        ListTargetPoolsHttpRequest.newBuilder().setRegion(region).build();
     return listTargetPools(request);
   }
 
@@ -1041,7 +1121,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -1059,15 +1140,15 @@ public class TargetPoolClient implements BackgroundResource {
    */
   @BetaApi
   public final ListTargetPoolsPagedResponse listTargetPools(ListTargetPoolsHttpRequest request) {
-    return listTargetPoolsPagedCallable()
-        .call(request);
+    return listTargetPoolsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -1083,7 +1164,8 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetPoolsHttpRequest, ListTargetPoolsPagedResponse> listTargetPoolsPagedCallable() {
+  public final UnaryCallable<ListTargetPoolsHttpRequest, ListTargetPoolsPagedResponse>
+      listTargetPoolsPagedCallable() {
     return stub.listTargetPoolsPagedCallable();
   }
 
@@ -1091,7 +1173,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Retrieves a list of target pools available to the specified project and region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -1122,7 +1205,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Removes health check URL from a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1133,23 +1217,31 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the target pool to remove health checks from.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsRemoveHealthCheckRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeHealthCheckTargetPool(ProjectRegionTargetPoolName targetPool, String requestId, TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
+  public final Operation removeHealthCheckTargetPool(
+      ProjectRegionTargetPoolName targetPool,
+      String requestId,
+      TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
 
     RemoveHealthCheckTargetPoolHttpRequest request =
         RemoveHealthCheckTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool == null ? null : targetPool.toString())
-        .setRequestId(requestId)
-        .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
-        .build();
+            .setTargetPool(targetPool == null ? null : targetPool.toString())
+            .setRequestId(requestId)
+            .setTargetPoolsRemoveHealthCheckRequestResource(
+                targetPoolsRemoveHealthCheckRequestResource)
+            .build();
     return removeHealthCheckTargetPool(request);
   }
 
@@ -1157,7 +1249,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Removes health check URL from a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1168,23 +1261,31 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the target pool to remove health checks from.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsRemoveHealthCheckRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeHealthCheckTargetPool(String targetPool, String requestId, TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
+  public final Operation removeHealthCheckTargetPool(
+      String targetPool,
+      String requestId,
+      TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
 
     RemoveHealthCheckTargetPoolHttpRequest request =
         RemoveHealthCheckTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool)
-        .setRequestId(requestId)
-        .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
-        .build();
+            .setTargetPool(targetPool)
+            .setRequestId(requestId)
+            .setTargetPoolsRemoveHealthCheckRequestResource(
+                targetPoolsRemoveHealthCheckRequestResource)
+            .build();
     return removeHealthCheckTargetPool(request);
   }
 
@@ -1192,7 +1293,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Removes health check URL from a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1211,7 +1313,8 @@ public class TargetPoolClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeHealthCheckTargetPool(RemoveHealthCheckTargetPoolHttpRequest request) {
+  public final Operation removeHealthCheckTargetPool(
+      RemoveHealthCheckTargetPoolHttpRequest request) {
     return removeHealthCheckTargetPoolCallable().call(request);
   }
 
@@ -1219,7 +1322,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Removes health check URL from a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1237,7 +1341,8 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<RemoveHealthCheckTargetPoolHttpRequest, Operation> removeHealthCheckTargetPoolCallable() {
+  public final UnaryCallable<RemoveHealthCheckTargetPoolHttpRequest, Operation>
+      removeHealthCheckTargetPoolCallable() {
     return stub.removeHealthCheckTargetPoolCallable();
   }
 
@@ -1245,7 +1350,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Removes instance URL from a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1256,23 +1362,30 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to remove instances from.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsRemoveInstanceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeInstanceTargetPool(ProjectRegionTargetPoolName targetPool, String requestId, TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
+  public final Operation removeInstanceTargetPool(
+      ProjectRegionTargetPoolName targetPool,
+      String requestId,
+      TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
 
     RemoveInstanceTargetPoolHttpRequest request =
         RemoveInstanceTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool == null ? null : targetPool.toString())
-        .setRequestId(requestId)
-        .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
-        .build();
+            .setTargetPool(targetPool == null ? null : targetPool.toString())
+            .setRequestId(requestId)
+            .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
+            .build();
     return removeInstanceTargetPool(request);
   }
 
@@ -1280,7 +1393,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Removes instance URL from a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1291,23 +1405,30 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to remove instances from.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetPoolsRemoveInstanceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removeInstanceTargetPool(String targetPool, String requestId, TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
+  public final Operation removeInstanceTargetPool(
+      String targetPool,
+      String requestId,
+      TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
 
     RemoveInstanceTargetPoolHttpRequest request =
         RemoveInstanceTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool)
-        .setRequestId(requestId)
-        .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
-        .build();
+            .setTargetPool(targetPool)
+            .setRequestId(requestId)
+            .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
+            .build();
     return removeInstanceTargetPool(request);
   }
 
@@ -1315,7 +1436,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Removes instance URL from a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1342,7 +1464,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Removes instance URL from a target pool.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1360,7 +1483,8 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<RemoveInstanceTargetPoolHttpRequest, Operation> removeInstanceTargetPoolCallable() {
+  public final UnaryCallable<RemoveInstanceTargetPoolHttpRequest, Operation>
+      removeInstanceTargetPoolCallable() {
     return stub.removeInstanceTargetPoolCallable();
   }
 
@@ -1368,7 +1492,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Changes a backup target pool's configurations.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1380,25 +1505,33 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to set a backup pool for.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param failoverRatio New failoverRatio value for the target pool.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackupTargetPool(ProjectRegionTargetPoolName targetPool, String requestId, Float failoverRatio, TargetReference targetReferenceResource) {
+  public final Operation setBackupTargetPool(
+      ProjectRegionTargetPoolName targetPool,
+      String requestId,
+      Float failoverRatio,
+      TargetReference targetReferenceResource) {
 
     SetBackupTargetPoolHttpRequest request =
         SetBackupTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool == null ? null : targetPool.toString())
-        .setRequestId(requestId)
-        .setFailoverRatio(failoverRatio)
-        .setTargetReferenceResource(targetReferenceResource)
-        .build();
+            .setTargetPool(targetPool == null ? null : targetPool.toString())
+            .setRequestId(requestId)
+            .setFailoverRatio(failoverRatio)
+            .setTargetReferenceResource(targetReferenceResource)
+            .build();
     return setBackupTargetPool(request);
   }
 
@@ -1406,7 +1539,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Changes a backup target pool's configurations.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1418,25 +1552,33 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetPool Name of the TargetPool resource to set a backup pool for.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param failoverRatio New failoverRatio value for the target pool.
    * @param targetReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackupTargetPool(String targetPool, String requestId, Float failoverRatio, TargetReference targetReferenceResource) {
+  public final Operation setBackupTargetPool(
+      String targetPool,
+      String requestId,
+      Float failoverRatio,
+      TargetReference targetReferenceResource) {
 
     SetBackupTargetPoolHttpRequest request =
         SetBackupTargetPoolHttpRequest.newBuilder()
-        .setTargetPool(targetPool)
-        .setRequestId(requestId)
-        .setFailoverRatio(failoverRatio)
-        .setTargetReferenceResource(targetReferenceResource)
-        .build();
+            .setTargetPool(targetPool)
+            .setRequestId(requestId)
+            .setFailoverRatio(failoverRatio)
+            .setTargetReferenceResource(targetReferenceResource)
+            .build();
     return setBackupTargetPool(request);
   }
 
@@ -1444,7 +1586,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Changes a backup target pool's configurations.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1473,7 +1616,8 @@ public class TargetPoolClient implements BackgroundResource {
   /**
    * Changes a backup target pool's configurations.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetPoolClient targetPoolClient = TargetPoolClient.create()) {
    *   ProjectRegionTargetPoolName targetPool = ProjectRegionTargetPoolName.of("[PROJECT]", "[REGION]", "[TARGET_POOL]");
@@ -1493,12 +1637,13 @@ public class TargetPoolClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetBackupTargetPoolHttpRequest, Operation> setBackupTargetPoolCallable() {
+  public final UnaryCallable<SetBackupTargetPoolHttpRequest, Operation>
+      setBackupTargetPoolCallable() {
     return stub.setBackupTargetPoolCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -1527,15 +1672,16 @@ public class TargetPoolClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListTargetPoolsPagedResponse extends AbstractPagedListResponse<
-      AggregatedListTargetPoolsHttpRequest,
-      TargetPoolAggregatedList,
-      TargetPoolsScopedList,
-      AggregatedListTargetPoolsPage,
-      AggregatedListTargetPoolsFixedSizeCollection> {
+  public static class AggregatedListTargetPoolsPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList,
+          AggregatedListTargetPoolsPage, AggregatedListTargetPoolsFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListTargetPoolsPagedResponse> createAsync(
-        PageContext<AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList> context,
+        PageContext<
+                AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
+                TargetPoolsScopedList>
+            context,
         ApiFuture<TargetPoolAggregatedList> futureResponse) {
       ApiFuture<AggregatedListTargetPoolsPage> futurePage =
           AggregatedListTargetPoolsPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -1543,7 +1689,8 @@ public class TargetPoolClient implements BackgroundResource {
           futurePage,
           new ApiFunction<AggregatedListTargetPoolsPage, AggregatedListTargetPoolsPagedResponse>() {
             @Override
-            public AggregatedListTargetPoolsPagedResponse apply(AggregatedListTargetPoolsPage input) {
+            public AggregatedListTargetPoolsPagedResponse apply(
+                AggregatedListTargetPoolsPage input) {
               return new AggregatedListTargetPoolsPagedResponse(input);
             }
           });
@@ -1552,18 +1699,18 @@ public class TargetPoolClient implements BackgroundResource {
     private AggregatedListTargetPoolsPagedResponse(AggregatedListTargetPoolsPage page) {
       super(page, AggregatedListTargetPoolsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListTargetPoolsPage extends AbstractPage<
-      AggregatedListTargetPoolsHttpRequest,
-      TargetPoolAggregatedList,
-      TargetPoolsScopedList,
-      AggregatedListTargetPoolsPage> {
+  public static class AggregatedListTargetPoolsPage
+      extends AbstractPage<
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList,
+          AggregatedListTargetPoolsPage> {
 
     private AggregatedListTargetPoolsPage(
-        PageContext<AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList> context,
+        PageContext<
+                AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
+                TargetPoolsScopedList>
+            context,
         TargetPoolAggregatedList response) {
       super(context, response);
     }
@@ -1574,31 +1721,32 @@ public class TargetPoolClient implements BackgroundResource {
 
     @Override
     protected AggregatedListTargetPoolsPage createPage(
-        PageContext<AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList> context,
+        PageContext<
+                AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
+                TargetPoolsScopedList>
+            context,
         TargetPoolAggregatedList response) {
       return new AggregatedListTargetPoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListTargetPoolsPage> createPageAsync(
-        PageContext<AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList> context,
+        PageContext<
+                AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
+                TargetPoolsScopedList>
+            context,
         ApiFuture<TargetPoolAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListTargetPoolsFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListTargetPoolsHttpRequest,
-      TargetPoolAggregatedList,
-      TargetPoolsScopedList,
-      AggregatedListTargetPoolsPage,
-      AggregatedListTargetPoolsFixedSizeCollection> {
+  public static class AggregatedListTargetPoolsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList,
+          AggregatedListTargetPoolsPage, AggregatedListTargetPoolsFixedSizeCollection> {
 
-    private AggregatedListTargetPoolsFixedSizeCollection(List<AggregatedListTargetPoolsPage> pages, int collectionSize) {
+    private AggregatedListTargetPoolsFixedSizeCollection(
+        List<AggregatedListTargetPoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1611,15 +1759,12 @@ public class TargetPoolClient implements BackgroundResource {
         List<AggregatedListTargetPoolsPage> pages, int collectionSize) {
       return new AggregatedListTargetPoolsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListTargetPoolsPagedResponse extends AbstractPagedListResponse<
-      ListTargetPoolsHttpRequest,
-      TargetPoolList,
-      TargetPool,
-      ListTargetPoolsPage,
-      ListTargetPoolsFixedSizeCollection> {
+
+  public static class ListTargetPoolsPagedResponse
+      extends AbstractPagedListResponse<
+          ListTargetPoolsHttpRequest, TargetPoolList, TargetPool, ListTargetPoolsPage,
+          ListTargetPoolsFixedSizeCollection> {
 
     public static ApiFuture<ListTargetPoolsPagedResponse> createAsync(
         PageContext<ListTargetPoolsHttpRequest, TargetPoolList, TargetPool> context,
@@ -1639,15 +1784,11 @@ public class TargetPoolClient implements BackgroundResource {
     private ListTargetPoolsPagedResponse(ListTargetPoolsPage page) {
       super(page, ListTargetPoolsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListTargetPoolsPage extends AbstractPage<
-      ListTargetPoolsHttpRequest,
-      TargetPoolList,
-      TargetPool,
-      ListTargetPoolsPage> {
+  public static class ListTargetPoolsPage
+      extends AbstractPage<
+          ListTargetPoolsHttpRequest, TargetPoolList, TargetPool, ListTargetPoolsPage> {
 
     private ListTargetPoolsPage(
         PageContext<ListTargetPoolsHttpRequest, TargetPoolList, TargetPool> context,
@@ -1672,20 +1813,15 @@ public class TargetPoolClient implements BackgroundResource {
         ApiFuture<TargetPoolList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListTargetPoolsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListTargetPoolsHttpRequest,
-      TargetPoolList,
-      TargetPool,
-      ListTargetPoolsPage,
-      ListTargetPoolsFixedSizeCollection> {
+  public static class ListTargetPoolsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTargetPoolsHttpRequest, TargetPoolList, TargetPool, ListTargetPoolsPage,
+          ListTargetPoolsFixedSizeCollection> {
 
-    private ListTargetPoolsFixedSizeCollection(List<ListTargetPoolsPage> pages, int collectionSize) {
+    private ListTargetPoolsFixedSizeCollection(
+        List<ListTargetPoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1698,7 +1834,5 @@ public class TargetPoolClient implements BackgroundResource {
         List<ListTargetPoolsPage> pages, int collectionSize) {
       return new ListTargetPoolsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

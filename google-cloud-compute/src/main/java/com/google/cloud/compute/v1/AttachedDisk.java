@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,7 +61,6 @@ public final class AttachedDisk implements ApiMessage {
     this.type = null;
   }
 
-
   private AttachedDisk(
       Boolean autoDelete,
       Boolean boot,
@@ -76,8 +74,7 @@ public final class AttachedDisk implements ApiMessage {
       List<String> licenses,
       String mode,
       String source,
-      String type
-      ) {
+      String type) {
     this.autoDelete = autoDelete;
     this.boot = boot;
     this.deviceName = deviceName;
@@ -106,7 +103,8 @@ public final class AttachedDisk implements ApiMessage {
       fieldMap.put("deviceName", Collections.singletonList(String.valueOf(deviceName)));
     }
     if (fieldNames.contains("diskEncryptionKey") && diskEncryptionKey != null) {
-      fieldMap.put("diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
+      fieldMap.put(
+          "diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
     }
     if (fieldNames.contains("guestOsFeatures") && guestOsFeatures != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -248,22 +246,24 @@ public final class AttachedDisk implements ApiMessage {
     return type;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AttachedDisk prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AttachedDisk getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AttachedDisk DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AttachedDisk();
   }
@@ -478,35 +478,22 @@ public final class AttachedDisk implements ApiMessage {
       return this;
     }
 
-
     public AttachedDisk build() {
 
-
-
-
-
-
-
-
-
-
-
-
       return new AttachedDisk(
-        autoDelete,
-        boot,
-        deviceName,
-        diskEncryptionKey,
-        guestOsFeatures,
-        index,
-        initializeParams,
-        interface2,
-        kind,
-        licenses,
-        mode,
-        source,
-        type
-      );
+          autoDelete,
+          boot,
+          deviceName,
+          diskEncryptionKey,
+          guestOsFeatures,
+          index,
+          initializeParams,
+          interface2,
+          kind,
+          licenses,
+          mode,
+          source,
+          type);
     }
 
     public Builder clone() {
@@ -531,19 +518,44 @@ public final class AttachedDisk implements ApiMessage {
   @Override
   public String toString() {
     return "AttachedDisk{"
-        + "autoDelete=" + autoDelete + ", "
-        + "boot=" + boot + ", "
-        + "deviceName=" + deviceName + ", "
-        + "diskEncryptionKey=" + diskEncryptionKey + ", "
-        + "guestOsFeatures=" + guestOsFeatures + ", "
-        + "index=" + index + ", "
-        + "initializeParams=" + initializeParams + ", "
-        + "interface2=" + interface2 + ", "
-        + "kind=" + kind + ", "
-        + "licenses=" + licenses + ", "
-        + "mode=" + mode + ", "
-        + "source=" + source + ", "
-        + "type=" + type
+        + "autoDelete="
+        + autoDelete
+        + ", "
+        + "boot="
+        + boot
+        + ", "
+        + "deviceName="
+        + deviceName
+        + ", "
+        + "diskEncryptionKey="
+        + diskEncryptionKey
+        + ", "
+        + "guestOsFeatures="
+        + guestOsFeatures
+        + ", "
+        + "index="
+        + index
+        + ", "
+        + "initializeParams="
+        + initializeParams
+        + ", "
+        + "interface2="
+        + interface2
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "licenses="
+        + licenses
+        + ", "
+        + "mode="
+        + mode
+        + ", "
+        + "source="
+        + source
+        + ", "
+        + "type="
+        + type
         + "}";
   }
 
@@ -554,21 +566,19 @@ public final class AttachedDisk implements ApiMessage {
     }
     if (o instanceof AttachedDisk) {
       AttachedDisk that = (AttachedDisk) o;
-      return
-          Objects.equals(this.autoDelete, that.getAutoDelete()) &&
-          Objects.equals(this.boot, that.getBoot()) &&
-          Objects.equals(this.deviceName, that.getDeviceName()) &&
-          Objects.equals(this.diskEncryptionKey, that.getDiskEncryptionKey()) &&
-          Objects.equals(this.guestOsFeatures, that.getGuestOsFeaturesList()) &&
-          Objects.equals(this.index, that.getIndex()) &&
-          Objects.equals(this.initializeParams, that.getInitializeParams()) &&
-          Objects.equals(this.interface2, that.getInterface()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.licenses, that.getLicensesList()) &&
-          Objects.equals(this.mode, that.getMode()) &&
-          Objects.equals(this.source, that.getSource()) &&
-          Objects.equals(this.type, that.getType())
-          ;
+      return Objects.equals(this.autoDelete, that.getAutoDelete())
+          && Objects.equals(this.boot, that.getBoot())
+          && Objects.equals(this.deviceName, that.getDeviceName())
+          && Objects.equals(this.diskEncryptionKey, that.getDiskEncryptionKey())
+          && Objects.equals(this.guestOsFeatures, that.getGuestOsFeaturesList())
+          && Objects.equals(this.index, that.getIndex())
+          && Objects.equals(this.initializeParams, that.getInitializeParams())
+          && Objects.equals(this.interface2, that.getInterface())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.licenses, that.getLicensesList())
+          && Objects.equals(this.mode, that.getMode())
+          && Objects.equals(this.source, that.getSource())
+          && Objects.equals(this.type, that.getType());
     }
     return false;
   }
@@ -576,19 +586,18 @@ public final class AttachedDisk implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      autoDelete,
-      boot,
-      deviceName,
-      diskEncryptionKey,
-      guestOsFeatures,
-      index,
-      initializeParams,
-      interface2,
-      kind,
-      licenses,
-      mode,
-      source,
-      type
-    );
+        autoDelete,
+        boot,
+        deviceName,
+        diskEncryptionKey,
+        guestOsFeatures,
+        index,
+        initializeParams,
+        interface2,
+        kind,
+        licenses,
+        mode,
+        source,
+        type);
   }
 }

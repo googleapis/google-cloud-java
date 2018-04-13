@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,12 +39,8 @@ public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessag
     this.utilizationTargetType = null;
   }
 
-
   private AutoscalingPolicyCustomMetricUtilization(
-      String metric,
-      Double utilizationTarget,
-      String utilizationTargetType
-      ) {
+      String metric, Double utilizationTarget, String utilizationTargetType) {
     this.metric = metric;
     this.utilizationTarget = utilizationTarget;
     this.utilizationTargetType = utilizationTargetType;
@@ -60,10 +53,13 @@ public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessag
       fieldMap.put("metric", Collections.singletonList(String.valueOf(metric)));
     }
     if (fieldNames.contains("utilizationTarget") && utilizationTarget != null) {
-      fieldMap.put("utilizationTarget", Collections.singletonList(String.valueOf(utilizationTarget)));
+      fieldMap.put(
+          "utilizationTarget", Collections.singletonList(String.valueOf(utilizationTarget)));
     }
     if (fieldNames.contains("utilizationTargetType") && utilizationTargetType != null) {
-      fieldMap.put("utilizationTargetType", Collections.singletonList(String.valueOf(utilizationTargetType)));
+      fieldMap.put(
+          "utilizationTargetType",
+          Collections.singletonList(String.valueOf(utilizationTargetType)));
     }
     return fieldMap;
   }
@@ -100,22 +96,24 @@ public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessag
     return utilizationTargetType;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AutoscalingPolicyCustomMetricUtilization prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AutoscalingPolicyCustomMetricUtilization getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AutoscalingPolicyCustomMetricUtilization DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AutoscalingPolicyCustomMetricUtilization();
   }
@@ -174,15 +172,10 @@ public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessag
       return this;
     }
 
-
     public AutoscalingPolicyCustomMetricUtilization build() {
 
-
       return new AutoscalingPolicyCustomMetricUtilization(
-        metric,
-        utilizationTarget,
-        utilizationTargetType
-      );
+          metric, utilizationTarget, utilizationTargetType);
     }
 
     public Builder clone() {
@@ -197,9 +190,14 @@ public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessag
   @Override
   public String toString() {
     return "AutoscalingPolicyCustomMetricUtilization{"
-        + "metric=" + metric + ", "
-        + "utilizationTarget=" + utilizationTarget + ", "
-        + "utilizationTargetType=" + utilizationTargetType
+        + "metric="
+        + metric
+        + ", "
+        + "utilizationTarget="
+        + utilizationTarget
+        + ", "
+        + "utilizationTargetType="
+        + utilizationTargetType
         + "}";
   }
 
@@ -210,21 +208,15 @@ public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessag
     }
     if (o instanceof AutoscalingPolicyCustomMetricUtilization) {
       AutoscalingPolicyCustomMetricUtilization that = (AutoscalingPolicyCustomMetricUtilization) o;
-      return
-          Objects.equals(this.metric, that.getMetric()) &&
-          Objects.equals(this.utilizationTarget, that.getUtilizationTarget()) &&
-          Objects.equals(this.utilizationTargetType, that.getUtilizationTargetType())
-          ;
+      return Objects.equals(this.metric, that.getMetric())
+          && Objects.equals(this.utilizationTarget, that.getUtilizationTarget())
+          && Objects.equals(this.utilizationTargetType, that.getUtilizationTargetType());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      metric,
-      utilizationTarget,
-      utilizationTargetType
-    );
+    return Objects.hash(metric, utilizationTarget, utilizationTargetType);
   }
 }

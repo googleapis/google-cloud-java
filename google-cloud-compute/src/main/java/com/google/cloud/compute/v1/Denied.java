@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class Denied implements ApiMessage {
     this.ports = null;
   }
 
-
-  private Denied(
-      String iPProtocol,
-      List<String> ports
-      ) {
+  private Denied(String iPProtocol, List<String> ports) {
     this.iPProtocol = iPProtocol;
     this.ports = ports;
   }
@@ -90,22 +85,24 @@ public final class Denied implements ApiMessage {
     return ports;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Denied prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Denied getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Denied DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Denied();
   }
@@ -158,13 +155,9 @@ public final class Denied implements ApiMessage {
       return this;
     }
 
-
     public Denied build() {
 
-      return new Denied(
-        iPProtocol,
-        ports
-      );
+      return new Denied(iPProtocol, ports);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class Denied implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Denied{"
-        + "iPProtocol=" + iPProtocol + ", "
-        + "ports=" + ports
-        + "}";
+    return "Denied{" + "iPProtocol=" + iPProtocol + ", " + "ports=" + ports + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class Denied implements ApiMessage {
     }
     if (o instanceof Denied) {
       Denied that = (Denied) o;
-      return
-          Objects.equals(this.iPProtocol, that.getIPProtocol()) &&
-          Objects.equals(this.ports, that.getPortsList())
-          ;
+      return Objects.equals(this.iPProtocol, that.getIPProtocol())
+          && Objects.equals(this.ports, that.getPortsList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      iPProtocol,
-      ports
-    );
+    return Objects.hash(iPProtocol, ports);
   }
 }

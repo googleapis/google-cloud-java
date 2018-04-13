@@ -15,6 +15,17 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.BackendServiceClient.AggregatedListBackendServicesPagedResponse;
+import static com.google.cloud.compute.v1.BackendServiceClient.ListBackendServicesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.aggregatedListBackendServicesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.deleteBackendServiceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getBackendServiceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getHealthBackendServiceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.insertBackendServiceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.listBackendServicesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.patchBackendServiceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.updateBackendServiceMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,17 +36,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.BackendServiceClient.AggregatedListBackendServicesPagedResponse;
-import static com.google.cloud.compute.v1.BackendServiceClient.ListBackendServicesPagedResponse;
 import com.google.cloud.compute.v1.stub.BackendServiceStubSettings;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.aggregatedListBackendServicesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.deleteBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.getHealthBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.insertBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.listBackendServicesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.patchBackendServiceMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonBackendServiceStub.updateBackendServiceMethodDescriptor;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -52,19 +53,19 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class BackendServiceClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          aggregatedListBackendServicesMethodDescriptor,
-          deleteBackendServiceMethodDescriptor,
-          getBackendServiceMethodDescriptor,
-          getHealthBackendServiceMethodDescriptor,
-          insertBackendServiceMethodDescriptor,
-          listBackendServicesMethodDescriptor,
-          patchBackendServiceMethodDescriptor,
-          updateBackendServiceMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, BackendServiceStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              aggregatedListBackendServicesMethodDescriptor,
+              deleteBackendServiceMethodDescriptor,
+              getBackendServiceMethodDescriptor,
+              getHealthBackendServiceMethodDescriptor,
+              insertBackendServiceMethodDescriptor,
+              listBackendServicesMethodDescriptor,
+              patchBackendServiceMethodDescriptor,
+              updateBackendServiceMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, BackendServiceStubSettings.getDefaultEndpoint());
 
   private static BackendServiceClient client;
   private static BackendServiceSettings clientSettings;
@@ -73,13 +74,13 @@ public class BackendServiceClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         BackendServiceSettings.newBuilder()
-           .setTransportChannelProvider(
-               BackendServiceSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       BackendServiceClient.create(clientSettings);
+            .setTransportChannelProvider(
+                BackendServiceSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = BackendServiceClient.create(clientSettings);
   }
 
   @After
@@ -102,37 +103,47 @@ public class BackendServiceClientTest {
     BackendServicesScopedList itemsItem = BackendServicesScopedList.newBuilder().build();
     Map<String, BackendServicesScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
-    BackendServiceAggregatedList expectedResponse = BackendServiceAggregatedList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .putAllItems(items)
-      .build();
+    BackendServiceAggregatedList expectedResponse =
+        BackendServiceAggregatedList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .putAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    AggregatedListBackendServicesPagedResponse pagedListResponse = client.aggregatedListBackendServices(project);
+    AggregatedListBackendServicesPagedResponse pagedListResponse =
+        client.aggregatedListBackendServices(project);
 
     List<BackendServicesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsMap().values().iterator().next(),
-        resources.get(0));
+    Assert.assertEquals(
+        expectedResponse.getItemsMap().values().iterator().next(), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void aggregatedListBackendServicesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -169,56 +180,66 @@ public class BackendServiceClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectGlobalBackendServiceName backendService =
+        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
-    Operation actualResponse =
-        client.deleteBackendService(requestId, backendService);
+    Operation actualResponse = client.deleteBackendService(requestId, backendService);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteBackendServiceExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectGlobalBackendServiceName backendService =
+          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
       client.deleteBackendService(requestId, backendService);
       Assert.fail("No exception raised");
@@ -246,49 +267,59 @@ public class BackendServiceClientTest {
     String name = "name3373707";
     String id = "id3355";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    BackendService expectedResponse = BackendService.newBuilder()
-      .setAffinityCookieTtlSec(affinityCookieTtlSec)
-      .setKind(kind)
-      .setSessionAffinity(sessionAffinity)
-      .setDescription(description)
-      .setLoadBalancingScheme(loadBalancingScheme)
-      .setPortName(portName)
-      .setTimeoutSec(timeoutSec)
-      .setSelfLink(selfLink)
-      .setProtocol(protocol)
-      .setEnableCDN(enableCDN)
-      .setPort(port)
-      .setCreationTimestamp(creationTimestamp)
-      .setFingerprint(fingerprint)
-      .setName(name)
-      .setId(id)
-      .setRegion(region.toString())
-      .build();
+    BackendService expectedResponse =
+        BackendService.newBuilder()
+            .setAffinityCookieTtlSec(affinityCookieTtlSec)
+            .setKind(kind)
+            .setSessionAffinity(sessionAffinity)
+            .setDescription(description)
+            .setLoadBalancingScheme(loadBalancingScheme)
+            .setPortName(portName)
+            .setTimeoutSec(timeoutSec)
+            .setSelfLink(selfLink)
+            .setProtocol(protocol)
+            .setEnableCDN(enableCDN)
+            .setPort(port)
+            .setCreationTimestamp(creationTimestamp)
+            .setFingerprint(fingerprint)
+            .setName(name)
+            .setId(id)
+            .setRegion(region.toString())
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectGlobalBackendServiceName backendService =
+        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
-    BackendService actualResponse =
-        client.getBackendService(backendService);
+    BackendService actualResponse = client.getBackendService(backendService);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getBackendServiceExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectGlobalBackendServiceName backendService =
+          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
 
       client.getBackendService(backendService);
       Assert.fail("No exception raised");
@@ -301,13 +332,14 @@ public class BackendServiceClientTest {
   @SuppressWarnings("all")
   public void getHealthBackendServiceTest() {
     String kind = "kind3292052";
-    BackendServiceGroupHealth expectedResponse = BackendServiceGroupHealth.newBuilder()
-      .setKind(kind)
-      .build();
+    BackendServiceGroupHealth expectedResponse =
+        BackendServiceGroupHealth.newBuilder().setKind(kind).build();
     mockService.addResponse(expectedResponse);
 
-    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-    ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
+    ProjectGlobalBackendServiceName backendService =
+        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ResourceGroupReference resourceGroupReferenceResource =
+        ResourceGroupReference.newBuilder().build();
 
     BackendServiceGroupHealth actualResponse =
         client.getHealthBackendService(backendService, resourceGroupReferenceResource);
@@ -316,21 +348,31 @@ public class BackendServiceClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getHealthBackendServiceExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
-      ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
+      ProjectGlobalBackendServiceName backendService =
+          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ResourceGroupReference resourceGroupReferenceResource =
+          ResourceGroupReference.newBuilder().build();
 
       client.getHealthBackendService(backendService, resourceGroupReferenceResource);
       Assert.fail("No exception raised");
@@ -363,29 +405,30 @@ public class BackendServiceClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
@@ -399,16 +442,24 @@ public class BackendServiceClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void insertBackendServiceExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -432,13 +483,14 @@ public class BackendServiceClientTest {
     String selfLink = "selfLink-1691268851";
     BackendService itemsElement = BackendService.newBuilder().build();
     List<BackendService> items = Arrays.asList(itemsElement);
-    BackendServiceList expectedResponse = BackendServiceList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    BackendServiceList expectedResponse =
+        BackendServiceList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -447,22 +499,29 @@ public class BackendServiceClientTest {
 
     List<BackendService> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listBackendServicesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -499,33 +558,35 @@ public class BackendServiceClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectGlobalBackendServiceName backendService =
+        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
@@ -535,21 +596,30 @@ public class BackendServiceClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void patchBackendServiceExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectGlobalBackendServiceName backendService =
+          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
 
       client.patchBackendService(requestId, backendService, backendServiceResource);
@@ -583,33 +653,35 @@ public class BackendServiceClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+    ProjectGlobalBackendServiceName backendService =
+        ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     BackendService backendServiceResource = BackendService.newBuilder().build();
 
     Operation actualResponse =
@@ -619,21 +691,30 @@ public class BackendServiceClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void updateBackendServiceExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectBackendServiceName backendService = ProjectBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
+      ProjectGlobalBackendServiceName backendService =
+          ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
       BackendService backendServiceResource = BackendService.newBuilder().build();
 
       client.updateBackendService(requestId, backendService, backendServiceResource);
@@ -642,5 +723,4 @@ public class BackendServiceClientTest {
       // Expected exception
     }
   }
-
 }

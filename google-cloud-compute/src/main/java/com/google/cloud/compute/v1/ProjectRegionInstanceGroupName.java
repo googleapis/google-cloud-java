@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectRegionInstanceGroupName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectRegionInstanceGroupName implements ResourceName {
   private final String instanceGroup;
   private final String project;
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/instanceGroups/{instanceGroup}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/instanceGroups/{instanceGroup}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -55,28 +52,16 @@ public final class ProjectRegionInstanceGroupName implements com.google.api.reso
   }
 
   public static ProjectRegionInstanceGroupName of(
-      String instanceGroup,
-      String project,
-      String region
-      ) {
+      String instanceGroup, String project, String region) {
     return newBuilder()
-    .setInstanceGroup(instanceGroup)
-    .setProject(project)
-    .setRegion(region)
-      .build();
+        .setInstanceGroup(instanceGroup)
+        .setProject(project)
+        .setRegion(region)
+        .build();
   }
 
-  public static String format(
-      String instanceGroup,
-      String project,
-      String region
-      ) {
-    return of(
-        instanceGroup,
-        project,
-        region
-        )
-        .toString();
+  public static String format(String instanceGroup, String project, String region) {
+    return of(instanceGroup, project, region).toString();
   }
 
   public String getInstanceGroup() {
@@ -90,7 +75,6 @@ public final class ProjectRegionInstanceGroupName implements com.google.api.reso
   public String getRegion() {
     return region;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +96,20 @@ public final class ProjectRegionInstanceGroupName implements com.google.api.reso
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectRegionInstanceGroupName> newFactory() {
     return new ResourceNameFactory<ProjectRegionInstanceGroupName>() {
-      public ProjectRegionInstanceGroupName parse(String formattedString) {return ProjectRegionInstanceGroupName.parse(formattedString);}
+      public ProjectRegionInstanceGroupName parse(String formattedString) {
+        return ProjectRegionInstanceGroupName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectRegionInstanceGroupName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRegionInstanceGroupName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("instanceGroup"),
-      matchMap.get("project"),
-      matchMap.get("region")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectRegionInstanceGroupName.parse: formattedString not in valid format");
+    return of(matchMap.get("instanceGroup"), matchMap.get("project"), matchMap.get("region"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +124,11 @@ public final class ProjectRegionInstanceGroupName implements com.google.api.reso
     public String getInstanceGroup() {
       return instanceGroup;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getRegion() {
       return region;
     }
@@ -152,10 +137,12 @@ public final class ProjectRegionInstanceGroupName implements com.google.api.reso
       this.instanceGroup = instanceGroup;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setRegion(String region) {
       this.region = region;
       return this;
@@ -163,7 +150,7 @@ public final class ProjectRegionInstanceGroupName implements com.google.api.reso
 
     private Builder() {}
 
-    public Builder (ProjectRegionInstanceGroupName projectRegionInstanceGroupName) {
+    public Builder(ProjectRegionInstanceGroupName projectRegionInstanceGroupName) {
       instanceGroup = projectRegionInstanceGroupName.instanceGroup;
       project = projectRegionInstanceGroupName.project;
       region = projectRegionInstanceGroupName.region;
@@ -179,8 +166,7 @@ public final class ProjectRegionInstanceGroupName implements com.google.api.reso
     return PATH_TEMPLATE.instantiate(
         "instanceGroup", instanceGroup,
         "project", project,
-        "region", region
-        );
+        "region", region);
   }
 
   @Override
@@ -190,21 +176,15 @@ public final class ProjectRegionInstanceGroupName implements com.google.api.reso
     }
     if (o instanceof ProjectRegionInstanceGroupName) {
       ProjectRegionInstanceGroupName that = (ProjectRegionInstanceGroupName) o;
-      return
-          Objects.equals(this.instanceGroup, that.getInstanceGroup()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.region, that.getRegion())
-          ;
+      return Objects.equals(this.instanceGroup, that.getInstanceGroup())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.region, that.getRegion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instanceGroup,
-      project,
-      region
-    );
+    return Objects.hash(instanceGroup, project, region);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class DiskMoveRequest implements ApiMessage {
     this.targetDisk = null;
   }
 
-
-  private DiskMoveRequest(
-      String destinationZone,
-      String targetDisk
-      ) {
+  private DiskMoveRequest(String destinationZone, String targetDisk) {
     this.destinationZone = destinationZone;
     this.targetDisk = targetDisk;
   }
@@ -86,22 +79,24 @@ public final class DiskMoveRequest implements ApiMessage {
     return targetDisk;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DiskMoveRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DiskMoveRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DiskMoveRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DiskMoveRequest();
   }
@@ -146,13 +141,9 @@ public final class DiskMoveRequest implements ApiMessage {
       return this;
     }
 
-
     public DiskMoveRequest build() {
 
-      return new DiskMoveRequest(
-        destinationZone,
-        targetDisk
-      );
+      return new DiskMoveRequest(destinationZone, targetDisk);
     }
 
     public Builder clone() {
@@ -166,8 +157,11 @@ public final class DiskMoveRequest implements ApiMessage {
   @Override
   public String toString() {
     return "DiskMoveRequest{"
-        + "destinationZone=" + destinationZone + ", "
-        + "targetDisk=" + targetDisk
+        + "destinationZone="
+        + destinationZone
+        + ", "
+        + "targetDisk="
+        + targetDisk
         + "}";
   }
 
@@ -178,19 +172,14 @@ public final class DiskMoveRequest implements ApiMessage {
     }
     if (o instanceof DiskMoveRequest) {
       DiskMoveRequest that = (DiskMoveRequest) o;
-      return
-          Objects.equals(this.destinationZone, that.getDestinationZone()) &&
-          Objects.equals(this.targetDisk, that.getTargetDisk())
-          ;
+      return Objects.equals(this.destinationZone, that.getDestinationZone())
+          && Objects.equals(this.targetDisk, that.getTargetDisk());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      destinationZone,
-      targetDisk
-    );
+    return Objects.hash(destinationZone, targetDisk);
   }
 }

@@ -15,11 +15,12 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.BackendBucketClient.ListBackendBucketsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BackendBucket;
-import static com.google.cloud.compute.v1.BackendBucketClient.ListBackendBucketsPagedResponse;
 import com.google.cloud.compute.v1.BackendBucketList;
 import com.google.cloud.compute.v1.DeleteBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.GetBackendBucketHttpRequest;
@@ -27,8 +28,6 @@ import com.google.cloud.compute.v1.InsertBackendBucketHttpRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendBucketHttpRequest;
-import com.google.cloud.compute.v1.ProjectBackendBucketName;
-import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.UpdateBackendBucketHttpRequest;
 import javax.annotation.Generated;
 
@@ -41,7 +40,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class BackendBucketStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteBackendBucketHttpRequest, Operation> deleteBackendBucketCallable() {
@@ -59,12 +57,14 @@ public abstract class BackendBucketStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListBackendBucketsHttpRequest, ListBackendBucketsPagedResponse> listBackendBucketsPagedCallable() {
+  public UnaryCallable<ListBackendBucketsHttpRequest, ListBackendBucketsPagedResponse>
+      listBackendBucketsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listBackendBucketsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListBackendBucketsHttpRequest, BackendBucketList> listBackendBucketsCallable() {
+  public UnaryCallable<ListBackendBucketsHttpRequest, BackendBucketList>
+      listBackendBucketsCallable() {
     throw new UnsupportedOperationException("Not implemented: listBackendBucketsCallable()");
   }
 
@@ -78,4 +78,6 @@ public abstract class BackendBucketStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateBackendBucketCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private DeleteTargetInstanceHttpRequest(
       String access_token,
       String callback,
@@ -64,8 +60,7 @@ public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
       String quotaUser,
       String requestId,
       String targetInstance,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -184,22 +179,24 @@ public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DeleteTargetInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeleteTargetInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DeleteTargetInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DeleteTargetInstanceHttpRequest();
   }
@@ -342,15 +339,8 @@ public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public DeleteTargetInstanceHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (targetInstance == null) {
         missing += " targetInstance";
@@ -360,16 +350,15 @@ public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new DeleteTargetInstanceHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetInstance,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetInstance,
+          userIp);
     }
 
     public Builder clone() {
@@ -390,15 +379,32 @@ public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "DeleteTargetInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetInstance=" + targetInstance + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetInstance="
+        + targetInstance
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -409,17 +415,15 @@ public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
     }
     if (o instanceof DeleteTargetInstanceHttpRequest) {
       DeleteTargetInstanceHttpRequest that = (DeleteTargetInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetInstance, that.getTargetInstance()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.targetInstance, that.getTargetInstance())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -427,15 +431,14 @@ public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetInstance,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetInstance,
+        userIp);
   }
 }

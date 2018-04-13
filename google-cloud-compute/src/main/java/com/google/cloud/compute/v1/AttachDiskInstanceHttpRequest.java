@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private AttachDiskInstanceHttpRequest(
       String access_token,
       AttachedDisk attachedDiskResource,
@@ -67,8 +63,7 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.attachedDiskResource = attachedDiskResource;
     this.callback = callback;
@@ -88,7 +83,8 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
       fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
     }
     if (fieldNames.contains("attachedDiskResource") && attachedDiskResource != null) {
-      fieldMap.put("attachedDiskResource", Collections.singletonList(String.valueOf(attachedDiskResource)));
+      fieldMap.put(
+          "attachedDiskResource", Collections.singletonList(String.valueOf(attachedDiskResource)));
     }
     if (fieldNames.contains("callback") && callback != null) {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
@@ -198,22 +194,24 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AttachDiskInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AttachDiskInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AttachDiskInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AttachDiskInstanceHttpRequest();
   }
@@ -370,36 +368,27 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public AttachDiskInstanceHttpRequest build() {
       String missing = "";
-
-
-
 
       if (instance == null) {
         missing += " instance";
       }
 
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new AttachDiskInstanceHttpRequest(
-        access_token,
-        attachedDiskResource,
-        callback,
-        fields,
-        instance,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          attachedDiskResource,
+          callback,
+          fields,
+          instance,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +410,35 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "AttachDiskInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "attachedDiskResource=" + attachedDiskResource + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instance=" + instance + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "attachedDiskResource="
+        + attachedDiskResource
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +449,16 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     }
     if (o instanceof AttachDiskInstanceHttpRequest) {
       AttachDiskInstanceHttpRequest that = (AttachDiskInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.attachedDiskResource, that.getAttachedDiskResource()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.attachedDiskResource, that.getAttachedDiskResource())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +466,15 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      attachedDiskResource,
-      callback,
-      fields,
-      instance,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        attachedDiskResource,
+        callback,
+        fields,
+        instance,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

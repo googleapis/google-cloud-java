@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest implements ApiMessage {
     this.proxyHeader = null;
   }
 
-
-  private TargetSslProxiesSetProxyHeaderRequest(
-      String proxyHeader
-      ) {
+  private TargetSslProxiesSetProxyHeaderRequest(String proxyHeader) {
     this.proxyHeader = proxyHeader;
   }
 
@@ -72,22 +66,24 @@ public final class TargetSslProxiesSetProxyHeaderRequest implements ApiMessage {
     return proxyHeader;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetSslProxiesSetProxyHeaderRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetSslProxiesSetProxyHeaderRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetSslProxiesSetProxyHeaderRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetSslProxiesSetProxyHeaderRequest();
   }
@@ -118,11 +114,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest implements ApiMessage {
       return this;
     }
 
-
     public TargetSslProxiesSetProxyHeaderRequest build() {
-      return new TargetSslProxiesSetProxyHeaderRequest(
-        proxyHeader
-      );
+      return new TargetSslProxiesSetProxyHeaderRequest(proxyHeader);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "TargetSslProxiesSetProxyHeaderRequest{"
-        + "proxyHeader=" + proxyHeader
-        + "}";
+    return "TargetSslProxiesSetProxyHeaderRequest{" + "proxyHeader=" + proxyHeader + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class TargetSslProxiesSetProxyHeaderRequest implements ApiMessage {
     }
     if (o instanceof TargetSslProxiesSetProxyHeaderRequest) {
       TargetSslProxiesSetProxyHeaderRequest that = (TargetSslProxiesSetProxyHeaderRequest) o;
-      return
-          Objects.equals(this.proxyHeader, that.getProxyHeader())
-          ;
+      return Objects.equals(this.proxyHeader, that.getProxyHeader());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      proxyHeader
-    );
+    return Objects.hash(proxyHeader);
   }
 }

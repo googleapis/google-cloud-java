@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -44,13 +41,7 @@ public final class TestFailure implements ApiMessage {
     this.path = null;
   }
 
-
-  private TestFailure(
-      String actualService,
-      String expectedService,
-      String host,
-      String path
-      ) {
+  private TestFailure(String actualService, String expectedService, String host, String path) {
     this.actualService = actualService;
     this.expectedService = expectedService;
     this.host = host;
@@ -114,22 +105,24 @@ public final class TestFailure implements ApiMessage {
     return path;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TestFailure prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TestFailure getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TestFailure DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TestFailure();
   }
@@ -202,17 +195,9 @@ public final class TestFailure implements ApiMessage {
       return this;
     }
 
-
     public TestFailure build() {
 
-
-
-      return new TestFailure(
-        actualService,
-        expectedService,
-        host,
-        path
-      );
+      return new TestFailure(actualService, expectedService, host, path);
     }
 
     public Builder clone() {
@@ -228,10 +213,17 @@ public final class TestFailure implements ApiMessage {
   @Override
   public String toString() {
     return "TestFailure{"
-        + "actualService=" + actualService + ", "
-        + "expectedService=" + expectedService + ", "
-        + "host=" + host + ", "
-        + "path=" + path
+        + "actualService="
+        + actualService
+        + ", "
+        + "expectedService="
+        + expectedService
+        + ", "
+        + "host="
+        + host
+        + ", "
+        + "path="
+        + path
         + "}";
   }
 
@@ -242,23 +234,16 @@ public final class TestFailure implements ApiMessage {
     }
     if (o instanceof TestFailure) {
       TestFailure that = (TestFailure) o;
-      return
-          Objects.equals(this.actualService, that.getActualService()) &&
-          Objects.equals(this.expectedService, that.getExpectedService()) &&
-          Objects.equals(this.host, that.getHost()) &&
-          Objects.equals(this.path, that.getPath())
-          ;
+      return Objects.equals(this.actualService, that.getActualService())
+          && Objects.equals(this.expectedService, that.getExpectedService())
+          && Objects.equals(this.host, that.getHost())
+          && Objects.equals(this.path, that.getPath());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      actualService,
-      expectedService,
-      host,
-      path
-    );
+    return Objects.hash(actualService, expectedService, host, path);
   }
 }

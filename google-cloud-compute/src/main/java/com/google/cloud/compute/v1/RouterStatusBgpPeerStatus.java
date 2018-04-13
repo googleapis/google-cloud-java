@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -56,7 +55,6 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
     this.uptimeSeconds = null;
   }
 
-
   private RouterStatusBgpPeerStatus(
       List<Route> advertisedRoutes,
       String ipAddress,
@@ -67,8 +65,7 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
       String state,
       String status,
       String uptime,
-      String uptimeSeconds
-      ) {
+      String uptimeSeconds) {
     this.advertisedRoutes = advertisedRoutes;
     this.ipAddress = ipAddress;
     this.linkedVpnTunnel = linkedVpnTunnel;
@@ -202,22 +199,24 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
     return uptimeSeconds;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RouterStatusBgpPeerStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RouterStatusBgpPeerStatus getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RouterStatusBgpPeerStatus DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RouterStatusBgpPeerStatus();
   }
@@ -382,29 +381,19 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
       return this;
     }
 
-
     public RouterStatusBgpPeerStatus build() {
 
-
-
-
-
-
-
-
-
       return new RouterStatusBgpPeerStatus(
-        advertisedRoutes,
-        ipAddress,
-        linkedVpnTunnel,
-        name,
-        numLearnedRoutes,
-        peerIpAddress,
-        state,
-        status,
-        uptime,
-        uptimeSeconds
-      );
+          advertisedRoutes,
+          ipAddress,
+          linkedVpnTunnel,
+          name,
+          numLearnedRoutes,
+          peerIpAddress,
+          state,
+          status,
+          uptime,
+          uptimeSeconds);
     }
 
     public Builder clone() {
@@ -426,16 +415,35 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
   @Override
   public String toString() {
     return "RouterStatusBgpPeerStatus{"
-        + "advertisedRoutes=" + advertisedRoutes + ", "
-        + "ipAddress=" + ipAddress + ", "
-        + "linkedVpnTunnel=" + linkedVpnTunnel + ", "
-        + "name=" + name + ", "
-        + "numLearnedRoutes=" + numLearnedRoutes + ", "
-        + "peerIpAddress=" + peerIpAddress + ", "
-        + "state=" + state + ", "
-        + "status=" + status + ", "
-        + "uptime=" + uptime + ", "
-        + "uptimeSeconds=" + uptimeSeconds
+        + "advertisedRoutes="
+        + advertisedRoutes
+        + ", "
+        + "ipAddress="
+        + ipAddress
+        + ", "
+        + "linkedVpnTunnel="
+        + linkedVpnTunnel
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "numLearnedRoutes="
+        + numLearnedRoutes
+        + ", "
+        + "peerIpAddress="
+        + peerIpAddress
+        + ", "
+        + "state="
+        + state
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "uptime="
+        + uptime
+        + ", "
+        + "uptimeSeconds="
+        + uptimeSeconds
         + "}";
   }
 
@@ -446,18 +454,16 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
     }
     if (o instanceof RouterStatusBgpPeerStatus) {
       RouterStatusBgpPeerStatus that = (RouterStatusBgpPeerStatus) o;
-      return
-          Objects.equals(this.advertisedRoutes, that.getAdvertisedRoutesList()) &&
-          Objects.equals(this.ipAddress, that.getIpAddress()) &&
-          Objects.equals(this.linkedVpnTunnel, that.getLinkedVpnTunnel()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.numLearnedRoutes, that.getNumLearnedRoutes()) &&
-          Objects.equals(this.peerIpAddress, that.getPeerIpAddress()) &&
-          Objects.equals(this.state, that.getState()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.uptime, that.getUptime()) &&
-          Objects.equals(this.uptimeSeconds, that.getUptimeSeconds())
-          ;
+      return Objects.equals(this.advertisedRoutes, that.getAdvertisedRoutesList())
+          && Objects.equals(this.ipAddress, that.getIpAddress())
+          && Objects.equals(this.linkedVpnTunnel, that.getLinkedVpnTunnel())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.numLearnedRoutes, that.getNumLearnedRoutes())
+          && Objects.equals(this.peerIpAddress, that.getPeerIpAddress())
+          && Objects.equals(this.state, that.getState())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.uptime, that.getUptime())
+          && Objects.equals(this.uptimeSeconds, that.getUptimeSeconds());
     }
     return false;
   }
@@ -465,16 +471,15 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      advertisedRoutes,
-      ipAddress,
-      linkedVpnTunnel,
-      name,
-      numLearnedRoutes,
-      peerIpAddress,
-      state,
-      status,
-      uptime,
-      uptimeSeconds
-    );
+        advertisedRoutes,
+        ipAddress,
+        linkedVpnTunnel,
+        name,
+        numLearnedRoutes,
+        peerIpAddress,
+        state,
+        status,
+        uptime,
+        uptimeSeconds);
   }
 }

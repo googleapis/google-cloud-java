@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -46,14 +43,12 @@ public final class ManagedInstance implements ApiMessage {
     this.lastAttempt = null;
   }
 
-
   private ManagedInstance(
       String currentAction,
       String id,
       String instance,
       String instanceStatus,
-      ManagedInstanceLastAttempt lastAttempt
-      ) {
+      ManagedInstanceLastAttempt lastAttempt) {
     this.currentAction = currentAction;
     this.id = id;
     this.instance = instance;
@@ -128,22 +123,24 @@ public final class ManagedInstance implements ApiMessage {
     return lastAttempt;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ManagedInstance prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ManagedInstance getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ManagedInstance DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ManagedInstance();
   }
@@ -230,19 +227,9 @@ public final class ManagedInstance implements ApiMessage {
       return this;
     }
 
-
     public ManagedInstance build() {
 
-
-
-
-      return new ManagedInstance(
-        currentAction,
-        id,
-        instance,
-        instanceStatus,
-        lastAttempt
-      );
+      return new ManagedInstance(currentAction, id, instance, instanceStatus, lastAttempt);
     }
 
     public Builder clone() {
@@ -259,11 +246,20 @@ public final class ManagedInstance implements ApiMessage {
   @Override
   public String toString() {
     return "ManagedInstance{"
-        + "currentAction=" + currentAction + ", "
-        + "id=" + id + ", "
-        + "instance=" + instance + ", "
-        + "instanceStatus=" + instanceStatus + ", "
-        + "lastAttempt=" + lastAttempt
+        + "currentAction="
+        + currentAction
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "instanceStatus="
+        + instanceStatus
+        + ", "
+        + "lastAttempt="
+        + lastAttempt
         + "}";
   }
 
@@ -274,25 +270,17 @@ public final class ManagedInstance implements ApiMessage {
     }
     if (o instanceof ManagedInstance) {
       ManagedInstance that = (ManagedInstance) o;
-      return
-          Objects.equals(this.currentAction, that.getCurrentAction()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.instanceStatus, that.getInstanceStatus()) &&
-          Objects.equals(this.lastAttempt, that.getLastAttempt())
-          ;
+      return Objects.equals(this.currentAction, that.getCurrentAction())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.instanceStatus, that.getInstanceStatus())
+          && Objects.equals(this.lastAttempt, that.getLastAttempt());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      currentAction,
-      id,
-      instance,
-      instanceStatus,
-      lastAttempt
-    );
+    return Objects.hash(currentAction, id, instance, instanceStatus, lastAttempt);
   }
 }

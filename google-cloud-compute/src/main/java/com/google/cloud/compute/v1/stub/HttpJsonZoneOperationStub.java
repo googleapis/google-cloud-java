@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.ZoneOperationClient.ListZoneOperationsPagedResponse;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,7 +28,6 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteZoneOperationHttpRequest;
@@ -36,14 +37,8 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
 import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ProjectZoneOperationName;
-import static com.google.cloud.compute.v1.ZoneOperationClient.ListZoneOperationsPagedResponse;
-import com.google.cloud.compute.v1.ZoneOperationSettings;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -57,113 +52,147 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonZoneOperationStub extends ZoneOperationStub {
   @InternalApi
-  public static final ApiMethodDescriptor<DeleteZoneOperationHttpRequest, Void> deleteZoneOperationMethodDescriptor =
-      ApiMethodDescriptor.<DeleteZoneOperationHttpRequest, Void>newBuilder()
-          .setFullMethodName("compute.zoneOperations.delete")
-          .setHttpMethod(HttpMethods.DELETE)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<DeleteZoneOperationHttpRequest>newBuilder()
-                  .setRequestInstance(DeleteZoneOperationHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/operations/{operation}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
-                  .setResourceNameFactory(ProjectZoneOperationName.newFactory())
-                  .setResourceNameField("operation")
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<DeleteZoneOperationHttpRequest, Void>
+      deleteZoneOperationMethodDescriptor =
+          ApiMethodDescriptor.<DeleteZoneOperationHttpRequest, Void>newBuilder()
+              .setFullMethodName("compute.zoneOperations.delete")
+              .setHttpMethod(HttpMethods.DELETE)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<DeleteZoneOperationHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteZoneOperationHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/zones/{zone}/operations/{operation}"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneOperationName.newFactory())
+                      .setResourceNameField("operation")
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<GetZoneOperationHttpRequest, Operation> getZoneOperationMethodDescriptor =
-      ApiMethodDescriptor.<GetZoneOperationHttpRequest, Operation>newBuilder()
-          .setFullMethodName("compute.zoneOperations.get")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<GetZoneOperationHttpRequest>newBuilder()
-                  .setRequestInstance(GetZoneOperationHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/operations/{operation}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
-                  .setResourceNameFactory(ProjectZoneOperationName.newFactory())
-                  .setResourceNameField("operation")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<Operation>newBuilder()
-                  .setResponseInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<GetZoneOperationHttpRequest, Operation>
+      getZoneOperationMethodDescriptor =
+          ApiMethodDescriptor.<GetZoneOperationHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.zoneOperations.get")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetZoneOperationHttpRequest>newBuilder()
+                      .setRequestInstance(GetZoneOperationHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/zones/{zone}/operations/{operation}"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneOperationName.newFactory())
+                      .setResourceNameField("operation")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<ListZoneOperationsHttpRequest, OperationList> listZoneOperationsMethodDescriptor =
-      ApiMethodDescriptor.<ListZoneOperationsHttpRequest, OperationList>newBuilder()
-          .setFullMethodName("compute.zoneOperations.list")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<ListZoneOperationsHttpRequest>newBuilder()
-                  .setRequestInstance(ListZoneOperationsHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/operations"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectZoneName.newFactory())
-                  .setResourceNameField("zone")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<OperationList>newBuilder()
-                  .setResponseInstance(OperationList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<ListZoneOperationsHttpRequest, OperationList>
+      listZoneOperationsMethodDescriptor =
+          ApiMethodDescriptor.<ListZoneOperationsHttpRequest, OperationList>newBuilder()
+              .setFullMethodName("compute.zoneOperations.list")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListZoneOperationsHttpRequest>newBuilder()
+                      .setRequestInstance(ListZoneOperationsHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/operations"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectZoneName.newFactory())
+                      .setResourceNameField("zone")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<OperationList>newBuilder()
+                      .setResponseInstance(OperationList.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteZoneOperationHttpRequest, Void> deleteZoneOperationCallable;
   private final UnaryCallable<GetZoneOperationHttpRequest, Operation> getZoneOperationCallable;
-  private final UnaryCallable<ListZoneOperationsHttpRequest, OperationList> listZoneOperationsCallable;
-  private final UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse> listZoneOperationsPagedCallable;
+  private final UnaryCallable<ListZoneOperationsHttpRequest, OperationList>
+      listZoneOperationsCallable;
+  private final UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse>
+      listZoneOperationsPagedCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
-  public static final HttpJsonZoneOperationStub create(ZoneOperationStubSettings settings) throws IOException {
+
+  public static final HttpJsonZoneOperationStub create(ZoneOperationStubSettings settings)
+      throws IOException {
     return new HttpJsonZoneOperationStub(settings, ClientContext.create(settings));
   }
 
-  public static final HttpJsonZoneOperationStub create(ClientContext clientContext) throws IOException {
-    return new HttpJsonZoneOperationStub(ZoneOperationStubSettings.newBuilder().build(), clientContext);
+  public static final HttpJsonZoneOperationStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonZoneOperationStub(
+        ZoneOperationStubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final HttpJsonZoneOperationStub create(ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
-    return new HttpJsonZoneOperationStub(ZoneOperationStubSettings.newBuilder().build(), clientContext, callableFactory);
+  public static final HttpJsonZoneOperationStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonZoneOperationStub(
+        ZoneOperationStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of HttpJsonZoneOperationStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonZoneOperationStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonZoneOperationStub(ZoneOperationStubSettings settings, ClientContext clientContext) throws IOException {
+  protected HttpJsonZoneOperationStub(
+      ZoneOperationStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new HttpJsonZoneOperationCallableFactory());
   }
 
   /**
-   * Constructs an instance of HttpJsonZoneOperationStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonZoneOperationStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonZoneOperationStub(ZoneOperationStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+  protected HttpJsonZoneOperationStub(
+      ZoneOperationStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
 
-    HttpJsonCallSettings<DeleteZoneOperationHttpRequest, Void> deleteZoneOperationTransportSettings =
-        HttpJsonCallSettings.<DeleteZoneOperationHttpRequest, Void>newBuilder()
-            .setMethodDescriptor(deleteZoneOperationMethodDescriptor)
-            .build();
+    HttpJsonCallSettings<DeleteZoneOperationHttpRequest, Void>
+        deleteZoneOperationTransportSettings =
+            HttpJsonCallSettings.<DeleteZoneOperationHttpRequest, Void>newBuilder()
+                .setMethodDescriptor(deleteZoneOperationMethodDescriptor)
+                .build();
     HttpJsonCallSettings<GetZoneOperationHttpRequest, Operation> getZoneOperationTransportSettings =
         HttpJsonCallSettings.<GetZoneOperationHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(getZoneOperationMethodDescriptor)
             .build();
-    HttpJsonCallSettings<ListZoneOperationsHttpRequest, OperationList> listZoneOperationsTransportSettings =
-        HttpJsonCallSettings.<ListZoneOperationsHttpRequest, OperationList>newBuilder()
-            .setMethodDescriptor(listZoneOperationsMethodDescriptor)
-            .build();
+    HttpJsonCallSettings<ListZoneOperationsHttpRequest, OperationList>
+        listZoneOperationsTransportSettings =
+            HttpJsonCallSettings.<ListZoneOperationsHttpRequest, OperationList>newBuilder()
+                .setMethodDescriptor(listZoneOperationsMethodDescriptor)
+                .build();
 
-    this.deleteZoneOperationCallable = callableFactory.createUnaryCallable(deleteZoneOperationTransportSettings,settings.deleteZoneOperationSettings(), clientContext);
-    this.getZoneOperationCallable = callableFactory.createUnaryCallable(getZoneOperationTransportSettings,settings.getZoneOperationSettings(), clientContext);
-    this.listZoneOperationsCallable = callableFactory.createUnaryCallable(listZoneOperationsTransportSettings,settings.listZoneOperationsSettings(), clientContext);
-    this.listZoneOperationsPagedCallable = callableFactory.createPagedCallable(listZoneOperationsTransportSettings,settings.listZoneOperationsSettings(), clientContext);
+    this.deleteZoneOperationCallable =
+        callableFactory.createUnaryCallable(
+            deleteZoneOperationTransportSettings,
+            settings.deleteZoneOperationSettings(),
+            clientContext);
+    this.getZoneOperationCallable =
+        callableFactory.createUnaryCallable(
+            getZoneOperationTransportSettings, settings.getZoneOperationSettings(), clientContext);
+    this.listZoneOperationsCallable =
+        callableFactory.createUnaryCallable(
+            listZoneOperationsTransportSettings,
+            settings.listZoneOperationsSettings(),
+            clientContext);
+    this.listZoneOperationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listZoneOperationsTransportSettings,
+            settings.listZoneOperationsSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -179,7 +208,8 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
   }
 
   @BetaApi
-  public UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse> listZoneOperationsPagedCallable() {
+  public UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse>
+      listZoneOperationsPagedCallable() {
     return listZoneOperationsPagedCallable;
   }
 
@@ -189,7 +219,7 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
@@ -217,5 +247,4 @@ public class HttpJsonZoneOperationStub extends ZoneOperationStub {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
-
 }

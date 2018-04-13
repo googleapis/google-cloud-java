@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.MachineTypeClient.AggregatedListMachineTypesPagedResponse;
+import static com.google.cloud.compute.v1.MachineTypeClient.ListMachineTypesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -23,13 +26,7 @@ import com.google.cloud.compute.v1.GetMachineTypeHttpRequest;
 import com.google.cloud.compute.v1.ListMachineTypesHttpRequest;
 import com.google.cloud.compute.v1.MachineType;
 import com.google.cloud.compute.v1.MachineTypeAggregatedList;
-import static com.google.cloud.compute.v1.MachineTypeClient.AggregatedListMachineTypesPagedResponse;
-import static com.google.cloud.compute.v1.MachineTypeClient.ListMachineTypesPagedResponse;
 import com.google.cloud.compute.v1.MachineTypeList;
-import com.google.cloud.compute.v1.MachineTypesScopedList;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -42,15 +39,19 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class MachineTypeStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListMachineTypesHttpRequest, AggregatedListMachineTypesPagedResponse> aggregatedListMachineTypesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListMachineTypesPagedCallable()");
+  public UnaryCallable<
+          AggregatedListMachineTypesHttpRequest, AggregatedListMachineTypesPagedResponse>
+      aggregatedListMachineTypesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListMachineTypesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList> aggregatedListMachineTypesCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListMachineTypesCallable()");
+  public UnaryCallable<AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList>
+      aggregatedListMachineTypesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListMachineTypesCallable()");
   }
 
   @BetaApi
@@ -59,7 +60,8 @@ public abstract class MachineTypeStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListMachineTypesHttpRequest, ListMachineTypesPagedResponse> listMachineTypesPagedCallable() {
+  public UnaryCallable<ListMachineTypesHttpRequest, ListMachineTypesPagedResponse>
+      listMachineTypesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listMachineTypesPagedCallable()");
   }
 
@@ -68,4 +70,6 @@ public abstract class MachineTypeStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listMachineTypesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

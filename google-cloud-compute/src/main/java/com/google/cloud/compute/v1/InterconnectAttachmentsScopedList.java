@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,8 @@ public final class InterconnectAttachmentsScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
   private InterconnectAttachmentsScopedList(
-      List<InterconnectAttachment> interconnectAttachments,
-      Warning warning
-      ) {
+      List<InterconnectAttachment> interconnectAttachments, Warning warning) {
     this.interconnectAttachments = interconnectAttachments;
     this.warning = warning;
   }
@@ -90,22 +86,24 @@ public final class InterconnectAttachmentsScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InterconnectAttachmentsScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InterconnectAttachmentsScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InterconnectAttachmentsScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InterconnectAttachmentsScopedList();
   }
@@ -136,7 +134,8 @@ public final class InterconnectAttachmentsScopedList implements ApiMessage {
       return interconnectAttachments;
     }
 
-    public Builder addAllInterconnectAttachments(List<InterconnectAttachment> interconnectAttachments) {
+    public Builder addAllInterconnectAttachments(
+        List<InterconnectAttachment> interconnectAttachments) {
       if (this.interconnectAttachments == null) {
         this.interconnectAttachments = new ArrayList<>(interconnectAttachments.size());
       }
@@ -158,13 +157,9 @@ public final class InterconnectAttachmentsScopedList implements ApiMessage {
       return this;
     }
 
-
     public InterconnectAttachmentsScopedList build() {
 
-      return new InterconnectAttachmentsScopedList(
-        interconnectAttachments,
-        warning
-      );
+      return new InterconnectAttachmentsScopedList(interconnectAttachments, warning);
     }
 
     public Builder clone() {
@@ -178,8 +173,11 @@ public final class InterconnectAttachmentsScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "InterconnectAttachmentsScopedList{"
-        + "interconnectAttachments=" + interconnectAttachments + ", "
-        + "warning=" + warning
+        + "interconnectAttachments="
+        + interconnectAttachments
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +188,14 @@ public final class InterconnectAttachmentsScopedList implements ApiMessage {
     }
     if (o instanceof InterconnectAttachmentsScopedList) {
       InterconnectAttachmentsScopedList that = (InterconnectAttachmentsScopedList) o;
-      return
-          Objects.equals(this.interconnectAttachments, that.getInterconnectAttachmentsList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.interconnectAttachments, that.getInterconnectAttachmentsList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      interconnectAttachments,
-      warning
-    );
+    return Objects.hash(interconnectAttachments, warning);
   }
 }

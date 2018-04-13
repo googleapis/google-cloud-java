@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private InsertTargetPoolHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
       String region,
       String requestId,
       TargetPool targetPoolResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -109,7 +104,8 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("targetPoolResource") && targetPoolResource != null) {
-      fieldMap.put("targetPoolResource", Collections.singletonList(String.valueOf(targetPoolResource)));
+      fieldMap.put(
+          "targetPoolResource", Collections.singletonList(String.valueOf(targetPoolResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +194,24 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertTargetPoolHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertTargetPoolHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertTargetPoolHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertTargetPoolHttpRequest();
   }
@@ -370,36 +368,27 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertTargetPoolHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (region == null) {
         missing += " region";
       }
 
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertTargetPoolHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        region,
-        requestId,
-        targetPoolResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          region,
+          requestId,
+          targetPoolResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +410,35 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertTargetPoolHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "region=" + region + ", "
-        + "requestId=" + requestId + ", "
-        + "targetPoolResource=" + targetPoolResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetPoolResource="
+        + targetPoolResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +449,16 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertTargetPoolHttpRequest) {
       InsertTargetPoolHttpRequest that = (InsertTargetPoolHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetPoolResource, that.getTargetPoolResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.targetPoolResource, that.getTargetPoolResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +466,15 @@ public final class InsertTargetPoolHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      region,
-      requestId,
-      targetPoolResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        region,
+        requestId,
+        targetPoolResource,
+        userIp);
   }
 }

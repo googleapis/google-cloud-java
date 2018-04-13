@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -46,14 +43,8 @@ public final class NetworkPeering implements ApiMessage {
     this.stateDetails = null;
   }
 
-
   private NetworkPeering(
-      Boolean autoCreateRoutes,
-      String name,
-      String network,
-      String state,
-      String stateDetails
-      ) {
+      Boolean autoCreateRoutes, String name, String network, String state, String stateDetails) {
     this.autoCreateRoutes = autoCreateRoutes;
     this.name = name;
     this.network = network;
@@ -128,22 +119,24 @@ public final class NetworkPeering implements ApiMessage {
     return stateDetails;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(NetworkPeering prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static NetworkPeering getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final NetworkPeering DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new NetworkPeering();
   }
@@ -230,19 +223,9 @@ public final class NetworkPeering implements ApiMessage {
       return this;
     }
 
-
     public NetworkPeering build() {
 
-
-
-
-      return new NetworkPeering(
-        autoCreateRoutes,
-        name,
-        network,
-        state,
-        stateDetails
-      );
+      return new NetworkPeering(autoCreateRoutes, name, network, state, stateDetails);
     }
 
     public Builder clone() {
@@ -259,11 +242,20 @@ public final class NetworkPeering implements ApiMessage {
   @Override
   public String toString() {
     return "NetworkPeering{"
-        + "autoCreateRoutes=" + autoCreateRoutes + ", "
-        + "name=" + name + ", "
-        + "network=" + network + ", "
-        + "state=" + state + ", "
-        + "stateDetails=" + stateDetails
+        + "autoCreateRoutes="
+        + autoCreateRoutes
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "state="
+        + state
+        + ", "
+        + "stateDetails="
+        + stateDetails
         + "}";
   }
 
@@ -274,25 +266,17 @@ public final class NetworkPeering implements ApiMessage {
     }
     if (o instanceof NetworkPeering) {
       NetworkPeering that = (NetworkPeering) o;
-      return
-          Objects.equals(this.autoCreateRoutes, that.getAutoCreateRoutes()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.state, that.getState()) &&
-          Objects.equals(this.stateDetails, that.getStateDetails())
-          ;
+      return Objects.equals(this.autoCreateRoutes, that.getAutoCreateRoutes())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.state, that.getState())
+          && Objects.equals(this.stateDetails, that.getStateDetails());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      autoCreateRoutes,
-      name,
-      network,
-      state,
-      stateDetails
-    );
+    return Objects.hash(autoCreateRoutes, name, network, state, stateDetails);
   }
 }

@@ -15,20 +15,19 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.HttpHealthCheckClient.ListHttpHealthChecksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteHttpHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHttpHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.HttpHealthCheck;
-import static com.google.cloud.compute.v1.HttpHealthCheckClient.ListHttpHealthChecksPagedResponse;
 import com.google.cloud.compute.v1.HttpHealthCheckList;
 import com.google.cloud.compute.v1.InsertHttpHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHttpHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchHttpHealthCheckHttpRequest;
-import com.google.cloud.compute.v1.ProjectHttpHealthCheckName;
-import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.UpdateHttpHealthCheckHttpRequest;
 import javax.annotation.Generated;
 
@@ -42,29 +41,33 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class HttpHealthCheckStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<DeleteHttpHealthCheckHttpRequest, Operation> deleteHttpHealthCheckCallable() {
+  public UnaryCallable<DeleteHttpHealthCheckHttpRequest, Operation>
+      deleteHttpHealthCheckCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteHttpHealthCheckCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetHttpHealthCheckHttpRequest, HttpHealthCheck> getHttpHealthCheckCallable() {
+  public UnaryCallable<GetHttpHealthCheckHttpRequest, HttpHealthCheck>
+      getHttpHealthCheckCallable() {
     throw new UnsupportedOperationException("Not implemented: getHttpHealthCheckCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<InsertHttpHealthCheckHttpRequest, Operation> insertHttpHealthCheckCallable() {
+  public UnaryCallable<InsertHttpHealthCheckHttpRequest, Operation>
+      insertHttpHealthCheckCallable() {
     throw new UnsupportedOperationException("Not implemented: insertHttpHealthCheckCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListHttpHealthChecksHttpRequest, ListHttpHealthChecksPagedResponse> listHttpHealthChecksPagedCallable() {
+  public UnaryCallable<ListHttpHealthChecksHttpRequest, ListHttpHealthChecksPagedResponse>
+      listHttpHealthChecksPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listHttpHealthChecksPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListHttpHealthChecksHttpRequest, HttpHealthCheckList> listHttpHealthChecksCallable() {
+  public UnaryCallable<ListHttpHealthChecksHttpRequest, HttpHealthCheckList>
+      listHttpHealthChecksCallable() {
     throw new UnsupportedOperationException("Not implemented: listHttpHealthChecksCallable()");
   }
 
@@ -74,8 +77,11 @@ public abstract class HttpHealthCheckStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<UpdateHttpHealthCheckHttpRequest, Operation> updateHttpHealthCheckCallable() {
+  public UnaryCallable<UpdateHttpHealthCheckHttpRequest, Operation>
+      updateHttpHealthCheckCallable() {
     throw new UnsupportedOperationException("Not implemented: updateHttpHealthCheckCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

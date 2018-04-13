@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
+import static com.google.cloud.compute.v1.SubnetworkClient.ListSubnetworksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -26,18 +29,10 @@ import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.ProjectRegionSubnetworkName;
 import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
-import static com.google.cloud.compute.v1.SubnetworkClient.AggregatedListSubnetworksPagedResponse;
-import static com.google.cloud.compute.v1.SubnetworkClient.ListSubnetworksPagedResponse;
 import com.google.cloud.compute.v1.SubnetworkList;
-import com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest;
-import com.google.cloud.compute.v1.SubnetworksScopedList;
-import com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -50,14 +45,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class SubnetworkStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListSubnetworksHttpRequest, AggregatedListSubnetworksPagedResponse> aggregatedListSubnetworksPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListSubnetworksPagedCallable()");
+  public UnaryCallable<AggregatedListSubnetworksHttpRequest, AggregatedListSubnetworksPagedResponse>
+      aggregatedListSubnetworksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListSubnetworksPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList> aggregatedListSubnetworksCallable() {
+  public UnaryCallable<AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList>
+      aggregatedListSubnetworksCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListSubnetworksCallable()");
   }
 
@@ -67,8 +64,10 @@ public abstract class SubnetworkStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ExpandIpCidrRangeSubnetworkHttpRequest, Operation> expandIpCidrRangeSubnetworkCallable() {
-    throw new UnsupportedOperationException("Not implemented: expandIpCidrRangeSubnetworkCallable()");
+  public UnaryCallable<ExpandIpCidrRangeSubnetworkHttpRequest, Operation>
+      expandIpCidrRangeSubnetworkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: expandIpCidrRangeSubnetworkCallable()");
   }
 
   @BetaApi
@@ -82,7 +81,8 @@ public abstract class SubnetworkStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListSubnetworksHttpRequest, ListSubnetworksPagedResponse> listSubnetworksPagedCallable() {
+  public UnaryCallable<ListSubnetworksHttpRequest, ListSubnetworksPagedResponse>
+      listSubnetworksPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSubnetworksPagedCallable()");
   }
 
@@ -97,8 +97,12 @@ public abstract class SubnetworkStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation> setPrivateIpGoogleAccessSubnetworkCallable() {
-    throw new UnsupportedOperationException("Not implemented: setPrivateIpGoogleAccessSubnetworkCallable()");
+  public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
+      setPrivateIpGoogleAccessSubnetworkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setPrivateIpGoogleAccessSubnetworkCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

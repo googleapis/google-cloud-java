@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,8 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
     this.source = null;
   }
 
-
   private CustomerEncryptionKeyProtectedDisk(
-      CustomerEncryptionKey diskEncryptionKey,
-      String source
-      ) {
+      CustomerEncryptionKey diskEncryptionKey, String source) {
     this.diskEncryptionKey = diskEncryptionKey;
     this.source = source;
   }
@@ -53,7 +47,8 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("diskEncryptionKey") && diskEncryptionKey != null) {
-      fieldMap.put("diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
+      fieldMap.put(
+          "diskEncryptionKey", Collections.singletonList(String.valueOf(diskEncryptionKey)));
     }
     if (fieldNames.contains("source") && source != null) {
       fieldMap.put("source", Collections.singletonList(String.valueOf(source)));
@@ -86,22 +81,24 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
     return source;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(CustomerEncryptionKeyProtectedDisk prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static CustomerEncryptionKeyProtectedDisk getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final CustomerEncryptionKeyProtectedDisk DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new CustomerEncryptionKeyProtectedDisk();
   }
@@ -146,13 +143,9 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
       return this;
     }
 
-
     public CustomerEncryptionKeyProtectedDisk build() {
 
-      return new CustomerEncryptionKeyProtectedDisk(
-        diskEncryptionKey,
-        source
-      );
+      return new CustomerEncryptionKeyProtectedDisk(diskEncryptionKey, source);
     }
 
     public Builder clone() {
@@ -166,8 +159,11 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
   @Override
   public String toString() {
     return "CustomerEncryptionKeyProtectedDisk{"
-        + "diskEncryptionKey=" + diskEncryptionKey + ", "
-        + "source=" + source
+        + "diskEncryptionKey="
+        + diskEncryptionKey
+        + ", "
+        + "source="
+        + source
         + "}";
   }
 
@@ -178,19 +174,14 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
     }
     if (o instanceof CustomerEncryptionKeyProtectedDisk) {
       CustomerEncryptionKeyProtectedDisk that = (CustomerEncryptionKeyProtectedDisk) o;
-      return
-          Objects.equals(this.diskEncryptionKey, that.getDiskEncryptionKey()) &&
-          Objects.equals(this.source, that.getSource())
-          ;
+      return Objects.equals(this.diskEncryptionKey, that.getDiskEncryptionKey())
+          && Objects.equals(this.source, that.getSource());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      diskEncryptionKey,
-      source
-    );
+    return Objects.hash(diskEncryptionKey, source);
   }
 }

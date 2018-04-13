@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionBackendServiceClient.ListRegionBackendServicesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -28,10 +30,6 @@ import com.google.cloud.compute.v1.InsertRegionBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.ListRegionBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceHttpRequest;
-import com.google.cloud.compute.v1.ProjectRegionBackendServiceName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import static com.google.cloud.compute.v1.RegionBackendServiceClient.ListRegionBackendServicesPagedResponse;
-import com.google.cloud.compute.v1.ResourceGroupReference;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceHttpRequest;
 import javax.annotation.Generated;
 
@@ -45,45 +43,59 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RegionBackendServiceStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<DeleteRegionBackendServiceHttpRequest, Operation> deleteRegionBackendServiceCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteRegionBackendServiceCallable()");
+  public UnaryCallable<DeleteRegionBackendServiceHttpRequest, Operation>
+      deleteRegionBackendServiceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRegionBackendServiceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetRegionBackendServiceHttpRequest, BackendService> getRegionBackendServiceCallable() {
+  public UnaryCallable<GetRegionBackendServiceHttpRequest, BackendService>
+      getRegionBackendServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: getRegionBackendServiceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetHealthRegionBackendServiceHttpRequest, BackendServiceGroupHealth> getHealthRegionBackendServiceCallable() {
-    throw new UnsupportedOperationException("Not implemented: getHealthRegionBackendServiceCallable()");
+  public UnaryCallable<GetHealthRegionBackendServiceHttpRequest, BackendServiceGroupHealth>
+      getHealthRegionBackendServiceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getHealthRegionBackendServiceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<InsertRegionBackendServiceHttpRequest, Operation> insertRegionBackendServiceCallable() {
-    throw new UnsupportedOperationException("Not implemented: insertRegionBackendServiceCallable()");
+  public UnaryCallable<InsertRegionBackendServiceHttpRequest, Operation>
+      insertRegionBackendServiceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: insertRegionBackendServiceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionBackendServicesHttpRequest, ListRegionBackendServicesPagedResponse> listRegionBackendServicesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listRegionBackendServicesPagedCallable()");
+  public UnaryCallable<ListRegionBackendServicesHttpRequest, ListRegionBackendServicesPagedResponse>
+      listRegionBackendServicesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRegionBackendServicesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionBackendServicesHttpRequest, BackendServiceList> listRegionBackendServicesCallable() {
+  public UnaryCallable<ListRegionBackendServicesHttpRequest, BackendServiceList>
+      listRegionBackendServicesCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionBackendServicesCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<PatchRegionBackendServiceHttpRequest, Operation> patchRegionBackendServiceCallable() {
+  public UnaryCallable<PatchRegionBackendServiceHttpRequest, Operation>
+      patchRegionBackendServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: patchRegionBackendServiceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<UpdateRegionBackendServiceHttpRequest, Operation> updateRegionBackendServiceCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateRegionBackendServiceCallable()");
+  public UnaryCallable<UpdateRegionBackendServiceHttpRequest, Operation>
+      updateRegionBackendServiceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateRegionBackendServiceCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

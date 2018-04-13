@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
     this.userIp = null;
   }
 
-
   private RemoveHealthCheckTargetPoolHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
       String requestId,
       String targetPool,
       TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -108,8 +103,11 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
     if (fieldNames.contains("targetPool") && targetPool != null) {
       fieldMap.put("targetPool", Collections.singletonList(String.valueOf(targetPool)));
     }
-    if (fieldNames.contains("targetPoolsRemoveHealthCheckRequestResource") && targetPoolsRemoveHealthCheckRequestResource != null) {
-      fieldMap.put("targetPoolsRemoveHealthCheckRequestResource", Collections.singletonList(String.valueOf(targetPoolsRemoveHealthCheckRequestResource)));
+    if (fieldNames.contains("targetPoolsRemoveHealthCheckRequestResource")
+        && targetPoolsRemoveHealthCheckRequestResource != null) {
+      fieldMap.put(
+          "targetPoolsRemoveHealthCheckRequestResource",
+          Collections.singletonList(String.valueOf(targetPoolsRemoveHealthCheckRequestResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +196,24 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RemoveHealthCheckTargetPoolHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RemoveHealthCheckTargetPoolHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RemoveHealthCheckTargetPoolHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RemoveHealthCheckTargetPoolHttpRequest();
   }
@@ -259,7 +259,8 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
         this.targetPool = other.targetPool;
       }
       if (other.getTargetPoolsRemoveHealthCheckRequestResource() != null) {
-        this.targetPoolsRemoveHealthCheckRequestResource = other.targetPoolsRemoveHealthCheckRequestResource;
+        this.targetPoolsRemoveHealthCheckRequestResource =
+            other.targetPoolsRemoveHealthCheckRequestResource;
       }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
@@ -276,7 +277,8 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
       this.targetPool = source.targetPool;
-      this.targetPoolsRemoveHealthCheckRequestResource = source.targetPoolsRemoveHealthCheckRequestResource;
+      this.targetPoolsRemoveHealthCheckRequestResource =
+          source.targetPoolsRemoveHealthCheckRequestResource;
       this.userIp = source.userIp;
     }
 
@@ -356,8 +358,10 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
       return targetPoolsRemoveHealthCheckRequestResource;
     }
 
-    public Builder setTargetPoolsRemoveHealthCheckRequestResource(TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
-      this.targetPoolsRemoveHealthCheckRequestResource = targetPoolsRemoveHealthCheckRequestResource;
+    public Builder setTargetPoolsRemoveHealthCheckRequestResource(
+        TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource) {
+      this.targetPoolsRemoveHealthCheckRequestResource =
+          targetPoolsRemoveHealthCheckRequestResource;
       return this;
     }
 
@@ -370,36 +374,27 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
       return this;
     }
 
-
     public RemoveHealthCheckTargetPoolHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (targetPool == null) {
         missing += " targetPool";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new RemoveHealthCheckTargetPoolHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetPool,
-        targetPoolsRemoveHealthCheckRequestResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetPool,
+          targetPoolsRemoveHealthCheckRequestResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -412,7 +407,8 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setTargetPool(this.targetPool);
-      newBuilder.setTargetPoolsRemoveHealthCheckRequestResource(this.targetPoolsRemoveHealthCheckRequestResource);
+      newBuilder.setTargetPoolsRemoveHealthCheckRequestResource(
+          this.targetPoolsRemoveHealthCheckRequestResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -421,16 +417,35 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
   @Override
   public String toString() {
     return "RemoveHealthCheckTargetPoolHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetPool=" + targetPool + ", "
-        + "targetPoolsRemoveHealthCheckRequestResource=" + targetPoolsRemoveHealthCheckRequestResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetPool="
+        + targetPool
+        + ", "
+        + "targetPoolsRemoveHealthCheckRequestResource="
+        + targetPoolsRemoveHealthCheckRequestResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +456,18 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
     }
     if (o instanceof RemoveHealthCheckTargetPoolHttpRequest) {
       RemoveHealthCheckTargetPoolHttpRequest that = (RemoveHealthCheckTargetPoolHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetPool, that.getTargetPool()) &&
-          Objects.equals(this.targetPoolsRemoveHealthCheckRequestResource, that.getTargetPoolsRemoveHealthCheckRequestResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.targetPool, that.getTargetPool())
+          && Objects.equals(
+              this.targetPoolsRemoveHealthCheckRequestResource,
+              that.getTargetPoolsRemoveHealthCheckRequestResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +475,15 @@ public final class RemoveHealthCheckTargetPoolHttpRequest implements ApiMessage 
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetPool,
-      targetPoolsRemoveHealthCheckRequestResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetPool,
+        targetPoolsRemoveHealthCheckRequestResource,
+        userIp);
   }
 }

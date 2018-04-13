@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.ImageStub;
 import com.google.cloud.compute.v1.stub.ImageStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -52,41 +42,40 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ImageClient imageClient = ImageClient.create()) {
- *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+ *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
  *   String requestId = "";
  *   Operation response = imageClient.deleteImage(image, requestId);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the imageClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the imageClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of ImageSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of ImageSettings to create(). For
+ * example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,19 +105,14 @@ public class ImageClient implements BackgroundResource {
   private final ImageSettings settings;
   private final ImageStub stub;
 
-
-
-  /**
-   * Constructs an instance of ImageClient with default settings.
-   */
+  /** Constructs an instance of ImageClient with default settings. */
   public static final ImageClient create() throws IOException {
     return create(ImageSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of ImageClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of ImageClient, using the given settings. The channels are created based
+   * on the settings passed in, or defaults for any settings that are not set.
    */
   public static final ImageClient create(ImageSettings settings) throws IOException {
     return new ImageClient(settings);
@@ -144,9 +128,8 @@ public class ImageClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of ImageClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of ImageClient, using the given settings. This is protected so that it
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected ImageClient(ImageSettings settings) throws IOException {
     this.settings = settings;
@@ -168,36 +151,40 @@ public class ImageClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified image.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   Operation response = imageClient.deleteImage(image, requestId);
    * }
    * </code></pre>
    *
    * @param image Name of the image resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteImage(ProjectImageName image, String requestId) {
+  public final Operation deleteImage(ProjectGlobalImageName image, String requestId) {
 
     DeleteImageHttpRequest request =
         DeleteImageHttpRequest.newBuilder()
-        .setImage(image == null ? null : image.toString())
-        .setRequestId(requestId)
-        .build();
+            .setImage(image == null ? null : image.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteImage(request);
   }
 
@@ -205,31 +192,33 @@ public class ImageClient implements BackgroundResource {
   /**
    * Deletes the specified image.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   Operation response = imageClient.deleteImage(image.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param image Name of the image resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteImage(String image, String requestId) {
 
     DeleteImageHttpRequest request =
-        DeleteImageHttpRequest.newBuilder()
-        .setImage(image)
-        .setRequestId(requestId)
-        .build();
+        DeleteImageHttpRequest.newBuilder().setImage(image).setRequestId(requestId).build();
     return deleteImage(request);
   }
 
@@ -237,10 +226,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Deletes the specified image.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeleteImageHttpRequest request = DeleteImageHttpRequest.newBuilder()
    *     .setImage(image.toString())
@@ -262,10 +252,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Deletes the specified image.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeleteImageHttpRequest request = DeleteImageHttpRequest.newBuilder()
    *     .setImage(image.toString())
@@ -286,12 +277,13 @@ public class ImageClient implements BackgroundResource {
   /**
    * Sets the deprecation status of an image.
    *
-   * If an empty request body is given, clears the deprecation status instead.
+   * <p>If an empty request body is given, clears the deprecation status instead.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   Operation response = imageClient.deprecateImage(image, requestId, deprecationStatusResource);
@@ -299,23 +291,28 @@ public class ImageClient implements BackgroundResource {
    * </code></pre>
    *
    * @param image Image name.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param deprecationStatusResource Deprecation status for a public resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deprecateImage(ProjectImageName image, String requestId, DeprecationStatus deprecationStatusResource) {
+  public final Operation deprecateImage(
+      ProjectGlobalImageName image, String requestId, DeprecationStatus deprecationStatusResource) {
 
     DeprecateImageHttpRequest request =
         DeprecateImageHttpRequest.newBuilder()
-        .setImage(image == null ? null : image.toString())
-        .setRequestId(requestId)
-        .setDeprecationStatusResource(deprecationStatusResource)
-        .build();
+            .setImage(image == null ? null : image.toString())
+            .setRequestId(requestId)
+            .setDeprecationStatusResource(deprecationStatusResource)
+            .build();
     return deprecateImage(request);
   }
 
@@ -323,12 +320,13 @@ public class ImageClient implements BackgroundResource {
   /**
    * Sets the deprecation status of an image.
    *
-   * If an empty request body is given, clears the deprecation status instead.
+   * <p>If an empty request body is given, clears the deprecation status instead.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   Operation response = imageClient.deprecateImage(image.toString(), requestId, deprecationStatusResource);
@@ -336,23 +334,28 @@ public class ImageClient implements BackgroundResource {
    * </code></pre>
    *
    * @param image Image name.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param deprecationStatusResource Deprecation status for a public resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deprecateImage(String image, String requestId, DeprecationStatus deprecationStatusResource) {
+  public final Operation deprecateImage(
+      String image, String requestId, DeprecationStatus deprecationStatusResource) {
 
     DeprecateImageHttpRequest request =
         DeprecateImageHttpRequest.newBuilder()
-        .setImage(image)
-        .setRequestId(requestId)
-        .setDeprecationStatusResource(deprecationStatusResource)
-        .build();
+            .setImage(image)
+            .setRequestId(requestId)
+            .setDeprecationStatusResource(deprecationStatusResource)
+            .build();
     return deprecateImage(request);
   }
 
@@ -360,12 +363,13 @@ public class ImageClient implements BackgroundResource {
   /**
    * Sets the deprecation status of an image.
    *
-   * If an empty request body is given, clears the deprecation status instead.
+   * <p>If an empty request body is given, clears the deprecation status instead.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   DeprecateImageHttpRequest request = DeprecateImageHttpRequest.newBuilder()
@@ -389,12 +393,13 @@ public class ImageClient implements BackgroundResource {
   /**
    * Sets the deprecation status of an image.
    *
-   * If an empty request body is given, clears the deprecation status instead.
+   * <p>If an empty request body is given, clears the deprecation status instead.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   String requestId = "";
    *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   DeprecateImageHttpRequest request = DeprecateImageHttpRequest.newBuilder()
@@ -417,10 +422,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Returns the specified image. Get a list of available images by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   Image response = imageClient.getImage(image);
    * }
    * </code></pre>
@@ -429,12 +435,10 @@ public class ImageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Image getImage(ProjectImageName image) {
+  public final Image getImage(ProjectGlobalImageName image) {
 
     GetImageHttpRequest request =
-        GetImageHttpRequest.newBuilder()
-        .setImage(image == null ? null : image.toString())
-        .build();
+        GetImageHttpRequest.newBuilder().setImage(image == null ? null : image.toString()).build();
     return getImage(request);
   }
 
@@ -442,10 +446,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Returns the specified image. Get a list of available images by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   Image response = imageClient.getImage(image.toString());
    * }
    * </code></pre>
@@ -456,10 +461,7 @@ public class ImageClient implements BackgroundResource {
   @BetaApi
   public final Image getImage(String image) {
 
-    GetImageHttpRequest request =
-        GetImageHttpRequest.newBuilder()
-        .setImage(image)
-        .build();
+    GetImageHttpRequest request = GetImageHttpRequest.newBuilder().setImage(image).build();
     return getImage(request);
   }
 
@@ -467,10 +469,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Returns the specified image. Get a list of available images by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   GetImageHttpRequest request = GetImageHttpRequest.newBuilder()
    *     .setImage(image.toString())
    *     .build();
@@ -490,10 +493,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Returns the specified image. Get a list of available images by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName image = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageName image = ProjectGlobalImageName.of("[PROJECT]", "[IMAGE]");
    *   GetImageHttpRequest request = GetImageHttpRequest.newBuilder()
    *     .setImage(image.toString())
    *     .build();
@@ -512,10 +516,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Returns the latest image that is part of an image family and is not deprecated.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
+   *   ProjectGlobalImageFamilyName family = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
    *   Image response = imageClient.getFromFamilyImage(family);
    * }
    * </code></pre>
@@ -524,12 +529,12 @@ public class ImageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Image getFromFamilyImage(ProjectFamilyName family) {
+  public final Image getFromFamilyImage(ProjectGlobalImageFamilyName family) {
 
     GetFromFamilyImageHttpRequest request =
         GetFromFamilyImageHttpRequest.newBuilder()
-        .setFamily(family == null ? null : family.toString())
-        .build();
+            .setFamily(family == null ? null : family.toString())
+            .build();
     return getFromFamilyImage(request);
   }
 
@@ -537,10 +542,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Returns the latest image that is part of an image family and is not deprecated.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
+   *   ProjectGlobalImageFamilyName family = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
    *   Image response = imageClient.getFromFamilyImage(family.toString());
    * }
    * </code></pre>
@@ -552,9 +558,7 @@ public class ImageClient implements BackgroundResource {
   public final Image getFromFamilyImage(String family) {
 
     GetFromFamilyImageHttpRequest request =
-        GetFromFamilyImageHttpRequest.newBuilder()
-        .setFamily(family)
-        .build();
+        GetFromFamilyImageHttpRequest.newBuilder().setFamily(family).build();
     return getFromFamilyImage(request);
   }
 
@@ -562,10 +566,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Returns the latest image that is part of an image family and is not deprecated.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
+   *   ProjectGlobalImageFamilyName family = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
    *   GetFromFamilyImageHttpRequest request = GetFromFamilyImageHttpRequest.newBuilder()
    *     .setFamily(family.toString())
    *     .build();
@@ -585,10 +590,11 @@ public class ImageClient implements BackgroundResource {
   /**
    * Returns the latest image that is part of an image family and is not deprecated.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectFamilyName family = ProjectFamilyName.of("[PROJECT]", "[FAMILY]");
+   *   ProjectGlobalImageFamilyName family = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
    *   GetFromFamilyImageHttpRequest request = GetFromFamilyImageHttpRequest.newBuilder()
    *     .setFamily(family.toString())
    *     .build();
@@ -607,7 +613,8 @@ public class ImageClient implements BackgroundResource {
   /**
    * Creates an image in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   Boolean forceCreate = false;
@@ -619,25 +626,31 @@ public class ImageClient implements BackgroundResource {
    * </code></pre>
    *
    * @param forceCreate Force image creation if true.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param imageResource An Image resource. (== resource_for beta.images ==) (== resource_for v1.images ==)
+   * @param imageResource An Image resource. (== resource_for beta.images ==) (== resource_for
+   *     v1.images ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertImage(Boolean forceCreate, String requestId, ProjectName project, Image imageResource) {
+  public final Operation insertImage(
+      Boolean forceCreate, String requestId, ProjectName project, Image imageResource) {
 
     InsertImageHttpRequest request =
         InsertImageHttpRequest.newBuilder()
-        .setForceCreate(forceCreate)
-        .setRequestId(requestId)
-        .setProject(project == null ? null : project.toString())
-        .setImageResource(imageResource)
-        .build();
+            .setForceCreate(forceCreate)
+            .setRequestId(requestId)
+            .setProject(project == null ? null : project.toString())
+            .setImageResource(imageResource)
+            .build();
     return insertImage(request);
   }
 
@@ -645,7 +658,8 @@ public class ImageClient implements BackgroundResource {
   /**
    * Creates an image in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   Boolean forceCreate = false;
@@ -657,25 +671,31 @@ public class ImageClient implements BackgroundResource {
    * </code></pre>
    *
    * @param forceCreate Force image creation if true.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param imageResource An Image resource. (== resource_for beta.images ==) (== resource_for v1.images ==)
+   * @param imageResource An Image resource. (== resource_for beta.images ==) (== resource_for
+   *     v1.images ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertImage(Boolean forceCreate, String requestId, String project, Image imageResource) {
+  public final Operation insertImage(
+      Boolean forceCreate, String requestId, String project, Image imageResource) {
 
     InsertImageHttpRequest request =
         InsertImageHttpRequest.newBuilder()
-        .setForceCreate(forceCreate)
-        .setRequestId(requestId)
-        .setProject(project)
-        .setImageResource(imageResource)
-        .build();
+            .setForceCreate(forceCreate)
+            .setRequestId(requestId)
+            .setProject(project)
+            .setImageResource(imageResource)
+            .build();
     return insertImage(request);
   }
 
@@ -683,7 +703,8 @@ public class ImageClient implements BackgroundResource {
   /**
    * Creates an image in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   Boolean forceCreate = false;
@@ -712,7 +733,8 @@ public class ImageClient implements BackgroundResource {
   /**
    * Creates an image in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   Boolean forceCreate = false;
@@ -738,9 +760,14 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of custom images available to the specified project. Custom images are images you create that belong to your project. This method does not get any images that belong to other projects, including publicly-available images, like Debian 8. If you want to get a list of publicly-available images, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.
+   * Retrieves the list of custom images available to the specified project. Custom images are
+   * images you create that belong to your project. This method does not get any images that belong
+   * to other projects, including publicly-available images, like Debian 8. If you want to get a
+   * list of publicly-available images, use this method to make a request to the respective image
+   * project, such as debian-cloud or windows-cloud.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -757,16 +784,21 @@ public class ImageClient implements BackgroundResource {
   public final ListImagesPagedResponse listImages(ProjectName project) {
     ListImagesHttpRequest request =
         ListImagesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listImages(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of custom images available to the specified project. Custom images are images you create that belong to your project. This method does not get any images that belong to other projects, including publicly-available images, like Debian 8. If you want to get a list of publicly-available images, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.
+   * Retrieves the list of custom images available to the specified project. Custom images are
+   * images you create that belong to your project. This method does not get any images that belong
+   * to other projects, including publicly-available images, like Debian 8. If you want to get a
+   * list of publicly-available images, use this method to make a request to the respective image
+   * project, such as debian-cloud or windows-cloud.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -781,18 +813,20 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final ListImagesPagedResponse listImages(String project) {
-    ListImagesHttpRequest request =
-        ListImagesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+    ListImagesHttpRequest request = ListImagesHttpRequest.newBuilder().setProject(project).build();
     return listImages(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of custom images available to the specified project. Custom images are images you create that belong to your project. This method does not get any images that belong to other projects, including publicly-available images, like Debian 8. If you want to get a list of publicly-available images, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.
+   * Retrieves the list of custom images available to the specified project. Custom images are
+   * images you create that belong to your project. This method does not get any images that belong
+   * to other projects, including publicly-available images, like Debian 8. If you want to get a
+   * list of publicly-available images, use this method to make a request to the respective image
+   * project, such as debian-cloud or windows-cloud.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -810,15 +844,19 @@ public class ImageClient implements BackgroundResource {
    */
   @BetaApi
   public final ListImagesPagedResponse listImages(ListImagesHttpRequest request) {
-    return listImagesPagedCallable()
-        .call(request);
+    return listImagesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of custom images available to the specified project. Custom images are images you create that belong to your project. This method does not get any images that belong to other projects, including publicly-available images, like Debian 8. If you want to get a list of publicly-available images, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.
+   * Retrieves the list of custom images available to the specified project. Custom images are
+   * images you create that belong to your project. This method does not get any images that belong
+   * to other projects, including publicly-available images, like Debian 8. If you want to get a
+   * list of publicly-available images, use this method to make a request to the respective image
+   * project, such as debian-cloud or windows-cloud.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -834,15 +872,21 @@ public class ImageClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListImagesHttpRequest, ListImagesPagedResponse> listImagesPagedCallable() {
+  public final UnaryCallable<ListImagesHttpRequest, ListImagesPagedResponse>
+      listImagesPagedCallable() {
     return stub.listImagesPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of custom images available to the specified project. Custom images are images you create that belong to your project. This method does not get any images that belong to other projects, including publicly-available images, like Debian 8. If you want to get a list of publicly-available images, use this method to make a request to the respective image project, such as debian-cloud or windows-cloud.
+   * Retrieves the list of custom images available to the specified project. Custom images are
+   * images you create that belong to your project. This method does not get any images that belong
+   * to other projects, including publicly-available images, like Debian 8. If you want to get a
+   * list of publicly-available images, use this method to make a request to the respective image
+   * project, such as debian-cloud or windows-cloud.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -871,12 +915,14 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on an image. To learn more about labels, read the Labeling Resources documentation.
+   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * documentation.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response = imageClient.setLabelsImage(resource, globalSetLabelsRequestResource);
    * }
@@ -887,24 +933,28 @@ public class ImageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setLabelsImage(ProjectImageName resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+  public final Operation setLabelsImage(
+      ProjectGlobalImageResourceName resource,
+      GlobalSetLabelsRequest globalSetLabelsRequestResource) {
 
     SetLabelsImageHttpRequest request =
         SetLabelsImageHttpRequest.newBuilder()
-        .setResource(resource == null ? null : resource.toString())
-        .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
-        .build();
+            .setResource(resource == null ? null : resource.toString())
+            .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+            .build();
     return setLabelsImage(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on an image. To learn more about labels, read the Labeling Resources documentation.
+   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * documentation.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response = imageClient.setLabelsImage(resource.toString(), globalSetLabelsRequestResource);
    * }
@@ -915,24 +965,27 @@ public class ImageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setLabelsImage(String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+  public final Operation setLabelsImage(
+      String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
 
     SetLabelsImageHttpRequest request =
         SetLabelsImageHttpRequest.newBuilder()
-        .setResource(resource)
-        .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
-        .build();
+            .setResource(resource)
+            .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+            .build();
     return setLabelsImage(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on an image. To learn more about labels, read the Labeling Resources documentation.
+   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * documentation.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsImageHttpRequest request = SetLabelsImageHttpRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -952,12 +1005,14 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on an image. To learn more about labels, read the Labeling Resources documentation.
+   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * documentation.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
-   *   ProjectImageName resource = ProjectImageName.of("[PROJECT]", "[IMAGE]");
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsImageHttpRequest request = SetLabelsImageHttpRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -975,7 +1030,7 @@ public class ImageClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -1004,12 +1059,9 @@ public class ImageClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListImagesPagedResponse extends AbstractPagedListResponse<
-      ListImagesHttpRequest,
-      ImageList,
-      Image,
-      ListImagesPage,
-      ListImagesFixedSizeCollection> {
+  public static class ListImagesPagedResponse
+      extends AbstractPagedListResponse<
+          ListImagesHttpRequest, ImageList, Image, ListImagesPage, ListImagesFixedSizeCollection> {
 
     public static ApiFuture<ListImagesPagedResponse> createAsync(
         PageContext<ListImagesHttpRequest, ImageList, Image> context,
@@ -1029,19 +1081,13 @@ public class ImageClient implements BackgroundResource {
     private ListImagesPagedResponse(ListImagesPage page) {
       super(page, ListImagesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListImagesPage extends AbstractPage<
-      ListImagesHttpRequest,
-      ImageList,
-      Image,
-      ListImagesPage> {
+  public static class ListImagesPage
+      extends AbstractPage<ListImagesHttpRequest, ImageList, Image, ListImagesPage> {
 
     private ListImagesPage(
-        PageContext<ListImagesHttpRequest, ImageList, Image> context,
-        ImageList response) {
+        PageContext<ListImagesHttpRequest, ImageList, Image> context, ImageList response) {
       super(context, response);
     }
 
@@ -1051,8 +1097,7 @@ public class ImageClient implements BackgroundResource {
 
     @Override
     protected ListImagesPage createPage(
-        PageContext<ListImagesHttpRequest, ImageList, Image> context,
-        ImageList response) {
+        PageContext<ListImagesHttpRequest, ImageList, Image> context, ImageList response) {
       return new ListImagesPage(context, response);
     }
 
@@ -1062,18 +1107,11 @@ public class ImageClient implements BackgroundResource {
         ApiFuture<ImageList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListImagesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListImagesHttpRequest,
-      ImageList,
-      Image,
-      ListImagesPage,
-      ListImagesFixedSizeCollection> {
+  public static class ListImagesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListImagesHttpRequest, ImageList, Image, ListImagesPage, ListImagesFixedSizeCollection> {
 
     private ListImagesFixedSizeCollection(List<ListImagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -1088,7 +1126,5 @@ public class ImageClient implements BackgroundResource {
         List<ListImagesPage> pages, int collectionSize) {
       return new ListImagesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

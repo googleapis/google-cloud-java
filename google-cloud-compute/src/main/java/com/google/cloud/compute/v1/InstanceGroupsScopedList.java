@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class InstanceGroupsScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private InstanceGroupsScopedList(
-      List<InstanceGroup> instanceGroups,
-      Warning warning
-      ) {
+  private InstanceGroupsScopedList(List<InstanceGroup> instanceGroups, Warning warning) {
     this.instanceGroups = instanceGroups;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class InstanceGroupsScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupsScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupsScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupsScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupsScopedList();
   }
@@ -158,13 +155,9 @@ public final class InstanceGroupsScopedList implements ApiMessage {
       return this;
     }
 
-
     public InstanceGroupsScopedList build() {
 
-      return new InstanceGroupsScopedList(
-        instanceGroups,
-        warning
-      );
+      return new InstanceGroupsScopedList(instanceGroups, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class InstanceGroupsScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceGroupsScopedList{"
-        + "instanceGroups=" + instanceGroups + ", "
-        + "warning=" + warning
+        + "instanceGroups="
+        + instanceGroups
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class InstanceGroupsScopedList implements ApiMessage {
     }
     if (o instanceof InstanceGroupsScopedList) {
       InstanceGroupsScopedList that = (InstanceGroupsScopedList) o;
-      return
-          Objects.equals(this.instanceGroups, that.getInstanceGroupsList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.instanceGroups, that.getInstanceGroupsList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instanceGroups,
-      warning
-    );
+    return Objects.hash(instanceGroups, warning);
   }
 }

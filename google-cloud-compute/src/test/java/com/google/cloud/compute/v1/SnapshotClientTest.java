@@ -15,6 +15,12 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.deleteSnapshotMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.getSnapshotMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.listSnapshotsMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.setLabelsSnapshotMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,19 +31,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.deleteSnapshotMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.getSnapshotMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.listSnapshotsMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.setLabelsSnapshotMethodDescriptor;
 import com.google.cloud.compute.v1.stub.SnapshotStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -47,15 +46,15 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class SnapshotClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          deleteSnapshotMethodDescriptor,
-          getSnapshotMethodDescriptor,
-          listSnapshotsMethodDescriptor,
-          setLabelsSnapshotMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, SnapshotStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              deleteSnapshotMethodDescriptor,
+              getSnapshotMethodDescriptor,
+              listSnapshotsMethodDescriptor,
+              setLabelsSnapshotMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, SnapshotStubSettings.getDefaultEndpoint());
 
   private static SnapshotClient client;
   private static SnapshotSettings clientSettings;
@@ -64,13 +63,13 @@ public class SnapshotClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         SnapshotSettings.newBuilder()
-           .setTransportChannelProvider(
-               SnapshotSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       SnapshotClient.create(clientSettings);
+            .setTransportChannelProvider(
+                SnapshotSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = SnapshotClient.create(clientSettings);
   }
 
   @After
@@ -107,56 +106,64 @@ public class SnapshotClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+    ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
-    Operation actualResponse =
-        client.deleteSnapshot(requestId, snapshot);
+    Operation actualResponse = client.deleteSnapshot(requestId, snapshot);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteSnapshotExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+      ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
       client.deleteSnapshot(requestId, snapshot);
       Assert.fail("No exception raised");
@@ -181,46 +188,54 @@ public class SnapshotClientTest {
     String id = "id3355";
     String diskSizeGb = "diskSizeGb-757478089";
     String status = "status-892481550";
-    Snapshot expectedResponse = Snapshot.newBuilder()
-      .setSourceDisk(sourceDisk)
-      .setSourceDiskId(sourceDiskId)
-      .setKind(kind)
-      .setDescription(description)
-      .setLabelFingerprint(labelFingerprint)
-      .setSelfLink(selfLink)
-      .setStorageBytesStatus(storageBytesStatus)
-      .setStorageBytes(storageBytes)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setId(id)
-      .setDiskSizeGb(diskSizeGb)
-      .setStatus(status)
-      .build();
+    Snapshot expectedResponse =
+        Snapshot.newBuilder()
+            .setSourceDisk(sourceDisk)
+            .setSourceDiskId(sourceDiskId)
+            .setKind(kind)
+            .setDescription(description)
+            .setLabelFingerprint(labelFingerprint)
+            .setSelfLink(selfLink)
+            .setStorageBytesStatus(storageBytesStatus)
+            .setStorageBytes(storageBytes)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setId(id)
+            .setDiskSizeGb(diskSizeGb)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+    ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
-    Snapshot actualResponse =
-        client.getSnapshot(snapshot);
+    Snapshot actualResponse = client.getSnapshot(snapshot);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getSnapshotExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+      ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
 
       client.getSnapshot(snapshot);
       Assert.fail("No exception raised");
@@ -238,13 +253,14 @@ public class SnapshotClientTest {
     String selfLink = "selfLink-1691268851";
     Snapshot itemsElement = Snapshot.newBuilder().build();
     List<Snapshot> items = Arrays.asList(itemsElement);
-    SnapshotList expectedResponse = SnapshotList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    SnapshotList expectedResponse =
+        SnapshotList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -253,22 +269,29 @@ public class SnapshotClientTest {
 
     List<Snapshot> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listSnapshotsExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -305,56 +328,68 @@ public class SnapshotClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
-    GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+    ProjectGlobalSnapshotResourceName resource =
+        ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+    GlobalSetLabelsRequest globalSetLabelsRequestResource =
+        GlobalSetLabelsRequest.newBuilder().build();
 
-    Operation actualResponse =
-        client.setLabelsSnapshot(resource, globalSetLabelsRequestResource);
+    Operation actualResponse = client.setLabelsSnapshot(resource, globalSetLabelsRequestResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void setLabelsSnapshotExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
-      GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
+      ProjectGlobalSnapshotResourceName resource =
+          ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+      GlobalSetLabelsRequest globalSetLabelsRequestResource =
+          GlobalSetLabelsRequest.newBuilder().build();
 
       client.setLabelsSnapshot(resource, globalSetLabelsRequestResource);
       Assert.fail("No exception raised");
@@ -362,5 +397,4 @@ public class SnapshotClientTest {
       // Expected exception
     }
   }
-
 }

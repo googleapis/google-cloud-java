@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private RemovePeeringNetworkHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -99,8 +94,11 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
     if (fieldNames.contains("network") && network != null) {
       fieldMap.put("network", Collections.singletonList(String.valueOf(network)));
     }
-    if (fieldNames.contains("networksRemovePeeringRequestResource") && networksRemovePeeringRequestResource != null) {
-      fieldMap.put("networksRemovePeeringRequestResource", Collections.singletonList(String.valueOf(networksRemovePeeringRequestResource)));
+    if (fieldNames.contains("networksRemovePeeringRequestResource")
+        && networksRemovePeeringRequestResource != null) {
+      fieldMap.put(
+          "networksRemovePeeringRequestResource",
+          Collections.singletonList(String.valueOf(networksRemovePeeringRequestResource)));
     }
     if (fieldNames.contains("prettyPrint") && prettyPrint != null) {
       fieldMap.put("prettyPrint", Collections.singletonList(String.valueOf(prettyPrint)));
@@ -198,22 +196,24 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RemovePeeringNetworkHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RemovePeeringNetworkHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RemovePeeringNetworkHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RemovePeeringNetworkHttpRequest();
   }
@@ -329,7 +329,8 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
       return networksRemovePeeringRequestResource;
     }
 
-    public Builder setNetworksRemovePeeringRequestResource(NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
+    public Builder setNetworksRemovePeeringRequestResource(
+        NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
       this.networksRemovePeeringRequestResource = networksRemovePeeringRequestResource;
       return this;
     }
@@ -370,36 +371,27 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public RemovePeeringNetworkHttpRequest build() {
       String missing = "";
-
-
-
 
       if (network == null) {
         missing += " network";
       }
 
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new RemovePeeringNetworkHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        network,
-        networksRemovePeeringRequestResource,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          network,
+          networksRemovePeeringRequestResource,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +413,35 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "RemovePeeringNetworkHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "network=" + network + ", "
-        + "networksRemovePeeringRequestResource=" + networksRemovePeeringRequestResource + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "networksRemovePeeringRequestResource="
+        + networksRemovePeeringRequestResource
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +452,18 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
     }
     if (o instanceof RemovePeeringNetworkHttpRequest) {
       RemovePeeringNetworkHttpRequest that = (RemovePeeringNetworkHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.networksRemovePeeringRequestResource, that.getNetworksRemovePeeringRequestResource()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(
+              this.networksRemovePeeringRequestResource,
+              that.getNetworksRemovePeeringRequestResource())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +471,15 @@ public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      network,
-      networksRemovePeeringRequestResource,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        network,
+        networksRemovePeeringRequestResource,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class CustomerEncryptionKey implements ApiMessage {
     this.sha256 = null;
   }
 
-
-  private CustomerEncryptionKey(
-      String rawKey,
-      String sha256
-      ) {
+  private CustomerEncryptionKey(String rawKey, String sha256) {
     this.rawKey = rawKey;
     this.sha256 = sha256;
   }
@@ -86,22 +79,24 @@ public final class CustomerEncryptionKey implements ApiMessage {
     return sha256;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(CustomerEncryptionKey prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static CustomerEncryptionKey getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final CustomerEncryptionKey DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new CustomerEncryptionKey();
   }
@@ -146,13 +141,9 @@ public final class CustomerEncryptionKey implements ApiMessage {
       return this;
     }
 
-
     public CustomerEncryptionKey build() {
 
-      return new CustomerEncryptionKey(
-        rawKey,
-        sha256
-      );
+      return new CustomerEncryptionKey(rawKey, sha256);
     }
 
     public Builder clone() {
@@ -165,10 +156,7 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   @Override
   public String toString() {
-    return "CustomerEncryptionKey{"
-        + "rawKey=" + rawKey + ", "
-        + "sha256=" + sha256
-        + "}";
+    return "CustomerEncryptionKey{" + "rawKey=" + rawKey + ", " + "sha256=" + sha256 + "}";
   }
 
   @Override
@@ -178,19 +166,14 @@ public final class CustomerEncryptionKey implements ApiMessage {
     }
     if (o instanceof CustomerEncryptionKey) {
       CustomerEncryptionKey that = (CustomerEncryptionKey) o;
-      return
-          Objects.equals(this.rawKey, that.getRawKey()) &&
-          Objects.equals(this.sha256, that.getSha256())
-          ;
+      return Objects.equals(this.rawKey, that.getRawKey())
+          && Objects.equals(this.sha256, that.getSha256());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      rawKey,
-      sha256
-    );
+    return Objects.hash(rawKey, sha256);
   }
 }

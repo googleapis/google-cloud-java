@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class MoveDiskProjectHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private MoveDiskProjectHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class MoveDiskProjectHttpRequest implements ApiMessage {
       String project,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.diskMoveRequestResource = diskMoveRequestResource;
@@ -91,7 +86,9 @@ public final class MoveDiskProjectHttpRequest implements ApiMessage {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
     }
     if (fieldNames.contains("diskMoveRequestResource") && diskMoveRequestResource != null) {
-      fieldMap.put("diskMoveRequestResource", Collections.singletonList(String.valueOf(diskMoveRequestResource)));
+      fieldMap.put(
+          "diskMoveRequestResource",
+          Collections.singletonList(String.valueOf(diskMoveRequestResource)));
     }
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
@@ -198,22 +195,24 @@ public final class MoveDiskProjectHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(MoveDiskProjectHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static MoveDiskProjectHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final MoveDiskProjectHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new MoveDiskProjectHttpRequest();
   }
@@ -370,36 +369,27 @@ public final class MoveDiskProjectHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public MoveDiskProjectHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (project == null) {
         missing += " project";
       }
 
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new MoveDiskProjectHttpRequest(
-        access_token,
-        callback,
-        diskMoveRequestResource,
-        fields,
-        key,
-        prettyPrint,
-        project,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          diskMoveRequestResource,
+          fields,
+          key,
+          prettyPrint,
+          project,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class MoveDiskProjectHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "MoveDiskProjectHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "diskMoveRequestResource=" + diskMoveRequestResource + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "project=" + project + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "diskMoveRequestResource="
+        + diskMoveRequestResource
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "project="
+        + project
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class MoveDiskProjectHttpRequest implements ApiMessage {
     }
     if (o instanceof MoveDiskProjectHttpRequest) {
       MoveDiskProjectHttpRequest that = (MoveDiskProjectHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.diskMoveRequestResource, that.getDiskMoveRequestResource()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.diskMoveRequestResource, that.getDiskMoveRequestResource())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class MoveDiskProjectHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      diskMoveRequestResource,
-      fields,
-      key,
-      prettyPrint,
-      project,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        diskMoveRequestResource,
+        fields,
+        key,
+        prettyPrint,
+        project,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

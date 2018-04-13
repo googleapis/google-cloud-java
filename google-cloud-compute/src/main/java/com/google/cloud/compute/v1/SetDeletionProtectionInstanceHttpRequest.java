@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
     this.userIp = null;
   }
 
-
   private SetDeletionProtectionInstanceHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
       String quotaUser,
       String requestId,
       String resource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.deletionProtection = deletionProtection;
@@ -91,7 +86,8 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
     }
     if (fieldNames.contains("deletionProtection") && deletionProtection != null) {
-      fieldMap.put("deletionProtection", Collections.singletonList(String.valueOf(deletionProtection)));
+      fieldMap.put(
+          "deletionProtection", Collections.singletonList(String.valueOf(deletionProtection)));
     }
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
@@ -198,22 +194,24 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetDeletionProtectionInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetDeletionProtectionInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetDeletionProtectionInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetDeletionProtectionInstanceHttpRequest();
   }
@@ -370,16 +368,8 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
       return this;
     }
 
-
     public SetDeletionProtectionInstanceHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
 
       if (resource == null) {
         missing += " resource";
@@ -389,17 +379,16 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetDeletionProtectionInstanceHttpRequest(
-        access_token,
-        callback,
-        deletionProtection,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        resource,
-        userIp
-      );
+          access_token,
+          callback,
+          deletionProtection,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          resource,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +410,35 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
   @Override
   public String toString() {
     return "SetDeletionProtectionInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "deletionProtection=" + deletionProtection + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "resource=" + resource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "deletionProtection="
+        + deletionProtection
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "resource="
+        + resource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +449,16 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
     }
     if (o instanceof SetDeletionProtectionInstanceHttpRequest) {
       SetDeletionProtectionInstanceHttpRequest that = (SetDeletionProtectionInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.deletionProtection, that.getDeletionProtection()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.resource, that.getResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.deletionProtection, that.getDeletionProtection())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.resource, that.getResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +466,15 @@ public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessag
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      deletionProtection,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      resource,
-      userIp
-    );
+        access_token,
+        callback,
+        deletionProtection,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        resource,
+        userIp);
   }
 }

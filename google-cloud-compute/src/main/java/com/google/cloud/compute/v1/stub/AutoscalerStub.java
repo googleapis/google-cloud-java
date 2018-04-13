@@ -15,25 +15,22 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.AutoscalerClient.AggregatedListAutoscalersPagedResponse;
+import static com.google.cloud.compute.v1.AutoscalerClient.ListAutoscalersPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListAutoscalersHttpRequest;
 import com.google.cloud.compute.v1.Autoscaler;
 import com.google.cloud.compute.v1.AutoscalerAggregatedList;
-import static com.google.cloud.compute.v1.AutoscalerClient.AggregatedListAutoscalersPagedResponse;
-import static com.google.cloud.compute.v1.AutoscalerClient.ListAutoscalersPagedResponse;
 import com.google.cloud.compute.v1.AutoscalerList;
-import com.google.cloud.compute.v1.AutoscalersScopedList;
 import com.google.cloud.compute.v1.DeleteAutoscalerHttpRequest;
 import com.google.cloud.compute.v1.GetAutoscalerHttpRequest;
 import com.google.cloud.compute.v1.InsertAutoscalerHttpRequest;
 import com.google.cloud.compute.v1.ListAutoscalersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchAutoscalerHttpRequest;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneAutoscalerName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.UpdateAutoscalerHttpRequest;
 import javax.annotation.Generated;
 
@@ -47,14 +44,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AutoscalerStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListAutoscalersHttpRequest, AggregatedListAutoscalersPagedResponse> aggregatedListAutoscalersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListAutoscalersPagedCallable()");
+  public UnaryCallable<AggregatedListAutoscalersHttpRequest, AggregatedListAutoscalersPagedResponse>
+      aggregatedListAutoscalersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListAutoscalersPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList> aggregatedListAutoscalersCallable() {
+  public UnaryCallable<AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList>
+      aggregatedListAutoscalersCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListAutoscalersCallable()");
   }
 
@@ -74,7 +73,8 @@ public abstract class AutoscalerStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListAutoscalersHttpRequest, ListAutoscalersPagedResponse> listAutoscalersPagedCallable() {
+  public UnaryCallable<ListAutoscalersHttpRequest, ListAutoscalersPagedResponse>
+      listAutoscalersPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAutoscalersPagedCallable()");
   }
 
@@ -93,4 +93,6 @@ public abstract class AutoscalerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateAutoscalerCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

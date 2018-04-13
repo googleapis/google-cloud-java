@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
     this.utilizationTarget = null;
   }
 
-
-  private AutoscalingPolicyCpuUtilization(
-      Double utilizationTarget
-      ) {
+  private AutoscalingPolicyCpuUtilization(Double utilizationTarget) {
     this.utilizationTarget = utilizationTarget;
   }
 
@@ -49,7 +43,8 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("utilizationTarget") && utilizationTarget != null) {
-      fieldMap.put("utilizationTarget", Collections.singletonList(String.valueOf(utilizationTarget)));
+      fieldMap.put(
+          "utilizationTarget", Collections.singletonList(String.valueOf(utilizationTarget)));
     }
     return fieldMap;
   }
@@ -72,22 +67,24 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
     return utilizationTarget;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AutoscalingPolicyCpuUtilization prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AutoscalingPolicyCpuUtilization getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AutoscalingPolicyCpuUtilization DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AutoscalingPolicyCpuUtilization();
   }
@@ -118,11 +115,8 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
       return this;
     }
 
-
     public AutoscalingPolicyCpuUtilization build() {
-      return new AutoscalingPolicyCpuUtilization(
-        utilizationTarget
-      );
+      return new AutoscalingPolicyCpuUtilization(utilizationTarget);
     }
 
     public Builder clone() {
@@ -134,9 +128,7 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
 
   @Override
   public String toString() {
-    return "AutoscalingPolicyCpuUtilization{"
-        + "utilizationTarget=" + utilizationTarget
-        + "}";
+    return "AutoscalingPolicyCpuUtilization{" + "utilizationTarget=" + utilizationTarget + "}";
   }
 
   @Override
@@ -146,17 +138,13 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
     }
     if (o instanceof AutoscalingPolicyCpuUtilization) {
       AutoscalingPolicyCpuUtilization that = (AutoscalingPolicyCpuUtilization) o;
-      return
-          Objects.equals(this.utilizationTarget, that.getUtilizationTarget())
-          ;
+      return Objects.equals(this.utilizationTarget, that.getUtilizationTarget());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      utilizationTarget
-    );
+    return Objects.hash(utilizationTarget);
   }
 }

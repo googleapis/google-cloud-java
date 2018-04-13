@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
     this.cacheKeyPolicy = null;
   }
 
-
-  private BackendServiceCdnPolicy(
-      CacheKeyPolicy cacheKeyPolicy
-      ) {
+  private BackendServiceCdnPolicy(CacheKeyPolicy cacheKeyPolicy) {
     this.cacheKeyPolicy = cacheKeyPolicy;
   }
 
@@ -72,22 +66,24 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
     return cacheKeyPolicy;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(BackendServiceCdnPolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static BackendServiceCdnPolicy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final BackendServiceCdnPolicy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new BackendServiceCdnPolicy();
   }
@@ -118,11 +114,8 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
       return this;
     }
 
-
     public BackendServiceCdnPolicy build() {
-      return new BackendServiceCdnPolicy(
-        cacheKeyPolicy
-      );
+      return new BackendServiceCdnPolicy(cacheKeyPolicy);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
 
   @Override
   public String toString() {
-    return "BackendServiceCdnPolicy{"
-        + "cacheKeyPolicy=" + cacheKeyPolicy
-        + "}";
+    return "BackendServiceCdnPolicy{" + "cacheKeyPolicy=" + cacheKeyPolicy + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class BackendServiceCdnPolicy implements ApiMessage {
     }
     if (o instanceof BackendServiceCdnPolicy) {
       BackendServiceCdnPolicy that = (BackendServiceCdnPolicy) o;
-      return
-          Objects.equals(this.cacheKeyPolicy, that.getCacheKeyPolicy())
-          ;
+      return Objects.equals(this.cacheKeyPolicy, that.getCacheKeyPolicy());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      cacheKeyPolicy
-    );
+    return Objects.hash(cacheKeyPolicy);
   }
 }

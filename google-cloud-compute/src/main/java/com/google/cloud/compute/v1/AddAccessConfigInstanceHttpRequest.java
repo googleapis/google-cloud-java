@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -58,7 +55,6 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private AddAccessConfigInstanceHttpRequest(
       AccessConfig accessConfigResource,
       String access_token,
@@ -70,8 +66,7 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.accessConfigResource = accessConfigResource;
     this.access_token = access_token;
     this.callback = callback;
@@ -89,7 +84,8 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("accessConfigResource") && accessConfigResource != null) {
-      fieldMap.put("accessConfigResource", Collections.singletonList(String.valueOf(accessConfigResource)));
+      fieldMap.put(
+          "accessConfigResource", Collections.singletonList(String.valueOf(accessConfigResource)));
     }
     if (fieldNames.contains("access_token") && access_token != null) {
       fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
@@ -212,22 +208,24 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AddAccessConfigInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AddAccessConfigInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AddAccessConfigInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AddAccessConfigInstanceHttpRequest();
   }
@@ -398,12 +396,8 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public AddAccessConfigInstanceHttpRequest build() {
       String missing = "";
-
-
-
 
       if (instance == null) {
         missing += " instance";
@@ -413,25 +407,21 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
         missing += " networkInterface";
       }
 
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new AddAccessConfigInstanceHttpRequest(
-        accessConfigResource,
-        access_token,
-        callback,
-        fields,
-        instance,
-        key,
-        networkInterface,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          accessConfigResource,
+          access_token,
+          callback,
+          fields,
+          instance,
+          key,
+          networkInterface,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -454,17 +444,38 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "AddAccessConfigInstanceHttpRequest{"
-        + "accessConfigResource=" + accessConfigResource + ", "
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instance=" + instance + ", "
-        + "key=" + key + ", "
-        + "networkInterface=" + networkInterface + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "accessConfigResource="
+        + accessConfigResource
+        + ", "
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "networkInterface="
+        + networkInterface
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -475,19 +486,17 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
     }
     if (o instanceof AddAccessConfigInstanceHttpRequest) {
       AddAccessConfigInstanceHttpRequest that = (AddAccessConfigInstanceHttpRequest) o;
-      return
-          Objects.equals(this.accessConfigResource, that.getAccessConfigResource()) &&
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.networkInterface, that.getNetworkInterface()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.accessConfigResource, that.getAccessConfigResource())
+          && Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.networkInterface, that.getNetworkInterface())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -495,17 +504,16 @@ public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      accessConfigResource,
-      access_token,
-      callback,
-      fields,
-      instance,
-      key,
-      networkInterface,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        accessConfigResource,
+        access_token,
+        callback,
+        fields,
+        instance,
+        key,
+        networkInterface,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

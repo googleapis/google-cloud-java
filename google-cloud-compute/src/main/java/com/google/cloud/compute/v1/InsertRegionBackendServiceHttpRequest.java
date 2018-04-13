@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private InsertRegionBackendServiceHttpRequest(
       String access_token,
       BackendService backendServiceResource,
@@ -67,8 +63,7 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
       String quotaUser,
       String region,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.backendServiceResource = backendServiceResource;
     this.callback = callback;
@@ -88,7 +83,9 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
       fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
     }
     if (fieldNames.contains("backendServiceResource") && backendServiceResource != null) {
-      fieldMap.put("backendServiceResource", Collections.singletonList(String.valueOf(backendServiceResource)));
+      fieldMap.put(
+          "backendServiceResource",
+          Collections.singletonList(String.valueOf(backendServiceResource)));
     }
     if (fieldNames.contains("callback") && callback != null) {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
@@ -198,22 +195,24 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertRegionBackendServiceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertRegionBackendServiceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertRegionBackendServiceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertRegionBackendServiceHttpRequest();
   }
@@ -370,36 +369,27 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertRegionBackendServiceHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (region == null) {
         missing += " region";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertRegionBackendServiceHttpRequest(
-        access_token,
-        backendServiceResource,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        region,
-        requestId,
-        userIp
-      );
+          access_token,
+          backendServiceResource,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          region,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertRegionBackendServiceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "backendServiceResource=" + backendServiceResource + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "region=" + region + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "backendServiceResource="
+        + backendServiceResource
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertRegionBackendServiceHttpRequest) {
       InsertRegionBackendServiceHttpRequest that = (InsertRegionBackendServiceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.backendServiceResource, that.getBackendServiceResource()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.backendServiceResource, that.getBackendServiceResource())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class InsertRegionBackendServiceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      backendServiceResource,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      region,
-      requestId,
-      userIp
-    );
+        access_token,
+        backendServiceResource,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        region,
+        requestId,
+        userIp);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class ProjectsEnableXpnResourceRequest implements ApiMessage {
     this.xpnResource = null;
   }
 
-
-  private ProjectsEnableXpnResourceRequest(
-      XpnResourceId xpnResource
-      ) {
+  private ProjectsEnableXpnResourceRequest(XpnResourceId xpnResource) {
     this.xpnResource = xpnResource;
   }
 
@@ -72,22 +66,24 @@ public final class ProjectsEnableXpnResourceRequest implements ApiMessage {
     return xpnResource;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ProjectsEnableXpnResourceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ProjectsEnableXpnResourceRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ProjectsEnableXpnResourceRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ProjectsEnableXpnResourceRequest();
   }
@@ -118,11 +114,8 @@ public final class ProjectsEnableXpnResourceRequest implements ApiMessage {
       return this;
     }
 
-
     public ProjectsEnableXpnResourceRequest build() {
-      return new ProjectsEnableXpnResourceRequest(
-        xpnResource
-      );
+      return new ProjectsEnableXpnResourceRequest(xpnResource);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class ProjectsEnableXpnResourceRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ProjectsEnableXpnResourceRequest{"
-        + "xpnResource=" + xpnResource
-        + "}";
+    return "ProjectsEnableXpnResourceRequest{" + "xpnResource=" + xpnResource + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class ProjectsEnableXpnResourceRequest implements ApiMessage {
     }
     if (o instanceof ProjectsEnableXpnResourceRequest) {
       ProjectsEnableXpnResourceRequest that = (ProjectsEnableXpnResourceRequest) o;
-      return
-          Objects.equals(this.xpnResource, that.getXpnResource())
-          ;
+      return Objects.equals(this.xpnResource, that.getXpnResource());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      xpnResource
-    );
+    return Objects.hash(xpnResource);
   }
 }

@@ -15,6 +15,13 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.TargetHttpProxyClient.ListTargetHttpProxiesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.deleteTargetHttpProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.getTargetHttpProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.insertTargetHttpProxyMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.listTargetHttpProxiesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.setUrlMapTargetHttpProxyMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,20 +32,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.TargetHttpProxyClient.ListTargetHttpProxiesPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.deleteTargetHttpProxyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.getTargetHttpProxyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.insertTargetHttpProxyMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.listTargetHttpProxiesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpProxyStub.setUrlMapTargetHttpProxyMethodDescriptor;
 import com.google.cloud.compute.v1.stub.TargetHttpProxyStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -48,16 +47,16 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class TargetHttpProxyClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          deleteTargetHttpProxyMethodDescriptor,
-          getTargetHttpProxyMethodDescriptor,
-          insertTargetHttpProxyMethodDescriptor,
-          listTargetHttpProxiesMethodDescriptor,
-          setUrlMapTargetHttpProxyMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, TargetHttpProxyStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              deleteTargetHttpProxyMethodDescriptor,
+              getTargetHttpProxyMethodDescriptor,
+              insertTargetHttpProxyMethodDescriptor,
+              listTargetHttpProxiesMethodDescriptor,
+              setUrlMapTargetHttpProxyMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, TargetHttpProxyStubSettings.getDefaultEndpoint());
 
   private static TargetHttpProxyClient client;
   private static TargetHttpProxySettings clientSettings;
@@ -66,13 +65,13 @@ public class TargetHttpProxyClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         TargetHttpProxySettings.newBuilder()
-           .setTransportChannelProvider(
-               TargetHttpProxySettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       TargetHttpProxyClient.create(clientSettings);
+            .setTransportChannelProvider(
+                TargetHttpProxySettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = TargetHttpProxyClient.create(clientSettings);
   }
 
   @After
@@ -109,56 +108,66 @@ public class TargetHttpProxyClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+    ProjectGlobalTargetHttpProxyName targetHttpProxy =
+        ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
 
-    Operation actualResponse =
-        client.deleteTargetHttpProxy(requestId, targetHttpProxy);
+    Operation actualResponse = client.deleteTargetHttpProxy(requestId, targetHttpProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteTargetHttpProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+      ProjectGlobalTargetHttpProxyName targetHttpProxy =
+          ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
 
       client.deleteTargetHttpProxy(requestId, targetHttpProxy);
       Assert.fail("No exception raised");
@@ -170,47 +179,57 @@ public class TargetHttpProxyClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTargetHttpProxyTest() {
-    ProjectUrlMapName urlMap = ProjectUrlMapName.of("[PROJECT]", "[URL_MAP]");
+    ProjectGlobalUrlMapName urlMap = ProjectGlobalUrlMapName.of("[PROJECT]", "[URL_MAP]");
     String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
     String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
     String selfLink = "selfLink-1691268851";
-    TargetHttpProxy expectedResponse = TargetHttpProxy.newBuilder()
-      .setUrlMap(urlMap.toString())
-      .setKind(kind)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setDescription(description)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .build();
+    TargetHttpProxy expectedResponse =
+        TargetHttpProxy.newBuilder()
+            .setUrlMap(urlMap.toString())
+            .setKind(kind)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setDescription(description)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+    ProjectGlobalTargetHttpProxyName targetHttpProxy =
+        ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
 
-    TargetHttpProxy actualResponse =
-        client.getTargetHttpProxy(targetHttpProxy);
+    TargetHttpProxy actualResponse = client.getTargetHttpProxy(targetHttpProxy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getTargetHttpProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+      ProjectGlobalTargetHttpProxyName targetHttpProxy =
+          ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
 
       client.getTargetHttpProxy(targetHttpProxy);
       Assert.fail("No exception raised");
@@ -243,29 +262,30 @@ public class TargetHttpProxyClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
@@ -279,16 +299,24 @@ public class TargetHttpProxyClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void insertTargetHttpProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -312,13 +340,14 @@ public class TargetHttpProxyClientTest {
     String selfLink = "selfLink-1691268851";
     TargetHttpProxy itemsElement = TargetHttpProxy.newBuilder().build();
     List<TargetHttpProxy> items = Arrays.asList(itemsElement);
-    TargetHttpProxyList expectedResponse = TargetHttpProxyList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    TargetHttpProxyList expectedResponse =
+        TargetHttpProxyList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -327,22 +356,29 @@ public class TargetHttpProxyClientTest {
 
     List<TargetHttpProxy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listTargetHttpProxiesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -379,33 +415,35 @@ public class TargetHttpProxyClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+    ProjectTargetHttpProxyName targetHttpProxy =
+        ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
     UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
 
     Operation actualResponse =
@@ -415,21 +453,30 @@ public class TargetHttpProxyClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void setUrlMapTargetHttpProxyExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+      ProjectTargetHttpProxyName targetHttpProxy =
+          ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
       UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
 
       client.setUrlMapTargetHttpProxy(requestId, targetHttpProxy, urlMapReferenceResource);
@@ -438,5 +485,4 @@ public class TargetHttpProxyClientTest {
       // Expected exception
     }
   }
-
 }

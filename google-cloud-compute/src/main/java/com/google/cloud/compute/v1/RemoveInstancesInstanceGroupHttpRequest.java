@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
     this.userIp = null;
   }
 
-
   private RemoveInstancesInstanceGroupHttpRequest(
       String access_token,
       String callback,
@@ -67,13 +63,13 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
     this.instanceGroup = instanceGroup;
-    this.instanceGroupsRemoveInstancesRequestResource = instanceGroupsRemoveInstancesRequestResource;
+    this.instanceGroupsRemoveInstancesRequestResource =
+        instanceGroupsRemoveInstancesRequestResource;
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
@@ -96,8 +92,11 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
     if (fieldNames.contains("instanceGroup") && instanceGroup != null) {
       fieldMap.put("instanceGroup", Collections.singletonList(String.valueOf(instanceGroup)));
     }
-    if (fieldNames.contains("instanceGroupsRemoveInstancesRequestResource") && instanceGroupsRemoveInstancesRequestResource != null) {
-      fieldMap.put("instanceGroupsRemoveInstancesRequestResource", Collections.singletonList(String.valueOf(instanceGroupsRemoveInstancesRequestResource)));
+    if (fieldNames.contains("instanceGroupsRemoveInstancesRequestResource")
+        && instanceGroupsRemoveInstancesRequestResource != null) {
+      fieldMap.put(
+          "instanceGroupsRemoveInstancesRequestResource",
+          Collections.singletonList(String.valueOf(instanceGroupsRemoveInstancesRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -198,22 +197,24 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RemoveInstancesInstanceGroupHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RemoveInstancesInstanceGroupHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RemoveInstancesInstanceGroupHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RemoveInstancesInstanceGroupHttpRequest();
   }
@@ -247,7 +248,8 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
         this.instanceGroup = other.instanceGroup;
       }
       if (other.getInstanceGroupsRemoveInstancesRequestResource() != null) {
-        this.instanceGroupsRemoveInstancesRequestResource = other.instanceGroupsRemoveInstancesRequestResource;
+        this.instanceGroupsRemoveInstancesRequestResource =
+            other.instanceGroupsRemoveInstancesRequestResource;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -272,7 +274,8 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
       this.callback = source.callback;
       this.fields = source.fields;
       this.instanceGroup = source.instanceGroup;
-      this.instanceGroupsRemoveInstancesRequestResource = source.instanceGroupsRemoveInstancesRequestResource;
+      this.instanceGroupsRemoveInstancesRequestResource =
+          source.instanceGroupsRemoveInstancesRequestResource;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
@@ -320,8 +323,10 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
       return instanceGroupsRemoveInstancesRequestResource;
     }
 
-    public Builder setInstanceGroupsRemoveInstancesRequestResource(InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
-      this.instanceGroupsRemoveInstancesRequestResource = instanceGroupsRemoveInstancesRequestResource;
+    public Builder setInstanceGroupsRemoveInstancesRequestResource(
+        InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource) {
+      this.instanceGroupsRemoveInstancesRequestResource =
+          instanceGroupsRemoveInstancesRequestResource;
       return this;
     }
 
@@ -370,36 +375,27 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
       return this;
     }
 
-
     public RemoveInstancesInstanceGroupHttpRequest build() {
       String missing = "";
-
-
 
       if (instanceGroup == null) {
         missing += " instanceGroup";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new RemoveInstancesInstanceGroupHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroup,
-        instanceGroupsRemoveInstancesRequestResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroup,
+          instanceGroupsRemoveInstancesRequestResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -408,7 +404,8 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setInstanceGroup(this.instanceGroup);
-      newBuilder.setInstanceGroupsRemoveInstancesRequestResource(this.instanceGroupsRemoveInstancesRequestResource);
+      newBuilder.setInstanceGroupsRemoveInstancesRequestResource(
+          this.instanceGroupsRemoveInstancesRequestResource);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
@@ -421,16 +418,35 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
   @Override
   public String toString() {
     return "RemoveInstancesInstanceGroupHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroup=" + instanceGroup + ", "
-        + "instanceGroupsRemoveInstancesRequestResource=" + instanceGroupsRemoveInstancesRequestResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroup="
+        + instanceGroup
+        + ", "
+        + "instanceGroupsRemoveInstancesRequestResource="
+        + instanceGroupsRemoveInstancesRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +457,18 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
     }
     if (o instanceof RemoveInstancesInstanceGroupHttpRequest) {
       RemoveInstancesInstanceGroupHttpRequest that = (RemoveInstancesInstanceGroupHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroup, that.getInstanceGroup()) &&
-          Objects.equals(this.instanceGroupsRemoveInstancesRequestResource, that.getInstanceGroupsRemoveInstancesRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceGroup, that.getInstanceGroup())
+          && Objects.equals(
+              this.instanceGroupsRemoveInstancesRequestResource,
+              that.getInstanceGroupsRemoveInstancesRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +476,15 @@ public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroup,
-      instanceGroupsRemoveInstancesRequestResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroup,
+        instanceGroupsRemoveInstancesRequestResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

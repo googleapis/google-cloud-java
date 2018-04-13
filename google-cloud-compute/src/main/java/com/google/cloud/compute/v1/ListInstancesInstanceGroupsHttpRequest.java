@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -62,7 +59,6 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
     this.userIp = null;
   }
 
-
   private ListInstancesInstanceGroupsHttpRequest(
       String access_token,
       String callback,
@@ -76,8 +72,7 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
       String pageToken,
       String prettyPrint,
       String quotaUser,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -111,8 +106,11 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
     if (fieldNames.contains("instanceGroup") && instanceGroup != null) {
       fieldMap.put("instanceGroup", Collections.singletonList(String.valueOf(instanceGroup)));
     }
-    if (fieldNames.contains("instanceGroupsListInstancesRequestResource") && instanceGroupsListInstancesRequestResource != null) {
-      fieldMap.put("instanceGroupsListInstancesRequestResource", Collections.singletonList(String.valueOf(instanceGroupsListInstancesRequestResource)));
+    if (fieldNames.contains("instanceGroupsListInstancesRequestResource")
+        && instanceGroupsListInstancesRequestResource != null) {
+      fieldMap.put(
+          "instanceGroupsListInstancesRequestResource",
+          Collections.singletonList(String.valueOf(instanceGroupsListInstancesRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -240,22 +238,24 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ListInstancesInstanceGroupsHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ListInstancesInstanceGroupsHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ListInstancesInstanceGroupsHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ListInstancesInstanceGroupsHttpRequest();
   }
@@ -295,7 +295,8 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
         this.instanceGroup = other.instanceGroup;
       }
       if (other.getInstanceGroupsListInstancesRequestResource() != null) {
-        this.instanceGroupsListInstancesRequestResource = other.instanceGroupsListInstancesRequestResource;
+        this.instanceGroupsListInstancesRequestResource =
+            other.instanceGroupsListInstancesRequestResource;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -327,7 +328,8 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
       this.fields = source.fields;
       this.filter = source.filter;
       this.instanceGroup = source.instanceGroup;
-      this.instanceGroupsListInstancesRequestResource = source.instanceGroupsListInstancesRequestResource;
+      this.instanceGroupsListInstancesRequestResource =
+          source.instanceGroupsListInstancesRequestResource;
       this.key = source.key;
       this.maxResults = source.maxResults;
       this.orderBy = source.orderBy;
@@ -386,7 +388,8 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
       return instanceGroupsListInstancesRequestResource;
     }
 
-    public Builder setInstanceGroupsListInstancesRequestResource(InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource) {
+    public Builder setInstanceGroupsListInstancesRequestResource(
+        InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource) {
       this.instanceGroupsListInstancesRequestResource = instanceGroupsListInstancesRequestResource;
       return this;
     }
@@ -454,42 +457,30 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
       return this;
     }
 
-
     public ListInstancesInstanceGroupsHttpRequest build() {
       String missing = "";
-
-
-
 
       if (instanceGroup == null) {
         missing += " instanceGroup";
       }
 
-
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ListInstancesInstanceGroupsHttpRequest(
-        access_token,
-        callback,
-        fields,
-        filter,
-        instanceGroup,
-        instanceGroupsListInstancesRequestResource,
-        key,
-        maxResults,
-        orderBy,
-        pageToken,
-        prettyPrint,
-        quotaUser,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          filter,
+          instanceGroup,
+          instanceGroupsListInstancesRequestResource,
+          key,
+          maxResults,
+          orderBy,
+          pageToken,
+          prettyPrint,
+          quotaUser,
+          userIp);
     }
 
     public Builder clone() {
@@ -499,7 +490,8 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
       newBuilder.setFields(this.fields);
       newBuilder.setFilter(this.filter);
       newBuilder.setInstanceGroup(this.instanceGroup);
-      newBuilder.setInstanceGroupsListInstancesRequestResource(this.instanceGroupsListInstancesRequestResource);
+      newBuilder.setInstanceGroupsListInstancesRequestResource(
+          this.instanceGroupsListInstancesRequestResource);
       newBuilder.setKey(this.key);
       newBuilder.setMaxResults(this.maxResults);
       newBuilder.setOrderBy(this.orderBy);
@@ -514,19 +506,44 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
   @Override
   public String toString() {
     return "ListInstancesInstanceGroupsHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "filter=" + filter + ", "
-        + "instanceGroup=" + instanceGroup + ", "
-        + "instanceGroupsListInstancesRequestResource=" + instanceGroupsListInstancesRequestResource + ", "
-        + "key=" + key + ", "
-        + "maxResults=" + maxResults + ", "
-        + "orderBy=" + orderBy + ", "
-        + "pageToken=" + pageToken + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "filter="
+        + filter
+        + ", "
+        + "instanceGroup="
+        + instanceGroup
+        + ", "
+        + "instanceGroupsListInstancesRequestResource="
+        + instanceGroupsListInstancesRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "maxResults="
+        + maxResults
+        + ", "
+        + "orderBy="
+        + orderBy
+        + ", "
+        + "pageToken="
+        + pageToken
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -537,21 +554,21 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
     }
     if (o instanceof ListInstancesInstanceGroupsHttpRequest) {
       ListInstancesInstanceGroupsHttpRequest that = (ListInstancesInstanceGroupsHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.filter, that.getFilter()) &&
-          Objects.equals(this.instanceGroup, that.getInstanceGroup()) &&
-          Objects.equals(this.instanceGroupsListInstancesRequestResource, that.getInstanceGroupsListInstancesRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.maxResults, that.getMaxResults()) &&
-          Objects.equals(this.orderBy, that.getOrderBy()) &&
-          Objects.equals(this.pageToken, that.getPageToken()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.filter, that.getFilter())
+          && Objects.equals(this.instanceGroup, that.getInstanceGroup())
+          && Objects.equals(
+              this.instanceGroupsListInstancesRequestResource,
+              that.getInstanceGroupsListInstancesRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.maxResults, that.getMaxResults())
+          && Objects.equals(this.orderBy, that.getOrderBy())
+          && Objects.equals(this.pageToken, that.getPageToken())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -559,19 +576,18 @@ public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage 
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      filter,
-      instanceGroup,
-      instanceGroupsListInstancesRequestResource,
-      key,
-      maxResults,
-      orderBy,
-      pageToken,
-      prettyPrint,
-      quotaUser,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        filter,
+        instanceGroup,
+        instanceGroupsListInstancesRequestResource,
+        key,
+        maxResults,
+        orderBy,
+        pageToken,
+        prettyPrint,
+        quotaUser,
+        userIp);
   }
 }

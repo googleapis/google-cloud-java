@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest implements ApiMes
     this.sslCertificates = null;
   }
 
-
-  private TargetHttpsProxiesSetSslCertificatesRequest(
-      List<String> sslCertificates
-      ) {
+  private TargetHttpsProxiesSetSslCertificatesRequest(List<String> sslCertificates) {
     this.sslCertificates = sslCertificates;
   }
 
@@ -76,22 +71,24 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest implements ApiMes
     return sslCertificates;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetHttpsProxiesSetSslCertificatesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetHttpsProxiesSetSslCertificatesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetHttpsProxiesSetSslCertificatesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetHttpsProxiesSetSslCertificatesRequest();
   }
@@ -130,11 +127,8 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest implements ApiMes
       return this;
     }
 
-
     public TargetHttpsProxiesSetSslCertificatesRequest build() {
-      return new TargetHttpsProxiesSetSslCertificatesRequest(
-        sslCertificates
-      );
+      return new TargetHttpsProxiesSetSslCertificatesRequest(sslCertificates);
     }
 
     public Builder clone() {
@@ -147,7 +141,8 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest implements ApiMes
   @Override
   public String toString() {
     return "TargetHttpsProxiesSetSslCertificatesRequest{"
-        + "sslCertificates=" + sslCertificates
+        + "sslCertificates="
+        + sslCertificates
         + "}";
   }
 
@@ -157,18 +152,15 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest implements ApiMes
       return true;
     }
     if (o instanceof TargetHttpsProxiesSetSslCertificatesRequest) {
-      TargetHttpsProxiesSetSslCertificatesRequest that = (TargetHttpsProxiesSetSslCertificatesRequest) o;
-      return
-          Objects.equals(this.sslCertificates, that.getSslCertificatesList())
-          ;
+      TargetHttpsProxiesSetSslCertificatesRequest that =
+          (TargetHttpsProxiesSetSslCertificatesRequest) o;
+      return Objects.equals(this.sslCertificates, that.getSslCertificatesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      sslCertificates
-    );
+    return Objects.hash(sslCertificates);
   }
 }

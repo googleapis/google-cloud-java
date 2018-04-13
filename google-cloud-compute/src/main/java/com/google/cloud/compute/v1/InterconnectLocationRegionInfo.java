@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,12 +39,8 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
     this.region = null;
   }
 
-
   private InterconnectLocationRegionInfo(
-      String expectedRttMs,
-      String locationPresence,
-      String region
-      ) {
+      String expectedRttMs, String locationPresence, String region) {
     this.expectedRttMs = expectedRttMs;
     this.locationPresence = locationPresence;
     this.region = region;
@@ -100,22 +93,24 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
     return region;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InterconnectLocationRegionInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InterconnectLocationRegionInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InterconnectLocationRegionInfo DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InterconnectLocationRegionInfo();
   }
@@ -174,15 +169,9 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
       return this;
     }
 
-
     public InterconnectLocationRegionInfo build() {
 
-
-      return new InterconnectLocationRegionInfo(
-        expectedRttMs,
-        locationPresence,
-        region
-      );
+      return new InterconnectLocationRegionInfo(expectedRttMs, locationPresence, region);
     }
 
     public Builder clone() {
@@ -197,9 +186,14 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
   @Override
   public String toString() {
     return "InterconnectLocationRegionInfo{"
-        + "expectedRttMs=" + expectedRttMs + ", "
-        + "locationPresence=" + locationPresence + ", "
-        + "region=" + region
+        + "expectedRttMs="
+        + expectedRttMs
+        + ", "
+        + "locationPresence="
+        + locationPresence
+        + ", "
+        + "region="
+        + region
         + "}";
   }
 
@@ -210,21 +204,15 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
     }
     if (o instanceof InterconnectLocationRegionInfo) {
       InterconnectLocationRegionInfo that = (InterconnectLocationRegionInfo) o;
-      return
-          Objects.equals(this.expectedRttMs, that.getExpectedRttMs()) &&
-          Objects.equals(this.locationPresence, that.getLocationPresence()) &&
-          Objects.equals(this.region, that.getRegion())
-          ;
+      return Objects.equals(this.expectedRttMs, that.getExpectedRttMs())
+          && Objects.equals(this.locationPresence, that.getLocationPresence())
+          && Objects.equals(this.region, that.getRegion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      expectedRttMs,
-      locationPresence,
-      region
-    );
+    return Objects.hash(expectedRttMs, locationPresence, region);
   }
 }

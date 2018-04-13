@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,7 +61,6 @@ public final class Subnetwork implements ApiMessage {
     this.selfLink = null;
   }
 
-
   private Subnetwork(
       String creationTimestamp,
       String description,
@@ -76,8 +74,7 @@ public final class Subnetwork implements ApiMessage {
       Boolean privateIpGoogleAccess,
       String region,
       List<SubnetworkSecondaryRange> secondaryIpRanges,
-      String selfLink
-      ) {
+      String selfLink) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.fingerprint = fingerprint;
@@ -97,7 +94,8 @@ public final class Subnetwork implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -124,7 +122,9 @@ public final class Subnetwork implements ApiMessage {
       fieldMap.put("network", Collections.singletonList(String.valueOf(network)));
     }
     if (fieldNames.contains("privateIpGoogleAccess") && privateIpGoogleAccess != null) {
-      fieldMap.put("privateIpGoogleAccess", Collections.singletonList(String.valueOf(privateIpGoogleAccess)));
+      fieldMap.put(
+          "privateIpGoogleAccess",
+          Collections.singletonList(String.valueOf(privateIpGoogleAccess)));
     }
     if (fieldNames.contains("region") && region != null) {
       fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
@@ -244,22 +244,24 @@ public final class Subnetwork implements ApiMessage {
     return selfLink;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Subnetwork prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Subnetwork getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Subnetwork DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Subnetwork();
   }
@@ -466,35 +468,22 @@ public final class Subnetwork implements ApiMessage {
       return this;
     }
 
-
     public Subnetwork build() {
 
-
-
-
-
-
-
-
-
-
-
-
       return new Subnetwork(
-        creationTimestamp,
-        description,
-        fingerprint,
-        gatewayAddress,
-        id,
-        ipCidrRange,
-        kind,
-        name,
-        network,
-        privateIpGoogleAccess,
-        region,
-        secondaryIpRanges,
-        selfLink
-      );
+          creationTimestamp,
+          description,
+          fingerprint,
+          gatewayAddress,
+          id,
+          ipCidrRange,
+          kind,
+          name,
+          network,
+          privateIpGoogleAccess,
+          region,
+          secondaryIpRanges,
+          selfLink);
     }
 
     public Builder clone() {
@@ -519,19 +508,44 @@ public final class Subnetwork implements ApiMessage {
   @Override
   public String toString() {
     return "Subnetwork{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "fingerprint=" + fingerprint + ", "
-        + "gatewayAddress=" + gatewayAddress + ", "
-        + "id=" + id + ", "
-        + "ipCidrRange=" + ipCidrRange + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "network=" + network + ", "
-        + "privateIpGoogleAccess=" + privateIpGoogleAccess + ", "
-        + "region=" + region + ", "
-        + "secondaryIpRanges=" + secondaryIpRanges + ", "
-        + "selfLink=" + selfLink
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "gatewayAddress="
+        + gatewayAddress
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "ipCidrRange="
+        + ipCidrRange
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "privateIpGoogleAccess="
+        + privateIpGoogleAccess
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "secondaryIpRanges="
+        + secondaryIpRanges
+        + ", "
+        + "selfLink="
+        + selfLink
         + "}";
   }
 
@@ -542,21 +556,19 @@ public final class Subnetwork implements ApiMessage {
     }
     if (o instanceof Subnetwork) {
       Subnetwork that = (Subnetwork) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.gatewayAddress, that.getGatewayAddress()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.ipCidrRange, that.getIpCidrRange()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.privateIpGoogleAccess, that.getPrivateIpGoogleAccess()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.secondaryIpRanges, that.getSecondaryIpRangesList()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.gatewayAddress, that.getGatewayAddress())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.ipCidrRange, that.getIpCidrRange())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.privateIpGoogleAccess, that.getPrivateIpGoogleAccess())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.secondaryIpRanges, that.getSecondaryIpRangesList())
+          && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
   }
@@ -564,19 +576,18 @@ public final class Subnetwork implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      fingerprint,
-      gatewayAddress,
-      id,
-      ipCidrRange,
-      kind,
-      name,
-      network,
-      privateIpGoogleAccess,
-      region,
-      secondaryIpRanges,
-      selfLink
-    );
+        creationTimestamp,
+        description,
+        fingerprint,
+        gatewayAddress,
+        id,
+        ipCidrRange,
+        kind,
+        name,
+        network,
+        privateIpGoogleAccess,
+        region,
+        secondaryIpRanges,
+        selfLink);
   }
 }

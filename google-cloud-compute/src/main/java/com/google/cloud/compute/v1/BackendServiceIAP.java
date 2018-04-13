@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -44,13 +41,11 @@ public final class BackendServiceIAP implements ApiMessage {
     this.oauth2ClientSecretSha256 = null;
   }
 
-
   private BackendServiceIAP(
       Boolean enabled,
       String oauth2ClientId,
       String oauth2ClientSecret,
-      String oauth2ClientSecretSha256
-      ) {
+      String oauth2ClientSecretSha256) {
     this.enabled = enabled;
     this.oauth2ClientId = oauth2ClientId;
     this.oauth2ClientSecret = oauth2ClientSecret;
@@ -67,10 +62,13 @@ public final class BackendServiceIAP implements ApiMessage {
       fieldMap.put("oauth2ClientId", Collections.singletonList(String.valueOf(oauth2ClientId)));
     }
     if (fieldNames.contains("oauth2ClientSecret") && oauth2ClientSecret != null) {
-      fieldMap.put("oauth2ClientSecret", Collections.singletonList(String.valueOf(oauth2ClientSecret)));
+      fieldMap.put(
+          "oauth2ClientSecret", Collections.singletonList(String.valueOf(oauth2ClientSecret)));
     }
     if (fieldNames.contains("oauth2ClientSecretSha256") && oauth2ClientSecretSha256 != null) {
-      fieldMap.put("oauth2ClientSecretSha256", Collections.singletonList(String.valueOf(oauth2ClientSecretSha256)));
+      fieldMap.put(
+          "oauth2ClientSecretSha256",
+          Collections.singletonList(String.valueOf(oauth2ClientSecretSha256)));
     }
     return fieldMap;
   }
@@ -114,22 +112,24 @@ public final class BackendServiceIAP implements ApiMessage {
     return oauth2ClientSecretSha256;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(BackendServiceIAP prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static BackendServiceIAP getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final BackendServiceIAP DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new BackendServiceIAP();
   }
@@ -202,17 +202,10 @@ public final class BackendServiceIAP implements ApiMessage {
       return this;
     }
 
-
     public BackendServiceIAP build() {
 
-
-
       return new BackendServiceIAP(
-        enabled,
-        oauth2ClientId,
-        oauth2ClientSecret,
-        oauth2ClientSecretSha256
-      );
+          enabled, oauth2ClientId, oauth2ClientSecret, oauth2ClientSecretSha256);
     }
 
     public Builder clone() {
@@ -228,10 +221,17 @@ public final class BackendServiceIAP implements ApiMessage {
   @Override
   public String toString() {
     return "BackendServiceIAP{"
-        + "enabled=" + enabled + ", "
-        + "oauth2ClientId=" + oauth2ClientId + ", "
-        + "oauth2ClientSecret=" + oauth2ClientSecret + ", "
-        + "oauth2ClientSecretSha256=" + oauth2ClientSecretSha256
+        + "enabled="
+        + enabled
+        + ", "
+        + "oauth2ClientId="
+        + oauth2ClientId
+        + ", "
+        + "oauth2ClientSecret="
+        + oauth2ClientSecret
+        + ", "
+        + "oauth2ClientSecretSha256="
+        + oauth2ClientSecretSha256
         + "}";
   }
 
@@ -242,23 +242,16 @@ public final class BackendServiceIAP implements ApiMessage {
     }
     if (o instanceof BackendServiceIAP) {
       BackendServiceIAP that = (BackendServiceIAP) o;
-      return
-          Objects.equals(this.enabled, that.getEnabled()) &&
-          Objects.equals(this.oauth2ClientId, that.getOauth2ClientId()) &&
-          Objects.equals(this.oauth2ClientSecret, that.getOauth2ClientSecret()) &&
-          Objects.equals(this.oauth2ClientSecretSha256, that.getOauth2ClientSecretSha256())
-          ;
+      return Objects.equals(this.enabled, that.getEnabled())
+          && Objects.equals(this.oauth2ClientId, that.getOauth2ClientId())
+          && Objects.equals(this.oauth2ClientSecret, that.getOauth2ClientSecret())
+          && Objects.equals(this.oauth2ClientSecretSha256, that.getOauth2ClientSecretSha256());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      enabled,
-      oauth2ClientId,
-      oauth2ClientSecret,
-      oauth2ClientSecretSha256
-    );
+    return Objects.hash(enabled, oauth2ClientId, oauth2ClientSecret, oauth2ClientSecretSha256);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class AcceleratorType implements ApiMessage {
     this.zone = null;
   }
 
-
   private AcceleratorType(
       String creationTimestamp,
       DeprecationStatus deprecated,
@@ -64,8 +60,7 @@ public final class AcceleratorType implements ApiMessage {
       Integer maximumCardsPerInstance,
       String name,
       String selfLink,
-      String zone
-      ) {
+      String zone) {
     this.creationTimestamp = creationTimestamp;
     this.deprecated = deprecated;
     this.description = description;
@@ -81,7 +76,8 @@ public final class AcceleratorType implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("deprecated") && deprecated != null) {
       fieldMap.put("deprecated", Collections.singletonList(String.valueOf(deprecated)));
@@ -96,7 +92,9 @@ public final class AcceleratorType implements ApiMessage {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
     }
     if (fieldNames.contains("maximumCardsPerInstance") && maximumCardsPerInstance != null) {
-      fieldMap.put("maximumCardsPerInstance", Collections.singletonList(String.valueOf(maximumCardsPerInstance)));
+      fieldMap.put(
+          "maximumCardsPerInstance",
+          Collections.singletonList(String.valueOf(maximumCardsPerInstance)));
     }
     if (fieldNames.contains("name") && name != null) {
       fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
@@ -184,22 +182,24 @@ public final class AcceleratorType implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AcceleratorType prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AcceleratorType getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AcceleratorType DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AcceleratorType();
   }
@@ -342,27 +342,18 @@ public final class AcceleratorType implements ApiMessage {
       return this;
     }
 
-
     public AcceleratorType build() {
 
-
-
-
-
-
-
-
       return new AcceleratorType(
-        creationTimestamp,
-        deprecated,
-        description,
-        id,
-        kind,
-        maximumCardsPerInstance,
-        name,
-        selfLink,
-        zone
-      );
+          creationTimestamp,
+          deprecated,
+          description,
+          id,
+          kind,
+          maximumCardsPerInstance,
+          name,
+          selfLink,
+          zone);
     }
 
     public Builder clone() {
@@ -383,15 +374,32 @@ public final class AcceleratorType implements ApiMessage {
   @Override
   public String toString() {
     return "AcceleratorType{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "deprecated=" + deprecated + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "maximumCardsPerInstance=" + maximumCardsPerInstance + ", "
-        + "name=" + name + ", "
-        + "selfLink=" + selfLink + ", "
-        + "zone=" + zone
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "deprecated="
+        + deprecated
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "maximumCardsPerInstance="
+        + maximumCardsPerInstance
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -402,17 +410,15 @@ public final class AcceleratorType implements ApiMessage {
     }
     if (o instanceof AcceleratorType) {
       AcceleratorType that = (AcceleratorType) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.deprecated, that.getDeprecated()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.maximumCardsPerInstance, that.getMaximumCardsPerInstance()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.deprecated, that.getDeprecated())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.maximumCardsPerInstance, that.getMaximumCardsPerInstance())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -420,15 +426,14 @@ public final class AcceleratorType implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      deprecated,
-      description,
-      id,
-      kind,
-      maximumCardsPerInstance,
-      name,
-      selfLink,
-      zone
-    );
+        creationTimestamp,
+        deprecated,
+        description,
+        id,
+        kind,
+        maximumCardsPerInstance,
+        name,
+        selfLink,
+        zone);
   }
 }

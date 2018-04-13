@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InterconnectClient.ListInterconnectsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -22,13 +24,10 @@ import com.google.cloud.compute.v1.DeleteInterconnectHttpRequest;
 import com.google.cloud.compute.v1.GetInterconnectHttpRequest;
 import com.google.cloud.compute.v1.InsertInterconnectHttpRequest;
 import com.google.cloud.compute.v1.Interconnect;
-import static com.google.cloud.compute.v1.InterconnectClient.ListInterconnectsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectList;
 import com.google.cloud.compute.v1.ListInterconnectsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectHttpRequest;
-import com.google.cloud.compute.v1.ProjectInterconnectName;
-import com.google.cloud.compute.v1.ProjectName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -40,7 +39,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class InterconnectStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteInterconnectHttpRequest, Operation> deleteInterconnectCallable() {
@@ -58,7 +56,8 @@ public abstract class InterconnectStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListInterconnectsHttpRequest, ListInterconnectsPagedResponse> listInterconnectsPagedCallable() {
+  public UnaryCallable<ListInterconnectsHttpRequest, ListInterconnectsPagedResponse>
+      listInterconnectsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listInterconnectsPagedCallable()");
   }
 
@@ -72,4 +71,6 @@ public abstract class InterconnectStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: patchInterconnectCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

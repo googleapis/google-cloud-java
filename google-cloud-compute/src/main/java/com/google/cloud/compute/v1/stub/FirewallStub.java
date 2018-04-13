@@ -15,20 +15,19 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.FirewallClient.ListFirewallsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteFirewallHttpRequest;
 import com.google.cloud.compute.v1.Firewall;
-import static com.google.cloud.compute.v1.FirewallClient.ListFirewallsPagedResponse;
 import com.google.cloud.compute.v1.FirewallList;
 import com.google.cloud.compute.v1.GetFirewallHttpRequest;
 import com.google.cloud.compute.v1.InsertFirewallHttpRequest;
 import com.google.cloud.compute.v1.ListFirewallsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchFirewallHttpRequest;
-import com.google.cloud.compute.v1.ProjectFirewallName;
-import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.UpdateFirewallHttpRequest;
 import javax.annotation.Generated;
 
@@ -41,7 +40,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class FirewallStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteFirewallHttpRequest, Operation> deleteFirewallCallable() {
@@ -59,7 +57,8 @@ public abstract class FirewallStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListFirewallsHttpRequest, ListFirewallsPagedResponse> listFirewallsPagedCallable() {
+  public UnaryCallable<ListFirewallsHttpRequest, ListFirewallsPagedResponse>
+      listFirewallsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listFirewallsPagedCallable()");
   }
 
@@ -78,4 +77,6 @@ public abstract class FirewallStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateFirewallCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

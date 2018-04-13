@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
     this.scopes = null;
   }
 
-
-  private InstancesSetServiceAccountRequest(
-      String email,
-      List<String> scopes
-      ) {
+  private InstancesSetServiceAccountRequest(String email, List<String> scopes) {
     this.email = email;
     this.scopes = scopes;
   }
@@ -90,22 +85,24 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
     return scopes;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstancesSetServiceAccountRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstancesSetServiceAccountRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstancesSetServiceAccountRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstancesSetServiceAccountRequest();
   }
@@ -158,13 +155,9 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
       return this;
     }
 
-
     public InstancesSetServiceAccountRequest build() {
 
-      return new InstancesSetServiceAccountRequest(
-        email,
-        scopes
-      );
+      return new InstancesSetServiceAccountRequest(email, scopes);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InstancesSetServiceAccountRequest{"
-        + "email=" + email + ", "
-        + "scopes=" + scopes
+        + "email="
+        + email
+        + ", "
+        + "scopes="
+        + scopes
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
     }
     if (o instanceof InstancesSetServiceAccountRequest) {
       InstancesSetServiceAccountRequest that = (InstancesSetServiceAccountRequest) o;
-      return
-          Objects.equals(this.email, that.getEmail()) &&
-          Objects.equals(this.scopes, that.getScopesList())
-          ;
+      return Objects.equals(this.email, that.getEmail())
+          && Objects.equals(this.scopes, that.getScopesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      email,
-      scopes
-    );
+    return Objects.hash(email, scopes);
   }
 }

@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.NetworkStub;
 import com.google.cloud.compute.v1.stub.NetworkStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -53,41 +43,40 @@ import javax.annotation.Generated;
  * <code>
  * try (NetworkClient networkClient = NetworkClient.create()) {
  *   String requestId = "";
- *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+ *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
  *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
  *   Operation response = networkClient.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the networkClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the networkClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of NetworkSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of NetworkSettings to create().
+ * For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -117,19 +106,14 @@ public class NetworkClient implements BackgroundResource {
   private final NetworkSettings settings;
   private final NetworkStub stub;
 
-
-
-  /**
-   * Constructs an instance of NetworkClient with default settings.
-   */
+  /** Constructs an instance of NetworkClient with default settings. */
   public static final NetworkClient create() throws IOException {
     return create(NetworkSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of NetworkClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of NetworkClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final NetworkClient create(NetworkSettings settings) throws IOException {
     return new NetworkClient(settings);
@@ -145,9 +129,8 @@ public class NetworkClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of NetworkClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of NetworkClient, using the given settings. This is protected so that it
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected NetworkClient(NetworkSettings settings) throws IOException {
     this.settings = settings;
@@ -169,39 +152,46 @@ public class NetworkClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds a peering to the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   Operation response = networkClient.addPeeringNetwork(requestId, network, networksAddPeeringRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network resource to add peering to.
    * @param networksAddPeeringRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addPeeringNetwork(String requestId, ProjectNetworkName network, NetworksAddPeeringRequest networksAddPeeringRequestResource) {
+  public final Operation addPeeringNetwork(
+      String requestId,
+      ProjectGlobalNetworkName network,
+      NetworksAddPeeringRequest networksAddPeeringRequestResource) {
 
     AddPeeringNetworkHttpRequest request =
         AddPeeringNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network == null ? null : network.toString())
-        .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network == null ? null : network.toString())
+            .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
+            .build();
     return addPeeringNetwork(request);
   }
 
@@ -209,34 +199,42 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Adds a peering to the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   Operation response = networkClient.addPeeringNetwork(requestId, network.toString(), networksAddPeeringRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network resource to add peering to.
    * @param networksAddPeeringRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation addPeeringNetwork(String requestId, String network, NetworksAddPeeringRequest networksAddPeeringRequestResource) {
+  public final Operation addPeeringNetwork(
+      String requestId,
+      String network,
+      NetworksAddPeeringRequest networksAddPeeringRequestResource) {
 
     AddPeeringNetworkHttpRequest request =
         AddPeeringNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network)
-        .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network)
+            .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
+            .build();
     return addPeeringNetwork(request);
   }
 
@@ -244,11 +242,12 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Adds a peering to the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   AddPeeringNetworkHttpRequest request = AddPeeringNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -271,11 +270,12 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Adds a peering to the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   AddPeeringNetworkHttpRequest request = AddPeeringNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -297,31 +297,36 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Deletes the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Operation response = networkClient.deleteNetwork(requestId, network);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteNetwork(String requestId, ProjectNetworkName network) {
+  public final Operation deleteNetwork(String requestId, ProjectGlobalNetworkName network) {
 
     DeleteNetworkHttpRequest request =
         DeleteNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network == null ? null : network.toString())
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network == null ? null : network.toString())
+            .build();
     return deleteNetwork(request);
   }
 
@@ -329,20 +334,25 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Deletes the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Operation response = networkClient.deleteNetwork(requestId, network.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -350,10 +360,7 @@ public class NetworkClient implements BackgroundResource {
   public final Operation deleteNetwork(String requestId, String network) {
 
     DeleteNetworkHttpRequest request =
-        DeleteNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network)
-        .build();
+        DeleteNetworkHttpRequest.newBuilder().setRequestId(requestId).setNetwork(network).build();
     return deleteNetwork(request);
   }
 
@@ -361,11 +368,12 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Deletes the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   DeleteNetworkHttpRequest request = DeleteNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setNetwork(network.toString())
@@ -386,11 +394,12 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Deletes the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   DeleteNetworkHttpRequest request = DeleteNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setNetwork(network.toString())
@@ -410,10 +419,11 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Returns the specified network. Get a list of available networks by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network response = networkClient.getNetwork(network);
    * }
    * </code></pre>
@@ -422,12 +432,12 @@ public class NetworkClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Network getNetwork(ProjectNetworkName network) {
+  public final Network getNetwork(ProjectGlobalNetworkName network) {
 
     GetNetworkHttpRequest request =
         GetNetworkHttpRequest.newBuilder()
-        .setNetwork(network == null ? null : network.toString())
-        .build();
+            .setNetwork(network == null ? null : network.toString())
+            .build();
     return getNetwork(request);
   }
 
@@ -435,10 +445,11 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Returns the specified network. Get a list of available networks by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network response = networkClient.getNetwork(network.toString());
    * }
    * </code></pre>
@@ -449,10 +460,7 @@ public class NetworkClient implements BackgroundResource {
   @BetaApi
   public final Network getNetwork(String network) {
 
-    GetNetworkHttpRequest request =
-        GetNetworkHttpRequest.newBuilder()
-        .setNetwork(network)
-        .build();
+    GetNetworkHttpRequest request = GetNetworkHttpRequest.newBuilder().setNetwork(network).build();
     return getNetwork(request);
   }
 
@@ -460,10 +468,11 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Returns the specified network. Get a list of available networks by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   GetNetworkHttpRequest request = GetNetworkHttpRequest.newBuilder()
    *     .setNetwork(network.toString())
    *     .build();
@@ -483,10 +492,11 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Returns the specified network. Get a list of available networks by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   GetNetworkHttpRequest request = GetNetworkHttpRequest.newBuilder()
    *     .setNetwork(network.toString())
    *     .build();
@@ -505,7 +515,8 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Creates a network in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
@@ -515,24 +526,30 @@ public class NetworkClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
+   *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertNetwork(String requestId, ProjectName project, Network networkResource) {
+  public final Operation insertNetwork(
+      String requestId, ProjectName project, Network networkResource) {
 
     InsertNetworkHttpRequest request =
         InsertNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project == null ? null : project.toString())
-        .setNetworkResource(networkResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project == null ? null : project.toString())
+            .setNetworkResource(networkResource)
+            .build();
     return insertNetwork(request);
   }
 
@@ -540,7 +557,8 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Creates a network in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
@@ -550,13 +568,18 @@ public class NetworkClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
+   *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -564,10 +587,10 @@ public class NetworkClient implements BackgroundResource {
 
     InsertNetworkHttpRequest request =
         InsertNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project)
-        .setNetworkResource(networkResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project)
+            .setNetworkResource(networkResource)
+            .build();
     return insertNetwork(request);
   }
 
@@ -575,7 +598,8 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Creates a network in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
@@ -602,7 +626,8 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Creates a network in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
@@ -628,7 +653,8 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Retrieves the list of networks available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -645,8 +671,8 @@ public class NetworkClient implements BackgroundResource {
   public final ListNetworksPagedResponse listNetworks(ProjectName project) {
     ListNetworksHttpRequest request =
         ListNetworksHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listNetworks(request);
   }
 
@@ -654,7 +680,8 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Retrieves the list of networks available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -670,9 +697,7 @@ public class NetworkClient implements BackgroundResource {
   @BetaApi
   public final ListNetworksPagedResponse listNetworks(String project) {
     ListNetworksHttpRequest request =
-        ListNetworksHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListNetworksHttpRequest.newBuilder().setProject(project).build();
     return listNetworks(request);
   }
 
@@ -680,7 +705,8 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Retrieves the list of networks available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -698,15 +724,15 @@ public class NetworkClient implements BackgroundResource {
    */
   @BetaApi
   public final ListNetworksPagedResponse listNetworks(ListNetworksHttpRequest request) {
-    return listNetworksPagedCallable()
-        .call(request);
+    return listNetworksPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of networks available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -722,7 +748,8 @@ public class NetworkClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListNetworksHttpRequest, ListNetworksPagedResponse> listNetworksPagedCallable() {
+  public final UnaryCallable<ListNetworksHttpRequest, ListNetworksPagedResponse>
+      listNetworksPagedCallable() {
     return stub.listNetworksPagedCallable();
   }
 
@@ -730,7 +757,8 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Retrieves the list of networks available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -759,60 +787,75 @@ public class NetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified network with the data included in the request. Only the following fields can be modified: routingConfig.routingMode.
+   * Patches the specified network with the data included in the request. Only the following fields
+   * can be modified: routingConfig.routingMode.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   Operation response = networkClient.patchNetwork(requestId, network, networkResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network to update.
-   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
+   *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchNetwork(String requestId, ProjectNetworkName network, Network networkResource) {
+  public final Operation patchNetwork(
+      String requestId, ProjectGlobalNetworkName network, Network networkResource) {
 
     PatchNetworkHttpRequest request =
         PatchNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network == null ? null : network.toString())
-        .setNetworkResource(networkResource)
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network == null ? null : network.toString())
+            .setNetworkResource(networkResource)
+            .build();
     return patchNetwork(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified network with the data included in the request. Only the following fields can be modified: routingConfig.routingMode.
+   * Patches the specified network with the data included in the request. Only the following fields
+   * can be modified: routingConfig.routingMode.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   Operation response = networkClient.patchNetwork(requestId, network.toString(), networkResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network to update.
-   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+   * @param networkResource Represents a Network resource. Read Networks and Firewalls for more
+   *     information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -820,22 +863,24 @@ public class NetworkClient implements BackgroundResource {
 
     PatchNetworkHttpRequest request =
         PatchNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network)
-        .setNetworkResource(networkResource)
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network)
+            .setNetworkResource(networkResource)
+            .build();
     return patchNetwork(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified network with the data included in the request. Only the following fields can be modified: routingConfig.routingMode.
+   * Patches the specified network with the data included in the request. Only the following fields
+   * can be modified: routingConfig.routingMode.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   PatchNetworkHttpRequest request = PatchNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -856,13 +901,15 @@ public class NetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified network with the data included in the request. Only the following fields can be modified: routingConfig.routingMode.
+   * Patches the specified network with the data included in the request. Only the following fields
+   * can be modified: routingConfig.routingMode.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Network networkResource = Network.newBuilder().build();
    *   PatchNetworkHttpRequest request = PatchNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -884,34 +931,42 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Removes a peering from the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   Operation response = networkClient.removePeeringNetwork(requestId, network, networksRemovePeeringRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network resource to remove peering from.
    * @param networksRemovePeeringRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removePeeringNetwork(String requestId, ProjectNetworkName network, NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
+  public final Operation removePeeringNetwork(
+      String requestId,
+      ProjectGlobalNetworkName network,
+      NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
 
     RemovePeeringNetworkHttpRequest request =
         RemovePeeringNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network == null ? null : network.toString())
-        .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network == null ? null : network.toString())
+            .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
+            .build();
     return removePeeringNetwork(request);
   }
 
@@ -919,34 +974,42 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Removes a peering from the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   Operation response = networkClient.removePeeringNetwork(requestId, network.toString(), networksRemovePeeringRequestResource);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network resource to remove peering from.
    * @param networksRemovePeeringRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation removePeeringNetwork(String requestId, String network, NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
+  public final Operation removePeeringNetwork(
+      String requestId,
+      String network,
+      NetworksRemovePeeringRequest networksRemovePeeringRequestResource) {
 
     RemovePeeringNetworkHttpRequest request =
         RemovePeeringNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network)
-        .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network)
+            .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
+            .build();
     return removePeeringNetwork(request);
   }
 
@@ -954,11 +1017,12 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Removes a peering from the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   RemovePeeringNetworkHttpRequest request = RemovePeeringNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -981,11 +1045,12 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Removes a peering from the specified network.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   RemovePeeringNetworkHttpRequest request = RemovePeeringNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
@@ -999,7 +1064,8 @@ public class NetworkClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<RemovePeeringNetworkHttpRequest, Operation> removePeeringNetworkCallable() {
+  public final UnaryCallable<RemovePeeringNetworkHttpRequest, Operation>
+      removePeeringNetworkCallable() {
     return stub.removePeeringNetworkCallable();
   }
 
@@ -1007,31 +1073,37 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Switches the network mode from auto subnet mode to custom subnet mode.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Operation response = networkClient.switchToCustomModeNetwork(requestId, network);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation switchToCustomModeNetwork(String requestId, ProjectNetworkName network) {
+  public final Operation switchToCustomModeNetwork(
+      String requestId, ProjectGlobalNetworkName network) {
 
     SwitchToCustomModeNetworkHttpRequest request =
         SwitchToCustomModeNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network == null ? null : network.toString())
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network == null ? null : network.toString())
+            .build();
     return switchToCustomModeNetwork(request);
   }
 
@@ -1039,20 +1111,25 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Switches the network mode from auto subnet mode to custom subnet mode.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   Operation response = networkClient.switchToCustomModeNetwork(requestId, network.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param network Name of the network to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1061,9 +1138,9 @@ public class NetworkClient implements BackgroundResource {
 
     SwitchToCustomModeNetworkHttpRequest request =
         SwitchToCustomModeNetworkHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setNetwork(network)
-        .build();
+            .setRequestId(requestId)
+            .setNetwork(network)
+            .build();
     return switchToCustomModeNetwork(request);
   }
 
@@ -1071,11 +1148,12 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Switches the network mode from auto subnet mode to custom subnet mode.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   SwitchToCustomModeNetworkHttpRequest request = SwitchToCustomModeNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setNetwork(network.toString())
@@ -1096,11 +1174,12 @@ public class NetworkClient implements BackgroundResource {
   /**
    * Switches the network mode from auto subnet mode to custom subnet mode.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (NetworkClient networkClient = NetworkClient.create()) {
    *   String requestId = "";
-   *   ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
    *   SwitchToCustomModeNetworkHttpRequest request = SwitchToCustomModeNetworkHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setNetwork(network.toString())
@@ -1112,12 +1191,13 @@ public class NetworkClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SwitchToCustomModeNetworkHttpRequest, Operation> switchToCustomModeNetworkCallable() {
+  public final UnaryCallable<SwitchToCustomModeNetworkHttpRequest, Operation>
+      switchToCustomModeNetworkCallable() {
     return stub.switchToCustomModeNetworkCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -1146,12 +1226,10 @@ public class NetworkClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListNetworksPagedResponse extends AbstractPagedListResponse<
-      ListNetworksHttpRequest,
-      NetworkList,
-      Network,
-      ListNetworksPage,
-      ListNetworksFixedSizeCollection> {
+  public static class ListNetworksPagedResponse
+      extends AbstractPagedListResponse<
+          ListNetworksHttpRequest, NetworkList, Network, ListNetworksPage,
+          ListNetworksFixedSizeCollection> {
 
     public static ApiFuture<ListNetworksPagedResponse> createAsync(
         PageContext<ListNetworksHttpRequest, NetworkList, Network> context,
@@ -1171,19 +1249,13 @@ public class NetworkClient implements BackgroundResource {
     private ListNetworksPagedResponse(ListNetworksPage page) {
       super(page, ListNetworksFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListNetworksPage extends AbstractPage<
-      ListNetworksHttpRequest,
-      NetworkList,
-      Network,
-      ListNetworksPage> {
+  public static class ListNetworksPage
+      extends AbstractPage<ListNetworksHttpRequest, NetworkList, Network, ListNetworksPage> {
 
     private ListNetworksPage(
-        PageContext<ListNetworksHttpRequest, NetworkList, Network> context,
-        NetworkList response) {
+        PageContext<ListNetworksHttpRequest, NetworkList, Network> context, NetworkList response) {
       super(context, response);
     }
 
@@ -1193,8 +1265,7 @@ public class NetworkClient implements BackgroundResource {
 
     @Override
     protected ListNetworksPage createPage(
-        PageContext<ListNetworksHttpRequest, NetworkList, Network> context,
-        NetworkList response) {
+        PageContext<ListNetworksHttpRequest, NetworkList, Network> context, NetworkList response) {
       return new ListNetworksPage(context, response);
     }
 
@@ -1204,18 +1275,12 @@ public class NetworkClient implements BackgroundResource {
         ApiFuture<NetworkList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListNetworksFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListNetworksHttpRequest,
-      NetworkList,
-      Network,
-      ListNetworksPage,
-      ListNetworksFixedSizeCollection> {
+  public static class ListNetworksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNetworksHttpRequest, NetworkList, Network, ListNetworksPage,
+          ListNetworksFixedSizeCollection> {
 
     private ListNetworksFixedSizeCollection(List<ListNetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -1230,7 +1295,5 @@ public class NetworkClient implements BackgroundResource {
         List<ListNetworksPage> pages, int collectionSize) {
       return new ListNetworksFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

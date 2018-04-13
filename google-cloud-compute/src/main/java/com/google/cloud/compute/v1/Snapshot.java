@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -39,6 +38,7 @@ public final class Snapshot implements ApiMessage {
   private final String kind;
   private final String labelFingerprint;
   private final Map<String, String> labels;
+  private final List<String> licenseCodes;
   private final List<String> licenses;
   private final String name;
   private final String selfLink;
@@ -58,6 +58,7 @@ public final class Snapshot implements ApiMessage {
     this.kind = null;
     this.labelFingerprint = null;
     this.labels = null;
+    this.licenseCodes = null;
     this.licenses = null;
     this.name = null;
     this.selfLink = null;
@@ -70,7 +71,6 @@ public final class Snapshot implements ApiMessage {
     this.storageBytesStatus = null;
   }
 
-
   private Snapshot(
       String creationTimestamp,
       String description,
@@ -79,6 +79,7 @@ public final class Snapshot implements ApiMessage {
       String kind,
       String labelFingerprint,
       Map<String, String> labels,
+      List<String> licenseCodes,
       List<String> licenses,
       String name,
       String selfLink,
@@ -88,8 +89,7 @@ public final class Snapshot implements ApiMessage {
       String sourceDiskId,
       String status,
       String storageBytes,
-      String storageBytesStatus
-      ) {
+      String storageBytesStatus) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.diskSizeGb = diskSizeGb;
@@ -97,6 +97,7 @@ public final class Snapshot implements ApiMessage {
     this.kind = kind;
     this.labelFingerprint = labelFingerprint;
     this.labels = labels;
+    this.licenseCodes = licenseCodes;
     this.licenses = licenses;
     this.name = name;
     this.selfLink = selfLink;
@@ -113,7 +114,8 @@ public final class Snapshot implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -133,6 +135,13 @@ public final class Snapshot implements ApiMessage {
     if (fieldNames.contains("labels") && labels != null) {
       fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
     }
+    if (fieldNames.contains("licenseCodes") && licenseCodes != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : licenseCodes) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("licenseCodes", stringList.build());
+    }
     if (fieldNames.contains("licenses") && licenses != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
       for (String item : licenses) {
@@ -147,13 +156,17 @@ public final class Snapshot implements ApiMessage {
       fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
     }
     if (fieldNames.contains("snapshotEncryptionKey") && snapshotEncryptionKey != null) {
-      fieldMap.put("snapshotEncryptionKey", Collections.singletonList(String.valueOf(snapshotEncryptionKey)));
+      fieldMap.put(
+          "snapshotEncryptionKey",
+          Collections.singletonList(String.valueOf(snapshotEncryptionKey)));
     }
     if (fieldNames.contains("sourceDisk") && sourceDisk != null) {
       fieldMap.put("sourceDisk", Collections.singletonList(String.valueOf(sourceDisk)));
     }
     if (fieldNames.contains("sourceDiskEncryptionKey") && sourceDiskEncryptionKey != null) {
-      fieldMap.put("sourceDiskEncryptionKey", Collections.singletonList(String.valueOf(sourceDiskEncryptionKey)));
+      fieldMap.put(
+          "sourceDiskEncryptionKey",
+          Collections.singletonList(String.valueOf(sourceDiskEncryptionKey)));
     }
     if (fieldNames.contains("sourceDiskId") && sourceDiskId != null) {
       fieldMap.put("sourceDiskId", Collections.singletonList(String.valueOf(sourceDiskId)));
@@ -165,7 +178,8 @@ public final class Snapshot implements ApiMessage {
       fieldMap.put("storageBytes", Collections.singletonList(String.valueOf(storageBytes)));
     }
     if (fieldNames.contains("storageBytesStatus") && storageBytesStatus != null) {
-      fieldMap.put("storageBytesStatus", Collections.singletonList(String.valueOf(storageBytesStatus)));
+      fieldMap.put(
+          "storageBytesStatus", Collections.singletonList(String.valueOf(storageBytesStatus)));
     }
     return fieldMap;
   }
@@ -192,6 +206,9 @@ public final class Snapshot implements ApiMessage {
     }
     if (fieldName.equals("labels")) {
       return String.valueOf(labels);
+    }
+    if (fieldName.equals("licenseCodes")) {
+      return String.valueOf(licenseCodes);
     }
     if (fieldName.equals("licenses")) {
       return String.valueOf(licenses);
@@ -260,6 +277,10 @@ public final class Snapshot implements ApiMessage {
     return labels;
   }
 
+  public List<String> getLicenseCodesList() {
+    return licenseCodes;
+  }
+
   public List<String> getLicensesList() {
     return licenses;
   }
@@ -300,22 +321,24 @@ public final class Snapshot implements ApiMessage {
     return storageBytesStatus;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Snapshot prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Snapshot getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Snapshot DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Snapshot();
   }
@@ -328,6 +351,7 @@ public final class Snapshot implements ApiMessage {
     private String kind;
     private String labelFingerprint;
     private Map<String, String> labels;
+    private List<String> licenseCodes;
     private List<String> licenses;
     private String name;
     private String selfLink;
@@ -363,6 +387,9 @@ public final class Snapshot implements ApiMessage {
       }
       if (other.getLabelsMap() != null) {
         this.labels = other.labels;
+      }
+      if (other.getLicenseCodesList() != null) {
+        this.licenseCodes = other.licenseCodes;
       }
       if (other.getLicensesList() != null) {
         this.licenses = other.licenses;
@@ -405,6 +432,7 @@ public final class Snapshot implements ApiMessage {
       this.kind = source.kind;
       this.labelFingerprint = source.labelFingerprint;
       this.labels = source.labels;
+      this.licenseCodes = source.licenseCodes;
       this.licenses = source.licenses;
       this.name = source.name;
       this.selfLink = source.selfLink;
@@ -477,6 +505,23 @@ public final class Snapshot implements ApiMessage {
 
     public Builder putAllLabels(Map<String, String> labels) {
       this.labels = labels;
+      return this;
+    }
+
+    public List<String> getLicenseCodesList() {
+      return licenseCodes;
+    }
+
+    public Builder addAllLicenseCodes(List<String> licenseCodes) {
+      if (this.licenseCodes == null) {
+        this.licenseCodes = new ArrayList<>(licenseCodes.size());
+      }
+      this.licenseCodes.addAll(licenseCodes);
+      return this;
+    }
+
+    public Builder addLicenseCodes(String licenseCodes) {
+      this.licenseCodes.add(licenseCodes);
       return this;
     }
 
@@ -578,43 +623,27 @@ public final class Snapshot implements ApiMessage {
       return this;
     }
 
-
     public Snapshot build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new Snapshot(
-        creationTimestamp,
-        description,
-        diskSizeGb,
-        id,
-        kind,
-        labelFingerprint,
-        labels,
-        licenses,
-        name,
-        selfLink,
-        snapshotEncryptionKey,
-        sourceDisk,
-        sourceDiskEncryptionKey,
-        sourceDiskId,
-        status,
-        storageBytes,
-        storageBytesStatus
-      );
+          creationTimestamp,
+          description,
+          diskSizeGb,
+          id,
+          kind,
+          labelFingerprint,
+          labels,
+          licenseCodes,
+          licenses,
+          name,
+          selfLink,
+          snapshotEncryptionKey,
+          sourceDisk,
+          sourceDiskEncryptionKey,
+          sourceDiskId,
+          status,
+          storageBytes,
+          storageBytesStatus);
     }
 
     public Builder clone() {
@@ -626,6 +655,7 @@ public final class Snapshot implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setLabelFingerprint(this.labelFingerprint);
       newBuilder.putAllLabels(this.labels);
+      newBuilder.addAllLicenseCodes(this.licenseCodes);
       newBuilder.addAllLicenses(this.licenses);
       newBuilder.setName(this.name);
       newBuilder.setSelfLink(this.selfLink);
@@ -643,23 +673,59 @@ public final class Snapshot implements ApiMessage {
   @Override
   public String toString() {
     return "Snapshot{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "diskSizeGb=" + diskSizeGb + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "labelFingerprint=" + labelFingerprint + ", "
-        + "labels=" + labels + ", "
-        + "licenses=" + licenses + ", "
-        + "name=" + name + ", "
-        + "selfLink=" + selfLink + ", "
-        + "snapshotEncryptionKey=" + snapshotEncryptionKey + ", "
-        + "sourceDisk=" + sourceDisk + ", "
-        + "sourceDiskEncryptionKey=" + sourceDiskEncryptionKey + ", "
-        + "sourceDiskId=" + sourceDiskId + ", "
-        + "status=" + status + ", "
-        + "storageBytes=" + storageBytes + ", "
-        + "storageBytesStatus=" + storageBytesStatus
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "diskSizeGb="
+        + diskSizeGb
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "labelFingerprint="
+        + labelFingerprint
+        + ", "
+        + "labels="
+        + labels
+        + ", "
+        + "licenseCodes="
+        + licenseCodes
+        + ", "
+        + "licenses="
+        + licenses
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "snapshotEncryptionKey="
+        + snapshotEncryptionKey
+        + ", "
+        + "sourceDisk="
+        + sourceDisk
+        + ", "
+        + "sourceDiskEncryptionKey="
+        + sourceDiskEncryptionKey
+        + ", "
+        + "sourceDiskId="
+        + sourceDiskId
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "storageBytes="
+        + storageBytes
+        + ", "
+        + "storageBytesStatus="
+        + storageBytesStatus
         + "}";
   }
 
@@ -670,25 +736,24 @@ public final class Snapshot implements ApiMessage {
     }
     if (o instanceof Snapshot) {
       Snapshot that = (Snapshot) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.diskSizeGb, that.getDiskSizeGb()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.labelFingerprint, that.getLabelFingerprint()) &&
-          Objects.equals(this.labels, that.getLabelsMap()) &&
-          Objects.equals(this.licenses, that.getLicensesList()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.snapshotEncryptionKey, that.getSnapshotEncryptionKey()) &&
-          Objects.equals(this.sourceDisk, that.getSourceDisk()) &&
-          Objects.equals(this.sourceDiskEncryptionKey, that.getSourceDiskEncryptionKey()) &&
-          Objects.equals(this.sourceDiskId, that.getSourceDiskId()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.storageBytes, that.getStorageBytes()) &&
-          Objects.equals(this.storageBytesStatus, that.getStorageBytesStatus())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.diskSizeGb, that.getDiskSizeGb())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.labelFingerprint, that.getLabelFingerprint())
+          && Objects.equals(this.labels, that.getLabelsMap())
+          && Objects.equals(this.licenseCodes, that.getLicenseCodesList())
+          && Objects.equals(this.licenses, that.getLicensesList())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.snapshotEncryptionKey, that.getSnapshotEncryptionKey())
+          && Objects.equals(this.sourceDisk, that.getSourceDisk())
+          && Objects.equals(this.sourceDiskEncryptionKey, that.getSourceDiskEncryptionKey())
+          && Objects.equals(this.sourceDiskId, that.getSourceDiskId())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.storageBytes, that.getStorageBytes())
+          && Objects.equals(this.storageBytesStatus, that.getStorageBytesStatus());
     }
     return false;
   }
@@ -696,23 +761,23 @@ public final class Snapshot implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      diskSizeGb,
-      id,
-      kind,
-      labelFingerprint,
-      labels,
-      licenses,
-      name,
-      selfLink,
-      snapshotEncryptionKey,
-      sourceDisk,
-      sourceDiskEncryptionKey,
-      sourceDiskId,
-      status,
-      storageBytes,
-      storageBytesStatus
-    );
+        creationTimestamp,
+        description,
+        diskSizeGb,
+        id,
+        kind,
+        labelFingerprint,
+        labels,
+        licenseCodes,
+        licenses,
+        name,
+        selfLink,
+        snapshotEncryptionKey,
+        sourceDisk,
+        sourceDiskEncryptionKey,
+        sourceDiskId,
+        status,
+        storageBytes,
+        storageBytesStatus);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private SetUrlMapTargetHttpsProxyHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
       String requestId,
       String targetHttpsProxy,
       UrlMapReference urlMapReferenceResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -109,7 +104,9 @@ public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
       fieldMap.put("targetHttpsProxy", Collections.singletonList(String.valueOf(targetHttpsProxy)));
     }
     if (fieldNames.contains("urlMapReferenceResource") && urlMapReferenceResource != null) {
-      fieldMap.put("urlMapReferenceResource", Collections.singletonList(String.valueOf(urlMapReferenceResource)));
+      fieldMap.put(
+          "urlMapReferenceResource",
+          Collections.singletonList(String.valueOf(urlMapReferenceResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +195,24 @@ public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetUrlMapTargetHttpsProxyHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetUrlMapTargetHttpsProxyHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetUrlMapTargetHttpsProxyHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetUrlMapTargetHttpsProxyHttpRequest();
   }
@@ -370,36 +369,27 @@ public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public SetUrlMapTargetHttpsProxyHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (targetHttpsProxy == null) {
         missing += " targetHttpsProxy";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetUrlMapTargetHttpsProxyHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetHttpsProxy,
-        urlMapReferenceResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetHttpsProxy,
+          urlMapReferenceResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "SetUrlMapTargetHttpsProxyHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetHttpsProxy=" + targetHttpsProxy + ", "
-        + "urlMapReferenceResource=" + urlMapReferenceResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetHttpsProxy="
+        + targetHttpsProxy
+        + ", "
+        + "urlMapReferenceResource="
+        + urlMapReferenceResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
     }
     if (o instanceof SetUrlMapTargetHttpsProxyHttpRequest) {
       SetUrlMapTargetHttpsProxyHttpRequest that = (SetUrlMapTargetHttpsProxyHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetHttpsProxy, that.getTargetHttpsProxy()) &&
-          Objects.equals(this.urlMapReferenceResource, that.getUrlMapReferenceResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.targetHttpsProxy, that.getTargetHttpsProxy())
+          && Objects.equals(this.urlMapReferenceResource, that.getUrlMapReferenceResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetHttpsProxy,
-      urlMapReferenceResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetHttpsProxy,
+        urlMapReferenceResource,
+        userIp);
   }
 }

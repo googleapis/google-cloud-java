@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,12 +41,7 @@ public final class InstanceWithNamedPorts implements ApiMessage {
     this.status = null;
   }
 
-
-  private InstanceWithNamedPorts(
-      String instance,
-      List<NamedPort> namedPorts,
-      String status
-      ) {
+  private InstanceWithNamedPorts(String instance, List<NamedPort> namedPorts, String status) {
     this.instance = instance;
     this.namedPorts = namedPorts;
     this.status = status;
@@ -104,22 +98,24 @@ public final class InstanceWithNamedPorts implements ApiMessage {
     return status;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceWithNamedPorts prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceWithNamedPorts getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceWithNamedPorts DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceWithNamedPorts();
   }
@@ -186,15 +182,9 @@ public final class InstanceWithNamedPorts implements ApiMessage {
       return this;
     }
 
-
     public InstanceWithNamedPorts build() {
 
-
-      return new InstanceWithNamedPorts(
-        instance,
-        namedPorts,
-        status
-      );
+      return new InstanceWithNamedPorts(instance, namedPorts, status);
     }
 
     public Builder clone() {
@@ -209,9 +199,14 @@ public final class InstanceWithNamedPorts implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceWithNamedPorts{"
-        + "instance=" + instance + ", "
-        + "namedPorts=" + namedPorts + ", "
-        + "status=" + status
+        + "instance="
+        + instance
+        + ", "
+        + "namedPorts="
+        + namedPorts
+        + ", "
+        + "status="
+        + status
         + "}";
   }
 
@@ -222,21 +217,15 @@ public final class InstanceWithNamedPorts implements ApiMessage {
     }
     if (o instanceof InstanceWithNamedPorts) {
       InstanceWithNamedPorts that = (InstanceWithNamedPorts) o;
-      return
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.namedPorts, that.getNamedPortsList()) &&
-          Objects.equals(this.status, that.getStatus())
-          ;
+      return Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.namedPorts, that.getNamedPortsList())
+          && Objects.equals(this.status, that.getStatus());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instance,
-      namedPorts,
-      status
-    );
+    return Objects.hash(instance, namedPorts, status);
   }
 }

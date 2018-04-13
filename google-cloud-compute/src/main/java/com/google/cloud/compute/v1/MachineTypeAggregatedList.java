@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -48,15 +45,13 @@ public final class MachineTypeAggregatedList implements ApiMessage {
     this.warning = null;
   }
 
-
   private MachineTypeAggregatedList(
       String id,
       Map<String, MachineTypesScopedList> items,
       String kind,
       String nextPageToken,
       String selfLink,
-      Warning warning
-      ) {
+      Warning warning) {
     this.id = id;
     this.items = items;
     this.kind = kind;
@@ -142,22 +137,24 @@ public final class MachineTypeAggregatedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(MachineTypeAggregatedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static MachineTypeAggregatedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final MachineTypeAggregatedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new MachineTypeAggregatedList();
   }
@@ -258,21 +255,9 @@ public final class MachineTypeAggregatedList implements ApiMessage {
       return this;
     }
 
-
     public MachineTypeAggregatedList build() {
 
-
-
-
-
-      return new MachineTypeAggregatedList(
-        id,
-        items,
-        kind,
-        nextPageToken,
-        selfLink,
-        warning
-      );
+      return new MachineTypeAggregatedList(id, items, kind, nextPageToken, selfLink, warning);
     }
 
     public Builder clone() {
@@ -290,12 +275,23 @@ public final class MachineTypeAggregatedList implements ApiMessage {
   @Override
   public String toString() {
     return "MachineTypeAggregatedList{"
-        + "id=" + id + ", "
-        + "items=" + items + ", "
-        + "kind=" + kind + ", "
-        + "nextPageToken=" + nextPageToken + ", "
-        + "selfLink=" + selfLink + ", "
-        + "warning=" + warning
+        + "id="
+        + id
+        + ", "
+        + "items="
+        + items
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "nextPageToken="
+        + nextPageToken
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -306,27 +302,18 @@ public final class MachineTypeAggregatedList implements ApiMessage {
     }
     if (o instanceof MachineTypeAggregatedList) {
       MachineTypeAggregatedList that = (MachineTypeAggregatedList) o;
-      return
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.items, that.getItemsMap()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.id, that.getId())
+          && Objects.equals(this.items, that.getItemsMap())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.nextPageToken, that.getNextPageToken())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      id,
-      items,
-      kind,
-      nextPageToken,
-      selfLink,
-      warning
-    );
+    return Objects.hash(id, items, kind, nextPageToken, selfLink, warning);
   }
 }

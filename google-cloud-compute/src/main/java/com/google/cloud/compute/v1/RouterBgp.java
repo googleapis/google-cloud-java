@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,13 +43,11 @@ public final class RouterBgp implements ApiMessage {
     this.asn = null;
   }
 
-
   private RouterBgp(
       String advertiseMode,
       List<String> advertisedGroups,
       List<RouterAdvertisedIpRange> advertisedIpRanges,
-      Integer asn
-      ) {
+      Integer asn) {
     this.advertiseMode = advertiseMode;
     this.advertisedGroups = advertisedGroups;
     this.advertisedIpRanges = advertisedIpRanges;
@@ -122,22 +119,24 @@ public final class RouterBgp implements ApiMessage {
     return asn;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RouterBgp prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RouterBgp getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RouterBgp DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RouterBgp();
   }
@@ -226,17 +225,9 @@ public final class RouterBgp implements ApiMessage {
       return this;
     }
 
-
     public RouterBgp build() {
 
-
-
-      return new RouterBgp(
-        advertiseMode,
-        advertisedGroups,
-        advertisedIpRanges,
-        asn
-      );
+      return new RouterBgp(advertiseMode, advertisedGroups, advertisedIpRanges, asn);
     }
 
     public Builder clone() {
@@ -252,10 +243,17 @@ public final class RouterBgp implements ApiMessage {
   @Override
   public String toString() {
     return "RouterBgp{"
-        + "advertiseMode=" + advertiseMode + ", "
-        + "advertisedGroups=" + advertisedGroups + ", "
-        + "advertisedIpRanges=" + advertisedIpRanges + ", "
-        + "asn=" + asn
+        + "advertiseMode="
+        + advertiseMode
+        + ", "
+        + "advertisedGroups="
+        + advertisedGroups
+        + ", "
+        + "advertisedIpRanges="
+        + advertisedIpRanges
+        + ", "
+        + "asn="
+        + asn
         + "}";
   }
 
@@ -266,23 +264,16 @@ public final class RouterBgp implements ApiMessage {
     }
     if (o instanceof RouterBgp) {
       RouterBgp that = (RouterBgp) o;
-      return
-          Objects.equals(this.advertiseMode, that.getAdvertiseMode()) &&
-          Objects.equals(this.advertisedGroups, that.getAdvertisedGroupsList()) &&
-          Objects.equals(this.advertisedIpRanges, that.getAdvertisedIpRangesList()) &&
-          Objects.equals(this.asn, that.getAsn())
-          ;
+      return Objects.equals(this.advertiseMode, that.getAdvertiseMode())
+          && Objects.equals(this.advertisedGroups, that.getAdvertisedGroupsList())
+          && Objects.equals(this.advertisedIpRanges, that.getAdvertisedIpRangesList())
+          && Objects.equals(this.asn, that.getAsn());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      advertiseMode,
-      advertisedGroups,
-      advertisedIpRanges,
-      asn
-    );
+    return Objects.hash(advertiseMode, advertisedGroups, advertisedIpRanges, asn);
   }
 }

@@ -15,14 +15,16 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InstanceClient.AggregatedListInstancesPagedResponse;
+import static com.google.cloud.compute.v1.InstanceClient.ListInstancesPagedResponse;
+import static com.google.cloud.compute.v1.InstanceClient.ListReferrersInstancesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.compute.v1.AccessConfig;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesHttpRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
-import com.google.cloud.compute.v1.AttachedDisk;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceHttpRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
@@ -31,29 +33,12 @@ import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceAggregatedList;
-import static com.google.cloud.compute.v1.InstanceClient.AggregatedListInstancesPagedResponse;
-import static com.google.cloud.compute.v1.InstanceClient.ListInstancesPagedResponse;
-import static com.google.cloud.compute.v1.InstanceClient.ListReferrersInstancesPagedResponse;
 import com.google.cloud.compute.v1.InstanceList;
 import com.google.cloud.compute.v1.InstanceListReferrers;
-import com.google.cloud.compute.v1.InstancesScopedList;
-import com.google.cloud.compute.v1.InstancesSetLabelsRequest;
-import com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest;
-import com.google.cloud.compute.v1.InstancesSetMachineTypeRequest;
-import com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest;
-import com.google.cloud.compute.v1.InstancesSetServiceAccountRequest;
-import com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest;
 import com.google.cloud.compute.v1.ListInstancesHttpRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesHttpRequest;
-import com.google.cloud.compute.v1.Metadata;
-import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneInstanceName;
-import com.google.cloud.compute.v1.ProjectZoneName;
-import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
-import com.google.cloud.compute.v1.Scheduling;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceHttpRequest;
@@ -68,7 +53,6 @@ import com.google.cloud.compute.v1.SetTagsInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
-import com.google.cloud.compute.v1.Tags;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import javax.annotation.Generated;
@@ -83,19 +67,22 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class InstanceStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AddAccessConfigInstanceHttpRequest, Operation> addAccessConfigInstanceCallable() {
+  public UnaryCallable<AddAccessConfigInstanceHttpRequest, Operation>
+      addAccessConfigInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: addAccessConfigInstanceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListInstancesHttpRequest, AggregatedListInstancesPagedResponse> aggregatedListInstancesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListInstancesPagedCallable()");
+  public UnaryCallable<AggregatedListInstancesHttpRequest, AggregatedListInstancesPagedResponse>
+      aggregatedListInstancesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListInstancesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListInstancesHttpRequest, InstanceAggregatedList> aggregatedListInstancesCallable() {
+  public UnaryCallable<AggregatedListInstancesHttpRequest, InstanceAggregatedList>
+      aggregatedListInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListInstancesCallable()");
   }
 
@@ -110,8 +97,10 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<DeleteAccessConfigInstanceHttpRequest, Operation> deleteAccessConfigInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteAccessConfigInstanceCallable()");
+  public UnaryCallable<DeleteAccessConfigInstanceHttpRequest, Operation>
+      deleteAccessConfigInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteAccessConfigInstanceCallable()");
   }
 
   @BetaApi
@@ -125,8 +114,10 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput> getSerialPortOutputInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: getSerialPortOutputInstanceCallable()");
+  public UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
+      getSerialPortOutputInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getSerialPortOutputInstanceCallable()");
   }
 
   @BetaApi
@@ -135,7 +126,8 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListInstancesHttpRequest, ListInstancesPagedResponse> listInstancesPagedCallable() {
+  public UnaryCallable<ListInstancesHttpRequest, ListInstancesPagedResponse>
+      listInstancesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstancesPagedCallable()");
   }
 
@@ -145,12 +137,15 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListReferrersInstancesHttpRequest, ListReferrersInstancesPagedResponse> listReferrersInstancesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listReferrersInstancesPagedCallable()");
+  public UnaryCallable<ListReferrersInstancesHttpRequest, ListReferrersInstancesPagedResponse>
+      listReferrersInstancesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listReferrersInstancesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListReferrersInstancesHttpRequest, InstanceListReferrers> listReferrersInstancesCallable() {
+  public UnaryCallable<ListReferrersInstancesHttpRequest, InstanceListReferrers>
+      listReferrersInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: listReferrersInstancesCallable()");
   }
 
@@ -160,12 +155,15 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<SetDeletionProtectionInstanceHttpRequest, Operation> setDeletionProtectionInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: setDeletionProtectionInstanceCallable()");
+  public UnaryCallable<SetDeletionProtectionInstanceHttpRequest, Operation>
+      setDeletionProtectionInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setDeletionProtectionInstanceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation> setDiskAutoDeleteInstanceCallable() {
+  public UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation>
+      setDiskAutoDeleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setDiskAutoDeleteInstanceCallable()");
   }
 
@@ -175,12 +173,15 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<SetMachineResourcesInstanceHttpRequest, Operation> setMachineResourcesInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: setMachineResourcesInstanceCallable()");
+  public UnaryCallable<SetMachineResourcesInstanceHttpRequest, Operation>
+      setMachineResourcesInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setMachineResourcesInstanceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetMachineTypeInstanceHttpRequest, Operation> setMachineTypeInstanceCallable() {
+  public UnaryCallable<SetMachineTypeInstanceHttpRequest, Operation>
+      setMachineTypeInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setMachineTypeInstanceCallable()");
   }
 
@@ -190,17 +191,20 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<SetMinCpuPlatformInstanceHttpRequest, Operation> setMinCpuPlatformInstanceCallable() {
+  public UnaryCallable<SetMinCpuPlatformInstanceHttpRequest, Operation>
+      setMinCpuPlatformInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setMinCpuPlatformInstanceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetSchedulingInstanceHttpRequest, Operation> setSchedulingInstanceCallable() {
+  public UnaryCallable<SetSchedulingInstanceHttpRequest, Operation>
+      setSchedulingInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setSchedulingInstanceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetServiceAccountInstanceHttpRequest, Operation> setServiceAccountInstanceCallable() {
+  public UnaryCallable<SetServiceAccountInstanceHttpRequest, Operation>
+      setServiceAccountInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setServiceAccountInstanceCallable()");
   }
 
@@ -215,8 +219,10 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<StartWithEncryptionKeyInstanceHttpRequest, Operation> startWithEncryptionKeyInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: startWithEncryptionKeyInstanceCallable()");
+  public UnaryCallable<StartWithEncryptionKeyInstanceHttpRequest, Operation>
+      startWithEncryptionKeyInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: startWithEncryptionKeyInstanceCallable()");
   }
 
   @BetaApi
@@ -225,13 +231,19 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation> updateAccessConfigInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateAccessConfigInstanceCallable()");
+  public UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation>
+      updateAccessConfigInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateAccessConfigInstanceCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation> updateNetworkInterfaceInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateNetworkInterfaceInstanceCallable()");
+  public UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
+      updateNetworkInterfaceInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateNetworkInterfaceInstanceCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

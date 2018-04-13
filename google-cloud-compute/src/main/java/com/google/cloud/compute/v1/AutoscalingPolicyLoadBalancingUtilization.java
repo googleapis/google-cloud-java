@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
     this.utilizationTarget = null;
   }
 
-
-  private AutoscalingPolicyLoadBalancingUtilization(
-      Double utilizationTarget
-      ) {
+  private AutoscalingPolicyLoadBalancingUtilization(Double utilizationTarget) {
     this.utilizationTarget = utilizationTarget;
   }
 
@@ -49,7 +43,8 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("utilizationTarget") && utilizationTarget != null) {
-      fieldMap.put("utilizationTarget", Collections.singletonList(String.valueOf(utilizationTarget)));
+      fieldMap.put(
+          "utilizationTarget", Collections.singletonList(String.valueOf(utilizationTarget)));
     }
     return fieldMap;
   }
@@ -72,22 +67,24 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
     return utilizationTarget;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AutoscalingPolicyLoadBalancingUtilization prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AutoscalingPolicyLoadBalancingUtilization getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AutoscalingPolicyLoadBalancingUtilization DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AutoscalingPolicyLoadBalancingUtilization();
   }
@@ -118,11 +115,8 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
       return this;
     }
 
-
     public AutoscalingPolicyLoadBalancingUtilization build() {
-      return new AutoscalingPolicyLoadBalancingUtilization(
-        utilizationTarget
-      );
+      return new AutoscalingPolicyLoadBalancingUtilization(utilizationTarget);
     }
 
     public Builder clone() {
@@ -135,7 +129,8 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
   @Override
   public String toString() {
     return "AutoscalingPolicyLoadBalancingUtilization{"
-        + "utilizationTarget=" + utilizationTarget
+        + "utilizationTarget="
+        + utilizationTarget
         + "}";
   }
 
@@ -145,18 +140,15 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
       return true;
     }
     if (o instanceof AutoscalingPolicyLoadBalancingUtilization) {
-      AutoscalingPolicyLoadBalancingUtilization that = (AutoscalingPolicyLoadBalancingUtilization) o;
-      return
-          Objects.equals(this.utilizationTarget, that.getUtilizationTarget())
-          ;
+      AutoscalingPolicyLoadBalancingUtilization that =
+          (AutoscalingPolicyLoadBalancingUtilization) o;
+      return Objects.equals(this.utilizationTarget, that.getUtilizationTarget());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      utilizationTarget
-    );
+    return Objects.hash(utilizationTarget);
   }
 }

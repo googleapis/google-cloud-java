@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -24,14 +26,9 @@ import com.google.cloud.compute.v1.GetNetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertNetworkHttpRequest;
 import com.google.cloud.compute.v1.ListNetworksHttpRequest;
 import com.google.cloud.compute.v1.Network;
-import static com.google.cloud.compute.v1.NetworkClient.ListNetworksPagedResponse;
 import com.google.cloud.compute.v1.NetworkList;
-import com.google.cloud.compute.v1.NetworksAddPeeringRequest;
-import com.google.cloud.compute.v1.NetworksRemovePeeringRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkHttpRequest;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectNetworkName;
 import com.google.cloud.compute.v1.RemovePeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkHttpRequest;
 import javax.annotation.Generated;
@@ -45,7 +42,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class NetworkStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkCallable() {
@@ -68,7 +64,8 @@ public abstract class NetworkStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListNetworksHttpRequest, ListNetworksPagedResponse> listNetworksPagedCallable() {
+  public UnaryCallable<ListNetworksHttpRequest, ListNetworksPagedResponse>
+      listNetworksPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listNetworksPagedCallable()");
   }
 
@@ -88,8 +85,11 @@ public abstract class NetworkStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<SwitchToCustomModeNetworkHttpRequest, Operation> switchToCustomModeNetworkCallable() {
+  public UnaryCallable<SwitchToCustomModeNetworkHttpRequest, Operation>
+      switchToCustomModeNetworkCallable() {
     throw new UnsupportedOperationException("Not implemented: switchToCustomModeNetworkCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

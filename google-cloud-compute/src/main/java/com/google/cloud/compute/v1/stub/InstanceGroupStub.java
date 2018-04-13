@@ -15,6 +15,10 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InstanceGroupClient.AggregatedListInstanceGroupsPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupClient.ListInstanceGroupsPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupClient.ListInstancesInstanceGroupsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -25,23 +29,11 @@ import com.google.cloud.compute.v1.GetInstanceGroupHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceGroupHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroup;
 import com.google.cloud.compute.v1.InstanceGroupAggregatedList;
-import static com.google.cloud.compute.v1.InstanceGroupClient.AggregatedListInstanceGroupsPagedResponse;
-import static com.google.cloud.compute.v1.InstanceGroupClient.ListInstanceGroupsPagedResponse;
-import static com.google.cloud.compute.v1.InstanceGroupClient.ListInstancesInstanceGroupsPagedResponse;
 import com.google.cloud.compute.v1.InstanceGroupList;
-import com.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest;
 import com.google.cloud.compute.v1.InstanceGroupsListInstances;
-import com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest;
-import com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest;
-import com.google.cloud.compute.v1.InstanceGroupsScopedList;
-import com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest;
-import com.google.cloud.compute.v1.InstanceWithNamedPorts;
 import com.google.cloud.compute.v1.ListInstanceGroupsHttpRequest;
 import com.google.cloud.compute.v1.ListInstancesInstanceGroupsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneInstanceGroupName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.RemoveInstancesInstanceGroupHttpRequest;
 import com.google.cloud.compute.v1.SetNamedPortsInstanceGroupHttpRequest;
 import javax.annotation.Generated;
@@ -56,20 +48,25 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class InstanceGroupStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AddInstancesInstanceGroupHttpRequest, Operation> addInstancesInstanceGroupCallable() {
+  public UnaryCallable<AddInstancesInstanceGroupHttpRequest, Operation>
+      addInstancesInstanceGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: addInstancesInstanceGroupCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListInstanceGroupsHttpRequest, AggregatedListInstanceGroupsPagedResponse> aggregatedListInstanceGroupsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListInstanceGroupsPagedCallable()");
+  public UnaryCallable<
+          AggregatedListInstanceGroupsHttpRequest, AggregatedListInstanceGroupsPagedResponse>
+      aggregatedListInstanceGroupsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListInstanceGroupsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList> aggregatedListInstanceGroupsCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListInstanceGroupsCallable()");
+  public UnaryCallable<AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList>
+      aggregatedListInstanceGroupsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListInstanceGroupsCallable()");
   }
 
   @BetaApi
@@ -88,33 +85,46 @@ public abstract class InstanceGroupStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListInstanceGroupsHttpRequest, ListInstanceGroupsPagedResponse> listInstanceGroupsPagedCallable() {
+  public UnaryCallable<ListInstanceGroupsHttpRequest, ListInstanceGroupsPagedResponse>
+      listInstanceGroupsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstanceGroupsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstanceGroupsHttpRequest, InstanceGroupList> listInstanceGroupsCallable() {
+  public UnaryCallable<ListInstanceGroupsHttpRequest, InstanceGroupList>
+      listInstanceGroupsCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstanceGroupsCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstancesInstanceGroupsHttpRequest, ListInstancesInstanceGroupsPagedResponse> listInstancesInstanceGroupsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInstancesInstanceGroupsPagedCallable()");
+  public UnaryCallable<
+          ListInstancesInstanceGroupsHttpRequest, ListInstancesInstanceGroupsPagedResponse>
+      listInstancesInstanceGroupsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listInstancesInstanceGroupsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances> listInstancesInstanceGroupsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInstancesInstanceGroupsCallable()");
+  public UnaryCallable<ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances>
+      listInstancesInstanceGroupsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listInstancesInstanceGroupsCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<RemoveInstancesInstanceGroupHttpRequest, Operation> removeInstancesInstanceGroupCallable() {
-    throw new UnsupportedOperationException("Not implemented: removeInstancesInstanceGroupCallable()");
+  public UnaryCallable<RemoveInstancesInstanceGroupHttpRequest, Operation>
+      removeInstancesInstanceGroupCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeInstancesInstanceGroupCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetNamedPortsInstanceGroupHttpRequest, Operation> setNamedPortsInstanceGroupCallable() {
-    throw new UnsupportedOperationException("Not implemented: setNamedPortsInstanceGroupCallable()");
+  public UnaryCallable<SetNamedPortsInstanceGroupHttpRequest, Operation>
+      setNamedPortsInstanceGroupCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setNamedPortsInstanceGroupCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

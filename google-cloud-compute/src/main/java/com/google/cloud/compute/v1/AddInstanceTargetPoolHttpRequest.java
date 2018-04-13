@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private AddInstanceTargetPoolHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
       String requestId,
       String targetPool,
       TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -108,8 +103,11 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
     if (fieldNames.contains("targetPool") && targetPool != null) {
       fieldMap.put("targetPool", Collections.singletonList(String.valueOf(targetPool)));
     }
-    if (fieldNames.contains("targetPoolsAddInstanceRequestResource") && targetPoolsAddInstanceRequestResource != null) {
-      fieldMap.put("targetPoolsAddInstanceRequestResource", Collections.singletonList(String.valueOf(targetPoolsAddInstanceRequestResource)));
+    if (fieldNames.contains("targetPoolsAddInstanceRequestResource")
+        && targetPoolsAddInstanceRequestResource != null) {
+      fieldMap.put(
+          "targetPoolsAddInstanceRequestResource",
+          Collections.singletonList(String.valueOf(targetPoolsAddInstanceRequestResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +196,24 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AddInstanceTargetPoolHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AddInstanceTargetPoolHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AddInstanceTargetPoolHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AddInstanceTargetPoolHttpRequest();
   }
@@ -356,7 +356,8 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
       return targetPoolsAddInstanceRequestResource;
     }
 
-    public Builder setTargetPoolsAddInstanceRequestResource(TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
+    public Builder setTargetPoolsAddInstanceRequestResource(
+        TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource) {
       this.targetPoolsAddInstanceRequestResource = targetPoolsAddInstanceRequestResource;
       return this;
     }
@@ -370,36 +371,27 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public AddInstanceTargetPoolHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (targetPool == null) {
         missing += " targetPool";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new AddInstanceTargetPoolHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetPool,
-        targetPoolsAddInstanceRequestResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetPool,
+          targetPoolsAddInstanceRequestResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -412,7 +404,8 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setTargetPool(this.targetPool);
-      newBuilder.setTargetPoolsAddInstanceRequestResource(this.targetPoolsAddInstanceRequestResource);
+      newBuilder.setTargetPoolsAddInstanceRequestResource(
+          this.targetPoolsAddInstanceRequestResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -421,16 +414,35 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "AddInstanceTargetPoolHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetPool=" + targetPool + ", "
-        + "targetPoolsAddInstanceRequestResource=" + targetPoolsAddInstanceRequestResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetPool="
+        + targetPool
+        + ", "
+        + "targetPoolsAddInstanceRequestResource="
+        + targetPoolsAddInstanceRequestResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +453,18 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
     }
     if (o instanceof AddInstanceTargetPoolHttpRequest) {
       AddInstanceTargetPoolHttpRequest that = (AddInstanceTargetPoolHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetPool, that.getTargetPool()) &&
-          Objects.equals(this.targetPoolsAddInstanceRequestResource, that.getTargetPoolsAddInstanceRequestResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.targetPool, that.getTargetPool())
+          && Objects.equals(
+              this.targetPoolsAddInstanceRequestResource,
+              that.getTargetPoolsAddInstanceRequestResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +472,15 @@ public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetPool,
-      targetPoolsAddInstanceRequestResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetPool,
+        targetPoolsAddInstanceRequestResource,
+        userIp);
   }
 }

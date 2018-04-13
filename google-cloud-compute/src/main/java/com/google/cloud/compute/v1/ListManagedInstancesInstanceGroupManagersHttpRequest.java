@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +57,6 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
     this.userIp = null;
   }
 
-
   private ListManagedInstancesInstanceGroupManagersHttpRequest(
       String access_token,
       String callback,
@@ -73,8 +69,7 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
       String pageToken,
       String prettyPrint,
       String quotaUser,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -105,7 +100,8 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
       fieldMap.put("filter", Collections.singletonList(String.valueOf(filter)));
     }
     if (fieldNames.contains("instanceGroupManager") && instanceGroupManager != null) {
-      fieldMap.put("instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
+      fieldMap.put(
+          "instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -226,22 +222,24 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ListManagedInstancesInstanceGroupManagersHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ListManagedInstancesInstanceGroupManagersHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ListManagedInstancesInstanceGroupManagersHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ListManagedInstancesInstanceGroupManagersHttpRequest();
   }
@@ -263,7 +261,8 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
     Builder() {}
 
     public Builder mergeFrom(ListManagedInstancesInstanceGroupManagersHttpRequest other) {
-      if (other == ListManagedInstancesInstanceGroupManagersHttpRequest.getDefaultInstance()) return this;
+      if (other == ListManagedInstancesInstanceGroupManagersHttpRequest.getDefaultInstance())
+        return this;
       if (other.getAccessToken() != null) {
         this.access_token = other.access_token;
       }
@@ -426,40 +425,29 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
       return this;
     }
 
-
     public ListManagedInstancesInstanceGroupManagersHttpRequest build() {
       String missing = "";
-
-
-
 
       if (instanceGroupManager == null) {
         missing += " instanceGroupManager";
       }
 
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ListManagedInstancesInstanceGroupManagersHttpRequest(
-        access_token,
-        callback,
-        fields,
-        filter,
-        instanceGroupManager,
-        key,
-        maxResults,
-        orderBy,
-        pageToken,
-        prettyPrint,
-        quotaUser,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          filter,
+          instanceGroupManager,
+          key,
+          maxResults,
+          orderBy,
+          pageToken,
+          prettyPrint,
+          quotaUser,
+          userIp);
     }
 
     public Builder clone() {
@@ -483,18 +471,41 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
   @Override
   public String toString() {
     return "ListManagedInstancesInstanceGroupManagersHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "filter=" + filter + ", "
-        + "instanceGroupManager=" + instanceGroupManager + ", "
-        + "key=" + key + ", "
-        + "maxResults=" + maxResults + ", "
-        + "orderBy=" + orderBy + ", "
-        + "pageToken=" + pageToken + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "filter="
+        + filter
+        + ", "
+        + "instanceGroupManager="
+        + instanceGroupManager
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "maxResults="
+        + maxResults
+        + ", "
+        + "orderBy="
+        + orderBy
+        + ", "
+        + "pageToken="
+        + pageToken
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -504,21 +515,20 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
       return true;
     }
     if (o instanceof ListManagedInstancesInstanceGroupManagersHttpRequest) {
-      ListManagedInstancesInstanceGroupManagersHttpRequest that = (ListManagedInstancesInstanceGroupManagersHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.filter, that.getFilter()) &&
-          Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.maxResults, that.getMaxResults()) &&
-          Objects.equals(this.orderBy, that.getOrderBy()) &&
-          Objects.equals(this.pageToken, that.getPageToken()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      ListManagedInstancesInstanceGroupManagersHttpRequest that =
+          (ListManagedInstancesInstanceGroupManagersHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.filter, that.getFilter())
+          && Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.maxResults, that.getMaxResults())
+          && Objects.equals(this.orderBy, that.getOrderBy())
+          && Objects.equals(this.pageToken, that.getPageToken())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -526,18 +536,17 @@ public final class ListManagedInstancesInstanceGroupManagersHttpRequest implemen
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      filter,
-      instanceGroupManager,
-      key,
-      maxResults,
-      orderBy,
-      pageToken,
-      prettyPrint,
-      quotaUser,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        filter,
+        instanceGroupManager,
+        key,
+        maxResults,
+        orderBy,
+        pageToken,
+        prettyPrint,
+        quotaUser,
+        userIp);
   }
 }

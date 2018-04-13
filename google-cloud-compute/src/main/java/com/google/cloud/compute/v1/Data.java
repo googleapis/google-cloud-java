@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class Data implements ApiMessage {
     this.value = null;
   }
 
-
-  private Data(
-      String key,
-      String value
-      ) {
+  private Data(String key, String value) {
     this.key = key;
     this.value = value;
   }
@@ -86,22 +79,24 @@ public final class Data implements ApiMessage {
     return value;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Data prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Data getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Data DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Data();
   }
@@ -146,13 +141,9 @@ public final class Data implements ApiMessage {
       return this;
     }
 
-
     public Data build() {
 
-      return new Data(
-        key,
-        value
-      );
+      return new Data(key, value);
     }
 
     public Builder clone() {
@@ -165,10 +156,7 @@ public final class Data implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Data{"
-        + "key=" + key + ", "
-        + "value=" + value
-        + "}";
+    return "Data{" + "key=" + key + ", " + "value=" + value + "}";
   }
 
   @Override
@@ -178,19 +166,13 @@ public final class Data implements ApiMessage {
     }
     if (o instanceof Data) {
       Data that = (Data) o;
-      return
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.value, that.getValue())
-          ;
+      return Objects.equals(this.key, that.getKey()) && Objects.equals(this.value, that.getValue());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      key,
-      value
-    );
+    return Objects.hash(key, value);
   }
 }

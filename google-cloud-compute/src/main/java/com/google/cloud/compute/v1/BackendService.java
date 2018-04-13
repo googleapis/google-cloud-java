@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -78,7 +77,6 @@ public final class BackendService implements ApiMessage {
     this.timeoutSec = null;
   }
 
-
   private BackendService(
       Integer affinityCookieTtlSec,
       List<Backend> backends,
@@ -100,8 +98,7 @@ public final class BackendService implements ApiMessage {
       String region,
       String selfLink,
       String sessionAffinity,
-      Integer timeoutSec
-      ) {
+      Integer timeoutSec) {
     this.affinityCookieTtlSec = affinityCookieTtlSec;
     this.backends = backends;
     this.cdnPolicy = cdnPolicy;
@@ -129,7 +126,8 @@ public final class BackendService implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("affinityCookieTtlSec") && affinityCookieTtlSec != null) {
-      fieldMap.put("affinityCookieTtlSec", Collections.singletonList(String.valueOf(affinityCookieTtlSec)));
+      fieldMap.put(
+          "affinityCookieTtlSec", Collections.singletonList(String.valueOf(affinityCookieTtlSec)));
     }
     if (fieldNames.contains("backends") && backends != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -142,10 +140,12 @@ public final class BackendService implements ApiMessage {
       fieldMap.put("cdnPolicy", Collections.singletonList(String.valueOf(cdnPolicy)));
     }
     if (fieldNames.contains("connectionDraining") && connectionDraining != null) {
-      fieldMap.put("connectionDraining", Collections.singletonList(String.valueOf(connectionDraining)));
+      fieldMap.put(
+          "connectionDraining", Collections.singletonList(String.valueOf(connectionDraining)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -173,7 +173,8 @@ public final class BackendService implements ApiMessage {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
     }
     if (fieldNames.contains("loadBalancingScheme") && loadBalancingScheme != null) {
-      fieldMap.put("loadBalancingScheme", Collections.singletonList(String.valueOf(loadBalancingScheme)));
+      fieldMap.put(
+          "loadBalancingScheme", Collections.singletonList(String.valueOf(loadBalancingScheme)));
     }
     if (fieldNames.contains("name") && name != null) {
       fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
@@ -360,22 +361,24 @@ public final class BackendService implements ApiMessage {
     return timeoutSec;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(BackendService prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static BackendService getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final BackendService DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new BackendService();
   }
@@ -702,51 +705,30 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
-
     public BackendService build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new BackendService(
-        affinityCookieTtlSec,
-        backends,
-        cdnPolicy,
-        connectionDraining,
-        creationTimestamp,
-        description,
-        enableCDN,
-        fingerprint,
-        healthChecks,
-        iap,
-        id,
-        kind,
-        loadBalancingScheme,
-        name,
-        port,
-        portName,
-        protocol,
-        region,
-        selfLink,
-        sessionAffinity,
-        timeoutSec
-      );
+          affinityCookieTtlSec,
+          backends,
+          cdnPolicy,
+          connectionDraining,
+          creationTimestamp,
+          description,
+          enableCDN,
+          fingerprint,
+          healthChecks,
+          iap,
+          id,
+          kind,
+          loadBalancingScheme,
+          name,
+          port,
+          portName,
+          protocol,
+          region,
+          selfLink,
+          sessionAffinity,
+          timeoutSec);
     }
 
     public Builder clone() {
@@ -779,27 +761,68 @@ public final class BackendService implements ApiMessage {
   @Override
   public String toString() {
     return "BackendService{"
-        + "affinityCookieTtlSec=" + affinityCookieTtlSec + ", "
-        + "backends=" + backends + ", "
-        + "cdnPolicy=" + cdnPolicy + ", "
-        + "connectionDraining=" + connectionDraining + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "enableCDN=" + enableCDN + ", "
-        + "fingerprint=" + fingerprint + ", "
-        + "healthChecks=" + healthChecks + ", "
-        + "iap=" + iap + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "loadBalancingScheme=" + loadBalancingScheme + ", "
-        + "name=" + name + ", "
-        + "port=" + port + ", "
-        + "portName=" + portName + ", "
-        + "protocol=" + protocol + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "sessionAffinity=" + sessionAffinity + ", "
-        + "timeoutSec=" + timeoutSec
+        + "affinityCookieTtlSec="
+        + affinityCookieTtlSec
+        + ", "
+        + "backends="
+        + backends
+        + ", "
+        + "cdnPolicy="
+        + cdnPolicy
+        + ", "
+        + "connectionDraining="
+        + connectionDraining
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "enableCDN="
+        + enableCDN
+        + ", "
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "healthChecks="
+        + healthChecks
+        + ", "
+        + "iap="
+        + iap
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "loadBalancingScheme="
+        + loadBalancingScheme
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "port="
+        + port
+        + ", "
+        + "portName="
+        + portName
+        + ", "
+        + "protocol="
+        + protocol
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "sessionAffinity="
+        + sessionAffinity
+        + ", "
+        + "timeoutSec="
+        + timeoutSec
         + "}";
   }
 
@@ -810,29 +833,27 @@ public final class BackendService implements ApiMessage {
     }
     if (o instanceof BackendService) {
       BackendService that = (BackendService) o;
-      return
-          Objects.equals(this.affinityCookieTtlSec, that.getAffinityCookieTtlSec()) &&
-          Objects.equals(this.backends, that.getBackendsList()) &&
-          Objects.equals(this.cdnPolicy, that.getCdnPolicy()) &&
-          Objects.equals(this.connectionDraining, that.getConnectionDraining()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.enableCDN, that.getEnableCDN()) &&
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.healthChecks, that.getHealthChecksList()) &&
-          Objects.equals(this.iap, that.getIap()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.port, that.getPort()) &&
-          Objects.equals(this.portName, that.getPortName()) &&
-          Objects.equals(this.protocol, that.getProtocol()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.sessionAffinity, that.getSessionAffinity()) &&
-          Objects.equals(this.timeoutSec, that.getTimeoutSec())
-          ;
+      return Objects.equals(this.affinityCookieTtlSec, that.getAffinityCookieTtlSec())
+          && Objects.equals(this.backends, that.getBackendsList())
+          && Objects.equals(this.cdnPolicy, that.getCdnPolicy())
+          && Objects.equals(this.connectionDraining, that.getConnectionDraining())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.enableCDN, that.getEnableCDN())
+          && Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.healthChecks, that.getHealthChecksList())
+          && Objects.equals(this.iap, that.getIap())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.port, that.getPort())
+          && Objects.equals(this.portName, that.getPortName())
+          && Objects.equals(this.protocol, that.getProtocol())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.sessionAffinity, that.getSessionAffinity())
+          && Objects.equals(this.timeoutSec, that.getTimeoutSec());
     }
     return false;
   }
@@ -840,27 +861,26 @@ public final class BackendService implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      affinityCookieTtlSec,
-      backends,
-      cdnPolicy,
-      connectionDraining,
-      creationTimestamp,
-      description,
-      enableCDN,
-      fingerprint,
-      healthChecks,
-      iap,
-      id,
-      kind,
-      loadBalancingScheme,
-      name,
-      port,
-      portName,
-      protocol,
-      region,
-      selfLink,
-      sessionAffinity,
-      timeoutSec
-    );
+        affinityCookieTtlSec,
+        backends,
+        cdnPolicy,
+        connectionDraining,
+        creationTimestamp,
+        description,
+        enableCDN,
+        fingerprint,
+        healthChecks,
+        iap,
+        id,
+        kind,
+        loadBalancingScheme,
+        name,
+        port,
+        portName,
+        protocol,
+        region,
+        selfLink,
+        sessionAffinity,
+        timeoutSec);
   }
 }

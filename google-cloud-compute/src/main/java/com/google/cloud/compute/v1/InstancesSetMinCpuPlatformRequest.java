@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
     this.minCpuPlatform = null;
   }
 
-
-  private InstancesSetMinCpuPlatformRequest(
-      String minCpuPlatform
-      ) {
+  private InstancesSetMinCpuPlatformRequest(String minCpuPlatform) {
     this.minCpuPlatform = minCpuPlatform;
   }
 
@@ -72,22 +66,24 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
     return minCpuPlatform;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstancesSetMinCpuPlatformRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstancesSetMinCpuPlatformRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstancesSetMinCpuPlatformRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstancesSetMinCpuPlatformRequest();
   }
@@ -118,11 +114,8 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
       return this;
     }
 
-
     public InstancesSetMinCpuPlatformRequest build() {
-      return new InstancesSetMinCpuPlatformRequest(
-        minCpuPlatform
-      );
+      return new InstancesSetMinCpuPlatformRequest(minCpuPlatform);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "InstancesSetMinCpuPlatformRequest{"
-        + "minCpuPlatform=" + minCpuPlatform
-        + "}";
+    return "InstancesSetMinCpuPlatformRequest{" + "minCpuPlatform=" + minCpuPlatform + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
     }
     if (o instanceof InstancesSetMinCpuPlatformRequest) {
       InstancesSetMinCpuPlatformRequest that = (InstancesSetMinCpuPlatformRequest) o;
-      return
-          Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform())
-          ;
+      return Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      minCpuPlatform
-    );
+    return Objects.hash(minCpuPlatform);
   }
 }

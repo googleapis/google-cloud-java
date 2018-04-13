@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
     this.organization = null;
   }
 
-
-  private ProjectsListXpnHostsRequest(
-      String organization
-      ) {
+  private ProjectsListXpnHostsRequest(String organization) {
     this.organization = organization;
   }
 
@@ -72,22 +66,24 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
     return organization;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ProjectsListXpnHostsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ProjectsListXpnHostsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ProjectsListXpnHostsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ProjectsListXpnHostsRequest();
   }
@@ -118,11 +114,8 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
       return this;
     }
 
-
     public ProjectsListXpnHostsRequest build() {
-      return new ProjectsListXpnHostsRequest(
-        organization
-      );
+      return new ProjectsListXpnHostsRequest(organization);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ProjectsListXpnHostsRequest{"
-        + "organization=" + organization
-        + "}";
+    return "ProjectsListXpnHostsRequest{" + "organization=" + organization + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
     }
     if (o instanceof ProjectsListXpnHostsRequest) {
       ProjectsListXpnHostsRequest that = (ProjectsListXpnHostsRequest) o;
-      return
-          Objects.equals(this.organization, that.getOrganization())
-          ;
+      return Objects.equals(this.organization, that.getOrganization());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      organization
-    );
+    return Objects.hash(organization);
   }
 }

@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -56,7 +55,6 @@ public final class Zone implements ApiMessage {
     this.status = null;
   }
 
-
   private Zone(
       List<String> availableCpuPlatforms,
       String creationTimestamp,
@@ -67,8 +65,7 @@ public final class Zone implements ApiMessage {
       String name,
       String region,
       String selfLink,
-      String status
-      ) {
+      String status) {
     this.availableCpuPlatforms = availableCpuPlatforms;
     this.creationTimestamp = creationTimestamp;
     this.deprecated = deprecated;
@@ -92,7 +89,8 @@ public final class Zone implements ApiMessage {
       fieldMap.put("availableCpuPlatforms", stringList.build());
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("deprecated") && deprecated != null) {
       fieldMap.put("deprecated", Collections.singletonList(String.valueOf(deprecated)));
@@ -202,22 +200,24 @@ public final class Zone implements ApiMessage {
     return status;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Zone prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Zone getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Zone DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Zone();
   }
@@ -382,29 +382,19 @@ public final class Zone implements ApiMessage {
       return this;
     }
 
-
     public Zone build() {
 
-
-
-
-
-
-
-
-
       return new Zone(
-        availableCpuPlatforms,
-        creationTimestamp,
-        deprecated,
-        description,
-        id,
-        kind,
-        name,
-        region,
-        selfLink,
-        status
-      );
+          availableCpuPlatforms,
+          creationTimestamp,
+          deprecated,
+          description,
+          id,
+          kind,
+          name,
+          region,
+          selfLink,
+          status);
     }
 
     public Builder clone() {
@@ -426,16 +416,35 @@ public final class Zone implements ApiMessage {
   @Override
   public String toString() {
     return "Zone{"
-        + "availableCpuPlatforms=" + availableCpuPlatforms + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "deprecated=" + deprecated + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "status=" + status
+        + "availableCpuPlatforms="
+        + availableCpuPlatforms
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "deprecated="
+        + deprecated
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "status="
+        + status
         + "}";
   }
 
@@ -446,18 +455,16 @@ public final class Zone implements ApiMessage {
     }
     if (o instanceof Zone) {
       Zone that = (Zone) o;
-      return
-          Objects.equals(this.availableCpuPlatforms, that.getAvailableCpuPlatformsList()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.deprecated, that.getDeprecated()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.status, that.getStatus())
-          ;
+      return Objects.equals(this.availableCpuPlatforms, that.getAvailableCpuPlatformsList())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.deprecated, that.getDeprecated())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.status, that.getStatus());
     }
     return false;
   }
@@ -465,16 +472,15 @@ public final class Zone implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      availableCpuPlatforms,
-      creationTimestamp,
-      deprecated,
-      description,
-      id,
-      kind,
-      name,
-      region,
-      selfLink,
-      status
-    );
+        availableCpuPlatforms,
+        creationTimestamp,
+        deprecated,
+        description,
+        id,
+        kind,
+        name,
+        region,
+        selfLink,
+        status);
   }
 }

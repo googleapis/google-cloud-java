@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetInstanceClient.AggregatedListTargetInstancesPagedResponse;
+import static com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,7 +29,6 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListTargetInstancesHttpRequest;
@@ -40,17 +42,9 @@ import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ProjectZoneTargetInstanceName;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
-import static com.google.cloud.compute.v1.TargetInstanceClient.AggregatedListTargetInstancesPagedResponse;
-import static com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
 import com.google.cloud.compute.v1.TargetInstanceList;
-import com.google.cloud.compute.v1.TargetInstanceSettings;
-import com.google.cloud.compute.v1.TargetInstancesScopedList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -64,183 +58,254 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
   @InternalApi
-  public static final ApiMethodDescriptor<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList> aggregatedListTargetInstancesMethodDescriptor =
-      ApiMethodDescriptor.<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>newBuilder()
-          .setFullMethodName("compute.targetInstances.aggregatedList")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<AggregatedListTargetInstancesHttpRequest>newBuilder()
-                  .setRequestInstance(AggregatedListTargetInstancesHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/aggregated/targetInstances"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<TargetInstanceAggregatedList>newBuilder()
-                  .setResponseInstance(TargetInstanceAggregatedList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>
+      aggregatedListTargetInstancesMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>newBuilder()
+              .setFullMethodName("compute.targetInstances.aggregatedList")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<AggregatedListTargetInstancesHttpRequest>newBuilder()
+                      .setRequestInstance(
+                          AggregatedListTargetInstancesHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/aggregated/targetInstances"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TargetInstanceAggregatedList>newBuilder()
+                      .setResponseInstance(TargetInstanceAggregatedList.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<DeleteTargetInstanceHttpRequest, Operation> deleteTargetInstanceMethodDescriptor =
-      ApiMethodDescriptor.<DeleteTargetInstanceHttpRequest, Operation>newBuilder()
-          .setFullMethodName("compute.targetInstances.delete")
-          .setHttpMethod(HttpMethods.DELETE)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<DeleteTargetInstanceHttpRequest>newBuilder()
-                  .setRequestInstance(DeleteTargetInstanceHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/targetInstances/{targetInstance}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "requestId"
-                                     ))
-                  .setResourceNameFactory(ProjectZoneTargetInstanceName.newFactory())
-                  .setResourceNameField("targetInstance")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<Operation>newBuilder()
-                  .setResponseInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<DeleteTargetInstanceHttpRequest, Operation>
+      deleteTargetInstanceMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTargetInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.targetInstances.delete")
+              .setHttpMethod(HttpMethods.DELETE)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<DeleteTargetInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteTargetInstanceHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/targetInstances/{targetInstance}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneTargetInstanceName.newFactory())
+                      .setResourceNameField("targetInstance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<GetTargetInstanceHttpRequest, TargetInstance> getTargetInstanceMethodDescriptor =
-      ApiMethodDescriptor.<GetTargetInstanceHttpRequest, TargetInstance>newBuilder()
-          .setFullMethodName("compute.targetInstances.get")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<GetTargetInstanceHttpRequest>newBuilder()
-                  .setRequestInstance(GetTargetInstanceHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/targetInstances/{targetInstance}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
-                  .setResourceNameFactory(ProjectZoneTargetInstanceName.newFactory())
-                  .setResourceNameField("targetInstance")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<TargetInstance>newBuilder()
-                  .setResponseInstance(TargetInstance.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<GetTargetInstanceHttpRequest, TargetInstance>
+      getTargetInstanceMethodDescriptor =
+          ApiMethodDescriptor.<GetTargetInstanceHttpRequest, TargetInstance>newBuilder()
+              .setFullMethodName("compute.targetInstances.get")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetTargetInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(GetTargetInstanceHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/targetInstances/{targetInstance}"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneTargetInstanceName.newFactory())
+                      .setResourceNameField("targetInstance")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TargetInstance>newBuilder()
+                      .setResponseInstance(TargetInstance.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<InsertTargetInstanceHttpRequest, Operation> insertTargetInstanceMethodDescriptor =
-      ApiMethodDescriptor.<InsertTargetInstanceHttpRequest, Operation>newBuilder()
-          .setFullMethodName("compute.targetInstances.insert")
-          .setHttpMethod(HttpMethods.POST)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<InsertTargetInstanceHttpRequest>newBuilder()
-                  .setRequestInstance(InsertTargetInstanceHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/targetInstances"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "requestId"
-                                     ))
-                  .setResourceNameFactory(ProjectZoneName.newFactory())
-                  .setResourceNameField("zone")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<Operation>newBuilder()
-                  .setResponseInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<InsertTargetInstanceHttpRequest, Operation>
+      insertTargetInstanceMethodDescriptor =
+          ApiMethodDescriptor.<InsertTargetInstanceHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.targetInstances.insert")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<InsertTargetInstanceHttpRequest>newBuilder()
+                      .setRequestInstance(InsertTargetInstanceHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/zones/{zone}/targetInstances"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneName.newFactory())
+                      .setResourceNameField("zone")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<ListTargetInstancesHttpRequest, TargetInstanceList> listTargetInstancesMethodDescriptor =
-      ApiMethodDescriptor.<ListTargetInstancesHttpRequest, TargetInstanceList>newBuilder()
-          .setFullMethodName("compute.targetInstances.list")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<ListTargetInstancesHttpRequest>newBuilder()
-                  .setRequestInstance(ListTargetInstancesHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/targetInstances"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectZoneName.newFactory())
-                  .setResourceNameField("zone")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<TargetInstanceList>newBuilder()
-                  .setResponseInstance(TargetInstanceList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<ListTargetInstancesHttpRequest, TargetInstanceList>
+      listTargetInstancesMethodDescriptor =
+          ApiMethodDescriptor.<ListTargetInstancesHttpRequest, TargetInstanceList>newBuilder()
+              .setFullMethodName("compute.targetInstances.list")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListTargetInstancesHttpRequest>newBuilder()
+                      .setRequestInstance(ListTargetInstancesHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/zones/{zone}/targetInstances"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectZoneName.newFactory())
+                      .setResourceNameField("zone")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TargetInstanceList>newBuilder()
+                      .setResponseInstance(TargetInstanceList.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList> aggregatedListTargetInstancesCallable;
-  private final UnaryCallable<AggregatedListTargetInstancesHttpRequest, AggregatedListTargetInstancesPagedResponse> aggregatedListTargetInstancesPagedCallable;
-  private final UnaryCallable<DeleteTargetInstanceHttpRequest, Operation> deleteTargetInstanceCallable;
-  private final UnaryCallable<GetTargetInstanceHttpRequest, TargetInstance> getTargetInstanceCallable;
-  private final UnaryCallable<InsertTargetInstanceHttpRequest, Operation> insertTargetInstanceCallable;
-  private final UnaryCallable<ListTargetInstancesHttpRequest, TargetInstanceList> listTargetInstancesCallable;
-  private final UnaryCallable<ListTargetInstancesHttpRequest, ListTargetInstancesPagedResponse> listTargetInstancesPagedCallable;
+  private final UnaryCallable<
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>
+      aggregatedListTargetInstancesCallable;
+  private final UnaryCallable<
+          AggregatedListTargetInstancesHttpRequest, AggregatedListTargetInstancesPagedResponse>
+      aggregatedListTargetInstancesPagedCallable;
+  private final UnaryCallable<DeleteTargetInstanceHttpRequest, Operation>
+      deleteTargetInstanceCallable;
+  private final UnaryCallable<GetTargetInstanceHttpRequest, TargetInstance>
+      getTargetInstanceCallable;
+  private final UnaryCallable<InsertTargetInstanceHttpRequest, Operation>
+      insertTargetInstanceCallable;
+  private final UnaryCallable<ListTargetInstancesHttpRequest, TargetInstanceList>
+      listTargetInstancesCallable;
+  private final UnaryCallable<ListTargetInstancesHttpRequest, ListTargetInstancesPagedResponse>
+      listTargetInstancesPagedCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
-  public static final HttpJsonTargetInstanceStub create(TargetInstanceStubSettings settings) throws IOException {
+
+  public static final HttpJsonTargetInstanceStub create(TargetInstanceStubSettings settings)
+      throws IOException {
     return new HttpJsonTargetInstanceStub(settings, ClientContext.create(settings));
   }
 
-  public static final HttpJsonTargetInstanceStub create(ClientContext clientContext) throws IOException {
-    return new HttpJsonTargetInstanceStub(TargetInstanceStubSettings.newBuilder().build(), clientContext);
+  public static final HttpJsonTargetInstanceStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonTargetInstanceStub(
+        TargetInstanceStubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final HttpJsonTargetInstanceStub create(ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
-    return new HttpJsonTargetInstanceStub(TargetInstanceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  public static final HttpJsonTargetInstanceStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonTargetInstanceStub(
+        TargetInstanceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of HttpJsonTargetInstanceStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonTargetInstanceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonTargetInstanceStub(TargetInstanceStubSettings settings, ClientContext clientContext) throws IOException {
+  protected HttpJsonTargetInstanceStub(
+      TargetInstanceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new HttpJsonTargetInstanceCallableFactory());
   }
 
   /**
-   * Constructs an instance of HttpJsonTargetInstanceStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonTargetInstanceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonTargetInstanceStub(TargetInstanceStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+  protected HttpJsonTargetInstanceStub(
+      TargetInstanceStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
 
-    HttpJsonCallSettings<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList> aggregatedListTargetInstancesTransportSettings =
-        HttpJsonCallSettings.<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>newBuilder()
-            .setMethodDescriptor(aggregatedListTargetInstancesMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<DeleteTargetInstanceHttpRequest, Operation> deleteTargetInstanceTransportSettings =
-        HttpJsonCallSettings.<DeleteTargetInstanceHttpRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteTargetInstanceMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<GetTargetInstanceHttpRequest, TargetInstance> getTargetInstanceTransportSettings =
-        HttpJsonCallSettings.<GetTargetInstanceHttpRequest, TargetInstance>newBuilder()
-            .setMethodDescriptor(getTargetInstanceMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<InsertTargetInstanceHttpRequest, Operation> insertTargetInstanceTransportSettings =
-        HttpJsonCallSettings.<InsertTargetInstanceHttpRequest, Operation>newBuilder()
-            .setMethodDescriptor(insertTargetInstanceMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<ListTargetInstancesHttpRequest, TargetInstanceList> listTargetInstancesTransportSettings =
-        HttpJsonCallSettings.<ListTargetInstancesHttpRequest, TargetInstanceList>newBuilder()
-            .setMethodDescriptor(listTargetInstancesMethodDescriptor)
-            .build();
+    HttpJsonCallSettings<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>
+        aggregatedListTargetInstancesTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>
+                    newBuilder()
+                .setMethodDescriptor(aggregatedListTargetInstancesMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<DeleteTargetInstanceHttpRequest, Operation>
+        deleteTargetInstanceTransportSettings =
+            HttpJsonCallSettings.<DeleteTargetInstanceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteTargetInstanceMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<GetTargetInstanceHttpRequest, TargetInstance>
+        getTargetInstanceTransportSettings =
+            HttpJsonCallSettings.<GetTargetInstanceHttpRequest, TargetInstance>newBuilder()
+                .setMethodDescriptor(getTargetInstanceMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<InsertTargetInstanceHttpRequest, Operation>
+        insertTargetInstanceTransportSettings =
+            HttpJsonCallSettings.<InsertTargetInstanceHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(insertTargetInstanceMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<ListTargetInstancesHttpRequest, TargetInstanceList>
+        listTargetInstancesTransportSettings =
+            HttpJsonCallSettings.<ListTargetInstancesHttpRequest, TargetInstanceList>newBuilder()
+                .setMethodDescriptor(listTargetInstancesMethodDescriptor)
+                .build();
 
-    this.aggregatedListTargetInstancesCallable = callableFactory.createUnaryCallable(aggregatedListTargetInstancesTransportSettings,settings.aggregatedListTargetInstancesSettings(), clientContext);
-    this.aggregatedListTargetInstancesPagedCallable = callableFactory.createPagedCallable(aggregatedListTargetInstancesTransportSettings,settings.aggregatedListTargetInstancesSettings(), clientContext);
-    this.deleteTargetInstanceCallable = callableFactory.createUnaryCallable(deleteTargetInstanceTransportSettings,settings.deleteTargetInstanceSettings(), clientContext);
-    this.getTargetInstanceCallable = callableFactory.createUnaryCallable(getTargetInstanceTransportSettings,settings.getTargetInstanceSettings(), clientContext);
-    this.insertTargetInstanceCallable = callableFactory.createUnaryCallable(insertTargetInstanceTransportSettings,settings.insertTargetInstanceSettings(), clientContext);
-    this.listTargetInstancesCallable = callableFactory.createUnaryCallable(listTargetInstancesTransportSettings,settings.listTargetInstancesSettings(), clientContext);
-    this.listTargetInstancesPagedCallable = callableFactory.createPagedCallable(listTargetInstancesTransportSettings,settings.listTargetInstancesSettings(), clientContext);
+    this.aggregatedListTargetInstancesCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTargetInstancesTransportSettings,
+            settings.aggregatedListTargetInstancesSettings(),
+            clientContext);
+    this.aggregatedListTargetInstancesPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTargetInstancesTransportSettings,
+            settings.aggregatedListTargetInstancesSettings(),
+            clientContext);
+    this.deleteTargetInstanceCallable =
+        callableFactory.createUnaryCallable(
+            deleteTargetInstanceTransportSettings,
+            settings.deleteTargetInstanceSettings(),
+            clientContext);
+    this.getTargetInstanceCallable =
+        callableFactory.createUnaryCallable(
+            getTargetInstanceTransportSettings,
+            settings.getTargetInstanceSettings(),
+            clientContext);
+    this.insertTargetInstanceCallable =
+        callableFactory.createUnaryCallable(
+            insertTargetInstanceTransportSettings,
+            settings.insertTargetInstanceSettings(),
+            clientContext);
+    this.listTargetInstancesCallable =
+        callableFactory.createUnaryCallable(
+            listTargetInstancesTransportSettings,
+            settings.listTargetInstancesSettings(),
+            clientContext);
+    this.listTargetInstancesPagedCallable =
+        callableFactory.createPagedCallable(
+            listTargetInstancesTransportSettings,
+            settings.listTargetInstancesSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListTargetInstancesHttpRequest, AggregatedListTargetInstancesPagedResponse> aggregatedListTargetInstancesPagedCallable() {
+  public UnaryCallable<
+          AggregatedListTargetInstancesHttpRequest, AggregatedListTargetInstancesPagedResponse>
+      aggregatedListTargetInstancesPagedCallable() {
     return aggregatedListTargetInstancesPagedCallable;
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList> aggregatedListTargetInstancesCallable() {
+  public UnaryCallable<AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList>
+      aggregatedListTargetInstancesCallable() {
     return aggregatedListTargetInstancesCallable;
   }
 
@@ -260,17 +325,19 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetInstancesHttpRequest, ListTargetInstancesPagedResponse> listTargetInstancesPagedCallable() {
+  public UnaryCallable<ListTargetInstancesHttpRequest, ListTargetInstancesPagedResponse>
+      listTargetInstancesPagedCallable() {
     return listTargetInstancesPagedCallable;
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetInstancesHttpRequest, TargetInstanceList> listTargetInstancesCallable() {
+  public UnaryCallable<ListTargetInstancesHttpRequest, TargetInstanceList>
+      listTargetInstancesCallable() {
     return listTargetInstancesCallable;
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
@@ -298,5 +365,4 @@ public class HttpJsonTargetInstanceStub extends TargetInstanceStub {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
-
 }

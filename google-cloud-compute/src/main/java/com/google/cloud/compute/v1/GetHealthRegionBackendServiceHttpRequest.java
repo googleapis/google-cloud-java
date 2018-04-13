@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
     this.userIp = null;
   }
 
-
   private GetHealthRegionBackendServiceHttpRequest(
       String access_token,
       String backendService,
@@ -64,8 +60,7 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
       String prettyPrint,
       String quotaUser,
       ResourceGroupReference resourceGroupReferenceResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.backendService = backendService;
     this.callback = callback;
@@ -101,8 +96,11 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
     }
-    if (fieldNames.contains("resourceGroupReferenceResource") && resourceGroupReferenceResource != null) {
-      fieldMap.put("resourceGroupReferenceResource", Collections.singletonList(String.valueOf(resourceGroupReferenceResource)));
+    if (fieldNames.contains("resourceGroupReferenceResource")
+        && resourceGroupReferenceResource != null) {
+      fieldMap.put(
+          "resourceGroupReferenceResource",
+          Collections.singletonList(String.valueOf(resourceGroupReferenceResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -184,22 +182,24 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GetHealthRegionBackendServiceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetHealthRegionBackendServiceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GetHealthRegionBackendServiceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GetHealthRegionBackendServiceHttpRequest();
   }
@@ -328,7 +328,8 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
       return resourceGroupReferenceResource;
     }
 
-    public Builder setResourceGroupReferenceResource(ResourceGroupReference resourceGroupReferenceResource) {
+    public Builder setResourceGroupReferenceResource(
+        ResourceGroupReference resourceGroupReferenceResource) {
       this.resourceGroupReferenceResource = resourceGroupReferenceResource;
       return this;
     }
@@ -342,7 +343,6 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
       return this;
     }
 
-
     public GetHealthRegionBackendServiceHttpRequest build() {
       String missing = "";
 
@@ -350,26 +350,19 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
         missing += " backendService";
       }
 
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetHealthRegionBackendServiceHttpRequest(
-        access_token,
-        backendService,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        resourceGroupReferenceResource,
-        userIp
-      );
+          access_token,
+          backendService,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          resourceGroupReferenceResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -390,15 +383,32 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
   @Override
   public String toString() {
     return "GetHealthRegionBackendServiceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "backendService=" + backendService + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "resourceGroupReferenceResource=" + resourceGroupReferenceResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "backendService="
+        + backendService
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "resourceGroupReferenceResource="
+        + resourceGroupReferenceResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -409,17 +419,16 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
     }
     if (o instanceof GetHealthRegionBackendServiceHttpRequest) {
       GetHealthRegionBackendServiceHttpRequest that = (GetHealthRegionBackendServiceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.backendService, that.getBackendService()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.resourceGroupReferenceResource, that.getResourceGroupReferenceResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.backendService, that.getBackendService())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(
+              this.resourceGroupReferenceResource, that.getResourceGroupReferenceResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -427,15 +436,14 @@ public final class GetHealthRegionBackendServiceHttpRequest implements ApiMessag
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      backendService,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      resourceGroupReferenceResource,
-      userIp
-    );
+        access_token,
+        backendService,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        resourceGroupReferenceResource,
+        userIp);
   }
 }

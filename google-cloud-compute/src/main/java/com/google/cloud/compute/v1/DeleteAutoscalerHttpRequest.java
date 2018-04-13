@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class DeleteAutoscalerHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private DeleteAutoscalerHttpRequest(
       String access_token,
       String autoscaler,
@@ -64,8 +60,7 @@ public final class DeleteAutoscalerHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.autoscaler = autoscaler;
     this.callback = callback;
@@ -184,22 +179,24 @@ public final class DeleteAutoscalerHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DeleteAutoscalerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeleteAutoscalerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DeleteAutoscalerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DeleteAutoscalerHttpRequest();
   }
@@ -342,7 +339,6 @@ public final class DeleteAutoscalerHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public DeleteAutoscalerHttpRequest build() {
       String missing = "";
 
@@ -350,26 +346,19 @@ public final class DeleteAutoscalerHttpRequest implements ApiMessage {
         missing += " autoscaler";
       }
 
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new DeleteAutoscalerHttpRequest(
-        access_token,
-        autoscaler,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          autoscaler,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -390,15 +379,32 @@ public final class DeleteAutoscalerHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "DeleteAutoscalerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "autoscaler=" + autoscaler + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "autoscaler="
+        + autoscaler
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -409,17 +415,15 @@ public final class DeleteAutoscalerHttpRequest implements ApiMessage {
     }
     if (o instanceof DeleteAutoscalerHttpRequest) {
       DeleteAutoscalerHttpRequest that = (DeleteAutoscalerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.autoscaler, that.getAutoscaler()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.autoscaler, that.getAutoscaler())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -427,15 +431,6 @@ public final class DeleteAutoscalerHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      autoscaler,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token, autoscaler, callback, fields, key, prettyPrint, quotaUser, requestId, userIp);
   }
 }

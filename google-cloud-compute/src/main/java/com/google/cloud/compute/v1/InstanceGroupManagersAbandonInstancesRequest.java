@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class InstanceGroupManagersAbandonInstancesRequest implements ApiMe
     this.instances = null;
   }
 
-
-  private InstanceGroupManagersAbandonInstancesRequest(
-      List<String> instances
-      ) {
+  private InstanceGroupManagersAbandonInstancesRequest(List<String> instances) {
     this.instances = instances;
   }
 
@@ -76,22 +71,24 @@ public final class InstanceGroupManagersAbandonInstancesRequest implements ApiMe
     return instances;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupManagersAbandonInstancesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupManagersAbandonInstancesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupManagersAbandonInstancesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupManagersAbandonInstancesRequest();
   }
@@ -130,11 +127,8 @@ public final class InstanceGroupManagersAbandonInstancesRequest implements ApiMe
       return this;
     }
 
-
     public InstanceGroupManagersAbandonInstancesRequest build() {
-      return new InstanceGroupManagersAbandonInstancesRequest(
-        instances
-      );
+      return new InstanceGroupManagersAbandonInstancesRequest(instances);
     }
 
     public Builder clone() {
@@ -146,9 +140,7 @@ public final class InstanceGroupManagersAbandonInstancesRequest implements ApiMe
 
   @Override
   public String toString() {
-    return "InstanceGroupManagersAbandonInstancesRequest{"
-        + "instances=" + instances
-        + "}";
+    return "InstanceGroupManagersAbandonInstancesRequest{" + "instances=" + instances + "}";
   }
 
   @Override
@@ -157,18 +149,15 @@ public final class InstanceGroupManagersAbandonInstancesRequest implements ApiMe
       return true;
     }
     if (o instanceof InstanceGroupManagersAbandonInstancesRequest) {
-      InstanceGroupManagersAbandonInstancesRequest that = (InstanceGroupManagersAbandonInstancesRequest) o;
-      return
-          Objects.equals(this.instances, that.getInstancesList())
-          ;
+      InstanceGroupManagersAbandonInstancesRequest that =
+          (InstanceGroupManagersAbandonInstancesRequest) o;
+      return Objects.equals(this.instances, that.getInstancesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instances
-    );
+    return Objects.hash(instances);
   }
 }

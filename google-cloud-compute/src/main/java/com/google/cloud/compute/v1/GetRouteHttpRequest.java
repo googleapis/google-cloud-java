@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class GetRouteHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private GetRouteHttpRequest(
       String access_token,
       String callback,
@@ -61,8 +57,7 @@ public final class GetRouteHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String route,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -170,22 +165,24 @@ public final class GetRouteHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GetRouteHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetRouteHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GetRouteHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GetRouteHttpRequest();
   }
@@ -314,14 +311,8 @@ public final class GetRouteHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public GetRouteHttpRequest build() {
       String missing = "";
-
-
-
-
-
 
       if (route == null) {
         missing += " route";
@@ -331,15 +322,7 @@ public final class GetRouteHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetRouteHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        route,
-        userIp
-      );
+          access_token, callback, fields, key, prettyPrint, quotaUser, route, userIp);
     }
 
     public Builder clone() {
@@ -359,14 +342,29 @@ public final class GetRouteHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "GetRouteHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "route=" + route + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "route="
+        + route
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -377,31 +375,20 @@ public final class GetRouteHttpRequest implements ApiMessage {
     }
     if (o instanceof GetRouteHttpRequest) {
       GetRouteHttpRequest that = (GetRouteHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.route, that.getRoute()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.route, that.getRoute())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      route,
-      userIp
-    );
+    return Objects.hash(access_token, callback, fields, key, prettyPrint, quotaUser, route, userIp);
   }
 }

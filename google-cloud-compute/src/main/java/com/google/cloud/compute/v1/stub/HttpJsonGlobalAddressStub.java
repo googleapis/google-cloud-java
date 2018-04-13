@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.GlobalAddressClient.ListGlobalAddressesPagedResponse;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,26 +28,19 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressList;
 import com.google.cloud.compute.v1.DeleteGlobalAddressHttpRequest;
 import com.google.cloud.compute.v1.GetGlobalAddressHttpRequest;
-import static com.google.cloud.compute.v1.GlobalAddressClient.ListGlobalAddressesPagedResponse;
-import com.google.cloud.compute.v1.GlobalAddressSettings;
 import com.google.cloud.compute.v1.InsertGlobalAddressHttpRequest;
 import com.google.cloud.compute.v1.ListGlobalAddressesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectAddressName;
+import com.google.cloud.compute.v1.ProjectGlobalAddressName;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -59,144 +54,182 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
   @InternalApi
-  public static final ApiMethodDescriptor<DeleteGlobalAddressHttpRequest, Operation> deleteGlobalAddressMethodDescriptor =
-      ApiMethodDescriptor.<DeleteGlobalAddressHttpRequest, Operation>newBuilder()
-          .setFullMethodName("compute.globalAddresses.delete")
-          .setHttpMethod(HttpMethods.DELETE)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<DeleteGlobalAddressHttpRequest>newBuilder()
-                  .setRequestInstance(DeleteGlobalAddressHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/addresses/{address}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "requestId"
-                                     ))
-                  .setResourceNameFactory(ProjectAddressName.newFactory())
-                  .setResourceNameField("address")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<Operation>newBuilder()
-                  .setResponseInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<DeleteGlobalAddressHttpRequest, Operation>
+      deleteGlobalAddressMethodDescriptor =
+          ApiMethodDescriptor.<DeleteGlobalAddressHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.globalAddresses.delete")
+              .setHttpMethod(HttpMethods.DELETE)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<DeleteGlobalAddressHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteGlobalAddressHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/global/addresses/{address}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalAddressName.newFactory())
+                      .setResourceNameField("address")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<GetGlobalAddressHttpRequest, Address> getGlobalAddressMethodDescriptor =
-      ApiMethodDescriptor.<GetGlobalAddressHttpRequest, Address>newBuilder()
-          .setFullMethodName("compute.globalAddresses.get")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<GetGlobalAddressHttpRequest>newBuilder()
-                  .setRequestInstance(GetGlobalAddressHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/addresses/{address}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
-                  .setResourceNameFactory(ProjectAddressName.newFactory())
-                  .setResourceNameField("address")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<Address>newBuilder()
-                  .setResponseInstance(Address.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<GetGlobalAddressHttpRequest, Address>
+      getGlobalAddressMethodDescriptor =
+          ApiMethodDescriptor.<GetGlobalAddressHttpRequest, Address>newBuilder()
+              .setFullMethodName("compute.globalAddresses.get")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetGlobalAddressHttpRequest>newBuilder()
+                      .setRequestInstance(GetGlobalAddressHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/global/addresses/{address}"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalAddressName.newFactory())
+                      .setResourceNameField("address")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Address>newBuilder()
+                      .setResponseInstance(Address.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<InsertGlobalAddressHttpRequest, Operation> insertGlobalAddressMethodDescriptor =
-      ApiMethodDescriptor.<InsertGlobalAddressHttpRequest, Operation>newBuilder()
-          .setFullMethodName("compute.globalAddresses.insert")
-          .setHttpMethod(HttpMethods.POST)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<InsertGlobalAddressHttpRequest>newBuilder()
-                  .setRequestInstance(InsertGlobalAddressHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/addresses"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "requestId"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<Operation>newBuilder()
-                  .setResponseInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<InsertGlobalAddressHttpRequest, Operation>
+      insertGlobalAddressMethodDescriptor =
+          ApiMethodDescriptor.<InsertGlobalAddressHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.globalAddresses.insert")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<InsertGlobalAddressHttpRequest>newBuilder()
+                      .setRequestInstance(InsertGlobalAddressHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/global/addresses"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<ListGlobalAddressesHttpRequest, AddressList> listGlobalAddressesMethodDescriptor =
-      ApiMethodDescriptor.<ListGlobalAddressesHttpRequest, AddressList>newBuilder()
-          .setFullMethodName("compute.globalAddresses.list")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<ListGlobalAddressesHttpRequest>newBuilder()
-                  .setRequestInstance(ListGlobalAddressesHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/addresses"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<AddressList>newBuilder()
-                  .setResponseInstance(AddressList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<ListGlobalAddressesHttpRequest, AddressList>
+      listGlobalAddressesMethodDescriptor =
+          ApiMethodDescriptor.<ListGlobalAddressesHttpRequest, AddressList>newBuilder()
+              .setFullMethodName("compute.globalAddresses.list")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListGlobalAddressesHttpRequest>newBuilder()
+                      .setRequestInstance(ListGlobalAddressesHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/global/addresses"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<AddressList>newBuilder()
+                      .setResponseInstance(AddressList.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteGlobalAddressHttpRequest, Operation> deleteGlobalAddressCallable;
+  private final UnaryCallable<DeleteGlobalAddressHttpRequest, Operation>
+      deleteGlobalAddressCallable;
   private final UnaryCallable<GetGlobalAddressHttpRequest, Address> getGlobalAddressCallable;
-  private final UnaryCallable<InsertGlobalAddressHttpRequest, Operation> insertGlobalAddressCallable;
-  private final UnaryCallable<ListGlobalAddressesHttpRequest, AddressList> listGlobalAddressesCallable;
-  private final UnaryCallable<ListGlobalAddressesHttpRequest, ListGlobalAddressesPagedResponse> listGlobalAddressesPagedCallable;
+  private final UnaryCallable<InsertGlobalAddressHttpRequest, Operation>
+      insertGlobalAddressCallable;
+  private final UnaryCallable<ListGlobalAddressesHttpRequest, AddressList>
+      listGlobalAddressesCallable;
+  private final UnaryCallable<ListGlobalAddressesHttpRequest, ListGlobalAddressesPagedResponse>
+      listGlobalAddressesPagedCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
-  public static final HttpJsonGlobalAddressStub create(GlobalAddressStubSettings settings) throws IOException {
+
+  public static final HttpJsonGlobalAddressStub create(GlobalAddressStubSettings settings)
+      throws IOException {
     return new HttpJsonGlobalAddressStub(settings, ClientContext.create(settings));
   }
 
-  public static final HttpJsonGlobalAddressStub create(ClientContext clientContext) throws IOException {
-    return new HttpJsonGlobalAddressStub(GlobalAddressStubSettings.newBuilder().build(), clientContext);
+  public static final HttpJsonGlobalAddressStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonGlobalAddressStub(
+        GlobalAddressStubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final HttpJsonGlobalAddressStub create(ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
-    return new HttpJsonGlobalAddressStub(GlobalAddressStubSettings.newBuilder().build(), clientContext, callableFactory);
+  public static final HttpJsonGlobalAddressStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonGlobalAddressStub(
+        GlobalAddressStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of HttpJsonGlobalAddressStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonGlobalAddressStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonGlobalAddressStub(GlobalAddressStubSettings settings, ClientContext clientContext) throws IOException {
+  protected HttpJsonGlobalAddressStub(
+      GlobalAddressStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new HttpJsonGlobalAddressCallableFactory());
   }
 
   /**
-   * Constructs an instance of HttpJsonGlobalAddressStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonGlobalAddressStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonGlobalAddressStub(GlobalAddressStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+  protected HttpJsonGlobalAddressStub(
+      GlobalAddressStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
 
-    HttpJsonCallSettings<DeleteGlobalAddressHttpRequest, Operation> deleteGlobalAddressTransportSettings =
-        HttpJsonCallSettings.<DeleteGlobalAddressHttpRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteGlobalAddressMethodDescriptor)
-            .build();
+    HttpJsonCallSettings<DeleteGlobalAddressHttpRequest, Operation>
+        deleteGlobalAddressTransportSettings =
+            HttpJsonCallSettings.<DeleteGlobalAddressHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGlobalAddressMethodDescriptor)
+                .build();
     HttpJsonCallSettings<GetGlobalAddressHttpRequest, Address> getGlobalAddressTransportSettings =
         HttpJsonCallSettings.<GetGlobalAddressHttpRequest, Address>newBuilder()
             .setMethodDescriptor(getGlobalAddressMethodDescriptor)
             .build();
-    HttpJsonCallSettings<InsertGlobalAddressHttpRequest, Operation> insertGlobalAddressTransportSettings =
-        HttpJsonCallSettings.<InsertGlobalAddressHttpRequest, Operation>newBuilder()
-            .setMethodDescriptor(insertGlobalAddressMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<ListGlobalAddressesHttpRequest, AddressList> listGlobalAddressesTransportSettings =
-        HttpJsonCallSettings.<ListGlobalAddressesHttpRequest, AddressList>newBuilder()
-            .setMethodDescriptor(listGlobalAddressesMethodDescriptor)
-            .build();
+    HttpJsonCallSettings<InsertGlobalAddressHttpRequest, Operation>
+        insertGlobalAddressTransportSettings =
+            HttpJsonCallSettings.<InsertGlobalAddressHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(insertGlobalAddressMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<ListGlobalAddressesHttpRequest, AddressList>
+        listGlobalAddressesTransportSettings =
+            HttpJsonCallSettings.<ListGlobalAddressesHttpRequest, AddressList>newBuilder()
+                .setMethodDescriptor(listGlobalAddressesMethodDescriptor)
+                .build();
 
-    this.deleteGlobalAddressCallable = callableFactory.createUnaryCallable(deleteGlobalAddressTransportSettings,settings.deleteGlobalAddressSettings(), clientContext);
-    this.getGlobalAddressCallable = callableFactory.createUnaryCallable(getGlobalAddressTransportSettings,settings.getGlobalAddressSettings(), clientContext);
-    this.insertGlobalAddressCallable = callableFactory.createUnaryCallable(insertGlobalAddressTransportSettings,settings.insertGlobalAddressSettings(), clientContext);
-    this.listGlobalAddressesCallable = callableFactory.createUnaryCallable(listGlobalAddressesTransportSettings,settings.listGlobalAddressesSettings(), clientContext);
-    this.listGlobalAddressesPagedCallable = callableFactory.createPagedCallable(listGlobalAddressesTransportSettings,settings.listGlobalAddressesSettings(), clientContext);
+    this.deleteGlobalAddressCallable =
+        callableFactory.createUnaryCallable(
+            deleteGlobalAddressTransportSettings,
+            settings.deleteGlobalAddressSettings(),
+            clientContext);
+    this.getGlobalAddressCallable =
+        callableFactory.createUnaryCallable(
+            getGlobalAddressTransportSettings, settings.getGlobalAddressSettings(), clientContext);
+    this.insertGlobalAddressCallable =
+        callableFactory.createUnaryCallable(
+            insertGlobalAddressTransportSettings,
+            settings.insertGlobalAddressSettings(),
+            clientContext);
+    this.listGlobalAddressesCallable =
+        callableFactory.createUnaryCallable(
+            listGlobalAddressesTransportSettings,
+            settings.listGlobalAddressesSettings(),
+            clientContext);
+    this.listGlobalAddressesPagedCallable =
+        callableFactory.createPagedCallable(
+            listGlobalAddressesTransportSettings,
+            settings.listGlobalAddressesSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -217,7 +250,8 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
   }
 
   @BetaApi
-  public UnaryCallable<ListGlobalAddressesHttpRequest, ListGlobalAddressesPagedResponse> listGlobalAddressesPagedCallable() {
+  public UnaryCallable<ListGlobalAddressesHttpRequest, ListGlobalAddressesPagedResponse>
+      listGlobalAddressesPagedCallable() {
     return listGlobalAddressesPagedCallable;
   }
 
@@ -227,7 +261,7 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
@@ -255,5 +289,4 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
-
 }

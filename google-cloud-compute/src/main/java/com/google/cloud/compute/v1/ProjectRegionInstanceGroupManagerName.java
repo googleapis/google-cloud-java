@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectRegionInstanceGroupManagerName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectRegionInstanceGroupManagerName implements ResourceName {
   private final String instanceGroupManager;
   private final String project;
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -55,28 +52,16 @@ public final class ProjectRegionInstanceGroupManagerName implements com.google.a
   }
 
   public static ProjectRegionInstanceGroupManagerName of(
-      String instanceGroupManager,
-      String project,
-      String region
-      ) {
+      String instanceGroupManager, String project, String region) {
     return newBuilder()
-    .setInstanceGroupManager(instanceGroupManager)
-    .setProject(project)
-    .setRegion(region)
-      .build();
+        .setInstanceGroupManager(instanceGroupManager)
+        .setProject(project)
+        .setRegion(region)
+        .build();
   }
 
-  public static String format(
-      String instanceGroupManager,
-      String project,
-      String region
-      ) {
-    return of(
-        instanceGroupManager,
-        project,
-        region
-        )
-        .toString();
+  public static String format(String instanceGroupManager, String project, String region) {
+    return of(instanceGroupManager, project, region).toString();
   }
 
   public String getInstanceGroupManager() {
@@ -90,7 +75,6 @@ public final class ProjectRegionInstanceGroupManagerName implements com.google.a
   public String getRegion() {
     return region;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +96,21 @@ public final class ProjectRegionInstanceGroupManagerName implements com.google.a
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectRegionInstanceGroupManagerName> newFactory() {
     return new ResourceNameFactory<ProjectRegionInstanceGroupManagerName>() {
-      public ProjectRegionInstanceGroupManagerName parse(String formattedString) {return ProjectRegionInstanceGroupManagerName.parse(formattedString);}
+      public ProjectRegionInstanceGroupManagerName parse(String formattedString) {
+        return ProjectRegionInstanceGroupManagerName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectRegionInstanceGroupManagerName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRegionInstanceGroupManagerName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectRegionInstanceGroupManagerName.parse: formattedString not in valid format");
     return of(
-      matchMap.get("instanceGroupManager"),
-      matchMap.get("project"),
-      matchMap.get("region")
-    );
+        matchMap.get("instanceGroupManager"), matchMap.get("project"), matchMap.get("region"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +125,11 @@ public final class ProjectRegionInstanceGroupManagerName implements com.google.a
     public String getInstanceGroupManager() {
       return instanceGroupManager;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getRegion() {
       return region;
     }
@@ -152,10 +138,12 @@ public final class ProjectRegionInstanceGroupManagerName implements com.google.a
       this.instanceGroupManager = instanceGroupManager;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setRegion(String region) {
       this.region = region;
       return this;
@@ -163,7 +151,7 @@ public final class ProjectRegionInstanceGroupManagerName implements com.google.a
 
     private Builder() {}
 
-    public Builder (ProjectRegionInstanceGroupManagerName projectRegionInstanceGroupManagerName) {
+    public Builder(ProjectRegionInstanceGroupManagerName projectRegionInstanceGroupManagerName) {
       instanceGroupManager = projectRegionInstanceGroupManagerName.instanceGroupManager;
       project = projectRegionInstanceGroupManagerName.project;
       region = projectRegionInstanceGroupManagerName.region;
@@ -179,8 +167,7 @@ public final class ProjectRegionInstanceGroupManagerName implements com.google.a
     return PATH_TEMPLATE.instantiate(
         "instanceGroupManager", instanceGroupManager,
         "project", project,
-        "region", region
-        );
+        "region", region);
   }
 
   @Override
@@ -190,21 +177,15 @@ public final class ProjectRegionInstanceGroupManagerName implements com.google.a
     }
     if (o instanceof ProjectRegionInstanceGroupManagerName) {
       ProjectRegionInstanceGroupManagerName that = (ProjectRegionInstanceGroupManagerName) o;
-      return
-          Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.region, that.getRegion())
-          ;
+      return Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.region, that.getRegion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instanceGroupManager,
-      project,
-      region
-    );
+    return Objects.hash(instanceGroupManager, project, region);
   }
 }

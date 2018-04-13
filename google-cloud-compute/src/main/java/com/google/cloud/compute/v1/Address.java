@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,7 +61,6 @@ public final class Address implements ApiMessage {
     this.users = null;
   }
 
-
   private Address(
       String address,
       String addressType,
@@ -76,8 +74,7 @@ public final class Address implements ApiMessage {
       String selfLink,
       String status,
       String subnetwork,
-      List<String> users
-      ) {
+      List<String> users) {
     this.address = address;
     this.addressType = addressType;
     this.creationTimestamp = creationTimestamp;
@@ -103,7 +100,8 @@ public final class Address implements ApiMessage {
       fieldMap.put("addressType", Collections.singletonList(String.valueOf(addressType)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -244,22 +242,24 @@ public final class Address implements ApiMessage {
     return users;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Address prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Address getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Address DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Address();
   }
@@ -466,35 +466,22 @@ public final class Address implements ApiMessage {
       return this;
     }
 
-
     public Address build() {
 
-
-
-
-
-
-
-
-
-
-
-
       return new Address(
-        address,
-        addressType,
-        creationTimestamp,
-        description,
-        id,
-        ipVersion,
-        kind,
-        name,
-        region,
-        selfLink,
-        status,
-        subnetwork,
-        users
-      );
+          address,
+          addressType,
+          creationTimestamp,
+          description,
+          id,
+          ipVersion,
+          kind,
+          name,
+          region,
+          selfLink,
+          status,
+          subnetwork,
+          users);
     }
 
     public Builder clone() {
@@ -519,19 +506,44 @@ public final class Address implements ApiMessage {
   @Override
   public String toString() {
     return "Address{"
-        + "address=" + address + ", "
-        + "addressType=" + addressType + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "ipVersion=" + ipVersion + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "status=" + status + ", "
-        + "subnetwork=" + subnetwork + ", "
-        + "users=" + users
+        + "address="
+        + address
+        + ", "
+        + "addressType="
+        + addressType
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "ipVersion="
+        + ipVersion
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "subnetwork="
+        + subnetwork
+        + ", "
+        + "users="
+        + users
         + "}";
   }
 
@@ -542,21 +554,19 @@ public final class Address implements ApiMessage {
     }
     if (o instanceof Address) {
       Address that = (Address) o;
-      return
-          Objects.equals(this.address, that.getAddress()) &&
-          Objects.equals(this.addressType, that.getAddressType()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.ipVersion, that.getIpVersion()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.subnetwork, that.getSubnetwork()) &&
-          Objects.equals(this.users, that.getUsersList())
-          ;
+      return Objects.equals(this.address, that.getAddress())
+          && Objects.equals(this.addressType, that.getAddressType())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.ipVersion, that.getIpVersion())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.subnetwork, that.getSubnetwork())
+          && Objects.equals(this.users, that.getUsersList());
     }
     return false;
   }
@@ -564,19 +574,18 @@ public final class Address implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      address,
-      addressType,
-      creationTimestamp,
-      description,
-      id,
-      ipVersion,
-      kind,
-      name,
-      region,
-      selfLink,
-      status,
-      subnetwork,
-      users
-    );
+        address,
+        addressType,
+        creationTimestamp,
+        description,
+        id,
+        ipVersion,
+        kind,
+        name,
+        region,
+        selfLink,
+        status,
+        subnetwork,
+        users);
   }
 }

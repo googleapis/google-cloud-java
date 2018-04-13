@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.SnapshotStub;
 import com.google.cloud.compute.v1.stub.SnapshotStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -53,40 +43,39 @@ import javax.annotation.Generated;
  * <code>
  * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
  *   String requestId = "";
- *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+ *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
  *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the snapshotClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the snapshotClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of SnapshotSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of SnapshotSettings to create().
+ * For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,19 +105,14 @@ public class SnapshotClient implements BackgroundResource {
   private final SnapshotSettings settings;
   private final SnapshotStub stub;
 
-
-
-  /**
-   * Constructs an instance of SnapshotClient with default settings.
-   */
+  /** Constructs an instance of SnapshotClient with default settings. */
   public static final SnapshotClient create() throws IOException {
     return create(SnapshotSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of SnapshotClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of SnapshotClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final SnapshotClient create(SnapshotSettings settings) throws IOException {
     return new SnapshotClient(settings);
@@ -144,9 +128,8 @@ public class SnapshotClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of SnapshotClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of SnapshotClient, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected SnapshotClient(SnapshotSettings settings) throws IOException {
     this.settings = settings;
@@ -168,61 +151,76 @@ public class SnapshotClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot.
+   * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next
+   * corresponding snapshot.
    *
-   * For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snaphots.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   String requestId = "";
-   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param snapshot Name of the Snapshot resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSnapshot(String requestId, ProjectSnapshotName snapshot) {
+  public final Operation deleteSnapshot(String requestId, ProjectGlobalSnapshotName snapshot) {
 
     DeleteSnapshotHttpRequest request =
         DeleteSnapshotHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setSnapshot(snapshot == null ? null : snapshot.toString())
-        .build();
+            .setRequestId(requestId)
+            .setSnapshot(snapshot == null ? null : snapshot.toString())
+            .build();
     return deleteSnapshot(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot.
+   * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next
+   * corresponding snapshot.
    *
-   * For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snaphots.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   String requestId = "";
-   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   Operation response = snapshotClient.deleteSnapshot(requestId, snapshot.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param snapshot Name of the Snapshot resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -231,23 +229,27 @@ public class SnapshotClient implements BackgroundResource {
 
     DeleteSnapshotHttpRequest request =
         DeleteSnapshotHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setSnapshot(snapshot)
-        .build();
+            .setRequestId(requestId)
+            .setSnapshot(snapshot)
+            .build();
     return deleteSnapshot(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot.
+   * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next
+   * corresponding snapshot.
    *
-   * For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snaphots.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   String requestId = "";
-   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setSnapshot(snapshot.toString())
@@ -266,15 +268,19 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot.
+   * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next
+   * corresponding snapshot.
    *
-   * For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snaphots.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   String requestId = "";
-   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   DeleteSnapshotHttpRequest request = DeleteSnapshotHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setSnapshot(snapshot.toString())
@@ -292,12 +298,14 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Snapshot resource. Get a list of available snapshots by making a list() request.
+   * Returns the specified Snapshot resource. Get a list of available snapshots by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   Snapshot response = snapshotClient.getSnapshot(snapshot);
    * }
    * </code></pre>
@@ -306,23 +314,25 @@ public class SnapshotClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Snapshot getSnapshot(ProjectSnapshotName snapshot) {
+  public final Snapshot getSnapshot(ProjectGlobalSnapshotName snapshot) {
 
     GetSnapshotHttpRequest request =
         GetSnapshotHttpRequest.newBuilder()
-        .setSnapshot(snapshot == null ? null : snapshot.toString())
-        .build();
+            .setSnapshot(snapshot == null ? null : snapshot.toString())
+            .build();
     return getSnapshot(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Snapshot resource. Get a list of available snapshots by making a list() request.
+   * Returns the specified Snapshot resource. Get a list of available snapshots by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   Snapshot response = snapshotClient.getSnapshot(snapshot.toString());
    * }
    * </code></pre>
@@ -334,20 +344,20 @@ public class SnapshotClient implements BackgroundResource {
   public final Snapshot getSnapshot(String snapshot) {
 
     GetSnapshotHttpRequest request =
-        GetSnapshotHttpRequest.newBuilder()
-        .setSnapshot(snapshot)
-        .build();
+        GetSnapshotHttpRequest.newBuilder().setSnapshot(snapshot).build();
     return getSnapshot(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Snapshot resource. Get a list of available snapshots by making a list() request.
+   * Returns the specified Snapshot resource. Get a list of available snapshots by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   GetSnapshotHttpRequest request = GetSnapshotHttpRequest.newBuilder()
    *     .setSnapshot(snapshot.toString())
    *     .build();
@@ -365,12 +375,14 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Snapshot resource. Get a list of available snapshots by making a list() request.
+   * Returns the specified Snapshot resource. Get a list of available snapshots by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotName snapshot = ProjectGlobalSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
    *   GetSnapshotHttpRequest request = GetSnapshotHttpRequest.newBuilder()
    *     .setSnapshot(snapshot.toString())
    *     .build();
@@ -389,7 +401,8 @@ public class SnapshotClient implements BackgroundResource {
   /**
    * Retrieves the list of Snapshot resources contained within the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -406,8 +419,8 @@ public class SnapshotClient implements BackgroundResource {
   public final ListSnapshotsPagedResponse listSnapshots(ProjectName project) {
     ListSnapshotsHttpRequest request =
         ListSnapshotsHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listSnapshots(request);
   }
 
@@ -415,7 +428,8 @@ public class SnapshotClient implements BackgroundResource {
   /**
    * Retrieves the list of Snapshot resources contained within the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -431,9 +445,7 @@ public class SnapshotClient implements BackgroundResource {
   @BetaApi
   public final ListSnapshotsPagedResponse listSnapshots(String project) {
     ListSnapshotsHttpRequest request =
-        ListSnapshotsHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListSnapshotsHttpRequest.newBuilder().setProject(project).build();
     return listSnapshots(request);
   }
 
@@ -441,7 +453,8 @@ public class SnapshotClient implements BackgroundResource {
   /**
    * Retrieves the list of Snapshot resources contained within the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -459,15 +472,15 @@ public class SnapshotClient implements BackgroundResource {
    */
   @BetaApi
   public final ListSnapshotsPagedResponse listSnapshots(ListSnapshotsHttpRequest request) {
-    return listSnapshotsPagedCallable()
-        .call(request);
+    return listSnapshotsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of Snapshot resources contained within the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -483,7 +496,8 @@ public class SnapshotClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListSnapshotsHttpRequest, ListSnapshotsPagedResponse> listSnapshotsPagedCallable() {
+  public final UnaryCallable<ListSnapshotsHttpRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
     return stub.listSnapshotsPagedCallable();
   }
 
@@ -491,7 +505,8 @@ public class SnapshotClient implements BackgroundResource {
   /**
    * Retrieves the list of Snapshot resources contained within the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -520,12 +535,14 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * documentation.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response = snapshotClient.setLabelsSnapshot(resource, globalSetLabelsRequestResource);
    * }
@@ -536,24 +553,28 @@ public class SnapshotClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setLabelsSnapshot(ProjectSnapshotName resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+  public final Operation setLabelsSnapshot(
+      ProjectGlobalSnapshotResourceName resource,
+      GlobalSetLabelsRequest globalSetLabelsRequestResource) {
 
     SetLabelsSnapshotHttpRequest request =
         SetLabelsSnapshotHttpRequest.newBuilder()
-        .setResource(resource == null ? null : resource.toString())
-        .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
-        .build();
+            .setResource(resource == null ? null : resource.toString())
+            .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+            .build();
     return setLabelsSnapshot(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * documentation.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   Operation response = snapshotClient.setLabelsSnapshot(resource.toString(), globalSetLabelsRequestResource);
    * }
@@ -564,24 +585,27 @@ public class SnapshotClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setLabelsSnapshot(String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+  public final Operation setLabelsSnapshot(
+      String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
 
     SetLabelsSnapshotHttpRequest request =
         SetLabelsSnapshotHttpRequest.newBuilder()
-        .setResource(resource)
-        .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
-        .build();
+            .setResource(resource)
+            .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+            .build();
     return setLabelsSnapshot(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * documentation.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsSnapshotHttpRequest request = SetLabelsSnapshotHttpRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -601,12 +625,14 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.
+   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * documentation.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
-   *   ProjectSnapshotName resource = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
    *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   SetLabelsSnapshotHttpRequest request = SetLabelsSnapshotHttpRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -624,7 +650,7 @@ public class SnapshotClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -653,12 +679,10 @@ public class SnapshotClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListSnapshotsPagedResponse extends AbstractPagedListResponse<
-      ListSnapshotsHttpRequest,
-      SnapshotList,
-      Snapshot,
-      ListSnapshotsPage,
-      ListSnapshotsFixedSizeCollection> {
+  public static class ListSnapshotsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSnapshotsHttpRequest, SnapshotList, Snapshot, ListSnapshotsPage,
+          ListSnapshotsFixedSizeCollection> {
 
     public static ApiFuture<ListSnapshotsPagedResponse> createAsync(
         PageContext<ListSnapshotsHttpRequest, SnapshotList, Snapshot> context,
@@ -678,15 +702,10 @@ public class SnapshotClient implements BackgroundResource {
     private ListSnapshotsPagedResponse(ListSnapshotsPage page) {
       super(page, ListSnapshotsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListSnapshotsPage extends AbstractPage<
-      ListSnapshotsHttpRequest,
-      SnapshotList,
-      Snapshot,
-      ListSnapshotsPage> {
+  public static class ListSnapshotsPage
+      extends AbstractPage<ListSnapshotsHttpRequest, SnapshotList, Snapshot, ListSnapshotsPage> {
 
     private ListSnapshotsPage(
         PageContext<ListSnapshotsHttpRequest, SnapshotList, Snapshot> context,
@@ -711,18 +730,12 @@ public class SnapshotClient implements BackgroundResource {
         ApiFuture<SnapshotList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListSnapshotsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListSnapshotsHttpRequest,
-      SnapshotList,
-      Snapshot,
-      ListSnapshotsPage,
-      ListSnapshotsFixedSizeCollection> {
+  public static class ListSnapshotsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSnapshotsHttpRequest, SnapshotList, Snapshot, ListSnapshotsPage,
+          ListSnapshotsFixedSizeCollection> {
 
     private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -737,7 +750,5 @@ public class SnapshotClient implements BackgroundResource {
         List<ListSnapshotsPage> pages, int collectionSize) {
       return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

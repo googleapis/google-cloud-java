@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -46,14 +43,8 @@ public final class DeprecationStatus implements ApiMessage {
     this.state = null;
   }
 
-
   private DeprecationStatus(
-      String deleted,
-      String deprecated,
-      String obsolete,
-      String replacement,
-      String state
-      ) {
+      String deleted, String deprecated, String obsolete, String replacement, String state) {
     this.deleted = deleted;
     this.deprecated = deprecated;
     this.obsolete = obsolete;
@@ -128,22 +119,24 @@ public final class DeprecationStatus implements ApiMessage {
     return state;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DeprecationStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeprecationStatus getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DeprecationStatus DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DeprecationStatus();
   }
@@ -230,19 +223,9 @@ public final class DeprecationStatus implements ApiMessage {
       return this;
     }
 
-
     public DeprecationStatus build() {
 
-
-
-
-      return new DeprecationStatus(
-        deleted,
-        deprecated,
-        obsolete,
-        replacement,
-        state
-      );
+      return new DeprecationStatus(deleted, deprecated, obsolete, replacement, state);
     }
 
     public Builder clone() {
@@ -259,11 +242,20 @@ public final class DeprecationStatus implements ApiMessage {
   @Override
   public String toString() {
     return "DeprecationStatus{"
-        + "deleted=" + deleted + ", "
-        + "deprecated=" + deprecated + ", "
-        + "obsolete=" + obsolete + ", "
-        + "replacement=" + replacement + ", "
-        + "state=" + state
+        + "deleted="
+        + deleted
+        + ", "
+        + "deprecated="
+        + deprecated
+        + ", "
+        + "obsolete="
+        + obsolete
+        + ", "
+        + "replacement="
+        + replacement
+        + ", "
+        + "state="
+        + state
         + "}";
   }
 
@@ -274,25 +266,17 @@ public final class DeprecationStatus implements ApiMessage {
     }
     if (o instanceof DeprecationStatus) {
       DeprecationStatus that = (DeprecationStatus) o;
-      return
-          Objects.equals(this.deleted, that.getDeleted()) &&
-          Objects.equals(this.deprecated, that.getDeprecated()) &&
-          Objects.equals(this.obsolete, that.getObsolete()) &&
-          Objects.equals(this.replacement, that.getReplacement()) &&
-          Objects.equals(this.state, that.getState())
-          ;
+      return Objects.equals(this.deleted, that.getDeleted())
+          && Objects.equals(this.deprecated, that.getDeprecated())
+          && Objects.equals(this.obsolete, that.getObsolete())
+          && Objects.equals(this.replacement, that.getReplacement())
+          && Objects.equals(this.state, that.getState());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      deleted,
-      deprecated,
-      obsolete,
-      replacement,
-      state
-    );
+    return Objects.hash(deleted, deprecated, obsolete, replacement, state);
   }
 }

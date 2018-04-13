@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +36,8 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
   private final String prettyPrint;
   private final String quotaUser;
   private final String requestId;
-  private final TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource;
+  private final TargetSslProxiesSetBackendServiceRequest
+      targetSslProxiesSetBackendServiceRequestResource;
   private final String targetSslProxy;
   private final String userIp;
 
@@ -56,7 +54,6 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     this.userIp = null;
   }
 
-
   private SetBackendServiceTargetSslProxyHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +64,7 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       String requestId,
       TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource,
       String targetSslProxy,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -76,7 +72,8 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.requestId = requestId;
-    this.targetSslProxiesSetBackendServiceRequestResource = targetSslProxiesSetBackendServiceRequestResource;
+    this.targetSslProxiesSetBackendServiceRequestResource =
+        targetSslProxiesSetBackendServiceRequestResource;
     this.targetSslProxy = targetSslProxy;
     this.userIp = userIp;
   }
@@ -105,8 +102,12 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     if (fieldNames.contains("requestId") && requestId != null) {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
-    if (fieldNames.contains("targetSslProxiesSetBackendServiceRequestResource") && targetSslProxiesSetBackendServiceRequestResource != null) {
-      fieldMap.put("targetSslProxiesSetBackendServiceRequestResource", Collections.singletonList(String.valueOf(targetSslProxiesSetBackendServiceRequestResource)));
+    if (fieldNames.contains("targetSslProxiesSetBackendServiceRequestResource")
+        && targetSslProxiesSetBackendServiceRequestResource != null) {
+      fieldMap.put(
+          "targetSslProxiesSetBackendServiceRequestResource",
+          Collections.singletonList(
+              String.valueOf(targetSslProxiesSetBackendServiceRequestResource)));
     }
     if (fieldNames.contains("targetSslProxy") && targetSslProxy != null) {
       fieldMap.put("targetSslProxy", Collections.singletonList(String.valueOf(targetSslProxy)));
@@ -186,7 +187,8 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     return requestId;
   }
 
-  public TargetSslProxiesSetBackendServiceRequest getTargetSslProxiesSetBackendServiceRequestResource() {
+  public TargetSslProxiesSetBackendServiceRequest
+      getTargetSslProxiesSetBackendServiceRequestResource() {
     return targetSslProxiesSetBackendServiceRequestResource;
   }
 
@@ -198,22 +200,24 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetBackendServiceTargetSslProxyHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetBackendServiceTargetSslProxyHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetBackendServiceTargetSslProxyHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetBackendServiceTargetSslProxyHttpRequest();
   }
@@ -226,7 +230,8 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
     private String prettyPrint;
     private String quotaUser;
     private String requestId;
-    private TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource;
+    private TargetSslProxiesSetBackendServiceRequest
+        targetSslProxiesSetBackendServiceRequestResource;
     private String targetSslProxy;
     private String userIp;
 
@@ -256,7 +261,8 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
         this.requestId = other.requestId;
       }
       if (other.getTargetSslProxiesSetBackendServiceRequestResource() != null) {
-        this.targetSslProxiesSetBackendServiceRequestResource = other.targetSslProxiesSetBackendServiceRequestResource;
+        this.targetSslProxiesSetBackendServiceRequestResource =
+            other.targetSslProxiesSetBackendServiceRequestResource;
       }
       if (other.getTargetSslProxy() != null) {
         this.targetSslProxy = other.targetSslProxy;
@@ -275,7 +281,8 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
-      this.targetSslProxiesSetBackendServiceRequestResource = source.targetSslProxiesSetBackendServiceRequestResource;
+      this.targetSslProxiesSetBackendServiceRequestResource =
+          source.targetSslProxiesSetBackendServiceRequestResource;
       this.targetSslProxy = source.targetSslProxy;
       this.userIp = source.userIp;
     }
@@ -343,12 +350,15 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       return this;
     }
 
-    public TargetSslProxiesSetBackendServiceRequest getTargetSslProxiesSetBackendServiceRequestResource() {
+    public TargetSslProxiesSetBackendServiceRequest
+        getTargetSslProxiesSetBackendServiceRequestResource() {
       return targetSslProxiesSetBackendServiceRequestResource;
     }
 
-    public Builder setTargetSslProxiesSetBackendServiceRequestResource(TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
-      this.targetSslProxiesSetBackendServiceRequestResource = targetSslProxiesSetBackendServiceRequestResource;
+    public Builder setTargetSslProxiesSetBackendServiceRequestResource(
+        TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
+      this.targetSslProxiesSetBackendServiceRequestResource =
+          targetSslProxiesSetBackendServiceRequestResource;
       return this;
     }
 
@@ -370,16 +380,8 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       return this;
     }
 
-
     public SetBackendServiceTargetSslProxyHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
 
       if (targetSslProxy == null) {
         missing += " targetSslProxy";
@@ -389,17 +391,16 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetBackendServiceTargetSslProxyHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetSslProxiesSetBackendServiceRequestResource,
-        targetSslProxy,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetSslProxiesSetBackendServiceRequestResource,
+          targetSslProxy,
+          userIp);
     }
 
     public Builder clone() {
@@ -411,7 +412,8 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
-      newBuilder.setTargetSslProxiesSetBackendServiceRequestResource(this.targetSslProxiesSetBackendServiceRequestResource);
+      newBuilder.setTargetSslProxiesSetBackendServiceRequestResource(
+          this.targetSslProxiesSetBackendServiceRequestResource);
       newBuilder.setTargetSslProxy(this.targetSslProxy);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -421,16 +423,35 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
   @Override
   public String toString() {
     return "SetBackendServiceTargetSslProxyHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetSslProxiesSetBackendServiceRequestResource=" + targetSslProxiesSetBackendServiceRequestResource + ", "
-        + "targetSslProxy=" + targetSslProxy + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetSslProxiesSetBackendServiceRequestResource="
+        + targetSslProxiesSetBackendServiceRequestResource
+        + ", "
+        + "targetSslProxy="
+        + targetSslProxy
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +461,20 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
       return true;
     }
     if (o instanceof SetBackendServiceTargetSslProxyHttpRequest) {
-      SetBackendServiceTargetSslProxyHttpRequest that = (SetBackendServiceTargetSslProxyHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetSslProxiesSetBackendServiceRequestResource, that.getTargetSslProxiesSetBackendServiceRequestResource()) &&
-          Objects.equals(this.targetSslProxy, that.getTargetSslProxy()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      SetBackendServiceTargetSslProxyHttpRequest that =
+          (SetBackendServiceTargetSslProxyHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(
+              this.targetSslProxiesSetBackendServiceRequestResource,
+              that.getTargetSslProxiesSetBackendServiceRequestResource())
+          && Objects.equals(this.targetSslProxy, that.getTargetSslProxy())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +482,15 @@ public final class SetBackendServiceTargetSslProxyHttpRequest implements ApiMess
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetSslProxiesSetBackendServiceRequestResource,
-      targetSslProxy,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetSslProxiesSetBackendServiceRequestResource,
+        targetSslProxy,
+        userIp);
   }
 }

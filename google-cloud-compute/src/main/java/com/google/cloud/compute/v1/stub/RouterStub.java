@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
+import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -27,17 +30,11 @@ import com.google.cloud.compute.v1.ListRoutersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRouterHttpRequest;
 import com.google.cloud.compute.v1.PreviewRouterHttpRequest;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.ProjectRegionRouterName;
 import com.google.cloud.compute.v1.Router;
 import com.google.cloud.compute.v1.RouterAggregatedList;
-import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
-import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
 import com.google.cloud.compute.v1.RouterList;
 import com.google.cloud.compute.v1.RouterStatusResponse;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
-import com.google.cloud.compute.v1.RoutersScopedList;
 import com.google.cloud.compute.v1.UpdateRouterHttpRequest;
 import javax.annotation.Generated;
 
@@ -51,14 +48,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RouterStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListRoutersHttpRequest, AggregatedListRoutersPagedResponse> aggregatedListRoutersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListRoutersPagedCallable()");
+  public UnaryCallable<AggregatedListRoutersHttpRequest, AggregatedListRoutersPagedResponse>
+      aggregatedListRoutersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListRoutersPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListRoutersHttpRequest, RouterAggregatedList> aggregatedListRoutersCallable() {
+  public UnaryCallable<AggregatedListRoutersHttpRequest, RouterAggregatedList>
+      aggregatedListRoutersCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListRoutersCallable()");
   }
 
@@ -73,7 +72,8 @@ public abstract class RouterStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<GetRouterStatusRouterHttpRequest, RouterStatusResponse> getRouterStatusRouterCallable() {
+  public UnaryCallable<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
+      getRouterStatusRouterCallable() {
     throw new UnsupportedOperationException("Not implemented: getRouterStatusRouterCallable()");
   }
 
@@ -83,7 +83,8 @@ public abstract class RouterStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListRoutersHttpRequest, ListRoutersPagedResponse> listRoutersPagedCallable() {
+  public UnaryCallable<ListRoutersHttpRequest, ListRoutersPagedResponse>
+      listRoutersPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listRoutersPagedCallable()");
   }
 
@@ -107,4 +108,6 @@ public abstract class RouterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateRouterCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

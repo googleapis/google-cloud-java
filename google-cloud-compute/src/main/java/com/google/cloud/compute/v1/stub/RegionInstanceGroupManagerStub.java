@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -27,17 +29,9 @@ import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectRegionInstanceGroupManagerName;
-import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
-import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagerList;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest;
-import com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest;
 import com.google.cloud.compute.v1.ResizeRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerHttpRequest;
@@ -53,65 +47,93 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RegionInstanceGroupManagerStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation> abandonInstancesRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: abandonInstancesRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<AbandonInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      abandonInstancesRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: abandonInstancesRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<DeleteRegionInstanceGroupManagerHttpRequest, Operation> deleteRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<DeleteRegionInstanceGroupManagerHttpRequest, Operation>
+      deleteRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<DeleteInstancesRegionInstanceGroupManagerHttpRequest, Operation> deleteInstancesRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteInstancesRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<DeleteInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      deleteInstancesRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteInstancesRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetRegionInstanceGroupManagerHttpRequest, InstanceGroupManager> getRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: getRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<GetRegionInstanceGroupManagerHttpRequest, InstanceGroupManager>
+      getRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<InsertRegionInstanceGroupManagerHttpRequest, Operation> insertRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: insertRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<InsertRegionInstanceGroupManagerHttpRequest, Operation>
+      insertRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: insertRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionInstanceGroupManagersHttpRequest, ListRegionInstanceGroupManagersPagedResponse> listRegionInstanceGroupManagersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listRegionInstanceGroupManagersPagedCallable()");
+  public UnaryCallable<
+          ListRegionInstanceGroupManagersHttpRequest, ListRegionInstanceGroupManagersPagedResponse>
+      listRegionInstanceGroupManagersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRegionInstanceGroupManagersPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList> listRegionInstanceGroupManagersCallable() {
-    throw new UnsupportedOperationException("Not implemented: listRegionInstanceGroupManagersCallable()");
+  public UnaryCallable<ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList>
+      listRegionInstanceGroupManagersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRegionInstanceGroupManagersCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListManagedInstancesRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagersListInstancesResponse> listManagedInstancesRegionInstanceGroupManagersCallable() {
-    throw new UnsupportedOperationException("Not implemented: listManagedInstancesRegionInstanceGroupManagersCallable()");
+  public UnaryCallable<
+          ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstancesResponse>
+      listManagedInstancesRegionInstanceGroupManagersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listManagedInstancesRegionInstanceGroupManagersCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation> recreateInstancesRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: recreateInstancesRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
+      recreateInstancesRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: recreateInstancesRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ResizeRegionInstanceGroupManagerHttpRequest, Operation> resizeRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: resizeRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<ResizeRegionInstanceGroupManagerHttpRequest, Operation>
+      resizeRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: resizeRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetInstanceTemplateRegionInstanceGroupManagerHttpRequest, Operation> setInstanceTemplateRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: setInstanceTemplateRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<SetInstanceTemplateRegionInstanceGroupManagerHttpRequest, Operation>
+      setInstanceTemplateRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setInstanceTemplateRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetTargetPoolsRegionInstanceGroupManagerHttpRequest, Operation> setTargetPoolsRegionInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: setTargetPoolsRegionInstanceGroupManagerCallable()");
+  public UnaryCallable<SetTargetPoolsRegionInstanceGroupManagerHttpRequest, Operation>
+      setTargetPoolsRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setTargetPoolsRegionInstanceGroupManagerCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

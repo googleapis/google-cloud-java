@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class InstanceMoveRequest implements ApiMessage {
     this.targetInstance = null;
   }
 
-
-  private InstanceMoveRequest(
-      String destinationZone,
-      String targetInstance
-      ) {
+  private InstanceMoveRequest(String destinationZone, String targetInstance) {
     this.destinationZone = destinationZone;
     this.targetInstance = targetInstance;
   }
@@ -86,22 +79,24 @@ public final class InstanceMoveRequest implements ApiMessage {
     return targetInstance;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceMoveRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceMoveRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceMoveRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceMoveRequest();
   }
@@ -146,13 +141,9 @@ public final class InstanceMoveRequest implements ApiMessage {
       return this;
     }
 
-
     public InstanceMoveRequest build() {
 
-      return new InstanceMoveRequest(
-        destinationZone,
-        targetInstance
-      );
+      return new InstanceMoveRequest(destinationZone, targetInstance);
     }
 
     public Builder clone() {
@@ -166,8 +157,11 @@ public final class InstanceMoveRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceMoveRequest{"
-        + "destinationZone=" + destinationZone + ", "
-        + "targetInstance=" + targetInstance
+        + "destinationZone="
+        + destinationZone
+        + ", "
+        + "targetInstance="
+        + targetInstance
         + "}";
   }
 
@@ -178,19 +172,14 @@ public final class InstanceMoveRequest implements ApiMessage {
     }
     if (o instanceof InstanceMoveRequest) {
       InstanceMoveRequest that = (InstanceMoveRequest) o;
-      return
-          Objects.equals(this.destinationZone, that.getDestinationZone()) &&
-          Objects.equals(this.targetInstance, that.getTargetInstance())
-          ;
+      return Objects.equals(this.destinationZone, that.getDestinationZone())
+          && Objects.equals(this.targetInstance, that.getTargetInstance());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      destinationZone,
-      targetInstance
-    );
+    return Objects.hash(destinationZone, targetInstance);
   }
 }

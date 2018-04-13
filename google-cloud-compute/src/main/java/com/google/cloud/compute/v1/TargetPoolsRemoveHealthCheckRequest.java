@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
     this.healthChecks = null;
   }
 
-
-  private TargetPoolsRemoveHealthCheckRequest(
-      List<HealthCheckReference> healthChecks
-      ) {
+  private TargetPoolsRemoveHealthCheckRequest(List<HealthCheckReference> healthChecks) {
     this.healthChecks = healthChecks;
   }
 
@@ -76,22 +71,24 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
     return healthChecks;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetPoolsRemoveHealthCheckRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetPoolsRemoveHealthCheckRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetPoolsRemoveHealthCheckRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetPoolsRemoveHealthCheckRequest();
   }
@@ -130,11 +127,8 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
       return this;
     }
 
-
     public TargetPoolsRemoveHealthCheckRequest build() {
-      return new TargetPoolsRemoveHealthCheckRequest(
-        healthChecks
-      );
+      return new TargetPoolsRemoveHealthCheckRequest(healthChecks);
     }
 
     public Builder clone() {
@@ -146,9 +140,7 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "TargetPoolsRemoveHealthCheckRequest{"
-        + "healthChecks=" + healthChecks
-        + "}";
+    return "TargetPoolsRemoveHealthCheckRequest{" + "healthChecks=" + healthChecks + "}";
   }
 
   @Override
@@ -158,17 +150,13 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
     }
     if (o instanceof TargetPoolsRemoveHealthCheckRequest) {
       TargetPoolsRemoveHealthCheckRequest that = (TargetPoolsRemoveHealthCheckRequest) o;
-      return
-          Objects.equals(this.healthChecks, that.getHealthChecksList())
-          ;
+      return Objects.equals(this.healthChecks, that.getHealthChecksList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      healthChecks
-    );
+    return Objects.hash(healthChecks);
   }
 }

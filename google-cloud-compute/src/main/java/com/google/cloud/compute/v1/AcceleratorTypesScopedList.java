@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private AcceleratorTypesScopedList(
-      List<AcceleratorType> acceleratorTypes,
-      Warning warning
-      ) {
+  private AcceleratorTypesScopedList(List<AcceleratorType> acceleratorTypes, Warning warning) {
     this.acceleratorTypes = acceleratorTypes;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AcceleratorTypesScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AcceleratorTypesScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AcceleratorTypesScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AcceleratorTypesScopedList();
   }
@@ -158,13 +155,9 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
       return this;
     }
 
-
     public AcceleratorTypesScopedList build() {
 
-      return new AcceleratorTypesScopedList(
-        acceleratorTypes,
-        warning
-      );
+      return new AcceleratorTypesScopedList(acceleratorTypes, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "AcceleratorTypesScopedList{"
-        + "acceleratorTypes=" + acceleratorTypes + ", "
-        + "warning=" + warning
+        + "acceleratorTypes="
+        + acceleratorTypes
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
     }
     if (o instanceof AcceleratorTypesScopedList) {
       AcceleratorTypesScopedList that = (AcceleratorTypesScopedList) o;
-      return
-          Objects.equals(this.acceleratorTypes, that.getAcceleratorTypesList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.acceleratorTypes, that.getAcceleratorTypesList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      acceleratorTypes,
-      warning
-    );
+    return Objects.hash(acceleratorTypes, warning);
   }
 }

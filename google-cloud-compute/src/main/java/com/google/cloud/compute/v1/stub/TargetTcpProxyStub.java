@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetTcpProxyClient.ListTargetTcpProxiesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -23,14 +25,9 @@ import com.google.cloud.compute.v1.GetTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetTcpProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectTargetTcpProxyName;
 import com.google.cloud.compute.v1.SetBackendServiceTargetTcpProxyHttpRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyHttpRequest;
-import com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest;
-import com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest;
 import com.google.cloud.compute.v1.TargetTcpProxy;
-import static com.google.cloud.compute.v1.TargetTcpProxyClient.ListTargetTcpProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
 import javax.annotation.Generated;
 
@@ -43,7 +40,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TargetTcpProxyStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteTargetTcpProxyHttpRequest, Operation> deleteTargetTcpProxyCallable() {
@@ -61,23 +57,31 @@ public abstract class TargetTcpProxyStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetTcpProxiesHttpRequest, ListTargetTcpProxiesPagedResponse> listTargetTcpProxiesPagedCallable() {
+  public UnaryCallable<ListTargetTcpProxiesHttpRequest, ListTargetTcpProxiesPagedResponse>
+      listTargetTcpProxiesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetTcpProxiesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListTargetTcpProxiesHttpRequest, TargetTcpProxyList> listTargetTcpProxiesCallable() {
+  public UnaryCallable<ListTargetTcpProxiesHttpRequest, TargetTcpProxyList>
+      listTargetTcpProxiesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetTcpProxiesCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetBackendServiceTargetTcpProxyHttpRequest, Operation> setBackendServiceTargetTcpProxyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setBackendServiceTargetTcpProxyCallable()");
+  public UnaryCallable<SetBackendServiceTargetTcpProxyHttpRequest, Operation>
+      setBackendServiceTargetTcpProxyCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setBackendServiceTargetTcpProxyCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetProxyHeaderTargetTcpProxyHttpRequest, Operation> setProxyHeaderTargetTcpProxyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setProxyHeaderTargetTcpProxyCallable()");
+  public UnaryCallable<SetProxyHeaderTargetTcpProxyHttpRequest, Operation>
+      setProxyHeaderTargetTcpProxyCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setProxyHeaderTargetTcpProxyCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

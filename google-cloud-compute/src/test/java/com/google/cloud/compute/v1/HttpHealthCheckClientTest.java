@@ -15,6 +15,14 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.HttpHealthCheckClient.ListHttpHealthChecksPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.deleteHttpHealthCheckMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.getHttpHealthCheckMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.insertHttpHealthCheckMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.listHttpHealthChecksMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.patchHttpHealthCheckMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.updateHttpHealthCheckMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,21 +33,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.HttpHealthCheckClient.ListHttpHealthChecksPagedResponse;
 import com.google.cloud.compute.v1.stub.HttpHealthCheckStubSettings;
-import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.deleteHttpHealthCheckMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.getHttpHealthCheckMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.insertHttpHealthCheckMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.listHttpHealthChecksMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.patchHttpHealthCheckMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonHttpHealthCheckStub.updateHttpHealthCheckMethodDescriptor;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -49,17 +48,17 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class HttpHealthCheckClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          deleteHttpHealthCheckMethodDescriptor,
-          getHttpHealthCheckMethodDescriptor,
-          insertHttpHealthCheckMethodDescriptor,
-          listHttpHealthChecksMethodDescriptor,
-          patchHttpHealthCheckMethodDescriptor,
-          updateHttpHealthCheckMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, HttpHealthCheckStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              deleteHttpHealthCheckMethodDescriptor,
+              getHttpHealthCheckMethodDescriptor,
+              insertHttpHealthCheckMethodDescriptor,
+              listHttpHealthChecksMethodDescriptor,
+              patchHttpHealthCheckMethodDescriptor,
+              updateHttpHealthCheckMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, HttpHealthCheckStubSettings.getDefaultEndpoint());
 
   private static HttpHealthCheckClient client;
   private static HttpHealthCheckSettings clientSettings;
@@ -68,13 +67,13 @@ public class HttpHealthCheckClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         HttpHealthCheckSettings.newBuilder()
-           .setTransportChannelProvider(
-               HttpHealthCheckSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       HttpHealthCheckClient.create(clientSettings);
+            .setTransportChannelProvider(
+                HttpHealthCheckSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = HttpHealthCheckClient.create(clientSettings);
   }
 
   @After
@@ -111,56 +110,66 @@ public class HttpHealthCheckClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+    ProjectGlobalHttpHealthCheckName httpHealthCheck =
+        ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
 
-    Operation actualResponse =
-        client.deleteHttpHealthCheck(requestId, httpHealthCheck);
+    Operation actualResponse = client.deleteHttpHealthCheck(requestId, httpHealthCheck);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteHttpHealthCheckExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+      ProjectGlobalHttpHealthCheckName httpHealthCheck =
+          ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
 
       client.deleteHttpHealthCheck(requestId, httpHealthCheck);
       Assert.fail("No exception raised");
@@ -185,46 +194,56 @@ public class HttpHealthCheckClientTest {
     Integer healthyThreshold = 133658551;
     String id = "id3355";
     String requestPath = "requestPath1303145429";
-    HttpHealthCheck expectedResponse = HttpHealthCheck.newBuilder()
-      .setCheckIntervalSec(checkIntervalSec)
-      .setKind(kind)
-      .setDescription(description)
-      .setTimeoutSec(timeoutSec)
-      .setSelfLink(selfLink)
-      .setPort(port)
-      .setCreationTimestamp(creationTimestamp)
-      .setHost(host)
-      .setName(name)
-      .setUnhealthyThreshold(unhealthyThreshold)
-      .setHealthyThreshold(healthyThreshold)
-      .setId(id)
-      .setRequestPath(requestPath)
-      .build();
+    HttpHealthCheck expectedResponse =
+        HttpHealthCheck.newBuilder()
+            .setCheckIntervalSec(checkIntervalSec)
+            .setKind(kind)
+            .setDescription(description)
+            .setTimeoutSec(timeoutSec)
+            .setSelfLink(selfLink)
+            .setPort(port)
+            .setCreationTimestamp(creationTimestamp)
+            .setHost(host)
+            .setName(name)
+            .setUnhealthyThreshold(unhealthyThreshold)
+            .setHealthyThreshold(healthyThreshold)
+            .setId(id)
+            .setRequestPath(requestPath)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+    ProjectGlobalHttpHealthCheckName httpHealthCheck =
+        ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
 
-    HttpHealthCheck actualResponse =
-        client.getHttpHealthCheck(httpHealthCheck);
+    HttpHealthCheck actualResponse = client.getHttpHealthCheck(httpHealthCheck);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getHttpHealthCheckExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+      ProjectGlobalHttpHealthCheckName httpHealthCheck =
+          ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
 
       client.getHttpHealthCheck(httpHealthCheck);
       Assert.fail("No exception raised");
@@ -257,29 +276,30 @@ public class HttpHealthCheckClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
@@ -293,16 +313,24 @@ public class HttpHealthCheckClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void insertHttpHealthCheckExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -326,13 +354,14 @@ public class HttpHealthCheckClientTest {
     String selfLink = "selfLink-1691268851";
     HttpHealthCheck itemsElement = HttpHealthCheck.newBuilder().build();
     List<HttpHealthCheck> items = Arrays.asList(itemsElement);
-    HttpHealthCheckList expectedResponse = HttpHealthCheckList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    HttpHealthCheckList expectedResponse =
+        HttpHealthCheckList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -341,22 +370,29 @@ public class HttpHealthCheckClientTest {
 
     List<HttpHealthCheck> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listHttpHealthChecksExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -393,33 +429,35 @@ public class HttpHealthCheckClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+    ProjectGlobalHttpHealthCheckName httpHealthCheck =
+        ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
     HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
 
     Operation actualResponse =
@@ -429,21 +467,30 @@ public class HttpHealthCheckClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void patchHttpHealthCheckExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+      ProjectGlobalHttpHealthCheckName httpHealthCheck =
+          ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
       HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
 
       client.patchHttpHealthCheck(requestId, httpHealthCheck, httpHealthCheckResource);
@@ -477,33 +524,35 @@ public class HttpHealthCheckClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+    ProjectGlobalHttpHealthCheckName httpHealthCheck =
+        ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
     HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
 
     Operation actualResponse =
@@ -513,21 +562,30 @@ public class HttpHealthCheckClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void updateHttpHealthCheckExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectHttpHealthCheckName httpHealthCheck = ProjectHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
+      ProjectGlobalHttpHealthCheckName httpHealthCheck =
+          ProjectGlobalHttpHealthCheckName.of("[PROJECT]", "[HTTP_HEALTH_CHECK]");
       HttpHealthCheck httpHealthCheckResource = HttpHealthCheck.newBuilder().build();
 
       client.updateHttpHealthCheck(requestId, httpHealthCheck, httpHealthCheckResource);
@@ -536,5 +594,4 @@ public class HttpHealthCheckClientTest {
       // Expected exception
     }
   }
-
 }

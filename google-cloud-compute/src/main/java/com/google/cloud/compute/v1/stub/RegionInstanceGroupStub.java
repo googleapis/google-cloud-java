@@ -15,23 +15,19 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionInstanceGroupClient.ListInstancesRegionInstanceGroupsPagedResponse;
+import static com.google.cloud.compute.v1.RegionInstanceGroupClient.ListRegionInstanceGroupsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroup;
-import com.google.cloud.compute.v1.InstanceWithNamedPorts;
 import com.google.cloud.compute.v1.ListInstancesRegionInstanceGroupsHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectRegionInstanceGroupName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import static com.google.cloud.compute.v1.RegionInstanceGroupClient.ListInstancesRegionInstanceGroupsPagedResponse;
-import static com.google.cloud.compute.v1.RegionInstanceGroupClient.ListRegionInstanceGroupsPagedResponse;
 import com.google.cloud.compute.v1.RegionInstanceGroupList;
 import com.google.cloud.compute.v1.RegionInstanceGroupsListInstances;
-import com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest;
-import com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest;
 import com.google.cloud.compute.v1.SetNamedPortsRegionInstanceGroupHttpRequest;
 import javax.annotation.Generated;
 
@@ -45,35 +41,49 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RegionInstanceGroupStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<GetRegionInstanceGroupHttpRequest, InstanceGroup> getRegionInstanceGroupCallable() {
+  public UnaryCallable<GetRegionInstanceGroupHttpRequest, InstanceGroup>
+      getRegionInstanceGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: getRegionInstanceGroupCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionInstanceGroupsHttpRequest, ListRegionInstanceGroupsPagedResponse> listRegionInstanceGroupsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listRegionInstanceGroupsPagedCallable()");
+  public UnaryCallable<ListRegionInstanceGroupsHttpRequest, ListRegionInstanceGroupsPagedResponse>
+      listRegionInstanceGroupsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRegionInstanceGroupsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList> listRegionInstanceGroupsCallable() {
+  public UnaryCallable<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList>
+      listRegionInstanceGroupsCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionInstanceGroupsCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstancesRegionInstanceGroupsHttpRequest, ListInstancesRegionInstanceGroupsPagedResponse> listInstancesRegionInstanceGroupsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInstancesRegionInstanceGroupsPagedCallable()");
+  public UnaryCallable<
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          ListInstancesRegionInstanceGroupsPagedResponse>
+      listInstancesRegionInstanceGroupsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listInstancesRegionInstanceGroupsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances> listInstancesRegionInstanceGroupsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInstancesRegionInstanceGroupsCallable()");
+  public UnaryCallable<
+          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances>
+      listInstancesRegionInstanceGroupsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listInstancesRegionInstanceGroupsCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetNamedPortsRegionInstanceGroupHttpRequest, Operation> setNamedPortsRegionInstanceGroupCallable() {
-    throw new UnsupportedOperationException("Not implemented: setNamedPortsRegionInstanceGroupCallable()");
+  public UnaryCallable<SetNamedPortsRegionInstanceGroupHttpRequest, Operation>
+      setNamedPortsRegionInstanceGroupCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setNamedPortsRegionInstanceGroupCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

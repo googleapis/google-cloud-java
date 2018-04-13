@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.SslCertificateStub;
 import com.google.cloud.compute.v1.stub.SslCertificateStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -52,7 +42,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
- *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+ *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
  *   String requestId = "";
  *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate, requestId);
  * }
@@ -60,33 +50,32 @@ import javax.annotation.Generated;
  * </pre>
  *
  * <p>Note: close() needs to be called on the sslCertificateClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of SslCertificateSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,27 +105,23 @@ public class SslCertificateClient implements BackgroundResource {
   private final SslCertificateSettings settings;
   private final SslCertificateStub stub;
 
-
-
-  /**
-   * Constructs an instance of SslCertificateClient with default settings.
-   */
+  /** Constructs an instance of SslCertificateClient with default settings. */
   public static final SslCertificateClient create() throws IOException {
     return create(SslCertificateSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of SslCertificateClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of SslCertificateClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final SslCertificateClient create(SslCertificateSettings settings) throws IOException {
+  public static final SslCertificateClient create(SslCertificateSettings settings)
+      throws IOException {
     return new SslCertificateClient(settings);
   }
 
   /**
-   * Constructs an instance of SslCertificateClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use SslCertificateSettings}.
+   * Constructs an instance of SslCertificateClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use SslCertificateSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SslCertificateClient create(SslCertificateStub stub) {
@@ -144,9 +129,9 @@ public class SslCertificateClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of SslCertificateClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of SslCertificateClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected SslCertificateClient(SslCertificateSettings settings) throws IOException {
     this.settings = settings;
@@ -168,36 +153,41 @@ public class SslCertificateClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified SslCertificate resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   String requestId = "";
    *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate, requestId);
    * }
    * </code></pre>
    *
    * @param sslCertificate Name of the SslCertificate resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteSslCertificate(ProjectSslCertificateName sslCertificate, String requestId) {
+  public final Operation deleteSslCertificate(
+      ProjectGlobalSslCertificateName sslCertificate, String requestId) {
 
     DeleteSslCertificateHttpRequest request =
         DeleteSslCertificateHttpRequest.newBuilder()
-        .setSslCertificate(sslCertificate == null ? null : sslCertificate.toString())
-        .setRequestId(requestId)
-        .build();
+            .setSslCertificate(sslCertificate == null ? null : sslCertificate.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteSslCertificate(request);
   }
 
@@ -205,21 +195,26 @@ public class SslCertificateClient implements BackgroundResource {
   /**
    * Deletes the specified SslCertificate resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   String requestId = "";
    *   Operation response = sslCertificateClient.deleteSslCertificate(sslCertificate.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param sslCertificate Name of the SslCertificate resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -227,9 +222,9 @@ public class SslCertificateClient implements BackgroundResource {
 
     DeleteSslCertificateHttpRequest request =
         DeleteSslCertificateHttpRequest.newBuilder()
-        .setSslCertificate(sslCertificate)
-        .setRequestId(requestId)
-        .build();
+            .setSslCertificate(sslCertificate)
+            .setRequestId(requestId)
+            .build();
     return deleteSslCertificate(request);
   }
 
@@ -237,10 +232,11 @@ public class SslCertificateClient implements BackgroundResource {
   /**
    * Deletes the specified SslCertificate resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   String requestId = "";
    *   DeleteSslCertificateHttpRequest request = DeleteSslCertificateHttpRequest.newBuilder()
    *     .setSslCertificate(sslCertificate.toString())
@@ -262,10 +258,11 @@ public class SslCertificateClient implements BackgroundResource {
   /**
    * Deletes the specified SslCertificate resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   String requestId = "";
    *   DeleteSslCertificateHttpRequest request = DeleteSslCertificateHttpRequest.newBuilder()
    *     .setSslCertificate(sslCertificate.toString())
@@ -278,18 +275,21 @@ public class SslCertificateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteSslCertificateHttpRequest, Operation> deleteSslCertificateCallable() {
+  public final UnaryCallable<DeleteSslCertificateHttpRequest, Operation>
+      deleteSslCertificateCallable() {
     return stub.deleteSslCertificateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by making a list() request.
+   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   SslCertificate response = sslCertificateClient.getSslCertificate(sslCertificate);
    * }
    * </code></pre>
@@ -298,23 +298,25 @@ public class SslCertificateClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final SslCertificate getSslCertificate(ProjectSslCertificateName sslCertificate) {
+  public final SslCertificate getSslCertificate(ProjectGlobalSslCertificateName sslCertificate) {
 
     GetSslCertificateHttpRequest request =
         GetSslCertificateHttpRequest.newBuilder()
-        .setSslCertificate(sslCertificate == null ? null : sslCertificate.toString())
-        .build();
+            .setSslCertificate(sslCertificate == null ? null : sslCertificate.toString())
+            .build();
     return getSslCertificate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by making a list() request.
+   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   SslCertificate response = sslCertificateClient.getSslCertificate(sslCertificate.toString());
    * }
    * </code></pre>
@@ -326,20 +328,20 @@ public class SslCertificateClient implements BackgroundResource {
   public final SslCertificate getSslCertificate(String sslCertificate) {
 
     GetSslCertificateHttpRequest request =
-        GetSslCertificateHttpRequest.newBuilder()
-        .setSslCertificate(sslCertificate)
-        .build();
+        GetSslCertificateHttpRequest.newBuilder().setSslCertificate(sslCertificate).build();
     return getSslCertificate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by making a list() request.
+   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   GetSslCertificateHttpRequest request = GetSslCertificateHttpRequest.newBuilder()
    *     .setSslCertificate(sslCertificate.toString())
    *     .build();
@@ -357,12 +359,14 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by making a list() request.
+   * Returns the specified SslCertificate resource. Get a list of available SSL certificates by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
-   *   ProjectSslCertificateName sslCertificate = ProjectSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
+   *   ProjectGlobalSslCertificateName sslCertificate = ProjectGlobalSslCertificateName.of("[PROJECT]", "[SSL_CERTIFICATE]");
    *   GetSslCertificateHttpRequest request = GetSslCertificateHttpRequest.newBuilder()
    *     .setSslCertificate(sslCertificate.toString())
    *     .build();
@@ -373,15 +377,18 @@ public class SslCertificateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetSslCertificateHttpRequest, SslCertificate> getSslCertificateCallable() {
+  public final UnaryCallable<GetSslCertificateHttpRequest, SslCertificate>
+      getSslCertificateCallable() {
     return stub.getSslCertificateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a SslCertificate resource in the specified project using the data included in the request.
+   * Creates a SslCertificate resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   String requestId = "";
@@ -391,32 +398,41 @@ public class SslCertificateClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param sslCertificateResource An SslCertificate resource. This resource provides a mechanism to upload an SSL key and certificate to the load balancer to serve secure connections from the user. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==)
+   * @param sslCertificateResource An SslCertificate resource. This resource provides a mechanism to
+   *     upload an SSL key and certificate to the load balancer to serve secure connections from the
+   *     user. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertSslCertificate(String requestId, ProjectName project, SslCertificate sslCertificateResource) {
+  public final Operation insertSslCertificate(
+      String requestId, ProjectName project, SslCertificate sslCertificateResource) {
 
     InsertSslCertificateHttpRequest request =
         InsertSslCertificateHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project == null ? null : project.toString())
-        .setSslCertificateResource(sslCertificateResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project == null ? null : project.toString())
+            .setSslCertificateResource(sslCertificateResource)
+            .build();
     return insertSslCertificate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a SslCertificate resource in the specified project using the data included in the request.
+   * Creates a SslCertificate resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   String requestId = "";
@@ -426,32 +442,41 @@ public class SslCertificateClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param sslCertificateResource An SslCertificate resource. This resource provides a mechanism to upload an SSL key and certificate to the load balancer to serve secure connections from the user. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==)
+   * @param sslCertificateResource An SslCertificate resource. This resource provides a mechanism to
+   *     upload an SSL key and certificate to the load balancer to serve secure connections from the
+   *     user. (== resource_for beta.sslCertificates ==) (== resource_for v1.sslCertificates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertSslCertificate(String requestId, String project, SslCertificate sslCertificateResource) {
+  public final Operation insertSslCertificate(
+      String requestId, String project, SslCertificate sslCertificateResource) {
 
     InsertSslCertificateHttpRequest request =
         InsertSslCertificateHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project)
-        .setSslCertificateResource(sslCertificateResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project)
+            .setSslCertificateResource(sslCertificateResource)
+            .build();
     return insertSslCertificate(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a SslCertificate resource in the specified project using the data included in the request.
+   * Creates a SslCertificate resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   String requestId = "";
@@ -476,9 +501,11 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a SslCertificate resource in the specified project using the data included in the request.
+   * Creates a SslCertificate resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   String requestId = "";
@@ -496,7 +523,8 @@ public class SslCertificateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertSslCertificateHttpRequest, Operation> insertSslCertificateCallable() {
+  public final UnaryCallable<InsertSslCertificateHttpRequest, Operation>
+      insertSslCertificateCallable() {
     return stub.insertSslCertificateCallable();
   }
 
@@ -504,7 +532,8 @@ public class SslCertificateClient implements BackgroundResource {
   /**
    * Retrieves the list of SslCertificate resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -521,8 +550,8 @@ public class SslCertificateClient implements BackgroundResource {
   public final ListSslCertificatesPagedResponse listSslCertificates(ProjectName project) {
     ListSslCertificatesHttpRequest request =
         ListSslCertificatesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listSslCertificates(request);
   }
 
@@ -530,7 +559,8 @@ public class SslCertificateClient implements BackgroundResource {
   /**
    * Retrieves the list of SslCertificate resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -546,9 +576,7 @@ public class SslCertificateClient implements BackgroundResource {
   @BetaApi
   public final ListSslCertificatesPagedResponse listSslCertificates(String project) {
     ListSslCertificatesHttpRequest request =
-        ListSslCertificatesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListSslCertificatesHttpRequest.newBuilder().setProject(project).build();
     return listSslCertificates(request);
   }
 
@@ -556,7 +584,8 @@ public class SslCertificateClient implements BackgroundResource {
   /**
    * Retrieves the list of SslCertificate resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -573,16 +602,17 @@ public class SslCertificateClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListSslCertificatesPagedResponse listSslCertificates(ListSslCertificatesHttpRequest request) {
-    return listSslCertificatesPagedCallable()
-        .call(request);
+  public final ListSslCertificatesPagedResponse listSslCertificates(
+      ListSslCertificatesHttpRequest request) {
+    return listSslCertificatesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of SslCertificate resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -598,7 +628,8 @@ public class SslCertificateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListSslCertificatesHttpRequest, ListSslCertificatesPagedResponse> listSslCertificatesPagedCallable() {
+  public final UnaryCallable<ListSslCertificatesHttpRequest, ListSslCertificatesPagedResponse>
+      listSslCertificatesPagedCallable() {
     return stub.listSslCertificatesPagedCallable();
   }
 
@@ -606,7 +637,8 @@ public class SslCertificateClient implements BackgroundResource {
   /**
    * Retrieves the list of SslCertificate resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SslCertificateClient sslCertificateClient = SslCertificateClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -629,12 +661,13 @@ public class SslCertificateClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListSslCertificatesHttpRequest, SslCertificateList> listSslCertificatesCallable() {
+  public final UnaryCallable<ListSslCertificatesHttpRequest, SslCertificateList>
+      listSslCertificatesCallable() {
     return stub.listSslCertificatesCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -663,12 +696,10 @@ public class SslCertificateClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListSslCertificatesPagedResponse extends AbstractPagedListResponse<
-      ListSslCertificatesHttpRequest,
-      SslCertificateList,
-      SslCertificate,
-      ListSslCertificatesPage,
-      ListSslCertificatesFixedSizeCollection> {
+  public static class ListSslCertificatesPagedResponse
+      extends AbstractPagedListResponse<
+          ListSslCertificatesHttpRequest, SslCertificateList, SslCertificate,
+          ListSslCertificatesPage, ListSslCertificatesFixedSizeCollection> {
 
     public static ApiFuture<ListSslCertificatesPagedResponse> createAsync(
         PageContext<ListSslCertificatesHttpRequest, SslCertificateList, SslCertificate> context,
@@ -688,15 +719,12 @@ public class SslCertificateClient implements BackgroundResource {
     private ListSslCertificatesPagedResponse(ListSslCertificatesPage page) {
       super(page, ListSslCertificatesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListSslCertificatesPage extends AbstractPage<
-      ListSslCertificatesHttpRequest,
-      SslCertificateList,
-      SslCertificate,
-      ListSslCertificatesPage> {
+  public static class ListSslCertificatesPage
+      extends AbstractPage<
+          ListSslCertificatesHttpRequest, SslCertificateList, SslCertificate,
+          ListSslCertificatesPage> {
 
     private ListSslCertificatesPage(
         PageContext<ListSslCertificatesHttpRequest, SslCertificateList, SslCertificate> context,
@@ -721,20 +749,15 @@ public class SslCertificateClient implements BackgroundResource {
         ApiFuture<SslCertificateList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListSslCertificatesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListSslCertificatesHttpRequest,
-      SslCertificateList,
-      SslCertificate,
-      ListSslCertificatesPage,
-      ListSslCertificatesFixedSizeCollection> {
+  public static class ListSslCertificatesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSslCertificatesHttpRequest, SslCertificateList, SslCertificate,
+          ListSslCertificatesPage, ListSslCertificatesFixedSizeCollection> {
 
-    private ListSslCertificatesFixedSizeCollection(List<ListSslCertificatesPage> pages, int collectionSize) {
+    private ListSslCertificatesFixedSizeCollection(
+        List<ListSslCertificatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -747,7 +770,5 @@ public class SslCertificateClient implements BackgroundResource {
         List<ListSslCertificatesPage> pages, int collectionSize) {
       return new ListSslCertificatesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

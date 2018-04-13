@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,13 +43,11 @@ public final class UrlMapValidationResult implements ApiMessage {
     this.testPassed = null;
   }
 
-
   private UrlMapValidationResult(
       List<String> loadErrors,
       Boolean loadSucceeded,
       List<TestFailure> testFailures,
-      Boolean testPassed
-      ) {
+      Boolean testPassed) {
     this.loadErrors = loadErrors;
     this.loadSucceeded = loadSucceeded;
     this.testFailures = testFailures;
@@ -122,22 +119,24 @@ public final class UrlMapValidationResult implements ApiMessage {
     return testPassed;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(UrlMapValidationResult prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static UrlMapValidationResult getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final UrlMapValidationResult DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new UrlMapValidationResult();
   }
@@ -226,17 +225,9 @@ public final class UrlMapValidationResult implements ApiMessage {
       return this;
     }
 
-
     public UrlMapValidationResult build() {
 
-
-
-      return new UrlMapValidationResult(
-        loadErrors,
-        loadSucceeded,
-        testFailures,
-        testPassed
-      );
+      return new UrlMapValidationResult(loadErrors, loadSucceeded, testFailures, testPassed);
     }
 
     public Builder clone() {
@@ -252,10 +243,17 @@ public final class UrlMapValidationResult implements ApiMessage {
   @Override
   public String toString() {
     return "UrlMapValidationResult{"
-        + "loadErrors=" + loadErrors + ", "
-        + "loadSucceeded=" + loadSucceeded + ", "
-        + "testFailures=" + testFailures + ", "
-        + "testPassed=" + testPassed
+        + "loadErrors="
+        + loadErrors
+        + ", "
+        + "loadSucceeded="
+        + loadSucceeded
+        + ", "
+        + "testFailures="
+        + testFailures
+        + ", "
+        + "testPassed="
+        + testPassed
         + "}";
   }
 
@@ -266,23 +264,16 @@ public final class UrlMapValidationResult implements ApiMessage {
     }
     if (o instanceof UrlMapValidationResult) {
       UrlMapValidationResult that = (UrlMapValidationResult) o;
-      return
-          Objects.equals(this.loadErrors, that.getLoadErrorsList()) &&
-          Objects.equals(this.loadSucceeded, that.getLoadSucceeded()) &&
-          Objects.equals(this.testFailures, that.getTestFailuresList()) &&
-          Objects.equals(this.testPassed, that.getTestPassed())
-          ;
+      return Objects.equals(this.loadErrors, that.getLoadErrorsList())
+          && Objects.equals(this.loadSucceeded, that.getLoadSucceeded())
+          && Objects.equals(this.testFailures, that.getTestFailuresList())
+          && Objects.equals(this.testPassed, that.getTestPassed());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      loadErrors,
-      loadSucceeded,
-      testFailures,
-      testPassed
-    );
+    return Objects.hash(loadErrors, loadSucceeded, testFailures, testPassed);
   }
 }

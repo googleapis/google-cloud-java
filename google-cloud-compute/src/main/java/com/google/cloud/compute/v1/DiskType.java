@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class DiskType implements ApiMessage {
     this.zone = null;
   }
 
-
   private DiskType(
       String creationTimestamp,
       String defaultDiskSizeGb,
@@ -67,8 +63,7 @@ public final class DiskType implements ApiMessage {
       String name,
       String selfLink,
       String validDiskSize,
-      String zone
-      ) {
+      String zone) {
     this.creationTimestamp = creationTimestamp;
     this.defaultDiskSizeGb = defaultDiskSizeGb;
     this.deprecated = deprecated;
@@ -85,10 +80,12 @@ public final class DiskType implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("defaultDiskSizeGb") && defaultDiskSizeGb != null) {
-      fieldMap.put("defaultDiskSizeGb", Collections.singletonList(String.valueOf(defaultDiskSizeGb)));
+      fieldMap.put(
+          "defaultDiskSizeGb", Collections.singletonList(String.valueOf(defaultDiskSizeGb)));
     }
     if (fieldNames.contains("deprecated") && deprecated != null) {
       fieldMap.put("deprecated", Collections.singletonList(String.valueOf(deprecated)));
@@ -198,22 +195,24 @@ public final class DiskType implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DiskType prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DiskType getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DiskType DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DiskType();
   }
@@ -370,29 +369,19 @@ public final class DiskType implements ApiMessage {
       return this;
     }
 
-
     public DiskType build() {
 
-
-
-
-
-
-
-
-
       return new DiskType(
-        creationTimestamp,
-        defaultDiskSizeGb,
-        deprecated,
-        description,
-        id,
-        kind,
-        name,
-        selfLink,
-        validDiskSize,
-        zone
-      );
+          creationTimestamp,
+          defaultDiskSizeGb,
+          deprecated,
+          description,
+          id,
+          kind,
+          name,
+          selfLink,
+          validDiskSize,
+          zone);
     }
 
     public Builder clone() {
@@ -414,16 +403,35 @@ public final class DiskType implements ApiMessage {
   @Override
   public String toString() {
     return "DiskType{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "defaultDiskSizeGb=" + defaultDiskSizeGb + ", "
-        + "deprecated=" + deprecated + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "selfLink=" + selfLink + ", "
-        + "validDiskSize=" + validDiskSize + ", "
-        + "zone=" + zone
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "defaultDiskSizeGb="
+        + defaultDiskSizeGb
+        + ", "
+        + "deprecated="
+        + deprecated
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "validDiskSize="
+        + validDiskSize
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -434,18 +442,16 @@ public final class DiskType implements ApiMessage {
     }
     if (o instanceof DiskType) {
       DiskType that = (DiskType) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.defaultDiskSizeGb, that.getDefaultDiskSizeGb()) &&
-          Objects.equals(this.deprecated, that.getDeprecated()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.validDiskSize, that.getValidDiskSize()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.defaultDiskSizeGb, that.getDefaultDiskSizeGb())
+          && Objects.equals(this.deprecated, that.getDeprecated())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.validDiskSize, that.getValidDiskSize())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -453,16 +459,15 @@ public final class DiskType implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      defaultDiskSizeGb,
-      deprecated,
-      description,
-      id,
-      kind,
-      name,
-      selfLink,
-      validDiskSize,
-      zone
-    );
+        creationTimestamp,
+        defaultDiskSizeGb,
+        deprecated,
+        description,
+        id,
+        kind,
+        name,
+        selfLink,
+        validDiskSize,
+        zone);
   }
 }

@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.TargetSslProxyStub;
 import com.google.cloud.compute.v1.stub.TargetSslProxyStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -52,7 +42,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
- *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+ *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
  *   String requestId = "";
  *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy, requestId);
  * }
@@ -60,33 +50,32 @@ import javax.annotation.Generated;
  * </pre>
  *
  * <p>Note: close() needs to be called on the targetSslProxyClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of TargetSslProxySettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,27 +105,23 @@ public class TargetSslProxyClient implements BackgroundResource {
   private final TargetSslProxySettings settings;
   private final TargetSslProxyStub stub;
 
-
-
-  /**
-   * Constructs an instance of TargetSslProxyClient with default settings.
-   */
+  /** Constructs an instance of TargetSslProxyClient with default settings. */
   public static final TargetSslProxyClient create() throws IOException {
     return create(TargetSslProxySettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of TargetSslProxyClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of TargetSslProxyClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final TargetSslProxyClient create(TargetSslProxySettings settings) throws IOException {
+  public static final TargetSslProxyClient create(TargetSslProxySettings settings)
+      throws IOException {
     return new TargetSslProxyClient(settings);
   }
 
   /**
-   * Constructs an instance of TargetSslProxyClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use TargetSslProxySettings}.
+   * Constructs an instance of TargetSslProxyClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use TargetSslProxySettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetSslProxyClient create(TargetSslProxyStub stub) {
@@ -144,9 +129,9 @@ public class TargetSslProxyClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of TargetSslProxyClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of TargetSslProxyClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected TargetSslProxyClient(TargetSslProxySettings settings) throws IOException {
     this.settings = settings;
@@ -168,36 +153,41 @@ public class TargetSslProxyClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified TargetSslProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy, requestId);
    * }
    * </code></pre>
    *
    * @param targetSslProxy Name of the TargetSslProxy resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetSslProxy(ProjectTargetSslProxyName targetSslProxy, String requestId) {
+  public final Operation deleteTargetSslProxy(
+      ProjectGlobalTargetSslProxyName targetSslProxy, String requestId) {
 
     DeleteTargetSslProxyHttpRequest request =
         DeleteTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
-        .setRequestId(requestId)
-        .build();
+            .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteTargetSslProxy(request);
   }
 
@@ -205,21 +195,26 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetSslProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   Operation response = targetSslProxyClient.deleteTargetSslProxy(targetSslProxy.toString(), requestId);
    * }
    * </code></pre>
    *
    * @param targetSslProxy Name of the TargetSslProxy resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -227,9 +222,9 @@ public class TargetSslProxyClient implements BackgroundResource {
 
     DeleteTargetSslProxyHttpRequest request =
         DeleteTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy)
-        .setRequestId(requestId)
-        .build();
+            .setTargetSslProxy(targetSslProxy)
+            .setRequestId(requestId)
+            .build();
     return deleteTargetSslProxy(request);
   }
 
@@ -237,10 +232,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetSslProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   DeleteTargetSslProxyHttpRequest request = DeleteTargetSslProxyHttpRequest.newBuilder()
    *     .setTargetSslProxy(targetSslProxy.toString())
@@ -262,10 +258,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetSslProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   DeleteTargetSslProxyHttpRequest request = DeleteTargetSslProxyHttpRequest.newBuilder()
    *     .setTargetSslProxy(targetSslProxy.toString())
@@ -278,18 +275,21 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteTargetSslProxyHttpRequest, Operation> deleteTargetSslProxyCallable() {
+  public final UnaryCallable<DeleteTargetSslProxyHttpRequest, Operation>
+      deleteTargetSslProxyCallable() {
     return stub.deleteTargetSslProxyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by making a list() request.
+   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   TargetSslProxy response = targetSslProxyClient.getTargetSslProxy(targetSslProxy);
    * }
    * </code></pre>
@@ -298,23 +298,25 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetSslProxy getTargetSslProxy(ProjectTargetSslProxyName targetSslProxy) {
+  public final TargetSslProxy getTargetSslProxy(ProjectGlobalTargetSslProxyName targetSslProxy) {
 
     GetTargetSslProxyHttpRequest request =
         GetTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
-        .build();
+            .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
+            .build();
     return getTargetSslProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by making a list() request.
+   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   TargetSslProxy response = targetSslProxyClient.getTargetSslProxy(targetSslProxy.toString());
    * }
    * </code></pre>
@@ -326,20 +328,20 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final TargetSslProxy getTargetSslProxy(String targetSslProxy) {
 
     GetTargetSslProxyHttpRequest request =
-        GetTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy)
-        .build();
+        GetTargetSslProxyHttpRequest.newBuilder().setTargetSslProxy(targetSslProxy).build();
     return getTargetSslProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by making a list() request.
+   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   GetTargetSslProxyHttpRequest request = GetTargetSslProxyHttpRequest.newBuilder()
    *     .setTargetSslProxy(targetSslProxy.toString())
    *     .build();
@@ -357,12 +359,14 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by making a list() request.
+   * Returns the specified TargetSslProxy resource. Get a list of available target SSL proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   GetTargetSslProxyHttpRequest request = GetTargetSslProxyHttpRequest.newBuilder()
    *     .setTargetSslProxy(targetSslProxy.toString())
    *     .build();
@@ -373,15 +377,18 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetTargetSslProxyHttpRequest, TargetSslProxy> getTargetSslProxyCallable() {
+  public final UnaryCallable<GetTargetSslProxyHttpRequest, TargetSslProxy>
+      getTargetSslProxyCallable() {
     return stub.getTargetSslProxyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetSslProxy resource in the specified project using the data included in the request.
+   * Creates a TargetSslProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   String requestId = "";
@@ -391,32 +398,40 @@ public class TargetSslProxyClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param targetSslProxyResource A TargetSslProxy resource. This resource defines an SSL proxy. (== resource_for beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
+   * @param targetSslProxyResource A TargetSslProxy resource. This resource defines an SSL proxy.
+   *     (== resource_for beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetSslProxy(String requestId, ProjectName project, TargetSslProxy targetSslProxyResource) {
+  public final Operation insertTargetSslProxy(
+      String requestId, ProjectName project, TargetSslProxy targetSslProxyResource) {
 
     InsertTargetSslProxyHttpRequest request =
         InsertTargetSslProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project == null ? null : project.toString())
-        .setTargetSslProxyResource(targetSslProxyResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project == null ? null : project.toString())
+            .setTargetSslProxyResource(targetSslProxyResource)
+            .build();
     return insertTargetSslProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetSslProxy resource in the specified project using the data included in the request.
+   * Creates a TargetSslProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   String requestId = "";
@@ -426,32 +441,40 @@ public class TargetSslProxyClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param targetSslProxyResource A TargetSslProxy resource. This resource defines an SSL proxy. (== resource_for beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
+   * @param targetSslProxyResource A TargetSslProxy resource. This resource defines an SSL proxy.
+   *     (== resource_for beta.targetSslProxies ==) (== resource_for v1.targetSslProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetSslProxy(String requestId, String project, TargetSslProxy targetSslProxyResource) {
+  public final Operation insertTargetSslProxy(
+      String requestId, String project, TargetSslProxy targetSslProxyResource) {
 
     InsertTargetSslProxyHttpRequest request =
         InsertTargetSslProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project)
-        .setTargetSslProxyResource(targetSslProxyResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project)
+            .setTargetSslProxyResource(targetSslProxyResource)
+            .build();
     return insertTargetSslProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetSslProxy resource in the specified project using the data included in the request.
+   * Creates a TargetSslProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   String requestId = "";
@@ -476,9 +499,11 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetSslProxy resource in the specified project using the data included in the request.
+   * Creates a TargetSslProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   String requestId = "";
@@ -496,7 +521,8 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertTargetSslProxyHttpRequest, Operation> insertTargetSslProxyCallable() {
+  public final UnaryCallable<InsertTargetSslProxyHttpRequest, Operation>
+      insertTargetSslProxyCallable() {
     return stub.insertTargetSslProxyCallable();
   }
 
@@ -504,7 +530,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -521,8 +548,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   public final ListTargetSslProxiesPagedResponse listTargetSslProxies(ProjectName project) {
     ListTargetSslProxiesHttpRequest request =
         ListTargetSslProxiesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listTargetSslProxies(request);
   }
 
@@ -530,7 +557,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -546,9 +574,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   @BetaApi
   public final ListTargetSslProxiesPagedResponse listTargetSslProxies(String project) {
     ListTargetSslProxiesHttpRequest request =
-        ListTargetSslProxiesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListTargetSslProxiesHttpRequest.newBuilder().setProject(project).build();
     return listTargetSslProxies(request);
   }
 
@@ -556,7 +582,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -573,16 +600,17 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListTargetSslProxiesPagedResponse listTargetSslProxies(ListTargetSslProxiesHttpRequest request) {
-    return listTargetSslProxiesPagedCallable()
-        .call(request);
+  public final ListTargetSslProxiesPagedResponse listTargetSslProxies(
+      ListTargetSslProxiesHttpRequest request) {
+    return listTargetSslProxiesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -598,7 +626,8 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetSslProxiesHttpRequest, ListTargetSslProxiesPagedResponse> listTargetSslProxiesPagedCallable() {
+  public final UnaryCallable<ListTargetSslProxiesHttpRequest, ListTargetSslProxiesPagedResponse>
+      listTargetSslProxiesPagedCallable() {
     return stub.listTargetSslProxiesPagedCallable();
   }
 
@@ -606,7 +635,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetSslProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -629,7 +659,8 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetSslProxiesHttpRequest, TargetSslProxyList> listTargetSslProxiesCallable() {
+  public final UnaryCallable<ListTargetSslProxiesHttpRequest, TargetSslProxyList>
+      listTargetSslProxiesCallable() {
     return stub.listTargetSslProxiesCallable();
   }
 
@@ -637,34 +668,44 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes the BackendService for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setBackendServiceTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetBackendServiceRequestResource);
    * }
    * </code></pre>
    *
-   * @param targetSslProxy Name of the TargetSslProxy resource whose BackendService resource is to be set.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param targetSslProxy Name of the TargetSslProxy resource whose BackendService resource is to
+   *     be set.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetSslProxiesSetBackendServiceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackendServiceTargetSslProxy(ProjectTargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
+  public final Operation setBackendServiceTargetSslProxy(
+      ProjectGlobalTargetSslProxyName targetSslProxy,
+      String requestId,
+      TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
 
     SetBackendServiceTargetSslProxyHttpRequest request =
         SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
-        .setRequestId(requestId)
-        .setTargetSslProxiesSetBackendServiceRequestResource(targetSslProxiesSetBackendServiceRequestResource)
-        .build();
+            .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
+            .setRequestId(requestId)
+            .setTargetSslProxiesSetBackendServiceRequestResource(
+                targetSslProxiesSetBackendServiceRequestResource)
+            .build();
     return setBackendServiceTargetSslProxy(request);
   }
 
@@ -672,34 +713,44 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes the BackendService for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setBackendServiceTargetSslProxy(targetSslProxy.toString(), requestId, targetSslProxiesSetBackendServiceRequestResource);
    * }
    * </code></pre>
    *
-   * @param targetSslProxy Name of the TargetSslProxy resource whose BackendService resource is to be set.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param targetSslProxy Name of the TargetSslProxy resource whose BackendService resource is to
+   *     be set.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetSslProxiesSetBackendServiceRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackendServiceTargetSslProxy(String targetSslProxy, String requestId, TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
+  public final Operation setBackendServiceTargetSslProxy(
+      String targetSslProxy,
+      String requestId,
+      TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource) {
 
     SetBackendServiceTargetSslProxyHttpRequest request =
         SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy)
-        .setRequestId(requestId)
-        .setTargetSslProxiesSetBackendServiceRequestResource(targetSslProxiesSetBackendServiceRequestResource)
-        .build();
+            .setTargetSslProxy(targetSslProxy)
+            .setRequestId(requestId)
+            .setTargetSslProxiesSetBackendServiceRequestResource(
+                targetSslProxiesSetBackendServiceRequestResource)
+            .build();
     return setBackendServiceTargetSslProxy(request);
   }
 
@@ -707,10 +758,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes the BackendService for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   SetBackendServiceTargetSslProxyHttpRequest request = SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
@@ -726,7 +778,8 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setBackendServiceTargetSslProxy(SetBackendServiceTargetSslProxyHttpRequest request) {
+  public final Operation setBackendServiceTargetSslProxy(
+      SetBackendServiceTargetSslProxyHttpRequest request) {
     return setBackendServiceTargetSslProxyCallable().call(request);
   }
 
@@ -734,10 +787,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes the BackendService for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   SetBackendServiceTargetSslProxyHttpRequest request = SetBackendServiceTargetSslProxyHttpRequest.newBuilder()
@@ -752,7 +806,8 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetBackendServiceTargetSslProxyHttpRequest, Operation> setBackendServiceTargetSslProxyCallable() {
+  public final UnaryCallable<SetBackendServiceTargetSslProxyHttpRequest, Operation>
+      setBackendServiceTargetSslProxyCallable() {
     return stub.setBackendServiceTargetSslProxyCallable();
   }
 
@@ -760,10 +815,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes the ProxyHeaderType for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setProxyHeaderTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetProxyHeaderRequestResource);
@@ -771,23 +827,31 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetSslProxy Name of the TargetSslProxy resource whose ProxyHeader is to be set.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetSslProxiesSetProxyHeaderRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setProxyHeaderTargetSslProxy(ProjectTargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
+  public final Operation setProxyHeaderTargetSslProxy(
+      ProjectGlobalTargetSslProxyName targetSslProxy,
+      String requestId,
+      TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
 
     SetProxyHeaderTargetSslProxyHttpRequest request =
         SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
-        .setRequestId(requestId)
-        .setTargetSslProxiesSetProxyHeaderRequestResource(targetSslProxiesSetProxyHeaderRequestResource)
-        .build();
+            .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
+            .setRequestId(requestId)
+            .setTargetSslProxiesSetProxyHeaderRequestResource(
+                targetSslProxiesSetProxyHeaderRequestResource)
+            .build();
     return setProxyHeaderTargetSslProxy(request);
   }
 
@@ -795,10 +859,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes the ProxyHeaderType for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setProxyHeaderTargetSslProxy(targetSslProxy.toString(), requestId, targetSslProxiesSetProxyHeaderRequestResource);
@@ -806,23 +871,31 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    *
    * @param targetSslProxy Name of the TargetSslProxy resource whose ProxyHeader is to be set.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetSslProxiesSetProxyHeaderRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setProxyHeaderTargetSslProxy(String targetSslProxy, String requestId, TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
+  public final Operation setProxyHeaderTargetSslProxy(
+      String targetSslProxy,
+      String requestId,
+      TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource) {
 
     SetProxyHeaderTargetSslProxyHttpRequest request =
         SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy)
-        .setRequestId(requestId)
-        .setTargetSslProxiesSetProxyHeaderRequestResource(targetSslProxiesSetProxyHeaderRequestResource)
-        .build();
+            .setTargetSslProxy(targetSslProxy)
+            .setRequestId(requestId)
+            .setTargetSslProxiesSetProxyHeaderRequestResource(
+                targetSslProxiesSetProxyHeaderRequestResource)
+            .build();
     return setProxyHeaderTargetSslProxy(request);
   }
 
@@ -830,10 +903,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes the ProxyHeaderType for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   SetProxyHeaderTargetSslProxyHttpRequest request = SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
@@ -849,7 +923,8 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setProxyHeaderTargetSslProxy(SetProxyHeaderTargetSslProxyHttpRequest request) {
+  public final Operation setProxyHeaderTargetSslProxy(
+      SetProxyHeaderTargetSslProxyHttpRequest request) {
     return setProxyHeaderTargetSslProxyCallable().call(request);
   }
 
@@ -857,10 +932,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes the ProxyHeaderType for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   SetProxyHeaderTargetSslProxyHttpRequest request = SetProxyHeaderTargetSslProxyHttpRequest.newBuilder()
@@ -875,7 +951,8 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetProxyHeaderTargetSslProxyHttpRequest, Operation> setProxyHeaderTargetSslProxyCallable() {
+  public final UnaryCallable<SetProxyHeaderTargetSslProxyHttpRequest, Operation>
+      setProxyHeaderTargetSslProxyCallable() {
     return stub.setProxyHeaderTargetSslProxyCallable();
   }
 
@@ -883,34 +960,44 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes SslCertificates for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setSslCertificatesTargetSslProxy(targetSslProxy, requestId, targetSslProxiesSetSslCertificatesRequestResource);
    * }
    * </code></pre>
    *
-   * @param targetSslProxy Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param targetSslProxy Name of the TargetSslProxy resource whose SslCertificate resource is to
+   *     be set.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetSslProxiesSetSslCertificatesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setSslCertificatesTargetSslProxy(ProjectTargetSslProxyName targetSslProxy, String requestId, TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
+  public final Operation setSslCertificatesTargetSslProxy(
+      ProjectGlobalTargetSslProxyName targetSslProxy,
+      String requestId,
+      TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
 
     SetSslCertificatesTargetSslProxyHttpRequest request =
         SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
-        .setRequestId(requestId)
-        .setTargetSslProxiesSetSslCertificatesRequestResource(targetSslProxiesSetSslCertificatesRequestResource)
-        .build();
+            .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
+            .setRequestId(requestId)
+            .setTargetSslProxiesSetSslCertificatesRequestResource(
+                targetSslProxiesSetSslCertificatesRequestResource)
+            .build();
     return setSslCertificatesTargetSslProxy(request);
   }
 
@@ -918,34 +1005,44 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes SslCertificates for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   Operation response = targetSslProxyClient.setSslCertificatesTargetSslProxy(targetSslProxy.toString(), requestId, targetSslProxiesSetSslCertificatesRequestResource);
    * }
    * </code></pre>
    *
-   * @param targetSslProxy Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param targetSslProxy Name of the TargetSslProxy resource whose SslCertificate resource is to
+   *     be set.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetSslProxiesSetSslCertificatesRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setSslCertificatesTargetSslProxy(String targetSslProxy, String requestId, TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
+  public final Operation setSslCertificatesTargetSslProxy(
+      String targetSslProxy,
+      String requestId,
+      TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource) {
 
     SetSslCertificatesTargetSslProxyHttpRequest request =
         SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()
-        .setTargetSslProxy(targetSslProxy)
-        .setRequestId(requestId)
-        .setTargetSslProxiesSetSslCertificatesRequestResource(targetSslProxiesSetSslCertificatesRequestResource)
-        .build();
+            .setTargetSslProxy(targetSslProxy)
+            .setRequestId(requestId)
+            .setTargetSslProxiesSetSslCertificatesRequestResource(
+                targetSslProxiesSetSslCertificatesRequestResource)
+            .build();
     return setSslCertificatesTargetSslProxy(request);
   }
 
@@ -953,10 +1050,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes SslCertificates for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   SetSslCertificatesTargetSslProxyHttpRequest request = SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()
@@ -972,7 +1070,8 @@ public class TargetSslProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setSslCertificatesTargetSslProxy(SetSslCertificatesTargetSslProxyHttpRequest request) {
+  public final Operation setSslCertificatesTargetSslProxy(
+      SetSslCertificatesTargetSslProxyHttpRequest request) {
     return setSslCertificatesTargetSslProxyCallable().call(request);
   }
 
@@ -980,10 +1079,11 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Changes SslCertificates for TargetSslProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
-   *   ProjectTargetSslProxyName targetSslProxy = ProjectTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
    *   String requestId = "";
    *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   SetSslCertificatesTargetSslProxyHttpRequest request = SetSslCertificatesTargetSslProxyHttpRequest.newBuilder()
@@ -998,12 +1098,163 @@ public class TargetSslProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetSslCertificatesTargetSslProxyHttpRequest, Operation> setSslCertificatesTargetSslProxyCallable() {
+  public final UnaryCallable<SetSslCertificatesTargetSslProxyHttpRequest, Operation>
+      setSslCertificatesTargetSslProxyCallable() {
     return stub.setSslCertificatesTargetSslProxyCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
+   * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
+   * not affect the connection between the load balancer and the backends.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   String requestId = "";
+   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
+   *   Operation response = targetSslProxyClient.setSslPolicyTargetSslProxy(targetSslProxy, requestId, sslPolicyReferenceResource);
+   * }
+   * </code></pre>
+   *
+   * @param targetSslProxy Name of the TargetSslProxy resource whose SSL policy is to be set. The
+   *     name must be 1-63 characters long, and comply with RFC1035.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param sslPolicyReferenceResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setSslPolicyTargetSslProxy(
+      ProjectGlobalTargetSslProxyName targetSslProxy,
+      String requestId,
+      SslPolicyReference sslPolicyReferenceResource) {
+
+    SetSslPolicyTargetSslProxyHttpRequest request =
+        SetSslPolicyTargetSslProxyHttpRequest.newBuilder()
+            .setTargetSslProxy(targetSslProxy == null ? null : targetSslProxy.toString())
+            .setRequestId(requestId)
+            .setSslPolicyReferenceResource(sslPolicyReferenceResource)
+            .build();
+    return setSslPolicyTargetSslProxy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
+   * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
+   * not affect the connection between the load balancer and the backends.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   String requestId = "";
+   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
+   *   Operation response = targetSslProxyClient.setSslPolicyTargetSslProxy(targetSslProxy.toString(), requestId, sslPolicyReferenceResource);
+   * }
+   * </code></pre>
+   *
+   * @param targetSslProxy Name of the TargetSslProxy resource whose SSL policy is to be set. The
+   *     name must be 1-63 characters long, and comply with RFC1035.
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param sslPolicyReferenceResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setSslPolicyTargetSslProxy(
+      String targetSslProxy, String requestId, SslPolicyReference sslPolicyReferenceResource) {
+
+    SetSslPolicyTargetSslProxyHttpRequest request =
+        SetSslPolicyTargetSslProxyHttpRequest.newBuilder()
+            .setTargetSslProxy(targetSslProxy)
+            .setRequestId(requestId)
+            .setSslPolicyReferenceResource(sslPolicyReferenceResource)
+            .build();
+    return setSslPolicyTargetSslProxy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
+   * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
+   * not affect the connection between the load balancer and the backends.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   String requestId = "";
+   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
+   *   SetSslPolicyTargetSslProxyHttpRequest request = SetSslPolicyTargetSslProxyHttpRequest.newBuilder()
+   *     .setTargetSslProxy(targetSslProxy.toString())
+   *     .setRequestId(requestId)
+   *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
+   *     .build();
+   *   Operation response = targetSslProxyClient.setSslPolicyTargetSslProxy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation setSslPolicyTargetSslProxy(SetSslPolicyTargetSslProxyHttpRequest request) {
+    return setSslPolicyTargetSslProxyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
+   * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
+   * not affect the connection between the load balancer and the backends.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TargetSslProxyClient targetSslProxyClient = TargetSslProxyClient.create()) {
+   *   ProjectGlobalTargetSslProxyName targetSslProxy = ProjectGlobalTargetSslProxyName.of("[PROJECT]", "[TARGET_SSL_PROXY]");
+   *   String requestId = "";
+   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
+   *   SetSslPolicyTargetSslProxyHttpRequest request = SetSslPolicyTargetSslProxyHttpRequest.newBuilder()
+   *     .setTargetSslProxy(targetSslProxy.toString())
+   *     .setRequestId(requestId)
+   *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = targetSslProxyClient.setSslPolicyTargetSslProxyCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetSslPolicyTargetSslProxyHttpRequest, Operation>
+      setSslPolicyTargetSslProxyCallable() {
+    return stub.setSslPolicyTargetSslProxyCallable();
+  }
+
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -1032,12 +1283,10 @@ public class TargetSslProxyClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListTargetSslProxiesPagedResponse extends AbstractPagedListResponse<
-      ListTargetSslProxiesHttpRequest,
-      TargetSslProxyList,
-      TargetSslProxy,
-      ListTargetSslProxiesPage,
-      ListTargetSslProxiesFixedSizeCollection> {
+  public static class ListTargetSslProxiesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTargetSslProxiesHttpRequest, TargetSslProxyList, TargetSslProxy,
+          ListTargetSslProxiesPage, ListTargetSslProxiesFixedSizeCollection> {
 
     public static ApiFuture<ListTargetSslProxiesPagedResponse> createAsync(
         PageContext<ListTargetSslProxiesHttpRequest, TargetSslProxyList, TargetSslProxy> context,
@@ -1057,15 +1306,12 @@ public class TargetSslProxyClient implements BackgroundResource {
     private ListTargetSslProxiesPagedResponse(ListTargetSslProxiesPage page) {
       super(page, ListTargetSslProxiesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListTargetSslProxiesPage extends AbstractPage<
-      ListTargetSslProxiesHttpRequest,
-      TargetSslProxyList,
-      TargetSslProxy,
-      ListTargetSslProxiesPage> {
+  public static class ListTargetSslProxiesPage
+      extends AbstractPage<
+          ListTargetSslProxiesHttpRequest, TargetSslProxyList, TargetSslProxy,
+          ListTargetSslProxiesPage> {
 
     private ListTargetSslProxiesPage(
         PageContext<ListTargetSslProxiesHttpRequest, TargetSslProxyList, TargetSslProxy> context,
@@ -1090,20 +1336,15 @@ public class TargetSslProxyClient implements BackgroundResource {
         ApiFuture<TargetSslProxyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListTargetSslProxiesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListTargetSslProxiesHttpRequest,
-      TargetSslProxyList,
-      TargetSslProxy,
-      ListTargetSslProxiesPage,
-      ListTargetSslProxiesFixedSizeCollection> {
+  public static class ListTargetSslProxiesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTargetSslProxiesHttpRequest, TargetSslProxyList, TargetSslProxy,
+          ListTargetSslProxiesPage, ListTargetSslProxiesFixedSizeCollection> {
 
-    private ListTargetSslProxiesFixedSizeCollection(List<ListTargetSslProxiesPage> pages, int collectionSize) {
+    private ListTargetSslProxiesFixedSizeCollection(
+        List<ListTargetSslProxiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1116,7 +1357,5 @@ public class TargetSslProxyClient implements BackgroundResource {
         List<ListTargetSslProxiesPage> pages, int collectionSize) {
       return new ListTargetSslProxiesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

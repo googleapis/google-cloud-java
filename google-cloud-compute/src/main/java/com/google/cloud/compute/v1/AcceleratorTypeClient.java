@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.AcceleratorTypeStub;
 import com.google.cloud.compute.v1.stub.AcceleratorTypeStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -58,34 +48,34 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the acceleratorTypeClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
+ * <p>Note: close() needs to be called on the acceleratorTypeClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of AcceleratorTypeSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,27 +105,23 @@ public class AcceleratorTypeClient implements BackgroundResource {
   private final AcceleratorTypeSettings settings;
   private final AcceleratorTypeStub stub;
 
-
-
-  /**
-   * Constructs an instance of AcceleratorTypeClient with default settings.
-   */
+  /** Constructs an instance of AcceleratorTypeClient with default settings. */
   public static final AcceleratorTypeClient create() throws IOException {
     return create(AcceleratorTypeSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of AcceleratorTypeClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of AcceleratorTypeClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final AcceleratorTypeClient create(AcceleratorTypeSettings settings) throws IOException {
+  public static final AcceleratorTypeClient create(AcceleratorTypeSettings settings)
+      throws IOException {
     return new AcceleratorTypeClient(settings);
   }
 
   /**
-   * Constructs an instance of AcceleratorTypeClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use AcceleratorTypeSettings}.
+   * Constructs an instance of AcceleratorTypeClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use AcceleratorTypeSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AcceleratorTypeClient create(AcceleratorTypeStub stub) {
@@ -143,9 +129,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of AcceleratorTypeClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of AcceleratorTypeClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected AcceleratorTypeClient(AcceleratorTypeSettings settings) throws IOException {
     this.settings = settings;
@@ -167,12 +153,12 @@ public class AcceleratorTypeClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of accelerator types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -186,11 +172,12 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAcceleratorTypesPagedResponse aggregatedListAcceleratorTypes(ProjectName project) {
+  public final AggregatedListAcceleratorTypesPagedResponse aggregatedListAcceleratorTypes(
+      ProjectName project) {
     AggregatedListAcceleratorTypesHttpRequest request =
         AggregatedListAcceleratorTypesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListAcceleratorTypes(request);
   }
 
@@ -198,7 +185,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of accelerator types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -212,11 +200,10 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAcceleratorTypesPagedResponse aggregatedListAcceleratorTypes(String project) {
+  public final AggregatedListAcceleratorTypesPagedResponse aggregatedListAcceleratorTypes(
+      String project) {
     AggregatedListAcceleratorTypesHttpRequest request =
-        AggregatedListAcceleratorTypesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListAcceleratorTypesHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListAcceleratorTypes(request);
   }
 
@@ -224,7 +211,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of accelerator types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -241,16 +229,17 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAcceleratorTypesPagedResponse aggregatedListAcceleratorTypes(AggregatedListAcceleratorTypesHttpRequest request) {
-    return aggregatedListAcceleratorTypesPagedCallable()
-        .call(request);
+  public final AggregatedListAcceleratorTypesPagedResponse aggregatedListAcceleratorTypes(
+      AggregatedListAcceleratorTypesHttpRequest request) {
+    return aggregatedListAcceleratorTypesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of accelerator types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -266,7 +255,9 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListAcceleratorTypesHttpRequest, AggregatedListAcceleratorTypesPagedResponse> aggregatedListAcceleratorTypesPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListAcceleratorTypesHttpRequest, AggregatedListAcceleratorTypesPagedResponse>
+      aggregatedListAcceleratorTypesPagedCallable() {
     return stub.aggregatedListAcceleratorTypesPagedCallable();
   }
 
@@ -274,7 +265,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of accelerator types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -297,15 +289,19 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList> aggregatedListAcceleratorTypesCallable() {
+  public final UnaryCallable<
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList>
+      aggregatedListAcceleratorTypesCallable() {
     return stub.aggregatedListAcceleratorTypesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified accelerator type. Get a list of available accelerator types by making a list() request.
+   * Returns the specified accelerator type. Get a list of available accelerator types by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
@@ -321,16 +317,18 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
     GetAcceleratorTypeHttpRequest request =
         GetAcceleratorTypeHttpRequest.newBuilder()
-        .setAcceleratorType(acceleratorType == null ? null : acceleratorType.toString())
-        .build();
+            .setAcceleratorType(acceleratorType == null ? null : acceleratorType.toString())
+            .build();
     return getAcceleratorType(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified accelerator type. Get a list of available accelerator types by making a list() request.
+   * Returns the specified accelerator type. Get a list of available accelerator types by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
@@ -345,17 +343,17 @@ public class AcceleratorTypeClient implements BackgroundResource {
   public final AcceleratorType getAcceleratorType(String acceleratorType) {
 
     GetAcceleratorTypeHttpRequest request =
-        GetAcceleratorTypeHttpRequest.newBuilder()
-        .setAcceleratorType(acceleratorType)
-        .build();
+        GetAcceleratorTypeHttpRequest.newBuilder().setAcceleratorType(acceleratorType).build();
     return getAcceleratorType(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified accelerator type. Get a list of available accelerator types by making a list() request.
+   * Returns the specified accelerator type. Get a list of available accelerator types by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
@@ -376,9 +374,11 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified accelerator type. Get a list of available accelerator types by making a list() request.
+   * Returns the specified accelerator type. Get a list of available accelerator types by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
@@ -392,7 +392,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetAcceleratorTypeHttpRequest, AcceleratorType> getAcceleratorTypeCallable() {
+  public final UnaryCallable<GetAcceleratorTypeHttpRequest, AcceleratorType>
+      getAcceleratorTypeCallable() {
     return stub.getAcceleratorTypeCallable();
   }
 
@@ -400,7 +401,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of accelerator types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -417,8 +419,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
   public final ListAcceleratorTypesPagedResponse listAcceleratorTypes(ProjectZoneName zone) {
     ListAcceleratorTypesHttpRequest request =
         ListAcceleratorTypesHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .build();
     return listAcceleratorTypes(request);
   }
 
@@ -426,7 +428,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of accelerator types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -442,9 +445,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
   @BetaApi
   public final ListAcceleratorTypesPagedResponse listAcceleratorTypes(String zone) {
     ListAcceleratorTypesHttpRequest request =
-        ListAcceleratorTypesHttpRequest.newBuilder()
-        .setZone(zone)
-        .build();
+        ListAcceleratorTypesHttpRequest.newBuilder().setZone(zone).build();
     return listAcceleratorTypes(request);
   }
 
@@ -452,7 +453,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of accelerator types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -469,16 +471,17 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListAcceleratorTypesPagedResponse listAcceleratorTypes(ListAcceleratorTypesHttpRequest request) {
-    return listAcceleratorTypesPagedCallable()
-        .call(request);
+  public final ListAcceleratorTypesPagedResponse listAcceleratorTypes(
+      ListAcceleratorTypesHttpRequest request) {
+    return listAcceleratorTypesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of accelerator types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -494,7 +497,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListAcceleratorTypesHttpRequest, ListAcceleratorTypesPagedResponse> listAcceleratorTypesPagedCallable() {
+  public final UnaryCallable<ListAcceleratorTypesHttpRequest, ListAcceleratorTypesPagedResponse>
+      listAcceleratorTypesPagedCallable() {
     return stub.listAcceleratorTypesPagedCallable();
   }
 
@@ -502,7 +506,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of accelerator types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AcceleratorTypeClient acceleratorTypeClient = AcceleratorTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -525,12 +530,13 @@ public class AcceleratorTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListAcceleratorTypesHttpRequest, AcceleratorTypeList> listAcceleratorTypesCallable() {
+  public final UnaryCallable<ListAcceleratorTypesHttpRequest, AcceleratorTypeList>
+      listAcceleratorTypesCallable() {
     return stub.listAcceleratorTypesCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -559,23 +565,28 @@ public class AcceleratorTypeClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListAcceleratorTypesPagedResponse extends AbstractPagedListResponse<
-      AggregatedListAcceleratorTypesHttpRequest,
-      AcceleratorTypeAggregatedList,
-      AcceleratorTypesScopedList,
-      AggregatedListAcceleratorTypesPage,
-      AggregatedListAcceleratorTypesFixedSizeCollection> {
+  public static class AggregatedListAcceleratorTypesPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+          AcceleratorTypesScopedList, AggregatedListAcceleratorTypesPage,
+          AggregatedListAcceleratorTypesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListAcceleratorTypesPagedResponse> createAsync(
-        PageContext<AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList, AcceleratorTypesScopedList> context,
+        PageContext<
+                AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+                AcceleratorTypesScopedList>
+            context,
         ApiFuture<AcceleratorTypeAggregatedList> futureResponse) {
       ApiFuture<AggregatedListAcceleratorTypesPage> futurePage =
-          AggregatedListAcceleratorTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+          AggregatedListAcceleratorTypesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListAcceleratorTypesPage, AggregatedListAcceleratorTypesPagedResponse>() {
+          new ApiFunction<
+              AggregatedListAcceleratorTypesPage, AggregatedListAcceleratorTypesPagedResponse>() {
             @Override
-            public AggregatedListAcceleratorTypesPagedResponse apply(AggregatedListAcceleratorTypesPage input) {
+            public AggregatedListAcceleratorTypesPagedResponse apply(
+                AggregatedListAcceleratorTypesPage input) {
               return new AggregatedListAcceleratorTypesPagedResponse(input);
             }
           });
@@ -584,18 +595,18 @@ public class AcceleratorTypeClient implements BackgroundResource {
     private AggregatedListAcceleratorTypesPagedResponse(AggregatedListAcceleratorTypesPage page) {
       super(page, AggregatedListAcceleratorTypesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListAcceleratorTypesPage extends AbstractPage<
-      AggregatedListAcceleratorTypesHttpRequest,
-      AcceleratorTypeAggregatedList,
-      AcceleratorTypesScopedList,
-      AggregatedListAcceleratorTypesPage> {
+  public static class AggregatedListAcceleratorTypesPage
+      extends AbstractPage<
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+          AcceleratorTypesScopedList, AggregatedListAcceleratorTypesPage> {
 
     private AggregatedListAcceleratorTypesPage(
-        PageContext<AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList, AcceleratorTypesScopedList> context,
+        PageContext<
+                AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+                AcceleratorTypesScopedList>
+            context,
         AcceleratorTypeAggregatedList response) {
       super(context, response);
     }
@@ -606,31 +617,33 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
     @Override
     protected AggregatedListAcceleratorTypesPage createPage(
-        PageContext<AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList, AcceleratorTypesScopedList> context,
+        PageContext<
+                AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+                AcceleratorTypesScopedList>
+            context,
         AcceleratorTypeAggregatedList response) {
       return new AggregatedListAcceleratorTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListAcceleratorTypesPage> createPageAsync(
-        PageContext<AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList, AcceleratorTypesScopedList> context,
+        PageContext<
+                AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+                AcceleratorTypesScopedList>
+            context,
         ApiFuture<AcceleratorTypeAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListAcceleratorTypesFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListAcceleratorTypesHttpRequest,
-      AcceleratorTypeAggregatedList,
-      AcceleratorTypesScopedList,
-      AggregatedListAcceleratorTypesPage,
-      AggregatedListAcceleratorTypesFixedSizeCollection> {
+  public static class AggregatedListAcceleratorTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+          AcceleratorTypesScopedList, AggregatedListAcceleratorTypesPage,
+          AggregatedListAcceleratorTypesFixedSizeCollection> {
 
-    private AggregatedListAcceleratorTypesFixedSizeCollection(List<AggregatedListAcceleratorTypesPage> pages, int collectionSize) {
+    private AggregatedListAcceleratorTypesFixedSizeCollection(
+        List<AggregatedListAcceleratorTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -643,15 +656,12 @@ public class AcceleratorTypeClient implements BackgroundResource {
         List<AggregatedListAcceleratorTypesPage> pages, int collectionSize) {
       return new AggregatedListAcceleratorTypesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListAcceleratorTypesPagedResponse extends AbstractPagedListResponse<
-      ListAcceleratorTypesHttpRequest,
-      AcceleratorTypeList,
-      AcceleratorType,
-      ListAcceleratorTypesPage,
-      ListAcceleratorTypesFixedSizeCollection> {
+
+  public static class ListAcceleratorTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAcceleratorTypesHttpRequest, AcceleratorTypeList, AcceleratorType,
+          ListAcceleratorTypesPage, ListAcceleratorTypesFixedSizeCollection> {
 
     public static ApiFuture<ListAcceleratorTypesPagedResponse> createAsync(
         PageContext<ListAcceleratorTypesHttpRequest, AcceleratorTypeList, AcceleratorType> context,
@@ -671,15 +681,12 @@ public class AcceleratorTypeClient implements BackgroundResource {
     private ListAcceleratorTypesPagedResponse(ListAcceleratorTypesPage page) {
       super(page, ListAcceleratorTypesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListAcceleratorTypesPage extends AbstractPage<
-      ListAcceleratorTypesHttpRequest,
-      AcceleratorTypeList,
-      AcceleratorType,
-      ListAcceleratorTypesPage> {
+  public static class ListAcceleratorTypesPage
+      extends AbstractPage<
+          ListAcceleratorTypesHttpRequest, AcceleratorTypeList, AcceleratorType,
+          ListAcceleratorTypesPage> {
 
     private ListAcceleratorTypesPage(
         PageContext<ListAcceleratorTypesHttpRequest, AcceleratorTypeList, AcceleratorType> context,
@@ -704,20 +711,15 @@ public class AcceleratorTypeClient implements BackgroundResource {
         ApiFuture<AcceleratorTypeList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListAcceleratorTypesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListAcceleratorTypesHttpRequest,
-      AcceleratorTypeList,
-      AcceleratorType,
-      ListAcceleratorTypesPage,
-      ListAcceleratorTypesFixedSizeCollection> {
+  public static class ListAcceleratorTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAcceleratorTypesHttpRequest, AcceleratorTypeList, AcceleratorType,
+          ListAcceleratorTypesPage, ListAcceleratorTypesFixedSizeCollection> {
 
-    private ListAcceleratorTypesFixedSizeCollection(List<ListAcceleratorTypesPage> pages, int collectionSize) {
+    private ListAcceleratorTypesFixedSizeCollection(
+        List<ListAcceleratorTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -730,7 +732,5 @@ public class AcceleratorTypeClient implements BackgroundResource {
         List<ListAcceleratorTypesPage> pages, int collectionSize) {
       return new ListAcceleratorTypesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

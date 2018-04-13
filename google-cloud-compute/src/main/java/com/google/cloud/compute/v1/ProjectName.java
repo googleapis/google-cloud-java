@@ -17,24 +17,20 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectName implements ResourceName {
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -50,27 +46,17 @@ public final class ProjectName implements com.google.api.resourcenames.ResourceN
     project = Preconditions.checkNotNull(builder.getProject());
   }
 
-  public static ProjectName of(
-      String project
-      ) {
-    return newBuilder()
-    .setProject(project)
-      .build();
+  public static ProjectName of(String project) {
+    return newBuilder().setProject(project).build();
   }
 
-  public static String format(
-      String project
-      ) {
-    return of(
-        project
-        )
-        .toString();
+  public static String format(String project) {
+    return of(project).toString();
   }
 
   public String getProject() {
     return project;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -90,19 +76,19 @@ public final class ProjectName implements com.google.api.resourcenames.ResourceN
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectName> newFactory() {
     return new ResourceNameFactory<ProjectName>() {
-      public ProjectName parse(String formattedString) {return ProjectName.parse(formattedString);}
+      public ProjectName parse(String formattedString) {
+        return ProjectName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("project")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -123,7 +109,7 @@ public final class ProjectName implements com.google.api.resourcenames.ResourceN
 
     private Builder() {}
 
-    public Builder (ProjectName projectName) {
+    public Builder(ProjectName projectName) {
       project = projectName.project;
     }
 
@@ -134,9 +120,7 @@ public final class ProjectName implements com.google.api.resourcenames.ResourceN
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project
-        );
+    return PATH_TEMPLATE.instantiate("project", project);
   }
 
   @Override
@@ -146,17 +130,13 @@ public final class ProjectName implements com.google.api.resourcenames.ResourceN
     }
     if (o instanceof ProjectName) {
       ProjectName that = (ProjectName) o;
-      return
-          Objects.equals(this.project, that.getProject())
-          ;
+      return Objects.equals(this.project, that.getProject());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      project
-    );
+    return Objects.hash(project);
   }
 }

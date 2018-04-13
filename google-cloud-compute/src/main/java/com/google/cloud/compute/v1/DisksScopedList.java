@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class DisksScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private DisksScopedList(
-      List<Disk> disks,
-      Warning warning
-      ) {
+  private DisksScopedList(List<Disk> disks, Warning warning) {
     this.disks = disks;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class DisksScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DisksScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DisksScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DisksScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DisksScopedList();
   }
@@ -158,13 +155,9 @@ public final class DisksScopedList implements ApiMessage {
       return this;
     }
 
-
     public DisksScopedList build() {
 
-      return new DisksScopedList(
-        disks,
-        warning
-      );
+      return new DisksScopedList(disks, warning);
     }
 
     public Builder clone() {
@@ -177,10 +170,7 @@ public final class DisksScopedList implements ApiMessage {
 
   @Override
   public String toString() {
-    return "DisksScopedList{"
-        + "disks=" + disks + ", "
-        + "warning=" + warning
-        + "}";
+    return "DisksScopedList{" + "disks=" + disks + ", " + "warning=" + warning + "}";
   }
 
   @Override
@@ -190,19 +180,14 @@ public final class DisksScopedList implements ApiMessage {
     }
     if (o instanceof DisksScopedList) {
       DisksScopedList that = (DisksScopedList) o;
-      return
-          Objects.equals(this.disks, that.getDisksList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.disks, that.getDisksList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      disks,
-      warning
-    );
+    return Objects.hash(disks, warning);
   }
 }

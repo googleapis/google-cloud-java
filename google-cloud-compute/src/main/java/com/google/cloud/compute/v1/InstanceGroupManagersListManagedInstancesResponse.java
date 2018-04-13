@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,8 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
     this.managedInstances = null;
   }
 
-
   private InstanceGroupManagersListManagedInstancesResponse(
-      List<ManagedInstance> managedInstances
-      ) {
+      List<ManagedInstance> managedInstances) {
     this.managedInstances = managedInstances;
   }
 
@@ -76,22 +72,24 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
     return managedInstances;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupManagersListManagedInstancesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupManagersListManagedInstancesResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupManagersListManagedInstancesResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupManagersListManagedInstancesResponse();
   }
@@ -102,7 +100,8 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
     Builder() {}
 
     public Builder mergeFrom(InstanceGroupManagersListManagedInstancesResponse other) {
-      if (other == InstanceGroupManagersListManagedInstancesResponse.getDefaultInstance()) return this;
+      if (other == InstanceGroupManagersListManagedInstancesResponse.getDefaultInstance())
+        return this;
       if (other.getManagedInstancesList() != null) {
         this.managedInstances = other.managedInstances;
       }
@@ -130,11 +129,8 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
       return this;
     }
 
-
     public InstanceGroupManagersListManagedInstancesResponse build() {
-      return new InstanceGroupManagersListManagedInstancesResponse(
-        managedInstances
-      );
+      return new InstanceGroupManagersListManagedInstancesResponse(managedInstances);
     }
 
     public Builder clone() {
@@ -147,7 +143,8 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
   @Override
   public String toString() {
     return "InstanceGroupManagersListManagedInstancesResponse{"
-        + "managedInstances=" + managedInstances
+        + "managedInstances="
+        + managedInstances
         + "}";
   }
 
@@ -157,18 +154,15 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
       return true;
     }
     if (o instanceof InstanceGroupManagersListManagedInstancesResponse) {
-      InstanceGroupManagersListManagedInstancesResponse that = (InstanceGroupManagersListManagedInstancesResponse) o;
-      return
-          Objects.equals(this.managedInstances, that.getManagedInstancesList())
-          ;
+      InstanceGroupManagersListManagedInstancesResponse that =
+          (InstanceGroupManagersListManagedInstancesResponse) o;
+      return Objects.equals(this.managedInstances, that.getManagedInstancesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      managedInstances
-    );
+    return Objects.hash(managedInstances);
   }
 }

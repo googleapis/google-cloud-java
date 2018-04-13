@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class ResourceCommitment implements ApiMessage {
     this.type = null;
   }
 
-
-  private ResourceCommitment(
-      String amount,
-      String type
-      ) {
+  private ResourceCommitment(String amount, String type) {
     this.amount = amount;
     this.type = type;
   }
@@ -86,22 +79,24 @@ public final class ResourceCommitment implements ApiMessage {
     return type;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ResourceCommitment prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ResourceCommitment getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ResourceCommitment DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ResourceCommitment();
   }
@@ -146,13 +141,9 @@ public final class ResourceCommitment implements ApiMessage {
       return this;
     }
 
-
     public ResourceCommitment build() {
 
-      return new ResourceCommitment(
-        amount,
-        type
-      );
+      return new ResourceCommitment(amount, type);
     }
 
     public Builder clone() {
@@ -165,10 +156,7 @@ public final class ResourceCommitment implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ResourceCommitment{"
-        + "amount=" + amount + ", "
-        + "type=" + type
-        + "}";
+    return "ResourceCommitment{" + "amount=" + amount + ", " + "type=" + type + "}";
   }
 
   @Override
@@ -178,19 +166,14 @@ public final class ResourceCommitment implements ApiMessage {
     }
     if (o instanceof ResourceCommitment) {
       ResourceCommitment that = (ResourceCommitment) o;
-      return
-          Objects.equals(this.amount, that.getAmount()) &&
-          Objects.equals(this.type, that.getType())
-          ;
+      return Objects.equals(this.amount, that.getAmount())
+          && Objects.equals(this.type, that.getType());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      amount,
-      type
-    );
+    return Objects.hash(amount, type);
   }
 }

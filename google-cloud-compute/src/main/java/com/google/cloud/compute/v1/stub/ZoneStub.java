@@ -15,15 +15,14 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.ZoneClient.ListZonesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetZoneHttpRequest;
 import com.google.cloud.compute.v1.ListZonesHttpRequest;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.Zone;
-import static com.google.cloud.compute.v1.ZoneClient.ListZonesPagedResponse;
 import com.google.cloud.compute.v1.ZoneList;
 import javax.annotation.Generated;
 
@@ -36,7 +35,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ZoneStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<GetZoneHttpRequest, Zone> getZoneCallable() {
@@ -53,4 +51,6 @@ public abstract class ZoneStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listZonesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

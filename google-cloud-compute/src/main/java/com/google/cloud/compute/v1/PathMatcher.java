@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,13 +43,8 @@ public final class PathMatcher implements ApiMessage {
     this.pathRules = null;
   }
 
-
   private PathMatcher(
-      String defaultService,
-      String description,
-      String name,
-      List<PathRule> pathRules
-      ) {
+      String defaultService, String description, String name, List<PathRule> pathRules) {
     this.defaultService = defaultService;
     this.description = description;
     this.name = name;
@@ -118,22 +112,24 @@ public final class PathMatcher implements ApiMessage {
     return pathRules;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(PathMatcher prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static PathMatcher getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final PathMatcher DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new PathMatcher();
   }
@@ -214,17 +210,9 @@ public final class PathMatcher implements ApiMessage {
       return this;
     }
 
-
     public PathMatcher build() {
 
-
-
-      return new PathMatcher(
-        defaultService,
-        description,
-        name,
-        pathRules
-      );
+      return new PathMatcher(defaultService, description, name, pathRules);
     }
 
     public Builder clone() {
@@ -240,10 +228,17 @@ public final class PathMatcher implements ApiMessage {
   @Override
   public String toString() {
     return "PathMatcher{"
-        + "defaultService=" + defaultService + ", "
-        + "description=" + description + ", "
-        + "name=" + name + ", "
-        + "pathRules=" + pathRules
+        + "defaultService="
+        + defaultService
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "pathRules="
+        + pathRules
         + "}";
   }
 
@@ -254,23 +249,16 @@ public final class PathMatcher implements ApiMessage {
     }
     if (o instanceof PathMatcher) {
       PathMatcher that = (PathMatcher) o;
-      return
-          Objects.equals(this.defaultService, that.getDefaultService()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.pathRules, that.getPathRulesList())
-          ;
+      return Objects.equals(this.defaultService, that.getDefaultService())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.pathRules, that.getPathRulesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      defaultService,
-      description,
-      name,
-      pathRules
-    );
+    return Objects.hash(defaultService, description, name, pathRules);
   }
 }

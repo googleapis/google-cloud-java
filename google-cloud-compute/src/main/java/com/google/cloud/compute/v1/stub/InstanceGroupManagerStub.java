@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -26,22 +29,11 @@ import com.google.cloud.compute.v1.GetInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.InstanceGroupManagerAggregatedList;
-import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse;
-import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 import com.google.cloud.compute.v1.InstanceGroupManagerList;
-import com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest;
-import com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest;
 import com.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResponse;
-import com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest;
-import com.google.cloud.compute.v1.InstanceGroupManagersScopedList;
-import com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest;
-import com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest;
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneInstanceGroupManagerName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerHttpRequest;
@@ -58,75 +50,107 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class InstanceGroupManagerStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AbandonInstancesInstanceGroupManagerHttpRequest, Operation> abandonInstancesInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: abandonInstancesInstanceGroupManagerCallable()");
+  public UnaryCallable<AbandonInstancesInstanceGroupManagerHttpRequest, Operation>
+      abandonInstancesInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: abandonInstancesInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListInstanceGroupManagersHttpRequest, AggregatedListInstanceGroupManagersPagedResponse> aggregatedListInstanceGroupManagersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListInstanceGroupManagersPagedCallable()");
+  public UnaryCallable<
+          AggregatedListInstanceGroupManagersHttpRequest,
+          AggregatedListInstanceGroupManagersPagedResponse>
+      aggregatedListInstanceGroupManagersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListInstanceGroupManagersPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList> aggregatedListInstanceGroupManagersCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListInstanceGroupManagersCallable()");
+  public UnaryCallable<
+          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList>
+      aggregatedListInstanceGroupManagersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListInstanceGroupManagersCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<DeleteInstanceGroupManagerHttpRequest, Operation> deleteInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteInstanceGroupManagerCallable()");
+  public UnaryCallable<DeleteInstanceGroupManagerHttpRequest, Operation>
+      deleteInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<DeleteInstancesInstanceGroupManagerHttpRequest, Operation> deleteInstancesInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteInstancesInstanceGroupManagerCallable()");
+  public UnaryCallable<DeleteInstancesInstanceGroupManagerHttpRequest, Operation>
+      deleteInstancesInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteInstancesInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetInstanceGroupManagerHttpRequest, InstanceGroupManager> getInstanceGroupManagerCallable() {
+  public UnaryCallable<GetInstanceGroupManagerHttpRequest, InstanceGroupManager>
+      getInstanceGroupManagerCallable() {
     throw new UnsupportedOperationException("Not implemented: getInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<InsertInstanceGroupManagerHttpRequest, Operation> insertInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: insertInstanceGroupManagerCallable()");
+  public UnaryCallable<InsertInstanceGroupManagerHttpRequest, Operation>
+      insertInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: insertInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstanceGroupManagersHttpRequest, ListInstanceGroupManagersPagedResponse> listInstanceGroupManagersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInstanceGroupManagersPagedCallable()");
+  public UnaryCallable<ListInstanceGroupManagersHttpRequest, ListInstanceGroupManagersPagedResponse>
+      listInstanceGroupManagersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listInstanceGroupManagersPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList> listInstanceGroupManagersCallable() {
+  public UnaryCallable<ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList>
+      listInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstanceGroupManagersCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListManagedInstancesInstanceGroupManagersHttpRequest, InstanceGroupManagersListManagedInstancesResponse> listManagedInstancesInstanceGroupManagersCallable() {
-    throw new UnsupportedOperationException("Not implemented: listManagedInstancesInstanceGroupManagersCallable()");
+  public UnaryCallable<
+          ListManagedInstancesInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListManagedInstancesResponse>
+      listManagedInstancesInstanceGroupManagersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listManagedInstancesInstanceGroupManagersCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<RecreateInstancesInstanceGroupManagerHttpRequest, Operation> recreateInstancesInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: recreateInstancesInstanceGroupManagerCallable()");
+  public UnaryCallable<RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
+      recreateInstancesInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: recreateInstancesInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ResizeInstanceGroupManagerHttpRequest, Operation> resizeInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: resizeInstanceGroupManagerCallable()");
+  public UnaryCallable<ResizeInstanceGroupManagerHttpRequest, Operation>
+      resizeInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: resizeInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetInstanceTemplateInstanceGroupManagerHttpRequest, Operation> setInstanceTemplateInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: setInstanceTemplateInstanceGroupManagerCallable()");
+  public UnaryCallable<SetInstanceTemplateInstanceGroupManagerHttpRequest, Operation>
+      setInstanceTemplateInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setInstanceTemplateInstanceGroupManagerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetTargetPoolsInstanceGroupManagerHttpRequest, Operation> setTargetPoolsInstanceGroupManagerCallable() {
-    throw new UnsupportedOperationException("Not implemented: setTargetPoolsInstanceGroupManagerCallable()");
+  public UnaryCallable<SetTargetPoolsInstanceGroupManagerHttpRequest, Operation>
+      setTargetPoolsInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setTargetPoolsInstanceGroupManagerCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

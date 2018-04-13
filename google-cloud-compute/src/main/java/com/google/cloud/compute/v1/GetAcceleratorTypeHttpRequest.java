@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private GetAcceleratorTypeHttpRequest(
       String acceleratorType,
       String access_token,
@@ -61,8 +57,7 @@ public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
-      String userIp
-      ) {
+      String userIp) {
     this.acceleratorType = acceleratorType;
     this.access_token = access_token;
     this.callback = callback;
@@ -170,22 +165,24 @@ public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GetAcceleratorTypeHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetAcceleratorTypeHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GetAcceleratorTypeHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GetAcceleratorTypeHttpRequest();
   }
@@ -314,32 +311,17 @@ public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public GetAcceleratorTypeHttpRequest build() {
       String missing = "";
       if (acceleratorType == null) {
         missing += " acceleratorType";
       }
 
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetAcceleratorTypeHttpRequest(
-        acceleratorType,
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        userIp
-      );
+          acceleratorType, access_token, callback, fields, key, prettyPrint, quotaUser, userIp);
     }
 
     public Builder clone() {
@@ -359,14 +341,29 @@ public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "GetAcceleratorTypeHttpRequest{"
-        + "acceleratorType=" + acceleratorType + ", "
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "userIp=" + userIp
+        + "acceleratorType="
+        + acceleratorType
+        + ", "
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -377,16 +374,14 @@ public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
     }
     if (o instanceof GetAcceleratorTypeHttpRequest) {
       GetAcceleratorTypeHttpRequest that = (GetAcceleratorTypeHttpRequest) o;
-      return
-          Objects.equals(this.acceleratorType, that.getAcceleratorType()) &&
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.acceleratorType, that.getAcceleratorType())
+          && Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -394,14 +389,6 @@ public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      acceleratorType,
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      userIp
-    );
+        acceleratorType, access_token, callback, fields, key, prettyPrint, quotaUser, userIp);
   }
 }

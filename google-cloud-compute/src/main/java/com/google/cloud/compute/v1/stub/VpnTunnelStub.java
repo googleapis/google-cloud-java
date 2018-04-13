@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.VpnTunnelClient.AggregatedListVpnTunnelsPagedResponse;
+import static com.google.cloud.compute.v1.VpnTunnelClient.ListVpnTunnelsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -24,15 +27,9 @@ import com.google.cloud.compute.v1.GetVpnTunnelHttpRequest;
 import com.google.cloud.compute.v1.InsertVpnTunnelHttpRequest;
 import com.google.cloud.compute.v1.ListVpnTunnelsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.ProjectRegionVpnTunnelName;
 import com.google.cloud.compute.v1.VpnTunnel;
 import com.google.cloud.compute.v1.VpnTunnelAggregatedList;
-import static com.google.cloud.compute.v1.VpnTunnelClient.AggregatedListVpnTunnelsPagedResponse;
-import static com.google.cloud.compute.v1.VpnTunnelClient.ListVpnTunnelsPagedResponse;
 import com.google.cloud.compute.v1.VpnTunnelList;
-import com.google.cloud.compute.v1.VpnTunnelsScopedList;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -45,14 +42,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class VpnTunnelStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListVpnTunnelsHttpRequest, AggregatedListVpnTunnelsPagedResponse> aggregatedListVpnTunnelsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListVpnTunnelsPagedCallable()");
+  public UnaryCallable<AggregatedListVpnTunnelsHttpRequest, AggregatedListVpnTunnelsPagedResponse>
+      aggregatedListVpnTunnelsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListVpnTunnelsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList> aggregatedListVpnTunnelsCallable() {
+  public UnaryCallable<AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList>
+      aggregatedListVpnTunnelsCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListVpnTunnelsCallable()");
   }
 
@@ -72,7 +71,8 @@ public abstract class VpnTunnelStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListVpnTunnelsHttpRequest, ListVpnTunnelsPagedResponse> listVpnTunnelsPagedCallable() {
+  public UnaryCallable<ListVpnTunnelsHttpRequest, ListVpnTunnelsPagedResponse>
+      listVpnTunnelsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listVpnTunnelsPagedCallable()");
   }
 
@@ -81,4 +81,6 @@ public abstract class VpnTunnelStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listVpnTunnelsCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

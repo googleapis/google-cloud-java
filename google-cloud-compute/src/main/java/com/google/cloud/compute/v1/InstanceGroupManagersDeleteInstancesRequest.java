@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest implements ApiMes
     this.instances = null;
   }
 
-
-  private InstanceGroupManagersDeleteInstancesRequest(
-      List<String> instances
-      ) {
+  private InstanceGroupManagersDeleteInstancesRequest(List<String> instances) {
     this.instances = instances;
   }
 
@@ -76,22 +71,24 @@ public final class InstanceGroupManagersDeleteInstancesRequest implements ApiMes
     return instances;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupManagersDeleteInstancesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupManagersDeleteInstancesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupManagersDeleteInstancesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupManagersDeleteInstancesRequest();
   }
@@ -130,11 +127,8 @@ public final class InstanceGroupManagersDeleteInstancesRequest implements ApiMes
       return this;
     }
 
-
     public InstanceGroupManagersDeleteInstancesRequest build() {
-      return new InstanceGroupManagersDeleteInstancesRequest(
-        instances
-      );
+      return new InstanceGroupManagersDeleteInstancesRequest(instances);
     }
 
     public Builder clone() {
@@ -146,9 +140,7 @@ public final class InstanceGroupManagersDeleteInstancesRequest implements ApiMes
 
   @Override
   public String toString() {
-    return "InstanceGroupManagersDeleteInstancesRequest{"
-        + "instances=" + instances
-        + "}";
+    return "InstanceGroupManagersDeleteInstancesRequest{" + "instances=" + instances + "}";
   }
 
   @Override
@@ -157,18 +149,15 @@ public final class InstanceGroupManagersDeleteInstancesRequest implements ApiMes
       return true;
     }
     if (o instanceof InstanceGroupManagersDeleteInstancesRequest) {
-      InstanceGroupManagersDeleteInstancesRequest that = (InstanceGroupManagersDeleteInstancesRequest) o;
-      return
-          Objects.equals(this.instances, that.getInstancesList())
-          ;
+      InstanceGroupManagersDeleteInstancesRequest that =
+          (InstanceGroupManagersDeleteInstancesRequest) o;
+      return Objects.equals(this.instances, that.getInstancesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instances
-    );
+    return Objects.hash(instances);
   }
 }

@@ -15,6 +15,13 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.InterconnectClient.ListInterconnectsPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.deleteInterconnectMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.getInterconnectMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.insertInterconnectMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.listInterconnectsMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.patchInterconnectMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,20 +32,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.InterconnectClient.ListInterconnectsPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.deleteInterconnectMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.getInterconnectMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.insertInterconnectMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.listInterconnectsMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.patchInterconnectMethodDescriptor;
 import com.google.cloud.compute.v1.stub.InterconnectStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -48,16 +47,16 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class InterconnectClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          deleteInterconnectMethodDescriptor,
-          getInterconnectMethodDescriptor,
-          insertInterconnectMethodDescriptor,
-          listInterconnectsMethodDescriptor,
-          patchInterconnectMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, InterconnectStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              deleteInterconnectMethodDescriptor,
+              getInterconnectMethodDescriptor,
+              insertInterconnectMethodDescriptor,
+              listInterconnectsMethodDescriptor,
+              patchInterconnectMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, InterconnectStubSettings.getDefaultEndpoint());
 
   private static InterconnectClient client;
   private static InterconnectSettings clientSettings;
@@ -66,13 +65,13 @@ public class InterconnectClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         InterconnectSettings.newBuilder()
-           .setTransportChannelProvider(
-               InterconnectSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       InterconnectClient.create(clientSettings);
+            .setTransportChannelProvider(
+                InterconnectSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = InterconnectClient.create(clientSettings);
   }
 
   @After
@@ -109,56 +108,66 @@ public class InterconnectClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+    ProjectGlobalInterconnectName interconnect =
+        ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
-    Operation actualResponse =
-        client.deleteInterconnect(requestId, interconnect);
+    Operation actualResponse = client.deleteInterconnect(requestId, interconnect);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteInterconnectExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+      ProjectGlobalInterconnectName interconnect =
+          ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
       client.deleteInterconnect(requestId, interconnect);
       Assert.fail("No exception raised");
@@ -188,51 +197,61 @@ public class InterconnectClientTest {
     String id = "id3355";
     String googleIpAddress = "googleIpAddress1516847778";
     String nocContactEmail = "nocContactEmail1087814656";
-    Interconnect expectedResponse = Interconnect.newBuilder()
-      .setOperationalStatus(operationalStatus)
-      .setInterconnectType(interconnectType)
-      .setPeerIpAddress(peerIpAddress)
-      .setKind(kind)
-      .setRequestedLinkCount(requestedLinkCount)
-      .setGoogleReferenceId(googleReferenceId)
-      .setDescription(description)
-      .setCustomerName(customerName)
-      .setSelfLink(selfLink)
-      .setAdminEnabled(adminEnabled)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setLinkType(linkType)
-      .setLocation(location)
-      .setProvisionedLinkCount(provisionedLinkCount)
-      .setId(id)
-      .setGoogleIpAddress(googleIpAddress)
-      .setNocContactEmail(nocContactEmail)
-      .build();
+    Interconnect expectedResponse =
+        Interconnect.newBuilder()
+            .setOperationalStatus(operationalStatus)
+            .setInterconnectType(interconnectType)
+            .setPeerIpAddress(peerIpAddress)
+            .setKind(kind)
+            .setRequestedLinkCount(requestedLinkCount)
+            .setGoogleReferenceId(googleReferenceId)
+            .setDescription(description)
+            .setCustomerName(customerName)
+            .setSelfLink(selfLink)
+            .setAdminEnabled(adminEnabled)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setLinkType(linkType)
+            .setLocation(location)
+            .setProvisionedLinkCount(provisionedLinkCount)
+            .setId(id)
+            .setGoogleIpAddress(googleIpAddress)
+            .setNocContactEmail(nocContactEmail)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+    ProjectGlobalInterconnectName interconnect =
+        ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
-    Interconnect actualResponse =
-        client.getInterconnect(interconnect);
+    Interconnect actualResponse = client.getInterconnect(interconnect);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getInterconnectExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+      ProjectGlobalInterconnectName interconnect =
+          ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
       client.getInterconnect(interconnect);
       Assert.fail("No exception raised");
@@ -265,52 +284,60 @@ public class InterconnectClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertInterconnect(requestId, project, interconnectResource);
+    Operation actualResponse = client.insertInterconnect(requestId, project, interconnectResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void insertInterconnectExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -334,13 +361,14 @@ public class InterconnectClientTest {
     String selfLink = "selfLink-1691268851";
     Interconnect itemsElement = Interconnect.newBuilder().build();
     List<Interconnect> items = Arrays.asList(itemsElement);
-    InterconnectList expectedResponse = InterconnectList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    InterconnectList expectedResponse =
+        InterconnectList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -349,22 +377,29 @@ public class InterconnectClientTest {
 
     List<Interconnect> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listInterconnectsExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -401,33 +436,35 @@ public class InterconnectClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
-    ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+    ProjectGlobalInterconnectName interconnect =
+        ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
     Interconnect interconnectResource = Interconnect.newBuilder().build();
 
     Operation actualResponse =
@@ -437,21 +474,30 @@ public class InterconnectClientTest {
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void patchInterconnectExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
       String requestId = "requestId37109963";
-      ProjectInterconnectName interconnect = ProjectInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+      ProjectGlobalInterconnectName interconnect =
+          ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
       Interconnect interconnectResource = Interconnect.newBuilder().build();
 
       client.patchInterconnect(requestId, interconnect, interconnectResource);
@@ -460,5 +506,4 @@ public class InterconnectClientTest {
       // Expected exception
     }
   }
-
 }

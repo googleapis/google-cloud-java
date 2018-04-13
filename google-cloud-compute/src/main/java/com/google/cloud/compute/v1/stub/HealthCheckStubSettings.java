@@ -15,11 +15,11 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -30,8 +30,6 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -41,11 +39,9 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.auth.Credentials;
 import com.google.cloud.compute.v1.DeleteHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.HealthCheck;
-import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
 import com.google.cloud.compute.v1.HealthCheckList;
 import com.google.cloud.compute.v1.InsertHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHealthChecksHttpRequest;
@@ -56,10 +52,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -70,15 +64,15 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
+ *       port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of deleteHealthCheck to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of deleteHealthCheck to 30 seconds:
  *
  * <pre>
  * <code>
@@ -93,67 +87,60 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSettings> {
-  /**
-   * The default scopes of the service.
-   */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES = ImmutableList.<String>builder()
-      .add("https://www.googleapis.com/auth/cloud-platform")
-      .add("https://www.googleapis.com/auth/compute")
-      .add("https://www.googleapis.com/auth/compute.readonly")
-      .add("https://www.googleapis.com/auth/devstorage.full_control")
-      .add("https://www.googleapis.com/auth/devstorage.read_only")
-      .add("https://www.googleapis.com/auth/devstorage.read_write")
-      .build();
+  /** The default scopes of the service. */
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/devstorage.full_control")
+          .add("https://www.googleapis.com/auth/devstorage.read_only")
+          .add("https://www.googleapis.com/auth/devstorage.read_write")
+          .build();
 
-  private final UnaryCallSettings<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckSettings;
+  private final UnaryCallSettings<DeleteHealthCheckHttpRequest, Operation>
+      deleteHealthCheckSettings;
   private final UnaryCallSettings<GetHealthCheckHttpRequest, HealthCheck> getHealthCheckSettings;
-  private final UnaryCallSettings<InsertHealthCheckHttpRequest, Operation> insertHealthCheckSettings;
-  private final PagedCallSettings<ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse> listHealthChecksSettings;
+  private final UnaryCallSettings<InsertHealthCheckHttpRequest, Operation>
+      insertHealthCheckSettings;
+  private final PagedCallSettings<
+          ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse>
+      listHealthChecksSettings;
   private final UnaryCallSettings<PatchHealthCheckHttpRequest, Operation> patchHealthCheckSettings;
-  private final UnaryCallSettings<UpdateHealthCheckHttpRequest, Operation> updateHealthCheckSettings;
+  private final UnaryCallSettings<UpdateHealthCheckHttpRequest, Operation>
+      updateHealthCheckSettings;
 
-  /**
-   * Returns the object with the settings used for calls to deleteHealthCheck.
-   */
+  /** Returns the object with the settings used for calls to deleteHealthCheck. */
   public UnaryCallSettings<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckSettings() {
     return deleteHealthCheckSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getHealthCheck.
-   */
+  /** Returns the object with the settings used for calls to getHealthCheck. */
   public UnaryCallSettings<GetHealthCheckHttpRequest, HealthCheck> getHealthCheckSettings() {
     return getHealthCheckSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to insertHealthCheck.
-   */
+  /** Returns the object with the settings used for calls to insertHealthCheck. */
   public UnaryCallSettings<InsertHealthCheckHttpRequest, Operation> insertHealthCheckSettings() {
     return insertHealthCheckSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listHealthChecks.
-   */
-  public PagedCallSettings<ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse> listHealthChecksSettings() {
+  /** Returns the object with the settings used for calls to listHealthChecks. */
+  public PagedCallSettings<
+          ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse>
+      listHealthChecksSettings() {
     return listHealthChecksSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to patchHealthCheck.
-   */
+  /** Returns the object with the settings used for calls to patchHealthCheck. */
   public UnaryCallSettings<PatchHealthCheckHttpRequest, Operation> patchHealthCheckSettings() {
     return patchHealthCheckSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to updateHealthCheck.
-   */
+  /** Returns the object with the settings used for calls to updateHealthCheck. */
   public UnaryCallSettings<UpdateHealthCheckHttpRequest, Operation> updateHealthCheckSettings() {
     return updateHealthCheckSettings;
   }
-
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public HealthCheckStub createStub() throws IOException {
@@ -167,47 +154,34 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
     }
   }
 
-  /**
-   * Returns a builder for the default ExecutorProvider for this service.
-   */
+  /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /**
-   * Returns the default service endpoint.
-   */
+  /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return "https://www.googleapis.com/compute/v1/projects/";
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return 443;
   }
 
-
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-
-  /**
-   * Returns a builder for the default credentials for this service.
-   */
+  /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder()
-        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
-        ;
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingHttpJsonChannelProvider.Builder defaultHttpJsonTransportProviderBuilder() {
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
@@ -218,27 +192,24 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(HealthCheckStubSettings.class))
-        .setTransportToken(GaxHttpJsonProperties.getHttpJsonTokenName(), GaxHttpJsonProperties.getHttpJsonVersion());
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(HealthCheckStubSettings.class))
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -254,78 +225,92 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
     updateHealthCheckSettings = settingsBuilder.updateHealthCheckSettings().build();
   }
 
-  private static final PagedListDescriptor<ListHealthChecksHttpRequest, HealthCheckList, HealthCheck> LIST_HEALTH_CHECKS_PAGE_STR_DESC =
-      new PagedListDescriptor<ListHealthChecksHttpRequest, HealthCheckList, HealthCheck>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
-        @Override
-        public ListHealthChecksHttpRequest injectToken(ListHealthChecksHttpRequest payload, String token) {
-          return ListHealthChecksHttpRequest
-            .newBuilder(payload)
-            .setPageToken(token)
-            .build();
-        }
-        @Override
-        public ListHealthChecksHttpRequest injectPageSize(ListHealthChecksHttpRequest payload, int pageSize) {
-          return ListHealthChecksHttpRequest
-            .newBuilder(payload)
-            .setMaxResults(pageSize)
-            .build();
-        }
-        @Override
-        public Integer extractPageSize(ListHealthChecksHttpRequest payload) {
-          return payload.getMaxResults();
-        }
-        @Override
-        public String extractNextToken(HealthCheckList payload) {
-          return payload.getNextPageToken();
-        }
-        @Override
-        public Iterable<HealthCheck> extractResources(HealthCheckList payload) {
-          return payload.getItemsList();
-        }
-      };
+  private static final PagedListDescriptor<
+          ListHealthChecksHttpRequest, HealthCheckList, HealthCheck>
+      LIST_HEALTH_CHECKS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListHealthChecksHttpRequest, HealthCheckList, HealthCheck>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
 
-  private static final PagedListResponseFactory<ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse> LIST_HEALTH_CHECKS_PAGE_STR_FACT =
-      new PagedListResponseFactory<ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse>() {
-        @Override
-        public ApiFuture<ListHealthChecksPagedResponse> getFuturePagedResponse(
-            UnaryCallable<ListHealthChecksHttpRequest, HealthCheckList> callable,
-            ListHealthChecksHttpRequest request,
-            ApiCallContext context,
-            ApiFuture<HealthCheckList> futureResponse) {
-          PageContext<ListHealthChecksHttpRequest, HealthCheckList, HealthCheck> pageContext =
-              PageContext.create(callable, LIST_HEALTH_CHECKS_PAGE_STR_DESC, request, context);
-          return ListHealthChecksPagedResponse.createAsync(pageContext, futureResponse);
-        }
-      };
+            @Override
+            public ListHealthChecksHttpRequest injectToken(
+                ListHealthChecksHttpRequest payload, String token) {
+              return ListHealthChecksHttpRequest.newBuilder(payload).setPageToken(token).build();
+            }
 
+            @Override
+            public ListHealthChecksHttpRequest injectPageSize(
+                ListHealthChecksHttpRequest payload, int pageSize) {
+              return ListHealthChecksHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
 
-  /**
-   * Builder for HealthCheckStubSettings.
-   */
+            @Override
+            public Integer extractPageSize(ListHealthChecksHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(HealthCheckList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<HealthCheck> extractResources(HealthCheckList payload) {
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse>
+      LIST_HEALTH_CHECKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse>() {
+            @Override
+            public ApiFuture<ListHealthChecksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListHealthChecksHttpRequest, HealthCheckList> callable,
+                ListHealthChecksHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<HealthCheckList> futureResponse) {
+              PageContext<ListHealthChecksHttpRequest, HealthCheckList, HealthCheck> pageContext =
+                  PageContext.create(callable, LIST_HEALTH_CHECKS_PAGE_STR_DESC, request, context);
+              return ListHealthChecksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Builder for HealthCheckStubSettings. */
   public static class Builder extends StubSettings.Builder<HealthCheckStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckSettings;
-    private final UnaryCallSettings.Builder<GetHealthCheckHttpRequest, HealthCheck> getHealthCheckSettings;
-    private final UnaryCallSettings.Builder<InsertHealthCheckHttpRequest, Operation> insertHealthCheckSettings;
-    private final PagedCallSettings.Builder<ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse> listHealthChecksSettings;
-    private final UnaryCallSettings.Builder<PatchHealthCheckHttpRequest, Operation> patchHealthCheckSettings;
-    private final UnaryCallSettings.Builder<UpdateHealthCheckHttpRequest, Operation> updateHealthCheckSettings;
+    private final UnaryCallSettings.Builder<DeleteHealthCheckHttpRequest, Operation>
+        deleteHealthCheckSettings;
+    private final UnaryCallSettings.Builder<GetHealthCheckHttpRequest, HealthCheck>
+        getHealthCheckSettings;
+    private final UnaryCallSettings.Builder<InsertHealthCheckHttpRequest, Operation>
+        insertHealthCheckSettings;
+    private final PagedCallSettings.Builder<
+            ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse>
+        listHealthChecksSettings;
+    private final UnaryCallSettings.Builder<PatchHealthCheckHttpRequest, Operation>
+        patchHealthCheckSettings;
+    private final UnaryCallSettings.Builder<UpdateHealthCheckHttpRequest, Operation>
+        updateHealthCheckSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -334,15 +319,16 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ofMillis(100L))
-          .setRetryDelayMultiplier(1.3)
-          .setMaxRetryDelay(Duration.ofMillis(60000L))
-          .setInitialRpcTimeout(Duration.ofMillis(20000L))
-          .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeout(Duration.ofMillis(20000L))
-          .setTotalTimeout(Duration.ofMillis(600000L))
-          .build();
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
@@ -360,21 +346,20 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
 
       insertHealthCheckSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listHealthChecksSettings = PagedCallSettings.newBuilder(
-          LIST_HEALTH_CHECKS_PAGE_STR_FACT);
+      listHealthChecksSettings = PagedCallSettings.newBuilder(LIST_HEALTH_CHECKS_PAGE_STR_FACT);
 
       patchHealthCheckSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateHealthCheckSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-          deleteHealthCheckSettings,
-          getHealthCheckSettings,
-          insertHealthCheckSettings,
-          listHealthChecksSettings,
-          patchHealthCheckSettings,
-          updateHealthCheckSettings
-      );
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteHealthCheckSettings,
+              getHealthCheckSettings,
+              insertHealthCheckSettings,
+              listHealthChecksSettings,
+              patchHealthCheckSettings,
+              updateHealthCheckSettings);
 
       initDefaults(this);
     }
@@ -390,27 +375,33 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
 
     private static Builder initDefaults(Builder builder) {
 
-      builder.deleteHealthCheckSettings()
+      builder
+          .deleteHealthCheckSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.getHealthCheckSettings()
+      builder
+          .getHealthCheckSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.insertHealthCheckSettings()
+      builder
+          .insertHealthCheckSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.listHealthChecksSettings()
+      builder
+          .listHealthChecksSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.patchHealthCheckSettings()
+      builder
+          .patchHealthCheckSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.updateHealthCheckSettings()
+      builder
+          .updateHealthCheckSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -427,22 +418,24 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
       patchHealthCheckSettings = settings.patchHealthCheckSettings.toBuilder();
       updateHealthCheckSettings = settings.updateHealthCheckSettings.toBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-          deleteHealthCheckSettings,
-          getHealthCheckSettings,
-          insertHealthCheckSettings,
-          listHealthChecksSettings,
-          patchHealthCheckSettings,
-          updateHealthCheckSettings
-      );
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteHealthCheckSettings,
+              getHealthCheckSettings,
+              insertHealthCheckSettings,
+              listHealthChecksSettings,
+              patchHealthCheckSettings,
+              updateHealthCheckSettings);
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
-     * Note: This method does not support applying settings to streaming methods.
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -451,45 +444,40 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
       return unaryMethodSettingsBuilders;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteHealthCheck.
-     */
-    public UnaryCallSettings.Builder<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckSettings() {
+    /** Returns the builder for the settings used for calls to deleteHealthCheck. */
+    public UnaryCallSettings.Builder<DeleteHealthCheckHttpRequest, Operation>
+        deleteHealthCheckSettings() {
       return deleteHealthCheckSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getHealthCheck.
-     */
-    public UnaryCallSettings.Builder<GetHealthCheckHttpRequest, HealthCheck> getHealthCheckSettings() {
+    /** Returns the builder for the settings used for calls to getHealthCheck. */
+    public UnaryCallSettings.Builder<GetHealthCheckHttpRequest, HealthCheck>
+        getHealthCheckSettings() {
       return getHealthCheckSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to insertHealthCheck.
-     */
-    public UnaryCallSettings.Builder<InsertHealthCheckHttpRequest, Operation> insertHealthCheckSettings() {
+    /** Returns the builder for the settings used for calls to insertHealthCheck. */
+    public UnaryCallSettings.Builder<InsertHealthCheckHttpRequest, Operation>
+        insertHealthCheckSettings() {
       return insertHealthCheckSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listHealthChecks.
-     */
-    public PagedCallSettings.Builder<ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse> listHealthChecksSettings() {
+    /** Returns the builder for the settings used for calls to listHealthChecks. */
+    public PagedCallSettings.Builder<
+            ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse>
+        listHealthChecksSettings() {
       return listHealthChecksSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to patchHealthCheck.
-     */
-    public UnaryCallSettings.Builder<PatchHealthCheckHttpRequest, Operation> patchHealthCheckSettings() {
+    /** Returns the builder for the settings used for calls to patchHealthCheck. */
+    public UnaryCallSettings.Builder<PatchHealthCheckHttpRequest, Operation>
+        patchHealthCheckSettings() {
       return patchHealthCheckSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to updateHealthCheck.
-     */
-    public UnaryCallSettings.Builder<UpdateHealthCheckHttpRequest, Operation> updateHealthCheckSettings() {
+    /** Returns the builder for the settings used for calls to updateHealthCheck. */
+    public UnaryCallSettings.Builder<UpdateHealthCheckHttpRequest, Operation>
+        updateHealthCheckSettings() {
       return updateHealthCheckSettings;
     }
 

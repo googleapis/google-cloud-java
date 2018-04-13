@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
     this.instanceTemplate = null;
   }
 
-
-  private InstanceGroupManagersSetInstanceTemplateRequest(
-      String instanceTemplate
-      ) {
+  private InstanceGroupManagersSetInstanceTemplateRequest(String instanceTemplate) {
     this.instanceTemplate = instanceTemplate;
   }
 
@@ -72,22 +66,24 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
     return instanceTemplate;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupManagersSetInstanceTemplateRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupManagersSetInstanceTemplateRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupManagersSetInstanceTemplateRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupManagersSetInstanceTemplateRequest();
   }
@@ -98,7 +94,8 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
     Builder() {}
 
     public Builder mergeFrom(InstanceGroupManagersSetInstanceTemplateRequest other) {
-      if (other == InstanceGroupManagersSetInstanceTemplateRequest.getDefaultInstance()) return this;
+      if (other == InstanceGroupManagersSetInstanceTemplateRequest.getDefaultInstance())
+        return this;
       if (other.getInstanceTemplate() != null) {
         this.instanceTemplate = other.instanceTemplate;
       }
@@ -118,11 +115,8 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
       return this;
     }
 
-
     public InstanceGroupManagersSetInstanceTemplateRequest build() {
-      return new InstanceGroupManagersSetInstanceTemplateRequest(
-        instanceTemplate
-      );
+      return new InstanceGroupManagersSetInstanceTemplateRequest(instanceTemplate);
     }
 
     public Builder clone() {
@@ -135,7 +129,8 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
   @Override
   public String toString() {
     return "InstanceGroupManagersSetInstanceTemplateRequest{"
-        + "instanceTemplate=" + instanceTemplate
+        + "instanceTemplate="
+        + instanceTemplate
         + "}";
   }
 
@@ -145,18 +140,15 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
       return true;
     }
     if (o instanceof InstanceGroupManagersSetInstanceTemplateRequest) {
-      InstanceGroupManagersSetInstanceTemplateRequest that = (InstanceGroupManagersSetInstanceTemplateRequest) o;
-      return
-          Objects.equals(this.instanceTemplate, that.getInstanceTemplate())
-          ;
+      InstanceGroupManagersSetInstanceTemplateRequest that =
+          (InstanceGroupManagersSetInstanceTemplateRequest) o;
+      return Objects.equals(this.instanceTemplate, that.getInstanceTemplate());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instanceTemplate
-    );
+    return Objects.hash(instanceTemplate);
   }
 }

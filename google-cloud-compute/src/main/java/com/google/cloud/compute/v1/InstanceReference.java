@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class InstanceReference implements ApiMessage {
     this.instance = null;
   }
 
-
-  private InstanceReference(
-      String instance
-      ) {
+  private InstanceReference(String instance) {
     this.instance = instance;
   }
 
@@ -72,22 +66,24 @@ public final class InstanceReference implements ApiMessage {
     return instance;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceReference prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceReference getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceReference DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceReference();
   }
@@ -118,11 +114,8 @@ public final class InstanceReference implements ApiMessage {
       return this;
     }
 
-
     public InstanceReference build() {
-      return new InstanceReference(
-        instance
-      );
+      return new InstanceReference(instance);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class InstanceReference implements ApiMessage {
 
   @Override
   public String toString() {
-    return "InstanceReference{"
-        + "instance=" + instance
-        + "}";
+    return "InstanceReference{" + "instance=" + instance + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class InstanceReference implements ApiMessage {
     }
     if (o instanceof InstanceReference) {
       InstanceReference that = (InstanceReference) o;
-      return
-          Objects.equals(this.instance, that.getInstance())
-          ;
+      return Objects.equals(this.instance, that.getInstance());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instance
-    );
+    return Objects.hash(instance);
   }
 }

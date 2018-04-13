@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -58,7 +57,6 @@ public final class UrlMap implements ApiMessage {
     this.tests = null;
   }
 
-
   private UrlMap(
       String creationTimestamp,
       String defaultService,
@@ -70,8 +68,7 @@ public final class UrlMap implements ApiMessage {
       String name,
       List<PathMatcher> pathMatchers,
       String selfLink,
-      List<UrlMapTest> tests
-      ) {
+      List<UrlMapTest> tests) {
     this.creationTimestamp = creationTimestamp;
     this.defaultService = defaultService;
     this.description = description;
@@ -89,7 +86,8 @@ public final class UrlMap implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("defaultService") && defaultService != null) {
       fieldMap.put("defaultService", Collections.singletonList(String.valueOf(defaultService)));
@@ -224,22 +222,24 @@ public final class UrlMap implements ApiMessage {
     return tests;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(UrlMap prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static UrlMap getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final UrlMap DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new UrlMap();
   }
@@ -434,31 +434,20 @@ public final class UrlMap implements ApiMessage {
       return this;
     }
 
-
     public UrlMap build() {
 
-
-
-
-
-
-
-
-
-
       return new UrlMap(
-        creationTimestamp,
-        defaultService,
-        description,
-        fingerprint,
-        hostRules,
-        id,
-        kind,
-        name,
-        pathMatchers,
-        selfLink,
-        tests
-      );
+          creationTimestamp,
+          defaultService,
+          description,
+          fingerprint,
+          hostRules,
+          id,
+          kind,
+          name,
+          pathMatchers,
+          selfLink,
+          tests);
     }
 
     public Builder clone() {
@@ -481,17 +470,38 @@ public final class UrlMap implements ApiMessage {
   @Override
   public String toString() {
     return "UrlMap{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "defaultService=" + defaultService + ", "
-        + "description=" + description + ", "
-        + "fingerprint=" + fingerprint + ", "
-        + "hostRules=" + hostRules + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "pathMatchers=" + pathMatchers + ", "
-        + "selfLink=" + selfLink + ", "
-        + "tests=" + tests
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "defaultService="
+        + defaultService
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "hostRules="
+        + hostRules
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "pathMatchers="
+        + pathMatchers
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "tests="
+        + tests
         + "}";
   }
 
@@ -502,19 +512,17 @@ public final class UrlMap implements ApiMessage {
     }
     if (o instanceof UrlMap) {
       UrlMap that = (UrlMap) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.defaultService, that.getDefaultService()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.hostRules, that.getHostRulesList()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.pathMatchers, that.getPathMatchersList()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.tests, that.getTestsList())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.defaultService, that.getDefaultService())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.hostRules, that.getHostRulesList())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.pathMatchers, that.getPathMatchersList())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.tests, that.getTestsList());
     }
     return false;
   }
@@ -522,17 +530,16 @@ public final class UrlMap implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      defaultService,
-      description,
-      fingerprint,
-      hostRules,
-      id,
-      kind,
-      name,
-      pathMatchers,
-      selfLink,
-      tests
-    );
+        creationTimestamp,
+        defaultService,
+        description,
+        fingerprint,
+        hostRules,
+        id,
+        kind,
+        name,
+        pathMatchers,
+        selfLink,
+        tests);
   }
 }

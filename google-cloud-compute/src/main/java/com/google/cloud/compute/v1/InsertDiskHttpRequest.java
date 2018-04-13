@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -58,7 +55,6 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     this.zone = null;
   }
 
-
   private InsertDiskHttpRequest(
       String access_token,
       String callback,
@@ -70,8 +66,7 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       String requestId,
       String sourceImage,
       String userIp,
-      String zone
-      ) {
+      String zone) {
     this.access_token = access_token;
     this.callback = callback;
     this.diskResource = diskResource;
@@ -212,22 +207,24 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertDiskHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertDiskHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertDiskHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertDiskHttpRequest();
   }
@@ -398,18 +395,8 @@ public final class InsertDiskHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertDiskHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
-
-
 
       if (zone == null) {
         missing += " zone";
@@ -418,18 +405,17 @@ public final class InsertDiskHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertDiskHttpRequest(
-        access_token,
-        callback,
-        diskResource,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        sourceImage,
-        userIp,
-        zone
-      );
+          access_token,
+          callback,
+          diskResource,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          sourceImage,
+          userIp,
+          zone);
     }
 
     public Builder clone() {
@@ -452,17 +438,38 @@ public final class InsertDiskHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertDiskHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "diskResource=" + diskResource + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "sourceImage=" + sourceImage + ", "
-        + "userIp=" + userIp + ", "
-        + "zone=" + zone
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "diskResource="
+        + diskResource
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "sourceImage="
+        + sourceImage
+        + ", "
+        + "userIp="
+        + userIp
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -473,19 +480,17 @@ public final class InsertDiskHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertDiskHttpRequest) {
       InsertDiskHttpRequest that = (InsertDiskHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.diskResource, that.getDiskResource()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.sourceImage, that.getSourceImage()) &&
-          Objects.equals(this.userIp, that.getUserIp()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.diskResource, that.getDiskResource())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.sourceImage, that.getSourceImage())
+          && Objects.equals(this.userIp, that.getUserIp())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -493,17 +498,16 @@ public final class InsertDiskHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      diskResource,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      sourceImage,
-      userIp,
-      zone
-    );
+        access_token,
+        callback,
+        diskResource,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        sourceImage,
+        userIp,
+        zone);
   }
 }

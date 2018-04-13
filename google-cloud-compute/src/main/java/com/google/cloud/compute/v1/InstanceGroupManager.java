@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -68,7 +67,6 @@ public final class InstanceGroupManager implements ApiMessage {
     this.zone = null;
   }
 
-
   private InstanceGroupManager(
       String baseInstanceName,
       String creationTimestamp,
@@ -85,8 +83,7 @@ public final class InstanceGroupManager implements ApiMessage {
       String selfLink,
       List<String> targetPools,
       Integer targetSize,
-      String zone
-      ) {
+      String zone) {
     this.baseInstanceName = baseInstanceName;
     this.creationTimestamp = creationTimestamp;
     this.currentActions = currentActions;
@@ -112,7 +109,8 @@ public final class InstanceGroupManager implements ApiMessage {
       fieldMap.put("baseInstanceName", Collections.singletonList(String.valueOf(baseInstanceName)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("currentActions") && currentActions != null) {
       fieldMap.put("currentActions", Collections.singletonList(String.valueOf(currentActions)));
@@ -290,22 +288,24 @@ public final class InstanceGroupManager implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupManager prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupManager getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupManager DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupManager();
   }
@@ -562,41 +562,25 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
-
     public InstanceGroupManager build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new InstanceGroupManager(
-        baseInstanceName,
-        creationTimestamp,
-        currentActions,
-        description,
-        fingerprint,
-        id,
-        instanceGroup,
-        instanceTemplate,
-        kind,
-        name,
-        namedPorts,
-        region,
-        selfLink,
-        targetPools,
-        targetSize,
-        zone
-      );
+          baseInstanceName,
+          creationTimestamp,
+          currentActions,
+          description,
+          fingerprint,
+          id,
+          instanceGroup,
+          instanceTemplate,
+          kind,
+          name,
+          namedPorts,
+          region,
+          selfLink,
+          targetPools,
+          targetSize,
+          zone);
     }
 
     public Builder clone() {
@@ -624,22 +608,53 @@ public final class InstanceGroupManager implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceGroupManager{"
-        + "baseInstanceName=" + baseInstanceName + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "currentActions=" + currentActions + ", "
-        + "description=" + description + ", "
-        + "fingerprint=" + fingerprint + ", "
-        + "id=" + id + ", "
-        + "instanceGroup=" + instanceGroup + ", "
-        + "instanceTemplate=" + instanceTemplate + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "namedPorts=" + namedPorts + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "targetPools=" + targetPools + ", "
-        + "targetSize=" + targetSize + ", "
-        + "zone=" + zone
+        + "baseInstanceName="
+        + baseInstanceName
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "currentActions="
+        + currentActions
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "instanceGroup="
+        + instanceGroup
+        + ", "
+        + "instanceTemplate="
+        + instanceTemplate
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "namedPorts="
+        + namedPorts
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "targetPools="
+        + targetPools
+        + ", "
+        + "targetSize="
+        + targetSize
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -650,24 +665,22 @@ public final class InstanceGroupManager implements ApiMessage {
     }
     if (o instanceof InstanceGroupManager) {
       InstanceGroupManager that = (InstanceGroupManager) o;
-      return
-          Objects.equals(this.baseInstanceName, that.getBaseInstanceName()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.currentActions, that.getCurrentActions()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.instanceGroup, that.getInstanceGroup()) &&
-          Objects.equals(this.instanceTemplate, that.getInstanceTemplate()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.namedPorts, that.getNamedPortsList()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.targetPools, that.getTargetPoolsList()) &&
-          Objects.equals(this.targetSize, that.getTargetSize()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.baseInstanceName, that.getBaseInstanceName())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.currentActions, that.getCurrentActions())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.instanceGroup, that.getInstanceGroup())
+          && Objects.equals(this.instanceTemplate, that.getInstanceTemplate())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.namedPorts, that.getNamedPortsList())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.targetPools, that.getTargetPoolsList())
+          && Objects.equals(this.targetSize, that.getTargetSize())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -675,22 +688,21 @@ public final class InstanceGroupManager implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      baseInstanceName,
-      creationTimestamp,
-      currentActions,
-      description,
-      fingerprint,
-      id,
-      instanceGroup,
-      instanceTemplate,
-      kind,
-      name,
-      namedPorts,
-      region,
-      selfLink,
-      targetPools,
-      targetSize,
-      zone
-    );
+        baseInstanceName,
+        creationTimestamp,
+        currentActions,
+        description,
+        fingerprint,
+        id,
+        instanceGroup,
+        instanceTemplate,
+        kind,
+        name,
+        namedPorts,
+        region,
+        selfLink,
+        targetPools,
+        targetSize,
+        zone);
   }
 }

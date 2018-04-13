@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +57,6 @@ public final class ListRegionInstanceGroupsHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private ListRegionInstanceGroupsHttpRequest(
       String access_token,
       String callback,
@@ -73,8 +69,7 @@ public final class ListRegionInstanceGroupsHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String region,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -226,22 +221,24 @@ public final class ListRegionInstanceGroupsHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ListRegionInstanceGroupsHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ListRegionInstanceGroupsHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ListRegionInstanceGroupsHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ListRegionInstanceGroupsHttpRequest();
   }
@@ -426,18 +423,8 @@ public final class ListRegionInstanceGroupsHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public ListRegionInstanceGroupsHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
-
-
 
       if (region == null) {
         missing += " region";
@@ -447,19 +434,18 @@ public final class ListRegionInstanceGroupsHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ListRegionInstanceGroupsHttpRequest(
-        access_token,
-        callback,
-        fields,
-        filter,
-        key,
-        maxResults,
-        orderBy,
-        pageToken,
-        prettyPrint,
-        quotaUser,
-        region,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          filter,
+          key,
+          maxResults,
+          orderBy,
+          pageToken,
+          prettyPrint,
+          quotaUser,
+          region,
+          userIp);
     }
 
     public Builder clone() {
@@ -483,18 +469,41 @@ public final class ListRegionInstanceGroupsHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "ListRegionInstanceGroupsHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "filter=" + filter + ", "
-        + "key=" + key + ", "
-        + "maxResults=" + maxResults + ", "
-        + "orderBy=" + orderBy + ", "
-        + "pageToken=" + pageToken + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "region=" + region + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "filter="
+        + filter
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "maxResults="
+        + maxResults
+        + ", "
+        + "orderBy="
+        + orderBy
+        + ", "
+        + "pageToken="
+        + pageToken
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -505,20 +514,18 @@ public final class ListRegionInstanceGroupsHttpRequest implements ApiMessage {
     }
     if (o instanceof ListRegionInstanceGroupsHttpRequest) {
       ListRegionInstanceGroupsHttpRequest that = (ListRegionInstanceGroupsHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.filter, that.getFilter()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.maxResults, that.getMaxResults()) &&
-          Objects.equals(this.orderBy, that.getOrderBy()) &&
-          Objects.equals(this.pageToken, that.getPageToken()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.filter, that.getFilter())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.maxResults, that.getMaxResults())
+          && Objects.equals(this.orderBy, that.getOrderBy())
+          && Objects.equals(this.pageToken, that.getPageToken())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -526,18 +533,17 @@ public final class ListRegionInstanceGroupsHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      filter,
-      key,
-      maxResults,
-      orderBy,
-      pageToken,
-      prettyPrint,
-      quotaUser,
-      region,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        filter,
+        key,
+        maxResults,
+        orderBy,
+        pageToken,
+        prettyPrint,
+        quotaUser,
+        region,
+        userIp);
   }
 }

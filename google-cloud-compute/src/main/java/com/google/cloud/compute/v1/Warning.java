@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,12 +41,7 @@ public final class Warning implements ApiMessage {
     this.message = null;
   }
 
-
-  private Warning(
-      String code,
-      List<Data> data,
-      String message
-      ) {
+  private Warning(String code, List<Data> data, String message) {
     this.code = code;
     this.data = data;
     this.message = message;
@@ -104,22 +98,24 @@ public final class Warning implements ApiMessage {
     return message;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Warning prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Warning getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Warning DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Warning();
   }
@@ -186,15 +182,9 @@ public final class Warning implements ApiMessage {
       return this;
     }
 
-
     public Warning build() {
 
-
-      return new Warning(
-        code,
-        data,
-        message
-      );
+      return new Warning(code, data, message);
     }
 
     public Builder clone() {
@@ -208,11 +198,7 @@ public final class Warning implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Warning{"
-        + "code=" + code + ", "
-        + "data=" + data + ", "
-        + "message=" + message
-        + "}";
+    return "Warning{" + "code=" + code + ", " + "data=" + data + ", " + "message=" + message + "}";
   }
 
   @Override
@@ -222,21 +208,15 @@ public final class Warning implements ApiMessage {
     }
     if (o instanceof Warning) {
       Warning that = (Warning) o;
-      return
-          Objects.equals(this.code, that.getCode()) &&
-          Objects.equals(this.data, that.getDataList()) &&
-          Objects.equals(this.message, that.getMessage())
-          ;
+      return Objects.equals(this.code, that.getCode())
+          && Objects.equals(this.data, that.getDataList())
+          && Objects.equals(this.message, that.getMessage());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      code,
-      data,
-      message
-    );
+    return Objects.hash(code, data, message);
   }
 }

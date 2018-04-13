@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -48,15 +45,13 @@ public final class AcceleratorTypeAggregatedList implements ApiMessage {
     this.warning = null;
   }
 
-
   private AcceleratorTypeAggregatedList(
       String id,
       Map<String, AcceleratorTypesScopedList> items,
       String kind,
       String nextPageToken,
       String selfLink,
-      Warning warning
-      ) {
+      Warning warning) {
     this.id = id;
     this.items = items;
     this.kind = kind;
@@ -142,22 +137,24 @@ public final class AcceleratorTypeAggregatedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AcceleratorTypeAggregatedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AcceleratorTypeAggregatedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AcceleratorTypeAggregatedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AcceleratorTypeAggregatedList();
   }
@@ -258,21 +255,9 @@ public final class AcceleratorTypeAggregatedList implements ApiMessage {
       return this;
     }
 
-
     public AcceleratorTypeAggregatedList build() {
 
-
-
-
-
-      return new AcceleratorTypeAggregatedList(
-        id,
-        items,
-        kind,
-        nextPageToken,
-        selfLink,
-        warning
-      );
+      return new AcceleratorTypeAggregatedList(id, items, kind, nextPageToken, selfLink, warning);
     }
 
     public Builder clone() {
@@ -290,12 +275,23 @@ public final class AcceleratorTypeAggregatedList implements ApiMessage {
   @Override
   public String toString() {
     return "AcceleratorTypeAggregatedList{"
-        + "id=" + id + ", "
-        + "items=" + items + ", "
-        + "kind=" + kind + ", "
-        + "nextPageToken=" + nextPageToken + ", "
-        + "selfLink=" + selfLink + ", "
-        + "warning=" + warning
+        + "id="
+        + id
+        + ", "
+        + "items="
+        + items
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "nextPageToken="
+        + nextPageToken
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -306,27 +302,18 @@ public final class AcceleratorTypeAggregatedList implements ApiMessage {
     }
     if (o instanceof AcceleratorTypeAggregatedList) {
       AcceleratorTypeAggregatedList that = (AcceleratorTypeAggregatedList) o;
-      return
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.items, that.getItemsMap()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.id, that.getId())
+          && Objects.equals(this.items, that.getItemsMap())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.nextPageToken, that.getNextPageToken())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      id,
-      items,
-      kind,
-      nextPageToken,
-      selfLink,
-      warning
-    );
+    return Objects.hash(id, items, kind, nextPageToken, selfLink, warning);
   }
 }

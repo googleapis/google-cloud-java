@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.DiskTypeStub;
 import com.google.cloud.compute.v1.stub.DiskTypeStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -58,34 +48,33 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the diskTypeClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the diskTypeClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of DiskTypeSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of DiskTypeSettings to create().
+ * For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,19 +104,14 @@ public class DiskTypeClient implements BackgroundResource {
   private final DiskTypeSettings settings;
   private final DiskTypeStub stub;
 
-
-
-  /**
-   * Constructs an instance of DiskTypeClient with default settings.
-   */
+  /** Constructs an instance of DiskTypeClient with default settings. */
   public static final DiskTypeClient create() throws IOException {
     return create(DiskTypeSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of DiskTypeClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of DiskTypeClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final DiskTypeClient create(DiskTypeSettings settings) throws IOException {
     return new DiskTypeClient(settings);
@@ -143,9 +127,8 @@ public class DiskTypeClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of DiskTypeClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of DiskTypeClient, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected DiskTypeClient(DiskTypeSettings settings) throws IOException {
     this.settings = settings;
@@ -167,12 +150,12 @@ public class DiskTypeClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of disk types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -189,8 +172,8 @@ public class DiskTypeClient implements BackgroundResource {
   public final AggregatedListDiskTypesPagedResponse aggregatedListDiskTypes(ProjectName project) {
     AggregatedListDiskTypesHttpRequest request =
         AggregatedListDiskTypesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListDiskTypes(request);
   }
 
@@ -198,7 +181,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of disk types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -214,9 +198,7 @@ public class DiskTypeClient implements BackgroundResource {
   @BetaApi
   public final AggregatedListDiskTypesPagedResponse aggregatedListDiskTypes(String project) {
     AggregatedListDiskTypesHttpRequest request =
-        AggregatedListDiskTypesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListDiskTypesHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListDiskTypes(request);
   }
 
@@ -224,7 +206,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of disk types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -241,16 +224,17 @@ public class DiskTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListDiskTypesPagedResponse aggregatedListDiskTypes(AggregatedListDiskTypesHttpRequest request) {
-    return aggregatedListDiskTypesPagedCallable()
-        .call(request);
+  public final AggregatedListDiskTypesPagedResponse aggregatedListDiskTypes(
+      AggregatedListDiskTypesHttpRequest request) {
+    return aggregatedListDiskTypesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of disk types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -266,7 +250,9 @@ public class DiskTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListDiskTypesHttpRequest, AggregatedListDiskTypesPagedResponse> aggregatedListDiskTypesPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListDiskTypesHttpRequest, AggregatedListDiskTypesPagedResponse>
+      aggregatedListDiskTypesPagedCallable() {
     return stub.aggregatedListDiskTypesPagedCallable();
   }
 
@@ -274,7 +260,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of disk types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -297,7 +284,8 @@ public class DiskTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList> aggregatedListDiskTypesCallable() {
+  public final UnaryCallable<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>
+      aggregatedListDiskTypesCallable() {
     return stub.aggregatedListDiskTypesCallable();
   }
 
@@ -305,7 +293,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Returns the specified disk type. Get a list of available disk types by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneDiskTypeName diskType = ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
@@ -321,8 +310,8 @@ public class DiskTypeClient implements BackgroundResource {
 
     GetDiskTypeHttpRequest request =
         GetDiskTypeHttpRequest.newBuilder()
-        .setDiskType(diskType == null ? null : diskType.toString())
-        .build();
+            .setDiskType(diskType == null ? null : diskType.toString())
+            .build();
     return getDiskType(request);
   }
 
@@ -330,7 +319,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Returns the specified disk type. Get a list of available disk types by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneDiskTypeName diskType = ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
@@ -345,9 +335,7 @@ public class DiskTypeClient implements BackgroundResource {
   public final DiskType getDiskType(String diskType) {
 
     GetDiskTypeHttpRequest request =
-        GetDiskTypeHttpRequest.newBuilder()
-        .setDiskType(diskType)
-        .build();
+        GetDiskTypeHttpRequest.newBuilder().setDiskType(diskType).build();
     return getDiskType(request);
   }
 
@@ -355,7 +343,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Returns the specified disk type. Get a list of available disk types by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneDiskTypeName diskType = ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
@@ -378,7 +367,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Returns the specified disk type. Get a list of available disk types by making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneDiskTypeName diskType = ProjectZoneDiskTypeName.of("[PROJECT]", "[ZONE]", "[DISK_TYPE]");
@@ -400,7 +390,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of disk types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -417,8 +408,8 @@ public class DiskTypeClient implements BackgroundResource {
   public final ListDiskTypesPagedResponse listDiskTypes(ProjectZoneName zone) {
     ListDiskTypesHttpRequest request =
         ListDiskTypesHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .build();
     return listDiskTypes(request);
   }
 
@@ -426,7 +417,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of disk types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -441,10 +433,7 @@ public class DiskTypeClient implements BackgroundResource {
    */
   @BetaApi
   public final ListDiskTypesPagedResponse listDiskTypes(String zone) {
-    ListDiskTypesHttpRequest request =
-        ListDiskTypesHttpRequest.newBuilder()
-        .setZone(zone)
-        .build();
+    ListDiskTypesHttpRequest request = ListDiskTypesHttpRequest.newBuilder().setZone(zone).build();
     return listDiskTypes(request);
   }
 
@@ -452,7 +441,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of disk types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -470,15 +460,15 @@ public class DiskTypeClient implements BackgroundResource {
    */
   @BetaApi
   public final ListDiskTypesPagedResponse listDiskTypes(ListDiskTypesHttpRequest request) {
-    return listDiskTypesPagedCallable()
-        .call(request);
+    return listDiskTypesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of disk types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -494,7 +484,8 @@ public class DiskTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListDiskTypesHttpRequest, ListDiskTypesPagedResponse> listDiskTypesPagedCallable() {
+  public final UnaryCallable<ListDiskTypesHttpRequest, ListDiskTypesPagedResponse>
+      listDiskTypesPagedCallable() {
     return stub.listDiskTypesPagedCallable();
   }
 
@@ -502,7 +493,8 @@ public class DiskTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of disk types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (DiskTypeClient diskTypeClient = DiskTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -530,7 +522,7 @@ public class DiskTypeClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -559,15 +551,14 @@ public class DiskTypeClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListDiskTypesPagedResponse extends AbstractPagedListResponse<
-      AggregatedListDiskTypesHttpRequest,
-      DiskTypeAggregatedList,
-      DiskTypesScopedList,
-      AggregatedListDiskTypesPage,
-      AggregatedListDiskTypesFixedSizeCollection> {
+  public static class AggregatedListDiskTypesPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList,
+          AggregatedListDiskTypesPage, AggregatedListDiskTypesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListDiskTypesPagedResponse> createAsync(
-        PageContext<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList> context,
+        PageContext<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList>
+            context,
         ApiFuture<DiskTypeAggregatedList> futureResponse) {
       ApiFuture<AggregatedListDiskTypesPage> futurePage =
           AggregatedListDiskTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -584,18 +575,16 @@ public class DiskTypeClient implements BackgroundResource {
     private AggregatedListDiskTypesPagedResponse(AggregatedListDiskTypesPage page) {
       super(page, AggregatedListDiskTypesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListDiskTypesPage extends AbstractPage<
-      AggregatedListDiskTypesHttpRequest,
-      DiskTypeAggregatedList,
-      DiskTypesScopedList,
-      AggregatedListDiskTypesPage> {
+  public static class AggregatedListDiskTypesPage
+      extends AbstractPage<
+          AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList,
+          AggregatedListDiskTypesPage> {
 
     private AggregatedListDiskTypesPage(
-        PageContext<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList> context,
+        PageContext<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList>
+            context,
         DiskTypeAggregatedList response) {
       super(context, response);
     }
@@ -606,31 +595,28 @@ public class DiskTypeClient implements BackgroundResource {
 
     @Override
     protected AggregatedListDiskTypesPage createPage(
-        PageContext<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList> context,
+        PageContext<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList>
+            context,
         DiskTypeAggregatedList response) {
       return new AggregatedListDiskTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListDiskTypesPage> createPageAsync(
-        PageContext<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList> context,
+        PageContext<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList>
+            context,
         ApiFuture<DiskTypeAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListDiskTypesFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListDiskTypesHttpRequest,
-      DiskTypeAggregatedList,
-      DiskTypesScopedList,
-      AggregatedListDiskTypesPage,
-      AggregatedListDiskTypesFixedSizeCollection> {
+  public static class AggregatedListDiskTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList, DiskTypesScopedList,
+          AggregatedListDiskTypesPage, AggregatedListDiskTypesFixedSizeCollection> {
 
-    private AggregatedListDiskTypesFixedSizeCollection(List<AggregatedListDiskTypesPage> pages, int collectionSize) {
+    private AggregatedListDiskTypesFixedSizeCollection(
+        List<AggregatedListDiskTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -643,15 +629,12 @@ public class DiskTypeClient implements BackgroundResource {
         List<AggregatedListDiskTypesPage> pages, int collectionSize) {
       return new AggregatedListDiskTypesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListDiskTypesPagedResponse extends AbstractPagedListResponse<
-      ListDiskTypesHttpRequest,
-      DiskTypeList,
-      DiskType,
-      ListDiskTypesPage,
-      ListDiskTypesFixedSizeCollection> {
+
+  public static class ListDiskTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListDiskTypesHttpRequest, DiskTypeList, DiskType, ListDiskTypesPage,
+          ListDiskTypesFixedSizeCollection> {
 
     public static ApiFuture<ListDiskTypesPagedResponse> createAsync(
         PageContext<ListDiskTypesHttpRequest, DiskTypeList, DiskType> context,
@@ -671,15 +654,10 @@ public class DiskTypeClient implements BackgroundResource {
     private ListDiskTypesPagedResponse(ListDiskTypesPage page) {
       super(page, ListDiskTypesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListDiskTypesPage extends AbstractPage<
-      ListDiskTypesHttpRequest,
-      DiskTypeList,
-      DiskType,
-      ListDiskTypesPage> {
+  public static class ListDiskTypesPage
+      extends AbstractPage<ListDiskTypesHttpRequest, DiskTypeList, DiskType, ListDiskTypesPage> {
 
     private ListDiskTypesPage(
         PageContext<ListDiskTypesHttpRequest, DiskTypeList, DiskType> context,
@@ -704,18 +682,12 @@ public class DiskTypeClient implements BackgroundResource {
         ApiFuture<DiskTypeList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListDiskTypesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListDiskTypesHttpRequest,
-      DiskTypeList,
-      DiskType,
-      ListDiskTypesPage,
-      ListDiskTypesFixedSizeCollection> {
+  public static class ListDiskTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDiskTypesHttpRequest, DiskTypeList, DiskType, ListDiskTypesPage,
+          ListDiskTypesFixedSizeCollection> {
 
     private ListDiskTypesFixedSizeCollection(List<ListDiskTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -730,7 +702,5 @@ public class DiskTypeClient implements BackgroundResource {
         List<ListDiskTypesPage> pages, int collectionSize) {
       return new ListDiskTypesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

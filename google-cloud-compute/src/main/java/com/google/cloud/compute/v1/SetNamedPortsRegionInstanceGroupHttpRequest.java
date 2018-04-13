@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +36,8 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
-  private final RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource;
+  private final RegionInstanceGroupsSetNamedPortsRequest
+      regionInstanceGroupsSetNamedPortsRequestResource;
   private final String requestId;
   private final String userIp;
 
@@ -56,7 +54,6 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
     this.userIp = null;
   }
 
-
   private SetNamedPortsRegionInstanceGroupHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +64,7 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
       String quotaUser,
       RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -76,7 +72,8 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
-    this.regionInstanceGroupsSetNamedPortsRequestResource = regionInstanceGroupsSetNamedPortsRequestResource;
+    this.regionInstanceGroupsSetNamedPortsRequestResource =
+        regionInstanceGroupsSetNamedPortsRequestResource;
     this.requestId = requestId;
     this.userIp = userIp;
   }
@@ -105,8 +102,12 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
     }
-    if (fieldNames.contains("regionInstanceGroupsSetNamedPortsRequestResource") && regionInstanceGroupsSetNamedPortsRequestResource != null) {
-      fieldMap.put("regionInstanceGroupsSetNamedPortsRequestResource", Collections.singletonList(String.valueOf(regionInstanceGroupsSetNamedPortsRequestResource)));
+    if (fieldNames.contains("regionInstanceGroupsSetNamedPortsRequestResource")
+        && regionInstanceGroupsSetNamedPortsRequestResource != null) {
+      fieldMap.put(
+          "regionInstanceGroupsSetNamedPortsRequestResource",
+          Collections.singletonList(
+              String.valueOf(regionInstanceGroupsSetNamedPortsRequestResource)));
     }
     if (fieldNames.contains("requestId") && requestId != null) {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
@@ -186,7 +187,8 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
     return quotaUser;
   }
 
-  public RegionInstanceGroupsSetNamedPortsRequest getRegionInstanceGroupsSetNamedPortsRequestResource() {
+  public RegionInstanceGroupsSetNamedPortsRequest
+      getRegionInstanceGroupsSetNamedPortsRequestResource() {
     return regionInstanceGroupsSetNamedPortsRequestResource;
   }
 
@@ -198,22 +200,24 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetNamedPortsRegionInstanceGroupHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetNamedPortsRegionInstanceGroupHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetNamedPortsRegionInstanceGroupHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetNamedPortsRegionInstanceGroupHttpRequest();
   }
@@ -226,7 +230,8 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
     private String key;
     private String prettyPrint;
     private String quotaUser;
-    private RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource;
+    private RegionInstanceGroupsSetNamedPortsRequest
+        regionInstanceGroupsSetNamedPortsRequestResource;
     private String requestId;
     private String userIp;
 
@@ -256,7 +261,8 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
         this.quotaUser = other.quotaUser;
       }
       if (other.getRegionInstanceGroupsSetNamedPortsRequestResource() != null) {
-        this.regionInstanceGroupsSetNamedPortsRequestResource = other.regionInstanceGroupsSetNamedPortsRequestResource;
+        this.regionInstanceGroupsSetNamedPortsRequestResource =
+            other.regionInstanceGroupsSetNamedPortsRequestResource;
       }
       if (other.getRequestId() != null) {
         this.requestId = other.requestId;
@@ -275,7 +281,8 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
-      this.regionInstanceGroupsSetNamedPortsRequestResource = source.regionInstanceGroupsSetNamedPortsRequestResource;
+      this.regionInstanceGroupsSetNamedPortsRequestResource =
+          source.regionInstanceGroupsSetNamedPortsRequestResource;
       this.requestId = source.requestId;
       this.userIp = source.userIp;
     }
@@ -343,12 +350,15 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
       return this;
     }
 
-    public RegionInstanceGroupsSetNamedPortsRequest getRegionInstanceGroupsSetNamedPortsRequestResource() {
+    public RegionInstanceGroupsSetNamedPortsRequest
+        getRegionInstanceGroupsSetNamedPortsRequestResource() {
       return regionInstanceGroupsSetNamedPortsRequestResource;
     }
 
-    public Builder setRegionInstanceGroupsSetNamedPortsRequestResource(RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource) {
-      this.regionInstanceGroupsSetNamedPortsRequestResource = regionInstanceGroupsSetNamedPortsRequestResource;
+    public Builder setRegionInstanceGroupsSetNamedPortsRequestResource(
+        RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource) {
+      this.regionInstanceGroupsSetNamedPortsRequestResource =
+          regionInstanceGroupsSetNamedPortsRequestResource;
       return this;
     }
 
@@ -370,36 +380,27 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
       return this;
     }
 
-
     public SetNamedPortsRegionInstanceGroupHttpRequest build() {
       String missing = "";
-
-
 
       if (instanceGroup == null) {
         missing += " instanceGroup";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetNamedPortsRegionInstanceGroupHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroup,
-        key,
-        prettyPrint,
-        quotaUser,
-        regionInstanceGroupsSetNamedPortsRequestResource,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroup,
+          key,
+          prettyPrint,
+          quotaUser,
+          regionInstanceGroupsSetNamedPortsRequestResource,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -411,7 +412,8 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
-      newBuilder.setRegionInstanceGroupsSetNamedPortsRequestResource(this.regionInstanceGroupsSetNamedPortsRequestResource);
+      newBuilder.setRegionInstanceGroupsSetNamedPortsRequestResource(
+          this.regionInstanceGroupsSetNamedPortsRequestResource);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
@@ -421,16 +423,35 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
   @Override
   public String toString() {
     return "SetNamedPortsRegionInstanceGroupHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroup=" + instanceGroup + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "regionInstanceGroupsSetNamedPortsRequestResource=" + regionInstanceGroupsSetNamedPortsRequestResource + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroup="
+        + instanceGroup
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "regionInstanceGroupsSetNamedPortsRequestResource="
+        + regionInstanceGroupsSetNamedPortsRequestResource
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +461,20 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
       return true;
     }
     if (o instanceof SetNamedPortsRegionInstanceGroupHttpRequest) {
-      SetNamedPortsRegionInstanceGroupHttpRequest that = (SetNamedPortsRegionInstanceGroupHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroup, that.getInstanceGroup()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.regionInstanceGroupsSetNamedPortsRequestResource, that.getRegionInstanceGroupsSetNamedPortsRequestResource()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      SetNamedPortsRegionInstanceGroupHttpRequest that =
+          (SetNamedPortsRegionInstanceGroupHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceGroup, that.getInstanceGroup())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(
+              this.regionInstanceGroupsSetNamedPortsRequestResource,
+              that.getRegionInstanceGroupsSetNamedPortsRequestResource())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +482,15 @@ public final class SetNamedPortsRegionInstanceGroupHttpRequest implements ApiMes
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroup,
-      key,
-      prettyPrint,
-      quotaUser,
-      regionInstanceGroupsSetNamedPortsRequestResource,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroup,
+        key,
+        prettyPrint,
+        quotaUser,
+        regionInstanceGroupsSetNamedPortsRequestResource,
+        requestId,
+        userIp);
   }
 }

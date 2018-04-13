@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +57,6 @@ public final class AggregatedListRoutersHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private AggregatedListRoutersHttpRequest(
       String access_token,
       String callback,
@@ -73,8 +69,7 @@ public final class AggregatedListRoutersHttpRequest implements ApiMessage {
       String prettyPrint,
       String project,
       String quotaUser,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -226,22 +221,24 @@ public final class AggregatedListRoutersHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AggregatedListRoutersHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AggregatedListRoutersHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AggregatedListRoutersHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AggregatedListRoutersHttpRequest();
   }
@@ -426,40 +423,29 @@ public final class AggregatedListRoutersHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public AggregatedListRoutersHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
-
 
       if (project == null) {
         missing += " project";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new AggregatedListRoutersHttpRequest(
-        access_token,
-        callback,
-        fields,
-        filter,
-        key,
-        maxResults,
-        orderBy,
-        pageToken,
-        prettyPrint,
-        project,
-        quotaUser,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          filter,
+          key,
+          maxResults,
+          orderBy,
+          pageToken,
+          prettyPrint,
+          project,
+          quotaUser,
+          userIp);
     }
 
     public Builder clone() {
@@ -483,18 +469,41 @@ public final class AggregatedListRoutersHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "AggregatedListRoutersHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "filter=" + filter + ", "
-        + "key=" + key + ", "
-        + "maxResults=" + maxResults + ", "
-        + "orderBy=" + orderBy + ", "
-        + "pageToken=" + pageToken + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "project=" + project + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "filter="
+        + filter
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "maxResults="
+        + maxResults
+        + ", "
+        + "orderBy="
+        + orderBy
+        + ", "
+        + "pageToken="
+        + pageToken
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "project="
+        + project
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -505,20 +514,18 @@ public final class AggregatedListRoutersHttpRequest implements ApiMessage {
     }
     if (o instanceof AggregatedListRoutersHttpRequest) {
       AggregatedListRoutersHttpRequest that = (AggregatedListRoutersHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.filter, that.getFilter()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.maxResults, that.getMaxResults()) &&
-          Objects.equals(this.orderBy, that.getOrderBy()) &&
-          Objects.equals(this.pageToken, that.getPageToken()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.filter, that.getFilter())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.maxResults, that.getMaxResults())
+          && Objects.equals(this.orderBy, that.getOrderBy())
+          && Objects.equals(this.pageToken, that.getPageToken())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -526,18 +533,17 @@ public final class AggregatedListRoutersHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      filter,
-      key,
-      maxResults,
-      orderBy,
-      pageToken,
-      prettyPrint,
-      project,
-      quotaUser,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        filter,
+        key,
+        maxResults,
+        orderBy,
+        pageToken,
+        prettyPrint,
+        project,
+        quotaUser,
+        userIp);
   }
 }

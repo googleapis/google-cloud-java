@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +51,6 @@ public final class DeleteHttpHealthCheckHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private DeleteHttpHealthCheckHttpRequest(
       String access_token,
       String callback,
@@ -64,8 +60,7 @@ public final class DeleteHttpHealthCheckHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -184,22 +179,24 @@ public final class DeleteHttpHealthCheckHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DeleteHttpHealthCheckHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeleteHttpHealthCheckHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DeleteHttpHealthCheckHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DeleteHttpHealthCheckHttpRequest();
   }
@@ -342,34 +339,26 @@ public final class DeleteHttpHealthCheckHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public DeleteHttpHealthCheckHttpRequest build() {
       String missing = "";
-
-
 
       if (httpHealthCheck == null) {
         missing += " httpHealthCheck";
       }
 
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new DeleteHttpHealthCheckHttpRequest(
-        access_token,
-        callback,
-        fields,
-        httpHealthCheck,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          httpHealthCheck,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -390,15 +379,32 @@ public final class DeleteHttpHealthCheckHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "DeleteHttpHealthCheckHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "httpHealthCheck=" + httpHealthCheck + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "httpHealthCheck="
+        + httpHealthCheck
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -409,17 +415,15 @@ public final class DeleteHttpHealthCheckHttpRequest implements ApiMessage {
     }
     if (o instanceof DeleteHttpHealthCheckHttpRequest) {
       DeleteHttpHealthCheckHttpRequest that = (DeleteHttpHealthCheckHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.httpHealthCheck, that.getHttpHealthCheck()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.httpHealthCheck, that.getHttpHealthCheck())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -427,15 +431,14 @@ public final class DeleteHttpHealthCheckHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      httpHealthCheck,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        httpHealthCheck,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

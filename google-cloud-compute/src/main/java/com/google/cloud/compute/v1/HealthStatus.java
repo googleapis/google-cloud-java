@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -44,13 +41,7 @@ public final class HealthStatus implements ApiMessage {
     this.port = null;
   }
 
-
-  private HealthStatus(
-      String healthState,
-      String instance,
-      String ipAddress,
-      Integer port
-      ) {
+  private HealthStatus(String healthState, String instance, String ipAddress, Integer port) {
     this.healthState = healthState;
     this.instance = instance;
     this.ipAddress = ipAddress;
@@ -114,22 +105,24 @@ public final class HealthStatus implements ApiMessage {
     return port;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(HealthStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static HealthStatus getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final HealthStatus DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new HealthStatus();
   }
@@ -202,17 +195,9 @@ public final class HealthStatus implements ApiMessage {
       return this;
     }
 
-
     public HealthStatus build() {
 
-
-
-      return new HealthStatus(
-        healthState,
-        instance,
-        ipAddress,
-        port
-      );
+      return new HealthStatus(healthState, instance, ipAddress, port);
     }
 
     public Builder clone() {
@@ -228,10 +213,17 @@ public final class HealthStatus implements ApiMessage {
   @Override
   public String toString() {
     return "HealthStatus{"
-        + "healthState=" + healthState + ", "
-        + "instance=" + instance + ", "
-        + "ipAddress=" + ipAddress + ", "
-        + "port=" + port
+        + "healthState="
+        + healthState
+        + ", "
+        + "instance="
+        + instance
+        + ", "
+        + "ipAddress="
+        + ipAddress
+        + ", "
+        + "port="
+        + port
         + "}";
   }
 
@@ -242,23 +234,16 @@ public final class HealthStatus implements ApiMessage {
     }
     if (o instanceof HealthStatus) {
       HealthStatus that = (HealthStatus) o;
-      return
-          Objects.equals(this.healthState, that.getHealthState()) &&
-          Objects.equals(this.instance, that.getInstance()) &&
-          Objects.equals(this.ipAddress, that.getIpAddress()) &&
-          Objects.equals(this.port, that.getPort())
-          ;
+      return Objects.equals(this.healthState, that.getHealthState())
+          && Objects.equals(this.instance, that.getInstance())
+          && Objects.equals(this.ipAddress, that.getIpAddress())
+          && Objects.equals(this.port, that.getPort());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      healthState,
-      instance,
-      ipAddress,
-      port
-    );
+    return Objects.hash(healthState, instance, ipAddress, port);
   }
 }

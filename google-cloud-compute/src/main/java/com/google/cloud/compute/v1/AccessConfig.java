@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -48,15 +45,13 @@ public final class AccessConfig implements ApiMessage {
     this.type = null;
   }
 
-
   private AccessConfig(
       String kind,
       String name,
       String natIP,
       String publicPtrDomainName,
       Boolean setPublicPtr,
-      String type
-      ) {
+      String type) {
     this.kind = kind;
     this.name = name;
     this.natIP = natIP;
@@ -78,7 +73,8 @@ public final class AccessConfig implements ApiMessage {
       fieldMap.put("natIP", Collections.singletonList(String.valueOf(natIP)));
     }
     if (fieldNames.contains("publicPtrDomainName") && publicPtrDomainName != null) {
-      fieldMap.put("publicPtrDomainName", Collections.singletonList(String.valueOf(publicPtrDomainName)));
+      fieldMap.put(
+          "publicPtrDomainName", Collections.singletonList(String.valueOf(publicPtrDomainName)));
     }
     if (fieldNames.contains("setPublicPtr") && setPublicPtr != null) {
       fieldMap.put("setPublicPtr", Collections.singletonList(String.valueOf(setPublicPtr)));
@@ -142,22 +138,24 @@ public final class AccessConfig implements ApiMessage {
     return type;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(AccessConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static AccessConfig getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final AccessConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new AccessConfig();
   }
@@ -258,21 +256,9 @@ public final class AccessConfig implements ApiMessage {
       return this;
     }
 
-
     public AccessConfig build() {
 
-
-
-
-
-      return new AccessConfig(
-        kind,
-        name,
-        natIP,
-        publicPtrDomainName,
-        setPublicPtr,
-        type
-      );
+      return new AccessConfig(kind, name, natIP, publicPtrDomainName, setPublicPtr, type);
     }
 
     public Builder clone() {
@@ -290,12 +276,23 @@ public final class AccessConfig implements ApiMessage {
   @Override
   public String toString() {
     return "AccessConfig{"
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "natIP=" + natIP + ", "
-        + "publicPtrDomainName=" + publicPtrDomainName + ", "
-        + "setPublicPtr=" + setPublicPtr + ", "
-        + "type=" + type
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "natIP="
+        + natIP
+        + ", "
+        + "publicPtrDomainName="
+        + publicPtrDomainName
+        + ", "
+        + "setPublicPtr="
+        + setPublicPtr
+        + ", "
+        + "type="
+        + type
         + "}";
   }
 
@@ -306,27 +303,18 @@ public final class AccessConfig implements ApiMessage {
     }
     if (o instanceof AccessConfig) {
       AccessConfig that = (AccessConfig) o;
-      return
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.natIP, that.getNatIP()) &&
-          Objects.equals(this.publicPtrDomainName, that.getPublicPtrDomainName()) &&
-          Objects.equals(this.setPublicPtr, that.getSetPublicPtr()) &&
-          Objects.equals(this.type, that.getType())
-          ;
+      return Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.natIP, that.getNatIP())
+          && Objects.equals(this.publicPtrDomainName, that.getPublicPtrDomainName())
+          && Objects.equals(this.setPublicPtr, that.getSetPublicPtr())
+          && Objects.equals(this.type, that.getType());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      kind,
-      name,
-      natIP,
-      publicPtrDomainName,
-      setPublicPtr,
-      type
-    );
+    return Objects.hash(kind, name, natIP, publicPtrDomainName, setPublicPtr, type);
   }
 }

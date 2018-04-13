@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.ZoneOperationClient.ListZoneOperationsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -23,9 +25,6 @@ import com.google.cloud.compute.v1.GetZoneOperationHttpRequest;
 import com.google.cloud.compute.v1.ListZoneOperationsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.OperationList;
-import com.google.cloud.compute.v1.ProjectZoneName;
-import com.google.cloud.compute.v1.ProjectZoneOperationName;
-import static com.google.cloud.compute.v1.ZoneOperationClient.ListZoneOperationsPagedResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -38,7 +37,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ZoneOperationStub implements BackgroundResource {
 
-
   @BetaApi
   public UnaryCallable<DeleteZoneOperationHttpRequest, Void> deleteZoneOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteZoneOperationCallable()");
@@ -50,7 +48,8 @@ public abstract class ZoneOperationStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse> listZoneOperationsPagedCallable() {
+  public UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse>
+      listZoneOperationsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listZoneOperationsPagedCallable()");
   }
 
@@ -59,4 +58,6 @@ public abstract class ZoneOperationStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listZoneOperationsCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

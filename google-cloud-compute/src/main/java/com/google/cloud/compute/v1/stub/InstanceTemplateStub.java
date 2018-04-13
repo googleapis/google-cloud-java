@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InstanceTemplateClient.ListInstanceTemplatesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -22,12 +24,9 @@ import com.google.cloud.compute.v1.DeleteInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
-import static com.google.cloud.compute.v1.InstanceTemplateClient.ListInstanceTemplatesPagedResponse;
 import com.google.cloud.compute.v1.InstanceTemplateList;
 import com.google.cloud.compute.v1.ListInstanceTemplatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectInstanceTemplateName;
-import com.google.cloud.compute.v1.ProjectName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -40,30 +39,37 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class InstanceTemplateStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation> deleteInstanceTemplateCallable() {
+  public UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation>
+      deleteInstanceTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceTemplateCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate> getInstanceTemplateCallable() {
+  public UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate>
+      getInstanceTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: getInstanceTemplateCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<InsertInstanceTemplateHttpRequest, Operation> insertInstanceTemplateCallable() {
+  public UnaryCallable<InsertInstanceTemplateHttpRequest, Operation>
+      insertInstanceTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: insertInstanceTemplateCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse> listInstanceTemplatesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInstanceTemplatesPagedCallable()");
+  public UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse>
+      listInstanceTemplatesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listInstanceTemplatesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList> listInstanceTemplatesCallable() {
+  public UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
+      listInstanceTemplatesCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstanceTemplatesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class ResizeDiskHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private ResizeDiskHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class ResizeDiskHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.disk = disk;
@@ -94,7 +89,9 @@ public final class ResizeDiskHttpRequest implements ApiMessage {
       fieldMap.put("disk", Collections.singletonList(String.valueOf(disk)));
     }
     if (fieldNames.contains("disksResizeRequestResource") && disksResizeRequestResource != null) {
-      fieldMap.put("disksResizeRequestResource", Collections.singletonList(String.valueOf(disksResizeRequestResource)));
+      fieldMap.put(
+          "disksResizeRequestResource",
+          Collections.singletonList(String.valueOf(disksResizeRequestResource)));
     }
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
@@ -198,22 +195,24 @@ public final class ResizeDiskHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ResizeDiskHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ResizeDiskHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ResizeDiskHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ResizeDiskHttpRequest();
   }
@@ -370,36 +369,27 @@ public final class ResizeDiskHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public ResizeDiskHttpRequest build() {
       String missing = "";
-
 
       if (disk == null) {
         missing += " disk";
       }
 
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ResizeDiskHttpRequest(
-        access_token,
-        callback,
-        disk,
-        disksResizeRequestResource,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          disk,
+          disksResizeRequestResource,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class ResizeDiskHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "ResizeDiskHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "disk=" + disk + ", "
-        + "disksResizeRequestResource=" + disksResizeRequestResource + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "disk="
+        + disk
+        + ", "
+        + "disksResizeRequestResource="
+        + disksResizeRequestResource
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class ResizeDiskHttpRequest implements ApiMessage {
     }
     if (o instanceof ResizeDiskHttpRequest) {
       ResizeDiskHttpRequest that = (ResizeDiskHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.disk, that.getDisk()) &&
-          Objects.equals(this.disksResizeRequestResource, that.getDisksResizeRequestResource()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.disk, that.getDisk())
+          && Objects.equals(this.disksResizeRequestResource, that.getDisksResizeRequestResource())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class ResizeDiskHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      disk,
-      disksResizeRequestResource,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        disk,
+        disksResizeRequestResource,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

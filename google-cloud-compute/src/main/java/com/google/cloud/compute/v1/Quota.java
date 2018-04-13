@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,12 +39,7 @@ public final class Quota implements ApiMessage {
     this.usage = null;
   }
 
-
-  private Quota(
-      Double limit,
-      String metric,
-      Double usage
-      ) {
+  private Quota(Double limit, String metric, Double usage) {
     this.limit = limit;
     this.metric = metric;
     this.usage = usage;
@@ -100,22 +92,24 @@ public final class Quota implements ApiMessage {
     return usage;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Quota prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Quota getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Quota DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Quota();
   }
@@ -174,15 +168,9 @@ public final class Quota implements ApiMessage {
       return this;
     }
 
-
     public Quota build() {
 
-
-      return new Quota(
-        limit,
-        metric,
-        usage
-      );
+      return new Quota(limit, metric, usage);
     }
 
     public Builder clone() {
@@ -196,11 +184,7 @@ public final class Quota implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Quota{"
-        + "limit=" + limit + ", "
-        + "metric=" + metric + ", "
-        + "usage=" + usage
-        + "}";
+    return "Quota{" + "limit=" + limit + ", " + "metric=" + metric + ", " + "usage=" + usage + "}";
   }
 
   @Override
@@ -210,21 +194,15 @@ public final class Quota implements ApiMessage {
     }
     if (o instanceof Quota) {
       Quota that = (Quota) o;
-      return
-          Objects.equals(this.limit, that.getLimit()) &&
-          Objects.equals(this.metric, that.getMetric()) &&
-          Objects.equals(this.usage, that.getUsage())
-          ;
+      return Objects.equals(this.limit, that.getLimit())
+          && Objects.equals(this.metric, that.getMetric())
+          && Objects.equals(this.usage, that.getUsage());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      limit,
-      metric,
-      usage
-    );
+    return Objects.hash(limit, metric, usage);
   }
 }

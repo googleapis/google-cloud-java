@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -46,14 +43,8 @@ public final class HTTPSHealthCheck implements ApiMessage {
     this.requestPath = null;
   }
 
-
   private HTTPSHealthCheck(
-      String host,
-      Integer port,
-      String portName,
-      String proxyHeader,
-      String requestPath
-      ) {
+      String host, Integer port, String portName, String proxyHeader, String requestPath) {
     this.host = host;
     this.port = port;
     this.portName = portName;
@@ -128,22 +119,24 @@ public final class HTTPSHealthCheck implements ApiMessage {
     return requestPath;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(HTTPSHealthCheck prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static HTTPSHealthCheck getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final HTTPSHealthCheck DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new HTTPSHealthCheck();
   }
@@ -230,19 +223,9 @@ public final class HTTPSHealthCheck implements ApiMessage {
       return this;
     }
 
-
     public HTTPSHealthCheck build() {
 
-
-
-
-      return new HTTPSHealthCheck(
-        host,
-        port,
-        portName,
-        proxyHeader,
-        requestPath
-      );
+      return new HTTPSHealthCheck(host, port, portName, proxyHeader, requestPath);
     }
 
     public Builder clone() {
@@ -259,11 +242,20 @@ public final class HTTPSHealthCheck implements ApiMessage {
   @Override
   public String toString() {
     return "HTTPSHealthCheck{"
-        + "host=" + host + ", "
-        + "port=" + port + ", "
-        + "portName=" + portName + ", "
-        + "proxyHeader=" + proxyHeader + ", "
-        + "requestPath=" + requestPath
+        + "host="
+        + host
+        + ", "
+        + "port="
+        + port
+        + ", "
+        + "portName="
+        + portName
+        + ", "
+        + "proxyHeader="
+        + proxyHeader
+        + ", "
+        + "requestPath="
+        + requestPath
         + "}";
   }
 
@@ -274,25 +266,17 @@ public final class HTTPSHealthCheck implements ApiMessage {
     }
     if (o instanceof HTTPSHealthCheck) {
       HTTPSHealthCheck that = (HTTPSHealthCheck) o;
-      return
-          Objects.equals(this.host, that.getHost()) &&
-          Objects.equals(this.port, that.getPort()) &&
-          Objects.equals(this.portName, that.getPortName()) &&
-          Objects.equals(this.proxyHeader, that.getProxyHeader()) &&
-          Objects.equals(this.requestPath, that.getRequestPath())
-          ;
+      return Objects.equals(this.host, that.getHost())
+          && Objects.equals(this.port, that.getPort())
+          && Objects.equals(this.portName, that.getPortName())
+          && Objects.equals(this.proxyHeader, that.getProxyHeader())
+          && Objects.equals(this.requestPath, that.getRequestPath());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      host,
-      port,
-      portName,
-      proxyHeader,
-      requestPath
-    );
+    return Objects.hash(host, port, portName, proxyHeader, requestPath);
   }
 }

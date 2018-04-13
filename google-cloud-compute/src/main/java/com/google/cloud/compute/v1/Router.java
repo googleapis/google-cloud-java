@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -58,7 +57,6 @@ public final class Router implements ApiMessage {
     this.selfLink = null;
   }
 
-
   private Router(
       RouterBgp bgp,
       List<RouterBgpPeer> bgpPeers,
@@ -70,8 +68,7 @@ public final class Router implements ApiMessage {
       String name,
       String network,
       String region,
-      String selfLink
-      ) {
+      String selfLink) {
     this.bgp = bgp;
     this.bgpPeers = bgpPeers;
     this.creationTimestamp = creationTimestamp;
@@ -99,7 +96,8 @@ public final class Router implements ApiMessage {
       fieldMap.put("bgpPeers", stringList.build());
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -220,22 +218,24 @@ public final class Router implements ApiMessage {
     return selfLink;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Router prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Router getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Router DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Router();
   }
@@ -422,31 +422,20 @@ public final class Router implements ApiMessage {
       return this;
     }
 
-
     public Router build() {
 
-
-
-
-
-
-
-
-
-
       return new Router(
-        bgp,
-        bgpPeers,
-        creationTimestamp,
-        description,
-        id,
-        interfaces,
-        kind,
-        name,
-        network,
-        region,
-        selfLink
-      );
+          bgp,
+          bgpPeers,
+          creationTimestamp,
+          description,
+          id,
+          interfaces,
+          kind,
+          name,
+          network,
+          region,
+          selfLink);
     }
 
     public Builder clone() {
@@ -469,17 +458,38 @@ public final class Router implements ApiMessage {
   @Override
   public String toString() {
     return "Router{"
-        + "bgp=" + bgp + ", "
-        + "bgpPeers=" + bgpPeers + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "interfaces=" + interfaces + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "network=" + network + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink
+        + "bgp="
+        + bgp
+        + ", "
+        + "bgpPeers="
+        + bgpPeers
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "interfaces="
+        + interfaces
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
         + "}";
   }
 
@@ -490,19 +500,17 @@ public final class Router implements ApiMessage {
     }
     if (o instanceof Router) {
       Router that = (Router) o;
-      return
-          Objects.equals(this.bgp, that.getBgp()) &&
-          Objects.equals(this.bgpPeers, that.getBgpPeersList()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.interfaces, that.getInterfacesList()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
-          ;
+      return Objects.equals(this.bgp, that.getBgp())
+          && Objects.equals(this.bgpPeers, that.getBgpPeersList())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.interfaces, that.getInterfacesList())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
   }
@@ -510,17 +518,16 @@ public final class Router implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      bgp,
-      bgpPeers,
-      creationTimestamp,
-      description,
-      id,
-      interfaces,
-      kind,
-      name,
-      network,
-      region,
-      selfLink
-    );
+        bgp,
+        bgpPeers,
+        creationTimestamp,
+        description,
+        id,
+        interfaces,
+        kind,
+        name,
+        network,
+        region,
+        selfLink);
   }
 }

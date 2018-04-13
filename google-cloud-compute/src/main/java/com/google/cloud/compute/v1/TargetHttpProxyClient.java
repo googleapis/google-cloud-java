@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.TargetHttpProxyStub;
 import com.google.cloud.compute.v1.stub.TargetHttpProxyStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -53,40 +43,40 @@ import javax.annotation.Generated;
  * <code>
  * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
  *   String requestId = "";
- *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+ *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
  *   Operation response = targetHttpProxyClient.deleteTargetHttpProxy(requestId, targetHttpProxy);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the targetHttpProxyClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
+ * <p>Note: close() needs to be called on the targetHttpProxyClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of TargetHttpProxySettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,27 +106,23 @@ public class TargetHttpProxyClient implements BackgroundResource {
   private final TargetHttpProxySettings settings;
   private final TargetHttpProxyStub stub;
 
-
-
-  /**
-   * Constructs an instance of TargetHttpProxyClient with default settings.
-   */
+  /** Constructs an instance of TargetHttpProxyClient with default settings. */
   public static final TargetHttpProxyClient create() throws IOException {
     return create(TargetHttpProxySettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of TargetHttpProxyClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of TargetHttpProxyClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final TargetHttpProxyClient create(TargetHttpProxySettings settings) throws IOException {
+  public static final TargetHttpProxyClient create(TargetHttpProxySettings settings)
+      throws IOException {
     return new TargetHttpProxyClient(settings);
   }
 
   /**
-   * Constructs an instance of TargetHttpProxyClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use TargetHttpProxySettings}.
+   * Constructs an instance of TargetHttpProxyClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use TargetHttpProxySettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetHttpProxyClient create(TargetHttpProxyStub stub) {
@@ -144,9 +130,9 @@ public class TargetHttpProxyClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of TargetHttpProxyClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of TargetHttpProxyClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected TargetHttpProxyClient(TargetHttpProxySettings settings) throws IOException {
     this.settings = settings;
@@ -168,36 +154,41 @@ public class TargetHttpProxyClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified TargetHttpProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+   *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
    *   Operation response = targetHttpProxyClient.deleteTargetHttpProxy(requestId, targetHttpProxy);
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetHttpProxy Name of the TargetHttpProxy resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation deleteTargetHttpProxy(String requestId, ProjectTargetHttpProxyName targetHttpProxy) {
+  public final Operation deleteTargetHttpProxy(
+      String requestId, ProjectGlobalTargetHttpProxyName targetHttpProxy) {
 
     DeleteTargetHttpProxyHttpRequest request =
         DeleteTargetHttpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
-        .build();
+            .setRequestId(requestId)
+            .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
+            .build();
     return deleteTargetHttpProxy(request);
   }
 
@@ -205,20 +196,25 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetHttpProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+   *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
    *   Operation response = targetHttpProxyClient.deleteTargetHttpProxy(requestId, targetHttpProxy.toString());
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetHttpProxy Name of the TargetHttpProxy resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -227,9 +223,9 @@ public class TargetHttpProxyClient implements BackgroundResource {
 
     DeleteTargetHttpProxyHttpRequest request =
         DeleteTargetHttpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetHttpProxy(targetHttpProxy)
-        .build();
+            .setRequestId(requestId)
+            .setTargetHttpProxy(targetHttpProxy)
+            .build();
     return deleteTargetHttpProxy(request);
   }
 
@@ -237,11 +233,12 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetHttpProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+   *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
    *   DeleteTargetHttpProxyHttpRequest request = DeleteTargetHttpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setTargetHttpProxy(targetHttpProxy.toString())
@@ -262,11 +259,12 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Deletes the specified TargetHttpProxy resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
-   *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+   *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
    *   DeleteTargetHttpProxyHttpRequest request = DeleteTargetHttpProxyHttpRequest.newBuilder()
    *     .setRequestId(requestId)
    *     .setTargetHttpProxy(targetHttpProxy.toString())
@@ -278,18 +276,21 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<DeleteTargetHttpProxyHttpRequest, Operation> deleteTargetHttpProxyCallable() {
+  public final UnaryCallable<DeleteTargetHttpProxyHttpRequest, Operation>
+      deleteTargetHttpProxyCallable() {
     return stub.deleteTargetHttpProxyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by making a list() request.
+   * Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
-   *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+   *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
    *   TargetHttpProxy response = targetHttpProxyClient.getTargetHttpProxy(targetHttpProxy);
    * }
    * </code></pre>
@@ -298,23 +299,26 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final TargetHttpProxy getTargetHttpProxy(ProjectTargetHttpProxyName targetHttpProxy) {
+  public final TargetHttpProxy getTargetHttpProxy(
+      ProjectGlobalTargetHttpProxyName targetHttpProxy) {
 
     GetTargetHttpProxyHttpRequest request =
         GetTargetHttpProxyHttpRequest.newBuilder()
-        .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
-        .build();
+            .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
+            .build();
     return getTargetHttpProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by making a list() request.
+   * Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
-   *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+   *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
    *   TargetHttpProxy response = targetHttpProxyClient.getTargetHttpProxy(targetHttpProxy.toString());
    * }
    * </code></pre>
@@ -326,20 +330,20 @@ public class TargetHttpProxyClient implements BackgroundResource {
   public final TargetHttpProxy getTargetHttpProxy(String targetHttpProxy) {
 
     GetTargetHttpProxyHttpRequest request =
-        GetTargetHttpProxyHttpRequest.newBuilder()
-        .setTargetHttpProxy(targetHttpProxy)
-        .build();
+        GetTargetHttpProxyHttpRequest.newBuilder().setTargetHttpProxy(targetHttpProxy).build();
     return getTargetHttpProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by making a list() request.
+   * Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
-   *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+   *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
    *   GetTargetHttpProxyHttpRequest request = GetTargetHttpProxyHttpRequest.newBuilder()
    *     .setTargetHttpProxy(targetHttpProxy.toString())
    *     .build();
@@ -357,12 +361,14 @@ public class TargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by making a list() request.
+   * Returns the specified TargetHttpProxy resource. Get a list of available target HTTP proxies by
+   * making a list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
-   *   ProjectTargetHttpProxyName targetHttpProxy = ProjectTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
+   *   ProjectGlobalTargetHttpProxyName targetHttpProxy = ProjectGlobalTargetHttpProxyName.of("[PROJECT]", "[TARGET_HTTP_PROXY]");
    *   GetTargetHttpProxyHttpRequest request = GetTargetHttpProxyHttpRequest.newBuilder()
    *     .setTargetHttpProxy(targetHttpProxy.toString())
    *     .build();
@@ -373,15 +379,18 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<GetTargetHttpProxyHttpRequest, TargetHttpProxy> getTargetHttpProxyCallable() {
+  public final UnaryCallable<GetTargetHttpProxyHttpRequest, TargetHttpProxy>
+      getTargetHttpProxyCallable() {
     return stub.getTargetHttpProxyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetHttpProxy resource in the specified project using the data included in the request.
+   * Creates a TargetHttpProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
@@ -391,32 +400,40 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param targetHttpProxyResource A TargetHttpProxy resource. This resource defines an HTTP proxy. (== resource_for beta.targetHttpProxies ==) (== resource_for v1.targetHttpProxies ==)
+   * @param targetHttpProxyResource A TargetHttpProxy resource. This resource defines an HTTP proxy.
+   *     (== resource_for beta.targetHttpProxies ==) (== resource_for v1.targetHttpProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetHttpProxy(String requestId, ProjectName project, TargetHttpProxy targetHttpProxyResource) {
+  public final Operation insertTargetHttpProxy(
+      String requestId, ProjectName project, TargetHttpProxy targetHttpProxyResource) {
 
     InsertTargetHttpProxyHttpRequest request =
         InsertTargetHttpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project == null ? null : project.toString())
-        .setTargetHttpProxyResource(targetHttpProxyResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project == null ? null : project.toString())
+            .setTargetHttpProxyResource(targetHttpProxyResource)
+            .build();
     return insertTargetHttpProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetHttpProxy resource in the specified project using the data included in the request.
+   * Creates a TargetHttpProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
@@ -426,32 +443,40 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param project Project ID for this request.
-   * @param targetHttpProxyResource A TargetHttpProxy resource. This resource defines an HTTP proxy. (== resource_for beta.targetHttpProxies ==) (== resource_for v1.targetHttpProxies ==)
+   * @param targetHttpProxyResource A TargetHttpProxy resource. This resource defines an HTTP proxy.
+   *     (== resource_for beta.targetHttpProxies ==) (== resource_for v1.targetHttpProxies ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertTargetHttpProxy(String requestId, String project, TargetHttpProxy targetHttpProxyResource) {
+  public final Operation insertTargetHttpProxy(
+      String requestId, String project, TargetHttpProxy targetHttpProxyResource) {
 
     InsertTargetHttpProxyHttpRequest request =
         InsertTargetHttpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setProject(project)
-        .setTargetHttpProxyResource(targetHttpProxyResource)
-        .build();
+            .setRequestId(requestId)
+            .setProject(project)
+            .setTargetHttpProxyResource(targetHttpProxyResource)
+            .build();
     return insertTargetHttpProxy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetHttpProxy resource in the specified project using the data included in the request.
+   * Creates a TargetHttpProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
@@ -476,9 +501,11 @@ public class TargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a TargetHttpProxy resource in the specified project using the data included in the request.
+   * Creates a TargetHttpProxy resource in the specified project using the data included in the
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
@@ -496,7 +523,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<InsertTargetHttpProxyHttpRequest, Operation> insertTargetHttpProxyCallable() {
+  public final UnaryCallable<InsertTargetHttpProxyHttpRequest, Operation>
+      insertTargetHttpProxyCallable() {
     return stub.insertTargetHttpProxyCallable();
   }
 
@@ -504,7 +532,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -521,8 +550,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   public final ListTargetHttpProxiesPagedResponse listTargetHttpProxies(ProjectName project) {
     ListTargetHttpProxiesHttpRequest request =
         ListTargetHttpProxiesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listTargetHttpProxies(request);
   }
 
@@ -530,7 +559,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -546,9 +576,7 @@ public class TargetHttpProxyClient implements BackgroundResource {
   @BetaApi
   public final ListTargetHttpProxiesPagedResponse listTargetHttpProxies(String project) {
     ListTargetHttpProxiesHttpRequest request =
-        ListTargetHttpProxiesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListTargetHttpProxiesHttpRequest.newBuilder().setProject(project).build();
     return listTargetHttpProxies(request);
   }
 
@@ -556,7 +584,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -573,16 +602,17 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListTargetHttpProxiesPagedResponse listTargetHttpProxies(ListTargetHttpProxiesHttpRequest request) {
-    return listTargetHttpProxiesPagedCallable()
-        .call(request);
+  public final ListTargetHttpProxiesPagedResponse listTargetHttpProxies(
+      ListTargetHttpProxiesHttpRequest request) {
+    return listTargetHttpProxiesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -598,7 +628,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetHttpProxiesHttpRequest, ListTargetHttpProxiesPagedResponse> listTargetHttpProxiesPagedCallable() {
+  public final UnaryCallable<ListTargetHttpProxiesHttpRequest, ListTargetHttpProxiesPagedResponse>
+      listTargetHttpProxiesPagedCallable() {
     return stub.listTargetHttpProxiesPagedCallable();
   }
 
@@ -606,7 +637,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -629,7 +661,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListTargetHttpProxiesHttpRequest, TargetHttpProxyList> listTargetHttpProxiesCallable() {
+  public final UnaryCallable<ListTargetHttpProxiesHttpRequest, TargetHttpProxyList>
+      listTargetHttpProxiesCallable() {
     return stub.listTargetHttpProxiesCallable();
   }
 
@@ -637,7 +670,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Changes the URL map for TargetHttpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
@@ -647,24 +681,31 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetHttpProxy Name of the TargetHttpProxy to set a URL map for.
    * @param urlMapReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setUrlMapTargetHttpProxy(String requestId, ProjectTargetHttpProxyName targetHttpProxy, UrlMapReference urlMapReferenceResource) {
+  public final Operation setUrlMapTargetHttpProxy(
+      String requestId,
+      ProjectTargetHttpProxyName targetHttpProxy,
+      UrlMapReference urlMapReferenceResource) {
 
     SetUrlMapTargetHttpProxyHttpRequest request =
         SetUrlMapTargetHttpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
-        .setUrlMapReferenceResource(urlMapReferenceResource)
-        .build();
+            .setRequestId(requestId)
+            .setTargetHttpProxy(targetHttpProxy == null ? null : targetHttpProxy.toString())
+            .setUrlMapReferenceResource(urlMapReferenceResource)
+            .build();
     return setUrlMapTargetHttpProxy(request);
   }
 
@@ -672,7 +713,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Changes the URL map for TargetHttpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
@@ -682,24 +724,29 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param targetHttpProxy Name of the TargetHttpProxy to set a URL map for.
    * @param urlMapReferenceResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation setUrlMapTargetHttpProxy(String requestId, String targetHttpProxy, UrlMapReference urlMapReferenceResource) {
+  public final Operation setUrlMapTargetHttpProxy(
+      String requestId, String targetHttpProxy, UrlMapReference urlMapReferenceResource) {
 
     SetUrlMapTargetHttpProxyHttpRequest request =
         SetUrlMapTargetHttpProxyHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setTargetHttpProxy(targetHttpProxy)
-        .setUrlMapReferenceResource(urlMapReferenceResource)
-        .build();
+            .setRequestId(requestId)
+            .setTargetHttpProxy(targetHttpProxy)
+            .setUrlMapReferenceResource(urlMapReferenceResource)
+            .build();
     return setUrlMapTargetHttpProxy(request);
   }
 
@@ -707,7 +754,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Changes the URL map for TargetHttpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
@@ -734,7 +782,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
   /**
    * Changes the URL map for TargetHttpProxy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TargetHttpProxyClient targetHttpProxyClient = TargetHttpProxyClient.create()) {
    *   String requestId = "";
@@ -752,12 +801,13 @@ public class TargetHttpProxyClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<SetUrlMapTargetHttpProxyHttpRequest, Operation> setUrlMapTargetHttpProxyCallable() {
+  public final UnaryCallable<SetUrlMapTargetHttpProxyHttpRequest, Operation>
+      setUrlMapTargetHttpProxyCallable() {
     return stub.setUrlMapTargetHttpProxyCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -786,12 +836,10 @@ public class TargetHttpProxyClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListTargetHttpProxiesPagedResponse extends AbstractPagedListResponse<
-      ListTargetHttpProxiesHttpRequest,
-      TargetHttpProxyList,
-      TargetHttpProxy,
-      ListTargetHttpProxiesPage,
-      ListTargetHttpProxiesFixedSizeCollection> {
+  public static class ListTargetHttpProxiesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTargetHttpProxiesHttpRequest, TargetHttpProxyList, TargetHttpProxy,
+          ListTargetHttpProxiesPage, ListTargetHttpProxiesFixedSizeCollection> {
 
     public static ApiFuture<ListTargetHttpProxiesPagedResponse> createAsync(
         PageContext<ListTargetHttpProxiesHttpRequest, TargetHttpProxyList, TargetHttpProxy> context,
@@ -811,15 +859,12 @@ public class TargetHttpProxyClient implements BackgroundResource {
     private ListTargetHttpProxiesPagedResponse(ListTargetHttpProxiesPage page) {
       super(page, ListTargetHttpProxiesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListTargetHttpProxiesPage extends AbstractPage<
-      ListTargetHttpProxiesHttpRequest,
-      TargetHttpProxyList,
-      TargetHttpProxy,
-      ListTargetHttpProxiesPage> {
+  public static class ListTargetHttpProxiesPage
+      extends AbstractPage<
+          ListTargetHttpProxiesHttpRequest, TargetHttpProxyList, TargetHttpProxy,
+          ListTargetHttpProxiesPage> {
 
     private ListTargetHttpProxiesPage(
         PageContext<ListTargetHttpProxiesHttpRequest, TargetHttpProxyList, TargetHttpProxy> context,
@@ -844,20 +889,15 @@ public class TargetHttpProxyClient implements BackgroundResource {
         ApiFuture<TargetHttpProxyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListTargetHttpProxiesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListTargetHttpProxiesHttpRequest,
-      TargetHttpProxyList,
-      TargetHttpProxy,
-      ListTargetHttpProxiesPage,
-      ListTargetHttpProxiesFixedSizeCollection> {
+  public static class ListTargetHttpProxiesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTargetHttpProxiesHttpRequest, TargetHttpProxyList, TargetHttpProxy,
+          ListTargetHttpProxiesPage, ListTargetHttpProxiesFixedSizeCollection> {
 
-    private ListTargetHttpProxiesFixedSizeCollection(List<ListTargetHttpProxiesPage> pages, int collectionSize) {
+    private ListTargetHttpProxiesFixedSizeCollection(
+        List<ListTargetHttpProxiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -870,7 +910,5 @@ public class TargetHttpProxyClient implements BackgroundResource {
         List<ListTargetHttpProxiesPage> pages, int collectionSize) {
       return new ListTargetHttpProxiesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

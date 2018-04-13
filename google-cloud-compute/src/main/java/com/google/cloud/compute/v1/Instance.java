@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -84,7 +83,6 @@ public final class Instance implements ApiMessage {
     this.zone = null;
   }
 
-
   private Instance(
       Boolean canIpForward,
       String cpuPlatform,
@@ -109,8 +107,7 @@ public final class Instance implements ApiMessage {
       String status,
       String statusMessage,
       Tags tags,
-      String zone
-      ) {
+      String zone) {
     this.canIpForward = canIpForward;
     this.cpuPlatform = cpuPlatform;
     this.creationTimestamp = creationTimestamp;
@@ -147,10 +144,12 @@ public final class Instance implements ApiMessage {
       fieldMap.put("cpuPlatform", Collections.singletonList(String.valueOf(cpuPlatform)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("deletionProtection") && deletionProtection != null) {
-      fieldMap.put("deletionProtection", Collections.singletonList(String.valueOf(deletionProtection)));
+      fieldMap.put(
+          "deletionProtection", Collections.singletonList(String.valueOf(deletionProtection)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -410,22 +409,24 @@ public final class Instance implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Instance prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Instance getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Instance DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Instance();
   }
@@ -810,57 +811,33 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
-
     public Instance build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new Instance(
-        canIpForward,
-        cpuPlatform,
-        creationTimestamp,
-        deletionProtection,
-        description,
-        disks,
-        guestAccelerators,
-        id,
-        kind,
-        labelFingerprint,
-        labels,
-        machineType,
-        metadata,
-        minCpuPlatform,
-        name,
-        networkInterfaces,
-        scheduling,
-        selfLink,
-        serviceAccounts,
-        startRestricted,
-        status,
-        statusMessage,
-        tags,
-        zone
-      );
+          canIpForward,
+          cpuPlatform,
+          creationTimestamp,
+          deletionProtection,
+          description,
+          disks,
+          guestAccelerators,
+          id,
+          kind,
+          labelFingerprint,
+          labels,
+          machineType,
+          metadata,
+          minCpuPlatform,
+          name,
+          networkInterfaces,
+          scheduling,
+          selfLink,
+          serviceAccounts,
+          startRestricted,
+          status,
+          statusMessage,
+          tags,
+          zone);
     }
 
     public Builder clone() {
@@ -896,30 +873,77 @@ public final class Instance implements ApiMessage {
   @Override
   public String toString() {
     return "Instance{"
-        + "canIpForward=" + canIpForward + ", "
-        + "cpuPlatform=" + cpuPlatform + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "deletionProtection=" + deletionProtection + ", "
-        + "description=" + description + ", "
-        + "disks=" + disks + ", "
-        + "guestAccelerators=" + guestAccelerators + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "labelFingerprint=" + labelFingerprint + ", "
-        + "labels=" + labels + ", "
-        + "machineType=" + machineType + ", "
-        + "metadata=" + metadata + ", "
-        + "minCpuPlatform=" + minCpuPlatform + ", "
-        + "name=" + name + ", "
-        + "networkInterfaces=" + networkInterfaces + ", "
-        + "scheduling=" + scheduling + ", "
-        + "selfLink=" + selfLink + ", "
-        + "serviceAccounts=" + serviceAccounts + ", "
-        + "startRestricted=" + startRestricted + ", "
-        + "status=" + status + ", "
-        + "statusMessage=" + statusMessage + ", "
-        + "tags=" + tags + ", "
-        + "zone=" + zone
+        + "canIpForward="
+        + canIpForward
+        + ", "
+        + "cpuPlatform="
+        + cpuPlatform
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "deletionProtection="
+        + deletionProtection
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "disks="
+        + disks
+        + ", "
+        + "guestAccelerators="
+        + guestAccelerators
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "labelFingerprint="
+        + labelFingerprint
+        + ", "
+        + "labels="
+        + labels
+        + ", "
+        + "machineType="
+        + machineType
+        + ", "
+        + "metadata="
+        + metadata
+        + ", "
+        + "minCpuPlatform="
+        + minCpuPlatform
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "networkInterfaces="
+        + networkInterfaces
+        + ", "
+        + "scheduling="
+        + scheduling
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "serviceAccounts="
+        + serviceAccounts
+        + ", "
+        + "startRestricted="
+        + startRestricted
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "statusMessage="
+        + statusMessage
+        + ", "
+        + "tags="
+        + tags
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -930,32 +954,30 @@ public final class Instance implements ApiMessage {
     }
     if (o instanceof Instance) {
       Instance that = (Instance) o;
-      return
-          Objects.equals(this.canIpForward, that.getCanIpForward()) &&
-          Objects.equals(this.cpuPlatform, that.getCpuPlatform()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.deletionProtection, that.getDeletionProtection()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.disks, that.getDisksList()) &&
-          Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.labelFingerprint, that.getLabelFingerprint()) &&
-          Objects.equals(this.labels, that.getLabelsMap()) &&
-          Objects.equals(this.machineType, that.getMachineType()) &&
-          Objects.equals(this.metadata, that.getMetadata()) &&
-          Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList()) &&
-          Objects.equals(this.scheduling, that.getScheduling()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.serviceAccounts, that.getServiceAccountsList()) &&
-          Objects.equals(this.startRestricted, that.getStartRestricted()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.statusMessage, that.getStatusMessage()) &&
-          Objects.equals(this.tags, that.getTags()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.canIpForward, that.getCanIpForward())
+          && Objects.equals(this.cpuPlatform, that.getCpuPlatform())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.deletionProtection, that.getDeletionProtection())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.disks, that.getDisksList())
+          && Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.labelFingerprint, that.getLabelFingerprint())
+          && Objects.equals(this.labels, that.getLabelsMap())
+          && Objects.equals(this.machineType, that.getMachineType())
+          && Objects.equals(this.metadata, that.getMetadata())
+          && Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
+          && Objects.equals(this.scheduling, that.getScheduling())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.serviceAccounts, that.getServiceAccountsList())
+          && Objects.equals(this.startRestricted, that.getStartRestricted())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.statusMessage, that.getStatusMessage())
+          && Objects.equals(this.tags, that.getTags())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -963,30 +985,29 @@ public final class Instance implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      canIpForward,
-      cpuPlatform,
-      creationTimestamp,
-      deletionProtection,
-      description,
-      disks,
-      guestAccelerators,
-      id,
-      kind,
-      labelFingerprint,
-      labels,
-      machineType,
-      metadata,
-      minCpuPlatform,
-      name,
-      networkInterfaces,
-      scheduling,
-      selfLink,
-      serviceAccounts,
-      startRestricted,
-      status,
-      statusMessage,
-      tags,
-      zone
-    );
+        canIpForward,
+        cpuPlatform,
+        creationTimestamp,
+        deletionProtection,
+        description,
+        disks,
+        guestAccelerators,
+        id,
+        kind,
+        labelFingerprint,
+        labels,
+        machineType,
+        metadata,
+        minCpuPlatform,
+        name,
+        networkInterfaces,
+        scheduling,
+        selfLink,
+        serviceAccounts,
+        startRestricted,
+        status,
+        statusMessage,
+        tags,
+        zone);
   }
 }

@@ -15,6 +15,9 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionCommitmentClient.AggregatedListRegionCommitmentsPagedResponse;
+import static com.google.cloud.compute.v1.RegionCommitmentClient.ListRegionCommitmentsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -22,16 +25,10 @@ import com.google.cloud.compute.v1.AggregatedListRegionCommitmentsHttpRequest;
 import com.google.cloud.compute.v1.Commitment;
 import com.google.cloud.compute.v1.CommitmentAggregatedList;
 import com.google.cloud.compute.v1.CommitmentList;
-import com.google.cloud.compute.v1.CommitmentsScopedList;
 import com.google.cloud.compute.v1.GetRegionCommitmentHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionCommitmentHttpRequest;
 import com.google.cloud.compute.v1.ListRegionCommitmentsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionCommitmentName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import static com.google.cloud.compute.v1.RegionCommitmentClient.AggregatedListRegionCommitmentsPagedResponse;
-import static com.google.cloud.compute.v1.RegionCommitmentClient.ListRegionCommitmentsPagedResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -44,15 +41,19 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RegionCommitmentStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListRegionCommitmentsHttpRequest, AggregatedListRegionCommitmentsPagedResponse> aggregatedListRegionCommitmentsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListRegionCommitmentsPagedCallable()");
+  public UnaryCallable<
+          AggregatedListRegionCommitmentsHttpRequest, AggregatedListRegionCommitmentsPagedResponse>
+      aggregatedListRegionCommitmentsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListRegionCommitmentsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList> aggregatedListRegionCommitmentsCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListRegionCommitmentsCallable()");
+  public UnaryCallable<AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList>
+      aggregatedListRegionCommitmentsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListRegionCommitmentsCallable()");
   }
 
   @BetaApi
@@ -61,18 +62,24 @@ public abstract class RegionCommitmentStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<InsertRegionCommitmentHttpRequest, Operation> insertRegionCommitmentCallable() {
+  public UnaryCallable<InsertRegionCommitmentHttpRequest, Operation>
+      insertRegionCommitmentCallable() {
     throw new UnsupportedOperationException("Not implemented: insertRegionCommitmentCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionCommitmentsHttpRequest, ListRegionCommitmentsPagedResponse> listRegionCommitmentsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listRegionCommitmentsPagedCallable()");
+  public UnaryCallable<ListRegionCommitmentsHttpRequest, ListRegionCommitmentsPagedResponse>
+      listRegionCommitmentsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRegionCommitmentsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionCommitmentsHttpRequest, CommitmentList> listRegionCommitmentsCallable() {
+  public UnaryCallable<ListRegionCommitmentsHttpRequest, CommitmentList>
+      listRegionCommitmentsCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionCommitmentsCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

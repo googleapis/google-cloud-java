@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private InvalidateCacheUrlMapHttpRequest(
       String access_token,
       CacheInvalidationRule cacheInvalidationRuleResource,
@@ -67,8 +63,7 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
       String quotaUser,
       String requestId,
       String urlMap,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.cacheInvalidationRuleResource = cacheInvalidationRuleResource;
     this.callback = callback;
@@ -87,8 +82,11 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
     if (fieldNames.contains("access_token") && access_token != null) {
       fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
     }
-    if (fieldNames.contains("cacheInvalidationRuleResource") && cacheInvalidationRuleResource != null) {
-      fieldMap.put("cacheInvalidationRuleResource", Collections.singletonList(String.valueOf(cacheInvalidationRuleResource)));
+    if (fieldNames.contains("cacheInvalidationRuleResource")
+        && cacheInvalidationRuleResource != null) {
+      fieldMap.put(
+          "cacheInvalidationRuleResource",
+          Collections.singletonList(String.valueOf(cacheInvalidationRuleResource)));
     }
     if (fieldNames.contains("callback") && callback != null) {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
@@ -198,22 +196,24 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InvalidateCacheUrlMapHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InvalidateCacheUrlMapHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InvalidateCacheUrlMapHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InvalidateCacheUrlMapHttpRequest();
   }
@@ -293,7 +293,8 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
       return cacheInvalidationRuleResource;
     }
 
-    public Builder setCacheInvalidationRuleResource(CacheInvalidationRule cacheInvalidationRuleResource) {
+    public Builder setCacheInvalidationRuleResource(
+        CacheInvalidationRule cacheInvalidationRuleResource) {
       this.cacheInvalidationRuleResource = cacheInvalidationRuleResource;
       return this;
     }
@@ -370,16 +371,8 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InvalidateCacheUrlMapHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
 
       if (urlMap == null) {
         missing += " urlMap";
@@ -389,17 +382,16 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InvalidateCacheUrlMapHttpRequest(
-        access_token,
-        cacheInvalidationRuleResource,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        urlMap,
-        userIp
-      );
+          access_token,
+          cacheInvalidationRuleResource,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          urlMap,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +413,35 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InvalidateCacheUrlMapHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "cacheInvalidationRuleResource=" + cacheInvalidationRuleResource + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "urlMap=" + urlMap + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "cacheInvalidationRuleResource="
+        + cacheInvalidationRuleResource
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "urlMap="
+        + urlMap
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +452,17 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
     }
     if (o instanceof InvalidateCacheUrlMapHttpRequest) {
       InvalidateCacheUrlMapHttpRequest that = (InvalidateCacheUrlMapHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.cacheInvalidationRuleResource, that.getCacheInvalidationRuleResource()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.urlMap, that.getUrlMap()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(
+              this.cacheInvalidationRuleResource, that.getCacheInvalidationRuleResource())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.urlMap, that.getUrlMap())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +470,15 @@ public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      cacheInvalidationRuleResource,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      urlMap,
-      userIp
-    );
+        access_token,
+        cacheInvalidationRuleResource,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        urlMap,
+        userIp);
   }
 }

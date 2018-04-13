@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -56,7 +55,6 @@ public final class Region implements ApiMessage {
     this.zones = null;
   }
 
-
   private Region(
       String creationTimestamp,
       DeprecationStatus deprecated,
@@ -67,8 +65,7 @@ public final class Region implements ApiMessage {
       List<Quota> quotas,
       String selfLink,
       String status,
-      List<String> zones
-      ) {
+      List<String> zones) {
     this.creationTimestamp = creationTimestamp;
     this.deprecated = deprecated;
     this.description = description;
@@ -85,7 +82,8 @@ public final class Region implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("deprecated") && deprecated != null) {
       fieldMap.put("deprecated", Collections.singletonList(String.valueOf(deprecated)));
@@ -206,22 +204,24 @@ public final class Region implements ApiMessage {
     return zones;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Region prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Region getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Region DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Region();
   }
@@ -394,29 +394,19 @@ public final class Region implements ApiMessage {
       return this;
     }
 
-
     public Region build() {
 
-
-
-
-
-
-
-
-
       return new Region(
-        creationTimestamp,
-        deprecated,
-        description,
-        id,
-        kind,
-        name,
-        quotas,
-        selfLink,
-        status,
-        zones
-      );
+          creationTimestamp,
+          deprecated,
+          description,
+          id,
+          kind,
+          name,
+          quotas,
+          selfLink,
+          status,
+          zones);
     }
 
     public Builder clone() {
@@ -438,16 +428,35 @@ public final class Region implements ApiMessage {
   @Override
   public String toString() {
     return "Region{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "deprecated=" + deprecated + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "quotas=" + quotas + ", "
-        + "selfLink=" + selfLink + ", "
-        + "status=" + status + ", "
-        + "zones=" + zones
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "deprecated="
+        + deprecated
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "quotas="
+        + quotas
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "zones="
+        + zones
         + "}";
   }
 
@@ -458,18 +467,16 @@ public final class Region implements ApiMessage {
     }
     if (o instanceof Region) {
       Region that = (Region) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.deprecated, that.getDeprecated()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.quotas, that.getQuotasList()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.zones, that.getZonesList())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.deprecated, that.getDeprecated())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.quotas, that.getQuotasList())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.zones, that.getZonesList());
     }
     return false;
   }
@@ -477,16 +484,15 @@ public final class Region implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      deprecated,
-      description,
-      id,
-      kind,
-      name,
-      quotas,
-      selfLink,
-      status,
-      zones
-    );
+        creationTimestamp,
+        deprecated,
+        description,
+        id,
+        kind,
+        name,
+        quotas,
+        selfLink,
+        status,
+        zones);
   }
 }

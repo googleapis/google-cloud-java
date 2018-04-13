@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.GlobalAddressClient.ListGlobalAddressesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -22,12 +24,9 @@ import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressList;
 import com.google.cloud.compute.v1.DeleteGlobalAddressHttpRequest;
 import com.google.cloud.compute.v1.GetGlobalAddressHttpRequest;
-import static com.google.cloud.compute.v1.GlobalAddressClient.ListGlobalAddressesPagedResponse;
 import com.google.cloud.compute.v1.InsertGlobalAddressHttpRequest;
 import com.google.cloud.compute.v1.ListGlobalAddressesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectAddressName;
-import com.google.cloud.compute.v1.ProjectName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -39,7 +38,6 @@ import javax.annotation.Generated;
 @Generated("by GAPIC v0.0.5")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class GlobalAddressStub implements BackgroundResource {
-
 
   @BetaApi
   public UnaryCallable<DeleteGlobalAddressHttpRequest, Operation> deleteGlobalAddressCallable() {
@@ -57,7 +55,8 @@ public abstract class GlobalAddressStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListGlobalAddressesHttpRequest, ListGlobalAddressesPagedResponse> listGlobalAddressesPagedCallable() {
+  public UnaryCallable<ListGlobalAddressesHttpRequest, ListGlobalAddressesPagedResponse>
+      listGlobalAddressesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listGlobalAddressesPagedCallable()");
   }
 
@@ -66,4 +65,6 @@ public abstract class GlobalAddressStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listGlobalAddressesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

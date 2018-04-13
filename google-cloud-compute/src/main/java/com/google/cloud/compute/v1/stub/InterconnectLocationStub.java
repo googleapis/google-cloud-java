@@ -15,16 +15,15 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InterconnectLocationClient.ListInterconnectLocationsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetInterconnectLocationHttpRequest;
 import com.google.cloud.compute.v1.InterconnectLocation;
-import static com.google.cloud.compute.v1.InterconnectLocationClient.ListInterconnectLocationsPagedResponse;
 import com.google.cloud.compute.v1.InterconnectLocationList;
 import com.google.cloud.compute.v1.ListInterconnectLocationsHttpRequest;
-import com.google.cloud.compute.v1.ProjectInterconnectLocationName;
-import com.google.cloud.compute.v1.ProjectName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -37,20 +36,25 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class InterconnectLocationStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<GetInterconnectLocationHttpRequest, InterconnectLocation> getInterconnectLocationCallable() {
+  public UnaryCallable<GetInterconnectLocationHttpRequest, InterconnectLocation>
+      getInterconnectLocationCallable() {
     throw new UnsupportedOperationException("Not implemented: getInterconnectLocationCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInterconnectLocationsHttpRequest, ListInterconnectLocationsPagedResponse> listInterconnectLocationsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInterconnectLocationsPagedCallable()");
+  public UnaryCallable<ListInterconnectLocationsHttpRequest, ListInterconnectLocationsPagedResponse>
+      listInterconnectLocationsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listInterconnectLocationsPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListInterconnectLocationsHttpRequest, InterconnectLocationList> listInterconnectLocationsCallable() {
+  public UnaryCallable<ListInterconnectLocationsHttpRequest, InterconnectLocationList>
+      listInterconnectLocationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listInterconnectLocationsCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

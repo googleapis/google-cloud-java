@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class Error implements ApiMessage {
     this.errors = null;
   }
 
-
-  private Error(
-      List<Errors> errors
-      ) {
+  private Error(List<Errors> errors) {
     this.errors = errors;
   }
 
@@ -76,22 +71,24 @@ public final class Error implements ApiMessage {
     return errors;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Error prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Error getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Error DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Error();
   }
@@ -130,11 +127,8 @@ public final class Error implements ApiMessage {
       return this;
     }
 
-
     public Error build() {
-      return new Error(
-        errors
-      );
+      return new Error(errors);
     }
 
     public Builder clone() {
@@ -146,9 +140,7 @@ public final class Error implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Error{"
-        + "errors=" + errors
-        + "}";
+    return "Error{" + "errors=" + errors + "}";
   }
 
   @Override
@@ -158,17 +150,13 @@ public final class Error implements ApiMessage {
     }
     if (o instanceof Error) {
       Error that = (Error) o;
-      return
-          Objects.equals(this.errors, that.getErrorsList())
-          ;
+      return Objects.equals(this.errors, that.getErrorsList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      errors
-    );
+    return Objects.hash(errors);
   }
 }

@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -82,7 +81,6 @@ public final class Operation implements ApiMessage {
     this.zone = null;
   }
 
-
   private Operation(
       String clientOperationId,
       String creationTimestamp,
@@ -106,8 +104,7 @@ public final class Operation implements ApiMessage {
       String targetLink,
       String user,
       List<Warnings> warnings,
-      String zone
-      ) {
+      String zone) {
     this.clientOperationId = clientOperationId;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -137,10 +134,12 @@ public final class Operation implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("clientOperationId") && clientOperationId != null) {
-      fieldMap.put("clientOperationId", Collections.singletonList(String.valueOf(clientOperationId)));
+      fieldMap.put(
+          "clientOperationId", Collections.singletonList(String.valueOf(clientOperationId)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -155,7 +154,8 @@ public final class Operation implements ApiMessage {
       fieldMap.put("httpErrorMessage", Collections.singletonList(String.valueOf(httpErrorMessage)));
     }
     if (fieldNames.contains("httpErrorStatusCode") && httpErrorStatusCode != null) {
-      fieldMap.put("httpErrorStatusCode", Collections.singletonList(String.valueOf(httpErrorStatusCode)));
+      fieldMap.put(
+          "httpErrorStatusCode", Collections.singletonList(String.valueOf(httpErrorStatusCode)));
     }
     if (fieldNames.contains("id") && id != null) {
       fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
@@ -384,22 +384,24 @@ public final class Operation implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Operation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Operation getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Operation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Operation();
   }
@@ -746,55 +748,32 @@ public final class Operation implements ApiMessage {
       return this;
     }
 
-
     public Operation build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new Operation(
-        clientOperationId,
-        creationTimestamp,
-        description,
-        endTime,
-        error,
-        httpErrorMessage,
-        httpErrorStatusCode,
-        id,
-        insertTime,
-        kind,
-        name,
-        operationType,
-        progress,
-        region,
-        selfLink,
-        startTime,
-        status,
-        statusMessage,
-        targetId,
-        targetLink,
-        user,
-        warnings,
-        zone
-      );
+          clientOperationId,
+          creationTimestamp,
+          description,
+          endTime,
+          error,
+          httpErrorMessage,
+          httpErrorStatusCode,
+          id,
+          insertTime,
+          kind,
+          name,
+          operationType,
+          progress,
+          region,
+          selfLink,
+          startTime,
+          status,
+          statusMessage,
+          targetId,
+          targetLink,
+          user,
+          warnings,
+          zone);
     }
 
     public Builder clone() {
@@ -829,29 +808,74 @@ public final class Operation implements ApiMessage {
   @Override
   public String toString() {
     return "Operation{"
-        + "clientOperationId=" + clientOperationId + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "endTime=" + endTime + ", "
-        + "error=" + error + ", "
-        + "httpErrorMessage=" + httpErrorMessage + ", "
-        + "httpErrorStatusCode=" + httpErrorStatusCode + ", "
-        + "id=" + id + ", "
-        + "insertTime=" + insertTime + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "operationType=" + operationType + ", "
-        + "progress=" + progress + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "startTime=" + startTime + ", "
-        + "status=" + status + ", "
-        + "statusMessage=" + statusMessage + ", "
-        + "targetId=" + targetId + ", "
-        + "targetLink=" + targetLink + ", "
-        + "user=" + user + ", "
-        + "warnings=" + warnings + ", "
-        + "zone=" + zone
+        + "clientOperationId="
+        + clientOperationId
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "endTime="
+        + endTime
+        + ", "
+        + "error="
+        + error
+        + ", "
+        + "httpErrorMessage="
+        + httpErrorMessage
+        + ", "
+        + "httpErrorStatusCode="
+        + httpErrorStatusCode
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "insertTime="
+        + insertTime
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "operationType="
+        + operationType
+        + ", "
+        + "progress="
+        + progress
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "startTime="
+        + startTime
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "statusMessage="
+        + statusMessage
+        + ", "
+        + "targetId="
+        + targetId
+        + ", "
+        + "targetLink="
+        + targetLink
+        + ", "
+        + "user="
+        + user
+        + ", "
+        + "warnings="
+        + warnings
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -862,31 +886,29 @@ public final class Operation implements ApiMessage {
     }
     if (o instanceof Operation) {
       Operation that = (Operation) o;
-      return
-          Objects.equals(this.clientOperationId, that.getClientOperationId()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.endTime, that.getEndTime()) &&
-          Objects.equals(this.error, that.getError()) &&
-          Objects.equals(this.httpErrorMessage, that.getHttpErrorMessage()) &&
-          Objects.equals(this.httpErrorStatusCode, that.getHttpErrorStatusCode()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.insertTime, that.getInsertTime()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.operationType, that.getOperationType()) &&
-          Objects.equals(this.progress, that.getProgress()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.startTime, that.getStartTime()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.statusMessage, that.getStatusMessage()) &&
-          Objects.equals(this.targetId, that.getTargetId()) &&
-          Objects.equals(this.targetLink, that.getTargetLink()) &&
-          Objects.equals(this.user, that.getUser()) &&
-          Objects.equals(this.warnings, that.getWarningsList()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.clientOperationId, that.getClientOperationId())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.endTime, that.getEndTime())
+          && Objects.equals(this.error, that.getError())
+          && Objects.equals(this.httpErrorMessage, that.getHttpErrorMessage())
+          && Objects.equals(this.httpErrorStatusCode, that.getHttpErrorStatusCode())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.insertTime, that.getInsertTime())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.operationType, that.getOperationType())
+          && Objects.equals(this.progress, that.getProgress())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.startTime, that.getStartTime())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.statusMessage, that.getStatusMessage())
+          && Objects.equals(this.targetId, that.getTargetId())
+          && Objects.equals(this.targetLink, that.getTargetLink())
+          && Objects.equals(this.user, that.getUser())
+          && Objects.equals(this.warnings, that.getWarningsList())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -894,29 +916,28 @@ public final class Operation implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      clientOperationId,
-      creationTimestamp,
-      description,
-      endTime,
-      error,
-      httpErrorMessage,
-      httpErrorStatusCode,
-      id,
-      insertTime,
-      kind,
-      name,
-      operationType,
-      progress,
-      region,
-      selfLink,
-      startTime,
-      status,
-      statusMessage,
-      targetId,
-      targetLink,
-      user,
-      warnings,
-      zone
-    );
+        clientOperationId,
+        creationTimestamp,
+        description,
+        endTime,
+        error,
+        httpErrorMessage,
+        httpErrorStatusCode,
+        id,
+        insertTime,
+        kind,
+        name,
+        operationType,
+        progress,
+        region,
+        selfLink,
+        startTime,
+        status,
+        statusMessage,
+        targetId,
+        targetLink,
+        user,
+        warnings,
+        zone);
   }
 }

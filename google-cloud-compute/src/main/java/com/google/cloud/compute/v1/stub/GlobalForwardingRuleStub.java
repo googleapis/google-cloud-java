@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.GlobalForwardingRuleClient.ListGlobalForwardingRulesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -22,14 +24,10 @@ import com.google.cloud.compute.v1.DeleteGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ForwardingRule;
 import com.google.cloud.compute.v1.ForwardingRuleList;
 import com.google.cloud.compute.v1.GetGlobalForwardingRuleHttpRequest;
-import static com.google.cloud.compute.v1.GlobalForwardingRuleClient.ListGlobalForwardingRulesPagedResponse;
 import com.google.cloud.compute.v1.InsertGlobalForwardingRuleHttpRequest;
 import com.google.cloud.compute.v1.ListGlobalForwardingRulesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectForwardingRuleName;
-import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.SetTargetGlobalForwardingRuleHttpRequest;
-import com.google.cloud.compute.v1.TargetReference;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -42,35 +40,46 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class GlobalForwardingRuleStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<DeleteGlobalForwardingRuleHttpRequest, Operation> deleteGlobalForwardingRuleCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteGlobalForwardingRuleCallable()");
+  public UnaryCallable<DeleteGlobalForwardingRuleHttpRequest, Operation>
+      deleteGlobalForwardingRuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteGlobalForwardingRuleCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetGlobalForwardingRuleHttpRequest, ForwardingRule> getGlobalForwardingRuleCallable() {
+  public UnaryCallable<GetGlobalForwardingRuleHttpRequest, ForwardingRule>
+      getGlobalForwardingRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: getGlobalForwardingRuleCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<InsertGlobalForwardingRuleHttpRequest, Operation> insertGlobalForwardingRuleCallable() {
-    throw new UnsupportedOperationException("Not implemented: insertGlobalForwardingRuleCallable()");
+  public UnaryCallable<InsertGlobalForwardingRuleHttpRequest, Operation>
+      insertGlobalForwardingRuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: insertGlobalForwardingRuleCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListGlobalForwardingRulesHttpRequest, ListGlobalForwardingRulesPagedResponse> listGlobalForwardingRulesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listGlobalForwardingRulesPagedCallable()");
+  public UnaryCallable<ListGlobalForwardingRulesHttpRequest, ListGlobalForwardingRulesPagedResponse>
+      listGlobalForwardingRulesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listGlobalForwardingRulesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListGlobalForwardingRulesHttpRequest, ForwardingRuleList> listGlobalForwardingRulesCallable() {
+  public UnaryCallable<ListGlobalForwardingRulesHttpRequest, ForwardingRuleList>
+      listGlobalForwardingRulesCallable() {
     throw new UnsupportedOperationException("Not implemented: listGlobalForwardingRulesCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<SetTargetGlobalForwardingRuleHttpRequest, Operation> setTargetGlobalForwardingRuleCallable() {
-    throw new UnsupportedOperationException("Not implemented: setTargetGlobalForwardingRuleCallable()");
+  public UnaryCallable<SetTargetGlobalForwardingRuleHttpRequest, Operation>
+      setTargetGlobalForwardingRuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setTargetGlobalForwardingRuleCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

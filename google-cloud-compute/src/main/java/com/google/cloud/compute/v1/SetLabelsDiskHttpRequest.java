@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class SetLabelsDiskHttpRequest implements ApiMessage {
     this.zoneSetLabelsRequestResource = null;
   }
 
-
   private SetLabelsDiskHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class SetLabelsDiskHttpRequest implements ApiMessage {
       String requestId,
       String resource,
       String userIp,
-      ZoneSetLabelsRequest zoneSetLabelsRequestResource
-      ) {
+      ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -111,8 +106,11 @@ public final class SetLabelsDiskHttpRequest implements ApiMessage {
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
     }
-    if (fieldNames.contains("zoneSetLabelsRequestResource") && zoneSetLabelsRequestResource != null) {
-      fieldMap.put("zoneSetLabelsRequestResource", Collections.singletonList(String.valueOf(zoneSetLabelsRequestResource)));
+    if (fieldNames.contains("zoneSetLabelsRequestResource")
+        && zoneSetLabelsRequestResource != null) {
+      fieldMap.put(
+          "zoneSetLabelsRequestResource",
+          Collections.singletonList(String.valueOf(zoneSetLabelsRequestResource)));
     }
     return fieldMap;
   }
@@ -198,22 +196,24 @@ public final class SetLabelsDiskHttpRequest implements ApiMessage {
     return zoneSetLabelsRequestResource;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetLabelsDiskHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetLabelsDiskHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetLabelsDiskHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetLabelsDiskHttpRequest();
   }
@@ -365,41 +365,33 @@ public final class SetLabelsDiskHttpRequest implements ApiMessage {
       return zoneSetLabelsRequestResource;
     }
 
-    public Builder setZoneSetLabelsRequestResource(ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
+    public Builder setZoneSetLabelsRequestResource(
+        ZoneSetLabelsRequest zoneSetLabelsRequestResource) {
       this.zoneSetLabelsRequestResource = zoneSetLabelsRequestResource;
       return this;
     }
 
-
     public SetLabelsDiskHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (resource == null) {
         missing += " resource";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetLabelsDiskHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        resource,
-        userIp,
-        zoneSetLabelsRequestResource
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          resource,
+          userIp,
+          zoneSetLabelsRequestResource);
     }
 
     public Builder clone() {
@@ -421,16 +413,35 @@ public final class SetLabelsDiskHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "SetLabelsDiskHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "resource=" + resource + ", "
-        + "userIp=" + userIp + ", "
-        + "zoneSetLabelsRequestResource=" + zoneSetLabelsRequestResource
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "resource="
+        + resource
+        + ", "
+        + "userIp="
+        + userIp
+        + ", "
+        + "zoneSetLabelsRequestResource="
+        + zoneSetLabelsRequestResource
         + "}";
   }
 
@@ -441,18 +452,17 @@ public final class SetLabelsDiskHttpRequest implements ApiMessage {
     }
     if (o instanceof SetLabelsDiskHttpRequest) {
       SetLabelsDiskHttpRequest that = (SetLabelsDiskHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.resource, that.getResource()) &&
-          Objects.equals(this.userIp, that.getUserIp()) &&
-          Objects.equals(this.zoneSetLabelsRequestResource, that.getZoneSetLabelsRequestResource())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.resource, that.getResource())
+          && Objects.equals(this.userIp, that.getUserIp())
+          && Objects.equals(
+              this.zoneSetLabelsRequestResource, that.getZoneSetLabelsRequestResource());
     }
     return false;
   }
@@ -460,16 +470,15 @@ public final class SetLabelsDiskHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      resource,
-      userIp,
-      zoneSetLabelsRequestResource
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        resource,
+        userIp,
+        zoneSetLabelsRequestResource);
   }
 }

@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private InsertRegionAutoscalerHttpRequest(
       String access_token,
       Autoscaler autoscalerResource,
@@ -67,8 +63,7 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
       String quotaUser,
       String region,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.autoscalerResource = autoscalerResource;
     this.callback = callback;
@@ -88,7 +83,8 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
       fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
     }
     if (fieldNames.contains("autoscalerResource") && autoscalerResource != null) {
-      fieldMap.put("autoscalerResource", Collections.singletonList(String.valueOf(autoscalerResource)));
+      fieldMap.put(
+          "autoscalerResource", Collections.singletonList(String.valueOf(autoscalerResource)));
     }
     if (fieldNames.contains("callback") && callback != null) {
       fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
@@ -198,22 +194,24 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertRegionAutoscalerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertRegionAutoscalerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertRegionAutoscalerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertRegionAutoscalerHttpRequest();
   }
@@ -370,36 +368,27 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertRegionAutoscalerHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (region == null) {
         missing += " region";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertRegionAutoscalerHttpRequest(
-        access_token,
-        autoscalerResource,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        region,
-        requestId,
-        userIp
-      );
+          access_token,
+          autoscalerResource,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          region,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +410,35 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertRegionAutoscalerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "autoscalerResource=" + autoscalerResource + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "region=" + region + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "autoscalerResource="
+        + autoscalerResource
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +449,16 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertRegionAutoscalerHttpRequest) {
       InsertRegionAutoscalerHttpRequest that = (InsertRegionAutoscalerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.autoscalerResource, that.getAutoscalerResource()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.autoscalerResource, that.getAutoscalerResource())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +466,15 @@ public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      autoscalerResource,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      region,
-      requestId,
-      userIp
-    );
+        access_token,
+        autoscalerResource,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        region,
+        requestId,
+        userIp);
   }
 }

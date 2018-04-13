@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +40,8 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
   private final String pageToken;
   private final String prettyPrint;
   private final String quotaUser;
-  private final RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource;
+  private final RegionInstanceGroupsListInstancesRequest
+      regionInstanceGroupsListInstancesRequestResource;
   private final String userIp;
 
   private ListInstancesRegionInstanceGroupsHttpRequest() {
@@ -62,7 +60,6 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
     this.userIp = null;
   }
 
-
   private ListInstancesRegionInstanceGroupsHttpRequest(
       String access_token,
       String callback,
@@ -76,8 +73,7 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
       String prettyPrint,
       String quotaUser,
       RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -89,7 +85,8 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
     this.pageToken = pageToken;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
-    this.regionInstanceGroupsListInstancesRequestResource = regionInstanceGroupsListInstancesRequestResource;
+    this.regionInstanceGroupsListInstancesRequestResource =
+        regionInstanceGroupsListInstancesRequestResource;
     this.userIp = userIp;
   }
 
@@ -129,8 +126,12 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
     }
-    if (fieldNames.contains("regionInstanceGroupsListInstancesRequestResource") && regionInstanceGroupsListInstancesRequestResource != null) {
-      fieldMap.put("regionInstanceGroupsListInstancesRequestResource", Collections.singletonList(String.valueOf(regionInstanceGroupsListInstancesRequestResource)));
+    if (fieldNames.contains("regionInstanceGroupsListInstancesRequestResource")
+        && regionInstanceGroupsListInstancesRequestResource != null) {
+      fieldMap.put(
+          "regionInstanceGroupsListInstancesRequestResource",
+          Collections.singletonList(
+              String.valueOf(regionInstanceGroupsListInstancesRequestResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -232,7 +233,8 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
     return quotaUser;
   }
 
-  public RegionInstanceGroupsListInstancesRequest getRegionInstanceGroupsListInstancesRequestResource() {
+  public RegionInstanceGroupsListInstancesRequest
+      getRegionInstanceGroupsListInstancesRequestResource() {
     return regionInstanceGroupsListInstancesRequestResource;
   }
 
@@ -240,22 +242,24 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ListInstancesRegionInstanceGroupsHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ListInstancesRegionInstanceGroupsHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ListInstancesRegionInstanceGroupsHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ListInstancesRegionInstanceGroupsHttpRequest();
   }
@@ -272,7 +276,8 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
     private String pageToken;
     private String prettyPrint;
     private String quotaUser;
-    private RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource;
+    private RegionInstanceGroupsListInstancesRequest
+        regionInstanceGroupsListInstancesRequestResource;
     private String userIp;
 
     Builder() {}
@@ -313,7 +318,8 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
         this.quotaUser = other.quotaUser;
       }
       if (other.getRegionInstanceGroupsListInstancesRequestResource() != null) {
-        this.regionInstanceGroupsListInstancesRequestResource = other.regionInstanceGroupsListInstancesRequestResource;
+        this.regionInstanceGroupsListInstancesRequestResource =
+            other.regionInstanceGroupsListInstancesRequestResource;
       }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
@@ -333,7 +339,8 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
       this.pageToken = source.pageToken;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
-      this.regionInstanceGroupsListInstancesRequestResource = source.regionInstanceGroupsListInstancesRequestResource;
+      this.regionInstanceGroupsListInstancesRequestResource =
+          source.regionInstanceGroupsListInstancesRequestResource;
       this.userIp = source.userIp;
     }
 
@@ -436,12 +443,15 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
       return this;
     }
 
-    public RegionInstanceGroupsListInstancesRequest getRegionInstanceGroupsListInstancesRequestResource() {
+    public RegionInstanceGroupsListInstancesRequest
+        getRegionInstanceGroupsListInstancesRequestResource() {
       return regionInstanceGroupsListInstancesRequestResource;
     }
 
-    public Builder setRegionInstanceGroupsListInstancesRequestResource(RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource) {
-      this.regionInstanceGroupsListInstancesRequestResource = regionInstanceGroupsListInstancesRequestResource;
+    public Builder setRegionInstanceGroupsListInstancesRequestResource(
+        RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource) {
+      this.regionInstanceGroupsListInstancesRequestResource =
+          regionInstanceGroupsListInstancesRequestResource;
       return this;
     }
 
@@ -454,42 +464,30 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
       return this;
     }
 
-
     public ListInstancesRegionInstanceGroupsHttpRequest build() {
       String missing = "";
-
-
-
 
       if (instanceGroup == null) {
         missing += " instanceGroup";
       }
 
-
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ListInstancesRegionInstanceGroupsHttpRequest(
-        access_token,
-        callback,
-        fields,
-        filter,
-        instanceGroup,
-        key,
-        maxResults,
-        orderBy,
-        pageToken,
-        prettyPrint,
-        quotaUser,
-        regionInstanceGroupsListInstancesRequestResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          filter,
+          instanceGroup,
+          key,
+          maxResults,
+          orderBy,
+          pageToken,
+          prettyPrint,
+          quotaUser,
+          regionInstanceGroupsListInstancesRequestResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -505,7 +503,8 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
       newBuilder.setPageToken(this.pageToken);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
-      newBuilder.setRegionInstanceGroupsListInstancesRequestResource(this.regionInstanceGroupsListInstancesRequestResource);
+      newBuilder.setRegionInstanceGroupsListInstancesRequestResource(
+          this.regionInstanceGroupsListInstancesRequestResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -514,19 +513,44 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
   @Override
   public String toString() {
     return "ListInstancesRegionInstanceGroupsHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "filter=" + filter + ", "
-        + "instanceGroup=" + instanceGroup + ", "
-        + "key=" + key + ", "
-        + "maxResults=" + maxResults + ", "
-        + "orderBy=" + orderBy + ", "
-        + "pageToken=" + pageToken + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "regionInstanceGroupsListInstancesRequestResource=" + regionInstanceGroupsListInstancesRequestResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "filter="
+        + filter
+        + ", "
+        + "instanceGroup="
+        + instanceGroup
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "maxResults="
+        + maxResults
+        + ", "
+        + "orderBy="
+        + orderBy
+        + ", "
+        + "pageToken="
+        + pageToken
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "regionInstanceGroupsListInstancesRequestResource="
+        + regionInstanceGroupsListInstancesRequestResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -536,22 +560,23 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
       return true;
     }
     if (o instanceof ListInstancesRegionInstanceGroupsHttpRequest) {
-      ListInstancesRegionInstanceGroupsHttpRequest that = (ListInstancesRegionInstanceGroupsHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.filter, that.getFilter()) &&
-          Objects.equals(this.instanceGroup, that.getInstanceGroup()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.maxResults, that.getMaxResults()) &&
-          Objects.equals(this.orderBy, that.getOrderBy()) &&
-          Objects.equals(this.pageToken, that.getPageToken()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.regionInstanceGroupsListInstancesRequestResource, that.getRegionInstanceGroupsListInstancesRequestResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      ListInstancesRegionInstanceGroupsHttpRequest that =
+          (ListInstancesRegionInstanceGroupsHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.filter, that.getFilter())
+          && Objects.equals(this.instanceGroup, that.getInstanceGroup())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.maxResults, that.getMaxResults())
+          && Objects.equals(this.orderBy, that.getOrderBy())
+          && Objects.equals(this.pageToken, that.getPageToken())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(
+              this.regionInstanceGroupsListInstancesRequestResource,
+              that.getRegionInstanceGroupsListInstancesRequestResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -559,19 +584,18 @@ public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMe
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      filter,
-      instanceGroup,
-      key,
-      maxResults,
-      orderBy,
-      pageToken,
-      prettyPrint,
-      quotaUser,
-      regionInstanceGroupsListInstancesRequestResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        filter,
+        instanceGroup,
+        key,
+        maxResults,
+        orderBy,
+        pageToken,
+        prettyPrint,
+        quotaUser,
+        regionInstanceGroupsListInstancesRequestResource,
+        userIp);
   }
 }

@@ -90,6 +90,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
+@Ignore
 public class ITComputeTest {
 
   private static final String REGION = "us-central1";

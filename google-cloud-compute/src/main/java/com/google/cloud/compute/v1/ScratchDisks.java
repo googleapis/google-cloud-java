@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class ScratchDisks implements ApiMessage {
     this.diskGb = null;
   }
 
-
-  private ScratchDisks(
-      Integer diskGb
-      ) {
+  private ScratchDisks(Integer diskGb) {
     this.diskGb = diskGb;
   }
 
@@ -72,22 +66,24 @@ public final class ScratchDisks implements ApiMessage {
     return diskGb;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ScratchDisks prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ScratchDisks getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ScratchDisks DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ScratchDisks();
   }
@@ -118,11 +114,8 @@ public final class ScratchDisks implements ApiMessage {
       return this;
     }
 
-
     public ScratchDisks build() {
-      return new ScratchDisks(
-        diskGb
-      );
+      return new ScratchDisks(diskGb);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class ScratchDisks implements ApiMessage {
 
   @Override
   public String toString() {
-    return "ScratchDisks{"
-        + "diskGb=" + diskGb
-        + "}";
+    return "ScratchDisks{" + "diskGb=" + diskGb + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class ScratchDisks implements ApiMessage {
     }
     if (o instanceof ScratchDisks) {
       ScratchDisks that = (ScratchDisks) o;
-      return
-          Objects.equals(this.diskGb, that.getDiskGb())
-          ;
+      return Objects.equals(this.diskGb, that.getDiskGb());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      diskGb
-    );
+    return Objects.hash(diskGb);
   }
 }

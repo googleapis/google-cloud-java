@@ -17,26 +17,23 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
 import com.google.api.resourcenames.ResourceNameFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class ProjectZoneAcceleratorTypeName implements com.google.api.resourcenames.ResourceName {
+public final class ProjectZoneAcceleratorTypeName implements ResourceName {
   private final String acceleratorType;
   private final String project;
   private final String zone;
   private static final PathTemplate PATH_TEMPLATE =
-        PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}/acceleratorTypes/{acceleratorType}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/zones/{zone}/acceleratorTypes/{acceleratorType}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -55,28 +52,16 @@ public final class ProjectZoneAcceleratorTypeName implements com.google.api.reso
   }
 
   public static ProjectZoneAcceleratorTypeName of(
-      String acceleratorType,
-      String project,
-      String zone
-      ) {
+      String acceleratorType, String project, String zone) {
     return newBuilder()
-    .setAcceleratorType(acceleratorType)
-    .setProject(project)
-    .setZone(zone)
-      .build();
+        .setAcceleratorType(acceleratorType)
+        .setProject(project)
+        .setZone(zone)
+        .build();
   }
 
-  public static String format(
-      String acceleratorType,
-      String project,
-      String zone
-      ) {
-    return of(
-        acceleratorType,
-        project,
-        zone
-        )
-        .toString();
+  public static String format(String acceleratorType, String project, String zone) {
+    return of(acceleratorType, project, zone).toString();
   }
 
   public String getAcceleratorType() {
@@ -90,7 +75,6 @@ public final class ProjectZoneAcceleratorTypeName implements com.google.api.reso
   public String getZone() {
     return zone;
   }
-
 
   @Override
   public Map<String, String> getFieldValuesMap() {
@@ -112,21 +96,20 @@ public final class ProjectZoneAcceleratorTypeName implements com.google.api.reso
     return getFieldValuesMap().get(fieldName);
   }
 
-
   public static ResourceNameFactory<ProjectZoneAcceleratorTypeName> newFactory() {
     return new ResourceNameFactory<ProjectZoneAcceleratorTypeName>() {
-      public ProjectZoneAcceleratorTypeName parse(String formattedString) {return ProjectZoneAcceleratorTypeName.parse(formattedString);}
+      public ProjectZoneAcceleratorTypeName parse(String formattedString) {
+        return ProjectZoneAcceleratorTypeName.parse(formattedString);
+      }
     };
   }
 
   public static ProjectZoneAcceleratorTypeName parse(String formattedString) {
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectZoneAcceleratorTypeName.parse: formattedString not in valid format");
-    return of(
-      matchMap.get("acceleratorType"),
-      matchMap.get("project"),
-      matchMap.get("zone")
-    );
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectZoneAcceleratorTypeName.parse: formattedString not in valid format");
+    return of(matchMap.get("acceleratorType"), matchMap.get("project"), matchMap.get("zone"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
@@ -141,9 +124,11 @@ public final class ProjectZoneAcceleratorTypeName implements com.google.api.reso
     public String getAcceleratorType() {
       return acceleratorType;
     }
+
     public String getProject() {
       return project;
     }
+
     public String getZone() {
       return zone;
     }
@@ -152,10 +137,12 @@ public final class ProjectZoneAcceleratorTypeName implements com.google.api.reso
       this.acceleratorType = acceleratorType;
       return this;
     }
+
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
+
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;
@@ -163,7 +150,7 @@ public final class ProjectZoneAcceleratorTypeName implements com.google.api.reso
 
     private Builder() {}
 
-    public Builder (ProjectZoneAcceleratorTypeName projectZoneAcceleratorTypeName) {
+    public Builder(ProjectZoneAcceleratorTypeName projectZoneAcceleratorTypeName) {
       acceleratorType = projectZoneAcceleratorTypeName.acceleratorType;
       project = projectZoneAcceleratorTypeName.project;
       zone = projectZoneAcceleratorTypeName.zone;
@@ -179,8 +166,7 @@ public final class ProjectZoneAcceleratorTypeName implements com.google.api.reso
     return PATH_TEMPLATE.instantiate(
         "acceleratorType", acceleratorType,
         "project", project,
-        "zone", zone
-        );
+        "zone", zone);
   }
 
   @Override
@@ -190,21 +176,15 @@ public final class ProjectZoneAcceleratorTypeName implements com.google.api.reso
     }
     if (o instanceof ProjectZoneAcceleratorTypeName) {
       ProjectZoneAcceleratorTypeName that = (ProjectZoneAcceleratorTypeName) o;
-      return
-          Objects.equals(this.acceleratorType, that.getAcceleratorType()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.acceleratorType, that.getAcceleratorType())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      acceleratorType,
-      project,
-      zone
-    );
+    return Objects.hash(acceleratorType, project, zone);
   }
 }

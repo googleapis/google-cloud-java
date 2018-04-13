@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -62,7 +59,6 @@ public final class HttpHealthCheck implements ApiMessage {
     this.unhealthyThreshold = null;
   }
 
-
   private HttpHealthCheck(
       Integer checkIntervalSec,
       String creationTimestamp,
@@ -76,8 +72,7 @@ public final class HttpHealthCheck implements ApiMessage {
       String requestPath,
       String selfLink,
       Integer timeoutSec,
-      Integer unhealthyThreshold
-      ) {
+      Integer unhealthyThreshold) {
     this.checkIntervalSec = checkIntervalSec;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -100,7 +95,8 @@ public final class HttpHealthCheck implements ApiMessage {
       fieldMap.put("checkIntervalSec", Collections.singletonList(String.valueOf(checkIntervalSec)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -133,7 +129,8 @@ public final class HttpHealthCheck implements ApiMessage {
       fieldMap.put("timeoutSec", Collections.singletonList(String.valueOf(timeoutSec)));
     }
     if (fieldNames.contains("unhealthyThreshold") && unhealthyThreshold != null) {
-      fieldMap.put("unhealthyThreshold", Collections.singletonList(String.valueOf(unhealthyThreshold)));
+      fieldMap.put(
+          "unhealthyThreshold", Collections.singletonList(String.valueOf(unhealthyThreshold)));
     }
     return fieldMap;
   }
@@ -240,22 +237,24 @@ public final class HttpHealthCheck implements ApiMessage {
     return unhealthyThreshold;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(HttpHealthCheck prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static HttpHealthCheck getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final HttpHealthCheck DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new HttpHealthCheck();
   }
@@ -454,35 +453,22 @@ public final class HttpHealthCheck implements ApiMessage {
       return this;
     }
 
-
     public HttpHealthCheck build() {
 
-
-
-
-
-
-
-
-
-
-
-
       return new HttpHealthCheck(
-        checkIntervalSec,
-        creationTimestamp,
-        description,
-        healthyThreshold,
-        host,
-        id,
-        kind,
-        name,
-        port,
-        requestPath,
-        selfLink,
-        timeoutSec,
-        unhealthyThreshold
-      );
+          checkIntervalSec,
+          creationTimestamp,
+          description,
+          healthyThreshold,
+          host,
+          id,
+          kind,
+          name,
+          port,
+          requestPath,
+          selfLink,
+          timeoutSec,
+          unhealthyThreshold);
     }
 
     public Builder clone() {
@@ -507,19 +493,44 @@ public final class HttpHealthCheck implements ApiMessage {
   @Override
   public String toString() {
     return "HttpHealthCheck{"
-        + "checkIntervalSec=" + checkIntervalSec + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "healthyThreshold=" + healthyThreshold + ", "
-        + "host=" + host + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "port=" + port + ", "
-        + "requestPath=" + requestPath + ", "
-        + "selfLink=" + selfLink + ", "
-        + "timeoutSec=" + timeoutSec + ", "
-        + "unhealthyThreshold=" + unhealthyThreshold
+        + "checkIntervalSec="
+        + checkIntervalSec
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "healthyThreshold="
+        + healthyThreshold
+        + ", "
+        + "host="
+        + host
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "port="
+        + port
+        + ", "
+        + "requestPath="
+        + requestPath
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "timeoutSec="
+        + timeoutSec
+        + ", "
+        + "unhealthyThreshold="
+        + unhealthyThreshold
         + "}";
   }
 
@@ -530,21 +541,19 @@ public final class HttpHealthCheck implements ApiMessage {
     }
     if (o instanceof HttpHealthCheck) {
       HttpHealthCheck that = (HttpHealthCheck) o;
-      return
-          Objects.equals(this.checkIntervalSec, that.getCheckIntervalSec()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.healthyThreshold, that.getHealthyThreshold()) &&
-          Objects.equals(this.host, that.getHost()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.port, that.getPort()) &&
-          Objects.equals(this.requestPath, that.getRequestPath()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.timeoutSec, that.getTimeoutSec()) &&
-          Objects.equals(this.unhealthyThreshold, that.getUnhealthyThreshold())
-          ;
+      return Objects.equals(this.checkIntervalSec, that.getCheckIntervalSec())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.healthyThreshold, that.getHealthyThreshold())
+          && Objects.equals(this.host, that.getHost())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.port, that.getPort())
+          && Objects.equals(this.requestPath, that.getRequestPath())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.timeoutSec, that.getTimeoutSec())
+          && Objects.equals(this.unhealthyThreshold, that.getUnhealthyThreshold());
     }
     return false;
   }
@@ -552,19 +561,18 @@ public final class HttpHealthCheck implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      checkIntervalSec,
-      creationTimestamp,
-      description,
-      healthyThreshold,
-      host,
-      id,
-      kind,
-      name,
-      port,
-      requestPath,
-      selfLink,
-      timeoutSec,
-      unhealthyThreshold
-    );
+        checkIntervalSec,
+        creationTimestamp,
+        description,
+        healthyThreshold,
+        host,
+        id,
+        kind,
+        name,
+        port,
+        requestPath,
+        selfLink,
+        timeoutSec,
+        unhealthyThreshold);
   }
 }

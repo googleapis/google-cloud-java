@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -58,7 +55,6 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private CreateSnapshotDiskHttpRequest(
       String access_token,
       String callback,
@@ -70,8 +66,7 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       String quotaUser,
       String requestId,
       Snapshot snapshotResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.disk = disk;
@@ -212,22 +207,24 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(CreateSnapshotDiskHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static CreateSnapshotDiskHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final CreateSnapshotDiskHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new CreateSnapshotDiskHttpRequest();
   }
@@ -398,38 +395,28 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public CreateSnapshotDiskHttpRequest build() {
       String missing = "";
-
 
       if (disk == null) {
         missing += " disk";
       }
 
-
-
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new CreateSnapshotDiskHttpRequest(
-        access_token,
-        callback,
-        disk,
-        fields,
-        guestFlush,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        snapshotResource,
-        userIp
-      );
+          access_token,
+          callback,
+          disk,
+          fields,
+          guestFlush,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          snapshotResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -452,17 +439,38 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "CreateSnapshotDiskHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "disk=" + disk + ", "
-        + "fields=" + fields + ", "
-        + "guestFlush=" + guestFlush + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "snapshotResource=" + snapshotResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "disk="
+        + disk
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "guestFlush="
+        + guestFlush
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "snapshotResource="
+        + snapshotResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -473,19 +481,17 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
     }
     if (o instanceof CreateSnapshotDiskHttpRequest) {
       CreateSnapshotDiskHttpRequest that = (CreateSnapshotDiskHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.disk, that.getDisk()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.guestFlush, that.getGuestFlush()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.snapshotResource, that.getSnapshotResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.disk, that.getDisk())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.guestFlush, that.getGuestFlush())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.snapshotResource, that.getSnapshotResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -493,17 +499,16 @@ public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      disk,
-      fields,
-      guestFlush,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      snapshotResource,
-      userIp
-    );
+        access_token,
+        callback,
+        disk,
+        fields,
+        guestFlush,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        snapshotResource,
+        userIp);
   }
 }

@@ -15,21 +15,18 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.AcceleratorTypeClient.AggregatedListAcceleratorTypesPagedResponse;
+import static com.google.cloud.compute.v1.AcceleratorTypeClient.ListAcceleratorTypesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AcceleratorType;
 import com.google.cloud.compute.v1.AcceleratorTypeAggregatedList;
-import static com.google.cloud.compute.v1.AcceleratorTypeClient.AggregatedListAcceleratorTypesPagedResponse;
-import static com.google.cloud.compute.v1.AcceleratorTypeClient.ListAcceleratorTypesPagedResponse;
 import com.google.cloud.compute.v1.AcceleratorTypeList;
-import com.google.cloud.compute.v1.AcceleratorTypesScopedList;
 import com.google.cloud.compute.v1.AggregatedListAcceleratorTypesHttpRequest;
 import com.google.cloud.compute.v1.GetAcceleratorTypeHttpRequest;
 import com.google.cloud.compute.v1.ListAcceleratorTypesHttpRequest;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneAcceleratorTypeName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -42,30 +39,39 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AcceleratorTypeStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListAcceleratorTypesHttpRequest, AggregatedListAcceleratorTypesPagedResponse> aggregatedListAcceleratorTypesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListAcceleratorTypesPagedCallable()");
+  public UnaryCallable<
+          AggregatedListAcceleratorTypesHttpRequest, AggregatedListAcceleratorTypesPagedResponse>
+      aggregatedListAcceleratorTypesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListAcceleratorTypesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList> aggregatedListAcceleratorTypesCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListAcceleratorTypesCallable()");
+  public UnaryCallable<AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList>
+      aggregatedListAcceleratorTypesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListAcceleratorTypesCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<GetAcceleratorTypeHttpRequest, AcceleratorType> getAcceleratorTypeCallable() {
+  public UnaryCallable<GetAcceleratorTypeHttpRequest, AcceleratorType>
+      getAcceleratorTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: getAcceleratorTypeCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListAcceleratorTypesHttpRequest, ListAcceleratorTypesPagedResponse> listAcceleratorTypesPagedCallable() {
+  public UnaryCallable<ListAcceleratorTypesHttpRequest, ListAcceleratorTypesPagedResponse>
+      listAcceleratorTypesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAcceleratorTypesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListAcceleratorTypesHttpRequest, AcceleratorTypeList> listAcceleratorTypesCallable() {
+  public UnaryCallable<ListAcceleratorTypesHttpRequest, AcceleratorTypeList>
+      listAcceleratorTypesCallable() {
     throw new UnsupportedOperationException("Not implemented: listAcceleratorTypesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

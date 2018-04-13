@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,12 +39,7 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     this.peerNetwork = null;
   }
 
-
-  private NetworksAddPeeringRequest(
-      Boolean autoCreateRoutes,
-      String name,
-      String peerNetwork
-      ) {
+  private NetworksAddPeeringRequest(Boolean autoCreateRoutes, String name, String peerNetwork) {
     this.autoCreateRoutes = autoCreateRoutes;
     this.name = name;
     this.peerNetwork = peerNetwork;
@@ -100,22 +92,24 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     return peerNetwork;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(NetworksAddPeeringRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static NetworksAddPeeringRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final NetworksAddPeeringRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new NetworksAddPeeringRequest();
   }
@@ -174,15 +168,9 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
       return this;
     }
 
-
     public NetworksAddPeeringRequest build() {
 
-
-      return new NetworksAddPeeringRequest(
-        autoCreateRoutes,
-        name,
-        peerNetwork
-      );
+      return new NetworksAddPeeringRequest(autoCreateRoutes, name, peerNetwork);
     }
 
     public Builder clone() {
@@ -197,9 +185,14 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
   @Override
   public String toString() {
     return "NetworksAddPeeringRequest{"
-        + "autoCreateRoutes=" + autoCreateRoutes + ", "
-        + "name=" + name + ", "
-        + "peerNetwork=" + peerNetwork
+        + "autoCreateRoutes="
+        + autoCreateRoutes
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "peerNetwork="
+        + peerNetwork
         + "}";
   }
 
@@ -210,21 +203,15 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     }
     if (o instanceof NetworksAddPeeringRequest) {
       NetworksAddPeeringRequest that = (NetworksAddPeeringRequest) o;
-      return
-          Objects.equals(this.autoCreateRoutes, that.getAutoCreateRoutes()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.peerNetwork, that.getPeerNetwork())
-          ;
+      return Objects.equals(this.autoCreateRoutes, that.getAutoCreateRoutes())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.peerNetwork, that.getPeerNetwork());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      autoCreateRoutes,
-      name,
-      peerNetwork
-    );
+    return Objects.hash(autoCreateRoutes, name, peerNetwork);
   }
 }

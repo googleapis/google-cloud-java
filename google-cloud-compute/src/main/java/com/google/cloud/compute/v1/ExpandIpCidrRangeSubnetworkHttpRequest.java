@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     this.userIp = null;
   }
 
-
   private ExpandIpCidrRangeSubnetworkHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       String requestId,
       String subnetwork,
       SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -108,8 +103,11 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     if (fieldNames.contains("subnetwork") && subnetwork != null) {
       fieldMap.put("subnetwork", Collections.singletonList(String.valueOf(subnetwork)));
     }
-    if (fieldNames.contains("subnetworksExpandIpCidrRangeRequestResource") && subnetworksExpandIpCidrRangeRequestResource != null) {
-      fieldMap.put("subnetworksExpandIpCidrRangeRequestResource", Collections.singletonList(String.valueOf(subnetworksExpandIpCidrRangeRequestResource)));
+    if (fieldNames.contains("subnetworksExpandIpCidrRangeRequestResource")
+        && subnetworksExpandIpCidrRangeRequestResource != null) {
+      fieldMap.put(
+          "subnetworksExpandIpCidrRangeRequestResource",
+          Collections.singletonList(String.valueOf(subnetworksExpandIpCidrRangeRequestResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +196,24 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ExpandIpCidrRangeSubnetworkHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ExpandIpCidrRangeSubnetworkHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ExpandIpCidrRangeSubnetworkHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ExpandIpCidrRangeSubnetworkHttpRequest();
   }
@@ -259,7 +259,8 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
         this.subnetwork = other.subnetwork;
       }
       if (other.getSubnetworksExpandIpCidrRangeRequestResource() != null) {
-        this.subnetworksExpandIpCidrRangeRequestResource = other.subnetworksExpandIpCidrRangeRequestResource;
+        this.subnetworksExpandIpCidrRangeRequestResource =
+            other.subnetworksExpandIpCidrRangeRequestResource;
       }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
@@ -276,7 +277,8 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
       this.subnetwork = source.subnetwork;
-      this.subnetworksExpandIpCidrRangeRequestResource = source.subnetworksExpandIpCidrRangeRequestResource;
+      this.subnetworksExpandIpCidrRangeRequestResource =
+          source.subnetworksExpandIpCidrRangeRequestResource;
       this.userIp = source.userIp;
     }
 
@@ -356,8 +358,10 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       return subnetworksExpandIpCidrRangeRequestResource;
     }
 
-    public Builder setSubnetworksExpandIpCidrRangeRequestResource(SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource) {
-      this.subnetworksExpandIpCidrRangeRequestResource = subnetworksExpandIpCidrRangeRequestResource;
+    public Builder setSubnetworksExpandIpCidrRangeRequestResource(
+        SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource) {
+      this.subnetworksExpandIpCidrRangeRequestResource =
+          subnetworksExpandIpCidrRangeRequestResource;
       return this;
     }
 
@@ -370,36 +374,27 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       return this;
     }
 
-
     public ExpandIpCidrRangeSubnetworkHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (subnetwork == null) {
         missing += " subnetwork";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ExpandIpCidrRangeSubnetworkHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        subnetwork,
-        subnetworksExpandIpCidrRangeRequestResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          subnetwork,
+          subnetworksExpandIpCidrRangeRequestResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -412,7 +407,8 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setSubnetwork(this.subnetwork);
-      newBuilder.setSubnetworksExpandIpCidrRangeRequestResource(this.subnetworksExpandIpCidrRangeRequestResource);
+      newBuilder.setSubnetworksExpandIpCidrRangeRequestResource(
+          this.subnetworksExpandIpCidrRangeRequestResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -421,16 +417,35 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
   @Override
   public String toString() {
     return "ExpandIpCidrRangeSubnetworkHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "subnetwork=" + subnetwork + ", "
-        + "subnetworksExpandIpCidrRangeRequestResource=" + subnetworksExpandIpCidrRangeRequestResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "subnetwork="
+        + subnetwork
+        + ", "
+        + "subnetworksExpandIpCidrRangeRequestResource="
+        + subnetworksExpandIpCidrRangeRequestResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +456,18 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
     }
     if (o instanceof ExpandIpCidrRangeSubnetworkHttpRequest) {
       ExpandIpCidrRangeSubnetworkHttpRequest that = (ExpandIpCidrRangeSubnetworkHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.subnetwork, that.getSubnetwork()) &&
-          Objects.equals(this.subnetworksExpandIpCidrRangeRequestResource, that.getSubnetworksExpandIpCidrRangeRequestResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.subnetwork, that.getSubnetwork())
+          && Objects.equals(
+              this.subnetworksExpandIpCidrRangeRequestResource,
+              that.getSubnetworksExpandIpCidrRangeRequestResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +475,15 @@ public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage 
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      subnetwork,
-      subnetworksExpandIpCidrRangeRequestResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        subnetwork,
+        subnetworksExpandIpCidrRangeRequestResource,
+        userIp);
   }
 }

@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -52,7 +51,6 @@ public final class InterconnectOutageNotification implements ApiMessage {
     this.state = null;
   }
 
-
   private InterconnectOutageNotification(
       List<String> affectedCircuits,
       String description,
@@ -61,8 +59,7 @@ public final class InterconnectOutageNotification implements ApiMessage {
       String name,
       String source,
       String startTime,
-      String state
-      ) {
+      String state) {
     this.affectedCircuits = affectedCircuits;
     this.description = description;
     this.endTime = endTime;
@@ -174,22 +171,24 @@ public final class InterconnectOutageNotification implements ApiMessage {
     return state;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InterconnectOutageNotification prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InterconnectOutageNotification getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InterconnectOutageNotification DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InterconnectOutageNotification();
   }
@@ -326,25 +325,10 @@ public final class InterconnectOutageNotification implements ApiMessage {
       return this;
     }
 
-
     public InterconnectOutageNotification build() {
 
-
-
-
-
-
-
       return new InterconnectOutageNotification(
-        affectedCircuits,
-        description,
-        endTime,
-        issueType,
-        name,
-        source,
-        startTime,
-        state
-      );
+          affectedCircuits, description, endTime, issueType, name, source, startTime, state);
     }
 
     public Builder clone() {
@@ -364,14 +348,29 @@ public final class InterconnectOutageNotification implements ApiMessage {
   @Override
   public String toString() {
     return "InterconnectOutageNotification{"
-        + "affectedCircuits=" + affectedCircuits + ", "
-        + "description=" + description + ", "
-        + "endTime=" + endTime + ", "
-        + "issueType=" + issueType + ", "
-        + "name=" + name + ", "
-        + "source=" + source + ", "
-        + "startTime=" + startTime + ", "
-        + "state=" + state
+        + "affectedCircuits="
+        + affectedCircuits
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "endTime="
+        + endTime
+        + ", "
+        + "issueType="
+        + issueType
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "source="
+        + source
+        + ", "
+        + "startTime="
+        + startTime
+        + ", "
+        + "state="
+        + state
         + "}";
   }
 
@@ -382,16 +381,14 @@ public final class InterconnectOutageNotification implements ApiMessage {
     }
     if (o instanceof InterconnectOutageNotification) {
       InterconnectOutageNotification that = (InterconnectOutageNotification) o;
-      return
-          Objects.equals(this.affectedCircuits, that.getAffectedCircuitsList()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.endTime, that.getEndTime()) &&
-          Objects.equals(this.issueType, that.getIssueType()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.source, that.getSource()) &&
-          Objects.equals(this.startTime, that.getStartTime()) &&
-          Objects.equals(this.state, that.getState())
-          ;
+      return Objects.equals(this.affectedCircuits, that.getAffectedCircuitsList())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.endTime, that.getEndTime())
+          && Objects.equals(this.issueType, that.getIssueType())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.source, that.getSource())
+          && Objects.equals(this.startTime, that.getStartTime())
+          && Objects.equals(this.state, that.getState());
     }
     return false;
   }
@@ -399,14 +396,6 @@ public final class InterconnectOutageNotification implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      affectedCircuits,
-      description,
-      endTime,
-      issueType,
-      name,
-      source,
-      startTime,
-      state
-    );
+        affectedCircuits, description, endTime, issueType, name, source, startTime, state);
   }
 }

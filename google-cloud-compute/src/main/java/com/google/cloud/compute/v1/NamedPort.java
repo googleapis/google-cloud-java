@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class NamedPort implements ApiMessage {
     this.port = null;
   }
 
-
-  private NamedPort(
-      String name,
-      Integer port
-      ) {
+  private NamedPort(String name, Integer port) {
     this.name = name;
     this.port = port;
   }
@@ -86,22 +79,24 @@ public final class NamedPort implements ApiMessage {
     return port;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(NamedPort prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static NamedPort getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final NamedPort DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new NamedPort();
   }
@@ -146,13 +141,9 @@ public final class NamedPort implements ApiMessage {
       return this;
     }
 
-
     public NamedPort build() {
 
-      return new NamedPort(
-        name,
-        port
-      );
+      return new NamedPort(name, port);
     }
 
     public Builder clone() {
@@ -165,10 +156,7 @@ public final class NamedPort implements ApiMessage {
 
   @Override
   public String toString() {
-    return "NamedPort{"
-        + "name=" + name + ", "
-        + "port=" + port
-        + "}";
+    return "NamedPort{" + "name=" + name + ", " + "port=" + port + "}";
   }
 
   @Override
@@ -178,19 +166,13 @@ public final class NamedPort implements ApiMessage {
     }
     if (o instanceof NamedPort) {
       NamedPort that = (NamedPort) o;
-      return
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.port, that.getPort())
-          ;
+      return Objects.equals(this.name, that.getName()) && Objects.equals(this.port, that.getPort());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      name,
-      port
-    );
+    return Objects.hash(name, port);
   }
 }

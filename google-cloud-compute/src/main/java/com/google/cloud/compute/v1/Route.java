@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -70,7 +69,6 @@ public final class Route implements ApiMessage {
     this.warnings = null;
   }
 
-
   private Route(
       String creationTimestamp,
       String description,
@@ -88,8 +86,7 @@ public final class Route implements ApiMessage {
       Integer priority,
       String selfLink,
       List<String> tags,
-      List<Warnings> warnings
-      ) {
+      List<Warnings> warnings) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.destRange = destRange;
@@ -113,7 +110,8 @@ public final class Route implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -304,22 +302,24 @@ public final class Route implements ApiMessage {
     return warnings;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Route prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Route getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Route DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Route();
   }
@@ -590,43 +590,26 @@ public final class Route implements ApiMessage {
       return this;
     }
 
-
     public Route build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new Route(
-        creationTimestamp,
-        description,
-        destRange,
-        id,
-        kind,
-        name,
-        network,
-        nextHopGateway,
-        nextHopInstance,
-        nextHopIp,
-        nextHopNetwork,
-        nextHopPeering,
-        nextHopVpnTunnel,
-        priority,
-        selfLink,
-        tags,
-        warnings
-      );
+          creationTimestamp,
+          description,
+          destRange,
+          id,
+          kind,
+          name,
+          network,
+          nextHopGateway,
+          nextHopInstance,
+          nextHopIp,
+          nextHopNetwork,
+          nextHopPeering,
+          nextHopVpnTunnel,
+          priority,
+          selfLink,
+          tags,
+          warnings);
     }
 
     public Builder clone() {
@@ -655,23 +638,56 @@ public final class Route implements ApiMessage {
   @Override
   public String toString() {
     return "Route{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "destRange=" + destRange + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "network=" + network + ", "
-        + "nextHopGateway=" + nextHopGateway + ", "
-        + "nextHopInstance=" + nextHopInstance + ", "
-        + "nextHopIp=" + nextHopIp + ", "
-        + "nextHopNetwork=" + nextHopNetwork + ", "
-        + "nextHopPeering=" + nextHopPeering + ", "
-        + "nextHopVpnTunnel=" + nextHopVpnTunnel + ", "
-        + "priority=" + priority + ", "
-        + "selfLink=" + selfLink + ", "
-        + "tags=" + tags + ", "
-        + "warnings=" + warnings
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "destRange="
+        + destRange
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "nextHopGateway="
+        + nextHopGateway
+        + ", "
+        + "nextHopInstance="
+        + nextHopInstance
+        + ", "
+        + "nextHopIp="
+        + nextHopIp
+        + ", "
+        + "nextHopNetwork="
+        + nextHopNetwork
+        + ", "
+        + "nextHopPeering="
+        + nextHopPeering
+        + ", "
+        + "nextHopVpnTunnel="
+        + nextHopVpnTunnel
+        + ", "
+        + "priority="
+        + priority
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "tags="
+        + tags
+        + ", "
+        + "warnings="
+        + warnings
         + "}";
   }
 
@@ -682,25 +698,23 @@ public final class Route implements ApiMessage {
     }
     if (o instanceof Route) {
       Route that = (Route) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.destRange, that.getDestRange()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.nextHopGateway, that.getNextHopGateway()) &&
-          Objects.equals(this.nextHopInstance, that.getNextHopInstance()) &&
-          Objects.equals(this.nextHopIp, that.getNextHopIp()) &&
-          Objects.equals(this.nextHopNetwork, that.getNextHopNetwork()) &&
-          Objects.equals(this.nextHopPeering, that.getNextHopPeering()) &&
-          Objects.equals(this.nextHopVpnTunnel, that.getNextHopVpnTunnel()) &&
-          Objects.equals(this.priority, that.getPriority()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.tags, that.getTagsList()) &&
-          Objects.equals(this.warnings, that.getWarningsList())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.destRange, that.getDestRange())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.nextHopGateway, that.getNextHopGateway())
+          && Objects.equals(this.nextHopInstance, that.getNextHopInstance())
+          && Objects.equals(this.nextHopIp, that.getNextHopIp())
+          && Objects.equals(this.nextHopNetwork, that.getNextHopNetwork())
+          && Objects.equals(this.nextHopPeering, that.getNextHopPeering())
+          && Objects.equals(this.nextHopVpnTunnel, that.getNextHopVpnTunnel())
+          && Objects.equals(this.priority, that.getPriority())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.tags, that.getTagsList())
+          && Objects.equals(this.warnings, that.getWarningsList());
     }
     return false;
   }
@@ -708,23 +722,22 @@ public final class Route implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      destRange,
-      id,
-      kind,
-      name,
-      network,
-      nextHopGateway,
-      nextHopInstance,
-      nextHopIp,
-      nextHopNetwork,
-      nextHopPeering,
-      nextHopVpnTunnel,
-      priority,
-      selfLink,
-      tags,
-      warnings
-    );
+        creationTimestamp,
+        description,
+        destRange,
+        id,
+        kind,
+        name,
+        network,
+        nextHopGateway,
+        nextHopInstance,
+        nextHopIp,
+        nextHopNetwork,
+        nextHopPeering,
+        nextHopVpnTunnel,
+        priority,
+        selfLink,
+        tags,
+        warnings);
   }
 }

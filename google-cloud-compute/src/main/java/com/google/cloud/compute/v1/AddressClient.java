@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.AddressStub;
 import com.google.cloud.compute.v1.stub.AddressStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -59,34 +49,33 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the addressClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the addressClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of AddressSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of AddressSettings to create().
+ * For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,19 +105,14 @@ public class AddressClient implements BackgroundResource {
   private final AddressSettings settings;
   private final AddressStub stub;
 
-
-
-  /**
-   * Constructs an instance of AddressClient with default settings.
-   */
+  /** Constructs an instance of AddressClient with default settings. */
   public static final AddressClient create() throws IOException {
     return create(AddressSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of AddressClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of AddressClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final AddressClient create(AddressSettings settings) throws IOException {
     return new AddressClient(settings);
@@ -144,9 +128,8 @@ public class AddressClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of AddressClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of AddressClient, using the given settings. This is protected so that it
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected AddressClient(AddressSettings settings) throws IOException {
     this.settings = settings;
@@ -168,12 +151,12 @@ public class AddressClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of addresses.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -190,8 +173,8 @@ public class AddressClient implements BackgroundResource {
   public final AggregatedListAddressesPagedResponse aggregatedListAddresses(ProjectName project) {
     AggregatedListAddressesHttpRequest request =
         AggregatedListAddressesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListAddresses(request);
   }
 
@@ -199,7 +182,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of addresses.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -215,9 +199,7 @@ public class AddressClient implements BackgroundResource {
   @BetaApi
   public final AggregatedListAddressesPagedResponse aggregatedListAddresses(String project) {
     AggregatedListAddressesHttpRequest request =
-        AggregatedListAddressesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListAddressesHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListAddresses(request);
   }
 
@@ -225,7 +207,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of addresses.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -242,16 +225,17 @@ public class AddressClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAddressesPagedResponse aggregatedListAddresses(AggregatedListAddressesHttpRequest request) {
-    return aggregatedListAddressesPagedCallable()
-        .call(request);
+  public final AggregatedListAddressesPagedResponse aggregatedListAddresses(
+      AggregatedListAddressesHttpRequest request) {
+    return aggregatedListAddressesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of addresses.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -267,7 +251,9 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListAddressesHttpRequest, AggregatedListAddressesPagedResponse> aggregatedListAddressesPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListAddressesHttpRequest, AggregatedListAddressesPagedResponse>
+      aggregatedListAddressesPagedCallable() {
     return stub.aggregatedListAddressesPagedCallable();
   }
 
@@ -275,7 +261,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of addresses.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -298,7 +285,8 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListAddressesHttpRequest, AddressAggregatedList> aggregatedListAddressesCallable() {
+  public final UnaryCallable<AggregatedListAddressesHttpRequest, AddressAggregatedList>
+      aggregatedListAddressesCallable() {
     return stub.aggregatedListAddressesCallable();
   }
 
@@ -306,7 +294,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Deletes the specified address resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
@@ -316,11 +305,15 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    *
    * @param address Name of the address resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -328,9 +321,9 @@ public class AddressClient implements BackgroundResource {
 
     DeleteAddressHttpRequest request =
         DeleteAddressHttpRequest.newBuilder()
-        .setAddress(address == null ? null : address.toString())
-        .setRequestId(requestId)
-        .build();
+            .setAddress(address == null ? null : address.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteAddress(request);
   }
 
@@ -338,7 +331,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Deletes the specified address resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
@@ -348,21 +342,22 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    *
    * @param address Name of the address resource to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Operation deleteAddress(String address, String requestId) {
 
     DeleteAddressHttpRequest request =
-        DeleteAddressHttpRequest.newBuilder()
-        .setAddress(address)
-        .setRequestId(requestId)
-        .build();
+        DeleteAddressHttpRequest.newBuilder().setAddress(address).setRequestId(requestId).build();
     return deleteAddress(request);
   }
 
@@ -370,7 +365,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Deletes the specified address resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
@@ -395,7 +391,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Deletes the specified address resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
@@ -419,7 +416,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Returns the specified address resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
@@ -435,8 +433,8 @@ public class AddressClient implements BackgroundResource {
 
     GetAddressHttpRequest request =
         GetAddressHttpRequest.newBuilder()
-        .setAddress(address == null ? null : address.toString())
-        .build();
+            .setAddress(address == null ? null : address.toString())
+            .build();
     return getAddress(request);
   }
 
@@ -444,7 +442,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Returns the specified address resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
@@ -458,10 +457,7 @@ public class AddressClient implements BackgroundResource {
   @BetaApi
   public final Address getAddress(String address) {
 
-    GetAddressHttpRequest request =
-        GetAddressHttpRequest.newBuilder()
-        .setAddress(address)
-        .build();
+    GetAddressHttpRequest request = GetAddressHttpRequest.newBuilder().setAddress(address).build();
     return getAddress(request);
   }
 
@@ -469,7 +465,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Returns the specified address resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
@@ -492,7 +489,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Returns the specified address resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionAddressName address = ProjectRegionAddressName.of("[PROJECT]", "[REGION]", "[ADDRESS]");
@@ -514,7 +512,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Creates an address resource in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   String requestId = "";
@@ -524,24 +523,31 @@ public class AddressClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
-   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
+   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (==
+   *     resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for
+   *     v1.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertAddress(String requestId, ProjectRegionName region, Address addressResource) {
+  public final Operation insertAddress(
+      String requestId, ProjectRegionName region, Address addressResource) {
 
     InsertAddressHttpRequest request =
         InsertAddressHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setRegion(region == null ? null : region.toString())
-        .setAddressResource(addressResource)
-        .build();
+            .setRequestId(requestId)
+            .setRegion(region == null ? null : region.toString())
+            .setAddressResource(addressResource)
+            .build();
     return insertAddress(request);
   }
 
@@ -549,7 +555,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Creates an address resource in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   String requestId = "";
@@ -559,13 +566,19 @@ public class AddressClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @param region Name of the region for this request.
-   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
+   * @param addressResource A reserved address resource. (== resource_for beta.addresses ==) (==
+   *     resource_for v1.addresses ==) (== resource_for beta.globalAddresses ==) (== resource_for
+   *     v1.globalAddresses ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -573,10 +586,10 @@ public class AddressClient implements BackgroundResource {
 
     InsertAddressHttpRequest request =
         InsertAddressHttpRequest.newBuilder()
-        .setRequestId(requestId)
-        .setRegion(region)
-        .setAddressResource(addressResource)
-        .build();
+            .setRequestId(requestId)
+            .setRegion(region)
+            .setAddressResource(addressResource)
+            .build();
     return insertAddress(request);
   }
 
@@ -584,7 +597,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Creates an address resource in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   String requestId = "";
@@ -611,7 +625,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Creates an address resource in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   String requestId = "";
@@ -637,7 +652,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Retrieves a list of addresses contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -654,8 +670,8 @@ public class AddressClient implements BackgroundResource {
   public final ListAddressesPagedResponse listAddresses(ProjectRegionName region) {
     ListAddressesHttpRequest request =
         ListAddressesHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .build();
     return listAddresses(request);
   }
 
@@ -663,7 +679,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Retrieves a list of addresses contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -679,9 +696,7 @@ public class AddressClient implements BackgroundResource {
   @BetaApi
   public final ListAddressesPagedResponse listAddresses(String region) {
     ListAddressesHttpRequest request =
-        ListAddressesHttpRequest.newBuilder()
-        .setRegion(region)
-        .build();
+        ListAddressesHttpRequest.newBuilder().setRegion(region).build();
     return listAddresses(request);
   }
 
@@ -689,7 +704,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Retrieves a list of addresses contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -707,15 +723,15 @@ public class AddressClient implements BackgroundResource {
    */
   @BetaApi
   public final ListAddressesPagedResponse listAddresses(ListAddressesHttpRequest request) {
-    return listAddressesPagedCallable()
-        .call(request);
+    return listAddressesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of addresses contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -731,7 +747,8 @@ public class AddressClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListAddressesHttpRequest, ListAddressesPagedResponse> listAddressesPagedCallable() {
+  public final UnaryCallable<ListAddressesHttpRequest, ListAddressesPagedResponse>
+      listAddressesPagedCallable() {
     return stub.listAddressesPagedCallable();
   }
 
@@ -739,7 +756,8 @@ public class AddressClient implements BackgroundResource {
   /**
    * Retrieves a list of addresses contained within the specified region.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AddressClient addressClient = AddressClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -767,7 +785,7 @@ public class AddressClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -796,15 +814,14 @@ public class AddressClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListAddressesPagedResponse extends AbstractPagedListResponse<
-      AggregatedListAddressesHttpRequest,
-      AddressAggregatedList,
-      AddressesScopedList,
-      AggregatedListAddressesPage,
-      AggregatedListAddressesFixedSizeCollection> {
+  public static class AggregatedListAddressesPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList,
+          AggregatedListAddressesPage, AggregatedListAddressesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListAddressesPagedResponse> createAsync(
-        PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList> context,
+        PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList>
+            context,
         ApiFuture<AddressAggregatedList> futureResponse) {
       ApiFuture<AggregatedListAddressesPage> futurePage =
           AggregatedListAddressesPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -821,18 +838,16 @@ public class AddressClient implements BackgroundResource {
     private AggregatedListAddressesPagedResponse(AggregatedListAddressesPage page) {
       super(page, AggregatedListAddressesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListAddressesPage extends AbstractPage<
-      AggregatedListAddressesHttpRequest,
-      AddressAggregatedList,
-      AddressesScopedList,
-      AggregatedListAddressesPage> {
+  public static class AggregatedListAddressesPage
+      extends AbstractPage<
+          AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList,
+          AggregatedListAddressesPage> {
 
     private AggregatedListAddressesPage(
-        PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList> context,
+        PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList>
+            context,
         AddressAggregatedList response) {
       super(context, response);
     }
@@ -843,31 +858,28 @@ public class AddressClient implements BackgroundResource {
 
     @Override
     protected AggregatedListAddressesPage createPage(
-        PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList> context,
+        PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList>
+            context,
         AddressAggregatedList response) {
       return new AggregatedListAddressesPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListAddressesPage> createPageAsync(
-        PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList> context,
+        PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList>
+            context,
         ApiFuture<AddressAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListAddressesFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListAddressesHttpRequest,
-      AddressAggregatedList,
-      AddressesScopedList,
-      AggregatedListAddressesPage,
-      AggregatedListAddressesFixedSizeCollection> {
+  public static class AggregatedListAddressesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList,
+          AggregatedListAddressesPage, AggregatedListAddressesFixedSizeCollection> {
 
-    private AggregatedListAddressesFixedSizeCollection(List<AggregatedListAddressesPage> pages, int collectionSize) {
+    private AggregatedListAddressesFixedSizeCollection(
+        List<AggregatedListAddressesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -880,15 +892,12 @@ public class AddressClient implements BackgroundResource {
         List<AggregatedListAddressesPage> pages, int collectionSize) {
       return new AggregatedListAddressesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListAddressesPagedResponse extends AbstractPagedListResponse<
-      ListAddressesHttpRequest,
-      AddressList,
-      Address,
-      ListAddressesPage,
-      ListAddressesFixedSizeCollection> {
+
+  public static class ListAddressesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAddressesHttpRequest, AddressList, Address, ListAddressesPage,
+          ListAddressesFixedSizeCollection> {
 
     public static ApiFuture<ListAddressesPagedResponse> createAsync(
         PageContext<ListAddressesHttpRequest, AddressList, Address> context,
@@ -908,19 +917,13 @@ public class AddressClient implements BackgroundResource {
     private ListAddressesPagedResponse(ListAddressesPage page) {
       super(page, ListAddressesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListAddressesPage extends AbstractPage<
-      ListAddressesHttpRequest,
-      AddressList,
-      Address,
-      ListAddressesPage> {
+  public static class ListAddressesPage
+      extends AbstractPage<ListAddressesHttpRequest, AddressList, Address, ListAddressesPage> {
 
     private ListAddressesPage(
-        PageContext<ListAddressesHttpRequest, AddressList, Address> context,
-        AddressList response) {
+        PageContext<ListAddressesHttpRequest, AddressList, Address> context, AddressList response) {
       super(context, response);
     }
 
@@ -930,8 +933,7 @@ public class AddressClient implements BackgroundResource {
 
     @Override
     protected ListAddressesPage createPage(
-        PageContext<ListAddressesHttpRequest, AddressList, Address> context,
-        AddressList response) {
+        PageContext<ListAddressesHttpRequest, AddressList, Address> context, AddressList response) {
       return new ListAddressesPage(context, response);
     }
 
@@ -941,18 +943,12 @@ public class AddressClient implements BackgroundResource {
         ApiFuture<AddressList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListAddressesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListAddressesHttpRequest,
-      AddressList,
-      Address,
-      ListAddressesPage,
-      ListAddressesFixedSizeCollection> {
+  public static class ListAddressesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAddressesHttpRequest, AddressList, Address, ListAddressesPage,
+          ListAddressesFixedSizeCollection> {
 
     private ListAddressesFixedSizeCollection(List<ListAddressesPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -967,7 +963,5 @@ public class AddressClient implements BackgroundResource {
         List<ListAddressesPage> pages, int collectionSize) {
       return new ListAddressesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

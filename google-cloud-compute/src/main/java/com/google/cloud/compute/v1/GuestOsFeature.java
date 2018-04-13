@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class GuestOsFeature implements ApiMessage {
     this.type = null;
   }
 
-
-  private GuestOsFeature(
-      String type
-      ) {
+  private GuestOsFeature(String type) {
     this.type = type;
   }
 
@@ -72,22 +66,24 @@ public final class GuestOsFeature implements ApiMessage {
     return type;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GuestOsFeature prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GuestOsFeature getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GuestOsFeature DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GuestOsFeature();
   }
@@ -118,11 +114,8 @@ public final class GuestOsFeature implements ApiMessage {
       return this;
     }
 
-
     public GuestOsFeature build() {
-      return new GuestOsFeature(
-        type
-      );
+      return new GuestOsFeature(type);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class GuestOsFeature implements ApiMessage {
 
   @Override
   public String toString() {
-    return "GuestOsFeature{"
-        + "type=" + type
-        + "}";
+    return "GuestOsFeature{" + "type=" + type + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class GuestOsFeature implements ApiMessage {
     }
     if (o instanceof GuestOsFeature) {
       GuestOsFeature that = (GuestOsFeature) o;
-      return
-          Objects.equals(this.type, that.getType())
-          ;
+      return Objects.equals(this.type, that.getType());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      type
-    );
+    return Objects.hash(type);
   }
 }

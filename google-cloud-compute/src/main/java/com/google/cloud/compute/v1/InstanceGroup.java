@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,7 +61,6 @@ public final class InstanceGroup implements ApiMessage {
     this.zone = null;
   }
 
-
   private InstanceGroup(
       String creationTimestamp,
       String description,
@@ -76,8 +74,7 @@ public final class InstanceGroup implements ApiMessage {
       String selfLink,
       Integer size,
       String subnetwork,
-      String zone
-      ) {
+      String zone) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.fingerprint = fingerprint;
@@ -97,7 +94,8 @@ public final class InstanceGroup implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -244,22 +242,24 @@ public final class InstanceGroup implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroup prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroup getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroup DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroup();
   }
@@ -466,35 +466,22 @@ public final class InstanceGroup implements ApiMessage {
       return this;
     }
 
-
     public InstanceGroup build() {
 
-
-
-
-
-
-
-
-
-
-
-
       return new InstanceGroup(
-        creationTimestamp,
-        description,
-        fingerprint,
-        id,
-        kind,
-        name,
-        namedPorts,
-        network,
-        region,
-        selfLink,
-        size,
-        subnetwork,
-        zone
-      );
+          creationTimestamp,
+          description,
+          fingerprint,
+          id,
+          kind,
+          name,
+          namedPorts,
+          network,
+          region,
+          selfLink,
+          size,
+          subnetwork,
+          zone);
     }
 
     public Builder clone() {
@@ -519,19 +506,44 @@ public final class InstanceGroup implements ApiMessage {
   @Override
   public String toString() {
     return "InstanceGroup{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "fingerprint=" + fingerprint + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "namedPorts=" + namedPorts + ", "
-        + "network=" + network + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "size=" + size + ", "
-        + "subnetwork=" + subnetwork + ", "
-        + "zone=" + zone
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "namedPorts="
+        + namedPorts
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "size="
+        + size
+        + ", "
+        + "subnetwork="
+        + subnetwork
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -542,21 +554,19 @@ public final class InstanceGroup implements ApiMessage {
     }
     if (o instanceof InstanceGroup) {
       InstanceGroup that = (InstanceGroup) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.namedPorts, that.getNamedPortsList()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.size, that.getSize()) &&
-          Objects.equals(this.subnetwork, that.getSubnetwork()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.namedPorts, that.getNamedPortsList())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.size, that.getSize())
+          && Objects.equals(this.subnetwork, that.getSubnetwork())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -564,19 +574,18 @@ public final class InstanceGroup implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      fingerprint,
-      id,
-      kind,
-      name,
-      namedPorts,
-      network,
-      region,
-      selfLink,
-      size,
-      subnetwork,
-      zone
-    );
+        creationTimestamp,
+        description,
+        fingerprint,
+        id,
+        kind,
+        name,
+        namedPorts,
+        network,
+        region,
+        selfLink,
+        size,
+        subnetwork,
+        zone);
   }
 }

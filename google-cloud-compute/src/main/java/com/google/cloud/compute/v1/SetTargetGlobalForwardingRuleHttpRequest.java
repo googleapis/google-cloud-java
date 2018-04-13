@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessag
     this.userIp = null;
   }
 
-
   private SetTargetGlobalForwardingRuleHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessag
       String quotaUser,
       String requestId,
       TargetReference targetReferenceResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -109,7 +104,9 @@ public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessag
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
     }
     if (fieldNames.contains("targetReferenceResource") && targetReferenceResource != null) {
-      fieldMap.put("targetReferenceResource", Collections.singletonList(String.valueOf(targetReferenceResource)));
+      fieldMap.put(
+          "targetReferenceResource",
+          Collections.singletonList(String.valueOf(targetReferenceResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +195,24 @@ public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessag
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetTargetGlobalForwardingRuleHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetTargetGlobalForwardingRuleHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetTargetGlobalForwardingRuleHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetTargetGlobalForwardingRuleHttpRequest();
   }
@@ -370,36 +369,27 @@ public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessag
       return this;
     }
 
-
     public SetTargetGlobalForwardingRuleHttpRequest build() {
       String missing = "";
-
-
 
       if (forwardingRule == null) {
         missing += " forwardingRule";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetTargetGlobalForwardingRuleHttpRequest(
-        access_token,
-        callback,
-        fields,
-        forwardingRule,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetReferenceResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          forwardingRule,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetReferenceResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +411,35 @@ public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessag
   @Override
   public String toString() {
     return "SetTargetGlobalForwardingRuleHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "forwardingRule=" + forwardingRule + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetReferenceResource=" + targetReferenceResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "forwardingRule="
+        + forwardingRule
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetReferenceResource="
+        + targetReferenceResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +450,16 @@ public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessag
     }
     if (o instanceof SetTargetGlobalForwardingRuleHttpRequest) {
       SetTargetGlobalForwardingRuleHttpRequest that = (SetTargetGlobalForwardingRuleHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.forwardingRule, that.getForwardingRule()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetReferenceResource, that.getTargetReferenceResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.forwardingRule, that.getForwardingRule())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.targetReferenceResource, that.getTargetReferenceResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +467,15 @@ public final class SetTargetGlobalForwardingRuleHttpRequest implements ApiMessag
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      forwardingRule,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetReferenceResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        forwardingRule,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetReferenceResource,
+        userIp);
   }
 }

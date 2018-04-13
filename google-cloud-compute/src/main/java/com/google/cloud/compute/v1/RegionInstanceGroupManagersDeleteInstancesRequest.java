@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest implements 
     this.instances = null;
   }
 
-
-  private RegionInstanceGroupManagersDeleteInstancesRequest(
-      List<String> instances
-      ) {
+  private RegionInstanceGroupManagersDeleteInstancesRequest(List<String> instances) {
     this.instances = instances;
   }
 
@@ -76,22 +71,24 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest implements 
     return instances;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RegionInstanceGroupManagersDeleteInstancesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RegionInstanceGroupManagersDeleteInstancesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RegionInstanceGroupManagersDeleteInstancesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RegionInstanceGroupManagersDeleteInstancesRequest();
   }
@@ -102,7 +99,8 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest implements 
     Builder() {}
 
     public Builder mergeFrom(RegionInstanceGroupManagersDeleteInstancesRequest other) {
-      if (other == RegionInstanceGroupManagersDeleteInstancesRequest.getDefaultInstance()) return this;
+      if (other == RegionInstanceGroupManagersDeleteInstancesRequest.getDefaultInstance())
+        return this;
       if (other.getInstancesList() != null) {
         this.instances = other.instances;
       }
@@ -130,11 +128,8 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest implements 
       return this;
     }
 
-
     public RegionInstanceGroupManagersDeleteInstancesRequest build() {
-      return new RegionInstanceGroupManagersDeleteInstancesRequest(
-        instances
-      );
+      return new RegionInstanceGroupManagersDeleteInstancesRequest(instances);
     }
 
     public Builder clone() {
@@ -146,9 +141,7 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest implements 
 
   @Override
   public String toString() {
-    return "RegionInstanceGroupManagersDeleteInstancesRequest{"
-        + "instances=" + instances
-        + "}";
+    return "RegionInstanceGroupManagersDeleteInstancesRequest{" + "instances=" + instances + "}";
   }
 
   @Override
@@ -157,18 +150,15 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest implements 
       return true;
     }
     if (o instanceof RegionInstanceGroupManagersDeleteInstancesRequest) {
-      RegionInstanceGroupManagersDeleteInstancesRequest that = (RegionInstanceGroupManagersDeleteInstancesRequest) o;
-      return
-          Objects.equals(this.instances, that.getInstancesList())
-          ;
+      RegionInstanceGroupManagersDeleteInstancesRequest that =
+          (RegionInstanceGroupManagersDeleteInstancesRequest) o;
+      return Objects.equals(this.instances, that.getInstancesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instances
-    );
+    return Objects.hash(instances);
   }
 }

@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -54,7 +53,6 @@ public final class RouterBgpPeer implements ApiMessage {
     this.peerIpAddress = null;
   }
 
-
   private RouterBgpPeer(
       String advertiseMode,
       List<String> advertisedGroups,
@@ -64,8 +62,7 @@ public final class RouterBgpPeer implements ApiMessage {
       String ipAddress,
       String name,
       Integer peerAsn,
-      String peerIpAddress
-      ) {
+      String peerIpAddress) {
     this.advertiseMode = advertiseMode;
     this.advertisedGroups = advertisedGroups;
     this.advertisedIpRanges = advertisedIpRanges;
@@ -98,7 +95,9 @@ public final class RouterBgpPeer implements ApiMessage {
       fieldMap.put("advertisedIpRanges", stringList.build());
     }
     if (fieldNames.contains("advertisedRoutePriority") && advertisedRoutePriority != null) {
-      fieldMap.put("advertisedRoutePriority", Collections.singletonList(String.valueOf(advertisedRoutePriority)));
+      fieldMap.put(
+          "advertisedRoutePriority",
+          Collections.singletonList(String.valueOf(advertisedRoutePriority)));
     }
     if (fieldNames.contains("interfaceName") && interfaceName != null) {
       fieldMap.put("interfaceName", Collections.singletonList(String.valueOf(interfaceName)));
@@ -192,22 +191,24 @@ public final class RouterBgpPeer implements ApiMessage {
     return peerIpAddress;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RouterBgpPeer prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RouterBgpPeer getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RouterBgpPeer DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RouterBgpPeer();
   }
@@ -366,27 +367,18 @@ public final class RouterBgpPeer implements ApiMessage {
       return this;
     }
 
-
     public RouterBgpPeer build() {
 
-
-
-
-
-
-
-
       return new RouterBgpPeer(
-        advertiseMode,
-        advertisedGroups,
-        advertisedIpRanges,
-        advertisedRoutePriority,
-        interfaceName,
-        ipAddress,
-        name,
-        peerAsn,
-        peerIpAddress
-      );
+          advertiseMode,
+          advertisedGroups,
+          advertisedIpRanges,
+          advertisedRoutePriority,
+          interfaceName,
+          ipAddress,
+          name,
+          peerAsn,
+          peerIpAddress);
     }
 
     public Builder clone() {
@@ -407,15 +399,32 @@ public final class RouterBgpPeer implements ApiMessage {
   @Override
   public String toString() {
     return "RouterBgpPeer{"
-        + "advertiseMode=" + advertiseMode + ", "
-        + "advertisedGroups=" + advertisedGroups + ", "
-        + "advertisedIpRanges=" + advertisedIpRanges + ", "
-        + "advertisedRoutePriority=" + advertisedRoutePriority + ", "
-        + "interfaceName=" + interfaceName + ", "
-        + "ipAddress=" + ipAddress + ", "
-        + "name=" + name + ", "
-        + "peerAsn=" + peerAsn + ", "
-        + "peerIpAddress=" + peerIpAddress
+        + "advertiseMode="
+        + advertiseMode
+        + ", "
+        + "advertisedGroups="
+        + advertisedGroups
+        + ", "
+        + "advertisedIpRanges="
+        + advertisedIpRanges
+        + ", "
+        + "advertisedRoutePriority="
+        + advertisedRoutePriority
+        + ", "
+        + "interfaceName="
+        + interfaceName
+        + ", "
+        + "ipAddress="
+        + ipAddress
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "peerAsn="
+        + peerAsn
+        + ", "
+        + "peerIpAddress="
+        + peerIpAddress
         + "}";
   }
 
@@ -426,17 +435,15 @@ public final class RouterBgpPeer implements ApiMessage {
     }
     if (o instanceof RouterBgpPeer) {
       RouterBgpPeer that = (RouterBgpPeer) o;
-      return
-          Objects.equals(this.advertiseMode, that.getAdvertiseMode()) &&
-          Objects.equals(this.advertisedGroups, that.getAdvertisedGroupsList()) &&
-          Objects.equals(this.advertisedIpRanges, that.getAdvertisedIpRangesList()) &&
-          Objects.equals(this.advertisedRoutePriority, that.getAdvertisedRoutePriority()) &&
-          Objects.equals(this.interfaceName, that.getInterfaceName()) &&
-          Objects.equals(this.ipAddress, that.getIpAddress()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.peerAsn, that.getPeerAsn()) &&
-          Objects.equals(this.peerIpAddress, that.getPeerIpAddress())
-          ;
+      return Objects.equals(this.advertiseMode, that.getAdvertiseMode())
+          && Objects.equals(this.advertisedGroups, that.getAdvertisedGroupsList())
+          && Objects.equals(this.advertisedIpRanges, that.getAdvertisedIpRangesList())
+          && Objects.equals(this.advertisedRoutePriority, that.getAdvertisedRoutePriority())
+          && Objects.equals(this.interfaceName, that.getInterfaceName())
+          && Objects.equals(this.ipAddress, that.getIpAddress())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.peerAsn, that.getPeerAsn())
+          && Objects.equals(this.peerIpAddress, that.getPeerIpAddress());
     }
     return false;
   }
@@ -444,15 +451,14 @@ public final class RouterBgpPeer implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      advertiseMode,
-      advertisedGroups,
-      advertisedIpRanges,
-      advertisedRoutePriority,
-      interfaceName,
-      ipAddress,
-      name,
-      peerAsn,
-      peerIpAddress
-    );
+        advertiseMode,
+        advertisedGroups,
+        advertisedIpRanges,
+        advertisedRoutePriority,
+        interfaceName,
+        ipAddress,
+        name,
+        peerAsn,
+        peerIpAddress);
   }
 }

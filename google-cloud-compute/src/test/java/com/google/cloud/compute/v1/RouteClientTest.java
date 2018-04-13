@@ -15,6 +15,12 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.RouteClient.ListRoutesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonRouteStub.deleteRouteMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonRouteStub.getRouteMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonRouteStub.insertRouteMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonRouteStub.listRoutesMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,19 +31,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.RouteClient.ListRoutesPagedResponse;
-import static com.google.cloud.compute.v1.stub.HttpJsonRouteStub.deleteRouteMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonRouteStub.getRouteMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonRouteStub.insertRouteMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonRouteStub.listRoutesMethodDescriptor;
 import com.google.cloud.compute.v1.stub.RouteStubSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -47,15 +46,15 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class RouteClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          deleteRouteMethodDescriptor,
-          getRouteMethodDescriptor,
-          insertRouteMethodDescriptor,
-          listRoutesMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, RouteStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              deleteRouteMethodDescriptor,
+              getRouteMethodDescriptor,
+              insertRouteMethodDescriptor,
+              listRoutesMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, RouteStubSettings.getDefaultEndpoint());
 
   private static RouteClient client;
   private static RouteSettings clientSettings;
@@ -64,13 +63,13 @@ public class RouteClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         RouteSettings.newBuilder()
-           .setTransportChannelProvider(
-               RouteSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       RouteClient.create(clientSettings);
+            .setTransportChannelProvider(
+                RouteSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = RouteClient.create(clientSettings);
   }
 
   @After
@@ -107,55 +106,63 @@ public class RouteClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
+    ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
     String requestId = "requestId37109963";
 
-    Operation actualResponse =
-        client.deleteRoute(route, requestId);
+    Operation actualResponse = client.deleteRoute(route, requestId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void deleteRouteExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
+      ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
       String requestId = "requestId37109963";
 
       client.deleteRoute(route, requestId);
@@ -174,7 +181,7 @@ public class RouteClientTest {
     String description = "description-1724546052";
     Integer priority = 1165461084;
     String nextHopNetwork = "nextHopNetwork1872908524";
-    ProjectNetworkName network = ProjectNetworkName.of("[PROJECT]", "[NETWORK]");
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
     String nextHopInstance = "nextHopInstance1467250071";
     String creationTimestamp = "creationTimestamp567396278";
@@ -183,48 +190,56 @@ public class RouteClientTest {
     String nextHopVpnTunnel = "nextHopVpnTunnel-1627639147";
     String nextHopIp = "nextHopIp1184061353";
     String id = "id3355";
-    Route expectedResponse = Route.newBuilder()
-      .setNextHopGateway(nextHopGateway)
-      .setKind(kind)
-      .setNextHopPeering(nextHopPeering)
-      .setDescription(description)
-      .setPriority(priority)
-      .setNextHopNetwork(nextHopNetwork)
-      .setNetwork(network.toString())
-      .setSelfLink(selfLink)
-      .setNextHopInstance(nextHopInstance)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setDestRange(destRange)
-      .setNextHopVpnTunnel(nextHopVpnTunnel)
-      .setNextHopIp(nextHopIp)
-      .setId(id)
-      .build();
+    Route expectedResponse =
+        Route.newBuilder()
+            .setNextHopGateway(nextHopGateway)
+            .setKind(kind)
+            .setNextHopPeering(nextHopPeering)
+            .setDescription(description)
+            .setPriority(priority)
+            .setNextHopNetwork(nextHopNetwork)
+            .setNetwork(network.toString())
+            .setSelfLink(selfLink)
+            .setNextHopInstance(nextHopInstance)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setDestRange(destRange)
+            .setNextHopVpnTunnel(nextHopVpnTunnel)
+            .setNextHopIp(nextHopIp)
+            .setId(id)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
+    ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
 
-    Route actualResponse =
-        client.getRoute(route);
+    Route actualResponse = client.getRoute(route);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getRouteExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectRouteName route = ProjectRouteName.of("[PROJECT]", "[ROUTE]");
+      ProjectGlobalRouteName route = ProjectGlobalRouteName.of("[PROJECT]", "[ROUTE]");
 
       client.getRoute(route);
       Assert.fail("No exception raised");
@@ -257,52 +272,60 @@ public class RouteClientTest {
     String clientOperationId = "clientOperationId-239630617";
     String user = "user3599307";
     String status = "status-892481550";
-    Operation expectedResponse = Operation.newBuilder()
-      .setHttpErrorMessage(httpErrorMessage)
-      .setTargetId(targetId)
-      .setKind(kind)
-      .setDescription(description)
-      .setStatusMessage(statusMessage)
-      .setSelfLink(selfLink)
-      .setInsertTime(insertTime)
-      .setHttpErrorStatusCode(httpErrorStatusCode)
-      .setZone(zone.toString())
-      .setTargetLink(targetLink)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setProgress(progress)
-      .setOperationType(operationType)
-      .setStartTime(startTime)
-      .setEndTime(endTime)
-      .setId(id)
-      .setRegion(region.toString())
-      .setClientOperationId(clientOperationId)
-      .setUser(user)
-      .setStatus(status)
-      .build();
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setHttpErrorMessage(httpErrorMessage)
+            .setTargetId(targetId)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
+            .build();
     mockService.addResponse(expectedResponse);
 
     String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
     Route routeResource = Route.newBuilder().build();
 
-    Operation actualResponse =
-        client.insertRoute(requestId, project, routeResource);
+    Operation actualResponse = client.insertRoute(requestId, project, routeResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void insertRouteExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -326,13 +349,14 @@ public class RouteClientTest {
     String selfLink = "selfLink-1691268851";
     Route itemsElement = Route.newBuilder().build();
     List<Route> items = Arrays.asList(itemsElement);
-    RouteList expectedResponse = RouteList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    RouteList expectedResponse =
+        RouteList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
@@ -341,22 +365,29 @@ public class RouteClientTest {
 
     List<Route> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listRoutesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -368,5 +399,4 @@ public class RouteClientTest {
       // Expected exception
     }
   }
-
 }

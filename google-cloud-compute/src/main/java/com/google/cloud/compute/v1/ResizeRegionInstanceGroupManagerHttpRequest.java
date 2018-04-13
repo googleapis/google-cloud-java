@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
     this.userIp = null;
   }
 
-
   private ResizeRegionInstanceGroupManagerHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
       String quotaUser,
       String requestId,
       Integer size,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -94,7 +89,8 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
     if (fieldNames.contains("instanceGroupManager") && instanceGroupManager != null) {
-      fieldMap.put("instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
+      fieldMap.put(
+          "instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -198,22 +194,24 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ResizeRegionInstanceGroupManagerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ResizeRegionInstanceGroupManagerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ResizeRegionInstanceGroupManagerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ResizeRegionInstanceGroupManagerHttpRequest();
   }
@@ -370,18 +368,12 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
       return this;
     }
 
-
     public ResizeRegionInstanceGroupManagerHttpRequest build() {
       String missing = "";
-
-
 
       if (instanceGroupManager == null) {
         missing += " instanceGroupManager";
       }
-
-
-
 
       if (size == null) {
         missing += " size";
@@ -391,17 +383,16 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ResizeRegionInstanceGroupManagerHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroupManager,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        size,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroupManager,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          size,
+          userIp);
     }
 
     public Builder clone() {
@@ -423,16 +414,35 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
   @Override
   public String toString() {
     return "ResizeRegionInstanceGroupManagerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroupManager=" + instanceGroupManager + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "size=" + size + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroupManager="
+        + instanceGroupManager
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "size="
+        + size
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -442,19 +452,18 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
       return true;
     }
     if (o instanceof ResizeRegionInstanceGroupManagerHttpRequest) {
-      ResizeRegionInstanceGroupManagerHttpRequest that = (ResizeRegionInstanceGroupManagerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.size, that.getSize()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      ResizeRegionInstanceGroupManagerHttpRequest that =
+          (ResizeRegionInstanceGroupManagerHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.size, that.getSize())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -462,16 +471,15 @@ public final class ResizeRegionInstanceGroupManagerHttpRequest implements ApiMes
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroupManager,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      size,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroupManager,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        size,
+        userIp);
   }
 }

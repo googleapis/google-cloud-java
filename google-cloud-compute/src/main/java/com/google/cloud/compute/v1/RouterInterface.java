@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -44,13 +41,8 @@ public final class RouterInterface implements ApiMessage {
     this.name = null;
   }
 
-
   private RouterInterface(
-      String ipRange,
-      String linkedInterconnectAttachment,
-      String linkedVpnTunnel,
-      String name
-      ) {
+      String ipRange, String linkedInterconnectAttachment, String linkedVpnTunnel, String name) {
     this.ipRange = ipRange;
     this.linkedInterconnectAttachment = linkedInterconnectAttachment;
     this.linkedVpnTunnel = linkedVpnTunnel;
@@ -63,8 +55,11 @@ public final class RouterInterface implements ApiMessage {
     if (fieldNames.contains("ipRange") && ipRange != null) {
       fieldMap.put("ipRange", Collections.singletonList(String.valueOf(ipRange)));
     }
-    if (fieldNames.contains("linkedInterconnectAttachment") && linkedInterconnectAttachment != null) {
-      fieldMap.put("linkedInterconnectAttachment", Collections.singletonList(String.valueOf(linkedInterconnectAttachment)));
+    if (fieldNames.contains("linkedInterconnectAttachment")
+        && linkedInterconnectAttachment != null) {
+      fieldMap.put(
+          "linkedInterconnectAttachment",
+          Collections.singletonList(String.valueOf(linkedInterconnectAttachment)));
     }
     if (fieldNames.contains("linkedVpnTunnel") && linkedVpnTunnel != null) {
       fieldMap.put("linkedVpnTunnel", Collections.singletonList(String.valueOf(linkedVpnTunnel)));
@@ -114,22 +109,24 @@ public final class RouterInterface implements ApiMessage {
     return name;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RouterInterface prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RouterInterface getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RouterInterface DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RouterInterface();
   }
@@ -202,17 +199,9 @@ public final class RouterInterface implements ApiMessage {
       return this;
     }
 
-
     public RouterInterface build() {
 
-
-
-      return new RouterInterface(
-        ipRange,
-        linkedInterconnectAttachment,
-        linkedVpnTunnel,
-        name
-      );
+      return new RouterInterface(ipRange, linkedInterconnectAttachment, linkedVpnTunnel, name);
     }
 
     public Builder clone() {
@@ -228,10 +217,17 @@ public final class RouterInterface implements ApiMessage {
   @Override
   public String toString() {
     return "RouterInterface{"
-        + "ipRange=" + ipRange + ", "
-        + "linkedInterconnectAttachment=" + linkedInterconnectAttachment + ", "
-        + "linkedVpnTunnel=" + linkedVpnTunnel + ", "
-        + "name=" + name
+        + "ipRange="
+        + ipRange
+        + ", "
+        + "linkedInterconnectAttachment="
+        + linkedInterconnectAttachment
+        + ", "
+        + "linkedVpnTunnel="
+        + linkedVpnTunnel
+        + ", "
+        + "name="
+        + name
         + "}";
   }
 
@@ -242,23 +238,17 @@ public final class RouterInterface implements ApiMessage {
     }
     if (o instanceof RouterInterface) {
       RouterInterface that = (RouterInterface) o;
-      return
-          Objects.equals(this.ipRange, that.getIpRange()) &&
-          Objects.equals(this.linkedInterconnectAttachment, that.getLinkedInterconnectAttachment()) &&
-          Objects.equals(this.linkedVpnTunnel, that.getLinkedVpnTunnel()) &&
-          Objects.equals(this.name, that.getName())
-          ;
+      return Objects.equals(this.ipRange, that.getIpRange())
+          && Objects.equals(
+              this.linkedInterconnectAttachment, that.getLinkedInterconnectAttachment())
+          && Objects.equals(this.linkedVpnTunnel, that.getLinkedVpnTunnel())
+          && Objects.equals(this.name, that.getName());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      ipRange,
-      linkedInterconnectAttachment,
-      linkedVpnTunnel,
-      name
-    );
+    return Objects.hash(ipRange, linkedInterconnectAttachment, linkedVpnTunnel, name);
   }
 }

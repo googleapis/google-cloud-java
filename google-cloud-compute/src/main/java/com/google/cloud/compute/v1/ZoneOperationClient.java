@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.ZoneOperationStub;
 import com.google.cloud.compute.v1.stub.ZoneOperationStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -59,33 +49,32 @@ import javax.annotation.Generated;
  * </pre>
  *
  * <p>Note: close() needs to be called on the zoneOperationClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ZoneOperationSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,27 +104,23 @@ public class ZoneOperationClient implements BackgroundResource {
   private final ZoneOperationSettings settings;
   private final ZoneOperationStub stub;
 
-
-
-  /**
-   * Constructs an instance of ZoneOperationClient with default settings.
-   */
+  /** Constructs an instance of ZoneOperationClient with default settings. */
   public static final ZoneOperationClient create() throws IOException {
     return create(ZoneOperationSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of ZoneOperationClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of ZoneOperationClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ZoneOperationClient create(ZoneOperationSettings settings) throws IOException {
+  public static final ZoneOperationClient create(ZoneOperationSettings settings)
+      throws IOException {
     return new ZoneOperationClient(settings);
   }
 
   /**
-   * Constructs an instance of ZoneOperationClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use ZoneOperationSettings}.
+   * Constructs an instance of ZoneOperationClient, using the given stub for making calls. This is
+   * for advanced usage - prefer to use ZoneOperationSettings}.
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ZoneOperationClient create(ZoneOperationStub stub) {
@@ -143,9 +128,9 @@ public class ZoneOperationClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of ZoneOperationClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of ZoneOperationClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected ZoneOperationClient(ZoneOperationSettings settings) throws IOException {
     this.settings = settings;
@@ -167,12 +152,12 @@ public class ZoneOperationClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified zone-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
@@ -188,8 +173,8 @@ public class ZoneOperationClient implements BackgroundResource {
 
     DeleteZoneOperationHttpRequest request =
         DeleteZoneOperationHttpRequest.newBuilder()
-        .setOperation(operation == null ? null : operation.toString())
-        .build();
+            .setOperation(operation == null ? null : operation.toString())
+            .build();
     deleteZoneOperation(request);
   }
 
@@ -197,7 +182,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Deletes the specified zone-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
@@ -212,9 +198,7 @@ public class ZoneOperationClient implements BackgroundResource {
   public final void deleteZoneOperation(String operation) {
 
     DeleteZoneOperationHttpRequest request =
-        DeleteZoneOperationHttpRequest.newBuilder()
-        .setOperation(operation)
-        .build();
+        DeleteZoneOperationHttpRequest.newBuilder().setOperation(operation).build();
     deleteZoneOperation(request);
   }
 
@@ -222,7 +206,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Deletes the specified zone-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
@@ -245,7 +230,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Deletes the specified zone-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
@@ -267,7 +253,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Retrieves the specified zone-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
@@ -283,8 +270,8 @@ public class ZoneOperationClient implements BackgroundResource {
 
     GetZoneOperationHttpRequest request =
         GetZoneOperationHttpRequest.newBuilder()
-        .setOperation(operation == null ? null : operation.toString())
-        .build();
+            .setOperation(operation == null ? null : operation.toString())
+            .build();
     return getZoneOperation(request);
   }
 
@@ -292,7 +279,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Retrieves the specified zone-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
@@ -307,9 +295,7 @@ public class ZoneOperationClient implements BackgroundResource {
   public final Operation getZoneOperation(String operation) {
 
     GetZoneOperationHttpRequest request =
-        GetZoneOperationHttpRequest.newBuilder()
-        .setOperation(operation)
-        .build();
+        GetZoneOperationHttpRequest.newBuilder().setOperation(operation).build();
     return getZoneOperation(request);
   }
 
@@ -317,7 +303,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Retrieves the specified zone-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
@@ -340,7 +327,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Retrieves the specified zone-specific Operations resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneOperationName operation = ProjectZoneOperationName.of("[PROJECT]", "[ZONE]", "[OPERATION]");
@@ -362,7 +350,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -379,8 +368,8 @@ public class ZoneOperationClient implements BackgroundResource {
   public final ListZoneOperationsPagedResponse listZoneOperations(ProjectZoneName zone) {
     ListZoneOperationsHttpRequest request =
         ListZoneOperationsHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .build();
     return listZoneOperations(request);
   }
 
@@ -388,7 +377,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -404,9 +394,7 @@ public class ZoneOperationClient implements BackgroundResource {
   @BetaApi
   public final ListZoneOperationsPagedResponse listZoneOperations(String zone) {
     ListZoneOperationsHttpRequest request =
-        ListZoneOperationsHttpRequest.newBuilder()
-        .setZone(zone)
-        .build();
+        ListZoneOperationsHttpRequest.newBuilder().setZone(zone).build();
     return listZoneOperations(request);
   }
 
@@ -414,7 +402,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -431,16 +420,17 @@ public class ZoneOperationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final ListZoneOperationsPagedResponse listZoneOperations(ListZoneOperationsHttpRequest request) {
-    return listZoneOperationsPagedCallable()
-        .call(request);
+  public final ListZoneOperationsPagedResponse listZoneOperations(
+      ListZoneOperationsHttpRequest request) {
+    return listZoneOperationsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -456,7 +446,8 @@ public class ZoneOperationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse> listZoneOperationsPagedCallable() {
+  public final UnaryCallable<ListZoneOperationsHttpRequest, ListZoneOperationsPagedResponse>
+      listZoneOperationsPagedCallable() {
     return stub.listZoneOperationsPagedCallable();
   }
 
@@ -464,7 +455,8 @@ public class ZoneOperationClient implements BackgroundResource {
   /**
    * Retrieves a list of Operation resources contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ZoneOperationClient zoneOperationClient = ZoneOperationClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -487,12 +479,13 @@ public class ZoneOperationClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListZoneOperationsHttpRequest, OperationList> listZoneOperationsCallable() {
+  public final UnaryCallable<ListZoneOperationsHttpRequest, OperationList>
+      listZoneOperationsCallable() {
     return stub.listZoneOperationsCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -521,12 +514,10 @@ public class ZoneOperationClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListZoneOperationsPagedResponse extends AbstractPagedListResponse<
-      ListZoneOperationsHttpRequest,
-      OperationList,
-      Operation,
-      ListZoneOperationsPage,
-      ListZoneOperationsFixedSizeCollection> {
+  public static class ListZoneOperationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListZoneOperationsHttpRequest, OperationList, Operation, ListZoneOperationsPage,
+          ListZoneOperationsFixedSizeCollection> {
 
     public static ApiFuture<ListZoneOperationsPagedResponse> createAsync(
         PageContext<ListZoneOperationsHttpRequest, OperationList, Operation> context,
@@ -546,15 +537,11 @@ public class ZoneOperationClient implements BackgroundResource {
     private ListZoneOperationsPagedResponse(ListZoneOperationsPage page) {
       super(page, ListZoneOperationsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListZoneOperationsPage extends AbstractPage<
-      ListZoneOperationsHttpRequest,
-      OperationList,
-      Operation,
-      ListZoneOperationsPage> {
+  public static class ListZoneOperationsPage
+      extends AbstractPage<
+          ListZoneOperationsHttpRequest, OperationList, Operation, ListZoneOperationsPage> {
 
     private ListZoneOperationsPage(
         PageContext<ListZoneOperationsHttpRequest, OperationList, Operation> context,
@@ -579,20 +566,15 @@ public class ZoneOperationClient implements BackgroundResource {
         ApiFuture<OperationList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListZoneOperationsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListZoneOperationsHttpRequest,
-      OperationList,
-      Operation,
-      ListZoneOperationsPage,
-      ListZoneOperationsFixedSizeCollection> {
+  public static class ListZoneOperationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListZoneOperationsHttpRequest, OperationList, Operation, ListZoneOperationsPage,
+          ListZoneOperationsFixedSizeCollection> {
 
-    private ListZoneOperationsFixedSizeCollection(List<ListZoneOperationsPage> pages, int collectionSize) {
+    private ListZoneOperationsFixedSizeCollection(
+        List<ListZoneOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -605,7 +587,5 @@ public class ZoneOperationClient implements BackgroundResource {
         List<ListZoneOperationsPage> pages, int collectionSize) {
       return new ListZoneOperationsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

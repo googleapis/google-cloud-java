@@ -15,17 +15,17 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.BackendServiceClient.AggregatedListBackendServicesPagedResponse;
+import static com.google.cloud.compute.v1.BackendServiceClient.ListBackendServicesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceAggregatedList;
-import static com.google.cloud.compute.v1.BackendServiceClient.AggregatedListBackendServicesPagedResponse;
-import static com.google.cloud.compute.v1.BackendServiceClient.ListBackendServicesPagedResponse;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
-import com.google.cloud.compute.v1.BackendServicesScopedList;
 import com.google.cloud.compute.v1.DeleteBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.GetBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.GetHealthBackendServiceHttpRequest;
@@ -33,9 +33,6 @@ import com.google.cloud.compute.v1.InsertBackendServiceHttpRequest;
 import com.google.cloud.compute.v1.ListBackendServicesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceHttpRequest;
-import com.google.cloud.compute.v1.ProjectBackendServiceName;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ResourceGroupReference;
 import com.google.cloud.compute.v1.UpdateBackendServiceHttpRequest;
 import javax.annotation.Generated;
 
@@ -49,15 +46,19 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class BackendServiceStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListBackendServicesHttpRequest, AggregatedListBackendServicesPagedResponse> aggregatedListBackendServicesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListBackendServicesPagedCallable()");
+  public UnaryCallable<
+          AggregatedListBackendServicesHttpRequest, AggregatedListBackendServicesPagedResponse>
+      aggregatedListBackendServicesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListBackendServicesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList> aggregatedListBackendServicesCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListBackendServicesCallable()");
+  public UnaryCallable<AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList>
+      aggregatedListBackendServicesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListBackendServicesCallable()");
   }
 
   @BetaApi
@@ -71,7 +72,8 @@ public abstract class BackendServiceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<GetHealthBackendServiceHttpRequest, BackendServiceGroupHealth> getHealthBackendServiceCallable() {
+  public UnaryCallable<GetHealthBackendServiceHttpRequest, BackendServiceGroupHealth>
+      getHealthBackendServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: getHealthBackendServiceCallable()");
   }
 
@@ -81,12 +83,14 @@ public abstract class BackendServiceStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListBackendServicesHttpRequest, ListBackendServicesPagedResponse> listBackendServicesPagedCallable() {
+  public UnaryCallable<ListBackendServicesHttpRequest, ListBackendServicesPagedResponse>
+      listBackendServicesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listBackendServicesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListBackendServicesHttpRequest, BackendServiceList> listBackendServicesCallable() {
+  public UnaryCallable<ListBackendServicesHttpRequest, BackendServiceList>
+      listBackendServicesCallable() {
     throw new UnsupportedOperationException("Not implemented: listBackendServicesCallable()");
   }
 
@@ -100,4 +104,6 @@ public abstract class BackendServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateBackendServiceCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

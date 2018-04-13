@@ -15,67 +15,15 @@
  */
 package com.google.cloud.compute.v1.stub;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
-import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.core.BackgroundResourceAggregation;
-import com.google.api.gax.httpjson.ApiMessageHttpRequestFormatter;
-import com.google.api.gax.httpjson.ApiMessageHttpResponseParser;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientStreamingCallable;
-import com.google.api.gax.rpc.OperationCallSettings;
-import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.RequestParamsExtractor;
-import com.google.api.gax.rpc.ServerStreamingCallSettings;
-import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.compute.v1.AddHealthCheckTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.AddInstanceTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.AggregatedListTargetPoolsHttpRequest;
-import com.google.cloud.compute.v1.DeleteTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.GetHealthTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.GetTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.InsertTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.InstanceReference;
-import com.google.cloud.compute.v1.ListTargetPoolsHttpRequest;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import com.google.cloud.compute.v1.ProjectRegionTargetPoolName;
-import com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.RemoveInstanceTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.SetBackupTargetPoolHttpRequest;
-import com.google.cloud.compute.v1.TargetPool;
-import com.google.cloud.compute.v1.TargetPoolAggregatedList;
-import static com.google.cloud.compute.v1.TargetPoolClient.AggregatedListTargetPoolsPagedResponse;
-import static com.google.cloud.compute.v1.TargetPoolClient.ListTargetPoolsPagedResponse;
-import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
-import com.google.cloud.compute.v1.TargetPoolList;
-import com.google.cloud.compute.v1.TargetPoolSettings;
-import com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest;
-import com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest;
-import com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest;
-import com.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest;
-import com.google.cloud.compute.v1.TargetPoolsScopedList;
-import com.google.cloud.compute.v1.TargetReference;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Sets;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -92,16 +40,18 @@ public class HttpJsonTargetPoolCallableFactory implements HttpJsonStubCallableFa
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       UnaryCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
-    return HttpJsonCallableFactory.createUnaryCallable(httpJsonCallSettings, callSettings, clientContext);
+    return HttpJsonCallableFactory.createUnaryCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 
   @Override
   public <RequestT, ResponseT, PagedListResponseT>
       UnaryCallable<RequestT, PagedListResponseT> createPagedCallable(
-      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
-      PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
-      ClientContext clientContext) {
-    return HttpJsonCallableFactory.createPagedCallable(httpJsonCallSettings, pagedCallSettings, clientContext);
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+          PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
+          ClientContext clientContext) {
+    return HttpJsonCallableFactory.createPagedCallable(
+        httpJsonCallSettings, pagedCallSettings, clientContext);
   }
 
   @Override
@@ -109,6 +59,7 @@ public class HttpJsonTargetPoolCallableFactory implements HttpJsonStubCallableFa
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       BatchingCallSettings<RequestT, ResponseT> batchingCallSettings,
       ClientContext clientContext) {
-    return HttpJsonCallableFactory.createBatchingCallable(httpJsonCallSettings, batchingCallSettings, clientContext);
+    return HttpJsonCallableFactory.createBatchingCallable(
+        httpJsonCallSettings, batchingCallSettings, clientContext);
   }
 }

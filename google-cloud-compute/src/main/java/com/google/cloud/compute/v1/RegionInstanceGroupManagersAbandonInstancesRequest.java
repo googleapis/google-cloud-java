@@ -18,9 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +36,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest implements
     this.instances = null;
   }
 
-
-  private RegionInstanceGroupManagersAbandonInstancesRequest(
-      List<String> instances
-      ) {
+  private RegionInstanceGroupManagersAbandonInstancesRequest(List<String> instances) {
     this.instances = instances;
   }
 
@@ -76,22 +71,24 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest implements
     return instances;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RegionInstanceGroupManagersAbandonInstancesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RegionInstanceGroupManagersAbandonInstancesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RegionInstanceGroupManagersAbandonInstancesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RegionInstanceGroupManagersAbandonInstancesRequest();
   }
@@ -102,7 +99,8 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest implements
     Builder() {}
 
     public Builder mergeFrom(RegionInstanceGroupManagersAbandonInstancesRequest other) {
-      if (other == RegionInstanceGroupManagersAbandonInstancesRequest.getDefaultInstance()) return this;
+      if (other == RegionInstanceGroupManagersAbandonInstancesRequest.getDefaultInstance())
+        return this;
       if (other.getInstancesList() != null) {
         this.instances = other.instances;
       }
@@ -130,11 +128,8 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest implements
       return this;
     }
 
-
     public RegionInstanceGroupManagersAbandonInstancesRequest build() {
-      return new RegionInstanceGroupManagersAbandonInstancesRequest(
-        instances
-      );
+      return new RegionInstanceGroupManagersAbandonInstancesRequest(instances);
     }
 
     public Builder clone() {
@@ -146,9 +141,7 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest implements
 
   @Override
   public String toString() {
-    return "RegionInstanceGroupManagersAbandonInstancesRequest{"
-        + "instances=" + instances
-        + "}";
+    return "RegionInstanceGroupManagersAbandonInstancesRequest{" + "instances=" + instances + "}";
   }
 
   @Override
@@ -157,18 +150,15 @@ public final class RegionInstanceGroupManagersAbandonInstancesRequest implements
       return true;
     }
     if (o instanceof RegionInstanceGroupManagersAbandonInstancesRequest) {
-      RegionInstanceGroupManagersAbandonInstancesRequest that = (RegionInstanceGroupManagersAbandonInstancesRequest) o;
-      return
-          Objects.equals(this.instances, that.getInstancesList())
-          ;
+      RegionInstanceGroupManagersAbandonInstancesRequest that =
+          (RegionInstanceGroupManagersAbandonInstancesRequest) o;
+      return Objects.equals(this.instances, that.getInstancesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instances
-    );
+    return Objects.hash(instances);
   }
 }

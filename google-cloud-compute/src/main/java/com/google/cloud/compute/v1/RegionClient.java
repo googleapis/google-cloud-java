@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.RegionStub;
 import com.google.cloud.compute.v1.stub.RegionStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -58,34 +48,33 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the regionClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the regionClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of RegionSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of RegionSettings to create().
+ * For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,19 +104,14 @@ public class RegionClient implements BackgroundResource {
   private final RegionSettings settings;
   private final RegionStub stub;
 
-
-
-  /**
-   * Constructs an instance of RegionClient with default settings.
-   */
+  /** Constructs an instance of RegionClient with default settings. */
   public static final RegionClient create() throws IOException {
     return create(RegionSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of RegionClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of RegionClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final RegionClient create(RegionSettings settings) throws IOException {
     return new RegionClient(settings);
@@ -143,9 +127,8 @@ public class RegionClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of RegionClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of RegionClient, using the given settings. This is protected so that it
+   * is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected RegionClient(RegionSettings settings) throws IOException {
     this.settings = settings;
@@ -167,12 +150,13 @@ public class RegionClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Region resource. Get a list of available regions by making a list() request.
+   * Returns the specified Region resource. Get a list of available regions by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -188,16 +172,18 @@ public class RegionClient implements BackgroundResource {
 
     GetRegionHttpRequest request =
         GetRegionHttpRequest.newBuilder()
-        .setRegion(region == null ? null : region.toString())
-        .build();
+            .setRegion(region == null ? null : region.toString())
+            .build();
     return getRegion(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Region resource. Get a list of available regions by making a list() request.
+   * Returns the specified Region resource. Get a list of available regions by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -211,18 +197,17 @@ public class RegionClient implements BackgroundResource {
   @BetaApi
   public final Region getRegion(String region) {
 
-    GetRegionHttpRequest request =
-        GetRegionHttpRequest.newBuilder()
-        .setRegion(region)
-        .build();
+    GetRegionHttpRequest request = GetRegionHttpRequest.newBuilder().setRegion(region).build();
     return getRegion(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Region resource. Get a list of available regions by making a list() request.
+   * Returns the specified Region resource. Get a list of available regions by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -243,9 +228,11 @@ public class RegionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified Region resource. Get a list of available regions by making a list() request.
+   * Returns the specified Region resource. Get a list of available regions by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -267,7 +254,8 @@ public class RegionClient implements BackgroundResource {
   /**
    * Retrieves the list of region resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -284,8 +272,8 @@ public class RegionClient implements BackgroundResource {
   public final ListRegionsPagedResponse listRegions(ProjectName project) {
     ListRegionsHttpRequest request =
         ListRegionsHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return listRegions(request);
   }
 
@@ -293,7 +281,8 @@ public class RegionClient implements BackgroundResource {
   /**
    * Retrieves the list of region resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -309,9 +298,7 @@ public class RegionClient implements BackgroundResource {
   @BetaApi
   public final ListRegionsPagedResponse listRegions(String project) {
     ListRegionsHttpRequest request =
-        ListRegionsHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        ListRegionsHttpRequest.newBuilder().setProject(project).build();
     return listRegions(request);
   }
 
@@ -319,7 +306,8 @@ public class RegionClient implements BackgroundResource {
   /**
    * Retrieves the list of region resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -337,15 +325,15 @@ public class RegionClient implements BackgroundResource {
    */
   @BetaApi
   public final ListRegionsPagedResponse listRegions(ListRegionsHttpRequest request) {
-    return listRegionsPagedCallable()
-        .call(request);
+    return listRegionsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of region resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -361,7 +349,8 @@ public class RegionClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListRegionsHttpRequest, ListRegionsPagedResponse> listRegionsPagedCallable() {
+  public final UnaryCallable<ListRegionsHttpRequest, ListRegionsPagedResponse>
+      listRegionsPagedCallable() {
     return stub.listRegionsPagedCallable();
   }
 
@@ -369,7 +358,8 @@ public class RegionClient implements BackgroundResource {
   /**
    * Retrieves the list of region resources available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (RegionClient regionClient = RegionClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -397,7 +387,7 @@ public class RegionClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -426,12 +416,10 @@ public class RegionClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class ListRegionsPagedResponse extends AbstractPagedListResponse<
-      ListRegionsHttpRequest,
-      RegionList,
-      Region,
-      ListRegionsPage,
-      ListRegionsFixedSizeCollection> {
+  public static class ListRegionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRegionsHttpRequest, RegionList, Region, ListRegionsPage,
+          ListRegionsFixedSizeCollection> {
 
     public static ApiFuture<ListRegionsPagedResponse> createAsync(
         PageContext<ListRegionsHttpRequest, RegionList, Region> context,
@@ -451,19 +439,13 @@ public class RegionClient implements BackgroundResource {
     private ListRegionsPagedResponse(ListRegionsPage page) {
       super(page, ListRegionsFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListRegionsPage extends AbstractPage<
-      ListRegionsHttpRequest,
-      RegionList,
-      Region,
-      ListRegionsPage> {
+  public static class ListRegionsPage
+      extends AbstractPage<ListRegionsHttpRequest, RegionList, Region, ListRegionsPage> {
 
     private ListRegionsPage(
-        PageContext<ListRegionsHttpRequest, RegionList, Region> context,
-        RegionList response) {
+        PageContext<ListRegionsHttpRequest, RegionList, Region> context, RegionList response) {
       super(context, response);
     }
 
@@ -473,8 +455,7 @@ public class RegionClient implements BackgroundResource {
 
     @Override
     protected ListRegionsPage createPage(
-        PageContext<ListRegionsHttpRequest, RegionList, Region> context,
-        RegionList response) {
+        PageContext<ListRegionsHttpRequest, RegionList, Region> context, RegionList response) {
       return new ListRegionsPage(context, response);
     }
 
@@ -484,18 +465,12 @@ public class RegionClient implements BackgroundResource {
         ApiFuture<RegionList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListRegionsFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListRegionsHttpRequest,
-      RegionList,
-      Region,
-      ListRegionsPage,
-      ListRegionsFixedSizeCollection> {
+  public static class ListRegionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRegionsHttpRequest, RegionList, Region, ListRegionsPage,
+          ListRegionsFixedSizeCollection> {
 
     private ListRegionsFixedSizeCollection(List<ListRegionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -510,7 +485,5 @@ public class RegionClient implements BackgroundResource {
         List<ListRegionsPage> pages, int collectionSize) {
       return new ListRegionsFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

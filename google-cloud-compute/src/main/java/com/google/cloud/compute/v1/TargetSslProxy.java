@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -41,6 +40,7 @@ public final class TargetSslProxy implements ApiMessage {
   private final String selfLink;
   private final String service;
   private final List<String> sslCertificates;
+  private final String sslPolicy;
 
   private TargetSslProxy() {
     this.creationTimestamp = null;
@@ -52,8 +52,8 @@ public final class TargetSslProxy implements ApiMessage {
     this.selfLink = null;
     this.service = null;
     this.sslCertificates = null;
+    this.sslPolicy = null;
   }
-
 
   private TargetSslProxy(
       String creationTimestamp,
@@ -64,8 +64,8 @@ public final class TargetSslProxy implements ApiMessage {
       String proxyHeader,
       String selfLink,
       String service,
-      List<String> sslCertificates
-      ) {
+      List<String> sslCertificates,
+      String sslPolicy) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -75,13 +75,15 @@ public final class TargetSslProxy implements ApiMessage {
     this.selfLink = selfLink;
     this.service = service;
     this.sslCertificates = sslCertificates;
+    this.sslPolicy = sslPolicy;
   }
 
   @Override
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -110,6 +112,9 @@ public final class TargetSslProxy implements ApiMessage {
         stringList.add(item.toString());
       }
       fieldMap.put("sslCertificates", stringList.build());
+    }
+    if (fieldNames.contains("sslPolicy") && sslPolicy != null) {
+      fieldMap.put("sslPolicy", Collections.singletonList(String.valueOf(sslPolicy)));
     }
     return fieldMap;
   }
@@ -142,6 +147,9 @@ public final class TargetSslProxy implements ApiMessage {
     }
     if (fieldName.equals("sslCertificates")) {
       return String.valueOf(sslCertificates);
+    }
+    if (fieldName.equals("sslPolicy")) {
+      return String.valueOf(sslPolicy);
     }
     return null;
   }
@@ -188,22 +196,28 @@ public final class TargetSslProxy implements ApiMessage {
     return sslCertificates;
   }
 
+  public String getSslPolicy() {
+    return sslPolicy;
+  }
 
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetSslProxy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetSslProxy getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetSslProxy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetSslProxy();
   }
@@ -218,6 +232,7 @@ public final class TargetSslProxy implements ApiMessage {
     private String selfLink;
     private String service;
     private List<String> sslCertificates;
+    private String sslPolicy;
 
     Builder() {}
 
@@ -250,6 +265,9 @@ public final class TargetSslProxy implements ApiMessage {
       if (other.getSslCertificatesList() != null) {
         this.sslCertificates = other.sslCertificates;
       }
+      if (other.getSslPolicy() != null) {
+        this.sslPolicy = other.sslPolicy;
+      }
       return this;
     }
 
@@ -263,6 +281,7 @@ public final class TargetSslProxy implements ApiMessage {
       this.selfLink = source.selfLink;
       this.service = source.service;
       this.sslCertificates = source.sslCertificates;
+      this.sslPolicy = source.sslPolicy;
     }
 
     public String getCreationTimestamp() {
@@ -354,27 +373,28 @@ public final class TargetSslProxy implements ApiMessage {
       return this;
     }
 
+    public String getSslPolicy() {
+      return sslPolicy;
+    }
+
+    public Builder setSslPolicy(String sslPolicy) {
+      this.sslPolicy = sslPolicy;
+      return this;
+    }
 
     public TargetSslProxy build() {
 
-
-
-
-
-
-
-
       return new TargetSslProxy(
-        creationTimestamp,
-        description,
-        id,
-        kind,
-        name,
-        proxyHeader,
-        selfLink,
-        service,
-        sslCertificates
-      );
+          creationTimestamp,
+          description,
+          id,
+          kind,
+          name,
+          proxyHeader,
+          selfLink,
+          service,
+          sslCertificates,
+          sslPolicy);
     }
 
     public Builder clone() {
@@ -388,6 +408,7 @@ public final class TargetSslProxy implements ApiMessage {
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setService(this.service);
       newBuilder.addAllSslCertificates(this.sslCertificates);
+      newBuilder.setSslPolicy(this.sslPolicy);
       return newBuilder;
     }
   }
@@ -395,15 +416,35 @@ public final class TargetSslProxy implements ApiMessage {
   @Override
   public String toString() {
     return "TargetSslProxy{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "proxyHeader=" + proxyHeader + ", "
-        + "selfLink=" + selfLink + ", "
-        + "service=" + service + ", "
-        + "sslCertificates=" + sslCertificates
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "proxyHeader="
+        + proxyHeader
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "service="
+        + service
+        + ", "
+        + "sslCertificates="
+        + sslCertificates
+        + ", "
+        + "sslPolicy="
+        + sslPolicy
         + "}";
   }
 
@@ -414,17 +455,16 @@ public final class TargetSslProxy implements ApiMessage {
     }
     if (o instanceof TargetSslProxy) {
       TargetSslProxy that = (TargetSslProxy) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.proxyHeader, that.getProxyHeader()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.service, that.getService()) &&
-          Objects.equals(this.sslCertificates, that.getSslCertificatesList())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.proxyHeader, that.getProxyHeader())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.service, that.getService())
+          && Objects.equals(this.sslCertificates, that.getSslCertificatesList())
+          && Objects.equals(this.sslPolicy, that.getSslPolicy());
     }
     return false;
   }
@@ -432,15 +472,15 @@ public final class TargetSslProxy implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      id,
-      kind,
-      name,
-      proxyHeader,
-      selfLink,
-      service,
-      sslCertificates
-    );
+        creationTimestamp,
+        description,
+        id,
+        kind,
+        name,
+        proxyHeader,
+        selfLink,
+        service,
+        sslCertificates,
+        sslPolicy);
   }
 }

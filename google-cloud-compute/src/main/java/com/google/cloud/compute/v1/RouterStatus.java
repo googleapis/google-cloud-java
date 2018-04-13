@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,13 +43,11 @@ public final class RouterStatus implements ApiMessage {
     this.network = null;
   }
 
-
   private RouterStatus(
       List<Route> bestRoutes,
       List<Route> bestRoutesForRouter,
       List<RouterStatusBgpPeerStatus> bgpPeerStatus,
-      String network
-      ) {
+      String network) {
     this.bestRoutes = bestRoutes;
     this.bestRoutesForRouter = bestRoutesForRouter;
     this.bgpPeerStatus = bgpPeerStatus;
@@ -126,22 +123,24 @@ public final class RouterStatus implements ApiMessage {
     return network;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RouterStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RouterStatus getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RouterStatus DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RouterStatus();
   }
@@ -238,17 +237,9 @@ public final class RouterStatus implements ApiMessage {
       return this;
     }
 
-
     public RouterStatus build() {
 
-
-
-      return new RouterStatus(
-        bestRoutes,
-        bestRoutesForRouter,
-        bgpPeerStatus,
-        network
-      );
+      return new RouterStatus(bestRoutes, bestRoutesForRouter, bgpPeerStatus, network);
     }
 
     public Builder clone() {
@@ -264,10 +255,17 @@ public final class RouterStatus implements ApiMessage {
   @Override
   public String toString() {
     return "RouterStatus{"
-        + "bestRoutes=" + bestRoutes + ", "
-        + "bestRoutesForRouter=" + bestRoutesForRouter + ", "
-        + "bgpPeerStatus=" + bgpPeerStatus + ", "
-        + "network=" + network
+        + "bestRoutes="
+        + bestRoutes
+        + ", "
+        + "bestRoutesForRouter="
+        + bestRoutesForRouter
+        + ", "
+        + "bgpPeerStatus="
+        + bgpPeerStatus
+        + ", "
+        + "network="
+        + network
         + "}";
   }
 
@@ -278,23 +276,16 @@ public final class RouterStatus implements ApiMessage {
     }
     if (o instanceof RouterStatus) {
       RouterStatus that = (RouterStatus) o;
-      return
-          Objects.equals(this.bestRoutes, that.getBestRoutesList()) &&
-          Objects.equals(this.bestRoutesForRouter, that.getBestRoutesForRouterList()) &&
-          Objects.equals(this.bgpPeerStatus, that.getBgpPeerStatusList()) &&
-          Objects.equals(this.network, that.getNetwork())
-          ;
+      return Objects.equals(this.bestRoutes, that.getBestRoutesList())
+          && Objects.equals(this.bestRoutesForRouter, that.getBestRoutesForRouterList())
+          && Objects.equals(this.bgpPeerStatus, that.getBgpPeerStatusList())
+          && Objects.equals(this.network, that.getNetwork());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      bestRoutes,
-      bestRoutesForRouter,
-      bgpPeerStatus,
-      network
-    );
+    return Objects.hash(bestRoutes, bestRoutesForRouter, bgpPeerStatus, network);
   }
 }

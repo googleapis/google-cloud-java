@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionAutoscalerClient.ListRegionAutoscalersPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -25,9 +27,6 @@ import com.google.cloud.compute.v1.InsertRegionAutoscalerHttpRequest;
 import com.google.cloud.compute.v1.ListRegionAutoscalersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionAutoscalerHttpRequest;
-import com.google.cloud.compute.v1.ProjectRegionAutoscalerName;
-import com.google.cloud.compute.v1.ProjectRegionName;
-import static com.google.cloud.compute.v1.RegionAutoscalerClient.ListRegionAutoscalersPagedResponse;
 import com.google.cloud.compute.v1.RegionAutoscalerList;
 import com.google.cloud.compute.v1.UpdateRegionAutoscalerHttpRequest;
 import javax.annotation.Generated;
@@ -42,9 +41,9 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class RegionAutoscalerStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<DeleteRegionAutoscalerHttpRequest, Operation> deleteRegionAutoscalerCallable() {
+  public UnaryCallable<DeleteRegionAutoscalerHttpRequest, Operation>
+      deleteRegionAutoscalerCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRegionAutoscalerCallable()");
   }
 
@@ -54,28 +53,36 @@ public abstract class RegionAutoscalerStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<InsertRegionAutoscalerHttpRequest, Operation> insertRegionAutoscalerCallable() {
+  public UnaryCallable<InsertRegionAutoscalerHttpRequest, Operation>
+      insertRegionAutoscalerCallable() {
     throw new UnsupportedOperationException("Not implemented: insertRegionAutoscalerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionAutoscalersHttpRequest, ListRegionAutoscalersPagedResponse> listRegionAutoscalersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listRegionAutoscalersPagedCallable()");
+  public UnaryCallable<ListRegionAutoscalersHttpRequest, ListRegionAutoscalersPagedResponse>
+      listRegionAutoscalersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRegionAutoscalersPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionAutoscalersHttpRequest, RegionAutoscalerList> listRegionAutoscalersCallable() {
+  public UnaryCallable<ListRegionAutoscalersHttpRequest, RegionAutoscalerList>
+      listRegionAutoscalersCallable() {
     throw new UnsupportedOperationException("Not implemented: listRegionAutoscalersCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<PatchRegionAutoscalerHttpRequest, Operation> patchRegionAutoscalerCallable() {
+  public UnaryCallable<PatchRegionAutoscalerHttpRequest, Operation>
+      patchRegionAutoscalerCallable() {
     throw new UnsupportedOperationException("Not implemented: patchRegionAutoscalerCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<UpdateRegionAutoscalerHttpRequest, Operation> updateRegionAutoscalerCallable() {
+  public UnaryCallable<UpdateRegionAutoscalerHttpRequest, Operation>
+      updateRegionAutoscalerCallable() {
     throw new UnsupportedOperationException("Not implemented: updateRegionAutoscalerCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

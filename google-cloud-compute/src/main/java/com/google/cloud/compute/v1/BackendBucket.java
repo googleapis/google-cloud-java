@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class BackendBucket implements ApiMessage {
     this.selfLink = null;
   }
 
-
   private BackendBucket(
       String bucketName,
       String creationTimestamp,
@@ -61,8 +57,7 @@ public final class BackendBucket implements ApiMessage {
       String id,
       String kind,
       String name,
-      String selfLink
-      ) {
+      String selfLink) {
     this.bucketName = bucketName;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -80,7 +75,8 @@ public final class BackendBucket implements ApiMessage {
       fieldMap.put("bucketName", Collections.singletonList(String.valueOf(bucketName)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -170,22 +166,24 @@ public final class BackendBucket implements ApiMessage {
     return selfLink;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(BackendBucket prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static BackendBucket getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final BackendBucket DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new BackendBucket();
   }
@@ -314,25 +312,10 @@ public final class BackendBucket implements ApiMessage {
       return this;
     }
 
-
     public BackendBucket build() {
 
-
-
-
-
-
-
       return new BackendBucket(
-        bucketName,
-        creationTimestamp,
-        description,
-        enableCdn,
-        id,
-        kind,
-        name,
-        selfLink
-      );
+          bucketName, creationTimestamp, description, enableCdn, id, kind, name, selfLink);
     }
 
     public Builder clone() {
@@ -352,14 +335,29 @@ public final class BackendBucket implements ApiMessage {
   @Override
   public String toString() {
     return "BackendBucket{"
-        + "bucketName=" + bucketName + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "enableCdn=" + enableCdn + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "selfLink=" + selfLink
+        + "bucketName="
+        + bucketName
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "enableCdn="
+        + enableCdn
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "selfLink="
+        + selfLink
         + "}";
   }
 
@@ -370,16 +368,14 @@ public final class BackendBucket implements ApiMessage {
     }
     if (o instanceof BackendBucket) {
       BackendBucket that = (BackendBucket) o;
-      return
-          Objects.equals(this.bucketName, that.getBucketName()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.enableCdn, that.getEnableCdn()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.selfLink, that.getSelfLink())
-          ;
+      return Objects.equals(this.bucketName, that.getBucketName())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.enableCdn, that.getEnableCdn())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
   }
@@ -387,14 +383,6 @@ public final class BackendBucket implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      bucketName,
-      creationTimestamp,
-      description,
-      enableCdn,
-      id,
-      kind,
-      name,
-      selfLink
-    );
+        bucketName, creationTimestamp, description, enableCdn, id, kind, name, selfLink);
   }
 }

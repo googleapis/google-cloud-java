@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +49,6 @@ public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private GetRegionAutoscalerHttpRequest(
       String access_token,
       String autoscaler,
@@ -61,8 +57,7 @@ public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
       String key,
       String prettyPrint,
       String quotaUser,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.autoscaler = autoscaler;
     this.callback = callback;
@@ -170,22 +165,24 @@ public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(GetRegionAutoscalerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static GetRegionAutoscalerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final GetRegionAutoscalerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new GetRegionAutoscalerHttpRequest();
   }
@@ -314,7 +311,6 @@ public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public GetRegionAutoscalerHttpRequest build() {
       String missing = "";
 
@@ -322,24 +318,11 @@ public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
         missing += " autoscaler";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetRegionAutoscalerHttpRequest(
-        access_token,
-        autoscaler,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        userIp
-      );
+          access_token, autoscaler, callback, fields, key, prettyPrint, quotaUser, userIp);
     }
 
     public Builder clone() {
@@ -359,14 +342,29 @@ public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "GetRegionAutoscalerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "autoscaler=" + autoscaler + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "autoscaler="
+        + autoscaler
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -377,16 +375,14 @@ public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
     }
     if (o instanceof GetRegionAutoscalerHttpRequest) {
       GetRegionAutoscalerHttpRequest that = (GetRegionAutoscalerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.autoscaler, that.getAutoscaler()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.autoscaler, that.getAutoscaler())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -394,14 +390,6 @@ public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      autoscaler,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      userIp
-    );
+        access_token, autoscaler, callback, fields, key, prettyPrint, quotaUser, userIp);
   }
 }

@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class BackendServicesScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private BackendServicesScopedList(
-      List<BackendService> backendServices,
-      Warning warning
-      ) {
+  private BackendServicesScopedList(List<BackendService> backendServices, Warning warning) {
     this.backendServices = backendServices;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class BackendServicesScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(BackendServicesScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static BackendServicesScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final BackendServicesScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new BackendServicesScopedList();
   }
@@ -158,13 +155,9 @@ public final class BackendServicesScopedList implements ApiMessage {
       return this;
     }
 
-
     public BackendServicesScopedList build() {
 
-      return new BackendServicesScopedList(
-        backendServices,
-        warning
-      );
+      return new BackendServicesScopedList(backendServices, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class BackendServicesScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "BackendServicesScopedList{"
-        + "backendServices=" + backendServices + ", "
-        + "warning=" + warning
+        + "backendServices="
+        + backendServices
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class BackendServicesScopedList implements ApiMessage {
     }
     if (o instanceof BackendServicesScopedList) {
       BackendServicesScopedList that = (BackendServicesScopedList) o;
-      return
-          Objects.equals(this.backendServices, that.getBackendServicesList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.backendServices, that.getBackendServicesList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      backendServices,
-      warning
-    );
+    return Objects.hash(backendServices, warning);
   }
 }

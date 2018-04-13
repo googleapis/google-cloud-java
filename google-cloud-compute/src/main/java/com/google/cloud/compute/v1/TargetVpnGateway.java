@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -58,7 +57,6 @@ public final class TargetVpnGateway implements ApiMessage {
     this.tunnels = null;
   }
 
-
   private TargetVpnGateway(
       String creationTimestamp,
       String description,
@@ -70,8 +68,7 @@ public final class TargetVpnGateway implements ApiMessage {
       String region,
       String selfLink,
       String status,
-      List<String> tunnels
-      ) {
+      List<String> tunnels) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.forwardingRules = forwardingRules;
@@ -89,7 +86,8 @@ public final class TargetVpnGateway implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -220,22 +218,24 @@ public final class TargetVpnGateway implements ApiMessage {
     return tunnels;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetVpnGateway prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetVpnGateway getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetVpnGateway DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetVpnGateway();
   }
@@ -422,31 +422,20 @@ public final class TargetVpnGateway implements ApiMessage {
       return this;
     }
 
-
     public TargetVpnGateway build() {
 
-
-
-
-
-
-
-
-
-
       return new TargetVpnGateway(
-        creationTimestamp,
-        description,
-        forwardingRules,
-        id,
-        kind,
-        name,
-        network,
-        region,
-        selfLink,
-        status,
-        tunnels
-      );
+          creationTimestamp,
+          description,
+          forwardingRules,
+          id,
+          kind,
+          name,
+          network,
+          region,
+          selfLink,
+          status,
+          tunnels);
     }
 
     public Builder clone() {
@@ -469,17 +458,38 @@ public final class TargetVpnGateway implements ApiMessage {
   @Override
   public String toString() {
     return "TargetVpnGateway{"
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "forwardingRules=" + forwardingRules + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "network=" + network + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "status=" + status + ", "
-        + "tunnels=" + tunnels
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "forwardingRules="
+        + forwardingRules
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "network="
+        + network
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "tunnels="
+        + tunnels
         + "}";
   }
 
@@ -490,19 +500,17 @@ public final class TargetVpnGateway implements ApiMessage {
     }
     if (o instanceof TargetVpnGateway) {
       TargetVpnGateway that = (TargetVpnGateway) o;
-      return
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.forwardingRules, that.getForwardingRulesList()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.network, that.getNetwork()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.tunnels, that.getTunnelsList())
-          ;
+      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.forwardingRules, that.getForwardingRulesList())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.tunnels, that.getTunnelsList());
     }
     return false;
   }
@@ -510,17 +518,16 @@ public final class TargetVpnGateway implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      creationTimestamp,
-      description,
-      forwardingRules,
-      id,
-      kind,
-      name,
-      network,
-      region,
-      selfLink,
-      status,
-      tunnels
-    );
+        creationTimestamp,
+        description,
+        forwardingRules,
+        id,
+        kind,
+        name,
+        network,
+        region,
+        selfLink,
+        status,
+        tunnels);
   }
 }

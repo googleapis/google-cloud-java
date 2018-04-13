@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.MachineTypeStub;
 import com.google.cloud.compute.v1.stub.MachineTypeStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -58,34 +48,33 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the machineTypeClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the machineTypeClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of MachineTypeSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -115,19 +104,14 @@ public class MachineTypeClient implements BackgroundResource {
   private final MachineTypeSettings settings;
   private final MachineTypeStub stub;
 
-
-
-  /**
-   * Constructs an instance of MachineTypeClient with default settings.
-   */
+  /** Constructs an instance of MachineTypeClient with default settings. */
   public static final MachineTypeClient create() throws IOException {
     return create(MachineTypeSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of MachineTypeClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of MachineTypeClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final MachineTypeClient create(MachineTypeSettings settings) throws IOException {
     return new MachineTypeClient(settings);
@@ -143,9 +127,9 @@ public class MachineTypeClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of MachineTypeClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of MachineTypeClient, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected MachineTypeClient(MachineTypeSettings settings) throws IOException {
     this.settings = settings;
@@ -167,12 +151,12 @@ public class MachineTypeClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of machine types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -186,11 +170,12 @@ public class MachineTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListMachineTypesPagedResponse aggregatedListMachineTypes(ProjectName project) {
+  public final AggregatedListMachineTypesPagedResponse aggregatedListMachineTypes(
+      ProjectName project) {
     AggregatedListMachineTypesHttpRequest request =
         AggregatedListMachineTypesHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListMachineTypes(request);
   }
 
@@ -198,7 +183,8 @@ public class MachineTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of machine types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -214,9 +200,7 @@ public class MachineTypeClient implements BackgroundResource {
   @BetaApi
   public final AggregatedListMachineTypesPagedResponse aggregatedListMachineTypes(String project) {
     AggregatedListMachineTypesHttpRequest request =
-        AggregatedListMachineTypesHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListMachineTypesHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListMachineTypes(request);
   }
 
@@ -224,7 +208,8 @@ public class MachineTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of machine types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -241,16 +226,17 @@ public class MachineTypeClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListMachineTypesPagedResponse aggregatedListMachineTypes(AggregatedListMachineTypesHttpRequest request) {
-    return aggregatedListMachineTypesPagedCallable()
-        .call(request);
+  public final AggregatedListMachineTypesPagedResponse aggregatedListMachineTypes(
+      AggregatedListMachineTypesHttpRequest request) {
+    return aggregatedListMachineTypesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of machine types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -266,7 +252,9 @@ public class MachineTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListMachineTypesHttpRequest, AggregatedListMachineTypesPagedResponse> aggregatedListMachineTypesPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListMachineTypesHttpRequest, AggregatedListMachineTypesPagedResponse>
+      aggregatedListMachineTypesPagedCallable() {
     return stub.aggregatedListMachineTypesPagedCallable();
   }
 
@@ -274,7 +262,8 @@ public class MachineTypeClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of machine types.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -297,15 +286,18 @@ public class MachineTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList> aggregatedListMachineTypesCallable() {
+  public final UnaryCallable<AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList>
+      aggregatedListMachineTypesCallable() {
     return stub.aggregatedListMachineTypesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified machine type. Get a list of available machine types by making a list() request.
+   * Returns the specified machine type. Get a list of available machine types by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
@@ -321,16 +313,18 @@ public class MachineTypeClient implements BackgroundResource {
 
     GetMachineTypeHttpRequest request =
         GetMachineTypeHttpRequest.newBuilder()
-        .setMachineType(machineType == null ? null : machineType.toString())
-        .build();
+            .setMachineType(machineType == null ? null : machineType.toString())
+            .build();
     return getMachineType(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified machine type. Get a list of available machine types by making a list() request.
+   * Returns the specified machine type. Get a list of available machine types by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
@@ -345,17 +339,17 @@ public class MachineTypeClient implements BackgroundResource {
   public final MachineType getMachineType(String machineType) {
 
     GetMachineTypeHttpRequest request =
-        GetMachineTypeHttpRequest.newBuilder()
-        .setMachineType(machineType)
-        .build();
+        GetMachineTypeHttpRequest.newBuilder().setMachineType(machineType).build();
     return getMachineType(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified machine type. Get a list of available machine types by making a list() request.
+   * Returns the specified machine type. Get a list of available machine types by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
@@ -376,9 +370,11 @@ public class MachineTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified machine type. Get a list of available machine types by making a list() request.
+   * Returns the specified machine type. Get a list of available machine types by making a list()
+   * request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneMachineTypeName machineType = ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
@@ -400,7 +396,8 @@ public class MachineTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of machine types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -417,8 +414,8 @@ public class MachineTypeClient implements BackgroundResource {
   public final ListMachineTypesPagedResponse listMachineTypes(ProjectZoneName zone) {
     ListMachineTypesHttpRequest request =
         ListMachineTypesHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .build();
     return listMachineTypes(request);
   }
 
@@ -426,7 +423,8 @@ public class MachineTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of machine types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -442,9 +440,7 @@ public class MachineTypeClient implements BackgroundResource {
   @BetaApi
   public final ListMachineTypesPagedResponse listMachineTypes(String zone) {
     ListMachineTypesHttpRequest request =
-        ListMachineTypesHttpRequest.newBuilder()
-        .setZone(zone)
-        .build();
+        ListMachineTypesHttpRequest.newBuilder().setZone(zone).build();
     return listMachineTypes(request);
   }
 
@@ -452,7 +448,8 @@ public class MachineTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of machine types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -470,15 +467,15 @@ public class MachineTypeClient implements BackgroundResource {
    */
   @BetaApi
   public final ListMachineTypesPagedResponse listMachineTypes(ListMachineTypesHttpRequest request) {
-    return listMachineTypesPagedCallable()
-        .call(request);
+    return listMachineTypesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of machine types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -494,7 +491,8 @@ public class MachineTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListMachineTypesHttpRequest, ListMachineTypesPagedResponse> listMachineTypesPagedCallable() {
+  public final UnaryCallable<ListMachineTypesHttpRequest, ListMachineTypesPagedResponse>
+      listMachineTypesPagedCallable() {
     return stub.listMachineTypesPagedCallable();
   }
 
@@ -502,7 +500,8 @@ public class MachineTypeClient implements BackgroundResource {
   /**
    * Retrieves a list of machine types available to the specified project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MachineTypeClient machineTypeClient = MachineTypeClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -525,12 +524,13 @@ public class MachineTypeClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListMachineTypesHttpRequest, MachineTypeList> listMachineTypesCallable() {
+  public final UnaryCallable<ListMachineTypesHttpRequest, MachineTypeList>
+      listMachineTypesCallable() {
     return stub.listMachineTypesCallable();
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -559,23 +559,26 @@ public class MachineTypeClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListMachineTypesPagedResponse extends AbstractPagedListResponse<
-      AggregatedListMachineTypesHttpRequest,
-      MachineTypeAggregatedList,
-      MachineTypesScopedList,
-      AggregatedListMachineTypesPage,
-      AggregatedListMachineTypesFixedSizeCollection> {
+  public static class AggregatedListMachineTypesPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList, MachineTypesScopedList,
+          AggregatedListMachineTypesPage, AggregatedListMachineTypesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListMachineTypesPagedResponse> createAsync(
-        PageContext<AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList, MachineTypesScopedList> context,
+        PageContext<
+                AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+                MachineTypesScopedList>
+            context,
         ApiFuture<MachineTypeAggregatedList> futureResponse) {
       ApiFuture<AggregatedListMachineTypesPage> futurePage =
           AggregatedListMachineTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<AggregatedListMachineTypesPage, AggregatedListMachineTypesPagedResponse>() {
+          new ApiFunction<
+              AggregatedListMachineTypesPage, AggregatedListMachineTypesPagedResponse>() {
             @Override
-            public AggregatedListMachineTypesPagedResponse apply(AggregatedListMachineTypesPage input) {
+            public AggregatedListMachineTypesPagedResponse apply(
+                AggregatedListMachineTypesPage input) {
               return new AggregatedListMachineTypesPagedResponse(input);
             }
           });
@@ -584,18 +587,18 @@ public class MachineTypeClient implements BackgroundResource {
     private AggregatedListMachineTypesPagedResponse(AggregatedListMachineTypesPage page) {
       super(page, AggregatedListMachineTypesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListMachineTypesPage extends AbstractPage<
-      AggregatedListMachineTypesHttpRequest,
-      MachineTypeAggregatedList,
-      MachineTypesScopedList,
-      AggregatedListMachineTypesPage> {
+  public static class AggregatedListMachineTypesPage
+      extends AbstractPage<
+          AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList, MachineTypesScopedList,
+          AggregatedListMachineTypesPage> {
 
     private AggregatedListMachineTypesPage(
-        PageContext<AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList, MachineTypesScopedList> context,
+        PageContext<
+                AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+                MachineTypesScopedList>
+            context,
         MachineTypeAggregatedList response) {
       super(context, response);
     }
@@ -606,31 +609,32 @@ public class MachineTypeClient implements BackgroundResource {
 
     @Override
     protected AggregatedListMachineTypesPage createPage(
-        PageContext<AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList, MachineTypesScopedList> context,
+        PageContext<
+                AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+                MachineTypesScopedList>
+            context,
         MachineTypeAggregatedList response) {
       return new AggregatedListMachineTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListMachineTypesPage> createPageAsync(
-        PageContext<AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList, MachineTypesScopedList> context,
+        PageContext<
+                AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+                MachineTypesScopedList>
+            context,
         ApiFuture<MachineTypeAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListMachineTypesFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListMachineTypesHttpRequest,
-      MachineTypeAggregatedList,
-      MachineTypesScopedList,
-      AggregatedListMachineTypesPage,
-      AggregatedListMachineTypesFixedSizeCollection> {
+  public static class AggregatedListMachineTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList, MachineTypesScopedList,
+          AggregatedListMachineTypesPage, AggregatedListMachineTypesFixedSizeCollection> {
 
-    private AggregatedListMachineTypesFixedSizeCollection(List<AggregatedListMachineTypesPage> pages, int collectionSize) {
+    private AggregatedListMachineTypesFixedSizeCollection(
+        List<AggregatedListMachineTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -643,15 +647,12 @@ public class MachineTypeClient implements BackgroundResource {
         List<AggregatedListMachineTypesPage> pages, int collectionSize) {
       return new AggregatedListMachineTypesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListMachineTypesPagedResponse extends AbstractPagedListResponse<
-      ListMachineTypesHttpRequest,
-      MachineTypeList,
-      MachineType,
-      ListMachineTypesPage,
-      ListMachineTypesFixedSizeCollection> {
+
+  public static class ListMachineTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListMachineTypesHttpRequest, MachineTypeList, MachineType, ListMachineTypesPage,
+          ListMachineTypesFixedSizeCollection> {
 
     public static ApiFuture<ListMachineTypesPagedResponse> createAsync(
         PageContext<ListMachineTypesHttpRequest, MachineTypeList, MachineType> context,
@@ -671,15 +672,11 @@ public class MachineTypeClient implements BackgroundResource {
     private ListMachineTypesPagedResponse(ListMachineTypesPage page) {
       super(page, ListMachineTypesFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListMachineTypesPage extends AbstractPage<
-      ListMachineTypesHttpRequest,
-      MachineTypeList,
-      MachineType,
-      ListMachineTypesPage> {
+  public static class ListMachineTypesPage
+      extends AbstractPage<
+          ListMachineTypesHttpRequest, MachineTypeList, MachineType, ListMachineTypesPage> {
 
     private ListMachineTypesPage(
         PageContext<ListMachineTypesHttpRequest, MachineTypeList, MachineType> context,
@@ -704,20 +701,15 @@ public class MachineTypeClient implements BackgroundResource {
         ApiFuture<MachineTypeList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListMachineTypesFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListMachineTypesHttpRequest,
-      MachineTypeList,
-      MachineType,
-      ListMachineTypesPage,
-      ListMachineTypesFixedSizeCollection> {
+  public static class ListMachineTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMachineTypesHttpRequest, MachineTypeList, MachineType, ListMachineTypesPage,
+          ListMachineTypesFixedSizeCollection> {
 
-    private ListMachineTypesFixedSizeCollection(List<ListMachineTypesPage> pages, int collectionSize) {
+    private ListMachineTypesFixedSizeCollection(
+        List<ListMachineTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -730,7 +722,5 @@ public class MachineTypeClient implements BackgroundResource {
         List<ListMachineTypesPage> pages, int collectionSize) {
       return new ListMachineTypesFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

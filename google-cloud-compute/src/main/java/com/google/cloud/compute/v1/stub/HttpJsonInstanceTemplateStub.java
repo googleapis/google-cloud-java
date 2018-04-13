@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InstanceTemplateClient.ListInstanceTemplatesPagedResponse;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,26 +28,19 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
-import static com.google.cloud.compute.v1.InstanceTemplateClient.ListInstanceTemplatesPagedResponse;
 import com.google.cloud.compute.v1.InstanceTemplateList;
-import com.google.cloud.compute.v1.InstanceTemplateSettings;
 import com.google.cloud.compute.v1.ListInstanceTemplatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectInstanceTemplateName;
+import com.google.cloud.compute.v1.ProjectGlobalInstanceTemplateName;
 import com.google.cloud.compute.v1.ProjectName;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -59,175 +54,227 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
   @InternalApi
-  public static final ApiMethodDescriptor<DeleteInstanceTemplateHttpRequest, Operation> deleteInstanceTemplateMethodDescriptor =
-      ApiMethodDescriptor.<DeleteInstanceTemplateHttpRequest, Operation>newBuilder()
-          .setFullMethodName("compute.instanceTemplates.delete")
-          .setHttpMethod(HttpMethods.DELETE)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<DeleteInstanceTemplateHttpRequest>newBuilder()
-                  .setRequestInstance(DeleteInstanceTemplateHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates/{instanceTemplate}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "requestId"
-                                     ))
-                  .setResourceNameFactory(ProjectInstanceTemplateName.newFactory())
-                  .setResourceNameField("instanceTemplate")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<Operation>newBuilder()
-                  .setResponseInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<DeleteInstanceTemplateHttpRequest, Operation>
+      deleteInstanceTemplateMethodDescriptor =
+          ApiMethodDescriptor.<DeleteInstanceTemplateHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instanceTemplates.delete")
+              .setHttpMethod(HttpMethods.DELETE)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<DeleteInstanceTemplateHttpRequest>newBuilder()
+                      .setRequestInstance(DeleteInstanceTemplateHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/instanceTemplates/{instanceTemplate}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalInstanceTemplateName.newFactory())
+                      .setResourceNameField("instanceTemplate")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<GetInstanceTemplateHttpRequest, InstanceTemplate> getInstanceTemplateMethodDescriptor =
-      ApiMethodDescriptor.<GetInstanceTemplateHttpRequest, InstanceTemplate>newBuilder()
-          .setFullMethodName("compute.instanceTemplates.get")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<GetInstanceTemplateHttpRequest>newBuilder()
-                  .setRequestInstance(GetInstanceTemplateHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates/{instanceTemplate}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
-                  .setResourceNameFactory(ProjectInstanceTemplateName.newFactory())
-                  .setResourceNameField("instanceTemplate")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<InstanceTemplate>newBuilder()
-                  .setResponseInstance(InstanceTemplate.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<GetInstanceTemplateHttpRequest, InstanceTemplate>
+      getInstanceTemplateMethodDescriptor =
+          ApiMethodDescriptor.<GetInstanceTemplateHttpRequest, InstanceTemplate>newBuilder()
+              .setFullMethodName("compute.instanceTemplates.get")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetInstanceTemplateHttpRequest>newBuilder()
+                      .setRequestInstance(GetInstanceTemplateHttpRequest.getDefaultInstance())
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/instanceTemplates/{instanceTemplate}"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalInstanceTemplateName.newFactory())
+                      .setResourceNameField("instanceTemplate")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<InstanceTemplate>newBuilder()
+                      .setResponseInstance(InstanceTemplate.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<InsertInstanceTemplateHttpRequest, Operation> insertInstanceTemplateMethodDescriptor =
-      ApiMethodDescriptor.<InsertInstanceTemplateHttpRequest, Operation>newBuilder()
-          .setFullMethodName("compute.instanceTemplates.insert")
-          .setHttpMethod(HttpMethods.POST)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<InsertInstanceTemplateHttpRequest>newBuilder()
-                  .setRequestInstance(InsertInstanceTemplateHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "requestId"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<Operation>newBuilder()
-                  .setResponseInstance(Operation.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<InsertInstanceTemplateHttpRequest, Operation>
+      insertInstanceTemplateMethodDescriptor =
+          ApiMethodDescriptor.<InsertInstanceTemplateHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instanceTemplates.insert")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<InsertInstanceTemplateHttpRequest>newBuilder()
+                      .setRequestInstance(InsertInstanceTemplateHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<ListInstanceTemplatesHttpRequest, InstanceTemplateList> listInstanceTemplatesMethodDescriptor =
-      ApiMethodDescriptor.<ListInstanceTemplatesHttpRequest, InstanceTemplateList>newBuilder()
-          .setFullMethodName("compute.instanceTemplates.list")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<ListInstanceTemplatesHttpRequest>newBuilder()
-                  .setRequestInstance(ListInstanceTemplatesHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<InstanceTemplateList>newBuilder()
-                  .setResponseInstance(InstanceTemplateList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
+      listInstanceTemplatesMethodDescriptor =
+          ApiMethodDescriptor.<ListInstanceTemplatesHttpRequest, InstanceTemplateList>newBuilder()
+              .setFullMethodName("compute.instanceTemplates.list")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListInstanceTemplatesHttpRequest>newBuilder()
+                      .setRequestInstance(ListInstanceTemplatesHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/global/instanceTemplates"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<InstanceTemplateList>newBuilder()
+                      .setResponseInstance(InstanceTemplateList.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation> deleteInstanceTemplateCallable;
-  private final UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate> getInstanceTemplateCallable;
-  private final UnaryCallable<InsertInstanceTemplateHttpRequest, Operation> insertInstanceTemplateCallable;
-  private final UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList> listInstanceTemplatesCallable;
-  private final UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse> listInstanceTemplatesPagedCallable;
+  private final UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation>
+      deleteInstanceTemplateCallable;
+  private final UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate>
+      getInstanceTemplateCallable;
+  private final UnaryCallable<InsertInstanceTemplateHttpRequest, Operation>
+      insertInstanceTemplateCallable;
+  private final UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
+      listInstanceTemplatesCallable;
+  private final UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse>
+      listInstanceTemplatesPagedCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
-  public static final HttpJsonInstanceTemplateStub create(InstanceTemplateStubSettings settings) throws IOException {
+
+  public static final HttpJsonInstanceTemplateStub create(InstanceTemplateStubSettings settings)
+      throws IOException {
     return new HttpJsonInstanceTemplateStub(settings, ClientContext.create(settings));
   }
 
-  public static final HttpJsonInstanceTemplateStub create(ClientContext clientContext) throws IOException {
-    return new HttpJsonInstanceTemplateStub(InstanceTemplateStubSettings.newBuilder().build(), clientContext);
+  public static final HttpJsonInstanceTemplateStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonInstanceTemplateStub(
+        InstanceTemplateStubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final HttpJsonInstanceTemplateStub create(ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
-    return new HttpJsonInstanceTemplateStub(InstanceTemplateStubSettings.newBuilder().build(), clientContext, callableFactory);
+  public static final HttpJsonInstanceTemplateStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonInstanceTemplateStub(
+        InstanceTemplateStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of HttpJsonInstanceTemplateStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonInstanceTemplateStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonInstanceTemplateStub(InstanceTemplateStubSettings settings, ClientContext clientContext) throws IOException {
+  protected HttpJsonInstanceTemplateStub(
+      InstanceTemplateStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new HttpJsonInstanceTemplateCallableFactory());
   }
 
   /**
-   * Constructs an instance of HttpJsonInstanceTemplateStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonInstanceTemplateStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
    */
-  protected HttpJsonInstanceTemplateStub(InstanceTemplateStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+  protected HttpJsonInstanceTemplateStub(
+      InstanceTemplateStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
 
-    HttpJsonCallSettings<DeleteInstanceTemplateHttpRequest, Operation> deleteInstanceTemplateTransportSettings =
-        HttpJsonCallSettings.<DeleteInstanceTemplateHttpRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteInstanceTemplateMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<GetInstanceTemplateHttpRequest, InstanceTemplate> getInstanceTemplateTransportSettings =
-        HttpJsonCallSettings.<GetInstanceTemplateHttpRequest, InstanceTemplate>newBuilder()
-            .setMethodDescriptor(getInstanceTemplateMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<InsertInstanceTemplateHttpRequest, Operation> insertInstanceTemplateTransportSettings =
-        HttpJsonCallSettings.<InsertInstanceTemplateHttpRequest, Operation>newBuilder()
-            .setMethodDescriptor(insertInstanceTemplateMethodDescriptor)
-            .build();
-    HttpJsonCallSettings<ListInstanceTemplatesHttpRequest, InstanceTemplateList> listInstanceTemplatesTransportSettings =
-        HttpJsonCallSettings.<ListInstanceTemplatesHttpRequest, InstanceTemplateList>newBuilder()
-            .setMethodDescriptor(listInstanceTemplatesMethodDescriptor)
-            .build();
+    HttpJsonCallSettings<DeleteInstanceTemplateHttpRequest, Operation>
+        deleteInstanceTemplateTransportSettings =
+            HttpJsonCallSettings.<DeleteInstanceTemplateHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteInstanceTemplateMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<GetInstanceTemplateHttpRequest, InstanceTemplate>
+        getInstanceTemplateTransportSettings =
+            HttpJsonCallSettings.<GetInstanceTemplateHttpRequest, InstanceTemplate>newBuilder()
+                .setMethodDescriptor(getInstanceTemplateMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<InsertInstanceTemplateHttpRequest, Operation>
+        insertInstanceTemplateTransportSettings =
+            HttpJsonCallSettings.<InsertInstanceTemplateHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(insertInstanceTemplateMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
+        listInstanceTemplatesTransportSettings =
+            HttpJsonCallSettings
+                .<ListInstanceTemplatesHttpRequest, InstanceTemplateList>newBuilder()
+                .setMethodDescriptor(listInstanceTemplatesMethodDescriptor)
+                .build();
 
-    this.deleteInstanceTemplateCallable = callableFactory.createUnaryCallable(deleteInstanceTemplateTransportSettings,settings.deleteInstanceTemplateSettings(), clientContext);
-    this.getInstanceTemplateCallable = callableFactory.createUnaryCallable(getInstanceTemplateTransportSettings,settings.getInstanceTemplateSettings(), clientContext);
-    this.insertInstanceTemplateCallable = callableFactory.createUnaryCallable(insertInstanceTemplateTransportSettings,settings.insertInstanceTemplateSettings(), clientContext);
-    this.listInstanceTemplatesCallable = callableFactory.createUnaryCallable(listInstanceTemplatesTransportSettings,settings.listInstanceTemplatesSettings(), clientContext);
-    this.listInstanceTemplatesPagedCallable = callableFactory.createPagedCallable(listInstanceTemplatesTransportSettings,settings.listInstanceTemplatesSettings(), clientContext);
+    this.deleteInstanceTemplateCallable =
+        callableFactory.createUnaryCallable(
+            deleteInstanceTemplateTransportSettings,
+            settings.deleteInstanceTemplateSettings(),
+            clientContext);
+    this.getInstanceTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getInstanceTemplateTransportSettings,
+            settings.getInstanceTemplateSettings(),
+            clientContext);
+    this.insertInstanceTemplateCallable =
+        callableFactory.createUnaryCallable(
+            insertInstanceTemplateTransportSettings,
+            settings.insertInstanceTemplateSettings(),
+            clientContext);
+    this.listInstanceTemplatesCallable =
+        callableFactory.createUnaryCallable(
+            listInstanceTemplatesTransportSettings,
+            settings.listInstanceTemplatesSettings(),
+            clientContext);
+    this.listInstanceTemplatesPagedCallable =
+        callableFactory.createPagedCallable(
+            listInstanceTemplatesTransportSettings,
+            settings.listInstanceTemplatesSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   @BetaApi
-  public UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation> deleteInstanceTemplateCallable() {
+  public UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation>
+      deleteInstanceTemplateCallable() {
     return deleteInstanceTemplateCallable;
   }
 
   @BetaApi
-  public UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate> getInstanceTemplateCallable() {
+  public UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate>
+      getInstanceTemplateCallable() {
     return getInstanceTemplateCallable;
   }
 
   @BetaApi
-  public UnaryCallable<InsertInstanceTemplateHttpRequest, Operation> insertInstanceTemplateCallable() {
+  public UnaryCallable<InsertInstanceTemplateHttpRequest, Operation>
+      insertInstanceTemplateCallable() {
     return insertInstanceTemplateCallable;
   }
 
   @BetaApi
-  public UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse> listInstanceTemplatesPagedCallable() {
+  public UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse>
+      listInstanceTemplatesPagedCallable() {
     return listInstanceTemplatesPagedCallable;
   }
 
   @BetaApi
-  public UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList> listInstanceTemplatesCallable() {
+  public UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
+      listInstanceTemplatesCallable() {
     return listInstanceTemplatesCallable;
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
@@ -255,5 +302,4 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
-
 }

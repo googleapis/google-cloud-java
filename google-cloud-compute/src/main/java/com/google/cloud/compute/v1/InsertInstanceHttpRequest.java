@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +37,7 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
   private final String prettyPrint;
   private final String quotaUser;
   private final String requestId;
+  private final String sourceInstanceTemplate;
   private final String userIp;
   private final String zone;
 
@@ -52,10 +50,10 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     this.prettyPrint = null;
     this.quotaUser = null;
     this.requestId = null;
+    this.sourceInstanceTemplate = null;
     this.userIp = null;
     this.zone = null;
   }
-
 
   private InsertInstanceHttpRequest(
       String access_token,
@@ -66,9 +64,9 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
       String prettyPrint,
       String quotaUser,
       String requestId,
+      String sourceInstanceTemplate,
       String userIp,
-      String zone
-      ) {
+      String zone) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -77,6 +75,7 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.requestId = requestId;
+    this.sourceInstanceTemplate = sourceInstanceTemplate;
     this.userIp = userIp;
     this.zone = zone;
   }
@@ -107,6 +106,11 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     }
     if (fieldNames.contains("requestId") && requestId != null) {
       fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
+    }
+    if (fieldNames.contains("sourceInstanceTemplate") && sourceInstanceTemplate != null) {
+      fieldMap.put(
+          "sourceInstanceTemplate",
+          Collections.singletonList(String.valueOf(sourceInstanceTemplate)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -142,6 +146,9 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("requestId")) {
       return String.valueOf(requestId);
+    }
+    if (fieldName.equals("sourceInstanceTemplate")) {
+      return String.valueOf(sourceInstanceTemplate);
     }
     if (fieldName.equals("userIp")) {
       return String.valueOf(userIp);
@@ -190,6 +197,10 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     return requestId;
   }
 
+  public String getSourceInstanceTemplate() {
+    return sourceInstanceTemplate;
+  }
+
   public String getUserIp() {
     return userIp;
   }
@@ -198,22 +209,24 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertInstanceHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertInstanceHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertInstanceHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertInstanceHttpRequest();
   }
@@ -227,6 +240,7 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     private String prettyPrint;
     private String quotaUser;
     private String requestId;
+    private String sourceInstanceTemplate;
     private String userIp;
     private String zone;
 
@@ -258,6 +272,9 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
       if (other.getRequestId() != null) {
         this.requestId = other.requestId;
       }
+      if (other.getSourceInstanceTemplate() != null) {
+        this.sourceInstanceTemplate = other.sourceInstanceTemplate;
+      }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
       }
@@ -276,6 +293,7 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
+      this.sourceInstanceTemplate = source.sourceInstanceTemplate;
       this.userIp = source.userIp;
       this.zone = source.zone;
     }
@@ -352,6 +370,15 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
+    public String getSourceInstanceTemplate() {
+      return sourceInstanceTemplate;
+    }
+
+    public Builder setSourceInstanceTemplate(String sourceInstanceTemplate) {
+      this.sourceInstanceTemplate = sourceInstanceTemplate;
+      return this;
+    }
+
     public String getUserIp() {
       return userIp;
     }
@@ -370,17 +397,8 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public InsertInstanceHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
-
 
       if (zone == null) {
         missing += " zone";
@@ -389,17 +407,17 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertInstanceHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp,
-        zone
-      );
+          access_token,
+          callback,
+          fields,
+          instanceResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          sourceInstanceTemplate,
+          userIp,
+          zone);
     }
 
     public Builder clone() {
@@ -412,6 +430,7 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
+      newBuilder.setSourceInstanceTemplate(this.sourceInstanceTemplate);
       newBuilder.setUserIp(this.userIp);
       newBuilder.setZone(this.zone);
       return newBuilder;
@@ -421,16 +440,38 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "InsertInstanceHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceResource=" + instanceResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp + ", "
-        + "zone=" + zone
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceResource="
+        + instanceResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "sourceInstanceTemplate="
+        + sourceInstanceTemplate
+        + ", "
+        + "userIp="
+        + userIp
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -441,18 +482,17 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
     }
     if (o instanceof InsertInstanceHttpRequest) {
       InsertInstanceHttpRequest that = (InsertInstanceHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceResource, that.getInstanceResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceResource, that.getInstanceResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.sourceInstanceTemplate, that.getSourceInstanceTemplate())
+          && Objects.equals(this.userIp, that.getUserIp())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -460,16 +500,16 @@ public final class InsertInstanceHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp,
-      zone
-    );
+        access_token,
+        callback,
+        fields,
+        instanceResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        sourceInstanceTemplate,
+        userIp,
+        zone);
   }
 }

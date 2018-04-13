@@ -15,21 +15,18 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
+import static com.google.cloud.compute.v1.DiskTypeClient.ListDiskTypesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListDiskTypesHttpRequest;
 import com.google.cloud.compute.v1.DiskType;
 import com.google.cloud.compute.v1.DiskTypeAggregatedList;
-import static com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
-import static com.google.cloud.compute.v1.DiskTypeClient.ListDiskTypesPagedResponse;
 import com.google.cloud.compute.v1.DiskTypeList;
-import com.google.cloud.compute.v1.DiskTypesScopedList;
 import com.google.cloud.compute.v1.GetDiskTypeHttpRequest;
 import com.google.cloud.compute.v1.ListDiskTypesHttpRequest;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
-import com.google.cloud.compute.v1.ProjectZoneName;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -42,14 +39,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DiskTypeStub implements BackgroundResource {
 
-
   @BetaApi
-  public UnaryCallable<AggregatedListDiskTypesHttpRequest, AggregatedListDiskTypesPagedResponse> aggregatedListDiskTypesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: aggregatedListDiskTypesPagedCallable()");
+  public UnaryCallable<AggregatedListDiskTypesHttpRequest, AggregatedListDiskTypesPagedResponse>
+      aggregatedListDiskTypesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListDiskTypesPagedCallable()");
   }
 
   @BetaApi
-  public UnaryCallable<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList> aggregatedListDiskTypesCallable() {
+  public UnaryCallable<AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList>
+      aggregatedListDiskTypesCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListDiskTypesCallable()");
   }
 
@@ -59,7 +58,8 @@ public abstract class DiskTypeStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<ListDiskTypesHttpRequest, ListDiskTypesPagedResponse> listDiskTypesPagedCallable() {
+  public UnaryCallable<ListDiskTypesHttpRequest, ListDiskTypesPagedResponse>
+      listDiskTypesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listDiskTypesPagedCallable()");
   }
 
@@ -68,4 +68,6 @@ public abstract class DiskTypeStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listDiskTypesCallable()");
   }
 
+  @Override
+  public abstract void close();
 }

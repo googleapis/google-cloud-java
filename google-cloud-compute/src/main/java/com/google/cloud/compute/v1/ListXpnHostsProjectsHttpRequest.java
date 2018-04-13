@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -62,7 +59,6 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private ListXpnHostsProjectsHttpRequest(
       String access_token,
       String callback,
@@ -76,8 +72,7 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
       String project,
       ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource,
       String quotaUser,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -126,8 +121,11 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
     if (fieldNames.contains("project") && project != null) {
       fieldMap.put("project", Collections.singletonList(String.valueOf(project)));
     }
-    if (fieldNames.contains("projectsListXpnHostsRequestResource") && projectsListXpnHostsRequestResource != null) {
-      fieldMap.put("projectsListXpnHostsRequestResource", Collections.singletonList(String.valueOf(projectsListXpnHostsRequestResource)));
+    if (fieldNames.contains("projectsListXpnHostsRequestResource")
+        && projectsListXpnHostsRequestResource != null) {
+      fieldMap.put(
+          "projectsListXpnHostsRequestResource",
+          Collections.singletonList(String.valueOf(projectsListXpnHostsRequestResource)));
     }
     if (fieldNames.contains("quotaUser") && quotaUser != null) {
       fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
@@ -240,22 +238,24 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ListXpnHostsProjectsHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ListXpnHostsProjectsHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ListXpnHostsProjectsHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ListXpnHostsProjectsHttpRequest();
   }
@@ -431,7 +431,8 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
       return projectsListXpnHostsRequestResource;
     }
 
-    public Builder setProjectsListXpnHostsRequestResource(ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource) {
+    public Builder setProjectsListXpnHostsRequestResource(
+        ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource) {
       this.projectsListXpnHostsRequestResource = projectsListXpnHostsRequestResource;
       return this;
     }
@@ -454,42 +455,30 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public ListXpnHostsProjectsHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
-
-
 
       if (project == null) {
         missing += " project";
       }
 
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new ListXpnHostsProjectsHttpRequest(
-        access_token,
-        callback,
-        fields,
-        filter,
-        key,
-        maxResults,
-        orderBy,
-        pageToken,
-        prettyPrint,
-        project,
-        projectsListXpnHostsRequestResource,
-        quotaUser,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          filter,
+          key,
+          maxResults,
+          orderBy,
+          pageToken,
+          prettyPrint,
+          project,
+          projectsListXpnHostsRequestResource,
+          quotaUser,
+          userIp);
     }
 
     public Builder clone() {
@@ -514,19 +503,44 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "ListXpnHostsProjectsHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "filter=" + filter + ", "
-        + "key=" + key + ", "
-        + "maxResults=" + maxResults + ", "
-        + "orderBy=" + orderBy + ", "
-        + "pageToken=" + pageToken + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "project=" + project + ", "
-        + "projectsListXpnHostsRequestResource=" + projectsListXpnHostsRequestResource + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "filter="
+        + filter
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "maxResults="
+        + maxResults
+        + ", "
+        + "orderBy="
+        + orderBy
+        + ", "
+        + "pageToken="
+        + pageToken
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "project="
+        + project
+        + ", "
+        + "projectsListXpnHostsRequestResource="
+        + projectsListXpnHostsRequestResource
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -537,21 +551,21 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
     }
     if (o instanceof ListXpnHostsProjectsHttpRequest) {
       ListXpnHostsProjectsHttpRequest that = (ListXpnHostsProjectsHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.filter, that.getFilter()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.maxResults, that.getMaxResults()) &&
-          Objects.equals(this.orderBy, that.getOrderBy()) &&
-          Objects.equals(this.pageToken, that.getPageToken()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.project, that.getProject()) &&
-          Objects.equals(this.projectsListXpnHostsRequestResource, that.getProjectsListXpnHostsRequestResource()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.filter, that.getFilter())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.maxResults, that.getMaxResults())
+          && Objects.equals(this.orderBy, that.getOrderBy())
+          && Objects.equals(this.pageToken, that.getPageToken())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.project, that.getProject())
+          && Objects.equals(
+              this.projectsListXpnHostsRequestResource,
+              that.getProjectsListXpnHostsRequestResource())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -559,19 +573,18 @@ public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      filter,
-      key,
-      maxResults,
-      orderBy,
-      pageToken,
-      prettyPrint,
-      project,
-      projectsListXpnHostsRequestResource,
-      quotaUser,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        filter,
+        key,
+        maxResults,
+        orderBy,
+        pageToken,
+        prettyPrint,
+        project,
+        projectsListXpnHostsRequestResource,
+        quotaUser,
+        userIp);
   }
 }

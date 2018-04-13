@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionClient.ListRegionsPagedResponse;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,7 +28,6 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetRegionHttpRequest;
@@ -34,15 +35,9 @@ import com.google.cloud.compute.v1.ListRegionsHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.Region;
-import static com.google.cloud.compute.v1.RegionClient.ListRegionsPagedResponse;
 import com.google.cloud.compute.v1.RegionList;
-import com.google.cloud.compute.v1.RegionSettings;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -64,8 +59,7 @@ public class HttpJsonRegionStub extends RegionStub {
               ApiMessageHttpRequestFormatter.<GetRegionHttpRequest>newBuilder()
                   .setRequestInstance(GetRegionHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/regions/{region}"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     ))
+                  .setQueryParams(Sets.<String>newHashSet())
                   .setResourceNameFactory(ProjectRegionName.newFactory())
                   .setResourceNameField("region")
                   .build())
@@ -74,33 +68,37 @@ public class HttpJsonRegionStub extends RegionStub {
                   .setResponseInstance(Region.getDefaultInstance())
                   .build())
           .build();
+
   @InternalApi
-  public static final ApiMethodDescriptor<ListRegionsHttpRequest, RegionList> listRegionsMethodDescriptor =
-      ApiMethodDescriptor.<ListRegionsHttpRequest, RegionList>newBuilder()
-          .setFullMethodName("compute.regions.list")
-          .setHttpMethod(HttpMethods.GET)
-          .setRequestFormatter(
-              ApiMessageHttpRequestFormatter.<ListRegionsHttpRequest>newBuilder()
-                  .setRequestInstance(ListRegionsHttpRequest.getDefaultInstance())
-                  .setPathTemplate(PathTemplate.create("{project}/regions"))
-                  .setQueryParams(Sets.<String>newHashSet(
-                                     "filter",    "maxResults",    "orderBy",    "pageToken"
-                                     ))
-                  .setResourceNameFactory(ProjectName.newFactory())
-                  .setResourceNameField("project")
-                  .build())
-          .setResponseParser(
-              ApiMessageHttpResponseParser.<RegionList>newBuilder()
-                  .setResponseInstance(RegionList.getDefaultInstance())
-                  .build())
-          .build();
+  public static final ApiMethodDescriptor<ListRegionsHttpRequest, RegionList>
+      listRegionsMethodDescriptor =
+          ApiMethodDescriptor.<ListRegionsHttpRequest, RegionList>newBuilder()
+              .setFullMethodName("compute.regions.list")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<ListRegionsHttpRequest>newBuilder()
+                      .setRequestInstance(ListRegionsHttpRequest.getDefaultInstance())
+                      .setPathTemplate(PathTemplate.create("{project}/regions"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<RegionList>newBuilder()
+                      .setResponseInstance(RegionList.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetRegionHttpRequest, Region> getRegionCallable;
   private final UnaryCallable<ListRegionsHttpRequest, RegionList> listRegionsCallable;
-  private final UnaryCallable<ListRegionsHttpRequest, ListRegionsPagedResponse> listRegionsPagedCallable;
+  private final UnaryCallable<ListRegionsHttpRequest, ListRegionsPagedResponse>
+      listRegionsPagedCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
+
   public static final HttpJsonRegionStub create(RegionStubSettings settings) throws IOException {
     return new HttpJsonRegionStub(settings, ClientContext.create(settings));
   }
@@ -109,25 +107,32 @@ public class HttpJsonRegionStub extends RegionStub {
     return new HttpJsonRegionStub(RegionStubSettings.newBuilder().build(), clientContext);
   }
 
-  public static final HttpJsonRegionStub create(ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
-    return new HttpJsonRegionStub(RegionStubSettings.newBuilder().build(), clientContext, callableFactory);
+  public static final HttpJsonRegionStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonRegionStub(
+        RegionStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
   /**
-   * Constructs an instance of HttpJsonRegionStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonRegionStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected HttpJsonRegionStub(RegionStubSettings settings, ClientContext clientContext) throws IOException {
+  protected HttpJsonRegionStub(RegionStubSettings settings, ClientContext clientContext)
+      throws IOException {
     this(settings, clientContext, new HttpJsonRegionCallableFactory());
   }
 
   /**
-   * Constructs an instance of HttpJsonRegionStub, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of HttpJsonRegionStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected HttpJsonRegionStub(RegionStubSettings settings, ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+  protected HttpJsonRegionStub(
+      RegionStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
 
     HttpJsonCallSettings<GetRegionHttpRequest, Region> getRegionTransportSettings =
@@ -139,9 +144,15 @@ public class HttpJsonRegionStub extends RegionStub {
             .setMethodDescriptor(listRegionsMethodDescriptor)
             .build();
 
-    this.getRegionCallable = callableFactory.createUnaryCallable(getRegionTransportSettings,settings.getRegionSettings(), clientContext);
-    this.listRegionsCallable = callableFactory.createUnaryCallable(listRegionsTransportSettings,settings.listRegionsSettings(), clientContext);
-    this.listRegionsPagedCallable = callableFactory.createPagedCallable(listRegionsTransportSettings,settings.listRegionsSettings(), clientContext);
+    this.getRegionCallable =
+        callableFactory.createUnaryCallable(
+            getRegionTransportSettings, settings.getRegionSettings(), clientContext);
+    this.listRegionsCallable =
+        callableFactory.createUnaryCallable(
+            listRegionsTransportSettings, settings.listRegionsSettings(), clientContext);
+    this.listRegionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRegionsTransportSettings, settings.listRegionsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -152,7 +163,8 @@ public class HttpJsonRegionStub extends RegionStub {
   }
 
   @BetaApi
-  public UnaryCallable<ListRegionsHttpRequest, ListRegionsPagedResponse> listRegionsPagedCallable() {
+  public UnaryCallable<ListRegionsHttpRequest, ListRegionsPagedResponse>
+      listRegionsPagedCallable() {
     return listRegionsPagedCallable;
   }
 
@@ -162,7 +174,7 @@ public class HttpJsonRegionStub extends RegionStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
@@ -190,5 +202,4 @@ public class HttpJsonRegionStub extends RegionStub {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
-
 }

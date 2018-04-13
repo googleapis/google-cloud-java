@@ -15,11 +15,12 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.ProjectClient.GetXpnResourcesProjectsPagedResponse;
+import static com.google.cloud.compute.v1.ProjectClient.ListXpnHostsProjectsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -30,8 +31,6 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -41,7 +40,6 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.auth.Credentials;
 import com.google.cloud.compute.v1.DisableXpnHostProjectHttpRequest;
 import com.google.cloud.compute.v1.DisableXpnResourceProjectHttpRequest;
 import com.google.cloud.compute.v1.EnableXpnHostProjectHttpRequest;
@@ -54,8 +52,6 @@ import com.google.cloud.compute.v1.MoveDiskProjectHttpRequest;
 import com.google.cloud.compute.v1.MoveInstanceProjectHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Project;
-import static com.google.cloud.compute.v1.ProjectClient.GetXpnResourcesProjectsPagedResponse;
-import static com.google.cloud.compute.v1.ProjectClient.ListXpnHostsProjectsPagedResponse;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectHttpRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectHttpRequest;
@@ -65,10 +61,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -79,15 +73,15 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
+ *       port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of disableXpnHostProject to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of disableXpnHostProject to 30 seconds:
  *
  * <pre>
  * <code>
@@ -102,115 +96,113 @@ import org.threeten.bp.Duration;
 @Generated("by GAPIC v0.0.5")
 @BetaApi
 public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
-  /**
-   * The default scopes of the service.
-   */
-  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES = ImmutableList.<String>builder()
-      .add("https://www.googleapis.com/auth/cloud-platform")
-      .add("https://www.googleapis.com/auth/compute")
-      .add("https://www.googleapis.com/auth/compute.readonly")
-      .add("https://www.googleapis.com/auth/devstorage.full_control")
-      .add("https://www.googleapis.com/auth/devstorage.read_only")
-      .add("https://www.googleapis.com/auth/devstorage.read_write")
-      .build();
+  /** The default scopes of the service. */
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/compute.readonly")
+          .add("https://www.googleapis.com/auth/devstorage.full_control")
+          .add("https://www.googleapis.com/auth/devstorage.read_only")
+          .add("https://www.googleapis.com/auth/devstorage.read_write")
+          .build();
 
-  private final UnaryCallSettings<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectSettings;
-  private final UnaryCallSettings<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectSettings;
-  private final UnaryCallSettings<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectSettings;
-  private final UnaryCallSettings<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectSettings;
+  private final UnaryCallSettings<DisableXpnHostProjectHttpRequest, Operation>
+      disableXpnHostProjectSettings;
+  private final UnaryCallSettings<DisableXpnResourceProjectHttpRequest, Operation>
+      disableXpnResourceProjectSettings;
+  private final UnaryCallSettings<EnableXpnHostProjectHttpRequest, Operation>
+      enableXpnHostProjectSettings;
+  private final UnaryCallSettings<EnableXpnResourceProjectHttpRequest, Operation>
+      enableXpnResourceProjectSettings;
   private final UnaryCallSettings<GetProjectHttpRequest, Project> getProjectSettings;
   private final UnaryCallSettings<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectSettings;
-  private final PagedCallSettings<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsSettings;
-  private final PagedCallSettings<ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsSettings;
+  private final PagedCallSettings<
+          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
+          GetXpnResourcesProjectsPagedResponse>
+      getXpnResourcesProjectsSettings;
+  private final PagedCallSettings<
+          ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse>
+      listXpnHostsProjectsSettings;
   private final UnaryCallSettings<MoveDiskProjectHttpRequest, Operation> moveDiskProjectSettings;
-  private final UnaryCallSettings<MoveInstanceProjectHttpRequest, Operation> moveInstanceProjectSettings;
-  private final UnaryCallSettings<SetCommonInstanceMetadataProjectHttpRequest, Operation> setCommonInstanceMetadataProjectSettings;
-  private final UnaryCallSettings<SetUsageExportBucketProjectHttpRequest, Operation> setUsageExportBucketProjectSettings;
+  private final UnaryCallSettings<MoveInstanceProjectHttpRequest, Operation>
+      moveInstanceProjectSettings;
+  private final UnaryCallSettings<SetCommonInstanceMetadataProjectHttpRequest, Operation>
+      setCommonInstanceMetadataProjectSettings;
+  private final UnaryCallSettings<SetUsageExportBucketProjectHttpRequest, Operation>
+      setUsageExportBucketProjectSettings;
 
-  /**
-   * Returns the object with the settings used for calls to disableXpnHostProject.
-   */
-  public UnaryCallSettings<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectSettings() {
+  /** Returns the object with the settings used for calls to disableXpnHostProject. */
+  public UnaryCallSettings<DisableXpnHostProjectHttpRequest, Operation>
+      disableXpnHostProjectSettings() {
     return disableXpnHostProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to disableXpnResourceProject.
-   */
-  public UnaryCallSettings<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectSettings() {
+  /** Returns the object with the settings used for calls to disableXpnResourceProject. */
+  public UnaryCallSettings<DisableXpnResourceProjectHttpRequest, Operation>
+      disableXpnResourceProjectSettings() {
     return disableXpnResourceProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to enableXpnHostProject.
-   */
-  public UnaryCallSettings<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectSettings() {
+  /** Returns the object with the settings used for calls to enableXpnHostProject. */
+  public UnaryCallSettings<EnableXpnHostProjectHttpRequest, Operation>
+      enableXpnHostProjectSettings() {
     return enableXpnHostProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to enableXpnResourceProject.
-   */
-  public UnaryCallSettings<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectSettings() {
+  /** Returns the object with the settings used for calls to enableXpnResourceProject. */
+  public UnaryCallSettings<EnableXpnResourceProjectHttpRequest, Operation>
+      enableXpnResourceProjectSettings() {
     return enableXpnResourceProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getProject.
-   */
+  /** Returns the object with the settings used for calls to getProject. */
   public UnaryCallSettings<GetProjectHttpRequest, Project> getProjectSettings() {
     return getProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getXpnHostProject.
-   */
+  /** Returns the object with the settings used for calls to getXpnHostProject. */
   public UnaryCallSettings<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectSettings() {
     return getXpnHostProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getXpnResourcesProjects.
-   */
-  public PagedCallSettings<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsSettings() {
+  /** Returns the object with the settings used for calls to getXpnResourcesProjects. */
+  public PagedCallSettings<
+          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
+          GetXpnResourcesProjectsPagedResponse>
+      getXpnResourcesProjectsSettings() {
     return getXpnResourcesProjectsSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listXpnHostsProjects.
-   */
-  public PagedCallSettings<ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsSettings() {
+  /** Returns the object with the settings used for calls to listXpnHostsProjects. */
+  public PagedCallSettings<
+          ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse>
+      listXpnHostsProjectsSettings() {
     return listXpnHostsProjectsSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to moveDiskProject.
-   */
+  /** Returns the object with the settings used for calls to moveDiskProject. */
   public UnaryCallSettings<MoveDiskProjectHttpRequest, Operation> moveDiskProjectSettings() {
     return moveDiskProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to moveInstanceProject.
-   */
-  public UnaryCallSettings<MoveInstanceProjectHttpRequest, Operation> moveInstanceProjectSettings() {
+  /** Returns the object with the settings used for calls to moveInstanceProject. */
+  public UnaryCallSettings<MoveInstanceProjectHttpRequest, Operation>
+      moveInstanceProjectSettings() {
     return moveInstanceProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to setCommonInstanceMetadataProject.
-   */
-  public UnaryCallSettings<SetCommonInstanceMetadataProjectHttpRequest, Operation> setCommonInstanceMetadataProjectSettings() {
+  /** Returns the object with the settings used for calls to setCommonInstanceMetadataProject. */
+  public UnaryCallSettings<SetCommonInstanceMetadataProjectHttpRequest, Operation>
+      setCommonInstanceMetadataProjectSettings() {
     return setCommonInstanceMetadataProjectSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to setUsageExportBucketProject.
-   */
-  public UnaryCallSettings<SetUsageExportBucketProjectHttpRequest, Operation> setUsageExportBucketProjectSettings() {
+  /** Returns the object with the settings used for calls to setUsageExportBucketProject. */
+  public UnaryCallSettings<SetUsageExportBucketProjectHttpRequest, Operation>
+      setUsageExportBucketProjectSettings() {
     return setUsageExportBucketProjectSettings;
   }
-
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProjectStub createStub() throws IOException {
@@ -224,47 +216,34 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
     }
   }
 
-  /**
-   * Returns a builder for the default ExecutorProvider for this service.
-   */
+  /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
-  /**
-   * Returns the default service endpoint.
-   */
+  /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return "https://www.googleapis.com/compute/v1/projects/";
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return 443;
   }
 
-
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-
-  /**
-   * Returns a builder for the default credentials for this service.
-   */
+  /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder()
-        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
-        ;
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingHttpJsonChannelProvider.Builder defaultHttpJsonTransportProviderBuilder() {
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
@@ -276,26 +255,22 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(ProjectStubSettings.class))
-        .setTransportToken(GaxHttpJsonProperties.getHttpJsonTokenName(), GaxHttpJsonProperties.getHttpJsonVersion());
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder(ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -313,136 +288,177 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
     listXpnHostsProjectsSettings = settingsBuilder.listXpnHostsProjectsSettings().build();
     moveDiskProjectSettings = settingsBuilder.moveDiskProjectSettings().build();
     moveInstanceProjectSettings = settingsBuilder.moveInstanceProjectSettings().build();
-    setCommonInstanceMetadataProjectSettings = settingsBuilder.setCommonInstanceMetadataProjectSettings().build();
-    setUsageExportBucketProjectSettings = settingsBuilder.setUsageExportBucketProjectSettings().build();
+    setCommonInstanceMetadataProjectSettings =
+        settingsBuilder.setCommonInstanceMetadataProjectSettings().build();
+    setUsageExportBucketProjectSettings =
+        settingsBuilder.setUsageExportBucketProjectSettings().build();
   }
 
-  private static final PagedListDescriptor<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId> GET_XPN_RESOURCES_PROJECTS_PAGE_STR_DESC =
-      new PagedListDescriptor<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
-        @Override
-        public GetXpnResourcesProjectsHttpRequest injectToken(GetXpnResourcesProjectsHttpRequest payload, String token) {
-          return GetXpnResourcesProjectsHttpRequest
-            .newBuilder(payload)
-            .setPageToken(token)
-            .build();
-        }
-        @Override
-        public GetXpnResourcesProjectsHttpRequest injectPageSize(GetXpnResourcesProjectsHttpRequest payload, int pageSize) {
-          return GetXpnResourcesProjectsHttpRequest
-            .newBuilder(payload)
-            .setMaxResults(pageSize)
-            .build();
-        }
-        @Override
-        public Integer extractPageSize(GetXpnResourcesProjectsHttpRequest payload) {
-          return payload.getMaxResults();
-        }
-        @Override
-        public String extractNextToken(ProjectsGetXpnResources payload) {
-          return payload.getNextPageToken();
-        }
-        @Override
-        public Iterable<XpnResourceId> extractResources(ProjectsGetXpnResources payload) {
-          return payload.getResourcesList();
-        }
-      };
+  private static final PagedListDescriptor<
+          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId>
+      GET_XPN_RESOURCES_PROJECTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
 
-  private static final PagedListDescriptor<ListXpnHostsProjectsHttpRequest, XpnHostList, Project> LIST_XPN_HOSTS_PROJECTS_PAGE_STR_DESC =
-      new PagedListDescriptor<ListXpnHostsProjectsHttpRequest, XpnHostList, Project>() {
-        @Override
-        public String emptyToken() {
-          return "";
-        }
-        @Override
-        public ListXpnHostsProjectsHttpRequest injectToken(ListXpnHostsProjectsHttpRequest payload, String token) {
-          return ListXpnHostsProjectsHttpRequest
-            .newBuilder(payload)
-            .setPageToken(token)
-            .build();
-        }
-        @Override
-        public ListXpnHostsProjectsHttpRequest injectPageSize(ListXpnHostsProjectsHttpRequest payload, int pageSize) {
-          return ListXpnHostsProjectsHttpRequest
-            .newBuilder(payload)
-            .setMaxResults(pageSize)
-            .build();
-        }
-        @Override
-        public Integer extractPageSize(ListXpnHostsProjectsHttpRequest payload) {
-          return payload.getMaxResults();
-        }
-        @Override
-        public String extractNextToken(XpnHostList payload) {
-          return payload.getNextPageToken();
-        }
-        @Override
-        public Iterable<Project> extractResources(XpnHostList payload) {
-          return payload.getItemsList();
-        }
-      };
+            @Override
+            public GetXpnResourcesProjectsHttpRequest injectToken(
+                GetXpnResourcesProjectsHttpRequest payload, String token) {
+              return GetXpnResourcesProjectsHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
 
-  private static final PagedListResponseFactory<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, GetXpnResourcesProjectsPagedResponse> GET_XPN_RESOURCES_PROJECTS_PAGE_STR_FACT =
-      new PagedListResponseFactory<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, GetXpnResourcesProjectsPagedResponse>() {
-        @Override
-        public ApiFuture<GetXpnResourcesProjectsPagedResponse> getFuturePagedResponse(
-            UnaryCallable<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources> callable,
-            GetXpnResourcesProjectsHttpRequest request,
-            ApiCallContext context,
-            ApiFuture<ProjectsGetXpnResources> futureResponse) {
-          PageContext<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId> pageContext =
-              PageContext.create(callable, GET_XPN_RESOURCES_PROJECTS_PAGE_STR_DESC, request, context);
-          return GetXpnResourcesProjectsPagedResponse.createAsync(pageContext, futureResponse);
-        }
-      };
+            @Override
+            public GetXpnResourcesProjectsHttpRequest injectPageSize(
+                GetXpnResourcesProjectsHttpRequest payload, int pageSize) {
+              return GetXpnResourcesProjectsHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
 
-  private static final PagedListResponseFactory<ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse> LIST_XPN_HOSTS_PROJECTS_PAGE_STR_FACT =
-      new PagedListResponseFactory<ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse>() {
-        @Override
-        public ApiFuture<ListXpnHostsProjectsPagedResponse> getFuturePagedResponse(
-            UnaryCallable<ListXpnHostsProjectsHttpRequest, XpnHostList> callable,
-            ListXpnHostsProjectsHttpRequest request,
-            ApiCallContext context,
-            ApiFuture<XpnHostList> futureResponse) {
-          PageContext<ListXpnHostsProjectsHttpRequest, XpnHostList, Project> pageContext =
-              PageContext.create(callable, LIST_XPN_HOSTS_PROJECTS_PAGE_STR_DESC, request, context);
-          return ListXpnHostsProjectsPagedResponse.createAsync(pageContext, futureResponse);
-        }
-      };
+            @Override
+            public Integer extractPageSize(GetXpnResourcesProjectsHttpRequest payload) {
+              return payload.getMaxResults();
+            }
 
+            @Override
+            public String extractNextToken(ProjectsGetXpnResources payload) {
+              return payload.getNextPageToken();
+            }
 
-  /**
-   * Builder for ProjectStubSettings.
-   */
+            @Override
+            public Iterable<XpnResourceId> extractResources(ProjectsGetXpnResources payload) {
+              return payload.getResourcesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListXpnHostsProjectsHttpRequest, XpnHostList, Project>
+      LIST_XPN_HOSTS_PROJECTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListXpnHostsProjectsHttpRequest, XpnHostList, Project>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListXpnHostsProjectsHttpRequest injectToken(
+                ListXpnHostsProjectsHttpRequest payload, String token) {
+              return ListXpnHostsProjectsHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListXpnHostsProjectsHttpRequest injectPageSize(
+                ListXpnHostsProjectsHttpRequest payload, int pageSize) {
+              return ListXpnHostsProjectsHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListXpnHostsProjectsHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(XpnHostList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Project> extractResources(XpnHostList payload) {
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
+          GetXpnResourcesProjectsPagedResponse>
+      GET_XPN_RESOURCES_PROJECTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
+              GetXpnResourcesProjectsPagedResponse>() {
+            @Override
+            public ApiFuture<GetXpnResourcesProjectsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources> callable,
+                GetXpnResourcesProjectsHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<ProjectsGetXpnResources> futureResponse) {
+              PageContext<
+                      GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId>
+                  pageContext =
+                      PageContext.create(
+                          callable, GET_XPN_RESOURCES_PROJECTS_PAGE_STR_DESC, request, context);
+              return GetXpnResourcesProjectsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse>
+      LIST_XPN_HOSTS_PROJECTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse>() {
+            @Override
+            public ApiFuture<ListXpnHostsProjectsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListXpnHostsProjectsHttpRequest, XpnHostList> callable,
+                ListXpnHostsProjectsHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<XpnHostList> futureResponse) {
+              PageContext<ListXpnHostsProjectsHttpRequest, XpnHostList, Project> pageContext =
+                  PageContext.create(
+                      callable, LIST_XPN_HOSTS_PROJECTS_PAGE_STR_DESC, request, context);
+              return ListXpnHostsProjectsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Builder for ProjectStubSettings. */
   public static class Builder extends StubSettings.Builder<ProjectStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectSettings;
-    private final UnaryCallSettings.Builder<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectSettings;
-    private final UnaryCallSettings.Builder<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectSettings;
-    private final UnaryCallSettings.Builder<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectSettings;
+    private final UnaryCallSettings.Builder<DisableXpnHostProjectHttpRequest, Operation>
+        disableXpnHostProjectSettings;
+    private final UnaryCallSettings.Builder<DisableXpnResourceProjectHttpRequest, Operation>
+        disableXpnResourceProjectSettings;
+    private final UnaryCallSettings.Builder<EnableXpnHostProjectHttpRequest, Operation>
+        enableXpnHostProjectSettings;
+    private final UnaryCallSettings.Builder<EnableXpnResourceProjectHttpRequest, Operation>
+        enableXpnResourceProjectSettings;
     private final UnaryCallSettings.Builder<GetProjectHttpRequest, Project> getProjectSettings;
-    private final UnaryCallSettings.Builder<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectSettings;
-    private final PagedCallSettings.Builder<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsSettings;
-    private final PagedCallSettings.Builder<ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsSettings;
-    private final UnaryCallSettings.Builder<MoveDiskProjectHttpRequest, Operation> moveDiskProjectSettings;
-    private final UnaryCallSettings.Builder<MoveInstanceProjectHttpRequest, Operation> moveInstanceProjectSettings;
-    private final UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectHttpRequest, Operation> setCommonInstanceMetadataProjectSettings;
-    private final UnaryCallSettings.Builder<SetUsageExportBucketProjectHttpRequest, Operation> setUsageExportBucketProjectSettings;
+    private final UnaryCallSettings.Builder<GetXpnHostProjectHttpRequest, Project>
+        getXpnHostProjectSettings;
+    private final PagedCallSettings.Builder<
+            GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
+            GetXpnResourcesProjectsPagedResponse>
+        getXpnResourcesProjectsSettings;
+    private final PagedCallSettings.Builder<
+            ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse>
+        listXpnHostsProjectsSettings;
+    private final UnaryCallSettings.Builder<MoveDiskProjectHttpRequest, Operation>
+        moveDiskProjectSettings;
+    private final UnaryCallSettings.Builder<MoveInstanceProjectHttpRequest, Operation>
+        moveInstanceProjectSettings;
+    private final UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectHttpRequest, Operation>
+        setCommonInstanceMetadataProjectSettings;
+    private final UnaryCallSettings.Builder<SetUsageExportBucketProjectHttpRequest, Operation>
+        setUsageExportBucketProjectSettings;
 
-    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>> RETRYABLE_CODE_DEFINITIONS;
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
-      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions = ImmutableMap.builder();
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "non_idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -451,15 +467,16 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder()
-          .setInitialRetryDelay(Duration.ofMillis(100L))
-          .setRetryDelayMultiplier(1.3)
-          .setMaxRetryDelay(Duration.ofMillis(60000L))
-          .setInitialRpcTimeout(Duration.ofMillis(20000L))
-          .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeout(Duration.ofMillis(20000L))
-          .setTotalTimeout(Duration.ofMillis(600000L))
-          .build();
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
@@ -483,11 +500,11 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
 
       getXpnHostProjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getXpnResourcesProjectsSettings = PagedCallSettings.newBuilder(
-          GET_XPN_RESOURCES_PROJECTS_PAGE_STR_FACT);
+      getXpnResourcesProjectsSettings =
+          PagedCallSettings.newBuilder(GET_XPN_RESOURCES_PROJECTS_PAGE_STR_FACT);
 
-      listXpnHostsProjectsSettings = PagedCallSettings.newBuilder(
-          LIST_XPN_HOSTS_PROJECTS_PAGE_STR_FACT);
+      listXpnHostsProjectsSettings =
+          PagedCallSettings.newBuilder(LIST_XPN_HOSTS_PROJECTS_PAGE_STR_FACT);
 
       moveDiskProjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -497,20 +514,20 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
 
       setUsageExportBucketProjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-          disableXpnHostProjectSettings,
-          disableXpnResourceProjectSettings,
-          enableXpnHostProjectSettings,
-          enableXpnResourceProjectSettings,
-          getProjectSettings,
-          getXpnHostProjectSettings,
-          getXpnResourcesProjectsSettings,
-          listXpnHostsProjectsSettings,
-          moveDiskProjectSettings,
-          moveInstanceProjectSettings,
-          setCommonInstanceMetadataProjectSettings,
-          setUsageExportBucketProjectSettings
-      );
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              disableXpnHostProjectSettings,
+              disableXpnResourceProjectSettings,
+              enableXpnHostProjectSettings,
+              enableXpnResourceProjectSettings,
+              getProjectSettings,
+              getXpnHostProjectSettings,
+              getXpnResourcesProjectsSettings,
+              listXpnHostsProjectsSettings,
+              moveDiskProjectSettings,
+              moveInstanceProjectSettings,
+              setCommonInstanceMetadataProjectSettings,
+              setUsageExportBucketProjectSettings);
 
       initDefaults(this);
     }
@@ -526,51 +543,63 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
 
     private static Builder initDefaults(Builder builder) {
 
-      builder.disableXpnHostProjectSettings()
+      builder
+          .disableXpnHostProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.disableXpnResourceProjectSettings()
+      builder
+          .disableXpnResourceProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.enableXpnHostProjectSettings()
+      builder
+          .enableXpnHostProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.enableXpnResourceProjectSettings()
+      builder
+          .enableXpnResourceProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.getProjectSettings()
+      builder
+          .getProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.getXpnHostProjectSettings()
+      builder
+          .getXpnHostProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.getXpnResourcesProjectsSettings()
+      builder
+          .getXpnResourcesProjectsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.listXpnHostsProjectsSettings()
+      builder
+          .listXpnHostsProjectsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.moveDiskProjectSettings()
+      builder
+          .moveDiskProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.moveInstanceProjectSettings()
+      builder
+          .moveInstanceProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.setCommonInstanceMetadataProjectSettings()
+      builder
+          .setCommonInstanceMetadataProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder.setUsageExportBucketProjectSettings()
+      builder
+          .setUsageExportBucketProjectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -590,31 +619,35 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
       listXpnHostsProjectsSettings = settings.listXpnHostsProjectsSettings.toBuilder();
       moveDiskProjectSettings = settings.moveDiskProjectSettings.toBuilder();
       moveInstanceProjectSettings = settings.moveInstanceProjectSettings.toBuilder();
-      setCommonInstanceMetadataProjectSettings = settings.setCommonInstanceMetadataProjectSettings.toBuilder();
-      setUsageExportBucketProjectSettings = settings.setUsageExportBucketProjectSettings.toBuilder();
+      setCommonInstanceMetadataProjectSettings =
+          settings.setCommonInstanceMetadataProjectSettings.toBuilder();
+      setUsageExportBucketProjectSettings =
+          settings.setUsageExportBucketProjectSettings.toBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-          disableXpnHostProjectSettings,
-          disableXpnResourceProjectSettings,
-          enableXpnHostProjectSettings,
-          enableXpnResourceProjectSettings,
-          getProjectSettings,
-          getXpnHostProjectSettings,
-          getXpnResourcesProjectsSettings,
-          listXpnHostsProjectsSettings,
-          moveDiskProjectSettings,
-          moveInstanceProjectSettings,
-          setCommonInstanceMetadataProjectSettings,
-          setUsageExportBucketProjectSettings
-      );
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              disableXpnHostProjectSettings,
+              disableXpnResourceProjectSettings,
+              enableXpnHostProjectSettings,
+              enableXpnResourceProjectSettings,
+              getProjectSettings,
+              getXpnHostProjectSettings,
+              getXpnResourcesProjectsSettings,
+              listXpnHostsProjectsSettings,
+              moveDiskProjectSettings,
+              moveInstanceProjectSettings,
+              setCommonInstanceMetadataProjectSettings,
+              setUsageExportBucketProjectSettings);
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
-     * Note: This method does not support applying settings to streaming methods.
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllUnaryMethods(ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -623,87 +656,77 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
       return unaryMethodSettingsBuilders;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to disableXpnHostProject.
-     */
-    public UnaryCallSettings.Builder<DisableXpnHostProjectHttpRequest, Operation> disableXpnHostProjectSettings() {
+    /** Returns the builder for the settings used for calls to disableXpnHostProject. */
+    public UnaryCallSettings.Builder<DisableXpnHostProjectHttpRequest, Operation>
+        disableXpnHostProjectSettings() {
       return disableXpnHostProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to disableXpnResourceProject.
-     */
-    public UnaryCallSettings.Builder<DisableXpnResourceProjectHttpRequest, Operation> disableXpnResourceProjectSettings() {
+    /** Returns the builder for the settings used for calls to disableXpnResourceProject. */
+    public UnaryCallSettings.Builder<DisableXpnResourceProjectHttpRequest, Operation>
+        disableXpnResourceProjectSettings() {
       return disableXpnResourceProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to enableXpnHostProject.
-     */
-    public UnaryCallSettings.Builder<EnableXpnHostProjectHttpRequest, Operation> enableXpnHostProjectSettings() {
+    /** Returns the builder for the settings used for calls to enableXpnHostProject. */
+    public UnaryCallSettings.Builder<EnableXpnHostProjectHttpRequest, Operation>
+        enableXpnHostProjectSettings() {
       return enableXpnHostProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to enableXpnResourceProject.
-     */
-    public UnaryCallSettings.Builder<EnableXpnResourceProjectHttpRequest, Operation> enableXpnResourceProjectSettings() {
+    /** Returns the builder for the settings used for calls to enableXpnResourceProject. */
+    public UnaryCallSettings.Builder<EnableXpnResourceProjectHttpRequest, Operation>
+        enableXpnResourceProjectSettings() {
       return enableXpnResourceProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getProject.
-     */
+    /** Returns the builder for the settings used for calls to getProject. */
     public UnaryCallSettings.Builder<GetProjectHttpRequest, Project> getProjectSettings() {
       return getProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getXpnHostProject.
-     */
-    public UnaryCallSettings.Builder<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectSettings() {
+    /** Returns the builder for the settings used for calls to getXpnHostProject. */
+    public UnaryCallSettings.Builder<GetXpnHostProjectHttpRequest, Project>
+        getXpnHostProjectSettings() {
       return getXpnHostProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getXpnResourcesProjects.
-     */
-    public PagedCallSettings.Builder<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, GetXpnResourcesProjectsPagedResponse> getXpnResourcesProjectsSettings() {
+    /** Returns the builder for the settings used for calls to getXpnResourcesProjects. */
+    public PagedCallSettings.Builder<
+            GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
+            GetXpnResourcesProjectsPagedResponse>
+        getXpnResourcesProjectsSettings() {
       return getXpnResourcesProjectsSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listXpnHostsProjects.
-     */
-    public PagedCallSettings.Builder<ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse> listXpnHostsProjectsSettings() {
+    /** Returns the builder for the settings used for calls to listXpnHostsProjects. */
+    public PagedCallSettings.Builder<
+            ListXpnHostsProjectsHttpRequest, XpnHostList, ListXpnHostsProjectsPagedResponse>
+        listXpnHostsProjectsSettings() {
       return listXpnHostsProjectsSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to moveDiskProject.
-     */
-    public UnaryCallSettings.Builder<MoveDiskProjectHttpRequest, Operation> moveDiskProjectSettings() {
+    /** Returns the builder for the settings used for calls to moveDiskProject. */
+    public UnaryCallSettings.Builder<MoveDiskProjectHttpRequest, Operation>
+        moveDiskProjectSettings() {
       return moveDiskProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to moveInstanceProject.
-     */
-    public UnaryCallSettings.Builder<MoveInstanceProjectHttpRequest, Operation> moveInstanceProjectSettings() {
+    /** Returns the builder for the settings used for calls to moveInstanceProject. */
+    public UnaryCallSettings.Builder<MoveInstanceProjectHttpRequest, Operation>
+        moveInstanceProjectSettings() {
       return moveInstanceProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to setCommonInstanceMetadataProject.
-     */
-    public UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectHttpRequest, Operation> setCommonInstanceMetadataProjectSettings() {
+    /** Returns the builder for the settings used for calls to setCommonInstanceMetadataProject. */
+    public UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectHttpRequest, Operation>
+        setCommonInstanceMetadataProjectSettings() {
       return setCommonInstanceMetadataProjectSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to setUsageExportBucketProject.
-     */
-    public UnaryCallSettings.Builder<SetUsageExportBucketProjectHttpRequest, Operation> setUsageExportBucketProjectSettings() {
+    /** Returns the builder for the settings used for calls to setUsageExportBucketProject. */
+    public UnaryCallSettings.Builder<SetUsageExportBucketProjectHttpRequest, Operation>
+        setUsageExportBucketProjectSettings() {
       return setUsageExportBucketProjectSettings;
     }
 

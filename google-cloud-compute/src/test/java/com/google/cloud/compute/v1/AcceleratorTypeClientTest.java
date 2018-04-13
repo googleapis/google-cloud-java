@@ -15,6 +15,12 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.AcceleratorTypeClient.AggregatedListAcceleratorTypesPagedResponse;
+import static com.google.cloud.compute.v1.AcceleratorTypeClient.ListAcceleratorTypesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonAcceleratorTypeStub.aggregatedListAcceleratorTypesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonAcceleratorTypeStub.getAcceleratorTypeMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonAcceleratorTypeStub.listAcceleratorTypesMethodDescriptor;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -25,12 +31,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import static com.google.cloud.compute.v1.AcceleratorTypeClient.AggregatedListAcceleratorTypesPagedResponse;
-import static com.google.cloud.compute.v1.AcceleratorTypeClient.ListAcceleratorTypesPagedResponse;
 import com.google.cloud.compute.v1.stub.AcceleratorTypeStubSettings;
-import static com.google.cloud.compute.v1.stub.HttpJsonAcceleratorTypeStub.aggregatedListAcceleratorTypesMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonAcceleratorTypeStub.getAcceleratorTypeMethodDescriptor;
-import static com.google.cloud.compute.v1.stub.HttpJsonAcceleratorTypeStub.listAcceleratorTypesMethodDescriptor;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
@@ -47,14 +48,14 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class AcceleratorTypeClientTest {
 
-   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS = ImmutableList.copyOf(
-        Lists.<ApiMethodDescriptor>newArrayList(
-          aggregatedListAcceleratorTypesMethodDescriptor,
-          getAcceleratorTypeMethodDescriptor,
-          listAcceleratorTypesMethodDescriptor
-        ));
-  private static final MockHttpService mockService
-      = new MockHttpService(METHOD_DESCRIPTORS, AcceleratorTypeStubSettings.getDefaultEndpoint());
+  private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
+      ImmutableList.copyOf(
+          Lists.<ApiMethodDescriptor>newArrayList(
+              aggregatedListAcceleratorTypesMethodDescriptor,
+              getAcceleratorTypeMethodDescriptor,
+              listAcceleratorTypesMethodDescriptor));
+  private static final MockHttpService mockService =
+      new MockHttpService(METHOD_DESCRIPTORS, AcceleratorTypeStubSettings.getDefaultEndpoint());
 
   private static AcceleratorTypeClient client;
   private static AcceleratorTypeSettings clientSettings;
@@ -63,13 +64,13 @@ public class AcceleratorTypeClientTest {
   public static void setUp() throws IOException {
     clientSettings =
         AcceleratorTypeSettings.newBuilder()
-           .setTransportChannelProvider(
-               AcceleratorTypeSettings.defaultHttpJsonTransportProviderBuilder()
-                   .setHttpTransport(mockService).build())
-           .setCredentialsProvider(NoCredentialsProvider.create())
-           .build();
-    client =
-       AcceleratorTypeClient.create(clientSettings);
+            .setTransportChannelProvider(
+                AcceleratorTypeSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = AcceleratorTypeClient.create(clientSettings);
   }
 
   @After
@@ -92,37 +93,47 @@ public class AcceleratorTypeClientTest {
     AcceleratorTypesScopedList itemsItem = AcceleratorTypesScopedList.newBuilder().build();
     Map<String, AcceleratorTypesScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
-    AcceleratorTypeAggregatedList expectedResponse = AcceleratorTypeAggregatedList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .putAllItems(items)
-      .build();
+    AcceleratorTypeAggregatedList expectedResponse =
+        AcceleratorTypeAggregatedList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .putAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
 
-    AggregatedListAcceleratorTypesPagedResponse pagedListResponse = client.aggregatedListAcceleratorTypes(project);
+    AggregatedListAcceleratorTypesPagedResponse pagedListResponse =
+        client.aggregatedListAcceleratorTypes(project);
 
     List<AcceleratorTypesScopedList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsMap().values().iterator().next(),
-        resources.get(0));
+    Assert.assertEquals(
+        expectedResponse.getItemsMap().values().iterator().next(), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void aggregatedListAcceleratorTypesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -146,41 +157,51 @@ public class AcceleratorTypeClientTest {
     Integer maximumCardsPerInstance = 1883669166;
     String id = "id3355";
     String selfLink = "selfLink-1691268851";
-    AcceleratorType expectedResponse = AcceleratorType.newBuilder()
-      .setZone(zone.toString())
-      .setKind(kind)
-      .setCreationTimestamp(creationTimestamp)
-      .setName(name)
-      .setDescription(description)
-      .setMaximumCardsPerInstance(maximumCardsPerInstance)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .build();
+    AcceleratorType expectedResponse =
+        AcceleratorType.newBuilder()
+            .setZone(zone.toString())
+            .setKind(kind)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setDescription(description)
+            .setMaximumCardsPerInstance(maximumCardsPerInstance)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+    ProjectZoneAcceleratorTypeName acceleratorType =
+        ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
 
-    AcceleratorType actualResponse =
-        client.getAcceleratorType(acceleratorType);
+    AcceleratorType actualResponse = client.getAcceleratorType(acceleratorType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getAcceleratorTypeExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      ProjectZoneAcceleratorTypeName acceleratorType = ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
+      ProjectZoneAcceleratorTypeName acceleratorType =
+          ProjectZoneAcceleratorTypeName.of("[PROJECT]", "[ZONE]", "[ACCELERATOR_TYPE]");
 
       client.getAcceleratorType(acceleratorType);
       Assert.fail("No exception raised");
@@ -198,13 +219,14 @@ public class AcceleratorTypeClientTest {
     String selfLink = "selfLink-1691268851";
     AcceleratorType itemsElement = AcceleratorType.newBuilder().build();
     List<AcceleratorType> items = Arrays.asList(itemsElement);
-    AcceleratorTypeList expectedResponse = AcceleratorTypeList.newBuilder()
-      .setKind(kind)
-      .setNextPageToken(nextPageToken)
-      .setId(id)
-      .setSelfLink(selfLink)
-      .addAllItems(items)
-      .build();
+    AcceleratorTypeList expectedResponse =
+        AcceleratorTypeList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllItems(items)
+            .build();
     mockService.addResponse(expectedResponse);
 
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -213,22 +235,29 @@ public class AcceleratorTypeClientTest {
 
     List<AcceleratorType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getItemsList().get(0),
-        resources.get(0));
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
 
-    String apiClientHeaderKey = mockService.getRequestHeaders()
-        .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey()).iterator().next();
-    Assert.assertTrue(GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-        .matcher(apiClientHeaderKey).matches());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   @SuppressWarnings("all")
   public void listAcceleratorTypesExceptionTest() throws Exception {
-    ApiException exception = ApiExceptionFactory.createException(new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
@@ -240,5 +269,4 @@ public class AcceleratorTypeClientTest {
       // Expected exception
     }
   }
-
 }

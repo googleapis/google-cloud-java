@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,12 +41,8 @@ public final class ProjectsGetXpnResources implements ApiMessage {
     this.resources = null;
   }
 
-
   private ProjectsGetXpnResources(
-      String kind,
-      String nextPageToken,
-      List<XpnResourceId> resources
-      ) {
+      String kind, String nextPageToken, List<XpnResourceId> resources) {
     this.kind = kind;
     this.nextPageToken = nextPageToken;
     this.resources = resources;
@@ -104,22 +99,24 @@ public final class ProjectsGetXpnResources implements ApiMessage {
     return resources;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ProjectsGetXpnResources prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ProjectsGetXpnResources getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ProjectsGetXpnResources DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ProjectsGetXpnResources();
   }
@@ -186,15 +183,9 @@ public final class ProjectsGetXpnResources implements ApiMessage {
       return this;
     }
 
-
     public ProjectsGetXpnResources build() {
 
-
-      return new ProjectsGetXpnResources(
-        kind,
-        nextPageToken,
-        resources
-      );
+      return new ProjectsGetXpnResources(kind, nextPageToken, resources);
     }
 
     public Builder clone() {
@@ -209,9 +200,14 @@ public final class ProjectsGetXpnResources implements ApiMessage {
   @Override
   public String toString() {
     return "ProjectsGetXpnResources{"
-        + "kind=" + kind + ", "
-        + "nextPageToken=" + nextPageToken + ", "
-        + "resources=" + resources
+        + "kind="
+        + kind
+        + ", "
+        + "nextPageToken="
+        + nextPageToken
+        + ", "
+        + "resources="
+        + resources
         + "}";
   }
 
@@ -222,21 +218,15 @@ public final class ProjectsGetXpnResources implements ApiMessage {
     }
     if (o instanceof ProjectsGetXpnResources) {
       ProjectsGetXpnResources that = (ProjectsGetXpnResources) o;
-      return
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.nextPageToken, that.getNextPageToken()) &&
-          Objects.equals(this.resources, that.getResourcesList())
-          ;
+      return Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.nextPageToken, that.getNextPageToken())
+          && Objects.equals(this.resources, that.getResourcesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      kind,
-      nextPageToken,
-      resources
-    );
+    return Objects.hash(kind, nextPageToken, resources);
   }
 }

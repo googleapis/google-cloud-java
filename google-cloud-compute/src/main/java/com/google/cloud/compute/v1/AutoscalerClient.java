@@ -23,22 +23,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.paging.FixedSizeCollection;
-import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.stub.AutoscalerStub;
 import com.google.cloud.compute.v1.stub.AutoscalerStubSettings;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -59,34 +49,33 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the autoscalerClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the autoscalerClient object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * API callable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of AutoscalerSettings to
  * create(). For example:
  *
- * To customize credentials:
+ * <p>To customize credentials:
  *
  * <pre>
  * <code>
@@ -116,19 +105,14 @@ public class AutoscalerClient implements BackgroundResource {
   private final AutoscalerSettings settings;
   private final AutoscalerStub stub;
 
-
-
-  /**
-   * Constructs an instance of AutoscalerClient with default settings.
-   */
+  /** Constructs an instance of AutoscalerClient with default settings. */
   public static final AutoscalerClient create() throws IOException {
     return create(AutoscalerSettings.newBuilder().build());
   }
 
   /**
-   * Constructs an instance of AutoscalerClient, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of AutoscalerClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final AutoscalerClient create(AutoscalerSettings settings) throws IOException {
     return new AutoscalerClient(settings);
@@ -144,9 +128,8 @@ public class AutoscalerClient implements BackgroundResource {
   }
 
   /**
-   * Constructs an instance of AutoscalerClient, using the given settings.
-   * This is protected so that it is easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of AutoscalerClient, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected AutoscalerClient(AutoscalerSettings settings) throws IOException {
     this.settings = settings;
@@ -168,12 +151,12 @@ public class AutoscalerClient implements BackgroundResource {
     return stub;
   }
 
-
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of autoscalers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -187,11 +170,12 @@ public class AutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers(ProjectName project) {
+  public final AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers(
+      ProjectName project) {
     AggregatedListAutoscalersHttpRequest request =
         AggregatedListAutoscalersHttpRequest.newBuilder()
-        .setProject(project == null ? null : project.toString())
-        .build();
+            .setProject(project == null ? null : project.toString())
+            .build();
     return aggregatedListAutoscalers(request);
   }
 
@@ -199,7 +183,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of autoscalers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -215,9 +200,7 @@ public class AutoscalerClient implements BackgroundResource {
   @BetaApi
   public final AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers(String project) {
     AggregatedListAutoscalersHttpRequest request =
-        AggregatedListAutoscalersHttpRequest.newBuilder()
-        .setProject(project)
-        .build();
+        AggregatedListAutoscalersHttpRequest.newBuilder().setProject(project).build();
     return aggregatedListAutoscalers(request);
   }
 
@@ -225,7 +208,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of autoscalers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -242,16 +226,17 @@ public class AutoscalerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers(AggregatedListAutoscalersHttpRequest request) {
-    return aggregatedListAutoscalersPagedCallable()
-        .call(request);
+  public final AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers(
+      AggregatedListAutoscalersHttpRequest request) {
+    return aggregatedListAutoscalersPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves an aggregated list of autoscalers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -267,7 +252,9 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListAutoscalersHttpRequest, AggregatedListAutoscalersPagedResponse> aggregatedListAutoscalersPagedCallable() {
+  public final UnaryCallable<
+          AggregatedListAutoscalersHttpRequest, AggregatedListAutoscalersPagedResponse>
+      aggregatedListAutoscalersPagedCallable() {
     return stub.aggregatedListAutoscalersPagedCallable();
   }
 
@@ -275,7 +262,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of autoscalers.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectName project = ProjectName.of("[PROJECT]");
@@ -298,7 +286,8 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList> aggregatedListAutoscalersCallable() {
+  public final UnaryCallable<AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList>
+      aggregatedListAutoscalersCallable() {
     return stub.aggregatedListAutoscalersCallable();
   }
 
@@ -306,7 +295,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Deletes the specified autoscaler.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
@@ -316,11 +306,15 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param autoscaler Name of the autoscaler to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -328,9 +322,9 @@ public class AutoscalerClient implements BackgroundResource {
 
     DeleteAutoscalerHttpRequest request =
         DeleteAutoscalerHttpRequest.newBuilder()
-        .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
-        .setRequestId(requestId)
-        .build();
+            .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
+            .setRequestId(requestId)
+            .build();
     return deleteAutoscaler(request);
   }
 
@@ -338,7 +332,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Deletes the specified autoscaler.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
@@ -348,11 +343,15 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param autoscaler Name of the autoscaler to delete.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -360,9 +359,9 @@ public class AutoscalerClient implements BackgroundResource {
 
     DeleteAutoscalerHttpRequest request =
         DeleteAutoscalerHttpRequest.newBuilder()
-        .setAutoscaler(autoscaler)
-        .setRequestId(requestId)
-        .build();
+            .setAutoscaler(autoscaler)
+            .setRequestId(requestId)
+            .build();
     return deleteAutoscaler(request);
   }
 
@@ -370,7 +369,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Deletes the specified autoscaler.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
@@ -395,7 +395,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Deletes the specified autoscaler.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
@@ -417,9 +418,11 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified autoscaler resource. Get a list of available autoscalers by making a list() request.
+   * Returns the specified autoscaler resource. Get a list of available autoscalers by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
@@ -435,16 +438,18 @@ public class AutoscalerClient implements BackgroundResource {
 
     GetAutoscalerHttpRequest request =
         GetAutoscalerHttpRequest.newBuilder()
-        .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
-        .build();
+            .setAutoscaler(autoscaler == null ? null : autoscaler.toString())
+            .build();
     return getAutoscaler(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified autoscaler resource. Get a list of available autoscalers by making a list() request.
+   * Returns the specified autoscaler resource. Get a list of available autoscalers by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
@@ -459,17 +464,17 @@ public class AutoscalerClient implements BackgroundResource {
   public final Autoscaler getAutoscaler(String autoscaler) {
 
     GetAutoscalerHttpRequest request =
-        GetAutoscalerHttpRequest.newBuilder()
-        .setAutoscaler(autoscaler)
-        .build();
+        GetAutoscalerHttpRequest.newBuilder().setAutoscaler(autoscaler).build();
     return getAutoscaler(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified autoscaler resource. Get a list of available autoscalers by making a list() request.
+   * Returns the specified autoscaler resource. Get a list of available autoscalers by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
@@ -490,9 +495,11 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified autoscaler resource. Get a list of available autoscalers by making a list() request.
+   * Returns the specified autoscaler resource. Get a list of available autoscalers by making a
+   * list() request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneAutoscalerName autoscaler = ProjectZoneAutoscalerName.of("[PROJECT]", "[ZONE]", "[AUTOSCALER]");
@@ -514,7 +521,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Creates an autoscaler in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -525,23 +533,32 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone Name of the zone for this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine instances in managed instance groups according to an autoscaling policy that you define. For more information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
+   *     automatically scale virtual machine instances in managed instance groups according to an
+   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
+   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
+   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertAutoscaler(ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation insertAutoscaler(
+      ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
 
     InsertAutoscalerHttpRequest request =
         InsertAutoscalerHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .setRequestId(requestId)
-        .setAutoscalerResource(autoscalerResource)
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .setRequestId(requestId)
+            .setAutoscalerResource(autoscalerResource)
+            .build();
     return insertAutoscaler(request);
   }
 
@@ -549,7 +566,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Creates an autoscaler in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -560,23 +578,32 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    *
    * @param zone Name of the zone for this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine instances in managed instance groups according to an autoscaling policy that you define. For more information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
+   *     automatically scale virtual machine instances in managed instance groups according to an
+   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
+   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
+   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation insertAutoscaler(String zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation insertAutoscaler(
+      String zone, String requestId, Autoscaler autoscalerResource) {
 
     InsertAutoscalerHttpRequest request =
         InsertAutoscalerHttpRequest.newBuilder()
-        .setZone(zone)
-        .setRequestId(requestId)
-        .setAutoscalerResource(autoscalerResource)
-        .build();
+            .setZone(zone)
+            .setRequestId(requestId)
+            .setAutoscalerResource(autoscalerResource)
+            .build();
     return insertAutoscaler(request);
   }
 
@@ -584,7 +611,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Creates an autoscaler in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -611,7 +639,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Creates an autoscaler in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -637,7 +666,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Retrieves a list of autoscalers contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -654,8 +684,8 @@ public class AutoscalerClient implements BackgroundResource {
   public final ListAutoscalersPagedResponse listAutoscalers(ProjectZoneName zone) {
     ListAutoscalersHttpRequest request =
         ListAutoscalersHttpRequest.newBuilder()
-        .setZone(zone == null ? null : zone.toString())
-        .build();
+            .setZone(zone == null ? null : zone.toString())
+            .build();
     return listAutoscalers(request);
   }
 
@@ -663,7 +693,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Retrieves a list of autoscalers contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -679,9 +710,7 @@ public class AutoscalerClient implements BackgroundResource {
   @BetaApi
   public final ListAutoscalersPagedResponse listAutoscalers(String zone) {
     ListAutoscalersHttpRequest request =
-        ListAutoscalersHttpRequest.newBuilder()
-        .setZone(zone)
-        .build();
+        ListAutoscalersHttpRequest.newBuilder().setZone(zone).build();
     return listAutoscalers(request);
   }
 
@@ -689,7 +718,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Retrieves a list of autoscalers contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -707,15 +737,15 @@ public class AutoscalerClient implements BackgroundResource {
    */
   @BetaApi
   public final ListAutoscalersPagedResponse listAutoscalers(ListAutoscalersHttpRequest request) {
-    return listAutoscalersPagedCallable()
-        .call(request);
+    return listAutoscalersPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves a list of autoscalers contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -731,7 +761,8 @@ public class AutoscalerClient implements BackgroundResource {
    * </code></pre>
    */
   @BetaApi
-  public final UnaryCallable<ListAutoscalersHttpRequest, ListAutoscalersPagedResponse> listAutoscalersPagedCallable() {
+  public final UnaryCallable<ListAutoscalersHttpRequest, ListAutoscalersPagedResponse>
+      listAutoscalersPagedCallable() {
     return stub.listAutoscalersPagedCallable();
   }
 
@@ -739,7 +770,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Retrieves a list of autoscalers contained within the specified zone.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
@@ -768,9 +800,11 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * Updates an autoscaler in the specified project using the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
@@ -783,32 +817,43 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param autoscaler Name of the autoscaler to patch.
    * @param zone Name of the zone for this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine instances in managed instance groups according to an autoscaling policy that you define. For more information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
+   *     automatically scale virtual machine instances in managed instance groups according to an
+   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
+   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
+   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchAutoscaler(String autoscaler, ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation patchAutoscaler(
+      String autoscaler, ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
 
     PatchAutoscalerHttpRequest request =
         PatchAutoscalerHttpRequest.newBuilder()
-        .setAutoscaler(autoscaler)
-        .setZone(zone == null ? null : zone.toString())
-        .setRequestId(requestId)
-        .setAutoscalerResource(autoscalerResource)
-        .build();
+            .setAutoscaler(autoscaler)
+            .setZone(zone == null ? null : zone.toString())
+            .setRequestId(requestId)
+            .setAutoscalerResource(autoscalerResource)
+            .build();
     return patchAutoscaler(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * Updates an autoscaler in the specified project using the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
@@ -821,32 +866,43 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param autoscaler Name of the autoscaler to patch.
    * @param zone Name of the zone for this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine instances in managed instance groups according to an autoscaling policy that you define. For more information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
+   *     automatically scale virtual machine instances in managed instance groups according to an
+   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
+   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
+   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation patchAutoscaler(String autoscaler, String zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation patchAutoscaler(
+      String autoscaler, String zone, String requestId, Autoscaler autoscalerResource) {
 
     PatchAutoscalerHttpRequest request =
         PatchAutoscalerHttpRequest.newBuilder()
-        .setAutoscaler(autoscaler)
-        .setZone(zone)
-        .setRequestId(requestId)
-        .setAutoscalerResource(autoscalerResource)
-        .build();
+            .setAutoscaler(autoscaler)
+            .setZone(zone)
+            .setRequestId(requestId)
+            .setAutoscalerResource(autoscalerResource)
+            .build();
     return patchAutoscaler(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * Updates an autoscaler in the specified project using the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
@@ -873,9 +929,11 @@ public class AutoscalerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * Updates an autoscaler in the specified project using the data included in the request. This
+   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
@@ -903,7 +961,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Updates an autoscaler in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
@@ -916,24 +975,33 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param autoscaler Name of the autoscaler to update.
    * @param zone Name of the zone for this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine instances in managed instance groups according to an autoscaling policy that you define. For more information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
+   *     automatically scale virtual machine instances in managed instance groups according to an
+   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
+   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
+   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateAutoscaler(String autoscaler, ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation updateAutoscaler(
+      String autoscaler, ProjectZoneName zone, String requestId, Autoscaler autoscalerResource) {
 
     UpdateAutoscalerHttpRequest request =
         UpdateAutoscalerHttpRequest.newBuilder()
-        .setAutoscaler(autoscaler)
-        .setZone(zone == null ? null : zone.toString())
-        .setRequestId(requestId)
-        .setAutoscalerResource(autoscalerResource)
-        .build();
+            .setAutoscaler(autoscaler)
+            .setZone(zone == null ? null : zone.toString())
+            .setRequestId(requestId)
+            .setAutoscalerResource(autoscalerResource)
+            .build();
     return updateAutoscaler(request);
   }
 
@@ -941,7 +1009,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Updates an autoscaler in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
@@ -954,24 +1023,33 @@ public class AutoscalerClient implements BackgroundResource {
    *
    * @param autoscaler Name of the autoscaler to update.
    * @param zone Name of the zone for this request.
-   * @param requestId An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed.
-   *
-   * For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
-   *
-   * The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine instances in managed instance groups according to an autoscaling policy that you define. For more information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+   * @param requestId An optional request ID to identify requests. Specify a unique request ID so
+   *     that if you must retry your request, the server will know to ignore the request if it has
+   *     already been completed.
+   *     <p>For example, consider a situation where you make an initial request and the request
+   *     times out. If you make the request again with the same request ID, the server can check if
+   *     original operation with the same request ID was received, and if so, will ignore the second
+   *     request. This prevents clients from accidentally creating duplicate commitments.
+   *     <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   *     (00000000-0000-0000-0000-000000000000).
+   * @param autoscalerResource Represents an Autoscaler resource. Autoscalers allow you to
+   *     automatically scale virtual machine instances in managed instance groups according to an
+   *     autoscaling policy that you define. For more information, read Autoscaling Groups of
+   *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
+   *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Operation updateAutoscaler(String autoscaler, String zone, String requestId, Autoscaler autoscalerResource) {
+  public final Operation updateAutoscaler(
+      String autoscaler, String zone, String requestId, Autoscaler autoscalerResource) {
 
     UpdateAutoscalerHttpRequest request =
         UpdateAutoscalerHttpRequest.newBuilder()
-        .setAutoscaler(autoscaler)
-        .setZone(zone)
-        .setRequestId(requestId)
-        .setAutoscalerResource(autoscalerResource)
-        .build();
+            .setAutoscaler(autoscaler)
+            .setZone(zone)
+            .setRequestId(requestId)
+            .setAutoscalerResource(autoscalerResource)
+            .build();
     return updateAutoscaler(request);
   }
 
@@ -979,7 +1057,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Updates an autoscaler in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
@@ -1008,7 +1087,8 @@ public class AutoscalerClient implements BackgroundResource {
   /**
    * Updates an autoscaler in the specified project using the data included in the request.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AutoscalerClient autoscalerClient = AutoscalerClient.create()) {
    *   String autoscaler = "";
@@ -1033,7 +1113,7 @@ public class AutoscalerClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 
@@ -1062,15 +1142,16 @@ public class AutoscalerClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 
-  public static class AggregatedListAutoscalersPagedResponse extends AbstractPagedListResponse<
-      AggregatedListAutoscalersHttpRequest,
-      AutoscalerAggregatedList,
-      AutoscalersScopedList,
-      AggregatedListAutoscalersPage,
-      AggregatedListAutoscalersFixedSizeCollection> {
+  public static class AggregatedListAutoscalersPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList, AutoscalersScopedList,
+          AggregatedListAutoscalersPage, AggregatedListAutoscalersFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListAutoscalersPagedResponse> createAsync(
-        PageContext<AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList, AutoscalersScopedList> context,
+        PageContext<
+                AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+                AutoscalersScopedList>
+            context,
         ApiFuture<AutoscalerAggregatedList> futureResponse) {
       ApiFuture<AggregatedListAutoscalersPage> futurePage =
           AggregatedListAutoscalersPage.createEmptyPage().createPageAsync(context, futureResponse);
@@ -1078,7 +1159,8 @@ public class AutoscalerClient implements BackgroundResource {
           futurePage,
           new ApiFunction<AggregatedListAutoscalersPage, AggregatedListAutoscalersPagedResponse>() {
             @Override
-            public AggregatedListAutoscalersPagedResponse apply(AggregatedListAutoscalersPage input) {
+            public AggregatedListAutoscalersPagedResponse apply(
+                AggregatedListAutoscalersPage input) {
               return new AggregatedListAutoscalersPagedResponse(input);
             }
           });
@@ -1087,18 +1169,18 @@ public class AutoscalerClient implements BackgroundResource {
     private AggregatedListAutoscalersPagedResponse(AggregatedListAutoscalersPage page) {
       super(page, AggregatedListAutoscalersFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class AggregatedListAutoscalersPage extends AbstractPage<
-      AggregatedListAutoscalersHttpRequest,
-      AutoscalerAggregatedList,
-      AutoscalersScopedList,
-      AggregatedListAutoscalersPage> {
+  public static class AggregatedListAutoscalersPage
+      extends AbstractPage<
+          AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList, AutoscalersScopedList,
+          AggregatedListAutoscalersPage> {
 
     private AggregatedListAutoscalersPage(
-        PageContext<AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList, AutoscalersScopedList> context,
+        PageContext<
+                AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+                AutoscalersScopedList>
+            context,
         AutoscalerAggregatedList response) {
       super(context, response);
     }
@@ -1109,31 +1191,32 @@ public class AutoscalerClient implements BackgroundResource {
 
     @Override
     protected AggregatedListAutoscalersPage createPage(
-        PageContext<AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList, AutoscalersScopedList> context,
+        PageContext<
+                AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+                AutoscalersScopedList>
+            context,
         AutoscalerAggregatedList response) {
       return new AggregatedListAutoscalersPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListAutoscalersPage> createPageAsync(
-        PageContext<AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList, AutoscalersScopedList> context,
+        PageContext<
+                AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+                AutoscalersScopedList>
+            context,
         ApiFuture<AutoscalerAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class AggregatedListAutoscalersFixedSizeCollection extends AbstractFixedSizeCollection<
-      AggregatedListAutoscalersHttpRequest,
-      AutoscalerAggregatedList,
-      AutoscalersScopedList,
-      AggregatedListAutoscalersPage,
-      AggregatedListAutoscalersFixedSizeCollection> {
+  public static class AggregatedListAutoscalersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList, AutoscalersScopedList,
+          AggregatedListAutoscalersPage, AggregatedListAutoscalersFixedSizeCollection> {
 
-    private AggregatedListAutoscalersFixedSizeCollection(List<AggregatedListAutoscalersPage> pages, int collectionSize) {
+    private AggregatedListAutoscalersFixedSizeCollection(
+        List<AggregatedListAutoscalersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1146,15 +1229,12 @@ public class AutoscalerClient implements BackgroundResource {
         List<AggregatedListAutoscalersPage> pages, int collectionSize) {
       return new AggregatedListAutoscalersFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
-  public static class ListAutoscalersPagedResponse extends AbstractPagedListResponse<
-      ListAutoscalersHttpRequest,
-      AutoscalerList,
-      Autoscaler,
-      ListAutoscalersPage,
-      ListAutoscalersFixedSizeCollection> {
+
+  public static class ListAutoscalersPagedResponse
+      extends AbstractPagedListResponse<
+          ListAutoscalersHttpRequest, AutoscalerList, Autoscaler, ListAutoscalersPage,
+          ListAutoscalersFixedSizeCollection> {
 
     public static ApiFuture<ListAutoscalersPagedResponse> createAsync(
         PageContext<ListAutoscalersHttpRequest, AutoscalerList, Autoscaler> context,
@@ -1174,15 +1254,11 @@ public class AutoscalerClient implements BackgroundResource {
     private ListAutoscalersPagedResponse(ListAutoscalersPage page) {
       super(page, ListAutoscalersFixedSizeCollection.createEmptyCollection());
     }
-
-
   }
 
-  public static class ListAutoscalersPage extends AbstractPage<
-      ListAutoscalersHttpRequest,
-      AutoscalerList,
-      Autoscaler,
-      ListAutoscalersPage> {
+  public static class ListAutoscalersPage
+      extends AbstractPage<
+          ListAutoscalersHttpRequest, AutoscalerList, Autoscaler, ListAutoscalersPage> {
 
     private ListAutoscalersPage(
         PageContext<ListAutoscalersHttpRequest, AutoscalerList, Autoscaler> context,
@@ -1207,20 +1283,15 @@ public class AutoscalerClient implements BackgroundResource {
         ApiFuture<AutoscalerList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
-
-
-
-
   }
 
-  public static class ListAutoscalersFixedSizeCollection extends AbstractFixedSizeCollection<
-      ListAutoscalersHttpRequest,
-      AutoscalerList,
-      Autoscaler,
-      ListAutoscalersPage,
-      ListAutoscalersFixedSizeCollection> {
+  public static class ListAutoscalersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAutoscalersHttpRequest, AutoscalerList, Autoscaler, ListAutoscalersPage,
+          ListAutoscalersFixedSizeCollection> {
 
-    private ListAutoscalersFixedSizeCollection(List<ListAutoscalersPage> pages, int collectionSize) {
+    private ListAutoscalersFixedSizeCollection(
+        List<ListAutoscalersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1233,7 +1304,5 @@ public class AutoscalerClient implements BackgroundResource {
         List<ListAutoscalersPage> pages, int collectionSize) {
       return new ListAutoscalersFixedSizeCollection(pages, collectionSize);
     }
-
-
   }
 }

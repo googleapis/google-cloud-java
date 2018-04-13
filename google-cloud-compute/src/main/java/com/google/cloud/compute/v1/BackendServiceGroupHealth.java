@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class BackendServiceGroupHealth implements ApiMessage {
     this.kind = null;
   }
 
-
-  private BackendServiceGroupHealth(
-      List<HealthStatus> healthStatus,
-      String kind
-      ) {
+  private BackendServiceGroupHealth(List<HealthStatus> healthStatus, String kind) {
     this.healthStatus = healthStatus;
     this.kind = kind;
   }
@@ -90,22 +85,24 @@ public final class BackendServiceGroupHealth implements ApiMessage {
     return kind;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(BackendServiceGroupHealth prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static BackendServiceGroupHealth getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final BackendServiceGroupHealth DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new BackendServiceGroupHealth();
   }
@@ -158,13 +155,9 @@ public final class BackendServiceGroupHealth implements ApiMessage {
       return this;
     }
 
-
     public BackendServiceGroupHealth build() {
 
-      return new BackendServiceGroupHealth(
-        healthStatus,
-        kind
-      );
+      return new BackendServiceGroupHealth(healthStatus, kind);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class BackendServiceGroupHealth implements ApiMessage {
   @Override
   public String toString() {
     return "BackendServiceGroupHealth{"
-        + "healthStatus=" + healthStatus + ", "
-        + "kind=" + kind
+        + "healthStatus="
+        + healthStatus
+        + ", "
+        + "kind="
+        + kind
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class BackendServiceGroupHealth implements ApiMessage {
     }
     if (o instanceof BackendServiceGroupHealth) {
       BackendServiceGroupHealth that = (BackendServiceGroupHealth) o;
-      return
-          Objects.equals(this.healthStatus, that.getHealthStatusList()) &&
-          Objects.equals(this.kind, that.getKind())
-          ;
+      return Objects.equals(this.healthStatus, that.getHealthStatusList())
+          && Objects.equals(this.kind, that.getKind());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      healthStatus,
-      kind
-    );
+    return Objects.hash(healthStatus, kind);
   }
 }

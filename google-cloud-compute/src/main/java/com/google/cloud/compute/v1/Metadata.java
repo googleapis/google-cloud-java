@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,12 +41,7 @@ public final class Metadata implements ApiMessage {
     this.kind = null;
   }
 
-
-  private Metadata(
-      String fingerprint,
-      List<Items> items,
-      String kind
-      ) {
+  private Metadata(String fingerprint, List<Items> items, String kind) {
     this.fingerprint = fingerprint;
     this.items = items;
     this.kind = kind;
@@ -104,22 +98,24 @@ public final class Metadata implements ApiMessage {
     return kind;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Metadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Metadata getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Metadata DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Metadata();
   }
@@ -186,15 +182,9 @@ public final class Metadata implements ApiMessage {
       return this;
     }
 
-
     public Metadata build() {
 
-
-      return new Metadata(
-        fingerprint,
-        items,
-        kind
-      );
+      return new Metadata(fingerprint, items, kind);
     }
 
     public Builder clone() {
@@ -209,9 +199,14 @@ public final class Metadata implements ApiMessage {
   @Override
   public String toString() {
     return "Metadata{"
-        + "fingerprint=" + fingerprint + ", "
-        + "items=" + items + ", "
-        + "kind=" + kind
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "items="
+        + items
+        + ", "
+        + "kind="
+        + kind
         + "}";
   }
 
@@ -222,21 +217,15 @@ public final class Metadata implements ApiMessage {
     }
     if (o instanceof Metadata) {
       Metadata that = (Metadata) o;
-      return
-          Objects.equals(this.fingerprint, that.getFingerprint()) &&
-          Objects.equals(this.items, that.getItemsList()) &&
-          Objects.equals(this.kind, that.getKind())
-          ;
+      return Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.items, that.getItemsList())
+          && Objects.equals(this.kind, that.getKind());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      fingerprint,
-      items,
-      kind
-    );
+    return Objects.hash(fingerprint, items, kind);
   }
 }

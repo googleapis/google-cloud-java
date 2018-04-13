@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +33,8 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
   private final String callback;
   private final String fields;
   private final String instanceGroupManager;
-  private final InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource;
+  private final InstanceGroupManagersRecreateInstancesRequest
+      instanceGroupManagersRecreateInstancesRequestResource;
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
@@ -56,24 +54,24 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
     this.userIp = null;
   }
 
-
   private RecreateInstancesInstanceGroupManagerHttpRequest(
       String access_token,
       String callback,
       String fields,
       String instanceGroupManager,
-      InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource,
+      InstanceGroupManagersRecreateInstancesRequest
+          instanceGroupManagersRecreateInstancesRequestResource,
       String key,
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
     this.instanceGroupManager = instanceGroupManager;
-    this.instanceGroupManagersRecreateInstancesRequestResource = instanceGroupManagersRecreateInstancesRequestResource;
+    this.instanceGroupManagersRecreateInstancesRequestResource =
+        instanceGroupManagersRecreateInstancesRequestResource;
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
@@ -94,10 +92,15 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
     if (fieldNames.contains("instanceGroupManager") && instanceGroupManager != null) {
-      fieldMap.put("instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
+      fieldMap.put(
+          "instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
     }
-    if (fieldNames.contains("instanceGroupManagersRecreateInstancesRequestResource") && instanceGroupManagersRecreateInstancesRequestResource != null) {
-      fieldMap.put("instanceGroupManagersRecreateInstancesRequestResource", Collections.singletonList(String.valueOf(instanceGroupManagersRecreateInstancesRequestResource)));
+    if (fieldNames.contains("instanceGroupManagersRecreateInstancesRequestResource")
+        && instanceGroupManagersRecreateInstancesRequestResource != null) {
+      fieldMap.put(
+          "instanceGroupManagersRecreateInstancesRequestResource",
+          Collections.singletonList(
+              String.valueOf(instanceGroupManagersRecreateInstancesRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -174,7 +177,8 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
     return instanceGroupManager;
   }
 
-  public InstanceGroupManagersRecreateInstancesRequest getInstanceGroupManagersRecreateInstancesRequestResource() {
+  public InstanceGroupManagersRecreateInstancesRequest
+      getInstanceGroupManagersRecreateInstancesRequestResource() {
     return instanceGroupManagersRecreateInstancesRequestResource;
   }
 
@@ -198,22 +202,24 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RecreateInstancesInstanceGroupManagerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RecreateInstancesInstanceGroupManagerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RecreateInstancesInstanceGroupManagerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RecreateInstancesInstanceGroupManagerHttpRequest();
   }
@@ -223,7 +229,8 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
     private String callback;
     private String fields;
     private String instanceGroupManager;
-    private InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource;
+    private InstanceGroupManagersRecreateInstancesRequest
+        instanceGroupManagersRecreateInstancesRequestResource;
     private String key;
     private String prettyPrint;
     private String quotaUser;
@@ -233,7 +240,8 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
     Builder() {}
 
     public Builder mergeFrom(RecreateInstancesInstanceGroupManagerHttpRequest other) {
-      if (other == RecreateInstancesInstanceGroupManagerHttpRequest.getDefaultInstance()) return this;
+      if (other == RecreateInstancesInstanceGroupManagerHttpRequest.getDefaultInstance())
+        return this;
       if (other.getAccessToken() != null) {
         this.access_token = other.access_token;
       }
@@ -247,7 +255,8 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
         this.instanceGroupManager = other.instanceGroupManager;
       }
       if (other.getInstanceGroupManagersRecreateInstancesRequestResource() != null) {
-        this.instanceGroupManagersRecreateInstancesRequestResource = other.instanceGroupManagersRecreateInstancesRequestResource;
+        this.instanceGroupManagersRecreateInstancesRequestResource =
+            other.instanceGroupManagersRecreateInstancesRequestResource;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -272,7 +281,8 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
       this.callback = source.callback;
       this.fields = source.fields;
       this.instanceGroupManager = source.instanceGroupManager;
-      this.instanceGroupManagersRecreateInstancesRequestResource = source.instanceGroupManagersRecreateInstancesRequestResource;
+      this.instanceGroupManagersRecreateInstancesRequestResource =
+          source.instanceGroupManagersRecreateInstancesRequestResource;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
@@ -316,12 +326,16 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
       return this;
     }
 
-    public InstanceGroupManagersRecreateInstancesRequest getInstanceGroupManagersRecreateInstancesRequestResource() {
+    public InstanceGroupManagersRecreateInstancesRequest
+        getInstanceGroupManagersRecreateInstancesRequestResource() {
       return instanceGroupManagersRecreateInstancesRequestResource;
     }
 
-    public Builder setInstanceGroupManagersRecreateInstancesRequestResource(InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource) {
-      this.instanceGroupManagersRecreateInstancesRequestResource = instanceGroupManagersRecreateInstancesRequestResource;
+    public Builder setInstanceGroupManagersRecreateInstancesRequestResource(
+        InstanceGroupManagersRecreateInstancesRequest
+            instanceGroupManagersRecreateInstancesRequestResource) {
+      this.instanceGroupManagersRecreateInstancesRequestResource =
+          instanceGroupManagersRecreateInstancesRequestResource;
       return this;
     }
 
@@ -370,36 +384,27 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
       return this;
     }
 
-
     public RecreateInstancesInstanceGroupManagerHttpRequest build() {
       String missing = "";
-
-
 
       if (instanceGroupManager == null) {
         missing += " instanceGroupManager";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new RecreateInstancesInstanceGroupManagerHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroupManager,
-        instanceGroupManagersRecreateInstancesRequestResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroupManager,
+          instanceGroupManagersRecreateInstancesRequestResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -408,7 +413,8 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setInstanceGroupManager(this.instanceGroupManager);
-      newBuilder.setInstanceGroupManagersRecreateInstancesRequestResource(this.instanceGroupManagersRecreateInstancesRequestResource);
+      newBuilder.setInstanceGroupManagersRecreateInstancesRequestResource(
+          this.instanceGroupManagersRecreateInstancesRequestResource);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
@@ -421,16 +427,35 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
   @Override
   public String toString() {
     return "RecreateInstancesInstanceGroupManagerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroupManager=" + instanceGroupManager + ", "
-        + "instanceGroupManagersRecreateInstancesRequestResource=" + instanceGroupManagersRecreateInstancesRequestResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroupManager="
+        + instanceGroupManager
+        + ", "
+        + "instanceGroupManagersRecreateInstancesRequestResource="
+        + instanceGroupManagersRecreateInstancesRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +465,20 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
       return true;
     }
     if (o instanceof RecreateInstancesInstanceGroupManagerHttpRequest) {
-      RecreateInstancesInstanceGroupManagerHttpRequest that = (RecreateInstancesInstanceGroupManagerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager()) &&
-          Objects.equals(this.instanceGroupManagersRecreateInstancesRequestResource, that.getInstanceGroupManagersRecreateInstancesRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      RecreateInstancesInstanceGroupManagerHttpRequest that =
+          (RecreateInstancesInstanceGroupManagerHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager())
+          && Objects.equals(
+              this.instanceGroupManagersRecreateInstancesRequestResource,
+              that.getInstanceGroupManagersRecreateInstancesRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +486,15 @@ public final class RecreateInstancesInstanceGroupManagerHttpRequest implements A
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroupManager,
-      instanceGroupManagersRecreateInstancesRequestResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroupManager,
+        instanceGroupManagersRecreateInstancesRequestResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

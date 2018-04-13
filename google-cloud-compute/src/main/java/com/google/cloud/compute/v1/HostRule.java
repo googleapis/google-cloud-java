@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,12 +41,7 @@ public final class HostRule implements ApiMessage {
     this.pathMatcher = null;
   }
 
-
-  private HostRule(
-      String description,
-      List<String> hosts,
-      String pathMatcher
-      ) {
+  private HostRule(String description, List<String> hosts, String pathMatcher) {
     this.description = description;
     this.hosts = hosts;
     this.pathMatcher = pathMatcher;
@@ -104,22 +98,24 @@ public final class HostRule implements ApiMessage {
     return pathMatcher;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(HostRule prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static HostRule getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final HostRule DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new HostRule();
   }
@@ -186,15 +182,9 @@ public final class HostRule implements ApiMessage {
       return this;
     }
 
-
     public HostRule build() {
 
-
-      return new HostRule(
-        description,
-        hosts,
-        pathMatcher
-      );
+      return new HostRule(description, hosts, pathMatcher);
     }
 
     public Builder clone() {
@@ -209,9 +199,14 @@ public final class HostRule implements ApiMessage {
   @Override
   public String toString() {
     return "HostRule{"
-        + "description=" + description + ", "
-        + "hosts=" + hosts + ", "
-        + "pathMatcher=" + pathMatcher
+        + "description="
+        + description
+        + ", "
+        + "hosts="
+        + hosts
+        + ", "
+        + "pathMatcher="
+        + pathMatcher
         + "}";
   }
 
@@ -222,21 +217,15 @@ public final class HostRule implements ApiMessage {
     }
     if (o instanceof HostRule) {
       HostRule that = (HostRule) o;
-      return
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.hosts, that.getHostsList()) &&
-          Objects.equals(this.pathMatcher, that.getPathMatcher())
-          ;
+      return Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.hosts, that.getHostsList())
+          && Objects.equals(this.pathMatcher, that.getPathMatcher());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      description,
-      hosts,
-      pathMatcher
-    );
+    return Objects.hash(description, hosts, pathMatcher);
   }
 }

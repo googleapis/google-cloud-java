@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,11 +39,7 @@ public final class TargetPoolsScopedList implements ApiMessage {
     this.warning = null;
   }
 
-
-  private TargetPoolsScopedList(
-      List<TargetPool> targetPools,
-      Warning warning
-      ) {
+  private TargetPoolsScopedList(List<TargetPool> targetPools, Warning warning) {
     this.targetPools = targetPools;
     this.warning = warning;
   }
@@ -90,22 +85,24 @@ public final class TargetPoolsScopedList implements ApiMessage {
     return warning;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TargetPoolsScopedList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TargetPoolsScopedList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TargetPoolsScopedList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TargetPoolsScopedList();
   }
@@ -158,13 +155,9 @@ public final class TargetPoolsScopedList implements ApiMessage {
       return this;
     }
 
-
     public TargetPoolsScopedList build() {
 
-      return new TargetPoolsScopedList(
-        targetPools,
-        warning
-      );
+      return new TargetPoolsScopedList(targetPools, warning);
     }
 
     public Builder clone() {
@@ -178,8 +171,11 @@ public final class TargetPoolsScopedList implements ApiMessage {
   @Override
   public String toString() {
     return "TargetPoolsScopedList{"
-        + "targetPools=" + targetPools + ", "
-        + "warning=" + warning
+        + "targetPools="
+        + targetPools
+        + ", "
+        + "warning="
+        + warning
         + "}";
   }
 
@@ -190,19 +186,14 @@ public final class TargetPoolsScopedList implements ApiMessage {
     }
     if (o instanceof TargetPoolsScopedList) {
       TargetPoolsScopedList that = (TargetPoolsScopedList) o;
-      return
-          Objects.equals(this.targetPools, that.getTargetPoolsList()) &&
-          Objects.equals(this.warning, that.getWarning())
-          ;
+      return Objects.equals(this.targetPools, that.getTargetPoolsList())
+          && Objects.equals(this.warning, that.getWarning());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      targetPools,
-      warning
-    );
+    return Objects.hash(targetPools, warning);
   }
 }

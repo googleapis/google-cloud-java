@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
     this.userIp = null;
   }
 
-
   private InsertRegionInstanceGroupManagerHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
       String quotaUser,
       String region,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -93,8 +88,11 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
     if (fieldNames.contains("fields") && fields != null) {
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
-    if (fieldNames.contains("instanceGroupManagerResource") && instanceGroupManagerResource != null) {
-      fieldMap.put("instanceGroupManagerResource", Collections.singletonList(String.valueOf(instanceGroupManagerResource)));
+    if (fieldNames.contains("instanceGroupManagerResource")
+        && instanceGroupManagerResource != null) {
+      fieldMap.put(
+          "instanceGroupManagerResource",
+          Collections.singletonList(String.valueOf(instanceGroupManagerResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -198,22 +196,24 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InsertRegionInstanceGroupManagerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InsertRegionInstanceGroupManagerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InsertRegionInstanceGroupManagerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InsertRegionInstanceGroupManagerHttpRequest();
   }
@@ -311,7 +311,8 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
       return instanceGroupManagerResource;
     }
 
-    public Builder setInstanceGroupManagerResource(InstanceGroupManager instanceGroupManagerResource) {
+    public Builder setInstanceGroupManagerResource(
+        InstanceGroupManager instanceGroupManagerResource) {
       this.instanceGroupManagerResource = instanceGroupManagerResource;
       return this;
     }
@@ -370,36 +371,27 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
       return this;
     }
 
-
     public InsertRegionInstanceGroupManagerHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (region == null) {
         missing += " region";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new InsertRegionInstanceGroupManagerHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroupManagerResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        region,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroupManagerResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          region,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -421,16 +413,35 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
   @Override
   public String toString() {
     return "InsertRegionInstanceGroupManagerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroupManagerResource=" + instanceGroupManagerResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "region=" + region + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroupManagerResource="
+        + instanceGroupManagerResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +451,19 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
       return true;
     }
     if (o instanceof InsertRegionInstanceGroupManagerHttpRequest) {
-      InsertRegionInstanceGroupManagerHttpRequest that = (InsertRegionInstanceGroupManagerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroupManagerResource, that.getInstanceGroupManagerResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      InsertRegionInstanceGroupManagerHttpRequest that =
+          (InsertRegionInstanceGroupManagerHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(
+              this.instanceGroupManagerResource, that.getInstanceGroupManagerResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +471,15 @@ public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMes
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroupManagerResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      region,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroupManagerResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        region,
+        requestId,
+        userIp);
   }
 }

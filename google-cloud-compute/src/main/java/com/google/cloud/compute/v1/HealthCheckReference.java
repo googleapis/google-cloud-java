@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class HealthCheckReference implements ApiMessage {
     this.healthCheck = null;
   }
 
-
-  private HealthCheckReference(
-      String healthCheck
-      ) {
+  private HealthCheckReference(String healthCheck) {
     this.healthCheck = healthCheck;
   }
 
@@ -72,22 +66,24 @@ public final class HealthCheckReference implements ApiMessage {
     return healthCheck;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(HealthCheckReference prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static HealthCheckReference getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final HealthCheckReference DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new HealthCheckReference();
   }
@@ -118,11 +114,8 @@ public final class HealthCheckReference implements ApiMessage {
       return this;
     }
 
-
     public HealthCheckReference build() {
-      return new HealthCheckReference(
-        healthCheck
-      );
+      return new HealthCheckReference(healthCheck);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class HealthCheckReference implements ApiMessage {
 
   @Override
   public String toString() {
-    return "HealthCheckReference{"
-        + "healthCheck=" + healthCheck
-        + "}";
+    return "HealthCheckReference{" + "healthCheck=" + healthCheck + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class HealthCheckReference implements ApiMessage {
     }
     if (o instanceof HealthCheckReference) {
       HealthCheckReference that = (HealthCheckReference) o;
-      return
-          Objects.equals(this.healthCheck, that.getHealthCheck())
-          ;
+      return Objects.equals(this.healthCheck, that.getHealthCheck());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      healthCheck
-    );
+    return Objects.hash(healthCheck);
   }
 }

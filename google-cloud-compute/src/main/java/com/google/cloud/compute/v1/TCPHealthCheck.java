@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -46,14 +43,8 @@ public final class TCPHealthCheck implements ApiMessage {
     this.response = null;
   }
 
-
   private TCPHealthCheck(
-      Integer port,
-      String portName,
-      String proxyHeader,
-      String request,
-      String response
-      ) {
+      Integer port, String portName, String proxyHeader, String request, String response) {
     this.port = port;
     this.portName = portName;
     this.proxyHeader = proxyHeader;
@@ -128,22 +119,24 @@ public final class TCPHealthCheck implements ApiMessage {
     return response;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(TCPHealthCheck prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static TCPHealthCheck getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final TCPHealthCheck DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new TCPHealthCheck();
   }
@@ -230,19 +223,9 @@ public final class TCPHealthCheck implements ApiMessage {
       return this;
     }
 
-
     public TCPHealthCheck build() {
 
-
-
-
-      return new TCPHealthCheck(
-        port,
-        portName,
-        proxyHeader,
-        request,
-        response
-      );
+      return new TCPHealthCheck(port, portName, proxyHeader, request, response);
     }
 
     public Builder clone() {
@@ -259,11 +242,20 @@ public final class TCPHealthCheck implements ApiMessage {
   @Override
   public String toString() {
     return "TCPHealthCheck{"
-        + "port=" + port + ", "
-        + "portName=" + portName + ", "
-        + "proxyHeader=" + proxyHeader + ", "
-        + "request=" + request + ", "
-        + "response=" + response
+        + "port="
+        + port
+        + ", "
+        + "portName="
+        + portName
+        + ", "
+        + "proxyHeader="
+        + proxyHeader
+        + ", "
+        + "request="
+        + request
+        + ", "
+        + "response="
+        + response
         + "}";
   }
 
@@ -274,25 +266,17 @@ public final class TCPHealthCheck implements ApiMessage {
     }
     if (o instanceof TCPHealthCheck) {
       TCPHealthCheck that = (TCPHealthCheck) o;
-      return
-          Objects.equals(this.port, that.getPort()) &&
-          Objects.equals(this.portName, that.getPortName()) &&
-          Objects.equals(this.proxyHeader, that.getProxyHeader()) &&
-          Objects.equals(this.request, that.getRequest()) &&
-          Objects.equals(this.response, that.getResponse())
-          ;
+      return Objects.equals(this.port, that.getPort())
+          && Objects.equals(this.portName, that.getPortName())
+          && Objects.equals(this.proxyHeader, that.getProxyHeader())
+          && Objects.equals(this.request, that.getRequest())
+          && Objects.equals(this.response, that.getResponse());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      port,
-      portName,
-      proxyHeader,
-      request,
-      response
-    );
+    return Objects.hash(port, portName, proxyHeader, request, response);
   }
 }

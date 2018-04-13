@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -38,10 +35,7 @@ public final class InstanceGroupsListInstancesRequest implements ApiMessage {
     this.instanceState = null;
   }
 
-
-  private InstanceGroupsListInstancesRequest(
-      String instanceState
-      ) {
+  private InstanceGroupsListInstancesRequest(String instanceState) {
     this.instanceState = instanceState;
   }
 
@@ -72,22 +66,24 @@ public final class InstanceGroupsListInstancesRequest implements ApiMessage {
     return instanceState;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(InstanceGroupsListInstancesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static InstanceGroupsListInstancesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final InstanceGroupsListInstancesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new InstanceGroupsListInstancesRequest();
   }
@@ -118,11 +114,8 @@ public final class InstanceGroupsListInstancesRequest implements ApiMessage {
       return this;
     }
 
-
     public InstanceGroupsListInstancesRequest build() {
-      return new InstanceGroupsListInstancesRequest(
-        instanceState
-      );
+      return new InstanceGroupsListInstancesRequest(instanceState);
     }
 
     public Builder clone() {
@@ -134,9 +127,7 @@ public final class InstanceGroupsListInstancesRequest implements ApiMessage {
 
   @Override
   public String toString() {
-    return "InstanceGroupsListInstancesRequest{"
-        + "instanceState=" + instanceState
-        + "}";
+    return "InstanceGroupsListInstancesRequest{" + "instanceState=" + instanceState + "}";
   }
 
   @Override
@@ -146,17 +137,13 @@ public final class InstanceGroupsListInstancesRequest implements ApiMessage {
     }
     if (o instanceof InstanceGroupsListInstancesRequest) {
       InstanceGroupsListInstancesRequest that = (InstanceGroupsListInstancesRequest) o;
-      return
-          Objects.equals(this.instanceState, that.getInstanceState())
-          ;
+      return Objects.equals(this.instanceState, that.getInstanceState());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      instanceState
-    );
+    return Objects.hash(instanceState);
   }
 }

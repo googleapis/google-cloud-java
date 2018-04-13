@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +53,6 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
     this.userIp = null;
   }
 
-
   private RemoveInstanceTargetPoolHttpRequest(
       String access_token,
       String callback,
@@ -67,8 +63,7 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
       String requestId,
       String targetPool,
       TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
@@ -108,8 +103,11 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
     if (fieldNames.contains("targetPool") && targetPool != null) {
       fieldMap.put("targetPool", Collections.singletonList(String.valueOf(targetPool)));
     }
-    if (fieldNames.contains("targetPoolsRemoveInstanceRequestResource") && targetPoolsRemoveInstanceRequestResource != null) {
-      fieldMap.put("targetPoolsRemoveInstanceRequestResource", Collections.singletonList(String.valueOf(targetPoolsRemoveInstanceRequestResource)));
+    if (fieldNames.contains("targetPoolsRemoveInstanceRequestResource")
+        && targetPoolsRemoveInstanceRequestResource != null) {
+      fieldMap.put(
+          "targetPoolsRemoveInstanceRequestResource",
+          Collections.singletonList(String.valueOf(targetPoolsRemoveInstanceRequestResource)));
     }
     if (fieldNames.contains("userIp") && userIp != null) {
       fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
@@ -198,22 +196,24 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RemoveInstanceTargetPoolHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RemoveInstanceTargetPoolHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RemoveInstanceTargetPoolHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RemoveInstanceTargetPoolHttpRequest();
   }
@@ -259,7 +259,8 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
         this.targetPool = other.targetPool;
       }
       if (other.getTargetPoolsRemoveInstanceRequestResource() != null) {
-        this.targetPoolsRemoveInstanceRequestResource = other.targetPoolsRemoveInstanceRequestResource;
+        this.targetPoolsRemoveInstanceRequestResource =
+            other.targetPoolsRemoveInstanceRequestResource;
       }
       if (other.getUserIp() != null) {
         this.userIp = other.userIp;
@@ -276,7 +277,8 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
       this.quotaUser = source.quotaUser;
       this.requestId = source.requestId;
       this.targetPool = source.targetPool;
-      this.targetPoolsRemoveInstanceRequestResource = source.targetPoolsRemoveInstanceRequestResource;
+      this.targetPoolsRemoveInstanceRequestResource =
+          source.targetPoolsRemoveInstanceRequestResource;
       this.userIp = source.userIp;
     }
 
@@ -356,7 +358,8 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
       return targetPoolsRemoveInstanceRequestResource;
     }
 
-    public Builder setTargetPoolsRemoveInstanceRequestResource(TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
+    public Builder setTargetPoolsRemoveInstanceRequestResource(
+        TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource) {
       this.targetPoolsRemoveInstanceRequestResource = targetPoolsRemoveInstanceRequestResource;
       return this;
     }
@@ -370,36 +373,27 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
       return this;
     }
 
-
     public RemoveInstanceTargetPoolHttpRequest build() {
       String missing = "";
-
-
-
-
-
-
 
       if (targetPool == null) {
         missing += " targetPool";
       }
 
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new RemoveInstanceTargetPoolHttpRequest(
-        access_token,
-        callback,
-        fields,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        targetPool,
-        targetPoolsRemoveInstanceRequestResource,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          targetPool,
+          targetPoolsRemoveInstanceRequestResource,
+          userIp);
     }
 
     public Builder clone() {
@@ -412,7 +406,8 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setRequestId(this.requestId);
       newBuilder.setTargetPool(this.targetPool);
-      newBuilder.setTargetPoolsRemoveInstanceRequestResource(this.targetPoolsRemoveInstanceRequestResource);
+      newBuilder.setTargetPoolsRemoveInstanceRequestResource(
+          this.targetPoolsRemoveInstanceRequestResource);
       newBuilder.setUserIp(this.userIp);
       return newBuilder;
     }
@@ -421,16 +416,35 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
   @Override
   public String toString() {
     return "RemoveInstanceTargetPoolHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "targetPool=" + targetPool + ", "
-        + "targetPoolsRemoveInstanceRequestResource=" + targetPoolsRemoveInstanceRequestResource + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "targetPool="
+        + targetPool
+        + ", "
+        + "targetPoolsRemoveInstanceRequestResource="
+        + targetPoolsRemoveInstanceRequestResource
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -441,18 +455,18 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
     }
     if (o instanceof RemoveInstanceTargetPoolHttpRequest) {
       RemoveInstanceTargetPoolHttpRequest that = (RemoveInstanceTargetPoolHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.targetPool, that.getTargetPool()) &&
-          Objects.equals(this.targetPoolsRemoveInstanceRequestResource, that.getTargetPoolsRemoveInstanceRequestResource()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.targetPool, that.getTargetPool())
+          && Objects.equals(
+              this.targetPoolsRemoveInstanceRequestResource,
+              that.getTargetPoolsRemoveInstanceRequestResource())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +474,15 @@ public final class RemoveInstanceTargetPoolHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      targetPool,
-      targetPoolsRemoveInstanceRequestResource,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        targetPool,
+        targetPoolsRemoveInstanceRequestResource,
+        userIp);
   }
 }

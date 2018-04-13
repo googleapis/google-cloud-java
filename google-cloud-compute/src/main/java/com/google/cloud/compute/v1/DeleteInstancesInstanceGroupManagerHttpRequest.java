@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +33,8 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
   private final String callback;
   private final String fields;
   private final String instanceGroupManager;
-  private final InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource;
+  private final InstanceGroupManagersDeleteInstancesRequest
+      instanceGroupManagersDeleteInstancesRequestResource;
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
@@ -56,24 +54,24 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
     this.userIp = null;
   }
 
-
   private DeleteInstancesInstanceGroupManagerHttpRequest(
       String access_token,
       String callback,
       String fields,
       String instanceGroupManager,
-      InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource,
+      InstanceGroupManagersDeleteInstancesRequest
+          instanceGroupManagersDeleteInstancesRequestResource,
       String key,
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
     this.instanceGroupManager = instanceGroupManager;
-    this.instanceGroupManagersDeleteInstancesRequestResource = instanceGroupManagersDeleteInstancesRequestResource;
+    this.instanceGroupManagersDeleteInstancesRequestResource =
+        instanceGroupManagersDeleteInstancesRequestResource;
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
@@ -94,10 +92,15 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
     if (fieldNames.contains("instanceGroupManager") && instanceGroupManager != null) {
-      fieldMap.put("instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
+      fieldMap.put(
+          "instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
     }
-    if (fieldNames.contains("instanceGroupManagersDeleteInstancesRequestResource") && instanceGroupManagersDeleteInstancesRequestResource != null) {
-      fieldMap.put("instanceGroupManagersDeleteInstancesRequestResource", Collections.singletonList(String.valueOf(instanceGroupManagersDeleteInstancesRequestResource)));
+    if (fieldNames.contains("instanceGroupManagersDeleteInstancesRequestResource")
+        && instanceGroupManagersDeleteInstancesRequestResource != null) {
+      fieldMap.put(
+          "instanceGroupManagersDeleteInstancesRequestResource",
+          Collections.singletonList(
+              String.valueOf(instanceGroupManagersDeleteInstancesRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -174,7 +177,8 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
     return instanceGroupManager;
   }
 
-  public InstanceGroupManagersDeleteInstancesRequest getInstanceGroupManagersDeleteInstancesRequestResource() {
+  public InstanceGroupManagersDeleteInstancesRequest
+      getInstanceGroupManagersDeleteInstancesRequestResource() {
     return instanceGroupManagersDeleteInstancesRequestResource;
   }
 
@@ -198,22 +202,24 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(DeleteInstancesInstanceGroupManagerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static DeleteInstancesInstanceGroupManagerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final DeleteInstancesInstanceGroupManagerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new DeleteInstancesInstanceGroupManagerHttpRequest();
   }
@@ -223,7 +229,8 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
     private String callback;
     private String fields;
     private String instanceGroupManager;
-    private InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource;
+    private InstanceGroupManagersDeleteInstancesRequest
+        instanceGroupManagersDeleteInstancesRequestResource;
     private String key;
     private String prettyPrint;
     private String quotaUser;
@@ -247,7 +254,8 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
         this.instanceGroupManager = other.instanceGroupManager;
       }
       if (other.getInstanceGroupManagersDeleteInstancesRequestResource() != null) {
-        this.instanceGroupManagersDeleteInstancesRequestResource = other.instanceGroupManagersDeleteInstancesRequestResource;
+        this.instanceGroupManagersDeleteInstancesRequestResource =
+            other.instanceGroupManagersDeleteInstancesRequestResource;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -272,7 +280,8 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
       this.callback = source.callback;
       this.fields = source.fields;
       this.instanceGroupManager = source.instanceGroupManager;
-      this.instanceGroupManagersDeleteInstancesRequestResource = source.instanceGroupManagersDeleteInstancesRequestResource;
+      this.instanceGroupManagersDeleteInstancesRequestResource =
+          source.instanceGroupManagersDeleteInstancesRequestResource;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
@@ -316,12 +325,16 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
       return this;
     }
 
-    public InstanceGroupManagersDeleteInstancesRequest getInstanceGroupManagersDeleteInstancesRequestResource() {
+    public InstanceGroupManagersDeleteInstancesRequest
+        getInstanceGroupManagersDeleteInstancesRequestResource() {
       return instanceGroupManagersDeleteInstancesRequestResource;
     }
 
-    public Builder setInstanceGroupManagersDeleteInstancesRequestResource(InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource) {
-      this.instanceGroupManagersDeleteInstancesRequestResource = instanceGroupManagersDeleteInstancesRequestResource;
+    public Builder setInstanceGroupManagersDeleteInstancesRequestResource(
+        InstanceGroupManagersDeleteInstancesRequest
+            instanceGroupManagersDeleteInstancesRequestResource) {
+      this.instanceGroupManagersDeleteInstancesRequestResource =
+          instanceGroupManagersDeleteInstancesRequestResource;
       return this;
     }
 
@@ -370,36 +383,27 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
       return this;
     }
 
-
     public DeleteInstancesInstanceGroupManagerHttpRequest build() {
       String missing = "";
-
-
 
       if (instanceGroupManager == null) {
         missing += " instanceGroupManager";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new DeleteInstancesInstanceGroupManagerHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroupManager,
-        instanceGroupManagersDeleteInstancesRequestResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroupManager,
+          instanceGroupManagersDeleteInstancesRequestResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -408,7 +412,8 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setInstanceGroupManager(this.instanceGroupManager);
-      newBuilder.setInstanceGroupManagersDeleteInstancesRequestResource(this.instanceGroupManagersDeleteInstancesRequestResource);
+      newBuilder.setInstanceGroupManagersDeleteInstancesRequestResource(
+          this.instanceGroupManagersDeleteInstancesRequestResource);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
@@ -421,16 +426,35 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
   @Override
   public String toString() {
     return "DeleteInstancesInstanceGroupManagerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroupManager=" + instanceGroupManager + ", "
-        + "instanceGroupManagersDeleteInstancesRequestResource=" + instanceGroupManagersDeleteInstancesRequestResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroupManager="
+        + instanceGroupManager
+        + ", "
+        + "instanceGroupManagersDeleteInstancesRequestResource="
+        + instanceGroupManagersDeleteInstancesRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +464,20 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
       return true;
     }
     if (o instanceof DeleteInstancesInstanceGroupManagerHttpRequest) {
-      DeleteInstancesInstanceGroupManagerHttpRequest that = (DeleteInstancesInstanceGroupManagerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager()) &&
-          Objects.equals(this.instanceGroupManagersDeleteInstancesRequestResource, that.getInstanceGroupManagersDeleteInstancesRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      DeleteInstancesInstanceGroupManagerHttpRequest that =
+          (DeleteInstancesInstanceGroupManagerHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager())
+          && Objects.equals(
+              this.instanceGroupManagersDeleteInstancesRequestResource,
+              that.getInstanceGroupManagersDeleteInstancesRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +485,15 @@ public final class DeleteInstancesInstanceGroupManagerHttpRequest implements Api
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroupManager,
-      instanceGroupManagersDeleteInstancesRequestResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroupManager,
+        instanceGroupManagersDeleteInstancesRequestResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }

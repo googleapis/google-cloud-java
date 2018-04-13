@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class ZoneSetLabelsRequest implements ApiMessage {
     this.labels = null;
   }
 
-
-  private ZoneSetLabelsRequest(
-      String labelFingerprint,
-      Map<String, String> labels
-      ) {
+  private ZoneSetLabelsRequest(String labelFingerprint, Map<String, String> labels) {
     this.labelFingerprint = labelFingerprint;
     this.labels = labels;
   }
@@ -86,22 +79,24 @@ public final class ZoneSetLabelsRequest implements ApiMessage {
     return labels;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(ZoneSetLabelsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static ZoneSetLabelsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final ZoneSetLabelsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new ZoneSetLabelsRequest();
   }
@@ -146,13 +141,9 @@ public final class ZoneSetLabelsRequest implements ApiMessage {
       return this;
     }
 
-
     public ZoneSetLabelsRequest build() {
 
-      return new ZoneSetLabelsRequest(
-        labelFingerprint,
-        labels
-      );
+      return new ZoneSetLabelsRequest(labelFingerprint, labels);
     }
 
     public Builder clone() {
@@ -166,8 +157,11 @@ public final class ZoneSetLabelsRequest implements ApiMessage {
   @Override
   public String toString() {
     return "ZoneSetLabelsRequest{"
-        + "labelFingerprint=" + labelFingerprint + ", "
-        + "labels=" + labels
+        + "labelFingerprint="
+        + labelFingerprint
+        + ", "
+        + "labels="
+        + labels
         + "}";
   }
 
@@ -178,19 +172,14 @@ public final class ZoneSetLabelsRequest implements ApiMessage {
     }
     if (o instanceof ZoneSetLabelsRequest) {
       ZoneSetLabelsRequest that = (ZoneSetLabelsRequest) o;
-      return
-          Objects.equals(this.labelFingerprint, that.getLabelFingerprint()) &&
-          Objects.equals(this.labels, that.getLabelsMap())
-          ;
+      return Objects.equals(this.labelFingerprint, that.getLabelFingerprint())
+          && Objects.equals(this.labels, that.getLabelsMap());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      labelFingerprint,
-      labels
-    );
+    return Objects.hash(labelFingerprint, labels);
   }
 }

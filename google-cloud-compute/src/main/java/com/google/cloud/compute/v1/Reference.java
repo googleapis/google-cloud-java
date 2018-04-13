@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -44,13 +41,7 @@ public final class Reference implements ApiMessage {
     this.target = null;
   }
 
-
-  private Reference(
-      String kind,
-      String referenceType,
-      String referrer,
-      String target
-      ) {
+  private Reference(String kind, String referenceType, String referrer, String target) {
     this.kind = kind;
     this.referenceType = referenceType;
     this.referrer = referrer;
@@ -114,22 +105,24 @@ public final class Reference implements ApiMessage {
     return target;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Reference prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Reference getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Reference DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Reference();
   }
@@ -202,17 +195,9 @@ public final class Reference implements ApiMessage {
       return this;
     }
 
-
     public Reference build() {
 
-
-
-      return new Reference(
-        kind,
-        referenceType,
-        referrer,
-        target
-      );
+      return new Reference(kind, referenceType, referrer, target);
     }
 
     public Builder clone() {
@@ -228,10 +213,17 @@ public final class Reference implements ApiMessage {
   @Override
   public String toString() {
     return "Reference{"
-        + "kind=" + kind + ", "
-        + "referenceType=" + referenceType + ", "
-        + "referrer=" + referrer + ", "
-        + "target=" + target
+        + "kind="
+        + kind
+        + ", "
+        + "referenceType="
+        + referenceType
+        + ", "
+        + "referrer="
+        + referrer
+        + ", "
+        + "target="
+        + target
         + "}";
   }
 
@@ -242,23 +234,16 @@ public final class Reference implements ApiMessage {
     }
     if (o instanceof Reference) {
       Reference that = (Reference) o;
-      return
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.referenceType, that.getReferenceType()) &&
-          Objects.equals(this.referrer, that.getReferrer()) &&
-          Objects.equals(this.target, that.getTarget())
-          ;
+      return Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.referenceType, that.getReferenceType())
+          && Objects.equals(this.referrer, that.getReferrer())
+          && Objects.equals(this.target, that.getTarget());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      kind,
-      referenceType,
-      referrer,
-      target
-    );
+    return Objects.hash(kind, referenceType, referrer, target);
   }
 }

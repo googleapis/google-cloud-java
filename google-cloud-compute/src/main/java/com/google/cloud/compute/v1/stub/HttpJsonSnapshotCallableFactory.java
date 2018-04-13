@@ -15,50 +15,15 @@
  */
 package com.google.cloud.compute.v1.stub;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
-import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.core.BackgroundResourceAggregation;
-import com.google.api.gax.httpjson.ApiMessageHttpRequestFormatter;
-import com.google.api.gax.httpjson.ApiMessageHttpResponseParser;
-import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ClientStreamingCallable;
-import com.google.api.gax.rpc.OperationCallSettings;
-import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.RequestParamsExtractor;
-import com.google.api.gax.rpc.ServerStreamingCallSettings;
-import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.compute.v1.DeleteSnapshotHttpRequest;
-import com.google.cloud.compute.v1.GetSnapshotHttpRequest;
-import com.google.cloud.compute.v1.GlobalSetLabelsRequest;
-import com.google.cloud.compute.v1.ListSnapshotsHttpRequest;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.ProjectName;
-import com.google.cloud.compute.v1.ProjectSnapshotName;
-import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
-import com.google.cloud.compute.v1.Snapshot;
-import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
-import com.google.cloud.compute.v1.SnapshotList;
-import com.google.cloud.compute.v1.SnapshotSettings;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Sets;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -75,16 +40,18 @@ public class HttpJsonSnapshotCallableFactory implements HttpJsonStubCallableFact
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       UnaryCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
-    return HttpJsonCallableFactory.createUnaryCallable(httpJsonCallSettings, callSettings, clientContext);
+    return HttpJsonCallableFactory.createUnaryCallable(
+        httpJsonCallSettings, callSettings, clientContext);
   }
 
   @Override
   public <RequestT, ResponseT, PagedListResponseT>
       UnaryCallable<RequestT, PagedListResponseT> createPagedCallable(
-      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
-      PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
-      ClientContext clientContext) {
-    return HttpJsonCallableFactory.createPagedCallable(httpJsonCallSettings, pagedCallSettings, clientContext);
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+          PagedCallSettings<RequestT, ResponseT, PagedListResponseT> pagedCallSettings,
+          ClientContext clientContext) {
+    return HttpJsonCallableFactory.createPagedCallable(
+        httpJsonCallSettings, pagedCallSettings, clientContext);
   }
 
   @Override
@@ -92,6 +59,7 @@ public class HttpJsonSnapshotCallableFactory implements HttpJsonStubCallableFact
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
       BatchingCallSettings<RequestT, ResponseT> batchingCallSettings,
       ClientContext clientContext) {
-    return HttpJsonCallableFactory.createBatchingCallable(httpJsonCallSettings, batchingCallSettings, clientContext);
+    return HttpJsonCallableFactory.createBatchingCallable(
+        httpJsonCallSettings, batchingCallSettings, clientContext);
   }
 }

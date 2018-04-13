@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -60,7 +59,6 @@ public final class Autoscaler implements ApiMessage {
     this.zone = null;
   }
 
-
   private Autoscaler(
       AutoscalingPolicy autoscalingPolicy,
       String creationTimestamp,
@@ -73,8 +71,7 @@ public final class Autoscaler implements ApiMessage {
       String status,
       List<AutoscalerStatusDetails> statusDetails,
       String target,
-      String zone
-      ) {
+      String zone) {
     this.autoscalingPolicy = autoscalingPolicy;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -93,10 +90,12 @@ public final class Autoscaler implements ApiMessage {
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
     if (fieldNames.contains("autoscalingPolicy") && autoscalingPolicy != null) {
-      fieldMap.put("autoscalingPolicy", Collections.singletonList(String.valueOf(autoscalingPolicy)));
+      fieldMap.put(
+          "autoscalingPolicy", Collections.singletonList(String.valueOf(autoscalingPolicy)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("description") && description != null) {
       fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
@@ -230,22 +229,24 @@ public final class Autoscaler implements ApiMessage {
     return zone;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Autoscaler prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Autoscaler getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Autoscaler DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Autoscaler();
   }
@@ -438,33 +439,21 @@ public final class Autoscaler implements ApiMessage {
       return this;
     }
 
-
     public Autoscaler build() {
 
-
-
-
-
-
-
-
-
-
-
       return new Autoscaler(
-        autoscalingPolicy,
-        creationTimestamp,
-        description,
-        id,
-        kind,
-        name,
-        region,
-        selfLink,
-        status,
-        statusDetails,
-        target,
-        zone
-      );
+          autoscalingPolicy,
+          creationTimestamp,
+          description,
+          id,
+          kind,
+          name,
+          region,
+          selfLink,
+          status,
+          statusDetails,
+          target,
+          zone);
     }
 
     public Builder clone() {
@@ -488,18 +477,41 @@ public final class Autoscaler implements ApiMessage {
   @Override
   public String toString() {
     return "Autoscaler{"
-        + "autoscalingPolicy=" + autoscalingPolicy + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "description=" + description + ", "
-        + "id=" + id + ", "
-        + "kind=" + kind + ", "
-        + "name=" + name + ", "
-        + "region=" + region + ", "
-        + "selfLink=" + selfLink + ", "
-        + "status=" + status + ", "
-        + "statusDetails=" + statusDetails + ", "
-        + "target=" + target + ", "
-        + "zone=" + zone
+        + "autoscalingPolicy="
+        + autoscalingPolicy
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "region="
+        + region
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "status="
+        + status
+        + ", "
+        + "statusDetails="
+        + statusDetails
+        + ", "
+        + "target="
+        + target
+        + ", "
+        + "zone="
+        + zone
         + "}";
   }
 
@@ -510,20 +522,18 @@ public final class Autoscaler implements ApiMessage {
     }
     if (o instanceof Autoscaler) {
       Autoscaler that = (Autoscaler) o;
-      return
-          Objects.equals(this.autoscalingPolicy, that.getAutoscalingPolicy()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.region, that.getRegion()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.status, that.getStatus()) &&
-          Objects.equals(this.statusDetails, that.getStatusDetailsList()) &&
-          Objects.equals(this.target, that.getTarget()) &&
-          Objects.equals(this.zone, that.getZone())
-          ;
+      return Objects.equals(this.autoscalingPolicy, that.getAutoscalingPolicy())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.status, that.getStatus())
+          && Objects.equals(this.statusDetails, that.getStatusDetailsList())
+          && Objects.equals(this.target, that.getTarget())
+          && Objects.equals(this.zone, that.getZone());
     }
     return false;
   }
@@ -531,18 +541,17 @@ public final class Autoscaler implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      autoscalingPolicy,
-      creationTimestamp,
-      description,
-      id,
-      kind,
-      name,
-      region,
-      selfLink,
-      status,
-      statusDetails,
-      target,
-      zone
-    );
+        autoscalingPolicy,
+        creationTimestamp,
+        description,
+        id,
+        kind,
+        name,
+        region,
+        selfLink,
+        status,
+        statusDetails,
+        target,
+        zone);
   }
 }

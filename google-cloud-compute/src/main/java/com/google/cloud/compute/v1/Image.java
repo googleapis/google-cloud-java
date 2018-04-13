@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,6 +43,7 @@ public final class Image implements ApiMessage {
   private final String kind;
   private final String labelFingerprint;
   private final Map<String, String> labels;
+  private final List<String> licenseCodes;
   private final List<String> licenses;
   private final String name;
   private final RawDisk rawDisk;
@@ -73,6 +73,7 @@ public final class Image implements ApiMessage {
     this.kind = null;
     this.labelFingerprint = null;
     this.labels = null;
+    this.licenseCodes = null;
     this.licenses = null;
     this.name = null;
     this.rawDisk = null;
@@ -90,7 +91,6 @@ public final class Image implements ApiMessage {
     this.status = null;
   }
 
-
   private Image(
       String archiveSizeBytes,
       String creationTimestamp,
@@ -104,6 +104,7 @@ public final class Image implements ApiMessage {
       String kind,
       String labelFingerprint,
       Map<String, String> labels,
+      List<String> licenseCodes,
       List<String> licenses,
       String name,
       RawDisk rawDisk,
@@ -118,8 +119,7 @@ public final class Image implements ApiMessage {
       CustomerEncryptionKey sourceSnapshotEncryptionKey,
       String sourceSnapshotId,
       String sourceType,
-      String status
-      ) {
+      String status) {
     this.archiveSizeBytes = archiveSizeBytes;
     this.creationTimestamp = creationTimestamp;
     this.deprecated = deprecated;
@@ -132,6 +132,7 @@ public final class Image implements ApiMessage {
     this.kind = kind;
     this.labelFingerprint = labelFingerprint;
     this.labels = labels;
+    this.licenseCodes = licenseCodes;
     this.licenses = licenses;
     this.name = name;
     this.rawDisk = rawDisk;
@@ -156,7 +157,8 @@ public final class Image implements ApiMessage {
       fieldMap.put("archiveSizeBytes", Collections.singletonList(String.valueOf(archiveSizeBytes)));
     }
     if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put("creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
+      fieldMap.put(
+          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
     }
     if (fieldNames.contains("deprecated") && deprecated != null) {
       fieldMap.put("deprecated", Collections.singletonList(String.valueOf(deprecated)));
@@ -181,7 +183,8 @@ public final class Image implements ApiMessage {
       fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
     }
     if (fieldNames.contains("imageEncryptionKey") && imageEncryptionKey != null) {
-      fieldMap.put("imageEncryptionKey", Collections.singletonList(String.valueOf(imageEncryptionKey)));
+      fieldMap.put(
+          "imageEncryptionKey", Collections.singletonList(String.valueOf(imageEncryptionKey)));
     }
     if (fieldNames.contains("kind") && kind != null) {
       fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
@@ -191,6 +194,13 @@ public final class Image implements ApiMessage {
     }
     if (fieldNames.contains("labels") && labels != null) {
       fieldMap.put("labels", Collections.singletonList(String.valueOf(labels)));
+    }
+    if (fieldNames.contains("licenseCodes") && licenseCodes != null) {
+      ImmutableList.Builder stringList = ImmutableList.builder();
+      for (String item : licenseCodes) {
+        stringList.add(item.toString());
+      }
+      fieldMap.put("licenseCodes", stringList.build());
     }
     if (fieldNames.contains("licenses") && licenses != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
@@ -212,7 +222,9 @@ public final class Image implements ApiMessage {
       fieldMap.put("sourceDisk", Collections.singletonList(String.valueOf(sourceDisk)));
     }
     if (fieldNames.contains("sourceDiskEncryptionKey") && sourceDiskEncryptionKey != null) {
-      fieldMap.put("sourceDiskEncryptionKey", Collections.singletonList(String.valueOf(sourceDiskEncryptionKey)));
+      fieldMap.put(
+          "sourceDiskEncryptionKey",
+          Collections.singletonList(String.valueOf(sourceDiskEncryptionKey)));
     }
     if (fieldNames.contains("sourceDiskId") && sourceDiskId != null) {
       fieldMap.put("sourceDiskId", Collections.singletonList(String.valueOf(sourceDiskId)));
@@ -221,7 +233,9 @@ public final class Image implements ApiMessage {
       fieldMap.put("sourceImage", Collections.singletonList(String.valueOf(sourceImage)));
     }
     if (fieldNames.contains("sourceImageEncryptionKey") && sourceImageEncryptionKey != null) {
-      fieldMap.put("sourceImageEncryptionKey", Collections.singletonList(String.valueOf(sourceImageEncryptionKey)));
+      fieldMap.put(
+          "sourceImageEncryptionKey",
+          Collections.singletonList(String.valueOf(sourceImageEncryptionKey)));
     }
     if (fieldNames.contains("sourceImageId") && sourceImageId != null) {
       fieldMap.put("sourceImageId", Collections.singletonList(String.valueOf(sourceImageId)));
@@ -230,7 +244,9 @@ public final class Image implements ApiMessage {
       fieldMap.put("sourceSnapshot", Collections.singletonList(String.valueOf(sourceSnapshot)));
     }
     if (fieldNames.contains("sourceSnapshotEncryptionKey") && sourceSnapshotEncryptionKey != null) {
-      fieldMap.put("sourceSnapshotEncryptionKey", Collections.singletonList(String.valueOf(sourceSnapshotEncryptionKey)));
+      fieldMap.put(
+          "sourceSnapshotEncryptionKey",
+          Collections.singletonList(String.valueOf(sourceSnapshotEncryptionKey)));
     }
     if (fieldNames.contains("sourceSnapshotId") && sourceSnapshotId != null) {
       fieldMap.put("sourceSnapshotId", Collections.singletonList(String.valueOf(sourceSnapshotId)));
@@ -281,6 +297,9 @@ public final class Image implements ApiMessage {
     }
     if (fieldName.equals("labels")) {
       return String.valueOf(labels);
+    }
+    if (fieldName.equals("licenseCodes")) {
+      return String.valueOf(licenseCodes);
     }
     if (fieldName.equals("licenses")) {
       return String.valueOf(licenses);
@@ -384,6 +403,10 @@ public final class Image implements ApiMessage {
     return labels;
   }
 
+  public List<String> getLicenseCodesList() {
+    return licenseCodes;
+  }
+
   public List<String> getLicensesList() {
     return licenses;
   }
@@ -444,22 +467,24 @@ public final class Image implements ApiMessage {
     return status;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(Image prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static Image getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final Image DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new Image();
   }
@@ -477,6 +502,7 @@ public final class Image implements ApiMessage {
     private String kind;
     private String labelFingerprint;
     private Map<String, String> labels;
+    private List<String> licenseCodes;
     private List<String> licenses;
     private String name;
     private RawDisk rawDisk;
@@ -532,6 +558,9 @@ public final class Image implements ApiMessage {
       }
       if (other.getLabelsMap() != null) {
         this.labels = other.labels;
+      }
+      if (other.getLicenseCodesList() != null) {
+        this.licenseCodes = other.licenseCodes;
       }
       if (other.getLicensesList() != null) {
         this.licenses = other.licenses;
@@ -594,6 +623,7 @@ public final class Image implements ApiMessage {
       this.kind = source.kind;
       this.labelFingerprint = source.labelFingerprint;
       this.labels = source.labels;
+      this.licenseCodes = source.licenseCodes;
       this.licenses = source.licenses;
       this.name = source.name;
       this.rawDisk = source.rawDisk;
@@ -727,6 +757,23 @@ public final class Image implements ApiMessage {
       return this;
     }
 
+    public List<String> getLicenseCodesList() {
+      return licenseCodes;
+    }
+
+    public Builder addAllLicenseCodes(List<String> licenseCodes) {
+      if (this.licenseCodes == null) {
+        this.licenseCodes = new ArrayList<>(licenseCodes.size());
+      }
+      this.licenseCodes.addAll(licenseCodes);
+      return this;
+    }
+
+    public Builder addLicenseCodes(String licenseCodes) {
+      this.licenseCodes.add(licenseCodes);
+      return this;
+    }
+
     public List<String> getLicensesList() {
       return licenses;
     }
@@ -838,7 +885,8 @@ public final class Image implements ApiMessage {
       return sourceSnapshotEncryptionKey;
     }
 
-    public Builder setSourceSnapshotEncryptionKey(CustomerEncryptionKey sourceSnapshotEncryptionKey) {
+    public Builder setSourceSnapshotEncryptionKey(
+        CustomerEncryptionKey sourceSnapshotEncryptionKey) {
       this.sourceSnapshotEncryptionKey = sourceSnapshotEncryptionKey;
       return this;
     }
@@ -870,63 +918,37 @@ public final class Image implements ApiMessage {
       return this;
     }
 
-
     public Image build() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       return new Image(
-        archiveSizeBytes,
-        creationTimestamp,
-        deprecated,
-        description,
-        diskSizeGb,
-        family,
-        guestOsFeatures,
-        id,
-        imageEncryptionKey,
-        kind,
-        labelFingerprint,
-        labels,
-        licenses,
-        name,
-        rawDisk,
-        selfLink,
-        sourceDisk,
-        sourceDiskEncryptionKey,
-        sourceDiskId,
-        sourceImage,
-        sourceImageEncryptionKey,
-        sourceImageId,
-        sourceSnapshot,
-        sourceSnapshotEncryptionKey,
-        sourceSnapshotId,
-        sourceType,
-        status
-      );
+          archiveSizeBytes,
+          creationTimestamp,
+          deprecated,
+          description,
+          diskSizeGb,
+          family,
+          guestOsFeatures,
+          id,
+          imageEncryptionKey,
+          kind,
+          labelFingerprint,
+          labels,
+          licenseCodes,
+          licenses,
+          name,
+          rawDisk,
+          selfLink,
+          sourceDisk,
+          sourceDiskEncryptionKey,
+          sourceDiskId,
+          sourceImage,
+          sourceImageEncryptionKey,
+          sourceImageId,
+          sourceSnapshot,
+          sourceSnapshotEncryptionKey,
+          sourceSnapshotId,
+          sourceType,
+          status);
     }
 
     public Builder clone() {
@@ -943,6 +965,7 @@ public final class Image implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setLabelFingerprint(this.labelFingerprint);
       newBuilder.putAllLabels(this.labels);
+      newBuilder.addAllLicenseCodes(this.licenseCodes);
       newBuilder.addAllLicenses(this.licenses);
       newBuilder.setName(this.name);
       newBuilder.setRawDisk(this.rawDisk);
@@ -965,33 +988,89 @@ public final class Image implements ApiMessage {
   @Override
   public String toString() {
     return "Image{"
-        + "archiveSizeBytes=" + archiveSizeBytes + ", "
-        + "creationTimestamp=" + creationTimestamp + ", "
-        + "deprecated=" + deprecated + ", "
-        + "description=" + description + ", "
-        + "diskSizeGb=" + diskSizeGb + ", "
-        + "family=" + family + ", "
-        + "guestOsFeatures=" + guestOsFeatures + ", "
-        + "id=" + id + ", "
-        + "imageEncryptionKey=" + imageEncryptionKey + ", "
-        + "kind=" + kind + ", "
-        + "labelFingerprint=" + labelFingerprint + ", "
-        + "labels=" + labels + ", "
-        + "licenses=" + licenses + ", "
-        + "name=" + name + ", "
-        + "rawDisk=" + rawDisk + ", "
-        + "selfLink=" + selfLink + ", "
-        + "sourceDisk=" + sourceDisk + ", "
-        + "sourceDiskEncryptionKey=" + sourceDiskEncryptionKey + ", "
-        + "sourceDiskId=" + sourceDiskId + ", "
-        + "sourceImage=" + sourceImage + ", "
-        + "sourceImageEncryptionKey=" + sourceImageEncryptionKey + ", "
-        + "sourceImageId=" + sourceImageId + ", "
-        + "sourceSnapshot=" + sourceSnapshot + ", "
-        + "sourceSnapshotEncryptionKey=" + sourceSnapshotEncryptionKey + ", "
-        + "sourceSnapshotId=" + sourceSnapshotId + ", "
-        + "sourceType=" + sourceType + ", "
-        + "status=" + status
+        + "archiveSizeBytes="
+        + archiveSizeBytes
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "deprecated="
+        + deprecated
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "diskSizeGb="
+        + diskSizeGb
+        + ", "
+        + "family="
+        + family
+        + ", "
+        + "guestOsFeatures="
+        + guestOsFeatures
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "imageEncryptionKey="
+        + imageEncryptionKey
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "labelFingerprint="
+        + labelFingerprint
+        + ", "
+        + "labels="
+        + labels
+        + ", "
+        + "licenseCodes="
+        + licenseCodes
+        + ", "
+        + "licenses="
+        + licenses
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "rawDisk="
+        + rawDisk
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "sourceDisk="
+        + sourceDisk
+        + ", "
+        + "sourceDiskEncryptionKey="
+        + sourceDiskEncryptionKey
+        + ", "
+        + "sourceDiskId="
+        + sourceDiskId
+        + ", "
+        + "sourceImage="
+        + sourceImage
+        + ", "
+        + "sourceImageEncryptionKey="
+        + sourceImageEncryptionKey
+        + ", "
+        + "sourceImageId="
+        + sourceImageId
+        + ", "
+        + "sourceSnapshot="
+        + sourceSnapshot
+        + ", "
+        + "sourceSnapshotEncryptionKey="
+        + sourceSnapshotEncryptionKey
+        + ", "
+        + "sourceSnapshotId="
+        + sourceSnapshotId
+        + ", "
+        + "sourceType="
+        + sourceType
+        + ", "
+        + "status="
+        + status
         + "}";
   }
 
@@ -1002,35 +1081,34 @@ public final class Image implements ApiMessage {
     }
     if (o instanceof Image) {
       Image that = (Image) o;
-      return
-          Objects.equals(this.archiveSizeBytes, that.getArchiveSizeBytes()) &&
-          Objects.equals(this.creationTimestamp, that.getCreationTimestamp()) &&
-          Objects.equals(this.deprecated, that.getDeprecated()) &&
-          Objects.equals(this.description, that.getDescription()) &&
-          Objects.equals(this.diskSizeGb, that.getDiskSizeGb()) &&
-          Objects.equals(this.family, that.getFamily()) &&
-          Objects.equals(this.guestOsFeatures, that.getGuestOsFeaturesList()) &&
-          Objects.equals(this.id, that.getId()) &&
-          Objects.equals(this.imageEncryptionKey, that.getImageEncryptionKey()) &&
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.labelFingerprint, that.getLabelFingerprint()) &&
-          Objects.equals(this.labels, that.getLabelsMap()) &&
-          Objects.equals(this.licenses, that.getLicensesList()) &&
-          Objects.equals(this.name, that.getName()) &&
-          Objects.equals(this.rawDisk, that.getRawDisk()) &&
-          Objects.equals(this.selfLink, that.getSelfLink()) &&
-          Objects.equals(this.sourceDisk, that.getSourceDisk()) &&
-          Objects.equals(this.sourceDiskEncryptionKey, that.getSourceDiskEncryptionKey()) &&
-          Objects.equals(this.sourceDiskId, that.getSourceDiskId()) &&
-          Objects.equals(this.sourceImage, that.getSourceImage()) &&
-          Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey()) &&
-          Objects.equals(this.sourceImageId, that.getSourceImageId()) &&
-          Objects.equals(this.sourceSnapshot, that.getSourceSnapshot()) &&
-          Objects.equals(this.sourceSnapshotEncryptionKey, that.getSourceSnapshotEncryptionKey()) &&
-          Objects.equals(this.sourceSnapshotId, that.getSourceSnapshotId()) &&
-          Objects.equals(this.sourceType, that.getSourceType()) &&
-          Objects.equals(this.status, that.getStatus())
-          ;
+      return Objects.equals(this.archiveSizeBytes, that.getArchiveSizeBytes())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.deprecated, that.getDeprecated())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.diskSizeGb, that.getDiskSizeGb())
+          && Objects.equals(this.family, that.getFamily())
+          && Objects.equals(this.guestOsFeatures, that.getGuestOsFeaturesList())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.imageEncryptionKey, that.getImageEncryptionKey())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.labelFingerprint, that.getLabelFingerprint())
+          && Objects.equals(this.labels, that.getLabelsMap())
+          && Objects.equals(this.licenseCodes, that.getLicenseCodesList())
+          && Objects.equals(this.licenses, that.getLicensesList())
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.rawDisk, that.getRawDisk())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.sourceDisk, that.getSourceDisk())
+          && Objects.equals(this.sourceDiskEncryptionKey, that.getSourceDiskEncryptionKey())
+          && Objects.equals(this.sourceDiskId, that.getSourceDiskId())
+          && Objects.equals(this.sourceImage, that.getSourceImage())
+          && Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey())
+          && Objects.equals(this.sourceImageId, that.getSourceImageId())
+          && Objects.equals(this.sourceSnapshot, that.getSourceSnapshot())
+          && Objects.equals(this.sourceSnapshotEncryptionKey, that.getSourceSnapshotEncryptionKey())
+          && Objects.equals(this.sourceSnapshotId, that.getSourceSnapshotId())
+          && Objects.equals(this.sourceType, that.getSourceType())
+          && Objects.equals(this.status, that.getStatus());
     }
     return false;
   }
@@ -1038,33 +1116,33 @@ public final class Image implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-      archiveSizeBytes,
-      creationTimestamp,
-      deprecated,
-      description,
-      diskSizeGb,
-      family,
-      guestOsFeatures,
-      id,
-      imageEncryptionKey,
-      kind,
-      labelFingerprint,
-      labels,
-      licenses,
-      name,
-      rawDisk,
-      selfLink,
-      sourceDisk,
-      sourceDiskEncryptionKey,
-      sourceDiskId,
-      sourceImage,
-      sourceImageEncryptionKey,
-      sourceImageId,
-      sourceSnapshot,
-      sourceSnapshotEncryptionKey,
-      sourceSnapshotId,
-      sourceType,
-      status
-    );
+        archiveSizeBytes,
+        creationTimestamp,
+        deprecated,
+        description,
+        diskSizeGb,
+        family,
+        guestOsFeatures,
+        id,
+        imageEncryptionKey,
+        kind,
+        labelFingerprint,
+        labels,
+        licenseCodes,
+        licenses,
+        name,
+        rawDisk,
+        selfLink,
+        sourceDisk,
+        sourceDiskEncryptionKey,
+        sourceDiskId,
+        sourceImage,
+        sourceImageEncryptionKey,
+        sourceImageId,
+        sourceSnapshot,
+        sourceSnapshotEncryptionKey,
+        sourceSnapshotId,
+        sourceType,
+        status);
   }
 }

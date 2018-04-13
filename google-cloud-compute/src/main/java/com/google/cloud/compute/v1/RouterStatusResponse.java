@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +37,7 @@ public final class RouterStatusResponse implements ApiMessage {
     this.result = null;
   }
 
-
-  private RouterStatusResponse(
-      String kind,
-      RouterStatus result
-      ) {
+  private RouterStatusResponse(String kind, RouterStatus result) {
     this.kind = kind;
     this.result = result;
   }
@@ -86,22 +79,24 @@ public final class RouterStatusResponse implements ApiMessage {
     return result;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(RouterStatusResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static RouterStatusResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final RouterStatusResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new RouterStatusResponse();
   }
@@ -146,13 +141,9 @@ public final class RouterStatusResponse implements ApiMessage {
       return this;
     }
 
-
     public RouterStatusResponse build() {
 
-      return new RouterStatusResponse(
-        kind,
-        result
-      );
+      return new RouterStatusResponse(kind, result);
     }
 
     public Builder clone() {
@@ -165,10 +156,7 @@ public final class RouterStatusResponse implements ApiMessage {
 
   @Override
   public String toString() {
-    return "RouterStatusResponse{"
-        + "kind=" + kind + ", "
-        + "result=" + result
-        + "}";
+    return "RouterStatusResponse{" + "kind=" + kind + ", " + "result=" + result + "}";
   }
 
   @Override
@@ -178,19 +166,14 @@ public final class RouterStatusResponse implements ApiMessage {
     }
     if (o instanceof RouterStatusResponse) {
       RouterStatusResponse that = (RouterStatusResponse) o;
-      return
-          Objects.equals(this.kind, that.getKind()) &&
-          Objects.equals(this.result, that.getResult())
-          ;
+      return Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.result, that.getResult());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-      kind,
-      result
-    );
+    return Objects.hash(kind, result);
   }
 }

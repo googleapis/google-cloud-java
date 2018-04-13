@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +33,8 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
   private final String callback;
   private final String fields;
   private final String instanceGroupManager;
-  private final InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource;
+  private final InstanceGroupManagersSetTargetPoolsRequest
+      instanceGroupManagersSetTargetPoolsRequestResource;
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
@@ -56,7 +54,6 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     this.userIp = null;
   }
 
-
   private SetTargetPoolsInstanceGroupManagerHttpRequest(
       String access_token,
       String callback,
@@ -67,13 +64,13 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       String prettyPrint,
       String quotaUser,
       String requestId,
-      String userIp
-      ) {
+      String userIp) {
     this.access_token = access_token;
     this.callback = callback;
     this.fields = fields;
     this.instanceGroupManager = instanceGroupManager;
-    this.instanceGroupManagersSetTargetPoolsRequestResource = instanceGroupManagersSetTargetPoolsRequestResource;
+    this.instanceGroupManagersSetTargetPoolsRequestResource =
+        instanceGroupManagersSetTargetPoolsRequestResource;
     this.key = key;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
@@ -94,10 +91,15 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
     }
     if (fieldNames.contains("instanceGroupManager") && instanceGroupManager != null) {
-      fieldMap.put("instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
+      fieldMap.put(
+          "instanceGroupManager", Collections.singletonList(String.valueOf(instanceGroupManager)));
     }
-    if (fieldNames.contains("instanceGroupManagersSetTargetPoolsRequestResource") && instanceGroupManagersSetTargetPoolsRequestResource != null) {
-      fieldMap.put("instanceGroupManagersSetTargetPoolsRequestResource", Collections.singletonList(String.valueOf(instanceGroupManagersSetTargetPoolsRequestResource)));
+    if (fieldNames.contains("instanceGroupManagersSetTargetPoolsRequestResource")
+        && instanceGroupManagersSetTargetPoolsRequestResource != null) {
+      fieldMap.put(
+          "instanceGroupManagersSetTargetPoolsRequestResource",
+          Collections.singletonList(
+              String.valueOf(instanceGroupManagersSetTargetPoolsRequestResource)));
     }
     if (fieldNames.contains("key") && key != null) {
       fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
@@ -174,7 +176,8 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     return instanceGroupManager;
   }
 
-  public InstanceGroupManagersSetTargetPoolsRequest getInstanceGroupManagersSetTargetPoolsRequestResource() {
+  public InstanceGroupManagersSetTargetPoolsRequest
+      getInstanceGroupManagersSetTargetPoolsRequestResource() {
     return instanceGroupManagersSetTargetPoolsRequestResource;
   }
 
@@ -198,22 +201,24 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     return userIp;
   }
 
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(SetTargetPoolsInstanceGroupManagerHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   public static SetTargetPoolsInstanceGroupManagerHttpRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
+
   private static final SetTargetPoolsInstanceGroupManagerHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new SetTargetPoolsInstanceGroupManagerHttpRequest();
   }
@@ -223,7 +228,8 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
     private String callback;
     private String fields;
     private String instanceGroupManager;
-    private InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource;
+    private InstanceGroupManagersSetTargetPoolsRequest
+        instanceGroupManagersSetTargetPoolsRequestResource;
     private String key;
     private String prettyPrint;
     private String quotaUser;
@@ -247,7 +253,8 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
         this.instanceGroupManager = other.instanceGroupManager;
       }
       if (other.getInstanceGroupManagersSetTargetPoolsRequestResource() != null) {
-        this.instanceGroupManagersSetTargetPoolsRequestResource = other.instanceGroupManagersSetTargetPoolsRequestResource;
+        this.instanceGroupManagersSetTargetPoolsRequestResource =
+            other.instanceGroupManagersSetTargetPoolsRequestResource;
       }
       if (other.getKey() != null) {
         this.key = other.key;
@@ -272,7 +279,8 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       this.callback = source.callback;
       this.fields = source.fields;
       this.instanceGroupManager = source.instanceGroupManager;
-      this.instanceGroupManagersSetTargetPoolsRequestResource = source.instanceGroupManagersSetTargetPoolsRequestResource;
+      this.instanceGroupManagersSetTargetPoolsRequestResource =
+          source.instanceGroupManagersSetTargetPoolsRequestResource;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
@@ -316,12 +324,16 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       return this;
     }
 
-    public InstanceGroupManagersSetTargetPoolsRequest getInstanceGroupManagersSetTargetPoolsRequestResource() {
+    public InstanceGroupManagersSetTargetPoolsRequest
+        getInstanceGroupManagersSetTargetPoolsRequestResource() {
       return instanceGroupManagersSetTargetPoolsRequestResource;
     }
 
-    public Builder setInstanceGroupManagersSetTargetPoolsRequestResource(InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource) {
-      this.instanceGroupManagersSetTargetPoolsRequestResource = instanceGroupManagersSetTargetPoolsRequestResource;
+    public Builder setInstanceGroupManagersSetTargetPoolsRequestResource(
+        InstanceGroupManagersSetTargetPoolsRequest
+            instanceGroupManagersSetTargetPoolsRequestResource) {
+      this.instanceGroupManagersSetTargetPoolsRequestResource =
+          instanceGroupManagersSetTargetPoolsRequestResource;
       return this;
     }
 
@@ -370,36 +382,27 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       return this;
     }
 
-
     public SetTargetPoolsInstanceGroupManagerHttpRequest build() {
       String missing = "";
-
-
 
       if (instanceGroupManager == null) {
         missing += " instanceGroupManager";
       }
 
-
-
-
-
-
       if (!missing.isEmpty()) {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new SetTargetPoolsInstanceGroupManagerHttpRequest(
-        access_token,
-        callback,
-        fields,
-        instanceGroupManager,
-        instanceGroupManagersSetTargetPoolsRequestResource,
-        key,
-        prettyPrint,
-        quotaUser,
-        requestId,
-        userIp
-      );
+          access_token,
+          callback,
+          fields,
+          instanceGroupManager,
+          instanceGroupManagersSetTargetPoolsRequestResource,
+          key,
+          prettyPrint,
+          quotaUser,
+          requestId,
+          userIp);
     }
 
     public Builder clone() {
@@ -408,7 +411,8 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setInstanceGroupManager(this.instanceGroupManager);
-      newBuilder.setInstanceGroupManagersSetTargetPoolsRequestResource(this.instanceGroupManagersSetTargetPoolsRequestResource);
+      newBuilder.setInstanceGroupManagersSetTargetPoolsRequestResource(
+          this.instanceGroupManagersSetTargetPoolsRequestResource);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
@@ -421,16 +425,35 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
   @Override
   public String toString() {
     return "SetTargetPoolsInstanceGroupManagerHttpRequest{"
-        + "access_token=" + access_token + ", "
-        + "callback=" + callback + ", "
-        + "fields=" + fields + ", "
-        + "instanceGroupManager=" + instanceGroupManager + ", "
-        + "instanceGroupManagersSetTargetPoolsRequestResource=" + instanceGroupManagersSetTargetPoolsRequestResource + ", "
-        + "key=" + key + ", "
-        + "prettyPrint=" + prettyPrint + ", "
-        + "quotaUser=" + quotaUser + ", "
-        + "requestId=" + requestId + ", "
-        + "userIp=" + userIp
+        + "access_token="
+        + access_token
+        + ", "
+        + "callback="
+        + callback
+        + ", "
+        + "fields="
+        + fields
+        + ", "
+        + "instanceGroupManager="
+        + instanceGroupManager
+        + ", "
+        + "instanceGroupManagersSetTargetPoolsRequestResource="
+        + instanceGroupManagersSetTargetPoolsRequestResource
+        + ", "
+        + "key="
+        + key
+        + ", "
+        + "prettyPrint="
+        + prettyPrint
+        + ", "
+        + "quotaUser="
+        + quotaUser
+        + ", "
+        + "requestId="
+        + requestId
+        + ", "
+        + "userIp="
+        + userIp
         + "}";
   }
 
@@ -440,19 +463,20 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
       return true;
     }
     if (o instanceof SetTargetPoolsInstanceGroupManagerHttpRequest) {
-      SetTargetPoolsInstanceGroupManagerHttpRequest that = (SetTargetPoolsInstanceGroupManagerHttpRequest) o;
-      return
-          Objects.equals(this.access_token, that.getAccessToken()) &&
-          Objects.equals(this.callback, that.getCallback()) &&
-          Objects.equals(this.fields, that.getFields()) &&
-          Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager()) &&
-          Objects.equals(this.instanceGroupManagersSetTargetPoolsRequestResource, that.getInstanceGroupManagersSetTargetPoolsRequestResource()) &&
-          Objects.equals(this.key, that.getKey()) &&
-          Objects.equals(this.prettyPrint, that.getPrettyPrint()) &&
-          Objects.equals(this.quotaUser, that.getQuotaUser()) &&
-          Objects.equals(this.requestId, that.getRequestId()) &&
-          Objects.equals(this.userIp, that.getUserIp())
-          ;
+      SetTargetPoolsInstanceGroupManagerHttpRequest that =
+          (SetTargetPoolsInstanceGroupManagerHttpRequest) o;
+      return Objects.equals(this.access_token, that.getAccessToken())
+          && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fields, that.getFields())
+          && Objects.equals(this.instanceGroupManager, that.getInstanceGroupManager())
+          && Objects.equals(
+              this.instanceGroupManagersSetTargetPoolsRequestResource,
+              that.getInstanceGroupManagersSetTargetPoolsRequestResource())
+          && Objects.equals(this.key, that.getKey())
+          && Objects.equals(this.prettyPrint, that.getPrettyPrint())
+          && Objects.equals(this.quotaUser, that.getQuotaUser())
+          && Objects.equals(this.requestId, that.getRequestId())
+          && Objects.equals(this.userIp, that.getUserIp());
     }
     return false;
   }
@@ -460,16 +484,15 @@ public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiM
   @Override
   public int hashCode() {
     return Objects.hash(
-      access_token,
-      callback,
-      fields,
-      instanceGroupManager,
-      instanceGroupManagersSetTargetPoolsRequestResource,
-      key,
-      prettyPrint,
-      quotaUser,
-      requestId,
-      userIp
-    );
+        access_token,
+        callback,
+        fields,
+        instanceGroupManager,
+        instanceGroupManagersSetTargetPoolsRequestResource,
+        key,
+        prettyPrint,
+        quotaUser,
+        requestId,
+        userIp);
   }
 }
