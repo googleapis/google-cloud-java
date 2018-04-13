@@ -148,6 +148,8 @@ public class GapicSpannerRpc implements SpannerRpc {
     CredentialsProvider credentialsProvider =
         GrpcTransportOptions.setUpCredentialsProvider(options);
     try {
+      // TODO: bump the version of gax and remove this try-catch block
+      // applyToAllUnaryMethods does not throw exception in the latest version
       this.stub =
         GrpcSpannerStub.create(
             SpannerStubSettings.newBuilder()
