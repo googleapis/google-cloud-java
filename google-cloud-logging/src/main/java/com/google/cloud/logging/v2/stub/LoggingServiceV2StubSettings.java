@@ -637,6 +637,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
               listLogsSettings);
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

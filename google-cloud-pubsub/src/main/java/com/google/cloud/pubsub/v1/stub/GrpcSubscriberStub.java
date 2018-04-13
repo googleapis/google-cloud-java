@@ -531,7 +531,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

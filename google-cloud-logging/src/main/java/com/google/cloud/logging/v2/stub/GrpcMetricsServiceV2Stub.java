@@ -215,7 +215,7 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

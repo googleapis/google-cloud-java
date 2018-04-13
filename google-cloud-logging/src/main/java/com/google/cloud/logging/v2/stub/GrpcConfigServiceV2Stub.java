@@ -327,7 +327,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

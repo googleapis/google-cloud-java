@@ -221,7 +221,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

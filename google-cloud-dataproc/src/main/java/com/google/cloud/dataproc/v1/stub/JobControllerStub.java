@@ -68,4 +68,7 @@ public abstract class JobControllerStub implements BackgroundResource {
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

@@ -1151,7 +1151,7 @@ public class TopicAdminClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 

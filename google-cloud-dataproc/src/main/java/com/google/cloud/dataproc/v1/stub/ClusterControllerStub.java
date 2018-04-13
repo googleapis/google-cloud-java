@@ -97,4 +97,7 @@ public abstract class ClusterControllerStub implements BackgroundResource {
   public UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: diagnoseClusterCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

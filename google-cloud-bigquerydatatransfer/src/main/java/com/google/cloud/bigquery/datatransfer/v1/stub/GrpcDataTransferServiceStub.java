@@ -485,7 +485,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

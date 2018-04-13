@@ -259,7 +259,7 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

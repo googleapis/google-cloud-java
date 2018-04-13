@@ -36,4 +36,7 @@ public abstract class ReportErrorsServiceStub implements BackgroundResource {
       reportErrorEventCallable() {
     throw new UnsupportedOperationException("Not implemented: reportErrorEventCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

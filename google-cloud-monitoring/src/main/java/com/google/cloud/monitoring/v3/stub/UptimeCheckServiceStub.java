@@ -82,4 +82,7 @@ public abstract class UptimeCheckServiceStub implements BackgroundResource {
       listUptimeCheckIpsCallable() {
     throw new UnsupportedOperationException("Not implemented: listUptimeCheckIpsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

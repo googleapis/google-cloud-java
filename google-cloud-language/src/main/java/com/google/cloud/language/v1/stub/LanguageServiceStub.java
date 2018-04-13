@@ -67,4 +67,7 @@ public abstract class LanguageServiceStub implements BackgroundResource {
   public UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {
     throw new UnsupportedOperationException("Not implemented: annotateTextCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

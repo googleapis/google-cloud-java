@@ -378,7 +378,7 @@ public class GrpcSpannerStub extends SpannerStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

@@ -285,7 +285,7 @@ public class GrpcIntentsStub extends IntentsStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

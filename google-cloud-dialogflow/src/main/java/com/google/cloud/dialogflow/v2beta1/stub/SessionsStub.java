@@ -43,4 +43,7 @@ public abstract class SessionsStub implements BackgroundResource {
       streamingDetectIntentCallable() {
     throw new UnsupportedOperationException("Not implemented: streamingDetectIntentCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

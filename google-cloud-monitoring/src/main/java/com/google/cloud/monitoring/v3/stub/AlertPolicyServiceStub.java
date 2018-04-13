@@ -65,4 +65,7 @@ public abstract class AlertPolicyServiceStub implements BackgroundResource {
   public UnaryCallable<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAlertPolicyCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

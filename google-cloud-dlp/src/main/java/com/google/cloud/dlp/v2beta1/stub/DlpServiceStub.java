@@ -103,4 +103,7 @@ public abstract class DlpServiceStub implements BackgroundResource {
       listRootCategoriesCallable() {
     throw new UnsupportedOperationException("Not implemented: listRootCategoriesCallable()");
   }
+
+  @Override
+  public abstract void close();
 }
