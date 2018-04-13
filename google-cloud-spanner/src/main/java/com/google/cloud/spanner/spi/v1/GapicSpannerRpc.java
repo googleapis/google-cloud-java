@@ -18,6 +18,7 @@ package com.google.cloud.spanner.spi.v1;
 
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -26,7 +27,9 @@ import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
@@ -44,6 +47,7 @@ import com.google.cloud.spanner.v1.stub.GrpcSpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableSet;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.FieldMask;
@@ -143,25 +147,53 @@ public class GapicSpannerRpc implements SpannerRpc {
                 .build());
     CredentialsProvider credentialsProvider =
         GrpcTransportOptions.setUpCredentialsProvider(options);
-
-    this.stub =
+    try {
+      this.stub =
         GrpcSpannerStub.create(
             SpannerStubSettings.newBuilder()
                 .setTransportChannelProvider(channelProvider)
                 .setCredentialsProvider(credentialsProvider)
+                .applyToAllUnaryMethods(
+                    new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+                      @Override
+                      public Void apply(UnaryCallSettings.Builder<?,?> builder) {
+                        builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
+                        return null;
+                      }
+                    })
                 .build());
+    
     this.instanceStub =
         GrpcInstanceAdminStub.create(
             InstanceAdminStubSettings.newBuilder()
                 .setTransportChannelProvider(channelProvider)
                 .setCredentialsProvider(credentialsProvider)
+                .applyToAllUnaryMethods(
+                    new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+                      @Override
+                      public Void apply(UnaryCallSettings.Builder<?,?> builder) {
+                        builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
+                        return null;
+                      }
+                    })
                 .build());
     this.databaseStub =
         GrpcDatabaseAdminStub.create(
             DatabaseAdminStubSettings.newBuilder()
                 .setTransportChannelProvider(channelProvider)
                 .setCredentialsProvider(credentialsProvider)
+                .applyToAllUnaryMethods(
+                    new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+                      @Override
+                      public Void apply(UnaryCallSettings.Builder<?,?> builder) {
+                        builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
+                        return null;
+                      }
+                    })
                 .build());
+    } catch (Exception e) {
+      throw SpannerExceptionFactory.newSpannerException(e);
+    }
   }
 
   @Override
