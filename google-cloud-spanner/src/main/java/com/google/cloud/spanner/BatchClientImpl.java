@@ -23,6 +23,7 @@ import com.google.cloud.spanner.Options.ReadOption;
 import com.google.cloud.spanner.SpannerImpl.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Struct;
@@ -68,7 +69,7 @@ public class BatchClientImpl implements BatchClient {
       super(
           checkNotNull(session),
           checkNotNull(bound),
-          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
+          checkNotNull(spanner).getOptions().getGapicSpannerRpc(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
@@ -81,7 +82,7 @@ public class BatchClientImpl implements BatchClient {
           checkNotNull(session),
           checkNotNull(batchTransactionId).getTransactionId(),
           batchTransactionId.getTimestamp(),
-          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
+          checkNotNull(spanner).getOptions().getGapicSpannerRpc(),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();

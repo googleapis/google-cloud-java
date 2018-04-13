@@ -402,8 +402,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Override
   public ServerStream<PartialResultSet> executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
-    GrpcCallContext context = GrpcCallContext.createDefault()
-        .withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue());
+    GrpcCallContext context = newCallContext(options, request.getSession());
     return stub.executeStreamingSqlCallable().call(request, context);
   }
 

@@ -21,6 +21,7 @@ import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
@@ -341,6 +342,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   protected SpannerRpc getSpannerRpcV1() {
     return (SpannerRpc) getRpc();
+  }
+
+  protected SpannerRpc getGapicSpannerRpc() {
+    return GapicSpannerRpc.create(this);
   }
 
   @SuppressWarnings("unchecked")

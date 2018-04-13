@@ -48,7 +48,8 @@ public final class BatchClientImplTest {
   private static final ByteString TXN_ID = ByteString.copyFromUtf8("my-txn");
   private static final String TIMESTAMP = "2017-11-15T10:54:20Z";
 
-  @Mock private SpannerRpc rpc;
+  @Mock private SpannerRpc rawGrpcRpc;
+  @Mock private SpannerRpc gapicRpc;
   @Mock private SpannerOptions spannerOptions;
   @Captor private ArgumentCaptor<Map<SpannerRpc.Option, Object>> optionsCaptor;
   @Mock private BatchTransactionId txnID;
@@ -59,20 +60,20 @@ public final class BatchClientImplTest {
   public void setUp() {
     initMocks(this);
     DatabaseId db = DatabaseId.of(DB_NAME);
-    SpannerImpl spanner = new SpannerImpl(rpc, rpc, 1, spannerOptions);
+    SpannerImpl spanner = new SpannerImpl(rawGrpcRpc, gapicRpc, 1, spannerOptions);
     client = new BatchClientImpl(db, spanner);
   }
 
   @Test
   public void testBatchReadOnlyTxnWithBound() throws Exception {
     Session sessionProto = Session.newBuilder().setName(SESSION_NAME).build();
-    when(rpc.createSession(eq(DB_NAME), (Map<String, String>) anyMap(), optionsCaptor.capture()))
+    when(gapicRpc.createSession(eq(DB_NAME), (Map<String, String>) anyMap(), optionsCaptor.capture()))
         .thenReturn(sessionProto);
     com.google.protobuf.Timestamp timestamp = Timestamps.parse(TIMESTAMP);
     Transaction txnMetadata =
         Transaction.newBuilder().setId(TXN_ID).setReadTimestamp(timestamp).build();
-    when(spannerOptions.getSpannerRpcV1()).thenReturn(rpc);
-    when(rpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), optionsCaptor.capture()))
+    when(spannerOptions.getGapicSpannerRpc()).thenReturn(gapicRpc);
+    when(gapicRpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), optionsCaptor.capture()))
         .thenReturn(txnMetadata);
 
     BatchReadOnlyTransaction batchTxn = client.batchReadOnlyTransaction(TimestampBound.strong());

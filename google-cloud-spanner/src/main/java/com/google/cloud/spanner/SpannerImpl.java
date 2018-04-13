@@ -165,7 +165,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   SpannerImpl(SpannerOptions options) {
     this(
         options.getSpannerRpcV1(),
-        GapicSpannerRpc.create(options),
+        options.getGapicSpannerRpc(),
         options.getPrefetchChunks(),
         options);
   }
@@ -1063,7 +1063,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   null,
                   session.options));
 
-              // let resume fail for now
+              // Let resume fail for now. Gapic has its own resume, but in order not 
+              // to introduce too much change at a time, we decide to plumb up
+              // ServerStream first and then figure out how to make resume work
             }
           };
       return new GrpcResultSet(stream, this, queryMode);
@@ -1170,7 +1172,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 null,
                 session.options));
               
-              // let resume fail for now
+              // Let resume fail for now. Gapic has its own resume, but in order not 
+              // to introduce too much change at a time, we decide to plumb up
+              // ServerStream first and then figure out how to make resume work
             }
           };
       GrpcResultSet resultSet =
@@ -2288,17 +2292,32 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public boolean hasNext() {
-      return iterator.hasNext();
+      try {
+        return iterator.hasNext();
+      }
+      catch (Exception e) {
+        throw SpannerExceptionFactory.newSpannerException(e);
+      }
     }
 
     @Override
     public T next() {
-      return iterator.next();
+      try {
+        return iterator.next();
+      }
+      catch (Exception e) {
+        throw SpannerExceptionFactory.newSpannerException(e);
+      }
     }
 
     @Override
     public void close(@Nullable String message) {
-      stream.cancel();
+      try {
+        stream.cancel();
+      }
+      catch (Exception e) {
+        throw SpannerExceptionFactory.newSpannerException(e);
+      }
     }
   }
 
