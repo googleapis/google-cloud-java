@@ -233,6 +233,11 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-bigquery</artifactId>
+        <version>v2-rev377-1.23.0</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerydatatransfer</artifactId>
         <version>${bigquerydatatransfer.version}</version>
@@ -263,6 +268,11 @@
         <artifactId>google-cloud-compute</artifactId>
         <version>${compute.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-compute</artifactId>
+        <version>v1-rev103-1.21.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -378,6 +388,11 @@
         <version>${generated-proto-beta.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud.datastore</groupId>
+        <artifactId>datastore-v1-proto-client</artifactId>
+        <version>1.6.0</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dlp</artifactId>
         <version>${dlp.version}</version>
@@ -439,6 +454,11 @@
         <artifactId>google-cloud-dns</artifactId>
         <version>${dns.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-dns</artifactId>
+        <version>v1-rev66-1.23.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -626,6 +646,11 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-cloudresourcemanager</artifactId>
+        <version>v1-rev470-1.23.0</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanner</artifactId>
         <version>${spanner.version}</version>
@@ -719,6 +744,11 @@
         <type>test-jar</type>
       </dependency>
       <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-storage</artifactId>
+        <version>v1-rev114-1.23.0</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-texttospeech</artifactId>
         <version>${texttospeech.version}</version>
@@ -780,6 +810,11 @@
         <artifactId>google-cloud-translate</artifactId>
         <version>${translate.version}</version>
         <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-translate</artifactId>
+        <version>v2-rev47-1.22.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
