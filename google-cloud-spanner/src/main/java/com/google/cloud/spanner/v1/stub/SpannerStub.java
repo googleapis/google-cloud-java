@@ -108,4 +108,7 @@ public abstract class SpannerStub implements BackgroundResource {
   public UnaryCallable<PartitionReadRequest, PartitionResponse> partitionReadCallable() {
     throw new UnsupportedOperationException("Not implemented: partitionReadCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

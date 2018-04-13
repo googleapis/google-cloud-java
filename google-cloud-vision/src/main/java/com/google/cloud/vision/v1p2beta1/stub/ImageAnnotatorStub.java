@@ -58,4 +58,7 @@ public abstract class ImageAnnotatorStub implements BackgroundResource {
       asyncBatchAnnotateFilesCallable() {
     throw new UnsupportedOperationException("Not implemented: asyncBatchAnnotateFilesCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

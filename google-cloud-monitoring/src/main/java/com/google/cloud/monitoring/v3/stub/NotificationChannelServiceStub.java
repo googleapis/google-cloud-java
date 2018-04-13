@@ -96,4 +96,7 @@ public abstract class NotificationChannelServiceStub implements BackgroundResour
       deleteNotificationChannelCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteNotificationChannelCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

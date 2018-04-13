@@ -59,4 +59,7 @@ public abstract class ErrorStatsServiceStub implements BackgroundResource {
   public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEventsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

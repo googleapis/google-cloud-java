@@ -245,7 +245,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

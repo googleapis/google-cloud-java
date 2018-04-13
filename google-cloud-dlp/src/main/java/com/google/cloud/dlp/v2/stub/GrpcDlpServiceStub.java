@@ -759,7 +759,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

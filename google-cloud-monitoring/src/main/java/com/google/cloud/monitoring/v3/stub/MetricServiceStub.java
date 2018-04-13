@@ -104,4 +104,7 @@ public abstract class MetricServiceStub implements BackgroundResource {
   public UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable() {
     throw new UnsupportedOperationException("Not implemented: createTimeSeriesCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

@@ -185,7 +185,7 @@ public class GrpcSpeechStub extends SpeechStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

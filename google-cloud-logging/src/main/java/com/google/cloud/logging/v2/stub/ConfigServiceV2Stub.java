@@ -96,4 +96,7 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
   public UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteExclusionCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

@@ -128,4 +128,7 @@ public abstract class EntityTypesStub implements BackgroundResource {
   public UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchDeleteEntitiesCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

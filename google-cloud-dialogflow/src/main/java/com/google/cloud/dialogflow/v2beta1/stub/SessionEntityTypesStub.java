@@ -69,4 +69,7 @@ public abstract class SessionEntityTypesStub implements BackgroundResource {
   public UnaryCallable<DeleteSessionEntityTypeRequest, Empty> deleteSessionEntityTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSessionEntityTypeCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

@@ -228,7 +228,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

@@ -430,7 +430,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an inspect template for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
    * images, and storage.
    *
    * <p>Sample code:
@@ -454,7 +454,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an inspect template for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
    * images, and storage.
    *
    * <p>Sample code:
@@ -478,7 +478,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the inspect template.
+   * Updates the InspectTemplate.
    *
    * <p>Sample code:
    *
@@ -501,7 +501,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the inspect template.
+   * Updates the InspectTemplate.
    *
    * <p>Sample code:
    *
@@ -524,7 +524,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets an inspect template.
+   * Gets an InspectTemplate.
    *
    * <p>Sample code:
    *
@@ -544,7 +544,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets an inspect template.
+   * Gets an InspectTemplate.
    *
    * <p>Sample code:
    *
@@ -564,7 +564,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists inspect templates.
+   * Lists InspectTemplates.
    *
    * <p>Sample code:
    *
@@ -590,7 +590,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists inspect templates.
+   * Lists InspectTemplates.
    *
    * <p>Sample code:
    *
@@ -615,7 +615,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists inspect templates.
+   * Lists InspectTemplates.
    *
    * <p>Sample code:
    *
@@ -647,7 +647,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an inspect template.
+   * Deletes an InspectTemplate.
    *
    * <p>Sample code:
    *
@@ -670,7 +670,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an inspect template.
+   * Deletes an InspectTemplate.
    *
    * <p>Sample code:
    *
@@ -692,7 +692,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a de-identify template for re-using frequently used configuration for Deidentifying
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
    * content, images, and storage.
    *
    * <p>Sample code:
@@ -717,7 +717,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a de-identify template for re-using frequently used configuration for Deidentifying
+   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
    * content, images, and storage.
    *
    * <p>Sample code:
@@ -741,7 +741,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the de-identify template.
+   * Updates the DeidentifyTemplate.
    *
    * <p>Sample code:
    *
@@ -765,7 +765,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the de-identify template.
+   * Updates the DeidentifyTemplate.
    *
    * <p>Sample code:
    *
@@ -788,7 +788,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a de-identify template.
+   * Gets a DeidentifyTemplate.
    *
    * <p>Sample code:
    *
@@ -811,7 +811,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a de-identify template.
+   * Gets a DeidentifyTemplate.
    *
    * <p>Sample code:
    *
@@ -834,7 +834,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists de-identify templates.
+   * Lists DeidentifyTemplates.
    *
    * <p>Sample code:
    *
@@ -860,7 +860,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists de-identify templates.
+   * Lists DeidentifyTemplates.
    *
    * <p>Sample code:
    *
@@ -885,7 +885,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists de-identify templates.
+   * Lists DeidentifyTemplates.
    *
    * <p>Sample code:
    *
@@ -917,7 +917,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a de-identify template.
+   * Deletes a DeidentifyTemplate.
    *
    * <p>Sample code:
    *
@@ -940,7 +940,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a de-identify template.
+   * Deletes a DeidentifyTemplate.
    *
    * <p>Sample code:
    *
@@ -963,7 +963,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new job to inspect storage or calculate risk metrics [How-to
+   * Creates a new job to inspect storage or calculate risk metrics. [How-to
    * guide](/dlp/docs/compute-risk-analysis).
    *
    * <p>Sample code:
@@ -987,7 +987,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new job to inspect storage or calculate risk metrics [How-to
+   * Creates a new job to inspect storage or calculate risk metrics. [How-to
    * guide](/dlp/docs/compute-risk-analysis).
    *
    * <p>Sample code:
@@ -1493,7 +1493,7 @@ public class DlpServiceClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 

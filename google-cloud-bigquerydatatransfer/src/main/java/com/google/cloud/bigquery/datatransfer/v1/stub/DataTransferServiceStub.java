@@ -133,4 +133,7 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     throw new UnsupportedOperationException("Not implemented: checkValidCredsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

@@ -53,4 +53,7 @@ public abstract class TraceServiceStub implements BackgroundResource {
   public UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTracesCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

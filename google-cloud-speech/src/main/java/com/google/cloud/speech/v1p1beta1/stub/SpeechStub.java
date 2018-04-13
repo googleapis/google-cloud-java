@@ -64,4 +64,7 @@ public abstract class SpeechStub implements BackgroundResource {
       streamingRecognizeCallable() {
     throw new UnsupportedOperationException("Not implemented: streamingRecognizeCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

@@ -296,7 +296,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

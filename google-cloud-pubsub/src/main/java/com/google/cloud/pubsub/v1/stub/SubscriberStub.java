@@ -145,4 +145,7 @@ public abstract class SubscriberStub implements BackgroundResource {
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

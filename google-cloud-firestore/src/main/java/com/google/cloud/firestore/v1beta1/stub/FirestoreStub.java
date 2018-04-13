@@ -122,4 +122,7 @@ public abstract class FirestoreStub implements BackgroundResource {
       listCollectionIdsCallable() {
     throw new UnsupportedOperationException("Not implemented: listCollectionIdsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

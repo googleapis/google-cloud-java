@@ -335,7 +335,7 @@ public class GrpcPublisherStub extends PublisherStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

@@ -82,4 +82,7 @@ public abstract class LoggingServiceV2Stub implements BackgroundResource {
   public UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable() {
     throw new UnsupportedOperationException("Not implemented: listLogsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }
