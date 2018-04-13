@@ -1252,6 +1252,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       BackOff backoff = newBackOff();
       final Context context = Context.current();
       int attempt = 0;
+      // TODO: Change this to use TransactionManager.
       while (true) {
         checkState(
             isValid, "TransactionRunner has been invalidated by a new operation on the session");
