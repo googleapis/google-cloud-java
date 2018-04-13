@@ -147,6 +147,10 @@ public class GapicSpannerRpc implements SpannerRpc {
                 .build());
     CredentialsProvider credentialsProvider =
         GrpcTransportOptions.setUpCredentialsProvider(options);
+    
+    // Disabling retry for now because spanner handles retry in SpannerImpl.
+    // We will finally want to improve gax but for smooth transitioning we
+    // preserve the retry in SpannerImpl
     try {
       // TODO: bump the version of gax and remove this try-catch block
       // applyToAllUnaryMethods does not throw exception in the latest version
