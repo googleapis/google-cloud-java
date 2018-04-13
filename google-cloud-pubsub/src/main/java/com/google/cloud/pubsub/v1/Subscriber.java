@@ -493,7 +493,7 @@ public class Subscriber extends AbstractApiService {
     /**
      * Sets the flow control settings.
      *
-     * <p>In the example below, the {@Subscriber} will make sure that
+     * <p>In the example below, the {@link Subscriber} will make sure that
      *
      * <ul>
      *   <li>there are at most ten thousand outstanding messages, and
