@@ -237,26 +237,6 @@ public interface DatabaseClient {
    *     });
    * </code></pre>
    *
-   * <p>Example of a read write transaction.
-   * <pre> {@code
-   * long singerId = my_singer_id;
-   * TransactionRunner runner = dbClient.readWriteTransaction();
-   * runner.run(
-   *     new TransactionCallable<Void>() {
-   * 
-   *       @Override
-   *       public Void run(TransactionContext transaction) throws Exception {
-   *         String column = "FirstName";
-   *         Struct row =
-   *             transaction.readRow("Singers", Key.of(singerId), Collections.singleton(column));
-   *         String name = row.getString(column);
-   *         transaction.buffer(
-   *             Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
-   *         return null;
-   *       }
-   *     });
-   * }</pre>
-   *
    */
   TransactionRunner readWriteTransaction();
   
