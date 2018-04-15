@@ -29,8 +29,14 @@ public class TimePartitioningTest {
 
   private static final Type TYPE = Type.DAY;
   private static final long EXPIRATION_MS = 42;
+  private static final boolean REQUIRE_PARTITION_FILTER = false;
+  private static final String FIELD = "field";
   private static final TimePartitioning TIME_PARTITIONING =
-      TimePartitioning.of(TYPE, EXPIRATION_MS);
+      TimePartitioning.newBuilder(TYPE)
+              .setExpirationMs(EXPIRATION_MS)
+              .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
+              .setField(FIELD)
+              .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -39,11 +45,26 @@ public class TimePartitioningTest {
   public void testOf() {
     assertEquals(TYPE, TIME_PARTITIONING.getType());
     assertEquals(EXPIRATION_MS, TIME_PARTITIONING.getExpirationMs().longValue());
+    assertEquals(REQUIRE_PARTITION_FILTER, TIME_PARTITIONING.getRequirePartitionFilter());
+    assertEquals(FIELD, TIME_PARTITIONING.getField());
     TimePartitioning partitioning = TimePartitioning.of(TYPE);
     assertEquals(TYPE, partitioning.getType());
     assertNull(partitioning.getExpirationMs());
   }
 
+  @Test
+  public void testBuilder() {
+    TimePartitioning partitioning = TimePartitioning.newBuilder(TYPE).build();
+    assertEquals(TYPE, partitioning.getType());
+    assertNull(partitioning.getExpirationMs());
+    assertNull(partitioning.getRequirePartitionFilter());
+    assertNull(partitioning.getField());
+    partitioning = TimePartitioning.newBuilder(TYPE).setExpirationMs(100).build();
+    assertEquals(TYPE, partitioning.getType());
+    assertEquals(100, (long) partitioning.getExpirationMs());
+    assertNull(partitioning.getRequirePartitionFilter());
+    assertNull(partitioning.getField());
+  }
 
   @Test
   public void testTypeOf_Npe() {
@@ -68,6 +89,8 @@ public class TimePartitioningTest {
     assertEquals(expected, value);
     assertEquals(expected.getType(), value.getType());
     assertEquals(expected.getExpirationMs(), value.getExpirationMs());
+    assertEquals(expected.getRequirePartitionFilter(), value.getRequirePartitionFilter());
+    assertEquals(expected.getField(), value.getField());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

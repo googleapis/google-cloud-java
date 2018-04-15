@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -36,6 +37,8 @@ public final class TimePartitioning implements Serializable {
 
   private final Type type;
   private final Long expirationMs;
+  private final Boolean requirePartitionFilter;
+  private final String field;
 
   /**
    * The type of time partitioning. Currently, the only type supported is {@code DAY}, which will
@@ -49,9 +52,92 @@ public final class TimePartitioning implements Serializable {
     DAY
   }
 
-  private TimePartitioning(Type type, Long expirationMs) {
-    this.type = checkNotNull(type);
-    this.expirationMs = expirationMs;
+  /**
+   * A builder for {@code TimePartitioning} objects.
+   */
+  public abstract static class Builder {
+    abstract Builder setType(Type type);
+
+    /**
+     * Sets the number of milliseconds for which to keep the storage for a partition. When expired,
+     * the storage for the partition is reclaimed.
+     */
+    public abstract Builder setExpirationMs(long expirationMs);
+
+    /**
+     * Sets whether queries over this table require a partition where clause.
+     */
+    @BetaApi
+    public abstract Builder setRequirePartitionFilter(boolean requirePartitionFilter);
+
+    /**
+     * Sets the field to partition the table by. If not set, the table is partitioned by pseudo
+     * column '_PARTITIONTIME'.
+     */
+    @BetaApi
+    public abstract Builder setField(String field);
+
+    public abstract TimePartitioning build();
+  }
+
+  static class BuilderImpl extends Builder {
+
+    private Type type;
+    private Long expirationMs;
+    private Boolean requirePartitionFilter;
+    private String field;
+
+    BuilderImpl() {}
+
+    BuilderImpl(TimePartitioning tp) {
+      this.type = tp.getType();
+      this.expirationMs = tp.getExpirationMs();
+      this.requirePartitionFilter = tp.getRequirePartitionFilter();
+      this.field = tp.getField();
+    }
+
+    BuilderImpl(com.google.api.services.bigquery.model.TimePartitioning tp) {
+      this.type = Type.valueOf(tp.getType());
+      this.expirationMs = tp.getExpirationMs();
+      this.requirePartitionFilter = tp.getRequirePartitionFilter();
+      this.field = tp.getField();
+    }
+
+    @Override
+    Builder setType(Type type) {
+      this.type = type;
+      return this;
+    }
+
+    @Override
+    public Builder setExpirationMs(long expirationMs) {
+      this.expirationMs = expirationMs;
+      return this;
+    }
+
+    @Override
+    public Builder setRequirePartitionFilter(boolean requirePartitionFilter) {
+      this.requirePartitionFilter = requirePartitionFilter;
+      return this;
+    }
+
+    @Override
+    public Builder setField(String field) {
+      this.field = field;
+      return this;
+    }
+
+    @Override
+    public TimePartitioning build() {
+      return new TimePartitioning(this);
+    }
+  }
+
+  private TimePartitioning(BuilderImpl builder) {
+    this.type = checkNotNull(builder.type);
+    this.expirationMs = builder.expirationMs;
+    this.requirePartitionFilter = builder.requirePartitionFilter;
+    this.field = builder.field;
   }
 
 
@@ -72,17 +158,37 @@ public final class TimePartitioning implements Serializable {
     return expirationMs;
   }
 
+
+  /**
+   * If not set, the table is partitioned by pseudo column '_PARTITIONTIME'; if set, the table is
+   * partitioned by this field.
+   */
+  public String getField() {
+    return field;
+  }
+
+
+  /**
+   * If set to true, queries over this table require a partition filter (that can be used for
+   * partition elimination) to be specified.
+   */
+  public Boolean getRequirePartitionFilter() {
+    return requirePartitionFilter;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("type", type)
         .add("expirationMs", expirationMs)
+        .add("requirePartitionFilter", requirePartitionFilter)
+        .add("field", field)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, expirationMs);
+    return Objects.hash(type, expirationMs, requirePartitionFilter, field);
   }
 
   @Override
@@ -97,8 +203,17 @@ public final class TimePartitioning implements Serializable {
    * type supported is {@link Type#DAY}, which will generate one partition per day based on data
    * loading time.
    */
+  public static Builder newBuilder(Type type) {
+    return new BuilderImpl().setType(type);
+  }
+
+  /**
+   * Returns a {@code TimePartitioning} object given the time partitioning type. Currently, the only
+   * type supported is {@link Type#DAY}, which will generate one partition per day based on data
+   * loading time.
+   */
   public static TimePartitioning of(Type type) {
-    return new TimePartitioning(type, null);
+    return newBuilder(type).build();
   }
 
   /**
@@ -110,7 +225,7 @@ public final class TimePartitioning implements Serializable {
    * @param expirationMs the number of milliseconds for which to keep the storage for a partition
    */
   public static TimePartitioning of(Type type, long expirationMs) {
-    return new TimePartitioning(type, expirationMs);
+    return newBuilder(type).setExpirationMs(expirationMs).build();
   }
 
   com.google.api.services.bigquery.model.TimePartitioning toPb() {
@@ -118,12 +233,13 @@ public final class TimePartitioning implements Serializable {
         new com.google.api.services.bigquery.model.TimePartitioning();
     partitioningPb.setType(type.name());
     partitioningPb.setExpirationMs(expirationMs);
+    partitioningPb.setRequirePartitionFilter(requirePartitionFilter);
+    partitioningPb.setField(field);
     return partitioningPb;
   }
 
   static TimePartitioning fromPb(
       com.google.api.services.bigquery.model.TimePartitioning partitioningPb) {
-    return new TimePartitioning(
-        Type.valueOf(partitioningPb.getType()), partitioningPb.getExpirationMs());
+    return new BuilderImpl(partitioningPb).build();
   }
 }
