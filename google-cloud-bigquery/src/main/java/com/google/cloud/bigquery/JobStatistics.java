@@ -323,6 +323,7 @@ public abstract class JobStatistics implements Serializable {
     private final Long totalBytesBilled;
     private final Long totalBytesProcessed;
     private final List<QueryStage> queryPlan;
+    private final Schema schema;
 
     static final class Builder extends JobStatistics.Builder<QueryStatistics, Builder> {
 
@@ -331,6 +332,7 @@ public abstract class JobStatistics implements Serializable {
       private Long totalBytesBilled;
       private Long totalBytesProcessed;
       private List<QueryStage> queryPlan;
+      private Schema schema;
 
       private Builder() {}
 
@@ -345,6 +347,9 @@ public abstract class JobStatistics implements Serializable {
             this.queryPlan =
                 Lists.transform(
                     statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+          }
+          if (statisticsPb.getQuery().getSchema() != null) {
+            this.schema = Schema.fromPb(statisticsPb.getQuery().getSchema());
           }
         }
       }
@@ -374,6 +379,11 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setSchema(Schema schema) {
+        this.schema = schema;
+        return self();
+      }
+
       @Override
       QueryStatistics build() {
         return new QueryStatistics(this);
@@ -387,6 +397,7 @@ public abstract class JobStatistics implements Serializable {
       this.totalBytesBilled = builder.totalBytesBilled;
       this.totalBytesProcessed = builder.totalBytesProcessed;
       this.queryPlan = builder.queryPlan;
+      this.schema = builder.schema;
     }
 
 
@@ -437,6 +448,15 @@ public abstract class JobStatistics implements Serializable {
       return queryPlan;
     }
 
+
+    /**
+     * Returns the schema for the query result. Present only for successful dry run of
+     * non-legacy SQL queries.
+     */
+    public Schema getSchema() {
+      return schema;
+    }
+
     @Override
     ToStringHelper toStringHelper() {
       return super.toStringHelper()
@@ -444,7 +464,8 @@ public abstract class JobStatistics implements Serializable {
           .add("cacheHit", cacheHit)
           .add("totalBytesBilled", totalBytesBilled)
           .add("totalBytesProcessed", totalBytesProcessed)
-          .add("queryPlan", queryPlan);
+          .add("queryPlan", queryPlan)
+          .add("schema", schema);
     }
 
     @Override
@@ -458,7 +479,7 @@ public abstract class JobStatistics implements Serializable {
     @Override
     public final int hashCode() {
       return Objects.hash(baseHashCode(), billingTier, cacheHit, totalBytesBilled,
-          totalBytesProcessed, queryPlan);
+          totalBytesProcessed, queryPlan, schema);
     }
 
     @Override
@@ -470,6 +491,9 @@ public abstract class JobStatistics implements Serializable {
       queryStatisticsPb.setTotalBytesProcessed(totalBytesProcessed);
       if (queryPlan != null) {
         queryStatisticsPb.setQueryPlan(Lists.transform(queryPlan, QueryStage.TO_PB_FUNCTION));
+      }
+      if (schema != null) {
+        queryStatisticsPb.setSchema(schema.toPb());
       }
       return super.toPb().setQuery(queryStatisticsPb);
     }
