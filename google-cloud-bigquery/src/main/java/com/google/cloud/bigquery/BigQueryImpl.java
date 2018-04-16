@@ -234,11 +234,16 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     // and get might work.
     // We can only do this if we randomly generated the ID. Otherwise we might mistakenly
     // fetch a job created by someone else.
+    Job job;
     try {
-      return getJob(jobInfo.getJobId());
+      job = getJob(jobInfo.getJobId());
     } catch (BigQueryException e) {
       throw createException;
     }
+    if (job == null) {
+      throw createException;
+    }
+    return job;
   }
 
   @Override
