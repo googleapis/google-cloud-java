@@ -296,7 +296,7 @@ public class Subscriber extends AbstractApiService {
               @Override
               public void run() {
                 try {
-                    startStreamingConnections();
+                  startStreamingConnections();
                   notifyStarted();
                 } catch (Throwable t) {
                   notifyFailed(t);
@@ -308,16 +308,23 @@ public class Subscriber extends AbstractApiService {
 
   @Override
   protected void doStop() {
-    // stop connection is no-op if connections haven't been started.
-    stopAllStreamingConnections();
-    try {
-      for (AutoCloseable closeable : closeables) {
-        closeable.close();
-      }
-      notifyStopped();
-    } catch (Exception e) {
-      notifyFailed(e);
-    }
+    new Thread(
+            new Runnable() {
+              @Override
+              public void run() {
+                try {
+                  // stop connection is no-op if connections haven't been started.
+                  stopAllStreamingConnections();
+                  for (AutoCloseable closeable : closeables) {
+                    closeable.close();
+                  }
+                  notifyStopped();
+                } catch (Exception e) {
+                  notifyFailed(e);
+                }
+              }
+            })
+        .start();
   }
 
   private void startStreamingConnections() throws IOException {
