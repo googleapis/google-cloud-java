@@ -18,7 +18,7 @@ package com.google.cloud.bigquery;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static com.google.common.truth.Truth.assertThat;
 
 public class GoogleSheetsOptionsTest {
 
@@ -33,7 +33,7 @@ public class GoogleSheetsOptionsTest {
     GoogleSheetsOptions googleSheetsOptions = GOOGLE_SHEETS_OPTIONS.toBuilder()
         .setSkipLeadingRows(123)
         .build();
-    assertEquals(123, (long) googleSheetsOptions.getSkipLeadingRows());
+    assertThat(googleSheetsOptions.getSkipLeadingRows()).isEqualTo(123);
     googleSheetsOptions = googleSheetsOptions.toBuilder().setSkipLeadingRows(SKIP_LEADING_ROWS).build();
     compareGoogleSheetsOptions(GOOGLE_SHEETS_OPTIONS, googleSheetsOptions);
   }
@@ -41,13 +41,13 @@ public class GoogleSheetsOptionsTest {
   @Test
   public void testToBuilderIncomplete() {
     GoogleSheetsOptions googleSheetsOptions = GoogleSheetsOptions.newBuilder().build();
-    assertEquals(googleSheetsOptions, googleSheetsOptions.toBuilder().build());
+    assertThat(googleSheetsOptions.toBuilder().build()).isEqualTo(googleSheetsOptions);
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(FormatOptions.GOOGLE_SHEETS, GOOGLE_SHEETS_OPTIONS.getType());
-    assertEquals(SKIP_LEADING_ROWS, (long) GOOGLE_SHEETS_OPTIONS.getSkipLeadingRows());
+    assertThat(GOOGLE_SHEETS_OPTIONS.getType()).isEqualTo(FormatOptions.GOOGLE_SHEETS);
+    assertThat(GOOGLE_SHEETS_OPTIONS.getSkipLeadingRows()).isEqualTo(SKIP_LEADING_ROWS);
   }
 
 
@@ -59,7 +59,7 @@ public class GoogleSheetsOptionsTest {
   }
 
   private void compareGoogleSheetsOptions(GoogleSheetsOptions expected, GoogleSheetsOptions value) {
-    assertEquals(expected, value);
-    assertEquals(expected.getSkipLeadingRows(), value.getSkipLeadingRows());
+    assertThat(value).isEqualTo(expected);
+    assertThat(value.getSkipLeadingRows()).isEqualTo(expected.getSkipLeadingRows());
   }
 }
