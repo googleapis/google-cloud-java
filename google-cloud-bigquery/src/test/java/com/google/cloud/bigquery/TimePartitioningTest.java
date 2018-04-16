@@ -59,7 +59,7 @@ public class TimePartitioningTest {
     assertNull(partitioning.getExpirationMs());
     assertNull(partitioning.getRequirePartitionFilter());
     assertNull(partitioning.getField());
-    partitioning = TimePartitioning.newBuilder(TYPE).setExpirationMs(100).build();
+    partitioning = TimePartitioning.newBuilder(TYPE).setExpirationMs(100L).build();
     assertEquals(TYPE, partitioning.getType());
     assertEquals(100, (long) partitioning.getExpirationMs());
     assertNull(partitioning.getRequirePartitionFilter());
