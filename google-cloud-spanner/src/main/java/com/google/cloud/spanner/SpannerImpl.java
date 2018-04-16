@@ -1056,13 +1056,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
-              return new CloseableServerStreamIterator<PartialResultSet>(rpc.executeQuery(
-                  resumeToken == null
-                      ? request
-                      : request.toBuilder().setResumeToken(resumeToken).build(),
-                  null,
-                  session.options));
+              return new CloseableServerStreamIterator<PartialResultSet>(
+                  rpc.executeQuery(
+                      resumeToken == null
+                          ? request
+                          : request.toBuilder().setResumeToken(resumeToken).build(),
+                      null,
+                      session.options));
 
+              // TODO(hzyi): make resume work
               // Let resume fail for now. Gapic has its own resume, but in order not 
               // to introduce too much change at a time, we decide to plumb up
               // ServerStream first and then figure out how to make resume work
@@ -1165,13 +1167,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
-              return new CloseableServerStreamIterator<PartialResultSet>(rpc.read(
-                resumeToken == null
-                    ? request
-                    : request.toBuilder().setResumeToken(resumeToken).build(),
-                null,
-                session.options));
+              return new CloseableServerStreamIterator<PartialResultSet>(
+                  rpc.read(
+                      resumeToken == null
+                          ? request
+                          : request.toBuilder().setResumeToken(resumeToken).build(),
+                      null,
+                      session.options));
               
+              // TODO(hzyi): make resume work
               // Let resume fail for now. Gapic has its own resume, but in order not 
               // to introduce too much change at a time, we decide to plumb up
               // ServerStream first and then figure out how to make resume work
@@ -2308,6 +2312,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       catch (Exception e) {
         throw SpannerExceptionFactory.newSpannerException(e);
       }
+    }
+
+    @Override
+    public void remove() {
+      throw new UnsupportedOperationException("Not supported: remove.");
     }
 
     @Override

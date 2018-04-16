@@ -18,7 +18,6 @@ package com.google.cloud.spanner;
 
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
-import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
 import com.google.common.base.Preconditions;
@@ -28,6 +27,10 @@ import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.CancellationException;
 
+/**
+ * TODO(hzyi): convert this class into a general utility class
+ * This class is copied from gax and is used for testing ServerStream only.
+ */
 public class ServerStreamingStashCallable<RequestT, ResponseT>
       extends ServerStreamingCallable<RequestT, ResponseT> {
   private List<ResponseT> responseList;
