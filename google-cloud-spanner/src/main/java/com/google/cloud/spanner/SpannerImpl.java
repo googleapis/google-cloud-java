@@ -25,6 +25,7 @@ import static com.google.common.base.Preconditions.checkState;
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.BaseService;
 import com.google.cloud.ByteArray;
@@ -164,7 +165,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   SpannerImpl(SpannerOptions options) {
     this(
         options.getSpannerRpcV1(),
-        GapicSpannerRpc.create(options),
+        options.getGapicSpannerRpc(),
         options.getPrefetchChunks(),
         options);
   }
@@ -828,7 +829,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public ReadContext singleUse(TimestampBound bound) {
-      return setActive(new SingleReadContext(this, bound, rawGrpcRpc, defaultPrefetchChunks));
+      return setActive(new SingleReadContext(this, bound, gapicRpc, defaultPrefetchChunks));
     }
 
     @Override
@@ -839,7 +840,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
       return setActive(
-          new SingleUseReadOnlyTransaction(this, bound, rawGrpcRpc, defaultPrefetchChunks));
+          new SingleUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
     }
 
     @Override
@@ -850,12 +851,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
       return setActive(
-          new MultiUseReadOnlyTransaction(this, bound, rawGrpcRpc, defaultPrefetchChunks));
+          new MultiUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
     }
 
     @Override
     public TransactionRunner readWriteTransaction() {
-      return setActive(new TransactionRunnerImpl(this, rawGrpcRpc, defaultPrefetchChunks));
+      return setActive(new TransactionRunnerImpl(this, gapicRpc, defaultPrefetchChunks));
     }
 
     @Override
@@ -1055,20 +1056,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
-              GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
-              SpannerRpc.StreamingCall call =
+              return new CloseableServerStreamIterator<PartialResultSet>(
                   rpc.executeQuery(
                       resumeToken == null
                           ? request
                           : request.toBuilder().setResumeToken(resumeToken).build(),
-                      stream.consumer(),
-                      session.options);
-              // We get one message for free.
-              if (prefetchChunks > 1) {
-                call.request(prefetchChunks - 1);
-              }
-              stream.setCall(call);
-              return stream;
+                      null,
+                      session.options));
+
+              // TODO(hzyi): make resume work
+              // Let resume fail for now. Gapic has its own resume, but in order not 
+              // to introduce too much change at a time, we decide to plumb up
+              // ServerStream first and then figure out how to make resume work
             }
           };
       return new GrpcResultSet(stream, this, queryMode);
@@ -1168,20 +1167,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ) {
             @Override
             CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
-              GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
-              SpannerRpc.StreamingCall call =
+              return new CloseableServerStreamIterator<PartialResultSet>(
                   rpc.read(
                       resumeToken == null
                           ? request
                           : request.toBuilder().setResumeToken(resumeToken).build(),
-                      stream.consumer(),
-                      session.options);
-              // We get one message for free.
-              if (prefetchChunks > 1) {
-                call.request(prefetchChunks - 1);
-              }
-              stream.setCall(call);
-              return stream;
+                      null,
+                      session.options));
+              
+              // TODO(hzyi): make resume work
+              // Let resume fail for now. Gapic has its own resume, but in order not 
+              // to introduce too much change at a time, we decide to plumb up
+              // ServerStream first and then figure out how to make resume work
             }
           };
       GrpcResultSet resultSet =
@@ -2285,6 +2282,52 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
      * @param message a message to include in the final RPC status
      */
     void close(@Nullable String message);
+  }
+
+  private static final class CloseableServerStreamIterator<T> implements CloseableIterator<T> {
+
+    private final ServerStream<T> stream;
+    private final Iterator<T> iterator;
+
+    public CloseableServerStreamIterator(ServerStream<T> stream) {
+      this.stream = stream;
+      this.iterator = stream.iterator();
+    }
+
+    @Override
+    public boolean hasNext() {
+      try {
+        return iterator.hasNext();
+      }
+      catch (Exception e) {
+        throw SpannerExceptionFactory.newSpannerException(e);
+      }
+    }
+
+    @Override
+    public T next() {
+      try {
+        return iterator.next();
+      }
+      catch (Exception e) {
+        throw SpannerExceptionFactory.newSpannerException(e);
+      }
+    }
+
+    @Override
+    public void remove() {
+      throw new UnsupportedOperationException("Not supported: remove.");
+    }
+
+    @Override
+    public void close(@Nullable String message) {
+      try {
+        stream.cancel();
+      }
+      catch (Exception e) {
+        throw SpannerExceptionFactory.newSpannerException(e);
+      }
+    }
   }
 
   /** Adapts a streaming read/query call into an iterator over partial result sets. */

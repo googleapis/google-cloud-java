@@ -22,6 +22,7 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
@@ -366,25 +367,15 @@ public class GrpcSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public StreamingCall read(
+  public ServerStream<PartialResultSet> read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
-    return doStreamingCall(
-        SpannerGrpc.METHOD_STREAMING_READ,
-        request,
-        consumer,
-        request.getSession(),
-        Option.CHANNEL_HINT.getLong(options));
+    throw new UnsupportedOperationException("Not implemented: read");
   }
 
   @Override
-  public StreamingCall executeQuery(
+  public ServerStream<PartialResultSet> executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
-    return doStreamingCall(
-        SpannerGrpc.METHOD_EXECUTE_STREAMING_SQL,
-        request,
-        consumer,
-        request.getSession(),
-        Option.CHANNEL_HINT.getLong(options));
+    throw new UnsupportedOperationException("Not implemented: executeQuery");
   }
 
   @Override
