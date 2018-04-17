@@ -239,6 +239,7 @@ workflows:
       - openjdk_7
       - openjdk_8
       - mac_openjdk_8
+      - javadoc_test
       - bigquery_it:
           filters:
             branches:
@@ -291,4 +292,3 @@ workflows:
           filters:
             branches:
               only: master
-      - javadoc_test
