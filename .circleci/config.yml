@@ -291,7 +291,4 @@ workflows:
           filters:
             branches:
               only: master
-      - javadoc_test:
-          filters:
-            branches:
-              only: master
+      - javadoc_test
