@@ -484,6 +484,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         throws SpannerException {
       final String dbName = getDatabaseName(instanceId, databaseId);
       final String opId = operationId != null ? operationId : randomOperationId();
+      // TODO(hzyi) 
+      // spanner checks the exception and if the error code is ALREADY_EXISTS
+      // it creates a new Operation instead of throwing the exception. This
+      // feature is not implemented in this PR but will come later
       try {
         return new TransformingOperationFuture<>(
           rpc.updateDatabaseDdl(dbName, statements, opId),

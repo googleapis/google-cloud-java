@@ -27,6 +27,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+/** A wrapper class to augment proto results returned from get() */
 public class TransformingOperationFuture<ResponseT, RawResponseT, MetadataT>
     implements OperationFuture<ResponseT, MetadataT> {
 
