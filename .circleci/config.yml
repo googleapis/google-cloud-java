@@ -221,6 +221,16 @@ jobs:
       - run:
           name: Run integration tests for google-cloud-translate
           command: ./utilities/verify_single_it.sh google-cloud-translate
+  javadoc_test:
+    working_directory: ~/googleapis
+    <<: *anchor_docker
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_build
+      - run:
+          name: Run mvn javadoc goal
+          command: mvn javadoc:jar javadoc:test-jar
 
 workflows:
   version: 2
@@ -278,6 +288,10 @@ workflows:
             branches:
               only: master
       - translate_it:
+          filters:
+            branches:
+              only: master
+      - javadoc_test:
           filters:
             branches:
               only: master
