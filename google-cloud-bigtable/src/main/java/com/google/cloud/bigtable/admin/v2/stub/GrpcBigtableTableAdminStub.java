@@ -573,7 +573,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

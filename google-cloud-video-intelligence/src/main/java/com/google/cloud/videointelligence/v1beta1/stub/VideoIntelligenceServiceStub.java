@@ -48,4 +48,7 @@ public abstract class VideoIntelligenceServiceStub implements BackgroundResource
   public UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable() {
     throw new UnsupportedOperationException("Not implemented: annotateVideoCallable()");
   }
+
+  @Override
+  public abstract void close();
 }
