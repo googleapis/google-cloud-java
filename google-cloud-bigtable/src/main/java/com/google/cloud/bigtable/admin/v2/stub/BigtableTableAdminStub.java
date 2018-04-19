@@ -136,4 +136,7 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
   public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSnapshotCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

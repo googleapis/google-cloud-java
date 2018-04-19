@@ -138,7 +138,7 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
