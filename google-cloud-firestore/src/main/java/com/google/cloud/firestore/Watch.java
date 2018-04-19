@@ -65,7 +65,7 @@ class Watch implements ApiStreamObserver<ListenResponse> {
    * Target ID used by watch. Watch uses a fixed target id since we only support one target per
    * stream. The actual target ID we use is arbitrary.
    */
-  private static final int WATCH_TARGET_ID = 0xD0;
+  private static final int WATCH_TARGET_ID = 0x1;
 
   private static RetrySettings RETRY_SETTINGS =
       RetrySettings.newBuilder()
