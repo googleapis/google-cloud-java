@@ -908,6 +908,19 @@ public final class TestDefinition {
      */
     com.google.cloud.firestore.conformance.TestDefinition.QueryTestOrBuilder getQueryOrBuilder();
 
+    /**
+     * <code>.tests.ListenTest listen = 9;</code>
+     */
+    boolean hasListen();
+    /**
+     * <code>.tests.ListenTest listen = 9;</code>
+     */
+    com.google.cloud.firestore.conformance.TestDefinition.ListenTest getListen();
+    /**
+     * <code>.tests.ListenTest listen = 9;</code>
+     */
+    com.google.cloud.firestore.conformance.TestDefinition.ListenTestOrBuilder getListenOrBuilder();
+
     public com.google.cloud.firestore.conformance.TestDefinition.Test.TestCase getTestCase();
   }
   /**
@@ -1065,6 +1078,20 @@ public final class TestDefinition {
               testCase_ = 8;
               break;
             }
+            case 74: {
+              com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder subBuilder = null;
+              if (testCase_ == 9) {
+                subBuilder = ((com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_).toBuilder();
+              }
+              test_ =
+                  input.readMessage(com.google.cloud.firestore.conformance.TestDefinition.ListenTest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_);
+                test_ = subBuilder.buildPartial();
+              }
+              testCase_ = 9;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1100,6 +1127,7 @@ public final class TestDefinition {
       UPDATE_PATHS(6),
       DELETE(7),
       QUERY(8),
+      LISTEN(9),
       TEST_NOT_SET(0);
       private final int value;
       private TestCase(int value) {
@@ -1122,6 +1150,7 @@ public final class TestDefinition {
           case 6: return UPDATE_PATHS;
           case 7: return DELETE;
           case 8: return QUERY;
+          case 9: return LISTEN;
           case 0: return TEST_NOT_SET;
           default: return null;
         }
@@ -1361,6 +1390,32 @@ public final class TestDefinition {
       return com.google.cloud.firestore.conformance.TestDefinition.QueryTest.getDefaultInstance();
     }
 
+    public static final int LISTEN_FIELD_NUMBER = 9;
+    /**
+     * <code>.tests.ListenTest listen = 9;</code>
+     */
+    public boolean hasListen() {
+      return testCase_ == 9;
+    }
+    /**
+     * <code>.tests.ListenTest listen = 9;</code>
+     */
+    public com.google.cloud.firestore.conformance.TestDefinition.ListenTest getListen() {
+      if (testCase_ == 9) {
+        return (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_;
+      }
+      return com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance();
+    }
+    /**
+     * <code>.tests.ListenTest listen = 9;</code>
+     */
+    public com.google.cloud.firestore.conformance.TestDefinition.ListenTestOrBuilder getListenOrBuilder() {
+      if (testCase_ == 9) {
+        return (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_;
+      }
+      return com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1396,6 +1451,9 @@ public final class TestDefinition {
       }
       if (testCase_ == 8) {
         output.writeMessage(8, (com.google.cloud.firestore.conformance.TestDefinition.QueryTest) test_);
+      }
+      if (testCase_ == 9) {
+        output.writeMessage(9, (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_);
       }
       unknownFields.writeTo(output);
     }
@@ -1435,6 +1493,10 @@ public final class TestDefinition {
       if (testCase_ == 8) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(8, (com.google.cloud.firestore.conformance.TestDefinition.QueryTest) test_);
+      }
+      if (testCase_ == 9) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(9, (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1486,6 +1548,10 @@ public final class TestDefinition {
           result = result && getQuery()
               .equals(other.getQuery());
           break;
+        case 9:
+          result = result && getListen()
+              .equals(other.getListen());
+          break;
         case 0:
         default:
       }
@@ -1530,6 +1596,10 @@ public final class TestDefinition {
         case 8:
           hash = (37 * hash) + QUERY_FIELD_NUMBER;
           hash = (53 * hash) + getQuery().hashCode();
+          break;
+        case 9:
+          hash = (37 * hash) + LISTEN_FIELD_NUMBER;
+          hash = (53 * hash) + getListen().hashCode();
           break;
         case 0:
         default:
@@ -1743,6 +1813,13 @@ public final class TestDefinition {
             result.test_ = queryBuilder_.build();
           }
         }
+        if (testCase_ == 9) {
+          if (listenBuilder_ == null) {
+            result.test_ = test_;
+          } else {
+            result.test_ = listenBuilder_.build();
+          }
+        }
         result.testCase_ = testCase_;
         onBuilt();
         return result;
@@ -1816,6 +1893,10 @@ public final class TestDefinition {
           }
           case QUERY: {
             mergeQuery(other.getQuery());
+            break;
+          }
+          case LISTEN: {
+            mergeListen(other.getListen());
             break;
           }
           case TEST_NOT_SET: {
@@ -2903,6 +2984,142 @@ public final class TestDefinition {
         testCase_ = 8;
         onChanged();;
         return queryBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.firestore.conformance.TestDefinition.ListenTest, com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder, com.google.cloud.firestore.conformance.TestDefinition.ListenTestOrBuilder> listenBuilder_;
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      public boolean hasListen() {
+        return testCase_ == 9;
+      }
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.ListenTest getListen() {
+        if (listenBuilder_ == null) {
+          if (testCase_ == 9) {
+            return (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_;
+          }
+          return com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance();
+        } else {
+          if (testCase_ == 9) {
+            return listenBuilder_.getMessage();
+          }
+          return com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      public Builder setListen(com.google.cloud.firestore.conformance.TestDefinition.ListenTest value) {
+        if (listenBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          test_ = value;
+          onChanged();
+        } else {
+          listenBuilder_.setMessage(value);
+        }
+        testCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      public Builder setListen(
+          com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder builderForValue) {
+        if (listenBuilder_ == null) {
+          test_ = builderForValue.build();
+          onChanged();
+        } else {
+          listenBuilder_.setMessage(builderForValue.build());
+        }
+        testCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      public Builder mergeListen(com.google.cloud.firestore.conformance.TestDefinition.ListenTest value) {
+        if (listenBuilder_ == null) {
+          if (testCase_ == 9 &&
+              test_ != com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance()) {
+            test_ = com.google.cloud.firestore.conformance.TestDefinition.ListenTest.newBuilder((com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            test_ = value;
+          }
+          onChanged();
+        } else {
+          if (testCase_ == 9) {
+            listenBuilder_.mergeFrom(value);
+          }
+          listenBuilder_.setMessage(value);
+        }
+        testCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      public Builder clearListen() {
+        if (listenBuilder_ == null) {
+          if (testCase_ == 9) {
+            testCase_ = 0;
+            test_ = null;
+            onChanged();
+          }
+        } else {
+          if (testCase_ == 9) {
+            testCase_ = 0;
+            test_ = null;
+          }
+          listenBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder getListenBuilder() {
+        return getListenFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.ListenTestOrBuilder getListenOrBuilder() {
+        if ((testCase_ == 9) && (listenBuilder_ != null)) {
+          return listenBuilder_.getMessageOrBuilder();
+        } else {
+          if (testCase_ == 9) {
+            return (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_;
+          }
+          return com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tests.ListenTest listen = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.firestore.conformance.TestDefinition.ListenTest, com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder, com.google.cloud.firestore.conformance.TestDefinition.ListenTestOrBuilder>
+      getListenFieldBuilder() {
+        if (listenBuilder_ == null) {
+          if (!(testCase_ == 9)) {
+            test_ = com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance();
+          }
+          listenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.firestore.conformance.TestDefinition.ListenTest, com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder, com.google.cloud.firestore.conformance.TestDefinition.ListenTestOrBuilder>(
+              (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) test_,
+              getParentForChildren(),
+              isClean());
+          test_ = null;
+        }
+        testCase_ = 9;
+        onChanged();;
+        return listenBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -19285,6 +19502,3458 @@ public final class TestDefinition {
 
   }
 
+  public interface ListenTestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tests.ListenTest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    java.util.List<com.google.firestore.v1beta1.ListenResponse>
+    getResponsesList();
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    com.google.firestore.v1beta1.ListenResponse getResponses(int index);
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    int getResponsesCount();
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    java.util.List<? extends com.google.firestore.v1beta1.ListenResponseOrBuilder>
+    getResponsesOrBuilderList();
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    com.google.firestore.v1beta1.ListenResponseOrBuilder getResponsesOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    java.util.List<com.google.cloud.firestore.conformance.TestDefinition.Snapshot>
+    getSnapshotsList();
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    com.google.cloud.firestore.conformance.TestDefinition.Snapshot getSnapshots(int index);
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    int getSnapshotsCount();
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    java.util.List<? extends com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder>
+    getSnapshotsOrBuilderList();
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder getSnapshotsOrBuilder(
+        int index);
+
+    /**
+     * <code>bool is_error = 3;</code>
+     */
+    boolean getIsError();
+  }
+  /**
+   * <pre>
+   * A test of the Listen streaming RPC (a.k.a. FireStore watch).
+   * If the sequence of responses is provided to the implementation,
+   * it should produce the sequence of snapshots.
+   * If is_error is true, an error should occur after the snapshots.
+   * The tests assume that the query is
+   * Collection("projects/projectID/databases/(default)/documents/C").OrderBy("a", Ascending)
+   * The watch target ID used in these tests is 1. Test interpreters
+   * should either change their client's ID for testing,
+   * or change the ID in the tests before running them.
+   * </pre>
+   *
+   * Protobuf type {@code tests.ListenTest}
+   */
+  public  static final class ListenTest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tests.ListenTest)
+      ListenTestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ListenTest.newBuilder() to construct.
+    private ListenTest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListenTest() {
+      responses_ = java.util.Collections.emptyList();
+      snapshots_ = java.util.Collections.emptyList();
+      isError_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListenTest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                responses_ = new java.util.ArrayList<com.google.firestore.v1beta1.ListenResponse>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              responses_.add(
+                  input.readMessage(com.google.firestore.v1beta1.ListenResponse.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                snapshots_ = new java.util.ArrayList<com.google.cloud.firestore.conformance.TestDefinition.Snapshot>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              snapshots_.add(
+                  input.readMessage(com.google.cloud.firestore.conformance.TestDefinition.Snapshot.parser(), extensionRegistry));
+              break;
+            }
+            case 24: {
+
+              isError_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          responses_ = java.util.Collections.unmodifiableList(responses_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          snapshots_ = java.util.Collections.unmodifiableList(snapshots_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_ListenTest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_ListenTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.ListenTest.class, com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int RESPONSES_FIELD_NUMBER = 1;
+    private java.util.List<com.google.firestore.v1beta1.ListenResponse> responses_;
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    public java.util.List<com.google.firestore.v1beta1.ListenResponse> getResponsesList() {
+      return responses_;
+    }
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    public java.util.List<? extends com.google.firestore.v1beta1.ListenResponseOrBuilder>
+    getResponsesOrBuilderList() {
+      return responses_;
+    }
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    public int getResponsesCount() {
+      return responses_.size();
+    }
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    public com.google.firestore.v1beta1.ListenResponse getResponses(int index) {
+      return responses_.get(index);
+    }
+    /**
+     * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+     */
+    public com.google.firestore.v1beta1.ListenResponseOrBuilder getResponsesOrBuilder(
+        int index) {
+      return responses_.get(index);
+    }
+
+    public static final int SNAPSHOTS_FIELD_NUMBER = 2;
+    private java.util.List<com.google.cloud.firestore.conformance.TestDefinition.Snapshot> snapshots_;
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    public java.util.List<com.google.cloud.firestore.conformance.TestDefinition.Snapshot> getSnapshotsList() {
+      return snapshots_;
+    }
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    public java.util.List<? extends com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder>
+    getSnapshotsOrBuilderList() {
+      return snapshots_;
+    }
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    public int getSnapshotsCount() {
+      return snapshots_.size();
+    }
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    public com.google.cloud.firestore.conformance.TestDefinition.Snapshot getSnapshots(int index) {
+      return snapshots_.get(index);
+    }
+    /**
+     * <code>repeated .tests.Snapshot snapshots = 2;</code>
+     */
+    public com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder getSnapshotsOrBuilder(
+        int index) {
+      return snapshots_.get(index);
+    }
+
+    public static final int IS_ERROR_FIELD_NUMBER = 3;
+    private boolean isError_;
+    /**
+     * <code>bool is_error = 3;</code>
+     */
+    public boolean getIsError() {
+      return isError_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+        throws java.io.IOException {
+      for (int i = 0; i < responses_.size(); i++) {
+        output.writeMessage(1, responses_.get(i));
+      }
+      for (int i = 0; i < snapshots_.size(); i++) {
+        output.writeMessage(2, snapshots_.get(i));
+      }
+      if (isError_ != false) {
+        output.writeBool(3, isError_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < responses_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, responses_.get(i));
+      }
+      for (int i = 0; i < snapshots_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, snapshots_.get(i));
+      }
+      if (isError_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(3, isError_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.firestore.conformance.TestDefinition.ListenTest)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.firestore.conformance.TestDefinition.ListenTest other = (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) obj;
+
+      boolean result = true;
+      result = result && getResponsesList()
+          .equals(other.getResponsesList());
+      result = result && getSnapshotsList()
+          .equals(other.getSnapshotsList());
+      result = result && (getIsError()
+          == other.getIsError());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getResponsesCount() > 0) {
+        hash = (37 * hash) + RESPONSES_FIELD_NUMBER;
+        hash = (53 * hash) + getResponsesList().hashCode();
+      }
+      if (getSnapshotsCount() > 0) {
+        hash = (37 * hash) + SNAPSHOTS_FIELD_NUMBER;
+        hash = (53 * hash) + getSnapshotsList().hashCode();
+      }
+      hash = (37 * hash) + IS_ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsError());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.cloud.firestore.conformance.TestDefinition.ListenTest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A test of the Listen streaming RPC (a.k.a. FireStore watch).
+     * If the sequence of responses is provided to the implementation,
+     * it should produce the sequence of snapshots.
+     * If is_error is true, an error should occur after the snapshots.
+     * The tests assume that the query is
+     * Collection("projects/projectID/databases/(default)/documents/C").OrderBy("a", Ascending)
+     * The watch target ID used in these tests is 1. Test interpreters
+     * should either change their client's ID for testing,
+     * or change the ID in the tests before running them.
+     * </pre>
+     *
+     * Protobuf type {@code tests.ListenTest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tests.ListenTest)
+        com.google.cloud.firestore.conformance.TestDefinition.ListenTestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_ListenTest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_ListenTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.ListenTest.class, com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder.class);
+      }
+
+      // Construct using com.google.cloud.firestore.conformance.TestDefinition.ListenTest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+            .alwaysUseFieldBuilders) {
+          getResponsesFieldBuilder();
+          getSnapshotsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (responsesBuilder_ == null) {
+          responses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          responsesBuilder_.clear();
+        }
+        if (snapshotsBuilder_ == null) {
+          snapshots_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          snapshotsBuilder_.clear();
+        }
+        isError_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_ListenTest_descriptor;
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.ListenTest getDefaultInstanceForType() {
+        return com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance();
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.ListenTest build() {
+        com.google.cloud.firestore.conformance.TestDefinition.ListenTest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.ListenTest buildPartial() {
+        com.google.cloud.firestore.conformance.TestDefinition.ListenTest result = new com.google.cloud.firestore.conformance.TestDefinition.ListenTest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (responsesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            responses_ = java.util.Collections.unmodifiableList(responses_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.responses_ = responses_;
+        } else {
+          result.responses_ = responsesBuilder_.build();
+        }
+        if (snapshotsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            snapshots_ = java.util.Collections.unmodifiableList(snapshots_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.snapshots_ = snapshots_;
+        } else {
+          result.snapshots_ = snapshotsBuilder_.build();
+        }
+        result.isError_ = isError_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.firestore.conformance.TestDefinition.ListenTest) {
+          return mergeFrom((com.google.cloud.firestore.conformance.TestDefinition.ListenTest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.firestore.conformance.TestDefinition.ListenTest other) {
+        if (other == com.google.cloud.firestore.conformance.TestDefinition.ListenTest.getDefaultInstance()) return this;
+        if (responsesBuilder_ == null) {
+          if (!other.responses_.isEmpty()) {
+            if (responses_.isEmpty()) {
+              responses_ = other.responses_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResponsesIsMutable();
+              responses_.addAll(other.responses_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.responses_.isEmpty()) {
+            if (responsesBuilder_.isEmpty()) {
+              responsesBuilder_.dispose();
+              responsesBuilder_ = null;
+              responses_ = other.responses_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              responsesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getResponsesFieldBuilder() : null;
+            } else {
+              responsesBuilder_.addAllMessages(other.responses_);
+            }
+          }
+        }
+        if (snapshotsBuilder_ == null) {
+          if (!other.snapshots_.isEmpty()) {
+            if (snapshots_.isEmpty()) {
+              snapshots_ = other.snapshots_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSnapshotsIsMutable();
+              snapshots_.addAll(other.snapshots_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.snapshots_.isEmpty()) {
+            if (snapshotsBuilder_.isEmpty()) {
+              snapshotsBuilder_.dispose();
+              snapshotsBuilder_ = null;
+              snapshots_ = other.snapshots_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              snapshotsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getSnapshotsFieldBuilder() : null;
+            } else {
+              snapshotsBuilder_.addAllMessages(other.snapshots_);
+            }
+          }
+        }
+        if (other.getIsError() != false) {
+          setIsError(other.getIsError());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.firestore.conformance.TestDefinition.ListenTest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.cloud.firestore.conformance.TestDefinition.ListenTest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.google.firestore.v1beta1.ListenResponse> responses_ =
+          java.util.Collections.emptyList();
+      private void ensureResponsesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          responses_ = new java.util.ArrayList<com.google.firestore.v1beta1.ListenResponse>(responses_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.firestore.v1beta1.ListenResponse, com.google.firestore.v1beta1.ListenResponse.Builder, com.google.firestore.v1beta1.ListenResponseOrBuilder> responsesBuilder_;
+
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public java.util.List<com.google.firestore.v1beta1.ListenResponse> getResponsesList() {
+        if (responsesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(responses_);
+        } else {
+          return responsesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public int getResponsesCount() {
+        if (responsesBuilder_ == null) {
+          return responses_.size();
+        } else {
+          return responsesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public com.google.firestore.v1beta1.ListenResponse getResponses(int index) {
+        if (responsesBuilder_ == null) {
+          return responses_.get(index);
+        } else {
+          return responsesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder setResponses(
+          int index, com.google.firestore.v1beta1.ListenResponse value) {
+        if (responsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResponsesIsMutable();
+          responses_.set(index, value);
+          onChanged();
+        } else {
+          responsesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder setResponses(
+          int index, com.google.firestore.v1beta1.ListenResponse.Builder builderForValue) {
+        if (responsesBuilder_ == null) {
+          ensureResponsesIsMutable();
+          responses_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          responsesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder addResponses(com.google.firestore.v1beta1.ListenResponse value) {
+        if (responsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResponsesIsMutable();
+          responses_.add(value);
+          onChanged();
+        } else {
+          responsesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder addResponses(
+          int index, com.google.firestore.v1beta1.ListenResponse value) {
+        if (responsesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResponsesIsMutable();
+          responses_.add(index, value);
+          onChanged();
+        } else {
+          responsesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder addResponses(
+          com.google.firestore.v1beta1.ListenResponse.Builder builderForValue) {
+        if (responsesBuilder_ == null) {
+          ensureResponsesIsMutable();
+          responses_.add(builderForValue.build());
+          onChanged();
+        } else {
+          responsesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder addResponses(
+          int index, com.google.firestore.v1beta1.ListenResponse.Builder builderForValue) {
+        if (responsesBuilder_ == null) {
+          ensureResponsesIsMutable();
+          responses_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          responsesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder addAllResponses(
+          java.lang.Iterable<? extends com.google.firestore.v1beta1.ListenResponse> values) {
+        if (responsesBuilder_ == null) {
+          ensureResponsesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, responses_);
+          onChanged();
+        } else {
+          responsesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder clearResponses() {
+        if (responsesBuilder_ == null) {
+          responses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          responsesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public Builder removeResponses(int index) {
+        if (responsesBuilder_ == null) {
+          ensureResponsesIsMutable();
+          responses_.remove(index);
+          onChanged();
+        } else {
+          responsesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public com.google.firestore.v1beta1.ListenResponse.Builder getResponsesBuilder(
+          int index) {
+        return getResponsesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public com.google.firestore.v1beta1.ListenResponseOrBuilder getResponsesOrBuilder(
+          int index) {
+        if (responsesBuilder_ == null) {
+          return responses_.get(index);  } else {
+          return responsesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public java.util.List<? extends com.google.firestore.v1beta1.ListenResponseOrBuilder>
+      getResponsesOrBuilderList() {
+        if (responsesBuilder_ != null) {
+          return responsesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(responses_);
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public com.google.firestore.v1beta1.ListenResponse.Builder addResponsesBuilder() {
+        return getResponsesFieldBuilder().addBuilder(
+            com.google.firestore.v1beta1.ListenResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public com.google.firestore.v1beta1.ListenResponse.Builder addResponsesBuilder(
+          int index) {
+        return getResponsesFieldBuilder().addBuilder(
+            index, com.google.firestore.v1beta1.ListenResponse.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code>
+       */
+      public java.util.List<com.google.firestore.v1beta1.ListenResponse.Builder>
+      getResponsesBuilderList() {
+        return getResponsesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.firestore.v1beta1.ListenResponse, com.google.firestore.v1beta1.ListenResponse.Builder, com.google.firestore.v1beta1.ListenResponseOrBuilder>
+      getResponsesFieldBuilder() {
+        if (responsesBuilder_ == null) {
+          responsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.firestore.v1beta1.ListenResponse, com.google.firestore.v1beta1.ListenResponse.Builder, com.google.firestore.v1beta1.ListenResponseOrBuilder>(
+              responses_,
+              ((bitField0_ & 0x00000001) == 0x00000001),
+              getParentForChildren(),
+              isClean());
+          responses_ = null;
+        }
+        return responsesBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.firestore.conformance.TestDefinition.Snapshot> snapshots_ =
+          java.util.Collections.emptyList();
+      private void ensureSnapshotsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          snapshots_ = new java.util.ArrayList<com.google.cloud.firestore.conformance.TestDefinition.Snapshot>(snapshots_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.cloud.firestore.conformance.TestDefinition.Snapshot, com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder, com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder> snapshotsBuilder_;
+
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public java.util.List<com.google.cloud.firestore.conformance.TestDefinition.Snapshot> getSnapshotsList() {
+        if (snapshotsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(snapshots_);
+        } else {
+          return snapshotsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public int getSnapshotsCount() {
+        if (snapshotsBuilder_ == null) {
+          return snapshots_.size();
+        } else {
+          return snapshotsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.Snapshot getSnapshots(int index) {
+        if (snapshotsBuilder_ == null) {
+          return snapshots_.get(index);
+        } else {
+          return snapshotsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder setSnapshots(
+          int index, com.google.cloud.firestore.conformance.TestDefinition.Snapshot value) {
+        if (snapshotsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSnapshotsIsMutable();
+          snapshots_.set(index, value);
+          onChanged();
+        } else {
+          snapshotsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder setSnapshots(
+          int index, com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder builderForValue) {
+        if (snapshotsBuilder_ == null) {
+          ensureSnapshotsIsMutable();
+          snapshots_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          snapshotsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder addSnapshots(com.google.cloud.firestore.conformance.TestDefinition.Snapshot value) {
+        if (snapshotsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSnapshotsIsMutable();
+          snapshots_.add(value);
+          onChanged();
+        } else {
+          snapshotsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder addSnapshots(
+          int index, com.google.cloud.firestore.conformance.TestDefinition.Snapshot value) {
+        if (snapshotsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSnapshotsIsMutable();
+          snapshots_.add(index, value);
+          onChanged();
+        } else {
+          snapshotsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder addSnapshots(
+          com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder builderForValue) {
+        if (snapshotsBuilder_ == null) {
+          ensureSnapshotsIsMutable();
+          snapshots_.add(builderForValue.build());
+          onChanged();
+        } else {
+          snapshotsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder addSnapshots(
+          int index, com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder builderForValue) {
+        if (snapshotsBuilder_ == null) {
+          ensureSnapshotsIsMutable();
+          snapshots_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          snapshotsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder addAllSnapshots(
+          java.lang.Iterable<? extends com.google.cloud.firestore.conformance.TestDefinition.Snapshot> values) {
+        if (snapshotsBuilder_ == null) {
+          ensureSnapshotsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, snapshots_);
+          onChanged();
+        } else {
+          snapshotsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder clearSnapshots() {
+        if (snapshotsBuilder_ == null) {
+          snapshots_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          snapshotsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public Builder removeSnapshots(int index) {
+        if (snapshotsBuilder_ == null) {
+          ensureSnapshotsIsMutable();
+          snapshots_.remove(index);
+          onChanged();
+        } else {
+          snapshotsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder getSnapshotsBuilder(
+          int index) {
+        return getSnapshotsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder getSnapshotsOrBuilder(
+          int index) {
+        if (snapshotsBuilder_ == null) {
+          return snapshots_.get(index);  } else {
+          return snapshotsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public java.util.List<? extends com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder>
+      getSnapshotsOrBuilderList() {
+        if (snapshotsBuilder_ != null) {
+          return snapshotsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(snapshots_);
+        }
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder addSnapshotsBuilder() {
+        return getSnapshotsFieldBuilder().addBuilder(
+            com.google.cloud.firestore.conformance.TestDefinition.Snapshot.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder addSnapshotsBuilder(
+          int index) {
+        return getSnapshotsFieldBuilder().addBuilder(
+            index, com.google.cloud.firestore.conformance.TestDefinition.Snapshot.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tests.Snapshot snapshots = 2;</code>
+       */
+      public java.util.List<com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder>
+      getSnapshotsBuilderList() {
+        return getSnapshotsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.cloud.firestore.conformance.TestDefinition.Snapshot, com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder, com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder>
+      getSnapshotsFieldBuilder() {
+        if (snapshotsBuilder_ == null) {
+          snapshotsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.firestore.conformance.TestDefinition.Snapshot, com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder, com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder>(
+              snapshots_,
+              ((bitField0_ & 0x00000002) == 0x00000002),
+              getParentForChildren(),
+              isClean());
+          snapshots_ = null;
+        }
+        return snapshotsBuilder_;
+      }
+
+      private boolean isError_ ;
+      /**
+       * <code>bool is_error = 3;</code>
+       */
+      public boolean getIsError() {
+        return isError_;
+      }
+      /**
+       * <code>bool is_error = 3;</code>
+       */
+      public Builder setIsError(boolean value) {
+
+        isError_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_error = 3;</code>
+       */
+      public Builder clearIsError() {
+
+        isError_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:tests.ListenTest)
+    }
+
+    // @@protoc_insertion_point(class_scope:tests.ListenTest)
+    private static final com.google.cloud.firestore.conformance.TestDefinition.ListenTest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.firestore.conformance.TestDefinition.ListenTest();
+    }
+
+    public static com.google.cloud.firestore.conformance.TestDefinition.ListenTest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListenTest>
+        PARSER = new com.google.protobuf.AbstractParser<ListenTest>() {
+      public ListenTest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListenTest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListenTest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListenTest> getParserForType() {
+      return PARSER;
+    }
+
+    public com.google.cloud.firestore.conformance.TestDefinition.ListenTest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SnapshotOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tests.Snapshot)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    java.util.List<com.google.firestore.v1beta1.Document>
+    getDocsList();
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    com.google.firestore.v1beta1.Document getDocs(int index);
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    int getDocsCount();
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    java.util.List<? extends com.google.firestore.v1beta1.DocumentOrBuilder>
+    getDocsOrBuilderList();
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    com.google.firestore.v1beta1.DocumentOrBuilder getDocsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    java.util.List<com.google.cloud.firestore.conformance.TestDefinition.DocChange>
+    getChangesList();
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    com.google.cloud.firestore.conformance.TestDefinition.DocChange getChanges(int index);
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    int getChangesCount();
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    java.util.List<? extends com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder>
+    getChangesOrBuilderList();
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder getChangesOrBuilder(
+        int index);
+
+    /**
+     * <code>.google.protobuf.Timestamp read_time = 3;</code>
+     */
+    boolean hasReadTime();
+    /**
+     * <code>.google.protobuf.Timestamp read_time = 3;</code>
+     */
+    com.google.protobuf.Timestamp getReadTime();
+    /**
+     * <code>.google.protobuf.Timestamp read_time = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
+  }
+  /**
+   * Protobuf type {@code tests.Snapshot}
+   */
+  public  static final class Snapshot extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tests.Snapshot)
+      SnapshotOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Snapshot.newBuilder() to construct.
+    private Snapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Snapshot() {
+      docs_ = java.util.Collections.emptyList();
+      changes_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Snapshot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                docs_ = new java.util.ArrayList<com.google.firestore.v1beta1.Document>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              docs_.add(
+                  input.readMessage(com.google.firestore.v1beta1.Document.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                changes_ = new java.util.ArrayList<com.google.cloud.firestore.conformance.TestDefinition.DocChange>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              changes_.add(
+                  input.readMessage(com.google.cloud.firestore.conformance.TestDefinition.DocChange.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (readTime_ != null) {
+                subBuilder = readTime_.toBuilder();
+              }
+              readTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readTime_);
+                readTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          docs_ = java.util.Collections.unmodifiableList(docs_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          changes_ = java.util.Collections.unmodifiableList(changes_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_Snapshot_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_Snapshot_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.Snapshot.class, com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DOCS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.firestore.v1beta1.Document> docs_;
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    public java.util.List<com.google.firestore.v1beta1.Document> getDocsList() {
+      return docs_;
+    }
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    public java.util.List<? extends com.google.firestore.v1beta1.DocumentOrBuilder>
+    getDocsOrBuilderList() {
+      return docs_;
+    }
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    public int getDocsCount() {
+      return docs_.size();
+    }
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    public com.google.firestore.v1beta1.Document getDocs(int index) {
+      return docs_.get(index);
+    }
+    /**
+     * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+     */
+    public com.google.firestore.v1beta1.DocumentOrBuilder getDocsOrBuilder(
+        int index) {
+      return docs_.get(index);
+    }
+
+    public static final int CHANGES_FIELD_NUMBER = 2;
+    private java.util.List<com.google.cloud.firestore.conformance.TestDefinition.DocChange> changes_;
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    public java.util.List<com.google.cloud.firestore.conformance.TestDefinition.DocChange> getChangesList() {
+      return changes_;
+    }
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    public java.util.List<? extends com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder>
+    getChangesOrBuilderList() {
+      return changes_;
+    }
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    public int getChangesCount() {
+      return changes_.size();
+    }
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    public com.google.cloud.firestore.conformance.TestDefinition.DocChange getChanges(int index) {
+      return changes_.get(index);
+    }
+    /**
+     * <code>repeated .tests.DocChange changes = 2;</code>
+     */
+    public com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder getChangesOrBuilder(
+        int index) {
+      return changes_.get(index);
+    }
+
+    public static final int READ_TIME_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp readTime_;
+    /**
+     * <code>.google.protobuf.Timestamp read_time = 3;</code>
+     */
+    public boolean hasReadTime() {
+      return readTime_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp read_time = 3;</code>
+     */
+    public com.google.protobuf.Timestamp getReadTime() {
+      return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp read_time = 3;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
+      return getReadTime();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+        throws java.io.IOException {
+      for (int i = 0; i < docs_.size(); i++) {
+        output.writeMessage(1, docs_.get(i));
+      }
+      for (int i = 0; i < changes_.size(); i++) {
+        output.writeMessage(2, changes_.get(i));
+      }
+      if (readTime_ != null) {
+        output.writeMessage(3, getReadTime());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < docs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, docs_.get(i));
+      }
+      for (int i = 0; i < changes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, changes_.get(i));
+      }
+      if (readTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, getReadTime());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.firestore.conformance.TestDefinition.Snapshot)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.firestore.conformance.TestDefinition.Snapshot other = (com.google.cloud.firestore.conformance.TestDefinition.Snapshot) obj;
+
+      boolean result = true;
+      result = result && getDocsList()
+          .equals(other.getDocsList());
+      result = result && getChangesList()
+          .equals(other.getChangesList());
+      result = result && (hasReadTime() == other.hasReadTime());
+      if (hasReadTime()) {
+        result = result && getReadTime()
+            .equals(other.getReadTime());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDocsCount() > 0) {
+        hash = (37 * hash) + DOCS_FIELD_NUMBER;
+        hash = (53 * hash) + getDocsList().hashCode();
+      }
+      if (getChangesCount() > 0) {
+        hash = (37 * hash) + CHANGES_FIELD_NUMBER;
+        hash = (53 * hash) + getChangesList().hashCode();
+      }
+      if (hasReadTime()) {
+        hash = (37 * hash) + READ_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getReadTime().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.cloud.firestore.conformance.TestDefinition.Snapshot prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code tests.Snapshot}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tests.Snapshot)
+        com.google.cloud.firestore.conformance.TestDefinition.SnapshotOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_Snapshot_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_Snapshot_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.Snapshot.class, com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder.class);
+      }
+
+      // Construct using com.google.cloud.firestore.conformance.TestDefinition.Snapshot.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+            .alwaysUseFieldBuilders) {
+          getDocsFieldBuilder();
+          getChangesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (docsBuilder_ == null) {
+          docs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          docsBuilder_.clear();
+        }
+        if (changesBuilder_ == null) {
+          changes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          changesBuilder_.clear();
+        }
+        if (readTimeBuilder_ == null) {
+          readTime_ = null;
+        } else {
+          readTime_ = null;
+          readTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_Snapshot_descriptor;
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.Snapshot getDefaultInstanceForType() {
+        return com.google.cloud.firestore.conformance.TestDefinition.Snapshot.getDefaultInstance();
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.Snapshot build() {
+        com.google.cloud.firestore.conformance.TestDefinition.Snapshot result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.Snapshot buildPartial() {
+        com.google.cloud.firestore.conformance.TestDefinition.Snapshot result = new com.google.cloud.firestore.conformance.TestDefinition.Snapshot(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (docsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            docs_ = java.util.Collections.unmodifiableList(docs_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.docs_ = docs_;
+        } else {
+          result.docs_ = docsBuilder_.build();
+        }
+        if (changesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            changes_ = java.util.Collections.unmodifiableList(changes_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.changes_ = changes_;
+        } else {
+          result.changes_ = changesBuilder_.build();
+        }
+        if (readTimeBuilder_ == null) {
+          result.readTime_ = readTime_;
+        } else {
+          result.readTime_ = readTimeBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.firestore.conformance.TestDefinition.Snapshot) {
+          return mergeFrom((com.google.cloud.firestore.conformance.TestDefinition.Snapshot)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.firestore.conformance.TestDefinition.Snapshot other) {
+        if (other == com.google.cloud.firestore.conformance.TestDefinition.Snapshot.getDefaultInstance()) return this;
+        if (docsBuilder_ == null) {
+          if (!other.docs_.isEmpty()) {
+            if (docs_.isEmpty()) {
+              docs_ = other.docs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDocsIsMutable();
+              docs_.addAll(other.docs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.docs_.isEmpty()) {
+            if (docsBuilder_.isEmpty()) {
+              docsBuilder_.dispose();
+              docsBuilder_ = null;
+              docs_ = other.docs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              docsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getDocsFieldBuilder() : null;
+            } else {
+              docsBuilder_.addAllMessages(other.docs_);
+            }
+          }
+        }
+        if (changesBuilder_ == null) {
+          if (!other.changes_.isEmpty()) {
+            if (changes_.isEmpty()) {
+              changes_ = other.changes_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureChangesIsMutable();
+              changes_.addAll(other.changes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.changes_.isEmpty()) {
+            if (changesBuilder_.isEmpty()) {
+              changesBuilder_.dispose();
+              changesBuilder_ = null;
+              changes_ = other.changes_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              changesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                      getChangesFieldBuilder() : null;
+            } else {
+              changesBuilder_.addAllMessages(other.changes_);
+            }
+          }
+        }
+        if (other.hasReadTime()) {
+          mergeReadTime(other.getReadTime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.firestore.conformance.TestDefinition.Snapshot parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.cloud.firestore.conformance.TestDefinition.Snapshot) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.google.firestore.v1beta1.Document> docs_ =
+          java.util.Collections.emptyList();
+      private void ensureDocsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          docs_ = new java.util.ArrayList<com.google.firestore.v1beta1.Document>(docs_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder> docsBuilder_;
+
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public java.util.List<com.google.firestore.v1beta1.Document> getDocsList() {
+        if (docsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(docs_);
+        } else {
+          return docsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public int getDocsCount() {
+        if (docsBuilder_ == null) {
+          return docs_.size();
+        } else {
+          return docsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public com.google.firestore.v1beta1.Document getDocs(int index) {
+        if (docsBuilder_ == null) {
+          return docs_.get(index);
+        } else {
+          return docsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder setDocs(
+          int index, com.google.firestore.v1beta1.Document value) {
+        if (docsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDocsIsMutable();
+          docs_.set(index, value);
+          onChanged();
+        } else {
+          docsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder setDocs(
+          int index, com.google.firestore.v1beta1.Document.Builder builderForValue) {
+        if (docsBuilder_ == null) {
+          ensureDocsIsMutable();
+          docs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          docsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder addDocs(com.google.firestore.v1beta1.Document value) {
+        if (docsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDocsIsMutable();
+          docs_.add(value);
+          onChanged();
+        } else {
+          docsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder addDocs(
+          int index, com.google.firestore.v1beta1.Document value) {
+        if (docsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDocsIsMutable();
+          docs_.add(index, value);
+          onChanged();
+        } else {
+          docsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder addDocs(
+          com.google.firestore.v1beta1.Document.Builder builderForValue) {
+        if (docsBuilder_ == null) {
+          ensureDocsIsMutable();
+          docs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          docsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder addDocs(
+          int index, com.google.firestore.v1beta1.Document.Builder builderForValue) {
+        if (docsBuilder_ == null) {
+          ensureDocsIsMutable();
+          docs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          docsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder addAllDocs(
+          java.lang.Iterable<? extends com.google.firestore.v1beta1.Document> values) {
+        if (docsBuilder_ == null) {
+          ensureDocsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, docs_);
+          onChanged();
+        } else {
+          docsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder clearDocs() {
+        if (docsBuilder_ == null) {
+          docs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          docsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public Builder removeDocs(int index) {
+        if (docsBuilder_ == null) {
+          ensureDocsIsMutable();
+          docs_.remove(index);
+          onChanged();
+        } else {
+          docsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public com.google.firestore.v1beta1.Document.Builder getDocsBuilder(
+          int index) {
+        return getDocsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public com.google.firestore.v1beta1.DocumentOrBuilder getDocsOrBuilder(
+          int index) {
+        if (docsBuilder_ == null) {
+          return docs_.get(index);  } else {
+          return docsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public java.util.List<? extends com.google.firestore.v1beta1.DocumentOrBuilder>
+      getDocsOrBuilderList() {
+        if (docsBuilder_ != null) {
+          return docsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(docs_);
+        }
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public com.google.firestore.v1beta1.Document.Builder addDocsBuilder() {
+        return getDocsFieldBuilder().addBuilder(
+            com.google.firestore.v1beta1.Document.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public com.google.firestore.v1beta1.Document.Builder addDocsBuilder(
+          int index) {
+        return getDocsFieldBuilder().addBuilder(
+            index, com.google.firestore.v1beta1.Document.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .google.firestore.v1beta1.Document docs = 1;</code>
+       */
+      public java.util.List<com.google.firestore.v1beta1.Document.Builder>
+      getDocsBuilderList() {
+        return getDocsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder>
+      getDocsFieldBuilder() {
+        if (docsBuilder_ == null) {
+          docsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder>(
+              docs_,
+              ((bitField0_ & 0x00000001) == 0x00000001),
+              getParentForChildren(),
+              isClean());
+          docs_ = null;
+        }
+        return docsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.firestore.conformance.TestDefinition.DocChange> changes_ =
+          java.util.Collections.emptyList();
+      private void ensureChangesIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          changes_ = new java.util.ArrayList<com.google.cloud.firestore.conformance.TestDefinition.DocChange>(changes_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.cloud.firestore.conformance.TestDefinition.DocChange, com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder, com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder> changesBuilder_;
+
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public java.util.List<com.google.cloud.firestore.conformance.TestDefinition.DocChange> getChangesList() {
+        if (changesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(changes_);
+        } else {
+          return changesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public int getChangesCount() {
+        if (changesBuilder_ == null) {
+          return changes_.size();
+        } else {
+          return changesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChange getChanges(int index) {
+        if (changesBuilder_ == null) {
+          return changes_.get(index);
+        } else {
+          return changesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder setChanges(
+          int index, com.google.cloud.firestore.conformance.TestDefinition.DocChange value) {
+        if (changesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChangesIsMutable();
+          changes_.set(index, value);
+          onChanged();
+        } else {
+          changesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder setChanges(
+          int index, com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder builderForValue) {
+        if (changesBuilder_ == null) {
+          ensureChangesIsMutable();
+          changes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          changesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder addChanges(com.google.cloud.firestore.conformance.TestDefinition.DocChange value) {
+        if (changesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChangesIsMutable();
+          changes_.add(value);
+          onChanged();
+        } else {
+          changesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder addChanges(
+          int index, com.google.cloud.firestore.conformance.TestDefinition.DocChange value) {
+        if (changesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChangesIsMutable();
+          changes_.add(index, value);
+          onChanged();
+        } else {
+          changesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder addChanges(
+          com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder builderForValue) {
+        if (changesBuilder_ == null) {
+          ensureChangesIsMutable();
+          changes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          changesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder addChanges(
+          int index, com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder builderForValue) {
+        if (changesBuilder_ == null) {
+          ensureChangesIsMutable();
+          changes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          changesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder addAllChanges(
+          java.lang.Iterable<? extends com.google.cloud.firestore.conformance.TestDefinition.DocChange> values) {
+        if (changesBuilder_ == null) {
+          ensureChangesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, changes_);
+          onChanged();
+        } else {
+          changesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder clearChanges() {
+        if (changesBuilder_ == null) {
+          changes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          changesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public Builder removeChanges(int index) {
+        if (changesBuilder_ == null) {
+          ensureChangesIsMutable();
+          changes_.remove(index);
+          onChanged();
+        } else {
+          changesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder getChangesBuilder(
+          int index) {
+        return getChangesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder getChangesOrBuilder(
+          int index) {
+        if (changesBuilder_ == null) {
+          return changes_.get(index);  } else {
+          return changesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public java.util.List<? extends com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder>
+      getChangesOrBuilderList() {
+        if (changesBuilder_ != null) {
+          return changesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(changes_);
+        }
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder addChangesBuilder() {
+        return getChangesFieldBuilder().addBuilder(
+            com.google.cloud.firestore.conformance.TestDefinition.DocChange.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder addChangesBuilder(
+          int index) {
+        return getChangesFieldBuilder().addBuilder(
+            index, com.google.cloud.firestore.conformance.TestDefinition.DocChange.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tests.DocChange changes = 2;</code>
+       */
+      public java.util.List<com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder>
+      getChangesBuilderList() {
+        return getChangesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.google.cloud.firestore.conformance.TestDefinition.DocChange, com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder, com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder>
+      getChangesFieldBuilder() {
+        if (changesBuilder_ == null) {
+          changesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.firestore.conformance.TestDefinition.DocChange, com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder, com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder>(
+              changes_,
+              ((bitField0_ & 0x00000002) == 0x00000002),
+              getParentForChildren(),
+              isClean());
+          changes_ = null;
+        }
+        return changesBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp readTime_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readTimeBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      public boolean hasReadTime() {
+        return readTimeBuilder_ != null || readTime_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      public com.google.protobuf.Timestamp getReadTime() {
+        if (readTimeBuilder_ == null) {
+          return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+        } else {
+          return readTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      public Builder setReadTime(com.google.protobuf.Timestamp value) {
+        if (readTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          readTime_ = value;
+          onChanged();
+        } else {
+          readTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      public Builder setReadTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (readTimeBuilder_ == null) {
+          readTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          readTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
+        if (readTimeBuilder_ == null) {
+          if (readTime_ != null) {
+            readTime_ =
+                com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+          } else {
+            readTime_ = value;
+          }
+          onChanged();
+        } else {
+          readTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      public Builder clearReadTime() {
+        if (readTimeBuilder_ == null) {
+          readTime_ = null;
+          onChanged();
+        } else {
+          readTime_ = null;
+          readTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
+
+        onChanged();
+        return getReadTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
+        if (readTimeBuilder_ != null) {
+          return readTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return readTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp read_time = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>
+      getReadTimeFieldBuilder() {
+        if (readTimeBuilder_ == null) {
+          readTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+              getReadTime(),
+              getParentForChildren(),
+              isClean());
+          readTime_ = null;
+        }
+        return readTimeBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:tests.Snapshot)
+    }
+
+    // @@protoc_insertion_point(class_scope:tests.Snapshot)
+    private static final com.google.cloud.firestore.conformance.TestDefinition.Snapshot DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.firestore.conformance.TestDefinition.Snapshot();
+    }
+
+    public static com.google.cloud.firestore.conformance.TestDefinition.Snapshot getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Snapshot>
+        PARSER = new com.google.protobuf.AbstractParser<Snapshot>() {
+      public Snapshot parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Snapshot(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Snapshot> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Snapshot> getParserForType() {
+      return PARSER;
+    }
+
+    public com.google.cloud.firestore.conformance.TestDefinition.Snapshot getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DocChangeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tests.DocChange)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.tests.DocChange.Kind kind = 1;</code>
+     */
+    int getKindValue();
+    /**
+     * <code>.tests.DocChange.Kind kind = 1;</code>
+     */
+    com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind getKind();
+
+    /**
+     * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+     */
+    boolean hasDoc();
+    /**
+     * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+     */
+    com.google.firestore.v1beta1.Document getDoc();
+    /**
+     * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+     */
+    com.google.firestore.v1beta1.DocumentOrBuilder getDocOrBuilder();
+
+    /**
+     * <code>int32 old_index = 3;</code>
+     */
+    int getOldIndex();
+
+    /**
+     * <code>int32 new_index = 4;</code>
+     */
+    int getNewIndex();
+  }
+  /**
+   * Protobuf type {@code tests.DocChange}
+   */
+  public  static final class DocChange extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tests.DocChange)
+      DocChangeOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DocChange.newBuilder() to construct.
+    private DocChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DocChange() {
+      kind_ = 0;
+      oldIndex_ = 0;
+      newIndex_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DocChange(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              kind_ = rawValue;
+              break;
+            }
+            case 18: {
+              com.google.firestore.v1beta1.Document.Builder subBuilder = null;
+              if (doc_ != null) {
+                subBuilder = doc_.toBuilder();
+              }
+              doc_ = input.readMessage(com.google.firestore.v1beta1.Document.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(doc_);
+                doc_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+
+              oldIndex_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              newIndex_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_DocChange_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_DocChange_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.DocChange.class, com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code tests.DocChange.Kind}
+     */
+    public enum Kind
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>KIND_UNSPECIFIED = 0;</code>
+       */
+      KIND_UNSPECIFIED(0),
+      /**
+       * <code>ADDED = 1;</code>
+       */
+      ADDED(1),
+      /**
+       * <code>REMOVED = 2;</code>
+       */
+      REMOVED(2),
+      /**
+       * <code>MODIFIED = 3;</code>
+       */
+      MODIFIED(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>KIND_UNSPECIFIED = 0;</code>
+       */
+      public static final int KIND_UNSPECIFIED_VALUE = 0;
+      /**
+       * <code>ADDED = 1;</code>
+       */
+      public static final int ADDED_VALUE = 1;
+      /**
+       * <code>REMOVED = 2;</code>
+       */
+      public static final int REMOVED_VALUE = 2;
+      /**
+       * <code>MODIFIED = 3;</code>
+       */
+      public static final int MODIFIED_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Kind valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Kind forNumber(int value) {
+        switch (value) {
+          case 0: return KIND_UNSPECIFIED;
+          case 1: return ADDED;
+          case 2: return REMOVED;
+          case 3: return MODIFIED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Kind>
+      internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Kind> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Kind>() {
+            public Kind findValueByNumber(int number) {
+              return Kind.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+      getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+      getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+      getDescriptor() {
+        return com.google.cloud.firestore.conformance.TestDefinition.DocChange.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Kind[] VALUES = values();
+
+      public static Kind valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+              "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Kind(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:tests.DocChange.Kind)
+    }
+
+    public static final int KIND_FIELD_NUMBER = 1;
+    private int kind_;
+    /**
+     * <code>.tests.DocChange.Kind kind = 1;</code>
+     */
+    public int getKindValue() {
+      return kind_;
+    }
+    /**
+     * <code>.tests.DocChange.Kind kind = 1;</code>
+     */
+    public com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind getKind() {
+      com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind result = com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.valueOf(kind_);
+      return result == null ? com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.UNRECOGNIZED : result;
+    }
+
+    public static final int DOC_FIELD_NUMBER = 2;
+    private com.google.firestore.v1beta1.Document doc_;
+    /**
+     * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+     */
+    public boolean hasDoc() {
+      return doc_ != null;
+    }
+    /**
+     * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+     */
+    public com.google.firestore.v1beta1.Document getDoc() {
+      return doc_ == null ? com.google.firestore.v1beta1.Document.getDefaultInstance() : doc_;
+    }
+    /**
+     * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+     */
+    public com.google.firestore.v1beta1.DocumentOrBuilder getDocOrBuilder() {
+      return getDoc();
+    }
+
+    public static final int OLD_INDEX_FIELD_NUMBER = 3;
+    private int oldIndex_;
+    /**
+     * <code>int32 old_index = 3;</code>
+     */
+    public int getOldIndex() {
+      return oldIndex_;
+    }
+
+    public static final int NEW_INDEX_FIELD_NUMBER = 4;
+    private int newIndex_;
+    /**
+     * <code>int32 new_index = 4;</code>
+     */
+    public int getNewIndex() {
+      return newIndex_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+        throws java.io.IOException {
+      if (kind_ != com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.KIND_UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, kind_);
+      }
+      if (doc_ != null) {
+        output.writeMessage(2, getDoc());
+      }
+      if (oldIndex_ != 0) {
+        output.writeInt32(3, oldIndex_);
+      }
+      if (newIndex_ != 0) {
+        output.writeInt32(4, newIndex_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (kind_ != com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.KIND_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, kind_);
+      }
+      if (doc_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, getDoc());
+      }
+      if (oldIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(3, oldIndex_);
+      }
+      if (newIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(4, newIndex_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.firestore.conformance.TestDefinition.DocChange)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.firestore.conformance.TestDefinition.DocChange other = (com.google.cloud.firestore.conformance.TestDefinition.DocChange) obj;
+
+      boolean result = true;
+      result = result && kind_ == other.kind_;
+      result = result && (hasDoc() == other.hasDoc());
+      if (hasDoc()) {
+        result = result && getDoc()
+            .equals(other.getDoc());
+      }
+      result = result && (getOldIndex()
+          == other.getOldIndex());
+      result = result && (getNewIndex()
+          == other.getNewIndex());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + kind_;
+      if (hasDoc()) {
+        hash = (37 * hash) + DOC_FIELD_NUMBER;
+        hash = (53 * hash) + getDoc().hashCode();
+      }
+      hash = (37 * hash) + OLD_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getOldIndex();
+      hash = (37 * hash) + NEW_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getNewIndex();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.cloud.firestore.conformance.TestDefinition.DocChange prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code tests.DocChange}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tests.DocChange)
+        com.google.cloud.firestore.conformance.TestDefinition.DocChangeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_DocChange_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_DocChange_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.DocChange.class, com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder.class);
+      }
+
+      // Construct using com.google.cloud.firestore.conformance.TestDefinition.DocChange.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+            .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        kind_ = 0;
+
+        if (docBuilder_ == null) {
+          doc_ = null;
+        } else {
+          doc_ = null;
+          docBuilder_ = null;
+        }
+        oldIndex_ = 0;
+
+        newIndex_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.google.cloud.firestore.conformance.TestDefinition.internal_static_tests_DocChange_descriptor;
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChange getDefaultInstanceForType() {
+        return com.google.cloud.firestore.conformance.TestDefinition.DocChange.getDefaultInstance();
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChange build() {
+        com.google.cloud.firestore.conformance.TestDefinition.DocChange result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChange buildPartial() {
+        com.google.cloud.firestore.conformance.TestDefinition.DocChange result = new com.google.cloud.firestore.conformance.TestDefinition.DocChange(this);
+        result.kind_ = kind_;
+        if (docBuilder_ == null) {
+          result.doc_ = doc_;
+        } else {
+          result.doc_ = docBuilder_.build();
+        }
+        result.oldIndex_ = oldIndex_;
+        result.newIndex_ = newIndex_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.firestore.conformance.TestDefinition.DocChange) {
+          return mergeFrom((com.google.cloud.firestore.conformance.TestDefinition.DocChange)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.firestore.conformance.TestDefinition.DocChange other) {
+        if (other == com.google.cloud.firestore.conformance.TestDefinition.DocChange.getDefaultInstance()) return this;
+        if (other.kind_ != 0) {
+          setKindValue(other.getKindValue());
+        }
+        if (other.hasDoc()) {
+          mergeDoc(other.getDoc());
+        }
+        if (other.getOldIndex() != 0) {
+          setOldIndex(other.getOldIndex());
+        }
+        if (other.getNewIndex() != 0) {
+          setNewIndex(other.getNewIndex());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.firestore.conformance.TestDefinition.DocChange parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.cloud.firestore.conformance.TestDefinition.DocChange) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int kind_ = 0;
+      /**
+       * <code>.tests.DocChange.Kind kind = 1;</code>
+       */
+      public int getKindValue() {
+        return kind_;
+      }
+      /**
+       * <code>.tests.DocChange.Kind kind = 1;</code>
+       */
+      public Builder setKindValue(int value) {
+        kind_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.tests.DocChange.Kind kind = 1;</code>
+       */
+      public com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind getKind() {
+        com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind result = com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.valueOf(kind_);
+        return result == null ? com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.tests.DocChange.Kind kind = 1;</code>
+       */
+      public Builder setKind(com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        kind_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.tests.DocChange.Kind kind = 1;</code>
+       */
+      public Builder clearKind() {
+
+        kind_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.firestore.v1beta1.Document doc_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder> docBuilder_;
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      public boolean hasDoc() {
+        return docBuilder_ != null || doc_ != null;
+      }
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      public com.google.firestore.v1beta1.Document getDoc() {
+        if (docBuilder_ == null) {
+          return doc_ == null ? com.google.firestore.v1beta1.Document.getDefaultInstance() : doc_;
+        } else {
+          return docBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      public Builder setDoc(com.google.firestore.v1beta1.Document value) {
+        if (docBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          doc_ = value;
+          onChanged();
+        } else {
+          docBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      public Builder setDoc(
+          com.google.firestore.v1beta1.Document.Builder builderForValue) {
+        if (docBuilder_ == null) {
+          doc_ = builderForValue.build();
+          onChanged();
+        } else {
+          docBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      public Builder mergeDoc(com.google.firestore.v1beta1.Document value) {
+        if (docBuilder_ == null) {
+          if (doc_ != null) {
+            doc_ =
+                com.google.firestore.v1beta1.Document.newBuilder(doc_).mergeFrom(value).buildPartial();
+          } else {
+            doc_ = value;
+          }
+          onChanged();
+        } else {
+          docBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      public Builder clearDoc() {
+        if (docBuilder_ == null) {
+          doc_ = null;
+          onChanged();
+        } else {
+          doc_ = null;
+          docBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      public com.google.firestore.v1beta1.Document.Builder getDocBuilder() {
+
+        onChanged();
+        return getDocFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      public com.google.firestore.v1beta1.DocumentOrBuilder getDocOrBuilder() {
+        if (docBuilder_ != null) {
+          return docBuilder_.getMessageOrBuilder();
+        } else {
+          return doc_ == null ?
+              com.google.firestore.v1beta1.Document.getDefaultInstance() : doc_;
+        }
+      }
+      /**
+       * <code>.google.firestore.v1beta1.Document doc = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder>
+      getDocFieldBuilder() {
+        if (docBuilder_ == null) {
+          docBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder>(
+              getDoc(),
+              getParentForChildren(),
+              isClean());
+          doc_ = null;
+        }
+        return docBuilder_;
+      }
+
+      private int oldIndex_ ;
+      /**
+       * <code>int32 old_index = 3;</code>
+       */
+      public int getOldIndex() {
+        return oldIndex_;
+      }
+      /**
+       * <code>int32 old_index = 3;</code>
+       */
+      public Builder setOldIndex(int value) {
+
+        oldIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 old_index = 3;</code>
+       */
+      public Builder clearOldIndex() {
+
+        oldIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int newIndex_ ;
+      /**
+       * <code>int32 new_index = 4;</code>
+       */
+      public int getNewIndex() {
+        return newIndex_;
+      }
+      /**
+       * <code>int32 new_index = 4;</code>
+       */
+      public Builder setNewIndex(int value) {
+
+        newIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 new_index = 4;</code>
+       */
+      public Builder clearNewIndex() {
+
+        newIndex_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:tests.DocChange)
+    }
+
+    // @@protoc_insertion_point(class_scope:tests.DocChange)
+    private static final com.google.cloud.firestore.conformance.TestDefinition.DocChange DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.firestore.conformance.TestDefinition.DocChange();
+    }
+
+    public static com.google.cloud.firestore.conformance.TestDefinition.DocChange getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DocChange>
+        PARSER = new com.google.protobuf.AbstractParser<DocChange>() {
+      public DocChange parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DocChange(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DocChange> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DocChange> getParserForType() {
+      return PARSER;
+    }
+
+    public com.google.cloud.firestore.conformance.TestDefinition.DocChange getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_tests_TestSuite_descriptor;
   private static final
@@ -19370,6 +23039,21 @@ public final class TestDefinition {
   private static final
   com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tests_FieldPath_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_tests_ListenTest_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tests_ListenTest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_tests_Snapshot_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tests_Snapshot_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_tests_DocChange_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tests_DocChange_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
   getDescriptor() {
@@ -19379,66 +23063,82 @@ public final class TestDefinition {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-        "\n\025test_definition.proto\022\005tests\032(google/f" +
-            "irestore/v1beta1/firestore.proto\032%google" +
-            "/firestore/v1beta1/common.proto\032$google/" +
-            "firestore/v1beta1/query.proto\"\'\n\tTestSui" +
-            "te\022\032\n\005tests\030\001 \003(\0132\013.tests.Test\"\243\002\n\004Test\022" +
-            "\023\n\013description\030\001 \001(\t\022\035\n\003get\030\002 \001(\0132\016.test" +
-            "s.GetTestH\000\022#\n\006create\030\003 \001(\0132\021.tests.Crea" +
-            "teTestH\000\022\035\n\003set\030\004 \001(\0132\016.tests.SetTestH\000\022" +
-            "#\n\006update\030\005 \001(\0132\021.tests.UpdateTestH\000\022.\n\014" +
-            "update_paths\030\006 \001(\0132\026.tests.UpdatePathsTe" +
-            "stH\000\022#\n\006delete\030\007 \001(\0132\021.tests.DeleteTestH" +
-            "\000\022!\n\005query\030\010 \001(\0132\020.tests.QueryTestH\000B\006\n\004" +
-            "test\"^\n\007GetTest\022\024\n\014doc_ref_path\030\001 \001(\t\022=\n" +
-            "\007request\030\002 \001(\0132,.google.firestore.v1beta" +
-            "1.GetDocumentRequest\"\201\001\n\nCreateTest\022\024\n\014d" +
-            "oc_ref_path\030\001 \001(\t\022\021\n\tjson_data\030\002 \001(\t\0228\n\007" +
-            "request\030\003 \001(\0132\'.google.firestore.v1beta1" +
-            ".CommitRequest\022\020\n\010is_error\030\004 \001(\010\"\240\001\n\007Set" +
-            "Test\022\024\n\014doc_ref_path\030\001 \001(\t\022 \n\006option\030\002 \001" +
-            "(\0132\020.tests.SetOption\022\021\n\tjson_data\030\003 \001(\t\022" +
-            "8\n\007request\030\004 \001(\0132\'.google.firestore.v1be" +
-            "ta1.CommitRequest\022\020\n\010is_error\030\005 \001(\010\"\277\001\n\n" +
-            "UpdateTest\022\024\n\014doc_ref_path\030\001 \001(\t\022<\n\014prec" +
-            "ondition\030\002 \001(\0132&.google.firestore.v1beta" +
-            "1.Precondition\022\021\n\tjson_data\030\003 \001(\t\0228\n\007req" +
-            "uest\030\004 \001(\0132\'.google.firestore.v1beta1.Co" +
-            "mmitRequest\022\020\n\010is_error\030\005 \001(\010\"\355\001\n\017Update" +
-            "PathsTest\022\024\n\014doc_ref_path\030\001 \001(\t\022<\n\014preco" +
-            "ndition\030\002 \001(\0132&.google.firestore.v1beta1" +
-            ".Precondition\022%\n\013field_paths\030\003 \003(\0132\020.tes" +
-            "ts.FieldPath\022\023\n\013json_values\030\004 \003(\t\0228\n\007req" +
-            "uest\030\005 \001(\0132\'.google.firestore.v1beta1.Co" +
-            "mmitRequest\022\020\n\010is_error\030\006 \001(\010\"\254\001\n\nDelete" +
-            "Test\022\024\n\014doc_ref_path\030\001 \001(\t\022<\n\014preconditi" +
-            "on\030\002 \001(\0132&.google.firestore.v1beta1.Prec" +
-            "ondition\0228\n\007request\030\003 \001(\0132\'.google.fires" +
-            "tore.v1beta1.CommitRequest\022\020\n\010is_error\030\004" +
-            " \001(\010\":\n\tSetOption\022\013\n\003all\030\001 \001(\010\022 \n\006fields" +
-            "\030\002 \003(\0132\020.tests.FieldPath\"\212\001\n\tQueryTest\022\021" +
-            "\n\tcoll_path\030\001 \001(\t\022\036\n\007clauses\030\002 \003(\0132\r.tes" +
-            "ts.Clause\0228\n\005query\030\003 \001(\0132).google.firest" +
-            "ore.v1beta1.StructuredQuery\022\020\n\010is_error\030" +
-            "\004 \001(\010\"\250\002\n\006Clause\022\037\n\006select\030\001 \001(\0132\r.tests" +
-            ".SelectH\000\022\035\n\005where\030\002 \001(\0132\014.tests.WhereH\000" +
-            "\022\"\n\010order_by\030\003 \001(\0132\016.tests.OrderByH\000\022\020\n\006" +
-            "offset\030\004 \001(\005H\000\022\017\n\005limit\030\005 \001(\005H\000\022!\n\010start" +
-            "_at\030\006 \001(\0132\r.tests.CursorH\000\022$\n\013start_afte" +
-            "r\030\007 \001(\0132\r.tests.CursorH\000\022\037\n\006end_at\030\010 \001(\013" +
-            "2\r.tests.CursorH\000\022#\n\nend_before\030\t \001(\0132\r." +
-            "tests.CursorH\000B\010\n\006clause\"*\n\006Select\022 \n\006fi" +
-            "elds\030\001 \003(\0132\020.tests.FieldPath\"G\n\005Where\022\036\n" +
-            "\004path\030\001 \001(\0132\020.tests.FieldPath\022\n\n\002op\030\002 \001(" +
-            "\t\022\022\n\njson_value\030\003 \001(\t\"<\n\007OrderBy\022\036\n\004path" +
-            "\030\001 \001(\0132\020.tests.FieldPath\022\021\n\tdirection\030\002 " +
-            "\001(\t\"G\n\006Cursor\022(\n\014doc_snapshot\030\001 \001(\0132\022.te" +
-            "sts.DocSnapshot\022\023\n\013json_values\030\002 \003(\t\".\n\013" +
-            "DocSnapshot\022\014\n\004path\030\001 \001(\t\022\021\n\tjson_data\030\002" +
-            " \001(\t\"\032\n\tFieldPath\022\r\n\005field\030\001 \003(\tBM\n&com." +
-            "google.cloud.firestore.conformance\252\002\"Goo" +
-            "gle.Cloud.Firestore.Tests.Protob\006proto3"
+        "\n\025test-definition.proto\022\005tests\032%google/f" +
+            "irestore/v1beta1/common.proto\032\'google/fi" +
+            "restore/v1beta1/document.proto\032(google/f" +
+            "irestore/v1beta1/firestore.proto\032$google" +
+            "/firestore/v1beta1/query.proto\032\037google/p" +
+            "rotobuf/timestamp.proto\"\'\n\tTestSuite\022\032\n\005" +
+            "tests\030\001 \003(\0132\013.tests.Test\"\310\002\n\004Test\022\023\n\013des" +
+            "cription\030\001 \001(\t\022\035\n\003get\030\002 \001(\0132\016.tests.GetT" +
+            "estH\000\022#\n\006create\030\003 \001(\0132\021.tests.CreateTest" +
+            "H\000\022\035\n\003set\030\004 \001(\0132\016.tests.SetTestH\000\022#\n\006upd" +
+            "ate\030\005 \001(\0132\021.tests.UpdateTestH\000\022.\n\014update" +
+            "_paths\030\006 \001(\0132\026.tests.UpdatePathsTestH\000\022#" +
+            "\n\006delete\030\007 \001(\0132\021.tests.DeleteTestH\000\022!\n\005q" +
+            "uery\030\010 \001(\0132\020.tests.QueryTestH\000\022#\n\006listen" +
+            "\030\t \001(\0132\021.tests.ListenTestH\000B\006\n\004test\"^\n\007G" +
+            "etTest\022\024\n\014doc_ref_path\030\001 \001(\t\022=\n\007request\030" +
+            "\002 \001(\0132,.google.firestore.v1beta1.GetDocu" +
+            "mentRequest\"\201\001\n\nCreateTest\022\024\n\014doc_ref_pa" +
+            "th\030\001 \001(\t\022\021\n\tjson_data\030\002 \001(\t\0228\n\007request\030\003" +
+            " \001(\0132\'.google.firestore.v1beta1.CommitRe" +
+            "quest\022\020\n\010is_error\030\004 \001(\010\"\240\001\n\007SetTest\022\024\n\014d" +
+            "oc_ref_path\030\001 \001(\t\022 \n\006option\030\002 \001(\0132\020.test" +
+            "s.SetOption\022\021\n\tjson_data\030\003 \001(\t\0228\n\007reques" +
+            "t\030\004 \001(\0132\'.google.firestore.v1beta1.Commi" +
+            "tRequest\022\020\n\010is_error\030\005 \001(\010\"\277\001\n\nUpdateTes" +
+            "t\022\024\n\014doc_ref_path\030\001 \001(\t\022<\n\014precondition\030" +
+            "\002 \001(\0132&.google.firestore.v1beta1.Precond" +
+            "ition\022\021\n\tjson_data\030\003 \001(\t\0228\n\007request\030\004 \001(" +
+            "\0132\'.google.firestore.v1beta1.CommitReque" +
+            "st\022\020\n\010is_error\030\005 \001(\010\"\355\001\n\017UpdatePathsTest" +
+            "\022\024\n\014doc_ref_path\030\001 \001(\t\022<\n\014precondition\030\002" +
+            " \001(\0132&.google.firestore.v1beta1.Precondi" +
+            "tion\022%\n\013field_paths\030\003 \003(\0132\020.tests.FieldP" +
+            "ath\022\023\n\013json_values\030\004 \003(\t\0228\n\007request\030\005 \001(" +
+            "\0132\'.google.firestore.v1beta1.CommitReque" +
+            "st\022\020\n\010is_error\030\006 \001(\010\"\254\001\n\nDeleteTest\022\024\n\014d" +
+            "oc_ref_path\030\001 \001(\t\022<\n\014precondition\030\002 \001(\0132" +
+            "&.google.firestore.v1beta1.Precondition\022" +
+            "8\n\007request\030\003 \001(\0132\'.google.firestore.v1be" +
+            "ta1.CommitRequest\022\020\n\010is_error\030\004 \001(\010\":\n\tS" +
+            "etOption\022\013\n\003all\030\001 \001(\010\022 \n\006fields\030\002 \003(\0132\020." +
+            "tests.FieldPath\"\212\001\n\tQueryTest\022\021\n\tcoll_pa" +
+            "th\030\001 \001(\t\022\036\n\007clauses\030\002 \003(\0132\r.tests.Clause" +
+            "\0228\n\005query\030\003 \001(\0132).google.firestore.v1bet" +
+            "a1.StructuredQuery\022\020\n\010is_error\030\004 \001(\010\"\250\002\n" +
+            "\006Clause\022\037\n\006select\030\001 \001(\0132\r.tests.SelectH\000" +
+            "\022\035\n\005where\030\002 \001(\0132\014.tests.WhereH\000\022\"\n\010order" +
+            "_by\030\003 \001(\0132\016.tests.OrderByH\000\022\020\n\006offset\030\004 " +
+            "\001(\005H\000\022\017\n\005limit\030\005 \001(\005H\000\022!\n\010start_at\030\006 \001(\013" +
+            "2\r.tests.CursorH\000\022$\n\013start_after\030\007 \001(\0132\r" +
+            ".tests.CursorH\000\022\037\n\006end_at\030\010 \001(\0132\r.tests." +
+            "CursorH\000\022#\n\nend_before\030\t \001(\0132\r.tests.Cur" +
+            "sorH\000B\010\n\006clause\"*\n\006Select\022 \n\006fields\030\001 \003(" +
+            "\0132\020.tests.FieldPath\"G\n\005Where\022\036\n\004path\030\001 \001" +
+            "(\0132\020.tests.FieldPath\022\n\n\002op\030\002 \001(\t\022\022\n\njson" +
+            "_value\030\003 \001(\t\"<\n\007OrderBy\022\036\n\004path\030\001 \001(\0132\020." +
+            "tests.FieldPath\022\021\n\tdirection\030\002 \001(\t\"G\n\006Cu" +
+            "rsor\022(\n\014doc_snapshot\030\001 \001(\0132\022.tests.DocSn" +
+            "apshot\022\023\n\013json_values\030\002 \003(\t\".\n\013DocSnapsh" +
+            "ot\022\014\n\004path\030\001 \001(\t\022\021\n\tjson_data\030\002 \001(\t\"\032\n\tF" +
+            "ieldPath\022\r\n\005field\030\001 \003(\t\"\177\n\nListenTest\022;\n" +
+            "\tresponses\030\001 \003(\0132(.google.firestore.v1be" +
+            "ta1.ListenResponse\022\"\n\tsnapshots\030\002 \003(\0132\017." +
+            "tests.Snapshot\022\020\n\010is_error\030\003 \001(\010\"\216\001\n\010Sna" +
+            "pshot\0220\n\004docs\030\001 \003(\0132\".google.firestore.v" +
+            "1beta1.Document\022!\n\007changes\030\002 \003(\0132\020.tests" +
+            ".DocChange\022-\n\tread_time\030\003 \001(\0132\032.google.p" +
+            "rotobuf.Timestamp\"\313\001\n\tDocChange\022#\n\004kind\030" +
+            "\001 \001(\0162\025.tests.DocChange.Kind\022/\n\003doc\030\002 \001(" +
+            "\0132\".google.firestore.v1beta1.Document\022\021\n" +
+            "\told_index\030\003 \001(\005\022\021\n\tnew_index\030\004 \001(\005\"B\n\004K" +
+            "ind\022\024\n\020KIND_UNSPECIFIED\020\000\022\t\n\005ADDED\020\001\022\013\n\007" +
+            "REMOVED\020\002\022\014\n\010MODIFIED\020\003Bx\n&com.google.cl" +
+            "oud.firestore.conformance\252\002\"Google.Cloud" +
+            ".Firestore.Tests.Proto\312\002(Google\\Cloud\\Fi" +
+            "restore\\Tests\\Conformanceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19451,9 +23151,11 @@ public final class TestDefinition {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalBuildGeneratedFileFrom(descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-                com.google.firestore.v1beta1.FirestoreProto.getDescriptor(),
                 com.google.firestore.v1beta1.CommonProto.getDescriptor(),
+                com.google.firestore.v1beta1.DocumentProto.getDescriptor(),
+                com.google.firestore.v1beta1.FirestoreProto.getDescriptor(),
                 com.google.firestore.v1beta1.QueryProto.getDescriptor(),
+                com.google.protobuf.TimestampProto.getDescriptor(),
             }, assigner);
     internal_static_tests_TestSuite_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -19466,7 +23168,7 @@ public final class TestDefinition {
     internal_static_tests_Test_fieldAccessorTable = new
         com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tests_Test_descriptor,
-        new java.lang.String[] { "Description", "Get", "Create", "Set", "Update", "UpdatePaths", "Delete", "Query", "Test", });
+        new java.lang.String[] { "Description", "Get", "Create", "Set", "Update", "UpdatePaths", "Delete", "Query", "Listen", "Test", });
     internal_static_tests_GetTest_descriptor =
         getDescriptor().getMessageTypes().get(2);
     internal_static_tests_GetTest_fieldAccessorTable = new
@@ -19557,9 +23259,29 @@ public final class TestDefinition {
         com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tests_FieldPath_descriptor,
         new java.lang.String[] { "Field", });
-    com.google.firestore.v1beta1.FirestoreProto.getDescriptor();
+    internal_static_tests_ListenTest_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_tests_ListenTest_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tests_ListenTest_descriptor,
+        new java.lang.String[] { "Responses", "Snapshots", "IsError", });
+    internal_static_tests_Snapshot_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_tests_Snapshot_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tests_Snapshot_descriptor,
+        new java.lang.String[] { "Docs", "Changes", "ReadTime", });
+    internal_static_tests_DocChange_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_tests_DocChange_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tests_DocChange_descriptor,
+        new java.lang.String[] { "Kind", "Doc", "OldIndex", "NewIndex", });
     com.google.firestore.v1beta1.CommonProto.getDescriptor();
+    com.google.firestore.v1beta1.DocumentProto.getDescriptor();
+    com.google.firestore.v1beta1.FirestoreProto.getDescriptor();
     com.google.firestore.v1beta1.QueryProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
