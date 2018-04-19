@@ -94,4 +94,7 @@ public abstract class AgentsStub implements BackgroundResource {
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreAgentCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

@@ -68,4 +68,7 @@ public abstract class ContextsStub implements BackgroundResource {
   public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAllContextsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

@@ -94,4 +94,7 @@ public abstract class IntentsStub implements BackgroundResource {
   public UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
     throw new UnsupportedOperationException("Not implemented: batchDeleteIntentsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

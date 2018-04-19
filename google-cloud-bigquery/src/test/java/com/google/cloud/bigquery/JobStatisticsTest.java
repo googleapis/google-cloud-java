@@ -89,6 +89,7 @@ public class JobStatisticsTest {
       .setWriteRatioMax(10.10)
       .build();
   private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);
+  private static final Schema SCHEMA = Schema.of(Field.of("column", LegacySQLTypeName.DATETIME));
   private static final QueryStatistics QUERY_STATISTICS = QueryStatistics.newBuilder()
       .setCreationTimestamp(CREATION_TIME)
       .setEndTime(END_TIME)
@@ -98,6 +99,7 @@ public class JobStatisticsTest {
       .setTotalBytesBilled(TOTAL_BYTES_BILLED)
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setQueryPlan(QUERY_PLAN)
+      .setSchema(SCHEMA)
       .build();
   private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE = QueryStatistics.newBuilder()
       .setCreationTimestamp(CREATION_TIME)
@@ -218,6 +220,7 @@ public class JobStatisticsTest {
     assertEquals(expected.getTotalBytesBilled(), value.getTotalBytesBilled());
     assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());
     assertEquals(expected.getQueryPlan(), value.getQueryPlan());
+    assertEquals(expected.getSchema(), value.getSchema());
   }
 
   private void compareStatistics(JobStatistics expected, JobStatistics value) {

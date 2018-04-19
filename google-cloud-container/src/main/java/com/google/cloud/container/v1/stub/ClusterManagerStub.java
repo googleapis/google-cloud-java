@@ -188,4 +188,7 @@ public abstract class ClusterManagerStub implements BackgroundResource {
   public UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setMaintenancePolicyCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

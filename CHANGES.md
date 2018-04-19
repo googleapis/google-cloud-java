@@ -14,6 +14,7 @@
   - `TableResult.getTotalRows()` can be called to obtain the total number of rows across pages.
 - Various `Job` statistics are no longer available at `QueryResponse`.
   - Use `BigQuery.getJob` then `Job.getStatistics` instead.
+
 # v0.36.0
 ## Pub/Sub
 - `TopicName` is renamed to `ProjectTopicName`, and now inherits from a new base class `TopicName`
@@ -34,3 +35,19 @@
   - `subscription.getTopicAsTopicNameOneof()`: use `TopicNames.parse(subscription.getTopic())`
   - `subscription.getNameAsSubscriptionName()`: use `ProjectSubscriptionName.parse(subscription.getName())`
   - `snapshot.getNameAsSnapshotName()`: use `ProjectSnapshotName.parse(snapshot.getName())`
+
+# v0.44.0
+## Pub/Sub
+The default flow control settings for `Subscriber` is changed.
+
+- Previously it keeps combined size of outstanding messages below 20% of available memory.
+  Now it keeps the number of outstanding messages less than or equal to 1000.
+- Previously it opens one stream per available CPU.
+  Now it opens one regardless of number of CPUs.
+
+Slow message consumers will likely see better load-balancing across machines.
+Because each machine pulls messages less eagerly, messages not yet pulled can be pulled by another machine.
+
+Fast message consumers might see reduced performance.
+If desired, these settings can be adjusted back by `Subscriber.Builder#setFlowControlSettings` and
+`Subscriber.Builder#setParallelPullCount`.

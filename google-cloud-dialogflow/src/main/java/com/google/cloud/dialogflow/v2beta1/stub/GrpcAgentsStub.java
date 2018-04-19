@@ -278,7 +278,7 @@ public class GrpcAgentsStub extends AgentsStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

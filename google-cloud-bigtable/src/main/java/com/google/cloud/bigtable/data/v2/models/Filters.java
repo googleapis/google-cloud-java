@@ -25,6 +25,7 @@ import com.google.cloud.bigtable.data.v2.models.Range.AbstractByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Range.AbstractTimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import java.io.Serializable;
 import javax.annotation.Nonnull;
 
 /**
@@ -458,7 +459,7 @@ public final class Filters {
 
   /** Matches only cells from columns within the given range. */
   public static final class QualifierRangeFilter
-      extends AbstractByteStringRange<QualifierRangeFilter> implements Filter {
+      extends AbstractByteStringRange<QualifierRangeFilter> implements Filter, Serializable {
     private final String family;
 
     private QualifierRangeFilter(String family) {
@@ -519,7 +520,7 @@ public final class Filters {
 
   /** Matches only cells with microsecond timestamps within the given range. */
   public static final class TimestampRangeFilter
-      extends AbstractTimestampRange<TimestampRangeFilter> implements Filter {
+      extends AbstractTimestampRange<TimestampRangeFilter> implements Filter, Serializable {
     private TimestampRangeFilter() {}
 
     @InternalApi
@@ -618,7 +619,7 @@ public final class Filters {
 
   /** Matches only cells with values that fall within the given value range. */
   public static final class ValueRangeFilter extends AbstractByteStringRange<ValueRangeFilter>
-      implements Filter {
+      implements Filter, Serializable {
     private ValueRangeFilter() {}
 
     @InternalApi

@@ -202,4 +202,7 @@ public abstract class DlpServiceStub implements BackgroundResource {
   public UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
     throw new UnsupportedOperationException("Not implemented: createJobTriggerCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

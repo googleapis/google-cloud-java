@@ -23,6 +23,7 @@
 package com.google.cloud.examples.spanner.snippets;
 
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.AbortedException;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.Key;
 import com.google.cloud.spanner.Mutation;
@@ -30,6 +31,7 @@ import com.google.cloud.spanner.ReadOnlyTransaction;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TransactionContext;
+import com.google.cloud.spanner.TransactionManager;
 import com.google.cloud.spanner.TransactionRunner;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import java.util.Collections;
@@ -221,5 +223,32 @@ public class DatabaseClientSnippets {
           }
         });
     // [END readWriteTransaction]
+  }
+  
+  /**
+   * Example of using {@link TransactionManager}.
+   */
+  // [TARGET transactionManager()]
+  // [VARIABLE my_singer_id]
+  public void transactionManager(final long singerId) throws InterruptedException {
+    // [START transactionManager]
+    try (TransactionManager manager = dbClient.transactionManager()) {
+      TransactionContext txn = manager.begin();
+      while (true) {
+        String column = "FirstName";
+        Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
+        String name = row.getString(column);
+        txn.buffer(
+            Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
+        try {
+          manager.commit();
+          break;
+        } catch (AbortedException e) {
+          Thread.sleep(e.getRetryDelayInMillis() / 1000);
+          txn = manager.resetForRetry();
+        }
+      }
+    }
+    // [END transactionManager]
   }
 }

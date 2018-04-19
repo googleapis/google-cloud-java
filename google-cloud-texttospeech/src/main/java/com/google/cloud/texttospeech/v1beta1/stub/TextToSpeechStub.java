@@ -42,4 +42,7 @@ public abstract class TextToSpeechStub implements BackgroundResource {
       synthesizeSpeechCallable() {
     throw new UnsupportedOperationException("Not implemented: synthesizeSpeechCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

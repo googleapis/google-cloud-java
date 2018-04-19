@@ -64,4 +64,7 @@ public abstract class OsLoginServiceStub implements BackgroundResource {
   public UnaryCallable<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSshPublicKeyCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

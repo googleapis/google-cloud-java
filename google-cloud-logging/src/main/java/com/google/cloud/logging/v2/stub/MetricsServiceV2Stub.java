@@ -64,4 +64,7 @@ public abstract class MetricsServiceV2Stub implements BackgroundResource {
   public UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteLogMetricCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

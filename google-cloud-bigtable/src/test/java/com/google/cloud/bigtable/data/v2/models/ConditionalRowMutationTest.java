@@ -17,13 +17,17 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -140,5 +144,24 @@ public class ConditionalRowMutationTest {
     }
 
     assertThat(actualError).isInstanceOf(IllegalStateException.class);
+  }
+
+  @Test
+  public void serializationTest() throws IOException, ClassNotFoundException {
+    ConditionalRowMutation expected =
+        ConditionalRowMutation.create(TABLE_ID, TEST_KEY)
+            .condition(Filters.FILTERS.pass())
+            .then(Mutation.create().deleteRow())
+            .otherwise(Mutation.create().deleteFamily("cf"));
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+
+    ConditionalRowMutation actual = (ConditionalRowMutation) ois.readObject();
+    assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
   }
 }

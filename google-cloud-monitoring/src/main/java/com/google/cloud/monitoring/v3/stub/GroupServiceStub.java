@@ -76,4 +76,7 @@ public abstract class GroupServiceStub implements BackgroundResource {
       listGroupMembersCallable() {
     throw new UnsupportedOperationException("Not implemented: listGroupMembersCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

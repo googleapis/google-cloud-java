@@ -69,4 +69,7 @@ public abstract class BigtableStub implements BackgroundResource {
       readModifyWriteRowCallable() {
     throw new UnsupportedOperationException("Not implemented: readModifyWriteRowCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

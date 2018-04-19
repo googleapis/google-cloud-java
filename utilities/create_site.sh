@@ -14,14 +14,14 @@ fi
 
 git clone --branch gh-pages --single-branch https://github.com/GoogleCloudPlatform/google-cloud-java/ tmp_gh-pages
 mkdir -p tmp_gh-pages/$SITE_VERSION_BASE
-mvn site -DskipTests -Djava.util.logging.config.file=logging.properties
+mvn site -Djava.util.logging.config.file=logging.properties
+mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=https://googlecloudplatform.github.io/google-cloud-java
 
-version_bases=(${SITE_VERSION_BASE} latest)
 rm -rf tmp_gh-pages/latest
 mkdir tmp_gh-pages/latest
+version_bases=(${SITE_VERSION_BASE} latest)
 for version_base in ${version_bases[@]}
 do
-  mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=https://googlecloudplatform.github.io/google-cloud-java/site/${version_base}/
   cd tmp_gh-pages
   cp -r ../target/staging/*/* $version_base
   sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${version_base}/index.html # Update "Quickstart with Maven" to reflect version change

@@ -40,4 +40,7 @@ public abstract class ErrorGroupServiceStub implements BackgroundResource {
   public UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: updateGroupCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

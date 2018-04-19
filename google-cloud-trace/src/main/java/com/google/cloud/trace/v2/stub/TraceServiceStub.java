@@ -40,4 +40,7 @@ public abstract class TraceServiceStub implements BackgroundResource {
   public UnaryCallable<Span, Span> createSpanCallable() {
     throw new UnsupportedOperationException("Not implemented: createSpanCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

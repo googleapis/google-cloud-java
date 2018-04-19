@@ -117,7 +117,7 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 

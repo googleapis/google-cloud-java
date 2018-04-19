@@ -334,6 +334,7 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       return ((ClusterManagerStubSettings.Builder) getStubSettings());
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
