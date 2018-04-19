@@ -8,7 +8,7 @@ apply plugin: 'java'
 
 description = 'GRPC library for grpc-google-iam-v1'
 group = 'com.google.api.grpc'
-version = "0.9.0"
+version = "0.10.0"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
