@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.auto.value.AutoValue;
@@ -99,23 +98,8 @@ public abstract class QueryParameterValue implements Serializable {
     /** Sets the data type of the array elements. The type must set to ARRAY. */
     public abstract Builder setArrayType(StandardSQLTypeName arrayType);
 
-    abstract QueryParameterValue autoBuild();
-
     /** Creates a {@code QueryParameterValue} object. */
-    public QueryParameterValue build() {
-      QueryParameterValue value = autoBuild();
-      boolean isArray = (value.getType() == StandardSQLTypeName.ARRAY);
-      checkArgument(
-          isArray == (value.getArrayType() != null),
-          "arrayType must be set if and only if the type is ARRAY");
-      checkArgument(
-          isArray == (value.getArrayValues() != null),
-          "arrayValues must be set if and only if the type is ARRAY");
-      checkArgument(
-          isArray == (value.getValue() == null),
-          "value must be set if and only if the type is not ARRAY");
-      return value;
-    }
+    public abstract QueryParameterValue build();
   }
 
   QueryParameterValue() {
