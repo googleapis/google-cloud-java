@@ -60,14 +60,14 @@ public class TableSnippets {
    */
   // [TARGET exists()]
   public boolean exists() {
-    // [START exists]
+    // [START bigquery_java_untracked]
     boolean exists = table.exists();
     if (exists) {
       // the table exists
     } else {
       // the table was not found
     }
-    // [END exists]
+    // [END bigquery_java_untracked]
     return exists;
   }
 
@@ -79,12 +79,12 @@ public class TableSnippets {
   // [VARIABLE TableField.LAST_MODIFIED_TIME]
   // [VARIABLE TableField.NUM_ROWS]
   public Table reloadTableWithFields(TableField field1, TableField field2) {
-    // [START reloadTableWithFields]
+    // [START bigquery_java_untracked]
     Table latestTable = table.reload(TableOption.fields(field1, field2));
     if (latestTable == null) {
       // the table was not found
     }
-    // [END reloadTableWithFields]
+    // [END bigquery_java_untracked]
     return latestTable;
   }
 
@@ -93,9 +93,9 @@ public class TableSnippets {
    */
   // [TARGET update(TableOption...)]
   public Table update() {
-    // [START update]
+    // [START bigquery_java_untracked]
     Table updatedTable = table.toBuilder().setDescription("new description").build().update();
-    // [END update]
+    // [END bigquery_java_untracked]
     return updatedTable;
   }
 
@@ -104,14 +104,14 @@ public class TableSnippets {
    */
   // [TARGET delete()]
   public boolean delete() {
-    // [START delete]
+    // [START bigquery_java_untracked]
     boolean deleted = table.delete();
     if (deleted) {
       // the table was deleted
     } else {
       // the table was not found
     }
-    // [END delete]
+    // [END bigquery_java_untracked]
     return deleted;
   }
 
@@ -122,7 +122,7 @@ public class TableSnippets {
   // [VARIABLE "rowId1"]
   // [VARIABLE "rowId2"]
   public InsertAllResponse insert(String rowId1, String rowId2) {
-    // [START insert]
+    // [START bigquery_java_untracked]
     List<RowToInsert> rows = new ArrayList<>();
     Map<String, Object> row1 = new HashMap<>();
     row1.put("stringField", "value1");
@@ -134,7 +134,7 @@ public class TableSnippets {
     rows.add(RowToInsert.of(rowId2, row2));
     InsertAllResponse response = table.insert(rows);
     // do something with response
-    // [END insert]
+    // [END bigquery_java_untracked]
     return response;
   }
 
@@ -145,7 +145,7 @@ public class TableSnippets {
   // [VARIABLE "rowId1"]
   // [VARIABLE "rowId2"]
   public InsertAllResponse insertWithParams(String rowId1, String rowId2) {
-    // [START insertWithParams]
+    // [START bigquery_java_untracked]
     List<RowToInsert> rows = new ArrayList<>();
     Map<String, Object> row1 = new HashMap<>();
     row1.put("stringField", 1);
@@ -157,7 +157,7 @@ public class TableSnippets {
     rows.add(RowToInsert.of(rowId2, row2));
     InsertAllResponse response = table.insert(rows, true, true);
     // do something with response
-    // [END insertWithParams]
+    // [END bigquery_java_untracked]
     return response;
   }
 
@@ -166,14 +166,14 @@ public class TableSnippets {
    */
   // [TARGET list(TableDataListOption...)]
   public Page<FieldValueList> list() {
-    // [START list]
+    // [START bigquery_java_untracked]
     // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
     // simply omit the option.
     Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
     for (FieldValueList row : page.iterateAll()) {
       // do something with the row
     }
-    // [END list]
+    // [END bigquery_java_untracked]
     return page;
   }
 
@@ -182,12 +182,12 @@ public class TableSnippets {
   // [VARIABLE ...]
   // [VARIABLE "my_field"]
   public Page<FieldValueList> list(Schema schema, String field) {
-    // [START list]
+    // [START bigquery_java_untracked]
     Page<FieldValueList> page = table.list(schema);
     for (FieldValueList row : page.iterateAll()) {
       row.get(field);
     }
-    // [END list]
+    // [END bigquery_java_untracked]
     return page;
   }
 
@@ -198,7 +198,7 @@ public class TableSnippets {
   // [VARIABLE "my_dataset"]
   // [VARIABLE "my_destination_table"]
   public Job copy(String datasetName, String tableName) {
-    // [START copy]
+    // [START bigquery_java_untracked]
     Job job = table.copy(datasetName, tableName);
     // Wait for the job to complete.
     try {
@@ -212,7 +212,7 @@ public class TableSnippets {
     } catch (InterruptedException e) {
       // Handle interrupted wait
     }
-    // [END copy]
+    // [END bigquery_java_untracked]
     return job;
   }
 
@@ -223,7 +223,7 @@ public class TableSnippets {
   // [VARIABLE "my_dataset"]
   // [VARIABLE "my_destination_table"]
   public Job copyTableId(String dataset, String tableName) throws BigQueryException {
-    // [START copyTableId]
+    // [START bigquery_copy_table]
     TableId destinationId = TableId.of(dataset, tableName);
     JobOption options = JobOption.fields(JobField.STATUS, JobField.USER_EMAIL);
     Job job = table.copy(destinationId, options);
@@ -239,7 +239,7 @@ public class TableSnippets {
     } catch (InterruptedException e) {
       // Handle interrupted wait
     }
-    // [END copyTableId]
+    // [END bigquery_copy_table]
     return job;
   }
 
@@ -251,7 +251,7 @@ public class TableSnippets {
   // [VARIABLE "gs://my_bucket/PartitionA_*.csv"]
   // [VARIABLE "gs://my_bucket/PartitionB_*.csv"]
   public Job extractList(String format, String gcsUrl1, String gcsUrl2) {
-    // [START extractList]
+    // [START bigquery_java_untracked]
     List<String> destinationUris = new ArrayList<>();
     destinationUris.add(gcsUrl1);
     destinationUris.add(gcsUrl2);
@@ -268,7 +268,7 @@ public class TableSnippets {
     } catch (InterruptedException e) {
       // Handle interrupted wait
     }
-    // [END extractList]
+    // [END bigquery_java_untracked]
     return job;
   }
 
@@ -279,7 +279,7 @@ public class TableSnippets {
   // [VARIABLE "CSV"]
   // [VARIABLE "gs://my_bucket/filename.csv"]
   public Job extractSingle(String format, String gcsUrl) {
-    // [START extractSingle]
+    // [START bigquery_extract_table]
     Job job = table.extract(format, gcsUrl);
     // Wait for the job to complete
     try {
@@ -293,7 +293,7 @@ public class TableSnippets {
     } catch (InterruptedException e) {
       // Handle interrupted wait
     }
-    // [END extractSingle]
+    // [END bigquery_extract_table]
     return job;
   }
 
@@ -304,7 +304,7 @@ public class TableSnippets {
   // [VARIABLE "gs://my_bucket/filename1.csv"]
   // [VARIABLE "gs://my_bucket/filename2.csv"]
   public Job loadList(String gcsUrl1, String gcsUrl2) {
-    // [START loadList]
+    // [START bigquery_java_untracked]
     List<String> sourceUris = new ArrayList<>();
     sourceUris.add(gcsUrl1);
     sourceUris.add(gcsUrl2);
@@ -321,7 +321,7 @@ public class TableSnippets {
     } catch (InterruptedException e) {
       // Handle interrupted wait
     }
-    // [END loadList]
+    // [END bigquery_java_untracked]
     return job;
   }
 
@@ -331,7 +331,7 @@ public class TableSnippets {
   // [TARGET load(FormatOptions, String, JobOption...)]
   // [VARIABLE "gs://my_bucket/filename.csv"]
   public Job loadSingle(String sourceUri) {
-    // [START loadSingle]
+    // [START bigquery_load_table_gcs_csv]
     Job job = table.load(FormatOptions.csv(), sourceUri);
     // Wait for the job to complete
     try {
@@ -345,7 +345,7 @@ public class TableSnippets {
     } catch (InterruptedException e) {
       // Handle interrupted wait
     }
-    // [END loadSingle]
+    // [END bigquery_load_table_gcs_csv]
     return job;
   }
 }

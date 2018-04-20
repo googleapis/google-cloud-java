@@ -40,12 +40,15 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.common.io.Resources;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -66,6 +69,7 @@ public class ITBigQuerySnippets {
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String QUERY =
       "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
+  private static final String CORPUS_NAME = "romeoandjuliet";
   private static final String QUERY_WITH_PARAMETERS =
       "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount";
   private static final Function<Job, JobId> TO_JOB_ID_FUNCTION = new Function<Job, JobId>() {
@@ -91,6 +95,8 @@ public class ITBigQuerySnippets {
 
   private static BigQuery bigquery;
   private static BigQuerySnippets bigquerySnippets;
+  private static ByteArrayOutputStream bout;
+  private static PrintStream out;
 
   @Rule
   public Timeout globalTimeout = Timeout.seconds(300);
@@ -100,12 +106,16 @@ public class ITBigQuerySnippets {
     bigquery = RemoteBigQueryHelper.create().getOptions().getService();
     bigquerySnippets = new BigQuerySnippets(bigquery);
     bigquery.create(DatasetInfo.newBuilder(DATASET).build());
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
     bigquery.delete(DATASET, DatasetDeleteOption.deleteContents());
     bigquery.delete(OTHER_DATASET, DatasetDeleteOption.deleteContents());
+    System.setOut(null);
   }
 
   @Test
@@ -117,9 +127,9 @@ public class ITBigQuerySnippets {
     TableId tableId = TableId.of(bigquery.getOptions().getProjectId(), DATASET, tableName);
     assertEquals(tableId,
         bigquerySnippets.getTable(tableId.getDataset(), tableId.getTable()).getTableId());
-    assertNotNull(bigquerySnippets.updateTable(DATASET, tableName, "new friendly name"));
-    assertEquals("new friendly name", bigquerySnippets.getTableFromId(
-        tableId.getProject(), tableId.getDataset(), tableId.getTable()).getFriendlyName());
+    assertNotNull(bigquerySnippets.updateTable(DATASET, tableName, "new description"));
+    assertEquals("new description", bigquerySnippets.getTableFromId(
+        tableId.getProject(), tableId.getDataset(), tableId.getTable()).getDescription());
     Set<TableId> tables = Sets.newHashSet(
         Iterators.transform(bigquerySnippets.listTables(DATASET).iterateAll().iterator(),
         TO_TABLE_ID_FUNCTION));
@@ -148,9 +158,9 @@ public class ITBigQuerySnippets {
     Dataset dataset = bigquerySnippets.createDataset(OTHER_DATASET);
     assertNotNull(dataset);
     assertEquals(datasetId, bigquerySnippets.getDataset(OTHER_DATASET).getDatasetId());
-    assertNotNull(bigquerySnippets.updateDataset(OTHER_DATASET, "new friendly name"));
-    assertEquals("new friendly name",
-        bigquerySnippets.getDatasetFromId(datasetId.getProject(), OTHER_DATASET).getFriendlyName());
+    assertNotNull(bigquerySnippets.updateDataset(OTHER_DATASET, "new description"));
+    assertEquals("new description",
+        bigquerySnippets.getDatasetFromId(datasetId.getProject(), OTHER_DATASET).getDescription());
     Set<DatasetId> datasets = Sets.newHashSet(
         Iterators.transform(bigquerySnippets.listDatasets().iterateAll().iterator(),
             TO_DATASET_ID_FUNCTION));
@@ -187,15 +197,15 @@ public class ITBigQuerySnippets {
     // Add rows from file
     Path csvPath =
         Paths.get(Resources.getResource("bigquery/test_write_and_list_table_data.csv").toURI());
-    outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, csvPath);
+    outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, csvPath, "us");
     assertEquals(2L, outputRows);
     // List all rows
-    Page<FieldValueList> listPage = bigquerySnippets.listTableData(DATASET, tableName);
-    Iterator<FieldValueList> rowIterator = listPage.getValues().iterator();
-    assertEquals("StringValue1", rowIterator.next().get(0).getStringValue());
-    assertEquals("StringValue2", rowIterator.next().get(0).getStringValue());
-    assertEquals("StringValue3", rowIterator.next().get(0).getStringValue());
-    assertEquals("StringValue4", rowIterator.next().get(0).getStringValue());
+    TableResult tableData = bigquerySnippets.listTableData(DATASET, tableName);
+    String tableDataString = tableData.toString();
+    assertTrue(tableDataString.contains("StringValue1"));
+    assertTrue(tableDataString.contains("StringValue2"));
+    assertTrue(tableDataString.contains("StringValue3"));
+    assertTrue(tableDataString.contains("StringValue4"));
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
   }
 
@@ -278,11 +288,65 @@ public class ITBigQuerySnippets {
 
   @Test
   public void testRunQuery() throws InterruptedException {
-    bigquerySnippets.runQuery(QUERY);
+    bigquerySnippets.runQuery();
+    String got = bout.toString();
+    assertTrue(got.contains("romeoandjuliet"));
   }
 
   @Test
-  public void testRunQueryWithParameters() throws InterruptedException {
-    bigquerySnippets.runQueryWithParameters(QUERY_WITH_PARAMETERS);
+  public void testRunLegacySqlQuery() throws InterruptedException {
+    bigquerySnippets.runLegacySqlQuery();
+    String got = bout.toString();
+    assertTrue(got.contains("romeoandjuliet"));
+  }
+
+  @Test
+  public void testRunStandardSqlQuery() throws InterruptedException {
+    bigquerySnippets.runStandardSqlQuery();
+    String got = bout.toString();
+    assertTrue(got.contains("romeoandjuliet"));
+  }
+
+  @Test
+  public void testRunQueryPermanentTable() throws InterruptedException {
+    String tableName = "test_destination_table";
+    bigquerySnippets.runQueryPermanentTable(DATASET, tableName);
+    String got = bout.toString();
+    assertTrue(got.contains("romeoandjuliet"));
+  }
+
+  @Test
+  public void testRunUncachedQuery() throws TimeoutException, InterruptedException {
+    bigquerySnippets.runUncachedQuery();
+    String got = bout.toString();
+    assertTrue(got.contains("romeoandjuliet"));
+  }
+
+  @Test
+  public void testRunBatchQuery() throws TimeoutException, InterruptedException {
+    bigquerySnippets.runBatchQuery();
+    String got = bout.toString();
+    assertTrue(got.contains("romeoandjuliet"));
+  }
+
+  @Test
+  public void testRunQueryWithNamedParameters() throws InterruptedException {
+    bigquerySnippets.runQueryWithNamedParameters();
+    String got = bout.toString();
+    assertTrue(got.contains("love"));
+  }
+
+  @Test
+  public void testRunQueryWithArrayParameters() throws InterruptedException {
+    bigquerySnippets.runQueryWithArrayParameters();
+    String got = bout.toString();
+    assertTrue(got.contains("James"));
+  }
+
+  @Test
+  public void testRunQueryWithTimestampParameters() throws InterruptedException {
+    bigquerySnippets.runQueryWithTimestampParameters();
+    String got = bout.toString();
+    assertTrue(got.contains("2016-12-07T09:00:00Z"));
   }
 }

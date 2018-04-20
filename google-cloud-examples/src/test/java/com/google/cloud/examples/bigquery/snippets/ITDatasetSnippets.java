@@ -99,14 +99,6 @@ public class ITDatasetSnippets {
   }
 
   @Test
-  public void testUpdate() {
-    assertNull(dataset.getFriendlyName());
-
-    Dataset updatedDataset = datasetSnippets.updateDataset(FRIENDLY_NAME);
-    assertEquals(FRIENDLY_NAME, updatedDataset.getFriendlyName());
-  }
-
-  @Test
   public void testDeleteNonExistingDataset() {
     assertFalse(nonExistingDatasetSnippets.deleteDataset());
   }
