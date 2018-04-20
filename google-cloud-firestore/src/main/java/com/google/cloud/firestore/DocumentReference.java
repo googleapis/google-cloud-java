@@ -36,8 +36,12 @@ import javax.annotation.Nullable;
  * write, read, or listen to the location. There may or may not exist a document at the referenced
  * location. A DocumentReference can also be used to create a CollectionReference to a
  * subcollection.
+ *
+ * <p><b>Subclassing Note</b>: Firestore classes are not meant to be subclassed except for use in
+ * test mocks. Subclassing is not supported in production code and new SDK releases may break code
+ * that does so.
  */
-public final class DocumentReference {
+public class DocumentReference {
 
   private final ResourcePath path;
   private final FirestoreImpl firestore;

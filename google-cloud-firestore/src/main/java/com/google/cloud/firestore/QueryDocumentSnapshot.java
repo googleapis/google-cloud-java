@@ -32,8 +32,12 @@ import org.threeten.bp.Instant;
  * <p>QueryDocumentSnapshot offers the same API surface as {@link DocumentSnapshot}. Since query
  * results contain only existing documents, the {@link #exists()} method will always return true and
  * {@code getData()} will never be null.
+ *
+ * <p><b>Subclassing Note</b>: Firestore classes are not meant to be subclassed except for use in
+ * test mocks. Subclassing is not supported in production code and new SDK releases may break code
+ * that does so.
  */
-public final class QueryDocumentSnapshot extends DocumentSnapshot {
+public class QueryDocumentSnapshot extends DocumentSnapshot {
   private QueryDocumentSnapshot(
       FirestoreImpl firestore,
       DocumentReference docRef,
