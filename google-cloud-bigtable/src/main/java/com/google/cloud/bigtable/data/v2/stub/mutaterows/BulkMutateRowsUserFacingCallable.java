@@ -24,7 +24,7 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 
 /**
- * A callable to convert userfacing {@link BulkMutation}s to {@link MutateRowsRequest}s.
+ * A callable to convert user-facing {@link BulkMutation}s to {@link MutateRowsRequest}s.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.

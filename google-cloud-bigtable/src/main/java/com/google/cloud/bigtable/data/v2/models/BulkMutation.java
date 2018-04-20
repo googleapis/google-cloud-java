@@ -36,6 +36,8 @@ import javax.annotation.Nonnull;
  * automatic batching with flow control.
  */
 public final class BulkMutation implements Serializable {
+  private static final long serialVersionUID = 3522061250439399088L;
+
   private final String tableId;
   private transient MutateRowsRequest.Builder builder;
 

@@ -18,11 +18,11 @@ package com.google.cloud.bigtable.data.v2.models;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.MutateRowsRequest.Entry;
-import com.google.bigtable.v2.Mutation.SetCell;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.TextFormat;
+import com.google.protobuf.TextFormat.ParseException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class BulkMutationTest {
       RequestContext.create(INSTANCE_NAME, APP_PROFILE);
 
   @Test
-  public void test() {
+  public void test() throws ParseException {
     BulkMutation m =
         BulkMutation.create(TABLE_ID)
             .add(
@@ -55,47 +55,43 @@ public class BulkMutationTest {
                 Mutation.create().setCell("fake-family3", "fake-qualifier3", 3_000, "fake-value3"));
 
     MutateRowsRequest actual = m.toProto(REQUEST_CONTEXT);
-    assertThat(actual)
-        .isEqualTo(
-            MutateRowsRequest.newBuilder()
-                .setTableName(
-                    TableName.format(
-                        INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), TABLE_ID))
-                .setAppProfileId(APP_PROFILE)
-                .addEntries(
-                    Entry.newBuilder()
-                        .setRowKey(ByteString.copyFromUtf8("key-a"))
-                        .addMutations(
-                            com.google.bigtable.v2.Mutation.newBuilder()
-                                .setSetCell(
-                                    SetCell.newBuilder()
-                                        .setFamilyName("fake-family1")
-                                        .setColumnQualifier(
-                                            ByteString.copyFromUtf8("fake-qualifier1"))
-                                        .setTimestampMicros(1_000)
-                                        .setValue(ByteString.copyFromUtf8("fake-value1"))))
-                        .addMutations(
-                            com.google.bigtable.v2.Mutation.newBuilder()
-                                .setSetCell(
-                                    SetCell.newBuilder()
-                                        .setFamilyName("fake-family2")
-                                        .setColumnQualifier(
-                                            ByteString.copyFromUtf8("fake-qualifier2"))
-                                        .setTimestampMicros(2_000)
-                                        .setValue(ByteString.copyFromUtf8("fake-value2")))))
-                .addEntries(
-                    Entry.newBuilder()
-                        .setRowKey(ByteString.copyFromUtf8("key-b"))
-                        .addMutations(
-                            com.google.bigtable.v2.Mutation.newBuilder()
-                                .setSetCell(
-                                    SetCell.newBuilder()
-                                        .setFamilyName("fake-family3")
-                                        .setColumnQualifier(
-                                            ByteString.copyFromUtf8("fake-qualifier3"))
-                                        .setTimestampMicros(3_000)
-                                        .setValue(ByteString.copyFromUtf8("fake-value3")))))
-                .build());
+
+    MutateRowsRequest.Builder expected = MutateRowsRequest.newBuilder()
+        .setTableName(TableName.format(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), TABLE_ID))
+        .setAppProfileId(APP_PROFILE);
+    TextFormat.merge(
+        "entries {"
+        + "  row_key: 'key-a'"
+        + "  mutations {"
+        + "    set_cell {"
+        + "      family_name: 'fake-family1'"
+        + "      column_qualifier: 'fake-qualifier1'"
+        + "      timestamp_micros: 1000"
+        + "      value: 'fake-value1'"
+        + "    }"
+        + "  }"
+        + "  mutations {"
+        + "    set_cell {"
+        + "      family_name: 'fake-family2'"
+        + "      column_qualifier: 'fake-qualifier2'"
+        + "      timestamp_micros: 2000"
+        + "      value: 'fake-value2'"
+        + "    }"
+        + "  }"
+        + "}"
+        + "entries {"
+        + "  row_key: 'key-b'"
+        + "  mutations {"
+        + "    set_cell {"
+        + "      family_name: 'fake-family3'"
+        + "      column_qualifier: 'fake-qualifier3'"
+        + "      timestamp_micros: 3000"
+        + "      value: 'fake-value3'"
+        + "    }"
+        + "  }"
+        + "}", expected);
+
+    assertThat(actual).isEqualTo(expected.build());
   }
 
   @Test
