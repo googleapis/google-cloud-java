@@ -69,7 +69,6 @@ public class ITBigQuerySnippets {
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String QUERY =
       "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
-  private static final String CORPUS_NAME = "romeoandjuliet";
   private static final String QUERY_WITH_PARAMETERS =
       "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount";
   private static final Function<Job, JobId> TO_JOB_ID_FUNCTION = new Function<Job, JobId>() {
