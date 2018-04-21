@@ -295,7 +295,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     private boolean isGcloudInstalled() {
       Map<String, String> env = System.getenv();
       for (String envName : env.keySet()) {
-        if ("PATH".equals(envName)) {
+        if ("PATH".equalsIgnoreCase(envName)) {
           return env.get(envName).contains("google-cloud-sdk");
         }
       }
