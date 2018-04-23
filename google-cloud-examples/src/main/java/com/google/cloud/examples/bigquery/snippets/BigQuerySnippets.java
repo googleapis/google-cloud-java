@@ -950,15 +950,13 @@ public class BigQuerySnippets {
     // Print the results.
     DateTimeFormatter formatter = ISODateTimeFormat.dateTimeNoMillis().withZoneUTC();
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
-      for (FieldValue val : row) {
-        System.out.printf(
-            "%s\n",
-            formatter.print(
-                new DateTime(
-                    // Timestamp values are returned in microseconds since 1970-01-01T00:00:00 UTC,
-                    // but org.joda.time.DateTime constructor accepts times in milliseconds.
-                    row.get(0).getTimestampValue() / 1000, DateTimeZone.UTC)));
-      }
+      System.out.printf(
+          "%s\n",
+          formatter.print(
+              new DateTime(
+                  // Timestamp values are returned in microseconds since 1970-01-01T00:00:00 UTC,
+                  // but org.joda.time.DateTime constructor accepts times in milliseconds.
+                  row.get(0).getTimestampValue() / 1000, DateTimeZone.UTC)));
       System.out.printf("\n");
     }
     // [END bigquery_query_params_timestamps]
