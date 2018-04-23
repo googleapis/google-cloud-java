@@ -177,7 +177,9 @@ public class TableSnippets {
     return page;
   }
 
-  /** Example of listing rows in the table. */
+  /**
+   * Example of listing rows in the table given a schema.
+   */
   // [TARGET list(Schema, TableDataListOption...)]
   // [VARIABLE ...]
   // [VARIABLE "my_field"]

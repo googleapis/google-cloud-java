@@ -301,11 +301,10 @@ public class Table extends TableInfo {
    * Returns the paginated list rows in this table.
    *
    * <p>Example of listing rows in the table.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
    * // simply omit the option.
-   * TableResult page = table.list(TableDataListOption.pageSize(100));
+   * Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
    * for (FieldValueList row : page.iterateAll()) {
    *   // do something with the row
    * }
@@ -321,12 +320,11 @@ public class Table extends TableInfo {
   /**
    * Returns the paginated list rows in this table.
    *
-   * <p>Example of listing rows in the table.
-   *
-   * <pre>{@code
+   * <p>Example of listing rows in the table given a schema.
+   * <pre> {@code
    * Schema schema = ...;
    * String field = "my_field";
-   * TableResult page = table.list(schema);
+   * Page<FieldValueList> page = table.list(schema);
    * for (FieldValueList row : page.iterateAll()) {
    *   row.get(field);
    * }
@@ -351,14 +349,14 @@ public class Table extends TableInfo {
    * Job job = table.copy(datasetName, tableName);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
-   *       RetryOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -386,14 +384,14 @@ public class Table extends TableInfo {
    * Job job = table.copy(destinationId, options);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
-   *       RetryOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully.
    *   } else {
    *     // Handle error case.
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -419,14 +417,14 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, gcsUrl);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
-   *       RetryOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -457,14 +455,14 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, destinationUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
-   *       RetryOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -492,14 +490,14 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUri);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
-   *       RetryOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *             RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -529,14 +527,14 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.checkEvery(1, TimeUnit.SECONDS),
-   *       RetryOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
