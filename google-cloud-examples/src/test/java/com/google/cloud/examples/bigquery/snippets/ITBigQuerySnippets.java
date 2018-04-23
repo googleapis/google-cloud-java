@@ -69,8 +69,6 @@ public class ITBigQuerySnippets {
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String QUERY =
       "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
-  private static final String QUERY_WITH_PARAMETERS =
-      "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount";
   private static final Function<Job, JobId> TO_JOB_ID_FUNCTION = new Function<Job, JobId>() {
     @Override
     public JobId apply(Job job) {
@@ -290,70 +288,5 @@ public class ITBigQuerySnippets {
     bigquerySnippets.runQuery();
     String got = bout.toString();
     assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
-  public void testRunLegacySqlQuery() throws InterruptedException {
-    bigquerySnippets.runLegacySqlQuery();
-    String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
-  public void testRunStandardSqlQuery() throws InterruptedException {
-    bigquerySnippets.runStandardSqlQuery();
-    String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
-  public void testRunQueryPermanentTable() throws InterruptedException {
-    String tableName = "test_destination_table";
-    bigquerySnippets.runQueryPermanentTable(DATASET, tableName);
-    String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
-  public void testRunQueryLargeResults() throws InterruptedException {
-    String tableName = "test_large_results";
-    bigquerySnippets.runQueryLargeResults(DATASET, tableName);
-    String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
-  public void testRunUncachedQuery() throws TimeoutException, InterruptedException {
-    bigquerySnippets.runUncachedQuery();
-    String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
-  public void testRunBatchQuery() throws TimeoutException, InterruptedException {
-    bigquerySnippets.runBatchQuery();
-    String got = bout.toString();
-    assertTrue(got.contains("romeoandjuliet"));
-  }
-
-  @Test
-  public void testRunQueryWithNamedParameters() throws InterruptedException {
-    bigquerySnippets.runQueryWithNamedParameters();
-    String got = bout.toString();
-    assertTrue(got.contains("love"));
-  }
-
-  @Test
-  public void testRunQueryWithArrayParameters() throws InterruptedException {
-    bigquerySnippets.runQueryWithArrayParameters();
-    String got = bout.toString();
-    assertTrue(got.contains("James"));
-  }
-
-  @Test
-  public void testRunQueryWithTimestampParameters() throws InterruptedException {
-    bigquerySnippets.runQueryWithTimestampParameters();
-    String got = bout.toString();
-    assertTrue(got.contains("2016-12-07T09:00:00Z"));
   }
 }
