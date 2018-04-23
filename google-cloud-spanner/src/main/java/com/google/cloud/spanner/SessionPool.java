@@ -199,6 +199,7 @@ final class SessionPool {
   private static class AutoClosingTransactionManager implements TransactionManager {
     final TransactionManager delegate;
     final PooledSession session;
+    private boolean closed;
     
     AutoClosingTransactionManager(TransactionManager delegate, PooledSession session) {
       this.delegate = delegate;
@@ -242,6 +243,10 @@ final class SessionPool {
 
     @Override
     public void close() {
+      if (closed) {
+        return;
+      }
+      closed = true;
       try {
         delegate.close();
       } finally {
