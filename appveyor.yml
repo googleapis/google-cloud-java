@@ -35,9 +35,6 @@ install:
   - cmd: IF DEFINED API_KEY_SECRET (secure-file\tools\secure-file -decrypt appveyor\api_key.enc -secret %API_KEY_SECRET% -out appveyor\api_key)
   - cmd: IF DEFINED API_KEY_SECRET (SET /P GOOGLE_API_KEY=<%APPVEYOR_BUILD_FOLDER%\appveyor\api_key)
   - cmd: ECHO GOOGLE_API_KEY defined
-  - cmd: SET MAVEN_OPTS=-Xmx1024m
-  - cmd: ECHO MAVEN_OPTS
-  - ps: "ls \"C:/projects/google-cloud-java-v0gf7/google-cloud-compute/src/main/java/com/google/cloud/compute/v1/\""
 
 # build and install artifacts
 build_script:
