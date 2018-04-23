@@ -74,7 +74,7 @@ public class JobStatisticsTest {
   private static final QueryStep QUERY_STEP1 = new QueryStep("KIND", SUBSTEPS1);
   private static final QueryStep QUERY_STEP2 = new QueryStep("KIND", SUBSTEPS2);
   private static final QueryStage QUERY_STAGE = QueryStage.newBuilder()
-      .setComputeRationAvg(1.1)
+      .setComputeRatioAvg(1.1)
       .setComputeRatioMax(2.2)
       .setGeneratedId(42L)
       .setName("stage")
