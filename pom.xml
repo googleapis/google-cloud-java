@@ -162,46 +162,9 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.apis</groupId>
-        <artifactId>google-api-services-bigquery</artifactId>
-        <version>v2-rev377-1.23.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.apis</groupId>
-        <artifactId>google-api-services-compute</artifactId>
-        <version>v1-rev103-1.21.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud.datastore</groupId>
-        <artifactId>datastore-v1-proto-client</artifactId>
-        <version>1.6.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.apis</groupId>
-        <artifactId>google-api-services-dns</artifactId>
-        <version>v1-rev66-1.23.0</version>
-      </dependency>
-      <dependency>
         <groupId>commons-fileupload</groupId>
         <artifactId>commons-fileupload</artifactId>
         <version>1.3.2</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.apis</groupId>
-        <artifactId>google-api-services-cloudresourcemanager</artifactId>
-        <version>v1-rev470-1.23.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.apis</groupId>
-        <artifactId>google-api-services-storage</artifactId>
-        <version>v1-rev114-1.23.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.apis</groupId>
-        <artifactId>google-api-services-translate</artifactId>
-        <version>v2-rev47-1.22.0</version>
       </dependency>
       <dependency>
         <groupId>org.json</groupId>
