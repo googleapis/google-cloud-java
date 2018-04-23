@@ -170,14 +170,14 @@ public class BigQuerySnippets {
   // [TARGET delete(String, DatasetDeleteOption...)]
   // [VARIABLE "my_dataset_name"]
   public Boolean deleteDataset(String datasetName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     Boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
     if (deleted) {
       // the dataset was deleted
     } else {
       // the dataset was not found
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return deleted;
   }
 
@@ -207,14 +207,14 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public Boolean deleteTable(String datasetName, String tableName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     Boolean deleted = bigquery.delete(datasetName, tableName);
     if (deleted) {
       // the table was deleted
     } else {
       // the table was not found
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return deleted;
   }
 
@@ -244,12 +244,12 @@ public class BigQuerySnippets {
   // [TARGET listTables(String, TableListOption...)]
   // [VARIABLE "my_dataset_name"]
   public Page<Table> listTables(String datasetName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
     for (Table table : tables.iterateAll()) {
       // do something with the table
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return tables;
   }
 
@@ -277,9 +277,9 @@ public class BigQuerySnippets {
   // [TARGET getDataset(String, DatasetOption...)]
   // [VARIABLE "my_dataset"]
   public Dataset getDataset(String datasetName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     Dataset dataset = bigquery.getDataset(datasetName);
-    // [END bigquery_java_untracked]
+    // [END ]
     return dataset;
   }
 
@@ -304,9 +304,9 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public Table getTable(String datasetName, String tableName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     Table table = bigquery.getTable(datasetName, tableName);
-    // [END bigquery_java_untracked]
+    // [END ]
     return table;
   }
 
@@ -334,7 +334,7 @@ public class BigQuerySnippets {
   // [VARIABLE "StringValue1\nStringValue2\n"]
   public long writeToTable(String datasetName, String tableName, String csvData)
       throws IOException, InterruptedException, TimeoutException {
-    // [START bigquery_java_untracked]
+    // [START ]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
         WriteChannelConfiguration.newBuilder(tableId)
@@ -352,7 +352,7 @@ public class BigQuerySnippets {
     job = job.waitFor();
     LoadStatistics stats = job.getStatistics();
     return stats.getOutputRows();
-    // [END bigquery_java_untracked]
+    // [END ]
   }
 
   /**
@@ -366,7 +366,7 @@ public class BigQuerySnippets {
   public long writeToTableLocation(
       String datasetName, String tableName, String csvData, String location)
       throws IOException, InterruptedException, TimeoutException {
-    // [START bigquery_java_untracked]
+    // [START ]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
         WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
@@ -384,7 +384,7 @@ public class BigQuerySnippets {
     job = job.waitFor();
     LoadStatistics stats = job.getStatistics();
     return stats.getOutputRows();
-    // [END bigquery_java_untracked]
+    // [END ]
   }
 
   /**
@@ -510,7 +510,7 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public TableResult listTableData(String datasetName, String tableName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
     // simply omit the option.
     TableResult tableData =
@@ -518,7 +518,7 @@ public class BigQuerySnippets {
     for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return tableData;
   }
 
@@ -552,13 +552,13 @@ public class BigQuerySnippets {
   // [VARIABLE "field"]
   public TableResult listTableDataSchema(
       String datasetName, String tableName, Schema schema, String field) {
-    // [START bigquery_java_untracked]
+    // [START ]
     TableResult tableData =
         bigquery.listTableData(datasetName, tableName, schema);
     for (FieldValueList row : tableData.iterateAll()) {
       row.get(field);
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return tableData;
   }
 
@@ -567,7 +567,7 @@ public class BigQuerySnippets {
    */
   // [TARGET listTableData(TableId, Schema, TableDataListOption...)]
   public FieldValueList listTableDataSchemaId() {
-    // [START bigquery_java_untracked]
+    // [START ]
     Schema schema =
         Schema.of(
             Field.of("word", LegacySQLTypeName.STRING),
@@ -579,7 +579,7 @@ public class BigQuerySnippets {
             TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
     FieldValueList row = tableData.getValues().iterator().next();
     System.out.println(row.get("word").getStringValue());
-    // [END bigquery_java_untracked]
+    // [END ]
     return row;
   }
 
@@ -589,7 +589,7 @@ public class BigQuerySnippets {
   // [TARGET create(JobInfo, JobOption...)]
   // [VARIABLE "SELECT field FROM my_dataset_name.my_table_name"]
   public Job createJob(String query) {
-    // [START bigquery_java_untracked]
+    // [START ]
     Job job = null;
     JobConfiguration jobConfiguration = QueryJobConfiguration.of(query);
     JobInfo jobInfo = JobInfo.of(jobConfiguration);
@@ -598,7 +598,7 @@ public class BigQuerySnippets {
     } catch (BigQueryException e) {
       // the job was not created
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return job;
   }
 
@@ -622,12 +622,12 @@ public class BigQuerySnippets {
   // [TARGET getJob(String, JobOption...)]
   // [VARIABLE "my_job_name"]
   public Job getJob(String jobName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     Job job = bigquery.getJob(jobName);
     if (job == null) {
       // job was not found
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return job;
   }
 
@@ -637,13 +637,13 @@ public class BigQuerySnippets {
   // [TARGET getJob(JobId, JobOption...)]
   // [VARIABLE "my_job_name"]
   public Job getJobFromId(String jobName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     JobId jobIdObject = JobId.of(jobName);
     Job job = bigquery.getJob(jobIdObject);
     if (job == null) {
       // job was not found
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return job;
   }
 
@@ -654,14 +654,14 @@ public class BigQuerySnippets {
   // [TARGET cancel(String)]
   // [VARIABLE "my_job_name"]
   public boolean cancelJob(String jobName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     boolean success = bigquery.cancel(jobName);
     if (success) {
       // job was cancelled
     } else {
       // job was not found
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return success;
   }
 
@@ -671,7 +671,7 @@ public class BigQuerySnippets {
   // [TARGET cancel(JobId)]
   // [VARIABLE "my_job_name"]
   public boolean cancelJobFromId(String jobName) {
-    // [START bigquery_java_untracked]
+    // [START ]
     JobId jobId = JobId.of(jobName);
     boolean success = bigquery.cancel(jobId);
     if (success) {
@@ -679,7 +679,7 @@ public class BigQuerySnippets {
     } else {
       // job was not found
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return success;
   }
 

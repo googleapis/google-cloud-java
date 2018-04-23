@@ -44,11 +44,11 @@ public class JobSnippets {
    */
   // [TARGET exists()]
   public boolean exists() throws InterruptedException {
-    // [START bigquery_java_untracked]
+    // [START ]
     if (!job.exists()) {
       // job doesn't exist
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return job.exists();
   }
 
@@ -57,11 +57,11 @@ public class JobSnippets {
    */
   // [TARGET isDone()]
   public void isDone() throws InterruptedException {
-    // [START bigquery_java_untracked]
+    // [START ]
     while (!job.isDone()) {
       Thread.sleep(1000L);
     }
-    // [END bigquery_java_untracked]
+    // [END ]
   }
 
   /**
@@ -70,7 +70,7 @@ public class JobSnippets {
   // [TARGET waitFor(RetryOption...)]
   public boolean waitFor() throws InterruptedException {
     try {
-      // [START bigquery_java_untracked]
+      // [START ]
       Job completedJob = job.waitFor();
       if (completedJob == null) {
         // job no longer exists
@@ -79,7 +79,7 @@ public class JobSnippets {
       } else {
         // job completed successfully
       }
-      // [END bigquery_java_untracked]
+      // [END ]
     } catch (BigQueryException e) {
       // Timeouts shouldn't happen without a timeout option.
       if (e.getCause() instanceof PollException) {
@@ -96,7 +96,7 @@ public class JobSnippets {
   // [TARGET waitFor(RetryOption...)]
   public boolean waitForWithOptions() throws InterruptedException {
     try {
-      // [START bigquery_java_untracked]
+      // [START ]
       Job completedJob =
           job.waitFor(
               RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
@@ -108,7 +108,7 @@ public class JobSnippets {
       } else {
         // job completed successfully
       }
-      // [END bigquery_java_untracked]
+      // [END ]
     } catch (BigQueryException e) {
       if (e.getCause() instanceof PollException) {
         return false;
@@ -123,12 +123,12 @@ public class JobSnippets {
    */
   // [TARGET reload(JobOption...)]
   public JobStatus.State reload() throws InterruptedException {
-    // [START bigquery_java_untracked]
+    // [START ]
     while (job.getStatus().getState() != JobStatus.State.DONE) {
       Thread.sleep(1000L);
       job = job.reload();
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return job.getStatus().getState();
   }
 
@@ -137,12 +137,12 @@ public class JobSnippets {
    */
   // [TARGET reload(JobOption...)]
   public JobStatus.State reloadStatus() throws InterruptedException {
-    // [START bigquery_java_untracked]
+    // [START ]
     while (job.getStatus().getState() != JobStatus.State.DONE) {
       Thread.sleep(1000L);
       job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return job.getStatus().getState();
   }
 
@@ -151,13 +151,13 @@ public class JobSnippets {
    */
   // [TARGET cancel()]
   public boolean cancel() {
-    // [START bigquery_java_untracked]
+    // [START ]
     if (job.cancel()) {
       return true; // job successfully cancelled
     } else {
       // job not found
     }
-    // [END bigquery_java_untracked]
+    // [END ]
     return false;
   }
 }
