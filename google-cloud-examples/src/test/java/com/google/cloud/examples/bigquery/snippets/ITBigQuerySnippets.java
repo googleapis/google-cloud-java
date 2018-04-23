@@ -315,6 +315,14 @@ public class ITBigQuerySnippets {
   }
 
   @Test
+  public void testRunQueryLargeResults() throws InterruptedException {
+    String tableName = "test_large_results";
+    bigquerySnippets.runQueryLargeResults(DATASET, tableName);
+    String got = bout.toString();
+    assertTrue(got.contains("romeoandjuliet"));
+  }
+
+  @Test
   public void testRunUncachedQuery() throws TimeoutException, InterruptedException {
     bigquerySnippets.runUncachedQuery();
     String got = bout.toString();

@@ -767,13 +767,8 @@ public class BigQuerySnippets {
     QueryJobConfiguration queryConfig =
         // Note that setUseLegacySql is set to false by default
         QueryJobConfiguration.newBuilder(query)
-        // Save the results of the query to a permanent table. See:
-        // https://cloud.google.com/bigquery/docs/writing-results#permanent-table
+        // Save the results of the query to a permanent table.
         .setDestinationTable(TableId.of(destinationDataset, destinationTable))
-        // Allow results larger than the maximum response size.
-        // If true, a destination table must be set. See:
-        // https://cloud.google.com/bigquery/docs/writing-results#large-results
-        .setAllowLargeResults(true)
         .build();
 
     // Print the results.
@@ -784,6 +779,37 @@ public class BigQuerySnippets {
       System.out.printf("\n");
     }
     // [END bigquery_query_destination_table]
+  }
+
+  /**
+   * Example of running a query and saving the results to a table.
+   */
+  // [TARGET query(QueryJobConfiguration, JobOption...)]
+  public void runQueryLargeResults(String destinationDataset, String destinationTable) throws InterruptedException {
+    // [START bigquery_query_legacy_large_results]
+    // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    // String destinationDataset = 'my_destination_dataset';
+    // String destinationTable = 'my_destination_table';
+    String query =
+        "SELECT corpus FROM [bigquery-public-data:samples.shakespeare] GROUP BY corpus;";
+    QueryJobConfiguration queryConfig =
+        // To use legacy SQL syntax, set useLegacySql to true.
+        QueryJobConfiguration.newBuilder(query).setUseLegacySql(true)
+        // Save the results of the query to a permanent table.
+        .setDestinationTable(TableId.of(destinationDataset, destinationTable))
+        // Allow results larger than the maximum response size.
+        // If true, a destination table must be set.
+        .setAllowLargeResults(true)
+        .build();
+
+    // Print the results.
+    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
+      for (FieldValue val : row) {
+        System.out.printf("%s,", val.toString());
+      }
+      System.out.printf("\n");
+    }
+    // [END bigquery_query_legacy_large_results]
   }
 
   /**
