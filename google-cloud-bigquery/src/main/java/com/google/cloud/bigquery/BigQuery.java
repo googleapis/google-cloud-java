@@ -633,6 +633,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of listing datasets, specifying the page size.
    * <pre> {@code
+   * // List datasets in the default project
    * Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
    * for (Dataset dataset : datasets.iterateAll()) {
    *   // do something with the dataset
@@ -653,6 +654,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <p>Example of listing datasets in a project, specifying the page size.
    * <pre> {@code
    * String projectId = "my_project_id";
+   * // List datasets in a specified project
    * Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
    * for (Dataset dataset : datasets.iterateAll()) {
    *   // do something with the dataset
@@ -748,12 +750,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Updates dataset information.
    *
-   * <p>Example of updating a dataset by changing its friendly name.
+   * <p>Example of updating a dataset by changing its description.
    * <pre> {@code
    * String datasetName = "my_dataset_name";
-   * String newFriendlyName = "some_new_friendly_name";
+   * String newDescription = "some_new_description";
    * Dataset oldDataset = bigquery.getDataset(datasetName);
-   * DatasetInfo datasetInfo = oldDataset.toBuilder().setFriendlyName(newFriendlyName).build();
+   * DatasetInfo datasetInfo = oldDataset.toBuilder().setDescription(newDescription).build();
    * Dataset newDataset = bigquery.update(datasetInfo);
    * }</pre>
    *
@@ -764,13 +766,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Updates table information.
    *
-   * <p>Example of updating a table by changing its friendly name.
+   * <p>Example of updating a table by changing its description.
    * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
-   * String newFriendlyName = "new_friendly_name";
+   * String newDescription = "new_description";
    * Table oldTable = bigquery.getTable(datasetName, tableName);
-   * TableInfo tableInfo = oldTable.toBuilder().setFriendlyName(newFriendlyName).build();
+   * TableInfo tableInfo = oldTable.toBuilder().setDescription(newDescription).build();
    * Table newTable = bigquery.update(tableInfo);
    * }</pre>
    *
@@ -974,8 +976,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * or "EU", {@link #getJob(JobId, JobOption...)} must be used instead.
    *
    * <p>Example of getting a job.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String jobName = "my_job_name";
    * Job job = bigquery.getJob(jobName);
    * if (job == null) {
@@ -992,8 +993,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * or "EU", the {@code jobId} must specify the job location.
    *
    * <p>Example of getting a job.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String jobName = "my_job_name";
    * JobId jobIdObject = JobId.of(jobName);
    * Job job = bigquery.getJob(jobIdObject);
@@ -1029,8 +1029,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <p>If the location of the job is not "US" or "EU", {@link #cancel(JobId)} must be used instead.
    *
    * <p>Example of cancelling a job.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String jobName = "my_job_name";
    * boolean success = bigquery.cancel(jobName);
    * if (success) {
@@ -1055,8 +1054,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * location.
    *
    * <p>Example of cancelling a job.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String jobName = "my_job_name";
    * JobId jobId = JobId.of(jobName);
    * boolean success = bigquery.cancel(jobId);
@@ -1083,26 +1081,19 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * queries. Since dry-run queries are not actually executed, there's no way to retrieve results.
    *
    * <p>Example of running a query.
-   *
-   * <pre>{@code
-   * String query = "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
+   * <pre> {@code
+   * // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+   * String query =
+   *     "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
    * QueryJobConfiguration queryConfig =
-   *     QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
+   *     QueryJobConfiguration.newBuilder(query).build();
+   * 
+   * // Print the results.
    * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
-   *   // do something with the data
-   * }
-   * }</pre>
-   *
-   * <p>Example of running a query with query parameters.
-   *
-   * <pre>{@code
-   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount";
-   * // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
-   * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
-   *     .addNamedParameter("wordCount", QueryParameterValue.int64(5))
-   *     .build();
-   * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
-   *   // do something with the data
+   *   for (FieldValue val : row) {
+   *     System.out.printf("%s,", val.toString());
+   *   }
+   *   System.out.printf("\n");
    * }
    * }</pre>
    *
@@ -1148,8 +1139,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * not in "US" or "EU", {@link #writer(JobId, WriteChannelConfiguration)} must be used instead.
    *
    * <p>Example of creating a channel with which to write to a table.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String csvData = "StringValue1\nStringValue2\n";
@@ -1159,31 +1149,33 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *         .setFormatOptions(FormatOptions.csv())
    *         .build();
    * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
-   *   // Write data to writer
-   *  try {
-   *     writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-   *   } finally {
-   *     writer.close();
-   *   }
-   *   // Get load job
-   *   Job job = writer.getJob();
-   *   job = job.waitFor();
-   *   LoadStatistics stats = job.getStatistics();
-   *   return stats.getOutputRows();
+   * // Write data to writer
+   * try {
+   *   writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   * } finally {
+   *   writer.close();
+   * }
+   * // Get load job
+   * Job job = writer.getJob();
+   * job = job.waitFor();
+   * LoadStatistics stats = job.getStatistics();
+   * return stats.getOutputRows();
    * }</pre>
    *
    * <p>Example of writing a local file to a table.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * Path csvPath = FileSystems.getDefault().getPath(".", "my-data.csv");
+   * String location = "us";
    * TableId tableId = TableId.of(datasetName, tableName);
    * WriteChannelConfiguration writeChannelConfiguration =
    *     WriteChannelConfiguration.newBuilder(tableId)
    *         .setFormatOptions(FormatOptions.csv())
    *         .build();
-   * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+   * // The location must be specified; other fields can be auto-detected.
+   * JobId jobId = JobId.newBuilder().setLocation(location).build();
+   * TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
    * // Write data to writer
    * try (OutputStream stream = Channels.newOutputStream(writer)) {
    *   Files.copy(csvPath, stream);
@@ -1205,13 +1197,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * not in "US" or "EU", the {@code jobId} must contain the location of the job.
    *
    * <p>Example of creating a channel with which to write to a table.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String csvData = "StringValue1\nStringValue2\n";
-   * String csvData = "StringValue1\nStringValue2\n";
-   * String location = "asia-northeast1";
+   * String location = "us";
    * TableId tableId = TableId.of(datasetName, tableName);
    * WriteChannelConfiguration writeChannelConfiguration =
    *     WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
@@ -1230,6 +1220,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * LoadStatistics stats = job.getStatistics();
    * return stats.getOutputRows();
    * }</pre>
+   *
    */
   TableDataWriteChannel writer(JobId jobId, WriteChannelConfiguration writeChannelConfiguration);
 }

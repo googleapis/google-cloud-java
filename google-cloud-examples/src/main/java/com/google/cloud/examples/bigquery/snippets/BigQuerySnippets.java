@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
@@ -49,7 +50,6 @@ import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -88,7 +88,7 @@ public class BigQuerySnippets {
   // [TARGET create(DatasetInfo, DatasetOption...)]
   // [VARIABLE "my_dataset_name"]
   public Dataset createDataset(String datasetName) {
-    // [START createDataset]
+    // [START bigquery_create_dataset]
     Dataset dataset = null;
     DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
     try {
@@ -97,38 +97,38 @@ public class BigQuerySnippets {
     } catch (BigQueryException e) {
       // the dataset was not created
     }
-    // [END createDataset]
+    // [END bigquery_create_dataset]
     return dataset;
   }
 
   /**
-   * Example of updating a dataset by changing its friendly name.
+   * Example of updating a dataset by changing its description.
    */
   // [TARGET update(DatasetInfo, DatasetOption...)]
   // [VARIABLE "my_dataset_name"]
-  // [VARIABLE "some_new_friendly_name"]
-  public Dataset updateDataset(String datasetName, String newFriendlyName) {
-    // [START updateDataset]
+  // [VARIABLE "some_new_description"]
+  public Dataset updateDataset(String datasetName, String newDescription) {
+    // [START bigquery_update_dataset_description]
     Dataset oldDataset = bigquery.getDataset(datasetName);
-    DatasetInfo datasetInfo = oldDataset.toBuilder().setFriendlyName(newFriendlyName).build();
+    DatasetInfo datasetInfo = oldDataset.toBuilder().setDescription(newDescription).build();
     Dataset newDataset = bigquery.update(datasetInfo);
-    // [END updateDataset]
+    // [END bigquery_update_dataset_description]
     return newDataset;
   }
 
   /**
-   * Example of updating a table by changing its friendly name.
+   * Example of updating a table by changing its description.
    */
   // [TARGET update(TableInfo, TableOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  // [VARIABLE "new_friendly_name"]
-  public Table updateTable(String datasetName, String tableName, String newFriendlyName) {
-    // [START updateTable]
+  // [VARIABLE "new_description"]
+  public Table updateTable(String datasetName, String tableName, String newDescription) {
+    // [START bigquery_update_table_description]
     Table oldTable = bigquery.getTable(datasetName, tableName);
-    TableInfo tableInfo = oldTable.toBuilder().setFriendlyName(newFriendlyName).build();
+    TableInfo tableInfo = oldTable.toBuilder().setDescription(newDescription).build();
     Table newTable = bigquery.update(tableInfo);
-    // [END updateTable]
+    // [END bigquery_update_table_description]
     return newTable;
   }
 
@@ -137,12 +137,13 @@ public class BigQuerySnippets {
    */
   // [TARGET listDatasets(DatasetListOption...)]
   public Page<Dataset> listDatasets() {
-    // [START listDatasets]
+    // [START bigquery_list_datasets]
+    // List datasets in the default project
     Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
     for (Dataset dataset : datasets.iterateAll()) {
       // do something with the dataset
     }
-    // [END listDatasets]
+    // [END bigquery_list_datasets]
     return datasets;
   }
 
@@ -152,12 +153,13 @@ public class BigQuerySnippets {
   // [TARGET listDatasets(String, DatasetListOption...)]
   // [VARIABLE "my_project_id"]
   public Page<Dataset> listDatasets(String projectId) {
-    // [START listDatasets]
+    // [START bigquery_list_datasets]
+    // List datasets in a specified project
     Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
     for (Dataset dataset : datasets.iterateAll()) {
       // do something with the dataset
     }
-    // [END listDatasets]
+    // [END bigquery_list_datasets]
     return datasets;
   }
 
@@ -167,14 +169,14 @@ public class BigQuerySnippets {
   // [TARGET delete(String, DatasetDeleteOption...)]
   // [VARIABLE "my_dataset_name"]
   public Boolean deleteDataset(String datasetName) {
-    // [START deleteDataset]
+    // [START ]
     Boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
     if (deleted) {
       // the dataset was deleted
     } else {
       // the dataset was not found
     }
-    // [END deleteDataset]
+    // [END ]
     return deleted;
   }
 
@@ -185,7 +187,7 @@ public class BigQuerySnippets {
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
   public Boolean deleteDatasetFromId(String projectId, String datasetName) {
-    // [START deleteDatasetFromId]
+    // [START bigquery_delete_dataset]
     DatasetId datasetId = DatasetId.of(projectId, datasetName);
     Boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
     if (deleted) {
@@ -193,7 +195,7 @@ public class BigQuerySnippets {
     } else {
       // the dataset was not found
     }
-    // [END deleteDatasetFromId]
+    // [END bigquery_delete_dataset]
     return deleted;
   }
 
@@ -204,14 +206,14 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public Boolean deleteTable(String datasetName, String tableName) {
-    // [START deleteTable]
+    // [START ]
     Boolean deleted = bigquery.delete(datasetName, tableName);
     if (deleted) {
       // the table was deleted
     } else {
       // the table was not found
     }
-    // [END deleteTable]
+    // [END ]
     return deleted;
   }
 
@@ -223,7 +225,7 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public Boolean deleteTableFromId(String projectId, String datasetName, String tableName) {
-    // [START deleteTableFromId]
+    // [START bigquery_delete_table]
     TableId tableId = TableId.of(projectId, datasetName, tableName);
     Boolean deleted = bigquery.delete(tableId);
     if (deleted) {
@@ -231,7 +233,7 @@ public class BigQuerySnippets {
     } else {
       // the table was not found
     }
-    // [END deleteTableFromId]
+    // [END bigquery_delete_table]
     return deleted;
   }
 
@@ -241,15 +243,14 @@ public class BigQuerySnippets {
   // [TARGET listTables(String, TableListOption...)]
   // [VARIABLE "my_dataset_name"]
   public Page<Table> listTables(String datasetName) {
-    // [START listTables]
+    // [START ]
     Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
     for (Table table : tables.iterateAll()) {
       // do something with the table
     }
-    // [END listTables]
+    // [END ]
     return tables;
   }
-
 
   /**
    * Example of listing the tables in a dataset.
@@ -258,13 +259,13 @@ public class BigQuerySnippets {
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
   public Page<Table> listTablesFromId(String projectId, String datasetName) {
-    // [START listTablesFromId]
+    // [START bigquery_list_tables]
     DatasetId datasetId = DatasetId.of(projectId, datasetName);
     Page<Table> tables = bigquery.listTables(datasetId, TableListOption.pageSize(100));
     for (Table table : tables.iterateAll()) {
       // do something with the table
     }
-    // [END listTablesFromId]
+    // [END bigquery_list_tables]
     return tables;
   }
 
@@ -274,9 +275,9 @@ public class BigQuerySnippets {
   // [TARGET getDataset(String, DatasetOption...)]
   // [VARIABLE "my_dataset"]
   public Dataset getDataset(String datasetName) {
-    // [START getDataset]
+    // [START ]
     Dataset dataset = bigquery.getDataset(datasetName);
-    // [END getDataset]
+    // [END ]
     return dataset;
   }
 
@@ -287,10 +288,10 @@ public class BigQuerySnippets {
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
   public Dataset getDatasetFromId(String projectId, String datasetName) {
-    // [START getDatasetFromId]
+    // [START bigquery_get_dataset]
     DatasetId datasetId = DatasetId.of(projectId, datasetName);
     Dataset dataset = bigquery.getDataset(datasetId);
-    // [END getDatasetFromId]
+    // [END bigquery_get_dataset]
     return dataset;
   }
 
@@ -301,9 +302,9 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public Table getTable(String datasetName, String tableName) {
-    // [START getTable]
+    // [START ]
     Table table = bigquery.getTable(datasetName, tableName);
-    // [END getTable]
+    // [END ]
     return table;
   }
 
@@ -315,10 +316,10 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public Table getTableFromId(String projectId, String datasetName, String tableName) {
-    // [START getTableFromId]
+    // [START bigquery_get_table]
     TableId tableId = TableId.of(projectId, datasetName, tableName);
     Table table = bigquery.getTable(tableId);
-    // [END getTableFromId]
+    // [END bigquery_get_table]
     return table;
   }
 
@@ -331,37 +332,37 @@ public class BigQuerySnippets {
   // [VARIABLE "StringValue1\nStringValue2\n"]
   public long writeToTable(String datasetName, String tableName, String csvData)
       throws IOException, InterruptedException, TimeoutException {
-    // [START writeToTable]
+    // [START ]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
-        WriteChannelConfiguration.newBuilder(tableId)
-            .setFormatOptions(FormatOptions.csv())
-            .build();
+        WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
     TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
-      // Write data to writer
-     try {
-        writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-      } finally {
-        writer.close();
-      }
-      // Get load job
-      Job job = writer.getJob();
-      job = job.waitFor();
-      LoadStatistics stats = job.getStatistics();
-      return stats.getOutputRows();
-      // [END writeToTable]
+    // Write data to writer
+    try {
+      writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+    } finally {
+      writer.close();
     }
+    // Get load job
+    Job job = writer.getJob();
+    job = job.waitFor();
+    LoadStatistics stats = job.getStatistics();
+    return stats.getOutputRows();
+    // [END ]
+  }
 
-  /** Example of creating a channel with which to write to a table. */
-  // [TARGET writer(WriteChannelConfiguration)]
+  /**
+   * Example of creating a channel with which to write to a table.
+   */
+  // [TARGET writer(JobId, WriteChannelConfiguration)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   // [VARIABLE "StringValue1\nStringValue2\n"]
-  // [VARIABLE "asia-northeast1"]
+  // [VARIABLE "us"]
   public long writeToTableLocation(
       String datasetName, String tableName, String csvData, String location)
       throws IOException, InterruptedException, TimeoutException {
-    // [START writeToTableLocation]
+    // [START ]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
         WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
@@ -379,7 +380,7 @@ public class BigQuerySnippets {
     job = job.waitFor();
     LoadStatistics stats = job.getStatistics();
     return stats.getOutputRows();
-    // [END writeToTableLocation]
+    // [END ]
   }
 
   /**
@@ -389,15 +390,16 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   // [VARIABLE FileSystems.getDefault().getPath(".", "my-data.csv")]
-  public long writeFileToTable(String datasetName, String tableName, Path csvPath)
+  // [VARIABLE "us"]
+  public long writeFileToTable(String datasetName, String tableName, Path csvPath, String location)
       throws IOException, InterruptedException, TimeoutException {
-    // [START writeFileToTable]
+    // [START bigquery_load_from_file]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
-        WriteChannelConfiguration.newBuilder(tableId)
-            .setFormatOptions(FormatOptions.csv())
-            .build();
-    TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+        WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
+    // The location must be specified; other fields can be auto-detected.
+    JobId jobId = JobId.newBuilder().setLocation(location).build();
+    TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
     // Write data to writer
     try (OutputStream stream = Channels.newOutputStream(writer)) {
       Files.copy(csvPath, stream);
@@ -407,7 +409,7 @@ public class BigQuerySnippets {
     job = job.waitFor();
     LoadStatistics stats = job.getStatistics();
     return stats.getOutputRows();
-    // [END writeFileToTable]
+    // [END bigquery_load_from_file]
   }
 
   /**
@@ -422,17 +424,19 @@ public class BigQuerySnippets {
     String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
     TableId tableId = TableId.of(datasetName, tableName);
     // Table field definition
-    Field[] fields = new Field[] {
-        Field.of("name", LegacySQLTypeName.STRING),
-        Field.of("post_abbr", LegacySQLTypeName.STRING)
-    };
+    Field[] fields =
+        new Field[] {
+          Field.of("name", LegacySQLTypeName.STRING),
+          Field.of("post_abbr", LegacySQLTypeName.STRING)
+        };
     // Table schema definition
     Schema schema = Schema.of(fields);
-    LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
-        .setFormatOptions(FormatOptions.json())
-        .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
-        .setSchema(schema)
-        .build();
+    LoadJobConfiguration configuration =
+        LoadJobConfiguration.builder(tableId, sourceUri)
+            .setFormatOptions(FormatOptions.json())
+            .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+            .setSchema(schema)
+            .build();
     // Load the table
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
     remoteLoadJob = remoteLoadJob.waitFor();
@@ -449,7 +453,7 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public InsertAllResponse insertAll(String datasetName, String tableName) {
-    // [START insertAll]
+    // [START bigquery_table_insert_rows]
     TableId tableId = TableId.of(datasetName, tableName);
     // Values of the row to insert
     Map<String, Object> rowContent = new HashMap<>();
@@ -460,17 +464,19 @@ public class BigQuerySnippets {
     Map<String, Object> recordsContent = new HashMap<>();
     recordsContent.put("stringField", "Hello, World!");
     rowContent.put("recordField", recordsContent);
-    InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
-        .addRow("rowId", rowContent)
-        // More rows can be added in the same RPC by invoking .addRow() on the builder
-        .build());
+    InsertAllResponse response =
+        bigquery.insertAll(
+            InsertAllRequest.newBuilder(tableId)
+                .addRow("rowId", rowContent)
+                // More rows can be added in the same RPC by invoking .addRow() on the builder
+                .build());
     if (response.hasErrors()) {
       // If any of the insertions failed, this lets you inspect the errors
       for (Entry<Long, List<BigQueryError>> entry : response.getInsertErrors().entrySet()) {
         // inspect row error
       }
     }
-    // [END insertAll]
+    // [END bigquery_table_insert_rows]
     return response;
   }
 
@@ -482,7 +488,7 @@ public class BigQuerySnippets {
   // [VARIABLE "my_table_name"]
   // [VARIABLE "string_field"]
   public Table createTable(String datasetName, String tableName, String fieldName) {
-    // [START createTable]
+    // [START bigquery_create_table]
     TableId tableId = TableId.of(datasetName, tableName);
     // Table field definition
     Field field = Field.of(fieldName, LegacySQLTypeName.STRING);
@@ -491,7 +497,7 @@ public class BigQuerySnippets {
     TableDefinition tableDefinition = StandardTableDefinition.of(schema);
     TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
     Table table = bigquery.create(tableInfo);
-    // [END createTable]
+    // [END bigquery_create_table]
     return table;
   }
 
@@ -502,7 +508,7 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public TableResult listTableData(String datasetName, String tableName) {
-    // [START listTableData]
+    // [START ]
     // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
     // simply omit the option.
     TableResult tableData =
@@ -510,7 +516,7 @@ public class BigQuerySnippets {
     for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
     }
-    // [END listTableData]
+    // [END ]
     return tableData;
   }
 
@@ -521,7 +527,7 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   public TableResult listTableDataFromId(String datasetName, String tableName) {
-    // [START listTableDataFromId]
+    // [START bigquery_browse_table]
     TableId tableIdObject = TableId.of(datasetName, tableName);
     // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
     // simply omit the option.
@@ -530,7 +536,7 @@ public class BigQuerySnippets {
     for (FieldValueList row : tableData.iterateAll()) {
       // do something with the row
     }
-    // [END listTableDataFromId]
+    // [END bigquery_browse_table]
     return tableData;
   }
 
@@ -544,13 +550,12 @@ public class BigQuerySnippets {
   // [VARIABLE "field"]
   public TableResult listTableDataSchema(
       String datasetName, String tableName, Schema schema, String field) {
-    // [START listTableDataSchema]
-    TableResult tableData =
-        bigquery.listTableData(datasetName, tableName, schema);
+    // [START ]
+    TableResult tableData = bigquery.listTableData(datasetName, tableName, schema);
     for (FieldValueList row : tableData.iterateAll()) {
       row.get(field);
     }
-    // [END listTableDataSchema]
+    // [END ]
     return tableData;
   }
 
@@ -559,7 +564,7 @@ public class BigQuerySnippets {
    */
   // [TARGET listTableData(TableId, Schema, TableDataListOption...)]
   public FieldValueList listTableDataSchemaId() {
-    // [START listTableDataSchemaId]
+    // [START ]
     Schema schema =
         Schema.of(
             Field.of("word", LegacySQLTypeName.STRING),
@@ -571,7 +576,7 @@ public class BigQuerySnippets {
             TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
     FieldValueList row = tableData.getValues().iterator().next();
     System.out.println(row.get("word").getStringValue());
-    // [END listTableDataSchemaId]
+    // [END ]
     return row;
   }
 
@@ -581,7 +586,7 @@ public class BigQuerySnippets {
   // [TARGET create(JobInfo, JobOption...)]
   // [VARIABLE "SELECT field FROM my_dataset_name.my_table_name"]
   public Job createJob(String query) {
-    // [START createJob]
+    // [START ]
     Job job = null;
     JobConfiguration jobConfiguration = QueryJobConfiguration.of(query);
     JobInfo jobInfo = JobInfo.of(jobConfiguration);
@@ -590,7 +595,7 @@ public class BigQuerySnippets {
     } catch (BigQueryException e) {
       // the job was not created
     }
-    // [END createJob]
+    // [END ]
     return job;
   }
 
@@ -599,12 +604,12 @@ public class BigQuerySnippets {
    */
   // [TARGET listJobs(JobListOption...)]
   public Page<Job> listJobs() {
-    // [START listJobs]
+    // [START bigquery_list_jobs]
     Page<Job> jobs = bigquery.listJobs(JobListOption.pageSize(100));
     for (Job job : jobs.iterateAll()) {
       // do something with the job
     }
-    // [END listJobs]
+    // [END bigquery_list_jobs]
     return jobs;
   }
 
@@ -614,12 +619,12 @@ public class BigQuerySnippets {
   // [TARGET getJob(String, JobOption...)]
   // [VARIABLE "my_job_name"]
   public Job getJob(String jobName) {
-    // [START getJob]
+    // [START ]
     Job job = bigquery.getJob(jobName);
     if (job == null) {
       // job was not found
     }
-    // [END getJob]
+    // [END ]
     return job;
   }
 
@@ -629,16 +634,15 @@ public class BigQuerySnippets {
   // [TARGET getJob(JobId, JobOption...)]
   // [VARIABLE "my_job_name"]
   public Job getJobFromId(String jobName) {
-    // [START getJobFromId]
+    // [START ]
     JobId jobIdObject = JobId.of(jobName);
     Job job = bigquery.getJob(jobIdObject);
     if (job == null) {
       // job was not found
     }
-    // [END getJobFromId]
+    // [END ]
     return job;
   }
-
 
   /**
    * Example of cancelling a job.
@@ -646,14 +650,14 @@ public class BigQuerySnippets {
   // [TARGET cancel(String)]
   // [VARIABLE "my_job_name"]
   public boolean cancelJob(String jobName) {
-    // [START cancelJob]
+    // [START ]
     boolean success = bigquery.cancel(jobName);
     if (success) {
       // job was cancelled
     } else {
       // job was not found
     }
-    // [END cancelJob]
+    // [END ]
     return success;
   }
 
@@ -663,7 +667,7 @@ public class BigQuerySnippets {
   // [TARGET cancel(JobId)]
   // [VARIABLE "my_job_name"]
   public boolean cancelJobFromId(String jobName) {
-    // [START cancelJobFromId]
+    // [START ]
     JobId jobId = JobId.of(jobName);
     boolean success = bigquery.cancel(jobId);
     if (success) {
@@ -671,7 +675,7 @@ public class BigQuerySnippets {
     } else {
       // job was not found
     }
-    // [END cancelJobFromId]
+    // [END ]
     return success;
   }
 
@@ -679,31 +683,19 @@ public class BigQuerySnippets {
    * Example of running a query.
    */
   // [TARGET query(QueryJobConfiguration, JobOption...)]
-  // [VARIABLE "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]"]
-  public void runQuery(String query) throws InterruptedException {
-    // [START runQuery]
-    QueryJobConfiguration queryConfig =
-        QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
-    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
-      // do something with the data
-    }
-    // [END runQuery]
-  }
+  public void runQuery() throws InterruptedException {
+    // [START bigquery_query]
+    // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
 
-  /**
-   * Example of running a query with query parameters.
-   */
-  // [TARGET query(QueryJobConfiguration, JobOption...)]
-  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
-  public void runQueryWithParameters(String query) throws InterruptedException {
-    // [START runQueryWithParameters]
-    // Note, standard SQL is required to use query parameters. Legacy SQL will not work.
-    QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)
-        .addNamedParameter("wordCount", QueryParameterValue.int64(5))
-        .build();
+    // Print the results.
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
-      // do something with the data
+      for (FieldValue val : row) {
+        System.out.printf("%s,", val.toString());
+      }
+      System.out.printf("\n");
     }
-    // [END runQueryWithParameters]
+    // [END bigquery_query]
   }
 }

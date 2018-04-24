@@ -32,13 +32,11 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
-
+import java.util.Iterator;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.Iterator;
 
 public class ITDatasetSnippets {
 
@@ -96,14 +94,6 @@ public class ITDatasetSnippets {
 
     Dataset reloadedDataset = datasetSnippets.reloadDataset();
     assertEquals(FRIENDLY_NAME, reloadedDataset.getFriendlyName());
-  }
-
-  @Test
-  public void testUpdate() {
-    assertNull(dataset.getFriendlyName());
-
-    Dataset updatedDataset = datasetSnippets.updateDataset(FRIENDLY_NAME);
-    assertEquals(FRIENDLY_NAME, updatedDataset.getFriendlyName());
   }
 
   @Test
