@@ -32,13 +32,11 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
-
+import java.util.Iterator;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.Iterator;
 
 public class ITDatasetSnippets {
 

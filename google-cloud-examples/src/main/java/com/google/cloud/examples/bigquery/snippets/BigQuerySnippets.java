@@ -50,7 +50,6 @@ import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -238,7 +237,7 @@ public class BigQuerySnippets {
     return deleted;
   }
 
- /**
+  /**
    * Example of listing the tables in a dataset, specifying the page size.
    */
   // [TARGET listTables(String, TableListOption...)]
@@ -252,7 +251,6 @@ public class BigQuerySnippets {
     // [END ]
     return tables;
   }
-
 
   /**
    * Example of listing the tables in a dataset.
@@ -337,9 +335,7 @@ public class BigQuerySnippets {
     // [START ]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
-        WriteChannelConfiguration.newBuilder(tableId)
-            .setFormatOptions(FormatOptions.csv())
-            .build();
+        WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
     TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
     // Write data to writer
     try {
@@ -400,9 +396,7 @@ public class BigQuerySnippets {
     // [START bigquery_load_from_file]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
-        WriteChannelConfiguration.newBuilder(tableId)
-            .setFormatOptions(FormatOptions.csv())
-            .build();
+        WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
     // The location must be specified; other fields can be auto-detected.
     JobId jobId = JobId.newBuilder().setLocation(location).build();
     TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
@@ -430,17 +424,19 @@ public class BigQuerySnippets {
     String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
     TableId tableId = TableId.of(datasetName, tableName);
     // Table field definition
-    Field[] fields = new Field[] {
-        Field.of("name", LegacySQLTypeName.STRING),
-        Field.of("post_abbr", LegacySQLTypeName.STRING)
-    };
+    Field[] fields =
+        new Field[] {
+          Field.of("name", LegacySQLTypeName.STRING),
+          Field.of("post_abbr", LegacySQLTypeName.STRING)
+        };
     // Table schema definition
     Schema schema = Schema.of(fields);
-    LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
-        .setFormatOptions(FormatOptions.json())
-        .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
-        .setSchema(schema)
-        .build();
+    LoadJobConfiguration configuration =
+        LoadJobConfiguration.builder(tableId, sourceUri)
+            .setFormatOptions(FormatOptions.json())
+            .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+            .setSchema(schema)
+            .build();
     // Load the table
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
     remoteLoadJob = remoteLoadJob.waitFor();
@@ -468,10 +464,12 @@ public class BigQuerySnippets {
     Map<String, Object> recordsContent = new HashMap<>();
     recordsContent.put("stringField", "Hello, World!");
     rowContent.put("recordField", recordsContent);
-    InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
-        .addRow("rowId", rowContent)
-        // More rows can be added in the same RPC by invoking .addRow() on the builder
-        .build());
+    InsertAllResponse response =
+        bigquery.insertAll(
+            InsertAllRequest.newBuilder(tableId)
+                .addRow("rowId", rowContent)
+                // More rows can be added in the same RPC by invoking .addRow() on the builder
+                .build());
     if (response.hasErrors()) {
       // If any of the insertions failed, this lets you inspect the errors
       for (Entry<Long, List<BigQueryError>> entry : response.getInsertErrors().entrySet()) {
@@ -553,8 +551,7 @@ public class BigQuerySnippets {
   public TableResult listTableDataSchema(
       String datasetName, String tableName, Schema schema, String field) {
     // [START ]
-    TableResult tableData =
-        bigquery.listTableData(datasetName, tableName, schema);
+    TableResult tableData = bigquery.listTableData(datasetName, tableName, schema);
     for (FieldValueList row : tableData.iterateAll()) {
       row.get(field);
     }
@@ -647,7 +644,6 @@ public class BigQuerySnippets {
     return job;
   }
 
-
   /**
    * Example of cancelling a job.
    */
@@ -690,10 +686,8 @@ public class BigQuerySnippets {
   public void runQuery() throws InterruptedException {
     // [START bigquery_query]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-    String query =
-        "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
-    QueryJobConfiguration queryConfig =
-        QueryJobConfiguration.newBuilder(query).build();
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
 
     // Print the results.
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {

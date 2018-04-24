@@ -45,7 +45,8 @@ import com.google.common.base.Function;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-
+import java.util.List;
+import java.util.Set;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -54,21 +55,17 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-import java.util.List;
-import java.util.Set;
-
-/**
- * Integration tests for {@link TableSnippets}.
- */
+/** Integration tests for {@link TableSnippets}. */
 public class ITTableSnippets {
 
   private static final String BASE_TABLE_NAME = "my_table";
   private static final String DATASET_NAME = RemoteBigQueryHelper.generateDatasetName();
   private static final String COPY_DATASET_NAME = RemoteBigQueryHelper.generateDatasetName();
   private static final String BUCKET_NAME = RemoteStorageHelper.generateBucketName();
-  private static final Schema SCHEMA = Schema.of(
-      Field.of("stringField", LegacySQLTypeName.STRING),
-      Field.of("booleanField", LegacySQLTypeName.BOOLEAN));
+  private static final Schema SCHEMA =
+      Schema.of(
+          Field.of("stringField", LegacySQLTypeName.STRING),
+          Field.of("booleanField", LegacySQLTypeName.BOOLEAN));
   private static final List<?> ROW1 = ImmutableList.of("value1", true);
   private static final List<?> ROW2 = ImmutableList.of("value2", false);
   private static final String DOOMED_TABLE_NAME = "doomed_table";
@@ -81,8 +78,7 @@ public class ITTableSnippets {
   private Table table;
   private TableSnippets tableSnippets;
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() {
@@ -176,12 +172,16 @@ public class ITTableSnippets {
       rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     }
     Set<List<?>> values =
-        FluentIterable.from(rows).transform(new Function<FieldValueList, List<?>>() {
-          @Override
-          public List<?> apply(FieldValueList row) {
-            return ImmutableList.of(row.get(0).getStringValue(), row.get(1).getBooleanValue());
-          }
-        }).toSet();
+        FluentIterable.from(rows)
+            .transform(
+                new Function<FieldValueList, List<?>>() {
+                  @Override
+                  public List<?> apply(FieldValueList row) {
+                    return ImmutableList.of(
+                        row.get(0).getStringValue(), row.get(1).getBooleanValue());
+                  }
+                })
+            .toSet();
     assertEquals(ImmutableSet.of(ROW2), values);
   }
 
@@ -241,12 +241,16 @@ public class ITTableSnippets {
     List<FieldValueList> rows = waitForTableRows(checkTable, 2);
     // Verify that the table data matches what it's supposed to.
     Set<List<?>> values =
-        FluentIterable.from(rows).transform(new Function<FieldValueList, List<?>>() {
-          @Override
-          public List<?> apply(FieldValueList row) {
-            return ImmutableList.of(row.get(0).getStringValue(), row.get(1).getBooleanValue());
-          }
-        }).toSet();
+        FluentIterable.from(rows)
+            .transform(
+                new Function<FieldValueList, List<?>>() {
+                  @Override
+                  public List<?> apply(FieldValueList row) {
+                    return ImmutableList.of(
+                        row.get(0).getStringValue(), row.get(1).getBooleanValue());
+                  }
+                })
+            .toSet();
     assertEquals(ImmutableSet.of(ROW2, ROW1), values);
   }
 

@@ -19,14 +19,14 @@ package com.google.cloud.examples.bigquery.cloudsnippets;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
-import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.TableId;
+import java.util.concurrent.TimeoutException;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
-import java.util.concurrent.TimeoutException;
 
 /**
  * This class contains snippets for cloud.google.com documentation.
@@ -45,8 +45,7 @@ public class CloudSnippets {
   public void runLegacySqlQuery() throws InterruptedException {
     // [START bigquery_query_legacy]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-    String query =
-        "SELECT corpus FROM [bigquery-public-data:samples.shakespeare] GROUP BY corpus;";
+    String query = "SELECT corpus FROM [bigquery-public-data:samples.shakespeare] GROUP BY corpus;";
     QueryJobConfiguration queryConfig =
         // To use legacy SQL syntax, set useLegacySql to true.
         QueryJobConfiguration.newBuilder(query).setUseLegacySql(true).build();
@@ -67,8 +66,7 @@ public class CloudSnippets {
   public void runStandardSqlQuery() throws InterruptedException {
     // [START bigquery_query_standard]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-    String query =
-        "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     QueryJobConfiguration queryConfig =
         // Note that setUseLegacySql is set to false by default
         QueryJobConfiguration.newBuilder(query).setUseLegacySql(false).build();
@@ -86,19 +84,19 @@ public class CloudSnippets {
   /**
    * Example of running a query and saving the results to a table.
    */
-  public void runQueryPermanentTable(String destinationDataset, String destinationTable) throws InterruptedException {
+  public void runQueryPermanentTable(String destinationDataset, String destinationTable)
+      throws InterruptedException {
     // [START bigquery_query_destination_table]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
     // String destinationDataset = 'my_destination_dataset';
     // String destinationTable = 'my_destination_table';
-    String query =
-        "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     QueryJobConfiguration queryConfig =
         // Note that setUseLegacySql is set to false by default
         QueryJobConfiguration.newBuilder(query)
-        // Save the results of the query to a permanent table.
-        .setDestinationTable(TableId.of(destinationDataset, destinationTable))
-        .build();
+            // Save the results of the query to a permanent table.
+            .setDestinationTable(TableId.of(destinationDataset, destinationTable))
+            .build();
 
     // Print the results.
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
@@ -113,22 +111,23 @@ public class CloudSnippets {
   /**
    * Example of running a query and saving the results to a table.
    */
-  public void runQueryLargeResults(String destinationDataset, String destinationTable) throws InterruptedException {
+  public void runQueryLargeResults(String destinationDataset, String destinationTable)
+      throws InterruptedException {
     // [START bigquery_query_legacy_large_results]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
     // String destinationDataset = 'my_destination_dataset';
     // String destinationTable = 'my_destination_table';
-    String query =
-        "SELECT corpus FROM [bigquery-public-data:samples.shakespeare] GROUP BY corpus;";
+    String query = "SELECT corpus FROM [bigquery-public-data:samples.shakespeare] GROUP BY corpus;";
     QueryJobConfiguration queryConfig =
         // To use legacy SQL syntax, set useLegacySql to true.
-        QueryJobConfiguration.newBuilder(query).setUseLegacySql(true)
-        // Save the results of the query to a permanent table.
-        .setDestinationTable(TableId.of(destinationDataset, destinationTable))
-        // Allow results larger than the maximum response size.
-        // If true, a destination table must be set.
-        .setAllowLargeResults(true)
-        .build();
+        QueryJobConfiguration.newBuilder(query)
+            .setUseLegacySql(true)
+            // Save the results of the query to a permanent table.
+            .setDestinationTable(TableId.of(destinationDataset, destinationTable))
+            // Allow results larger than the maximum response size.
+            // If true, a destination table must be set.
+            .setAllowLargeResults(true)
+            .build();
 
     // Print the results.
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
@@ -146,13 +145,12 @@ public class CloudSnippets {
   public void runUncachedQuery() throws TimeoutException, InterruptedException {
     // [START bigquery_query_no_cache]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-    String query =
-        "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query)
-        // Disable the query cache to force live query evaluation.
-        .setUseQueryCache(false)
-        .build();
+            // Disable the query cache to force live query evaluation.
+            .setUseQueryCache(false)
+            .build();
 
     // Print the results.
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
@@ -170,15 +168,14 @@ public class CloudSnippets {
   public void runBatchQuery() throws TimeoutException, InterruptedException {
     // [START bigquery_query_batch]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-    String query =
-        "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query)
-        // Run at batch priority, which won't count toward concurrent rate
-        // limit. See:
-        // https://cloud.google.com/bigquery/docs/running-queries#batch
-        .setPriority(QueryJobConfiguration.Priority.BATCH)
-        .build();
+            // Run at batch priority, which won't count toward concurrent rate
+            // limit. See:
+            // https://cloud.google.com/bigquery/docs/running-queries#batch
+            .setPriority(QueryJobConfiguration.Priority.BATCH)
+            .build();
 
     // Print the results.
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
@@ -207,9 +204,9 @@ public class CloudSnippets {
     // Note: Standard SQL is required to use query parameters.
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query)
-        .addNamedParameter("corpus", QueryParameterValue.string(corpus))
-        .addNamedParameter("min_word_count", QueryParameterValue.int64(minWordCount))
-        .build();
+            .addNamedParameter("corpus", QueryParameterValue.string(corpus))
+            .addNamedParameter("min_word_count", QueryParameterValue.int64(minWordCount))
+            .build();
 
     // Print the results.
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
@@ -240,9 +237,9 @@ public class CloudSnippets {
     // Note: Standard SQL is required to use query parameters.
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query)
-        .addNamedParameter("gender", QueryParameterValue.string(gender))
-        .addNamedParameter("states", QueryParameterValue.array(states, String.class))
-        .build();
+            .addNamedParameter("gender", QueryParameterValue.string(gender))
+            .addNamedParameter("states", QueryParameterValue.array(states, String.class))
+            .build();
 
     // Print the results.
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
@@ -265,12 +262,12 @@ public class CloudSnippets {
     // Note: Standard SQL is required to use query parameters.
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(query)
-        .addNamedParameter(
-            "ts_value",
-            QueryParameterValue.timestamp(
-                // Timestamp takes microseconds since 1970-01-01T00:00:00 UTC
-                timestamp.getMillis() * 1000))
-        .build();
+            .addNamedParameter(
+                "ts_value",
+                QueryParameterValue.timestamp(
+                    // Timestamp takes microseconds since 1970-01-01T00:00:00 UTC
+                    timestamp.getMillis() * 1000))
+            .build();
 
     // Print the results.
     DateTimeFormatter formatter = ISODateTimeFormat.dateTimeNoMillis().withZoneUTC();

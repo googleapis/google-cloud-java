@@ -18,7 +18,7 @@
  * EDITING INSTRUCTIONS
  * This file is referenced in Dataset’s javadoc. Any change to this file should be reflected in
  * Dataset’s javadoc.
-*/
+ */
 
 package com.google.cloud.examples.bigquery.snippets;
 
@@ -31,7 +31,6 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TimePartitioning;
-
 
 /**
  * This class contains a number of snippets for the {@link Dataset} interface.
@@ -109,13 +108,13 @@ public class DatasetSnippets {
    */
   // [TARGET list(TableListOption...)]
   public Page<Table> list() {
-     // [START ]
+    // [START ]
     Page<Table> tables = dataset.list();
     for (Table table : tables.iterateAll()) {
       // do something with the table
     }
     // [END ]
-   return tables;
+    return tables;
   }
 
   /**
@@ -139,10 +138,11 @@ public class DatasetSnippets {
   public Table createTable(String tableName, String fieldName) {
     // [START ]
     Schema schema = Schema.of(Field.of(fieldName, LegacySQLTypeName.STRING));
-    StandardTableDefinition definition = StandardTableDefinition.newBuilder()
-        .setSchema(schema)
-        .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
-        .build();
+    StandardTableDefinition definition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(schema)
+            .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
+            .build();
     Table table = dataset.create(tableName, definition);
     // [END ]
     return table;
