@@ -86,8 +86,7 @@ public class OrderTest {
     groups[35] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc2/c2/doc1")};
     groups[36] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc2/c2/doc2")};
     groups[37] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c10/doc1")};
-    groups[38] =
-        new Value[] {referenceValue("projects/p1/databases/dkkkkklkjnjkkk1/documents/c2/doc1")};
+    groups[38] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c2/doc1")};
     groups[39] = new Value[] {referenceValue("projects/p2/databases/d2/documents/c1/doc1")};
     groups[40] = new Value[] {referenceValue("projects/p2/databases/d2/documents/c1-/doc1")};
 
