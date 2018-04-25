@@ -491,7 +491,7 @@
         <executions>
           <execution>
             <id>enforce</id>
-            <phase>validate</phase>
+            <phase>test</phase>
             <goals>
               <goal>enforce</goal>
             </goals>
@@ -503,8 +503,7 @@
                 <requireJavaVersion>
                   <version>[1.7,)</version>
                 </requireJavaVersion>
-                <dependencyConvergence>
-                </dependencyConvergence>
+                <dependencyConvergence />
                 <requireUpperBoundDeps/>
               </rules>
             </configuration>
