@@ -32,7 +32,7 @@ public class OrderTest {
 
   @Test
   public void verifyOrder() {
-    Value[][] groups = new Value[64][];
+    Value[][] groups = new Value[65][];
 
     groups[0] = new Value[] {nullValue()};
 
@@ -89,36 +89,36 @@ public class OrderTest {
     groups[38] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c2/doc1")};
     groups[39] = new Value[] {referenceValue("projects/p2/databases/d2/documents/c1/doc1")};
     groups[40] = new Value[] {referenceValue("projects/p2/databases/d2/documents/c1-/doc1")};
-    groups[40] = new Value[] {referenceValue("projects/p2/databases/d3/documents/c1-/doc1")};
+    groups[41] = new Value[] {referenceValue("projects/p2/databases/d3/documents/c1-/doc1")};
 
     // geo points
-    groups[41] = new Value[] {geoPointValue(-90, -180)};
-    groups[42] = new Value[] {geoPointValue(-90, 0)};
-    groups[43] = new Value[] {geoPointValue(-90, 180)};
-    groups[44] = new Value[] {geoPointValue(0, -180)};
-    groups[45] = new Value[] {geoPointValue(0, 0)};
-    groups[46] = new Value[] {geoPointValue(0, 180)};
-    groups[47] = new Value[] {geoPointValue(1, -180)};
-    groups[48] = new Value[] {geoPointValue(1, 0)};
-    groups[49] = new Value[] {geoPointValue(1, 180)};
-    groups[50] = new Value[] {geoPointValue(90, -180)};
-    groups[51] = new Value[] {geoPointValue(90, 0)};
-    groups[52] = new Value[] {geoPointValue(90, 180)};
+    groups[42] = new Value[] {geoPointValue(-90, -180)};
+    groups[43] = new Value[] {geoPointValue(-90, 0)};
+    groups[44] = new Value[] {geoPointValue(-90, 180)};
+    groups[45] = new Value[] {geoPointValue(0, -180)};
+    groups[46] = new Value[] {geoPointValue(0, 0)};
+    groups[47] = new Value[] {geoPointValue(0, 180)};
+    groups[48] = new Value[] {geoPointValue(1, -180)};
+    groups[49] = new Value[] {geoPointValue(1, 0)};
+    groups[50] = new Value[] {geoPointValue(1, 180)};
+    groups[51] = new Value[] {geoPointValue(90, -180)};
+    groups[52] = new Value[] {geoPointValue(90, 0)};
+    groups[53] = new Value[] {geoPointValue(90, 180)};
 
     // arrays
-    groups[53] = new Value[] {arrayValue()};
-    groups[54] = new Value[] {arrayValue(stringValue("bar"))};
-    groups[55] = new Value[] {arrayValue(stringValue("foo"))};
-    groups[56] = new Value[] {arrayValue(stringValue("foo"), intValue(0))};
-    groups[57] = new Value[] {arrayValue(stringValue("foo"), intValue(1))};
-    groups[58] = new Value[] {arrayValue(stringValue("foo"), stringValue("0"))};
+    groups[54] = new Value[] {arrayValue()};
+    groups[55] = new Value[] {arrayValue(stringValue("bar"))};
+    groups[56] = new Value[] {arrayValue(stringValue("foo"))};
+    groups[57] = new Value[] {arrayValue(stringValue("foo"), intValue(0))};
+    groups[58] = new Value[] {arrayValue(stringValue("foo"), intValue(1))};
+    groups[59] = new Value[] {arrayValue(stringValue("foo"), stringValue("0"))};
 
     // objects
-    groups[59] = new Value[] {objectValue("bar", intValue(0))};
-    groups[60] = new Value[] {objectValue("bar", intValue(0), "foo", intValue(1))};
-    groups[61] = new Value[] {objectValue("bar", intValue(1))};
-    groups[62] = new Value[] {objectValue("bar", intValue(2))};
-    groups[63] = new Value[] {objectValue("bar", stringValue("0"))};
+    groups[60] = new Value[] {objectValue("bar", intValue(0))};
+    groups[61] = new Value[] {objectValue("bar", intValue(0), "foo", intValue(1))};
+    groups[62] = new Value[] {objectValue("bar", intValue(1))};
+    groups[63] = new Value[] {objectValue("bar", intValue(2))};
+    groups[64] = new Value[] {objectValue("bar", stringValue("0"))};
 
     for (int left = 0; left < groups.length; left++) {
       for (int right = 0; right < groups.length; right++) {
