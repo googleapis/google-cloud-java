@@ -146,7 +146,13 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return mutateRowSettings;
   }
 
-  /** Returns the object with the settings used for manually batched calls to MutateRows. */
+  /**
+   * Returns the object with the settings used for to MutateRows.
+   *
+   * <p>Please note that these settings will affect both manually batched calls
+   * (bulkMutateRowsCallable) and automatic batched calls (bulkMutateRowsBatchingCallable). The
+   * {@link RowMutation} request signature is ignored for the manual batched calls.
+   */
   public BatchingCallSettings<RowMutation, Void> bulkMutateRowsSettings() {
     return bulkMutateRowsSettings;
   }
