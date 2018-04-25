@@ -25,7 +25,10 @@ import static com.google.common.base.Preconditions.checkState;
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.core.ApiFunction;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.longrunning.OperationFutureImpl;
+import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.pathtemplate.PathTemplate;
@@ -448,18 +451,28 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       // CreateDatabase() is not idempotent, so we're not retrying this request.
       String instanceName = getInstanceName(instanceId);
       String createStatement = "CREATE DATABASE `" + databaseId + "`";
-      try {
-        return new TransformingOperationFuture<>(
-        rpc.createDatabase(instanceName, createStatement, statements),
-        new ApiFunction<com.google.spanner.admin.database.v1.Database, Database>() {
-          @Override
-          public Database apply(com.google.spanner.admin.database.v1.Database database) {
-            return Database.fromProto(database, DatabaseAdminClientImpl.this);
-          }
-        });
-      } catch (Exception e) {
-        throw SpannerExceptionFactory.newSpannerException(e);
-      } 
+      OperationFuture<com.google.spanner.admin.database.v1.Database, CreateDatabaseMetadata>
+          rawOperationFuture = rpc.createDatabase(instanceName, createStatement, statements);
+      return new OperationFutureImpl(
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Database>() {
+            @Override
+            public Database apply(OperationSnapshot snapshot) {
+              return Database.fromProto(
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                      com.google.spanner.admin.database.v1.Database.class)
+                          .apply(snapshot),
+                  DatabaseAdminClientImpl.this);
+            }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(CreateDatabaseMetadata.class),
+          new ApiFunction<Exception, Database>() {
+            @Override
+            public Database apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
+            }
+          });
     }
 
     @Override
@@ -485,22 +498,27 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final String dbName = getDatabaseName(instanceId, databaseId);
       final String opId = operationId != null ? operationId : randomOperationId();
       // TODO(hzyi) 
-      // spanner checks the exception and if the error code is ALREADY_EXISTS
+      // Spanner checks the exception and if the error code is ALREADY_EXISTS
       // it creates a new Operation instead of throwing the exception. This
       // feature is not implemented in this PR but will come later
-      try {
-        return new TransformingOperationFuture<>(
-          rpc.updateDatabaseDdl(dbName, statements, opId),
-          new ApiFunction<Empty, Void>() {
+      OperationFuture rawOperationFuture = rpc.updateDatabaseDdl(dbName, statements, opId);
+      return new OperationFutureImpl(
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Void>() {
             @Override
-            public Void apply(Empty empty) {
+            public Void apply(OperationSnapshot snapshot) {
               return null;
             }
-          });        
-      } catch(Exception e) {
-        throw SpannerExceptionFactory.newSpannerException(e);
-      }
-    }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(UpdateDatabaseDdlMetadata.class),
+          new ApiFunction<Exception, Database>() {
+            @Override
+            public Database apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
+            }
+          });
+    }  
 
     @Override
     public void dropDatabase(String instanceId, String databaseId) throws SpannerException {
@@ -618,18 +636,30 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public OperationFuture<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
         throws SpannerException {
       String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
-      try {
-        return new TransformingOperationFuture<>(
-          rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto()),
-          new ApiFunction<com.google.spanner.admin.instance.v1.Instance, Instance>() {
+      OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata> rawOperationFuture =
+          rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
+      
+      return new OperationFutureImpl<Instance, CreateInstanceMetadata>(
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Instance>() {
             @Override
-            public Instance apply(com.google.spanner.admin.instance.v1.Instance instance) {
-              return Instance.fromProto(instance, InstanceAdminClientImpl.this, dbClient);
+            public Instance apply(OperationSnapshot snapshot) {
+              return Instance.fromProto(
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                      com.google.spanner.admin.instance.v1.Instance.class)
+                          .apply(snapshot),
+                  InstanceAdminClientImpl.this,
+                  dbClient);
+            }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(CreateInstanceMetadata.class),
+          new ApiFunction<Exception, Instance>() {
+            @Override
+            public Instance apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
             }
           });
-      } catch(Exception e) {
-        throw SpannerExceptionFactory.newSpannerException(e);
-      }
     }
 
     @Override
@@ -688,18 +718,30 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           fieldsToUpdate.length == 0
               ? InstanceInfo.InstanceField.toFieldMask(InstanceInfo.InstanceField.values())
               : InstanceInfo.InstanceField.toFieldMask(fieldsToUpdate);
-      try {
-        return new TransformingOperationFuture<>(
-          rpc.updateInstance(instance.toProto(), fieldMask),
-          new ApiFunction<com.google.spanner.admin.instance.v1.Instance, Instance>() {
+
+      OperationFuture<com.google.spanner.admin.instance.v1.Instance, UpdateInstanceMetadata>
+          rawOperationFuture = rpc.updateInstance(instance.toProto(), fieldMask);
+      return new OperationFutureImpl<Instance, UpdateInstanceMetadata>(
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Instance>() {
             @Override
-            public Instance apply(com.google.spanner.admin.instance.v1.Instance instance) {
-              return Instance.fromProto(instance, InstanceAdminClientImpl.this, dbClient);
+            public Instance apply(OperationSnapshot snapshot) {
+              return Instance.fromProto(
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                      com.google.spanner.admin.instance.v1.Instance.class)
+                          .apply(snapshot),
+                  InstanceAdminClientImpl.this,
+                  dbClient);
+            }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(UpdateInstanceMetadata.class),
+          new ApiFunction<Exception, Instance>() {
+            @Override
+            public Instance apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
             }
           });
-      } catch(Exception e) {
-        throw SpannerExceptionFactory.newSpannerException(e);
-      }
     }
 
     @Override

@@ -17,12 +17,13 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.longrunning.OperationFutures;
+import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.collect.ImmutableList;
@@ -104,7 +105,9 @@ public class InstanceAdminClientImplTest {
   @Test
   public void createInstance() throws Exception {
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
-        rawOperationFuture = createMockOperationFuture(true, getInstanceProto());
+        rawOperationFuture =
+            OperationFutureUtil.fakeOperationFuture(
+                true, getInstanceProto(), CreateInstanceMetadata.getDefaultInstance());
     when(rpc.createInstance("projects/" + PROJECT_ID, INSTANCE_ID, getInstanceProto()))
         .thenReturn(rawOperationFuture);
     OperationFuture<Instance, CreateInstanceMetadata> op =
@@ -138,7 +141,9 @@ public class InstanceAdminClientImplTest {
             .setNodeCount(2)
             .build();
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, UpdateInstanceMetadata>
-        rawOperationFuture = createMockOperationFuture(true, getInstanceProto());
+        rawOperationFuture =
+            OperationFutureUtil(
+                "updateInstance", getInstanceProto(), UpdateInstanceMetadata.getDefaultInstance());
     when(rpc.updateInstance(instance, FieldMask.newBuilder().addPaths("node_count").build()))
         .thenReturn(rawOperationFuture);
     InstanceInfo instanceInfo =
@@ -172,12 +177,4 @@ public class InstanceAdminClientImplTest {
     assertThat(instances.size()).isEqualTo(2);
   }
 
-  private <ResponseT, MetadataT> OperationFuture<ResponseT, MetadataT> createMockOperationFuture(
-      final boolean done,
-      final ResponseT result) throws Exception {
-    OperationFuture<ResponseT, MetadataT> mockOperationFuture = mock(OperationFuture.class);
-    when(mockOperationFuture.isDone()).thenReturn(done);
-    when(mockOperationFuture.get()).thenReturn(result);
-    return mockOperationFuture;
-  }
 }
