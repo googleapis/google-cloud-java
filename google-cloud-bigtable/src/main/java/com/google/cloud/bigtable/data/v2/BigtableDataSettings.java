@@ -96,7 +96,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
   public BatchingCallSettings<RowMutation, Void> bulkMutationsSettings() {
     // NOTE: the user facing BigtableDataClient only exposes this api as newBulkMutationBatcher,
     // so the outer name should match that, while the stub should stick to rpc names.
-    return getTypedStubSettings().mutateRowsSettings();
+    return getTypedStubSettings().bulkMutateRowsSettings();
   }
 
   /** Returns the object with the settings used for calls to checkAndMutateRow. */
@@ -188,7 +188,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     public BatchingCallSettings.Builder<RowMutation, Void> bulkMutationsSettings() {
       // NOTE: the user facing BigtableDataClient only exposes this api as newBulkMutationBatcher,
       // so the outer name should match that, while the stub should stick to rpc names.
-      return getTypedStubSettings().mutateRowsSettings();
+      return getTypedStubSettings().bulkMutateRowsSettings();
     }
 
     /** Returns the object with the settings used for calls to checkAndMutateRow. */
