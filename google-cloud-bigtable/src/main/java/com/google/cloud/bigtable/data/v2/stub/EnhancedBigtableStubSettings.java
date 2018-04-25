@@ -147,7 +147,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   }
 
   /**
-   * Returns the object with the settings used for to MutateRows.
+   * Returns the object with the settings used for calls to MutateRows.
    *
    * <p>Please note that these settings will affect both manually batched calls
    * (bulkMutateRowsCallable) and automatic batched calls (bulkMutateRowsBatchingCallable). The
