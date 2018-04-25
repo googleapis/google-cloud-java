@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ package com.google.cloud.dns;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.dns.model.ManagedZone;
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -55,11 +55,6 @@ public class Zone extends ZoneInfo {
       this.infoBuilder = new ZoneInfo.BuilderImpl(zone);
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -79,11 +74,6 @@ public class Zone extends ZoneInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder dnsName(String dnsName) {
-      return setDnsName(dnsName);
-    }
 
     @Override
     public Builder setDnsName(String dnsName) {
@@ -91,11 +81,6 @@ public class Zone extends ZoneInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -206,13 +191,6 @@ public class Zone extends ZoneInfo {
     return dns.listChangeRequests(getName(), options);
   }
 
-  /**
-   * Returns the {@link Dns} service object associated with this zone.
-   */
-  @Deprecated
-  public Dns dns() {
-    return getDns();
-  }
 
   /**
    * Returns the {@link Dns} service object associated with this zone.

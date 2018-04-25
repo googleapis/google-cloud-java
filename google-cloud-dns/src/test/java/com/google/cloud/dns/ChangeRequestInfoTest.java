@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,14 +54,6 @@ public class ChangeRequestInfoTest {
       .setStatus(STATUS)
       .setGeneratedId(GENERATED_ID)
       .build();
-  private static final ChangeRequestInfo DEPRECATED_CHANGE = ChangeRequest.builder()
-      .add(RECORD1)
-      .add(RECORD2)
-      .delete(RECORD3)
-      .setStartTime(START_TIME_MILLIS)
-      .setStatus(STATUS)
-      .setGeneratedId(GENERATED_ID)
-      .build();
 
   @Test
   public void testEmptyBuilder() {
@@ -72,14 +64,6 @@ public class ChangeRequestInfoTest {
     assertTrue(cr.getAdditions().isEmpty());
   }
 
-  @Test
-  public void testEmptyBuilderDeprecated() {
-    ChangeRequestInfo cr = ChangeRequest.builder().build();
-    assertNotNull(cr.deletions());
-    assertTrue(cr.deletions().isEmpty());
-    assertNotNull(cr.additions());
-    assertTrue(cr.additions().isEmpty());
-  }
 
   @Test
   public void testBuilder() {
@@ -97,21 +81,6 @@ public class ChangeRequestInfoTest {
     assertEquals(CHANGE.getAdditions(), another.getAdditions());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(GENERATED_ID, DEPRECATED_CHANGE.generatedId());
-    assertEquals(STATUS, DEPRECATED_CHANGE.status());
-    assertEquals(START_TIME_MILLIS, DEPRECATED_CHANGE.startTimeMillis());
-    assertEquals(ADDITIONS, DEPRECATED_CHANGE.additions());
-    assertEquals(DELETIONS, DEPRECATED_CHANGE.deletions());
-    List<RecordSet> recordList = ImmutableList.of(RECORD1);
-    ChangeRequestInfo another = DEPRECATED_CHANGE.toBuilder().additions(recordList).build();
-    assertEquals(recordList, another.additions());
-    assertEquals(DEPRECATED_CHANGE.deletions(), another.deletions());
-    another = DEPRECATED_CHANGE.toBuilder().deletions(recordList).build();
-    assertEquals(recordList, another.deletions());
-    assertEquals(DEPRECATED_CHANGE.additions(), another.additions());
-  }
 
   @Test
   public void testEqualsAndNotEquals() {

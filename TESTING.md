@@ -2,15 +2,16 @@
 
 This library provides tools to help write tests for code that uses the following google-cloud services:
 
--  [BigQuery] (#testing-code-that-uses-bigquery)
--  [Compute] (#testing-code-that-uses-compute)
--  [Datastore] (#testing-code-that-uses-datastore)
--  [DNS] (#testing-code-that-uses-dns)
--  [Logging] (#testing-code-that-uses-logging)
--  [PubSub] (#testing-code-that-uses-pubsub)
--  [Resource Manager] (#testing-code-that-uses-resource-manager)
--  [Storage] (#testing-code-that-uses-storage)
--  [Spanner] (#testing-code-that-uses-cloud-spanner)
+-  [BigQuery](#testing-code-that-uses-bigquery)
+-  [Bigtable](#testing-code-that-uses-bigtable)
+-  [Compute](#testing-code-that-uses-compute)
+-  [Datastore](#testing-code-that-uses-datastore)
+-  [DNS](#testing-code-that-uses-dns)
+-  [Logging](#testing-code-that-uses-logging)
+-  [PubSub](#testing-code-that-uses-pubsub)
+-  [Resource Manager](#testing-code-that-uses-resource-manager)
+-  [Storage](#testing-code-that-uses-storage)
+-  [Spanner](#testing-code-that-uses-cloud-spanner)
 
 ### Testing code that uses BigQuery
 
@@ -40,6 +41,29 @@ Here is an example that clears the dataset created in Step 3.
   ```java
   RemoteBigQueryHelper.forceDelete(bigquery, dataset);
   ```
+
+### Testing code that uses Bigtable
+
+Bigtable integration tests can either be run against an emulator or a real Bigtable table. The
+target environment can be selected via the `bigtable.env` system property. By default it is set to
+`emulator` and the other option is `prod`.
+
+To use the `emulator` environment, please install the gcloud sdk and use it to install the
+`cbtemulator` via `gcloud components install bigtable`.
+
+To use the `prod` environment:
+1. Set up the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
+2. Download the [JSON service account credentials file][create-service-account] from the Google 
+   Developer's Console.
+3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
+4. Set the system property `bigtable.env=prod` and `bigtable.table` to the full table name you 
+    created earlier. Example: 
+    ```shell
+    mvn verify -am -pl google-cloud-bigtable \
+      -Dbigtable.env=prod \
+      -Dbigtable.table=projects/my-project/instances/my-instance/tables/my-table
+    ```
+
 
 ### Testing code that uses Compute
 
@@ -73,46 +97,30 @@ uses the `RemoteComputeHelper` to create an address.
 
 You can test against a temporary local Datastore by following these steps:
 
-1. Start the local Datastore emulator before running your tests using `LocalDatastoreHelper`'s `create` and `start` methods. This will create a temporary folder on your computer and bind a port for communication with the local Datastore. There is an optional argument for `create`: consistency. The consistency setting controls the fraction of Datastore writes that are immediately visible in global queries.
-  ```java
-  // Use the default consistency setting of 0.9
-  LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-  // or explicitly set the consistency
-  helper = LocalDatastoreHelper.create(0.6);
+1. [Install Cloud SDK](https://cloud.google.com/sdk/downloads)
 
-  helper.start(); // Starts the local Datastore emulator in a separate process
-  ```
-
-2. Create and use a `Datastore` object with the options given by the `LocalDatastoreHelper` instance.  For example:
-  ```java
-  Datastore localDatastore = helper.getOptions().getService();
-  ```
-
-3. Run your tests.
-
-4. Stop the local datastore emulator by calling the `stop()` method, like so:
-  ```java
-  helper.stop();
-  ```
-
-#### On a remote machine
-
-You can test against a remote Datastore emulator as well.  To do this, set the `DatastoreOptions` project endpoint to the hostname of the remote machine, like the example below.
-
-  ```java
-  DatastoreOptions options = DatastoreOptions.newBuilder()
-      .setProjectId("my-project-id") // must match project ID specified on remote machine
-      .setHost("http://<hostname of machine>:<port>")
-      .setCredentials(NoCredentials.getInstance())
-      .build();
-  Datastore localDatastore = options.getService();
-  ```
-
-We recommend that you start the emulator on the remote machine using the [Google Cloud SDK](https://cloud.google.com/sdk/gcloud/reference/beta/emulators/datastore/) from command line, as shown below:
-
+2. Start the emulator
 ```
-gcloud beta emulators datastore start --host-port <hostname of machine>:<port>
+$ gcloud beta emulators datastore start
 ```
+To determine which host/port the emulator is running on:
+```
+$ gcloud beta emulators datastore env-init
+# Sample output:
+#   export DATASTORE_EMULATOR_HOST=localhost:8759
+```
+3. Point your client to the emulator
+
+```java
+DatastoreOptions options = DatastoreOptions.newBuilder()
+    .setProjectId(DatastoreOptions.getDefaultProjectId())
+    .setHost(System.getenv("DATASTORE_EMULATOR_HOST"))
+    .setCredentials(NoCredentials.getInstance())
+    .setRetrySettings(ServiceOptions.getNoRetrySettings())
+    .build();
+Datastore datastore = options.getService();
+```
+4. Run your tests
 
 ### Testing code that uses DNS
 
@@ -145,44 +153,52 @@ uses the `RemoteLoggingHelper` to create a metric.
 
 ### Testing code that uses Pub/Sub
 
-#### On your machine
+You can test against a Pub/Sub emulator:
 
-You can test against a temporary local Pub/Sub by following these steps:
+1. [Install Cloud SDK](https://cloud.google.com/sdk/downloads)
 
-1. Start the local Pub/Sub emulator before running your tests using `LocalPubSubHelper`'s `create`
-and `start` methods. This will bind a port for communication with the local Pub/Sub emulator.
-  ```java
-  LocalPubSubHelper helper = LocalPubSubHelper.create();
+2. Start the emulator:
+```shell
+$ gcloud beta emulators pubsub start
+```
 
-  helper.start(); // Starts the local Pub/Sub emulator in a separate process
-  ```
+To determine which host/port the emulator is running on:
+```shell
+$ gcloud beta emulators pubsub env-init
+# Sample output:
+#   export PUBSUB_EMULATOR_HOST=localhost:8759
+```
 
-2. Create and use a `PubSub` object with the options given by the `LocalPubSubHelper` instance. For
-example:
-  ```java
-  PubSub localPubsub = helper.getOptions().getService();
-  ```
+3. Point your client to the emulator.
+```java
+String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
+ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext(true).build();
+try {
+  ChannelProvider channelProvider = FixedChannelProvider.create(channel);
+  CredentialsProvider credentialsProvider = new NoCredentialsProvider();
 
-3. Run your tests.
+  // Similarly for SubscriptionAdminSettings
+  TopicAdminClient topicClient = TopicAdminClient.create(
+    TopicAdminSettings
+      .defaultBuilder()
+        .setTransportProvider(
+            GrpcTransportProvider.newBuilder()
+                .setChannelProvider(channelProvider)
+                .build())
+      .setCredentialsProvider(credentialsProvider)
+      .build());
 
-4. Stop the local Pub/Sub emulator by calling the `stop()` method, like so:
-  ```java
-  helper.stop();
-  ```
-
-#### On a remote machine
-
-You can test against a remote Pub/Sub emulator as well. To do this, set the `PubSubOptions` project
-endpoint to the hostname of the remote machine, like the example below.
-
-  ```java
-  PubSubOptions options = PubSubOptions.newBuilder()
-      .setProjectId("my-project-id") // must match project ID specified on remote machine
-      .setHost("<hostname of machine>:<port>")
-      .setCredentials(NoCredentials.getInstance())
+  // Similarly for Subscriber
+  Publisher publisher =
+    Publisher
+      .defaultBuilder(topicName)
+      .setChannelProvider(channelProvider)
+      .setCredentialsProvider(credentialsProvider)
       .build();
-  PubSub localPubsub = options.getService();
-  ```
+} finally {
+  channel.shutdown();
+}
+```
 
 ### Testing code that uses Resource Manager
 
@@ -217,7 +233,24 @@ You can test against an in-memory local Resource Manager by following these step
 
 ### Testing code that uses Storage
 
-Currently, there isn't an emulator for Google Cloud Storage, so an alternative is to create a test project.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
+#### On your machine
+
+You can test against an in-memory local Storage. The in-memory configuration supports only limited number of operations; please refer to the `LocalStorageHelper` class documentation for more details. Please use `RemoteStorageHelper` (see next section) if you need to use operations which are not supported by `LocalStorageHelper`. 
+
+To use the in-memory configuration please follow these steps:
+
+1. Follow the [Quickstart instructions][cloud-nio] to add the nio dependency to your project.
+2. In your program, create and use a fake Storage service object.  For example:
+
+  ```java
+  Storage storage = LocalStorageHelper.getOptions().getService();
+  ```
+
+3. Run your tests.
+
+#### Remote
+
+The alternative way of testing is to create a test project. This way allows using operations not supported by the in-memory configuration.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
 
 1. Create a test Google Cloud project.
 
@@ -241,20 +274,21 @@ Here is an example that clears the bucket created in Step 3 with a timeout of 5 
   RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
   ```
 
-### Testing code that uses Translate
+### Testing code that uses Translation
 
 `RemoteTranslateHelper` contains convenience methods to make is easier to run tests against the
-Google Translate service.
+Google Translation service.
 
 1. Create a test Google Cloud project.
 
-2. Follow [Translate Quickstart](https://cloud.google.com/translate/v2/quickstart) to get an API
+2. Download a JSON service account credentials file from the Google Developer's Console. See more about this on the [Google Cloud Platform Authentication page][cloud-platform-authentication]
 key.
 
 3. Create a `RemoteTranslateHelper` object using your project ID and API key. Here is an example
 that uses the `RemoteTranslateHelper` to list supported languages.
   ```java
-  RemoteTranslateHelper translateHelper = RemoteTranslateHelper.create(PROJECT_ID, API_KEY);
+  RemoteTranslateHelper translateHelper =
+      RemoteTranslateHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
   Translate translate = translateHelper.getOptions().getService();
   List<Language> languages = translate.listSupportedLanguages();
   ```
@@ -267,7 +301,7 @@ Currently, there isn't an emulator for Cloud Spanner, so an alternative is to cr
 
 1. Create a test Google Cloud project.
 
-2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication].
+2. Download a JSON service account credentials file from the Google Developer's Console. See more about this on the [Google Cloud Platform Authentication page][cloud-platform-authentication].
 
 3. Create or use an existing Cloud Spanner Instance.
 
@@ -290,6 +324,9 @@ Here is an example that uses the `RemoteSpannerHelper` to create a database.
 6. Clean up the test project by using `cleanUp` to clear any databases created.
   ```java
   RemoteSpannerHelper.cleanUp();
+  ```
 
+[cloud-platform-authentication]:https://cloud.google.com/docs/authentication/getting-started
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
+[cloud-nio]:https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-contrib/google-cloud-nio

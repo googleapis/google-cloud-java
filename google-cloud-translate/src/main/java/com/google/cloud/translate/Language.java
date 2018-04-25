@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,12 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Information about a language supported by Google Translate. Objects of this class contain
- * language's code and the language name.
+ * Information about a language supported by Google Translation. Objects of this class contain
+ * the language's code and the language name.
  *
  * @see <a href="https://cloud.google.com/translate/v2/discovering-supported-languages-with-rest">
  *     Discovering Supported Languages</a>
- * @see <a href="https://cloud.google.com/translate/v2/translate-reference#supported_languages">
+ * @see <a href="https://cloud.google.com/translate/docs/languages">
  *     Supported Languages</a>
  */
 public class Language implements Serializable {
@@ -51,13 +51,6 @@ public class Language implements Serializable {
     this.name = name;
   }
 
-  /**
-   * Returns the code of the language.
-   */
-  @Deprecated
-  public String code() {
-    return getCode();
-  }
 
   /**
    * Returns the code of the language.
@@ -66,13 +59,6 @@ public class Language implements Serializable {
     return code;
   }
 
-  /**
-   * Returns the name of the language.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the name of the language.

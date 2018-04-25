@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,21 +49,6 @@ public class JobStatusTest {
     assertEquals(STATE, JOB_STATUS_INCOMPLETE2.getState());
     assertEquals(null, JOB_STATUS_INCOMPLETE2.getError());
     assertEquals(null, JOB_STATUS_INCOMPLETE2.getExecutionErrors());
-  }
-
-  @Test
-  public void testConstructorDeprecated() {
-    assertEquals(STATE, JOB_STATUS.state());
-    assertEquals(ERROR, JOB_STATUS.error());
-    assertEquals(ALL_ERRORS, JOB_STATUS.executionErrors());
-
-    assertEquals(STATE, JOB_STATUS_INCOMPLETE1.state());
-    assertEquals(ERROR, JOB_STATUS_INCOMPLETE1.error());
-    assertEquals(null, JOB_STATUS_INCOMPLETE1.executionErrors());
-
-    assertEquals(STATE, JOB_STATUS_INCOMPLETE2.state());
-    assertEquals(null, JOB_STATUS_INCOMPLETE2.error());
-    assertEquals(null, JOB_STATUS_INCOMPLETE2.executionErrors());
   }
 
   @Test

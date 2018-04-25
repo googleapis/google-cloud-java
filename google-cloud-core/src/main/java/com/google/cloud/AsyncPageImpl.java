@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,22 @@
 
 package com.google.cloud;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.paging.AsyncPage;
+import com.google.api.gax.paging.Page;
 import com.google.common.base.Throwables;
-import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.Uninterruptibles;
-
 import java.io.Serializable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 /**
  * Base implementation for asynchronously consuming Google Cloud paginated results.
  *
  * @param <T> the value type that the page holds
  */
+@InternalApi
 public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
 
   private static final long serialVersionUID = -6009473188630364906L;
@@ -41,10 +44,8 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
    * @param <T> the value type that the page holds
    */
   public interface NextPageFetcher<T> extends Serializable {
-    @Deprecated
-    Future<AsyncPage<T>> nextPage();
 
-    Future<AsyncPage<T>> getNextPage();
+    ApiFuture<AsyncPage<T>> getNextPage();
   }
 
   private static class SyncNextPageFetcher<T> implements PageImpl.NextPageFetcher<T> {
@@ -58,17 +59,13 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
     }
 
     @Override
-    public Page<T> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<T> getNextPage() {
       try {
         return asyncPageFetcher != null
             ? Uninterruptibles.getUninterruptibly(asyncPageFetcher.getNextPage()) : null;
       } catch (ExecutionException ex) {
-        throw Throwables.propagate(ex.getCause());
+        Throwables.throwIfUnchecked(ex.getCause());
+        throw new RuntimeException(ex);
       }
     }
   }
@@ -81,16 +78,11 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
     this.asyncPageFetcher = asyncPageFetcher;
   }
 
-  @Override
-  @Deprecated
-  public Future<AsyncPage<T>> nextPageAsync() {
-    return getNextPageAsync();
-  }
 
   @Override
-  public Future<AsyncPage<T>> getNextPageAsync() {
-    if (getNextPageCursor() == null || asyncPageFetcher == null) {
-      return Futures.immediateCheckedFuture(null);
+  public ApiFuture<AsyncPage<T>> getNextPageAsync() {
+    if (getNextPageToken() == null || asyncPageFetcher == null) {
+      return ApiFutures.immediateFuture(null);
     }
     return asyncPageFetcher.getNextPage();
   }

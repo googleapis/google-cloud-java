@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
 import com.google.cloud.dns.Dns;
@@ -105,11 +105,11 @@ public class ITDnsTest {
         /* We wait for all changes to complete before retrieving a list of DNS records to be
         deleted. Waiting is necessary as changes potentially might create more records between
         when the list has been retrieved and executing the subsequent delete operation. */
-        Iterator<ChangeRequest> iterator = zone.listChangeRequests().iterateAll();
+        Iterator<ChangeRequest> iterator = zone.listChangeRequests().iterateAll().iterator();
         while (iterator.hasNext()) {
           waitForChangeToComplete(zoneName, iterator.next().getGeneratedId());
         }
-        Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
+        Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll().iterator();
         List<RecordSet> toDelete = new LinkedList<>();
         while (recordSetIterator.hasNext()) {
           RecordSet recordSet = recordSetIterator.next();
@@ -383,15 +383,15 @@ public class ITDnsTest {
   @Test
   public void testListZones() {
     try {
-      List<Zone> zones = filter(DNS.listZones().iterateAll());
+      List<Zone> zones = filter(DNS.listZones().iterateAll().iterator());
       assertEquals(0, zones.size());
       // some zones exists
       Zone created = DNS.create(ZONE1);
-      zones = filter(DNS.listZones().iterateAll());
+      zones = filter(DNS.listZones().iterateAll().iterator());
       assertEquals(created, zones.get(0));
       assertEquals(1, zones.size());
       created = DNS.create(ZONE_EMPTY_DESCRIPTION);
-      zones = filter(DNS.listZones().iterateAll());
+      zones = filter(DNS.listZones().iterateAll().iterator());
       assertEquals(2, zones.size());
       assertTrue(zones.contains(created));
       // error in options
@@ -412,7 +412,7 @@ public class ITDnsTest {
         assertFalse(ex.isRetryable());
       }
       // ok size
-      zones = filter(DNS.listZones(Dns.ZoneListOption.pageSize(1000)).iterateAll());
+      zones = filter(DNS.listZones(Dns.ZoneListOption.pageSize(1000)).iterateAll().iterator());
       assertEquals(2, zones.size()); // we still have only 2 zones
       // dns name problems
       try {
@@ -424,11 +424,11 @@ public class ITDnsTest {
         assertFalse(ex.isRetryable());
       }
       // ok name
-      zones = filter(DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName())).iterateAll());
+      zones = filter(DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName())).iterateAll().iterator());
       assertEquals(1, zones.size());
       // field options
       Iterator<Zone> zoneIterator = DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName()),
-          Dns.ZoneListOption.fields(ZoneField.ZONE_ID)).iterateAll();
+          Dns.ZoneListOption.fields(ZoneField.ZONE_ID)).iterateAll().iterator();
       Zone zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -439,7 +439,7 @@ public class ITDnsTest {
       assertNotNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
       zoneIterator = DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName()),
-          Dns.ZoneListOption.fields(ZoneField.CREATION_TIME)).iterateAll();
+          Dns.ZoneListOption.fields(ZoneField.CREATION_TIME)).iterateAll().iterator();
       zone = zoneIterator.next();
       assertNotNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -450,7 +450,7 @@ public class ITDnsTest {
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
       zoneIterator = DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName()),
-          Dns.ZoneListOption.fields(ZoneField.DNS_NAME)).iterateAll();
+          Dns.ZoneListOption.fields(ZoneField.DNS_NAME)).iterateAll().iterator();
       zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -461,7 +461,7 @@ public class ITDnsTest {
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
       zoneIterator = DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName()),
-          Dns.ZoneListOption.fields(ZoneField.DESCRIPTION)).iterateAll();
+          Dns.ZoneListOption.fields(ZoneField.DESCRIPTION)).iterateAll().iterator();
       zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -472,7 +472,7 @@ public class ITDnsTest {
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
       zoneIterator = DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName()),
-          Dns.ZoneListOption.fields(ZoneField.NAME_SERVERS)).iterateAll();
+          Dns.ZoneListOption.fields(ZoneField.NAME_SERVERS)).iterateAll().iterator();
       zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -483,7 +483,7 @@ public class ITDnsTest {
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
       zoneIterator = DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName()),
-          Dns.ZoneListOption.fields(ZoneField.NAME_SERVER_SET)).iterateAll();
+          Dns.ZoneListOption.fields(ZoneField.NAME_SERVER_SET)).iterateAll().iterator();
       zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -496,7 +496,7 @@ public class ITDnsTest {
       // several combined
       zones = filter(DNS.listZones(Dns.ZoneListOption.fields(ZoneField.ZONE_ID,
           ZoneField.DESCRIPTION),
-          Dns.ZoneListOption.pageSize(1)).iterateAll());
+          Dns.ZoneListOption.pageSize(1)).iterateAll().iterator());
       assertEquals(2, zones.size());
       for (Zone current : zones) {
         assertNull(current.getCreationTimeMillis());
@@ -626,7 +626,7 @@ public class ITDnsTest {
         assertFalse(ex.isRetryable());
       }
       // delete and add SOA
-      Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
+      Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll().iterator();
       LinkedList<RecordSet> deletions = new LinkedList<>();
       LinkedList<RecordSet> additions = new LinkedList<>();
       while (recordSetIterator.hasNext()) {
@@ -856,7 +856,7 @@ public class ITDnsTest {
       }
       // field options
       Iterator<RecordSet> recordSetIterator = DNS.listRecordSets(zone.getName(),
-          Dns.RecordSetListOption.fields(RecordSetField.TTL)).iterateAll();
+          Dns.RecordSetListOption.fields(RecordSetField.TTL)).iterateAll().iterator();
       int counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -868,7 +868,7 @@ public class ITDnsTest {
       }
       assertEquals(2, counter);
       recordSetIterator = DNS.listRecordSets(zone.getName(),
-          Dns.RecordSetListOption.fields(RecordSetField.NAME)).iterateAll();
+          Dns.RecordSetListOption.fields(RecordSetField.NAME)).iterateAll().iterator();
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -881,7 +881,7 @@ public class ITDnsTest {
       assertEquals(2, counter);
       recordSetIterator = DNS.listRecordSets(zone.getName(),
           Dns.RecordSetListOption.fields(RecordSetField.DNS_RECORDS))
-          .iterateAll();
+          .iterateAll().iterator();
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -894,7 +894,7 @@ public class ITDnsTest {
       assertEquals(2, counter);
       recordSetIterator = DNS.listRecordSets(zone.getName(),
           Dns.RecordSetListOption.fields(RecordSetField.TYPE),
-          Dns.RecordSetListOption.pageSize(1)).iterateAll(); // also test paging
+          Dns.RecordSetListOption.pageSize(1)).iterateAll().iterator(); // also test paging
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -914,7 +914,7 @@ public class ITDnsTest {
       ChangeRequest change = DNS.applyChangeRequest(ZONE1.getName(), CHANGE_ADD_ZONE1);
       waitForChangeToComplete(ZONE1.getName(), change.getGeneratedId());
       recordSetIterator = DNS.listRecordSets(ZONE1.getName(),
-          Dns.RecordSetListOption.dnsName(A_RECORD_ZONE1.getName())).iterateAll();
+          Dns.RecordSetListOption.dnsName(A_RECORD_ZONE1.getName())).iterateAll().iterator();
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -927,7 +927,7 @@ public class ITDnsTest {
       waitForChangeToComplete(ZONE1.getName(), change.getGeneratedId());
       recordSetIterator = DNS.listRecordSets(ZONE1.getName(),
           Dns.RecordSetListOption.dnsName(A_RECORD_ZONE1.getName()),
-          Dns.RecordSetListOption.type(A_RECORD_ZONE1.getType())).iterateAll();
+          Dns.RecordSetListOption.type(A_RECORD_ZONE1.getType())).iterateAll().iterator();
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -975,14 +975,14 @@ public class ITDnsTest {
       DnsBatch batch = DNS.batch();
       DnsBatchResult<Page<Zone>> result = batch.listZones();
       batch.submit();
-      List<Zone> zones = filter(result.get().iterateAll());
+      List<Zone> zones = filter(result.get().iterateAll().iterator());
       assertEquals(0, zones.size());
       // some zones exists
       Zone firstZone = DNS.create(ZONE1);
       batch = DNS.batch();
       result = batch.listZones();
       batch.submit();
-      zones = filter(result.get().iterateAll());
+      zones = filter(result.get().iterateAll().iterator());
       assertEquals(1, zones.size());
       assertEquals(firstZone, zones.get(0));
       Zone created = DNS.create(ZONE_EMPTY_DESCRIPTION);
@@ -1018,7 +1018,7 @@ public class ITDnsTest {
           batch.listZones(Dns.ZoneListOption.fields(ZoneField.ZONE_ID, ZoneField.DESCRIPTION),
               Dns.ZoneListOption.pageSize(1));
       batch.submit();
-      zones = filter(result.get().iterateAll());
+      zones = filter(result.get().iterateAll().iterator());
       assertEquals(2, zones.size());
       assertTrue(zones.contains(firstZone));
       assertTrue(zones.contains(created));
@@ -1051,10 +1051,10 @@ public class ITDnsTest {
         assertFalse(ex.isRetryable());
       }
       // ok name
-      zones = filter(okName.get().iterateAll());
+      zones = filter(okName.get().iterateAll().iterator());
       assertEquals(1, zones.size());
       // field options
-      Iterator<Zone> zoneIterator = idResult.get().iterateAll();
+      Iterator<Zone> zoneIterator = idResult.get().iterateAll().iterator();
       Zone zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -1064,7 +1064,7 @@ public class ITDnsTest {
       assertTrue(zone.getNameServers().isEmpty());
       assertNotNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
-      zoneIterator = timeResult.get().iterateAll();
+      zoneIterator = timeResult.get().iterateAll().iterator();
       zone = zoneIterator.next();
       assertNotNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -1074,7 +1074,7 @@ public class ITDnsTest {
       assertTrue(zone.getNameServers().isEmpty());
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
-      zoneIterator = dnsNameResult.get().iterateAll();
+      zoneIterator = dnsNameResult.get().iterateAll().iterator();
       zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -1084,7 +1084,7 @@ public class ITDnsTest {
       assertTrue(zone.getNameServers().isEmpty());
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
-      zoneIterator = descriptionResult.get().iterateAll();
+      zoneIterator = descriptionResult.get().iterateAll().iterator();
       zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -1094,7 +1094,7 @@ public class ITDnsTest {
       assertTrue(zone.getNameServers().isEmpty());
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
-      zoneIterator = nameServersResult.get().iterateAll();
+      zoneIterator = nameServersResult.get().iterateAll().iterator();
       zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -1104,7 +1104,7 @@ public class ITDnsTest {
       assertFalse(zone.getNameServers().isEmpty());
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
-      zoneIterator = nameServerSetResult.get().iterateAll();
+      zoneIterator = nameServerSetResult.get().iterateAll().iterator();
       zone = zoneIterator.next();
       assertNull(zone.getCreationTimeMillis());
       assertNotNull(zone.getName());
@@ -1115,7 +1115,7 @@ public class ITDnsTest {
       assertNull(zone.getGeneratedId());
       assertFalse(zoneIterator.hasNext());
       // several combined
-      zones = filter(combinationResult.get().iterateAll());
+      zones = filter(combinationResult.get().iterateAll().iterator());
       assertEquals(2, zones.size());
       for (Zone current : zones) {
         assertNull(current.getCreationTimeMillis());
@@ -1736,7 +1736,7 @@ public class ITDnsTest {
           Dns.RecordSetListOption.fields(RecordSetField.TYPE),
           Dns.RecordSetListOption.pageSize(1));
       batch.submit();
-      Iterator<RecordSet> recordSetIterator = ttlResult.get().iterateAll();
+      Iterator<RecordSet> recordSetIterator = ttlResult.get().iterateAll().iterator();
       int counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -1747,7 +1747,7 @@ public class ITDnsTest {
         counter++;
       }
       assertEquals(2, counter);
-      recordSetIterator = nameResult.get().iterateAll();
+      recordSetIterator = nameResult.get().iterateAll().iterator();
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -1758,7 +1758,7 @@ public class ITDnsTest {
         counter++;
       }
       assertEquals(2, counter);
-      recordSetIterator = recordsResult.get().iterateAll();
+      recordSetIterator = recordsResult.get().iterateAll().iterator();
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -1769,7 +1769,7 @@ public class ITDnsTest {
         counter++;
       }
       assertEquals(2, counter);
-      recordSetIterator = pageSizeResult.get().iterateAll(); // also test paging
+      recordSetIterator = pageSizeResult.get().iterateAll().iterator(); // also test paging
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -1790,7 +1790,7 @@ public class ITDnsTest {
       result = batch.listRecordSets(ZONE1.getName(),
           Dns.RecordSetListOption.dnsName(A_RECORD_ZONE1.getName()));
       batch.submit();
-      recordSetIterator = result.get().iterateAll();
+      recordSetIterator = result.get().iterateAll().iterator();
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();
@@ -1805,7 +1805,7 @@ public class ITDnsTest {
           Dns.RecordSetListOption.dnsName(A_RECORD_ZONE1.getName()),
           Dns.RecordSetListOption.type(A_RECORD_ZONE1.getType()));
       batch.submit();
-      recordSetIterator = result.get().iterateAll();
+      recordSetIterator = result.get().iterateAll().iterator();
       counter = 0;
       while (recordSetIterator.hasNext()) {
         RecordSet recordSet = recordSetIterator.next();

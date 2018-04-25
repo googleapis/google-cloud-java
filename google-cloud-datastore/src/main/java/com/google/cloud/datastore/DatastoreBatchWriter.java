@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,11 +109,6 @@ interface DatastoreBatchWriter extends DatastoreWriter {
   @Override
   List<Entity> put(FullEntity<?>... entities);
 
-  /**
-   * Returns {@code true} if still active (write operations were not sent to the Datastore).
-   */
-  @Deprecated
-  boolean active();
 
   /**
    * Returns {@code true} if still active (write operations were not sent to the Datastore).

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,9 +66,9 @@ public enum ValueType {
   BOOLEAN(BooleanValue.MARSHALLER),
 
   /**
-   * Represents a {@link DateTime} value.
+   * Represents a {@link com.google.cloud.Timestamp} value.
    */
-  DATE_TIME(DateTimeValue.MARSHALLER),
+  TIMESTAMP(TimestampValue.MARSHALLER),
 
   /**
    * Represents a {@link Blob} value.

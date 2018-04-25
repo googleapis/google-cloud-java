@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableMap;
 

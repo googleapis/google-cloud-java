@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,23 @@
 
 package com.google.cloud.resourcemanager;
 
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
 public class ResourceManagerOptions
-    extends HttpServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
+    extends ServiceOptions<ResourceManager, ResourceManagerOptions> {
 
   private static final long serialVersionUID = 624147474447836183L;
+  private static final String API_SHORT_NAME = "ResourceManager";
   private static final String GCRM_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE);
   private static final String DEFAULT_HOST = "https://cloudresourcemanager.googleapis.com";
@@ -41,13 +46,6 @@ public class ResourceManagerOptions
     }
   }
 
-  /**
-   * Returns a default {@code ResourceManagerOptions} instance.
-   */
-  @Deprecated
-  public static ResourceManagerOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code ResourceManagerOptions} instance.
@@ -61,8 +59,8 @@ public class ResourceManagerOptions
         new DefaultResourceManagerRpcFactory();
 
     @Override
-    public ResourceManagerRpc create(ResourceManagerOptions options) {
-      return new DefaultResourceManagerRpc(options);
+    public ServiceRpc create(ResourceManagerOptions options) {
+      return new HttpResourceManagerRpc(options);
     }
   }
 
@@ -71,13 +69,22 @@ public class ResourceManagerOptions
     return DEFAULT_HOST;
   }
 
-  public static class Builder extends HttpServiceOptions.Builder<ResourceManager,
-      ResourceManagerRpc, ResourceManagerOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<ResourceManager,
+      ResourceManagerOptions, Builder> {
 
     private Builder() {}
 
     private Builder(ResourceManagerOptions options) {
       super(options);
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     @Override
@@ -87,7 +94,8 @@ public class ResourceManagerOptions
   }
 
   private ResourceManagerOptions(Builder builder) {
-    super(ResourceManagerFactory.class, ResourceManagerRpcFactory.class, builder);
+    super(ResourceManagerFactory.class, ResourceManagerRpcFactory.class, builder,
+        new ResourceManagerDefaults());
   }
 
   @Override
@@ -95,19 +103,36 @@ public class ResourceManagerOptions
     return false;
   }
 
-  @Override
-  protected ResourceManagerFactory getDefaultServiceFactory() {
-    return DefaultResourceManagerFactory.INSTANCE;
+  private static class ResourceManagerDefaults implements
+      ServiceDefaults<ResourceManager, ResourceManagerOptions> {
+
+    @Override
+    public ResourceManagerFactory getDefaultServiceFactory() {
+      return DefaultResourceManagerFactory.INSTANCE;
+    }
+
+    @Override
+    public ResourceManagerRpcFactory getDefaultRpcFactory() {
+      return DefaultResourceManagerRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
-  @Override
-  protected ResourceManagerRpcFactory getDefaultRpcFactory() {
-    return DefaultResourceManagerRpcFactory.INSTANCE;
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
   }
 
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected ResourceManagerRpc getResourceManagerRpcV1Beta1() {
+    return (ResourceManagerRpc) getRpc();
   }
 
   @Override
@@ -126,10 +151,6 @@ public class ResourceManagerOptions
     return new Builder(this);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

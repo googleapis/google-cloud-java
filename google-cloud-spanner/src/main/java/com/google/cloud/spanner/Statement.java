@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -50,7 +52,9 @@ import java.util.Objects;
  *
  * <p>{@code Statement} instances are immutable.
  */
-public final class Statement {
+public final class Statement implements Serializable {
+  private static final long serialVersionUID = -1967958247625065259L;
+
   private final ImmutableMap<String, Value> parameters;
   private final String sql;
 
@@ -96,6 +100,9 @@ public final class Statement {
     private class Binder extends ValueBinder<Builder> {
       @Override
       Builder handle(Value value) {
+        Preconditions.checkArgument(
+            !value.isCommitTimestamp(),
+            "Mutation.COMMIT_TIMESTAMP cannot be bound as a query parameter");
         checkState(currentBinding != null, "No binding in progress");
         parameters.put(currentBinding, value);
         currentBinding = null;

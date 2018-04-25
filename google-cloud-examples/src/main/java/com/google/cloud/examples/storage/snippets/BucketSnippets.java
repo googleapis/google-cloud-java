@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
@@ -35,7 +35,6 @@ import com.google.cloud.storage.StorageException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -68,7 +67,7 @@ public class BucketSnippets {
 
   /**
    * Example of getting the bucket's latest information, if its generation does not match the
-   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET reload(BucketSourceOption...)]
   public Bucket reload() {
@@ -94,7 +93,7 @@ public class BucketSnippets {
 
   /**
    * Example of deleting the bucket, if its metageneration matches the
-   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET delete(BucketSourceOption...)]
   public boolean delete() {
@@ -116,9 +115,7 @@ public class BucketSnippets {
   public Page<Blob> listBlobs() {
     // [START listBlobs]
     Page<Blob> blobs = bucket.list();
-    Iterator<Blob> blobIterator = blobs.iterateAll();
-    while (blobIterator.hasNext()) {
-      Blob blob = blobIterator.next();
+    for (Blob blob : blobs.iterateAll()) {
       // do something with the blob
     }
     // [END listBlobs]

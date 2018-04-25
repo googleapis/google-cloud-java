@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.Dataset;
@@ -32,13 +32,11 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
-
+import java.util.Iterator;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.Iterator;
 
 public class ITDatasetSnippets {
 
@@ -99,14 +97,6 @@ public class ITDatasetSnippets {
   }
 
   @Test
-  public void testUpdate() {
-    assertNull(dataset.getFriendlyName());
-
-    Dataset updatedDataset = datasetSnippets.updateDataset(FRIENDLY_NAME);
-    assertEquals(FRIENDLY_NAME, updatedDataset.getFriendlyName());
-  }
-
-  @Test
   public void testDeleteNonExistingDataset() {
     assertFalse(nonExistingDatasetSnippets.deleteDataset());
   }
@@ -122,7 +112,7 @@ public class ITDatasetSnippets {
   @Test
   public void testListTablesEmpty() {
     Page<Table> tables = datasetSnippets.list();
-    assertFalse(tables.iterateAll().hasNext());
+    assertFalse(tables.iterateAll().iterator().hasNext());
   }
 
   @Test
@@ -131,7 +121,7 @@ public class ITDatasetSnippets {
 
     dataset.create(expectedTableName, StandardTableDefinition.newBuilder().build());
     Page<Table> tables = datasetSnippets.list();
-    Iterator<Table> iterator = tables.iterateAll();
+    Iterator<Table> iterator = tables.iterateAll().iterator();
     assertTrue(iterator.hasNext());
 
     Table actualTable = iterator.next();

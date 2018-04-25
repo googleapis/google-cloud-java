@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,11 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.cloud.spanner.TimestampBound.Mode;
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.TimestampBound.Mode;
 import com.google.common.testing.EqualsTester;
 import com.google.spanner.v1.TransactionOptions;
 import java.util.concurrent.TimeUnit;
@@ -35,6 +37,15 @@ public class TimestampBoundTest {
   private static final long TEST_TIME_SECONDS = 1444662894L;
   private static final String TEST_TIME_ISO = "2015-10-12T15:14:54Z";
   @Rule public ExpectedException expectedException = ExpectedException.none();
+
+  @Test
+  public void serialization() throws Exception {
+    reserializeAndAssert(TimestampBound.strong());
+    reserializeAndAssert(TimestampBound.ofExactStaleness(10, TimeUnit.NANOSECONDS));
+    reserializeAndAssert(TimestampBound.ofMaxStaleness(100, TimeUnit.DAYS));
+    reserializeAndAssert(TimestampBound.ofMinReadTimestamp(Timestamp.now()));
+    reserializeAndAssert(TimestampBound.ofReadTimestamp(Timestamp.now()));
+  }
 
   @Test
   public void strong() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.KeyRange.Endpoint.CLOSED;
 import static com.google.cloud.spanner.KeyRange.Endpoint.OPEN;
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.testing.EqualsTester;
@@ -122,5 +123,14 @@ public class KeyRangeTest {
     assertThat(KeyRange.openOpen(Key.of("a"), Key.of("b")).toString()).isEqualTo("([a],[b])");
     assertThat(KeyRange.openClosed(Key.of("a"), Key.of("b")).toString()).isEqualTo("([a],[b]]");
     assertThat(KeyRange.closedClosed(Key.of(), Key.of()).toString()).isEqualTo("[[],[]]");
+  }
+
+  @Test
+  public void serialization() throws Exception {
+    reserializeAndAssert(KeyRange.closedOpen(Key.of(1), Key.of(2)));
+    reserializeAndAssert(
+            KeyRange.closedClosed(Key.of(1), Key.of(2)));
+    reserializeAndAssert(KeyRange.openOpen(Key.of(1), Key.of(2)));
+    reserializeAndAssert(KeyRange.openClosed(Key.of(1), Key.of(2)));
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.translate.it;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.translate.Detection;
@@ -25,15 +26,14 @@ import com.google.cloud.translate.Language;
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.Translate.LanguageListOption;
 import com.google.cloud.translate.Translate.TranslateOption;
+import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 import com.google.cloud.translate.testing.RemoteTranslateHelper;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import org.junit.Test;
 
 public class ITTranslateTest {
 
@@ -46,6 +46,7 @@ public class ITTranslateTest {
       "mt", "mi", "mr", "mn", "my", "ne", "no", "fa", "pl", "pt", "ro", "ru", "sr", "st", "si",
       "sk", "sl", "so", "es", "su", "sw", "sv", "tg", "ta", "te", "th", "tr", "uk", "ur", "uz",
       "vi", "cy", "yi", "yo", "zu"};
+  private static final String API_KEY = "api_key";
 
   @Test
   public void testListSupportedLanguages() {
@@ -135,6 +136,29 @@ public class ITTranslateTest {
     Translation translation = TRANSLATE.translate("Hola",
         TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));
     assertEquals("Hallo", translation.getTranslatedText());
+    assertEquals("es", translation.getSourceLanguage());
+  }
+
+  @Test
+  public void testApiKeyOverridesDefaultCredentials() {
+    TranslateOptions options = RemoteTranslateHelper.create(API_KEY).getOptions();
+    assertNull(options.getCredentials());
+    assertEquals(options.getApiKey(), API_KEY);
+  }
+
+  @Test
+  public void testDefaultCredentialsOverridesDefaultApiKey() {
+    TranslateOptions options = RemoteTranslateHelper.create().getOptions();
+    assertNotNull(options.getCredentials());
+    assertNull(options.getApiKey());
+  }
+
+  @Test
+  public void testTranslateTextWithApiKey() {
+    Translate translate =
+        RemoteTranslateHelper.create(TranslateOptions.getDefaultApiKey()).getOptions().getService();
+    Translation translation = translate.translate("Hola");
+    assertEquals("Hello", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,15 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
@@ -48,13 +51,32 @@ import javax.annotation.concurrent.Immutable;
  * <p>{@code Value} instances are immutable.
  */
 @Immutable
-public abstract class Value {
+public abstract class Value implements Serializable {
+
+  /**
+   * Placeholder value to be passed to a mutation to make Cloud Spanner store the commit timestamp
+   * in that column. The commit timestamp is the timestamp corresponding to when Cloud Spanner
+   * commits the transaction containing the mutation.
+   *
+   * <p>Note that this particular timestamp instance has no semantic meaning. In particular the
+   * value of seconds and nanoseconds in this timestamp are meaningless. This placeholder can only
+   * be used for columns that have set the option "(allow_commit_timestamp=true)" in the schema.
+   *
+   * <p>When reading the value stored in such a column, the value returned is an actual timestamp
+   * corresponding to the commit time of the transaction, which has no relation to this placeholder.
+   *
+   * @see <a href="https://cloud.google.com/spanner/docs/transactions#rw_transaction_semantics">
+   *   Transaction Semantics</a>
+   */
+  public static final Timestamp COMMIT_TIMESTAMP = Timestamp.ofTimeMicroseconds(0L);
+
   private static final int MAX_DEBUG_STRING_LENGTH = 32;
   private static final String ELLIPSIS = "...";
   private static final String NULL_STRING = "NULL";
   private static final char LIST_SEPERATOR = ',';
   private static final char LIST_OPEN = '[';
   private static final char LIST_CLOSE = ']';
+  private static final long serialVersionUID = -5289864325087675338L;
 
   /**
    * Returns a {@code BOOL} value.
@@ -118,10 +140,14 @@ public abstract class Value {
 
   /** Returns a {@code TIMESTAMP} value. */
   public static Value timestamp(@Nullable Timestamp v) {
-    return new TimestampImpl(v == null, v);
+    return new TimestampImpl(v == null, v == Value.COMMIT_TIMESTAMP, v);
   }
 
-  /** Returns a {@code DATE} value. */
+  /**
+   * Returns a {@code DATE} value. The range [1678-01-01, 2262-01-01) is the legal interval for
+   * cloud spanner dates. A write to a date column is rejected if the value is outside of that
+   * interval.
+   */
   public static Value date(@Nullable Date v) {
     return new DateImpl(v == null, v);
   }
@@ -262,7 +288,9 @@ public abstract class Value {
   }
 
   /**
-   * Returns an {@code ARRAY<DATE>} value.
+   * Returns an {@code ARRAY<DATE>} value. The range [1678-01-01, 2262-01-01) is the legal interval
+   * for cloud spanner dates. A write to a date column is rejected if the value is outside of that
+   * interval.
    *
    * @param v the source of element values. This may be {@code null} to produce a value for which
    *     {@code isNull()} is {@code true}. Individual elements may also be {@code null}.
@@ -317,9 +345,13 @@ public abstract class Value {
   /**
    * Returns the value of a {@code TIMESTAMP}-typed instance.
    *
-   * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type
+   * @throws IllegalStateException if {@code isNull()} or the value is not of the expected type or
+   *     {@link #isCommitTimestamp()}.
    */
   public abstract Timestamp getTimestamp();
+
+  /** Returns true if this is a commit timestamp value. */
+  public abstract boolean isCommitTimestamp();
 
   /**
    * Returns the value of a {@code DATE}-typed instance.
@@ -564,6 +596,11 @@ public abstract class Value {
     @Override
     public final boolean isNull() {
       return isNull;
+    }
+
+    @Override
+    public boolean isCommitTimestamp() {
+      return false;
     }
 
     @Override
@@ -905,32 +942,75 @@ public abstract class Value {
     @Override
     com.google.protobuf.Value valueToProto() {
       return com.google.protobuf.Value.newBuilder()
-          .setStringValue(ByteArrays.toBase64(value))
+          .setStringValue(value.toBase64())
           .build();
     }
 
     @Override
     void valueToString(StringBuilder b) {
-      ByteArrays.appendToString(value, b, MAX_DEBUG_STRING_LENGTH);
+      b.append(value.toString());
     }
   }
 
   private static class TimestampImpl extends AbstractObjectValue<Timestamp> {
 
-    private TimestampImpl(boolean isNull, Timestamp value) {
+    private static final String COMMIT_TIMESTAMP_STRING = "spanner.commit_timestamp()";
+    private final boolean isCommitTimestamp;
+
+    private TimestampImpl(boolean isNull, boolean isCommitTimestamp, Timestamp value) {
       super(isNull, Type.timestamp(), value);
+      this.isCommitTimestamp = isCommitTimestamp;
     }
 
     @Override
     public Timestamp getTimestamp() {
       checkType(Type.timestamp());
       checkNotNull();
+      Preconditions.checkState(!isCommitTimestamp, "Commit timestamp value");
       return value;
     }
 
     @Override
+    public boolean isCommitTimestamp() {
+      return isCommitTimestamp;
+    }
+
+    @Override
+    com.google.protobuf.Value valueToProto() {
+      if (isCommitTimestamp) {
+        return com.google.protobuf.Value.newBuilder()
+            .setStringValue(COMMIT_TIMESTAMP_STRING)
+            .build();
+      }
+      return super.valueToProto();
+    }
+
+    @Override
     void valueToString(StringBuilder b) {
-      value.toString(b);
+      if (isCommitTimestamp()) {
+        b.append(COMMIT_TIMESTAMP_STRING);
+      } else {
+        b.append(value);
+      }
+    }
+
+    @Override
+    boolean valueEquals(Value v) {
+      if (isCommitTimestamp) {
+        return v.isCommitTimestamp();
+      }
+      if (v.isCommitTimestamp()) {
+        return isCommitTimestamp;
+      }
+      return ((TimestampImpl) v).value.equals(value);
+    }
+
+    @Override
+    int valueHash() {
+      if (isCommitTimestamp) {
+        return Objects.hashCode(isCommitTimestamp);
+      }
+      return value.hashCode();
     }
   }
 
@@ -949,7 +1029,7 @@ public abstract class Value {
 
     @Override
     void valueToString(StringBuilder b) {
-      value.toString(b);
+      b.append(value);
     }
   }
 
@@ -1216,12 +1296,12 @@ public abstract class Value {
 
     @Override
     String elementToString(ByteArray element) {
-      return ByteArrays.toBase64(element);
+      return element.toBase64();
     }
 
     @Override
     void appendElement(StringBuilder b, ByteArray element) {
-      ByteArrays.appendToString(element, b, MAX_DEBUG_STRING_LENGTH);
+      b.append(element.toString());
     }
   }
 
@@ -1240,7 +1320,7 @@ public abstract class Value {
 
     @Override
     void appendElement(StringBuilder b, Timestamp element) {
-      element.toString(b);
+      b.append(element);
     }
   }
 
@@ -1259,7 +1339,7 @@ public abstract class Value {
 
     @Override
     void appendElement(StringBuilder b, Date element) {
-      element.toString(b);
+      b.append(element);
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ public class BlobSnippets {
 
   /**
    * Example of reading all bytes of the blob, if its generation matches the
-   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET getContent(BlobSourceOption...)]
   public byte[] getContent() {
@@ -87,7 +87,7 @@ public class BlobSnippets {
 
   /**
    * Example of getting the blob's latest information, if its generation does not match the
-   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET reload(BlobSourceOption...)]
   public Blob reload() {
@@ -115,7 +115,7 @@ public class BlobSnippets {
   }
 
   /**
-   * Example of deleting the blob, if its generation matches the {@link Blob#generation()} value,
+   * Example of deleting the blob, if its generation matches the {@link Blob#getGeneration()} value,
    * otherwise a {@link StorageException} is thrown.
    */
   // [TARGET delete(BlobSourceOption...)]

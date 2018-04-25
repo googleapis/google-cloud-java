@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,8 @@ public interface DatastoreWriter {
   /**
    * A Datastore update operation. The operation will fail if an entity with the same key does not
    * already exist.
+   *
+   * @throws DatastoreException upon failure
    */
   void update(Entity... entities);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,7 @@ import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
-import com.google.common.base.MoreObjects;
-
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 
@@ -37,9 +36,9 @@ public class TableDataWriteChannel extends
 
   private Job job;
 
-  TableDataWriteChannel(BigQueryOptions options,
-      WriteChannelConfiguration writeChannelConfiguration) {
-    this(options, writeChannelConfiguration, open(options, writeChannelConfiguration));
+  TableDataWriteChannel(
+      BigQueryOptions options, JobId jobId, WriteChannelConfiguration writeChannelConfiguration) {
+    this(options, writeChannelConfiguration, open(options, jobId, writeChannelConfiguration));
   }
 
   TableDataWriteChannel(BigQueryOptions options, WriteChannelConfiguration config,
@@ -54,10 +53,10 @@ public class TableDataWriteChannel extends
           new Callable<com.google.api.services.bigquery.model.Job>() {
             @Override
             public com.google.api.services.bigquery.model.Job call() {
-              return getOptions().getRpc().write(
+              return getOptions().getBigQueryRpcV2().write(
                   getUploadId(), getBuffer(), 0, getPosition(), length, last);
             }
-      }, getOptions().getRetryParams(), BigQueryImpl.EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), BigQueryImpl.EXCEPTION_HANDLER, getOptions().getClock());
       job = jobPb != null ? Job.fromPb(getOptions().getService(), jobPb) : null;
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -69,15 +68,26 @@ public class TableDataWriteChannel extends
     return StateImpl.builder(getOptions(), getEntity(), getUploadId(), job);
   }
 
-  private static String open(final BigQueryOptions options,
+  private static String open(
+      final BigQueryOptions options,
+      final JobId jobId,
       final WriteChannelConfiguration writeChannelConfiguration) {
     try {
-      return runWithRetries(new Callable<String>() {
-        @Override
-        public String call() {
-          return options.getRpc().open(writeChannelConfiguration.toPb());
-        }
-      }, options.getRetryParams(), BigQueryImpl.EXCEPTION_HANDLER, options.getClock());
+      return runWithRetries(
+          new Callable<String>() {
+            @Override
+            public String call() {
+              return options
+                  .getBigQueryRpcV2()
+                  .open(
+                      new com.google.api.services.bigquery.model.Job()
+                          .setConfiguration(writeChannelConfiguration.toPb())
+                          .setJobReference(jobId.toPb()));
+            }
+          },
+          options.getRetrySettings(),
+          BigQueryImpl.EXCEPTION_HANDLER,
+          options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -149,8 +159,10 @@ public class TableDataWriteChannel extends
     }
 
     @Override
-    protected MoreObjects.ToStringHelper toStringHelper() {
-      return super.toStringHelper().add("job", job);
+    protected List<ValueHolder> toStringHelper() {
+      List<ValueHolder> valueList = super.toStringHelper();
+      valueList.add(ValueHolder.create("job", job));
+      return valueList;
     }
   }
 }

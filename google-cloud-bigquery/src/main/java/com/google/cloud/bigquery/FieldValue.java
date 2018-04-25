@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.Data;
-import com.google.common.base.Function;
+import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -36,13 +34,6 @@ import java.util.Objects;
  * query or when listing table data.
  */
 public class FieldValue implements Serializable {
-
-  static final Function<Object, FieldValue> FROM_PB_FUNCTION = new Function<Object, FieldValue>() {
-    @Override
-    public FieldValue apply(Object pb) {
-      return FieldValue.fromPb(pb);
-    }
-  };
   private static final int MICROSECONDS = 1000000;
   private static final long serialVersionUID = 469098630191710061L;
 
@@ -55,9 +46,10 @@ public class FieldValue implements Serializable {
   public enum Attribute {
     /**
      * A primitive field value. A {@code FieldValue} is primitive when the corresponding field has
-     * type {@link Field.Type#bytes()}, {@link Field.Type#bool()}, {@link Field.Type#string()},
-     * {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
-     * {@link Field.Type#timestamp()} or the value is set to {@code null}.
+     * type {@link LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN},
+     * {@link LegacySQLTypeName#STRING}, {@link LegacySQLTypeName#FLOAT},
+     * {@link LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#TIMESTAMP} or the value is set to
+     * {@code null}.
      */
     PRIMITIVE,
 
@@ -67,42 +59,27 @@ public class FieldValue implements Serializable {
     REPEATED,
 
     /**
-     * A {@code FieldValue} for a field of type {@link Field.Type#record(Field...)}.
+     * A {@code FieldValue} for a field of type {@link LegacySQLTypeName#RECORD}.
      */
     RECORD
   }
 
-  FieldValue(Attribute attribute, Object value) {
-    this.attribute = attribute;
+  private FieldValue(Attribute attribute, Object value) {
+    this.attribute = checkNotNull(attribute);
     this.value = value;
   }
 
-  /**
-   * Returns the attribute of this Field Value.
-   *
-   * @return {@link Attribute#PRIMITIVE} if the field is a primitive type
-   *     ({@link Field.Type#bytes()}, {@link Field.Type#bool()}, {@link Field.Type#string()},
-   *     {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
-   *     {@link Field.Type#timestamp()}) or is {@code null}. Returns {@link Attribute#REPEATED} if
-   *     the corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns
-   *     {@link Attribute#RECORD} if the corresponding field is a
-   *     {@link Field.Type#record(Field...)} type.
-   */
-  @Deprecated
-  public Attribute attribute() {
-    return getAttribute();
-  }
 
   /**
    * Returns the attribute of this Field Value.
    *
    * @return {@link Attribute#PRIMITIVE} if the field is a primitive type
-   *     ({@link Field.Type#bytes()}, {@link Field.Type#bool()}, {@link Field.Type#string()},
-   *     {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
-   *     {@link Field.Type#timestamp()}) or is {@code null}. Returns {@link Attribute#REPEATED} if
+   *     ({@link LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN}, {@link LegacySQLTypeName#STRING},
+   *     {@link LegacySQLTypeName#FLOAT}, {@link LegacySQLTypeName#INTEGER},
+   *     {@link LegacySQLTypeName#TIMESTAMP}) or is {@code null}. Returns {@link Attribute#REPEATED} if
    *     the corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns
    *     {@link Attribute#RECORD} if the corresponding field is a
-   *     {@link Field.Type#record(Field...)} type.
+   *     {@link LegacySQLTypeName#RECORD} type.
    */
   public Attribute getAttribute() {
     return attribute;
@@ -115,14 +92,6 @@ public class FieldValue implements Serializable {
     return value == null;
   }
 
-  /**
-   * Returns this field's value as an {@link Object}. If {@link #isNull()} is {@code true} this
-   * method returns {@code null}.
-   */
-  @Deprecated
-  public Object value() {
-    return getValue();
-  }
 
   /**
    * Returns this field's value as an {@link Object}. If {@link #isNull()} is {@code true} this
@@ -132,26 +101,13 @@ public class FieldValue implements Serializable {
     return value;
   }
 
-  /**
-   * Returns this field's value as a {@link String}. This method should only be used if the
-   * corresponding field has primitive type ({@link Field.Type#bytes()}, {@link Field.Type#bool()},
-   * {@link Field.Type#string()}, {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
-   * {@link Field.Type#timestamp()}).
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public String stringValue() {
-    return getStringValue();
-  }
 
   /**
    * Returns this field's value as a {@link String}. This method should only be used if the
-   * corresponding field has primitive type ({@link Field.Type#bytes()}, {@link Field.Type#bool()},
-   * {@link Field.Type#string()}, {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
-   * {@link Field.Type#timestamp()}).
+   * corresponding field has primitive type ({@link LegacySQLTypeName#BYTES},
+   * {@link LegacySQLTypeName#BOOLEAN}, {@link LegacySQLTypeName#STRING},
+   * {@link LegacySQLTypeName#FLOAT}, {@link LegacySQLTypeName#INTEGER},
+   * {@link LegacySQLTypeName#TIMESTAMP}).
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}
@@ -162,22 +118,10 @@ public class FieldValue implements Serializable {
     return (String) value;
   }
 
-  /**
-   * Returns this field's value as a byte array. This method should only be used if the
-   * corresponding field has primitive type ({@link Field.Type#bytes()}.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   * @throws IllegalStateException if the field value is not encoded in base64
-   */
-  @Deprecated
-  public byte[] bytesValue() {
-    return getBytesValue();
-  }
 
   /**
    * Returns this field's value as a byte array. This method should only be used if the
-   * corresponding field has primitive type ({@link Field.Type#bytes()}.
+   * corresponding field has primitive type ({@link LegacySQLTypeName#BYTES}.
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}
@@ -191,23 +135,10 @@ public class FieldValue implements Serializable {
     }
   }
 
-  /**
-   * Returns this field's value as a {@code long}. This method should only be used if the
-   * corresponding field has {@link Field.Type#integer()} type.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NumberFormatException if the field's value could not be converted to {@link Integer}
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public long longValue() {
-    return getLongValue();
-  }
 
   /**
    * Returns this field's value as a {@code long}. This method should only be used if the
-   * corresponding field has {@link Field.Type#integer()} type.
+   * corresponding field has {@link LegacySQLTypeName#INTEGER} type.
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Integer}
@@ -218,23 +149,10 @@ public class FieldValue implements Serializable {
     return Long.parseLong(getStringValue());
   }
 
-  /**
-   * Returns this field's value as a {@link Double}. This method should only be used if the
-   * corresponding field has {@link Field.Type#floatingPoint()} type.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NumberFormatException if the field's value could not be converted to {@link Double}
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public double doubleValue() {
-    return getDoubleValue();
-  }
 
   /**
    * Returns this field's value as a {@link Double}. This method should only be used if the
-   * corresponding field has {@link Field.Type#floatingPoint()} type.
+   * corresponding field has {@link LegacySQLTypeName#FLOAT} type.
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Double}
@@ -245,23 +163,10 @@ public class FieldValue implements Serializable {
     return Double.parseDouble(getStringValue());
   }
 
-  /**
-   * Returns this field's value as a {@link Boolean}. This method should only be used if the
-   * corresponding field has {@link Field.Type#bool()} type.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws IllegalStateException if the field's value could not be converted to {@link Boolean}
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public boolean booleanValue() {
-    return getBooleanValue();
-  }
 
   /**
    * Returns this field's value as a {@link Boolean}. This method should only be used if the
-   * corresponding field has {@link Field.Type#bool()} type.
+   * corresponding field has {@link LegacySQLTypeName#BOOLEAN} type.
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws IllegalStateException if the field's value could not be converted to {@link Boolean}
@@ -275,25 +180,11 @@ public class FieldValue implements Serializable {
     return Boolean.parseBoolean(stringValue);
   }
 
-  /**
-   * Returns this field's value as a {@code long}, representing a timestamp in microseconds since
-   * epoch (UNIX time). This method should only be used if the corresponding field has
-   * {@link Field.Type#timestamp()} type.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NumberFormatException if the field's value could not be converted to {@link Long}
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public long timestampValue() {
-    return getTimestampValue();
-  }
 
   /**
    * Returns this field's value as a {@code long}, representing a timestamp in microseconds since
    * epoch (UNIX time). This method should only be used if the corresponding field has
-   * {@link Field.Type#timestamp()} type.
+   * {@link LegacySQLTypeName#TIMESTAMP} type.
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Long}
@@ -306,23 +197,10 @@ public class FieldValue implements Serializable {
     return new Double(Double.valueOf(getStringValue()) * MICROSECONDS).longValue();
   }
 
-  /**
-   * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #attribute()} is
-   * {@link Attribute#REPEATED}).
-   *
-   * @throws ClassCastException if the field has not {@link Field.Mode#REPEATED} mode
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public List<FieldValue> repeatedValue() {
-    return getRepeatedValue();
-  }
 
   /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #attribute()} is
+   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #getAttribute()} is
    * {@link Attribute#REPEATED}).
    *
    * @throws ClassCastException if the field has not {@link Field.Mode#REPEATED} mode
@@ -334,32 +212,18 @@ public class FieldValue implements Serializable {
     return (List<FieldValue>) value;
   }
 
-  /**
-   * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e. {@link #attribute()}
-   * is {@link Attribute#RECORD}).
-   *
-   * @throws ClassCastException if the field is not a {@link Field.Type#record(Field...)} type
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public List<FieldValue> recordValue() {
-    return getRecordValue();
-  }
 
   /**
-   * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e. {@link #attribute()}
-   * is {@link Attribute#RECORD}).
+   * Returns this field's value as a {@link FieldValueList} instance. This method should only be used if
+   * the corresponding field has {@link LegacySQLTypeName#RECORD} type (i.e.
+   * {@link #getAttribute()} is {@link Attribute#RECORD}).
    *
-   * @throws ClassCastException if the field is not a {@link Field.Type#record(Field...)} type
+   * @throws ClassCastException if the field is not a {@link LegacySQLTypeName#RECORD} type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
-  @SuppressWarnings("unchecked")
-  public List<FieldValue> getRecordValue() {
+  public FieldValueList getRecordValue() {
     checkNotNull(value);
-    return (List<FieldValue>) value;
+    return (FieldValueList) value;
   }
 
   @Override
@@ -387,38 +251,54 @@ public class FieldValue implements Serializable {
     return attribute == other.attribute && Objects.equals(value, other.value);
   }
 
-  @SuppressWarnings("unchecked")
+  /**
+   * Creates an instance of {@code FieldValue}, useful for testing.
+   *
+   * <p>If the {@code attribute} is {@link Attribute#PRIMITIVE}, the {@code value} should be the
+   * string representation of the underlying value, eg {@code "123"} for number {@code 123}.
+   *
+   * <p>If the {@code attribute} is {@link Attribute#REPEATED} or {@link Attribute#RECORD}, the
+   * {@code value} should be {@code List} of {@link FieldValue}s or {@link FieldValueList},
+   * respectively.
+   *
+   * <p>This method is unstable. See <a
+   * href="https://github.com/GoogleCloudPlatform/google-cloud-java/pull/2891">this discussion</a>
+   * for more context.
+   */
+  @BetaApi
+  public static FieldValue of(Attribute attribute, Object value) {
+    return new FieldValue(attribute, value);
+  }
+
   static FieldValue fromPb(Object cellPb) {
+    return fromPb(cellPb, null);
+  }
+
+  @SuppressWarnings("unchecked")
+  static FieldValue fromPb(Object cellPb, Field recordSchema) {
     if (Data.isNull(cellPb)) {
-      return new FieldValue(Attribute.PRIMITIVE, null);
+      return FieldValue.of(Attribute.PRIMITIVE, null);
     }
     if (cellPb instanceof String) {
-      return new FieldValue(Attribute.PRIMITIVE, cellPb);
+      return FieldValue.of(Attribute.PRIMITIVE, cellPb);
     }
     if (cellPb instanceof List) {
-      List<Object> cellsListPb = (List<Object>) cellPb;
-      List<FieldValue> repeatedCells = Lists.newArrayListWithCapacity(cellsListPb.size());
-      for (Object repeatedCellPb : cellsListPb) {
-        repeatedCells.add(FieldValue.fromPb(repeatedCellPb));
-      }
-      return new FieldValue(Attribute.REPEATED, repeatedCells);
+      return FieldValue.of(Attribute.REPEATED, FieldValueList.fromPb((List<Object>) cellPb, null));
     }
     if (cellPb instanceof Map) {
       Map<String, Object> cellMapPb = (Map<String, Object>) cellPb;
       if (cellMapPb.containsKey("f")) {
-        List<Object> cellsListPb = (List<Object>) cellMapPb.get("f");
-        List<FieldValue> recordCells = Lists.newArrayListWithCapacity(cellsListPb.size());
-        for (Object repeatedCellPb : cellsListPb) {
-          recordCells.add(FieldValue.fromPb(repeatedCellPb));
-        }
-        return new FieldValue(Attribute.RECORD, recordCells);
+        FieldList subFieldsSchema = recordSchema != null ? recordSchema.getSubFields() : null;
+        return FieldValue.of(
+            Attribute.RECORD,
+            FieldValueList.fromPb((List<Object>) cellMapPb.get("f"), subFieldsSchema));
       }
       // This should never be the case when we are processing a first level table field (i.e. a
       // row's field, not a record sub-field)
       if (cellMapPb.containsKey("v")) {
-        return FieldValue.fromPb(cellMapPb.get("v"));
+        return FieldValue.fromPb(cellMapPb.get("v"), recordSchema);
       }
     }
-    throw new AssertionError("Unexpected table cell format");
+    throw new IllegalArgumentException("Unexpected table cell format");
   }
 }

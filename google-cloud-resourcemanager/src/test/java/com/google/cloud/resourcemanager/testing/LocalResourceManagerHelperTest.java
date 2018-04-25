@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,23 +25,21 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.services.cloudresourcemanager.model.Binding;
+import com.google.cloud.Tuple;
 import com.google.cloud.resourcemanager.ResourceManagerException;
-import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
+import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class LocalResourceManagerHelperTest {
 
@@ -55,7 +53,7 @@ public class LocalResourceManagerHelperTest {
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create();
   private static final ResourceManagerRpc rpc =
-      new DefaultResourceManagerRpc(RESOURCE_MANAGER_HELPER.getOptions());
+      new HttpResourceManagerRpc(RESOURCE_MANAGER_HELPER.getOptions());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
       new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
           "partial-project");

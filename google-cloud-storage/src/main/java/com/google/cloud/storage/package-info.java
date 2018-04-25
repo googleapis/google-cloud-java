@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud Storage.
+ * A client for Cloud Storage - Unified object storage.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * shows how to create a Storage blob. For the complete source code see

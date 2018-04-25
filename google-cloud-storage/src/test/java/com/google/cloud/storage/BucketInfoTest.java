@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,10 +33,12 @@ import com.google.cloud.storage.BucketInfo.NumNewerVersionsDeleteRule;
 import com.google.cloud.storage.BucketInfo.RawDeleteRule;
 import com.google.common.collect.ImmutableList;
 
+import com.google.common.collect.ImmutableMap;
 import org.junit.Test;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class BucketInfoTest {
 
@@ -57,8 +59,10 @@ public class BucketInfoTest {
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
-  private static final String STORAGE_CLASS = "STANDARD";
+  private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
   private static final Boolean VERSIONING_ENABLED = true;
+  private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final Boolean REQUESTER_PAYS = true;
   private static final BucketInfo BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACL)
       .setEtag(ETAG)
@@ -75,23 +79,8 @@ public class BucketInfoTest {
       .setLocation(LOCATION)
       .setStorageClass(STORAGE_CLASS)
       .setVersioningEnabled(VERSIONING_ENABLED)
-      .build();
-  private static final BucketInfo DEPRECATED_BUCKET_INFO = BucketInfo.builder("b")
-      .acl(ACL)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setMetageneration(META_GENERATION)
-      .setOwner(OWNER)
-      .setSelfLink(SELF_LINK)
-      .cors(CORS)
-      .setCreateTime(CREATE_TIME)
-      .defaultAcl(DEFAULT_ACL)
-      .deleteRules(DELETE_RULES)
-      .indexPage(INDEX_PAGE)
-      .notFoundPage(NOT_FOUND_PAGE)
-      .location(LOCATION)
-      .storageClass(STORAGE_CLASS)
-      .versioningEnabled(VERSIONING_ENABLED)
+      .setLabels(BUCKET_LABELS)
+      .setRequesterPays(REQUESTER_PAYS)
       .build();
 
   @Test
@@ -105,24 +94,8 @@ public class BucketInfoTest {
   }
 
   @Test
-  public void testToBuilderDeprecated() {
-    compareBuckets(BUCKET_INFO, BUCKET_INFO.toBuilder().build());
-    BucketInfo bucketInfo = BUCKET_INFO.toBuilder().name("B").setGeneratedId("id").build();
-    assertEquals("B", bucketInfo.name());
-    assertEquals("id", bucketInfo.generatedId());
-    bucketInfo = bucketInfo.toBuilder().name("b").setGeneratedId(GENERATED_ID).build();
-    compareBuckets(BUCKET_INFO, bucketInfo);
-  }
-
-  @Test
   public void testToBuilderIncomplete() {
     BucketInfo incompleteBucketInfo = BucketInfo.newBuilder("b").build();
-    compareBuckets(incompleteBucketInfo, incompleteBucketInfo.toBuilder().build());
-  }
-
-  @Test
-  public void testToBuilderIncompleteDeprecated() {
-    BucketInfo incompleteBucketInfo = BucketInfo.builder("b").build();
     compareBuckets(incompleteBucketInfo, incompleteBucketInfo.toBuilder().build());
   }
 
@@ -150,26 +123,8 @@ public class BucketInfoTest {
     assertEquals(LOCATION, BUCKET_INFO.getLocation());
     assertEquals(STORAGE_CLASS, BUCKET_INFO.getStorageClass());
     assertEquals(VERSIONING_ENABLED, BUCKET_INFO.versioningEnabled());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals("b", DEPRECATED_BUCKET_INFO.name());
-    assertEquals(ACL, DEPRECATED_BUCKET_INFO.acl());
-    assertEquals(ETAG, DEPRECATED_BUCKET_INFO.etag());
-    assertEquals(GENERATED_ID, DEPRECATED_BUCKET_INFO.generatedId());
-    assertEquals(META_GENERATION, DEPRECATED_BUCKET_INFO.metageneration());
-    assertEquals(OWNER, DEPRECATED_BUCKET_INFO.owner());
-    assertEquals(SELF_LINK, DEPRECATED_BUCKET_INFO.selfLink());
-    assertEquals(CREATE_TIME, DEPRECATED_BUCKET_INFO.createTime());
-    assertEquals(CORS, DEPRECATED_BUCKET_INFO.cors());
-    assertEquals(DEFAULT_ACL, DEPRECATED_BUCKET_INFO.defaultAcl());
-    assertEquals(DELETE_RULES, DEPRECATED_BUCKET_INFO.deleteRules());
-    assertEquals(INDEX_PAGE, DEPRECATED_BUCKET_INFO.indexPage());
-    assertEquals(NOT_FOUND_PAGE, DEPRECATED_BUCKET_INFO.notFoundPage());
-    assertEquals(LOCATION, DEPRECATED_BUCKET_INFO.location());
-    assertEquals(STORAGE_CLASS, DEPRECATED_BUCKET_INFO.storageClass());
-    assertEquals(VERSIONING_ENABLED, DEPRECATED_BUCKET_INFO.versioningEnabled());
+    assertEquals(BUCKET_LABELS, BUCKET_INFO.getLabels());
+    assertEquals(REQUESTER_PAYS, BUCKET_INFO.requesterPays());
   }
 
   @Test
@@ -197,6 +152,8 @@ public class BucketInfoTest {
     assertEquals(expected.getLocation(), value.getLocation());
     assertEquals(expected.getStorageClass(), value.getStorageClass());
     assertEquals(expected.versioningEnabled(), value.versioningEnabled());
+    assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(expected.requesterPays(), value.requesterPays());
   }
 
   @Test
@@ -221,36 +178,6 @@ public class BucketInfoTest {
     Rule rule = new Rule().set("a", "b");
     RawDeleteRule rawRule = new RawDeleteRule(rule);
     assertEquals(Type.IS_LIVE, isLiveRule.getType());
-    assertEquals(Type.IS_LIVE, isLiveRule.getType());
-    ImmutableList<DeleteRule> rules = ImmutableList
-        .of(ageRule, createBeforeRule, versionsRule, isLiveRule, rawRule);
-    for (DeleteRule delRule : rules) {
-      assertEquals(delRule, DeleteRule.fromPb(delRule.toPb()));
-    }
-  }
-
-  @Test
-  public void testDeleteRulesDeprecated() {
-    AgeDeleteRule ageRule = new AgeDeleteRule(10);
-    assertEquals(10, ageRule.daysToLive());
-    assertEquals(10, ageRule.getDaysToLive());
-    assertEquals(Type.AGE, ageRule.type());
-    assertEquals(Type.AGE, ageRule.getType());
-    CreatedBeforeDeleteRule createBeforeRule = new CreatedBeforeDeleteRule(1);
-    assertEquals(1, createBeforeRule.timeMillis());
-    assertEquals(1, createBeforeRule.getTimeMillis());
-    assertEquals(Type.CREATE_BEFORE, createBeforeRule.type());
-    NumNewerVersionsDeleteRule versionsRule = new NumNewerVersionsDeleteRule(2);
-    assertEquals(2, versionsRule.numNewerVersions());
-    assertEquals(2, versionsRule.getNumNewerVersions());
-    assertEquals(Type.NUM_NEWER_VERSIONS, versionsRule.type());
-    IsLiveDeleteRule isLiveRule = new IsLiveDeleteRule(true);
-    assertTrue(isLiveRule.isLive());
-    assertEquals(Type.IS_LIVE, isLiveRule.type());
-    assertEquals(Type.IS_LIVE, isLiveRule.getType());
-    Rule rule = new Rule().set("a", "b");
-    RawDeleteRule rawRule = new RawDeleteRule(rule);
-    assertEquals(Type.IS_LIVE, isLiveRule.type());
     assertEquals(Type.IS_LIVE, isLiveRule.getType());
     ImmutableList<DeleteRule> rules = ImmutableList
         .of(ageRule, createBeforeRule, versionsRule, isLiveRule, rawRule);

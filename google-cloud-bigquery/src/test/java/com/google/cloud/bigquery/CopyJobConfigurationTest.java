@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,25 +37,18 @@ public class CopyJobConfigurationTest {
   private static final TableId DESTINATION_TABLE = TableId.of("dataset", "destinationTable");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
+  private static final EncryptionConfiguration COPY_JOB_ENCRYPTION_CONFIGURATION =
+      EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION =
       CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLE)
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
+          .setDestinationEncryptionConfiguration(COPY_JOB_ENCRYPTION_CONFIGURATION)
           .build();
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION_MULTIPLE_TABLES =
       CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLES)
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
-          .build();
-  private static final CopyJobConfiguration DEPRECATED_COPY_JOB_CONFIGURATION =
-      CopyJobConfiguration.builder(DESTINATION_TABLE, SOURCE_TABLE)
-          .createDisposition(CREATE_DISPOSITION)
-          .writeDisposition(WRITE_DISPOSITION)
-          .build();
-  private static final CopyJobConfiguration DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES =
-      CopyJobConfiguration.builder(DESTINATION_TABLE, SOURCE_TABLES)
-          .createDisposition(CREATE_DISPOSITION)
-          .writeDisposition(WRITE_DISPOSITION)
           .build();
 
   @Test
@@ -100,21 +93,6 @@ public class CopyJobConfigurationTest {
     assertEquals(WRITE_DISPOSITION, COPY_JOB_CONFIGURATION.getWriteDisposition());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(DESTINATION_TABLE,
-        DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.destinationTable());
-    assertEquals(SOURCE_TABLES,
-        DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.sourceTables());
-    assertEquals(CREATE_DISPOSITION,
-        DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.createDisposition());
-    assertEquals(WRITE_DISPOSITION,
-        DEPRECATED_COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.writeDisposition());
-    assertEquals(DESTINATION_TABLE, DEPRECATED_COPY_JOB_CONFIGURATION.destinationTable());
-    assertEquals(ImmutableList.of(SOURCE_TABLE), DEPRECATED_COPY_JOB_CONFIGURATION.sourceTables());
-    assertEquals(CREATE_DISPOSITION, DEPRECATED_COPY_JOB_CONFIGURATION.createDisposition());
-    assertEquals(WRITE_DISPOSITION, DEPRECATED_COPY_JOB_CONFIGURATION.writeDisposition());
-  }
 
   @Test
   public void testToPbAndFromPb() {
@@ -143,6 +121,12 @@ public class CopyJobConfigurationTest {
     }
   }
 
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.COPY, COPY_JOB_CONFIGURATION.getType());
+    assertEquals(JobConfiguration.Type.COPY, COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.getType());
+  }
+
   private void compareCopyJobConfiguration(CopyJobConfiguration expected,
       CopyJobConfiguration value) {
     assertEquals(expected, value);
@@ -152,5 +136,6 @@ public class CopyJobConfigurationTest {
     assertEquals(expected.getSourceTables(), value.getSourceTables());
     assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
+    assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
   }
 }

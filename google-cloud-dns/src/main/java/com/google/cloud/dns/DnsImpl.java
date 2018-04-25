@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,10 @@ import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.cloud.BaseService;
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.RetryHelper;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -57,11 +57,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<Zone> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<Zone> getNextPage() {
@@ -84,11 +79,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<ChangeRequest> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<ChangeRequest> getNextPage() {
@@ -111,11 +101,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       this.serviceOptions = serviceOptions;
     }
 
-    @Override
-    @Deprecated
-    public Page<RecordSet> nextPage() {
-      return getNextPage();
-    }
 
     @Override
     public Page<RecordSet> getNextPage() {
@@ -125,7 +110,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   DnsImpl(DnsOptions options) {
     super(options);
-    dnsRpc = options.getRpc();
+    dnsRpc = options.getDnsRpcV1();
   }
 
   static Function<ManagedZone, Zone> zoneFromPb(final DnsOptions options) {
@@ -146,14 +131,14 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of managed zones
-      final DnsRpc rpc = serviceOptions.getRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<ManagedZone> result =
           runWithRetries(new Callable<DnsRpc.ListResult<ManagedZone>>() {
             @Override
             public DnsRpc.ListResult<ManagedZone> call() {
               return rpc.listZones(optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.pageToken();
       // transform that list into zone objects
       Iterable<Zone> zones = result.results() == null ? ImmutableList.<Zone>of()
@@ -175,13 +160,13 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final DnsOptions serviceOptions, final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of changes
-      final DnsRpc rpc = serviceOptions.getRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<Change> result = runWithRetries(new Callable<DnsRpc.ListResult<Change>>() {
         @Override
         public DnsRpc.ListResult<Change> call() {
           return rpc.listChangeRequests(zoneName, optionsMap);
         }
-      }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+      }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.pageToken();
       // transform that list into change request objects
       Iterable<ChangeRequest> changes = result.results() == null
@@ -204,14 +189,14 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final DnsOptions serviceOptions, final Map<DnsRpc.Option, ?> optionsMap) {
     try {
       // get a list of record sets
-      final DnsRpc rpc = serviceOptions.getRpc();
+      final DnsRpc rpc = serviceOptions.getDnsRpcV1();
       DnsRpc.ListResult<ResourceRecordSet> result = runWithRetries(
           new Callable<DnsRpc.ListResult<ResourceRecordSet>>() {
             @Override
             public DnsRpc.ListResult<ResourceRecordSet> call() {
               return rpc.listRecordSets(zoneName, optionsMap);
             }
-          }, serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
+          }, serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.pageToken();
       // transform that list into record sets
       Iterable<RecordSet> recordSets = result.results() == null
@@ -234,7 +219,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public ManagedZone call() {
               return dnsRpc.create(zoneInfo.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Zone.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -251,7 +236,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public ManagedZone call() {
               return dnsRpc.getZone(zoneName, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Zone.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -266,7 +251,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
         public Boolean call() {
           return dnsRpc.deleteZone(zoneName);
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
     }
@@ -282,7 +267,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public Project call() {
               return dnsRpc.getProject(optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : ProjectInfo.fromPb(answer); // should never be null
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -300,7 +285,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public Change call() {
               return dnsRpc.applyChangeRequest(zoneName, changeRequest.toPb(), optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer); // not null
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -318,7 +303,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public Change call() {
               return dnsRpc.getChangeRequest(zoneName, changeRequestId, optionsMap);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);

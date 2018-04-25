@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,18 +19,16 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class QueryJobConfigurationTest {
 
@@ -39,17 +37,17 @@ public class QueryJobConfigurationTest {
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.newBuilder("IntegerField", Field.Type.integer())
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
@@ -73,8 +71,13 @@ public class QueryJobConfigurationTest {
   private static final boolean USE_QUERY_CACHE = false;
   private static final boolean FLATTEN_RESULTS = true;
   private static final boolean USE_LEGACY_SQL = true;
+  private static final Integer MAX_BILLING_TIER = 123;
+  private static final List<SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
+      ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_RELAXATION);
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
       UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
+  private static final EncryptionConfiguration JOB_ENCRYPTION_CONFIGURATION =
+      EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -89,21 +92,9 @@ public class QueryJobConfigurationTest {
           .setUserDefinedFunctions(USER_DEFINED_FUNCTIONS)
           .setDryRun(true)
           .setUseLegacySql(USE_LEGACY_SQL)
-          .build();
-  private static final QueryJobConfiguration DEPRECATED_QUERY_JOB_CONFIGURATION =
-      QueryJobConfiguration.builder(QUERY)
-          .useQueryCache(USE_QUERY_CACHE)
-          .tableDefinitions(TABLE_DEFINITIONS)
-          .allowLargeResults(ALLOW_LARGE_RESULTS)
-          .createDisposition(CREATE_DISPOSITION)
-          .defaultDataset(DATASET_ID)
-          .destinationTable(TABLE_ID)
-          .writeDisposition(WRITE_DISPOSITION)
-          .priority(PRIORITY)
-          .flattenResults(FLATTEN_RESULTS)
-          .userDefinedFunctions(USER_DEFINED_FUNCTIONS)
-          .dryRun(true)
-          .useLegacySql(USE_LEGACY_SQL)
+          .setMaximumBillingTier(MAX_BILLING_TIER)
+          .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
+          .setDestinationEncryptionConfiguration(JOB_ENCRYPTION_CONFIGURATION)
           .build();
 
   @Test
@@ -131,41 +122,6 @@ public class QueryJobConfigurationTest {
   }
 
   @Test
-  public void testBuilder() {
-    assertEquals(ALLOW_LARGE_RESULTS, DEPRECATED_QUERY_JOB_CONFIGURATION.allowLargeResults());
-    assertEquals(CREATE_DISPOSITION, DEPRECATED_QUERY_JOB_CONFIGURATION.getCreateDisposition());
-    assertEquals(DATASET_ID, DEPRECATED_QUERY_JOB_CONFIGURATION.getDefaultDataset());
-    assertEquals(TABLE_ID, DEPRECATED_QUERY_JOB_CONFIGURATION.getDestinationTable());
-    assertEquals(FLATTEN_RESULTS, DEPRECATED_QUERY_JOB_CONFIGURATION.flattenResults());
-    assertEquals(PRIORITY, DEPRECATED_QUERY_JOB_CONFIGURATION.getPriority());
-    assertEquals(QUERY, DEPRECATED_QUERY_JOB_CONFIGURATION.getQuery());
-    assertEquals(TABLE_DEFINITIONS, DEPRECATED_QUERY_JOB_CONFIGURATION.getTableDefinitions());
-    assertEquals(USE_QUERY_CACHE, DEPRECATED_QUERY_JOB_CONFIGURATION.useQueryCache());
-    assertEquals(USER_DEFINED_FUNCTIONS,
-        DEPRECATED_QUERY_JOB_CONFIGURATION.getUserDefinedFunctions());
-    assertEquals(WRITE_DISPOSITION, DEPRECATED_QUERY_JOB_CONFIGURATION.getWriteDisposition());
-    assertTrue(DEPRECATED_QUERY_JOB_CONFIGURATION.dryRun());
-    assertTrue(DEPRECATED_QUERY_JOB_CONFIGURATION.useLegacySql());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(ALLOW_LARGE_RESULTS, QUERY_JOB_CONFIGURATION.allowLargeResults());
-    assertEquals(CREATE_DISPOSITION, QUERY_JOB_CONFIGURATION.createDisposition());
-    assertEquals(DATASET_ID, QUERY_JOB_CONFIGURATION.defaultDataset());
-    assertEquals(TABLE_ID, QUERY_JOB_CONFIGURATION.destinationTable());
-    assertEquals(FLATTEN_RESULTS, QUERY_JOB_CONFIGURATION.flattenResults());
-    assertEquals(PRIORITY, QUERY_JOB_CONFIGURATION.priority());
-    assertEquals(QUERY, QUERY_JOB_CONFIGURATION.query());
-    assertEquals(TABLE_DEFINITIONS, QUERY_JOB_CONFIGURATION.tableDefinitions());
-    assertEquals(USE_QUERY_CACHE, QUERY_JOB_CONFIGURATION.useQueryCache());
-    assertEquals(USER_DEFINED_FUNCTIONS, QUERY_JOB_CONFIGURATION.userDefinedFunctions());
-    assertEquals(WRITE_DISPOSITION, QUERY_JOB_CONFIGURATION.writeDisposition());
-    assertTrue(QUERY_JOB_CONFIGURATION.dryRun());
-    assertTrue(QUERY_JOB_CONFIGURATION.useLegacySql());
-  }
-
-  @Test
   public void testToPbAndFromPb() {
     assertNotNull(QUERY_JOB_CONFIGURATION.toPb().getQuery());
     assertNull(QUERY_JOB_CONFIGURATION.toPb().getExtract());
@@ -182,6 +138,11 @@ public class QueryJobConfigurationTest {
     QueryJobConfiguration configuration = QUERY_JOB_CONFIGURATION.setProjectId("p");
     assertEquals("p", configuration.getDefaultDataset().getProject());
     assertEquals("p", configuration.getDestinationTable().getProject());
+  }
+
+  @Test
+  public void testGetType() {
+    assertEquals(JobConfiguration.Type.QUERY, QUERY_JOB_CONFIGURATION.getType());
   }
 
   private void compareQueryJobConfiguration(QueryJobConfiguration expected,
@@ -202,5 +163,8 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getUserDefinedFunctions(), value.getUserDefinedFunctions());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
     assertEquals(expected.useLegacySql(), value.useLegacySql());
+    assertEquals(expected.getMaximumBillingTier(), value.getMaximumBillingTier());
+    assertEquals(expected.getSchemaUpdateOptions(), value.getSchemaUpdateOptions());
+    assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
   }
 }

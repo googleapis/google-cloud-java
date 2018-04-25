@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,65 +16,64 @@
 
 package com.google.cloud.examples.compute;
 
-import com.google.cloud.compute.Address;
-import com.google.cloud.compute.AddressId;
-import com.google.cloud.compute.AddressInfo;
-import com.google.cloud.compute.AttachedDisk;
-import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.Disk;
-import com.google.cloud.compute.DiskConfiguration;
-import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.DiskImageConfiguration;
-import com.google.cloud.compute.DiskInfo;
-import com.google.cloud.compute.DiskType;
-import com.google.cloud.compute.DiskTypeId;
-import com.google.cloud.compute.GlobalAddressId;
-import com.google.cloud.compute.GlobalOperationId;
-import com.google.cloud.compute.Image;
-import com.google.cloud.compute.ImageDiskConfiguration;
-import com.google.cloud.compute.ImageId;
-import com.google.cloud.compute.ImageInfo;
-import com.google.cloud.compute.Instance;
-import com.google.cloud.compute.InstanceId;
-import com.google.cloud.compute.InstanceInfo;
-import com.google.cloud.compute.LicenseId;
-import com.google.cloud.compute.MachineType;
-import com.google.cloud.compute.MachineTypeId;
-import com.google.cloud.compute.Network;
-import com.google.cloud.compute.NetworkId;
-import com.google.cloud.compute.NetworkInfo;
-import com.google.cloud.compute.NetworkInterface;
-import com.google.cloud.compute.NetworkInterface.AccessConfig;
-import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.Region;
-import com.google.cloud.compute.RegionAddressId;
-import com.google.cloud.compute.RegionId;
-import com.google.cloud.compute.RegionOperationId;
-import com.google.cloud.compute.SchedulingOptions;
-import com.google.cloud.compute.SchedulingOptions.Maintenance;
-import com.google.cloud.compute.Snapshot;
-import com.google.cloud.compute.SnapshotDiskConfiguration;
-import com.google.cloud.compute.SnapshotId;
-import com.google.cloud.compute.SnapshotInfo;
-import com.google.cloud.compute.StandardDiskConfiguration;
-import com.google.cloud.compute.StandardNetworkConfiguration;
-import com.google.cloud.compute.SubnetNetworkConfiguration;
-import com.google.cloud.compute.Subnetwork;
-import com.google.cloud.compute.SubnetworkId;
-import com.google.cloud.compute.SubnetworkInfo;
-import com.google.cloud.compute.Zone;
-import com.google.cloud.compute.ZoneId;
-import com.google.cloud.compute.ZoneOperationId;
-import com.google.cloud.compute.spi.ComputeRpc.Tuple;
+import com.google.api.gax.paging.Page;
+import com.google.cloud.Tuple;
+import com.google.cloud.compute.deprecated.Address;
+import com.google.cloud.compute.deprecated.AddressId;
+import com.google.cloud.compute.deprecated.AddressInfo;
+import com.google.cloud.compute.deprecated.AttachedDisk;
+import com.google.cloud.compute.deprecated.AttachedDisk.PersistentDiskConfiguration;
+import com.google.cloud.compute.deprecated.Compute;
+import com.google.cloud.compute.deprecated.ComputeOptions;
+import com.google.cloud.compute.deprecated.Disk;
+import com.google.cloud.compute.deprecated.DiskConfiguration;
+import com.google.cloud.compute.deprecated.DiskId;
+import com.google.cloud.compute.deprecated.DiskImageConfiguration;
+import com.google.cloud.compute.deprecated.DiskInfo;
+import com.google.cloud.compute.deprecated.DiskType;
+import com.google.cloud.compute.deprecated.DiskTypeId;
+import com.google.cloud.compute.deprecated.GlobalAddressId;
+import com.google.cloud.compute.deprecated.GlobalOperationId;
+import com.google.cloud.compute.deprecated.Image;
+import com.google.cloud.compute.deprecated.ImageDiskConfiguration;
+import com.google.cloud.compute.deprecated.ImageId;
+import com.google.cloud.compute.deprecated.ImageInfo;
+import com.google.cloud.compute.deprecated.Instance;
+import com.google.cloud.compute.deprecated.InstanceId;
+import com.google.cloud.compute.deprecated.InstanceInfo;
+import com.google.cloud.compute.deprecated.LicenseId;
+import com.google.cloud.compute.deprecated.MachineType;
+import com.google.cloud.compute.deprecated.MachineTypeId;
+import com.google.cloud.compute.deprecated.Network;
+import com.google.cloud.compute.deprecated.NetworkId;
+import com.google.cloud.compute.deprecated.NetworkInfo;
+import com.google.cloud.compute.deprecated.NetworkInterface;
+import com.google.cloud.compute.deprecated.NetworkInterface.AccessConfig;
+import com.google.cloud.compute.deprecated.Operation;
+import com.google.cloud.compute.deprecated.Region;
+import com.google.cloud.compute.deprecated.RegionAddressId;
+import com.google.cloud.compute.deprecated.RegionId;
+import com.google.cloud.compute.deprecated.RegionOperationId;
+import com.google.cloud.compute.deprecated.SchedulingOptions;
+import com.google.cloud.compute.deprecated.SchedulingOptions.Maintenance;
+import com.google.cloud.compute.deprecated.Snapshot;
+import com.google.cloud.compute.deprecated.SnapshotDiskConfiguration;
+import com.google.cloud.compute.deprecated.SnapshotId;
+import com.google.cloud.compute.deprecated.SnapshotInfo;
+import com.google.cloud.compute.deprecated.StandardDiskConfiguration;
+import com.google.cloud.compute.deprecated.StandardNetworkConfiguration;
+import com.google.cloud.compute.deprecated.SubnetNetworkConfiguration;
+import com.google.cloud.compute.deprecated.Subnetwork;
+import com.google.cloud.compute.deprecated.SubnetworkId;
+import com.google.cloud.compute.deprecated.SubnetworkInfo;
+import com.google.cloud.compute.deprecated.Zone;
+import com.google.cloud.compute.deprecated.ZoneId;
+import com.google.cloud.compute.deprecated.ZoneOperationId;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -306,14 +305,14 @@ public class ComputeExample {
   private static class ListDiskTypesAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<DiskType> diskTypeIterator;
+      Page<DiskType> diskTypePage;
       if (zone != null) {
-        diskTypeIterator = compute.listDiskTypes(zone.getZone()).iterateAll();
+        diskTypePage = compute.listDiskTypes(zone.getZone());
       } else {
-        diskTypeIterator = compute.listDiskTypes().iterateAll();
+        diskTypePage = compute.listDiskTypes();
       }
-      while (diskTypeIterator.hasNext()) {
-        System.out.println(diskTypeIterator.next());
+      for (DiskType diskType : diskTypePage.iterateAll()) {
+        System.out.println(diskType);
       }
     }
   }
@@ -361,14 +360,14 @@ public class ComputeExample {
   private static class ListMachineTypesAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<MachineType> machineTypeIterator;
+      Page<MachineType> machineTypePage;
       if (zone != null) {
-        machineTypeIterator = compute.listMachineTypes(zone.getZone()).iterateAll();
+        machineTypePage = compute.listMachineTypes(zone.getZone());
       } else {
-        machineTypeIterator = compute.listMachineTypes().iterateAll();
+        machineTypePage = compute.listMachineTypes();
       }
-      while (machineTypeIterator.hasNext()) {
-        System.out.println(machineTypeIterator.next());
+      for (MachineType diskType : machineTypePage.iterateAll()) {
+        System.out.println(diskType);
       }
     }
   }
@@ -413,9 +412,8 @@ public class ComputeExample {
   private static class ListRegionsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Region> regionIterator = compute.listRegions().iterateAll();
-      while (regionIterator.hasNext()) {
-        System.out.println(regionIterator.next());
+      for (Region region : compute.listRegions().iterateAll()) {
+        System.out.println(region);
       }
     }
   }
@@ -460,9 +458,8 @@ public class ComputeExample {
   private static class ListZonesAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Zone> zoneIterator = compute.listZones().iterateAll();
-      while (zoneIterator.hasNext()) {
-        System.out.println(zoneIterator.next());
+      for (Zone zone : compute.listZones().iterateAll()) {
+        System.out.println(zone);
       }
     }
   }
@@ -537,9 +534,8 @@ public class ComputeExample {
   private static class ListGlobalOperationsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Operation> operationIterator = compute.listGlobalOperations().iterateAll();
-      while (operationIterator.hasNext()) {
-        System.out.println(operationIterator.next());
+      for (Operation operation : compute.listGlobalOperations().iterateAll()) {
+        System.out.println(operation);
       }
     }
   }
@@ -553,10 +549,8 @@ public class ComputeExample {
   private static class ListZoneOperationsAction extends ComputeAction<ZoneId> {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<Operation> operationIterator =
-          compute.listZoneOperations(zone.getZone()).iterateAll();
-      while (operationIterator.hasNext()) {
-        System.out.println(operationIterator.next());
+      for (Operation operation : compute.listZoneOperations(zone.getZone()).iterateAll()) {
+        System.out.println(operation);
       }
     }
 
@@ -588,10 +582,8 @@ public class ComputeExample {
   private static class ListRegionOperationsAction extends ComputeAction<RegionId> {
     @Override
     public void run(Compute compute, RegionId region) {
-      Iterator<Operation> operationIterator =
-          compute.listRegionOperations(region.getRegion()).iterateAll();
-      while (operationIterator.hasNext()) {
-        System.out.println(operationIterator.next());
+      for (Operation operation : compute.listRegionOperations(region.getRegion()).iterateAll()) {
+        System.out.println(operation);
       }
     }
 
@@ -775,14 +767,14 @@ public class ComputeExample {
   private static class ListAddressesAction extends OptionalRegionAction {
     @Override
     public void run(Compute compute, RegionId region) {
-      Iterator<Address> addressIterator;
+      Page<Address> addressPage;
       if (region != null) {
-        addressIterator = compute.listRegionAddresses(region.getRegion()).iterateAll();
+        addressPage = compute.listRegionAddresses(region.getRegion());
       } else {
-        addressIterator = compute.listAddresses().iterateAll();
+        addressPage = compute.listAddresses();
       }
-      while (addressIterator.hasNext()) {
-        System.out.println(addressIterator.next());
+      for (Address address : addressPage.iterateAll()) {
+        System.out.println(address);
       }
     }
   }
@@ -891,9 +883,8 @@ public class ComputeExample {
   private static class ListSnapshotsAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Snapshot> snapshotIterator = compute.listSnapshots().iterateAll();
-      while (snapshotIterator.hasNext()) {
-        System.out.println(snapshotIterator.next());
+      for (Snapshot snapshot : compute.listSnapshots().iterateAll()) {
+        System.out.println(snapshot);
       }
     }
   }
@@ -1015,9 +1006,8 @@ public class ComputeExample {
   private static class ListImagesAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Image> imageIterator = compute.listImages().iterateAll();
-      while (imageIterator.hasNext()) {
-        System.out.println(imageIterator.next());
+      for (Image image : compute.listImages().iterateAll()) {
+        System.out.println(image);
       }
     }
   }
@@ -1201,9 +1191,8 @@ public class ComputeExample {
   private static class ListDisksAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<Disk> diskIterator = compute.listDisks().iterateAll();
-      while (diskIterator.hasNext()) {
-        System.out.println(diskIterator.next());
+      for (Disk disk : compute.listDisks().iterateAll()) {
+        System.out.println(disk);
       }
     }
   }
@@ -1330,9 +1319,8 @@ public class ComputeExample {
   private static class ListNetworksAction extends NoArgsAction {
     @Override
     public void run(Compute compute, Void arg) {
-      Iterator<Network> networkIterator = compute.listNetworks().iterateAll();
-      while (networkIterator.hasNext()) {
-        System.out.println(networkIterator.next());
+      for (Network network : compute.listNetworks().iterateAll()) {
+        System.out.println(network);
       }
     }
   }
@@ -1490,14 +1478,14 @@ public class ComputeExample {
 
     @Override
     public void run(Compute compute, RegionId region) {
-      Iterator<Subnetwork> subnetworkIterator;
+      Page<Subnetwork> subnetworkPage;
       if (region != null) {
-        subnetworkIterator = compute.listSubnetworks(region.getRegion()).iterateAll();
+        subnetworkPage = compute.listSubnetworks(region.getRegion());
       } else {
-        subnetworkIterator = compute.listSubnetworks().iterateAll();
+        subnetworkPage = compute.listSubnetworks();
       }
-      while (subnetworkIterator.hasNext()) {
-        System.out.println(subnetworkIterator.next());
+      for (Subnetwork subnetwork : subnetworkPage.iterateAll()) {
+        System.out.println(subnetwork);
       }
     }
   }
@@ -1617,14 +1605,14 @@ public class ComputeExample {
   private static class ListInstancesAction extends OptionalZoneAction {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<Instance> instanceIterator;
+      Page<Instance> instancePage;
       if (zone != null) {
-        instanceIterator = compute.listInstances(zone.getZone()).iterateAll();
+        instancePage = compute.listInstances(zone.getZone());
       } else {
-        instanceIterator = compute.listInstances().iterateAll();
+        instancePage = compute.listInstances();
       }
-      while (instanceIterator.hasNext()) {
-        System.out.println(instanceIterator.next());
+      for (Instance instance : instancePage.iterateAll()) {
+        System.out.println(instance);
       }
     }
   }

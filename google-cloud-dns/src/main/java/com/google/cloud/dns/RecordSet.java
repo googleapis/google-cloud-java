@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,10 @@ package com.google.cloud.dns;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -74,53 +77,93 @@ public final class RecordSet implements Serializable {
    * @see <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Cloud DNS
    * supported record types</a>
    */
-  public enum Type {
+  public static final class Type extends StringEnumValue {
+    private static final long serialVersionUID = -2217433987664635241L;
+
+    private static final ApiFunction<String, Type> CONSTRUCTOR =
+        new ApiFunction<String, Type>() {
+          @Override
+          public Type apply(String constant) {
+            return new Type(constant);
+          }
+        };
+
+    private static final StringEnumType<Type> type = new StringEnumType(
+        Type.class,
+        CONSTRUCTOR);
+
     /**
      * Address record, which is used to map host names to their IPv4 address.
      */
-    A,
+    public static final Type A = type.createAndRegister("A");
     /**
      * IPv6 Address record, which is used to map host names to their IPv6 address.
      */
-    AAAA,
+    public static final Type AAAA = type.createAndRegister("AAAA");
     /**
      * Canonical name record, which is used to alias names.
      */
-    CNAME,
+    public static final Type CNAME = type.createAndRegister("CNAME");
     /**
      * Mail exchange record, which is used in routing requests to mail servers.
      */
-    MX,
+    public static final Type MX = type.createAndRegister("MX");
     /**
      * Naming authority pointer record, defined by RFC3403.
      */
-    NAPTR,
+    public static final Type NAPTR = type.createAndRegister("NAPTR");
     /**
      * Name server record, which delegates a DNS zone to an authoritative server.
      */
-    NS,
+    public static final Type NS = type.createAndRegister("NS");
     /**
      * Pointer record, which is often used for reverse DNS lookups.
      */
-    PTR,
+    public static final Type PTR = type.createAndRegister("PTR");
     /**
      * Start of authority record, which specifies authoritative information about a DNS zone.
      */
-    SOA,
+    public static final Type SOA = type.createAndRegister("SOA");
     /**
      * Sender policy framework record, which is used in email validation systems.
      */
-    SPF,
+    public static final Type SPF = type.createAndRegister("SPF");
     /**
      * Service locator record, which is used by some voice over IP, instant messaging protocols and
      * other applications.
      */
-    SRV,
+    public static final Type SRV = type.createAndRegister("SRV");
     /**
      * Text record, which can contain arbitrary text and can also be used to define machine readable
      * data such as security or abuse prevention information.
      */
-    TXT
+    public static final Type TXT = type.createAndRegister("TXT");
+
+    private Type(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the Type for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Type valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Type for the given String constant, and allow unrecognized values.
+     */
+    public static Type valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Type.
+     */
+    public static Type[] values() {
+      return type.values();
+    }
   }
 
   /**
@@ -177,13 +220,6 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * Replaces the current records with the provided list of records.
-     */
-    @Deprecated
-    public Builder records(List<String> records) {
-      return setRecords(records);
-    }
 
     /**
      * Replaces the current records with the provided list of records.
@@ -193,13 +229,6 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the name for this record set. For example, www.example.com.
-     */
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     /**
      * Sets the name for this record set. For example, www.example.com.
@@ -209,17 +238,6 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the time that this record can be cached by resolvers. This number must be non-negative.
-     * The maximum duration must be equivalent to at most {@link Integer#MAX_VALUE} seconds.
-     *
-     * @param duration A non-negative number of time units
-     * @param unit The unit of the ttl parameter
-     */
-    @Deprecated
-    public Builder ttl(int duration, TimeUnit unit) {
-      return setTtl(duration, unit);
-    }
 
     /**
      * Sets the time that this record can be cached by resolvers. This number must be non-negative.
@@ -238,13 +256,6 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on.
-     */
-    @Deprecated
-    public Builder type(Type type) {
-      return setType(type);
-    }
 
     /**
      * The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on.
@@ -276,13 +287,6 @@ public final class RecordSet implements Serializable {
     return new Builder(this);
   }
 
-  /**
-   * Creates a {@code RecordSet} builder for the given {@code name} and {@code type}.
-   */
-  @Deprecated
-  public static Builder builder(String name, Type type) {
-    return newBuilder(name, type);
-  }
 
   /**
    * Creates a {@code RecordSet} builder for the given {@code name} and {@code type}.
@@ -291,13 +295,6 @@ public final class RecordSet implements Serializable {
     return new Builder(name, type);
   }
 
-  /**
-   * Returns the user-assigned name of this record set.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the user-assigned name of this record set.
@@ -306,13 +303,6 @@ public final class RecordSet implements Serializable {
     return name;
   }
 
-  /**
-   * Returns a list of records stored in this record set.
-   */
-  @Deprecated
-  public List<String> records() {
-    return getRecords();
-  }
 
   /**
    * Returns a list of records stored in this record set.
@@ -321,13 +311,6 @@ public final class RecordSet implements Serializable {
     return rrdatas;
   }
 
-  /**
-   * Returns the number of seconds that this record set can be cached by resolvers.
-   */
-  @Deprecated
-  public Integer ttl() {
-    return getTtl();
-  }
 
   /**
    * Returns the number of seconds that this record set can be cached by resolvers.
@@ -336,13 +319,6 @@ public final class RecordSet implements Serializable {
     return ttl;
   }
 
-  /**
-   * Returns the type of this record set.
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the type of this record set.

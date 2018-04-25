@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
@@ -28,19 +29,19 @@ import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.collect.ImmutableList;
-
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
+import org.threeten.bp.Duration;
 
 public class RemoteStorageHelperTest {
 
@@ -83,6 +84,8 @@ public class RemoteStorageHelperTest {
   private List<Blob> blobList;
   private Page<Blob> blobPage;
 
+
+
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
@@ -92,21 +95,15 @@ public class RemoteStorageHelperTest {
     blob2 = EasyMock.createMock(Blob.class);
     blobList = ImmutableList.of(blob1, blob2);
     blobPage = new Page<Blob>() {
+
       @Override
-      @Deprecated
-      public String nextPageCursor() {
-        return "nextPageCursor";
+      public boolean hasNextPage() {
+        return true;
       }
 
       @Override
-      public String getNextPageCursor() {
+      public String getNextPageToken() {
         return "nextPageCursor";
-      }
-
-      @Override
-      @Deprecated
-      public Page<Blob> nextPage() {
-        return null;
       }
 
       @Override
@@ -114,11 +111,6 @@ public class RemoteStorageHelperTest {
         return null;
       }
 
-      @Override
-      @Deprecated
-      public Iterable<Blob> values() {
-        return blobList;
-      }
 
       @Override
       public Iterable<Blob> getValues() {
@@ -126,8 +118,8 @@ public class RemoteStorageHelperTest {
       }
 
       @Override
-      public Iterator<Blob> iterateAll() {
-        return blobList.iterator();
+      public Iterable<Blob> iterateAll() {
+        return blobList;
       }
     };
   }
@@ -136,9 +128,12 @@ public class RemoteStorageHelperTest {
   public void testForceDelete() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
     EasyMock.expect(blob1.getBlobId()).andReturn(BLOB_ID1);
-    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true);
     EasyMock.expect(blob2.getBlobId()).andReturn(BLOB_ID2);
-    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true);
+
+    ArrayList<BlobId> ids = new ArrayList<>();
+    ids.add(BLOB_ID1);
+    ids.add(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(ids)).andReturn(Collections.nCopies(2, true));
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage);
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
@@ -151,9 +146,13 @@ public class RemoteStorageHelperTest {
   public void testForceDeleteTimeout() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
     EasyMock.expect(blob1.getBlobId()).andReturn(BLOB_ID1).anyTimes();
-    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true).anyTimes();
     EasyMock.expect(blob2.getBlobId()).andReturn(BLOB_ID2).anyTimes();
-    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true).anyTimes();
+
+    ArrayList<BlobId> ids = new ArrayList<>();
+    ids.add(BLOB_ID1);
+    ids.add(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(ids)).andReturn(Collections.nCopies(2, true)).anyTimes();
+
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage).anyTimes();
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(RETRYABLE_EXCEPTION).anyTimes();
@@ -167,9 +166,11 @@ public class RemoteStorageHelperTest {
   public void testForceDeleteFail() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
     EasyMock.expect(blob1.getBlobId()).andReturn(BLOB_ID1);
-    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true);
     EasyMock.expect(blob2.getBlobId()).andReturn(BLOB_ID2);
-    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true);
+    ArrayList<BlobId> ids = new ArrayList<>();
+    ids.add(BLOB_ID1);
+    ids.add(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(ids)).andReturn(Collections.nCopies(2, true)).anyTimes();
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage);
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
@@ -186,9 +187,11 @@ public class RemoteStorageHelperTest {
   public void testForceDeleteNoTimeout() {
     Storage storageMock = EasyMock.createMock(Storage.class);
     EasyMock.expect(blob1.getBlobId()).andReturn(BLOB_ID1);
-    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true);
     EasyMock.expect(blob2.getBlobId()).andReturn(BLOB_ID2);
-    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true);
+    ArrayList<BlobId> ids = new ArrayList<>();
+    ids.add(BLOB_ID1);
+    ids.add(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(ids)).andReturn(Collections.nCopies(2, true)).anyTimes();
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage);
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
@@ -201,9 +204,11 @@ public class RemoteStorageHelperTest {
   public void testForceDeleteNoTimeoutFail() {
     Storage storageMock = EasyMock.createMock(Storage.class);
     EasyMock.expect(blob1.getBlobId()).andReturn(BLOB_ID1);
-    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true);
     EasyMock.expect(blob2.getBlobId()).andReturn(BLOB_ID2);
-    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true);
+    ArrayList<BlobId> ids = new ArrayList<>();
+    ids.add(BLOB_ID1);
+    ids.add(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(ids)).andReturn(Collections.nCopies(2, true)).anyTimes();
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage);
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
@@ -220,14 +225,14 @@ public class RemoteStorageHelperTest {
   public void testCreateFromStream() {
     RemoteStorageHelper helper = RemoteStorageHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     StorageOptions options = helper.getOptions();
-    assertEquals(options, helper.options());
     assertEquals(PROJECT_ID, options.getProjectId());
-    assertEquals(60000, options.getConnectTimeout());
-    assertEquals(60000, options.getReadTimeout());
-    assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
-    assertEquals(6, options.getRetryParams().getRetryMinAttempts());
-    assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());
-    assertEquals(120000, options.getRetryParams().getTotalRetryPeriodMillis());
-    assertEquals(250, options.getRetryParams().getInitialRetryDelayMillis());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getConnectTimeout());
+    assertEquals(60000,
+        ((HttpTransportOptions) options.getTransportOptions()).getReadTimeout());
+    assertEquals(10, options.getRetrySettings().getMaxAttempts());
+    assertEquals(Duration.ofMillis(30000), options.getRetrySettings().getMaxRetryDelay());
+    assertEquals(Duration.ofMillis(120000), options.getRetrySettings().getTotalTimeout());
+    assertEquals(Duration.ofMillis(250), options.getRetrySettings().getInitialRetryDelay());
   }
 }

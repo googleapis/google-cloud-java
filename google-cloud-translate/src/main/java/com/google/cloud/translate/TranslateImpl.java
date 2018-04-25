@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.BaseService;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -51,7 +51,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
 
   TranslateImpl(TranslateOptions options) {
     super(options);
-    translateRpc = options.getRpc();
+    translateRpc = options.getTranslateRpcV2();
   }
 
   @Override
@@ -62,7 +62,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
         public List<LanguagesResource> call() {
           return translateRpc.listSupportedLanguages(optionMap(options));
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()),
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()),
           Language.FROM_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw TranslateException.translateAndThrow(e);
@@ -78,7 +78,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
             public List<List<DetectionsResourceItems>> call() {
               return translateRpc.detect(texts);
             }
-          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
+          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
       Iterator<List<DetectionsResourceItems>> detectionIterator = detectionsPb.iterator();
       Iterator<String> textIterator = texts.iterator();
       while (detectionIterator.hasNext() && textIterator.hasNext()) {
@@ -112,7 +112,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
         public List<TranslationsResource> call() {
           return translateRpc.translate(texts, optionMap(options));
         }
-      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()),
+      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()),
           Translation.FROM_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw TranslateException.translateAndThrow(e);

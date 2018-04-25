@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,13 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.Service;
-import com.google.common.util.concurrent.ListenableFuture;
 
-/** An interface for Cloud Spanner. */
+/**
+ * An interface for Cloud Spanner. Typically, there would only be one instance of this for the
+ * lifetime of the application which must be closed by invoking {@link #close()} when it is no
+ * longer needed. Failure to do so may result in leaking session resources and exhausting session
+ * quota.
+ */
 public interface Spanner extends Service<SpannerOptions> {
   /** Returns a {@code DatabaseAdminClient} to do admin operations on Cloud Spanner databases. */
   DatabaseAdminClient getDatabaseAdminClient();
@@ -34,9 +38,24 @@ public interface Spanner extends Service<SpannerOptions> {
   DatabaseClient getDatabaseClient(DatabaseId db);
 
   /**
-   * Closes all the clients associated with this instance and frees up all the resources. This
-   * method does not block. Return future will complete when cleanup is done. TODO(user): Add
-   * logging and tracking of leaked sessions.
+   * Returns a {@code BatchClient} to do batch operations on Cloud Spanner databases. Batch client
+   * is useful when one wants to read/query a large amount of data from Cloud
+   * Spanner across multiple processes, even across different machines. It allows to create
+   * partitions of Cloud Spanner database and then read/query over each partition independently
+   * yet at the same snapshot.
+   *
+   * <p> For all other use cases, {@code DatabaseClient} is more appropriate and performant.
    */
-  ListenableFuture<Void> closeAsync();
+  BatchClient getBatchClient(DatabaseId db);
+
+  /**
+   * Closes all the clients associated with this instance and frees up all the resources. This
+   * method will block until it can clean up all the resources. Specifically, it deletes all the
+   * underlying sessions (which involves rpcs) and closes all the gRPC channels. Once this method
+   * called, this object is no longer usable. It is strongly advised to call this method when you
+   * are done with the {@code Spanner} object, typically when your application shuts down. There is
+   * a hard limit on number of sessions in Cloud Spanner and not calling this method can lead to
+   * unused sessions piling up on the backend.
+   */
+  void close();
 }

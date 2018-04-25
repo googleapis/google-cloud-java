@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,19 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
+import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -40,6 +45,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private static final long serialVersionUID = -1108948249081804890L;
 
   private final String query;
+  private final ImmutableList<QueryParameterValue> positionalParameters;
+  private final ImmutableMap<String, QueryParameterValue> namedParameters;
   private final TableId destinationTable;
   private final Map<String, ExternalTableDefinition> tableDefinitions;
   private final List<UserDefinedFunction> userDefinedFunctions;
@@ -52,6 +59,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Boolean flattenResults;
   private final Boolean dryRun;
   private final Boolean useLegacySql;
+  private final Integer maximumBillingTier;
+  private final List<SchemaUpdateOption> schemaUpdateOptions;
+  private final EncryptionConfiguration destinationEncryptionConfiguration;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be
@@ -77,6 +87,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
       extends JobConfiguration.Builder<QueryJobConfiguration, Builder> {
 
     private String query;
+    private List<QueryParameterValue> positionalParameters = Lists.newArrayList();
+    private Map<String, QueryParameterValue> namedParameters = Maps.newHashMap();
     private TableId destinationTable;
     private Map<String, ExternalTableDefinition> tableDefinitions;
     private List<UserDefinedFunction> userDefinedFunctions;
@@ -88,7 +100,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Boolean useQueryCache;
     private Boolean flattenResults;
     private Boolean dryRun;
-    private Boolean useLegacySql;
+    private Boolean useLegacySql = false;
+    private Integer maximumBillingTier;
+    private List<SchemaUpdateOption> schemaUpdateOptions;
+    private EncryptionConfiguration destinationEncryptionConfiguration;
 
     private Builder() {
       super(Type.QUERY);
@@ -97,6 +112,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Builder(QueryJobConfiguration jobConfiguration) {
       this();
       this.query = jobConfiguration.query;
+      this.namedParameters = jobConfiguration.namedParameters;
+      this.positionalParameters = jobConfiguration.positionalParameters;
       this.destinationTable = jobConfiguration.destinationTable;
       this.tableDefinitions = jobConfiguration.tableDefinitions;
       this.userDefinedFunctions = jobConfiguration.userDefinedFunctions;
@@ -109,16 +126,37 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.flattenResults = jobConfiguration.flattenResults;
       this.dryRun = jobConfiguration.dryRun;
       this.useLegacySql = jobConfiguration.useLegacySql;
+      this.maximumBillingTier = jobConfiguration.maximumBillingTier;
+      this.schemaUpdateOptions = jobConfiguration.schemaUpdateOptions;
+      this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
       this();
       JobConfigurationQuery queryConfigurationPb = configurationPb.getQuery();
       this.query = queryConfigurationPb.getQuery();
+      if (queryConfigurationPb.getQueryParameters() != null && !queryConfigurationPb.getQueryParameters().isEmpty()) {
+        if (queryConfigurationPb.getQueryParameters().get(0).getName() == null) {
+          setPositionalParameters(
+              Lists.transform(queryConfigurationPb.getQueryParameters(), POSITIONAL_PARAMETER_FROM_PB_FUNCTION));
+        } else {
+          Map<String, QueryParameterValue> values = Maps.newHashMap();
+          for (QueryParameter queryParameterPb : queryConfigurationPb.getQueryParameters()) {
+            checkNotNull(queryParameterPb.getName());
+            QueryParameterValue value = QueryParameterValue.fromPb(
+                queryParameterPb.getParameterValue(), queryParameterPb.getParameterType());
+            values.put(queryParameterPb.getName(), value);
+          }
+          setNamedParameters(values);
+        }
+      }
       allowLargeResults = queryConfigurationPb.getAllowLargeResults();
       useQueryCache = queryConfigurationPb.getUseQueryCache();
       flattenResults = queryConfigurationPb.getFlattenResults();
       useLegacySql = queryConfigurationPb.getUseLegacySql();
+      if (queryConfigurationPb.getMaximumBillingTier() != null) {
+        maximumBillingTier = queryConfigurationPb.getMaximumBillingTier();
+      }
       dryRun = configurationPb.getDryRun();
       if (queryConfigurationPb.getDestinationTable() != null) {
         destinationTable = TableId.fromPb(queryConfigurationPb.getDestinationTable());
@@ -146,15 +184,19 @@ public final class QueryJobConfiguration extends JobConfiguration {
         writeDisposition =
             WriteDisposition.valueOf(queryConfigurationPb.getWriteDisposition());
       }
+      if (queryConfigurationPb.getSchemaUpdateOptions() != null) {
+        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+        for (String rawSchemaUpdateOption : queryConfigurationPb.getSchemaUpdateOptions()) {
+          schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
+        }
+        this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
+      }
+      if (queryConfigurationPb.getDestinationEncryptionConfiguration() != null) {
+        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
+            queryConfigurationPb.getDestinationEncryptionConfiguration()).build();
+      }
     }
 
-    /**
-     * Sets the BigQuery SQL query to execute.
-     */
-    @Deprecated
-    public Builder query(String query) {
-      return setQuery(query);
-    }
 
     /**
      * Sets the BigQuery SQL query to execute.
@@ -164,33 +206,103 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+
     /**
-     * Sets the table where to put query results. If not provided a new table is created. This value
-     * is required if {@link Builder#allowLargeResults(Boolean)} is set to {@code true}.
+     * Adds a positional query parameter to the list of query parameters. See
+     * {@link #setPositionalParameters(Iterable)} for more details on the input requirements.
+     *
+     * <p>A positional parameter cannot be added after named parameters have been added.
      */
-    @Deprecated
-    public Builder destinationTable(TableId destinationTable) {
-      return setDestinationTable(destinationTable);
+    public Builder addPositionalParameter(QueryParameterValue value) {
+      checkNotNull(value);
+      if (!namedParameters.isEmpty()) {
+        throw new IllegalStateException(
+            "Positional parameters can't be combined with named parameters");
+      }
+      positionalParameters.add(value);
+      return this;
+    }
+
+    /**
+     * Sets the query parameters to a list of positional query parameters to use in the query.
+     *
+     * <p>The set of query parameters must either be all positional or all named parameters.
+     * Positional parameters are denoted in the query with a question mark (?).
+     *
+     * <p>Additionally, useLegacySql must be set to false; query parameters cannot be used with
+     * legacy SQL.
+     *
+     * <p>The values parameter can be set to null to clear out the positional
+     * parameters so that named parameters can be used instead.
+     */
+    public Builder setPositionalParameters(Iterable<QueryParameterValue> values) {
+      if (values == null || Iterables.isEmpty(values)) {
+        positionalParameters = Lists.newArrayList();
+      } else {
+        if (!this.namedParameters.isEmpty()) {
+          throw new IllegalStateException(
+              "Positional parameters can't be combined with named parameters");
+        }
+        this.positionalParameters = Lists.newArrayList(values);
+      }
+      return this;
+    }
+
+    /**
+     * Adds a named query parameter to the set of query parameters. See
+     * {@link #setNamedParameters(Map)} for more details on the input requirements.
+     *
+     * <p>A named parameter cannot be added after positional parameters have been added.
+     */
+    public Builder addNamedParameter(String name, QueryParameterValue value) {
+      checkNotNull(value);
+      if (!this.positionalParameters.isEmpty()) {
+        throw new IllegalStateException(
+            "Named parameters can't be combined with positional parameters");
+      }
+      namedParameters.put(name, value);
+      return this;
+    }
+
+    /**
+     * Sets the query parameters to a set of named query parameters to use in the query.
+     *
+     * <p>The set of query parameters must either be all positional or all named parameters. Named
+     * parameters are denoted using an @ prefix, e.g. @myParam for a parameter named "myParam".
+     *
+     * <p>Additionally, useLegacySql must be set to false; query parameters cannot be used with
+     * legacy SQL.
+     *
+     * <p>The values parameter can be set to null to clear out the named parameters so that
+     * positional parameters can be used instead.
+     */
+    public Builder setNamedParameters(Map<String, QueryParameterValue> values) {
+      if (values == null || values.isEmpty()) {
+        namedParameters = Maps.newHashMap();
+      } else {
+        if (!this.positionalParameters.isEmpty()) {
+          throw new IllegalStateException(
+              "Named parameters can't be combined with positional parameters");
+        }
+        this.namedParameters = Maps.newHashMap(values);
+      }
+      return this;
     }
 
     /**
      * Sets the table where to put query results. If not provided a new table is created. This value
-     * is required if {@link Builder#allowLargeResults(Boolean)} is set to {@code true}.
+     * is required if {@link Builder#setAllowLargeResults(Boolean)} is set to {@code true}.
      */
     public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
       return this;
     }
 
-    /**
-     * Sets the external tables definitions. If querying external data sources outside of BigQuery,
-     * this value describes the data format, location and other properties of the data
-     * sources. By defining these properties, the data sources can be queried as if they were
-     * standard BigQuery tables.
-     */
-    @Deprecated
-    public Builder tableDefinitions(Map<String, ExternalTableDefinition> tableDefinitions) {
-      return setTableDefinitions(tableDefinitions);
+
+    public Builder setDestinationEncryptionConfiguration(
+        EncryptionConfiguration encryptionConfiguration) {
+      this.destinationEncryptionConfiguration = encryptionConfiguration;
+      return this;
     }
 
     /**
@@ -219,15 +331,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets user defined function resources that can be used by this query. Function resources
-     * can either be defined inline ({@link UserDefinedFunction#inline(String)}) or loaded from
-     * a Google Cloud Storage URI ({@link UserDefinedFunction#fromUri(String)}.
-     */
-    @Deprecated
-    public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
-      return setUserDefinedFunctions(userDefinedFunctions);
-    }
 
     /**
      * Sets user defined function resources that can be used by this query. Function resources
@@ -240,16 +343,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether the job is allowed to create tables.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
-     *     Create Disposition</a>
-     */
-    @Deprecated
-    public Builder createDisposition(CreateDisposition createDisposition) {
-      return setCreateDisposition(createDisposition);
-    }
 
     /**
      * Sets whether the job is allowed to create tables.
@@ -262,16 +355,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the action that should occur if the destination table already exists.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
-     *     Write Disposition</a>
-     */
-    @Deprecated
-    public Builder writeDisposition(WriteDisposition writeDisposition) {
-      return setWriteDisposition(writeDisposition);
-    }
 
     /**
      * Sets the action that should occur if the destination table already exists.
@@ -284,14 +367,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the default dataset. This dataset is used for all unqualified table names used in the
-     * query.
-     */
-    @Deprecated
-    public Builder defaultDataset(DatasetId defaultDataset) {
-      return setDefaultDataset(defaultDataset);
-    }
 
     /**
      * Sets the default dataset. This dataset is used for all unqualified table names used in the
@@ -302,14 +377,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the default dataset. This dataset is used for all unqualified table names used in the
-     * query.
-     */
-    @Deprecated
-    public Builder defaultDataset(String defaultDataset) {
-      return setDefaultDataset(DatasetId.of(defaultDataset));
-    }
 
     /**
      * Sets the default dataset. This dataset is used for all unqualified table names used in the
@@ -319,14 +386,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return setDefaultDataset(DatasetId.of(defaultDataset));
     }
 
-    /**
-     * Sets a priority for the query. If not specified the priority is assumed to be
-     * {@link Priority#INTERACTIVE}.
-     */
-    @Deprecated
-    public Builder priority(Priority priority) {
-      return setPriority(priority);
-    }
 
     /**
      * Sets a priority for the query. If not specified the priority is assumed to be
@@ -337,23 +396,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether the job is enabled to create arbitrarily large results. If {@code true}
-     * the query is allowed to create large results at a slight cost in performance. If {@code true}
-     * {@link Builder#destinationTable(TableId)} must be provided.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">
-     *     Returning Large Query Results</a>
-     */
-    @Deprecated
-    public Builder allowLargeResults(Boolean allowLargeResults) {
-      return setAllowLargeResults(allowLargeResults);
-    }
 
     /**
      * Sets whether the job is enabled to create arbitrarily large results. If {@code true}
      * the query is allowed to create large results at a slight cost in performance. If {@code true}
-     * {@link Builder#destinationTable(TableId)} must be provided.
+     * {@link Builder#setDestinationTable(TableId)} must be provided.
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">
      *     Returning Large Query Results</a>
@@ -363,22 +410,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether to look for the result in the query cache. The query cache is a best-effort
-     * cache that will be flushed whenever tables in the query are modified. Moreover, the query
-     * cache is only available when {@link Builder#destinationTable(TableId)} is not set.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
-     */
-    @Deprecated
-    public Builder useQueryCache(Boolean useQueryCache) {
-      return setUseQueryCache(useQueryCache);
-    }
 
     /**
      * Sets whether to look for the result in the query cache. The query cache is a best-effort
      * cache that will be flushed whenever tables in the query are modified. Moreover, the query
-     * cache is only available when {@link Builder#destinationTable(TableId)} is not set.
+     * cache is only available when {@link Builder#setDestinationTable(TableId)} is not set.
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
      */
@@ -387,21 +423,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether nested and repeated fields should be flattened. If set to {@code false}
-     * {@link Builder#allowLargeResults(Boolean)} must be {@code true}. By default results are
-     * flattened.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
-     */
-    @Deprecated
-    public Builder flattenResults(Boolean flattenResults) {
-      return setFlattenResults(flattenResults);
-    }
 
     /**
      * Sets whether nested and repeated fields should be flattened. If set to {@code false}
-     * {@link Builder#allowLargeResults(Boolean)} must be {@code true}. By default results are
+     * {@link Builder#setAllowLargeResults(Boolean)} must be {@code true}. By default results are
      * flattened.
      *
      * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
@@ -411,15 +436,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether the job has to be dry run or not. If set, the job is not executed. A valid query
-     * will return a mostly empty response with some processing statistics, while an invalid query
-     * will return the same error it would if it wasn't a dry run.
-     */
-    @Deprecated
-    public Builder dryRun(Boolean dryRun) {
-      return setDryRun(dryRun);
-    }
 
     /**
      * Sets whether the job has to be dry run or not. If set, the job is not executed. A valid query
@@ -431,31 +447,44 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
-     * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
-     * Standard SQL</a>. When set to {@code false}, the values of
-     * {@link #allowLargeResults(Boolean)} and {@link #flattenResults(Boolean)} are ignored; query
-     * will be run as if {@link #allowLargeResults(Boolean)} is {@code true} and
-     * {@link #flattenResults(Boolean)} is {@code false}. If not set, legacy SQL dialect is used.
-     * This property is experimental and might be subject to change.
-     */
-    @Deprecated
-    public Builder useLegacySql(Boolean useLegacySql) {
-      return setUseLegacySql(useLegacySql);
-    }
 
     /**
-     * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
-     * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
-     * Standard SQL</a>. When set to {@code false}, the values of
-     * {@link #allowLargeResults(Boolean)} and {@link #flattenResults(Boolean)} are ignored; query
-     * will be run as if {@link #allowLargeResults(Boolean)} is {@code true} and
-     * {@link #flattenResults(Boolean)} is {@code false}. If not set, legacy SQL dialect is used.
-     * This property is experimental and might be subject to change.
+     * Sets whether to use BigQuery's legacy SQL dialect for this query. By default this property is
+     * set to {@code false}. If set to {@code false}, the query will use BigQuery's
+     * <a href="https://cloud.google.com/bigquery/sql-reference/"> Standard SQL</a>. When set to
+     * {@code false}, the values of {@link #setAllowLargeResults(Boolean)} and
+     * {@link #setFlattenResults(Boolean)} are ignored; query will be run as if
+     * {@link #setAllowLargeResults(Boolean)} is {@code true} and {@link #setFlattenResults(Boolean)}
+     * is {@code false}.
+     *
+     * If set to {@code null} or {@code true}, legacy SQL dialect is used. This property is
+     * experimental and might be subject to change.
      */
     public Builder setUseLegacySql(Boolean useLegacySql) {
       this.useLegacySql = useLegacySql;
+      return this;
+    }
+
+    /**
+     * Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail
+     * (without incurring a charge). If unspecified, this will be set to your project default.
+
+     * @param maximumBillingTier maximum billing tier for this job
+     */
+    public Builder setMaximumBillingTier(Integer maximumBillingTier) {
+      this.maximumBillingTier = maximumBillingTier;
+      return this;
+    }
+
+
+    /**
+     * [Experimental] Sets options allowing the schema of the destination table to be updated as a side effect of the
+     * query job. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when
+     * writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition
+     * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema.
+     */
+    public Builder setSchemaUpdateOptions(List<SchemaUpdateOption> schemaUpdateOptions) {
+      this.schemaUpdateOptions = schemaUpdateOptions;
       return this;
     }
 
@@ -467,6 +496,16 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private QueryJobConfiguration(Builder builder) {
     super(builder);
     this.query = checkNotNull(builder.query);
+    checkNotNull(builder.positionalParameters);
+    checkNotNull(builder.namedParameters);
+    if (!builder.positionalParameters.isEmpty()) {
+      checkArgument(builder.namedParameters.isEmpty());
+    }
+    if (!builder.namedParameters.isEmpty()) {
+      checkArgument(builder.positionalParameters.isEmpty());
+    }
+    positionalParameters = ImmutableList.copyOf(builder.positionalParameters);
+    namedParameters = ImmutableMap.copyOf(builder.namedParameters);
     this.allowLargeResults = builder.allowLargeResults;
     this.createDisposition = builder.createDisposition;
     this.defaultDataset = builder.defaultDataset;
@@ -480,6 +519,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
         builder.tableDefinitions != null ? ImmutableMap.copyOf(builder.tableDefinitions) : null;
     this.dryRun = builder.dryRun;
     this.useLegacySql = builder.useLegacySql;
+    this.maximumBillingTier = builder.maximumBillingTier;
+    this.schemaUpdateOptions = builder.schemaUpdateOptions;
+    this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
   }
 
   /**
@@ -494,16 +536,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return allowLargeResults;
   }
 
-  /**
-   * Returns whether the job is allowed to create new tables.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
-   *     Create Disposition</a>
-   */
-  @Deprecated
-  public CreateDisposition createDisposition() {
-    return getCreateDisposition();
-  }
 
   /**
    * Returns whether the job is allowed to create new tables.
@@ -515,14 +547,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return createDisposition;
   }
 
-  /**
-   * Returns the default dataset. This dataset is used for all unqualified table names used in the
-   * query.
-   */
-  @Deprecated
-  public DatasetId defaultDataset() {
-    return getDefaultDataset();
-  }
 
   /**
    * Returns the default dataset. This dataset is used for all unqualified table names used in the
@@ -532,14 +556,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return defaultDataset;
   }
 
-  /**
-   * Returns the table where to put query results. If not provided a new table is created. This
-   * value is required if {@link #allowLargeResults()} is {@code true}.
-   */
-  @Deprecated
-  public TableId destinationTable() {
-    return getDestinationTable();
-  }
 
   /**
    * Returns the table where to put query results. If not provided a new table is created. This
@@ -549,9 +565,13 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return destinationTable;
   }
 
+  public EncryptionConfiguration getDestinationEncryptionConfiguration() {
+    return destinationEncryptionConfiguration;
+  }
+
   /**
    * Returns whether nested and repeated fields should be flattened. If set to {@code false}
-   * {@link Builder#allowLargeResults(Boolean)} must be {@code true}.
+   * {@link Builder#setAllowLargeResults(Boolean)} must be {@code true}.
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
    */
@@ -559,13 +579,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return flattenResults;
   }
 
-  /**
-   * Returns the query priority.
-   */
-  @Deprecated
-  public Priority priority() {
-    return getPriority();
-  }
 
   /**
    * Returns the query priority.
@@ -574,13 +587,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return priority;
   }
 
-  /**
-   * Returns the Google BigQuery SQL query.
-   */
-  @Deprecated
-  public String query() {
-    return getQuery();
-  }
 
   /**
    * Returns the Google BigQuery SQL query.
@@ -589,16 +595,21 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return query;
   }
 
+
   /**
-   * Returns the external tables definitions. If querying external data sources outside of BigQuery,
-   * this value describes the data format, location and other properties of the data
-   * sources. By defining these properties, the data sources can be queried as if they were
-   * standard BigQuery tables.
+   * Returns the positional query parameters to use for the query.
    */
-  @Deprecated
-  public Map<String, ExternalTableDefinition> tableDefinitions() {
-    return getTableDefinitions();
+  public List<QueryParameterValue> getPositionalParameters() {
+    return positionalParameters;
   }
+
+  /**
+   * Returns the named query parameters to use for the query.
+   */
+  public Map<String, QueryParameterValue> getNamedParameters() {
+    return namedParameters;
+  }
+
 
   /**
    * Returns the external tables definitions. If querying external data sources outside of BigQuery,
@@ -613,7 +624,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   /**
    * Returns whether to look for the result in the query cache. The query cache is a best-effort
    * cache that will be flushed whenever tables in the query are modified. Moreover, the query
-   * cache is only available when {@link Builder#destinationTable(TableId)} is not set.
+   * cache is only available when {@link Builder#setDestinationTable(TableId)} is not set.
    *
    * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
    */
@@ -621,15 +632,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return useQueryCache;
   }
 
-  /**
-   * Returns user defined function resources that can be used by this query. Function resources
-   * can either be defined inline ({@link UserDefinedFunction.Type#INLINE}) or loaded from
-   * a Google Cloud Storage URI ({@link UserDefinedFunction.Type#FROM_URI}.
-   */
-  @Deprecated
-  public List<UserDefinedFunction> userDefinedFunctions() {
-    return getUserDefinedFunctions();
-  }
 
   /**
    * Returns user defined function resources that can be used by this query. Function resources
@@ -640,16 +642,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return userDefinedFunctions;
   }
 
-  /**
-   * Returns the action that should occur if the destination table already exists.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
-   *     Write Disposition</a>
-   */
-  @Deprecated
-  public WriteDisposition writeDisposition() {
-    return getWriteDisposition();
-  }
 
   /**
    * Returns the action that should occur if the destination table already exists.
@@ -671,15 +663,34 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   /**
-   * Returns whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
-   * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
-   * Standard SQL</a>. When set to {@code false}, the values of {@link #allowLargeResults()} and
+   * Returns whether to use BigQuery's legacy SQL dialect for this query. By default this property is
+   * set to {@code false}. If set to {@code false}, the query will use BigQuery's
+   * <a href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>.
+   * When set to {@code false}, the values of {@link #allowLargeResults()} and
    * {@link #flattenResults()} are ignored; query will be run as if {@link #allowLargeResults()} is
-   * {@code true} and {@link #flattenResults()} is {@code false}. If not set, legacy SQL dialect is
-   * used. This property is experimental and might be subject to change.
+   * {@code true} and {@link #flattenResults()} is {@code false}. If set to {@code null} or
+   * {@code true}, legacy SQL dialect is used. This property is experimental and might be subject
+   * to change.
    */
   public Boolean useLegacySql() {
     return useLegacySql;
+  }
+
+  /**
+   * Returns the optional billing tier limit for this job.
+   */
+  public Integer getMaximumBillingTier() {
+    return maximumBillingTier;
+  }
+
+  /**
+   * [Experimental] Returns options allowing the schema of the destination table to be updated as a side effect of the
+   * query job. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when
+   * writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition
+   * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema.
+   */
+  public List<SchemaUpdateOption> getSchemaUpdateOptions() {
+    return schemaUpdateOptions;
   }
 
   @Override
@@ -691,7 +702,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("query", query)
+        .add("positionalParameters", positionalParameters)
+        .add("namedParameters", namedParameters)
         .add("destinationTable", destinationTable)
+        .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("defaultDataset", defaultDataset)
         .add("allowLargeResults", allowLargeResults)
         .add("flattenResults", flattenResults)
@@ -702,7 +716,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
         .add("dryRun", dryRun)
-        .add("useLegacySql", useLegacySql);
+        .add("useLegacySql", useLegacySql)
+        .add("maximumBillingTier", maximumBillingTier)
+        .add("schemaUpdateOptions", schemaUpdateOptions);
   }
 
   @Override
@@ -715,8 +731,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
   @Override
   public int hashCode() {
     return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
-        defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
-        userDefinedFunctions, writeDisposition, dryRun, useLegacySql);
+        defaultDataset, flattenResults, priority, query, positionalParameters,
+        namedParameters, tableDefinitions, useQueryCache,
+        userDefinedFunctions, writeDisposition, dryRun, useLegacySql, maximumBillingTier,
+        schemaUpdateOptions);
   }
 
   @Override
@@ -737,6 +755,15 @@ public final class QueryJobConfiguration extends JobConfiguration {
         new com.google.api.services.bigquery.model.JobConfiguration();
     JobConfigurationQuery queryConfigurationPb = new JobConfigurationQuery();
     queryConfigurationPb.setQuery(query);
+    if (!positionalParameters.isEmpty()) {
+      List<QueryParameter> queryParametersPb
+          = Lists.transform(positionalParameters, POSITIONAL_PARAMETER_TO_PB_FUNCTION);
+      queryConfigurationPb.setQueryParameters(queryParametersPb);
+    } else if (!namedParameters.isEmpty()) {
+      List<QueryParameter> queryParametersPb
+          = Lists.transform(namedParameters.entrySet().asList(), NAMED_PARAMETER_TO_PB_FUNCTION);
+      queryConfigurationPb.setQueryParameters(queryParametersPb);
+    }
     configurationPb.setDryRun(dryRun());
     if (allowLargeResults != null) {
       queryConfigurationPb.setAllowLargeResults(allowLargeResults);
@@ -773,16 +800,22 @@ public final class QueryJobConfiguration extends JobConfiguration {
     if (useLegacySql != null) {
       queryConfigurationPb.setUseLegacySql(useLegacySql);
     }
+    if (maximumBillingTier != null) {
+      queryConfigurationPb.setMaximumBillingTier(maximumBillingTier);
+    }
+    if (schemaUpdateOptions != null) {
+      ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+      for (JobInfo.SchemaUpdateOption schemaUpdateOption : schemaUpdateOptions) {
+        schemaUpdateOptionsBuilder.add(schemaUpdateOption.name());
+      }
+      queryConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
+    }
+    if (destinationEncryptionConfiguration != null) {
+      queryConfigurationPb.setDestinationEncryptionConfiguration(destinationEncryptionConfiguration.toPb());
+    }
     return configurationPb.setQuery(queryConfigurationPb);
   }
 
-  /**
-   * Creates a builder for a BigQuery Query Job given the query to be run.
-   */
-  @Deprecated
-  public static Builder builder(String query) {
-    return newBuilder(query);
-  }
 
   /**
    * Creates a builder for a BigQuery Query Job given the query to be run.
@@ -804,4 +837,37 @@ public final class QueryJobConfiguration extends JobConfiguration {
       com.google.api.services.bigquery.model.JobConfiguration jobPb) {
     return new Builder(jobPb).build();
   }
+
+  private static final Function<QueryParameter, QueryParameterValue> POSITIONAL_PARAMETER_FROM_PB_FUNCTION =
+      new Function<QueryParameter, QueryParameterValue>() {
+        @Override
+        public QueryParameterValue apply(QueryParameter pb) {
+          checkArgument(pb.getName() == null);
+          return QueryParameterValue.fromPb(pb.getParameterValue(), pb.getParameterType());
+        }
+      };
+
+  private static final Function<QueryParameterValue, QueryParameter> POSITIONAL_PARAMETER_TO_PB_FUNCTION =
+      new Function<QueryParameterValue, QueryParameter>() {
+        @Override
+        public QueryParameter apply(QueryParameterValue value) {
+          QueryParameter queryParameterPb = new QueryParameter();
+          queryParameterPb.setParameterValue(value.toValuePb());
+          queryParameterPb.setParameterType(value.toTypePb());
+          return queryParameterPb;
+        }
+      };
+
+  private static final Function<Map.Entry<String, QueryParameterValue>, QueryParameter>
+      NAMED_PARAMETER_TO_PB_FUNCTION =
+          new Function<Map.Entry<String, QueryParameterValue>, QueryParameter>() {
+            @Override
+            public QueryParameter apply(Map.Entry<String, QueryParameterValue> entry) {
+              QueryParameter queryParameterPb = new QueryParameter();
+              queryParameterPb.setName(entry.getKey());
+              queryParameterPb.setParameterValue(entry.getValue().toValuePb());
+              queryParameterPb.setParameterType(entry.getValue().toTypePb());
+              return queryParameterPb;
+            }
+          };
 }

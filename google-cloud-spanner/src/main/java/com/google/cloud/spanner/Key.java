@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,17 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.cloud.spanner.ByteArrays.toBase64;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.ByteArray;
-import com.google.common.base.Function;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.common.base.Joiner;
-import com.google.common.collect.Iterables;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Value;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -42,10 +43,11 @@ import javax.annotation.Nullable;
  *
  * <p>{@code Key} instances are immutable.
  */
-public final class Key {
+public final class Key implements Serializable {
   private static final Joiner joiner = Joiner.on(',').useForNull("<null>");
   private static final com.google.protobuf.Value NULL_PROTO =
       Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
+  private static final long serialVersionUID = 4433485671785063530L;
 
   private final List<Object> parts;
 
@@ -232,23 +234,11 @@ public final class Key {
   }
 
   void toString(StringBuilder b) {
-    // ByteArray#toString() doesn't produce nice output, so handle that ourselves.
-    Iterable<Object> prettyParts =
-        Iterables.transform(
-            parts,
-            new Function<Object, Object>() {
-              @Nullable
-              @Override
-              public Object apply(@Nullable Object input) {
-                return input instanceof ByteArray ? ByteArrays.toString((ByteArray) input) : input;
-              }
-            });
-
     // TODO(user): Consider limiting the length of string output.
     // Note: the format produced should match that used for keys in error messages yielded by the
     // backend.
     b.append('[');
-    joiner.appendTo(b, prettyParts);
+    joiner.appendTo(b, parts);
     b.append(']');
   }
 
@@ -290,7 +280,7 @@ public final class Key {
       } else if (part instanceof String) {
         builder.addValuesBuilder().setStringValue((String) part);
       } else if (part instanceof ByteArray) {
-        builder.addValuesBuilder().setStringValue(toBase64((ByteArray) part));
+        builder.addValuesBuilder().setStringValue(((ByteArray) part).toBase64());
       } else if (part instanceof Timestamp) {
         builder.addValuesBuilder().setStringValue(((Timestamp) part).toString());
       } else {

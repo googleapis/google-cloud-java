@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.Project.ProjectRole;
@@ -37,6 +37,7 @@ import com.google.cloud.storage.BucketInfo.AgeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 
@@ -52,6 +53,7 @@ import java.security.Key;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.crypto.spec.SecretKeySpec;
 
@@ -74,8 +76,11 @@ public class BucketTest {
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
-  private static final String STORAGE_CLASS = "STANDARD";
+  private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
   private static final Boolean VERSIONING_ENABLED = true;
+  private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final Boolean REQUESTER_PAYS = true;
+  private static final String USER_PROJECT = "test-project";
   private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACLS)
       .setEtag(ETAG)
@@ -92,6 +97,8 @@ public class BucketTest {
       .setLocation(LOCATION)
       .setStorageClass(STORAGE_CLASS)
       .setVersioningEnabled(VERSIONING_ENABLED)
+      .setLabels(BUCKET_LABELS)
+      .setRequesterPays(REQUESTER_PAYS)
       .build();
   private static final BucketInfo BUCKET_INFO =
       BucketInfo.newBuilder("b").setMetageneration(42L).build();
@@ -237,7 +244,7 @@ public class BucketTest {
     }
     assertFalse(blobInfoIterator.hasNext());
     assertFalse(blobIterator.hasNext());
-    assertEquals(expectedBlobPage.getNextPageCursor(), blobPage.getNextPageCursor());
+    assertEquals(expectedBlobPage.getNextPageToken(), blobPage.getNextPageToken());
   }
 
   @Test
@@ -328,14 +335,16 @@ public class BucketTest {
     expect(storage.create(info, content, Storage.BlobTargetOption.generationMatch(),
         Storage.BlobTargetOption.metagenerationMatch(),
         Storage.BlobTargetOption.predefinedAcl(acl),
-        Storage.BlobTargetOption.encryptionKey(BASE64_KEY))).andReturn(expectedBlob);
+        Storage.BlobTargetOption.encryptionKey(BASE64_KEY),
+        Storage.BlobTargetOption.userProject(USER_PROJECT))).andReturn(expectedBlob);
     replay(storage);
     initializeBucket();
     Blob blob = bucket.create("n", content, CONTENT_TYPE,
         Bucket.BlobTargetOption.generationMatch(42L),
         Bucket.BlobTargetOption.metagenerationMatch(24L),
         Bucket.BlobTargetOption.predefinedAcl(acl),
-        Bucket.BlobTargetOption.encryptionKey(BASE64_KEY));
+        Bucket.BlobTargetOption.encryptionKey(BASE64_KEY),
+        Bucket.BlobTargetOption.userProject(USER_PROJECT));
     assertEquals(expectedBlob, blob);
   }
 
@@ -446,7 +455,8 @@ public class BucketTest {
     expect(storage.create(info, streamContent, Storage.BlobWriteOption.generationMatch(),
         Storage.BlobWriteOption.metagenerationMatch(), Storage.BlobWriteOption.predefinedAcl(acl),
         Storage.BlobWriteOption.crc32cMatch(), Storage.BlobWriteOption.md5Match(),
-        Storage.BlobWriteOption.encryptionKey(BASE64_KEY)))
+        Storage.BlobWriteOption.encryptionKey(BASE64_KEY),
+        Storage.BlobWriteOption.userProject(USER_PROJECT)))
         .andReturn(expectedBlob);
     replay(storage);
     initializeBucket();
@@ -454,7 +464,8 @@ public class BucketTest {
         Bucket.BlobWriteOption.generationMatch(42L),
         Bucket.BlobWriteOption.metagenerationMatch(24L), Bucket.BlobWriteOption.predefinedAcl(acl),
         Bucket.BlobWriteOption.crc32cMatch("crc"), Bucket.BlobWriteOption.md5Match("md5"),
-        Bucket.BlobWriteOption.encryptionKey(BASE64_KEY));
+        Bucket.BlobWriteOption.encryptionKey(BASE64_KEY),
+        Bucket.BlobWriteOption.userProject(USER_PROJECT));
     assertEquals(expectedBlob, blob);
   }
 
@@ -662,6 +673,8 @@ public class BucketTest {
         .setLocation(LOCATION)
         .setStorageClass(STORAGE_CLASS)
         .setVersioningEnabled(VERSIONING_ENABLED)
+        .setLabels(BUCKET_LABELS)
+        .setRequesterPays(REQUESTER_PAYS)
         .build();
     assertEquals("b", bucket.getName());
     assertEquals(ACLS, bucket.getAcl());
@@ -679,48 +692,8 @@ public class BucketTest {
     assertEquals(LOCATION, bucket.getLocation());
     assertEquals(STORAGE_CLASS, bucket.getStorageClass());
     assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
+    assertEquals(BUCKET_LABELS, bucket.getLabels());
+    assertEquals(REQUESTER_PAYS, bucket.requesterPays());
     assertEquals(storage.getOptions(), bucket.getStorage().getOptions());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedBucket(4);
-    expect(storage.getOptions()).andReturn(mockOptions).times(4);
-    replay(storage);
-    Bucket.Builder builder =
-        new Bucket.Builder(new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO)));
-    Bucket bucket = builder.acl(ACLS)
-        .setEtag(ETAG)
-        .setGeneratedId(GENERATED_ID)
-        .setMetageneration(META_GENERATION)
-        .setOwner(OWNER)
-        .setSelfLink(SELF_LINK)
-        .cors(CORS)
-        .setCreateTime(CREATE_TIME)
-        .defaultAcl(DEFAULT_ACL)
-        .deleteRules(DELETE_RULES)
-        .indexPage(INDEX_PAGE)
-        .notFoundPage(NOT_FOUND_PAGE)
-        .location(LOCATION)
-        .storageClass(STORAGE_CLASS)
-        .versioningEnabled(VERSIONING_ENABLED)
-        .build();
-    assertEquals("b", bucket.name());
-    assertEquals(ACLS, bucket.acl());
-    assertEquals(ETAG, bucket.etag());
-    assertEquals(GENERATED_ID, bucket.generatedId());
-    assertEquals(META_GENERATION, bucket.metageneration());
-    assertEquals(OWNER, bucket.owner());
-    assertEquals(SELF_LINK, bucket.selfLink());
-    assertEquals(CREATE_TIME, bucket.createTime());
-    assertEquals(CORS, bucket.cors());
-    assertEquals(DEFAULT_ACL, bucket.defaultAcl());
-    assertEquals(DELETE_RULES, bucket.deleteRules());
-    assertEquals(INDEX_PAGE, bucket.indexPage());
-    assertEquals(NOT_FOUND_PAGE, bucket.notFoundPage());
-    assertEquals(LOCATION, bucket.location());
-    assertEquals(STORAGE_CLASS, bucket.storageClass());
-    assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
-    assertEquals(storage.getOptions(), bucket.storage().getOptions());
   }
 }

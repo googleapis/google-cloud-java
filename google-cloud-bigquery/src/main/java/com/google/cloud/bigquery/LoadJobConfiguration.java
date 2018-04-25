@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -37,13 +36,16 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
   private final List<String> sourceUris;
   private final TableId destinationTable;
+  private final EncryptionConfiguration destinationEncryptionConfiguration;
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
   private final FormatOptions formatOptions;
+  private final String nullMarker;
   private final Integer maxBadRecords;
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
-  private final List<String> projectionFields;
+  private final List<JobInfo.SchemaUpdateOption> schemaUpdateOptions;
+  private final Boolean autodetect;
 
   public static final class Builder
       extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
@@ -51,13 +53,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
     private List<String> sourceUris;
     private TableId destinationTable;
+    private EncryptionConfiguration destinationEncryptionConfiguration;
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
     private FormatOptions formatOptions;
+    private String nullMarker;
     private Integer maxBadRecords;
     private Schema schema;
     private Boolean ignoreUnknownValues;
     private List<String> projectionFields;
+    private List<JobInfo.SchemaUpdateOption> schemaUpdateOptions;
+    private Boolean autodetect;
 
     private Builder() {
       super(Type.LOAD);
@@ -69,11 +75,15 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.createDisposition = loadConfiguration.createDisposition;
       this.writeDisposition = loadConfiguration.writeDisposition;
       this.formatOptions = loadConfiguration.formatOptions;
+      this.nullMarker = loadConfiguration.nullMarker;
       this.maxBadRecords = loadConfiguration.maxBadRecords;
       this.schema = loadConfiguration.schema;
       this.ignoreUnknownValues = loadConfiguration.ignoreUnknownValues;
-      this.projectionFields = loadConfiguration.projectionFields;
       this.sourceUris = loadConfiguration.sourceUris;
+      this.schemaUpdateOptions = loadConfiguration.schemaUpdateOptions;
+      this.autodetect = loadConfiguration.autodetect;
+      this.destinationEncryptionConfiguration =
+          loadConfiguration.destinationEncryptionConfiguration;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -90,6 +100,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       }
       if (loadConfigurationPb.getSourceFormat() != null) {
         this.formatOptions = FormatOptions.of(loadConfigurationPb.getSourceFormat());
+      }
+      if (loadConfigurationPb.getNullMarker() != null) {
+        this.nullMarker = loadConfigurationPb.getNullMarker();
       }
       if (loadConfigurationPb.getAllowJaggedRows() != null
           || loadConfigurationPb.getAllowQuotedNewlines() != null
@@ -121,13 +134,20 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       if (loadConfigurationPb.getSourceUris() != null) {
         this.sourceUris = ImmutableList.copyOf(configurationPb.getLoad().getSourceUris());
       }
+      if (loadConfigurationPb.getSchemaUpdateOptions() != null) {
+        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+        for (String rawSchemaUpdateOption : loadConfigurationPb.getSchemaUpdateOptions()) {
+          schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
+        }
+        this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
+      }
+      this.autodetect = loadConfigurationPb.getAutodetect();
+      if (loadConfigurationPb.getDestinationEncryptionConfiguration() != null) {
+        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
+            loadConfigurationPb.getDestinationEncryptionConfiguration()).build();
+      }
     }
 
-    @Override
-    @Deprecated
-    public Builder destinationTable(TableId destinationTable) {
-      return setDestinationTable(destinationTable);
-    }
 
     @Override
     public Builder setDestinationTable(TableId destinationTable) {
@@ -136,10 +156,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
 
     @Override
-    @Deprecated
-    public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
-      return setCreateDisposition(createDisposition);
+    public Builder setDestinationEncryptionConfiguration(
+        EncryptionConfiguration encryptionConfiguration) {
+      this.destinationEncryptionConfiguration = encryptionConfiguration;
+      return this;
     }
+
 
     @Override
     public Builder setCreateDisposition(JobInfo.CreateDisposition createDisposition) {
@@ -147,11 +169,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
-      return setWriteDisposition(writeDisposition);
-    }
 
     @Override
     public Builder setWriteDisposition(JobInfo.WriteDisposition writeDisposition) {
@@ -159,11 +176,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder formatOptions(FormatOptions formatOptions) {
-      return setFormatOptions(formatOptions);
-    }
 
     @Override
     public Builder setFormatOptions(FormatOptions formatOptions) {
@@ -171,11 +183,13 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+
     @Override
-    @Deprecated
-    public Builder maxBadRecords(Integer maxBadRecords) {
-      return setMaxBadRecords(maxBadRecords);
+    public Builder setNullMarker(String nullMarker) {
+      this.nullMarker = nullMarker;
+      return this;
     }
+
 
     @Override
     public Builder setMaxBadRecords(Integer maxBadRecords) {
@@ -183,11 +197,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder schema(Schema schema) {
-      return setSchema(schema);
-    }
 
     @Override
     public Builder setSchema(Schema schema) {
@@ -195,39 +204,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
-      return setIgnoreUnknownValues(ignoreUnknownValues);
-    }
 
     @Override
     public Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues) {
       this.ignoreUnknownValues = ignoreUnknownValues;
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder projectionFields(List<String> projectionFields) {
-      return setProjectionFields(projectionFields);
-    }
-
-    @Override
-    public Builder setProjectionFields(List<String> projectionFields) {
-      this.projectionFields =
-          projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
-      return this;
-    }
-
-    /**
-     * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
-     * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
-     * 'bucket' name.
-     */
-    @Deprecated
-    public Builder sourceUris(List<String> sourceUris) {
-      return setSourceUris(sourceUris);
     }
 
     /**
@@ -237,6 +218,18 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
      */
     public Builder setSourceUris(List<String> sourceUris) {
       this.sourceUris = ImmutableList.copyOf(checkNotNull(sourceUris));
+      return this;
+    }
+
+    public Builder setAutodetect(Boolean autodetect) {
+      this.autodetect = autodetect;
+      return this;
+    }
+
+    @Override
+    public Builder setSchemaUpdateOptions(List<JobInfo.SchemaUpdateOption> schemaUpdateOptions) {
+      this.schemaUpdateOptions =
+              schemaUpdateOptions != null ? ImmutableList.copyOf(schemaUpdateOptions) : null;
       return this;
     }
 
@@ -253,50 +246,45 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
     this.formatOptions = builder.formatOptions;
+    this.nullMarker = builder.nullMarker;
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
-    this.projectionFields = builder.projectionFields;
+    this.schemaUpdateOptions = builder.schemaUpdateOptions;
+    this.autodetect = builder.autodetect;
+    this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
   }
 
-  @Override
-  @Deprecated
-  public TableId destinationTable() {
-    return getDestinationTable();
-  }
 
   @Override
   public TableId getDestinationTable() {
     return destinationTable;
   }
 
+
   @Override
-  @Deprecated
-  public JobInfo.CreateDisposition createDisposition() {
-    return this.getCreateDisposition();
+  public EncryptionConfiguration getDestinationEncryptionConfiguration() {
+    return destinationEncryptionConfiguration;
   }
+
 
   @Override
   public JobInfo.CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
 
-  @Override
-  @Deprecated
-  public JobInfo.WriteDisposition writeDisposition() {
-    return getWriteDisposition();
-  }
 
   @Override
   public JobInfo.WriteDisposition getWriteDisposition() {
     return writeDisposition;
   }
 
+
   @Override
-  @Deprecated
-  public CsvOptions csvOptions() {
-    return getCsvOptions();
+  public String getNullMarker() {
+    return nullMarker;
   }
+
 
   @Override
   public CsvOptions getCsvOptions() {
@@ -304,32 +292,23 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   }
 
   @Override
-  @Deprecated
-  public String format() {
-    return getFormat();
+  public DatastoreBackupOptions getDatastoreBackupOptions() {
+    return formatOptions instanceof DatastoreBackupOptions ?
+        (DatastoreBackupOptions) formatOptions : null;
   }
+
 
   @Override
   public String getFormat() {
     return formatOptions != null ? formatOptions.getType() : null;
   }
 
-  @Override
-  @Deprecated
-  public Integer maxBadRecords() {
-    return getMaxBadRecords();
-  }
 
   @Override
   public Integer getMaxBadRecords() {
     return maxBadRecords;
   }
 
-  @Override
-  @Deprecated
-  public Schema schema() {
-    return getSchema();
-  }
 
   @Override
   public Schema getSchema() {
@@ -341,27 +320,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return ignoreUnknownValues;
   }
 
-  @Override
-  @Deprecated
-  public List<String> projectionFields() {
-    return getProjectionFields();
-  }
-
-  @Override
-  public List<String> getProjectionFields() {
-    return projectionFields;
-  }
-
-  /**
-   * Returns the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
-   * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
-   * 'bucket' name.
-   */
-  @Deprecated
-  public List<String> sourceUris() {
-    return getSourceUris();
-  }
-
   /**
    * Returns the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
    * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
@@ -369,6 +327,15 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    */
   public List<String> getSourceUris() {
     return sourceUris;
+  }
+
+  public Boolean getAutodetect() {
+    return autodetect;
+  }
+
+  @Override
+  public List<JobInfo.SchemaUpdateOption> getSchemaUpdateOptions() {
+    return schemaUpdateOptions;
   }
 
   @Override
@@ -380,14 +347,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("destinationTable", destinationTable)
+        .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
         .add("formatOptions", formatOptions)
+        .add("nullMarker", nullMarker)
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("projectionFields", projectionFields)
-        .add("sourceUris", sourceUris);
+        .add("sourceUris", sourceUris)
+        .add("schemaUpdateOptions", schemaUpdateOptions)
+        .add("autodetect", autodetect);
   }
 
   @Override
@@ -417,6 +387,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     if (writeDisposition != null) {
       loadConfigurationPb.setWriteDisposition(writeDisposition.toString());
     }
+    if (nullMarker != null) {
+      loadConfigurationPb.setNullMarker(nullMarker);
+    }
     if (getCsvOptions() != null) {
       CsvOptions csvOptions = getCsvOptions();
       loadConfigurationPb.setFieldDelimiter(csvOptions.getFieldDelimiter())
@@ -437,22 +410,29 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     loadConfigurationPb.setMaxBadRecords(maxBadRecords);
     loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
-    loadConfigurationPb.setProjectionFields(projectionFields);
+    if (getDatastoreBackupOptions() != null) {
+      DatastoreBackupOptions backOptions = getDatastoreBackupOptions();
+      loadConfigurationPb.setProjectionFields(backOptions.getProjectionFields());
+    }
     if (sourceUris != null) {
       loadConfigurationPb.setSourceUris(ImmutableList.copyOf(sourceUris));
+    }
+    if (schemaUpdateOptions != null) {
+      ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+      for (JobInfo.SchemaUpdateOption schemaUpdateOption : schemaUpdateOptions) {
+        schemaUpdateOptionsBuilder.add(schemaUpdateOption.name());
+      }
+      loadConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
+    }
+    loadConfigurationPb.setAutodetect(autodetect);
+    if (destinationEncryptionConfiguration != null) {
+      loadConfigurationPb.setDestinationEncryptionConfiguration(
+          destinationEncryptionConfiguration.toPb());
     }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table and source
-   * URIs.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, List<String> sourceUris) {
-    return newBuilder(destinationTable, sourceUris);
-  }
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table and source
@@ -478,15 +458,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return newBuilder(destinationTable, ImmutableList.of(sourceUri));
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
-   * source URIs.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, List<String> sourceUris,
-      FormatOptions format) {
-    return newBuilder(destinationTable, sourceUris, format);
-  }
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
@@ -497,14 +468,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return newBuilder(destinationTable, sourceUris).setFormatOptions(format);
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
-   * source URI.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, String sourceUri, FormatOptions format) {
-    return newBuilder(destinationTable, sourceUri, format);
-  }
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table, format and

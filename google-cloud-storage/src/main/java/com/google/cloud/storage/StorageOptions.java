@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,22 @@
 
 package com.google.cloud.storage;
 
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.storage.spi.DefaultStorageRpc;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.storage.spi.v1.HttpStorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Set;
 
-public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, StorageOptions> {
+public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
 
   private static final long serialVersionUID = -2907268477247502947L;
+  private static final String API_SHORT_NAME = "Storage";
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
 
@@ -45,18 +50,27 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
     private static final StorageRpcFactory INSTANCE = new DefaultStorageRpcFactory();
 
     @Override
-    public StorageRpc create(StorageOptions options) {
-      return new DefaultStorageRpc(options);
+    public ServiceRpc create(StorageOptions options) {
+      return new HttpStorageRpc(options);
     }
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Storage, StorageRpc, StorageOptions, Builder> {
+      ServiceOptions.Builder<Storage, StorageOptions, Builder> {
 
     private Builder() {}
 
     private Builder(StorageOptions options) {
       super(options);
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     @Override
@@ -66,17 +80,37 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
   }
 
   private StorageOptions(Builder builder) {
-    super(StorageFactory.class, StorageRpcFactory.class, builder);
+    super(StorageFactory.class, StorageRpcFactory.class, builder, new StorageDefaults());
   }
 
-  @Override
-  protected StorageFactory getDefaultServiceFactory() {
-    return DefaultStorageFactory.INSTANCE;
+  private static class StorageDefaults implements
+      ServiceDefaults<Storage, StorageOptions> {
+
+    @Override
+    public StorageFactory getDefaultServiceFactory() {
+      return DefaultStorageFactory.INSTANCE;
+    }
+
+    @Override
+    public StorageRpcFactory getDefaultRpcFactory() {
+      return DefaultStorageRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
+  }
+
+  // Project ID is only required for creating buckets, so we don't require it for creating the
+  // service.
   @Override
-  protected StorageRpcFactory getDefaultRpcFactory() {
-    return DefaultStorageRpcFactory.INSTANCE;
+  protected boolean projectIdRequired() {
+    return false;
   }
 
   @Override
@@ -84,12 +118,8 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
     return SCOPES;
   }
 
-  /**
-   * Returns a default {@code StorageOptions} instance.
-   */
-  @Deprecated
-  public static StorageOptions defaultInstance() {
-    return getDefaultInstance();
+  protected StorageRpc getStorageRpcV1() {
+    return (StorageRpc) getRpc();
   }
 
   /**
@@ -97,6 +127,13 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
    */
   public static StorageOptions getDefaultInstance() {
     return newBuilder().build();
+  }
+
+  /**
+   * Returns a unauthenticated {@code StorageOptions} instance.
+   */
+  public static StorageOptions getUnauthenticatedInstance() {
+    return newBuilder().setCredentials(NoCredentials.getInstance()).build();
   }
 
   @SuppressWarnings("unchecked")
@@ -115,10 +152,6 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
     return obj instanceof StorageOptions && baseEquals((StorageOptions) obj);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

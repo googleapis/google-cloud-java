@@ -1,38 +1,41 @@
 Google Cloud Java Client for Resource Manager
 =============================================
 
-Java idiomatic client for [Google Cloud Resource Manager] (https://cloud.google.com/resource-manager/).
+Java idiomatic client for [Google Cloud Resource Manager][cloud-resourcemanager].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-resourcemanager.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-resourcemanager.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html)
+- [Product Documentation][resourcemanager-product-docs]
+- [Client Library Documentation][resourcemanager-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud-resourcemanager:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>0.45.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-resourcemanager:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud-resourcemanager:0.45.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.45.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
 Example Application
 --------------------
@@ -54,11 +57,9 @@ Google [Cloud Resource Manager][cloud-resourcemanager] provides a programmatic w
 * Delete projects.
 * Undelete projects that you don't want to delete.
 
-Google Cloud Resource Manager is currently in beta and may occasionally make backwards incompatible changes.
-
 Be sure to activate the Google Cloud Resource Manager API on the Developer's Console to use Resource Manager from your project.
 
-See the ``google-cloud`` API [Resource Manager documentation][resourcemanager-api] to learn how to interact
+See the [Resource Manager client library docs][resourcemanager-client-lib-docs] to learn how to interact
 with the Cloud Resource Manager using this client Library.
 
 Getting Started
@@ -87,7 +88,7 @@ ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().ge
 ```
 
 #### Getting a specific project
-You can load a project if you know it's project ID and have read permissions to the project.
+You can load a project if you know its project ID and have read permissions to the project.
 To get a project, add the following import at the top of your file:
 
 ```java
@@ -212,6 +213,10 @@ The third program modifies the IAM policy associated with a project using the re
 pattern.  Complete source code can be found at
 [ModifyPolicy.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
 
+Transport
+---------
+Resource Manager uses HTTP for the transport layer.
+
 Java Versions
 -------------
 
@@ -220,7 +225,7 @@ Java 7 or above is required for using this client.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
@@ -250,6 +255,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-resource-manager
 [cloud-platform]: https://cloud.google.com/
-[cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
-[resourcemanager-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
-
+[cloud-resourcemanager]: https://cloud.google.com/resource-manager/
+[resourcemanager-product-docs]: https://cloud.google.com/resource-manager/docs/
+[resourcemanager-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html

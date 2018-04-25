@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,9 @@ import com.google.common.base.Preconditions;
 
 /** Options for the session pool used by {@code DatabaseClient}. */
 public class SessionPoolOptions {
+  // Default number of channels * 100.
+  private static final int DEFAULT_MAX_SESSIONS = 400;
+  private static final ActionOnExhaustion DEFAULT_ACTION = ActionOnExhaustion.BLOCK;
   private final int minSessions;
   private final int maxSessions;
   private final int maxIdleSessions;
@@ -76,10 +79,10 @@ public class SessionPoolOptions {
   /** Builder for creating SessionPoolOptions. */
   public static class Builder {
     private int minSessions;
-    private int maxSessions = Integer.MAX_VALUE;
+    private int maxSessions = DEFAULT_MAX_SESSIONS;
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
-    private ActionOnExhaustion actionOnExhaustion = ActionOnExhaustion.BLOCK;
+    private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
     private int keepAliveIntervalMinutes = 30;
 
     /**
@@ -87,8 +90,6 @@ public class SessionPoolOptions {
      * in parallel. Defaults to 0.
      */
     public Builder setMinSessions(int minSessions) {
-      Preconditions.checkArgument(
-          maxSessions >= minSessions, "Min sessions must be <= max sessions");
       this.minSessions = minSessions;
       return this;
     }
@@ -97,11 +98,9 @@ public class SessionPoolOptions {
      * Maximum number of sessions that this pool will have. If current numbers of sessions in the
      * pool is less than this and they are all busy, then a new session will be created for any new
      * operation. If current number of in use sessions is same as this and a new request comes, pool
-     * can either block or fail. Defaults to unlimited.
+     * can either block or fail. Defaults to 2000.
      */
     public Builder setMaxSessions(int maxSessions) {
-      Preconditions.checkArgument(
-          maxSessions >= minSessions, "Max sessions must be >= min" + "sessions");
       this.maxSessions = maxSessions;
       return this;
     }
@@ -124,8 +123,6 @@ public class SessionPoolOptions {
      * query "Select 1". Default value is 30 minutes.
      */
     public Builder setKeepAliveIntervalMinutes(int intervalMinutes) {
-      Preconditions.checkArgument(
-          intervalMinutes < 60, "Keep alive interval should be less than" + "60 minutes");
       this.keepAliveIntervalMinutes = intervalMinutes;
       return this;
     }
@@ -133,7 +130,7 @@ public class SessionPoolOptions {
     /**
      * If all sessions are in use and and {@code maxSessions} has been reached, fail the request by
      * throwing a {@link SpannerException} with the error code {@code RESOURCE_EXHAUSTED}. Default
-     * behavior is to block for a session to become available.
+     * behavior is to block the request.
      */
     public Builder setFailIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.FAIL;
@@ -158,16 +155,24 @@ public class SessionPoolOptions {
      * <p>Default value is 0.2.
      */
     public Builder setWriteSessionsFraction(float writeSessionsFraction) {
-      Preconditions.checkArgument(
-          writeSessionsFraction >= 0 && writeSessionsFraction <= 1,
-          "Fraction of write sessions must be between 0 and 1 (inclusive)");
       this.writeSessionsFraction = writeSessionsFraction;
       return this;
     }
 
     /** Build a SessionPoolOption object */
     public SessionPoolOptions build() {
+      validate();
       return new SessionPoolOptions(this);
+    }
+
+    private void validate() {
+      Preconditions.checkArgument(maxSessions >= minSessions,
+              "Min sessions(%s) must be <= max sessions(%s)", minSessions, maxSessions);
+      Preconditions.checkArgument(
+              keepAliveIntervalMinutes < 60, "Keep alive interval should be less than" + "60 minutes");
+      Preconditions.checkArgument(
+              writeSessionsFraction >= 0 && writeSessionsFraction <= 1,
+              "Fraction of write sessions must be between 0 and 1 (inclusive)");
     }
   }
 }

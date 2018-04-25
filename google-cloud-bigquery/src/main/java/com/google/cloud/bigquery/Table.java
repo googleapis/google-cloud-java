@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,15 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
+import com.google.cloud.bigquery.TableInfo.Builder;
 import com.google.common.collect.ImmutableList;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -70,11 +70,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -88,11 +83,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder expirationTime(Long expirationTime) {
-      return setExpirationTime(expirationTime);
-    }
 
     @Override
     public Builder setExpirationTime(Long expirationTime) {
@@ -100,11 +90,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder friendlyName(String friendlyName) {
-      return setFriendlyName(friendlyName);
-    }
 
     @Override
     public Builder setFriendlyName(String friendlyName) {
@@ -130,11 +115,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder tableId(TableId tableId) {
-      return setTableId(tableId);
-    }
 
     @Override
     public Builder setTableId(TableId tableId) {
@@ -142,15 +122,22 @@ public class Table extends TableInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder definition(TableDefinition definition) {
-      return setDefinition(definition);
-    }
 
     @Override
     public Builder setDefinition(TableDefinition definition) {
       infoBuilder.setDefinition(definition);
+      return this;
+    }
+
+    @Override
+    public TableInfo.Builder setEncryptionConfiguration(EncryptionConfiguration configuration) {
+      infoBuilder.setEncryptionConfiguration(configuration);
+      return this;
+    }
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
+      infoBuilder.setLabels(labels);
       return this;
     }
 
@@ -315,10 +302,10 @@ public class Table extends TableInfo {
    *
    * <p>Example of listing rows in the table.
    * <pre> {@code
-   * Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
-   * Iterator<List<FieldValue>> rowIterator = page.iterateAll();
-   * while (rowIterator.hasNext()) {
-   *   List<FieldValue> row = rowIterator.next();
+   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
+   * // simply omit the option.
+   * Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
+   * for (FieldValueList row : page.iterateAll()) {
    *   // do something with the row
    * }
    * }</pre>
@@ -326,9 +313,29 @@ public class Table extends TableInfo {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  public Page<List<FieldValue>> list(TableDataListOption... options)
-      throws BigQueryException {
+  public TableResult list(TableDataListOption... options) throws BigQueryException {
     return bigquery.listTableData(getTableId(), options);
+  }
+
+  /**
+   * Returns the paginated list rows in this table.
+   *
+   * <p>Example of listing rows in the table given a schema.
+   * <pre> {@code
+   * Schema schema = ...;
+   * String field = "my_field";
+   * Page<FieldValueList> page = table.list(schema);
+   * for (FieldValueList row : page.iterateAll()) {
+   *   row.get(field);
+   * }
+   * }</pre>
+   *
+   * @param options table data list options
+   * @throws BigQueryException upon failure
+   */
+  public TableResult list(Schema schema, TableDataListOption... options)
+      throws BigQueryException {
+    return bigquery.listTableData(getTableId(), schema, options);
   }
 
   /**
@@ -342,14 +349,14 @@ public class Table extends TableInfo {
    * Job job = table.copy(datasetName, tableName);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -377,14 +384,14 @@ public class Table extends TableInfo {
    * Job job = table.copy(destinationId, options);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully.
    *   } else {
    *     // Handle error case.
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -410,14 +417,14 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, gcsUrl);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -448,14 +455,14 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, destinationUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -483,14 +490,14 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUri);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *             RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -520,14 +527,14 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
    *   if (completedJob != null && completedJob.getStatus().getError() == null) {
    *     // Job completed successfully
    *   } else {
    *     // Handle error case
    *   }
-   * } catch (InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
@@ -544,18 +551,11 @@ public class Table extends TableInfo {
     return bigquery.create(JobInfo.of(loadConfig), options);
   }
 
-  /**
-   * Returns the table's {@code BigQuery} object used to issue requests.
-   */
-  @Deprecated
-  public BigQuery bigquery() {
-    return getBigquery();
-  }
 
   /**
    * Returns the table's {@code BigQuery} object used to issue requests.
    */
-  public BigQuery getBigquery() {
+  public BigQuery getBigQuery() {
     return bigquery;
   }
 

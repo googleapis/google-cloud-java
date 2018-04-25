@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public class ZoneInfo implements Serializable {
    * Builder for {@code ZoneInfo}.
    */
   public abstract static class Builder {
-    /**
-     * Sets a mandatory user-provided name for the zone. It must be unique within the project.
-     */
-    @Deprecated
-    public abstract Builder name(String name);
 
     /**
      * Sets a mandatory user-provided name for the zone. It must be unique within the project.
@@ -73,23 +68,12 @@ public class ZoneInfo implements Serializable {
      */
     abstract Builder setCreationTimeMillis(long creationTimeMillis);
 
-    /**
-     * Sets a mandatory DNS name of this zone, for instance "example.com.".
-     */
-    @Deprecated
-    public abstract Builder dnsName(String dnsName);
 
     /**
      * Sets a mandatory DNS name of this zone, for instance "example.com.".
      */
     public abstract Builder setDnsName(String dnsName);
 
-    /**
-     * Sets a mandatory description for this zone. The value is a string of at most 1024 characters
-     * which has no effect on the zone's function.
-     */
-    @Deprecated
-    public abstract Builder description(String description);
 
     /**
      * Sets a mandatory description for this zone. The value is a string of at most 1024 characters
@@ -144,11 +128,6 @@ public class ZoneInfo implements Serializable {
       }
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -168,11 +147,6 @@ public class ZoneInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder dnsName(String dnsName) {
-      return setDnsName(dnsName);
-    }
 
     @Override
     public Builder setDnsName(String dnsName) {
@@ -180,11 +154,6 @@ public class ZoneInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -229,13 +198,6 @@ public class ZoneInfo implements Serializable {
     return new BuilderImpl(name).setDnsName(dnsName).setDescription(description).build();
   }
 
-  /**
-   * Returns the user-defined name of the zone.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the user-defined name of the zone.
@@ -244,13 +206,6 @@ public class ZoneInfo implements Serializable {
     return name;
   }
 
-  /**
-   * Returns the service-generated id for this zone.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
 
   /**
    * Returns the service-generated id for this zone.
@@ -259,13 +214,6 @@ public class ZoneInfo implements Serializable {
     return generatedId;
   }
 
-  /**
-   * Returns the time when this zone was created on the server.
-   */
-  @Deprecated
-  public Long creationTimeMillis() {
-    return getCreationTimeMillis();
-  }
 
   /**
    * Returns the time when this zone was created on the server.
@@ -274,13 +222,6 @@ public class ZoneInfo implements Serializable {
     return creationTimeMillis;
   }
 
-  /**
-   * Returns the DNS name of this zone, for instance "example.com.".
-   */
-  @Deprecated
-  public String dnsName() {
-    return getDnsName();
-  }
 
   /**
    * Returns the DNS name of this zone, for instance "example.com.".
@@ -289,13 +230,6 @@ public class ZoneInfo implements Serializable {
     return dnsName;
   }
 
-  /**
-   * Returns the description of this zone.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
 
   /**
    * Returns the description of this zone.
@@ -304,14 +238,6 @@ public class ZoneInfo implements Serializable {
     return description;
   }
 
-  /**
-   * Returns the optionally specified set of DNS name servers that all host this zone. This value is
-   * set only for specific use cases and is left empty for vast majority of users.
-   */
-  @Deprecated
-  public String nameServerSet() {
-    return getNameServerSet();
-  }
 
   /**
    * Returns the optionally specified set of DNS name servers that all host this zone. This value is
@@ -321,13 +247,6 @@ public class ZoneInfo implements Serializable {
     return nameServerSet;
   }
 
-  /**
-   * The nameservers that the zone should be delegated to. This is defined by the Google DNS cloud.
-   */
-  @Deprecated
-  public List<String> nameServers() {
-    return getNameServers();
-  }
 
   /**
    * The nameservers that the zone should be delegated to. This is defined by the Google DNS cloud.

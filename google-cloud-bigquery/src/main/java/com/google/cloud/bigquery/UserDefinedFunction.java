@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,6 @@ public abstract class UserDefinedFunction implements Serializable {
     this.content = content;
   }
 
-  /**
-   * Returns the type of user defined function.
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the type of user defined function.
@@ -83,18 +76,11 @@ public abstract class UserDefinedFunction implements Serializable {
     return type;
   }
 
-  /**
-   * If {@link #type()} is {@link Type#INLINE} this method returns a code blob. If {@link #type()}
-   * is {@link Type#FROM_URI} the method returns a Google Cloud Storage URI (e.g. gs://bucket/path).
-   */
-  @Deprecated
-  public String content() {
-    return getContent();
-  }
 
   /**
-   * If {@link #type()} is {@link Type#INLINE} this method returns a code blob. If {@link #type()}
-   * is {@link Type#FROM_URI} the method returns a Google Cloud Storage URI (e.g. gs://bucket/path).
+   * If {@link #getType()} is {@link Type#INLINE} this method returns a code blob. If
+   * {@link #getType()} is {@link Type#FROM_URI} the method returns a Google Cloud Storage
+   * URI (e.g. gs://bucket/path).
    */
   public String getContent() {
     return content;

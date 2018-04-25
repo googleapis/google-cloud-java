@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import java.util.Objects;
 
 /**
  * Stackdriver Logging metrics describe logs-based metric. The value of the metric is the number of
- * log entries that match a logs filter (see {@link #filter()}).
+ * log entries that match a logs filter (see {@link #getFilter()}).
  *
  * @see <a href="https://cloud.google.com/logging/docs/view/logs_based_metrics">Logs-based Metrics
  *     </a>
@@ -44,15 +44,8 @@ public class MetricInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    /**
-     * Sets the name of the metric. Example: {@code severe-errors}. Metric identifiers are
-     * limited to 1000 characters and can include only the following characters: {@code A-Z},
-     * {@code a-z}, {@code 0-9}, and the special characters {@code _-.,+!*',()%/\}. The
-     * forward-slash character ({@code /}) denotes a hierarchy of name pieces, and it cannot be the
-     * first character of the name.
-     */
-    @Deprecated
-    public abstract Builder name(String name);
+    Builder() {
+    }
 
     /**
      * Sets the name of the metric. Example: {@code severe-errors}. Metric identifiers are
@@ -63,26 +56,12 @@ public class MetricInfo implements Serializable {
      */
     public abstract Builder setName(String name);
 
-    /**
-     * Sets an optional description for this metric. Used for documentation purpose.
-     */
-    @Deprecated
-    public abstract Builder description(String description);
 
     /**
      * Sets an optional description for this metric. Used for documentation purpose.
      */
     public abstract Builder setDescription(String description);
 
-    /**
-     * Sets an advanced logs filter. The value of the metric is the number of log entries that match
-     * this filter. Example: {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
-     *
-     * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
-     *     Filters</a>
-     */
-    @Deprecated
-    public abstract Builder filter(String filter);
 
     /**
      * Sets an advanced logs filter. The value of the metric is the number of log entries that match
@@ -116,11 +95,6 @@ public class MetricInfo implements Serializable {
       this.filter = metric.filter;
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -128,11 +102,6 @@ public class MetricInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -140,11 +109,6 @@ public class MetricInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder filter(String filter) {
-      return setFilter(filter);
-    }
 
     @Override
     public Builder setFilter(String filter) {
@@ -164,17 +128,6 @@ public class MetricInfo implements Serializable {
     this.description = builder.description;
   }
 
-  /**
-   * Returns the name of the metric. Example: {@code severe-errors}. Metric identifiers are
-   * limited to 1000 characters and can include only the following characters: {@code A-Z},
-   * {@code a-z}, {@code 0-9}, and the special characters {@code _-.,+!*',()%/\}. The
-   * forward-slash character ({@code /}) denotes a hierarchy of name pieces, and it cannot be the
-   * first character of the name.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns the name of the metric. Example: {@code severe-errors}. Metric identifiers are
@@ -187,13 +140,6 @@ public class MetricInfo implements Serializable {
     return name;
   }
 
-  /**
-   * Returns an optional description for this metric. Used for documentation purpose.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
 
   /**
    * Returns an optional description for this metric. Used for documentation purpose.
@@ -202,18 +148,6 @@ public class MetricInfo implements Serializable {
     return description;
   }
 
-  /**
-   * Returns an advanced logs filter. The value of the metric is the number of log entries that
-   * match this filter. Example:
-   * {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
-   *
-   * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
-   *     Filters</a>
-   */
-  @Deprecated
-  public String filter() {
-    return getFilter();
-  }
 
   /**
    * Returns an advanced logs filter. The value of the metric is the number of log entries that
@@ -265,13 +199,6 @@ public class MetricInfo implements Serializable {
     return new BuilderImpl(this);
   }
 
-  /**
-   * Returns a builder for {@code MetricInfo} objects given the name of the metric and its filter.
-   */
-  @Deprecated
-  public static Builder builder(String name, String filter) {
-    return newBuilder(name, filter);
-  }
 
   /**
    * Returns a builder for {@code MetricInfo} objects given the name of the metric and its filter.

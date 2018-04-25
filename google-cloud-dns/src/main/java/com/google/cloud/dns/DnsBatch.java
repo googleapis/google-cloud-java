@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,10 +26,10 @@ import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
-import com.google.cloud.dns.spi.DnsRpc;
-import com.google.cloud.dns.spi.RpcBatch;
+import com.google.cloud.dns.spi.v1.DnsRpc;
+import com.google.cloud.dns.spi.v1.RpcBatch;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -48,7 +48,7 @@ public class DnsBatch {
 
   DnsBatch(DnsOptions options) {
     this.options = options;
-    this.dnsRpc = options.getRpc();
+    this.dnsRpc = options.getDnsRpcV1();
     this.batch = dnsRpc.createBatch();
   }
 

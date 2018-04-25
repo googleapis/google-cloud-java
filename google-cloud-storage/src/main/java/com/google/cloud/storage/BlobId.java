@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import java.util.Objects;
 
 /**
  * Google Storage Object identifier. A {@code BlobId} object includes the name of the containing
- * bucket, the blob's name and possibly the blob's generation. If {@link #generation()} is
+ * bucket, the blob's name and possibly the blob's generation. If {@link #getGeneration()} is
  * {@code null} the identifier refers to the latest blob's generation.
  */
 public final class BlobId implements Serializable {
@@ -42,14 +42,6 @@ public final class BlobId implements Serializable {
     this.generation = generation;
   }
 
-  /**
-   * Returns the name of the bucket containing the blob.
-   */
-  @Deprecated
-  public String bucket() {
-    return getBucket();
-  }
-
     /**
    * Returns the name of the bucket containing the blob.
    */
@@ -57,27 +49,11 @@ public final class BlobId implements Serializable {
     return bucket;
   }
 
-  /**
-   * Returns the name of the blob.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
-
     /**
    * Returns the name of the blob.
    */
   public String getName() {
     return name;
-  }
-
-  /**
-   * Returns blob's data generation. Used for versioning.
-   */
-  @Deprecated
-  public Long generation() {
-    return getGeneration();
   }
 
     /**

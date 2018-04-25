@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,14 @@
 
 package com.google.cloud.storage;
 
+import static org.easymock.EasyMock.anyObject;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.createNiceMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.eq;
 import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.getCurrentArguments;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
@@ -43,11 +46,15 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 
 import org.easymock.Capture;
+import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.file.Files;
 import java.security.Key;
 import java.util.List;
 import java.util.Map;
@@ -519,86 +526,32 @@ public class BlobTest {
   }
 
   @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedBlob(4);
-    expect(storage.getOptions()).andReturn(mockOptions).times(6);
+  public void testDownload() throws Exception {
+    final byte[] expected = {1, 2};
+
+    initializeExpectedBlob(2);
+    ReadChannel channel = createNiceMock(ReadChannel.class);
+    expect(storage.getOptions()).andReturn(mockOptions);
+    expect(storage.reader(BLOB_INFO.getBlobId())).andReturn(channel);
     replay(storage);
-    Blob.Builder builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO)));
-    Blob blob = builder.acl(ACLS)
-        .setComponentCount(COMPONENT_COUNT)
-        .contentType(CONTENT_TYPE)
-        .cacheControl(CACHE_CONTROL)
-        .contentDisposition(CONTENT_DISPOSITION)
-        .contentEncoding(CONTENT_ENCODING)
-        .contentLanguage(CONTENT_LANGUAGE)
-        .crc32c(CRC32)
-        .setCreateTime(CREATE_TIME)
-        .setCustomerEncryption(CUSTOMER_ENCRYPTION)
-        .setDeleteTime(DELETE_TIME)
-        .setEtag(ETAG)
-        .setGeneratedId(GENERATED_ID)
-        .md5(MD5)
-        .setMediaLink(MEDIA_LINK)
-        .metadata(METADATA)
-        .setMetageneration(META_GENERATION)
-        .setOwner(OWNER)
-        .setSelfLink(SELF_LINK)
-        .setSize(SIZE)
-        .setUpdateTime(UPDATE_TIME)
-        .build();
-    assertEquals("b", blob.bucket());
-    assertEquals("n", blob.name());
-    assertEquals(ACLS, blob.acl());
-    assertEquals(COMPONENT_COUNT, blob.componentCount());
-    assertEquals(CONTENT_TYPE, blob.contentType());
-    assertEquals(CACHE_CONTROL, blob.cacheControl());
-    assertEquals(CONTENT_DISPOSITION, blob.contentDisposition());
-    assertEquals(CONTENT_ENCODING, blob.contentEncoding());
-    assertEquals(CONTENT_LANGUAGE, blob.contentLanguage());
-    assertEquals(CRC32, blob.crc32c());
-    assertEquals(CREATE_TIME, blob.createTime());
-    assertEquals(CUSTOMER_ENCRYPTION, blob.customerEncryption());
-    assertEquals(DELETE_TIME, blob.deleteTime());
-    assertEquals(ETAG, blob.etag());
-    assertEquals(GENERATED_ID, blob.generatedId());
-    assertEquals(MD5, blob.md5());
-    assertEquals(MEDIA_LINK, blob.mediaLink());
-    assertEquals(METADATA, blob.metadata());
-    assertEquals(META_GENERATION, blob.metageneration());
-    assertEquals(OWNER, blob.owner());
-    assertEquals(SELF_LINK, blob.selfLink());
-    assertEquals(SIZE, blob.size());
-    assertEquals(UPDATE_TIME, blob.updateTime());
-    assertEquals(storage.getOptions(), blob.storage().getOptions());
-    assertFalse(blob.isDirectory());
-    builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(DIRECTORY_INFO)));
-    blob = builder.blobId(BlobId.of("b", "n/"))
-        .setIsDirectory(true)
-        .setSize(0L)
-        .build();
-    assertEquals("b", blob.bucket());
-    assertEquals("n/", blob.name());
-    assertNull(blob.acl());
-    assertNull(blob.componentCount());
-    assertNull(blob.contentType());
-    assertNull(blob.cacheControl());
-    assertNull(blob.contentDisposition());
-    assertNull(blob.contentEncoding());
-    assertNull(blob.contentLanguage());
-    assertNull(blob.crc32c());
-    assertNull(blob.createTime());
-    assertNull(blob.customerEncryption());
-    assertNull(blob.deleteTime());
-    assertNull(blob.etag());
-    assertNull(blob.generatedId());
-    assertNull(blob.md5());
-    assertNull(blob.mediaLink());
-    assertNull(blob.metadata());
-    assertNull(blob.metageneration());
-    assertNull(blob.owner());
-    assertNull(blob.selfLink());
-    assertEquals(0L, (long) blob.size());
-    assertNull(blob.updateTime());
-    assertTrue(blob.isDirectory());
+    // First read should return 2 bytes.
+    expect(channel.read(anyObject(ByteBuffer.class)))
+        .andAnswer(new IAnswer<Integer>() {
+          @Override
+          public Integer answer() throws Throwable {
+            // Modify the argument to match the expected behavior of `read`.
+            ((ByteBuffer) getCurrentArguments()[0]).put(expected);
+            return 2;
+          }
+        });
+    // Second read should return 0 bytes.
+    expect(channel.read(anyObject(ByteBuffer.class))).andReturn(0);
+    replay(channel);
+    initializeBlob();
+
+    File file = File.createTempFile("blob", ".tmp");
+    blob.downloadTo(file.toPath());
+    byte actual[] = Files.readAllBytes(file.toPath());
+    assertArrayEquals(expected, actual);
   }
 }

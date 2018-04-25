@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,13 +33,6 @@ public class DatasetIdTest {
     assertEquals("dataset", DATASET_COMPLETE.getDataset());
   }
 
-  @Test
-  public void testOfDeprecated() {
-    assertEquals(null, DATASET.project());
-    assertEquals("dataset", DATASET.dataset());
-    assertEquals("project", DATASET_COMPLETE.project());
-    assertEquals("dataset", DATASET_COMPLETE.dataset());
-  }
 
   @Test
   public void testEquals() {

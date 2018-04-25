@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,12 +60,19 @@ public abstract class CloudStorageConfiguration {
   public abstract int blockSize();
 
   /**
+   * Returns the number of times we try re-opening a channel if it's closed unexpectedly
+   * while reading.
+   */
+  public abstract int maxChannelReopens();
+
+  /**
    * Creates a new builder, initialized with the following settings:
    *
    * <ul>
    * <li>Performing I/O on paths with extra slashes, e.g. {@code a//b} will throw an error.
    * <li>The prefix slash on absolute paths will be removed when converting to an object name.
    * <li>Pseudo-directories are enabled, so any path with a trailing slash is a fake directory.
+   * <li>Channel re-opens are disabled.
    * </ul>
    */
   public static Builder builder() {
@@ -82,6 +89,7 @@ public abstract class CloudStorageConfiguration {
     private boolean stripPrefixSlash = true;
     private boolean usePseudoDirectories = true;
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
+    private int maxChannelReopens = 0;
 
     /**
      * Changes current working directory for new filesystem. This defaults to the root directory.
@@ -134,6 +142,11 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
+    public Builder maxChannelReopens(int value) {
+      maxChannelReopens = value;
+      return this;
+    }
+
     /**
      * Creates new instance without destroying builder.
      */
@@ -143,14 +156,31 @@ public abstract class CloudStorageConfiguration {
           permitEmptyPathComponents,
           stripPrefixSlash,
           usePseudoDirectories,
-          blockSize);
+          blockSize,
+          maxChannelReopens);
+    }
+
+    Builder(CloudStorageConfiguration toModify) {
+      workingDirectory = toModify.workingDirectory();
+      permitEmptyPathComponents = toModify.permitEmptyPathComponents();
+      stripPrefixSlash = toModify.stripPrefixSlash();
+      usePseudoDirectories = toModify.usePseudoDirectories();
+      blockSize = toModify.blockSize();
+      maxChannelReopens = toModify.maxChannelReopens();
     }
 
     Builder() {}
   }
 
   static CloudStorageConfiguration fromMap(Map<String, ?> env) {
-    Builder builder = builder();
+    return fromMap(builder(), env);
+  }
+
+  static CloudStorageConfiguration fromMap(CloudStorageConfiguration defaultValues, Map<String, ?> env) {
+    return fromMap(new Builder(defaultValues), env);
+  }
+
+  static private CloudStorageConfiguration fromMap(Builder builder, Map<String, ?> env) {
     for (Map.Entry<String, ?> entry : env.entrySet()) {
       switch (entry.getKey()) {
         case "workingDirectory":
@@ -167,6 +197,9 @@ public abstract class CloudStorageConfiguration {
           break;
         case "blockSize":
           builder.blockSize((Integer) entry.getValue());
+          break;
+        case "maxChannelReopens":
+          builder.maxChannelReopens((Integer) entry.getValue());
           break;
         default:
           throw new IllegalArgumentException(entry.getKey());

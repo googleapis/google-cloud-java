@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ package com.google.cloud.spanner.it;
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.ErrorCode;
@@ -86,7 +86,7 @@ public class ITDatabaseAdminTest {
 
     boolean foundDb = false;
     for (Database dbInList :
-        Iterators.toArray(dbAdminClient.listDatabases(instanceId).iterateAll(), Database.class)) {
+        Iterators.toArray(dbAdminClient.listDatabases(instanceId).iterateAll().iterator(), Database.class)) {
       if (dbInList.getId().getDatabase().equals(dbId)) {
         foundDb = true;
         break;
@@ -164,13 +164,14 @@ public class ITDatabaseAdminTest {
 
     String instanceId = testHelper.getInstanceId().getInstance();
     for (String dbId : dbIds) {
-      dbAdminClient.createDatabase(instanceId, dbId, ImmutableList.<String>of()).waitFor();
+      dbs.add(dbAdminClient.createDatabase(instanceId, dbId, ImmutableList.<String>of())
+        .waitFor()
+        .getResult());
     }
     Page<Database> page = dbAdminClient.listDatabases(instanceId, Options.pageSize(1));
     List<String> dbIdsGot = new ArrayList<>();
     while (page != null) {
       Database db = Iterables.getOnlyElement(page.getValues());
-      dbs.add(db);
       dbIdsGot.add(db.getId().getDatabase());
       page = page.getNextPage();
     }

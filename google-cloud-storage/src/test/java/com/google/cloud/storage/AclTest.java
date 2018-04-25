@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,6 @@ public class AclTest {
   private static final String ETAG = "etag";
   private static final String ID = "id";
   private static final Acl ACL = Acl.newBuilder(ENTITY, ROLE).setEtag(ETAG).setId(ID).build();
-  private static final Acl DEPRECATED_ACL =
-      Acl.builder(ENTITY, ROLE).setEtag(ETAG).setId(ID).build();
 
   @Test
   public void testBuilder() {
@@ -48,14 +46,6 @@ public class AclTest {
     assertEquals(ENTITY, ACL.getEntity());
     assertEquals(ETAG, ACL.getEtag());
     assertEquals(ID, ACL.getId());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(ROLE, DEPRECATED_ACL.role());
-    assertEquals(ENTITY, DEPRECATED_ACL.entity());
-    assertEquals(ETAG, DEPRECATED_ACL.etag());
-    assertEquals(ID, DEPRECATED_ACL.id());
   }
 
   @Test
@@ -74,21 +64,6 @@ public class AclTest {
   }
 
   @Test
-  public void testToBuilderDeprecated() {
-    assertEquals(DEPRECATED_ACL, DEPRECATED_ACL.toBuilder().build());
-    Acl acl = DEPRECATED_ACL.toBuilder()
-        .setEtag("otherEtag")
-        .setId("otherId")
-        .role(Role.READER)
-        .entity(User.ofAllUsers())
-        .build();
-    assertEquals(Role.READER, acl.role());
-    assertEquals(User.ofAllUsers(), acl.entity());
-    assertEquals("otherEtag", acl.etag());
-    assertEquals("otherId", acl.id());
-  }
-
-  @Test
   public void testToAndFromPb() {
     assertEquals(ACL, Acl.fromPb(ACL.toBucketPb()));
     assertEquals(ACL, Acl.fromPb(ACL.toObjectPb()));
@@ -104,15 +79,6 @@ public class AclTest {
   }
 
   @Test
-  public void testDomainEntityDeprecated() {
-    Domain acl = new Domain("d1");
-    assertEquals("d1", acl.domain());
-    assertEquals(Type.DOMAIN, acl.type());
-    String pb = acl.toPb();
-    assertEquals(acl, Entity.fromPb(pb));
-  }
-
-  @Test
   public void testGroupEntity() {
     Group acl = new Group("g1");
     assertEquals("g1", acl.getEmail());
@@ -122,28 +88,10 @@ public class AclTest {
   }
 
   @Test
-  public void testGroupEntityDeprecated() {
-    Group acl = new Group("g1");
-    assertEquals("g1", acl.email());
-    assertEquals(Type.GROUP, acl.type());
-    String pb = acl.toPb();
-    assertEquals(acl, Entity.fromPb(pb));
-  }
-
-  @Test
   public void testUserEntity() {
     User acl = new User("u1");
     assertEquals("u1", acl.getEmail());
     assertEquals(Type.USER, acl.getType());
-    String pb = acl.toPb();
-    assertEquals(acl, Entity.fromPb(pb));
-  }
-
-  @Test
-  public void testUserEntityDeprecated() {
-    User acl = new User("u1");
-    assertEquals("u1", acl.email());
-    assertEquals(Type.USER, acl.type());
     String pb = acl.toPb();
     assertEquals(acl, Entity.fromPb(pb));
   }
@@ -159,29 +107,10 @@ public class AclTest {
   }
 
   @Test
-  public void testProjectEntityDeprecated() {
-    Project acl = new Project(ProjectRole.VIEWERS, "p1");
-    assertEquals(ProjectRole.VIEWERS, acl.projectRole());
-    assertEquals("p1", acl.projectId());
-    assertEquals(Type.PROJECT, acl.type());
-    String pb = acl.toPb();
-    assertEquals(acl, Entity.fromPb(pb));
-  }
-
-  @Test
   public void testRawEntity() {
     Entity acl = new RawEntity("bla");
     assertEquals("bla", acl.getValue());
     assertEquals(Type.UNKNOWN, acl.getType());
-    String pb = acl.toPb();
-    assertEquals(acl, Entity.fromPb(pb));
-  }
-
-  @Test
-  public void testRawEntityDeprecated() {
-    Entity acl = new RawEntity("bla");
-    assertEquals("bla", acl.value());
-    assertEquals(Type.UNKNOWN, acl.type());
     String pb = acl.toPb();
     assertEquals(acl, Entity.fromPb(pb));
   }

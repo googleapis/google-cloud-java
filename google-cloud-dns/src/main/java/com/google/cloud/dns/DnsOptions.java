@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,22 @@
 
 package com.google.cloud.dns;
 
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.dns.spi.DefaultDnsRpc;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.dns.spi.v1.HttpDnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
+public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
 
   private static final long serialVersionUID = -2501790264435912627L;
+  private static final String API_SHORT_NAME = "Dns";
   private static final String GC_DNS_RW = "https://www.googleapis.com/auth/ndev.clouddns.readwrite";
   private static final Set<String> SCOPES = ImmutableSet.of(GC_DNS_RW);
 
@@ -44,12 +49,12 @@ public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
     private static final DnsRpcFactory INSTANCE = new DefaultDnsRpcFactory();
 
     @Override
-    public DnsRpc create(DnsOptions options) {
-      return new DefaultDnsRpc(options);
+    public ServiceRpc create(DnsOptions options) {
+      return new HttpDnsRpc(options);
     }
   }
 
-  public static class Builder extends HttpServiceOptions.Builder<Dns, DnsRpc,
+  public static class Builder extends ServiceOptions.Builder<Dns,
       DnsOptions, Builder> {
 
     private Builder() {
@@ -60,28 +65,54 @@ public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
     }
 
     @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
+    }
+
+    @Override
     public DnsOptions build() {
       return new DnsOptions(this);
     }
   }
 
   private DnsOptions(Builder builder) {
-    super(DnsFactory.class, DnsRpcFactory.class, builder);
+    super(DnsFactory.class, DnsRpcFactory.class, builder, new DnsDefaults());
   }
 
-  @Override
-  protected DnsFactory getDefaultServiceFactory() {
-    return DefaultDnsFactory.INSTANCE;
+  private static class DnsDefaults implements
+      ServiceDefaults<Dns, DnsOptions> {
+
+    @Override
+    public DnsFactory getDefaultServiceFactory() {
+      return DefaultDnsFactory.INSTANCE;
+    }
+
+    @Override
+    public DnsRpcFactory getDefaultRpcFactory() {
+      return DefaultDnsRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
-  @Override
-  protected DnsRpcFactory getDefaultRpcFactory() {
-    return DefaultDnsRpcFactory.INSTANCE;
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
   }
 
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected DnsRpc getDnsRpcV1() {
+    return (DnsRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")
@@ -90,23 +121,11 @@ public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
     return new Builder(this);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Creates a default instance of {@code DnsOptions} with the project ID and credentials inferred
-   * from the environment.
-   */
-  @Deprecated
-  public static DnsOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Creates a default instance of {@code DnsOptions} with the project ID and credentials inferred

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.logging.HttpRequest.RequestMethod;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.threeten.bp.Duration;
 
 public class HttpRequestTest {
 
@@ -43,36 +43,23 @@ public class HttpRequestTest {
   private static final boolean CACHE_HIT = true;
   private static final boolean CACHE_VALIDATED_WITH_ORIGIN_SERVER = false;
   private static final Long CACHE_FILL_BYTES = 3L;
-  private static final HttpRequest HTTP_REQUEST = HttpRequest.newBuilder()
-      .setRequestMethod(REQUEST_METHOD)
-      .setRequestUrl(REQUEST_URL)
-      .setRequestSize(REQUEST_SIZE)
-      .setStatus(STATUS)
-      .setResponseSize(REPONSE_SIZE)
-      .setUserAgent(USER_AGENT)
-      .setRemoteIp(REMOTE_IP)
-      .setServerIp(SERVER_IP)
-      .setReferer(REFERER)
-      .setCacheLookup(CACHE_LOOKUP)
-      .setCacheHit(CACHE_HIT)
-      .setCacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
-      .setCacheFillBytes(CACHE_FILL_BYTES)
-      .build();
-  private static final HttpRequest DEPRECATED_HTTP_REQUEST = HttpRequest.builder()
-      .requestMethod(REQUEST_METHOD)
-      .requestUrl(REQUEST_URL)
-      .requestSize(REQUEST_SIZE)
-      .status(STATUS)
-      .responseSize(REPONSE_SIZE)
-      .userAgent(USER_AGENT)
-      .remoteIp(REMOTE_IP)
-      .serverIp(SERVER_IP)
-      .referer(REFERER)
-      .cacheLookup(CACHE_LOOKUP)
-      .cacheHit(CACHE_HIT)
-      .cacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
-      .cacheFillBytes(CACHE_FILL_BYTES)
-      .build();
+  private static final HttpRequest HTTP_REQUEST =
+      HttpRequest.newBuilder()
+          .setRequestMethod(REQUEST_METHOD)
+          .setRequestUrl(REQUEST_URL)
+          .setRequestSize(REQUEST_SIZE)
+          .setStatus(STATUS)
+          .setResponseSize(REPONSE_SIZE)
+          .setUserAgent(USER_AGENT)
+          .setRemoteIp(REMOTE_IP)
+          .setServerIp(SERVER_IP)
+          .setReferer(REFERER)
+          .setCacheLookup(CACHE_LOOKUP)
+          .setCacheHit(CACHE_HIT)
+          .setCacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
+          .setCacheFillBytes(CACHE_FILL_BYTES)
+          .setLatency(Duration.ofSeconds(123, 456))
+          .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -94,23 +81,6 @@ public class HttpRequestTest {
     assertEquals(CACHE_FILL_BYTES, HTTP_REQUEST.getCacheFillBytes());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(REQUEST_METHOD, DEPRECATED_HTTP_REQUEST.requestMethod());
-    assertEquals(REQUEST_URL, DEPRECATED_HTTP_REQUEST.requestUrl());
-    assertEquals(REQUEST_SIZE, DEPRECATED_HTTP_REQUEST.requestSize());
-    assertEquals(STATUS, DEPRECATED_HTTP_REQUEST.status());
-    assertEquals(REPONSE_SIZE, DEPRECATED_HTTP_REQUEST.responseSize());
-    assertEquals(USER_AGENT, DEPRECATED_HTTP_REQUEST.userAgent());
-    assertEquals(REMOTE_IP, DEPRECATED_HTTP_REQUEST.remoteIp());
-    assertEquals(SERVER_IP, DEPRECATED_HTTP_REQUEST.serverIp());
-    assertEquals(REFERER, DEPRECATED_HTTP_REQUEST.referer());
-    assertEquals(CACHE_LOOKUP, DEPRECATED_HTTP_REQUEST.cacheLookup());
-    assertEquals(CACHE_HIT, DEPRECATED_HTTP_REQUEST.cacheHit());
-    assertEquals(CACHE_VALIDATED_WITH_ORIGIN_SERVER,
-        DEPRECATED_HTTP_REQUEST.cacheValidatedWithOriginServer());
-    assertEquals(CACHE_FILL_BYTES, DEPRECATED_HTTP_REQUEST.cacheFillBytes());
-  }
 
   @Test
   public void testBuilderDefaultValues() {

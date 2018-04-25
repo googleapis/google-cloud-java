@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,12 +20,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.datastore.spi.DatastoreRpc;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
-
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import org.easymock.EasyMock;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class DatastoreOptionsTest {
 
@@ -34,6 +36,9 @@ public class DatastoreOptionsTest {
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -77,7 +82,13 @@ public class DatastoreOptionsTest {
     assertEquals(original.getProjectId(), copy.getProjectId());
     assertEquals(original.getNamespace(), copy.getNamespace());
     assertEquals(original.getHost(), copy.getHost());
-    assertEquals(original.getRetryParams(), copy.getRetryParams());
+    assertEquals(original.getRetrySettings(), copy.getRetrySettings());
     assertEquals(original.getCredentials(), copy.getCredentials());
+  }
+
+  @Test
+  public void testInvalidTransport() {
+    thrown.expect(IllegalArgumentException.class);
+    DatastoreOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
   }
 }

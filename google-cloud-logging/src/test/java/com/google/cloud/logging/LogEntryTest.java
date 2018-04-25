@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ public class LogEntryTest {
           .setLabels(ImmutableMap.of("datasetId", "myDataset", "zone", "myZone"))
           .build();
   private static final long TIMESTAMP = 42;
+  private static final long RECEIVE_TIMESTAMP = 24;
   private static final Severity SEVERITY = Severity.ALERT;
   private static final String INSERT_ID = "insertId";
   private static final HttpRequest HTTP_REQUEST = HttpRequest.newBuilder()
@@ -48,6 +49,12 @@ public class LogEntryTest {
   private static final Map<String, String> LABELS =
       ImmutableMap.of("key1", "value1", "key2", "value2");
   private static final Operation OPERATION = Operation.of("id", "producer");
+  private static final String TRACE = "trace";
+  private static final SourceLocation SOURCE_LOCATION = new SourceLocation.Builder()
+      .setFile("file")
+      .setLine(42L)
+      .setFunction("function")
+      .build();
   private static final StringPayload STRING_PAYLOAD = StringPayload.of("payload");
   private static final JsonPayload JSON_PAYLOAD =
       JsonPayload.of(ImmutableMap.<String, Object>of("key", "val"));
@@ -57,61 +64,40 @@ public class LogEntryTest {
       .setLogName(LOG_NAME)
       .setResource(RESOURCE)
       .setTimestamp(TIMESTAMP)
+      .setReceiveTimestamp(RECEIVE_TIMESTAMP)
       .setSeverity(SEVERITY)
       .setInsertId(INSERT_ID)
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
+      .setTrace(TRACE)
+      .setSourceLocation(SOURCE_LOCATION)
       .build();
   private static final LogEntry JSON_ENTRY = LogEntry.newBuilder(JSON_PAYLOAD)
       .setLogName(LOG_NAME)
       .setResource(RESOURCE)
       .setTimestamp(TIMESTAMP)
+      .setReceiveTimestamp(RECEIVE_TIMESTAMP)
       .setSeverity(SEVERITY)
       .setInsertId(INSERT_ID)
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
+      .setTrace(TRACE)
+      .setSourceLocation(SOURCE_LOCATION)
       .build();
   private static final LogEntry PROTO_ENTRY = LogEntry.newBuilder(PROTO_PAYLOAD)
       .setLogName(LOG_NAME)
       .setResource(RESOURCE)
       .setTimestamp(TIMESTAMP)
+      .setReceiveTimestamp(RECEIVE_TIMESTAMP)
       .setSeverity(SEVERITY)
       .setInsertId(INSERT_ID)
       .setHttpRequest(HTTP_REQUEST)
       .setLabels(LABELS)
       .setOperation(OPERATION)
-      .build();
-  private static final LogEntry DEPRECATED_STRING_ENTRY = LogEntry.builder(STRING_PAYLOAD)
-      .logName(LOG_NAME)
-      .resource(RESOURCE)
-      .timestamp(TIMESTAMP)
-      .severity(SEVERITY)
-      .insertId(INSERT_ID)
-      .httpRequest(HTTP_REQUEST)
-      .labels(LABELS)
-      .operation(OPERATION)
-      .build();
-  private static final LogEntry DEPRECATED_JSON_ENTRY = LogEntry.builder(JSON_PAYLOAD)
-      .logName(LOG_NAME)
-      .resource(RESOURCE)
-      .timestamp(TIMESTAMP)
-      .severity(SEVERITY)
-      .insertId(INSERT_ID)
-      .httpRequest(HTTP_REQUEST)
-      .labels(LABELS)
-      .operation(OPERATION)
-      .build();
-  private static final LogEntry DEPRECATED_PROTO_ENTRY = LogEntry.builder(PROTO_PAYLOAD)
-      .logName(LOG_NAME)
-      .resource(RESOURCE)
-      .timestamp(TIMESTAMP)
-      .severity(SEVERITY)
-      .insertId(INSERT_ID)
-      .httpRequest(HTTP_REQUEST)
-      .labels(LABELS)
-      .operation(OPERATION)
+      .setTrace(TRACE)
+      .setSourceLocation(SOURCE_LOCATION)
       .build();
 
   @Test
@@ -123,9 +109,12 @@ public class LogEntryTest {
     assertNull(logEntry.getLogName());
     assertNull(logEntry.getResource());
     assertNull(logEntry.getTimestamp());
+    assertNull(logEntry.getReceiveTimestamp());
     assertNull(logEntry.getInsertId());
     assertNull(logEntry.getHttpRequest());
     assertNull(logEntry.getOperation());
+    assertNull(logEntry.getTrace());
+    assertNull(logEntry.getSourceLocation());
     logEntry = LogEntry.of(LOG_NAME, RESOURCE, STRING_PAYLOAD);
     assertEquals(STRING_PAYLOAD, logEntry.getPayload());
     assertEquals(LOG_NAME, logEntry.getLogName());
@@ -134,9 +123,12 @@ public class LogEntryTest {
     assertEquals(ImmutableMap.of(), logEntry.getLabels());
     assertEquals(ImmutableMap.of(), logEntry.getLabels());
     assertNull(logEntry.getTimestamp());
+    assertNull(logEntry.getReceiveTimestamp());
     assertNull(logEntry.getInsertId());
     assertNull(logEntry.getHttpRequest());
     assertNull(logEntry.getOperation());
+    assertNull(logEntry.getTrace());
+    assertNull(logEntry.getSourceLocation());
   }
 
   @Test
@@ -144,104 +136,68 @@ public class LogEntryTest {
     assertEquals(LOG_NAME, STRING_ENTRY.getLogName());
     assertEquals(RESOURCE, STRING_ENTRY.getResource());
     assertEquals(TIMESTAMP, (long) STRING_ENTRY.getTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP, (long) STRING_ENTRY.getReceiveTimestamp());
     assertEquals(SEVERITY, STRING_ENTRY.getSeverity());
     assertEquals(INSERT_ID, STRING_ENTRY.getInsertId());
     assertEquals(HTTP_REQUEST, STRING_ENTRY.getHttpRequest());
     assertEquals(LABELS, STRING_ENTRY.getLabels());
     assertEquals(OPERATION, STRING_ENTRY.getOperation());
+    assertEquals(TRACE, STRING_ENTRY.getTrace());
+    assertEquals(SOURCE_LOCATION, STRING_ENTRY.getSourceLocation());
     assertEquals(STRING_PAYLOAD, STRING_ENTRY.getPayload());
     assertEquals(LOG_NAME, JSON_ENTRY.getLogName());
     assertEquals(RESOURCE, JSON_ENTRY.getResource());
     assertEquals(TIMESTAMP, (long) JSON_ENTRY.getTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP, (long) JSON_ENTRY.getReceiveTimestamp());
     assertEquals(SEVERITY, JSON_ENTRY.getSeverity());
     assertEquals(INSERT_ID, JSON_ENTRY.getInsertId());
     assertEquals(HTTP_REQUEST, JSON_ENTRY.getHttpRequest());
     assertEquals(LABELS, JSON_ENTRY.getLabels());
     assertEquals(OPERATION, JSON_ENTRY.getOperation());
+    assertEquals(TRACE, JSON_ENTRY.getTrace());
+    assertEquals(SOURCE_LOCATION, JSON_ENTRY.getSourceLocation());
     assertEquals(JSON_PAYLOAD, JSON_ENTRY.getPayload());
     assertEquals(LOG_NAME, PROTO_ENTRY.getLogName());
     assertEquals(RESOURCE, PROTO_ENTRY.getResource());
     assertEquals(TIMESTAMP, (long) PROTO_ENTRY.getTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP, (long) PROTO_ENTRY.getReceiveTimestamp());
     assertEquals(SEVERITY, PROTO_ENTRY.getSeverity());
     assertEquals(INSERT_ID, PROTO_ENTRY.getInsertId());
     assertEquals(HTTP_REQUEST, PROTO_ENTRY.getHttpRequest());
     assertEquals(LABELS, PROTO_ENTRY.getLabels());
     assertEquals(OPERATION, PROTO_ENTRY.getOperation());
+    assertEquals(TRACE, PROTO_ENTRY.getTrace());
+    assertEquals(SOURCE_LOCATION, PROTO_ENTRY.getSourceLocation());
     assertEquals(PROTO_PAYLOAD, PROTO_ENTRY.getPayload());
     LogEntry logEntry = LogEntry.newBuilder(STRING_PAYLOAD)
         .setPayload(StringPayload.of("otherPayload"))
         .setLogName(LOG_NAME)
         .setResource(RESOURCE)
         .setTimestamp(TIMESTAMP)
+        .setReceiveTimestamp(RECEIVE_TIMESTAMP)
         .setSeverity(SEVERITY)
         .setInsertId(INSERT_ID)
         .setHttpRequest(HTTP_REQUEST)
         .addLabel("key1", "value1")
         .addLabel("key2", "value2")
         .setOperation(OPERATION)
+        .setTrace(TRACE)
+        .setSourceLocation(SOURCE_LOCATION)
         .build();
     assertEquals(LOG_NAME, logEntry.getLogName());
     assertEquals(RESOURCE, logEntry.getResource());
     assertEquals(TIMESTAMP, (long) logEntry.getTimestamp());
+    assertEquals(RECEIVE_TIMESTAMP, (long) logEntry.getReceiveTimestamp());
     assertEquals(SEVERITY, logEntry.getSeverity());
     assertEquals(INSERT_ID, logEntry.getInsertId());
     assertEquals(HTTP_REQUEST, logEntry.getHttpRequest());
     assertEquals(LABELS, logEntry.getLabels());
     assertEquals(OPERATION, logEntry.getOperation());
+    assertEquals(TRACE, logEntry.getTrace());
+    assertEquals(SOURCE_LOCATION, logEntry.getSourceLocation());
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(LOG_NAME, DEPRECATED_STRING_ENTRY.logName());
-    assertEquals(RESOURCE, DEPRECATED_STRING_ENTRY.resource());
-    assertEquals(TIMESTAMP, (long) DEPRECATED_STRING_ENTRY.timestamp());
-    assertEquals(SEVERITY, DEPRECATED_STRING_ENTRY.severity());
-    assertEquals(INSERT_ID, DEPRECATED_STRING_ENTRY.insertId());
-    assertEquals(HTTP_REQUEST, DEPRECATED_STRING_ENTRY.httpRequest());
-    assertEquals(LABELS, DEPRECATED_STRING_ENTRY.labels());
-    assertEquals(OPERATION, DEPRECATED_STRING_ENTRY.operation());
-    assertEquals(STRING_PAYLOAD, DEPRECATED_STRING_ENTRY.payload());
-    assertEquals(LOG_NAME, DEPRECATED_JSON_ENTRY.logName());
-    assertEquals(RESOURCE, DEPRECATED_JSON_ENTRY.resource());
-    assertEquals(TIMESTAMP, (long) DEPRECATED_JSON_ENTRY.timestamp());
-    assertEquals(SEVERITY, DEPRECATED_JSON_ENTRY.severity());
-    assertEquals(INSERT_ID, DEPRECATED_JSON_ENTRY.insertId());
-    assertEquals(HTTP_REQUEST, DEPRECATED_JSON_ENTRY.httpRequest());
-    assertEquals(LABELS, DEPRECATED_JSON_ENTRY.labels());
-    assertEquals(OPERATION, DEPRECATED_JSON_ENTRY.operation());
-    assertEquals(JSON_PAYLOAD, DEPRECATED_JSON_ENTRY.payload());
-    assertEquals(LOG_NAME, DEPRECATED_PROTO_ENTRY.logName());
-    assertEquals(RESOURCE, DEPRECATED_PROTO_ENTRY.resource());
-    assertEquals(TIMESTAMP, (long) DEPRECATED_PROTO_ENTRY.timestamp());
-    assertEquals(SEVERITY, DEPRECATED_PROTO_ENTRY.severity());
-    assertEquals(INSERT_ID, DEPRECATED_PROTO_ENTRY.insertId());
-    assertEquals(HTTP_REQUEST, DEPRECATED_PROTO_ENTRY.httpRequest());
-    assertEquals(LABELS, DEPRECATED_PROTO_ENTRY.labels());
-    assertEquals(OPERATION, DEPRECATED_PROTO_ENTRY.operation());
-    assertEquals(PROTO_PAYLOAD, DEPRECATED_PROTO_ENTRY.payload());
-    LogEntry logEntry = LogEntry.builder(STRING_PAYLOAD)
-        .payload(StringPayload.of("otherPayload"))
-        .logName(LOG_NAME)
-        .resource(RESOURCE)
-        .timestamp(TIMESTAMP)
-        .severity(SEVERITY)
-        .insertId(INSERT_ID)
-        .httpRequest(HTTP_REQUEST)
-        .addLabel("key1", "value1")
-        .addLabel("key2", "value2")
-        .operation(OPERATION)
-        .build();
-    assertEquals(LOG_NAME, logEntry.logName());
-    assertEquals(RESOURCE, logEntry.resource());
-    assertEquals(TIMESTAMP, (long) logEntry.timestamp());
-    assertEquals(SEVERITY, logEntry.severity());
-    assertEquals(INSERT_ID, logEntry.insertId());
-    assertEquals(HTTP_REQUEST, logEntry.httpRequest());
-    assertEquals(LABELS, logEntry.labels());
-    assertEquals(OPERATION, logEntry.operation());
-    assertEquals(StringPayload.of("otherPayload"), logEntry.payload());
-  }
 
   @Test
   public void testToBuilder() {
@@ -255,32 +211,42 @@ public class LogEntryTest {
         .setLogName("otherLogName")
         .setResource(MonitoredResource.newBuilder("global").build())
         .setTimestamp(43)
+        .setReceiveTimestamp(34)
         .setSeverity(Severity.DEBUG)
         .setInsertId("otherInsertId")
         .setHttpRequest(request)
         .clearLabels()
         .addLabel("key", "value")
         .setOperation(Operation.of("otherId", "otherProducer"))
+        .setTrace("otherTrace")
+        .setSourceLocation(new SourceLocation.Builder().setFile("hey.java").build())
         .build();
     assertEquals("otherLogName", logEntry.getLogName());
     assertEquals(MonitoredResource.newBuilder("global").build(), logEntry.getResource());
     assertEquals(43, (long) logEntry.getTimestamp());
+    assertEquals(34, (long) logEntry.getReceiveTimestamp());
     assertEquals(Severity.DEBUG, logEntry.getSeverity());
     assertEquals("otherInsertId", logEntry.getInsertId());
     assertEquals(request, logEntry.getHttpRequest());
     assertEquals(ImmutableMap.of("key", "value"), logEntry.getLabels());
     assertEquals(Operation.of("otherId", "otherProducer"), logEntry.getOperation());
+    assertEquals("otherTrace", logEntry.getTrace());
+    assertEquals(new SourceLocation.Builder().setFile("hey.java").build(),
+        logEntry.getSourceLocation());
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
     logEntry = logEntry.toBuilder()
         .setPayload(STRING_PAYLOAD)
         .setLogName(LOG_NAME)
         .setResource(RESOURCE)
         .setTimestamp(TIMESTAMP)
+        .setReceiveTimestamp(RECEIVE_TIMESTAMP)
         .setSeverity(SEVERITY)
         .setInsertId(INSERT_ID)
         .setHttpRequest(HTTP_REQUEST)
         .setLabels(LABELS)
         .setOperation(OPERATION)
+        .setTrace(TRACE)
+        .setSourceLocation(SOURCE_LOCATION)
         .build();
     compareLogEntry(STRING_ENTRY, logEntry);
   }
@@ -301,11 +267,14 @@ public class LogEntryTest {
     assertEquals(expected.getLogName(), value.getLogName());
     assertEquals(expected.getResource(), value.getResource());
     assertEquals(expected.getTimestamp(), value.getTimestamp());
+    assertEquals(expected.getReceiveTimestamp(), value.getReceiveTimestamp());
     assertEquals(expected.getSeverity(), value.getSeverity());
     assertEquals(expected.getInsertId(), value.getInsertId());
     assertEquals(expected.getHttpRequest(), value.getHttpRequest());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.getOperation(), value.getOperation());
+    assertEquals(expected.getTrace(), value.getTrace());
+    assertEquals(expected.getSourceLocation(), value.getSourceLocation());
     assertEquals(expected.getPayload(), value.getPayload());
     assertEquals(expected.hashCode(), value.hashCode());
   }

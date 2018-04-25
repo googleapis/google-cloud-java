@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,13 +36,6 @@ public class UserDefinedFunctionTest {
     assertEquals(UserDefinedFunction.Type.FROM_URI, URI_FUNCTION.getType());
   }
 
-  @Test
-  public void testConstructorDeprecated() {
-    assertEquals(INLINE, INLINE_FUNCTION.content());
-    assertEquals(UserDefinedFunction.Type.INLINE, INLINE_FUNCTION.type());
-    assertEquals(URI, URI_FUNCTION.content());
-    assertEquals(UserDefinedFunction.Type.FROM_URI, URI_FUNCTION.type());
-  }
 
   @Test
   public void testFactoryMethod() {

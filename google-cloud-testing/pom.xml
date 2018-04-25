@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>google-cloud-testing</artifactId>
+  <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+  <packaging>pom</packaging>
+
+  <name>Google Cloud Testing</name>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-testing</url>
+  <description>
+    Contains packages used for testing google-cloud libraries on various platforms.
+  </description>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-pom</artifactId>
+    <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom:current} -->
+  </parent>
+  <properties>
+    <site.installationModule>google-cloud-testing</site.installationModule>
+    <appengine.sdk.version>1.9.51</appengine.sdk.version>
+  </properties>
+
+  <modules>
+    <module>google-cloud-appengineflexcompat</module>
+    <module>google-cloud-appengineflexcustom</module>
+    <module>google-cloud-appengineflexjava</module>
+    <module>google-cloud-appenginejava8</module>
+    <module>google-cloud-managedtest</module>
+  </modules>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>google-cloud-managedtest</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-api-1.0-sdk</artifactId>
+        <version>${appengine.sdk.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,19 +26,16 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
-import com.google.cloud.bigquery.QueryRequest;
-import com.google.cloud.bigquery.QueryResponse;
+import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
-
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -57,7 +54,7 @@ public class InsertDataAndQueryTable {
 
     TableId tableId = TableId.of(datasetId, "my_table_id");
     // Table field definition
-    Field stringField = Field.of("StringField", Field.Type.string());
+    Field stringField = Field.of("StringField", LegacySQLTypeName.STRING);
     // Table schema definition
     Schema schema = Schema.of(stringField);
     // Create a table
@@ -80,22 +77,12 @@ public class InsertDataAndQueryTable {
     }
 
     // Create a query request
-    QueryRequest queryRequest =
-        QueryRequest.newBuilder("SELECT * FROM my_dataset_id.my_table_id")
-            .setMaxWaitTime(60000L)
-            .setPageSize(1000L)
-            .build();
-    // Request query to be executed and wait for results
-    QueryResponse queryResponse = bigquery.query(queryRequest);
-    while (!queryResponse.jobCompleted()) {
-      Thread.sleep(1000L);
-      queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
-    }
+    QueryJobConfiguration queryConfig =
+        QueryJobConfiguration.newBuilder("SELECT * FROM my_dataset_id.my_table_id").build();
     // Read rows
-    Iterator<List<FieldValue>> rowIterator = queryResponse.getResult().iterateAll();
     System.out.println("Table rows:");
-    while (rowIterator.hasNext()) {
-      System.out.println(rowIterator.next());
+    for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
+      System.out.println(row);
     }
   }
 }

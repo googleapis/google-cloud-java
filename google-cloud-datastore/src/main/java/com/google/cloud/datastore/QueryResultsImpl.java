@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,22 +103,12 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     return result;
   }
 
-  @Override
-  @Deprecated
-  public Class<?> resultClass() {
-    return getResultClass();
-  }
 
   @Override
   public Class<?> getResultClass() {
     return actualResultType.resultClass();
   }
 
-  @Override
-  @Deprecated
-  public Cursor cursorAfter() {
-    return getCursorAfter();
-  }
 
   @Override
   public Cursor getCursorAfter() {

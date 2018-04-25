@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,13 +49,6 @@ public final class TableId implements Serializable {
   private final String dataset;
   private final String table;
 
-  /**
-   * Returns project's user-defined id.
-   */
-  @Deprecated
-  public String project() {
-    return getProject();
-  }
 
   /**
    * Returns project's user-defined id.
@@ -64,13 +57,6 @@ public final class TableId implements Serializable {
     return project;
   }
 
-  /**
-   * Returns dataset's user-defined id.
-   */
-  @Deprecated
-  public String dataset() {
-    return getDataset();
-  }
 
   /**
    * Returns dataset's user-defined id.
@@ -79,13 +65,6 @@ public final class TableId implements Serializable {
     return dataset;
   }
 
-  /**
-   * Returns table's user-defined id.
-   */
-  @Deprecated
-  public String table() {
-    return getTable();
-  }
 
   /**
    * Returns table's user-defined id.

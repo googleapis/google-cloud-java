@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,12 @@
 
 package com.google.cloud.examples.compute.snippets;
 
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.Disk;
-import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.Snapshot;
+import com.google.cloud.compute.deprecated.Compute;
+import com.google.cloud.compute.deprecated.ComputeOptions;
+import com.google.cloud.compute.deprecated.Disk;
+import com.google.cloud.compute.deprecated.DiskId;
+import com.google.cloud.compute.deprecated.Operation;
+import com.google.cloud.compute.deprecated.Snapshot;
 
 import java.util.concurrent.TimeoutException;
 

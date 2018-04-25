@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,27 +29,32 @@ import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 
 /**
- * A snippet for Google Translate showing how to detect the language of some text and translate
+ * A snippet for Google Translation showing how to detect the language of some text and translate
  * some other text.
  */
 public class DetectLanguageAndTranslate {
 
   public static void main(String... args) {
     // Create a service object
-    // Default application credentials or an API key from the GOOGLE_API_KEY environment variable
-    // are used to authenticate requests
+    //
+    // If no explicit credentials or API key are set, requests are authenticated using Application
+    // Default Credentials if available; otherwise, using an API key from the GOOGLE_API_KEY
+    // environment variable
     Translate translate = TranslateOptions.getDefaultInstance().getService();
 
-    // Detect the language of some text
-    Detection detection = translate.detect("Hola");
+    // Text of an "unknown" language to detect and then translate into English
+    final String mysteriousText = "Hola Mundo";
+
+    // Detect the language of the mysterious text
+    Detection detection = translate.detect(mysteriousText);
     String detectedLanguage = detection.getLanguage();
 
-    // Translate some text
+    // Translate the mysterious text to English
     Translation translation = translate.translate(
-        "World",
-        TranslateOption.sourceLanguage("en"),
-        TranslateOption.targetLanguage(detectedLanguage));
+        mysteriousText,
+        TranslateOption.sourceLanguage(detectedLanguage),
+        TranslateOption.targetLanguage("en"));
 
-    System.out.printf("Hola %s%n", translation.getTranslatedText());
+    System.out.println(translation.getTranslatedText());
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,28 +134,6 @@ public class ProjectTest {
     assertEquals(parent, project.getParent());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    expect(resourceManager.getOptions()).andReturn(mockOptions).times(4);
-    replay(resourceManager);
-    Project.Builder builder =
-        new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl("wrong-id")));
-    Project project = builder.projectId(PROJECT_ID)
-        .name(NAME)
-        .labels(LABELS)
-        .setProjectNumber(PROJECT_NUMBER)
-        .setCreateTimeMillis(CREATE_TIME_MILLIS)
-        .setState(STATE)
-        .build();
-    assertEquals(PROJECT_ID, project.projectId());
-    assertEquals(NAME, project.name());
-    assertEquals(LABELS, project.labels());
-    assertEquals(PROJECT_NUMBER, project.projectNumber());
-    assertEquals(CREATE_TIME_MILLIS, project.createTimeMillis());
-    assertEquals(STATE, project.state());
-    assertEquals(resourceManager.getOptions(), project.resourceManager().getOptions());
-    assertNull(project.getParent());
-  }
 
   @Test
   public void testGet() {

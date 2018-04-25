@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,10 @@
 
 package com.google.cloud;
 
+import com.google.api.core.InternalApi;
+import com.google.api.gax.paging.Page;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Iterator;
@@ -30,6 +31,7 @@ import java.util.Objects;
  *
  * @param <T> the value type that the page holds
  */
+@InternalApi
 public class PageImpl<T> implements Page<T>, Serializable {
 
   private static final long serialVersionUID = 3914827379823557934L;
@@ -44,8 +46,6 @@ public class PageImpl<T> implements Page<T>, Serializable {
    * @param <T> the value type that the page holds
    */
   public interface NextPageFetcher<T> extends Serializable {
-    @Deprecated
-    Page<T> nextPage();
 
     Page<T> getNextPage();
   }
@@ -84,37 +84,30 @@ public class PageImpl<T> implements Page<T>, Serializable {
   }
 
   @Override
-  @Deprecated
-  public Iterable<T> values() {
-    return getValues();
-  }
-
-  @Override
   public Iterable<T> getValues() {
     return results == null ? Collections.<T>emptyList() : results;
   }
 
   @Override
-  public Iterator<T> iterateAll() {
-    return new PageIterator<>(this);
+  public Iterable<T> iterateAll() {
+    return new Iterable<T>() {
+      @Override
+      public Iterator<T> iterator() {
+        return new PageIterator<>(PageImpl.this);
+      }
+    };
   }
 
   @Override
-  @Deprecated
-  public String nextPageCursor() {
-    return getNextPageCursor();
+  public boolean hasNextPage() {
+    return getNextPageToken() != null && !getNextPageToken().equals("");
   }
 
   @Override
-  public String getNextPageCursor() {
+  public String getNextPageToken() {
     return cursor;
   }
 
-  @Override
-  @Deprecated
-  public Page<T> nextPage() {
-    return getNextPage();
-  }
 
   @Override
   public Page<T> getNextPage() {

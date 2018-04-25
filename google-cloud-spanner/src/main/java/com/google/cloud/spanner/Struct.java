@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -39,7 +43,7 @@ import javax.annotation.concurrent.Immutable;
  * <p>{@code Struct} instances are immutable.
  */
 @Immutable
-public abstract class Struct extends AbstractStructReader {
+public abstract class Struct extends AbstractStructReader implements Serializable {
   // Only implementations within the package are allowed.
   Struct() {}
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,13 +69,6 @@ public class QueryStageTest {
     assertEquals(SUBSTEPS2, QUERY_STEP2.getSubsteps());
   }
 
-  @Test
-  public void testQueryStepConstructorDeprecated() {
-    assertEquals("KIND", QUERY_STEP1.name());
-    assertEquals("KIND", QUERY_STEP2.name());
-    assertEquals(SUBSTEPS1, QUERY_STEP1.substeps());
-    assertEquals(SUBSTEPS2, QUERY_STEP2.substeps());
-  }
 
   @Test
   public void testBuilder() {
@@ -94,22 +87,6 @@ public class QueryStageTest {
     assertEquals(WRITE_RATIO_MAX, QUERY_STAGE.getWriteRatioMax(), 0);
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(COMPUTE_RATIO_AVG, QUERY_STAGE.computeRatioAvg(), 0);
-    assertEquals(COMPUTE_RATIO_MAX, QUERY_STAGE.computeRatioMax(), 0);
-    assertEquals(ID, QUERY_STAGE.generatedId());
-    assertEquals(NAME, QUERY_STAGE.name());
-    assertEquals(READ_RATIO_AVG, QUERY_STAGE.readRatioAvg(), 0);
-    assertEquals(READ_RATIO_MAX, QUERY_STAGE.readRatioMax(), 0);
-    assertEquals(RECORDS_READ, QUERY_STAGE.recordsRead());
-    assertEquals(RECORDS_WRITTEN, QUERY_STAGE.recordsWritten());
-    assertEquals(STEPS, QUERY_STAGE.steps());
-    assertEquals(WAIT_RATIO_AVG, QUERY_STAGE.waitRatioAvg(), 0);
-    assertEquals(WAIT_RATIO_MAX, QUERY_STAGE.waitRatioMax(), 0);
-    assertEquals(WRITE_RATIO_AVG, QUERY_STAGE.writeRatioAvg(), 0);
-    assertEquals(WRITE_RATIO_MAX, QUERY_STAGE.writeRatioMax(), 0);
-  }
 
   @Test
   public void testToAndFromPb() {

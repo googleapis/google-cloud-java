@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,14 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.api.gax.core.RpcFuture;
-import com.google.cloud.pubsub.spi.v1.Publisher;
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.cloud.pubsub.v1.Publisher;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.TopicName;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,30 +33,53 @@ import java.util.List;
  * publish messages to it.
  */
 public class CreateTopicAndPublishMessages {
-  public static void main(String... args) throws Exception {
-    TopicName topic = TopicName.create("test-project", "test-topic");
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      publisherClient.createTopic(topic);
-    }
 
+  public static void createTopic() throws Exception {
+    ProjectTopicName topic = ProjectTopicName.of("my-project-id", "my-topic-id");
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+      topicAdminClient.createTopic(topic);
+    }
+  }
+
+  public static void publishMessages() throws Exception {
+    // [START pubsub_publish]
+    ProjectTopicName topicName = ProjectTopicName.of("my-project-id", "my-topic-id");
     Publisher publisher = null;
+    List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
+
     try {
-      publisher = Publisher.newBuilder(topic).build();
+      // Create a publisher instance with default settings bound to the topic
+      publisher = Publisher.newBuilder(topicName).build();
+
       List<String> messages = Arrays.asList("first message", "second message");
-      List<RpcFuture<String>> messageIds = new ArrayList<>();
+
+      // schedule publishing one message at a time : messages get automatically batched
       for (String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-        RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-        messageIds.add(messageIdFuture);
-      }
-      for (RpcFuture<String> messageId : messageIds) {
-        System.out.println("published with message ID: " + messageId.get());
+
+        // Once published, returns a server-assigned message id (unique within the topic)
+        ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+        messageIdFutures.add(messageIdFuture);
       }
     } finally {
+      // wait on any pending publish requests.
+      List<String> messageIds = ApiFutures.allAsList(messageIdFutures).get();
+
+      for (String messageId : messageIds) {
+        System.out.println("published with message ID: " + messageId);
+      }
+
       if (publisher != null) {
+        // When finished with the publisher, shutdown to free up resources.
         publisher.shutdown();
       }
     }
+    // [END pubsub_publish]
+  }
+
+  public static void main(String... args) throws Exception {
+    createTopic();
+    publishMessages();
   }
 }

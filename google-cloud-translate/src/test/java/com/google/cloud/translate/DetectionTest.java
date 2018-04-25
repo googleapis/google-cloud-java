@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,12 +37,6 @@ public class DetectionTest {
     compareDetection(DETECTION, Detection.fromPb(DETECTION_PB));
   }
 
-  @Test
-  public void testFromPbDeprecated() {
-    assertEquals(LANGUAGE, DETECTION.language());
-    assertEquals(CONFIDENCE, DETECTION.confidence(), 0);
-    compareDetection(DETECTION, Detection.fromPb(DETECTION_PB));
-  }
 
   private void compareDetection(Detection expected, Detection value) {
     assertEquals(expected, value);

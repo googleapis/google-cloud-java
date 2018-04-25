@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@
 package com.google.cloud.spanner;
 
 import com.google.common.collect.ImmutableList;
+
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -29,7 +31,8 @@ import java.util.Objects;
  *
  * <p>{@code KeySet} instances are immutable.
  */
-public final class KeySet {
+public final class KeySet implements Serializable {
+  private static final long serialVersionUID = -542201151451064347L;
   private final boolean all;
   private final ImmutableList<Key> keys;
   private final ImmutableList<KeyRange> ranges;

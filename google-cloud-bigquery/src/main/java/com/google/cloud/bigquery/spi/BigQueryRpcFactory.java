@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,5 +23,5 @@ import com.google.cloud.spi.ServiceRpcFactory;
  * An interface for BigQuery RPC factory.
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
-public interface BigQueryRpcFactory extends ServiceRpcFactory<BigQueryRpc, BigQueryOptions> {
+public interface BigQueryRpcFactory extends ServiceRpcFactory<BigQueryOptions> {
 }

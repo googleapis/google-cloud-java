@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ public abstract class BaseKey implements Serializable {
    *
    * @param <B> the key builder.
    */
-  protected abstract static class Builder<B extends Builder<B>> {
+  public abstract static class Builder<B extends Builder<B>> {
 
     String projectId = "";
     String namespace = "";
@@ -76,13 +76,6 @@ public abstract class BaseKey implements Serializable {
       return (B) this;
     }
 
-    /**
-     * Adds an ancestor for this key.
-     */
-    @Deprecated
-    public B ancestors(PathElement ancestor) {
-      return addAncestor(ancestor);
-    }
 
     /**
      * Adds an ancestor for this key.
@@ -93,13 +86,6 @@ public abstract class BaseKey implements Serializable {
       return self();
     }
 
-    /**
-     * Adds an ancestor to the key.
-     */
-    @Deprecated
-    public B ancestors(PathElement ancestor, PathElement... other) {
-      return addAncestors(ancestor, other);
-    }
 
     /**
      * Adds the provided ancestors to the key.
@@ -108,13 +94,6 @@ public abstract class BaseKey implements Serializable {
       return addAncestors(ImmutableList.<PathElement>builder().add(ancestor).add(other).build());
     }
 
-    /**
-     * Adds the provided ancestors to the key.
-     */
-    @Deprecated
-    public B ancestors(Iterable<PathElement> ancestors) {
-      return addAncestors(ancestors);
-    }
 
     /**
      * Adds the provided ancestors to the key.
@@ -127,13 +106,6 @@ public abstract class BaseKey implements Serializable {
       return self();
     }
 
-    /**
-     * Sets the kind of the key.
-     */
-    @Deprecated
-    public B kind(String kind) {
-      return setKind(kind);
-    }
 
     /**
      * Sets the kind of the key.
@@ -143,13 +115,6 @@ public abstract class BaseKey implements Serializable {
       return self();
     }
 
-    /**
-     * Sets the project ID of the key.
-     */
-    @Deprecated
-    public B projectId(String projectId) {
-      return setProjectId(projectId);
-    }
 
     /**
      * Sets the project ID of the key.
@@ -159,13 +124,6 @@ public abstract class BaseKey implements Serializable {
       return self();
     }
 
-    /**
-     * Sets the namespace of the key.
-     */
-    @Deprecated
-    public B namespace(String namespace) {
-      return setNamespace(namespace);
-    }
 
     /**
      * Sets the namespace of the key.
@@ -185,13 +143,6 @@ public abstract class BaseKey implements Serializable {
     this.path = path;
   }
 
-  /**
-   * Returns the key's projectId.
-   */
-  @Deprecated
-  public String projectId() {
-    return getProjectId();
-  }
 
   /**
    * Returns the key's projectId.
@@ -200,13 +151,6 @@ public abstract class BaseKey implements Serializable {
     return projectId;
   }
 
-  /**
-   * Returns the key's namespace or {@code null} if not provided.
-   */
-  @Deprecated
-  public String namespace() {
-    return getNamespace();
-  }
 
   /**
    * Returns the key's namespace or {@code null} if not provided.
@@ -215,13 +159,6 @@ public abstract class BaseKey implements Serializable {
     return namespace;
   }
 
-  /**
-   * Returns an immutable list with the key's ancestors.
-   */
-  @Deprecated
-  public List<PathElement> ancestors() {
-    return getAncestors();
-  }
 
   /**
    * Returns an immutable list with the key's ancestors.
@@ -230,13 +167,6 @@ public abstract class BaseKey implements Serializable {
     return getPath().subList(0, getPath().size() - 1);
   }
 
-  /**
-   * Returns an immutable list of the key's path (ancestors + self).
-   */
-  @Deprecated
-  List<PathElement> path() {
-    return getPath();
-  }
 
   /**
    * Returns an immutable list of the key's path (ancestors + self).
@@ -249,13 +179,6 @@ public abstract class BaseKey implements Serializable {
     return getPath().get(getPath().size() - 1);
   }
 
-  /**
-   * Returns the key's kind.
-   */
-  @Deprecated
-  public String kind() {
-    return getKind();
-  }
 
   /**
    * Returns the key's kind.
@@ -264,8 +187,6 @@ public abstract class BaseKey implements Serializable {
     return getLeaf().getKind();
   }
 
-  @Deprecated
-  abstract BaseKey parent();
 
   abstract BaseKey getParent();
 

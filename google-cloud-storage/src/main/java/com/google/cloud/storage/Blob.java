@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,21 +23,28 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
+import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.ReadChannel;
+import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.SignUrlOption;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.Function;
 import com.google.common.io.BaseEncoding;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.OutputStream;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.WritableByteChannel;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.security.Key;
 import java.util.Arrays;
 import java.util.List;
@@ -69,6 +76,8 @@ public class Blob extends BlobInfo {
         }
       };
 
+  private static final int DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024;
+
   /**
    * Class for specifying blob source options when {@code Blob} methods are used.
    */
@@ -96,6 +105,8 @@ public class Blob extends BlobInfo {
           return Storage.BlobSourceOption.metagenerationNotMatch(blobInfo.getMetageneration());
         case CUSTOMER_SUPPLIED_KEY:
           return Storage.BlobSourceOption.decryptionKey((String) getValue());
+        case USER_PROJECT:
+          return Storage.BlobSourceOption.userProject((String) getValue());
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -111,6 +122,8 @@ public class Blob extends BlobInfo {
           return Storage.BlobGetOption.metagenerationMatch(blobInfo.getMetageneration());
         case IF_METAGENERATION_NOT_MATCH:
           return Storage.BlobGetOption.metagenerationNotMatch(blobInfo.getMetageneration());
+        case USER_PROJECT:
+          return Storage.BlobGetOption.userProject((String) getValue());
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -167,6 +180,15 @@ public class Blob extends BlobInfo {
       return new BlobSourceOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
+    /**
+     * Returns an option for blob's billing user project. This option is used only if the blob's
+     * bucket has requester_pays flag enabled.
+     */
+    @GcpLaunchStage.Alpha
+    public static BlobSourceOption userProject(String userProject) {
+      return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
     static Storage.BlobSourceOption[] toSourceOptions(BlobInfo blobInfo,
         BlobSourceOption... options) {
       Storage.BlobSourceOption[] convertedOptions = new Storage.BlobSourceOption[options.length];
@@ -188,6 +210,43 @@ public class Blob extends BlobInfo {
   }
 
   /**
+   * Downloads this blob to the given file path using specified blob read options.
+   *
+   * @param path destination
+   * @param options blob read options
+   * @throws StorageException upon failure
+   */
+  public void downloadTo(Path path, BlobSourceOption... options) {
+    try (
+        OutputStream outputStream = Files.newOutputStream(path);
+        ReadChannel reader = reader(options)
+    ) {
+      WritableByteChannel channel = Channels.newChannel(outputStream);
+      ByteBuffer bytes = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
+      while (reader.read(bytes) > 0) {
+        bytes.flip();
+        channel.write(bytes);
+        bytes.clear();
+      }
+    } catch (IOException e) {
+      throw new StorageException(e);
+    }
+  }
+
+  /**
+   * Downloads this blob to the given file path.
+   *
+   * This method is replaced with {@link #downloadTo(Path, BlobSourceOption...)}, but is kept here
+   * for binary compatibility with the older versions of the client library.
+   *
+   * @param path destination
+   * @throws StorageException upon failure
+   */
+  public void downloadTo(Path path) {
+    downloadTo(path, new BlobSourceOption[0]);
+  }
+
+  /**
    * Builder for {@code Blob}.
    */
   public static class Builder extends BlobInfo.Builder {
@@ -198,12 +257,6 @@ public class Blob extends BlobInfo {
     Builder(Blob blob) {
       this.storage = blob.getStorage();
       this.infoBuilder = new BlobInfo.BuilderImpl(blob);
-    }
-
-    @Override
-    @Deprecated
-    public Builder blobId(BlobId blobId) {
-      return setBlobId(blobId);
     }
 
     @Override
@@ -219,20 +272,9 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    public Builder contentType(String contentType) {
-      return setContentType(contentType);
-    }
-
-    @Override
     public Builder setContentType(String contentType) {
       infoBuilder.setContentType(contentType);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder contentDisposition(String contentDisposition) {
-      return setContentDisposition(contentDisposition);
     }
 
     @Override
@@ -242,21 +284,9 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder contentLanguage(String contentLanguage) {
-      return setContentLanguage(contentLanguage);
-    }
-
-    @Override
     public Builder setContentLanguage(String contentLanguage) {
       infoBuilder.setContentLanguage(contentLanguage);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder contentEncoding(String contentEncoding) {
-      return setContentEncoding(contentEncoding);
     }
 
     @Override
@@ -272,21 +302,9 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder cacheControl(String cacheControl) {
-      return setCacheControl(cacheControl);
-    }
-
-    @Override
     public Builder setCacheControl(String cacheControl) {
       infoBuilder.setCacheControl(cacheControl);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder acl(List<Acl> acl) {
-      return setAcl(acl);
     }
 
     @Override
@@ -320,21 +338,9 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder md5(String md5) {
-      return setMd5(md5);
-    }
-
-    @Override
     public Builder setMd5(String md5) {
       infoBuilder.setMd5(md5);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder crc32c(String crc32c) {
-      return setCrc32c(crc32c);
     }
 
     @Override
@@ -350,14 +356,14 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    public Builder metadata(Map<String, String> metadata) {
-      return setMetadata(metadata);
+    public Builder setMetadata(Map<String, String> metadata) {
+      infoBuilder.setMetadata(metadata);
+      return this;
     }
 
     @Override
-    public Builder setMetadata(Map<String, String> metadata) {
-      infoBuilder.setMetadata(metadata);
+    public Builder setStorageClass(StorageClass storageClass) {
+      infoBuilder.setStorageClass(storageClass);
       return this;
     }
 
@@ -436,19 +442,8 @@ public class Blob extends BlobInfo {
   /**
    * Returns this blob's content.
    *
-   * @param options blob read options
-   * @throws StorageException upon failure
-   */
-  @Deprecated
-  public byte[] content(BlobSourceOption... options) {
-    return storage.readAllBytes(getBlobId(), toSourceOptions(this, options));
-  }
-
-  /**
-   * Returns this blob's content.
-   *
    * <p>Example of reading all bytes of the blob, if its generation matches the
-   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * byte[] content = blob.getContent(BlobSourceOption.generationMatch());
    * }</pre>
@@ -464,7 +459,7 @@ public class Blob extends BlobInfo {
    * Fetches current blob's latest information. Returns {@code null} if the blob does not exist.
    *
    * <p>Example of getting the blob's latest information, if its generation does not match the
-   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * Blob latestBlob = blob.reload(BlobSourceOption.generationNotMatch());
    * if (latestBlob == null) {
@@ -512,8 +507,8 @@ public class Blob extends BlobInfo {
   /**
    * Deletes this blob.
    *
-   * <p>Example of deleting the blob, if its generation matches the {@link Blob#generation()} value,
-   * otherwise a {@link StorageException} is thrown.
+   * <p>Example of deleting the blob, if its generation matches the {@link Blob#getGeneration()}
+   * value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * boolean deleted = blob.delete(BlobSourceOption.generationMatch());
    * if (deleted) {
@@ -802,14 +797,6 @@ public class Blob extends BlobInfo {
    */
   public List<Acl> listAcls() {
     return storage.listAcls(getBlobId());
-  }
-
-  /**
-   * Returns the blob's {@code Storage} object used to issue requests.
-   */
-  @Deprecated
-  public Storage storage() {
-    return getStorage();
   }
 
   /**

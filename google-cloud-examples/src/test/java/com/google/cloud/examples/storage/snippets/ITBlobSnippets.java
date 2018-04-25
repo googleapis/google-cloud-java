@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -161,7 +161,7 @@ public class ITBlobSnippets {
     assertNotNull(movedBlob);
 
     // Assert that the destination blob exists
-    Iterator<Blob> blobs = storage.list(BUCKET).iterateAll();
+    Iterator<Blob> blobs = storage.list(BUCKET).iterateAll().iterator();
     Blob moveBlob = blobs.next();
     assertEquals(BUCKET, moveBlob.getBucket());
     assertEquals("moveBlob", moveBlob.getName());

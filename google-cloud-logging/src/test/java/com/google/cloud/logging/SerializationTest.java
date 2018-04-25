@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
@@ -80,9 +81,10 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
+    GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
     LoggingOptions options = LoggingOptions.newBuilder()
         .setProjectId("p1")
-        .setInitialTimeout(1234)
+        .setTransportOptions(transportOptions)
         .build();
     return new Serializable[]{options, HTTP_REQUEST, OPERATION, STRING_PAYLOAD, JSON_PAYLOAD,
         PROTO_PAYLOAD, ENTRY, METRIC_INFO, METRIC, BUCKET_DESTINATION, DATASET_DESTINATION,

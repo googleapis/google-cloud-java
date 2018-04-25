@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,6 @@ import com.google.cloud.spi.ServiceRpcFactory;
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
 public interface DatastoreRpcFactory extends
-    ServiceRpcFactory<DatastoreRpc, DatastoreOptions> {
+    ServiceRpcFactory<DatastoreOptions> {
 }
 

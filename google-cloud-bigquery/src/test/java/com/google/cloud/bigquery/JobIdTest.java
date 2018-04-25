@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,13 +33,6 @@ public class JobIdTest {
     assertEquals("job", JOB_COMPLETE.getJob());
   }
 
-  @Test
-  public void testOfDeprecated() {
-    assertEquals(null, JOB.project());
-    assertEquals("job", JOB.job());
-    assertEquals("project", JOB_COMPLETE.project());
-    assertEquals("job", JOB_COMPLETE.job());
-  }
 
   @Test
   public void testEquals() {

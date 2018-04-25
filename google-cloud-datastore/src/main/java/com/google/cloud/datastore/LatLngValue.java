@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,10 +78,6 @@ public final class LatLngValue extends Value<LatLng> {
     return new LatLngValue(value);
   }
 
-  @Deprecated
-  public static Builder builder(LatLng value) {
-    return newBuilder(value);
-  }
 
   public static Builder newBuilder(LatLng value) {
     return new Builder().set(value);

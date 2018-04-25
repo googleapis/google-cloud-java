@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,14 +33,6 @@ public class KeyTest {
     assertFalse(key.hasId());
   }
 
-  @Test
-  public void testHasIdDeprecated() throws Exception {
-    Key.Builder builder = Key.builder("d", "k", 10);
-    Key key = builder.build();
-    assertTrue(key.hasId());
-    key = builder.name("bla").build();
-    assertFalse(key.hasId());
-  }
 
   @Test
   public void testId() throws Exception {
@@ -51,14 +43,6 @@ public class KeyTest {
     assertEquals(Long.valueOf(100), key.getId());
   }
 
-  @Test
-  public void testIdDeprecated() throws Exception {
-    Key.Builder builder = Key.builder("d", "k", 10);
-    Key key = builder.build();
-    assertEquals(Long.valueOf(10), key.id());
-    key = builder.id(100).build();
-    assertEquals(Long.valueOf(100), key.id());
-  }
 
   @Test
   public void testHasName() throws Exception {
@@ -69,14 +53,6 @@ public class KeyTest {
     assertFalse(key.hasName());
   }
 
-  @Test
-  public void testHasNameDeprecated() throws Exception {
-    Key.Builder builder = Key.builder("d", "k", "n");
-    Key key = builder.build();
-    assertTrue(key.hasName());
-    key = builder.id(1).build();
-    assertFalse(key.hasName());
-  }
 
   @Test
   public void testName() throws Exception {
@@ -87,14 +63,6 @@ public class KeyTest {
     assertEquals("o", key.getName());
   }
 
-  @Test
-  public void testNameDeprecated() throws Exception {
-    Key.Builder builder = Key.builder("d", "k", "n");
-    Key key = builder.build();
-    assertEquals("n", key.name());
-    key = builder.name("o").build();
-    assertEquals("o", key.name());
-  }
 
   @Test
   public void testNameOrId() throws Exception {
@@ -105,14 +73,6 @@ public class KeyTest {
     assertEquals(Long.valueOf(1), key.getNameOrId());
   }
 
-  @Test
-  public void testNameOrIdDeprecated() throws Exception {
-    Key.Builder builder = Key.builder("d", "k", "n");
-    Key key = builder.build();
-    assertEquals("n", key.nameOrId());
-    key = builder.id(1).build();
-    assertEquals(Long.valueOf(1), key.nameOrId());
-  }
 
   @Test
   public void testToAndFromUrlSafe() throws Exception {

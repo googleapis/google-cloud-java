@@ -3,40 +3,36 @@ Google Cloud Java Client for Logging
 
 Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-logging.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-logging.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs)
-
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+- [Product Documentation][logging-product-docs]
+- [Client Library Documentation][logging-client-lib-docs]
 
 Quickstart
 ----------
 
-> `google-cloud-logging` uses gRPC as transport layer, which is not (yet) supported by App Engine
-Standard. `google-cloud-logging` will work on App Engine Flexible.
-
+[//]: # ({x-version-update-start:google-cloud-logging:released})
 Add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>0.9.3-beta</version>
+  <version>1.27.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:0.9.3-beta'
+compile 'com.google.cloud:google-cloud-logging:1.27.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "0.9.3-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "1.27.0"
 ```
+[//]: # ({x-version-update-end})
 
 Example Application
 -------------------
@@ -61,7 +57,7 @@ thousands of VMs. Even better, you can analyze all that log data in real-time.
 See the [Stackdriver Logging docs][stackdriver-logging-quickstart] for more details on how to
 activate Logging for your project.
 
-See the ``google-cloud`` API [Logging documentation][logging-api] to learn how to interact with the
+See the [Logging client library docs][logging-client-lib-docs] to learn how to interact with the
 Stackdriver Logging using this Client Library.
 
 Getting Started
@@ -140,6 +136,25 @@ LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
 logging.write(Collections.singleton(firstEntry));
 ```
 
+#### Listing log entries
+With Logging you can also list log entries that have been previously written. Add the following
+imports at the top of your file:
+```java
+import com.google.cloud.Page;
+import com.google.cloud.logging.LogEntry;
+import com.google.cloud.logging.Logging.EntryListOption;
+```
+Then, to list the log entries, use the following code:
+
+``` java
+Page<LogEntry> entries = logging.listLogEntries(
+    EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
+Iterator<LogEntry> entryIterator = entries.iterateAll();
+while (entryIterator.hasNext()) {
+  System.out.println(entryIterator.next());
+}
+```
+
 #### Add a Stackdriver Logging handler to a logger
 You can also register a `LoggingHandler` to a `java.util.logging.Logger` that publishes log entries
 to Stackdriver Logging. Given the following logger:
@@ -167,6 +182,10 @@ and
 we put together all the code shown above into three programs. The programs assume that you are
 running on Compute Engine or from your own desktop.
 
+Transport
+---------
+Logging uses gRPC for the transport layer.
+
 Java Versions
 -------------
 
@@ -182,11 +201,9 @@ See [TESTING] to read more about testing.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version zero (``0.y.z``), which means that anything
-may change at any time and the public API should not be considered
-stable.
+It is currently in major version one (``1.y.z``), which means that the public API should be considered stable.
 
 Contributing
 ------------
@@ -209,6 +226,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-logging
 
 
-[stackdriver-logging]: https://cloud.google.com/logging
+[stackdriver-logging]: https://cloud.google.com/logging/
 [stackdriver-logging-quickstart]: https://cloud.google.com/logging/docs/quickstart-sdk
-[logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
+[logging-product-docs]: https://cloud.google.com/logging/docs/
+[logging-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/logging/package-summary.html

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,17 +28,17 @@ public class ExternalTableDefinitionTest {
 
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.newBuilder("IntegerField", Field.Type.integer())
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
@@ -46,18 +46,14 @@ public class ExternalTableDefinitionTest {
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
+  private static final Boolean AUTODETECT = true;
   private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .setCompression(COMPRESSION)
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
-          .build();
-  private static final ExternalTableDefinition DEPRECATED_EXTERNAL_TABLE_DEFINITION =
-      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-          .compression(COMPRESSION)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .maxBadRecords(MAX_BAD_RECORDS)
+          .setAutodetect(AUTODETECT)
           .build();
 
   @Test
@@ -89,18 +85,9 @@ public class ExternalTableDefinitionTest {
     assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.getMaxBadRecords());
     assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_DEFINITION.getSchema());
     assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.getSourceUris());
+    assertEquals(AUTODETECT, EXTERNAL_TABLE_DEFINITION.getAutodetect());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TableDefinition.Type.EXTERNAL, DEPRECATED_EXTERNAL_TABLE_DEFINITION.type());
-    assertEquals(COMPRESSION, DEPRECATED_EXTERNAL_TABLE_DEFINITION.compression());
-    assertEquals(CSV_OPTIONS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.formatOptions());
-    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.maxBadRecords());
-    assertEquals(TABLE_SCHEMA, DEPRECATED_EXTERNAL_TABLE_DEFINITION.schema());
-    assertEquals(SOURCE_URIS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.sourceUris());
-  }
 
   @Test
   public void testToAndFromPb() {
@@ -122,5 +109,6 @@ public class ExternalTableDefinitionTest {
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getSourceUris(), value.getSourceUris());
     assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.getAutodetect(), value.getAutodetect());
   }
 }

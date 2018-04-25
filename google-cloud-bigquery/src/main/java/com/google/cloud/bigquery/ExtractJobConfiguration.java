@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,13 +76,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       this.compression = extractConfigurationPb.getCompression();
     }
 
-    /**
-     * Sets the table to export.
-     */
-    @Deprecated
-    public Builder sourceTable(TableId sourceTable) {
-      return setSourceTable(sourceTable);
-    }
 
     /**
      * Sets the table to export.
@@ -92,14 +85,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the list of fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path) where the
-     * extracted table should be written.
-     */
-    @Deprecated
-    public Builder destinationUris(List<String> destinationUris) {
-      return setDestinationUris(destinationUris);
-    }
 
     /**
      * Sets the list of fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path) where the
@@ -110,13 +95,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether to print out a header row in the results. By default an header is printed.
-     */
-    @Deprecated
-    public Builder printHeader(Boolean printHeader) {
-      return setPrintHeader(printHeader);
-    }
 
     /**
      * Sets whether to print out a header row in the results. By default an header is printed.
@@ -126,13 +104,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the delimiter to use between fields in the exported data. By default "," is used.
-     */
-    @Deprecated
-    public Builder fieldDelimiter(String fieldDelimiter) {
-      return setFieldDelimiter(fieldDelimiter);
-    }
 
     /**
      * Sets the delimiter to use between fields in the exported data. By default "," is used.
@@ -142,16 +113,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the exported file format. If not set table is exported in CSV format.
-     *
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.extract.destinationFormat">
-     *     Destination Format</a>
-     */
-    @Deprecated
-    public Builder format(String format) {
-      return setFormat(format);
-    }
 
     /**
      * Sets the exported file format. If not set table is exported in CSV format.
@@ -164,17 +125,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the compression value to use for exported files. If not set exported files are not
-     * compressed.
-     *
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.extract.compression">
-     *     Compression</a>
-     */
-    @Deprecated
-    public Builder compression(String compression) {
-      return setCompression(compression);
-    }
 
     /**
      * Sets the compression value to use for exported files. If not set exported files are not
@@ -203,13 +153,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     this.compression = builder.compression;
   }
 
-  /**
-   * Returns the table to export.
-   */
-  @Deprecated
-  public TableId sourceTable() {
-    return getSourceTable();
-  }
 
   /**
    * Returns the table to export.
@@ -218,17 +161,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return sourceTable;
   }
 
-  /**
-   * Returns the list of fully-qualified Google Cloud Storage URIs where the extracted table should
-   * be written.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/exporting-data-from-bigquery#exportingmultiple">
-   *     Exporting Data Into One or More Files</a>
-   */
-  @Deprecated
-  public List<String> destinationUris() {
-    return getDestinationUris();
-  }
 
   /**
    * Returns the list of fully-qualified Google Cloud Storage URIs where the extracted table should
@@ -248,13 +180,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return printHeader;
   }
 
-  /**
-   * Returns the delimiter used between fields in the exported data.
-   */
-  @Deprecated
-  public String fieldDelimiter() {
-    return getFieldDelimiter();
-  }
 
   /**
    * Returns the delimiter used between fields in the exported data.
@@ -263,13 +188,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return fieldDelimiter;
   }
 
-  /**
-   * Returns the exported files format.
-   */
-  @Deprecated
-  public String format() {
-    return getFormat();
-  }
 
   /**
    * Returns the exported files format.
@@ -278,13 +196,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return format;
   }
 
-  /**
-   * Returns the compression value of exported files.
-   */
-  @Deprecated
-  public String compression() {
-    return getCompression();
-  }
 
   /**
    * Returns the compression value of exported files.
@@ -340,14 +251,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         .setExtract(extractConfigurationPb);
   }
 
-  /**
-   * Creates a builder for a BigQuery Extract Job configuration given source table and destination
-   * URI.
-   */
-  @Deprecated
-  public static Builder builder(TableId sourceTable, String destinationUri) {
-    return newBuilder(sourceTable, destinationUri);
-  }
 
   /**
    * Creates a builder for a BigQuery Extract Job configuration given source table and destination
@@ -357,14 +260,6 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return newBuilder(sourceTable, ImmutableList.of(checkNotNull(destinationUri)));
   }
 
-  /**
-   * Creates a builder for a BigQuery Extract Job configuration given source table and destination
-   * URIs.
-   */
-  @Deprecated
-  public static Builder builder(TableId sourceTable, List<String> destinationUris) {
-    return newBuilder(sourceTable, destinationUris);
-  }
 
   /**
    * Creates a builder for a BigQuery Extract Job configuration given source table and destination

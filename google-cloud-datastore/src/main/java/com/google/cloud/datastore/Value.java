@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.GcpLaunchStage;
 import com.google.common.base.MoreObjects;
 import com.google.datastore.v1.Value.ValueTypeCase;
 
@@ -55,8 +56,8 @@ public abstract class Value<V> implements Serializable {
     @Override
     public final B fromProto(com.google.datastore.v1.Value proto) {
       B builder = newBuilder(getValue(proto));
-      builder.excludeFromIndexes(proto.getExcludeFromIndexes());
-      builder.meaning(proto.getMeaning());
+      builder.setExcludeFromIndexes(proto.getExcludeFromIndexes());
+      builder.setMeaning(proto.getMeaning());
       return builder;
     }
 
@@ -65,9 +66,12 @@ public abstract class Value<V> implements Serializable {
     public final com.google.datastore.v1.Value toProto(P value) {
       com.google.datastore.v1.Value.Builder builder = com.google.datastore.v1.Value.newBuilder();
       builder.setExcludeFromIndexes(value.excludeFromIndexes());
-      builder.setMeaning(value.meaning());
+      builder.setMeaning(value.getMeaning());
       setValue(value, builder);
       return builder.build();
+    }
+
+    BaseMarshaller() {
     }
 
     protected abstract V getValue(com.google.datastore.v1.Value from);
@@ -101,20 +105,8 @@ public abstract class Value<V> implements Serializable {
     }
 
     @Override
-    @Deprecated
     public boolean getExcludeFromIndexes() {
-      return excludeFromIndexes();
-    }
-
-    @Override
-    public boolean excludeFromIndexes() {
       return excludeFromIndexes;
-    }
-
-    @Override
-    @Deprecated
-    public B excludeFromIndexes(boolean excludeFromIndexes) {
-      return setExcludeFromIndexes(excludeFromIndexes);
     }
 
     @Override
@@ -123,19 +115,13 @@ public abstract class Value<V> implements Serializable {
       return self();
     }
 
-    @Deprecated
+    @GcpLaunchStage.Deprecated
     @Override
     public int getMeaning() {
       return meaning;
     }
 
-    @Deprecated
-    @Override
-    public B meaning(int meaning) {
-      return setMeaning(meaning);
-    }
-
-    @Deprecated
+    @GcpLaunchStage.Deprecated
     @Override
     public B setMeaning(int meaning) {
       this.meaning = meaning;
@@ -165,17 +151,9 @@ public abstract class Value<V> implements Serializable {
   @SuppressWarnings("deprecation")
   <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(ValueBuilder<V, P, B> builder) {
     valueType = builder.getValueType();
-    excludeFromIndexes = builder.excludeFromIndexes();
+    excludeFromIndexes = builder.getExcludeFromIndexes();
     meaning = builder.getMeaning();
     value = builder.get();
-  }
-
-  /**
-   * Returns the type of this value.
-   */
-  @Deprecated
-  public final ValueType type() {
-    return getType();
   }
 
   /**
@@ -192,12 +170,7 @@ public abstract class Value<V> implements Serializable {
     return excludeFromIndexes;
   }
 
-  @Deprecated
-  final int meaning() {
-    return getMeaning();
-  }
-
-  @Deprecated
+  @GcpLaunchStage.Deprecated
   final int getMeaning() {
     return meaning;
   }

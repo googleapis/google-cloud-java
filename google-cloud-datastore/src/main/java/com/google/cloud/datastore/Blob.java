@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,13 +69,6 @@ public final class Blob implements Serializable {
     return obj == this || obj instanceof Blob && byteString.equals(((Blob) obj).byteString);
   }
 
-  /**
-   * Returns the size of this blob.
-   */
-  @Deprecated
-  public int length() {
-    return getLength();
-  }
 
   /**
    * Returns the size of this blob.

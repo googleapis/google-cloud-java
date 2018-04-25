@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public abstract class JobConfiguration implements Serializable {
   /**
    * Type of a BigQuery Job.
    */
-  enum Type {
+  public enum Type {
     /**
      * A Copy Job copies an existing table to another new or existing table. Instances of
      * {@code JobConfiguration} for this type are implemented by {@link CopyJobConfiguration}.
@@ -93,13 +93,6 @@ public abstract class JobConfiguration implements Serializable {
     this.type = builder.type;
   }
 
-  /**
-   * Returns the type of the job configuration.
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the type of the job configuration.

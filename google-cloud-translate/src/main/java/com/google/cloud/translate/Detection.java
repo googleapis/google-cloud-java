@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ import java.util.Objects;
  * Information about a language detection. Objects of this class contain the detected language and
  * possibly a confidence level.
  *
- * <a href="https://cloud.google.com/translate/v2/detecting-language-with-rest">Detecting Language
- *     </a>
+ * @see <a href="https://cloud.google.com/translate/v2/detecting-language-with-rest">Detecting
+ *     Language </a>
  */
 public class Detection implements Serializable {
 
@@ -41,16 +41,6 @@ public class Detection implements Serializable {
     this.confidence = confidence;
   }
 
-  /**
-   * Returns the code of the detected language.
-   *
-   * @see <a href="https://cloud.google.com/translate/v2/translate-reference#supported_languages">
-   *     Supported Languages</a>
-   */
-  @Deprecated
-  public String language() {
-    return getLanguage();
-  }
 
   /**
    * Returns the code of the detected language.
@@ -62,15 +52,6 @@ public class Detection implements Serializable {
     return language;
   }
 
-  /**
-   * Returns an optional confidence value in the interval [0,1]. The closer this value is to 1, the
-   * higher the confidence level for the language detection. Note that this value is not always
-   * available.
-   */
-  @Deprecated
-  public float confidence() {
-    return getConfidence();
-  }
 
   /**
    * Returns an optional confidence value in the interval [0,1]. The closer this value is to 1, the

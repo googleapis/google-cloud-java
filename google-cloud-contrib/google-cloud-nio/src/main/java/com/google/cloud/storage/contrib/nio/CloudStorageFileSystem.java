@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,32 @@ public final class CloudStorageFileSystem extends FileSystem {
   public static final String BASIC_VIEW = "basic";
   public static final int BLOCK_SIZE_DEFAULT = 2 * 1024 * 1024;
   public static final FileTime FILE_TIME_UNKNOWN = FileTime.fromMillis(0);
-  public static final ImmutableSet<String> SUPPORTED_VIEWS = ImmutableSet.of(BASIC_VIEW, GCS_VIEW);
+  public static final Set<String> SUPPORTED_VIEWS = ImmutableSet.of(BASIC_VIEW, GCS_VIEW);
 
   private final CloudStorageFileSystemProvider provider;
   private final String bucket;
   private final CloudStorageConfiguration config;
+
+  // Users can change this: then this affects every filesystem object created
+  // later, including via SPI. This is meant to be done only once, at the beginning
+  // of some main program, in order to force all libraries to use some settings we like.
+  // Libraries should never call this. It'll cause surprise to the writers of the main
+  // program and they'll be unhappy. Instead, create your own filesystem object with the
+  // right configuration and pass it along.
+  private static CloudStorageConfiguration userSpecifiedDefault = CloudStorageConfiguration.DEFAULT;
+
+  // Don't call this one, call the one in CloudStorageFileSystemProvider.
+  static void setDefaultCloudStorageConfiguration(CloudStorageConfiguration config) {
+    if (null == config) {
+      userSpecifiedDefault = CloudStorageConfiguration.DEFAULT;
+    } else {
+      userSpecifiedDefault = config;
+    }
+  }
+
+  static CloudStorageConfiguration getDefaultCloudStorageConfiguration() {
+    return userSpecifiedDefault;
+  }
 
   /**
    * Returns Google Cloud Storage {@link FileSystem} object for {@code bucket}.
@@ -79,7 +100,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    */
   @CheckReturnValue
   public static CloudStorageFileSystem forBucket(String bucket) {
-    return forBucket(bucket, CloudStorageConfiguration.DEFAULT);
+    return forBucket(bucket, userSpecifiedDefault);
   }
 
   /**

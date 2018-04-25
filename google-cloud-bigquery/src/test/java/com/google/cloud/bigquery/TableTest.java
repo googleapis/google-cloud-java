@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.eq;
@@ -28,18 +29,14 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterators;
-
+import java.util.List;
 import org.junit.After;
 import org.junit.Test;
-
-import java.util.Iterator;
-import java.util.List;
 
 public class TableTest {
 
@@ -60,9 +57,9 @@ public class TableTest {
       JobInfo.of(LoadJobConfiguration.of(TABLE_ID1, ImmutableList.of("URI"), FormatOptions.json()));
   private static final JobInfo EXTRACT_JOB_INFO =
       JobInfo.of(ExtractJobConfiguration.of(TABLE_ID1, ImmutableList.of("URI"), "CSV"));
-  private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
-  private static final TableDefinition TABLE_DEFINITION =
-      StandardTableDefinition.of(Schema.of(FIELD));
+  private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.STRING);
+  private static final Schema SCHEMA = Schema.of(FIELD);
+  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.of(SCHEMA);
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID1, TABLE_DEFINITION);
   private static final List<RowToInsert> ROWS_TO_INSERT = ImmutableList.of(
       RowToInsert.of("id1", ImmutableMap.<String, Object>of("key", "val1")),
@@ -77,12 +74,17 @@ public class TableTest {
   private static final InsertAllResponse EMPTY_INSERT_ALL_RESPONSE =
       new InsertAllResponse(ImmutableMap.<Long, List<BigQueryError>>of());
   private static final FieldValue FIELD_VALUE1 =
-      new FieldValue(FieldValue.Attribute.PRIMITIVE, "val1");
+      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
   private static final FieldValue FIELD_VALUE2 =
-      new FieldValue(FieldValue.Attribute.PRIMITIVE, "val1");
-  private static final Iterable<List<FieldValue>> ROWS = ImmutableList.of(
-      (List<FieldValue>) ImmutableList.of(FIELD_VALUE1), ImmutableList.of(FIELD_VALUE2));
-
+      FieldValue.of(FieldValue.Attribute.PRIMITIVE, "val1");
+  private static final List<FieldValueList> ROWS =
+      ImmutableList.of(
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE1)),
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE2)));
+  private static final List<FieldValueList> ROWS_WITH_SCHEMA =
+      ImmutableList.of(
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE1)).withSchema(SCHEMA.getFields()),
+          FieldValueList.of(ImmutableList.of(FIELD_VALUE2)).withSchema(SCHEMA.getFields()));
   private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
   private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
   private BigQuery bigquery;
@@ -129,35 +131,9 @@ public class TableTest {
     assertEquals(LAST_MODIFIED_TIME, builtTable.getLastModifiedTime());
     assertEquals(TABLE_DEFINITION, builtTable.getDefinition());
     assertEquals(SELF_LINK, builtTable.getSelfLink());
-    assertSame(serviceMockReturnsOptions, builtTable.getBigquery());
+    assertSame(serviceMockReturnsOptions, builtTable.getBigQuery());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedTable(2);
-    replay(bigquery);
-    Table builtTable = new Table.Builder(serviceMockReturnsOptions, TABLE_ID1, TABLE_DEFINITION)
-        .setCreationTime(CREATION_TIME)
-        .description(DESCRIPTION)
-        .setEtag(ETAG)
-        .expirationTime(EXPIRATION_TIME)
-        .friendlyName(FRIENDLY_NAME)
-        .setGeneratedId(GENERATED_ID)
-        .setLastModifiedTime(LAST_MODIFIED_TIME)
-        .setSelfLink(SELF_LINK)
-        .build();
-    assertEquals(TABLE_ID1, builtTable.tableId());
-    assertEquals(CREATION_TIME, builtTable.creationTime());
-    assertEquals(DESCRIPTION, builtTable.description());
-    assertEquals(ETAG, builtTable.etag());
-    assertEquals(EXPIRATION_TIME, builtTable.expirationTime());
-    assertEquals(FRIENDLY_NAME, builtTable.friendlyName());
-    assertEquals(GENERATED_ID, builtTable.generatedId());
-    assertEquals(LAST_MODIFIED_TIME, builtTable.lastModifiedTime());
-    assertEquals(TABLE_DEFINITION, builtTable.definition());
-    assertEquals(SELF_LINK, builtTable.selfLink());
-    assertSame(serviceMockReturnsOptions, builtTable.bigquery());
-  }
 
   @Test
   public void testToBuilder() {
@@ -296,31 +272,38 @@ public class TableTest {
 
   @Test
   public void testList() throws Exception {
+    Page<FieldValueList> page = new PageImpl<>(null, "c", ROWS);
+
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    PageImpl<List<FieldValue>> tableDataPage = new PageImpl<>(null, "c", ROWS);
-    expect(bigquery.listTableData(TABLE_ID1)).andReturn(tableDataPage);
+    expect(bigquery.listTableData(TABLE_ID1)).andReturn(new TableResult(null, ROWS.size(), page));
+    expect(bigquery.listTableData(TABLE_ID1, SCHEMA))
+        .andReturn(new TableResult(SCHEMA, ROWS.size(), page));
     replay(bigquery);
     initializeTable();
-    Page<List<FieldValue>> dataPage = table.list();
-    Iterator<List<FieldValue>> tableDataIterator = dataPage.getValues().iterator();
-    Iterator<List<FieldValue>> dataIterator = dataPage.getValues().iterator();
-    assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
+    Page<FieldValueList> dataPage = table.list();
+    assertThat(dataPage.getValues()).containsExactlyElementsIn(ROWS).inOrder();
+
+    dataPage = table.list(SCHEMA);
+    assertThat(dataPage.getValues()).containsExactlyElementsIn(ROWS_WITH_SCHEMA).inOrder();
   }
 
   @Test
   public void testListWithOptions() throws Exception {
+    Page<FieldValueList> page = new PageImpl<>(null, "c", ROWS);
     initializeExpectedTable(1);
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    PageImpl<List<FieldValue>> tableDataPage = new PageImpl<>(null, "c", ROWS);
     expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.pageSize(10L)))
-        .andReturn(tableDataPage);
+        .andReturn(new TableResult(null, ROWS.size(), page));
+    expect(bigquery.listTableData(TABLE_ID1, SCHEMA, BigQuery.TableDataListOption.pageSize(10L)))
+        .andReturn(new TableResult(SCHEMA, ROWS.size(), page));
     replay(bigquery);
     initializeTable();
-    Page<List<FieldValue>> dataPage = table.list(BigQuery.TableDataListOption.pageSize(10L));
-    Iterator<List<FieldValue>> tableDataIterator = dataPage.getValues().iterator();
-    Iterator<List<FieldValue>> dataIterator = dataPage.getValues().iterator();
-    assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
+    Page<FieldValueList> dataPage = table.list(BigQuery.TableDataListOption.pageSize(10L));
+    assertThat(dataPage.getValues()).containsExactlyElementsIn(ROWS).inOrder();
+
+    dataPage = table.list(SCHEMA, BigQuery.TableDataListOption.pageSize(10L));
+    assertThat(dataPage.getValues()).containsExactlyElementsIn(ROWS_WITH_SCHEMA).inOrder();
   }
 
   @Test
@@ -397,10 +380,10 @@ public class TableTest {
   }
 
   @Test
-  public void testBigquery() {
+  public void testBigQuery() {
     initializeExpectedTable(1);
     replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedTable.getBigquery());
+    assertSame(serviceMockReturnsOptions, expectedTable.getBigQuery());
   }
 
   @Test
@@ -413,7 +396,7 @@ public class TableTest {
   private void compareTable(Table expected, Table value) {
     assertEquals(expected, value);
     compareTableInfo(expected, value);
-    assertEquals(expected.getBigquery().getOptions(), value.getBigquery().getOptions());
+    assertEquals(expected.getBigQuery().getOptions(), value.getBigQuery().getOptions());
   }
 
   private void compareTableInfo(TableInfo expected, TableInfo value) {

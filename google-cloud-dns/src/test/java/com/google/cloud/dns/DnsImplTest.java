@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,13 @@ package com.google.cloud.dns;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.core.ApiClock;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ResourceRecordSet;
-import com.google.cloud.Clock;
-import com.google.cloud.Page;
-import com.google.cloud.RetryParams;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.api.gax.paging.Page;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -100,10 +100,15 @@ public class DnsImplTest {
 
   // Other
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final Clock TIME_SOURCE = new Clock() {
+  private static final ApiClock TIME_SOURCE = new ApiClock() {
     @Override
-    public long millis() {
-      return 42000L;
+    public long nanoTime() {
+      return 42_000_000_000L;
+    }
+
+    @Override
+    public long millisTime() {
+      return 42_000L;
     }
   };
 
@@ -123,7 +128,7 @@ public class DnsImplTest {
         .setProjectId("projectId")
         .setClock(TIME_SOURCE)
         .setServiceRpcFactory(rpcFactoryMock)
-        .setRetryParams(RetryParams.noRetries())
+        .setRetrySettings(ServiceOptions.getNoRetrySettings())
         .build();
   }
 

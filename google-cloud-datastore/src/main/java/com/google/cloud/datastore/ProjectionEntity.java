@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.cloud.Timestamp;
 import com.google.protobuf.ByteString;
 
 /**
@@ -53,19 +54,19 @@ public final class ProjectionEntity extends BaseEntity<Key> {
 
   @SuppressWarnings({"unchecked", "deprecation"})
   @Override
-  public DateTime getDateTime(String name) {
+  public Timestamp getTimestamp(String name) {
     Value<?> value = getValue(name);
-    if (value.meaning() == 18 && value instanceof LongValue) {
-      return new DateTime(getLong(name));
+    if (value.getMeaning() == 18 && value instanceof LongValue) {
+      return Timestamp.ofTimeMicroseconds(getLong(name));
     }
-    return ((Value<DateTime>) value).get();
+    return ((Value<Timestamp>) value).get();
   }
 
   @SuppressWarnings({"unchecked", "deprecation"})
   @Override
   public Blob getBlob(String name) {
     Value<?> value = getValue(name);
-    if (value.meaning() == 18 && value instanceof StringValue) {
+    if (value.getMeaning() == 18 && value instanceof StringValue) {
       return new Blob(ByteString.copyFromUtf8(getString(name)));
     }
     return ((Value<Blob>) value).get();
@@ -75,10 +76,6 @@ public final class ProjectionEntity extends BaseEntity<Key> {
     return new Builder().fill(entityPb).build();
   }
 
-  @Deprecated
-  public static Builder builder(ProjectionEntity copyFrom) {
-    return newBuilder(copyFrom);
-  }
 
   public static Builder newBuilder(ProjectionEntity copyFrom) {
     return new Builder(copyFrom);

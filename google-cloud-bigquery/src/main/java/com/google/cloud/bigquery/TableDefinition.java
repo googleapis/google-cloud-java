@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,12 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
+import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.Table;
-import com.google.common.base.MoreObjects;
-
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import java.io.Serializable;
-import java.util.Objects;
+import javax.annotation.Nullable;
 
 /**
  * Base class for a Google BigQuery table definition.
@@ -31,18 +30,29 @@ public abstract class TableDefinition implements Serializable {
 
   private static final long serialVersionUID = -374760330662959529L;
 
-  private final Type type;
-  private final Schema schema;
-
   /**
    * The table type.
    */
-  public enum Type {
+  public static final class Type extends StringEnumValue {
+    private static final long serialVersionUID = -551560816480511474L;
+
+    private static final ApiFunction<String, Type> CONSTRUCTOR =
+        new ApiFunction<String, Type>() {
+          @Override
+          public Type apply(String constant) {
+            return new Type(constant);
+          }
+        };
+
+    private static final StringEnumType<Type> type = new StringEnumType(
+        Type.class,
+        CONSTRUCTOR);
+
     /**
      * A normal BigQuery table. Instances of {@code TableDefinition} for this type are implemented
      * by {@link StandardTableDefinition}.
      */
-    TABLE,
+    public static final Type TABLE = type.createAndRegister("TABLE");
 
     /**
      * A virtual table defined by a SQL query. Instances of {@code TableDefinition} for this type
@@ -50,7 +60,7 @@ public abstract class TableDefinition implements Serializable {
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
      */
-    VIEW,
+    public static final Type VIEW = type.createAndRegister("VIEW");
 
     /**
      * A BigQuery table backed by external data. Instances of {@code TableDefinition} for this type
@@ -59,7 +69,33 @@ public abstract class TableDefinition implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
      *     Sources</a>
      */
-    EXTERNAL
+    public static final Type EXTERNAL = type.createAndRegister("EXTERNAL");
+
+    private Type(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the Type for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Type valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Type for the given String constant, and allow unrecognized values.
+     */
+    public static Type valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Type.
+     */
+    public static Type[] values() {
+      return type.values();
+    }
   }
 
   /**
@@ -69,71 +105,22 @@ public abstract class TableDefinition implements Serializable {
    * @param <B> the table definition builder
    */
   public abstract static class Builder<T extends TableDefinition, B extends Builder<T, B>> {
+    public abstract B setType(Type type);
 
-    private Type type;
-    private Schema schema;
-
-    Builder(Type type) {
-      this.type = type;
-    }
-
-    Builder(TableDefinition tableDefinition) {
-      this.type = tableDefinition.type;
-      this.schema = tableDefinition.schema;
-    }
-
-    Builder(Table tablePb) {
-      this.type = Type.valueOf(tablePb.getType());
-      if (tablePb.getSchema() != null) {
-        this.setSchema(Schema.fromPb(tablePb.getSchema()));
-      }
-    }
-
-    @SuppressWarnings("unchecked")
-    B self() {
-      return (B) this;
-    }
-
-    B setType(Type type) {
-      this.type = type;
-      return self();
-    }
-
-    /**
-     * Sets the table schema.
-     */
-    @Deprecated
-    public B schema(Schema schema) {
-      return setSchema(schema);
-    }
-
-    /**
-     * Sets the table schema.
-     */
-    public B setSchema(Schema schema) {
-      this.schema = checkNotNull(schema);
-      return self();
-    }
+    /** Sets the table schema. */
+    public abstract B setSchema(Schema schema);
 
     /**
      * Creates an object.
      */
     public abstract T build();
-  }
 
-  TableDefinition(Builder builder) {
-    this.type = builder.type;
-    this.schema = builder.schema;
-  }
-
-  /**
-   * Returns the table's type. If this table is simple table the method returns {@link Type#TABLE}.
-   * If this table is an external table this method returns {@link Type#EXTERNAL}. If this table is
-   * a view table this method returns {@link Type#VIEW}.
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
+    B table(Table tablePb) {
+      if (tablePb.getSchema() != null) {
+        setSchema(Schema.fromPb(tablePb.getSchema()));
+      }
+      return setType(Type.valueOf(tablePb.getType()));
+    }
   }
 
   /**
@@ -141,64 +128,34 @@ public abstract class TableDefinition implements Serializable {
    * If this table is an external table this method returns {@link Type#EXTERNAL}. If this table is
    * a view table this method returns {@link Type#VIEW}.
    */
-  public Type getType() {
-    return type;
-  }
+  public abstract Type getType();
 
-  /**
-   * Returns the table's schema.
-   */
-  @Deprecated
-  public Schema schema() {
-    return getSchema();
-  }
-
-  /**
-   * Returns the table's schema.
-   */
-  public Schema getSchema() {
-    return schema;
-  }
+  /** Returns the table's schema. */
+  @Nullable
+  public abstract Schema getSchema();
 
   /**
    * Returns a builder for the object.
    */
   public abstract Builder toBuilder();
 
-  MoreObjects.ToStringHelper toStringHelper() {
-    return MoreObjects.toStringHelper(this).add("type", type).add("schema", schema);
-  }
-
-  @Override
-  public String toString() {
-    return toStringHelper().toString();
-  }
-
-  final int baseHashCode() {
-    return Objects.hash(type);
-  }
-
-  final boolean baseEquals(TableDefinition tableDefinition) {
-    return Objects.equals(toPb(), tableDefinition.toPb());
-  }
-
   Table toPb() {
     Table tablePb = new Table();
-    if (schema != null) {
-      tablePb.setSchema(schema.toPb());
+    if (getSchema() != null) {
+      tablePb.setSchema(getSchema().toPb());
     }
-    tablePb.setType(type.name());
+    tablePb.setType(getType().name());
     return tablePb;
   }
 
   @SuppressWarnings("unchecked")
   static <T extends TableDefinition> T fromPb(Table tablePb) {
-    switch (Type.valueOf(tablePb.getType())) {
-      case TABLE:
+    switch (Type.valueOf(tablePb.getType()).toString()) {
+      case "TABLE":
         return (T) StandardTableDefinition.fromPb(tablePb);
-      case VIEW:
+      case "VIEW":
         return (T) ViewDefinition.fromPb(tablePb);
-      case EXTERNAL:
+      case "EXTERNAL":
         return (T) ExternalTableDefinition.fromPb(tablePb);
       default:
         // never reached

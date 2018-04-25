@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 
 package com.google.cloud.spanner;
 
-import com.google.api.gax.protobuf.PathTemplate;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
+import java.util.Map;
 
 /** Represents the resource name of a Cloud Spanner Instance. */
 public final class InstanceId {
@@ -80,7 +80,7 @@ public final class InstanceId {
    * pattern.
    */
   static InstanceId of(String name) {
-    ImmutableMap<String, String> parts = NAME_TEMPLATE.match(name);
+    Map<String, String> parts = NAME_TEMPLATE.match(name);
     Preconditions.checkArgument(
         parts != null, "Name should conform to pattern %s: %s", NAME_TEMPLATE, name);
     return of(parts.get("project"), parts.get("instance"));

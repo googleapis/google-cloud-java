@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,10 +32,6 @@ public class MonitoredResourceTest {
   private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.newBuilder(TYPE)
       .setLabels(LABELS)
       .build();
-  private static final MonitoredResource DEPRECATED_MONITORED_RESOURCE =
-      MonitoredResource.builder(TYPE)
-          .labels(LABELS)
-          .build();
 
   @Test
   public void testBuilder() {
@@ -58,26 +54,6 @@ public class MonitoredResourceTest {
     assertEquals(ImmutableMap.of(), monitoredResource.getLabels());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TYPE, DEPRECATED_MONITORED_RESOURCE.type());
-    assertEquals(LABELS, DEPRECATED_MONITORED_RESOURCE.labels());
-    MonitoredResource monitoredResource = MonitoredResource.builder(TYPE)
-        .addLabel("dataset-id", "myDataset")
-        .addLabel("zone", "myZone")
-        .build();
-    assertEquals(TYPE, monitoredResource.type());
-    assertEquals(LABELS, monitoredResource.labels());
-    compareMonitoredResource(DEPRECATED_MONITORED_RESOURCE, monitoredResource);
-    monitoredResource = MonitoredResource.builder(TYPE)
-        .type("global")
-        .addLabel("dataset-id", "myDataset")
-        .addLabel("zone", "myZone")
-        .clearLabels()
-        .build();
-    assertEquals("global", monitoredResource.type());
-    assertEquals(ImmutableMap.of(), monitoredResource.labels());
-  }
 
   @Test
   public void testToBuilder() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.datastore;
 
+import com.google.cloud.GcpLaunchStage;
+
 /**
  * A common interface for Value builders.
  *
@@ -29,32 +31,20 @@ public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P
 
   B mergeFrom(P other);
 
-  @Deprecated
   boolean getExcludeFromIndexes();
-
-  boolean excludeFromIndexes();
-
-  @Deprecated
-  B excludeFromIndexes(boolean excludeFromIndexes);
 
   B setExcludeFromIndexes(boolean excludeFromIndexes);
 
   /**
    * Deprecated. This library preserves the field for backwards compatibility.
    */
-  @Deprecated
+  @GcpLaunchStage.Deprecated
   int getMeaning();
 
   /**
    * Deprecated. This library preserves the field for backwards compatibility.
    */
-  @Deprecated
-  B meaning(int meaning);
-
-  /**
-   * Deprecated. This library preserves the field for backwards compatibility.
-   */
-  @Deprecated
+  @GcpLaunchStage.Deprecated
   B setMeaning(int meaning);
 
   V get();

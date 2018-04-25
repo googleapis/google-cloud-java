@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,10 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.Dataset.Access;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -43,21 +46,61 @@ public final class Acl implements Serializable {
    *
    * @see <a href="https://cloud.google.com/bigquery/access-control#datasetroles">Dataset Roles</a>
    */
-  public enum Role {
+  public static final class Role extends StringEnumValue {
+    private static final long serialVersionUID = -1992679397135956912L;
+
+    private static final ApiFunction<String, Role> CONSTRUCTOR =
+        new ApiFunction<String, Role>() {
+          @Override
+          public Role apply(String constant) {
+            return new Role(constant);
+          }
+        };
+
+    private static final StringEnumType<Role> type = new StringEnumType(
+        Role.class,
+        CONSTRUCTOR);
+
     /**
      * Can read, query, copy or export tables in the dataset.
      */
-    READER,
+    public static final Role READER = type.createAndRegister("READER");
 
     /**
      * Same as {@link #READER} plus can edit or append data in the dataset.
      */
-    WRITER,
+    public static final Role WRITER = type.createAndRegister("WRITER");
 
     /**
      * Same as {@link #WRITER} plus can update and delete the dataset.
      */
-    OWNER
+    public static final Role OWNER = type.createAndRegister("OWNER");
+
+    private Role(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the Role for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Role valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Role for the given String constant, and allow unrecognized values.
+     */
+    public static Role valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Role.
+     */
+    public static Role[] values() {
+      return type.values();
+    }
   }
 
   /**
@@ -80,10 +123,6 @@ public final class Acl implements Serializable {
       this.type = type;
     }
 
-    @Deprecated
-    public Type type() {
-      return getType();
-    }
 
     public Type getType() {
       return type;
@@ -131,13 +170,6 @@ public final class Acl implements Serializable {
       this.domain = domain;
     }
 
-    /**
-     * Returns the domain name.
-     */
-    @Deprecated
-    public String domain() {
-      return getDomain();
-    }
 
     /**
      * Returns the domain name.
@@ -201,15 +233,6 @@ public final class Acl implements Serializable {
       this.identifier = identifier;
     }
 
-    /**
-     * Returns group's identifier, can be either a
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
-     *     special group identifier</a> or a group email.
-     */
-    @Deprecated
-    public String identifier() {
-      return getIdentifier();
-    }
 
     /**
      * Returns group's identifier, can be either a
@@ -306,13 +329,6 @@ public final class Acl implements Serializable {
       this.email = email;
     }
 
-    /**
-     * Returns user's email.
-     */
-    @Deprecated
-    public String email() {
-      return getEmail();
-    }
 
     /**
      * Returns user's email.
@@ -369,13 +385,6 @@ public final class Acl implements Serializable {
       this.id = id;
     }
 
-    /**
-     * Returns table's identity.
-     */
-    @Deprecated
-    public TableId id() {
-      return getId();
-    }
 
     /**
      * Returns table's identity.
@@ -417,13 +426,6 @@ public final class Acl implements Serializable {
     this.role = role;
   }
 
-  /**
-   * Returns the entity for this ACL.
-   */
-  @Deprecated
-  public Entity entity() {
-    return getEntity();
-  }
 
   /**
    * Returns the entity for this ACL.
@@ -432,13 +434,6 @@ public final class Acl implements Serializable {
     return entity;
   }
 
-  /**
-   * Returns the role specified by this ACL.
-   */
-  @Deprecated
-  public Role role() {
-    return getRole();
-  }
 
   /**
    * Returns the role specified by this ACL.

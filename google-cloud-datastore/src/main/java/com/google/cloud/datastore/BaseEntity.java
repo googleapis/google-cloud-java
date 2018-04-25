@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.BlobValue.of;
 import static com.google.cloud.datastore.BooleanValue.of;
-import static com.google.cloud.datastore.DateTimeValue.of;
+import static com.google.cloud.datastore.TimestampValue.of;
 import static com.google.cloud.datastore.DoubleValue.of;
 import static com.google.cloud.datastore.EntityValue.of;
 import static com.google.cloud.datastore.KeyValue.of;
@@ -28,6 +28,7 @@ import static com.google.cloud.datastore.LongValue.of;
 import static com.google.cloud.datastore.NullValue.of;
 import static com.google.cloud.datastore.StringValue.of;
 
+import com.google.cloud.Timestamp;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Maps;
@@ -109,13 +110,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
       return self();
     }
 
-    /**
-     * Sets the key for the entity.
-     */
-    @Deprecated
-    public B key(K key) {
-      return setKey(key);
-    }
 
     /**
      * Sets the key for the entity.
@@ -273,29 +267,29 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     }
 
     /**
-     * Sets a property of type {@link DateTimeValue}.
+     * Sets a property of type {@link TimestampValue}.
      *
      * @param name name of the property
      * @param value value associated with the property
      */
-    public B set(String name, DateTime value) {
+    public B set(String name, Timestamp value) {
       properties.put(name, of(value));
       return self();
     }
 
     /**
-     * Sets a list property containing elements of type {@link DateTimeValue}.
+     * Sets a list property containing elements of type {@link TimestampValue}.
      *
      * @param name name of the property
-     * @param first the first {@link DateTime} in the list
-     * @param second the second {@link DateTime} in the list
-     * @param others other {@link DateTime}s in the list
+     * @param first the first {@link Timestamp} in the list
+     * @param second the second {@link Timestamp} in the list
+     * @param others other {@link Timestamp}s in the list
      */
-    public B set(String name, DateTime first, DateTime second, DateTime... others) {
-      List<DateTimeValue> values = new LinkedList<>();
+    public B set(String name, Timestamp first, Timestamp second, Timestamp... others) {
+      List<TimestampValue> values = new LinkedList<>();
       values.add(of(first));
       values.add(of(second));
-      for (DateTime other : others) {
+      for (Timestamp other : others) {
         values.add(of(other));
       }
       properties.put(name, of(values));
@@ -502,13 +496,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return key != null;
   }
 
-  /**
-   * Returns the associated key or null if it does not have one.
-   */
-  @Deprecated
-  public K key() {
-    return getKey();
-  }
 
   /**
    * Returns the associated key or null if it does not have one.
@@ -527,7 +514,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the {@link Value} for the given property {@code name}.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    */
   public <V extends Value<?>> V getValue(String name) {
     @SuppressWarnings("unchecked")
@@ -541,7 +528,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns true if property is an instance of NullValue.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    */
   public boolean isNull(String name) {
     return getValue(name) instanceof NullValue;
@@ -551,7 +538,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a string.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a string
    */
   @SuppressWarnings("unchecked")
@@ -562,7 +549,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as long.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a long
    */
   @SuppressWarnings("unchecked")
@@ -573,7 +560,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a double.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a double
    */
   @SuppressWarnings("unchecked")
@@ -584,7 +571,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a boolean.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a boolean
    */
   @SuppressWarnings("unchecked")
@@ -593,20 +580,20 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   }
 
   /**
-   * Returns the property value as a DateTime.
+   * Returns the property value as a Timestamp.
    *
-   * @throws DatastoreException if not such property
-   * @throws ClassCastException if value is not a DateTime
+   * @throws DatastoreException if no such property
+   * @throws ClassCastException if value is not a Timestamp
    */
   @SuppressWarnings("unchecked")
-  public DateTime getDateTime(String name) {
-    return ((Value<DateTime>) getValue(name)).get();
+  public Timestamp getTimestamp(String name) {
+    return ((Value<Timestamp>) getValue(name)).get();
   }
 
   /**
    * Returns the property value as a LatLng.
    *
-   * @throws DatastoreException if not such property.
+   * @throws DatastoreException if no such property.
    * @throws ClassCastException if value is not a LatLng.
    */
   @SuppressWarnings("unchecked")
@@ -617,7 +604,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a Key.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a Key
    */
   @SuppressWarnings("unchecked")
@@ -628,7 +615,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as an entity.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not an entity
    */
   @SuppressWarnings("unchecked")
@@ -639,7 +626,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a list of values.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a list of values
    */
   @SuppressWarnings("unchecked")
@@ -650,7 +637,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the property value as a blob.
    *
-   * @throws DatastoreException if not such property
+   * @throws DatastoreException if no such property
    * @throws ClassCastException if value is not a blob
    */
   @SuppressWarnings("unchecked")
@@ -658,13 +645,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return ((Value<Blob>) getValue(name)).get();
   }
 
-  /**
-   * Returns the properties name.
-   */
-  @Deprecated
-  public Set<String> names() {
-    return getNames();
-  }
 
   /**
    * Returns the properties name.

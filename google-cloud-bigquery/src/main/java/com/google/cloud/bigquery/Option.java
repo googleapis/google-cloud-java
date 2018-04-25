@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.bigquery.spi.BigQueryRpc;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;

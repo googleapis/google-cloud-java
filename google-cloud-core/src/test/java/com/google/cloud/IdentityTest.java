@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,9 @@ public class IdentityTest {
       Identity.serviceAccount("service-account@gmail.com");
   private static final Identity GROUP = Identity.group("group@gmail.com");
   private static final Identity DOMAIN = Identity.domain("google.com");
+  private static final Identity PROJECT_OWNER = Identity.projectOwner("my-sample-project");
+  private static final Identity PROJECT_EDITOR = Identity.projectEditor("my-sample-project");
+  private static final Identity PROJECT_VIEWER = Identity.projectViewer("my-sample-project");
 
   @Test
   public void testAllUsers() {
@@ -37,11 +40,6 @@ public class IdentityTest {
     assertNull(ALL_USERS.getValue());
   }
 
-  @Test
-  public void testAllUsersDeprecated() {
-    assertEquals(Identity.Type.ALL_USERS, ALL_USERS.type());
-    assertNull(ALL_USERS.value());
-  }
 
   @Test
   public void testAllAuthenticatedUsers() {
@@ -49,11 +47,6 @@ public class IdentityTest {
     assertNull(ALL_AUTH_USERS.getValue());
   }
 
-  @Test
-  public void testAllAuthenticatedUsersDeprecated() {
-    assertEquals(Identity.Type.ALL_AUTHENTICATED_USERS, ALL_AUTH_USERS.type());
-    assertNull(ALL_AUTH_USERS.value());
-  }
 
   @Test
   public void testUser() {
@@ -61,11 +54,6 @@ public class IdentityTest {
     assertEquals("abc@gmail.com", USER.getValue());
   }
 
-  @Test
-  public void testUserDeprecated() {
-    assertEquals(Identity.Type.USER, USER.type());
-    assertEquals("abc@gmail.com", USER.value());
-  }
 
   @Test(expected = NullPointerException.class)
   public void testUserNullEmail() {
@@ -78,11 +66,6 @@ public class IdentityTest {
     assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.getValue());
   }
 
-  @Test
-  public void testServiceAccountDeprecated() {
-    assertEquals(Identity.Type.SERVICE_ACCOUNT, SERVICE_ACCOUNT.type());
-    assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.value());
-  }
 
   @Test(expected = NullPointerException.class)
   public void testServiceAccountNullEmail() {
@@ -95,11 +78,6 @@ public class IdentityTest {
     assertEquals("group@gmail.com", GROUP.getValue());
   }
 
-  @Test
-  public void testGroupDeprecated() {
-    assertEquals(Identity.Type.GROUP, GROUP.type());
-    assertEquals("group@gmail.com", GROUP.value());
-  }
 
   @Test(expected = NullPointerException.class)
   public void testGroupNullEmail() {
@@ -112,15 +90,43 @@ public class IdentityTest {
     assertEquals("google.com", DOMAIN.getValue());
   }
 
-  @Test
-  public void testDomainDeprecated() {
-    assertEquals(Identity.Type.DOMAIN, DOMAIN.type());
-    assertEquals("google.com", DOMAIN.value());
-  }
 
   @Test(expected = NullPointerException.class)
   public void testDomainNullId() {
     Identity.domain(null);
+  }
+
+  @Test
+  public void testProjectOwner() {
+    assertEquals(Identity.Type.PROJECT_OWNER, PROJECT_OWNER.getType());
+    assertEquals("my-sample-project", PROJECT_OWNER.getValue());
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testProjectOwnerNullId() {
+    Identity.projectOwner(null);
+  }
+
+  @Test
+  public void testProjectEditor() {
+    assertEquals(Identity.Type.PROJECT_EDITOR, PROJECT_EDITOR.getType());
+    assertEquals("my-sample-project", PROJECT_EDITOR.getValue());
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testProjectEditorNullId() {
+    Identity.projectEditor(null);
+  }
+
+  @Test
+  public void testProjectViewer() {
+    assertEquals(Identity.Type.PROJECT_VIEWER, PROJECT_VIEWER.getType());
+    assertEquals("my-sample-project", PROJECT_VIEWER.getValue());
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testProjectViewerNullId() {
+    Identity.projectViewer(null);
   }
 
   @Test
@@ -131,6 +137,24 @@ public class IdentityTest {
     compareIdentities(SERVICE_ACCOUNT, Identity.valueOf(SERVICE_ACCOUNT.strValue()));
     compareIdentities(GROUP, Identity.valueOf(GROUP.strValue()));
     compareIdentities(DOMAIN, Identity.valueOf(DOMAIN.strValue()));
+    compareIdentities(PROJECT_OWNER, Identity.valueOf(PROJECT_OWNER.strValue()));
+    compareIdentities(PROJECT_EDITOR, Identity.valueOf(PROJECT_EDITOR.strValue()));
+    compareIdentities(PROJECT_VIEWER, Identity.valueOf(PROJECT_VIEWER.strValue()));
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testValueOfEmpty() {
+    Identity.valueOf("");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testValueOfThreePart() {
+    Identity.valueOf("a:b:c");
+  }
+
+  @Test
+  public void testUnrecognizedToString() {
+    assertEquals("a:b", Identity.valueOf("a:b").strValue());
   }
 
   private void compareIdentities(Identity expected, Identity actual) {

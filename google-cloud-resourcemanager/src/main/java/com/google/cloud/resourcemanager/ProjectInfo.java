@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,10 @@ package com.google.cloud.resourcemanager;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.client.util.Data;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 
@@ -50,27 +53,67 @@ public class ProjectInfo implements Serializable {
   /**
    * The project lifecycle states.
    */
-  public enum State {
+  public static final class State extends StringEnumValue {
+    private static final long serialVersionUID = 869635563976629566L;
+
+    private static final ApiFunction<String, State> CONSTRUCTOR =
+        new ApiFunction<String, State>() {
+          @Override
+          public State apply(String constant) {
+            return new State(constant);
+          }
+        };
+
+    private static final StringEnumType<State> type = new StringEnumType(
+        State.class,
+        CONSTRUCTOR);
+
     /**
      * Only used/useful for distinguishing unset values.
      */
-    LIFECYCLE_STATE_UNSPECIFIED,
+    public static final State LIFECYCLE_STATE_UNSPECIFIED = type.createAndRegister("LIFECYCLE_STATE_UNSPECIFIED");
 
     /**
      * The normal and active state.
      */
-    ACTIVE,
+    public static final State ACTIVE = type.createAndRegister("ACTIVE");
 
     /**
      * The project has been marked for deletion by the user or by the system (Google Cloud
      * Platform). This can generally be reversed by calling {@link ResourceManager#undelete}.
      */
-    DELETE_REQUESTED,
+    public static final State DELETE_REQUESTED = type.createAndRegister("DELETE_REQUESTED");
 
     /**
      * The process of deleting the project has begun. Reversing the deletion is no longer possible.
      */
-    DELETE_IN_PROGRESS
+    public static final State DELETE_IN_PROGRESS = type.createAndRegister("DELETE_IN_PROGRESS");
+
+    private State(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the State for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static State valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the State for the given String constant, and allow unrecognized values.
+     */
+    public static State valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for State.
+     */
+    public static State[] values() {
+      return type.values();
+    }
   }
 
   static class ResourceId implements Serializable {
@@ -122,15 +165,6 @@ public class ProjectInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    /**
-     * Set the user-assigned name of the project.
-     *
-     * <p>This field is optional and can remain unset. Allowed characters are: lowercase and
-     * uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
-     * This field can be changed after project creation.
-     */
-    @Deprecated
-    public abstract Builder name(String name);
 
     /**
      * Set the user-assigned name of the project.
@@ -141,15 +175,6 @@ public class ProjectInfo implements Serializable {
      */
     public abstract Builder setName(String name);
 
-    /**
-     * Set the unique, user-assigned ID of the project.
-     *
-     * <p>The ID must be 6 to 30 lowercase letters, digits, or hyphens. It must start with a letter.
-     * Trailing hyphens are prohibited. This field cannot be changed after the server creates the
-     * project.
-     */
-    @Deprecated
-    public abstract Builder projectId(String projectId);
 
     /**
      * Set the unique, user-assigned ID of the project.
@@ -177,17 +202,6 @@ public class ProjectInfo implements Serializable {
      */
     public abstract Builder clearLabels();
 
-    /**
-     * Set the labels associated with this project.
-     *
-     * <p>Label keys must be between 1 and 63 characters long and must conform to the following
-     * regular expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63
-     * characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No
-     * more than 256 labels can be associated with a given resource. This field can be changed after
-     * project creation.
-     */
-    @Deprecated
-    public abstract Builder labels(Map<String, String> labels);
 
     /**
      * Set the labels associated with this project.
@@ -235,11 +249,6 @@ public class ProjectInfo implements Serializable {
       this.parent = info.parent;
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -247,11 +256,6 @@ public class ProjectInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder projectId(String projectId) {
-      return setProjectId(projectId);
-    }
 
     @Override
     public Builder setProjectId(String projectId) {
@@ -277,11 +281,6 @@ public class ProjectInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder labels(Map<String, String> labels) {
-      return setLabels(labels);
-    }
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
@@ -329,15 +328,6 @@ public class ProjectInfo implements Serializable {
     this.parent = builder.parent;
   }
 
-  /**
-   * Get the unique, user-assigned ID of the project.
-   *
-   * <p>This field cannot be changed after the server creates the project.
-   */
-  @Deprecated
-  public String projectId() {
-    return getProjectId();
-  }
 
   /**
    * Get the unique, user-assigned ID of the project.
@@ -348,15 +338,6 @@ public class ProjectInfo implements Serializable {
     return projectId;
   }
 
-  /**
-   * Get the user-assigned name of the project.
-   *
-   * <p>This field is optional, can remain unset, and can be changed after project creation.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Get the user-assigned name of the project.
@@ -367,15 +348,6 @@ public class ProjectInfo implements Serializable {
     return Data.isNull(name) ? null : name;
   }
 
-  /**
-   * Get number uniquely identifying the project.
-   *
-   * <p>This field is set by the server and is read-only.
-   */
-  @Deprecated
-  public Long projectNumber() {
-    return getProjectNumber();
-  }
 
   /**
    * Get number uniquely identifying the project.
@@ -386,13 +358,6 @@ public class ProjectInfo implements Serializable {
     return projectNumber;
   }
 
-  /**
-   * Get the immutable map of labels associated with this project.
-   */
-  @Deprecated
-  public Map<String, String> labels() {
-    return getLabels();
-  }
 
   /**
    * Get the immutable map of labels associated with this project.
@@ -401,16 +366,6 @@ public class ProjectInfo implements Serializable {
     return labels;
   }
 
-  /**
-   * Get the project's lifecycle state.
-   *
-   * <p>This is a read-only field. To change the lifecycle state of your project, use the
-   * {@code delete} or {@code undelete} method.
-   */
-  @Deprecated
-  public State state() {
-    return state;
-  }
 
   /**
    * Get the project's lifecycle state.
@@ -426,15 +381,6 @@ public class ProjectInfo implements Serializable {
     return parent;
   }
 
-  /**
-   * Get the project's creation time (in milliseconds).
-   *
-   * <p>This field is set by the server and is read-only.
-   */
-  @Deprecated
-  public Long createTimeMillis() {
-    return getCreateTimeMillis();
-  }
 
   /**
    * Get the project's creation time (in milliseconds).
@@ -458,10 +404,6 @@ public class ProjectInfo implements Serializable {
     return Objects.hash(name, projectId, labels, projectNumber, state, createTimeMillis, parent);
   }
 
-  @Deprecated
-  public static Builder builder(String id) {
-    return newBuilder(id);
-  }
 
   public static Builder newBuilder(String id) {
     return new BuilderImpl(id);

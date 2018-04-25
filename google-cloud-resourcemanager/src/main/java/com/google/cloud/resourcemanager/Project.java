@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public class Project extends ProjectInfo {
       this.infoBuilder = new ProjectInfo.BuilderImpl(project);
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -65,11 +60,6 @@ public class Project extends ProjectInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder projectId(String projectId) {
-      return setProjectId(projectId);
-    }
 
     @Override
     public Builder setProjectId(String projectId) {
@@ -95,11 +85,6 @@ public class Project extends ProjectInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder labels(Map<String, String> labels) {
-      return setLabels(labels);
-    }
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
@@ -143,13 +128,6 @@ public class Project extends ProjectInfo {
     this.options = resourceManager.getOptions();
   }
 
-  /**
-   * Returns the {@link ResourceManager} service object associated with this Project.
-   */
-  @Deprecated
-  public ResourceManager resourceManager() {
-    return getResourceManager();
-  }
 
   /**
    * Returns the {@link ResourceManager} service object associated with this Project.

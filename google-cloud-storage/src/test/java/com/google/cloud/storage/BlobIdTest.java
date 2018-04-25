@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,13 +29,6 @@ public class BlobIdTest {
     BlobId blobId = BlobId.of("b", "n");
     assertEquals("b", blobId.getBucket());
     assertEquals("n", blobId.getName());
-  }
-
-  @Test
-  public void testOfDeprecated() {
-    BlobId blobId = BlobId.of("b", "n");
-    assertEquals("b", blobId.bucket());
-    assertEquals("n", blobId.name());
   }
 
   @Test

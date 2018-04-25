@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,21 +25,24 @@ import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_NAME;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
 
-import com.google.cloud.AsyncPage;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
+import com.google.api.gax.paging.AsyncPage;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
-import com.google.cloud.logging.spi.LoggingRpc;
+import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -56,24 +59,32 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
-import com.google.logging.v2.LogName;
-import com.google.logging.v2.MetricName;
+import com.google.logging.v2.ProjectLogName;
+import com.google.logging.v2.ProjectMetricName;
 import com.google.logging.v2.ProjectName;
-import com.google.logging.v2.SinkName;
+import com.google.logging.v2.ProjectSinkName;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private final LoggingRpc rpc;
+  private final Object writeLock = new Object();
+  private final Set<ApiFuture<Void>> pendingWrites =
+      Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
+
+  private volatile Synchronicity writeSynchronicity = Synchronicity.ASYNC;
+  private volatile Severity flushSeverity = Severity.ERROR;
   private boolean closed;
 
   private static final Function<Empty, Boolean> EMPTY_TO_BOOLEAN_FUNCTION =
@@ -90,23 +101,46 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           return null;
         }
       };
+  private static final ThreadLocal<Boolean> inWriteCall = new ThreadLocal<>();
 
   LoggingImpl(LoggingOptions options) {
     super(options);
-    rpc = options.getRpc();
+    rpc = options.getLoggingRpcV2();
   }
 
-  private static <V> V get(Future<V> future) {
+  public void setWriteSynchronicity(Synchronicity writeSynchronicity) {
+    this.writeSynchronicity = writeSynchronicity;
+  }
+
+  public void setFlushSeverity(Severity flushSeverity) {
+    this.flushSeverity = flushSeverity;
+  }
+
+  public Synchronicity getWriteSynchronicity() {
+    return writeSynchronicity;
+  }
+
+  public Severity getFlushSeverity() {
+    return flushSeverity;
+  }
+
+  private static <V> V get(ApiFuture<V> future) {
     try {
       return Uninterruptibles.getUninterruptibly(future);
     } catch (ExecutionException ex) {
-      throw Throwables.propagate(ex.getCause());
+      Throwables.throwIfUnchecked(ex.getCause());
+      throw new RuntimeException(ex);
     }
   }
 
-  private static <I, O> Future<O> transform(Future<I> future,
-      Function<? super I, ? extends O> function) {
-    return Futures.lazyTransform(future, function);
+  private static <I, O> ApiFuture<O> transform(ApiFuture<I> future,
+      final Function<? super I, ? extends O> function) {
+    return ApiFutures.transform(future, new ApiFunction<I, O>() {
+      @Override
+      public O apply(I i) {
+        return function.apply(i);
+      }
+    });
   }
 
   private abstract static class BasePageFetcher<T> implements AsyncPageImpl.NextPageFetcher<T> {
@@ -141,14 +175,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       super(serviceOptions, cursor, requestOptions);
     }
 
-    @Override
-    @Deprecated
-    public Future<AsyncPage<Sink>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
-    public Future<AsyncPage<Sink>> getNextPage() {
+    public ApiFuture<AsyncPage<Sink>> getNextPage() {
       return listSinksAsync(serviceOptions(), requestOptions());
     }
   }
@@ -163,14 +192,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       super(serviceOptions, cursor, requestOptions);
     }
 
-    @Override
-    @Deprecated
-    public Future<AsyncPage<MonitoredResourceDescriptor>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
-    public Future<AsyncPage<MonitoredResourceDescriptor>> getNextPage() {
+    public ApiFuture<AsyncPage<MonitoredResourceDescriptor>> getNextPage() {
       return listMonitoredResourceDescriptorsAsync(serviceOptions(), requestOptions());
     }
   }
@@ -184,14 +208,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       super(serviceOptions, cursor, requestOptions);
     }
 
-    @Override
-    @Deprecated
-    public Future<AsyncPage<Metric>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
-    public Future<AsyncPage<Metric>> getNextPage() {
+    public ApiFuture<AsyncPage<Metric>> getNextPage() {
       return listMetricsAsync(serviceOptions(), requestOptions());
     }
   }
@@ -205,14 +224,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       super(serviceOptions, cursor, requestOptions);
     }
 
-    @Override
-    @Deprecated
-    public Future<AsyncPage<LogEntry>> nextPage() {
-      return getNextPage();
-    }
 
     @Override
-    public Future<AsyncPage<LogEntry>> getNextPage() {
+    public ApiFuture<AsyncPage<LogEntry>> getNextPage() {
       return listLogEntriesAsync(serviceOptions(), requestOptions());
     }
   }
@@ -223,9 +237,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<Sink> createAsync(SinkInfo sink) {
+  public ApiFuture<Sink> createAsync(SinkInfo sink) {
     CreateSinkRequest request = CreateSinkRequest.newBuilder()
-        .setParent(ProjectName.create(getOptions().getProjectId()).toString())
+        .setParent(ProjectName.of(getOptions().getProjectId()).toString())
         .setSink(sink.toPb(getOptions().getProjectId()))
         .build();
     return transform(rpc.create(request), Sink.fromPbFunction(this));
@@ -237,9 +251,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<Sink> updateAsync(SinkInfo sink) {
+  public ApiFuture<Sink> updateAsync(SinkInfo sink) {
     UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
-        .setSinkName(SinkName.create(getOptions().getProjectId(), sink.getName()).toString())
+        .setSinkName(ProjectSinkName.of(getOptions().getProjectId(), sink.getName()).toString())
         .setSink(sink.toPb(getOptions().getProjectId()))
         .build();
     return transform(rpc.update(request), Sink.fromPbFunction(this));
@@ -251,9 +265,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<Sink> getSinkAsync(String sink) {
+  public ApiFuture<Sink> getSinkAsync(String sink) {
     GetSinkRequest request = GetSinkRequest.newBuilder()
-        .setSinkName(SinkName.create(getOptions().getProjectId(), sink).toString())
+        .setSinkName(ProjectSinkName.of(getOptions().getProjectId(), sink).toString())
         .build();
     return transform(rpc.get(request), Sink.fromPbFunction(this));
   }
@@ -261,7 +275,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ListSinksRequest listSinksRequest(LoggingOptions serviceOptions,
       Map<Option.OptionType, ?> options) {
     ListSinksRequest.Builder builder = ListSinksRequest.newBuilder();
-    builder.setParent(ProjectName.create(serviceOptions.getProjectId()).toString());
+    builder.setParent(ProjectName.of(serviceOptions.getProjectId()).toString());
     Integer pageSize = PAGE_SIZE.get(options);
     String pageToken = PAGE_TOKEN.get(options);
     if (pageSize != null) {
@@ -273,10 +287,10 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return builder.build();
   }
 
-  private static Future<AsyncPage<Sink>> listSinksAsync(final LoggingOptions serviceOptions,
+  private static ApiFuture<AsyncPage<Sink>> listSinksAsync(final LoggingOptions serviceOptions,
       final Map<Option.OptionType, ?> options) {
     final ListSinksRequest request = listSinksRequest(serviceOptions, options);
-    Future<ListSinksResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListSinksResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(list, new Function<ListSinksResponse, AsyncPage<Sink>>() {
       @Override
       public AsyncPage<Sink> apply(ListSinksResponse listSinksResponse) {
@@ -297,7 +311,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<AsyncPage<Sink>> listSinksAsync(ListOption... options) {
+  public ApiFuture<AsyncPage<Sink>> listSinksAsync(ListOption... options) {
     return listSinksAsync(getOptions(), optionMap(options));
   }
 
@@ -307,9 +321,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<Boolean> deleteSinkAsync(String sink) {
+  public ApiFuture<Boolean> deleteSinkAsync(String sink) {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
-        .setSinkName(SinkName.create(getOptions().getProjectId(), sink).toString())
+        .setSinkName(ProjectSinkName.of(getOptions().getProjectId(), sink).toString())
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -318,9 +332,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return get(deleteLogAsync(log));
   }
 
-  public Future<Boolean> deleteLogAsync(String log) {
+  public ApiFuture<Boolean> deleteLogAsync(String log) {
     DeleteLogRequest request = DeleteLogRequest.newBuilder()
-        .setLogName(LogName.create(getOptions().getProjectId(), log).toString())
+        .setLogName(ProjectLogName.of(getOptions().getProjectId(), log).toString())
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -340,12 +354,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return builder.build();
   }
 
-  private static Future<AsyncPage<MonitoredResourceDescriptor>>
+  private static ApiFuture<AsyncPage<MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsAsync(final LoggingOptions serviceOptions,
           final Map<Option.OptionType, ?> options) {
     final ListMonitoredResourceDescriptorsRequest request =
         listMonitoredResourceDescriptorsRequest(options);
-    Future<ListMonitoredResourceDescriptorsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListMonitoredResourceDescriptorsResponse> list = serviceOptions.getLoggingRpcV2()
+        .list(request);
     return transform(list, new Function<ListMonitoredResourceDescriptorsResponse,
         AsyncPage<MonitoredResourceDescriptor>>() {
           @Override
@@ -355,7 +370,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                 listDescriptorsResponse.getResourceDescriptorsList() == null
                     ? ImmutableList.<MonitoredResourceDescriptor>of()
                     : Lists.transform(listDescriptorsResponse.getResourceDescriptorsList(),
-                MonitoredResourceDescriptor.FROM_PB_FUNCTION);
+                        new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
+                          @Override
+                          public MonitoredResourceDescriptor apply(
+                              com.google.api.MonitoredResourceDescriptor monitoredResourceDescriptor) {
+                            return MonitoredResourceDescriptor.FROM_PB_FUNCTION.apply(monitoredResourceDescriptor);
+                          }
+                        });
             String cursor = listDescriptorsResponse.getNextPageToken().equals("") ? null
                 : listDescriptorsResponse.getNextPageToken();
             return new AsyncPageImpl<>(
@@ -369,7 +390,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return get(listMonitoredResourceDescriptorsAsync(options));
   }
 
-  public Future<AsyncPage<MonitoredResourceDescriptor>> listMonitoredResourceDescriptorsAsync(
+  public ApiFuture<AsyncPage<MonitoredResourceDescriptor>> listMonitoredResourceDescriptorsAsync(
       ListOption... options) {
     return listMonitoredResourceDescriptorsAsync(getOptions(), optionMap(options));
   }
@@ -380,9 +401,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<Metric> createAsync(MetricInfo metric) {
+  public ApiFuture<Metric> createAsync(MetricInfo metric) {
     CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-        .setParent(ProjectName.create(getOptions().getProjectId()).toString())
+        .setParent(ProjectName.of(getOptions().getProjectId()).toString())
         .setMetric(metric.toPb())
         .build();
     return transform(rpc.create(request), Metric.fromPbFunction(this));
@@ -394,9 +415,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<Metric> updateAsync(MetricInfo metric) {
+  public ApiFuture<Metric> updateAsync(MetricInfo metric) {
     UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-        .setMetricName(MetricName.create(getOptions().getProjectId(), metric.getName()).toString())
+        .setMetricName(ProjectMetricName.of(getOptions().getProjectId(), metric.getName()).toString())
         .setMetric(metric.toPb())
         .build();
     return transform(rpc.update(request), Metric.fromPbFunction(this));
@@ -408,9 +429,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<Metric> getMetricAsync(String metric) {
+  public ApiFuture<Metric> getMetricAsync(String metric) {
     GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-        .setMetricName(MetricName.create(getOptions().getProjectId(), metric).toString())
+        .setMetricName(ProjectMetricName.of(getOptions().getProjectId(), metric).toString())
         .build();
     return transform(rpc.get(request), Metric.fromPbFunction(this));
   }
@@ -418,7 +439,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ListLogMetricsRequest listMetricsRequest(LoggingOptions serviceOptions,
       Map<Option.OptionType, ?> options) {
     ListLogMetricsRequest.Builder builder = ListLogMetricsRequest.newBuilder();
-    builder.setParent(ProjectName.create(serviceOptions.getProjectId()).toString());
+    builder.setParent(ProjectName.of(serviceOptions.getProjectId()).toString());
     Integer pageSize = PAGE_SIZE.get(options);
     String pageToken = PAGE_TOKEN.get(options);
     if (pageSize != null) {
@@ -430,10 +451,10 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return builder.build();
   }
 
-  private static Future<AsyncPage<Metric>> listMetricsAsync(final LoggingOptions serviceOptions,
+  private static ApiFuture<AsyncPage<Metric>> listMetricsAsync(final LoggingOptions serviceOptions,
       final Map<Option.OptionType, ?> options) {
     final ListLogMetricsRequest request = listMetricsRequest(serviceOptions, options);
-    Future<ListLogMetricsResponse> list = serviceOptions.getRpc().list(request);
+    ApiFuture<ListLogMetricsResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(list, new Function<ListLogMetricsResponse, AsyncPage<Metric>>() {
       @Override
       public AsyncPage<Metric> apply(ListLogMetricsResponse listMetricsResponse) {
@@ -454,7 +475,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<AsyncPage<Metric>> listMetricsAsync(ListOption... options) {
+  public ApiFuture<AsyncPage<Metric>> listMetricsAsync(ListOption... options) {
     return listMetricsAsync(getOptions(), optionMap(options));
   }
 
@@ -464,9 +485,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<Boolean> deleteMetricAsync(String metric) {
+  public ApiFuture<Boolean> deleteMetricAsync(String metric) {
     DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-        .setMetricName(MetricName.create(getOptions().getProjectId(), metric).toString())
+        .setMetricName(ProjectMetricName.of(getOptions().getProjectId(), metric).toString())
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -477,7 +498,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     WriteLogEntriesRequest.Builder builder = WriteLogEntriesRequest.newBuilder();
     String logName = LOG_NAME.get(options);
     if (logName != null) {
-      builder.setLogName(LogName.create(projectId, logName).toString());
+      builder.setLogName(ProjectLogName.of(projectId, logName).toString());
     }
     MonitoredResource resource = RESOURCE.get(options);
     if (resource != null) {
@@ -492,19 +513,91 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   public void write(Iterable<LogEntry> logEntries, WriteOption... options) {
-    get(writeAsync(logEntries, options));
+    if (inWriteCall.get() != null) {
+      return;
+    }
+    inWriteCall.set(true);
+
+    try {
+      writeLogEntries(logEntries, options);
+      for (LogEntry logEntry : logEntries) {
+        // flush pending writes if log severity at or above flush severity
+        if (logEntry.getSeverity().compareTo(flushSeverity) >= 0) {
+          flush();
+          break;
+        }
+      }
+    } finally {
+      inWriteCall.remove();
+    }
   }
 
-  public Future<Void> writeAsync(Iterable<LogEntry> logEntries, WriteOption... options) {
+  public void flush() {
+    // BUG(1795): We should force batcher to issue RPC call for buffered messages,
+    // so the code below doesn't wait uselessly.
+    ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
+    synchronized (writeLock) {
+      writesToFlush.addAll(pendingWrites);
+    }
+
+   try {
+      ApiFutures.allAsList(writesToFlush).get();
+    } catch (InterruptedException|ExecutionException e) {
+       throw new RuntimeException(e);
+    }
+  }
+
+  /* Write logs synchronously or asynchronously based on writeSynchronicity setting. */
+  private void writeLogEntries(Iterable<LogEntry> logEntries, WriteOption... writeOptions) {
+    switch (this.writeSynchronicity) {
+      case SYNC:
+        get(writeAsync(logEntries, writeOptions));
+        break;
+
+      case ASYNC:
+      default:
+        final ApiFuture<Void> writeFuture = writeAsync(logEntries, writeOptions);
+        ApiFutures.addCallback(
+            writeFuture,
+            new ApiFutureCallback<Void>() {
+              private void removeFromPending() {
+                synchronized (writeLock) {
+                  pendingWrites.remove(writeFuture);
+                }
+              }
+
+              @Override
+              public void onSuccess(Void v) {
+                removeFromPending();
+              }
+
+              @Override
+              public void onFailure(Throwable t) {
+                try {
+                  Exception ex = t instanceof Exception ? (Exception) t : new Exception(t);
+                  throw new RuntimeException(ex);
+                } finally {
+                  removeFromPending();
+                }
+              }
+            });
+        synchronized (writeLock) {
+          pendingWrites.add(writeFuture);
+        }
+        break;
+    }
+  }
+
+  private ApiFuture<Void> writeAsync(Iterable<LogEntry> logEntries, WriteOption... options) {
     return transform(
         rpc.write(writeLogEntriesRequest(getOptions(), logEntries, optionMap(options))),
         WRITE_RESPONSE_TO_VOID_FUNCTION);
   }
 
-  private static ListLogEntriesRequest listLogEntriesRequest(LoggingOptions serviceOptions,
-      Map<Option.OptionType, ?> options) {
+  static ListLogEntriesRequest listLogEntriesRequest(
+      String projectId, Map<Option.OptionType, ?> options) {
     ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
-    builder.addProjectIds(serviceOptions.getProjectId());
+    builder.addProjectIds(projectId);
     Integer pageSize = PAGE_SIZE.get(options);
     if (pageSize != null) {
       builder.setPageSize(pageSize);
@@ -524,10 +617,11 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return builder.build();
   }
 
-  private static Future<AsyncPage<LogEntry>> listLogEntriesAsync(
+  private static ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(
       final LoggingOptions serviceOptions, final Map<Option.OptionType, ?> options) {
-    final ListLogEntriesRequest request = listLogEntriesRequest(serviceOptions, options);
-    Future<ListLogEntriesResponse> list = serviceOptions.getRpc().list(request);
+    final ListLogEntriesRequest request =
+        listLogEntriesRequest(serviceOptions.getProjectId(), options);
+    ApiFuture<ListLogEntriesResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(list, new Function<ListLogEntriesResponse, AsyncPage<LogEntry>>() {
       @Override
       public AsyncPage<LogEntry> apply(ListLogEntriesResponse listLogEntrysResponse) {
@@ -548,7 +642,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Future<AsyncPage<LogEntry>> listLogEntriesAsync(EntryListOption... options) {
+  public ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(EntryListOption... options) {
     return listLogEntriesAsync(getOptions(), optionMap(options));
   }
 

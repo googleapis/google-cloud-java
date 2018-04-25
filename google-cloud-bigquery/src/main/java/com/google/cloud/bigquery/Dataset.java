@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,15 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -64,11 +64,6 @@ public class Dataset extends DatasetInfo {
       this.infoBuilder = new DatasetInfo.BuilderImpl(dataset);
     }
 
-    @Override
-    @Deprecated
-    public Builder datasetId(DatasetId datasetId) {
-      return setDatasetId(datasetId);
-    }
 
     @Override
     public Builder setDatasetId(DatasetId datasetId) {
@@ -76,11 +71,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder acl(List<Acl> acl) {
-      return setAcl(acl);
-    }
 
     @Override
     public Builder setAcl(List<Acl> acl) {
@@ -94,11 +84,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder defaultTableLifetime(Long defaultTableLifetime) {
-      return setDefaultTableLifetime(defaultTableLifetime);
-    }
 
     @Override
     public Builder setDefaultTableLifetime(Long defaultTableLifetime) {
@@ -106,11 +91,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -124,11 +104,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder friendlyName(String friendlyName) {
-      return setFriendlyName(friendlyName);
-    }
 
     @Override
     public Builder setFriendlyName(String friendlyName) {
@@ -148,11 +123,6 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder location(String location) {
-      return setLocation(location);
-    }
 
     @Override
     public Builder setLocation(String location) {
@@ -163,6 +133,12 @@ public class Dataset extends DatasetInfo {
     @Override
     Builder setSelfLink(String selfLink) {
       infoBuilder.setSelfLink(selfLink);
+      return this;
+    }
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
+      infoBuilder.setLabels(labels);
       return this;
     }
 
@@ -264,9 +240,7 @@ public class Dataset extends DatasetInfo {
    * <p>Example of listing tables in the dataset.
    * <pre> {@code
    * Page<Table> tables = dataset.list();
-   * Iterator<Table> tableIterator = tables.iterateAll();
-   * while (tableIterator.hasNext()) {
-   *   Table table = tableIterator.next();
+   * for (Table table : tables.iterateAll()) {
    *   // do something with the table
    * }
    * }</pre>
@@ -302,7 +276,7 @@ public class Dataset extends DatasetInfo {
    * <pre> {@code
    * String tableName = “my_table”;
    * String fieldName = “my_field”;
-   * Schema schema = Schema.of(Field.of(fieldName, Type.string()));
+   * Schema schema = Schema.of(Field.of(fieldName, LegacySQLTypeName.STRING));
    * StandardTableDefinition definition = StandardTableDefinition.newBuilder()
    *     .setSchema(schema)
    *     .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
@@ -322,18 +296,11 @@ public class Dataset extends DatasetInfo {
     return bigquery.create(tableInfo, options);
   }
 
-  /**
-   * Returns the dataset's {@code BigQuery} object used to issue requests.
-   */
-  @Deprecated
-  public BigQuery bigquery() {
-    return getBigquery();
-  }
 
   /**
    * Returns the dataset's {@code BigQuery} object used to issue requests.
    */
-  public BigQuery getBigquery() {
+  public BigQuery getBigQuery() {
     return bigquery;
   }
 

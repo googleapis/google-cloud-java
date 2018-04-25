@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
+import java.util.Collections;
 import java.util.List;
+import org.junit.Test;
 
 public class TableInfoTest {
 
@@ -38,17 +37,17 @@ public class TableInfoTest {
   private static final Long LAST_MODIFIED_TIME = 20L;
 
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.newBuilder("IntegerField", Field.Type.integer())
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
@@ -83,18 +82,20 @@ public class TableInfoTest {
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
       ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final ViewDefinition VIEW_DEFINITION =
-      ViewDefinition.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
+      ViewDefinition.newBuilder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
-  private static final TableInfo TABLE_INFO = TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
-      .setCreationTime(CREATION_TIME)
-      .setDescription(DESCRIPTION)
-      .setEtag(ETAG)
-      .setExpirationTime(EXPIRATION_TIME)
-      .setFriendlyName(FRIENDLY_NAME)
-      .setGeneratedId(GENERATED_ID)
-      .setLastModifiedTime(LAST_MODIFIED_TIME)
-      .setSelfLink(SELF_LINK)
-      .build();
+  private static final TableInfo TABLE_INFO =
+      TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
+          .setCreationTime(CREATION_TIME)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setExpirationTime(EXPIRATION_TIME)
+          .setFriendlyName(FRIENDLY_NAME)
+          .setGeneratedId(GENERATED_ID)
+          .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setSelfLink(SELF_LINK)
+          .setLabels(Collections.singletonMap("a", "b"))
+          .build();
   private static final TableInfo VIEW_INFO = TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
       .setCreationTime(CREATION_TIME)
       .setDescription(DESCRIPTION)
@@ -112,17 +113,6 @@ public class TableInfoTest {
           .setEtag(ETAG)
           .setExpirationTime(EXPIRATION_TIME)
           .setFriendlyName(FRIENDLY_NAME)
-          .setGeneratedId(GENERATED_ID)
-          .setLastModifiedTime(LAST_MODIFIED_TIME)
-          .setSelfLink(SELF_LINK)
-          .build();
-  private static final TableInfo DEPRECATED_TABLE_INFO =
-      TableInfo.builder(TABLE_ID, TABLE_DEFINITION)
-          .setCreationTime(CREATION_TIME)
-          .description(DESCRIPTION)
-          .setEtag(ETAG)
-          .expirationTime(EXPIRATION_TIME)
-          .friendlyName(FRIENDLY_NAME)
           .setGeneratedId(GENERATED_ID)
           .setLastModifiedTime(LAST_MODIFIED_TIME)
           .setSelfLink(SELF_LINK)
@@ -188,19 +178,6 @@ public class TableInfoTest {
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.getSelfLink());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TABLE_ID, DEPRECATED_TABLE_INFO.tableId());
-    assertEquals(CREATION_TIME, DEPRECATED_TABLE_INFO.creationTime());
-    assertEquals(DESCRIPTION, DEPRECATED_TABLE_INFO.description());
-    assertEquals(ETAG, DEPRECATED_TABLE_INFO.etag());
-    assertEquals(EXPIRATION_TIME, DEPRECATED_TABLE_INFO.expirationTime());
-    assertEquals(FRIENDLY_NAME, DEPRECATED_TABLE_INFO.friendlyName());
-    assertEquals(GENERATED_ID, DEPRECATED_TABLE_INFO.generatedId());
-    assertEquals(LAST_MODIFIED_TIME, DEPRECATED_TABLE_INFO.lastModifiedTime());
-    assertEquals(TABLE_DEFINITION, DEPRECATED_TABLE_INFO.definition());
-    assertEquals(SELF_LINK, DEPRECATED_TABLE_INFO.selfLink());
-  }
 
   @Test
   public void testOf() {
@@ -265,7 +242,7 @@ public class TableInfoTest {
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
     assertEquals(expected.getSelfLink(), value.getSelfLink());
-    assertEquals(expected.getDefinition(), value.getDefinition());
+    assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
-import com.google.cloud.Page;
-import com.google.cloud.dns.spi.DnsRpc;
-import com.google.cloud.dns.spi.RpcBatch;
+import com.google.api.gax.paging.Page;
+import com.google.cloud.dns.spi.v1.DnsRpc;
+import com.google.cloud.dns.spi.v1.RpcBatch;
 import com.google.common.collect.ImmutableList;
 
 import org.easymock.Capture;
@@ -109,7 +109,7 @@ public class DnsBatchTest {
     optionsMock = EasyMock.createMock(DnsOptions.class);
     dnsRpcMock = EasyMock.createMock(DnsRpc.class);
     batchMock = EasyMock.createMock(RpcBatch.class);
-    EasyMock.expect(optionsMock.getRpc()).andReturn(dnsRpcMock);
+    EasyMock.expect(optionsMock.getDnsRpcV1()).andReturn(dnsRpcMock);
     EasyMock.expect(dnsRpcMock.createBatch()).andReturn(batchMock);
     EasyMock.replay(optionsMock, dnsRpcMock, batchMock, dns);
     dnsBatch = new DnsBatch(optionsMock);
@@ -150,7 +150,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertTrue(ex.isIdempotent());
     }
   }
 
@@ -183,7 +182,7 @@ public class DnsBatchTest {
     EasyMock.replay(optionsMock);
     capturedCallback.onSuccess(response);
     Page<Zone> page = batchResult.get();
-    assertEquals(PAGE_TOKEN, page.getNextPageCursor());
+    assertEquals(PAGE_TOKEN, page.getNextPageToken());
     Iterator<Zone> iterator = page.getValues().iterator();
     int resultSize = 0;
     EasyMock.verify(dns);
@@ -227,7 +226,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertTrue(ex.isIdempotent());
     }
   }
 
@@ -278,7 +276,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertTrue(ex.isIdempotent());
     }
   }
 
@@ -341,7 +338,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertFalse(ex.isIdempotent());
     }
   }
 
@@ -383,7 +379,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertTrue(ex.isIdempotent());
     }
   }
 
@@ -428,7 +423,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertTrue(ex.isIdempotent());
     }
   }
 
@@ -463,7 +457,7 @@ public class DnsBatchTest {
         .setNextPageToken(PAGE_TOKEN);
     capturedCallback.onSuccess(response);
     Page<RecordSet> page = batchResult.get();
-    assertEquals(PAGE_TOKEN, page.getNextPageCursor());
+    assertEquals(PAGE_TOKEN, page.getNextPageToken());
     Iterator<RecordSet> iterator = page.getValues().iterator();
     int resultSize = 0;
     while (iterator.hasNext()) {
@@ -497,7 +491,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertTrue(ex.isIdempotent());
     }
   }
 
@@ -533,7 +526,7 @@ public class DnsBatchTest {
     EasyMock.replay(optionsMock);
     capturedCallback.onSuccess(response);
     Page<ChangeRequest> page = batchResult.get();
-    assertEquals(PAGE_TOKEN, page.getNextPageCursor());
+    assertEquals(PAGE_TOKEN, page.getNextPageToken());
     Iterator<ChangeRequest> iterator = page.getValues().iterator();
     int resultSize = 0;
     EasyMock.verify(dns);
@@ -574,7 +567,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertTrue(ex.isIdempotent());
     }
   }
 
@@ -652,7 +644,6 @@ public class DnsBatchTest {
       fail("Should throw a DnsException on error.");
     } catch (DnsException ex) {
       // expected
-      assertFalse(ex.isIdempotent());
     }
   }
 

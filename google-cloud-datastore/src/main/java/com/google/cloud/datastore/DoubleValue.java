@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,10 +77,6 @@ public final class DoubleValue extends Value<Double> {
     return new DoubleValue(value);
   }
 
-  @Deprecated
-  public static Builder builder(double value) {
-    return newBuilder(value);
-  }
 
   public static Builder newBuilder(double value) {
     return new Builder().set(value);

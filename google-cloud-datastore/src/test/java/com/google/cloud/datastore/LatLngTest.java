@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,11 +42,6 @@ public class LatLngTest {
     assertEquals(-122.084124, gp1.getLongitude(), 0);
   }
 
-  @Test
-  public void testLatLngDeprecated() {
-    assertEquals(37.422035, gp1.latitude(), 0);
-    assertEquals(-122.084124, gp1.longitude(), 0);
-  }
 
   @Test
   public void testEquals() {

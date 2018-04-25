@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -47,9 +47,10 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
       runWithRetries(callable(new Runnable() {
         @Override
         public void run() {
-          getOptions().getRpc().write(getUploadId(), getBuffer(), 0, getPosition(), length, last);
+          getOptions().getStorageRpcV1()
+              .write(getUploadId(), getBuffer(), 0, getPosition(), length, last);
         }
-      }), getOptions().getRetryParams(), StorageImpl.EXCEPTION_HANDLER, getOptions().getClock());
+      }), getOptions().getRetrySettings(), StorageImpl.EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -65,9 +66,9 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
       return runWithRetries(new Callable<String>() {
         @Override
         public String call() {
-          return options.getRpc().open(blob.toPb(), optionsMap);
+          return options.getStorageRpcV1().open(blob.toPb(), optionsMap);
         }
-      }, options.getRetryParams(), StorageImpl.EXCEPTION_HANDLER, options.getClock());
+      }, options.getRetrySettings(), StorageImpl.EXCEPTION_HANDLER, options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }

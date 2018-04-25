@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.examples.storage;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ReadChannel;
+import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
@@ -30,10 +31,7 @@ import com.google.cloud.storage.Storage.ComposeRequest;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageOptions;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.Tuple;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,7 +50,6 @@ import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -121,7 +118,7 @@ public class StorageExample {
     }
   }
 
-  private static class ParentAction extends StorageAction<StorageRpc.Tuple<StorageAction, Object>> {
+  private static class ParentAction extends StorageAction<Tuple<StorageAction, Object>> {
 
     private final Map<String, StorageAction> subActions;
 
@@ -131,17 +128,17 @@ public class StorageExample {
 
     @Override
     @SuppressWarnings("unchecked")
-    void run(Storage storage, StorageRpc.Tuple<StorageAction, Object> subaction) throws Exception {
+    void run(Storage storage, Tuple<StorageAction, Object> subaction) throws Exception {
       subaction.x().run(storage, subaction.y());
     }
 
     @Override
-    StorageRpc.Tuple<StorageAction, Object> parse(String... args) throws Exception {
+    Tuple<StorageAction, Object> parse(String... args) throws Exception {
       if (args.length >= 1) {
         StorageAction action = subActions.get(args[0]);
         if (action != null) {
           Object actionArguments = action.parse(Arrays.copyOfRange(args, 1, args.length));
-          return StorageRpc.Tuple.of(action, actionArguments);
+          return Tuple.of(action, actionArguments);
         } else {
           throw new IllegalArgumentException("Unrecognized entity '" + args[0] + "'.");
         }
@@ -268,9 +265,8 @@ public class StorageExample {
     public void run(Storage storage, String bucketName) {
       if (bucketName == null) {
         // list buckets
-        Iterator<Bucket> bucketIterator = storage.list().iterateAll();
-        while (bucketIterator.hasNext()) {
-          System.out.println(bucketIterator.next());
+        for (Bucket bucket : storage.list().iterateAll()) {
+          System.out.println(bucket);
         }
       } else {
         // list a bucket's blobs
@@ -279,9 +275,8 @@ public class StorageExample {
           System.out.println("No such bucket");
           return;
         }
-        Iterator<Blob> blobIterator = bucket.list().iterateAll();
-        while (blobIterator.hasNext()) {
-          System.out.println(blobIterator.next());
+        for (Blob blob : bucket.list().iterateAll()) {
+          System.out.println(blob);
         }
       }
     }
@@ -357,10 +352,11 @@ public class StorageExample {
 
     @Override
     public void run(Storage storage, Tuple<BlobId, Path> tuple) throws IOException {
-      run(storage, tuple.x(), tuple.y());
+      run(storage, tuple.x().getBucket(), tuple.x().getName(), tuple.y());
     }
 
-    private void run(Storage storage, BlobId blobId, Path downloadTo) throws IOException {
+    private void run(Storage storage, String bucketName, String objectName, Path downloadTo) throws IOException {
+      BlobId blobId = BlobId.of(bucketName, objectName);
       Blob blob = storage.get(blobId);
       if (blob == null) {
         System.out.println("No such object");
@@ -556,8 +552,10 @@ public class StorageExample {
       KeyStore keystore = KeyStore.getInstance("PKCS12");
       keystore.load(Files.newInputStream(Paths.get(args[0])), PASSWORD);
       PrivateKey privateKey = (PrivateKey) keystore.getKey("privatekey", PASSWORD);
-      ServiceAccountCredentials credentials =
-          new ServiceAccountCredentials(null, args[1], privateKey, null, null);
+      ServiceAccountCredentials credentials = ServiceAccountCredentials.newBuilder()
+          .setClientEmail(args[1])
+          .setPrivateKey(privateKey)
+          .build();
       return Tuple.of(credentials, BlobInfo.newBuilder(BlobId.of(args[2], args[3])).build());
     }
 

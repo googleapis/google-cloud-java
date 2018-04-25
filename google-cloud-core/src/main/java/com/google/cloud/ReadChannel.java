@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,12 +40,6 @@ public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<
 
   void seek(long position) throws IOException;
 
-  /**
-   * Sets the minimum size that will be read by a single RPC.
-   * Read data will be locally buffered until consumed.
-   */
-  @Deprecated
-  void chunkSize(int chunkSize);
 
   /**
    * Sets the minimum size that will be read by a single RPC.

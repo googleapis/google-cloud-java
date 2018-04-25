@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,17 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.spanner.v1.Mutation.Write;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.util.Timestamps;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.Mutation.Write;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSetMetadata;
@@ -60,6 +61,7 @@ public class SessionImplTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @Mock private SpannerRpc rpc;
+  @Mock private SpannerOptions spannerOptions;
   private com.google.cloud.spanner.Session session;
   @Captor private ArgumentCaptor<Map<SpannerRpc.Option, Object>> optionsCaptor;
   private Map<SpannerRpc.Option, Object> options;
@@ -67,13 +69,14 @@ public class SessionImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    SpannerImpl spanner = new SpannerImpl(rpc, 1, null);
+    SpannerImpl spanner = new SpannerImpl(rpc, 1, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";
     String sessionName = dbName + "/sessions/s1";
     DatabaseId db = DatabaseId.of(dbName);
 
     Session sessionProto = Session.newBuilder().setName(sessionName).build();
-    Mockito.when(rpc.createSession(Mockito.eq(dbName), optionsCaptor.capture()))
+    Mockito.when(rpc.createSession(Mockito.eq(dbName),
+    		Mockito.anyMapOf(String.class, String.class), optionsCaptor.capture()))
         .thenReturn(sessionProto);
     session = spanner.createSession(db);
     // We expect the same options, "options", on all calls on "session".

@@ -1,16 +1,16 @@
 Google Cloud Java Client for Pub/Sub
 ====================================
 
-Java idiomatic client for [Google Cloud Pub/Sub] (https://cloud.google.com/pubsub/).
+Java idiomatic client for [Google Cloud Pub/Sub][cloud-pubsub].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-pubsub.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-pubsub.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+- [Product Documentation][pubsub-product-docs]
+- [Client Library Documentation][pubsub-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -18,30 +18,24 @@ Java idiomatic client for [Google Cloud Pub/Sub] (https://cloud.google.com/pubsu
 Quickstart
 ----------
 
-> `google-cloud-pubsub` uses gRPC as transport layer, which is not (yet) supported by App Engine
-Standard. `google-cloud-pubsub` will work on App Engine Flexible.
-
+[//]: # ({x-version-update-start:google-cloud-pubsub:released})
 Add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>0.45.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud-pubsub:0.45.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.45.0-beta"
 ```
-
-Example Application
--------------------
-
-[`PubSubExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/PubSubExample.java) is a simple command line interface that provides some of Cloud Pub/Sub's functionality.  Read more about using the application on the [`PubSubExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/pubsub/PubSubExample.html).
+[//]: # ({x-version-update-end})
 
 Authentication
 --------------
@@ -53,7 +47,7 @@ About Google Cloud Pub/Sub
 
 [Google Cloud Pub/Sub][cloud-pubsub] is designed to provide reliable,
 many-to-many, asynchronous messaging between applications. Publisher
-applications can send messages to a ``topic`` and other applications can
+applications can send messages to a topic and other applications can
 subscribe to that topic to receive the messages. By decoupling senders and
 receivers, Google Cloud Pub/Sub allows developers to communicate between
 independently written applications.
@@ -61,7 +55,7 @@ independently written applications.
 See the [Google Cloud Pub/Sub docs][cloud-pubsub-quickstart] for more details on how to activate
 Cloud Pub/Sub for your project.
 
-See the ``google-cloud`` API [Pub/Sub documentation][pubsub-api] to learn how to interact with the
+See the [Pub/Sub client library docs][pubsub-client-lib-docs] to learn how to interact with the
 Cloud Pub/Sub using this Client Library.
 
 Getting Started
@@ -95,15 +89,15 @@ With Pub/Sub you can create topics. A topic is a named resource to which message
 publishers. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
-import com.google.pubsub.v1.TopicName;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.pubsub.v1.ProjectTopicName;
 ```
 Then, to create the topic, use the following code:
 
 ```java
-TopicName topic = TopicName.create("test-project", "test-topic");
-try (PublisherClient publisherClient = PublisherClient.create()) {
-  publisherClient.createTopic(topic);
+ProjectTopicName topic = ProjectTopicName.of("test-project", "test-topic");
+try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+  topicAdminClient.createTopic(topic);
 }
 ```
 
@@ -111,8 +105,8 @@ try (PublisherClient publisherClient = PublisherClient.create()) {
 With Pub/Sub you can publish messages to a topic. Add the following import at the top of your file:
 
 ```java
-import com.google.api.gax.core.RpcFuture;
-import com.google.cloud.pubsub.spi.v1.Publisher;
+import com.google.api.core.ApiFuture;
+import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 ```
@@ -124,10 +118,10 @@ try {
   publisher = Publisher.newBuilder(topic).build();
   ByteString data = ByteString.copyFromUtf8("my-message");
   PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-  RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+  ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
 } finally {
   if (publisher != null) {
-    publisher.shutdown();
+  publisher.shutdown();
   }
 }
 ```
@@ -137,19 +131,19 @@ With Pub/Sub you can create subscriptions. A subscription represents the stream 
 single, specific topic. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.PushConfig;
-import com.google.pubsub.v1.SubscriptionName;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 ```
 Then, to create the subscription, use the following code:
 
 ```java
-TopicName topic = TopicName.create("test-project", "test-topic");
-SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
+ProjectTopicName topic = ProjectTopicName.of("test-project", "test-topic");
+ProjectSubscriptionName subscription = ProjectSubscriptionName.of("test-project", "test-subscription");
 
-try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-  subscriberClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
+try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+  subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
 }
 ```
 
@@ -158,41 +152,42 @@ With Pub/Sub you can pull messages from a subscription. Add the following import
 file:
 
 ```java
-import com.google.cloud.pubsub.spi.v1.AckReply;
-import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver;
-import com.google.cloud.pubsub.spi.v1.Subscriber;
+import com.google.cloud.pubsub.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.v1.MessageReceiver;
+import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
-import com.google.pubsub.v1.SubscriptionName;
-import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.ProjectTopicName;
 ```
 Then, to pull messages asynchronously, use the following code:
 
 ```java
+ProjectSubscriptionName subscription = ProjectSubscriptionName.of("test-project", "test-subscription");
+
 MessageReceiver receiver =
-    new MessageReceiver() {
-      @Override
-      public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-        System.out.println("got message: " + message.getData().toStringUtf8());
-        consumer.accept(AckReply.ACK, null);
-      }
-    };
+  new MessageReceiver() {
+    @Override
+    public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
+      System.out.println("got message: " + message.getData().toStringUtf8());
+      consumer.ack();
+    }
+  };
+
 Subscriber subscriber = null;
 try {
   subscriber = Subscriber.newBuilder(subscription, receiver).build();
   subscriber.addListener(
-      new Subscriber.SubscriberListener() {
-        @Override
-        public void failed(Subscriber.State from, Throwable failure) {
-          // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
-          System.err.println(failure);
-        }
-      },
-      MoreExecutors.directExecutor());
+    new Subscriber.Listener() {
+      @Override
+      public void failed(Subscriber.State from, Throwable failure) {
+        // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
+        System.err.println(failure);
+      }
+    },
+    MoreExecutors.directExecutor());
   subscriber.startAsync().awaitRunning();
-  // Pull messages for 60 seconds.
-  Thread.sleep(60000);
+  //...
 } finally {
   if (subscriber != null) {
     subscriber.stopAsync();
@@ -201,12 +196,11 @@ try {
 ```
 #### Complete source code
 
-In
-[CreateTopicAndPublishMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java)
-and
-[CreateSubscriptionAndPullMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java)
-we put together all the code shown above into two programs. The programs assume that you are
-running on Compute Engine, App Engine Flexible or from your own desktop.
+In [CreateTopicAndPublishMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java) and [CreateSubscriptionAndConsumeMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndConsumeMessages.java) we put together all the code shown above into two programs. The programs assume that you are running on Compute Engine, App Engine Flexible or from your own desktop.
+
+Transport
+---------
+Pub/Sub uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -223,7 +217,7 @@ See [TESTING] to read more about testing.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
@@ -249,6 +243,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub
 
-[cloud-pubsub]: https://cloud.google.com/storage/
+[cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-quickstart]: https://cloud.google.com/pubsub/quickstart-console#before-you-begin
-[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/package-summary.html
+[pubsub-product-docs]: https://cloud.google.com/pubsub/docs/
+[pubsub-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/pubsub/v1/package-summary.html

@@ -3,33 +3,36 @@ Google Cloud Java Client Examples
 
 Examples for google-cloud (Java idiomatic client for [Google Cloud Platform][cloud-platform] services).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-examples.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-examples.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
 -  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
 -  [Examples](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud-examples:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>0.45.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-examples:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud-examples:0.45.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.45.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
 To run examples from your command line:
 
@@ -88,7 +91,7 @@ To run examples from your command line:
   * Here's an example run of `DnsExample`.
 
     Note that you have to enable the Google Cloud DNS API on the [Google Developers Console][developers-console] before running the following commands.
-    You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership] (https://www.google.com/webmasters/verification/home).
+    You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership](https://www.google.com/webmasters/verification/home).
     Also, note that the example creates and deletes record sets of type A only. Operations with other record types are not implemented in the example.
     ```
     target/appassembler/bin/DnsExample create some-sample-zone elaborateexample.com. description
@@ -119,16 +122,6 @@ To run examples from your command line:
     Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket with a file in it.
     ```
     target/appassembler/bin/ParallelCountBytes gs://mybucket/myfile.txt
-    ```
-
-  * Here's an example run of `PubSubExample`.
-
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Pub/Sub" is enabled.
-    ```
-    target/appassembler/bin/PubSubExample create topic test-topic
-    target/appassembler/bin/PubSubExample create subscription test-topic test-subscription
-    target/appassembler/bin/PubSubExample publish test-topic message1 message2
-    target/appassembler/bin/PubSubExample pull sync test-subscription 2
     ```
 
   * Here's an example run of `ResourceManagerExample`.
@@ -170,12 +163,12 @@ To run examples from your command line:
 
   * Here's an example run of `TranslateExample`.
 
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Translate API" is enabled and that you have a valid API key.
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Translation API" is enabled.
     ```
-    target/appassembler/bin/TranslateExample <apiKey> languages
-    target/appassembler/bin/TranslateExample <apiKey> detect Hello,\ World!
-    target/appassembler/bin/TranslateExample <apiKey> translate ¡Hola\ Mundo!
-    target/appassembler/bin/TranslateExample <apiKey> es translate Hello,\ World!
+    target/appassembler/bin/TranslateExample languages
+    target/appassembler/bin/TranslateExample detect Hello,\ World!
+    target/appassembler/bin/TranslateExample translate ¡Hola\ Mundo!
+    target/appassembler/bin/TranslateExample es translate Hello,\ World!
     ```
 
 Troubleshooting

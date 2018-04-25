@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.translate.Translate.LanguageListOption;
 import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 
 import org.junit.Test;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,17 +27,17 @@ import org.junit.Test;
 public class StandardTableDefinitionTest {
 
   private static final Field FIELD_SCHEMA1 =
-      Field.newBuilder("StringField", Field.Type.string())
+      Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.newBuilder("IntegerField", Field.Type.integer())
+      Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
           .setMode(Field.Mode.REPEATED)
           .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+      Field.newBuilder("RecordField", LegacySQLTypeName.RECORD, FIELD_SCHEMA1, FIELD_SCHEMA2)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
@@ -56,15 +56,6 @@ public class StandardTableDefinitionTest {
           .setStreamingBuffer(STREAMING_BUFFER)
           .setSchema(TABLE_SCHEMA)
           .setTimePartitioning(TIME_PARTITIONING)
-          .build();
-  private static final StandardTableDefinition DEPRECATED_TABLE_DEFINITION =
-      StandardTableDefinition.builder()
-          .setLocation(LOCATION)
-          .setNumBytes(NUM_BYTES)
-          .setNumRows(NUM_ROWS)
-          .setStreamingBuffer(STREAMING_BUFFER)
-          .schema(TABLE_SCHEMA)
-          .timePartitioning(TIME_PARTITIONING)
           .build();
 
   @Test
@@ -96,16 +87,6 @@ public class StandardTableDefinitionTest {
     assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.getTimePartitioning());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(TableDefinition.Type.TABLE, DEPRECATED_TABLE_DEFINITION.type());
-    assertEquals(TABLE_SCHEMA, DEPRECATED_TABLE_DEFINITION.schema());
-    assertEquals(LOCATION, DEPRECATED_TABLE_DEFINITION.location());
-    assertEquals(NUM_BYTES, DEPRECATED_TABLE_DEFINITION.numBytes());
-    assertEquals(NUM_ROWS, DEPRECATED_TABLE_DEFINITION.numRows());
-    assertEquals(STREAMING_BUFFER, DEPRECATED_TABLE_DEFINITION.streamingBuffer());
-    assertEquals(TIME_PARTITIONING, DEPRECATED_TABLE_DEFINITION.timePartitioning());
-  }
 
   @Test
   public void testOf() {

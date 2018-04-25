@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   private final Set<Key> toDelete = new LinkedHashSet<>();
   private boolean active = true;
 
-  protected BaseDatastoreBatchWriter(String name) {
+  BaseDatastoreBatchWriter(String name) {
     this.name = name;
   }
 
@@ -203,11 +203,6 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     }
   }
 
-  @Override
-  @Deprecated
-  public boolean active() {
-    return isActive();
-  }
 
   @Override
   public boolean isActive() {
@@ -276,8 +271,6 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return mutationsPb;
   }
 
-  @Deprecated
-  protected abstract Datastore datastore();
 
   protected abstract Datastore getDatastore();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,18 +59,6 @@ public class FullEntityTest {
   }
 
   @Test
-  public void testNoKeyDeprecated() throws Exception {
-    FullEntity<IncompleteKey> entity = FullEntity.builder().set("foo", "bar").build();
-    assertFalse(entity.hasKey());
-    assertNull(entity.key());
-    assertEquals("bar", entity.getString("foo"));
-
-    entity = FullEntity.builder((IncompleteKey) null).build();
-    assertFalse(entity.hasKey());
-    assertNull(entity.key());
-  }
-
-  @Test
   public void testCopyFrom() throws Exception {
     FullEntity.Builder<Key> builder1 = FullEntity.newBuilder(ENTITY);
     assertEquals(ENTITY, builder1.build());
@@ -79,18 +67,6 @@ public class FullEntityTest {
     assertEquals(COMPLETE_ENTITY1, builder1.build());
 
     FullEntity.Builder<IncompleteKey> builder2 = FullEntity.newBuilder(INCOMPLETE_ENTITY);
-    assertEquals(INCOMPLETE_ENTITY, builder2.build());
-  }
-
-  @Test
-  public void testCopyFromDeprected() throws Exception {
-    FullEntity.Builder<Key> builder1 = FullEntity.builder(ENTITY);
-    assertEquals(ENTITY, builder1.build());
-
-    builder1 = FullEntity.builder(COMPLETE_ENTITY1);
-    assertEquals(COMPLETE_ENTITY1, builder1.build());
-
-    FullEntity.Builder<IncompleteKey> builder2 = FullEntity.builder(INCOMPLETE_ENTITY);
     assertEquals(INCOMPLETE_ENTITY, builder2.build());
   }
 }

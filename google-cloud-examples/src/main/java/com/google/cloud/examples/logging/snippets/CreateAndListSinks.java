@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,13 @@
 
 package com.google.cloud.examples.logging.snippets;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 
-import java.util.Iterator;
 
 /**
  * A snippet for Stackdriver Logging showing how to create a sink to backs log entries to BigQuery.
@@ -46,9 +45,8 @@ public class CreateAndListSinks {
 
       // List sinks
       Page<Sink> sinks = logging.listSinks();
-      Iterator<Sink> sinkIterator = sinks.iterateAll();
-      while (sinkIterator.hasNext()) {
-        System.out.println(sinkIterator.next());
+      for (Sink sink : sinks.iterateAll()) {
+        System.out.println(sink);
       }
     }
   }

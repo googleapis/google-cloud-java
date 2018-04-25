@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,6 @@ public class BigQueryErrorTest {
     assertEquals(MESSAGE, ERROR_INCOMPLETE.getMessage());
   }
 
-  @Test
-  public void testConstructorDeprecated() {
-    assertEquals(REASON, ERROR.reason());
-    assertEquals(LOCATION, ERROR.location());
-    assertEquals(DEBUG_INFO, ERROR.getDebugInfo());
-    assertEquals(MESSAGE, ERROR.message());
-    assertEquals(REASON, ERROR_INCOMPLETE.reason());
-    assertEquals(LOCATION, ERROR_INCOMPLETE.location());
-    assertEquals(null, ERROR_INCOMPLETE.getDebugInfo());
-    assertEquals(MESSAGE, ERROR_INCOMPLETE.message());
-  }
 
   @Test
   public void testToAndFromPb() {

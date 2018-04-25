@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,8 @@
  */
 
 /**
- * A client to the Google Cloud Datastore.
+ * A client for Cloud Datastore – A highly-scalable NoSQL database for web and mobile
+ * applications.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * shows how to create a Datastore entity. For the complete source code see
@@ -28,7 +29,7 @@
  * Entity entity = Entity.newBuilder(key)
  *     .set("name", "John Doe")
  *     .set("age", 30)
- *     .set("access_time", DateTime.now())
+ *     .set("access_time", Timestamp.now())
  *     .build();
  * datastore.put(entity);
  * } </pre>
@@ -45,7 +46,7 @@
  * if (entity != null) {
  *   System.out.println("Updating access_time for " + entity.getString("name"));
  *   entity = Entity.newBuilder(entity)
- *       .set("access_time", DateTime.now())
+ *       .set("access_time", Timestamp.now())
  *       .build();
  *   datastore.update(entity);
  * }} </pre>

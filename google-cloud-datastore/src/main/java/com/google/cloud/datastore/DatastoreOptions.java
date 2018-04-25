@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,24 +18,25 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
-import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestInitializer;
-import com.google.cloud.HttpServiceOptions;
-import com.google.cloud.datastore.spi.DatastoreRpc;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
-import com.google.cloud.datastore.spi.DefaultDatastoreRpc;
+import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
-
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
 
 public class DatastoreOptions
-    extends HttpServiceOptions<Datastore, DatastoreRpc, DatastoreOptions> {
+    extends ServiceOptions<Datastore, DatastoreOptions> {
 
   private static final long serialVersionUID = -1018382430058137336L;
+  private static final String API_SHORT_NAME = "Datastore";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
 
@@ -56,13 +57,13 @@ public class DatastoreOptions
     private static final DatastoreRpcFactory INSTANCE = new DefaultDatastoreRpcFactory();
 
     @Override
-    public DatastoreRpc create(DatastoreOptions options) {
-      return new DefaultDatastoreRpc(options);
+    public ServiceRpc create(DatastoreOptions options) {
+      return new HttpDatastoreRpc(options);
     }
   }
 
   public static class Builder extends
-      HttpServiceOptions.Builder<Datastore, DatastoreRpc, DatastoreOptions, Builder> {
+      ServiceOptions.Builder<Datastore, DatastoreOptions, Builder> {
 
     private String namespace;
 
@@ -75,16 +76,17 @@ public class DatastoreOptions
     }
 
     @Override
-    public DatastoreOptions build() {
-      return new DatastoreOptions(this);
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof HttpTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
-    /**
-     * Sets the default namespace to be used by the datastore service.
-     */
-    @Deprecated
-    public Builder namespace(String namespace) {
-      return setNamespace(namespace);
+    @Override
+    public DatastoreOptions build() {
+      return new DatastoreOptions(this);
     }
 
     /**
@@ -97,20 +99,8 @@ public class DatastoreOptions
   }
 
   private DatastoreOptions(Builder builder) {
-    super(DatastoreFactory.class, DatastoreRpcFactory.class, builder);
+    super(DatastoreFactory.class, DatastoreRpcFactory.class, builder, new DatastoreDefaults());
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
-  }
-
-  @Override
-  public HttpRequestInitializer getHttpRequestInitializer() {
-    final HttpRequestInitializer delegate = super.getHttpRequestInitializer();
-    return new HttpRequestInitializer() {
-      @Override
-      public void initialize(HttpRequest httpRequest) throws IOException {
-        delegate.initialize(httpRequest);
-        httpRequest.getHeaders().setUserAgent(getApplicationName());
-      }
-    };
   }
 
   @Override
@@ -129,23 +119,29 @@ public class DatastoreOptions
     return projectId != null ? projectId : super.getDefaultProject();
   }
 
-  @Override
-  protected DatastoreFactory getDefaultServiceFactory() {
-    return DefaultDatastoreFactory.INSTANCE;
+  private static class DatastoreDefaults implements
+      ServiceDefaults<Datastore, DatastoreOptions> {
+
+    @Override
+    public DatastoreFactory getDefaultServiceFactory() {
+      return DefaultDatastoreFactory.INSTANCE;
+    }
+
+    @Override
+    public DatastoreRpcFactory getDefaultRpcFactory() {
+      return DefaultDatastoreRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultHttpTransportOptions();
+    }
   }
 
-  @Override
-  protected DatastoreRpcFactory getDefaultRpcFactory() {
-    return DefaultDatastoreRpcFactory.INSTANCE;
+  public static HttpTransportOptions getDefaultHttpTransportOptions() {
+    return HttpTransportOptions.newBuilder().build();
   }
 
-  /**
-   * Returns the default namespace to be used by the datastore service.
-   */
-  @Deprecated
-  public String namespace() {
-    return getNamespace();
-  }
 
   /**
    * Returns the default namespace to be used by the datastore service.
@@ -154,13 +150,6 @@ public class DatastoreOptions
     return namespace;
   }
 
-  /**
-   * Returns a default {@code DatastoreOptions} instance.
-   */
-  @Deprecated
-  public static DatastoreOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code DatastoreOptions} instance.
@@ -186,6 +175,10 @@ public class DatastoreOptions
     return SCOPES;
   }
 
+  protected DatastoreRpc getDatastoreRpcV1() {
+    return (DatastoreRpc) getRpc();
+  }
+
   @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
@@ -206,10 +199,6 @@ public class DatastoreOptions
     return baseEquals(other) && Objects.equals(namespace, other.namespace);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

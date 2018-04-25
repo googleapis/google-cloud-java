@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package com.google.cloud;
 
 import com.google.auth.oauth2.OAuth2Credentials;
-
 import java.io.ObjectStreamException;
 
 /**
@@ -37,5 +36,13 @@ public class NoCredentials extends OAuth2Credentials {
 
   public static NoCredentials getInstance() {
     return INSTANCE;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof NoCredentials)) {
+      return false;
+    }
+    return this == obj;
   }
 }

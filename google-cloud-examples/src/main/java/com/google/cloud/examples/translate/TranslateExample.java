@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,21 +28,21 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * An example of using Google Translate.
+ * An example of using Google Translation.
  *
- * <p>This example demonstrates a simple/typical Translate usage.
+ * <p>This example demonstrates a simple/typical Translation usage.
  *
  * <p>See the
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  * <pre>{@code target/appassembler/bin/TranslateExample
- *  -Dexec.args="<apiKey> [<targetLanguage>]
+ *  -Dexec.args="[[<apiKey>] <targetLanguage>]
  *  list languages <languageCode>?
  *  detect <text>+
  *  translate <text>+"}</pre>
  *
  * <p>The first parameter is an optional {@code targetLanguage}. If the target language is not
- * supplied, {@code en} is used (see {@link TranslateOptions.Builder#setTargetLanguage(String)}).
+ * supplied, {@code en} is used (see {@link com.google.cloud.translate.TranslateOptions.Builder#setTargetLanguage(String)}).
  */
 public class TranslateExample {
 
@@ -169,7 +169,7 @@ public class TranslateExample {
         actionAndParams.append(' ').append(param);
       }
     }
-    System.out.printf("Usage: %s [<apiKey>] [<targetLanguage>] operation <args>*%s%n",
+    System.out.printf("Usage: %s [[<apiKey>] <targetLanguage>] operation <args>*%s%n",
         TranslateExample.class.getSimpleName(), actionAndParams);
   }
 
@@ -189,7 +189,7 @@ public class TranslateExample {
       optionsBuilder.setTargetLanguage(args[1]);
       args = Arrays.copyOfRange(args, 3, args.length);
     } else if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
-      optionsBuilder.setApiKey(args[0]);
+      optionsBuilder.setTargetLanguage(args[0]);
       actionName = args[1];
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {

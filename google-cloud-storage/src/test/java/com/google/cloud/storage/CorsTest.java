@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,23 +50,5 @@ public class CorsTest {
     assertEquals(origins, cors.getOrigins());
     assertEquals(methods, cors.getMethods());
     assertEquals(headers, cors.getResponseHeaders());
-  }
-
-  @Test
-  public void corsTestDeprecated() {
-    List<Origin> origins = ImmutableList.of(Origin.any(), Origin.of("o"));
-    List<String> headers = ImmutableList.of("h1", "h2");
-    List<HttpMethod> methods = ImmutableList.of(HttpMethod.GET);
-    Cors cors = Cors.builder()
-        .maxAgeSeconds(100)
-        .origins(origins)
-        .responseHeaders(headers)
-        .methods(methods)
-        .build();
-
-    assertEquals(Integer.valueOf(100), cors.maxAgeSeconds());
-    assertEquals(origins, cors.origins());
-    assertEquals(methods, cors.methods());
-    assertEquals(headers, cors.responseHeaders());
   }
 }

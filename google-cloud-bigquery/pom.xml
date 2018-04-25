@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>${beta.version}</version>
+  <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud BigQuery</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bigquery</url>
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.9.4-alpha-SNAPSHOT</version>
+    <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquery</site.installationModule>
@@ -21,18 +21,24 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-core-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value</artifactId>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>${storage.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-bigquery</artifactId>
-      <version>v2-rev330-1.22.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
@@ -44,21 +50,60 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${core.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>3.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Allow script to run, so we can run benchmarks. -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
+          <skip>false</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/benchmark/java</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

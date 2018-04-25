@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to the Google Cloud DNS.
+ * A client for Cloud DNS - A highly available global DNS network.
  *
  * <p>
  * Here are two simple usage examples from within Compute/App Engine.

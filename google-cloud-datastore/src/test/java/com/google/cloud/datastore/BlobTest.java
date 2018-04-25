@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,11 +59,6 @@ public class BlobTest {
     assertEquals(bytes2.length, blob2.getLength());
   }
 
-  @Test
-  public void testLengthDeprecated() throws Exception {
-    assertEquals(bytes1.length, blob1.length());
-    assertEquals(bytes2.length, blob2.length());
-  }
 
   @Test
   public void testToByteArray() throws Exception {

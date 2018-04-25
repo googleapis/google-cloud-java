@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,9 @@ package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.BetaApi;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -31,9 +34,10 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 
 /**
- * Exception handling used by {@link RetryHelper}.
+ * Exception retry algorithm implementation used by {@link RetryHelper}.
  */
-public final class ExceptionHandler implements Serializable {
+@BetaApi
+public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Serializable {
 
   private static final long serialVersionUID = -2460707015779532919L;
 
@@ -87,16 +91,6 @@ public final class ExceptionHandler implements Serializable {
     private Builder() {}
 
 
-    /**
-     * Adds the exception handler interceptors. Call order will be maintained.
-     *
-     * @param interceptors the interceptors for this exception handler
-     * @return the Builder for chaining
-     */
-    @Deprecated
-    public Builder interceptor(Interceptor... interceptors) {
-      return addInterceptors(interceptors);
-    }
 
     /**
      * Adds the exception handler interceptors. Call order will be maintained.
@@ -243,25 +237,12 @@ public final class ExceptionHandler implements Serializable {
     }
   }
 
-  @Deprecated
-  public Set<Class<? extends Exception>> retriableExceptions() {
-    return getRetriableExceptions();
-  }
-
-  public Set<Class<? extends Exception>> getRetriableExceptions() {
-    return retriableExceptions;
-  }
-
-  @Deprecated
-  public Set<Class<? extends Exception>> nonRetriableExceptions() {
-    return nonRetriableExceptions;
-  }
-
-  public Set<Class<? extends Exception>> getNonRetriableExceptions() {
-    return nonRetriableExceptions;
-  }
-
-  boolean shouldRetry(Exception ex) {
+  @Override
+  public boolean shouldRetry(Throwable prevThrowable, Object prevResponse) {
+    if(!(prevThrowable instanceof Exception)) {
+      return false;
+    }
+    Exception ex = (Exception) prevThrowable;
     for (Interceptor interceptor : interceptors) {
       Interceptor.RetryResult retryResult = checkNotNull(interceptor.beforeEval(ex));
       if (retryResult != Interceptor.RetryResult.CONTINUE_EVALUATION) {
@@ -279,6 +260,14 @@ public final class ExceptionHandler implements Serializable {
       }
     }
     return retryResult == Interceptor.RetryResult.RETRY;
+  }
+
+  @Override
+  public TimedAttemptSettings createNextAttempt(Throwable prevThrowable, Object prevResponse,
+      TimedAttemptSettings prevSettings) {
+    // Return null to indicate that this implementation does not provide any specific attempt
+    // settings, so by default the TimedRetryAlgorithm options can be used instead.
+    return null;
   }
 
   @Override
@@ -301,13 +290,6 @@ public final class ExceptionHandler implements Serializable {
         && Objects.equals(retryInfo, other.retryInfo);
   }
 
-  /**
-   * Returns an instance which retry any checked exception and abort on any runtime exception.
-   */
-  @Deprecated
-  public static ExceptionHandler defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns an instance which retry any checked exception and abort on any runtime exception.
@@ -316,10 +298,6 @@ public final class ExceptionHandler implements Serializable {
     return DEFAULT_INSTANCE;
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

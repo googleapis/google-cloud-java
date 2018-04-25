@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,32 +30,17 @@ public class FieldSelectorHelperTest {
 
   private static final FieldSelector FIELD1 = new FieldSelector() {
     @Override
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return "field1";
     }
   };
   private static final FieldSelector FIELD2 = new FieldSelector() {
     @Override
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return "field2";
     }
   };
   private static final FieldSelector FIELD3 = new FieldSelector() {
-    @Override
-    public String selector() {
-      return getSelector();
-    }
-
     @Override
     public String getSelector() {
       return "field3";

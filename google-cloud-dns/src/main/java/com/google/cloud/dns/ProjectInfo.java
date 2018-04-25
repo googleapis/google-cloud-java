@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,13 +76,6 @@ public class ProjectInfo implements Serializable {
       this.totalRrdataSizePerChange = totalRrdataSizePerChange;
     }
 
-    /**
-     * Returns the maximum allowed number of zones in the project.
-     */
-    @Deprecated
-    public int zones() {
-      return getZones();
-    }
 
     /**
      * Returns the maximum allowed number of zones in the project.
@@ -91,13 +84,6 @@ public class ProjectInfo implements Serializable {
       return zones;
     }
 
-    /**
-     * Returns the maximum allowed number of records per {@link RecordSet}.
-     */
-    @Deprecated
-    public int resourceRecordsPerRrset() {
-      return getResourceRecordsPerRrset();
-    }
 
     /**
      * Returns the maximum allowed number of records per {@link RecordSet}.
@@ -106,14 +92,6 @@ public class ProjectInfo implements Serializable {
       return resourceRecordsPerRrset;
     }
 
-    /**
-     * Returns the maximum allowed number of {@link RecordSet}s to add per {@link
-     * ChangeRequest}.
-     */
-    @Deprecated
-    public int rrsetAdditionsPerChange() {
-      return getRrsetAdditionsPerChange();
-    }
 
     /**
      * Returns the maximum allowed number of {@link RecordSet}s to add per {@link
@@ -123,14 +101,6 @@ public class ProjectInfo implements Serializable {
       return rrsetAdditionsPerChange;
     }
 
-    /**
-     * Returns the maximum allowed number of {@link RecordSet}s to delete per {@link
-     * ChangeRequest}.
-     */
-    @Deprecated
-    public int rrsetDeletionsPerChange() {
-      return getRrsetDeletionsPerChange();
-    }
 
     /**
      * Returns the maximum allowed number of {@link RecordSet}s to delete per {@link
@@ -140,14 +110,6 @@ public class ProjectInfo implements Serializable {
       return rrsetDeletionsPerChange;
     }
 
-    /**
-     * Returns the maximum allowed number of {@link RecordSet}s per {@link ZoneInfo} in the
-     * project.
-     */
-    @Deprecated
-    public int rrsetsPerZone() {
-      return getRrsetsPerZone();
-    }
 
     /**
      * Returns the maximum allowed number of {@link RecordSet}s per {@link ZoneInfo} in the
@@ -157,13 +119,6 @@ public class ProjectInfo implements Serializable {
       return rrsetsPerZone;
     }
 
-    /**
-     * Returns the maximum allowed size for total records in one ChangesRequest in bytes.
-     */
-    @Deprecated
-    public int totalRrdataSizePerChange() {
-      return getTotalRrdataSizePerChange();
-    }
 
     /**
      * Returns the maximum allowed size for total records in one ChangesRequest in bytes.
@@ -273,13 +228,6 @@ public class ProjectInfo implements Serializable {
     return new Builder();
   }
 
-  /**
-   * Returns the {@code Quota} object which contains quotas assigned to this project.
-   */
-  @Deprecated
-  public Quota quota() {
-    return getQuota();
-  }
 
   /**
    * Returns the {@code Quota} object which contains quotas assigned to this project.
@@ -295,13 +243,6 @@ public class ProjectInfo implements Serializable {
     return number;
   }
 
-  /**
-   * Returns project id. For internal use only.
-   */
-  @Deprecated
-  String id() {
-    return getId();
-  }
 
   /**
    * Returns project id. For internal use only.

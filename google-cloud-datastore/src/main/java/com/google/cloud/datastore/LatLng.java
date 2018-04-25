@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,13 +45,6 @@ public final class LatLng implements Serializable {
     this.longitude = longitude;
   }
 
-  /**
-   * Returns the latitude.
-   */
-  @Deprecated
-  public double latitude() {
-    return getLatitude();
-  }
 
   /**
    * Returns the latitude.
@@ -60,13 +53,6 @@ public final class LatLng implements Serializable {
     return latitude;
   }
 
-  /**
-   * Returns the longitude.
-   */
-  @Deprecated
-  public double longitude() {
-    return getLongitude();
-  }
 
   /**
    * Returns the longitude.

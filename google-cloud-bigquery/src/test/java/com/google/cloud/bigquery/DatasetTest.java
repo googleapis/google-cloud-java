@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,11 +30,13 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 
+import java.util.Map;
 import org.junit.After;
 import org.junit.Test;
 
@@ -46,6 +48,9 @@ public class DatasetTest {
   private static final List<Acl> ACCESS_RULES = ImmutableList.of(
       Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
       Acl.of(new Acl.View(TableId.of("dataset", "table"))));
+  private static final Map<String, String> LABELS = ImmutableMap.of(
+      "example-label1", "example-value1",
+      "example-label2", "example-value2");
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
   private static final String DESCRIPTION = "description";
@@ -56,7 +61,7 @@ public class DatasetTest {
   private static final String LOCATION = "";
   private static final String SELF_LINK = "http://bigquery/p/d";
   private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET_ID).build();
-  private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
+  private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.INTEGER);
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.of(Schema.of(FIELD));
   private static final ViewDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
@@ -106,6 +111,7 @@ public class DatasetTest {
         .setLastModified(LAST_MODIFIED)
         .setLocation(LOCATION)
         .setSelfLink(SELF_LINK)
+        .setLabels(LABELS)
         .build();
     assertEquals(DATASET_ID, builtDataset.getDatasetId());
     assertEquals(ACCESS_RULES, builtDataset.getAcl());
@@ -118,36 +124,9 @@ public class DatasetTest {
     assertEquals(LAST_MODIFIED, builtDataset.getLastModified());
     assertEquals(LOCATION, builtDataset.getLocation());
     assertEquals(SELF_LINK, builtDataset.getSelfLink());
+    assertEquals(LABELS, builtDataset.getLabels());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    initializeExpectedDataset(2);
-    replay(bigquery);
-    Dataset builtDataset = new Dataset.Builder(serviceMockReturnsOptions, DATASET_ID)
-        .acl(ACCESS_RULES)
-        .setCreationTime(CREATION_TIME)
-        .defaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
-        .description(DESCRIPTION)
-        .setEtag(ETAG)
-        .friendlyName(FRIENDLY_NAME)
-        .setGeneratedId(GENERATED_ID)
-        .setLastModified(LAST_MODIFIED)
-        .location(LOCATION)
-        .setSelfLink(SELF_LINK)
-        .build();
-    assertEquals(DATASET_ID, builtDataset.datasetId());
-    assertEquals(ACCESS_RULES, builtDataset.acl());
-    assertEquals(CREATION_TIME, builtDataset.creationTime());
-    assertEquals(DEFAULT_TABLE_EXPIRATION, builtDataset.defaultTableLifetime());
-    assertEquals(DESCRIPTION, builtDataset.description());
-    assertEquals(ETAG, builtDataset.etag());
-    assertEquals(FRIENDLY_NAME, builtDataset.friendlyName());
-    assertEquals(GENERATED_ID, builtDataset.generatedId());
-    assertEquals(LAST_MODIFIED, builtDataset.lastModified());
-    assertEquals(LOCATION, builtDataset.location());
-    assertEquals(SELF_LINK, builtDataset.selfLink());
-  }
 
   @Test
   public void testToBuilder() {
@@ -281,7 +260,7 @@ public class DatasetTest {
     Page<Table> tablePage = dataset.list();
     assertArrayEquals(tableResults.toArray(),
         Iterables.toArray(tablePage.getValues(), Table.class));
-    assertEquals(expectedPage.getNextPageCursor(), tablePage.getNextPageCursor());
+    assertEquals(expectedPage.getNextPageToken(), tablePage.getNextPageToken());
   }
 
   @Test
@@ -300,7 +279,7 @@ public class DatasetTest {
     Page<Table> tablePage = dataset.list(BigQuery.TableListOption.pageSize(10L));
     assertArrayEquals(tableResults.toArray(),
         Iterables.toArray(tablePage.getValues(), Table.class));
-    assertEquals(expectedPage.getNextPageCursor(), tablePage.getNextPageCursor());
+    assertEquals(expectedPage.getNextPageToken(), tablePage.getNextPageToken());
   }
 
   @Test
@@ -370,18 +349,12 @@ public class DatasetTest {
   }
 
   @Test
-  public void testBigquery() {
+  public void testBigQuery() {
     initializeExpectedDataset(1);
     replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedDataset.getBigquery());
+    assertSame(serviceMockReturnsOptions, expectedDataset.getBigQuery());
   }
 
-  @Test
-  public void testBigqueryDeprecated() {
-    initializeExpectedDataset(1);
-    replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedDataset.bigquery());
-  }
 
   @Test
   public void testToAndFromPb() {
@@ -394,7 +367,7 @@ public class DatasetTest {
   private void compareDataset(Dataset expected, Dataset value) {
     assertEquals(expected, value);
     compareDatasetInfo(expected, value);
-    assertEquals(expected.getBigquery().getOptions(), value.getBigquery().getOptions());
+    assertEquals(expected.getBigQuery().getOptions(), value.getBigQuery().getOptions());
   }
 
   private void compareDatasetInfo(DatasetInfo expected, DatasetInfo value) {

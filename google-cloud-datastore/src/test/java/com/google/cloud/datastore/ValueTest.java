@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.primitives.Primitives;
@@ -36,7 +37,7 @@ public class ValueTest {
 
   private static final Key KEY = Key.newBuilder("ds", "kind", 1).build();
   private static final Blob BLOB = Blob.copyFrom(new byte[]{});
-  private static final DateTime DATE_TIME = DateTime.now();
+  private static final Timestamp TIMESTAMP = Timestamp.now();
   private static final Entity ENTITY = Entity.newBuilder(KEY).set("FOO", "BAR").build();
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
@@ -49,7 +50,7 @@ public class ValueTest {
           .put(ValueType.KEY, new Object[] {KeyValue.class, KEY})
           .put(ValueType.BLOB, new Object[] {BlobValue.class, BLOB})
           .put(ValueType.BOOLEAN, new Object[] {BooleanValue.class, Boolean.TRUE})
-          .put(ValueType.DATE_TIME, new Object[] {DateTimeValue.class, DATE_TIME})
+          .put(ValueType.TIMESTAMP, new Object[] {TimestampValue.class, TIMESTAMP})
           .put(ValueType.DOUBLE, new Object[] {DoubleValue.class, 1.25D})
           .put(ValueType.ENTITY, new Object[] {EntityValue.class, ENTITY})
           .put(ValueType.LIST, new Object[] {
@@ -120,12 +121,6 @@ public class ValueTest {
     }
   }
 
-  @Test
-  public void testTypeDeprecated() throws Exception {
-    for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
-      assertEquals(entry.getKey(), entry.getValue().type());
-    }
-  }
 
   @Test
   public void testExcludeFromIndexes() throws Exception {
@@ -138,16 +133,6 @@ public class ValueTest {
     assertFalse(builder.setExcludeFromIndexes(false).build().excludeFromIndexes());
   }
 
-  @Test
-  public void testExcludeFromIndexesDeprecated() throws Exception {
-    for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
-      assertFalse(entry.getValue().excludeFromIndexes());
-    }
-    TestBuilder builder = new TestBuilder();
-    assertFalse(builder.build().excludeFromIndexes());
-    assertTrue(builder.excludeFromIndexes(true).build().excludeFromIndexes());
-    assertFalse(builder.excludeFromIndexes(false).build().excludeFromIndexes());
-  }
 
   @SuppressWarnings("deprecation")
   @Test
@@ -156,11 +141,6 @@ public class ValueTest {
     assertEquals(10, builder.setMeaning(10).build().getMeaning());
   }
 
-  @Test
-  public void testMeaningDeprecated() throws Exception {
-    TestBuilder builder = new TestBuilder();
-    assertEquals(10, builder.meaning(10).build().meaning());
-  }
 
   @Test
   public void testGet() throws Exception {

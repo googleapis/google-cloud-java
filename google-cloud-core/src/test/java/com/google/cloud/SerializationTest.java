@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,37 +16,41 @@
 
 package com.google.cloud;
 
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.BaseServiceException.ExceptionData;
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor;
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor.ValueType;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
 import java.io.Serializable;
-import java.util.concurrent.TimeUnit;
+import org.threeten.bp.Duration;
 
 public class SerializationTest extends BaseSerializationTest {
 
   private static final BaseServiceException BASE_SERVICE_EXCEPTION =
-      new BaseServiceException(42, "message", "reason", true);
+      new BaseServiceException(ExceptionData.from(42, "message", "reason", false));
   private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.getDefaultInstance();
   private static final Identity IDENTITY = Identity.allAuthenticatedUsers();
   private static final PageImpl<String> PAGE =
       new PageImpl<>(null, "cursor", ImmutableList.of("string1", "string2"));
-  private static final RetryParams RETRY_PARAMS = RetryParams.getDefaultInstance();
+  private static final RetrySettings RETRY_SETTINGS = ServiceOptions.getDefaultRetrySettings();
   private static final Role SOME_ROLE = Role.viewer();
   private static final Policy SOME_IAM_POLICY = Policy.newBuilder().build();
-  private static final WaitForOption CHECKING_PERIOD =
-      WaitForOption.checkEvery(42, TimeUnit.SECONDS);
+  private static final RetryOption CHECKING_PERIOD =
+      RetryOption.initialRetryDelay(Duration.ofSeconds(42));
   private static final LabelDescriptor LABEL_DESCRIPTOR =
       new LabelDescriptor("project_id", ValueType.STRING, "The project id");
   private static final MonitoredResourceDescriptor MONITORED_RESOURCE_DESCRIPTOR =
       MonitoredResourceDescriptor.newBuilder("global")
           .setLabels(ImmutableList.of(LABEL_DESCRIPTOR))
           .build();
-  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.newBuilder("global")
-      .setLabels(ImmutableMap.of("project_id", "project"))
-      .build();
-  private static final String JSON_KEY = "{\n"
+  private static final MonitoredResource MONITORED_RESOURCE =
+      MonitoredResource.newBuilder("global")
+          .setLabels(ImmutableMap.of("project_id", "project"))
+          .build();
+  private static final String JSON_KEY =
+      "{\n"
       + "  \"private_key_id\": \"somekeyid\",\n"
       + "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggS"
       + "kAgEAAoIBAQC+K2hSuFpAdrJI\\nnCgcDz2M7t7bjdlsadsasad+fvRSW6TjNQZ3p5LLQY1kSZRqBqylRkzteMOyHg"
@@ -75,9 +79,19 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    return new Serializable[]{BASE_SERVICE_EXCEPTION, EXCEPTION_HANDLER, IDENTITY, PAGE,
-        RETRY_PARAMS, SOME_ROLE, SOME_IAM_POLICY, CHECKING_PERIOD, LABEL_DESCRIPTOR,
-        MONITORED_RESOURCE_DESCRIPTOR, MONITORED_RESOURCE};
+    return new Serializable[] {
+      BASE_SERVICE_EXCEPTION,
+      EXCEPTION_HANDLER,
+      IDENTITY,
+      PAGE,
+      RETRY_SETTINGS,
+      SOME_ROLE,
+      SOME_IAM_POLICY,
+      CHECKING_PERIOD,
+      LABEL_DESCRIPTOR,
+      MONITORED_RESOURCE_DESCRIPTOR,
+      MONITORED_RESOURCE
+    };
   }
 
   @Override

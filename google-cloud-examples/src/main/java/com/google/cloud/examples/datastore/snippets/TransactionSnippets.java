@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -369,8 +369,8 @@ public class TransactionSnippets {
       transaction.commit();
     } finally {
       // if committing succeeded
-      // then transaction.active() will be false
-      if (transaction.active()) {
+      // then transaction.isActive() will be false
+      if (transaction.isActive()) {
         // otherwise it's true and we need to rollback
         transaction.rollback();
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
+import com.google.cloud.storage.Blob.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -78,6 +79,7 @@ public class BlobInfo implements Serializable {
   private final String contentEncoding;
   private final String contentDisposition;
   private final String contentLanguage;
+  private final StorageClass storageClass;
   private final Integer componentCount;
   private final boolean isDirectory;
   private final CustomerEncryption customerEncryption;
@@ -112,24 +114,8 @@ public class BlobInfo implements Serializable {
     /**
      * Returns the algorithm used to encrypt the blob.
      */
-    @Deprecated
-    public String encryptionAlgorithm() {
-      return getEncryptionAlgorithm();
-    }
-
-    /**
-     * Returns the algorithm used to encrypt the blob.
-     */
     public String getEncryptionAlgorithm() {
       return encryptionAlgorithm;
-    }
-
-    /**
-     * Returns the SHA256 hash of the encryption key.
-     */
-    @Deprecated
-    public String keySha256() {
-      return getKeySha256();
     }
 
     /**
@@ -180,23 +166,9 @@ public class BlobInfo implements Serializable {
     /**
      * Sets the blob identity.
      */
-    @Deprecated
-    public abstract Builder blobId(BlobId blobId);
-
-    /**
-     * Sets the blob identity.
-     */
     public abstract Builder setBlobId(BlobId blobId);
 
     abstract Builder setGeneratedId(String generatedId);
-
-    /**
-     * Sets the blob's data content type.
-     *
-     * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.17">Content-Type</a>
-     */
-    @Deprecated
-    public abstract Builder contentType(String contentType);
 
     /**
      * Sets the blob's data content type.
@@ -210,14 +182,6 @@ public class BlobInfo implements Serializable {
      *
      * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
      */
-    @Deprecated
-    public abstract Builder contentDisposition(String contentDisposition);
-
-    /**
-     * Sets the blob's data content disposition.
-     *
-     * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
-     */
     public abstract Builder setContentDisposition(String contentDisposition);
 
     /**
@@ -225,23 +189,7 @@ public class BlobInfo implements Serializable {
      *
      * @see <a href="http://tools.ietf.org/html/bcp47">Content-Language</a>
      */
-    @Deprecated
-    public abstract Builder contentLanguage(String contentLanguage);
-
-    /**
-     * Sets the blob's data content language.
-     *
-     * @see <a href="http://tools.ietf.org/html/bcp47">Content-Language</a>
-     */
     public abstract Builder setContentLanguage(String contentLanguage);
-
-    /**
-     * Sets the blob's data content encoding.
-     *
-     * @see <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">Content-Encoding</a>
-     */
-    @Deprecated
-    public abstract Builder contentEncoding(String contentEncoding);
 
     /**
      * Sets the blob's data content encoding.
@@ -257,25 +205,7 @@ public class BlobInfo implements Serializable {
      *
      * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">Cache-Control</a>
      */
-    @Deprecated
-    public abstract Builder cacheControl(String cacheControl);
-
-    /**
-     * Sets the blob's data cache control.
-     *
-     * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">Cache-Control</a>
-     */
     public abstract Builder setCacheControl(String cacheControl);
-
-    /**
-     * Sets the blob's access control configuration.
-     *
-     * @see <a
-     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
-     *     About Access Control Lists</a>
-     */
-    @Deprecated
-    public abstract Builder acl(List<Acl> acl);
 
     /**
      * Sets the blob's access control configuration.
@@ -300,27 +230,7 @@ public class BlobInfo implements Serializable {
      * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
      *     Hashes and ETags: Best Practices</a>
      */
-    @Deprecated
-    public abstract Builder md5(String md5);
-
-    /**
-     * Sets the MD5 hash of blob's data. MD5 value must be encoded in base64.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-     *     Hashes and ETags: Best Practices</a>
-     */
     public abstract Builder setMd5(String md5);
-
-    /**
-     * Sets the CRC32C checksum of blob's data as described in
-     * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
-     * base64 in big-endian order.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-     *     Hashes and ETags: Best Practices</a>
-     */
-    @Deprecated
-    public abstract Builder crc32c(String crc32c);
 
     /**
      * Sets the CRC32C checksum of blob's data as described in
@@ -335,10 +245,9 @@ public class BlobInfo implements Serializable {
     abstract Builder setMediaLink(String mediaLink);
 
     /**
-     * Sets the blob's user provided metadata.
+     * Sets the blob's storage class.
      */
-    @Deprecated
-    public abstract Builder metadata(Map<String, String> metadata);
+    public abstract Builder setStorageClass(StorageClass storageClass);
 
     /**
      * Sets the blob's user provided metadata.
@@ -388,6 +297,7 @@ public class BlobInfo implements Serializable {
     private Long createTime;
     private Boolean isDirectory;
     private CustomerEncryption customerEncryption;
+    private StorageClass storageClass;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -417,12 +327,7 @@ public class BlobInfo implements Serializable {
       updateTime = blobInfo.updateTime;
       createTime = blobInfo.createTime;
       isDirectory = blobInfo.isDirectory;
-    }
-
-    @Override
-    @Deprecated
-    public Builder blobId(BlobId blobId) {
-      return setBlobId(blobId);
+      storageClass = blobInfo.storageClass;
     }
 
     @Override
@@ -438,21 +343,9 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder contentType(String contentType) {
-      return setContentType(contentType);
-    }
-
-    @Override
     public Builder setContentType(String contentType) {
       this.contentType = firstNonNull(contentType, Data.<String>nullOf(String.class));
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder contentDisposition(String contentDisposition) {
-      return setContentDisposition(contentDisposition);
     }
 
     @Override
@@ -462,21 +355,9 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder contentLanguage(String contentLanguage) {
-      return setContentLanguage(contentLanguage);
-    }
-
-    @Override
     public Builder setContentLanguage(String contentLanguage) {
       this.contentLanguage = firstNonNull(contentLanguage, Data.<String>nullOf(String.class));
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder contentEncoding(String contentEncoding) {
-      return setContentEncoding(contentEncoding);
     }
 
     @Override
@@ -492,21 +373,9 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder cacheControl(String cacheControl) {
-      return setCacheControl(cacheControl);
-    }
-
-    @Override
     public Builder setCacheControl(String cacheControl) {
       this.cacheControl = firstNonNull(cacheControl, Data.<String>nullOf(String.class));
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder acl(List<Acl> acl) {
-      return setAcl(acl);
     }
 
     @Override
@@ -540,21 +409,9 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder md5(String md5) {
-      return setMd5(md5);
-    }
-
-    @Override
     public Builder setMd5(String md5) {
       this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder crc32c(String crc32c) {
-      return setCrc32c(crc32c);
     }
 
     @Override
@@ -570,15 +427,15 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    public Builder metadata(Map<String, String> metadata) {
-      return setMetadata(metadata);
-    }
-
-    @Override
     public Builder setMetadata(Map<String, String> metadata) {
       this.metadata = metadata != null
           ? new HashMap<>(metadata) : Data.<Map<String, String>>nullOf(ImmutableEmptyMap.class);
+      return this;
+    }
+
+    @Override
+    public Builder setStorageClass(StorageClass storageClass) {
+      this.storageClass = storageClass;
       return this;
     }
 
@@ -649,14 +506,7 @@ public class BlobInfo implements Serializable {
     updateTime = builder.updateTime;
     createTime = builder.createTime;
     isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
-  }
-
-  /**
-   * Returns the blob's identity.
-   */
-  @Deprecated
-  public BlobId blobId() {
-    return getBlobId();
+    storageClass = builder.storageClass;
   }
 
     /**
@@ -666,27 +516,11 @@ public class BlobInfo implements Serializable {
     return blobId;
   }
 
-  /**
-   * Returns the name of the containing bucket.
-   */
-  @Deprecated
-  public String bucket() {
-    return getBucket();
-  }
-
     /**
    * Returns the name of the containing bucket.
    */
   public String getBucket() {
     return getBlobId().getBucket();
-  }
-
-  /**
-   * Returns the service-generated for the blob.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
   }
 
     /**
@@ -696,29 +530,11 @@ public class BlobInfo implements Serializable {
     return generatedId;
   }
 
-  /**
-   * Returns the blob's name.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
-
     /**
    * Returns the blob's name.
    */
   public String getName() {
     return getBlobId().getName();
-  }
-
-  /**
-   * Returns the blob's data cache control.
-   *
-   * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">Cache-Control</a>
-   */
-  @Deprecated
-  public String cacheControl() {
-    return getCacheControl();
   }
 
   /**
@@ -736,17 +552,6 @@ public class BlobInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
    *     About Access Control Lists</a>
    */
-  @Deprecated
-  public List<Acl> acl() {
-    return getAcl();
-  }
-
-  /**
-   * Returns the blob's access control configuration.
-   *
-   * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
-   *     About Access Control Lists</a>
-   */
   public List<Acl> getAcl() {
     return acl;
   }
@@ -754,26 +559,8 @@ public class BlobInfo implements Serializable {
   /**
    * Returns the blob's owner. This will always be the uploader of the blob.
    */
-  @Deprecated
-  public Acl.Entity owner() {
-    return getOwner();
-  }
-
-  /**
-   * Returns the blob's owner. This will always be the uploader of the blob.
-   */
   public Acl.Entity getOwner() {
     return owner;
-  }
-
-  /**
-   * Returns the content length of the data in bytes.
-   *
-   * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.13">Content-Length</a>
-   */
-  @Deprecated
-  public Long size() {
-    return getSize();
   }
 
   /**
@@ -790,28 +577,8 @@ public class BlobInfo implements Serializable {
    *
    * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.17">Content-Type</a>
    */
-  @Deprecated
-  public String contentType() {
-    return getContentType();
-  }
-
-  /**
-   * Returns the blob's data content type.
-   *
-   * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.17">Content-Type</a>
-   */
   public String getContentType() {
     return Data.isNull(contentType) ? null : contentType;
-  }
-
-  /**
-   * Returns the blob's data content encoding.
-   *
-   * @see <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">Content-Encoding</a>
-   */
-  @Deprecated
-  public String contentEncoding() {
-    return getContentEncoding();
   }
 
   /**
@@ -828,28 +595,8 @@ public class BlobInfo implements Serializable {
    *
    * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
    */
-  @Deprecated
-  public String contentDisposition() {
-    return getContentDisposition();
-  }
-
-  /**
-   * Returns the blob's data content disposition.
-   *
-   * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
-   */
   public String getContentDisposition() {
     return Data.isNull(contentDisposition) ? null : contentDisposition;
-  }
-
-  /**
-   * Returns the blob's data content language.
-   *
-   * @see <a href="http://tools.ietf.org/html/bcp47">Content-Language</a>
-   */
-  @Deprecated
-  public String contentLanguage() {
-    return getContentLanguage();
   }
 
   /**
@@ -870,32 +617,8 @@ public class BlobInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Count">Component Count
    *     Property</a>
    */
-  @Deprecated
-  public Integer componentCount() {
-    return getComponentCount();
-  }
-
-  /**
-   * Returns the number of components that make up this blob. Components are accumulated through
-   * the {@link Storage#compose(Storage.ComposeRequest)} operation and are limited to a count of
-   * 1024, counting 1 for each non-composite component blob and componentCount for each composite
-   * component blob. This value is set only for composite blobs.
-   *
-   * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Count">Component Count
-   *     Property</a>
-   */
   public Integer getComponentCount() {
     return componentCount;
-  }
-
-  /**
-   * Returns HTTP 1.1 Entity tag for the blob.
-   *
-   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
-   */
-  @Deprecated
-  public String etag() {
-    return getEtag();
   }
 
   /**
@@ -910,27 +633,8 @@ public class BlobInfo implements Serializable {
   /**
    * Returns the URI of this blob as a string.
    */
-  @Deprecated
-  public String selfLink() {
-    return getSelfLink();
-  }
-
-  /**
-   * Returns the URI of this blob as a string.
-   */
   public String getSelfLink() {
     return selfLink;
-  }
-
-  /**
-   * Returns the MD5 hash of blob's data encoded in base64.
-   *
-   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-   *     Hashes and ETags: Best Practices</a>
-   */
-  @Deprecated
-  public String md5() {
-    return getMd5();
   }
 
   /**
@@ -951,29 +655,8 @@ public class BlobInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
    *     Hashes and ETags: Best Practices</a>
    */
-  @Deprecated
-  public String crc32c() {
-    return getCrc32c();
-  }
-
-  /**
-   * Returns the CRC32C checksum of blob's data as described in
-   * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
-   * base64 in big-endian order.
-   *
-   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-   *     Hashes and ETags: Best Practices</a>
-   */
   public String getCrc32c() {
     return Data.isNull(crc32c) ? null : crc32c;
-  }
-
-  /**
-   * Returns the blob's media download link.
-   */
-  @Deprecated
-  public String mediaLink() {
-    return getMediaLink();
   }
 
   /**
@@ -986,24 +669,8 @@ public class BlobInfo implements Serializable {
   /**
    * Returns blob's user provided metadata.
    */
-  @Deprecated
-  public Map<String, String> metadata() {
-    return getMetadata();
-  }
-
-  /**
-   * Returns blob's user provided metadata.
-   */
   public Map<String, String> getMetadata() {
     return metadata == null || Data.isNull(metadata) ? null : Collections.unmodifiableMap(metadata);
-  }
-
-  /**
-   * Returns blob's data generation. Used for blob versioning.
-   */
-  @Deprecated
-  public Long generation() {
-    return getGeneration();
   }
 
   /**
@@ -1018,26 +685,8 @@ public class BlobInfo implements Serializable {
    * A metageneration number is only meaningful in the context of a particular generation of a
    * particular blob.
    */
-  @Deprecated
-  public Long metageneration() {
-    return getMetageneration();
-  }
-
-  /**
-   * Returns blob's metageneration. Used for preconditions and for detecting changes in metadata.
-   * A metageneration number is only meaningful in the context of a particular generation of a
-   * particular blob.
-   */
   public Long getMetageneration() {
     return metageneration;
-  }
-
-  /**
-   * Returns the deletion time of the blob.
-   */
-  @Deprecated
-  public Long deleteTime() {
-    return getDeleteTime();
   }
 
   /**
@@ -1047,27 +696,11 @@ public class BlobInfo implements Serializable {
     return deleteTime;
   }
 
-  /**
-   * Returns the last modification time of the blob's metadata.
-   */
-  @Deprecated
-  public Long updateTime() {
-    return getUpdateTime();
-  }
-
     /**
    * Returns the last modification time of the blob's metadata.
    */
   public Long getUpdateTime() {
     return updateTime;
-  }
-
-  /**
-   * Returns the creation time of the blob.
-   */
-  @Deprecated
-  public Long createTime() {
-    return getCreateTime();
   }
 
     /**
@@ -1081,9 +714,9 @@ public class BlobInfo implements Serializable {
    * Returns {@code true} if the current blob represents a directory. This can only happen if the
    * blob is returned by {@link Storage#list(String, Storage.BlobListOption...)} when the
    * {@link Storage.BlobListOption#currentDirectory()} option is used. When this is the case only
-   * {@link #blobId()} and {@link #size()} are set for the current blob: {@link BlobId#name()} ends
-   * with the '/' character, {@link BlobId#generation()} returns {@code null} and {@link #size()} is
-   * {@code 0}.
+   * {@link #getBlobId()} and {@link #getSize()} are set for the current blob:
+   * {@link BlobId#getName()} ends with the '/' character, {@link BlobId#getGeneration()} returns
+   * {@code null} and {@link #getSize()} is {@code 0}.
    */
   public boolean isDirectory() {
     return isDirectory;
@@ -1093,17 +726,15 @@ public class BlobInfo implements Serializable {
    * Returns information on the customer-supplied encryption key, if the blob is encrypted using
    * such a key.
    */
-  @Deprecated
-  public CustomerEncryption customerEncryption() {
-    return getCustomerEncryption();
+  public CustomerEncryption getCustomerEncryption() {
+    return customerEncryption;
   }
 
   /**
-   * Returns information on the customer-supplied encryption key, if the blob is encrypted using
-   * such a key.
+   * Returns the storage class of the blob.
    */
-  public CustomerEncryption getCustomerEncryption() {
-    return customerEncryption;
+  public StorageClass getStorageClass() {
+    return storageClass;
   }
 
   /**
@@ -1163,6 +794,10 @@ public class BlobInfo implements Serializable {
     if (owner != null) {
       storageObject.setOwner(new Owner().setEntity(owner.toPb()));
     }
+    if (storageClass != null) {
+      storageObject.setStorageClass(storageClass.toString());
+    }
+
     Map<String, String> pbMetadata = metadata;
     if (metadata != null && !Data.isNull(metadata)) {
       pbMetadata = Maps.newHashMapWithExpectedSize(metadata.size());
@@ -1194,24 +829,8 @@ public class BlobInfo implements Serializable {
   /**
    * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
    */
-  @Deprecated
-  public static Builder builder(BucketInfo bucketInfo, String name) {
-    return newBuilder(bucketInfo.getName(), name);
-  }
-
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
-   */
   public static Builder newBuilder(BucketInfo bucketInfo, String name) {
     return newBuilder(bucketInfo.getName(), name);
-  }
-
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
-   */
-  @Deprecated
-  public static Builder builder(String bucket, String name) {
-    return newBuilder(BlobId.of(bucket, name));
   }
 
   /**
@@ -1224,14 +843,6 @@ public class BlobInfo implements Serializable {
   /**
    * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
    */
-  @Deprecated
-  public static Builder builder(BucketInfo bucketInfo, String name, Long generation) {
-    return newBuilder(bucketInfo.getName(), name, generation);
-  }
-
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
-   */
   public static Builder newBuilder(BucketInfo bucketInfo, String name, Long generation) {
     return newBuilder(bucketInfo.getName(), name, generation);
   }
@@ -1239,24 +850,8 @@ public class BlobInfo implements Serializable {
   /**
    * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
    */
-  @Deprecated
-  public static Builder builder(String bucket, String name, Long generation) {
-    return newBuilder(BlobId.of(bucket, name, generation));
-  }
-
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
-   */
   public static Builder newBuilder(String bucket, String name, Long generation) {
     return newBuilder(BlobId.of(bucket, name, generation));
-  }
-
-  /**
-   * Returns a {@code BlobInfo} builder where blob identity is set using the provided value.
-   */
-  @Deprecated
-  public static Builder builder(BlobId blobId) {
-    return newBuilder(blobId);
   }
 
   /**
@@ -1340,6 +935,9 @@ public class BlobInfo implements Serializable {
     if (storageObject.getCustomerEncryption() != null) {
       builder.setCustomerEncryption(
           CustomerEncryption.fromPb(storageObject.getCustomerEncryption()));
+    }
+    if (storageObject.getStorageClass() != null) {
+      builder.setStorageClass(StorageClass.valueOf(storageObject.getStorageClass()));
     }
     return builder.build();
   }

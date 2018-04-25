@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,13 +22,13 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.cloud.WaitForOption;
+import com.google.api.gax.retrying.PollException;
+import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobStatus;
-
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import org.threeten.bp.Duration;
 
 public class JobSnippets {
 
@@ -43,11 +43,11 @@ public class JobSnippets {
    */
   // [TARGET exists()]
   public boolean exists() throws InterruptedException {
-    // [START exists]
+    // [START ]
     if (!job.exists()) {
       // job doesn't exist
     }
-    // [END exists]
+    // [END ]
     return job.exists();
   }
 
@@ -56,20 +56,20 @@ public class JobSnippets {
    */
   // [TARGET isDone()]
   public void isDone() throws InterruptedException {
-    // [START isDone]
+    // [START ]
     while (!job.isDone()) {
       Thread.sleep(1000L);
     }
-    // [END isDone]
+    // [END ]
   }
 
   /**
    * Example usage of {@code waitFor()}.
    */
-  // [TARGET waitFor(WaitForOption...)]
+  // [TARGET waitFor(RetryOption...)]
   public boolean waitFor() throws InterruptedException {
     try {
-      // [START waitFor]
+      // [START ]
       Job completedJob = job.waitFor();
       if (completedJob == null) {
         // job no longer exists
@@ -78,10 +78,13 @@ public class JobSnippets {
       } else {
         // job completed successfully
       }
-      // [END waitFor]
-    } catch (TimeoutException e) {
+      // [END ]
+    } catch (BigQueryException e) {
       // Timeouts shouldn't happen without a timeout option.
-      return false;
+      if (e.getCause() instanceof PollException) {
+        return false;
+      }
+      throw e;
     }
     return true;
   }
@@ -89,14 +92,14 @@ public class JobSnippets {
   /**
    * Example usage of {@code waitFor()} with checking period and timeout.
    */
-  // [TARGET waitFor(WaitForOption...)]
+  // [TARGET waitFor(RetryOption...)]
   public boolean waitForWithOptions() throws InterruptedException {
     try {
-      // [START waitForWithOptions]
+      // [START ]
       Job completedJob =
           job.waitFor(
-              WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-              WaitForOption.timeout(60, TimeUnit.SECONDS));
+              RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+              RetryOption.totalTimeout(Duration.ofMinutes(1)));
       if (completedJob == null) {
         // job no longer exists
       } else if (completedJob.getStatus().getError() != null) {
@@ -104,9 +107,12 @@ public class JobSnippets {
       } else {
         // job completed successfully
       }
-      // [END waitForWithOptions]
-    } catch (TimeoutException e) {
-      return true;
+      // [END ]
+    } catch (BigQueryException e) {
+      if (e.getCause() instanceof PollException) {
+        return false;
+      }
+      throw e;
     }
     return true;
   }
@@ -116,12 +122,12 @@ public class JobSnippets {
    */
   // [TARGET reload(JobOption...)]
   public JobStatus.State reload() throws InterruptedException {
-    // [START reload]
+    // [START ]
     while (job.getStatus().getState() != JobStatus.State.DONE) {
       Thread.sleep(1000L);
       job = job.reload();
     }
-    // [END reload]
+    // [END ]
     return job.getStatus().getState();
   }
 
@@ -130,12 +136,12 @@ public class JobSnippets {
    */
   // [TARGET reload(JobOption...)]
   public JobStatus.State reloadStatus() throws InterruptedException {
-    // [START reloadStatus]
+    // [START ]
     while (job.getStatus().getState() != JobStatus.State.DONE) {
       Thread.sleep(1000L);
       job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
     }
-    // [END reloadStatus]
+    // [END ]
     return job.getStatus().getState();
   }
 
@@ -144,13 +150,13 @@ public class JobSnippets {
    */
   // [TARGET cancel()]
   public boolean cancel() {
-    // [START cancel]
+    // [START ]
     if (job.cancel()) {
       return true; // job successfully cancelled
     } else {
       // job not found
     }
-    // [END cancel]
+    // [END ]
     return false;
   }
 }

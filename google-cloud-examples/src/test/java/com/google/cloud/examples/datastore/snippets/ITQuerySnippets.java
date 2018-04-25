@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,16 +78,6 @@ public class ITQuerySnippets {
     }
   }
 
-  @Test
-  public void testNewQueryDeprecated() throws InterruptedException {
-    QuerySnippets transactionSnippets = new QuerySnippets(datastore);
-    QueryResults<?> results = transactionSnippets.newQueryDeprecated(KIND);
-    Set<?> resultSet = Sets.newHashSet(results);
-    while (!resultSet.contains(entity1) || !resultSet.contains(entity2)) {
-      Thread.sleep(500);
-      resultSet = Sets.newHashSet(results);
-    }
-  }
 
   @Test
   public void testNewTypedQuery() throws InterruptedException {
@@ -100,16 +90,6 @@ public class ITQuerySnippets {
     }
   }
 
-  @Test
-  public void testNewTypedQueryDeprecated() throws InterruptedException {
-    QuerySnippets transactionSnippets = new QuerySnippets(datastore);
-    QueryResults<Entity> results = transactionSnippets.newTypedQueryDeprecated(KIND);
-    Set<Entity> resultSet = Sets.newHashSet(results);
-    while (!resultSet.contains(entity1) || !resultSet.contains(entity2)) {
-      Thread.sleep(500);
-      resultSet = Sets.newHashSet(results);
-    }
-  }
 
   @Test
   public void testNewEntityQuery() throws InterruptedException {
@@ -133,36 +113,12 @@ public class ITQuerySnippets {
     }
   }
 
-  @Test
-  public void testNewKeyQueryDeprecated() throws InterruptedException {
-    QuerySnippets transactionSnippets = new QuerySnippets(datastore);
-    QueryResults<Key> results = transactionSnippets.newKeyQueryDeprecated(KIND);
-    Set<Key> resultSet = Sets.newHashSet(results);
-    while (!resultSet.contains(entity1.getKey()) || !resultSet.contains(entity2.getKey())) {
-      Thread.sleep(500);
-      resultSet = Sets.newHashSet(results);
-    }
-  }
 
   @Test
   public void testNewProjectionEntityQuery() throws InterruptedException {
     QuerySnippets transactionSnippets = new QuerySnippets(datastore);
     QueryResults<ProjectionEntity> results =
         transactionSnippets.newProjectionEntityQuery(KIND, "description");
-    Set<String> resultSet =
-        Sets.newHashSet(Iterators.transform(results, ENTITY_TO_DESCRIPTION_FUNCTION));
-    while (!resultSet.contains(entity1.getString("description"))
-        || !resultSet.contains(entity2.getString("description"))) {
-      Thread.sleep(500);
-      resultSet = Sets.newHashSet(Iterators.transform(results, ENTITY_TO_DESCRIPTION_FUNCTION));
-    }
-  }
-
-  @Test
-  public void testNewProjectionEntityQueryDeprecated() throws InterruptedException {
-    QuerySnippets transactionSnippets = new QuerySnippets(datastore);
-    QueryResults<ProjectionEntity> results =
-        transactionSnippets.newProjectionEntityQueryDeprecated(KIND, "description");
     Set<String> resultSet =
         Sets.newHashSet(Iterators.transform(results, ENTITY_TO_DESCRIPTION_FUNCTION));
     while (!resultSet.contains(entity1.getString("description"))

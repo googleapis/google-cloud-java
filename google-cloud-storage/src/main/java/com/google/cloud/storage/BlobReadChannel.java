@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,9 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.cloud.Tuple;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.MoreObjects;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
@@ -61,7 +60,7 @@ class BlobReadChannel implements ReadChannel {
     this.blob = blob;
     this.requestOptions = requestOptions;
     isOpen = true;
-    storageRpc = serviceOptions.getRpc();
+    storageRpc = serviceOptions.getStorageRpcV1();
     storageObject = blob.toPb();
   }
 
@@ -107,11 +106,6 @@ class BlobReadChannel implements ReadChannel {
     endOfStream = false;
   }
 
-  @Override
-  @Deprecated
-  public void chunkSize(int chunkSize) {
-    setChunkSize(chunkSize);
-  }
 
   @Override
   public void setChunkSize(int chunkSize) {
@@ -132,7 +126,7 @@ class BlobReadChannel implements ReadChannel {
           public Tuple<String, byte[]> call() {
             return storageRpc.read(storageObject, requestOptions, position, toRead);
           }
-        }, serviceOptions.getRetryParams(), StorageImpl.EXCEPTION_HANDLER,
+        }, serviceOptions.getRetrySettings(), StorageImpl.EXCEPTION_HANDLER,
             serviceOptions.getClock());
         if (result.y().length > 0 && lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
           StringBuilder messageBuilder = new StringBuilder();

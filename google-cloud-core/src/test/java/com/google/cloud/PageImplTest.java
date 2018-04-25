@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.gax.paging.Page;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
@@ -41,11 +42,6 @@ public class PageImplTest {
     }
 
     @Override
-    public Page<String> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Page<String> getNextPage() {
       return nextResult;
     }
@@ -57,19 +53,10 @@ public class PageImplTest {
     PageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
     PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
     assertEquals(nextResult, result.getNextPage());
-    assertEquals("c", result.getNextPageCursor());
+    assertEquals("c", result.getNextPageToken());
     assertEquals(VALUES, result.getValues());
   }
 
-  @Test
-  public void testPageDeprecated() {
-    final PageImpl<String> nextResult = new PageImpl<>(null, "c", NEXT_VALUES);
-    PageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
-    PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
-    assertEquals(nextResult, result.nextPage());
-    assertEquals("c", result.nextPageCursor());
-    assertEquals(VALUES, result.values());
-  }
 
   @Test
   public void testIterateAll() {

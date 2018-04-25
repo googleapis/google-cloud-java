@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.testing;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.ServiceOptions;
 import com.google.common.io.CharStreams;
 import com.google.common.util.concurrent.SettableFuture;
@@ -52,11 +53,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-import org.joda.time.Duration;
+import org.threeten.bp.Duration;
 
 /**
  * Utility class to start and stop a local service which is used by unit testing.
  */
+@InternalApi
 public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
 
   private final String emulator;
@@ -69,6 +71,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
   protected static final String DEFAULT_HOST = "localhost";
   protected static final int DEFAULT_PORT = 8080;
 
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected BaseEmulatorHelper(String emulator, int port, String projectId) {
     this.emulator = emulator;
     this.port = port > 0 ? port : DEFAULT_PORT;
@@ -146,7 +149,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     waiter.start();
 
     try {
-      return exitValue.get(timeout.getMillis(), TimeUnit.MILLISECONDS);
+      return exitValue.get(timeout.toMillis(), TimeUnit.MILLISECONDS);
     } catch (ExecutionException e) {
       if (e.getCause() instanceof InterruptedException) {
         throw (InterruptedException) e.getCause();

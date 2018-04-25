@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,20 @@
 
 package com.google.cloud.storage.testing;
 
+import com.google.api.gax.paging.Page;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.RetryParams;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -36,16 +40,17 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote storage configuration for testing. Storage options can be obtained via
  * the {@link #getOptions()} ()} method. Returned options have custom
- * {@link StorageOptions#getRetryParams()}: {@link RetryParams#getRetryMaxAttempts()} is {@code 10},
- * {@link RetryParams#getRetryMinAttempts()} is {@code 6},
- * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
- * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
- * {@link StorageOptions#getConnectTimeout()} and {@link StorageOptions#getReadTimeout()} are both
+ * {@link StorageOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is {@code 10},
+ * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
+ * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
+ * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
+ * {@link HttpTransportOptions#getConnectTimeout()} and
+ * {@link HttpTransportOptions#getReadTimeout()} are both
  * set to {@code 60000}.
  */
 public class RemoteStorageHelper {
@@ -61,16 +66,35 @@ public class RemoteStorageHelper {
   /**
    * Returns a {@link StorageOptions} object to be used for testing.
    */
-  @Deprecated
-  public StorageOptions options() {
-    return getOptions();
-  }
-
-  /**
-   * Returns a {@link StorageOptions} object to be used for testing.
-   */
   public StorageOptions getOptions() {
     return options;
+  }
+
+  public static void cleanBuckets(final Storage storage, final long olderThan, long timeoutMs) {
+    Runnable task =
+        new Runnable() {
+          @Override
+          public void run() {
+            Page<Bucket> buckets =
+                storage.list(Storage.BucketListOption.prefix(BUCKET_NAME_PREFIX));
+            for (Bucket bucket : buckets.iterateAll()) {
+              if (bucket.getCreateTime() < olderThan) {
+                try {
+                  forceDelete(storage, bucket.getName());
+                } catch (Exception e) {
+                  // Ignore the exception, maybe the bucket is being deleted by someone else.
+                }
+              }
+            }
+          }
+        };
+    Thread thread = new Thread(task);
+    thread.start();
+    try {
+      thread.join(timeoutMs);
+    } catch (InterruptedException e) {
+      log.info("cleanBuckets interrupted");
+    }
   }
 
   /**
@@ -132,12 +156,14 @@ public class RemoteStorageHelper {
   public static RemoteStorageHelper create(String projectId, InputStream keyStream)
       throws StorageHelperException {
     try {
+      HttpTransportOptions transportOptions = StorageOptions.getDefaultHttpTransportOptions();
+      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+          .build();
       StorageOptions storageOptions = StorageOptions.newBuilder()
           .setCredentials(GoogleCredentials.fromStream(keyStream))
           .setProjectId(projectId)
-          .setRetryParams(retryParams())
-          .setConnectTimeout(60000)
-          .setReadTimeout(60000)
+          .setRetrySettings(retrySettings())
+          .setTransportOptions(transportOptions)
           .build();
       return new RemoteStorageHelper(storageOptions);
     } catch (IOException ex) {
@@ -153,21 +179,25 @@ public class RemoteStorageHelper {
    * credentials.
    */
   public static RemoteStorageHelper create() throws StorageHelperException {
+    HttpTransportOptions transportOptions = StorageOptions.getDefaultHttpTransportOptions();
+    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
+        .build();
     StorageOptions storageOptions = StorageOptions.newBuilder()
-        .setRetryParams(retryParams())
-        .setConnectTimeout(60000)
-        .setReadTimeout(60000)
+        .setRetrySettings(retrySettings())
+        .setTransportOptions(transportOptions)
         .build();
     return new RemoteStorageHelper(storageOptions);
   }
 
-  private static RetryParams retryParams() {
-    return RetryParams.newBuilder()
-        .setRetryMaxAttempts(10)
-        .setRetryMinAttempts(6)
-        .setMaxRetryDelayMillis(30000)
-        .setTotalRetryPeriodMillis(120000)
-        .setInitialRetryDelayMillis(250)
+  private static RetrySettings retrySettings() {
+    return RetrySettings.newBuilder().setMaxAttempts(10)
+        .setMaxRetryDelay(Duration.ofMillis(30000L))
+        .setTotalTimeout(Duration.ofMillis(120000L))
+        .setInitialRetryDelay(Duration.ofMillis(250L))
+        .setRetryDelayMultiplier(1.0)
+        .setInitialRpcTimeout(Duration.ofMillis(120000L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.ofMillis(120000L))
         .build();
   }
 
@@ -184,8 +214,12 @@ public class RemoteStorageHelper {
     @Override
     public Boolean call() {
       while (true) {
+        ArrayList<BlobId> ids = new ArrayList<>();
         for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true)).getValues()) {
-          storage.delete(info.getBlobId());
+          ids.add(info.getBlobId());
+        }
+        if (!ids.isEmpty()) {
+          storage.delete(ids);
         }
         try {
           storage.delete(bucket);

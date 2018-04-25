@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ public class ITInstanceAdminTest {
   @Test
   public void instanceConfigOperations() {
     List<InstanceConfig> configs = new ArrayList<>();
-    Iterators.addAll(configs, instanceClient.listInstanceConfigs().iterateAll());
+    Iterators.addAll(configs, instanceClient.listInstanceConfigs().iterateAll().iterator());
     assertThat(configs.isEmpty()).isFalse();
     InstanceConfig config =
         instanceClient.getInstanceConfig(configs.get(0).getId().getInstanceConfig());
@@ -73,7 +73,8 @@ public class ITInstanceAdminTest {
                 .listInstances(
                     Options.filter(
                         "name:instances/" + env.getTestHelper().getInstanceId().getInstance()))
-                .iterateAll());
+                .iterateAll()
+                .iterator());
     assertThat(instance.getId()).isEqualTo(env.getTestHelper().getInstanceId());
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,15 +41,6 @@ public class LanguageTest {
     compareLanguage(LANGUAGE, Language.fromPb(LANGUAGE_PB));
   }
 
-  @Test
-  public void testFromPbDeprecated() {
-    assertEquals(CODE, LANGUAGE.code());
-    assertEquals(NAME, LANGUAGE.name());
-    Language language = Language.fromPb(new LanguagesResource().setLanguage(CODE));
-    assertEquals(CODE, language.code());
-    assertNull(language.name());
-    compareLanguage(LANGUAGE, Language.fromPb(LANGUAGE_PB));
-  }
 
   private void compareLanguage(Language expected, Language value) {
     assertEquals(expected, value);

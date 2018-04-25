@@ -1,38 +1,42 @@
 Google Cloud Java Client for Compute
 ====================================
 
-Java idiomatic client for [Google Cloud Compute](https://cloud.google.com/compute).
+Java idiomatic client for [Google Cloud Compute][cloud-compute].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html)
+- [Product Documentation][compute-product-docs]
+- [Client Library Documentation][compute-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+> Note: This client is no longer receiving updates; new features in the Compute API will not be added to this client.
+Check https://cloud.google.com/compute/docs/api/libraries for the recommended Java client library to use for
+accessing Compute.
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>0.45.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-compute:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud-compute:0.45.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.45.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
 Example Application
 -------------------
@@ -59,7 +63,7 @@ configurations.
 Be sure to activate the Google Cloud Compute API on the Developer's Console to use Compute from
 your project.
 
-See the ``google-cloud`` API [compute documentation][compute-api] to learn how to interact
+See the [Compute client library docs][compute-client-lib-docs] to learn how to interact
 with Google Cloud Compute using this Client Library.
 
 Getting Started
@@ -85,8 +89,8 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
+import com.google.cloud.compute.deprecated.Compute;
+import com.google.cloud.compute.deprecated.ComputeOptions;
 
 Compute compute = ComputeOptions.getDefaultInstance().getService();
 ```
@@ -102,9 +106,9 @@ Engine. In this code snippet, we will create a new external region address.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.AddressInfo;
-import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.RegionAddressId;
+import com.google.cloud.compute.deprecated.AddressInfo;
+import com.google.cloud.compute.deprecated.Operation;
+import com.google.cloud.compute.deprecated.RegionAddressId;
 ```
 
 Then add the following code to create an address. Most Compute Engine calls return an `Operation`
@@ -134,10 +138,10 @@ a publicly-available image.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.DiskInfo;
-import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.ImageDiskConfiguration;
-import com.google.cloud.compute.ImageId;
+import com.google.cloud.compute.deprecated.DiskInfo;
+import com.google.cloud.compute.deprecated.DiskId;
+import com.google.cloud.compute.deprecated.ImageDiskConfiguration;
+import com.google.cloud.compute.deprecated.ImageId;
 ```
 
 Then add the following code to create a disk and wait for disk creation to terminate.
@@ -159,23 +163,23 @@ if (operation.getErrors() == null) {
 ```
 
 #### Creating a virtual machine instance
-An Google Compute Engine instance is a virtual machine (VM) hosted on Google's infrastructure. An
-instance can be created given it's identity, a machine type, one boot disk and a network interface.
+A Google Compute Engine instance is a virtual machine (VM) hosted on Google's infrastructure. An
+instance can be created given its identity, a machine type, one boot disk and a network interface.
 In this code snippet, we will create a virtual machine instance in the default network using as a
 boot disk the disk we have just created and assigning to it the just created IP address.
 
 Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.compute.AttachedDisk;
-import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
-import com.google.cloud.compute.InstanceId;
-import com.google.cloud.compute.InstanceInfo;
-import com.google.cloud.compute.MachineTypeId;
-import com.google.cloud.compute.NetworkConfiguration;
-import com.google.cloud.compute.NetworkConfiguration.AccessConfig;
-import com.google.cloud.compute.NetworkId;
-import com.google.cloud.compute.NetworkInterface;
+import com.google.cloud.compute.deprecated.AttachedDisk;
+import com.google.cloud.compute.deprecated.AttachedDisk.PersistentDiskConfiguration;
+import com.google.cloud.compute.deprecated.InstanceId;
+import com.google.cloud.compute.deprecated.InstanceInfo;
+import com.google.cloud.compute.deprecated.MachineTypeId;
+import com.google.cloud.compute.deprecated.NetworkConfiguration;
+import com.google.cloud.compute.deprecated.NetworkConfiguration.AccessConfig;
+import com.google.cloud.compute.deprecated.NetworkId;
+import com.google.cloud.compute.deprecated.NetworkInterface;
 ```
 
 Then add the following code to create an instance and wait for instance creation to terminate.
@@ -213,10 +217,23 @@ running on Compute Engine or from your own desktop. To run the example on App En
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
 
+#### Other examples
+
+Other examples are available too:
+
+- [CreateSnapshot.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java) shows
+how to create a snapshot from an existing disk
+- [CreateInstance.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java) shows
+how to create a virtual machine instance (shorter sample than the one above)
+
 Troubleshooting
 ---------------
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+
+Transport
+---------
+Compute uses HTTP for the transport layer.
 
 Java Versions
 -------------
@@ -258,4 +275,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-compute]: https://cloud.google.com/compute/
-[compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
+[compute-product-docs]: https://cloud.google.com/compute/docs/
+[compute-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/compute/package-summary.html

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,16 +25,21 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.cloud.datastore.spi.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
+import com.google.datastore.v1.BeginTransactionRequest;
+import com.google.datastore.v1.BeginTransactionResponse;
+import com.google.datastore.v1.CommitRequest;
+import com.google.datastore.v1.CommitResponse;
 import com.google.datastore.v1.EntityResult;
 import com.google.datastore.v1.LookupRequest;
 import com.google.datastore.v1.LookupResponse;
@@ -42,21 +47,12 @@ import com.google.datastore.v1.PartitionId;
 import com.google.datastore.v1.QueryResultBatch;
 import com.google.datastore.v1.ReadOptions;
 import com.google.datastore.v1.ReadOptions.ReadConsistency;
+import com.google.datastore.v1.RollbackRequest;
+import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
+import com.google.datastore.v1.TransactionOptions;
 import com.google.protobuf.ByteString;
-
-import org.easymock.EasyMock;
-import org.joda.time.Duration;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,6 +61,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeoutException;
+import org.easymock.EasyMock;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class DatastoreTest {
@@ -96,7 +102,7 @@ public class DatastoreTest {
       .build();
   private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
   private static final ListValue EMPTY_LIST_VALUE = ListValue.of(Collections.<Value<?>>emptyList());
-  private static final DateTimeValue DATE_TIME_VALUE = new DateTimeValue(DateTime.now());
+  private static final TimestampValue TIMESTAMP_VALUE = new TimestampValue(Timestamp.now());
   private static final LatLngValue LAT_LNG_VALUE =
       new LatLngValue(new LatLng(37.422035, -122.084124));
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY1 =
@@ -111,7 +117,7 @@ public class DatastoreTest {
           .build();
   private static final Entity ENTITY1 = Entity.newBuilder(KEY1)
       .set("str", STR_VALUE)
-      .set("date", DATE_TIME_VALUE)
+      .set("date", TIMESTAMP_VALUE)
       .set("latLng", LAT_LNG_VALUE)
       .set("bool", BOOL_VALUE)
       .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
@@ -141,7 +147,7 @@ public class DatastoreTest {
     rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
     rpcMockOptions = options
         .toBuilder()
-        .setRetryParams(RetryParams.getDefaultInstance())
+        .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
         .setServiceRpcFactory(rpcFactoryMock)
         .build();
     EasyMock.expect(rpcFactoryMock.create(rpcMockOptions)).andReturn(rpcMock);
@@ -153,7 +159,7 @@ public class DatastoreTest {
 
   @AfterClass
   public static void afterClass() throws IOException, InterruptedException, TimeoutException {
-    helper.stop(Duration.standardMinutes(1));
+    helper.stop(Duration.ofMinutes(1));
   }
 
   @Test
@@ -270,6 +276,44 @@ public class DatastoreTest {
     assertEquals(ENTITY2, list.get(1));
     assertNull(list.get(2));
     assertEquals(3, list.size());
+  }
+
+  @Test
+  public void testRunInTransactionWithReadWriteOption() {
+
+    EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
+        .andReturn(BeginTransactionResponse.getDefaultInstance());
+    EasyMock.expect(rpcMock.rollback(EasyMock.anyObject(RollbackRequest.class)))
+        .andReturn(RollbackResponse.getDefaultInstance())
+        .once();
+
+    EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
+        .andReturn(BeginTransactionResponse.getDefaultInstance());
+    EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
+        .andReturn(CommitResponse.newBuilder().build());
+
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Datastore.TransactionCallable<Integer> callable =
+        new Datastore.TransactionCallable<Integer>() {
+          private Integer attempts = 1;
+
+          @Override
+          public Integer run(DatastoreReaderWriter transaction) {
+            if (attempts < 2) {
+              ++attempts;
+              throw new DatastoreException(10, "", "ABORTED", false, null);
+            }
+            return attempts;
+          }
+        };
+
+    TransactionOptions options = TransactionOptions.newBuilder().setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()).build();
+    Integer result = mockDatastore.runInTransaction(callable, options);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    assertEquals(2, result.intValue());
   }
 
   private void verifyNotUsable(DatastoreWriter writer) {
@@ -407,9 +451,7 @@ public class DatastoreTest {
     assertTrue(projectionResult.hasNext());
     projectionEntity = projectionResult.next();
     assertEquals("str", projectionEntity.getString("str"));
-    assertEquals(DATE_TIME_VALUE.get(), projectionEntity.getDateTime("date"));
-    assertEquals(DATE_TIME_VALUE.get().getTimestampMicroseconds(),
-        projectionEntity.getLong("date"));
+    assertEquals(TIMESTAMP_VALUE.get(), projectionEntity.getTimestamp("date"));
     assertEquals(2, projectionEntity.getNames().size());
     assertFalse(projectionResult.hasNext());
   }
@@ -595,7 +637,7 @@ public class DatastoreTest {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
     datastore.add(ENTITY3, entity4, entity5);
-    DatastoreRpc datastoreRpc = datastore.getOptions().getRpc();
+    DatastoreRpc datastoreRpc = datastore.getOptions().getDatastoreRpcV1();
     List<RunQueryResponse> responses = new ArrayList<>();
     Query<Entity> query = Query.newEntityQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
@@ -688,9 +730,12 @@ public class DatastoreTest {
     assertNotEquals(key1, key2);
     assertEquals(Key.newBuilder(pk1, key2.getId()).build(), key2);
 
-    Key key3 = datastore.allocateId(key1);
-    assertNotEquals(key1, key3);
-    assertEquals(Key.newBuilder(pk1, key3.getId()).build(), key3);
+    try {
+      datastore.allocateId(key1);
+      fail("Expecting a failure");
+    } catch (IllegalArgumentException expected) {
+      assertEquals(expected.getMessage(), "keys must be IncompleteKey instances");
+    }
   }
 
   @Test
@@ -700,16 +745,20 @@ public class DatastoreTest {
     IncompleteKey incompleteKey2 =
         keyFactory.setKind(KIND2).addAncestor(PathElement.of(KIND1, 10)).newKey();
     Key key3 = keyFactory.newKey("name");
-    Key key4 = keyFactory.newKey(1);
-    List<Key> result =
-        datastore.allocateId(incompleteKey1, incompleteKey2, key3, key4, incompleteKey1, key3);
-    assertEquals(6, result.size());
-    assertEquals(Key.newBuilder(incompleteKey1, result.get(0).getId()).build(), result.get(0));
-    assertEquals(Key.newBuilder(incompleteKey1, result.get(4).getId()).build(), result.get(4));
-    assertEquals(Key.newBuilder(incompleteKey2, result.get(1).getId()).build(), result.get(1));
-    assertEquals(Key.newBuilder(key3).setId(result.get(2).getId()).build(), result.get(2));
-    assertEquals(Key.newBuilder(key3).setId(result.get(5).getId()).build(), result.get(5));
-    assertEquals(Key.newBuilder(key4).setId(result.get(3).getId()).build(), result.get(3));
+    List<Key> result1 =
+            datastore.allocateId(incompleteKey1, incompleteKey2, incompleteKey1);
+    assertEquals(3, result1.size());
+    assertEquals(Key.newBuilder(incompleteKey1, result1.get(0).getId()).build(), result1.get(0));
+    assertEquals(Key.newBuilder(incompleteKey1, result1.get(2).getId()).build(), result1.get(2));
+    assertEquals(Key.newBuilder(incompleteKey2, result1.get(1).getId()).build(), result1.get(1));
+
+    try {
+      datastore.allocateId(incompleteKey1, incompleteKey2, key3);
+      fail("expecting a failure");
+    } catch(IllegalArgumentException expected) {
+        assertEquals(expected.getMessage(), "keys must be IncompleteKey instances");
+
+    }
   }
 
   @Test
@@ -725,8 +774,8 @@ public class DatastoreTest {
     assertEquals(BOOL_VALUE, value2);
     ListValue value3 = entity.getValue("list");
     assertEquals(LIST_VALUE2, value3);
-    DateTimeValue value4 = entity.getValue("date");
-    assertEquals(DATE_TIME_VALUE, value4);
+    TimestampValue value4 = entity.getValue("date");
+    assertEquals(TIMESTAMP_VALUE, value4);
     LatLngValue value5 = entity.getValue("latLng");
     assertEquals(LAT_LNG_VALUE, value5);
     FullEntity<IncompleteKey> value6 = entity.getEntity("partial1");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
@@ -37,9 +38,9 @@ import java.util.Objects;
 public class MonitoredResourceDescriptor implements Serializable {
 
   private static final long serialVersionUID = -3702077512777687441L;
-  public static final Function<com.google.api.MonitoredResourceDescriptor,
+  public static final ApiFunction<com.google.api.MonitoredResourceDescriptor,
       MonitoredResourceDescriptor> FROM_PB_FUNCTION =
-      new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
+      new ApiFunction<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
         @Override
         public MonitoredResourceDescriptor apply(
             com.google.api.MonitoredResourceDescriptor pb) {
@@ -117,13 +118,6 @@ public class MonitoredResourceDescriptor implements Serializable {
       this.description = description;
     }
 
-    /**
-     * Returns the key associated to this label.
-     */
-    @Deprecated
-    public String key() {
-      return getKey();
-    }
 
     /**
      * Returns the key associated to this label.
@@ -132,13 +126,6 @@ public class MonitoredResourceDescriptor implements Serializable {
       return key;
     }
 
-    /**
-     * Returns the type of data that can be assigned to this label.
-     */
-    @Deprecated
-    public ValueType valueType() {
-      return getValueType();
-    }
 
     /**
      * Returns the type of data that can be assigned to this label.
@@ -147,14 +134,6 @@ public class MonitoredResourceDescriptor implements Serializable {
       return valueType;
     }
 
-    /**
-     * Returns the optional human-readable description for this label. If not set, this method
-     * returns {@code null}.
-     */
-    @Deprecated
-    public String description() {
-      return getDescription();
-    }
 
     /**
      * Returns the optional human-readable description for this label. If not set, this method
@@ -257,14 +236,6 @@ public class MonitoredResourceDescriptor implements Serializable {
     this.labels = checkNotNull(builder.labels);
   }
 
-  /**
-   * Returns the monitored resource type. For example, the type {@code cloudsql_database} represents
-   * databases in Google Cloud SQL.
-   */
-  @Deprecated
-  public String type() {
-    return getType();
-  }
 
   /**
    * Returns the monitored resource type. For example, the type {@code cloudsql_database} represents
@@ -274,14 +245,6 @@ public class MonitoredResourceDescriptor implements Serializable {
     return type;
   }
 
-  /**
-   * Returns an optional name for the monitored resource descriptor. If not set, this method returns
-   * {@code null}.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns an optional name for the monitored resource descriptor. If not set, this method returns
@@ -291,15 +254,6 @@ public class MonitoredResourceDescriptor implements Serializable {
     return name;
   }
 
-  /**
-   * Returns an optional concise name for the monitored resource type. This value might be displayed
-   * in user interfaces. For example, {@code Google Cloud SQL Database}. If not set, this method
-   * returns {@code null}.
-   */
-  @Deprecated
-  public String displayName() {
-    return getDisplayName();
-  }
 
   /**
    * Returns an optional concise name for the monitored resource type. This value might be displayed
@@ -310,14 +264,6 @@ public class MonitoredResourceDescriptor implements Serializable {
     return displayName;
   }
 
-  /**
-   * Returns an optional detailed description of the monitored resource type. This value might be
-   * used in documentation. If not set, this method returns {@code null}.
-   */
-  @Deprecated
-  public String description() {
-    return getDescription();
-  }
 
   /**
    * Returns an optional detailed description of the monitored resource type. This value might be
@@ -327,15 +273,6 @@ public class MonitoredResourceDescriptor implements Serializable {
     return description;
   }
 
-  /**
-   * Returns a list of labels used to describe instances of this monitored resource type. For
-   * example, an individual Google Cloud SQL database is identified by values for the labels
-   * {@code database_id} and {@code region}.
-   */
-  @Deprecated
-  public List<LabelDescriptor> labels() {
-    return getLabels();
-  }
 
   /**
    * Returns a list of labels used to describe instances of this monitored resource type. For

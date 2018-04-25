@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,8 @@ public class BlobInfoTest {
   private static final String KEY_SHA256 = "keySha";
   private static final CustomerEncryption CUSTOMER_ENCRYPTION =
       new CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
+  private static final StorageClass STORAGE_CLASS = StorageClass.COLDLINE;
+
   private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
       .setAcl(ACL)
       .setComponentCount(COMPONENT_COUNT)
@@ -88,35 +90,9 @@ public class BlobInfoTest {
       .setSize(SIZE)
       .setUpdateTime(UPDATE_TIME)
       .setCreateTime(CREATE_TIME)
+      .setStorageClass(STORAGE_CLASS)
       .build();
   private static final BlobInfo DIRECTORY_INFO = BlobInfo.newBuilder("b", "n/")
-      .setSize(0L)
-      .setIsDirectory(true)
-      .build();
-  private static final BlobInfo DEPRECATED_BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
-      .acl(ACL)
-      .setComponentCount(COMPONENT_COUNT)
-      .contentType(CONTENT_TYPE)
-      .cacheControl(CACHE_CONTROL)
-      .contentDisposition(CONTENT_DISPOSITION)
-      .contentEncoding(CONTENT_ENCODING)
-      .contentLanguage(CONTENT_LANGUAGE)
-      .setCustomerEncryption(CUSTOMER_ENCRYPTION)
-      .crc32c(CRC32)
-      .setDeleteTime(DELETE_TIME)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .md5(MD5)
-      .setMediaLink(MEDIA_LINK)
-      .metadata(METADATA)
-      .setMetageneration(META_GENERATION)
-      .setOwner(OWNER)
-      .setSelfLink(SELF_LINK)
-      .setSize(SIZE)
-      .setUpdateTime(UPDATE_TIME)
-      .setCreateTime(CREATE_TIME)
-      .build();
-  private static final BlobInfo DEPRECATED_DIRECTORY_INFO = BlobInfo.builder("b", "n/")
       .setSize(0L)
       .setIsDirectory(true)
       .build();
@@ -125,12 +101,6 @@ public class BlobInfoTest {
   public void testCustomerEncryption() {
     assertEquals(ENCRYPTION_ALGORITHM, CUSTOMER_ENCRYPTION.getEncryptionAlgorithm());
     assertEquals(KEY_SHA256, CUSTOMER_ENCRYPTION.getKeySha256());
-  }
-
-  @Test
-  public void testCustomerEncryptionDeprecated() {
-    assertEquals(ENCRYPTION_ALGORITHM, CUSTOMER_ENCRYPTION.encryptionAlgorithm());
-    assertEquals(KEY_SHA256, CUSTOMER_ENCRYPTION.keySha256());
   }
 
   @Test
@@ -153,12 +123,6 @@ public class BlobInfoTest {
   @Test
   public void testToBuilderIncomplete() {
     BlobInfo incompleteBlobInfo = BlobInfo.newBuilder(BlobId.of("b2", "n2")).build();
-    compareBlobs(incompleteBlobInfo, incompleteBlobInfo.toBuilder().build());
-  }
-
-  @Test
-  public void testToBuilderIncompleteDeprecated() {
-    BlobInfo incompleteBlobInfo = BlobInfo.builder(BlobId.of("b2", "n2")).build();
     compareBlobs(incompleteBlobInfo, incompleteBlobInfo.toBuilder().build());
   }
 
@@ -188,6 +152,7 @@ public class BlobInfoTest {
     assertEquals(SIZE, BLOB_INFO.getSize());
     assertEquals(UPDATE_TIME, BLOB_INFO.getUpdateTime());
     assertEquals(CREATE_TIME, BLOB_INFO.getCreateTime());
+    assertEquals(STORAGE_CLASS, BLOB_INFO.getStorageClass());
     assertFalse(BLOB_INFO.isDirectory());
     assertEquals("b", DIRECTORY_INFO.getBucket());
     assertEquals("n/", DIRECTORY_INFO.getName());
@@ -216,60 +181,6 @@ public class BlobInfoTest {
     assertTrue(DIRECTORY_INFO.isDirectory());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals("b", DEPRECATED_BLOB_INFO.bucket());
-    assertEquals("n", DEPRECATED_BLOB_INFO.name());
-    assertEquals(ACL, DEPRECATED_BLOB_INFO.acl());
-    assertEquals(COMPONENT_COUNT, DEPRECATED_BLOB_INFO.componentCount());
-    assertEquals(CONTENT_TYPE, DEPRECATED_BLOB_INFO.contentType());
-    assertEquals(CACHE_CONTROL, DEPRECATED_BLOB_INFO.cacheControl());
-    assertEquals(CONTENT_DISPOSITION, DEPRECATED_BLOB_INFO.contentDisposition());
-    assertEquals(CONTENT_ENCODING, DEPRECATED_BLOB_INFO.contentEncoding());
-    assertEquals(CONTENT_LANGUAGE, DEPRECATED_BLOB_INFO.contentLanguage());
-    assertEquals(CUSTOMER_ENCRYPTION, DEPRECATED_BLOB_INFO.customerEncryption());
-    assertEquals(CRC32, DEPRECATED_BLOB_INFO.crc32c());
-    assertEquals(DELETE_TIME, DEPRECATED_BLOB_INFO.deleteTime());
-    assertEquals(ETAG, DEPRECATED_BLOB_INFO.etag());
-    assertEquals(GENERATION, DEPRECATED_BLOB_INFO.generation());
-    assertEquals(GENERATED_ID, DEPRECATED_BLOB_INFO.generatedId());
-    assertEquals(MD5, DEPRECATED_BLOB_INFO.md5());
-    assertEquals(MEDIA_LINK, DEPRECATED_BLOB_INFO.mediaLink());
-    assertEquals(METADATA, DEPRECATED_BLOB_INFO.metadata());
-    assertEquals(META_GENERATION, DEPRECATED_BLOB_INFO.metageneration());
-    assertEquals(OWNER, DEPRECATED_BLOB_INFO.owner());
-    assertEquals(SELF_LINK, DEPRECATED_BLOB_INFO.selfLink());
-    assertEquals(SIZE, DEPRECATED_BLOB_INFO.size());
-    assertEquals(UPDATE_TIME, DEPRECATED_BLOB_INFO.updateTime());
-    assertEquals(CREATE_TIME, DEPRECATED_BLOB_INFO.createTime());
-    assertFalse(DEPRECATED_BLOB_INFO.isDirectory());
-    assertEquals("b", DEPRECATED_DIRECTORY_INFO.bucket());
-    assertEquals("n/", DEPRECATED_DIRECTORY_INFO.name());
-    assertNull(DEPRECATED_DIRECTORY_INFO.acl());
-    assertNull(DEPRECATED_DIRECTORY_INFO.componentCount());
-    assertNull(DEPRECATED_DIRECTORY_INFO.contentType());
-    assertNull(DEPRECATED_DIRECTORY_INFO.cacheControl());
-    assertNull(DEPRECATED_DIRECTORY_INFO.contentDisposition());
-    assertNull(DEPRECATED_DIRECTORY_INFO.contentEncoding());
-    assertNull(DEPRECATED_DIRECTORY_INFO.contentLanguage());
-    assertNull(DEPRECATED_DIRECTORY_INFO.customerEncryption());
-    assertNull(DEPRECATED_DIRECTORY_INFO.crc32c());
-    assertNull(DEPRECATED_DIRECTORY_INFO.createTime());
-    assertNull(DEPRECATED_DIRECTORY_INFO.deleteTime());
-    assertNull(DEPRECATED_DIRECTORY_INFO.etag());
-    assertNull(DEPRECATED_DIRECTORY_INFO.generation());
-    assertNull(DEPRECATED_DIRECTORY_INFO.generatedId());
-    assertNull(DEPRECATED_DIRECTORY_INFO.md5());
-    assertNull(DEPRECATED_DIRECTORY_INFO.mediaLink());
-    assertNull(DEPRECATED_DIRECTORY_INFO.metadata());
-    assertNull(DEPRECATED_DIRECTORY_INFO.metageneration());
-    assertNull(DEPRECATED_DIRECTORY_INFO.owner());
-    assertNull(DEPRECATED_DIRECTORY_INFO.selfLink());
-    assertEquals(0L, (long) DEPRECATED_DIRECTORY_INFO.size());
-    assertNull(DEPRECATED_DIRECTORY_INFO.updateTime());
-    assertTrue(DEPRECATED_DIRECTORY_INFO.isDirectory());
-  }
-
   private void compareBlobs(BlobInfo expected, BlobInfo value) {
     assertEquals(expected, value);
     assertEquals(expected.getBucket(), value.getBucket());
@@ -296,6 +207,7 @@ public class BlobInfoTest {
     assertEquals(expected.getSelfLink(), value.getSelfLink());
     assertEquals(expected.getSize(), value.getSize());
     assertEquals(expected.getUpdateTime(), value.getUpdateTime());
+    assertEquals(expected.getStorageClass(), value.getStorageClass());
   }
 
   private void compareCustomerEncryptions(CustomerEncryption expected, CustomerEncryption value) {
@@ -309,7 +221,7 @@ public class BlobInfoTest {
   public void testToPbAndFromPb() {
     compareCustomerEncryptions(CUSTOMER_ENCRYPTION,
         CustomerEncryption.fromPb(CUSTOMER_ENCRYPTION.toPb()));
-    compareBlobs(DEPRECATED_BLOB_INFO, BlobInfo.fromPb(DEPRECATED_BLOB_INFO.toPb()));
+    compareBlobs(BLOB_INFO, BlobInfo.fromPb(BLOB_INFO.toPb()));
     BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of("b", "n")).build();
     compareBlobs(blobInfo, BlobInfo.fromPb(blobInfo.toPb()));
     StorageObject object = new StorageObject()
@@ -342,6 +254,7 @@ public class BlobInfoTest {
     assertNull(blobInfo.getSelfLink());
     assertEquals(0L, (long) blobInfo.getSize());
     assertNull(blobInfo.getUpdateTime());
+    assertNull(blobInfo.getStorageClass());
     assertTrue(blobInfo.isDirectory());
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -104,7 +104,9 @@ public abstract class JobStatistics implements Serializable {
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.destinationUriFileCounts = statisticsPb.getExtract().getDestinationUriFileCounts();
+        if (statisticsPb.getExtract() != null) {
+          this.destinationUriFileCounts = statisticsPb.getExtract().getDestinationUriFileCounts();
+        }
       }
 
       Builder setDestinationUriFileCounts(List<Long> destinationUriFileCounts) {
@@ -123,20 +125,11 @@ public abstract class JobStatistics implements Serializable {
       this.destinationUriFileCounts = builder.destinationUriFileCounts;
     }
 
-    /**
-     * Returns the number of files per destination URI or URI pattern specified in the extract job.
-     * These values will be in the same order as the URIs specified by
-     * {@link ExtractJobConfiguration#destinationUris()}.
-     */
-    @Deprecated
-    public List<Long> destinationUriFileCounts() {
-      return getDestinationUriFileCounts();
-    }
 
     /**
      * Returns the number of files per destination URI or URI pattern specified in the extract job.
      * These values will be in the same order as the URIs specified by
-     * {@link ExtractJobConfiguration#destinationUris()}.
+     * {@link ExtractJobConfiguration#getDestinationUris()}.
      */
     public List<Long> getDestinationUriFileCounts() {
       return destinationUriFileCounts;
@@ -201,10 +194,12 @@ public abstract class JobStatistics implements Serializable {
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.inputBytes = statisticsPb.getLoad().getInputFileBytes();
-        this.inputFiles = statisticsPb.getLoad().getInputFiles();
-        this.outputBytes = statisticsPb.getLoad().getOutputBytes();
-        this.outputRows = statisticsPb.getLoad().getOutputRows();
+        if (statisticsPb.getLoad() != null) {
+          this.inputBytes = statisticsPb.getLoad().getInputFileBytes();
+          this.inputFiles = statisticsPb.getLoad().getInputFiles();
+          this.outputBytes = statisticsPb.getLoad().getOutputBytes();
+          this.outputRows = statisticsPb.getLoad().getOutputRows();
+        }
       }
 
       Builder setInputBytes(Long inputBytes) {
@@ -242,13 +237,6 @@ public abstract class JobStatistics implements Serializable {
 
     }
 
-    /**
-     * Returns the number of bytes of source data in a load job.
-     */
-    @Deprecated
-    public Long inputBytes() {
-      return getInputBytes();
-    }
 
     /**
      * Returns the number of bytes of source data in a load job.
@@ -257,13 +245,6 @@ public abstract class JobStatistics implements Serializable {
       return inputBytes;
     }
 
-    /**
-     * Returns the number of source files in a load job.
-     */
-    @Deprecated
-    public Long inputFiles() {
-      return getInputFiles();
-    }
 
     /**
      * Returns the number of source files in a load job.
@@ -272,13 +253,6 @@ public abstract class JobStatistics implements Serializable {
       return inputFiles;
     }
 
-    /**
-     * Returns the size of the data loaded by a load job so far, in bytes.
-     */
-    @Deprecated
-    public Long outputBytes() {
-      return getOutputBytes();
-    }
 
     /**
      * Returns the size of the data loaded by a load job so far, in bytes.
@@ -287,13 +261,6 @@ public abstract class JobStatistics implements Serializable {
       return outputBytes;
     }
 
-    /**
-     * Returns the number of rows loaded by a load job so far.
-     */
-    @Deprecated
-    public Long outputRows() {
-      return getOutputRows();
-    }
 
     /**
      * Returns the number of rows loaded by a load job so far.
@@ -356,6 +323,7 @@ public abstract class JobStatistics implements Serializable {
     private final Long totalBytesBilled;
     private final Long totalBytesProcessed;
     private final List<QueryStage> queryPlan;
+    private final Schema schema;
 
     static final class Builder extends JobStatistics.Builder<QueryStatistics, Builder> {
 
@@ -364,18 +332,25 @@ public abstract class JobStatistics implements Serializable {
       private Long totalBytesBilled;
       private Long totalBytesProcessed;
       private List<QueryStage> queryPlan;
+      private Schema schema;
 
       private Builder() {}
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
-        this.billingTier = statisticsPb.getQuery().getBillingTier();
-        this.cacheHit = statisticsPb.getQuery().getCacheHit();
-        this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
-        this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
-        if (statisticsPb.getQuery().getQueryPlan() != null) {
-          this.queryPlan =
-              Lists.transform(statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+        if (statisticsPb.getQuery() != null) {
+          this.billingTier = statisticsPb.getQuery().getBillingTier();
+          this.cacheHit = statisticsPb.getQuery().getCacheHit();
+          this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
+          this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
+          if (statisticsPb.getQuery().getQueryPlan() != null) {
+            this.queryPlan =
+                Lists.transform(
+                    statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+          }
+          if (statisticsPb.getQuery().getSchema() != null) {
+            this.schema = Schema.fromPb(statisticsPb.getQuery().getSchema());
+          }
         }
       }
 
@@ -404,6 +379,11 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setSchema(Schema schema) {
+        this.schema = schema;
+        return self();
+      }
+
       @Override
       QueryStatistics build() {
         return new QueryStatistics(this);
@@ -417,15 +397,9 @@ public abstract class JobStatistics implements Serializable {
       this.totalBytesBilled = builder.totalBytesBilled;
       this.totalBytesProcessed = builder.totalBytesProcessed;
       this.queryPlan = builder.queryPlan;
+      this.schema = builder.schema;
     }
 
-    /**
-     * Returns the billing tier for the job.
-     */
-    @Deprecated
-    public Integer billingTier() {
-      return getBillingTier();
-    }
 
     /**
      * Returns the billing tier for the job.
@@ -434,16 +408,6 @@ public abstract class JobStatistics implements Serializable {
       return billingTier;
     }
 
-    /**
-     * Returns whether the query result was fetched from the query cache.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">
-     *     Query Caching</a>
-     */
-    @Deprecated
-    public Boolean cacheHit() {
-      return getCacheHit();
-    }
 
     /**
      * Returns whether the query result was fetched from the query cache.
@@ -455,13 +419,6 @@ public abstract class JobStatistics implements Serializable {
       return cacheHit;
     }
 
-    /**
-     * Returns the total number of bytes billed for the job.
-     */
-    @Deprecated
-    public Long totalBytesBilled() {
-      return getTotalBytesBilled();
-    }
 
     /**
      * Returns the total number of bytes billed for the job.
@@ -470,13 +427,6 @@ public abstract class JobStatistics implements Serializable {
       return totalBytesBilled;
     }
 
-    /**
-     * Returns the total number of bytes processed by the job.
-     */
-    @Deprecated
-    public Long totalBytesProcessed() {
-      return getTotalBytesProcessed();
-    }
 
     /**
      * Returns the total number of bytes processed by the job.
@@ -485,18 +435,6 @@ public abstract class JobStatistics implements Serializable {
       return totalBytesProcessed;
     }
 
-    /**
-     * Returns the query plan as a list of stages or {@code null} if a query plan is not available.
-     * Each stage involves a number of steps that read from data sources, perform a series of
-     * transformations on the input, and emit an output to a future stage (or the final result). The
-     * query plan is available for a completed query job and is retained for 7 days.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation">Query Plan</a>
-     */
-    @Deprecated
-    public List<QueryStage> queryPlan() {
-      return getQueryPlan();
-    }
 
     /**
      * Returns the query plan as a list of stages or {@code null} if a query plan is not available.
@@ -510,6 +448,15 @@ public abstract class JobStatistics implements Serializable {
       return queryPlan;
     }
 
+
+    /**
+     * Returns the schema for the query result. Present only for successful dry run of
+     * non-legacy SQL queries.
+     */
+    public Schema getSchema() {
+      return schema;
+    }
+
     @Override
     ToStringHelper toStringHelper() {
       return super.toStringHelper()
@@ -517,7 +464,8 @@ public abstract class JobStatistics implements Serializable {
           .add("cacheHit", cacheHit)
           .add("totalBytesBilled", totalBytesBilled)
           .add("totalBytesProcessed", totalBytesProcessed)
-          .add("queryPlan", queryPlan);
+          .add("queryPlan", queryPlan)
+          .add("schema", schema);
     }
 
     @Override
@@ -531,7 +479,7 @@ public abstract class JobStatistics implements Serializable {
     @Override
     public final int hashCode() {
       return Objects.hash(baseHashCode(), billingTier, cacheHit, totalBytesBilled,
-          totalBytesProcessed, queryPlan);
+          totalBytesProcessed, queryPlan, schema);
     }
 
     @Override
@@ -543,6 +491,9 @@ public abstract class JobStatistics implements Serializable {
       queryStatisticsPb.setTotalBytesProcessed(totalBytesProcessed);
       if (queryPlan != null) {
         queryStatisticsPb.setQueryPlan(Lists.transform(queryPlan, QueryStage.TO_PB_FUNCTION));
+      }
+      if (schema != null) {
+        queryStatisticsPb.setSchema(schema.toPb());
       }
       return super.toPb().setQuery(queryStatisticsPb);
     }
@@ -601,13 +552,6 @@ public abstract class JobStatistics implements Serializable {
     this.startTime = builder.startTime;
   }
 
-  /**
-   * Returns the creation time of the job in milliseconds since epoch.
-   */
-  @Deprecated
-  public Long creationTime() {
-    return getCreationTime();
-  }
 
   /**
    * Returns the creation time of the job in milliseconds since epoch.
@@ -616,14 +560,6 @@ public abstract class JobStatistics implements Serializable {
     return creationTime;
   }
 
-  /**
-   * Returns the end time of the job in milliseconds since epoch. Returns {@code null} if the
-   * job has not finished yet.
-   */
-  @Deprecated
-  public Long endTime() {
-    return getEndTime();
-  }
 
   /**
    * Returns the end time of the job in milliseconds since epoch. Returns {@code null} if the
@@ -633,14 +569,6 @@ public abstract class JobStatistics implements Serializable {
     return endTime;
   }
 
-  /**
-   * Returns the start time of the job in milliseconds since epoch. Returns {@code null} if the
-   * job has not started yet.
-   */
-  @Deprecated
-  public Long startTime() {
-    return getStartTime();
-  }
 
   /**
    * Returns the start time of the job in milliseconds since epoch. Returns {@code null} if the
@@ -680,16 +608,19 @@ public abstract class JobStatistics implements Serializable {
   }
 
   @SuppressWarnings("unchecked")
-  static <T extends JobStatistics> T fromPb(
-      com.google.api.services.bigquery.model.JobStatistics statisticPb) {
-    if (statisticPb.getLoad() != null) {
+  static <T extends JobStatistics> T fromPb(com.google.api.services.bigquery.model.Job jobPb) {
+    JobConfiguration jobConfigPb = jobPb.getConfiguration();
+    com.google.api.services.bigquery.model.JobStatistics statisticPb = jobPb.getStatistics();
+    if (jobConfigPb.getLoad() != null) {
       return (T) LoadStatistics.fromPb(statisticPb);
-    } else if (statisticPb.getExtract() != null) {
+    } else if (jobConfigPb.getExtract() != null) {
       return (T) ExtractStatistics.fromPb(statisticPb);
-    } else if (statisticPb.getQuery() != null) {
+    } else if (jobConfigPb.getQuery() != null) {
       return (T) QueryStatistics.fromPb(statisticPb);
-    } else {
+    } else if (jobConfigPb.getCopy() != null) {
       return (T) CopyStatistics.fromPb(statisticPb);
+    } else {
+      throw new IllegalArgumentException("unknown job configuration: " + jobConfigPb);
     }
   }
 }

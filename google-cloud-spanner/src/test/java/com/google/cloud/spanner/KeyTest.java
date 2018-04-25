@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,12 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.common.testing.EqualsTester;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -125,7 +128,8 @@ public class KeyTest {
     assertThat(Key.of(32).toString()).isEqualTo("[32]");
     assertThat(Key.of(2.0).toString()).isEqualTo("[2.0]");
     assertThat(Key.of("xyz").toString()).isEqualTo("[xyz]");
-    assertThat(Key.of(ByteArray.copyFrom("xyz")).toString()).isEqualTo("[xyz]");
+    ByteArray b = ByteArray.copyFrom("xyz");
+    assertThat(Key.of(b).toString()).isEqualTo("[" + b.toString() + "]");
     String timestamp = "2015-09-15T00:00:00Z";
     assertThat(Key.of(Timestamp.parseTimestamp(timestamp)).toString())
         .isEqualTo("[" + timestamp + "]");
@@ -170,5 +174,19 @@ public class KeyTest {
     tester.addEqualityGroup(Key.of("a", 2, null));
 
     tester.testEquals();
+  }
+
+  @Test
+  public void serialization() throws Exception {
+    reserializeAndAssert(Key.of());
+    reserializeAndAssert(Key.of(new Object[] {null}));
+    reserializeAndAssert(Key.of(true));
+    reserializeAndAssert(Key.of(32));
+    reserializeAndAssert(Key.of(2.0));
+    reserializeAndAssert(Key.of("xyz"));
+    reserializeAndAssert(Key.of(ByteArray.copyFrom("xyz")));
+    reserializeAndAssert(Key.of(Timestamp.parseTimestamp("2015-09-15T00:00:00Z")));
+    reserializeAndAssert(Key.of(Date.parseDate("2015-09-15")));
+    reserializeAndAssert(Key.of(1, 2, 3));
   }
 }

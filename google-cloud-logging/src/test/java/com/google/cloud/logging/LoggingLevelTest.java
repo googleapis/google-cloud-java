@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,6 @@ public class LoggingLevelTest {
   @Test
   public void testDebug() {
     LoggingLevel debug = LoggingLevel.DEBUG;
-    assertEquals(Severity.DEBUG, debug.severity());
     assertEquals(Severity.DEBUG, debug.getSeverity());
     assertEquals("DEBUG", debug.getName());
     assertTrue(debug.intValue() < Level.FINEST.intValue());
@@ -38,7 +37,6 @@ public class LoggingLevelTest {
   @Test
   public void testNotice() {
     LoggingLevel notice = LoggingLevel.NOTICE;
-    assertEquals(Severity.NOTICE, notice.severity());
     assertEquals(Severity.NOTICE, notice.getSeverity());
     assertEquals("NOTICE", notice.getName());
     assertTrue(notice.intValue() > Level.INFO.intValue());
@@ -48,7 +46,6 @@ public class LoggingLevelTest {
   @Test
   public void testError() {
     LoggingLevel error = LoggingLevel.ERROR;
-    assertEquals(Severity.ERROR, error.severity());
     assertEquals(Severity.ERROR, error.getSeverity());
     assertEquals("ERROR", error.getName());
     assertTrue(error.intValue() > Level.WARNING.intValue());
@@ -58,7 +55,6 @@ public class LoggingLevelTest {
   @Test
   public void testCritical() {
     LoggingLevel critical = LoggingLevel.CRITICAL;
-    assertEquals(Severity.CRITICAL, critical.severity());
     assertEquals(Severity.CRITICAL, critical.getSeverity());
     assertEquals("CRITICAL", critical.getName());
     assertTrue(critical.intValue() > LoggingLevel.SEVERE.intValue());
@@ -68,7 +64,6 @@ public class LoggingLevelTest {
   @Test
   public void testAlert() {
     LoggingLevel alert = LoggingLevel.ALERT;
-    assertEquals(Severity.ALERT, alert.severity());
     assertEquals(Severity.ALERT, alert.getSeverity());
     assertEquals("ALERT", alert.getName());
     assertTrue(alert.intValue() > LoggingLevel.CRITICAL.intValue());
@@ -78,7 +73,6 @@ public class LoggingLevelTest {
   @Test
   public void testEmergency() {
     LoggingLevel emergency = LoggingLevel.EMERGENCY;
-    assertEquals(Severity.EMERGENCY, emergency.severity());
     assertEquals(Severity.EMERGENCY, emergency.getSeverity());
     assertEquals("EMERGENCY", emergency.getName());
     assertTrue(emergency.intValue() > LoggingLevel.ALERT.intValue());

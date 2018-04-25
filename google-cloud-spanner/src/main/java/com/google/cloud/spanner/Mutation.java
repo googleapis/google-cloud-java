@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,15 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ListValue;
+
+import java.io.Serializable;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.Nullable;
 
 /**
@@ -47,12 +51,15 @@ import javax.annotation.Nullable;
  *
  * <p>{@code Mutation} instances are immutable.
  */
-public final class Mutation {
+public final class Mutation implements Serializable {
+  private static final long serialVersionUID = 1784900828296918555L;
+
   /** Enumerates the types of mutation that can be applied. */
   public enum Op {
     /**
      * Inserts a new row in a table. If the row already exists, the write or transaction fails with
-     * {@link ErrorCode#ALREADY_EXISTS}.
+     * {@link ErrorCode#ALREADY_EXISTS}. When inserting a row, all NOT NULL columns in the table must
+     * be given a value.
      */
     INSERT,
 
@@ -64,7 +71,9 @@ public final class Mutation {
 
     /**
      * Like {@link #INSERT}, except that if the row already exists, then its column values are
-     * overwritten with the ones provided. Any column values not explicitly written are preserved.
+     * overwritten with the ones provided. All NOT NUll columns in the table must be give a value and
+     * this holds true even when the row already exists and will actually be updated. Values for all NULL
+     * columns not explicitly written are preserved.
      */
     INSERT_OR_UPDATE,
 
@@ -184,9 +193,17 @@ public final class Mutation {
       return binder;
     }
 
+    /**
+     * Returns a newly created {@code Mutation} based on the contents of the {@code Builder}.
+     *
+     * @throws IllegalStateException if any duplicate columns are present. Duplicate detection is
+     * case-insensitive.
+     */
     public Mutation build() {
       checkBindingInProgress(false);
-      return new Mutation(table, operation, columns.build(), values.build(), null);
+      ImmutableList<String> columnNames = columns.build();
+      checkDuplicateColumns(columnNames);
+      return new Mutation(table, operation, columnNames, values.build(), null);
     }
 
     private void checkBindingInProgress(boolean expectInProgress) {
@@ -194,6 +211,17 @@ public final class Mutation {
         checkState(currentColumn != null, "No binding currently active");
       } else if (currentColumn != null) {
         throw new IllegalStateException("Incomplete binding for column " + currentColumn);
+      }
+    }
+
+    private void checkDuplicateColumns(ImmutableList<String> columnNames) {
+      Set<String> columnNameSet = new HashSet<>();
+      for (String columnName : columnNames) {
+        columnName = columnName.toLowerCase();
+        if (columnNameSet.contains(columnName)) {
+          throw new IllegalStateException("Duplicate column: " + columnName);
+        }
+        columnNameSet.add(columnName);
       }
     }
   }
@@ -243,9 +271,6 @@ public final class Mutation {
     LinkedHashMap<String, Value> map = new LinkedHashMap<>();
     for (int i = 0; i < columns.size(); ++i) {
       Value existing = map.put(columns.get(i), values.get(i));
-      if (existing != null) {
-        throw new IllegalStateException("Duplicate column: " + columns.get(i));
-      }
     }
     return Collections.unmodifiableMap(map);
   }

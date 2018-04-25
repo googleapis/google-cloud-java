@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,20 +55,6 @@ public class QuerySnippets {
     return results;
   }
 
-  /**
-   * Example of creating and running a GQL query.
-   */
-  // [TARGET gqlQueryBuilder(String)]
-  // [VARIABLE "my_kind"]
-  public QueryResults<?> newQueryDeprecated(String kind) {
-    // [START newQueryDeprecated]
-    String gqlQuery = "select * from " + kind;
-    Query<?> query = Query.gqlQueryBuilder(gqlQuery).build();
-    QueryResults<?> results = datastore.run(query);
-    // Use results
-    // [END newQueryDeprecated]
-    return results;
-  }
 
   /**
    * Example of creating and running a typed GQL query.
@@ -85,20 +71,6 @@ public class QuerySnippets {
     return results;
   }
 
-  /**
-   * Example of creating and running a typed GQL query.
-   */
-  // [TARGET gqlQueryBuilder(ResultType, String)]
-  // [VARIABLE "my_kind"]
-  public QueryResults<Entity> newTypedQueryDeprecated(String kind) {
-    // [START newTypedQueryDeprecated]
-    String gqlQuery = "select * from " + kind;
-    Query<Entity> query = Query.gqlQueryBuilder(Query.ResultType.ENTITY, gqlQuery).build();
-    QueryResults<Entity> results = datastore.run(query);
-    // Use results
-    // [END newTypedQueryDeprecated]
-    return results;
-  }
 
   /**
    * Example of creating and running an entity query.
@@ -114,19 +86,6 @@ public class QuerySnippets {
     return results;
   }
 
-  /**
-   * Example of creating and running an entity query.
-   */
-  // [TARGET entityQueryBuilder()]
-  // [VARIABLE "my_kind"]
-  public QueryResults<Entity> newEntityQueryDeprecated(String kind) {
-    // [START newEntityQueryDeprecated]
-    Query<Entity> query = Query.entityQueryBuilder().setKind(kind).build();
-    QueryResults<Entity> results = datastore.run(query);
-    // Use results
-    // [END newEntityQueryDeprecated]
-    return results;
-  }
 
   /**
    * Example of creating and running a key query.
@@ -142,19 +101,6 @@ public class QuerySnippets {
     return results;
   }
 
-  /**
-   * Example of creating and running a key query.
-   */
-  // [TARGET keyQueryBuilder()]
-  // [VARIABLE "my_kind"]
-  public QueryResults<Key> newKeyQueryDeprecated(String kind) {
-    // [START newKeyQueryDeprecated]
-    Query<Key> query = Query.keyQueryBuilder().setKind(kind).build();
-    QueryResults<Key> results = datastore.run(query);
-    // Use results
-    // [END newKeyQueryDeprecated]
-    return results;
-  }
 
   /**
    * Example of creating and running a projection entity query.
@@ -173,23 +119,5 @@ public class QuerySnippets {
     // [END newProjectionEntityQuery]
     return results;
   }
-
-  /**
-   * Example of creating and running a projection entity query.
-   */
-  // [TARGET projectionEntityQueryBuilder()]
-  // [VARIABLE "my_kind"]
-  // [VARIABLE "my_property"]
-  public QueryResults<ProjectionEntity> newProjectionEntityQueryDeprecated(String kind,
-      String property) {
-    // [START newProjectionEntityQuery]
-    Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
-        .setKind(kind)
-        .addProjection(property)
-        .build();
-    QueryResults<ProjectionEntity> results = datastore.run(query);
-    // Use results
-    // [END newProjectionEntityQuery]
-    return results;
-  }
 }
+

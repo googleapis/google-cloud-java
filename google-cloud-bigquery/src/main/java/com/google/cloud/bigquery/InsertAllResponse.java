@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,14 +50,6 @@ public class InsertAllResponse implements Serializable {
         : ImmutableMap.<Long, List<BigQueryError>>of();
   }
 
-  /**
-   * Returns all insertion errors as a map whose keys are indexes of rows that failed to insert.
-   * Each failed row index is associated with a non-empty list of {@link BigQueryError}.
-   */
-  @Deprecated
-  public Map<Long, List<BigQueryError>> insertErrors() {
-    return getInsertErrors();
-  }
 
   /**
    * Returns all insertion errors as a map whose keys are indexes of rows that failed to insert.
@@ -67,13 +59,6 @@ public class InsertAllResponse implements Serializable {
     return insertErrors;
   }
 
-  /**
-   * Returns errors for the provided row index. If no error exists returns {@code null}.
-   */
-  @Deprecated
-  public List<BigQueryError> errorsFor(long index) {
-    return getErrorsFor(index);
-  }
 
   /**
    * Returns errors for the provided row index. If no error exists returns {@code null}.
@@ -84,7 +69,7 @@ public class InsertAllResponse implements Serializable {
 
   /**
    * Returns {@code true} if no row insertion failed, {@code false} otherwise. If {@code false}
-   * {@link #insertErrors()} returns an empty map.
+   * {@link #getInsertErrors()} returns an empty map.
    */
   public boolean hasErrors() {
     return !insertErrors.isEmpty();

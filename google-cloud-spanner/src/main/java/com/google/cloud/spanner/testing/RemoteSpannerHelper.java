@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.testing;
 
+import com.google.cloud.spanner.BatchClient;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.InstanceId;
@@ -61,6 +62,10 @@ public class RemoteSpannerHelper {
 
   public DatabaseClient getDatabaseClient(Database db) {
     return getClient().getDatabaseClient(db.getId());
+  }
+
+  public BatchClient getBatchClient(Database db) {
+    return getClient().getBatchClient(db.getId());
   }
 
   public InstanceId getInstanceId() {
@@ -113,7 +118,7 @@ public class RemoteSpannerHelper {
       }
     }
     logger.log(Level.INFO, "Dropped {0} test database(s)", numDropped);
-    client.closeAsync();
+    client.close();
   }
 
   /**

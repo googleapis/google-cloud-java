@@ -1,92 +1,89 @@
-Google Cloud Java Client
+Google Cloud Client Library for Java
 ==========================
 
 Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.cloud%22%20a%3A%22google-cloud%22)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs)
+- [Google Cloud Platform Documentation][cloud-platform-docs]
+- [Client Library Documentation][client-lib-docs]
 
-This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
+This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
+-  [BigQuery](google-cloud-bigquery) (GA)
+-  [Stackdriver Logging](google-cloud-logging) (GA)
+-  [Cloud Datastore](google-cloud-datastore) (GA)
+-  [Cloud Natural Language](google-cloud-language) (GA)
+-  [Cloud Storage](google-cloud-storage) (GA)
+-  [Cloud Translation](google-cloud-translate) (GA)
+-  [Cloud Vision](google-cloud-vision) (GA)
 
--  [Google Cloud BigQuery] (#google-cloud-bigquery-beta) (Beta)
--  [Stackdriver Logging] (#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
--  [Google Cloud Datastore] (#google-cloud-datastore-beta) (Beta)
--  [Google Cloud Storage] (#google-cloud-storage-beta) (Beta)
--  [Cloud Spanner] (#cloud-spanner-beta) (Beta)
+This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
-This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
+-  [Cloud Data Loss Prevention](google-cloud-dlp) (Beta)
+-  [Stackdriver Error Reporting](google-cloud-errorreporting) (Beta)
+-  [Cloud Firestore](google-cloud-firestore) (Beta)
+-  [Stackdriver Monitoring](google-cloud-monitoring) (Beta)
+-  [Cloud Pub/Sub](google-cloud-pubsub) (Beta)
+-  [Cloud Spanner](google-cloud-spanner) (Beta)
+-  [Cloud Video Intelligence](google-cloud-video-intelligence) (Beta)
+-  [Stackdriver Trace](google-cloud-trace) (Beta)
+-  [Text-to-Speech](google-cloud-texttospeech) (Beta)
 
--  [Google Cloud Compute] (#google-cloud-compute-alpha) (Alpha)
--  [Google Cloud DNS] (#google-cloud-dns-alpha) (Alpha)
--  [Google Cloud Pub/Sub] (#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
--  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
--  [Google Cloud Translate] (#google-translate-alpha) (Alpha)
+This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+-  [Cloud Dataproc](google-cloud-dataproc) (Alpha)
+-  [Cloud DNS](google-cloud-dns) (Alpha)
+-  [Cloud OS Login](google-cloud-os-login) (Alpha)
+-  [Cloud Resource Manager](google-cloud-resourcemanager) (Alpha)
+-  [Cloud Speech](google-cloud-speech) (Alpha)
+-  [Dialogflow](google-cloud-dialogflow) (Alpha)
 
-## Where did `gcloud-java` go?
+These libraries are deprecated and no longer receive updates:
 
-`gcloud-java` lives on under a new name, `google-cloud`.
-Your code will behave the same, simply change your dependency (see [Quickstart](./README.md#quickstart)).
+-  [Cloud Compute](google-cloud-compute) (Deprecated)
 
 Quickstart
 ----------
 
+The easy way to get started is to add the umbrella package which pulls in all of the supported clients as
+dependencies. Note that even though the version of the umbrella package is Alpha, the individual clients are
+at different support levels (Alpha, Beta, and GA).
+
+[//]: # ({x-version-update-start:google-cloud:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>0.45.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud:0.45.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.45.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
-Example Applications
---------------------
+It also works just as well to declare a dependency only on the specific clients that you need. See the README of
+each client for instructions.
 
-- [`BigQueryExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
-  - Read more about using this application on the [`BigQueryExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
-- [`ComputeExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java) - A simple command line interface providing some of Cloud Compute's functionality
-  - Read more about using this application on the [`google-cloud-examples` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/compute/ComputeExample.html).
-- [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
-  - This app uses `google-cloud` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
-- [`DatastoreExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) - A simple command line interface for Cloud Datastore
-  - Read more about using this application on the [`DatastoreExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
-- [`DnsExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java) - A simple command line interface for Cloud DNS
-  - Read more about using this application on the [`DnsExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/dns/DnsExample.html).
-- [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
-  - Read about how to run the application [here](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/README.md).
-- [`Flexible Environment/Storage example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/cloudstorage) - An app that uploads files to a public Cloud Storage bucket on the App Engine Flexible Environment runtime.
-- [`GuestBook`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/appengine/guestbook-cloud-datastore) - An App Engine Standard guestbook that uses Cloud Datastore.
-- [`LoggingExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/LoggingExample.java) - A simple command line interface providing some of Stackdriver Logging's functionality
-  - Read more about using this application on the [`LoggingExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/logging/LoggingExample.html).
-- [`PubSubExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/PubSubExample.java) - A simple command line interface providing some of Cloud Pub/Sub's functionality
-  - Read more about using this application on the [`PubSubExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/pubsub/PubSubExample.html).
-- [`ResourceManagerExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
-  - Read more about using this application on the [`ResourceManagerExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
-- [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/flexible/sparkjava) - An example of using `google-cloud-datastore` from within the SparkJava and App Engine Flexible Environment frameworks.
-  - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/sparkjava#how-does-it-work).
-- [`StorageExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
-  - Read more about using this application on the [`StorageExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
-- [`TaskList`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/datastore/src/main/java/com/google/datastore/snippets/TaskList.java) - A command line application that uses Cloud Datastore to manage a to-do list.
-  - Read about how to run the application on its [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/datastore).
-- [`TranslateExample`](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) - A simple command line interface providing some of Google Translate's functionality
-  - Read more about using this application on the [`TranslateExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
+If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins: 
+* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries)
+* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries)
+
+Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
+
+These client libraries can be used on App Engine standard for Java 8 runtime, App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime, however, Datastore, Storage, and Bigquery should work.
+
+If you are running into problems with version conflicts, see [Version Management](#version-management).
 
 Specifying a Project ID
 -----------------------
@@ -115,6 +112,13 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
 4. The project ID specified in the JSON credentials file pointed by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
 5. The Google Cloud SDK project ID
 6. The Compute Engine project ID
+
+In cases where the library may expect a project ID explicitly, we provide a helper that can provide the inferred project ID:
+   ```java
+     import com.google.cloud.ServiceOptions;
+     ...
+     String projectId = ServiceOptions.getDefaultProjectId();
+   ```
 
 Authentication
 --------------
@@ -168,7 +172,7 @@ Storage storage = StorageOptions.getDefaultInstance().getService();
   ```
 
 If no credentials are provided, `google-cloud` will attempt to detect them from the environment
-using `GoogleCredentials.getApplicationDefault()` which will search for Default Application
+using `GoogleCredentials.getApplicationDefault()` which will search for Application Default
 Credentials in the following locations (in order):
 
 1. The credentials file pointed to by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
@@ -177,517 +181,58 @@ Credentials in the following locations (in order):
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
 
-Google Cloud BigQuery (Beta)
-----------------------
-
-- [API Documentation][bigquery-api]
-- [Official Documentation][cloud-bigquery-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
-must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-Complete source code can be found at
-[CreateTableAndLoadData.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
-
-```java
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.FormatOptions;
-import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.StandardTableDefinition;
-import com.google.cloud.bigquery.Table;
-import com.google.cloud.bigquery.TableId;
-import com.google.cloud.bigquery.TableInfo;
-
-BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-TableId tableId = TableId.of("dataset", "table");
-Table table = bigquery.getTable(tableId);
-if (table == null) {
-  System.out.println("Creating table " + tableId);
-  Field integerField = Field.of("fieldName", Field.Type.integer());
-  Schema schema = Schema.of(integerField);
-  table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
-}
-System.out.println("Loading data into table " + tableId);
-Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-loadJob = loadJob.waitFor();
-if (loadJob.getStatus().getError() != null) {
-  System.out.println("Job completed with errors");
-} else {
-  System.out.println("Job succeeded");
-}
-```
-
-Stackdriver Logging (Beta)
-----------------------
-- [API Documentation][logging-api]
-- [Official Documentation][stackdriver-logging-docs]
-
-*Follow the [activation instructions][stackdriver-logging-activation] to use the Stackdriver Logging
-API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute Engine/App Engine
-Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
-snippet elsewhere.
-
-The first snippet shows how to write and list log entries. Complete source code can be found on
-[WriteAndListLogEntries.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java).
-
-```java
-import com.google.cloud.MonitoredResource;
-import com.google.cloud.Page;
-import com.google.cloud.logging.LogEntry;
-import com.google.cloud.logging.Logging;
-import com.google.cloud.logging.Logging.EntryListOption;
-import com.google.cloud.logging.LoggingOptions;
-import com.google.cloud.logging.Payload.StringPayload;
-
-import java.util.Collections;
-import java.util.Iterator;
-
-LoggingOptions options = LoggingOptions.getDefaultInstance();
-try(Logging logging = options.getService()) {
-
-  LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
-      .setLogName("test-log")
-      .setResource(MonitoredResource.newBuilder("global")
-          .addLabel("project_id", options.getProjectId())
-          .build())
-      .build();
-  logging.write(Collections.singleton(firstEntry));
-
-  Page<LogEntry> entries = logging.listLogEntries(
-      EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
-  Iterator<LogEntry> entryIterator = entries.iterateAll();
-  while (entryIterator.hasNext()) {
-    System.out.println(entryIterator.next());
-  }
-}
-```
-
-The second snippet shows how to use a `java.util.logging.Logger` to write log entries to Stackdriver
-Logging. The snippet installs a Stackdriver Logging handler using
-`LoggingHandler.addHandler(Logger, LoggingHandler)`. Notice that this could also be done through the
-`logging.properties` file, adding the following line:
-```
-com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler
-```
-The complete code can be found on
-[AddLoggingHandler.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java).
-
-```java
-import com.google.cloud.logging.LoggingHandler;
-
-import java.util.logging.Logger;
-
-Logger logger = Logger.getLogger(AddLoggingHandler.class.getName());
-LoggingHandler.addHandler(logger, new LoggingHandler());
-logger.warning("test warning");
-```
-
-Google Cloud Datastore (Beta)
-----------------------
-
-- [API Documentation][datastore-api]
-- [Official Documentation][cloud-datastore-docs]
-
-*Follow the [activation instructions][cloud-datastore-activation] to use the Google Cloud Datastore API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a Datastore entity. Complete source code can be found at
-[CreateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java).
-
-```java
-import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
-import com.google.cloud.datastore.Entity;
-import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.KeyFactory;
-
-Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
-Key key = keyFactory.newKey("keyName");
-Entity entity = Entity.newBuilder(key)
-    .set("name", "John Doe")
-    .set("age", 30)
-    .set("access_time", DateTime.now())
-    .build();
-datastore.put(entity);
-```
-The second snippet shows how to update a Datastore entity if it exists. Complete source code can be
-found at
-[UpdateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
-```java
-import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
-import com.google.cloud.datastore.Entity;
-import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.KeyFactory;
-
-Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
-Key key = keyFactory.newKey("keyName");
-Entity entity = datastore.get(key);
-if (entity != null) {
-  System.out.println("Updating access_time for " + entity.getString("name"));
-  entity = Entity.newBuilder(entity)
-      .set("access_time", DateTime.now())
-      .build();
-  datastore.update(entity);
-}
-```
-
-Google Cloud Storage (Beta)
-----------------------
-
-- [API Documentation][storage-api]
-- [Official Documentation][cloud-storage-docs]
-
-*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a Storage blob. Complete source code can be found at
-[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
-
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-
-Storage storage = StorageOptions.getDefaultInstance().getService();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
-Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
-```
-The second snippet shows how to update a Storage blob if it exists. Complete source code can be
-found at
-[UpdateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-
-Storage storage = StorageOptions.getDefaultInstance().getService();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-Blob blob = storage.get(blobId);
-if (blob != null) {
-  byte[] prevContent = blob.getContent();
-  System.out.println(new String(prevContent, UTF_8));
-  WritableByteChannel channel = blob.writer();
-  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
-  channel.close();
-}
-```
-Cloud Spanner (Beta)
---------------------
-
-- [API Documentation][cloud-spanner-api]
-- [Official Documentation][cloud-spanner-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute/App Engine Flex. Note that you
-must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-```java
-import com.google.cloud.spanner.DatabaseClient;
-import com.google.cloud.spanner.DatabaseId;
-import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.Spanner;
-import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.Statement;
-
-// Instantiates a client
-SpannerOptions options = SpannerOptions.newBuilder().build();
-Spanner spanner = options.getService();
-String instance = "my-instance";
-String database = "my-database";
-try {
-    // Creates a database client
-    DatabaseClient dbClient = spanner.getDatabaseClient(
-      DatabaseId.of(options.getProjectId(), instance, database));
-    // Queries the database
-    ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"));
-    // Prints the results
-    while (resultSet.next()) {
-      System.out.printf("%d\n", resultSet.getLong(0));
-    }
-} finally {
-    // Closes the client which will free up the resources used
-    spanner.closeAsync().get();
-}
-```
-
-Google Cloud Compute (Alpha)
-----------------------
-
-- [API Documentation][compute-api]
-- [Official Documentation][cloud-compute-docs]
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that
-you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a snapshot from an existing disk. Complete source code can be
-found at
-[CreateSnapshot.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java).
-
-```java
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.Disk;
-import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.Snapshot;
-
-Compute compute = ComputeOptions.getDefaultInstance().getService();
-DiskId diskId = DiskId.of("us-central1-a", "disk-name");
-Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
-if (disk != null) {
-  String snapshotName = "disk-name-snapshot";
-  Operation operation = disk.createSnapshot(snapshotName);
-  operation = operation.waitFor();
-  if (operation.getErrors() == null) {
-    // use snapshot
-    Snapshot snapshot = compute.getSnapshot(snapshotName);
-  }
-}
-```
-The second snippet shows how to create a virtual machine instance. Complete source code can be found
-at
-[CreateInstance.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java).
-```java
-import com.google.cloud.compute.AttachedDisk;
-import com.google.cloud.compute.Compute;
-import com.google.cloud.compute.ComputeOptions;
-import com.google.cloud.compute.ImageId;
-import com.google.cloud.compute.Instance;
-import com.google.cloud.compute.InstanceId;
-import com.google.cloud.compute.InstanceInfo;
-import com.google.cloud.compute.MachineTypeId;
-import com.google.cloud.compute.NetworkId;
-
-Compute compute = ComputeOptions.getDefaultInstance().getService();
-ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
-NetworkId networkId = NetworkId.of("default");
-AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
-NetworkInterface networkInterface = NetworkInterface.of(networkId);
-InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
-MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
-Operation operation =
-    compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
-operation = operation.waitFor();
-if (operation.getErrors() == null) {
-  // use instance
-  Instance instance = compute.getInstance(instanceId);
-}
-```
-
-Google Cloud DNS (Alpha)
-----------------------
-- [API Documentation][dns-api]
-- [Official Documentation][cloud-dns-docs]
-
-*Follow the [activation instructions][cloud-dns-activation] to use the Google Cloud DNS API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a zone resource. Complete source code can be found on
-[CreateZone.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java).
-
-```java
-import com.google.cloud.dns.Dns;
-import com.google.cloud.dns.DnsOptions;
-import com.google.cloud.dns.Zone;
-import com.google.cloud.dns.ZoneInfo;
-
-Dns dns = DnsOptions.getDefaultInstance().getService();
-String zoneName = "my-unique-zone";
-String domainName = "someexampledomain.com.";
-String description = "This is a google-cloud-dns sample zone.";
-ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
-Zone zone = dns.create(zoneInfo);
-```
-
-The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
-
-```java
-import com.google.cloud.dns.ChangeRequestInfo;
-import com.google.cloud.dns.Dns;
-import com.google.cloud.dns.DnsOptions;
-import com.google.cloud.dns.RecordSet;
-import com.google.cloud.dns.Zone;
-
-import java.util.Iterator;
-import java.util.concurrent.TimeUnit;
-
-Dns dns = DnsOptions.getDefaultInstance().getService();
-String zoneName = "my-unique-zone";
-Zone zone = dns.getZone(zoneName);
-String ip = "12.13.14.15";
-RecordSet toCreate = RecordSet.newBuilder("www.someexampledomain.com.", RecordSet.Type.A)
-    .setTtl(24, TimeUnit.HOURS)
-    .addRecord(ip)
-    .build();
-ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder().add(toCreate);
-
-// Verify that the record does not exist yet.
-// If it does exist, we will overwrite it with our prepared record.
-Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
-while (recordSetIterator.hasNext()) {
-  RecordSet current = recordSetIterator.next();
-  if (toCreate.getName().equals(current.getName()) &&
-      toCreate.getType().equals(current.getType())) {
-    changeBuilder.delete(current);
-  }
-}
-
-ChangeRequestInfo changeRequest = changeBuilder.build();
-zone.applyChangeRequest(changeRequest);
-```
-
-Google Cloud Pub/Sub (Alpha)
-----------------------
-
-- [API Documentation][pubsub-api]
-- [Official Documentation][cloud-pubsub-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute Engine/App Engine
-Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
-snippet elsewhere. Complete source code can be found at
-[CreateSubscriptionAndPullMessages.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java).
-
-```java
-import com.google.cloud.pubsub.Message;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSub.MessageConsumer;
-import com.google.cloud.pubsub.PubSub.MessageProcessor;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.Subscription;
-import com.google.cloud.pubsub.SubscriptionInfo;
-
-try (PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
-  Subscription subscription =
-      pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
-  MessageProcessor callback = new MessageProcessor() {
-    @Override
-    public void process(Message message) throws Exception {
-      System.out.printf("Received message \"%s\"%n", message.getPayloadAsString());
-    }
-  };
-  // Create a message consumer and pull messages (for 60 seconds)
-  try (MessageConsumer consumer = subscription.pullAsync(callback)) {
-    Thread.sleep(60_000);
-  }
-}
-```
-
-Google Cloud Resource Manager (Alpha)
-----------------------
-
-- [API Documentation][resourcemanager-api]
-- [Official Documentation][cloud-resourcemanager-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
-Complete source code can be found at
-[UpdateAndListProjects.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
-```java
-import com.google.cloud.resourcemanager.Project;
-import com.google.cloud.resourcemanager.ResourceManager;
-import com.google.cloud.resourcemanager.ResourceManagerOptions;
-
-import java.util.Iterator;
-
-ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
-Project project = resourceManager.get("some-project-id"); // Use an existing project's ID
-if (project != null) {
-  Project newProject = project.toBuilder()
-      .addLabel("launch-status", "in-development")
-      .build()
-      .replace();
-  System.out.println("Updated the labels of project " + newProject.getProjectId()
-      + " to be " + newProject.getLabels());
-}
-Iterator<Project> projectIterator = resourceManager.list().iterateAll();
-System.out.println("Projects I can view:");
-while (projectIterator.hasNext()) {
-  System.out.println(projectIterator.next().getProjectId());
-}
-```
-
-Google Translate (Alpha)
-----------------
-
-- [API Documentation][translate-api]
-- [Official Documentation][translate-docs]
-
-#### Preview
-
-Here's a snippet showing a simple usage example. The example shows how to detect the language of
-some text and how to translate some text. The example assumes that either default application
-credentials or a valid api key are available. An api key stored in the `GOOGLE_API_KEY` environment
-variable will be automatically detected. Alternatively, you can use the `apiKey(String)` setter in
-`TranslateOptions.Builder`. Complete source code can be found at
-[DetectLanguageAndTranslate.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java).
-
-```java
-import com.google.cloud.translate.Detection;
-import com.google.cloud.translate.Translate;
-import com.google.cloud.translate.Translate.TranslateOption;
-import com.google.cloud.translate.TranslateOptions;
-import com.google.cloud.translate.Translation;
-
-Translate translate = TranslateOptions.getDefaultInstance().getService();
-
-Detection detection = translate.detect("Hola");
-String detectedLanguage = detection.getLanguage();
-
-Translation translation = translate.translate(
-    "World",
-    TranslateOption.sourceLanguage("en"),
-    TranslateOption.targetLanguage(detectedLanguage));
-
-System.out.printf("Hola %s%n", translation.getTranslatedText());
-```
-
 Troubleshooting
 ---------------
 
-To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [Troubleshooting document](https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TROUBLESHOOTING.md).
+
+Using a proxy
+-------------
+Clients in this repository use either HTTP or gRPC for the transport layer.
+The README of each client documents the transport layer the client uses.
+
+For HTTP clients, a proxy can be configured by using `http.proxyHost` and
+related system properties as documented by
+[Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html).
+
+For gRPC clients, a proxy can be configured by using the
+`GRPC_PROXY_EXP` environment variable as documented by
+the gRPC [release notes](https://github.com/grpc/grpc-java/releases/tag/v1.0.3).
+Please note that gRPC proxy support is currently experimental.
 
 Java Versions
 -------------
 
-Java 7 or above is required for using this client.
+Java 7 or above is required for using the clients in this repository.
+
+Supported Platforms
+-------------------
+
+Clients in this repository use either HTTP or gRPC for the transport layer. All
+HTTP-based clients should work in all environments.
+
+For clients that use gRPC, the supported platforms are constrained by the platforms
+that [Forked Tomcat Native](http://netty.io/wiki/forked-tomcat-native.html) supports,
+which for architectures means only x86_64, and for operating systems means Mac OS X,
+Windows, and Linux. Additionally, gRPC constrains the use of platforms with
+threading restrictions.
+
+Thus, the following are not supported:
+
+- Android
+- Alpine Linux (due to netty-tcnative requiring glibc, which is not present on Alpine)
+- Raspberry Pi (since it runs on the ARM architecture)
+- Google App Engine Standard Java 7
+
+The following environments should work (among others):
+
+- standalone Windows on x86_64
+- standalone Mac OS X on x86_64
+- standalone Linux on x86_64
+- Google Compute Engine (GCE)
+- Google Container Engine (GKE)
+- Google App Engine Standard Java 8 (GAE Std J8)
+- Google App Engine Flex (GAE Flex)
 
 Testing
 -------
@@ -699,17 +244,98 @@ See [TESTING] to read more about using our testing helpers.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/), but with some
+additional qualifications:
+
+1. Components marked with `@BetaApi` are considered to be "0.x" features inside
+   a "1.x" library. This means they can change between minor and patch releases
+   in incompatible ways. These features should not be used by any library "B"
+   that itself has consumers, unless the components of library B that use
+   `@BetaApi` features are also marked with `@BetaApi`. Features marked as
+   `@BetaApi` are on a path to eventually become "1.x" features with the marker
+   removed.
+
+   **Special exception for google-cloud-java**: google-cloud-java is
+   allowed to depend on `@BetaApi` features in gax-java without declaring the consuming
+   code `@BetaApi`, because gax-java and google-cloud-java move in step
+   with each other. For this reason, gax-java should not be used
+   independently of google-cloud-java.
+
+1. Components marked with `@InternalApi` are technically public, but are only
+   public for technical reasons, because of the limitations of Java's access
+   modifiers. For the purposes of semver, they should be considered private.
 
 Please note it is currently under active development. Any release versioned 0.x.y is
 subject to backwards incompatible changes at any time.
+
+**GA**: Libraries defined at a GA quality level are expected to be stable and all updates in the
+libraries are guaranteed to be backwards-compatible. Any backwards-incompatible changes will lead
+to the major version increment (1.x.y -> 2.0.0).
 
 **Beta**: Libraries defined at a Beta quality level are expected to be mostly stable and
 we're working towards their release candidate. We will address issues and requests with
 a higher priority.
 
 **Alpha**: Libraries defined at an Alpha quality level are still a work-in-progress and
-are more likely to get backwards-incompatible updates.
+are more likely to get backwards-incompatible updates. Additionally, it's possible for Alpha
+libraries to get deprecated and deleted before ever being promoted to Beta or GA.
+
+Version Management
+------------------
+
+The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
+
+[//]: # ({x-version-update-start:google-cloud-bom:released})
+```xml
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>0.45.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+```
+[//]: # ({x-version-update-end})
+
+This BOM is only available starting at version 0.32.0-alpha. If you are having problems with prior versions of
+google-cloud, use the following table as a reference to make sure that your versions are compatible. Definitions:
+
+* **alpha**: The version of any alpha package in google-cloud
+* **beta**: The version of any beta package in google-cloud
+* **GA**: The version of any GA package in google-cloud
+* **gax**: The version of com.google.api:gax
+* **gax-grpc**: The version of com.google.api:gax-grpc
+
+Something to be aware of is that a package can be promoted from alpha -> beta or beta -> GA between versions, which
+means that after a certain point for any given package, the alpha or beta version won't be valid any more.
+
+alpha         | beta         | GA         | gax        | gax-grpc
+------------- | ------------ | ---------- | ---------- | --------
+0.30.0-alpha  | 0.30.0-beta  | 1.12.0     | 1.15.0     | 1.15.0
+0.29.0-alpha  | 0.29.0-beta  | 1.11.0     | 1.15.0     | 1.15.0
+0.28.0-alpha  | 0.28.0-beta  | 1.10.0     | 1.14.0     | 1.14.0
+0.27.0-alpha  | 0.27.0-beta  | 1.9.0      | 1.13.0     | 0.30.0
+0.26.0-alpha  | 0.26.0-beta  | 1.8.0      | 1.9.0      | 0.26.0
+0.25.0-alpha  | 0.25.0-beta  | 1.7.0      | 1.8.1      | 0.25.1
+0.24.0-alpha  | 0.24.0-beta  | 1.6.0      | 1.8.1      | 0.25.1
+0.23.1-alpha  | 0.23.1-beta  | 1.5.1      | 1.8.1      | 0.25.1
+0.23.0-alpha  | 0.23.0-beta  | 1.5.0      | 1.5.0      | 0.22.0
+0.22.0-alpha  | 0.22.0-beta  | 1.4.0      | 1.5.0      | 0.22.0
+0.21.1-alpha  | 0.21.1-beta  | 1.3.1      | 1.5.0      | 0.22.0
+0.21.0-alpha  | 0.21.0-beta  | 1.3.0      | 1.5.0      | 0.22.0
+0.20.3-alpha  | 0.20.3-beta  | 1.2.3      | 1.4.2      | 0.21.2
+0.20.2-alpha  | 0.20.2-beta  | 1.2.2      | 1.4.2      | 0.21.2
+0.20.1-alpha  | 0.20.1-beta  | 1.2.1      | 1.4.1      | 0.21.1
+0.20.0-alpha  | 0.20.0-beta  | 1.2.0      | 1.3.1      | 0.20.0
+0.19.0-alpha  | 0.19.0-beta  | 1.1.0      | 1.3.0      | 0.19.0
+0.18.0-alpha  | 0.18.0-beta  | 1.0.2      | 1.1.0      | 0.17.0
+0.17.2-alpha  | 0.17.2-beta  | 1.0.1      | 1.0.0      | 0.16.0
+0.17.1-alpha  | 0.17.1-beta  | 1.0.0      | 1.0.0      | 0.16.0
+0.17.0-alpha  | 0.17.0-beta  | 1.0.0-rc4  | 1.0.0-rc1  | 0.15.0
 
 Contributing
 ------------
@@ -730,44 +356,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md
+
 [cloud-platform]: https://cloud.google.com/
-[cloud-datastore]: https://cloud.google.com/datastore/docs
-[cloud-datastore-docs]: https://cloud.google.com/datastore/docs
-[cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
-[datastore-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html
-
-[dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
-[cloud-dns-docs]: https://cloud.google.com/dns/docs
-[cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
-
-[logging-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/logging/package-summary.html
-[stackdriver-logging-docs]: https://cloud.google.com/logging/docs
-[stackdriver-logging-activation]: https://console.cloud.google.com/start/api?id=logging
-
-[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/package-summary.html
-[cloud-pubsub]: https://cloud.google.com/pubsub/
-[cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
-
-[cloud-storage]: https://cloud.google.com/storage/
-[cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
-[cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
-[cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
-[storage-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
-
-[resourcemanager-api]:https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
-[cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/
-
-[cloud-bigquery]: https://cloud.google.com/bigquery/
-[cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/overview
-[bigquery-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
-
-[cloud-compute]: https://cloud.google.com/compute/
-[cloud-compute-docs]: https://cloud.google.com/compute/docs/overview
-[compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
-
-[translate-docs]: https://cloud.google.com/translate/docs/
-[translate-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html
-
-[cloud-spanner]: https://cloud.google.com/spanner/
-[cloud-spanner-docs]: https://cloud.google.com/spanner/docs/
-[cloud-spanner-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/spanner/package-summary.html
+[cloud-platform-docs]: https://cloud.google.com/docs/
+[client-lib-docs]: http://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/

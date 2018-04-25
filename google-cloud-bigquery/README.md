@@ -1,38 +1,37 @@
 Google Cloud Java Client for BigQuery
 ====================================
 
-Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigquery).
+Java idiomatic client for [Google Cloud BigQuery][cloud-bigquery].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html)
-
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+- [Product Documentation][bigquery-product-docs]
+- [Client Library Documentation][bigquery-client-lib-docs]
 
 Quickstart
 ----------
+[//]: # ({x-version-update-start:google-cloud-bigquery:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>0.9.3-beta</version>
+  <version>1.27.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery:0.9.3-beta'
+compile 'com.google.cloud:google-cloud-bigquery:1.27.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.9.3-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.27.0"
 ```
+[//]: # ({x-version-update-end})
 
 Example Application
 -------------------
@@ -54,7 +53,7 @@ With BigQuery you can easily deploy Petabyte-scale Databases.
 Be sure to activate the Google Cloud BigQuery API on the Developer's Console to use BigQuery from
 your project.
 
-See the ``google-cloud`` API [bigquery documentation][bigquery-api] to learn how to interact
+See the [BigQuery client library docs][bigquery-client-lib-docs] to learn how to interact
 with Google Cloud BigQuery using this Client Library.
 
 Getting Started
@@ -125,7 +124,7 @@ Then add the following code to create the table:
 ```java
 TableId tableId = TableId.of(datasetId, "my_table_id");
 // Table field definition
-Field stringField = Field.of("StringField", Field.Type.string());
+Field stringField = Field.of("StringField", LegacySQLTypeName.STRING);
 // Table schema definition
 Schema schema = Schema.of(stringField);
 // Create a table
@@ -171,33 +170,19 @@ directly or through a Query Job. In this code snippet we show how to run a query
 for the result. Add the following imports at the top of your file:
 
 ```java
-import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.QueryRequest;
-import com.google.cloud.bigquery.QueryResponse;
-
-import java.util.Iterator;
-import java.util.List;
+import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 ```
 Then add the following code to run the query and wait for the result:
 
 ```java
 // Create a query request
-QueryRequest queryRequest =
-    QueryRequest.newBuilder("SELECT * FROM my_dataset_id.my_table_id")
-        .setMaxWaitTime(60000L)
-        .setPageSize(1000L)
-        .build();
-// Request query to be executed and wait for results
-QueryResponse queryResponse = bigquery.query(queryRequest);
-while (!queryResponse.jobCompleted()) {
-  Thread.sleep(1000L);
-  queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
-}
+QueryJobConfiguration queryConfig =
+    QueryJobConfiguration.newBuilder("SELECT my_column FROM my_dataset_id.my_table_id").build();
 // Read rows
-Iterator<List<FieldValue>> rowIterator = queryResponse.getResult().iterateAll();
 System.out.println("Table rows:");
-while (rowIterator.hasNext()) {
-  System.out.println(rowIterator.next());
+for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
+  System.out.println(row);
 }
 ```
 #### Complete source code
@@ -214,6 +199,10 @@ Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
+Transport
+---------
+BigQuery uses HTTP for the transport layer.
+
 Java Versions
 -------------
 
@@ -229,7 +218,7 @@ See [TESTING] to read more about testing.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
@@ -255,4 +244,5 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-storage]: https://cloud.google.com/storage/
-[bigquery-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
+[bigquery-product-docs]: https://cloud.google.com/bigquery/docs/
+[bigquery-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/bigquery/package-summary.html

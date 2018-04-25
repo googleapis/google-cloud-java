@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,19 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
+import com.google.common.collect.ForwardingList;
 import com.google.common.collect.Lists;
 import com.google.common.testing.EqualsTester;
+
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -206,7 +214,7 @@ public class ValueTest {
     assertThat(v.getType()).isEqualTo(Type.bytes());
     assertThat(v.isNull()).isFalse();
     assertThat(v.getBytes()).isSameAs(bytes);
-    assertThat(v.toString()).isEqualTo("abc");
+    assertThat(v.toString()).isEqualTo(bytes.toString());
   }
 
   @Test
@@ -214,7 +222,7 @@ public class ValueTest {
     ByteArray bytes = ByteArray.copyFrom(new byte[] {'a', 0, 15, -1, 'e'});
     Value v = Value.bytes(bytes);
     assertThat(v.getBytes()).isSameAs(bytes);
-    assertThat(v.toString()).isEqualTo("a\\0\\17\\377e");
+    assertThat(v.toString()).isEqualTo(bytes.toString());
   }
 
   @Test
@@ -230,23 +238,13 @@ public class ValueTest {
   }
 
   @Test
-  public void bytesLong() {
-    String str = "aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd";
-    ByteArray bytes = newByteArray(str);
-    Value v = Value.bytes(bytes);
-    assertThat(v.getBytes()).isEqualTo(bytes);
-    assertThat(v.toString()).hasLength(32);
-    assertThat(v.toString()).startsWith(str.substring(0, 32 - 3));
-    assertThat(v.toString()).endsWith("...");
-  }
-
-  @Test
   public void timestamp() {
     String timestamp = "2016-09-15T00:00:00Z";
     Timestamp t = Timestamp.parseTimestamp(timestamp);
     Value v = Value.timestamp(t);
     assertThat(v.getType()).isEqualTo(Type.timestamp());
     assertThat(v.isNull()).isFalse();
+    assertThat(v.isCommitTimestamp()).isFalse();
     assertThat(v.getTimestamp()).isSameAs(t);
     assertThat(v.toString()).isEqualTo(timestamp);
   }
@@ -257,9 +255,26 @@ public class ValueTest {
     assertThat(v.getType()).isEqualTo(Type.timestamp());
     assertThat(v.isNull()).isTrue();
     assertThat(v.toString()).isEqualTo(NULL_STRING);
-
+    assertThat(v.isCommitTimestamp()).isFalse();
     expectedException.expect(IllegalStateException.class);
     expectedException.expectMessage("null value");
+    v.getTimestamp();
+  }
+
+  @Test
+  public void commitTimestamp() {
+    Value v = Value.timestamp(Value.COMMIT_TIMESTAMP);
+    assertThat(v.getType()).isEqualTo(Type.timestamp());
+    assertThat(v.isNull()).isFalse();
+    assertThat(v.isCommitTimestamp()).isTrue();
+    assertThat(v.toString()).isEqualTo("spanner.commit_timestamp()");
+    assertThat(v.toProto())
+        .isEqualTo(
+            com.google.protobuf.Value.newBuilder()
+                .setStringValue("spanner.commit_timestamp()")
+                .build());
+    expectedException.expect(IllegalStateException.class);
+    expectedException.expectMessage("Commit timestamp value");
     v.getTimestamp();
   }
 
@@ -507,12 +522,14 @@ public class ValueTest {
 
   @Test
   public void bytesArray() {
-    Value v = Value.bytesArray(Arrays.asList(newByteArray("a"), null, newByteArray("c")));
+    ByteArray a = newByteArray("a");
+    ByteArray c = newByteArray("c");
+    Value v = Value.bytesArray(Arrays.asList(a, null, c));
     assertThat(v.isNull()).isFalse();
     assertThat(v.getBytesArray())
-        .containsExactly(newByteArray("a"), null, newByteArray("c"))
+        .containsExactly(a, null, c)
         .inOrder();
-    assertThat(v.toString()).isEqualTo("[a,NULL,c]");
+    assertThat(v.toString()).isEqualTo(String.format("[%s,NULL,%s]", a, c));
   }
 
   @Test
@@ -662,6 +679,20 @@ public class ValueTest {
     tester.addEqualityGroup(Value.bytes(newByteArray("def")));
     tester.addEqualityGroup(Value.bytes(null));
 
+    tester.addEqualityGroup(Value.timestamp(null), Value.timestamp(null));
+    tester.addEqualityGroup(Value.timestamp(Value.COMMIT_TIMESTAMP),
+        Value.timestamp(Value.COMMIT_TIMESTAMP));
+    Timestamp now = Timestamp.now();
+    tester.addEqualityGroup(Value.timestamp(now), Value.timestamp(now));
+    tester.addEqualityGroup(Value.timestamp(Timestamp.ofTimeMicroseconds(0)));
+
+    tester.addEqualityGroup(Value.date(null), Value.date(null));
+    tester.addEqualityGroup(
+        Value.date(Date.fromYearMonthDay(2018, 2, 26)),
+        Value.date(Date.fromYearMonthDay(2018, 2, 26)));
+    tester.addEqualityGroup(
+        Value.date(Date.fromYearMonthDay(2018, 2, 27)));
+
     tester.addEqualityGroup(
         Value.boolArray(Arrays.asList(false, true)),
         Value.boolArray(new boolean[] {false, true}),
@@ -697,6 +728,100 @@ public class ValueTest {
     tester.addEqualityGroup(Value.bytesArray(Arrays.asList(newByteArray("c"))));
     tester.addEqualityGroup(Value.bytesArray(null));
 
+    tester.addEqualityGroup(Value.timestampArray(Arrays.asList(null, now)),
+        Value.timestampArray(Arrays.asList(null, now)));
+    tester.addEqualityGroup(Value.timestampArray(null));
+
+    tester.addEqualityGroup(
+        Value.dateArray(
+            Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))),
+        Value.dateArray(
+            Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))));
+    tester.addEqualityGroup(Value.dateArray(null));
+
+
     tester.testEquals();
+  }
+
+  @Test
+  public void serialization() {
+
+    reserializeAndAssert(Value.bool(true));
+    reserializeAndAssert(Value.bool(false));
+    reserializeAndAssert(Value.bool(null));
+
+    reserializeAndAssert(Value.int64(123));
+    reserializeAndAssert(Value.int64(null));
+
+    reserializeAndAssert(Value.float64(1.23));
+    reserializeAndAssert(Value.float64(null));
+
+    reserializeAndAssert(Value.string("abc"));
+    reserializeAndAssert(Value.string(null));
+
+    reserializeAndAssert(Value.bytes(newByteArray("abc")));
+    reserializeAndAssert(Value.bytes(null));
+
+    reserializeAndAssert(Value.boolArray(new boolean[] { false, true }));
+    reserializeAndAssert(Value.boolArray(BrokenSerializationList.of(true, false)));
+    reserializeAndAssert(Value.boolArray((Iterable<Boolean>) null));
+
+    reserializeAndAssert(Value.int64Array(BrokenSerializationList.of(1L, 2L)));
+    reserializeAndAssert(Value.int64Array(new long[] { 1L, 2L }));
+    reserializeAndAssert(Value.int64Array((Iterable<Long>) null));
+
+    reserializeAndAssert(Value.float64Array(new double[] { .1, .2 }));
+    reserializeAndAssert(Value.float64Array(BrokenSerializationList.of(.1, .2, .3)));
+    reserializeAndAssert(Value.float64Array((Iterable<Double>) null));
+
+    reserializeAndAssert(Value.timestamp(null));
+    reserializeAndAssert(Value.timestamp(Value.COMMIT_TIMESTAMP));
+    reserializeAndAssert(Value.timestamp(Timestamp.now()));
+    reserializeAndAssert(Value.timestampArray(Arrays.asList(null, Timestamp.now())));
+
+    reserializeAndAssert(Value.date(null));
+    reserializeAndAssert(Value.date(Date.fromYearMonthDay(2018, 2, 26)));
+    reserializeAndAssert(Value.dateArray(Arrays.asList(null,
+        Date.fromYearMonthDay(2018, 2, 26))));
+
+    BrokenSerializationList<String> of = BrokenSerializationList.of("a", "b");
+    reserializeAndAssert(Value.stringArray(of));
+    reserializeAndAssert(Value.stringArray(null));
+
+    reserializeAndAssert(
+        Value.bytesArray(BrokenSerializationList.of(newByteArray("a"), newByteArray("b"))));
+    reserializeAndAssert(Value.bytesArray(null));
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void verifyBrokenSerialization() {
+    reserializeAndAssert(BrokenSerializationList.of(1, 2, 3));
+  }
+
+  private static class BrokenSerializationList<T> extends ForwardingList<T> implements
+      Serializable {
+    private final List<T> delegate;
+
+    public static <T> BrokenSerializationList<T> of(T... values) {
+      return new BrokenSerializationList<>(Arrays.asList(values));
+    }
+
+    private BrokenSerializationList(List<T> delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override protected List<T> delegate() {
+      return delegate;
+    }
+    private void readObject(java.io.ObjectInputStream unusedStream)
+        throws IOException, ClassNotFoundException {
+      throw new IllegalStateException("Serialization disabled");
+    }
+    private void writeObject(java.io.ObjectOutputStream unusedStream)
+        throws IOException {
+      throw new IllegalStateException("Serialization disabled");
+    }
+
+
   }
 }

@@ -3,33 +3,36 @@ Google Cloud Java Client -- Core
 
 This module provides common functionality required by service-specific modules of this library.
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-core.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/package-summary.html)
+-  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/package-summary.html)
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud-core:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-core</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>1.27.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-core:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud-core:1.27.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-core" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-core" % "1.27.0"
 ```
+[//]: # ({x-version-update-end})
 
 Troubleshooting
 ---------------
@@ -53,7 +56,7 @@ Please note that this project is released with a Contributor Code of Conduct. By
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered

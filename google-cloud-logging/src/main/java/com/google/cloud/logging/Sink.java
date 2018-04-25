@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@ package com.google.cloud.logging;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFuture;
 import com.google.common.base.Function;
 import com.google.logging.v2.LogSink;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
-import java.util.concurrent.Future;
 
 /**
  * Stackdriver Logging sinks can be used to control the export of your logs. Each sink specifies the
@@ -63,11 +63,6 @@ public class Sink extends SinkInfo {
       delegate = new BuilderImpl(sink);
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -75,11 +70,6 @@ public class Sink extends SinkInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder destination(Destination destination) {
-      return setDestination(destination);
-    }
 
     @Override
     public Builder setDestination(Destination destination) {
@@ -87,11 +77,6 @@ public class Sink extends SinkInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder filter(String filter) {
-      return setFilter(filter);
-    }
 
     @Override
     public Builder setFilter(String filter) {
@@ -99,11 +84,6 @@ public class Sink extends SinkInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder versionFormat(VersionFormat versionFormat) {
-      return setVersionFormat(versionFormat);
-    }
 
     @Override
     public Builder setVersionFormat(VersionFormat versionFormat) {
@@ -145,13 +125,6 @@ public class Sink extends SinkInfo {
     return baseEquals(other) && Objects.equals(options, other.options);
   }
 
-  /**
-   * Returns the sinks's {@code Logging} object used to issue requests.
-   */
-  @Deprecated
-  public Logging logging() {
-    return getLogging();
-  }
 
   /**
    * Returns the sinks's {@code Logging} object used to issue requests.
@@ -181,13 +154,13 @@ public class Sink extends SinkInfo {
   }
 
   /**
-   * Sends a request for deleting this sink. This method returns a {@code Future} object to consume
-   * the result. {@link Future#get()} returns {@code true} if the sink was deleted, {@code false}
+   * Sends a request for deleting this sink. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns {@code true} if the sink was deleted, {@code false}
    * if it was not found.
    *
    * <p>Example of asynchronously deleting the sink.
    * <pre> {@code
-   * Future<Boolean> future = sink.deleteAsync();
+   * ApiFuture<Boolean> future = sink.deleteAsync();
    * // ...
    * boolean deleted = future.get();
    * if (deleted) {
@@ -199,7 +172,7 @@ public class Sink extends SinkInfo {
    *
    * @throws LoggingException upon failure
    */
-  public Future<Boolean> deleteAsync() {
+  public ApiFuture<Boolean> deleteAsync() {
     return logging.deleteSinkAsync(getName());
   }
 
@@ -223,12 +196,12 @@ public class Sink extends SinkInfo {
 
   /**
    * Sends a request to fetch current sink's latest information. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a {@code Sink} object
+   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a {@code Sink} object
    * with latest information or {@code null} if not found.
    *
    * <p>Example of asynchronously getting the sink's latest information.
    * <pre> {@code
-   * Future<Sink> future = sink.reloadAsync();
+   * ApiFuture<Sink> future = sink.reloadAsync();
    * // ...
    * Sink latestSink = future.get();
    * if (latestSink == null) {
@@ -238,7 +211,7 @@ public class Sink extends SinkInfo {
    *
    * @throws LoggingException upon failure
    */
-  public Future<Sink> reloadAsync() {
+  public ApiFuture<Sink> reloadAsync() {
     return logging.getSinkAsync(getName());
   }
 
@@ -262,12 +235,12 @@ public class Sink extends SinkInfo {
 
   /**
    * Sends a request to update current sink. If the sink does not exist, it is created. This method
-   * returns a {@code Future} object to consume the result. {@link Future#get()} returns a
+   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a
    * {@code Sink} object with updated information.
    *
    * <p>Example of asynchronously updating the sink's information.
    * <pre> {@code
-   * Future<Sink> future = sink.toBuilder()
+   * ApiFuture<Sink> future = sink.toBuilder()
    *     .setFilter("severity<=ERROR")
    *     .build()
    *     .updateAsync();
@@ -277,7 +250,7 @@ public class Sink extends SinkInfo {
    *
    * @throws LoggingException upon failure
    */
-  public Future<Sink> updateAsync() {
+  public ApiFuture<Sink> updateAsync() {
     return logging.updateAsync(this);
   }
 

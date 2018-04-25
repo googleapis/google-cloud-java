@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.testing.NullPointerTester;
 
 import org.junit.Before;

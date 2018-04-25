@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,14 +63,6 @@ public final class Operation implements Serializable {
       this.last = operation.last;
     }
 
-    /**
-     * Sets the operation identifier. Log entries with the same identifier are assumed to be part
-     * of the same operation. The combination of id and producer must be globally unique.
-     */
-    @Deprecated
-    public Builder id(String id) {
-      return setId(id);
-    }
 
     /**
      * Sets the operation identifier. Log entries with the same identifier are assumed to be part
@@ -81,15 +73,6 @@ public final class Operation implements Serializable {
       return this;
     }
 
-    /**
-     * Sets an arbitrary producer identifier. The combination of producer and id must be globally
-     * unique. Examples: {@code MyDivision.MyBigCompany.com},
-     * {@code github.com/MyProject/MyApplication}.
-     */
-    @Deprecated
-    public Builder producer(String producer) {
-      return setProducer(producer);
-    }
 
     /**
      * Sets an arbitrary producer identifier. The combination of producer and id must be globally
@@ -101,14 +84,6 @@ public final class Operation implements Serializable {
       return this;
     }
 
-    /**
-     * Sets whether the corresponding entry is the first log entry in the operation. If not set,
-     * {@code false} is used.
-     */
-    @Deprecated
-    public Builder first(boolean first) {
-      return setFirst(first);
-    }
 
     /**
      * Sets whether the corresponding entry is the first log entry in the operation. If not set,
@@ -119,14 +94,6 @@ public final class Operation implements Serializable {
       return this;
     }
 
-    /**
-     * Sets whether the corresponding entry is the last log entry in the operation. If not set,
-     * {@code false} is used.
-     */
-    @Deprecated
-    public Builder last(boolean last) {
-      return setLast(last);
-    }
 
     /**
      * Sets whether the corresponding entry is the last log entry in the operation. If not set,
@@ -152,37 +119,19 @@ public final class Operation implements Serializable {
     this.last = builder.last;
   }
 
-  /**
-   * Returns the operation identifier. Log entries with the same identifier are assumed to be part
-   * of the same operation. The combination of this value and {@link #producer()} must be globally
-   * unique.
-   */
-  @Deprecated
-  public String id() {
-    return getId();
-  }
 
   /**
    * Returns the operation identifier. Log entries with the same identifier are assumed to be part
-   * of the same operation. The combination of this value and {@link #producer()} must be globally
-   * unique.
+   * of the same operation. The combination of this value and {@link #getProducer()} must be
+   * globally unique.
    */
   public String getId() {
     return id;
   }
 
-  /**
-   * Returns an arbitrary producer identifier. The combination of this value and {@link #id()}
-   * must be globally unique. Examples: {@code MyDivision.MyBigCompany.com},
-   * {@code github.com/MyProject/MyApplication}.
-   */
-  @Deprecated
-  public String producer() {
-    return getProducer();
-  }
 
   /**
-   * Returns an arbitrary producer identifier. The combination of this value and {@link #id()}
+   * Returns an arbitrary producer identifier. The combination of this value and {@link #getId()}
    * must be globally unique. Examples: {@code MyDivision.MyBigCompany.com},
    * {@code github.com/MyProject/MyApplication}.
    */
@@ -252,14 +201,6 @@ public final class Operation implements Serializable {
     return builder.build();
   }
 
-  /**
-   * Returns a builder for {@code Operation} objects given the operation and producer identifiers.
-   * The combination of producer and id must be globally unique.
-   */
-  @Deprecated
-  public static Builder builder(String id, String producer) {
-    return newBuilder(id, producer);
-  }
 
   /**
    * Returns a builder for {@code Operation} objects given the operation and producer identifiers.

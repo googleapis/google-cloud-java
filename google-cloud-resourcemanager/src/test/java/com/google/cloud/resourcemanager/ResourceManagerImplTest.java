@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,14 +26,14 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.Identity;
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.cloud.resourcemanager.ResourceManager.ProjectField;
 import com.google.cloud.resourcemanager.ResourceManager.ProjectGetOption;
 import com.google.cloud.resourcemanager.ResourceManager.ProjectListOption;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.cloud.resourcemanager.testing.LocalResourceManagerHelper;
 import com.google.common.collect.ImmutableList;
@@ -198,7 +198,7 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     Page<Project> page = RESOURCE_MANAGER.list(ProjectListOption.pageSize(1));
-    assertNotNull(page.getNextPageCursor());
+    assertNotNull(page.getNextPageToken());
     Iterator<Project> iterator = page.getValues().iterator();
     compareReadWriteFields(COMPLETE_PROJECT, iterator.next());
     assertFalse(iterator.hasNext());
@@ -206,14 +206,14 @@ public class ResourceManagerImplTest {
     iterator = page.getValues().iterator();
     compareReadWriteFields(PARTIAL_PROJECT, iterator.next());
     assertFalse(iterator.hasNext());
-    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageToken());
   }
 
   @Test
   public void testListFieldOptions() {
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     Page<Project> projects = RESOURCE_MANAGER.list(LIST_FIELDS);
-    Project returnedProject = projects.iterateAll().next();
+    Project returnedProject = projects.iterateAll().iterator().next();
     assertEquals(COMPLETE_PROJECT.getProjectId(), returnedProject.getProjectId());
     assertEquals(COMPLETE_PROJECT.getName(), returnedProject.getName());
     assertEquals(COMPLETE_PROJECT.getLabels(), returnedProject.getLabels());
@@ -229,7 +229,7 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     Page<Project> projects = RESOURCE_MANAGER.list(LIST_FIELDS, ProjectListOption.pageSize(1));
-    assertNotNull(projects.getNextPageCursor());
+    assertNotNull(projects.getNextPageToken());
     Iterator<Project> iterator = projects.getValues().iterator();
     Project returnedProject = iterator.next();
     assertEquals(COMPLETE_PROJECT.getProjectId(), returnedProject.getProjectId());
@@ -253,7 +253,7 @@ public class ResourceManagerImplTest {
     assertNull(returnedProject.getCreateTimeMillis());
     assertSame(RESOURCE_MANAGER, returnedProject.getResourceManager());
     assertFalse(iterator.hasNext());
-    assertNull(projects.getNextPageCursor());
+    assertNull(projects.getNextPageToken());
   }
 
   @Test

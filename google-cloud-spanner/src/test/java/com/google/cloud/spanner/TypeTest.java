@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.Type.StructField;
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.spanner.v1.TypeCode;
@@ -59,6 +60,8 @@ public class TypeTest {
       Type fromProto = Type.fromProto(proto);
       assertThat(fromProto).isEqualTo(t);
       assertThat(fromProto).isSameAs(t);
+
+      reserializeAndAssert(t);
     }
   }
 
@@ -167,6 +170,7 @@ public class TypeTest {
       if (expectInterned) {
         assertThat(fromProto).isSameAs(t);
       }
+      reserializeAndAssert(t);
     }
   }
 

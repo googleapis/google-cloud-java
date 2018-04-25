@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,14 @@
 
 package com.google.cloud;
 
-import com.google.common.base.MoreObjects;
-
+import com.google.api.core.InternalApi;
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -32,7 +33,7 @@ import java.util.Objects;
  * @param <EntityT> the entity this channel writes data to. Possibly with additional configuration
  */
 public abstract class BaseWriteChannel<
-    ServiceOptionsT extends ServiceOptions<?, ?, ServiceOptionsT>,
+    ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>,
     EntityT extends Serializable> implements WriteChannel {
 
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
@@ -47,19 +48,11 @@ public abstract class BaseWriteChannel<
   private boolean isOpen = true;
   private int chunkSize = getDefaultChunkSize();
 
-  @Deprecated
-  protected int minChunkSize() {
-    return getMinChunkSize();
-  }
 
   protected int getMinChunkSize() {
     return MIN_CHUNK_SIZE;
   }
 
-  @Deprecated
-  protected int defaultChunkSize() {
-    return getDefaultChunkSize();
-  }
 
   protected int getDefaultChunkSize() {
     return DEFAULT_CHUNK_SIZE;
@@ -73,81 +66,50 @@ public abstract class BaseWriteChannel<
    */
   protected abstract void flushBuffer(int length, boolean last);
 
-  @Deprecated
-  protected ServiceOptionsT options() {
-    return options;
-  }
 
   protected ServiceOptionsT getOptions() {
     return options;
   }
 
-  @Deprecated
-  protected EntityT entity() {
-    return getEntity();
-  }
 
   protected EntityT getEntity() {
     return entity;
   }
 
-  @Deprecated
-  protected String uploadId() {
-    return getUploadId();
-  }
 
   protected String getUploadId() {
     return uploadId;
   }
 
-  @Deprecated
-  protected long position() {
-    return getPosition();
-  }
 
   protected long getPosition() {
     return position;
   }
 
-  @Deprecated
-  protected byte[] buffer() {
-    return getBuffer();
-  }
 
   protected byte[] getBuffer() {
     return buffer;
   }
 
-  @Deprecated
-  protected long limit() {
-    return getLimit();
-  }
 
   protected int getLimit() {
     return limit;
   }
 
-  @Deprecated
-  protected int chunkSize() {
-    return getChunkSize();
-  }
 
   protected int getChunkSize() {
     return chunkSize;
   }
 
-  @Override
-  @Deprecated
-  public final void chunkSize(int chunkSize) {
-    setChunkSize(chunkSize);
-  }
 
   @Override
   public final void setChunkSize(int chunkSize) {
-    chunkSize = (chunkSize / getMinChunkSize()) * getMinChunkSize();
-    this.chunkSize = Math.max(getMinChunkSize(), chunkSize);
+    int minSize = getMinChunkSize();
+
+    this.chunkSize = Math.max(minSize, (chunkSize + minSize - 1) / minSize * minSize);
   }
 
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected BaseWriteChannel(ServiceOptionsT options, EntityT entity, String uploadId) {
     this.options = options;
     this.entity = entity;
@@ -212,7 +174,6 @@ public abstract class BaseWriteChannel<
   public RestorableState<WriteChannel> capture() {
     byte[] bufferToSave = null;
     if (isOpen) {
-      flush();
       bufferToSave = Arrays.copyOf(buffer, limit);
     }
     return stateBuilder()
@@ -237,7 +198,7 @@ public abstract class BaseWriteChannel<
   }
 
   protected abstract static class BaseState<
-      ServiceOptionsT extends ServiceOptions<?, ?, ServiceOptionsT>, EntityT extends Serializable>
+      ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>, EntityT extends Serializable>
       implements RestorableState<WriteChannel>, Serializable {
 
     private static final long serialVersionUID = 8541062465055125619L;
@@ -250,6 +211,7 @@ public abstract class BaseWriteChannel<
     protected final boolean isOpen;
     protected final int chunkSize;
 
+    @InternalApi("This class should only be extended within google-cloud-java")
     protected BaseState(Builder<ServiceOptionsT, EntityT> builder) {
       this.serviceOptions = builder.serviceOptions;
       this.entity = builder.entity;
@@ -269,7 +231,7 @@ public abstract class BaseWriteChannel<
      *     configuration
      */
     public abstract static class Builder<
-        ServiceOptionsT extends ServiceOptions<?, ?, ServiceOptionsT>,
+        ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>,
         EntityT extends Serializable> {
       private final ServiceOptionsT serviceOptions;
       private final EntityT entity;
@@ -279,46 +241,31 @@ public abstract class BaseWriteChannel<
       private boolean isOpen;
       private int chunkSize;
 
+      @InternalApi("This class should only be extended within google-cloud-java")
       protected Builder(ServiceOptionsT options, EntityT entity, String uploadId) {
         this.serviceOptions = options;
         this.entity = entity;
         this.uploadId = uploadId;
       }
 
-      @Deprecated
-      public Builder<ServiceOptionsT, EntityT> position(int position) {
-        return setPosition(position);
-      }
 
       public Builder<ServiceOptionsT, EntityT> setPosition(long position) {
         this.position = position;
         return this;
       }
 
-      @Deprecated
-      public Builder<ServiceOptionsT, EntityT> buffer(byte[] buffer) {
-        return setBuffer(buffer);
-      }
 
       public Builder<ServiceOptionsT, EntityT> setBuffer(byte[] buffer) {
         this.buffer = buffer;
         return this;
       }
 
-      @Deprecated
-      public Builder<ServiceOptionsT, EntityT> isOpen(boolean isOpen) {
-        return setIsOpen(isOpen);
-      }
 
       public Builder<ServiceOptionsT, EntityT> setIsOpen(boolean isOpen) {
         this.isOpen = isOpen;
         return this;
       }
 
-      @Deprecated
-      public Builder<ServiceOptionsT, EntityT> chunkSize(int chunkSize) {
-        return setChunkSize(chunkSize);
-      }
 
       public Builder<ServiceOptionsT, EntityT> setChunkSize(int chunkSize) {
         this.chunkSize = chunkSize;
@@ -352,17 +299,54 @@ public abstract class BaseWriteChannel<
           && this.chunkSize == other.chunkSize;
     }
 
-    protected MoreObjects.ToStringHelper toStringHelper() {
-      return MoreObjects.toStringHelper(this)
-          .add("entity", entity)
-          .add("uploadId", uploadId)
-          .add("position", position)
-          .add("isOpen", isOpen);
+    protected static final class ValueHolder {
+      final String name;
+      final Object value;
+
+      private ValueHolder(String name, Object value) {
+        this.name = name;
+        this.value = value;
+      }
+
+      public static ValueHolder create(String name, Object value) {
+        return new ValueHolder(name, value);
+      }
+
+      @Override
+      public String toString() {
+        String result = name + "=";
+        if (value != null && value.getClass().isArray()) {
+          Object[] objectArray = new Object[]{value};
+          String arrayString = Arrays.deepToString(objectArray);
+          result += arrayString.substring(1, arrayString.length() - 1);
+        } else {
+          result += value;
+        }
+        return result;
+      }
+    }
+
+    protected List<ValueHolder> toStringHelper() {
+      List<ValueHolder> valueList = new ArrayList<>();
+      valueList.add(ValueHolder.create("entity", entity));
+      valueList.add(ValueHolder.create("uploadId", uploadId));
+      valueList.add(ValueHolder.create("position", String.valueOf(position)));
+      valueList.add(ValueHolder.create("isOpen", String.valueOf(isOpen)));
+      return valueList;
     }
 
     @Override
     public String toString() {
-      return toStringHelper().toString();
+      StringBuilder builder = new StringBuilder();
+      builder.append(getClass().getSimpleName())
+          .append('{');
+      String nextSeparator = "";
+      for (ValueHolder valueHolder : toStringHelper()) {
+        builder.append(nextSeparator).append(valueHolder);
+        nextSeparator = ", ";
+      }
+      builder.append('}');
+      return builder.toString();
     }
   }
 }

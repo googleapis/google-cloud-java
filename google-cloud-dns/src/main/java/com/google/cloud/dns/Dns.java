@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@ package com.google.cloud.dns;
 
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.Service;
-import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.common.collect.ImmutableList;
 
 import java.util.List;
@@ -52,11 +52,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -88,11 +83,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -121,11 +111,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -155,11 +140,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {

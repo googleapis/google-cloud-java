@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 
 package com.google.cloud;
 
+import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
 
 import java.io.IOException;
@@ -30,18 +32,16 @@ import java.util.Iterator;
 /**
  * An immutable byte array holder.
  */
+@BetaApi
 public class ByteArray implements Iterable<Byte>, Serializable {
 
   private static final long serialVersionUID = -1908809133893782840L;
+  private static final BaseEncoding encoder = BaseEncoding.base64();
 
   private final ByteString byteString;
 
-  protected ByteArray(ByteString byteString) {
+  ByteArray(ByteString byteString) {
     this.byteString = byteString;
-  }
-
-  protected ByteArray(ByteArray byteArray) {
-    this.byteString = byteArray.getByteString();
   }
 
   @Override
@@ -94,6 +94,11 @@ public class ByteArray implements Iterable<Byte>, Serializable {
     return byteString.toStringUtf8();
   }
 
+  /** Converts this byte array to its base64 representation. */
+  public final String toBase64() {
+    return encoder.encode(toByteArray());
+  }
+
   /**
    * Returns the content of this {@code ByteArray} as a read-only {@link ByteBuffer}.
    */
@@ -106,15 +111,6 @@ public class ByteArray implements Iterable<Byte>, Serializable {
    */
   public final InputStream asInputStream() {
     return byteString.newInput();
-  }
-
-  @Deprecated
-  protected ByteString byteString() {
-    return getByteString();
-  }
-
-  protected ByteString getByteString() {
-    return byteString;
   }
 
   /**
@@ -165,5 +161,10 @@ public class ByteArray implements Iterable<Byte>, Serializable {
    */
   public static final ByteArray copyFrom(InputStream input) throws IOException {
     return new ByteArray(ByteString.readFrom(input));
+  }
+
+  /** Creates a {@code ByteArray} from a base64 representation. */
+  public static ByteArray fromBase64(String data) {
+    return ByteArray.copyFrom(encoder.decode(data));
   }
 }

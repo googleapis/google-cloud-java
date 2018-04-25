@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Stackdriver Logging.
+ * A client for Stackdriver Logging - Real-time log management and analysis.
  *
  * <p>Here's a simple usage example for using google-cloud from Compute Engine/App Engine Flexible.
  * This example shows how to write and list log entries. For the complete source code see

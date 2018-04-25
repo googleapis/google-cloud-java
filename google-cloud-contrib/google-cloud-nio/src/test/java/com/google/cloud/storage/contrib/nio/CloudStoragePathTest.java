@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.storage.contrib.nio;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.collect.Iterables;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
@@ -31,6 +32,7 @@ import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URLDecoder;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -481,6 +483,20 @@ public class CloudStoragePathTest {
       tester.setDefault(Path.class, fs.getPath("sup"));
       tester.testAllPublicStaticMethods(CloudStoragePath.class);
       tester.testAllPublicInstanceMethods(fs.getPath("sup"));
+    }
+  }
+
+  @Test
+  public void testSpaces() throws IOException {
+    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle")) {
+      Path path = fs.getPath("/with/a space");
+      // we can also go via a URI. Decoding should give us the space back.
+      String toUri = URLDecoder.decode(path.toUri().toString(), "UTF-8");
+      assertThat(toUri).isEqualTo("gs://doodle/with/a space");
+
+      Path path2 = fs.getPath("/with/a%20percent");
+      String toUri2 = URLDecoder.decode(path2.toUri().toString(), "UTF-8");
+      assertThat(toUri2).isEqualTo("gs://doodle/with/a%20percent");
     }
   }
 

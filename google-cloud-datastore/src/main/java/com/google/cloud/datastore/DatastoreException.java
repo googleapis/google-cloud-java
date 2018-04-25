@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,8 @@ package com.google.cloud.datastore;
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryHelper.RetryInterruptedException;
+import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
 
@@ -30,7 +29,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud
  *      Datastore error codes</a>
  */
-public final class DatastoreException extends BaseServiceException {
+public final class DatastoreException extends BaseHttpServiceException {
 
   // see https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes"
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -44,21 +43,16 @@ public final class DatastoreException extends BaseServiceException {
   }
 
   public DatastoreException(int code, String message, String reason, Throwable cause) {
-    super(code, message, reason, true, cause);
+    super(code, message, reason, true, RETRYABLE_ERRORS, cause);
   }
 
   public DatastoreException(int code, String message, String reason, boolean idempotent,
       Throwable cause) {
-    super(code, message, reason, idempotent, cause);
+    super(code, message, reason, idempotent, RETRYABLE_ERRORS, cause);
   }
 
   public DatastoreException(IOException exception) {
-    super(exception, true);
-  }
-
-  @Override
-  protected Set<Error> getRetryableErrors() {
-    return RETRYABLE_ERRORS;
+    super(exception, true, RETRYABLE_ERRORS);
   }
 
   /**
@@ -66,10 +60,9 @@ public final class DatastoreException extends BaseServiceException {
    * will always throw an exception.
    *
    * @throws DatastoreException when {@code ex} was caused by a {@code DatastoreException}
-   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static DatastoreException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndPropagateIfPossible(ex);
+    BaseServiceException.translate(ex);
     throw new DatastoreException(UNKNOWN_CODE, ex.getMessage(), null, ex.getCause());
   }
 

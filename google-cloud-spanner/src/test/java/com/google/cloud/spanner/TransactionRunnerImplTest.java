@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,43 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.fail;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.client.util.BackOff;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
-import com.google.cloud.spanner.spi.SpannerRpc;
-import com.google.cloud.spanner.spi.SpannerRpc.Option;
-import com.google.protobuf.ByteString;
-import com.google.protobuf.Duration;
-import com.google.protobuf.Timestamp;
-import com.google.rpc.RetryInfo;
-import com.google.spanner.v1.CommitRequest;
-import com.google.spanner.v1.CommitResponse;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import io.grpc.Context;
-import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
-import io.grpc.protobuf.ProtoUtils;
-import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-/** Unit test for {@link com.google.cloud.spanner.SpannerImpl.TransactionRunnerImpl} */
+/**
+ *  Unit test for {@link com.google.cloud.spanner.SpannerImpl.TransactionRunnerImpl}
+ **/
 @RunWith(JUnit4.class)
 public class TransactionRunnerImplTest {
   @Mock private SpannerRpc rpc;
   @Mock private SpannerImpl.SessionImpl session;
   @Mock private SpannerImpl.TransactionRunnerImpl.Sleeper sleeper;
+  @Mock private SpannerImpl.TransactionContextImpl txn;
   private SpannerImpl.TransactionRunnerImpl transactionRunner;
   private boolean firstRun;
 
@@ -57,83 +56,102 @@ public class TransactionRunnerImplTest {
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
     firstRun = true;
+    when(session.newTransaction()).thenReturn(txn);
     transactionRunner = new SpannerImpl.TransactionRunnerImpl(session, rpc, sleeper, 1);
-    when(session.beginTransaction()).thenReturn(ByteString.copyFromUtf8("transaction"));
-    when(session.getName()).thenReturn("fake_session");
   }
 
+  @Test
+  public void commitSucceeds() {
+    final AtomicInteger numCalls = new AtomicInteger(0);
+    transactionRunner.run(
+        new TransactionCallable<Void>() {
+          @Override
+          public Void run(TransactionContext transaction) throws Exception {
+            numCalls.incrementAndGet();
+            return null;
+          }
+        });
+    assertThat(numCalls.get()).isEqualTo(1);
+    verify(txn).ensureTxn();
+    verify(txn).commit();
+  }
+  
   @Test
   public void runAbort() {
-    runTransaction(createRetryException());
-    ArgumentCaptor<Long> backoffMillis = ArgumentCaptor.forClass(Long.class);
-    verify(sleeper, times(1)).backoffSleep(Mockito.<Context>any(), backoffMillis.capture());
-    assertThat(backoffMillis.getValue()).isEqualTo(1001L);
-  }
-
-  @Test
-  public void runAbortNoRetryInfo() {
-    runTransaction(new StatusRuntimeException(Status.fromCodeValue(Status.Code.ABORTED.value())));
-    ArgumentCaptor<Long> backoffMillis = ArgumentCaptor.forClass(Long.class);
-    verify(sleeper, times(1)).backoffSleep(Mockito.<Context>any(), backoffMillis.capture());
-    assertThat(backoffMillis.getValue()).isGreaterThan(0L);
+    when(txn.isAborted()).thenReturn(true);
+    long backoffMillis = 100L;
+    when(txn.getRetryDelayInMillis(any(BackOff.class))).thenReturn(backoffMillis);
+    runTransaction(SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, ""));
+    verify(sleeper, times(1)).backoffSleep(any(Context.class), eq(backoffMillis));
   }
 
   @Test
   public void commitAbort() {
     final SpannerException error =
-        SpannerExceptionFactory.newSpannerException(createRetryException());
-    when(rpc.commit(Mockito.<CommitRequest>any(), Mockito.<Map<Option, ?>>any()))
-        .thenThrow(error)
-        .thenReturn(
-            CommitResponse.newBuilder()
-                .setCommitTimestamp(Timestamp.newBuilder().setSeconds(100))
-                .build());
-
+        SpannerExceptionFactory.newSpannerException(
+            SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, ""));
+    doThrow(error).doNothing().when(txn).commit();
+    long backoffMillis = 100L;
+    when(txn.getRetryDelayInMillis(any(BackOff.class))).thenReturn(backoffMillis);
+    final AtomicInteger numCalls = new AtomicInteger(0);
     transactionRunner.run(
         new TransactionCallable<Void>() {
           @Override
           public Void run(TransactionContext transaction) throws Exception {
-            if (firstRun) {
-              ((SpannerImpl.TransactionContextImpl) transaction).onError(error);
-              firstRun = false;
-            }
+            numCalls.incrementAndGet();
             return null;
           }
         });
-
-    ArgumentCaptor<Long> backoffMillis = ArgumentCaptor.forClass(Long.class);
-    verify(sleeper, times(1)).backoffSleep(Mockito.<Context>any(), backoffMillis.capture());
-    assertThat(backoffMillis.getValue()).isEqualTo(1001L);
+    assertThat(numCalls.get()).isEqualTo(2);
+    verify(sleeper, times(1)).backoffSleep(any(Context.class), eq(backoffMillis));
+    verify(txn, times(2)).ensureTxn();
+  }
+  
+  @Test
+  public void commitFailsWithNonAbort() {
+    final SpannerException error =
+        SpannerExceptionFactory.newSpannerException(
+            SpannerExceptionFactory.newSpannerException(ErrorCode.UNKNOWN, ""));
+    doThrow(error).when(txn).commit();
+    final AtomicInteger numCalls = new AtomicInteger(0);
+    try {
+      transactionRunner.run(
+          new TransactionCallable<Void>() {
+            @Override
+            public Void run(TransactionContext transaction) throws Exception {
+              numCalls.incrementAndGet();
+              return null;
+            }
+          });
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
+    }
+    assertThat(numCalls.get()).isEqualTo(1);
+    verify(txn, times(1)).ensureTxn();
+    verify(txn, times(1)).commit();
   }
 
-  private StatusRuntimeException createRetryException() {
-    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
-    Status status = Status.fromCodeValue(Status.Code.ABORTED.value());
-    Metadata trailers = new Metadata();
-    RetryInfo retryInfo =
-        RetryInfo.newBuilder()
-            .setRetryDelay(Duration.newBuilder().setNanos(1000000).setSeconds(1L))
-            .build();
-    trailers.put(key, retryInfo);
-    return new StatusRuntimeException(status, trailers);
+  @Test
+  public void runResourceExhaustedNoRetry() throws Exception {
+    try {
+      runTransaction(
+          new StatusRuntimeException(Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())));
+      fail("Expected exception");
+    } catch (SpannerException e) {
+      // expected.
+    }
+    verify(txn).rollback();
   }
 
   private void runTransaction(final Exception exception) {
-    when(rpc.commit(Mockito.<CommitRequest>any(), Mockito.<Map<Option, ?>>any()))
-        .thenReturn(
-            CommitResponse.newBuilder()
-                .setCommitTimestamp(Timestamp.newBuilder().setSeconds(100))
-                .build());
-    final SpannerException error = SpannerExceptionFactory.newSpannerException(exception);
-
     transactionRunner.run(
         new TransactionCallable<Void>() {
           @Override
           public Void run(TransactionContext transaction) throws Exception {
             if (firstRun) {
-              ((SpannerImpl.TransactionContextImpl) transaction).onError(error);
               firstRun = false;
-              throw error;
+              throw SpannerExceptionFactory.newSpannerException(exception);
             }
             return null;
           }

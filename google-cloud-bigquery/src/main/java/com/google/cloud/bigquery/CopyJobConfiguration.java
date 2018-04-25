@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
   private final TableId destinationTable;
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
+  private final EncryptionConfiguration destinationEncryptionConfiguration;
 
   public static final class Builder
       extends JobConfiguration.Builder<CopyJobConfiguration, Builder> {
@@ -47,6 +48,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     private TableId destinationTable;
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
+    private EncryptionConfiguration destinationEncryptionConfiguration;
 
     private Builder() {
       super(Type.COPY);
@@ -58,6 +60,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
       this.destinationTable = jobConfiguration.destinationTable;
       this.createDisposition = jobConfiguration.createDisposition;
       this.writeDisposition = jobConfiguration.writeDisposition;
+      this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -78,15 +81,12 @@ public final class CopyJobConfiguration extends JobConfiguration {
         this.writeDisposition = JobInfo.WriteDisposition.valueOf(
             copyConfigurationPb.getWriteDisposition());
       }
+      if (copyConfigurationPb.getDestinationEncryptionConfiguration() != null) {
+        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
+            copyConfigurationPb.getDestinationEncryptionConfiguration()).build();
+      }
     }
 
-    /**
-     * Sets the source tables to copy.
-     */
-    @Deprecated
-    public Builder sourceTables(List<TableId> sourceTables) {
-      return setSourceTables(sourceTables);
-    }
 
     /**
      * Sets the source tables to copy.
@@ -96,13 +96,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the destination table of the copy job.
-     */
-    @Deprecated
-    public Builder destinationTable(TableId destinationTable) {
-      return setDestinationTable(destinationTable);
-    }
 
     /**
      * Sets the destination table of the copy job.
@@ -112,16 +105,13 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether the job is allowed to create new tables.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
-     *     Create Disposition</a>
-     */
-    @Deprecated
-    public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
-      return setCreateDisposition(createDisposition);
+
+    public Builder setDestinationEncryptionConfiguration(
+        EncryptionConfiguration encryptionConfiguration) {
+      this.destinationEncryptionConfiguration = encryptionConfiguration;
+      return this;
     }
+
 
     /**
      * Sets whether the job is allowed to create new tables.
@@ -134,16 +124,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the action that should occur if the destination table already exists.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
-     *     Write Disposition</a>
-     */
-    @Deprecated
-    public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
-      return setWriteDisposition(writeDisposition);
-    }
 
     /**
      * Sets the action that should occur if the destination table already exists.
@@ -167,15 +147,9 @@ public final class CopyJobConfiguration extends JobConfiguration {
     this.destinationTable = checkNotNull(builder.destinationTable);
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
+    this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
   }
 
-  /**
-   * Returns the source tables to copy.
-   */
-  @Deprecated
-  public List<TableId> sourceTables() {
-    return getSourceTables();
-  }
 
   /**
    * Returns the source tables to copy.
@@ -184,13 +158,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return sourceTables;
   }
 
-  /**
-   * Returns the destination table to load the data into.
-   */
-  @Deprecated
-  public TableId destinationTable() {
-    return getDestinationTable();
-  }
 
   /**
    * Returns the destination table to load the data into.
@@ -199,16 +166,11 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return destinationTable;
   }
 
-  /**
-   * Returns whether the job is allowed to create new tables.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
-   *     Create Disposition</a>
-   */
-  @Deprecated
-  public JobInfo.CreateDisposition createDisposition() {
-    return this.getCreateDisposition();
+
+  public EncryptionConfiguration getDestinationEncryptionConfiguration() {
+    return destinationEncryptionConfiguration;
   }
+
 
   /**
    * Returns whether the job is allowed to create new tables.
@@ -220,16 +182,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return this.createDisposition;
   }
 
-  /**
-   * Returns the action that should occur if the destination table already exists.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
-   *     Write Disposition</a>
-   */
-  @Deprecated
-  public JobInfo.WriteDisposition writeDisposition() {
-    return getWriteDisposition();
-  }
 
   /**
    * Returns the action that should occur if the destination table already exists.
@@ -251,6 +203,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return super.toStringHelper()
         .add("sourceTables", sourceTables)
         .add("destinationTable", destinationTable)
+        .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition);
   }
@@ -297,16 +250,13 @@ public final class CopyJobConfiguration extends JobConfiguration {
     if (writeDisposition != null) {
       configurationPb.setWriteDisposition(writeDisposition.toString());
     }
+    if (destinationEncryptionConfiguration != null) {
+      configurationPb.setDestinationEncryptionConfiguration(
+          destinationEncryptionConfiguration.toPb());
+    }
     return new com.google.api.services.bigquery.model.JobConfiguration().setCopy(configurationPb);
   }
 
-  /**
-   * Creates a builder for a BigQuery Copy Job configuration given destination and source table.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, TableId sourceTable) {
-    return newBuilder(destinationTable, sourceTable);
-  }
 
   /**
    * Creates a builder for a BigQuery Copy Job configuration given destination and source table.
@@ -315,13 +265,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return newBuilder(destinationTable, ImmutableList.of(checkNotNull(sourceTable)));
   }
 
-  /**
-   * Creates a builder for a BigQuery Copy Job configuration given destination and source tables.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, List<TableId> sourceTables) {
-    return newBuilder(destinationTable, sourceTables);
-  }
 
   /**
    * Creates a builder for a BigQuery Copy Job configuration given destination and source tables.

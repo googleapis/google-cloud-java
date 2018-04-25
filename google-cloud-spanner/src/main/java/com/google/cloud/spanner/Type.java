@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.TypeCode;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +40,7 @@ import javax.annotation.concurrent.Immutable;
  * <p>{@code Type} instances are immutable.
  */
 @Immutable
-public final class Type {
+public final class Type implements Serializable {
   private static final Type TYPE_BOOL = new Type(Code.BOOL, null, null);
   private static final Type TYPE_INT64 = new Type(Code.INT64, null, null);
   private static final Type TYPE_FLOAT64 = new Type(Code.FLOAT64, null, null);
@@ -56,6 +57,7 @@ public final class Type {
   private static final Type TYPE_ARRAY_DATE = new Type(Code.ARRAY, TYPE_DATE, null);
 
   private static final int AMBIGUOUS_FIELD = -1;
+  private static final long serialVersionUID = -3076152125004114582L;
 
   /** Returns the descriptor for the {@code BOOL type}. */
   public static Type bool() {
@@ -204,7 +206,9 @@ public final class Type {
   }
 
   /** Describes an individual field in a {@code STRUCT type}. */
-  public static final class StructField {
+  public static final class StructField implements Serializable {
+    private static final long serialVersionUID = 8640511292704408210L;
+
     private final String name;
     private final Type type;
 

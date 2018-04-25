@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,16 @@ public final class CloudStorageOptions {
    */
   public static CloudStorageOption.OpenCopy withBlockSize(int size) {
     return OptionBlockSize.create(size);
+  }
+
+  /**
+   * Sets the max number of times that the channel can be reopened if reading
+   * fails because the channel unexpectedly closes.
+   *
+   * <p>The default is 0.
+   */
+  public static CloudStorageOption.OpenCopy withChannelReopen(int count) {
+    return OptionMaxChannelReopens.create(count);
   }
 
   private CloudStorageOptions() {}

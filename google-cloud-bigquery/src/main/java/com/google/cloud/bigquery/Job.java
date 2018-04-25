@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,17 +18,24 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.Clock;
-import com.google.cloud.WaitForOption;
-import com.google.cloud.WaitForOption.CheckingPeriod;
-import com.google.cloud.WaitForOption.Timeout;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedAttemptSettings;
+import com.google.cloud.RetryHelper;
+import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
-
+import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
+import com.google.cloud.bigquery.BigQuery.TableDataListOption;
+import com.google.cloud.bigquery.JobConfiguration.Type;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import org.threeten.bp.Duration;
 
 /**
  * A Google BigQuery Job.
@@ -36,18 +43,37 @@ import java.util.concurrent.TimeoutException;
  * <p>Objects of this class are immutable. To get a {@code Job} object with the most recent
  * information use {@link #reload}. {@code Job} adds a layer of service-related functionality over
  * {@link JobInfo}.
- * </p>
  */
 public class Job extends JobInfo {
 
   private static final long serialVersionUID = -4324100991693024704L;
 
+  private static final RetrySettings DEFAULT_JOB_WAIT_SETTINGS =
+      RetrySettings.newBuilder()
+          .setTotalTimeout(Duration.ofHours(12L))
+          .setInitialRetryDelay(Duration.ofSeconds(1L))
+          .setRetryDelayMultiplier(2.0)
+          .setJittered(true)
+          .setMaxRetryDelay(Duration.ofMinutes(1L))
+          .build();
+
+  static final RetrySettings DEFAULT_QUERY_JOB_WAIT_SETTINGS =
+      RetrySettings.newBuilder()
+          .setTotalTimeout(Duration.ofHours(12L))
+          .setInitialRetryDelay(Duration.ofSeconds(3L))
+          .setRetryDelayMultiplier(1.0)
+          .setJittered(true)
+          .setMaxRetryDelay(Duration.ofSeconds(3L))
+          .build();
+
+  static final QueryResultsOption[] DEFAULT_QUERY_WAIT_OPTIONS = {
+    QueryResultsOption.pageSize(0L),
+  };
+
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
-  /**
-   * A builder for {@code Job} objects.
-   */
+  /** A builder for {@code Job} objects. */
   public static final class Builder extends JobInfo.Builder {
 
     private final BigQuery bigquery;
@@ -74,12 +100,6 @@ public class Job extends JobInfo {
     Builder setGeneratedId(String generatedId) {
       infoBuilder.setGeneratedId(generatedId);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder jobId(JobId jobId) {
-      return setJobId(jobId);
     }
 
     @Override
@@ -110,12 +130,6 @@ public class Job extends JobInfo {
     Builder setUserEmail(String userEmail) {
       infoBuilder.setUserEmail(userEmail);
       return this;
-    }
-
-    @Override
-    @Deprecated
-    public Builder configuration(JobConfiguration configuration) {
-      return setConfiguration(configuration);
     }
 
     @Override
@@ -150,6 +164,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
+    checkNotDryRun("exists");
     return bigquery.getJob(getJobId(), JobOption.fields()) != null;
   }
 
@@ -169,16 +184,16 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean isDone() {
+    checkNotDryRun("isDone");
     Job job = bigquery.getJob(getJobId(), JobOption.fields(BigQuery.JobField.STATUS));
     return job == null || job.getStatus().getState() == JobStatus.State.DONE;
   }
-
   /**
    * Blocks until this job completes its execution, either failing or succeeding. This method
    * returns current job's latest information. If the job no longer exists, this method returns
-   * {@code null}. By default, the job status is checked every 500 milliseconds, to configure this
-   * value use {@link WaitForOption#checkEvery(long, TimeUnit)}. Use
-   * {@link WaitForOption#timeout(long, TimeUnit)} to set the maximum time to wait.
+   * {@code null}. By default, the job status is checked using jittered exponential backoff with 1
+   * second as an initial delay, 2.0 as a backoff factor, 1 minute as maximum delay between polls,
+   * 12 hours as a total timeout and unlimited number of attempts.
    *
    * <p>Example usage of {@code waitFor()}.
    * <pre> {@code
@@ -196,8 +211,8 @@ public class Job extends JobInfo {
    * <pre> {@code
    * Job completedJob =
    *     job.waitFor(
-   *         WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *         WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *         RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *         RetryOption.totalTimeout(Duration.ofMinutes(1)));
    * if (completedJob == null) {
    *   // job no longer exists
    * } else if (completedJob.getStatus().getError() != null) {
@@ -208,26 +223,133 @@ public class Job extends JobInfo {
    * }</pre>
    *
    * @param waitOptions options to configure checking period and timeout
-   * @throws BigQueryException upon failure
+   * @throws BigQueryException upon failure, check {@link BigQueryException#getCause()} for details
    * @throws InterruptedException if the current thread gets interrupted while waiting for the job
    *     to complete
-   * @throws TimeoutException if the timeout provided with
-   *     {@link WaitForOption#timeout(long, TimeUnit)} is exceeded. If no such option is provided
-   *     this exception is never thrown.
    */
-  public Job waitFor(WaitForOption... waitOptions) throws InterruptedException, TimeoutException {
-    Timeout timeout = Timeout.getOrDefault(waitOptions);
-    CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
-    long timeoutMillis = timeout.getTimeoutMillis();
-    Clock clock = options.getClock();
-    long startTime = clock.millis();
-    while (!isDone()) {
-      if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
-        throw new TimeoutException();
-      }
-      checkingPeriod.sleep();
+  public Job waitFor(RetryOption... waitOptions) throws InterruptedException {
+    checkNotDryRun("waitFor");
+    Object completedJobResponse;
+    if (getConfiguration().getType() == Type.QUERY) {
+      completedJobResponse =
+          waitForQueryResults(
+              RetryOption.mergeToSettings(DEFAULT_JOB_WAIT_SETTINGS, waitOptions),
+              DEFAULT_QUERY_WAIT_OPTIONS);
+    } else {
+      completedJobResponse =
+          waitForJob(RetryOption.mergeToSettings(DEFAULT_QUERY_JOB_WAIT_SETTINGS, waitOptions));
     }
-    return reload();
+
+    return completedJobResponse == null ? null : reload();
+  }
+
+  /**
+   * Gets the query results of this job. This job must be of type {@code
+   * JobConfiguration.Type.QUERY}, otherwise this method will throw {@link
+   * UnsupportedOperationException}.
+   *
+   * <p>If the job hasn't finished, this method waits for the job to complete. However, the state of
+   * the current {@code Job} instance is not updated. To get the new state, call {@link
+   * #waitFor(RetryOption...)} or {@link #reload(JobOption...)}.
+   *
+   * @throws BigQueryException upon failure
+   */
+  public TableResult getQueryResults(QueryResultsOption... options)
+      throws InterruptedException, JobException {
+    checkNotDryRun("getQueryResults");
+    if (getConfiguration().getType() != Type.QUERY) {
+      throw new UnsupportedOperationException(
+          "Getting query results is supported only for " + Type.QUERY + " jobs");
+    }
+
+    List<QueryResultsOption> waitOptions =
+        new ArrayList<>(Arrays.asList(DEFAULT_QUERY_WAIT_OPTIONS));
+    List<TableDataListOption> listOptions = new ArrayList<>();
+    for (QueryResultsOption option : options) {
+      switch (option.getRpcOption()) {
+        case MAX_RESULTS:
+          listOptions.add(TableDataListOption.pageSize((Long) option.getValue()));
+          break;
+        case PAGE_TOKEN:
+          listOptions.add(TableDataListOption.pageToken((String) option.getValue()));
+          break;
+        case START_INDEX:
+          listOptions.add(TableDataListOption.startIndex((Long) option.getValue()));
+          break;
+        case TIMEOUT:
+          waitOptions.add(QueryResultsOption.maxWaitTime((Long) option.getValue()));
+          break;
+      }
+    }
+
+    QueryResponse response =
+        waitForQueryResults(
+            DEFAULT_JOB_WAIT_SETTINGS, waitOptions.toArray(new QueryResultsOption[0]));
+    if (response.getSchema() == null) {
+      throw new JobException(getJobId(), response.getErrors());
+    }
+    
+    TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
+    return bigquery.listTableData(
+        table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
+  }
+
+  private QueryResponse waitForQueryResults(
+      RetrySettings waitSettings, final QueryResultsOption... resultsOptions)
+      throws InterruptedException {
+    if (getConfiguration().getType() != Type.QUERY) {
+      throw new UnsupportedOperationException(
+          "Waiting for query results is supported only for " + Type.QUERY + " jobs");
+    }
+
+    try {
+      return RetryHelper.poll(
+          new Callable<QueryResponse>() {
+            @Override
+            public QueryResponse call() {
+              return bigquery.getQueryResults(getJobId(), resultsOptions);
+            }
+          },
+          waitSettings,
+          new BasicResultRetryAlgorithm<QueryResponse>() {
+            @Override
+            public boolean shouldRetry(Throwable prevThrowable, QueryResponse prevResponse) {
+              return prevResponse != null && !prevResponse.getCompleted();
+            }
+          },
+          options.getClock());
+    } catch (ExecutionException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+  }
+
+  private Job waitForJob(RetrySettings waitSettings) throws InterruptedException {
+    try {
+      return RetryHelper.poll(
+          new Callable<Job>() {
+            @Override
+            public Job call() throws Exception {
+              return bigquery.getJob(getJobId(), JobOption.fields(BigQuery.JobField.STATUS));
+            }
+          },
+          waitSettings,
+          new BasicResultRetryAlgorithm<Job>() {
+            @Override
+            public TimedAttemptSettings createNextAttempt(
+                Throwable prevThrowable, Job prevResponse, TimedAttemptSettings prevSettings) {
+              return null;
+            }
+
+            @Override
+            public boolean shouldRetry(Throwable prevThrowable, Job prevResponse) {
+              return prevResponse != null
+                  && prevResponse.getStatus().getState() != JobStatus.State.DONE;
+            }
+          },
+          options.getClock());
+    } catch (ExecutionException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
   }
 
   /**
@@ -254,6 +376,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public Job reload(JobOption... options) {
+    checkNotDryRun("reload");
     return bigquery.getJob(getJobId(), options);
   }
 
@@ -274,21 +397,38 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean cancel() {
+    checkNotDryRun("cancel");
     return bigquery.cancel(getJobId());
   }
 
-  /**
-   * Returns the job's {@code BigQuery} object used to issue requests.
-   */
-  @Deprecated
-  public BigQuery bigquery() {
-    return getBigquery();
+  private void checkNotDryRun(String op) {
+    checkNotDryRun(getConfiguration(), op);
   }
 
-  /**
-   * Returns the job's {@code BigQuery} object used to issue requests.
-   */
-  public BigQuery getBigquery() {
+  static void checkNotDryRun(JobConfiguration jobConfig, String op) {
+    QueryJobConfiguration config;
+    if (jobConfig instanceof QueryJobConfiguration) {
+      config = (QueryJobConfiguration) jobConfig;
+    } else {
+      return;
+    }
+
+    Boolean dryRun = config.dryRun();
+    if (dryRun == null) {
+      dryRun = false;
+    }
+    if (dryRun) {
+      String msg =
+          "Operation \"%s\" does not work for dryrun queries, "
+              + "since a dry run does not actually create a job. "
+              + "To validate a query and obtain some processing statistics, consider calling "
+              + "BigQuery.create(JobInfo).";
+      throw new UnsupportedOperationException(String.format(msg, op));
+    }
+  }
+
+  /** Returns the job's {@code BigQuery} object used to issue requests. */
+  public BigQuery getBigQuery() {
     return bigquery;
   }
 
@@ -306,8 +446,7 @@ public class Job extends JobInfo {
       return false;
     }
     Job other = (Job) obj;
-    return Objects.equals(toPb(), other.toPb())
-        && Objects.equals(options, other.options);
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override

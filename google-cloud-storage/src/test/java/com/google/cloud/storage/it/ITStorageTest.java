@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.it;
 
+import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -25,7 +26,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
@@ -39,26 +42,24 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.HttpMethod;
+import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobField;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
+import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.StorageRoles;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -70,7 +71,9 @@ import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -81,11 +84,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
-
 import javax.crypto.spec.SecretKeySpec;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITStorageTest {
 
+  private static RemoteStorageHelper remoteStorageHelper;
   private static Storage storage;
 
   private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
@@ -100,18 +106,29 @@ public class ITStorageTest {
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
   private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
+  private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final String SERVICE_ACCOUNT_EMAIL = "gcloud-devel@gs-project-accounts.iam.gserviceaccount.com";
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
-    RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.getOptions().getService();
-    storage.create(BucketInfo.of(BUCKET));
+    remoteStorageHelper = RemoteStorageHelper.create();
+    storage = remoteStorageHelper.getOptions().getService();
+    storage.create(
+        BucketInfo.newBuilder(BUCKET)
+            .setDeleteRules(Collections.singleton(new BucketInfo.AgeDeleteRule(1)))
+            .build());
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (storage != null) {
-      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
+      // In beforeClass, we make buckets auto-delete blobs older than a day old.
+      // Here, delete all buckets older than 2 days. They should already be empty and easy.
+      long cleanTime = System.currentTimeMillis() - TimeUnit.DAYS.toMillis(2);
+      long cleanTimeout = System.currentTimeMillis() - TimeUnit.MINUTES.toMillis(1);
+      RemoteStorageHelper.cleanBuckets(storage, cleanTime, cleanTimeout);
+
+      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 1, TimeUnit.MINUTES);
       if (!wasDeleted && log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
@@ -121,11 +138,11 @@ public class ITStorageTest {
   @Test(timeout = 5000)
   public void testListBuckets() throws InterruptedException {
     Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-        Storage.BucketListOption.fields()).iterateAll();
+        Storage.BucketListOption.fields()).iterateAll().iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
       bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-          Storage.BucketListOption.fields()).iterateAll();
+          Storage.BucketListOption.fields()).iterateAll().iterator();
     }
     while (bucketIterator.hasNext()) {
       Bucket remoteBucket = bucketIterator.next();
@@ -185,7 +202,6 @@ public class ITStorageTest {
     byte[] readBytes =
         storage.readAllBytes(BUCKET, blobName, Storage.BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -198,7 +214,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), remoteBlob.getName());
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(new byte[0], readBytes);
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -213,7 +228,6 @@ public class ITStorageTest {
     assertEquals(blob.getContentType(), remoteBlob.getContentType());
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertEquals(BLOB_STRING_CONTENT, new String(readBytes, UTF_8));
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -230,7 +244,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -257,7 +270,6 @@ public class ITStorageTest {
     Blob remoteBlob = storage.get(blob.getBlobId(), Storage.BlobGetOption.fields());
     assertEquals(blob.getBlobId(), remoteBlob.getBlobId());
     assertNull(remoteBlob.getContentType());
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -273,7 +285,6 @@ public class ITStorageTest {
     assertEquals(blob.getBlobId(), remoteBlob.getBlobId());
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.getMetadata());
     assertNull(remoteBlob.getContentType());
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -291,7 +302,6 @@ public class ITStorageTest {
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.getMetadata());
     assertNotNull(remoteBlob.getGeneratedId());
     assertNotNull(remoteBlob.getSelfLink());
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -307,7 +317,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -317,8 +326,12 @@ public class ITStorageTest {
     Blob remoteBlob = storage.create(blob);
     assertNotNull(remoteBlob);
     BlobId wrongGenerationBlob = BlobId.of(BUCKET, blobName, -1L);
-    assertNull(storage.get(wrongGenerationBlob));
-    assertTrue(remoteBlob.delete());
+    try {
+      assertNull(storage.get(wrongGenerationBlob));
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
   }
 
   @Test(timeout = 5000)
@@ -343,14 +356,14 @@ public class ITStorageTest {
         Storage.BlobListOption.fields(BlobField.METADATA));
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
-    while (Iterators.size(page.iterateAll()) != 2) {
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
       page = storage.list(BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
           Storage.BlobListOption.fields(BlobField.METADATA));
     }
     Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-    Iterator<Blob> iterator = page.iterateAll();
+    Iterator<Blob> iterator = page.iterateAll().iterator();
     while (iterator.hasNext()) {
       Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.getBucket());
@@ -358,8 +371,6 @@ public class ITStorageTest {
       assertEquals(metadata, remoteBlob.getMetadata());
       assertNull(remoteBlob.getContentType());
     }
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteBlob2.delete());
   }
 
   @Test(timeout = 5000)
@@ -381,22 +392,64 @@ public class ITStorageTest {
         Storage.BlobListOption.fields());
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
-    while (Iterators.size(page.iterateAll()) != 2) {
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
       page = storage.list(BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
           Storage.BlobListOption.fields());
     }
     Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-    Iterator<Blob> iterator = page.iterateAll();
+    Iterator<Blob> iterator = page.iterateAll().iterator();
     while (iterator.hasNext()) {
       Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.getBucket());
       assertTrue(blobSet.contains(remoteBlob.getName()));
       assertNull(remoteBlob.getContentType());
     }
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteBlob2.delete());
+  }
+
+  @Test(timeout = 7500)
+  public void testListBlobRequesterPays() throws InterruptedException {
+    BlobInfo blob1 =
+        BlobInfo.newBuilder(BUCKET, "test-list-blobs-empty-selected-fields-blob1")
+            .setContentType(CONTENT_TYPE)
+            .build();
+    assertNotNull(storage.create(blob1));
+
+    // Test listing a Requester Pays bucket.
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.requesterPays());
+    remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertTrue(updatedBucket.requesterPays());
+    try {
+      storage.list(
+          BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+          Storage.BlobListOption.fields(),
+          Storage.BlobListOption.userProject("fakeBillingProjectId"));
+      fail("Expected bad user project error.");
+    } catch (StorageException e) {
+      assertTrue(e.getMessage().contains("User project specified in the request is invalid"));
+    }
+
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    while (true) {
+      Page<Blob> page =
+          storage.list(
+              BUCKET,
+              Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+              Storage.BlobListOption.fields(),
+              Storage.BlobListOption.userProject(projectId));
+      List<Blob> blobs = Lists.newArrayList(page.iterateAll());
+      // If the list is empty, maybe the blob isn't visible yet; wait and try again.
+      // Otherwise, expect one blob, since we only put in one above.
+      if (!blobs.isEmpty()) {
+        assertThat(blobs).hasSize(1);
+        break;
+      }
+      Thread.sleep(500);
+    }
   }
 
   @Test(timeout = 15000)
@@ -423,23 +476,20 @@ public class ITStorageTest {
           Storage.BlobListOption.versions(true));
       // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
       // test fails if timeout is reached.
-      while (Iterators.size(page.iterateAll()) != 3) {
+      while (Iterators.size(page.iterateAll().iterator()) != 3) {
         Thread.sleep(500);
         page = storage.list(bucketName,
             Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
             Storage.BlobListOption.versions(true));
       }
       Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-      Iterator<Blob> iterator = page.iterateAll();
+      Iterator<Blob> iterator = page.iterateAll().iterator();
       while (iterator.hasNext()) {
         Blob remoteBlob = iterator.next();
         assertEquals(bucketName, remoteBlob.getBucket());
         assertTrue(blobSet.contains(remoteBlob.getName()));
         assertNotNull(remoteBlob.getGeneration());
       }
-      assertTrue(remoteBlob1.delete());
-      assertTrue(remoteBlob2.delete());
-      assertTrue(remoteBlob3.delete());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
     }
@@ -466,13 +516,13 @@ public class ITStorageTest {
         Storage.BlobListOption.currentDirectory());
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
-    while (Iterators.size(page.iterateAll()) != 2) {
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
       Thread.sleep(500);
       page = storage.list(BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
           Storage.BlobListOption.currentDirectory());
     }
-    Iterator<Blob> iterator = page.iterateAll();
+    Iterator<Blob> iterator = page.iterateAll().iterator();
     while (iterator.hasNext()) {
       Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.getBucket());
@@ -487,8 +537,6 @@ public class ITStorageTest {
         fail("Unexpected blob with name " + remoteBlob.getName());
       }
     }
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteBlob2.delete());
   }
 
   @Test
@@ -502,7 +550,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), updatedBlob.getName());
     assertEquals(blob.getBucket(), updatedBlob.getBucket());
     assertEquals(CONTENT_TYPE, updatedBlob.getContentType());
-    assertTrue(updatedBlob.delete());
   }
 
   @Test
@@ -523,7 +570,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), updatedBlob.getName());
     assertEquals(blob.getBucket(), updatedBlob.getBucket());
     assertEquals(newMetadata, updatedBlob.getMetadata());
-    assertTrue(updatedBlob.delete());
   }
 
   @Test
@@ -543,7 +589,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), updatedBlob.getName());
     assertEquals(blob.getBucket(), updatedBlob.getBucket());
     assertEquals(expectedMetadata, updatedBlob.getMetadata());
-    assertTrue(updatedBlob.delete());
   }
 
   @Test
@@ -565,7 +610,6 @@ public class ITStorageTest {
     assertEquals(blob.getName(), updatedBlob.getName());
     assertEquals(blob.getBucket(), updatedBlob.getBucket());
     assertEquals(expectedMetadata, updatedBlob.getMetadata());
-    assertTrue(updatedBlob.delete());
   }
 
   @Test
@@ -583,7 +627,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -597,7 +640,12 @@ public class ITStorageTest {
     String blobName = "test-delete-blob-non-existing-generation";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+    try {
+      assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
   }
 
   @Test
@@ -639,9 +687,6 @@ public class ITStorageTest {
     System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
         BLOB_BYTE_CONTENT.length);
     assertArrayEquals(composedBytes, readBytes);
-    assertTrue(remoteSourceBlob1.delete());
-    assertTrue(remoteSourceBlob2.delete());
-    assertTrue(remoteTargetBlob.delete());
   }
 
   @Test
@@ -669,9 +714,6 @@ public class ITStorageTest {
     System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
         BLOB_BYTE_CONTENT.length);
     assertArrayEquals(composedBytes, readBytes);
-    assertTrue(remoteSourceBlob1.delete());
-    assertTrue(remoteSourceBlob2.delete());
-    assertTrue(remoteTargetBlob.delete());
   }
 
   @Test
@@ -697,8 +739,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteSourceBlob1.delete());
-    assertTrue(remoteSourceBlob2.delete());
   }
 
   @Test
@@ -789,6 +829,30 @@ public class ITStorageTest {
     assertTrue(storage.delete(BUCKET, targetBlobName));
   }
 
+  //Re-enable this test when it stops failing
+  //@Test
+  public void testCopyBlobUpdateStorageClass() {
+    String sourceBlobName = "test-copy-blob-update-storage-class-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    BlobInfo sourceInfo =
+        BlobInfo.newBuilder(source).setStorageClass(StorageClass.STANDARD).build();
+    Blob remoteSourceBlob = storage.create(sourceInfo, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteSourceBlob);
+    assertEquals(StorageClass.STANDARD, remoteSourceBlob.getStorageClass());
+
+    String targetBlobName = "test-copy-blob-update-storage-class-target";
+    BlobInfo targetInfo = BlobInfo
+        .newBuilder(BUCKET, targetBlobName).setStorageClass(StorageClass.COLDLINE).build();
+    Storage.CopyRequest req = Storage.CopyRequest.of(source, targetInfo);
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.getResult().getBucket());
+    assertEquals(targetBlobName, copyWriter.getResult().getName());
+    assertEquals(StorageClass.COLDLINE, copyWriter.getResult().getStorageClass());
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteSourceBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
   @Test
   public void testCopyBlobNoContentType() {
     String sourceBlobName = "test-copy-blob-no-content-type-source";
@@ -840,7 +904,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteSourceBlob.delete());
   }
 
   @Test
@@ -951,8 +1014,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob2.getName(), remoteUpdatedBlob2.getName());
     assertEquals(updatedBlob2.getContentType(), remoteUpdatedBlob2.getContentType());
 
-    assertTrue(remoteBlob1.delete());
-    assertTrue(remoteUpdatedBlob2.delete());
   }
 
   @Test
@@ -984,14 +1045,24 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertFalse(deleteResult2.get());
+    try {
+      deleteResult2.get();
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
     try {
       getResult1.get();
       fail("Expected StorageException");
     } catch (StorageException ex) {
       // expected
     }
-    assertNull(getResult2.get());
+    try {
+      getResult2.get();
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
   }
 
   @Test
@@ -1014,7 +1085,6 @@ public class ITStorageTest {
     }
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
     assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
-    assertTrue(storage.delete(BUCKET, blobName));
   }
 
   @Test
@@ -1126,7 +1196,6 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -1204,7 +1273,6 @@ public class ITStorageTest {
     try (InputStream responseStream = connection.getInputStream()) {
       assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
       assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-      assertTrue(remoteBlob.delete());
     }
   }
 
@@ -1222,7 +1290,6 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
-    assertTrue(remoteBlob.delete());
   }
 
   @Test
@@ -1238,8 +1305,55 @@ public class ITStorageTest {
     assertEquals(sourceBlob1.getName(), remoteBlobs.get(0).getName());
     assertEquals(sourceBlob2.getBucket(), remoteBlobs.get(1).getBucket());
     assertEquals(sourceBlob2.getName(), remoteBlobs.get(1).getName());
-    assertTrue(remoteBlobs.get(0).delete());
-    assertTrue(remoteBlobs.get(1).delete());
+  }
+
+  @Test
+  public void testDownloadPublicBlobWithoutAuthentication() {
+    // create an unauthorized user
+    Storage unauthorizedStorage = StorageOptions.getUnauthenticatedInstance().getService();
+
+    // try to download blobs from a public bucket
+    String landsatBucket = "gcp-public-data-landsat";
+    String landsatPrefix = "LC08/PRE/044/034/LC80440342016259LGN00/";
+    String landsatBlob = landsatPrefix + "LC80440342016259LGN00_MTL.txt";
+    byte[] bytes = unauthorizedStorage.readAllBytes(landsatBucket, landsatBlob);
+    assertThat(bytes.length).isEqualTo(7903);
+    int numBlobs = 0;
+    Iterator<Blob> blobIterator = unauthorizedStorage
+      .list(landsatBucket, Storage.BlobListOption.prefix(landsatPrefix))
+      .iterateAll().iterator();
+    while (blobIterator.hasNext()) {
+      numBlobs++;
+      blobIterator.next();
+    }
+    assertThat(numBlobs).isEqualTo(13);
+
+    // try to download blobs from a bucket that requires authentication
+    // authenticated client will succeed
+    // unauthenticated client will receive an exception
+    String sourceBlobName = "source-blob-name";
+    BlobInfo sourceBlob = BlobInfo.newBuilder(BUCKET, sourceBlobName).build();
+    assertThat(storage.create(sourceBlob)).isNotNull();
+    assertThat(storage.readAllBytes(BUCKET, sourceBlobName)).isNotNull();
+    try {
+      unauthorizedStorage.readAllBytes(BUCKET, sourceBlobName);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    assertThat(storage.get(sourceBlob.getBlobId()).delete()).isTrue();
+
+    // try to upload blobs to a bucket that requires authentication
+    // authenticated client will succeed
+    // unauthenticated client will receive an exception
+    assertThat(storage.create(sourceBlob)).isNotNull();
+    try {
+      unauthorizedStorage.create(sourceBlob);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    assertThat(storage.get(sourceBlob.getBlobId()).delete()).isTrue();
   }
 
   @Test
@@ -1253,7 +1367,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob1.getBucket(), remoteBlobs.get(0).getBucket());
     assertEquals(sourceBlob1.getName(), remoteBlobs.get(0).getName());
     assertNull(remoteBlobs.get(1));
-    assertTrue(remoteBlobs.get(0).delete());
   }
 
   @Test
@@ -1300,8 +1413,6 @@ public class ITStorageTest {
     assertEquals(sourceBlob2.getBucket(), updatedBlobs.get(1).getBucket());
     assertEquals(sourceBlob2.getName(), updatedBlobs.get(1).getName());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(1).getContentType());
-    assertTrue(updatedBlobs.get(0).delete());
-    assertTrue(updatedBlobs.get(1).delete());
   }
 
   @Test
@@ -1319,21 +1430,40 @@ public class ITStorageTest {
     assertEquals(sourceBlob1.getName(), updatedBlobs.get(0).getName());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(0).getContentType());
     assertNull(updatedBlobs.get(1));
-    assertTrue(updatedBlobs.get(0).delete());
   }
 
   @Test
   public void testBucketAcl() {
-    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
-    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    testBucketAclRequesterPays(true);
+    testBucketAclRequesterPays(false);
+  }
+
+  private void testBucketAclRequesterPays(boolean requesterPays) {
+    if (requesterPays) {
+      Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+      assertNull(remoteBucket.requesterPays());
+      remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+      Bucket updatedBucket = storage.update(remoteBucket);
+      assertTrue(updatedBucket.requesterPays());
+    }
+
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+
+    Storage.BucketSourceOption[] bucketOptions = requesterPays
+        ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
+        : new Storage.BucketSourceOption[] {};
+
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
+    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
     Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
-    assertNotNull(storage.createAcl(BUCKET, acl));
-    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build());
+    assertNotNull(storage.createAcl(BUCKET, acl, bucketOptions));
+    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().setRole(Role.WRITER).build(), bucketOptions);
     assertEquals(Role.WRITER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listAcls(BUCKET));
+    Set<Acl> acls = new HashSet<>();
+    acls.addAll(storage.listAcls(BUCKET, bucketOptions));
     assertTrue(acls.contains(updatedAcl));
-    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
-    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers(), bucketOptions));
   }
 
   @Test
@@ -1344,7 +1474,8 @@ public class ITStorageTest {
     assertNotNull(storage.createDefaultAcl(BUCKET, acl));
     Acl updatedAcl = storage.updateDefaultAcl(BUCKET, acl.toBuilder().setRole(Role.OWNER).build());
     assertEquals(Role.OWNER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listDefaultAcls(BUCKET));
+    Set<Acl> acls = new HashSet<>();
+    acls.addAll(storage.listDefaultAcls(BUCKET));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storage.deleteDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
     assertNull(storage.getDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
@@ -1360,14 +1491,26 @@ public class ITStorageTest {
     assertNotNull(storage.createAcl(blobId, acl));
     Acl updatedAcl = storage.updateAcl(blobId, acl.toBuilder().setRole(Role.OWNER).build());
     assertEquals(Role.OWNER, updatedAcl.getRole());
-    Set<Acl> acls = Sets.newHashSet(storage.listAcls(blobId));
+    Set<Acl> acls = new HashSet<>(storage.listAcls(blobId));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storage.deleteAcl(blobId, User.ofAllAuthenticatedUsers()));
     assertNull(storage.getAcl(blobId, User.ofAllAuthenticatedUsers()));
     // test non-existing blob
     BlobId otherBlobId = BlobId.of(BUCKET, "test-blob-acl", -1L);
-    assertNull(storage.getAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
-    assertFalse(storage.deleteAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+    try {
+      assertNull(storage.getAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
+
+    try {
+      assertFalse(storage.deleteAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+      fail("Expected an 'Invalid argument' exception");
+    } catch (StorageException e) {
+      assertThat(e.getMessage()).contains("Invalid argument");
+    }
+
     try {
       storage.createAcl(otherBlobId, acl);
       fail("Expected StorageException");
@@ -1414,6 +1557,124 @@ public class ITStorageTest {
         assertArrayEquals(BLOB_STRING_CONTENT.getBytes(UTF_8), ByteStreams.toByteArray(zipInput));
       }
     }
-    blob.delete();
+  }
+
+  @Test
+  public void testBucketPolicy() {
+    testBucketPolicyRequesterPays(true);
+    testBucketPolicyRequesterPays(false);
+  }
+
+  private void testBucketPolicyRequesterPays(boolean requesterPays) {
+    if (requesterPays) {
+      Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+      assertNull(remoteBucket.requesterPays());
+      remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+      Bucket updatedBucket = storage.update(remoteBucket);
+      assertTrue(updatedBucket.requesterPays());
+    }
+
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+
+    Storage.BucketSourceOption[] bucketOptions = requesterPays
+        ? new Storage.BucketSourceOption[] {Storage.BucketSourceOption.userProject(projectId)}
+        : new Storage.BucketSourceOption[] {};
+    Identity projectOwner = Identity.projectOwner(projectId);
+    Identity projectEditor = Identity.projectEditor(projectId);
+    Identity projectViewer = Identity.projectViewer(projectId);
+    Map<com.google.cloud.Role, Set<Identity>> bindingsWithoutPublicRead =
+        ImmutableMap.of(
+            StorageRoles.legacyBucketOwner(),
+            new HashSet<>(Arrays.asList(projectOwner, projectEditor)),
+            StorageRoles.legacyBucketReader(), (Set<Identity>) new HashSet<>(Collections.singleton(projectViewer)));
+    Map<com.google.cloud.Role, Set<Identity>> bindingsWithPublicRead =
+        ImmutableMap.of(
+            StorageRoles.legacyBucketOwner(),
+            new HashSet<>(Arrays.asList(projectOwner, projectEditor)),
+            StorageRoles.legacyBucketReader(), new HashSet<>(Collections.singleton(projectViewer)),
+            StorageRoles.legacyObjectReader(), (Set<Identity>) new HashSet<>(Collections.singleton((Identity.allUsers()))));
+
+    // Validate getting policy.
+    Policy currentPolicy = storage.getIamPolicy(BUCKET, bucketOptions);
+    assertEquals(bindingsWithoutPublicRead, currentPolicy.getBindings());
+
+    // Validate updating policy.
+    Policy updatedPolicy =
+        storage.setIamPolicy(
+            BUCKET,
+            currentPolicy.toBuilder()
+                .addIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
+                .build(),
+            bucketOptions);
+    assertEquals(bindingsWithPublicRead, updatedPolicy.getBindings());
+    Policy revertedPolicy =
+        storage.setIamPolicy(
+            BUCKET,
+            updatedPolicy.toBuilder()
+                .removeIdentity(StorageRoles.legacyObjectReader(), Identity.allUsers())
+                .build(),
+            bucketOptions);
+    assertEquals(bindingsWithoutPublicRead, revertedPolicy.getBindings());
+
+    // Validate testing permissions.
+    List<Boolean> expectedPermissions = ImmutableList.of(true, true);
+    assertEquals(
+        expectedPermissions,
+        storage.testIamPermissions(
+            BUCKET,
+            ImmutableList.of("storage.buckets.getIamPolicy", "storage.buckets.setIamPolicy"),
+            bucketOptions));
+  }
+
+  @Test
+  public void testUpdateBucketLabel() {
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.getLabels());
+    remoteBucket = remoteBucket.toBuilder().setLabels(BUCKET_LABELS).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertEquals(BUCKET_LABELS, updatedBucket.getLabels());
+  }
+
+  @Test
+  public void testUpdateBucketRequesterPays() {
+    Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertNull(remoteBucket.requesterPays());
+    remoteBucket = remoteBucket.toBuilder().setRequesterPays(true).build();
+    Bucket updatedBucket = storage.update(remoteBucket);
+    assertTrue(updatedBucket.requesterPays());
+
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    Bucket.BlobTargetOption option = Bucket.BlobTargetOption.userProject(projectId);
+    String blobName = "test-create-empty-blob-requester-pays";
+    Blob remoteBlob = updatedBucket.create(blobName, BLOB_BYTE_CONTENT, option);
+    assertNotNull(remoteBlob);
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+  }
+
+  @Test
+  public void testListBucketRequesterPaysFails() throws InterruptedException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+        Storage.BucketListOption.fields(), Storage.BucketListOption.userProject(projectId)).iterateAll().iterator();
+    while (!bucketIterator.hasNext()) {
+      Thread.sleep(500);
+      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+          Storage.BucketListOption.fields()).iterateAll().iterator();
+    }
+    while (bucketIterator.hasNext()) {
+      Bucket remoteBucket = bucketIterator.next();
+      assertTrue(remoteBucket.getName().startsWith(BUCKET));
+      assertNull(remoteBucket.getCreateTime());
+      assertNull(remoteBucket.getSelfLink());
+    }
+  }
+
+  @Test
+  public void testGetServiceAccount() throws InterruptedException {
+    String projectId = remoteStorageHelper.getOptions().getProjectId();
+    ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
+    assertNotNull(serviceAccount);
+    assertEquals(SERVICE_ACCOUNT_EMAIL, serviceAccount.getEmail());
   }
 }

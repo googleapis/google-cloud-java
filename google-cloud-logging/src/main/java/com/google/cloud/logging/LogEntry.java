@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.LogEntryOperation;
+import com.google.logging.v2.LogEntrySourceLocation;
 import com.google.logging.v2.LogName;
+import com.google.logging.v2.ProjectLogName;
 import com.google.protobuf.Timestamp;
 
 import java.io.Serializable;
@@ -36,8 +38,8 @@ import java.util.Objects;
  * entries can have different type of payloads: an UTF-8 string (see
  * {@link Payload.StringPayload}), a JSON object (see {@link Payload.JsonPayload}, or a protobuf
  * object (see {@link Payload.ProtoPayload}). Entries can also store additional information about
- * the operation or the HTTP request that generated the log (see {@link LogEntry#operation()} and
- * {@link LogEntry#httpRequest()}, respectively).
+ * the operation or the HTTP request that generated the log (see {@link LogEntry#getOperation()} and
+ * {@link LogEntry#getHttpRequest()}, respectively).
  *
  * @see <a href="https://cloud.google.com/logging/docs/view/logs_index">Log Entries and Logs</a>
  */
@@ -57,11 +59,14 @@ public class LogEntry implements Serializable {
   private final String logName;
   private final MonitoredResource resource;
   private final Long timestamp;
+  private final Long receiveTimestamp;
   private final Severity severity;
   private final String insertId;
   private final HttpRequest httpRequest;
   private final Map<String, String> labels;
   private final Operation operation;
+  private final String trace;
+  private final SourceLocation sourceLocation;
   private final Payload<?> payload;
 
   /**
@@ -72,11 +77,14 @@ public class LogEntry implements Serializable {
     private String logName;
     private MonitoredResource resource;
     private Long timestamp;
+    private Long receiveTimestamp;
     private Severity severity = Severity.DEFAULT;
     private String insertId;
     private HttpRequest httpRequest;
     private Map<String, String> labels = new HashMap<>();
     private Operation operation;
+    private String trace;
+    private SourceLocation sourceLocation;
     private Payload<?> payload;
 
     Builder(Payload<?> payload) {
@@ -87,25 +95,17 @@ public class LogEntry implements Serializable {
       this.logName = entry.logName;
       this.resource = entry.resource;
       this.timestamp = entry.timestamp;
+      this.receiveTimestamp = entry.receiveTimestamp;
       this.severity = entry.severity;
       this.insertId = entry.insertId;
       this.httpRequest = entry.httpRequest;
       this.labels = new HashMap<>(entry.labels);
       this.operation = entry.operation;
+      this.trace = entry.trace;
+      this.sourceLocation = entry.sourceLocation;
       this.payload = entry.payload;
     }
 
-    /**
-     * Sets the name of the log to which this log entry belongs. The log name must be less than 512
-     * characters long and can only include the following characters: upper and lower case
-     * alphanumeric characters: {@code [A-Za-z0-9]}; and punctuation characters: {@code _-./}. The
-     * forward-slash ({@code /}) characters in the log name must be URL-encoded. Examples:
-     * {@code syslog}, {@code library.googleapis.com%2Fbook_log}.
-     */
-    @Deprecated
-    public Builder logName(String logName) {
-      return setLogName(logName);
-    }
 
     /**
      * Sets the name of the log to which this log entry belongs. The log name must be less than 512
@@ -119,15 +119,6 @@ public class LogEntry implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the monitored resource associated with this log entry. Example: a log entry that reports
-     * a database error would be associated with the monitored resource designating the particular
-     * database that reported the error.
-     */
-    @Deprecated
-    public Builder resource(MonitoredResource resource) {
-      return setResource(resource);
-    }
 
     /**
      * Sets the monitored resource associated with this log entry. Example: a log entry that reports
@@ -139,14 +130,6 @@ public class LogEntry implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the time at which the event described by the log entry occurred, in milliseconds. If
-     * omitted, the Logging service will use the time at which the log entry is received.
-     */
-    @Deprecated
-    public Builder timestamp(long timestamp) {
-      return setTimestamp(timestamp);
-    }
 
     /**
      * Sets the time at which the event described by the log entry occurred, in milliseconds. If
@@ -157,13 +140,15 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+
     /**
-     * Sets the severity of the log entry. If not set, {@link Severity#DEFAULT} is used.
+     * Sets the time the log entry was received by Stackdriver Logging.
      */
-    @Deprecated
-    public Builder severity(Severity severity) {
-      return setSeverity(severity);
+    public Builder setReceiveTimestamp(long receiveTimestamp) {
+      this.receiveTimestamp = receiveTimestamp;
+      return this;
     }
+
 
     /**
      * Sets the severity of the log entry. If not set, {@link Severity#DEFAULT} is used.
@@ -173,15 +158,6 @@ public class LogEntry implements Serializable {
       return this;
     }
 
-    /**
-     * Sets a unique ID for the log entry. If you provide this field, the Logging service considers
-     * other log entries in the same log with the same ID as duplicates which can be removed. If
-     * omitted, the Logging service will generate a unique ID for this log entry.
-     */
-    @Deprecated
-    public Builder insertId(String insertId) {
-      return setInsertId(insertId);
-    }
 
     /**
      * Sets a unique ID for the log entry. If you provide this field, the Logging service considers
@@ -193,13 +169,6 @@ public class LogEntry implements Serializable {
       return this;
     }
 
-    /**
-     * Sets information about the HTTP request associated with this log entry, if applicable.
-     */
-    @Deprecated
-    public Builder httpRequest(HttpRequest httpRequest) {
-      return setHttpRequest(httpRequest);
-    }
 
     /**
      * Sets information about the HTTP request associated with this log entry, if applicable.
@@ -209,14 +178,6 @@ public class LogEntry implements Serializable {
       return this;
     }
 
-    /**
-     * Sets an optional set of user-defined (key, value) data that provides additional information
-     * about the log entry.
-     */
-    @Deprecated
-    public Builder labels(Map<String, String> labels) {
-      return setLabels(labels);
-    }
 
     /**
      * Sets an optional set of user-defined (key, value) data that provides additional information
@@ -227,6 +188,7 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+
     /**
      * Adds a label to the log entry's labels. Labels are user-defined (key, value) data that
      * provides additional information about the log entry.
@@ -235,6 +197,7 @@ public class LogEntry implements Serializable {
       this.labels.put(key, value);
       return this;
     }
+
 
     /**
      * Clears all the labels of the log entry. Labels are user-defined (key, value) data that
@@ -245,13 +208,6 @@ public class LogEntry implements Serializable {
       return this;
     }
 
-    /**
-     * Sets information about an operation associated with the log entry, if applicable.
-     */
-    @Deprecated
-    public Builder operation(Operation operation) {
-      return setOperation(operation);
-    }
 
     /**
      * Sets information about an operation associated with the log entry, if applicable.
@@ -261,17 +217,25 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+
     /**
-     * Sets the payload for this log entry. The log entry payload can be provided as an UTF-8 string
-     * (see {@link Payload.StringPayload}), a JSON object (see {@link Payload.JsonPayload}, or
-     * a protobuf object (see {@link Payload.ProtoPayload}).
-     *
-     * @see <a href="https://cloud.google.com/logging/docs/view/logs_index">Log Entries and Logs</a>
+     * Sets the resource name of the trace associated with the log entry, if any. If it contains a
+     * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
      */
-    @Deprecated
-    public Builder payload(Payload payload) {
-      return setPayload(payload);
+    public Builder setTrace(String trace) {
+      this.trace = trace;
+      return this;
     }
+
+
+    /**
+     * Sets the source code location information associated with the log entry if any.
+     */
+    public Builder setSourceLocation(SourceLocation sourceLocation) {
+      this.sourceLocation = sourceLocation;
+      return this;
+    }
+
 
     /**
      * Sets the payload for this log entry. The log entry payload can be provided as an UTF-8 string
@@ -297,25 +261,17 @@ public class LogEntry implements Serializable {
     this.logName = builder.logName;
     this.resource = builder.resource;
     this.timestamp = builder.timestamp;
+    this.receiveTimestamp = builder.receiveTimestamp;
     this.severity = builder.severity;
     this.insertId = builder.insertId;
     this.httpRequest = builder.httpRequest;
     this.labels = ImmutableMap.copyOf(builder.labels);
     this.operation = builder.operation;
+    this.trace = builder.trace;
+    this.sourceLocation = builder.sourceLocation;
     this.payload = builder.payload;
   }
 
-  /**
-   * Returns the name of the log to which this log entry belongs. The log name must be less than 512
-   * characters long and can only include the following characters: upper and lower case
-   * alphanumeric characters: {@code [A-Za-z0-9]}; and punctuation characters: {@code _-./}. The
-   * forward-slash ({@code /}) characters in the log name must be URL-encoded. Examples:
-   * {@code syslog}, {@code library.googleapis.com%2Fbook_log}.
-   */
-  @Deprecated
-  public String logName() {
-    return getLogName();
-  }
 
   /**
    * Returns the name of the log to which this log entry belongs. The log name must be less than 512
@@ -328,15 +284,6 @@ public class LogEntry implements Serializable {
     return logName;
   }
 
-  /**
-   * Returns the monitored resource associated with this log entry. Example: a log entry that
-   * reports a database error would be associated with the monitored resource designating the
-   * particular database that reported the error.
-   */
-  @Deprecated
-  public MonitoredResource resource() {
-    return getResource();
-  }
 
   /**
    * Returns the monitored resource associated with this log entry. Example: a log entry that
@@ -347,14 +294,6 @@ public class LogEntry implements Serializable {
     return resource;
   }
 
-  /**
-   * Returns the time at which the event described by the log entry occurred, in milliseconds. If
-   * omitted, the Logging service will use the time at which the log entry is received.
-   */
-  @Deprecated
-  public Long timestamp() {
-    return getTimestamp();
-  }
 
   /**
    * Returns the time at which the event described by the log entry occurred, in milliseconds. If
@@ -364,13 +303,14 @@ public class LogEntry implements Serializable {
     return timestamp;
   }
 
+
   /**
-   * Returns the severity of the log entry. If not set, {@link Severity#DEFAULT} is used.
+   * Returns the time the log entry was received by Stackdriver Logging.
    */
-  @Deprecated
-  public Severity severity() {
-    return getSeverity();
+  public Long getReceiveTimestamp() {
+    return receiveTimestamp;
   }
+
 
   /**
    * Returns the severity of the log entry. If not set, {@link Severity#DEFAULT} is used.
@@ -379,14 +319,6 @@ public class LogEntry implements Serializable {
     return severity;
   }
 
-  /**
-   * Returns a unique ID for the log entry. The Logging service considers other log entries in the
-   * same log with the same ID as duplicates which can be removed.
-   */
-  @Deprecated
-  public String insertId() {
-    return getInsertId();
-  }
 
   /**
    * Returns a unique ID for the log entry. The Logging service considers other log entries in the
@@ -396,13 +328,6 @@ public class LogEntry implements Serializable {
     return insertId;
   }
 
-  /**
-   * Returns information about the HTTP request associated with this log entry, if applicable.
-   */
-  @Deprecated
-  public HttpRequest httpRequest() {
-    return getHttpRequest();
-  }
 
   /**
    * Returns information about the HTTP request associated with this log entry, if applicable.
@@ -411,14 +336,6 @@ public class LogEntry implements Serializable {
     return httpRequest;
   }
 
-  /**
-   * Returns an optional set of user-defined (key, value) data that provides additional information
-   * about the log entry.
-   */
-  @Deprecated
-  public Map<String, String> labels() {
-    return getLabels();
-  }
 
   /**
    * Returns an optional set of user-defined (key, value) data that provides additional information
@@ -428,13 +345,6 @@ public class LogEntry implements Serializable {
     return labels;
   }
 
-  /**
-   * Returns information about an operation associated with the log entry, if applicable.
-   */
-  @Deprecated
-  public Operation operation() {
-    return getOperation();
-  }
 
   /**
    * Returns information about an operation associated with the log entry, if applicable.
@@ -443,18 +353,23 @@ public class LogEntry implements Serializable {
     return operation;
   }
 
+
   /**
-   * Returns the payload for this log entry. The log entry payload can be an UTF-8 string (see
-   * {@link Payload.StringPayload}), a JSON object (see {@link Payload.JsonPayload}, or a protobuf
-   * object (see {@link Payload.ProtoPayload}).
-   *
-   * @see <a href="https://cloud.google.com/logging/docs/view/logs_index">Log Entries and Logs</a>
+   * Returns the resource name of the trace associated with the log entry, if any. If it contains a
+   * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
    */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public <T extends Payload> T payload() {
-    return getPayload();
+  public String getTrace() {
+    return trace;
   }
+
+
+  /**
+   * Returns the source code location information associated with the log entry, if any.
+   */
+  public SourceLocation getSourceLocation() {
+    return sourceLocation;
+  }
+
 
   /**
    * Returns the payload for this log entry. The log entry payload can be an UTF-8 string (see
@@ -470,8 +385,8 @@ public class LogEntry implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(logName, resource, timestamp, severity, insertId, httpRequest, labels,
-        operation, payload);
+    return Objects.hash(logName, resource, timestamp, receiveTimestamp, severity, insertId,
+        httpRequest, labels, operation, trace, sourceLocation, payload);
   }
 
   @Override
@@ -486,11 +401,14 @@ public class LogEntry implements Serializable {
     return Objects.equals(logName, other.logName)
         && Objects.equals(resource, other.resource)
         && Objects.equals(timestamp, other.timestamp)
+        && Objects.equals(receiveTimestamp, other.receiveTimestamp)
         && Objects.equals(severity, other.severity)
         && Objects.equals(insertId, other.insertId)
         && Objects.equals(httpRequest, other.httpRequest)
         && Objects.equals(labels, other.labels)
         && Objects.equals(operation, other.operation)
+        && Objects.equals(trace, other.trace)
+        && Objects.equals(sourceLocation, other.sourceLocation)
         && Objects.equals(payload, other.payload);
   }
 
@@ -500,11 +418,14 @@ public class LogEntry implements Serializable {
         .add("logName", logName)
         .add("resource", resource)
         .add("timestamp", timestamp)
+        .add("receiveTimestamp", receiveTimestamp)
         .add("severity", severity)
         .add("insertId", insertId)
         .add("httpRequest", httpRequest)
         .add("labels", labels)
         .add("operation", operation)
+        .add("trace", trace)
+        .add("sourceLocation", sourceLocation)
         .add("payload", payload)
         .toString();
   }
@@ -516,20 +437,32 @@ public class LogEntry implements Serializable {
     return new Builder(this);
   }
 
+  private static Timestamp timestampFromMillis(Long millis) {
+    Timestamp.Builder tsBuilder = Timestamp.newBuilder();
+    tsBuilder.setSeconds(millis / MILLIS_PER_SECOND);
+    tsBuilder.setNanos((int) (millis % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
+    return tsBuilder.build();
+  }
+
+  private static Long millisFromTimestamp(Timestamp timestamp) {
+    return timestamp.getSeconds() * MILLIS_PER_SECOND
+        + timestamp.getNanos() / NANOS_PER_MILLISECOND;
+  }
+
   com.google.logging.v2.LogEntry toPb(String projectId) {
     com.google.logging.v2.LogEntry.Builder builder = payload.toPb();
     builder.putAllLabels(labels);
     if (logName != null) {
-      builder.setLogName(LogName.create(projectId, logName).toString());
+      builder.setLogName(ProjectLogName.of(projectId, logName).toString());
     }
     if (resource != null) {
       builder.setResource(resource.toPb());
     }
     if (timestamp != null) {
-      Timestamp.Builder tsBuilder = Timestamp.newBuilder();
-      tsBuilder.setSeconds(timestamp / MILLIS_PER_SECOND);
-      tsBuilder.setNanos((int) (timestamp % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
-      builder.setTimestamp(tsBuilder.build());
+      builder.setTimestamp(timestampFromMillis(timestamp));
+    }
+    if (receiveTimestamp != null) {
+      builder.setReceiveTimestamp(timestampFromMillis(receiveTimestamp));
     }
     if (severity != null) {
       builder.setSeverity(severity.toPb());
@@ -543,16 +476,15 @@ public class LogEntry implements Serializable {
     if (operation != null) {
       builder.setOperation(operation.toPb());
     }
+    if (trace != null) {
+      builder.setTrace(trace);
+    }
+    if (sourceLocation != null) {
+      builder.setSourceLocation(sourceLocation.toPb());
+    }
     return builder.build();
   }
 
-  /**
-   * Returns a builder for {@code LogEntry} objects given the entry payload.
-   */
-  @Deprecated
-  public static Builder builder(Payload<?> payload) {
-    return newBuilder(payload);
-  }
 
   /**
    * Returns a builder for {@code LogEntry} objects given the entry payload.
@@ -581,16 +513,21 @@ public class LogEntry implements Serializable {
     builder.setLabels(entryPb.getLabelsMap());
     builder.setSeverity(Severity.fromPb(entryPb.getSeverity()));
     if (!entryPb.getLogName().equals("")) {
-      builder.setLogName(LogName.parse(entryPb.getLogName()).getLog());
+      builder.setLogName(ProjectLogName.parse(entryPb.getLogName()).getLog());
     }
     if (!entryPb.getResource().equals(com.google.api.MonitoredResource.getDefaultInstance())) {
       builder.setResource(MonitoredResource.fromPb(entryPb.getResource()));
     }
     if (entryPb.hasTimestamp()) {
-      Timestamp ts = entryPb.getTimestamp();
-      Long millis = ts.getSeconds() * MILLIS_PER_SECOND + ts.getNanos() / NANOS_PER_MILLISECOND;
+      Long millis = millisFromTimestamp(entryPb.getTimestamp());
       if (millis != 0) {
         builder.setTimestamp(millis);
+      }
+    }
+    if (entryPb.hasReceiveTimestamp()) {
+      Long millis = millisFromTimestamp(entryPb.getReceiveTimestamp());
+      if (millis != 0) {
+        builder.setReceiveTimestamp(millis);
       }
     }
     if (!entryPb.getInsertId().equals("")) {
@@ -602,6 +539,12 @@ public class LogEntry implements Serializable {
     }
     if (!entryPb.getOperation().equals(LogEntryOperation.getDefaultInstance())) {
       builder.setOperation(Operation.fromPb(entryPb.getOperation()));
+    }
+    if (!entryPb.getTrace().equals("")) {
+      builder.setTrace(entryPb.getTrace());
+    }
+    if (!entryPb.getSourceLocation().equals(LogEntrySourceLocation.getDefaultInstance())) {
+      builder.setSourceLocation(SourceLocation.fromPb(entryPb.getSourceLocation()));
     }
     return builder.build();
   }

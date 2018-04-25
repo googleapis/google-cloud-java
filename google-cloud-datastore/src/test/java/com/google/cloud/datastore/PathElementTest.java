@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,13 +37,6 @@ public class PathElementTest {
   }
 
   @Test
-  public void testKindDeprected() throws Exception {
-    assertEquals("k1", PE_1.kind());
-    assertEquals("k2", PE_2.kind());
-    assertEquals("k3", PE_3.kind());
-  }
-
-  @Test
   public void testHasId() throws Exception {
     assertFalse(PE_1.hasId());
     assertFalse(PE_2.hasId());
@@ -57,12 +50,6 @@ public class PathElementTest {
     assertEquals(Long.valueOf(1), PE_3.getId());
   }
 
-  @Test
-  public void testIdDeprecated() throws Exception {
-    assertNull(PE_1.id());
-    assertNull(PE_2.id());
-    assertEquals(Long.valueOf(1), PE_3.id());
-  }
 
   @Test
   public void testHasName() throws Exception {
@@ -78,24 +65,11 @@ public class PathElementTest {
     assertNull(PE_3.getName());
   }
 
-  @Test
-  public void testNameDeprecated() throws Exception {
-    assertNull(PE_1.name());
-    assertEquals("n", PE_2.name());
-    assertNull(PE_3.name());
-  }
 
   @Test
   public void testNameOrId() throws Exception {
     assertNull(PE_1.getNameOrId());
     assertEquals("n", PE_2.getNameOrId());
     assertEquals(Long.valueOf(1), PE_3.getNameOrId());
-  }
-
-  @Test
-  public void testNameOrIdDeprecated() throws Exception {
-    assertNull(PE_1.nameOrId());
-    assertEquals("n", PE_2.nameOrId());
-    assertEquals(Long.valueOf(1), PE_3.nameOrId());
   }
 }

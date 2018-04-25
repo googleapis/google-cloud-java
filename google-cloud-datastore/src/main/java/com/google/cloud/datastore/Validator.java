@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ final class Validator {
       "([a-z\\d\\-]{1,100}~)?([a-z\\d][a-z\\d\\-\\.]{0,99}:)?([a-z\\d][a-z\\d\\-]{0,99})");
   private static final int MAX_NAMESPACE_LENGTH = 100;
   private static final Pattern NAMESPACE_PATTERN =
-      Pattern.compile(String.format("[0-9A-Za-z\\._\\-]{0,%d}", MAX_NAMESPACE_LENGTH));
+      Pattern.compile("[0-9A-Za-z\\._\\-]{0," + MAX_NAMESPACE_LENGTH + "}");
 
   private Validator() {
     // utility class

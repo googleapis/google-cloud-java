@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,16 +22,16 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.Field.Type;
-import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -45,7 +45,8 @@ import com.google.common.base.Function;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-
+import java.util.List;
+import java.util.Set;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -54,12 +55,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-import java.util.List;
-import java.util.Set;
-
-/**
- * Integration tests for {@link TableSnippets}.
- */
+/** Integration tests for {@link TableSnippets}. */
 public class ITTableSnippets {
 
   private static final String BASE_TABLE_NAME = "my_table";
@@ -67,7 +63,9 @@ public class ITTableSnippets {
   private static final String COPY_DATASET_NAME = RemoteBigQueryHelper.generateDatasetName();
   private static final String BUCKET_NAME = RemoteStorageHelper.generateBucketName();
   private static final Schema SCHEMA =
-      Schema.of(Field.of("stringField", Type.string()), Field.of("booleanField", Type.bool()));
+      Schema.of(
+          Field.of("stringField", LegacySQLTypeName.STRING),
+          Field.of("booleanField", LegacySQLTypeName.BOOLEAN));
   private static final List<?> ROW1 = ImmutableList.of("value1", true);
   private static final List<?> ROW2 = ImmutableList.of("value2", false);
   private static final String DOOMED_TABLE_NAME = "doomed_table";
@@ -80,8 +78,7 @@ public class ITTableSnippets {
   private Table table;
   private TableSnippets tableSnippets;
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() {
@@ -168,25 +165,29 @@ public class ITTableSnippets {
   @Test
   public void testInsertParams() throws InterruptedException {
     InsertAllResponse response = tableSnippets.insertWithParams("row1", "row2");
-    assertTrue(response.hasErrors());
-    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
+    assertFalse(response.hasErrors());
+    List<FieldValueList> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     while (rows.isEmpty()) {
       Thread.sleep(500);
       rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     }
     Set<List<?>> values =
-        FluentIterable.from(rows).transform(new Function<List<FieldValue>, List<?>>() {
-          @Override
-          public List<?> apply(List<FieldValue> row) {
-            return ImmutableList.of(row.get(0).getStringValue(), row.get(1).getBooleanValue());
-          }
-        }).toSet();
+        FluentIterable.from(rows)
+            .transform(
+                new Function<FieldValueList, List<?>>() {
+                  @Override
+                  public List<?> apply(FieldValueList row) {
+                    return ImmutableList.of(
+                        row.get(0).getStringValue(), row.get(1).getBooleanValue());
+                  }
+                })
+            .toSet();
     assertEquals(ImmutableSet.of(ROW2), values);
   }
 
   @Test
   public void testList() throws InterruptedException {
-    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
+    List<FieldValueList> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     assertEquals(0, rows.size());
 
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
@@ -237,15 +238,19 @@ public class ITTableSnippets {
    * @param checkTable the table to query
    */
   private void verifyTestRows(Table checkTable) throws InterruptedException {
-    List<List<FieldValue>> rows = waitForTableRows(checkTable, 2);
+    List<FieldValueList> rows = waitForTableRows(checkTable, 2);
     // Verify that the table data matches what it's supposed to.
     Set<List<?>> values =
-        FluentIterable.from(rows).transform(new Function<List<FieldValue>, List<?>>() {
-          @Override
-          public List<?> apply(List<FieldValue> row) {
-            return ImmutableList.of(row.get(0).getStringValue(), row.get(1).getBooleanValue());
-          }
-        }).toSet();
+        FluentIterable.from(rows)
+            .transform(
+                new Function<FieldValueList, List<?>>() {
+                  @Override
+                  public List<?> apply(FieldValueList row) {
+                    return ImmutableList.of(
+                        row.get(0).getStringValue(), row.get(1).getBooleanValue());
+                  }
+                })
+            .toSet();
     assertEquals(ImmutableSet.of(ROW2, ROW1), values);
   }
 
@@ -257,11 +262,11 @@ public class ITTableSnippets {
    * @param numRows the expected number of rows
    * @return the rows from the table
    */
-  private List<List<FieldValue>> waitForTableRows(Table checkTable, int numRows)
+  private List<FieldValueList> waitForTableRows(Table checkTable, int numRows)
       throws InterruptedException {
     // Wait for the data to appear.
-    Page<List<FieldValue>> page = checkTable.list(TableDataListOption.pageSize(100));
-    List<List<FieldValue>> rows = ImmutableList.copyOf(page.getValues());
+    Page<FieldValueList> page = checkTable.list(TableDataListOption.pageSize(100));
+    List<FieldValueList> rows = ImmutableList.copyOf(page.getValues());
     while (rows.size() != numRows) {
       Thread.sleep(1000);
       page = checkTable.list(TableDataListOption.pageSize(100));

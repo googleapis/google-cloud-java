@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,10 @@ import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.Date;
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
-import com.google.cloud.spanner.Date;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.IntegrationTest;
 import com.google.cloud.spanner.IntegrationTestEnv;
@@ -32,8 +33,8 @@ import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.Struct;
-import com.google.cloud.spanner.Timestamp;
 import com.google.cloud.spanner.TimestampBound;
+import com.google.cloud.spanner.Value;
 import io.grpc.Context;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -77,7 +78,7 @@ public class ITWriteTest {
                     + "  Float64Value        FLOAT64,"
                     + "  StringValue         STRING(MAX),"
                     + "  BytesValue          BYTES(MAX),"
-                    + "  TimestampValue      TIMESTAMP,"
+                    + "  TimestampValue      TIMESTAMP OPTIONS (allow_commit_timestamp = true),"
                     + "  DateValue           DATE,"
                     + "  BoolArrayValue      ARRAY<BOOL>,"
                     + "  Int64ArrayValue     ARRAY<INT64>,"
@@ -97,8 +98,8 @@ public class ITWriteTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
   private String lastKey;
 
-  private void write(Mutation m) {
-    client.write(Arrays.asList(m));
+  private Timestamp write(Mutation m) {
+    return client.write(Arrays.asList(m));
   }
 
   private Mutation.WriteBuilder baseInsert() {
@@ -292,6 +293,14 @@ public class ITWriteTest {
     write(baseInsert().set("TimestampValue").to((Timestamp) null).build());
     Struct row = readLastRow("TimestampValue");
     assertThat(row.isNull(0)).isTrue();
+  }
+
+  @Test
+  public void writeCommitTimestamp() {
+    Timestamp commitTimestamp =
+        write(baseInsert().set("TimestampValue").to(Value.COMMIT_TIMESTAMP).build());
+    Struct row = readLastRow("TimestampValue");
+    assertThat(row.getTimestamp(0)).isEqualTo(commitTimestamp);
   }
 
   @Test

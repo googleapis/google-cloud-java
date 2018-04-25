@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,11 +121,6 @@ public final class Cors implements Serializable {
       return getValue();
     }
 
-    @Deprecated
-    public String value() {
-      return getValue();
-    }
-
     public String getValue() {
       return value;
     }
@@ -147,26 +142,9 @@ public final class Cors implements Serializable {
      * Sets the max time in seconds in which a client can issue requests before sending a new
      * preflight request.
      */
-    @Deprecated
-    public Builder maxAgeSeconds(Integer maxAgeSeconds) {
-      return setMaxAgeSeconds(maxAgeSeconds);
-    }
-
-    /**
-     * Sets the max time in seconds in which a client can issue requests before sending a new
-     * preflight request.
-     */
     public Builder setMaxAgeSeconds(Integer maxAgeSeconds) {
       this.maxAgeSeconds = maxAgeSeconds;
       return this;
-    }
-
-    /**
-     * Sets the HTTP methods supported by this CORS configuration.
-     */
-    @Deprecated
-    public Builder methods(Iterable<HttpMethod> methods) {
-      return setMethods(methods);
     }
 
     /**
@@ -180,25 +158,9 @@ public final class Cors implements Serializable {
     /**
      * Sets the origins for this CORS configuration.
      */
-    @Deprecated
-    public Builder origins(Iterable<Origin> origins) {
-      return setOrigins(origins);
-    }
-
-    /**
-     * Sets the origins for this CORS configuration.
-     */
     public Builder setOrigins(Iterable<Origin> origins) {
       this.origins = origins != null ? ImmutableList.copyOf(origins) : null;
       return this;
-    }
-
-    /**
-     * Sets the response headers supported by this CORS configuration.
-     */
-    @Deprecated
-    public Builder responseHeaders(Iterable<String> headers) {
-      return setResponseHeaders(headers);
     }
 
     /**
@@ -228,25 +190,8 @@ public final class Cors implements Serializable {
    * Returns the max time in seconds in which a client can issue requests before sending a new
    * preflight request.
    */
-  @Deprecated
-  public Integer maxAgeSeconds() {
-    return getMaxAgeSeconds();
-  }
-
-  /**
-   * Returns the max time in seconds in which a client can issue requests before sending a new
-   * preflight request.
-   */
   public Integer getMaxAgeSeconds() {
     return maxAgeSeconds;
-  }
-
-  /**
-   * Returns the HTTP methods supported by this CORS configuration.
-   */
-  @Deprecated
-  public List<HttpMethod> methods() {
-    return getMethods();
   }
 
   /**
@@ -259,24 +204,8 @@ public final class Cors implements Serializable {
   /**
    * Returns the origins in this CORS configuration.
    */
-  @Deprecated
-  public List<Origin> origins() {
-    return getOrigins();
-  }
-
-  /**
-   * Returns the origins in this CORS configuration.
-   */
   public List<Origin> getOrigins() {
     return origins;
-  }
-
-  /**
-   * Returns the response headers supported by this CORS configuration.
-   */
-  @Deprecated
-  public List<String> responseHeaders() {
-    return getResponseHeaders();
   }
 
   /**
@@ -312,14 +241,6 @@ public final class Cors implements Serializable {
         && Objects.equals(methods, other.methods)
         && Objects.equals(origins, other.origins)
         && Objects.equals(responseHeaders, other.responseHeaders);
-  }
-
-  /**
-   * Returns a CORS configuration builder.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
   }
 
   /**

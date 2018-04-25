@@ -1,38 +1,41 @@
 Google Cloud Java Client for DNS
 ================================
 
-Java idiomatic client for [Google Cloud DNS] (https://cloud.google.com/dns/).
+Java idiomatic client for [Google Cloud DNS][cloud-dns].
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![CircleCI](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/GoogleCloudPlatform/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dns.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dns.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
-[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
+[![Dependency Status](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58fe4c8d6ac171426c414772)
 
--  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
--  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html)
+- [Product Documentation][dns-product-docs]
+- [Client Library Documentation][dns-client-lib-docs]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
 
 Quickstart
 ----------
+
+[//]: # ({x-version-update-start:google-cloud-dns:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dns</artifactId>
-  <version>0.9.3-alpha</version>
+  <version>0.45.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dns:0.9.3-alpha'
+compile 'com.google.cloud:google-cloud-dns:0.45.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.9.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.45.0-alpha"
 ```
+[//]: # ({x-version-update-end})
 
 Example Application
 -------------------
@@ -55,10 +58,10 @@ About Google Cloud DNS
 (DNS) service running on the same infrastructure as Google. It has low latency, high availability
 and is a cost-effective way to make your applications and services available to your users.
 
-See the [Google Cloud DNS docs][dns-activate] for more details on how to activate
+See the [Google Cloud DNS docs][cloud-dns-activate] for more details on how to activate
 Cloud DNS for your project.
 
-See the [``google-cloud-dns`` API documentation][dns-api] to learn how to interact
+See the [DNS client library docs][dns-client-lib-docs] to learn how to interact
 with the Cloud DNS using this client Library.
 
 Getting Started
@@ -93,7 +96,7 @@ For other authentication options, see the [Authentication](https://github.com/Go
 
 #### Managing Zones
 Record sets in `google-cloud-dns` are managed inside containers called "zones". `ZoneInfo` is a class
-which encapsulates metadata that describe a zone in Google Cloud DNS. `Zone`, a subclass of `ZoneInfo`, adds service-related
+which encapsulates metadata that describes a zone in Google Cloud DNS. `Zone`, a subclass of `ZoneInfo`, adds service-related
 functionality over `ZoneInfo`.
 
 *Important: Zone names must be unique to the project. If you choose a zone name that already
@@ -143,12 +146,12 @@ and then add
 ```java
 // Print assigned name servers
 List<String> nameServers = zone.getNameServers();
-for(String nameServer : nameServers) {
+for (String nameServer : nameServers) {
   System.out.println(nameServer);
 }
 ```
 
-You can now instruct your domain registrar to [update your domain name servers] (https://cloud.google.com/dns/update-name-servers).
+You can now instruct your domain registrar to [update your domain name servers](https://cloud.google.com/dns/update-name-servers).
 As soon as this happens and the change propagates through cached values in DNS resolvers,
 all the DNS queries will be directed to and answered by the Google Cloud DNS service.
 
@@ -215,7 +218,7 @@ while (recordSetIterator.hasNext()) {
 ChangeRequestInfo changeRequest = changeBuilder.build();
 ChangeRequest pendingRequest = zone.applyChangeRequest(changeRequest);
 ```
-You can find more information about changes in the [Cloud DNS documentation] (https://cloud.google.com/dns/what-is-cloud-dns#cloud_dns_api_concepts).
+You can find more information about changes in the [Cloud DNS documentation](https://cloud.google.com/dns/what-is-cloud-dns#cloud_dns_api_concepts).
 
 When the change request is applied, it is registered with the Cloud DNS service for processing. We
 can wait for its completion as follows:
@@ -342,6 +345,10 @@ Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
+Transport
+---------
+DNS uses HTTP for the transport layer.
+
 Java Versions
 -------------
 
@@ -357,7 +364,7 @@ See [TESTING] to read more about testing.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
@@ -385,5 +392,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-dns]: https://cloud.google.com/dns/
-[dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
-[dns-activate]:https://cloud.google.com/dns/getting-started#prerequisites
+[cloud-dns-activate]: https://cloud.google.com/dns/getting-started#prerequisites
+[dns-product-docs]: https://cloud.google.com/dns/docs/
+[dns-client-lib-docs]: https://googlecloudplatform.github.io/google-cloud-java/latest/apidocs/index.html?com/google/cloud/dns/package-summary.html

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import com.google.api.core.InternalApi;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
@@ -31,12 +32,6 @@ import java.util.Set;
  */
 public interface FieldSelector {
 
-  /**
-   * Returns a string selector. This selector is passed to a Google Cloud service (possibly with
-   * other field selectors) to specify which resource fields should be returned by an API call.
-   */
-  @Deprecated
-  String selector();
 
   /**
    * Returns a string selector. This selector is passed to a Google Cloud service (possibly with
@@ -48,6 +43,7 @@ public interface FieldSelector {
    * A helper class used to build composite selectors given a number of fields. This class is not
    * supposed to be used directly by users.
    */
+  @InternalApi
   class Helper {
 
     private static final String[] EMPTY_FIELDS = {};

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,10 @@ package com.google.cloud.resourcemanager;
 
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Service;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.common.collect.ImmutableList;
 
 import java.util.List;
@@ -58,11 +58,6 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -298,7 +293,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
    * the project's current policy, updating it locally, and then sending the modified policy for
    * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
-   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * modify a policy by using the {@link Policy#getEtag etag} property. This property is used to
    * verify whether the policy has changed since the last request. When you make a request to Cloud
    * IAM with an etag value, Cloud IAM compares the etag value in the request with the existing etag
    * value associated with the policy. It writes the policy only if the etag values match. If the

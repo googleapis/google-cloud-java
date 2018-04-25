@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,36 +16,43 @@
 
 package com.google.cloud.spanner;
 
-import com.google.cloud.GrpcServiceOptions;
-import com.google.cloud.spanner.spi.DefaultSpannerRpc;
-import com.google.cloud.spanner.spi.SpannerRpc;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.ServiceDefaults;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.spanner.spi.v1.GrpcSpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
-import io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.NettyChannelBuilder;
-import io.netty.handler.ssl.SslContext;
+import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ScheduledExecutorService;
 import javax.net.ssl.SSLException;
 
 /** Options for the Cloud Spanner service. */
-public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, SpannerOptions> {
+public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
+  private static final long serialVersionUID = 2789571558532701170L;
+
+  private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
-  private static final Set<String> SCOPES =
+  private static final ImmutableSet<String> SCOPES =
       ImmutableSet.of(
           "https://www.googleapis.com/auth/spanner.admin",
           "https://www.googleapis.com/auth/spanner.data");
   private static final int MAX_CHANNELS = 256;
-  private static final RpcChannelFactory DEFAULT_RPC_CHANNEL_FACTORY =
-      new NettyRpcChannelFactory(DefaultSpannerRpc.API_CLIENT);
+  private static final RpcChannelFactory DEFAULT_RPC_CHANNEL_FACTORY = new NettyRpcChannelFactory();
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -62,8 +69,8 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
     private static final DefaultSpannerRpcFactory INSTANCE = new DefaultSpannerRpcFactory();
 
     @Override
-    public SpannerRpc create(SpannerOptions options) {
-      return new DefaultSpannerRpc(options);
+    public ServiceRpc create(SpannerOptions options) {
+      return new GrpcSpannerRpc(options);
     }
   }
 
@@ -71,16 +78,16 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
   private final SessionPoolOptions sessionPoolOptions;
   private final int prefetchChunks;
   private final int numChannels;
-  private final String userAgent;
+  private final ImmutableMap<String, String> sessionLabels;
 
   private SpannerOptions(Builder builder) {
-    super(SpannerFactory.class, SpannerRpcFactory.class, builder);
+    super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
     numChannels = builder.numChannels;
-    userAgent = builder.userAgentPrefix;
+    String userAgent = getUserAgent();
     RpcChannelFactory defaultRpcChannelFactory =
         userAgent == null
             ? DEFAULT_RPC_CHANNEL_FACTORY
-            : new NettyRpcChannelFactory(userAgent + " " + DefaultSpannerRpc.API_CLIENT);
+            : new NettyRpcChannelFactory(userAgent);
     rpcChannels =
         createChannels(
             getHost(),
@@ -91,12 +98,13 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
             ? builder.sessionPoolOptions
             : SessionPoolOptions.newBuilder().build();
     prefetchChunks = builder.prefetchChunks;
+    sessionLabels = builder.sessionLabels;
   }
 
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
-      extends GrpcServiceOptions.Builder<
-          Spanner, SpannerRpc, SpannerOptions, SpannerOptions.Builder> {
+      extends ServiceOptions.Builder<
+      Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private RpcChannelFactory rpcChannelFactory;
     /** By default, we create 4 channels per {@link SpannerOptions} */
@@ -104,7 +112,7 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
 
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
-    private String userAgentPrefix;
+    private ImmutableMap<String, String> sessionLabels;
 
     private Builder() {}
 
@@ -113,7 +121,16 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
       this.numChannels = options.numChannels;
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
-      this.userAgentPrefix = options.userAgent;
+      this.sessionLabels = options.sessionLabels;
+    }
+
+    @Override
+    public Builder setTransportOptions(TransportOptions transportOptions) {
+      if (!(transportOptions instanceof GrpcTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only grpc transport is allowed for " + API_SHORT_NAME + ".");
+      }
+      return super.setTransportOptions(transportOptions);
     }
 
     /** Sets the factory for creating gRPC channels. If not set, a default will be used. */
@@ -141,6 +158,23 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
     }
 
     /**
+     * Sets the labels to add to all Sessions created in this client.
+     *
+     * @param sessionLabels Map from label key to label value. Label key and value cannot be null.
+     *     For more information on valid syntax see
+     *     <a href="https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.Session">
+     *     api docs </a>.
+     */
+    public Builder setSessionLabels(Map<String, String> sessionLabels) {
+      Preconditions.checkNotNull(sessionLabels, "Session labels map cannot be null");
+      for (String value : sessionLabels.values()) {
+        Preconditions.checkNotNull(value, "Null values are not allowed in the labels map.");
+      }
+      this.sessionLabels = ImmutableMap.copyOf(sessionLabels);
+      return this;
+    }
+
+    /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
      * server implementation but a good rule of thumb is that each chunk will be up to 1 MiB. Larger
@@ -153,12 +187,6 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
      */
     public Builder setPrefetchChunks(int prefetchChunks) {
       this.prefetchChunks = prefetchChunks;
-      return this;
-    }
-
-    /** If specified, this will be prefixed to the default user agent sent in the requests. */
-    public Builder setUserAgentPrefix(String userAgentPrefix) {
-      this.userAgentPrefix = userAgentPrefix;
       return this;
     }
 
@@ -193,13 +221,16 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
     return sessionPoolOptions;
   }
 
+  public Map<String, String> getSessionLabels() {
+    return sessionLabels;
+  }
+
   public int getPrefetchChunks() {
     return prefetchChunks;
   }
 
-  @Override
-  protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
-    return super.getExecutorFactory();
+  public static GrpcTransportOptions getDefaultGrpcTransportOptions() {
+    return GrpcTransportOptions.newBuilder().build();
   }
 
   /**
@@ -244,8 +275,13 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
 
   static class NettyRpcChannelFactory implements RpcChannelFactory {
     private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
+    private static final int MAX_HEADER_LIST_SIZE = 32 * 1024; //bytes
     private final String userAgent;
     private final List<ClientInterceptor> interceptors;
+
+    NettyRpcChannelFactory() {
+      this(null);
+    }
 
     NettyRpcChannelFactory(String userAgent) {
       this(userAgent, ImmutableList.<ClientInterceptor>of());
@@ -258,12 +294,16 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
 
     @Override
     public ManagedChannel newChannel(String host, int port) {
-      return NettyChannelBuilder.forAddress(host, port)
-          .sslContext(newSslContext())
-          .intercept(interceptors)
-          .maxMessageSize(MAX_MESSAGE_SIZE)
-          .userAgent(userAgent)
-          .build();
+      NettyChannelBuilder builder =
+          NettyChannelBuilder.forAddress(host, port)
+            .sslContext(newSslContext())
+            .intercept(interceptors)
+            .maxHeaderListSize(MAX_HEADER_LIST_SIZE)
+            .maxMessageSize(MAX_MESSAGE_SIZE);
+      if (userAgent != null) {
+        builder.userAgent(userAgent);
+      }
+      return builder.build();
     }
 
     private static SslContext newSslContext() {
@@ -275,19 +315,32 @@ public class SpannerOptions extends GrpcServiceOptions<Spanner, SpannerRpc, Span
     }
   }
 
-  @Override
-  protected SpannerFactory getDefaultServiceFactory() {
-    return DefaultSpannerFactory.INSTANCE;
-  }
+  private static class SpannerDefaults implements
+      ServiceDefaults<Spanner, SpannerOptions> {
 
-  @Override
-  protected SpannerRpcFactory getDefaultRpcFactory() {
-    return DefaultSpannerRpcFactory.INSTANCE;
+    @Override
+    public SpannerFactory getDefaultServiceFactory() {
+      return DefaultSpannerFactory.INSTANCE;
+    }
+
+    @Override
+    public SpannerRpcFactory getDefaultRpcFactory() {
+      return DefaultSpannerRpcFactory.INSTANCE;
+    }
+
+    @Override
+    public TransportOptions getDefaultTransportOptions() {
+      return getDefaultGrpcTransportOptions();
+    }
   }
 
   @Override
   public Set<String> getScopes() {
     return SCOPES;
+  }
+
+  protected SpannerRpc getSpannerRpcV1() {
+    return (SpannerRpc) getRpc();
   }
 
   @SuppressWarnings("unchecked")

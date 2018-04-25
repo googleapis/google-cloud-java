@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,11 @@ package com.google.cloud.storage;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
@@ -55,8 +58,50 @@ public final class Acl implements Serializable {
   private final String id;
   private final String etag;
 
-  public enum Role {
-    OWNER, READER, WRITER
+  public static final class Role extends StringEnumValue {
+    private static final long serialVersionUID = 123037132067643600L;
+
+    private Role(String constant) {
+      super(constant);
+    }
+
+    private static final ApiFunction<String, Role> CONSTRUCTOR =
+        new ApiFunction<String, Role>() {
+          @Override
+          public Role apply(String constant) {
+            return new Role(constant);
+          }
+        };
+
+    private static final StringEnumType<Role> type = new StringEnumType(
+        Role.class,
+        CONSTRUCTOR);
+
+    public static final Role OWNER = type.createAndRegister("OWNER");
+    public static final Role READER = type.createAndRegister("READER");
+    public static final Role WRITER = type.createAndRegister("WRITER");
+
+    /**
+     * Get the Role for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static Role valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the Role for the given String constant, and allow unrecognized values.
+     */
+    public static Role valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for Role.
+     */
+    public static Role[] values() {
+      return type.values();
+    }
   }
 
   /**
@@ -84,25 +129,9 @@ public final class Acl implements Serializable {
     /**
      * Sets the entity for the ACL object.
      */
-    @Deprecated
-    public Builder entity(Entity entity) {
-      return setEntity(entity);
-    }
-
-    /**
-     * Sets the entity for the ACL object.
-     */
     public Builder setEntity(Entity entity) {
       this.entity = entity;
       return this;
-    }
-
-    /**
-     * Sets the role to associate to the {@code entity} object.
-     */
-    @Deprecated
-    public Builder role(Role role) {
-      return setRole(role);
     }
 
     /**
@@ -153,24 +182,8 @@ public final class Acl implements Serializable {
     /**
      * Returns the type of entity.
      */
-    @Deprecated
-    public Type type() {
-      return getType();
-    }
-
-    /**
-     * Returns the type of entity.
-     */
     public Type getType() {
       return type;
-    }
-
-    /**
-     * Returns the entity's value.
-     */
-    @Deprecated
-    protected String value() {
-      return getValue();
     }
 
     /**
@@ -251,14 +264,6 @@ public final class Acl implements Serializable {
     /**
      * Returns the domain associated to this entity.
      */
-    @Deprecated
-    public String domain() {
-      return getDomain();
-    }
-
-    /**
-     * Returns the domain associated to this entity.
-     */
     public String getDomain() {
       return getValue();
     }
@@ -278,14 +283,6 @@ public final class Acl implements Serializable {
      */
     public Group(String email) {
       super(Type.GROUP, email);
-    }
-
-    /**
-     * Returns the group email.
-     */
-    @Deprecated
-    public String email() {
-      return getEmail();
     }
 
     /**
@@ -312,14 +309,6 @@ public final class Acl implements Serializable {
      */
     public User(String email) {
       super(Type.USER, email);
-    }
-
-    /**
-     * Returns the user email.
-     */
-    @Deprecated
-    public String email() {
-      return getEmail();
     }
 
     /**
@@ -361,8 +350,50 @@ public final class Acl implements Serializable {
     private final ProjectRole projectRole;
     private final String projectId;
 
-    public enum ProjectRole {
-      OWNERS, EDITORS, VIEWERS
+    public static final class ProjectRole extends StringEnumValue {
+      private static final long serialVersionUID = -8360324311187914382L;
+
+      private ProjectRole(String constant) {
+        super(constant);
+      }
+
+      private static final ApiFunction<String, ProjectRole> CONSTRUCTOR =
+          new ApiFunction<String, ProjectRole>() {
+            @Override
+            public ProjectRole apply(String constant) {
+              return new ProjectRole(constant);
+            }
+          };
+
+      private static final StringEnumType<ProjectRole> type = new StringEnumType(
+          ProjectRole.class,
+          CONSTRUCTOR);
+
+      public static final ProjectRole OWNERS = type.createAndRegister("OWNERS");
+      public static final ProjectRole EDITORS = type.createAndRegister("EDITORS");
+      public static final ProjectRole VIEWERS = type.createAndRegister("VIEWERS");
+
+      /**
+       * Get the ProjectRole for the given String constant, and throw an exception if the constant is
+       * not recognized.
+       */
+      public static ProjectRole valueOfStrict(String constant) {
+        return type.valueOfStrict(constant);
+      }
+
+      /**
+       * Get the ProjectRole for the given String constant, and allow unrecognized values.
+       */
+      public static ProjectRole valueOf(String constant) {
+        return type.valueOf(constant);
+      }
+
+      /**
+       * Return the known values for ProjectRole.
+       */
+      public static ProjectRole[] values() {
+        return type.values();
+      }
     }
 
     /**
@@ -380,24 +411,8 @@ public final class Acl implements Serializable {
     /**
      * Returns the role in the project for this entity.
      */
-    @Deprecated
-    public ProjectRole projectRole() {
-      return getProjectRole();
-    }
-
-    /**
-     * Returns the role in the project for this entity.
-     */
     public ProjectRole getProjectRole() {
       return projectRole;
-    }
-
-    /**
-     * Returns the project id for this entity.
-     */
-    @Deprecated
-    public String projectId() {
-      return getProjectId();
     }
 
     /**
@@ -432,24 +447,8 @@ public final class Acl implements Serializable {
   /**
    * Returns the entity for this ACL object.
    */
-  @Deprecated
-  public Entity entity() {
-    return getEntity();
-  }
-
-  /**
-   * Returns the entity for this ACL object.
-   */
   public Entity getEntity() {
     return entity;
-  }
-
-  /**
-   * Returns the role associated to the entity in this ACL object.
-   */
-  @Deprecated
-  public Role role() {
-    return getRole();
   }
 
   /**
@@ -462,26 +461,8 @@ public final class Acl implements Serializable {
   /**
    * Returns the ID of the ACL entry.
    */
-  @Deprecated
-  public String id() {
-    return getId();
-  }
-
-  /**
-   * Returns the ID of the ACL entry.
-   */
   public String getId() {
     return id;
-  }
-
-  /**
-   * Returns HTTP 1.1 Entity tag for the ACL entry.
-   *
-   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
-   */
-  @Deprecated
-  public String etag() {
-    return getEtag();
   }
 
   /**
@@ -508,17 +489,6 @@ public final class Acl implements Serializable {
    */
   public static Acl of(Entity entity, Role role) {
     return newBuilder(entity, role).build();
-  }
-
-  /**
-   * Returns a builder for {@code Acl} objects.
-   *
-   * @param entity the entity for this ACL object
-   * @param role the role to associate to the {@code entity} object
-   */
-  @Deprecated
-  public static Builder builder(Entity entity, Role role) {
-    return newBuilder(entity, role);
   }
 
   /**

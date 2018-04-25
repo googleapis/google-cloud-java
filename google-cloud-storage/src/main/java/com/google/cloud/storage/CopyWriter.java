@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ import static com.google.cloud.RetryHelper.runWithRetries;
 import com.google.cloud.Restorable;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
-import com.google.cloud.storage.spi.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpc.RewriteRequest;
-import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteRequest;
+import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -35,14 +35,14 @@ import java.util.concurrent.Callable;
  * Google Storage blob copy writer. A {@code CopyWriter} object allows to copy both blob's data and
  * information. To override source blob's information supply a {@code BlobInfo} to the
  * {@code CopyRequest} using either
- * {@link Storage.CopyRequest.Builder#target(BlobInfo, Storage.BlobTargetOption...)} or
- * {@link Storage.CopyRequest.Builder#target(BlobInfo, Iterable)}.
+ * {@link Storage.CopyRequest.Builder#setTarget(BlobInfo, Storage.BlobTargetOption...)} or
+ * {@link Storage.CopyRequest.Builder#setTarget(BlobInfo, Iterable)}.
  *
  * <p>This class holds the result of a copy request. If source and
  * destination blobs share the same location and storage class the copy is completed in one RPC call
  * otherwise one or more {@link #copyChunk} calls are necessary to complete the copy. In addition,
- * {@link CopyWriter#result()} can be used to automatically complete the copy and return information
- * on the newly created blob.
+ * {@link CopyWriter#getResult()} can be used to automatically complete the copy and return
+ * information on the newly created blob.
  *
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
  */
@@ -55,25 +55,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
   CopyWriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
     this.serviceOptions = serviceOptions;
     this.rewriteResponse = rewriteResponse;
-    this.storageRpc = serviceOptions.getRpc();
-  }
-
-  /**
-   * Returns the updated information for the written blob. Calling this method when {@code isDone()}
-   * is {@code false} will block until all pending chunks are copied.
-   *
-   * <p>This method has the same effect of doing:
-   * <pre> {@code
-   * while (!copyWriter.isDone()) {
-   *    copyWriter.copyChunk();
-   * }}
-   * </pre>
-   *
-   * @throws StorageException upon failure
-   */
-  @Deprecated
-  public Blob result() {
-    return getResult();
+    this.storageRpc = serviceOptions.getStorageRpcV1();
   }
 
   /**
@@ -99,14 +81,6 @@ public class CopyWriter implements Restorable<CopyWriter> {
   /**
    * Returns the size of the blob being copied.
    */
-  @Deprecated
-  public long blobSize() {
-    return getBlobSize();
-  }
-
-  /**
-   * Returns the size of the blob being copied.
-   */
   public long getBlobSize() {
     return rewriteResponse.blobSize;
   }
@@ -116,14 +90,6 @@ public class CopyWriter implements Restorable<CopyWriter> {
    */
   public boolean isDone() {
     return rewriteResponse.isDone;
-  }
-
-  /**
-   * Returns the number of bytes copied.
-   */
-  @Deprecated
-  public long totalBytesCopied() {
-    return getTotalBytesCopied();
   }
 
   /**
@@ -147,7 +113,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
           public RewriteResponse call() {
             return storageRpc.continueRewrite(rewriteResponse);
           }
-        }, serviceOptions.getRetryParams(), StorageImpl.EXCEPTION_HANDLER,
+        }, serviceOptions.getRetrySettings(), StorageImpl.EXCEPTION_HANDLER,
             serviceOptions.getClock());
       } catch (RetryHelper.RetryHelperException e) {
         throw StorageException.translateAndThrow(e);

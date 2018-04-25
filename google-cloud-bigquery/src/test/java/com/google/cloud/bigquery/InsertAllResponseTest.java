@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,13 +55,6 @@ public class InsertAllResponseTest {
     assertNull(INSERT_ALL_RESPONSE.getErrorsFor(2L));
   }
 
-  @Test
-  public void testErrorsForDeprecated() {
-    assertEquals(ERRORS_MAP, INSERT_ALL_RESPONSE.insertErrors());
-    assertEquals(ERRORS1, INSERT_ALL_RESPONSE.errorsFor(0L));
-    assertEquals(ERRORS2, INSERT_ALL_RESPONSE.errorsFor(1L));
-    assertNull(INSERT_ALL_RESPONSE.errorsFor(2L));
-  }
 
   @Test
   public void testHasErrors() {

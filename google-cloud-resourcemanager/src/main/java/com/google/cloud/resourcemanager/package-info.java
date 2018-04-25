@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,8 @@
  */
 
 /**
- * A client to Google Cloud Resource Manager.
+ * A client for Cloud Resource Manager - Centrally manage all your projects, IAM, and resource
+ * containers.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
  * creates a project if it does not exist. For the complete source code see

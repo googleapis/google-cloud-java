@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.api.core.ApiFunction;
+import com.google.cloud.StringEnumType;
+import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -35,22 +38,62 @@ public class JobStatus implements Serializable {
   /**
    * Possible states that a BigQuery Job can assume.
    */
-  public enum State {
+  public static final class State extends StringEnumValue {
+    private static final long serialVersionUID = 818920627219751204L;
+
+    private static final ApiFunction<String, State> CONSTRUCTOR =
+        new ApiFunction<String, State>() {
+          @Override
+          public State apply(String constant) {
+            return new State(constant);
+          }
+        };
+
+    private static final StringEnumType<State> type = new StringEnumType(
+        State.class,
+        CONSTRUCTOR);
+
     /**
      * The BigQuery Job is waiting to be executed.
      */
-    PENDING,
+    public static final State PENDING = type.createAndRegister("PENDING");
 
     /**
      * The BigQuery Job is being executed.
      */
-    RUNNING,
+    public static final State RUNNING = type.createAndRegister("RUNNING");
 
     /**
-     * The BigQuery Job has completed either succeeding or failing. If failed {@link #error()} will
-     * be non-null.
+     * The BigQuery Job has completed either succeeding or failing. If failed {@link #getError()}
+     * will be non-null.
      */
-    DONE
+    public static final State DONE = type.createAndRegister("DONE");
+
+    private State(String constant) {
+      super(constant);
+    }
+
+    /**
+     * Get the State for the given String constant, and throw an exception if the constant is
+     * not recognized.
+     */
+    public static State valueOfStrict(String constant) {
+      return type.valueOfStrict(constant);
+    }
+
+    /**
+     * Get the State for the given String constant, and allow unrecognized values.
+     */
+    public static State valueOf(String constant) {
+      return type.valueOf(constant);
+    }
+
+    /**
+     * Return the known values for State.
+     */
+    public static State[] values() {
+      return type.values();
+    }
   }
 
   private final State state;
@@ -69,36 +112,16 @@ public class JobStatus implements Serializable {
     this.executionErrors = executionErrors != null ? ImmutableList.copyOf(executionErrors) : null;
   }
 
-  /**
-   * Returns the state of the job. A {@link State#PENDING} job is waiting to be executed. A
-   * {@link State#RUNNING} is being executed. A {@link State#DONE} job has completed either
-   * succeeding or failing. If failed {@link #error()} will be non-null.
-   */
-  @Deprecated
-  public State state() {
-    return getState();
-  }
 
   /**
    * Returns the state of the job. A {@link State#PENDING} job is waiting to be executed. A
    * {@link State#RUNNING} is being executed. A {@link State#DONE} job has completed either
-   * succeeding or failing. If failed {@link #error()} will be non-null.
+   * succeeding or failing. If failed {@link #getError()} will be non-null.
    */
   public State getState() {
     return state;
   }
 
-  /**
-   * Returns the final error result of the job. If present, indicates that the job has completed
-   * and was unsuccessful.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
-   *     Troubleshooting Errors</a>
-   */
-  @Deprecated
-  public BigQueryError error() {
-    return getError();
-  }
 
   /**
    * Returns the final error result of the job. If present, indicates that the job has completed
@@ -111,17 +134,6 @@ public class JobStatus implements Serializable {
     return error;
   }
 
-  /**
-   * Returns all errors encountered during the running of the job. Errors here do not necessarily
-   * mean that the job has completed or was unsuccessful.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
-   *     Troubleshooting Errors</a>
-   */
-  @Deprecated
-  public List<BigQueryError> executionErrors() {
-    return getExecutionErrors();
-  }
 
   /**
    * Returns all errors encountered during the running of the job. Errors here do not necessarily

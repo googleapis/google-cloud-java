@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,13 +30,16 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 
+import com.google.cloud.storage.StorageException;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.ArgumentCaptor;
 
+import javax.net.ssl.SSLHandshakeException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
@@ -60,12 +63,13 @@ public class CloudStorageReadChannelTest {
   @Before
   public void before() throws IOException {
     when(metadata.getSize()).thenReturn(42L);
-    when(gcsStorage.get(file)).thenReturn(metadata);
-    when(gcsStorage.reader(eq(file))).thenReturn(gcsChannel);
+    when(metadata.getGeneration()).thenReturn(2L);
+    when(gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE))).thenReturn(metadata);
+    when(gcsStorage.reader(file, Storage.BlobSourceOption.generationMatch(2L))).thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);
-    chan = CloudStorageReadChannel.create(gcsStorage, file, 0);
-    verify(gcsStorage).get(eq(file));
-    verify(gcsStorage).reader(eq(file));
+    chan = CloudStorageReadChannel.create(gcsStorage, file, 0, 1);
+    verify(gcsStorage).get(eq(file), eq(Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE)));
+    verify(gcsStorage).reader(eq(file), eq(Storage.BlobSourceOption.generationMatch(2L)));
   }
 
   @Test
@@ -77,6 +81,42 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.position()).isEqualTo(1L);
     verify(gcsChannel).read(any(ByteBuffer.class));
     verify(gcsChannel, times(3)).isOpen();
+  }
+
+  @Test
+  public void testReadRetry() throws IOException {
+    ByteBuffer buffer = ByteBuffer.allocate(1);
+    when(gcsChannel.read(eq(buffer)))
+        .thenThrow(new StorageException(new IOException("outer", new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040"))))
+        .thenReturn(1);
+    assertThat(chan.position()).isEqualTo(0L);
+    assertThat(chan.read(buffer)).isEqualTo(1);
+    assertThat(chan.position()).isEqualTo(1L);
+    verify(gcsChannel, times(2)).read(any(ByteBuffer.class));
+  }
+
+  @Test
+  public void testReadRetrySSLHandshake() throws IOException {
+    ByteBuffer buffer = ByteBuffer.allocate(1);
+    when(gcsChannel.read(eq(buffer)))
+        .thenThrow(new StorageException(new IOException("something", new IOException("thing", new SSLHandshakeException("connection closed due to throttling")))))
+        .thenReturn(1);
+    assertThat(chan.position()).isEqualTo(0L);
+    assertThat(chan.read(buffer)).isEqualTo(1);
+    assertThat(chan.position()).isEqualTo(1L);
+    verify(gcsChannel, times(2)).read(any(ByteBuffer.class));
+  }
+
+  @Test
+  public void testReadRetryEventuallyGivesUp() throws IOException {
+    ByteBuffer buffer = ByteBuffer.allocate(1);
+    when(gcsChannel.read(eq(buffer)))
+        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenReturn(1);
+    assertThat(chan.position()).isEqualTo(0L);
+    thrown.expect(StorageException.class);
+    chan.read(buffer);
   }
 
   @Test
@@ -152,5 +192,26 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.size()).isEqualTo(42L);
     verify(gcsChannel).seek(1);
     verify(gcsChannel, times(5)).isOpen();
+  }
+
+  /*
+   * This test case was crafted in response to a bug in CloudStorageReadChannel in which the
+   * channel position (a long) was getting truncated to an int when seeking on the encapsulated
+   * ReadChannel in innerOpen(). This test case fails when the bad long -> int cast is present,
+   * and passes when it's removed.
+   */
+  @Test
+  public void testChannelPositionDoesNotGetTruncatedToInt() throws IOException {
+    // This position value will overflow to a negative value if a long -> int cast is attempted
+    long startPosition = 11918483280L;
+    ArgumentCaptor<Long> captor = ArgumentCaptor.forClass(Long.class);
+
+    // Invoke CloudStorageReadChannel.create() to trigger a call to the private
+    // CloudStorageReadChannel.innerOpen() method, which does a seek on our gcsChannel.
+    CloudStorageReadChannel.create(gcsStorage, file, startPosition, 1);
+
+    // Confirm that our position did not overflow during the seek in CloudStorageReadChannel.innerOpen()
+    verify(gcsChannel).seek(captor.capture());
+    assertThat(captor.getValue()).isEqualTo(startPosition);
   }
 }

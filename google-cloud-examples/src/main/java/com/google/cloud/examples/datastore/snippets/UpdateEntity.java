@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@
 
 package com.google.cloud.examples.datastore.snippets;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
@@ -42,7 +42,7 @@ public class UpdateEntity {
     if (entity != null) {
       System.out.println("Updating access_time for " + entity.getString("name"));
       entity = Entity.newBuilder(entity)
-          .set("access_time", DateTime.now())
+          .set("access_time", Timestamp.now())
           .build();
       datastore.update(entity);
     }

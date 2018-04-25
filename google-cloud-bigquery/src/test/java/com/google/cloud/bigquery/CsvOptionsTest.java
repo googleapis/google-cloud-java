@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,14 +39,6 @@ public class CsvOptionsTest {
       .setQuote(QUOTE)
       .setSkipLeadingRows(SKIP_LEADING_ROWS)
       .build();
-  private static final CsvOptions DEPRECATED_CSV_OPTIONS = CsvOptions.builder()
-      .allowJaggedRows(ALLOW_JAGGED_ROWS)
-      .allowQuotedNewLines(ALLOW_QUOTED_NEWLINE)
-      .encoding(ENCODING)
-      .fieldDelimiter(FIELD_DELIMITER)
-      .quote(QUOTE)
-      .skipLeadingRows(SKIP_LEADING_ROWS)
-      .build();
 
   @Test
   public void testToBuilder() {
@@ -76,16 +68,6 @@ public class CsvOptionsTest {
     assertEquals(SKIP_LEADING_ROWS, (long) CSV_OPTIONS.getSkipLeadingRows());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(FormatOptions.CSV, DEPRECATED_CSV_OPTIONS.type());
-    assertEquals(ALLOW_JAGGED_ROWS, DEPRECATED_CSV_OPTIONS.allowJaggedRows());
-    assertEquals(ALLOW_QUOTED_NEWLINE, DEPRECATED_CSV_OPTIONS.allowQuotedNewLines());
-    assertEquals(ENCODING.name(), DEPRECATED_CSV_OPTIONS.encoding());
-    assertEquals(FIELD_DELIMITER, DEPRECATED_CSV_OPTIONS.fieldDelimiter());
-    assertEquals(QUOTE, DEPRECATED_CSV_OPTIONS.quote());
-    assertEquals(SKIP_LEADING_ROWS, (long) DEPRECATED_CSV_OPTIONS.skipLeadingRows());
-  }
 
   @Test
   public void testToAndFromPb() {

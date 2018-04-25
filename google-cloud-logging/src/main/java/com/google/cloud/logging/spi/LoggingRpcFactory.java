@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,5 +23,5 @@ import com.google.cloud.spi.ServiceRpcFactory;
  * An interface for Logging RPC factory.
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
-public interface LoggingRpcFactory extends ServiceRpcFactory<LoggingRpc, LoggingOptions> {
+public interface LoggingRpcFactory extends ServiceRpcFactory<LoggingOptions> {
 }

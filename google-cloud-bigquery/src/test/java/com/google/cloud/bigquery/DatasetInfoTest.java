@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,13 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
+import com.google.common.collect.ImmutableMap;
 import java.util.List;
+import java.util.Map;
+import org.junit.Test;
 
 public class DatasetInfoTest {
 
@@ -33,6 +34,9 @@ public class DatasetInfoTest {
   private static final List<Acl> ACCESS_RULES_COMPLETE = ImmutableList.of(
       Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
       Acl.of(new Acl.View(TableId.of("project", "dataset", "table"))));
+  private static final Map<String, String> LABELS = ImmutableMap.of(
+      "example-label1", "example-value1",
+      "example-label2", "example-value2");
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
   private static final String DESCRIPTION = "description";
@@ -55,26 +59,11 @@ public class DatasetInfoTest {
       .setLastModified(LAST_MODIFIED)
       .setLocation(LOCATION)
       .setSelfLink(SELF_LINK)
+      .setLabels(LABELS)
       .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE = DATASET_INFO.toBuilder()
       .setDatasetId(DATASET_ID_COMPLETE)
       .setAcl(ACCESS_RULES_COMPLETE)
-      .build();
-  private static final DatasetInfo DEPRECATED_DATASET_INFO = DatasetInfo.builder(DATASET_ID)
-      .acl(ACCESS_RULES)
-      .setCreationTime(CREATION_TIME)
-      .defaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
-      .description(DESCRIPTION)
-      .setEtag(ETAG)
-      .friendlyName(FRIENDLY_NAME)
-      .setGeneratedId(GENERATED_ID)
-      .setLastModified(LAST_MODIFIED)
-      .location(LOCATION)
-      .setSelfLink(SELF_LINK)
-      .build();
-  private static final DatasetInfo DEPRECATED_DATASET_INFO_COMPLETE = DATASET_INFO.toBuilder()
-      .datasetId(DATASET_ID_COMPLETE)
-      .acl(ACCESS_RULES_COMPLETE)
       .build();
 
   @Test
@@ -122,34 +111,9 @@ public class DatasetInfoTest {
     assertEquals(LAST_MODIFIED, DATASET_INFO_COMPLETE.getLastModified());
     assertEquals(LOCATION, DATASET_INFO_COMPLETE.getLocation());
     assertEquals(SELF_LINK, DATASET_INFO_COMPLETE.getSelfLink());
+    assertEquals(LABELS, DATASET_INFO_COMPLETE.getLabels());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertNull(DEPRECATED_DATASET_INFO.datasetId().getProject());
-    assertEquals(DATASET_ID, DEPRECATED_DATASET_INFO.datasetId());
-    assertEquals(ACCESS_RULES, DEPRECATED_DATASET_INFO.acl());
-    assertEquals(CREATION_TIME, DEPRECATED_DATASET_INFO.creationTime());
-    assertEquals(DEFAULT_TABLE_EXPIRATION, DEPRECATED_DATASET_INFO.defaultTableLifetime());
-    assertEquals(DESCRIPTION, DEPRECATED_DATASET_INFO.description());
-    assertEquals(ETAG, DEPRECATED_DATASET_INFO.etag());
-    assertEquals(FRIENDLY_NAME, DEPRECATED_DATASET_INFO.friendlyName());
-    assertEquals(GENERATED_ID, DEPRECATED_DATASET_INFO.generatedId());
-    assertEquals(LAST_MODIFIED, DEPRECATED_DATASET_INFO.lastModified());
-    assertEquals(LOCATION, DEPRECATED_DATASET_INFO.location());
-    assertEquals(SELF_LINK, DEPRECATED_DATASET_INFO.selfLink());
-    assertEquals(DATASET_ID_COMPLETE, DEPRECATED_DATASET_INFO_COMPLETE.datasetId());
-    assertEquals(ACCESS_RULES_COMPLETE, DEPRECATED_DATASET_INFO_COMPLETE.acl());
-    assertEquals(CREATION_TIME, DEPRECATED_DATASET_INFO_COMPLETE.creationTime());
-    assertEquals(DEFAULT_TABLE_EXPIRATION, DEPRECATED_DATASET_INFO_COMPLETE.defaultTableLifetime());
-    assertEquals(DESCRIPTION, DEPRECATED_DATASET_INFO_COMPLETE.description());
-    assertEquals(ETAG, DEPRECATED_DATASET_INFO_COMPLETE.etag());
-    assertEquals(FRIENDLY_NAME, DEPRECATED_DATASET_INFO_COMPLETE.friendlyName());
-    assertEquals(GENERATED_ID, DEPRECATED_DATASET_INFO_COMPLETE.generatedId());
-    assertEquals(LAST_MODIFIED, DEPRECATED_DATASET_INFO_COMPLETE.lastModified());
-    assertEquals(LOCATION, DEPRECATED_DATASET_INFO_COMPLETE.location());
-    assertEquals(SELF_LINK, DEPRECATED_DATASET_INFO_COMPLETE.selfLink());
-  }
 
   @Test
   public void testOf() {
@@ -165,6 +129,8 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLastModified());
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
+    assertTrue(datasetInfo.getLabels().isEmpty());
+
     datasetInfo = DatasetInfo.of(DATASET_ID);
     assertEquals(DATASET_ID, datasetInfo.getDatasetId());
     assertNull(datasetInfo.getAcl());
@@ -177,6 +143,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLastModified());
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
+    assertTrue(datasetInfo.getLabels().isEmpty());
   }
 
   @Test
@@ -204,5 +171,6 @@ public class DatasetInfoTest {
     assertEquals(expected.getCreationTime(), value.getCreationTime());
     assertEquals(expected.getDefaultTableLifetime(), value.getDefaultTableLifetime());
     assertEquals(expected.getLastModified(), value.getLastModified());
+    assertEquals(expected.getLabels(), value.getLabels());
   }
 }

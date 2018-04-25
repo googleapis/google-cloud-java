@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.ByteArray;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.testing.EqualsTester;
 import org.junit.Rule;
@@ -38,6 +40,20 @@ public class StatementTest {
     assertThat(stmt.getSql()).isEqualTo(sql);
     assertThat(stmt.getParameters()).isEmpty();
     assertThat(stmt.toString()).isEqualTo(sql);
+    reserializeAndAssert(stmt);
+  }
+
+  @Test
+  public void serialization() throws Exception {
+    Statement stmt = Statement.newBuilder("SELECT * FROM table WHERE ")
+        .append("bool_field = @bool_field ").bind("bool_field").to(true)
+        .append("long_field = @long_field ").bind("long_field").to(1L)
+        .append("float_field = @float_field ").bind("float_field").to(1.)
+        .append("string_field = @string_field ").bind("string_field").to("abc")
+        .append("bytes_field = @bytes_field ").bind("bytes_field")
+        .to(ByteArray.fromBase64("abcd"))
+        .build();
+    reserializeAndAssert(stmt);
   }
 
   @Test
@@ -56,8 +72,11 @@ public class StatementTest {
     assertThat(stmt.hasBinding("id")).isTrue();
     assertThat(stmt.hasBinding("status")).isTrue();
     assertThat(stmt.getParameters())
-        .isEqualTo(ImmutableMap.of("id", Value.int64(1234), "status", Value.string("ACTIVE")));
-    assertThat(stmt.toString()).isEqualTo(expectedSql + " {id: 1234, status: ACTIVE}");
+        .containsExactlyEntriesIn(
+            ImmutableMap.of("id", Value.int64(1234), "status", Value.string("ACTIVE")));
+    assertThat(stmt.toString()).startsWith(expectedSql);
+    assertThat(stmt.toString()).contains("id: 1234");
+    assertThat(stmt.toString()).contains("status: ACTIVE");
   }
 
   @Test
@@ -94,6 +113,13 @@ public class StatementTest {
 
     expectedException.expect(IllegalStateException.class);
     binder.to("xyz");
+  }
+
+  @Test
+  public void bindCommitTimestampFails() {
+    ValueBinder<Statement.Builder> binder = Statement.newBuilder("SELECT @v").bind("v");
+    expectedException.expect(IllegalArgumentException.class);
+    binder.to(Value.COMMIT_TIMESTAMP);
   }
 
   @Test

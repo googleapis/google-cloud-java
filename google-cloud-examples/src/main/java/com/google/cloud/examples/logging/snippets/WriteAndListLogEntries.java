@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 package com.google.cloud.examples.logging.snippets;
 
 import com.google.cloud.MonitoredResource;
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.EntryListOption;
@@ -25,7 +25,6 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Payload.StringPayload;
 
 import java.util.Collections;
-import java.util.Iterator;
 
 /**
  * A snippet for Stackdriver Logging showing how to write a log entry. The snippet also shows how to
@@ -53,9 +52,8 @@ public class WriteAndListLogEntries {
       // List log entries
       Page<LogEntry> entries = logging.listLogEntries(
           EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
-      Iterator<LogEntry> entryIterator = entries.iterateAll();
-      while (entryIterator.hasNext()) {
-        System.out.println(entryIterator.next());
+      for (LogEntry logEntry : entries.iterateAll()) {
+        System.out.println(logEntry);
       }
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,21 +52,6 @@ public class SinkInfoTest {
       .setFilter(FILTER)
       .setVersionFormat(VERSION)
       .build();
-  private static final SinkInfo DEPRECATED_BUCKET_SINK_INFO =
-      SinkInfo.builder(NAME, BUCKET_DESTINATION)
-          .filter(FILTER)
-          .versionFormat(VERSION)
-          .build();
-  private static final SinkInfo DEPRECATED_DATASET_SINK_INFO =
-      SinkInfo.builder(NAME, DATASET_DESTINATION)
-          .filter(FILTER)
-          .versionFormat(VERSION)
-          .build();
-  private static final SinkInfo DEPRECATED_TOPIC_SINK_INFO =
-      SinkInfo.builder(NAME, TOPIC_DESTINATION)
-          .filter(FILTER)
-          .versionFormat(VERSION)
-          .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -77,11 +62,6 @@ public class SinkInfoTest {
     assertEquals("bucket", BUCKET_DESTINATION.getBucket());
   }
 
-  @Test
-  public void testOfBucketDestinationDeprecated() {
-    assertEquals(Destination.Type.BUCKET, BUCKET_DESTINATION.type());
-    assertEquals("bucket", BUCKET_DESTINATION.bucket());
-  }
 
   @Test
   public void testOfDatasetDestination() {
@@ -93,15 +73,6 @@ public class SinkInfoTest {
     assertEquals("dataset", datasetDestination.getDataset());
   }
 
-  @Test
-  public void testOfDatasetDestinationDeprecated() {
-    assertEquals(Destination.Type.DATASET, DATASET_DESTINATION.type());
-    assertEquals("project", DATASET_DESTINATION.project());
-    assertEquals("dataset", DATASET_DESTINATION.dataset());
-    DatasetDestination datasetDestination = DatasetDestination.of("dataset");
-    assertNull(datasetDestination.project());
-    assertEquals("dataset", datasetDestination.dataset());
-  }
 
   @Test
   public void testOfTopicDestination() {
@@ -113,15 +84,6 @@ public class SinkInfoTest {
     assertEquals("topic", topicDestination.getTopic());
   }
 
-  @Test
-  public void testOfTopicDestinationDeprecated() {
-    assertEquals(Destination.Type.TOPIC, TOPIC_DESTINATION.type());
-    assertEquals("project", TOPIC_DESTINATION.project());
-    assertEquals("topic", TOPIC_DESTINATION.topic());
-    TopicDestination topicDestination = TopicDestination.of("topic");
-    assertNull(topicDestination.project());
-    assertEquals("topic", topicDestination.topic());
-  }
 
   @Test
   public void testToAndFromPbDestination() {
@@ -172,31 +134,6 @@ public class SinkInfoTest {
     assertEquals(VERSION, TOPIC_SINK_INFO.getVersionFormat());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(NAME, DEPRECATED_BUCKET_SINK_INFO.name());
-    assertEquals(BUCKET_DESTINATION, DEPRECATED_BUCKET_SINK_INFO.destination());
-    assertEquals(FILTER, DEPRECATED_BUCKET_SINK_INFO.filter());
-    assertEquals(VERSION, DEPRECATED_BUCKET_SINK_INFO.versionFormat());
-    assertEquals(NAME, DEPRECATED_DATASET_SINK_INFO.name());
-    assertEquals(DATASET_DESTINATION, DEPRECATED_DATASET_SINK_INFO.destination());
-    assertEquals(FILTER, DEPRECATED_DATASET_SINK_INFO.filter());
-    assertEquals(VERSION, DEPRECATED_DATASET_SINK_INFO.versionFormat());
-    assertEquals(NAME, DEPRECATED_TOPIC_SINK_INFO.name());
-    assertEquals(TOPIC_DESTINATION, DEPRECATED_TOPIC_SINK_INFO.destination());
-    assertEquals(FILTER, DEPRECATED_TOPIC_SINK_INFO.filter());
-    assertEquals(VERSION, DEPRECATED_TOPIC_SINK_INFO.versionFormat());
-    SinkInfo updatedSinkInfo = DEPRECATED_BUCKET_SINK_INFO.toBuilder()
-        .destination(TOPIC_DESTINATION)
-        .name("newName")
-        .filter("logName=projects/my-projectid/logs/syslog")
-        .versionFormat(VersionFormat.V2)
-        .build();
-    assertEquals("newName", updatedSinkInfo.name());
-    assertEquals(TOPIC_DESTINATION, updatedSinkInfo.destination());
-    assertEquals("logName=projects/my-projectid/logs/syslog", updatedSinkInfo.filter());
-    assertEquals(VersionFormat.V2, updatedSinkInfo.versionFormat());
-  }
 
   @Test
   public void testToBuilder() {

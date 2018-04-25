@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
-import com.google.cloud.storage.spi.RpcBatch;
-import com.google.cloud.storage.spi.StorageRpc;
+import com.google.cloud.storage.spi.v1.RpcBatch;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.annotations.VisibleForTesting;
 
 import java.util.Map;
@@ -60,7 +60,7 @@ public class StorageBatch {
 
   StorageBatch(StorageOptions options) {
     this.options = options;
-    this.storageRpc = options.getRpc();
+    this.storageRpc = options.getStorageRpcV1();
     this.batch = storageRpc.createBatch();
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,14 @@
 package com.google.cloud.translate;
 
 import com.google.cloud.Service;
-import com.google.cloud.translate.spi.TranslateRpc;
+import com.google.cloud.translate.spi.v2.TranslateRpc;
 
 import java.util.List;
 
 /**
- * An interface for Google Translate.
+ * An interface for Google Translation.
  *
- * @see <a href="https://cloud.google.com/translate/docs">Google Translate</a>
+ * @see <a href="https://cloud.google.com/translate/docs">Google Translation</a>
  */
 public interface Translate extends Service<TranslateOptions> {
 
@@ -42,7 +42,8 @@ public interface Translate extends Service<TranslateOptions> {
     /**
      * Returns an option for setting the target language. If this option is not provided, the value
      * returned by {@link TranslateOptions#getTargetLanguage()} is used. When provided, the returned
-     * {@link Language#name()} will be in the language specified by the {@code targetLanguage} code.
+     * {@link Language#getName()} will be in the language specified by the {@code targetLanguage}
+     * code.
      *
      * @param targetLanguage the target language code
      */
@@ -63,7 +64,7 @@ public interface Translate extends Service<TranslateOptions> {
     }
 
     /**
-     * Returns an option for setting the source language. If not provided, Google Translate will try
+     * Returns an option for setting the source language. If not provided, Google Translation will try
      * to detect the language of the text to translate.
      *
      * @param sourceLanguage the source language code
@@ -84,9 +85,9 @@ public interface Translate extends Service<TranslateOptions> {
 
     /**
      * Sets the language translation model. You can use this parameter to take advantage of Neural
-     * Machine Translation. Possible values are {@code base} and {@code nmt}. Google Translate could
-     * use a different model to translate your text, use {@link Translation#getModel()} to know
-     * which model was used for translation. Please notice that you must be whitelisted to use this
+     * Machine Translation. Possible values are {@code base} and {@code nmt}. Google Translation could
+     * use a different model to translate your text: use {@link Translation#getModel()} to know
+     * which model was used for translation. Please note that you must be whitelisted to use this
      * option, otherwise translation will fail.
      *
      * @param model the language translation model
@@ -94,22 +95,32 @@ public interface Translate extends Service<TranslateOptions> {
     public static TranslateOption model(String model) {
       return new TranslateOption(TranslateRpc.Option.MODEL, model);
     }
+
+    /**
+     * Sets the format of the source text, in either HTML (default) or plain-text.
+     * A value of {@code html} indicates HTML and a value of {@code text} indicates plain-text.
+     *
+     * @param format the format of the source text
+     */
+    public static TranslateOption format(String format) {
+      return new TranslateOption(TranslateRpc.Option.FORMAT, format);
+    }
   }
 
   /**
-   * Returns the list of languages supported by Google Translate. If
-   * {@link LanguageListOption#targetLanguage(String)} is provided, {@link Language#getName()}
-   * values are localized according to the provided target language. If no such option is passed,
-   * {@link Language#getName()} values are localized according to
+   * Returns the list of languages supported by Google Translation. If an option from
+   * {@link LanguageListOption#targetLanguage(String)} is provided, the value of
+   * {@link Language#getName()} is localized according to the provided target language. If no such
+   * option is passed, the value of {@link Language#getName()} is localized according to
    * {@link TranslateOptions#getTargetLanguage()}.
    *
    * <p>Example of listing supported languages, localized according to
-   * {@link TranslateOptions#getTargetLanguage()}.
+   * {@link TranslateOptions#getTargetLanguage()}:
    * <pre> {@code
    * List<Language> languages = translate.listSupportedLanguages();
    * }</pre>
    *
-   * <p>Example of listing supported languages, localized according to a provided language.
+   * <p>Example of listing supported languages, localized according to a provided language:
    * <pre> {@code
    * List<Language> languages = translate.listSupportedLanguages(
    *     LanguageListOption.targetLanguage("es"));
@@ -121,7 +132,7 @@ public interface Translate extends Service<TranslateOptions> {
   /**
    * Detects the language of the provided texts.
    *
-   * <p>Example of detecting the language of some texts.
+   * <p>Example of detecting the language of some texts:
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("Hello, World!");
@@ -131,21 +142,21 @@ public interface Translate extends Service<TranslateOptions> {
    *
    * @param texts the texts for which language should be detected
    * @return a list of objects containing information on the language detection, one for each
-   *     provided text, in order.
+   *     provided text, in order
    */
   List<Detection> detect(List<String> texts);
 
   /**
    * Detects the language of the provided texts.
    *
-   * <p>Example of detecting the language of some texts.
+   * <p>Example of detecting the language of some texts:
    * <pre> {@code
    * List<Detection> detections = translate.detect("Hello, World!", "¡Hola Mundo!");
    * }</pre>
    *
    * @param texts the texts for which language should be detected
    * @return a list of objects containing information on the language detection, one for each
-   *     provided text, in order.
+   *     provided text, in order
    */
   List<Detection> detect(String... texts);
 
@@ -153,7 +164,7 @@ public interface Translate extends Service<TranslateOptions> {
    * Detects the language of the provided text. Returns an object containing information on the
    * language detection.
    *
-   * <p>Example of detecting the language of a text.
+   * <p>Example of detecting the language of a text:
    * <pre> {@code
    * Detection detection = translate.detect("Hello, World!");
    * }</pre>
@@ -164,7 +175,7 @@ public interface Translate extends Service<TranslateOptions> {
   /**
    * Translates the provided texts.
    *
-   * <p>Example of translating some texts.
+   * <p>Example of translating some texts:
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("Hello, World!");
@@ -172,7 +183,7 @@ public interface Translate extends Service<TranslateOptions> {
    * List<Translation> translations = translate.translate(texts);
    * }</pre>
    *
-   * <p>Example of translating some texts, specifying source and target language.
+   * <p>Example of translating some texts, specifying source and target language:
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("¡Hola Mundo!");
@@ -182,7 +193,7 @@ public interface Translate extends Service<TranslateOptions> {
    *
    * @param texts the texts to translate
    * @return a list of objects containing information on the language translation, one for each
-   *     provided text, in order.
+   *     provided text, in order
    * @throws TranslateException upon failure or if {@link TranslateOption#model(String)} is used by
    *     a non-whitelisted user
    */
@@ -191,12 +202,12 @@ public interface Translate extends Service<TranslateOptions> {
   /**
    * Translates the provided texts.
    *
-   * <p>Example of translating a text.
+   * <p>Example of translating a text:
    * <pre> {@code
    * Translation translation = translate.translate("¡Hola Mundo!");
    * }</pre>
    *
-   * <p>Example of translating a text, specifying source and target language.
+   * <p>Example of translating a text, specifying source and target language:
    * <pre> {@code
    * Translation translation = translate.translate("¡Hola Mundo!",
    *     TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));

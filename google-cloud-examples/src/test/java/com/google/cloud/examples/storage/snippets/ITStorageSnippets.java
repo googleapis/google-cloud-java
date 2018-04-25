@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -33,6 +34,7 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.Bucket.BlobTargetOption;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
@@ -50,6 +52,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -64,6 +68,7 @@ public class ITStorageSnippets {
 
   private static final Logger log = Logger.getLogger(ITStorageSnippets.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
+  private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
   private static final String USER_EMAIL = "google-cloud-java-tests@"
       + "java-docs-samples-tests.iam.gserviceaccount.com";
 
@@ -124,12 +129,12 @@ public class ITStorageSnippets {
     Blob copiedBlob = storageSnippets.copyBlob(BUCKET, blobName, "directory/copy-blob");
     assertNotNull(copiedBlob);
     Page<Blob> blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory/");
-    while (Iterators.size(blobs.iterateAll()) < 2) {
+    while (Iterators.size(blobs.iterateAll().iterator()) < 2) {
       Thread.sleep(500);
       blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory/");
     }
     Set<String> blobNames = new HashSet<>();
-    Iterator<Blob> blobIterator = blobs.iterateAll();
+    Iterator<Blob> blobIterator = blobs.iterateAll().iterator();
     while (blobIterator.hasNext()) {
       blobNames.add(blobIterator.next().getName());
     }
@@ -209,11 +214,11 @@ public class ITStorageSnippets {
   @Test
   public void testListBucketsWithSizeAndPrefix() throws InterruptedException {
     Page<Bucket> buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
-    while (Iterators.size(buckets.iterateAll()) < 1) {
+    while (Iterators.size(buckets.iterateAll().iterator()) < 1) {
       Thread.sleep(500);
       buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
     }
-    Iterator<Bucket> bucketIterator = buckets.iterateAll();
+    Iterator<Bucket> bucketIterator = buckets.iterateAll().iterator();
     while (bucketIterator.hasNext()) {
       assertTrue(bucketIterator.next().getName().startsWith(BUCKET));
     }
@@ -398,5 +403,30 @@ public class ITStorageSnippets {
     } catch (StorageException ex) {
       // expected
     }
+  }
+
+  @Test
+  public void testAuthListBuckets() {
+    Page<Bucket> bucket = storageSnippets.authListBuckets();
+    assertNotNull(bucket);
+  }
+
+  @Test
+  public void testRequesterPays() throws Exception {
+    Bucket bucket = storageSnippets.enableRequesterPays(BUCKET);
+    assertTrue(bucket.requesterPays());
+    bucket = storageSnippets.getRequesterPaysStatus(BUCKET);
+    assertTrue(bucket.requesterPays());
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String blobName = "test-create-empty-blob-requester-pays";
+    Blob remoteBlob = bucket.create(blobName, BLOB_BYTE_CONTENT,
+        BlobTargetOption.userProject(projectId));
+    assertNotNull(remoteBlob);
+    storageSnippets.downloadFileUsingRequesterPays(projectId, BUCKET, blobName,
+        Paths.get(blobName));
+    byte[] readBytes = Files.readAllBytes(Paths.get(blobName));
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    bucket = storageSnippets.disableRequesterPays(BUCKET);
+    assertFalse(bucket.requesterPays());
   }
 }

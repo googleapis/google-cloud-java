@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,16 +86,6 @@ public class QueryStage implements Serializable {
       this.substeps = substeps;
     }
 
-    /**
-     * Returns a machine-readable name for the operation.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation#steps_metadata">Steps
-     *     Metadata</a>
-     */
-    @Deprecated
-    public String name() {
-      return getName();
-    }
 
     /**
      * Returns a machine-readable name for the operation.
@@ -107,13 +97,6 @@ public class QueryStage implements Serializable {
       return name;
     }
 
-    /**
-     * Returns a list of human-readable stage descriptions.
-     */
-    @Deprecated
-    public List<String> substeps() {
-      return getSubsteps();
-    }
 
     /**
      * Returns a list of human-readable stage descriptions.
@@ -272,14 +255,6 @@ public class QueryStage implements Serializable {
     writeRatioMax = builder.writeRatioMax;
   }
 
-  /**
-   * Returns the time the average worker spent CPU-bound, divided by the longest time spent by any
-   * worker in any segment.
-   */
-  @Deprecated
-  public double computeRatioAvg() {
-    return getComputeRatioAvg();
-  }
 
   /**
    * Returns the time the average worker spent CPU-bound, divided by the longest time spent by any
@@ -289,14 +264,6 @@ public class QueryStage implements Serializable {
     return computeRatioAvg;
   }
 
-  /**
-   * Returns the time the slowest worker spent CPU-bound, divided by the longest time spent by any
-   * worker in any segment.
-   */
-  @Deprecated
-  public double computeRatioMax() {
-    return getComputeRatioMax();
-  }
 
   /**
    * Returns the time the slowest worker spent CPU-bound, divided by the longest time spent by any
@@ -306,13 +273,6 @@ public class QueryStage implements Serializable {
     return computeRatioMax;
   }
 
-  /**
-   * Returns a unique, server-generated ID for the stage within its plan.
-   */
-  @Deprecated
-  public long generatedId() {
-    return getGeneratedId();
-  }
 
   /**
    * Returns a unique, server-generated ID for the stage within its plan.
@@ -321,13 +281,6 @@ public class QueryStage implements Serializable {
     return generatedId;
   }
 
-  /**
-   * Returns a human-readable name for the stage.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
 
   /**
    * Returns a human-readable name for the stage.
@@ -336,14 +289,6 @@ public class QueryStage implements Serializable {
     return name;
   }
 
-  /**
-   * Returns the time the average worker spent reading input data, divided by the longest time spent
-   * by any worker in any segment.
-   */
-  @Deprecated
-  public double readRatioAvg() {
-    return getReadRatioAvg();
-  }
 
   /**
    * Returns the time the average worker spent reading input data, divided by the longest time spent
@@ -353,14 +298,6 @@ public class QueryStage implements Serializable {
     return readRatioAvg;
   }
 
-  /**
-   * Returns the time the slowest worker spent reading input data, divided by the longest time spent
-   * by any worker in any segment.
-   */
-  @Deprecated
-  public double readRatioMax() {
-    return getReadRatioMax();
-  }
 
   /**
    * Returns the time the slowest worker spent reading input data, divided by the longest time spent
@@ -370,13 +307,6 @@ public class QueryStage implements Serializable {
     return readRatioMax;
   }
 
-  /**
-   * Returns the number of rows (top-level records) read by the stage.
-   */
-  @Deprecated
-  public long recordsRead() {
-    return getRecordsRead();
-  }
 
   /**
    * Returns the number of rows (top-level records) read by the stage.
@@ -385,13 +315,6 @@ public class QueryStage implements Serializable {
     return recordsRead;
   }
 
-  /**
-   * Returns the number of rows (top-level records) written by the stage.
-   */
-  @Deprecated
-  public long recordsWritten() {
-    return getRecordsWritten();
-  }
 
   /**
    * Returns the number of rows (top-level records) written by the stage.
@@ -400,13 +323,6 @@ public class QueryStage implements Serializable {
     return recordsWritten;
   }
 
-  /**
-   * Returns the list of steps within the stage in dependency order (approximately chronological).
-   */
-  @Deprecated
-  public List<QueryStep> steps() {
-    return getSteps();
-  }
 
   /**
    * Returns the list of steps within the stage in dependency order (approximately chronological).
@@ -415,14 +331,6 @@ public class QueryStage implements Serializable {
     return steps;
   }
 
-  /**
-   * Returns the time the average worker spent waiting to be scheduled, divided by the longest time
-   * spent by any worker in any segment.
-   */
-  @Deprecated
-  public double waitRatioAvg() {
-    return getWaitRatioAvg();
-  }
 
   /**
    * Returns the time the average worker spent waiting to be scheduled, divided by the longest time
@@ -432,14 +340,6 @@ public class QueryStage implements Serializable {
     return waitRatioAvg;
   }
 
-  /**
-   * Returns the time the slowest worker spent waiting to be scheduled, divided by the longest time
-   * spent by any worker in any segment.
-   */
-  @Deprecated
-  public double waitRatioMax() {
-    return getWaitRatioMax();
-  }
 
   /**
    * Returns the time the slowest worker spent waiting to be scheduled, divided by the longest time
@@ -449,14 +349,6 @@ public class QueryStage implements Serializable {
     return waitRatioMax;
   }
 
-  /**
-   * Returns the time the average worker spent writing output data, divided by the longest time
-   * spent by any worker in any segment.
-   */
-  @Deprecated
-  public double writeRatioAvg() {
-    return getWriteRatioAvg();
-  }
 
   /**
    * Returns the time the average worker spent writing output data, divided by the longest time
@@ -466,14 +358,6 @@ public class QueryStage implements Serializable {
     return writeRatioAvg;
   }
 
-  /**
-   * Returns the time the slowest worker spent writing output data, divided by the longest time
-   * spent by any worker in any segment.
-   */
-  @Deprecated
-  public double writeRatioMax() {
-    return getWriteRatioMax();
-  }
 
   /**
    * Returns the time the slowest worker spent writing output data, divided by the longest time

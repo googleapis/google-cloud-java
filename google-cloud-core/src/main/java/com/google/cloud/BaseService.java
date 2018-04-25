@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.ExceptionHandler.Interceptor;
 
 /**
@@ -23,7 +24,7 @@ import com.google.cloud.ExceptionHandler.Interceptor;
  *
  * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
-public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT>>
+public abstract class BaseService<OptionsT extends ServiceOptions<?, OptionsT>>
     implements Service<OptionsT> {
 
   public static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
@@ -39,7 +40,7 @@ public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT
     public RetryResult beforeEval(Exception exception) {
       if (exception instanceof BaseServiceException) {
         boolean retriable = ((BaseServiceException) exception).isRetryable();
-        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
+        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.CONTINUE_EVALUATION;
       }
       return Interceptor.RetryResult.CONTINUE_EVALUATION;
     }
@@ -51,15 +52,11 @@ public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT
 
   private final OptionsT options;
 
+  @InternalApi("This class should only be extended within google-cloud-java")
   protected BaseService(OptionsT options) {
     this.options = options;
   }
 
-  @Override
-  @Deprecated
-  public OptionsT options() {
-    return options;
-  }
 
   @Override
   public OptionsT getOptions() {

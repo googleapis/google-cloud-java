@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,17 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
-
-import org.junit.Test;
-
+import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.junit.Test;
 
 public class JobStatisticsTest {
 
@@ -90,6 +89,7 @@ public class JobStatisticsTest {
       .setWriteRatioMax(10.10)
       .build();
   private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);
+  private static final Schema SCHEMA = Schema.of(Field.of("column", LegacySQLTypeName.DATETIME));
   private static final QueryStatistics QUERY_STATISTICS = QueryStatistics.newBuilder()
       .setCreationTimestamp(CREATION_TIME)
       .setEndTime(END_TIME)
@@ -99,6 +99,7 @@ public class JobStatisticsTest {
       .setTotalBytesBilled(TOTAL_BYTES_BILLED)
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setQueryPlan(QUERY_PLAN)
+      .setSchema(SCHEMA)
       .build();
   private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE = QueryStatistics.newBuilder()
       .setCreationTimestamp(CREATION_TIME)
@@ -109,11 +110,7 @@ public class JobStatisticsTest {
       .build();
 
   @Test
-  public void testBuilderDeprecated() {
-    assertEquals(CREATION_TIME, COPY_STATISTICS.getCreationTime());
-    assertEquals(START_TIME, COPY_STATISTICS.getStartTime());
-    assertEquals(END_TIME, COPY_STATISTICS.getEndTime());
-
+  public void testBuilder() {
     assertEquals(CREATION_TIME, EXTRACT_STATISTICS.getCreationTime());
     assertEquals(START_TIME, EXTRACT_STATISTICS.getStartTime());
     assertEquals(END_TIME, EXTRACT_STATISTICS.getEndTime());
@@ -156,64 +153,48 @@ public class JobStatisticsTest {
   }
 
   @Test
-  public void testBuilder() {
-    assertEquals(CREATION_TIME, COPY_STATISTICS.creationTime());
-    assertEquals(START_TIME, COPY_STATISTICS.startTime());
-    assertEquals(END_TIME, COPY_STATISTICS.endTime());
-
-    assertEquals(CREATION_TIME, EXTRACT_STATISTICS.creationTime());
-    assertEquals(START_TIME, EXTRACT_STATISTICS.startTime());
-    assertEquals(END_TIME, EXTRACT_STATISTICS.endTime());
-    assertEquals(FILE_COUNT, EXTRACT_STATISTICS.destinationUriFileCounts());
-
-    assertEquals(CREATION_TIME, LOAD_STATISTICS.creationTime());
-    assertEquals(START_TIME, LOAD_STATISTICS.startTime());
-    assertEquals(END_TIME, LOAD_STATISTICS.endTime());
-    assertEquals(INPUT_BYTES, LOAD_STATISTICS.inputBytes());
-    assertEquals(INPUT_FILES, LOAD_STATISTICS.inputFiles());
-    assertEquals(OUTPUT_BYTES, LOAD_STATISTICS.outputBytes());
-    assertEquals(OUTPUT_ROWS, LOAD_STATISTICS.outputRows());
-
-    assertEquals(CREATION_TIME, QUERY_STATISTICS.creationTime());
-    assertEquals(START_TIME, QUERY_STATISTICS.startTime());
-    assertEquals(END_TIME, QUERY_STATISTICS.endTime());
-    assertEquals(BILLING_TIER, QUERY_STATISTICS.billingTier());
-    assertEquals(CACHE_HIT, QUERY_STATISTICS.cacheHit());
-    assertEquals(TOTAL_BYTES_BILLED, QUERY_STATISTICS.totalBytesBilled());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.totalBytesProcessed());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.totalBytesProcessed());
-    assertEquals(QUERY_PLAN, QUERY_STATISTICS.queryPlan());
-
-    assertEquals(CREATION_TIME, LOAD_STATISTICS_INCOMPLETE.creationTime());
-    assertEquals(START_TIME, LOAD_STATISTICS_INCOMPLETE.startTime());
-    assertEquals(END_TIME, LOAD_STATISTICS_INCOMPLETE.endTime());
-    assertEquals(INPUT_BYTES, LOAD_STATISTICS_INCOMPLETE.inputBytes());
-    assertEquals(INPUT_FILES, LOAD_STATISTICS_INCOMPLETE.inputFiles());
-    assertEquals(null, LOAD_STATISTICS_INCOMPLETE.outputBytes());
-    assertEquals(null, LOAD_STATISTICS_INCOMPLETE.outputRows());
-
-    assertEquals(CREATION_TIME, QUERY_STATISTICS_INCOMPLETE.creationTime());
-    assertEquals(START_TIME, QUERY_STATISTICS_INCOMPLETE.startTime());
-    assertEquals(END_TIME, QUERY_STATISTICS_INCOMPLETE.endTime());
-    assertEquals(BILLING_TIER, QUERY_STATISTICS_INCOMPLETE.billingTier());
-    assertEquals(CACHE_HIT, QUERY_STATISTICS_INCOMPLETE.cacheHit());
-    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.totalBytesBilled());
-    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.totalBytesProcessed());
-    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.queryPlan());
-  }
-
-  @Test
   public void testToPbAndFromPb() {
     compareExtractStatistics(EXTRACT_STATISTICS,
         ExtractStatistics.fromPb(EXTRACT_STATISTICS.toPb()));
     compareLoadStatistics(LOAD_STATISTICS, LoadStatistics.fromPb(LOAD_STATISTICS.toPb()));
     compareQueryStatistics(QUERY_STATISTICS, QueryStatistics.fromPb(QUERY_STATISTICS.toPb()));
-    compareStatistics(COPY_STATISTICS, JobStatistics.fromPb(COPY_STATISTICS.toPb()));
+    compareStatistics(COPY_STATISTICS, CopyStatistics.fromPb(COPY_STATISTICS.toPb()));
 
-    compareLoadStatistics(LOAD_STATISTICS_INCOMPLETE,
-        LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
-    compareQueryStatistics(QUERY_STATISTICS_INCOMPLETE,
-        QueryStatistics.fromPb(QUERY_STATISTICS_INCOMPLETE.toPb()));
+    compareLoadStatistics(
+        LOAD_STATISTICS_INCOMPLETE, LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
+    compareQueryStatistics(
+        QUERY_STATISTICS_INCOMPLETE, QueryStatistics.fromPb(QUERY_STATISTICS_INCOMPLETE.toPb()));
+  }
+
+  @Test
+  public void testIncomplete() {
+    // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/2357
+    com.google.api.services.bigquery.model.Job job =
+        new com.google.api.services.bigquery.model.Job()
+            .setStatistics(
+                new com.google.api.services.bigquery.model.JobStatistics()
+                    .setCreationTime(1234L)
+                    .setStartTime(5678L));
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setCopy(new com.google.api.services.bigquery.model.JobConfigurationTableCopy()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(CopyStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setLoad(new com.google.api.services.bigquery.model.JobConfigurationLoad()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(LoadStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setExtract(new com.google.api.services.bigquery.model.JobConfigurationExtract()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(ExtractStatistics.class);
+
+    job.setConfiguration(
+        new com.google.api.services.bigquery.model.JobConfiguration()
+            .setQuery(new com.google.api.services.bigquery.model.JobConfigurationQuery()));
+    assertThat(JobStatistics.fromPb(job)).isInstanceOf(QueryStatistics.class);
   }
 
   private void compareExtractStatistics(ExtractStatistics expected, ExtractStatistics value) {
@@ -239,6 +220,7 @@ public class JobStatisticsTest {
     assertEquals(expected.getTotalBytesBilled(), value.getTotalBytesBilled());
     assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());
     assertEquals(expected.getQueryPlan(), value.getQueryPlan());
+    assertEquals(expected.getSchema(), value.getSchema());
   }
 
   private void compareStatistics(JobStatistics expected, JobStatistics value) {

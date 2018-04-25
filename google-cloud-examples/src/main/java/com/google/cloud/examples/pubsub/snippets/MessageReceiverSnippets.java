@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,18 @@
 
 /*
  * EDITING INSTRUCTIONS
- * This file is referenced in Subscriber's javadoc. Any change to this file should be reflected in
- * PubSub's javadoc.
+ * This file is referenced in MessageReceiver's javadoc.
+ * Any change to this file should be reflected in MessageReceiver's javadoc.
  */
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.spi.v1.AckReply;
-import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver;
+import com.google.cloud.pubsub.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.pubsub.v1.PubsubMessage;
 import java.util.concurrent.BlockingQueue;
+
+/** This class contains snippets for the {@link MessageReceiver} interface. */
 
 public class MessageReceiverSnippets {
   private final BlockingQueue<PubsubMessage> blockingQueue;
@@ -45,17 +46,15 @@ public class MessageReceiverSnippets {
    */
   // [TARGET receiveMessage(PubsubMessage, AckReplyConsumer)]
   public MessageReceiver messageReceiver() {
-    // [START receiveMessage]
     MessageReceiver receiver = new MessageReceiver() {
       public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
         if (blockingQueue.offer(message)) {
-          consumer.accept(AckReply.ACK, null);
+          consumer.ack();
         } else {
-          consumer.accept(AckReply.NACK, null);
+          consumer.nack();
         }
       }
     };
-    // [END receiveMessage]
     return receiver;
   }
 }

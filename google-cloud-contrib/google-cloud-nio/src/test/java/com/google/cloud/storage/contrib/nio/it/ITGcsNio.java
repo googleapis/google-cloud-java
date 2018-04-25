@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,10 +44,13 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.FileSystem;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
 import java.nio.file.StandardOpenOption;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -359,6 +362,68 @@ public class ITGcsNio {
       }
       assertThat(got).containsExactlyElementsIn(goodPaths);
     }
+  }
+
+
+  @Test
+  public void testDeleteRecursive() throws IOException {
+    try (FileSystem fs = getTestBucket()) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("Racine"));
+      paths.add(fs.getPath("playwrights/Moliere"));
+      paths.add(fs.getPath("playwrights/French/Corneille"));
+      for (Path path : paths) {
+        Files.write(path, FILE_CONTENTS, UTF_8);
+      }
+      deleteRecursive(fs.getPath("playwrights/"));
+      assertThat(Files.exists(fs.getPath("playwrights/Moliere"))).isFalse();
+      assertThat(Files.exists(fs.getPath("playwrights/French/Corneille"))).isFalse();
+      assertThat(Files.exists(fs.getPath("Racine"))).isTrue();
+      Files.deleteIfExists(fs.getPath("Racine"));
+      assertThat(Files.exists(fs.getPath("Racine"))).isFalse();
+    }
+  }
+
+  @Test
+  public void testListFilesInRootDirectory() throws IOException {
+    CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket(
+      BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
+      .build());
+    
+    // test absolute path
+    Path rootPath = fs.getPath("");
+    List<String> objectNames = new ArrayList<String>();
+    for (Path path : Files.newDirectoryStream(rootPath)) {
+      objectNames.add(path.toString());
+    }
+    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
+    
+    // test relative path
+    rootPath = fs.getPath(".");
+    for (Path path : Files.newDirectoryStream(rootPath)) {
+      objectNames.add(path.toString());
+    }
+    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
+  }
+
+  /**
+   * Delete the given directory and all of its contents if non-empty.
+   * @param directory the directory to delete
+   * @throws IOException
+   */
+  private static void deleteRecursive(Path directory) throws IOException {
+    Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
+      @Override
+      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        Files.delete(file);
+        return FileVisitResult.CONTINUE;
+      }
+      @Override
+      public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+        Files.delete(dir);
+        return FileVisitResult.CONTINUE;
+      }
+    });
   }
 
   private int readFully(ReadableByteChannel chan, byte[] outputBuf) throws IOException {

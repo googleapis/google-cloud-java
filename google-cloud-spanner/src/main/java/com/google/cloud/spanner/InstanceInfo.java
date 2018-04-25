@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,11 +41,6 @@ public class InstanceInfo {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -191,7 +186,7 @@ public class InstanceInfo {
   }
 
   /** Returns the cloud labels attached to this instance. */
-  public ImmutableMap<String, String> getLabels() {
+  public Map<String, String> getLabels() {
     return labels;
   }
 

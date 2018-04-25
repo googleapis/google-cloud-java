@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.BatchResult;
-import com.google.cloud.Page;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
@@ -45,6 +45,7 @@ import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
@@ -53,16 +54,20 @@ import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
+import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.StorageOptions;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
+import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -100,7 +105,7 @@ public class StorageSnippets {
     // [START createBucketWithStorageClassAndLocation]
     Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
         // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
-        .setStorageClass("COLDLINE")
+        .setStorageClass(StorageClass.COLDLINE)
         // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
         .setLocation("asia")
         .build());
@@ -246,9 +251,7 @@ public class StorageSnippets {
     // [START listBucketsWithSizeAndPrefix]
     Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
         BucketListOption.prefix(prefix));
-    Iterator<Bucket> bucketIterator = buckets.iterateAll();
-    while (bucketIterator.hasNext()) {
-      Bucket bucket = bucketIterator.next();
+    for (Bucket bucket : buckets.iterateAll()) {
       // do something with the bucket
     }
     // [END listBucketsWithSizeAndPrefix]
@@ -265,9 +268,7 @@ public class StorageSnippets {
     // [START listBlobsWithDirectoryAndPrefix]
     Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
         BlobListOption.prefix(directory));
-    Iterator<Blob> blobIterator = blobs.iterateAll();
-    while (blobIterator.hasNext()) {
-      Blob blob = blobIterator.next();
+    for (Blob blob : blobs.iterateAll()) {
       // do something with the blob
     }
     // [END listBlobsWithDirectoryAndPrefix]
@@ -1025,5 +1026,115 @@ public class StorageSnippets {
     }
     // [END listBlobAcls]
     return acls;
+  }
+
+  /**
+   * Example of default auth
+   */
+  public Page<Bucket> authListBuckets() {
+    // [START auth_cloud_implicit]
+    // If you don't specify credentials when constructing the client, the
+    // client library will look for credentials in the environment.
+
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    Page<Bucket> buckets = storage.list();
+    for (Bucket bucket : buckets.iterateAll()) {
+      // do something with the info
+    }
+    // [END auth_cloud_implicit]
+    return buckets;
+  }
+
+  /**
+   * Example of enabling Requester pays on a bucket.
+   */
+  public Bucket enableRequesterPays(String  bucketName) throws StorageException {
+    // [START enable_requester_pays]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the existing bucket to enable requester-paying for, e.g. "my-bucket"
+    // String bucketName = "my-bucket"
+    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName)
+        .setRequesterPays(true)
+        .build();
+
+    // Update the bucket, throws StorageException on failure
+    Bucket bucket = storage.update(bucketInfo);
+
+    System.out.println("Requester pay status for " + bucketName +": " + bucket.requesterPays());
+    // [END enable_requester_pays]
+    return bucket;
+  }
+
+  /**
+   * Example of disabling Requester pays on a bucket.
+   */
+  public Bucket disableRequesterPays(String bucketName) {
+    // [START disable_requester_pays]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the bucket to disable requester-paying for, e.g. "my-bucket"
+    // String bucketName = "my-bucket"
+    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName)
+        .setRequesterPays(false)
+        .build();
+
+    // Update the bucket, throws StorageException on failure
+    Bucket bucket = storage.update(bucketInfo);
+
+    System.out.println("Requester pays status for " + bucketName +": " + bucket.requesterPays());
+    // [END disable_requester_pays]
+    return bucket;
+  }
+
+  /**
+   * Example of retrieving Requester pays status on a bucket.
+   */
+  public Bucket getRequesterPaysStatus(String bucketName) throws StorageException {
+    // [START get_requester_pays_status]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of the bucket to retrieve requester-pays status, eg. "my-bucket"
+    // String bucketName = "my-bucket"
+    // Retrieve the bucket, throws StorageException on failure
+    Bucket bucket = storage.get(bucketName,
+        Storage.BucketGetOption.fields(BucketField.BILLING));
+
+    System.out.println("Requester pays status : " + bucket.requesterPays());
+    // [END get_requester_pays_status]
+    return bucket;
+  }
+
+  /**
+   * Example of downloading a file using Requester pay.
+   */
+  public void downloadFileUsingRequesterPays(String projectId, String bucketName,
+      String srcFilename, Path destFilePath) throws IOException {
+    // [START storage_download_file_requester_pays]
+    // The project ID to bill
+    // String projectId = "my-billable-project-id";
+
+    // The name of the bucket to access
+    // String bucketName = "my-bucket";
+
+    // The name of the remote file to download
+    // String srcFilename = "file.txt";
+
+    // The path to which the file should be downloaded
+    // Path destFilePath = Paths.get("/local/path/to/file.txt");
+
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // Get specific file from specified bucket
+    Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
+
+    // Download file to specified path
+    blob.downloadTo(destFilePath, Blob.BlobSourceOption.userProject(projectId));
+    // [END storage_download_file_requester_pays]
   }
 }

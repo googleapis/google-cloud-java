@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,15 +46,6 @@ public class BlobValueTest {
     BlobValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
     assertEquals(1, value.getMeaning());
-    assertTrue(value.excludeFromIndexes());
-  }
-
-  @Test
-  public void testBuilderDeprecated() throws Exception {
-    BlobValue.Builder builder = BlobValue.builder(CONTENT);
-    BlobValue value = builder.meaning(1).excludeFromIndexes(true).build();
-    assertEquals(CONTENT, value.get());
-    assertEquals(1, value.meaning());
     assertTrue(value.excludeFromIndexes());
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,4 +20,4 @@ import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spi.ServiceRpcFactory;
 
 /** Factory to create instances of {@code SpannerRpc}. */
-public interface SpannerRpcFactory extends ServiceRpcFactory<SpannerRpc, SpannerOptions> {}
+public interface SpannerRpcFactory extends ServiceRpcFactory<SpannerOptions> {}

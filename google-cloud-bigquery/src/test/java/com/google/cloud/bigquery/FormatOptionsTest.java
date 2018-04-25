@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,18 +34,6 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.AVRO, options.getType());
   }
 
-  @Test
-  @SuppressWarnings("deprecation")
-  public void testConstructorDeprecated() {
-    FormatOptions options = new FormatOptions(FormatOptions.CSV);
-    assertEquals(FormatOptions.CSV, options.type());
-    options = new FormatOptions(FormatOptions.JSON);
-    assertEquals(FormatOptions.JSON, options.type());
-    options = new FormatOptions(FormatOptions.DATASTORE_BACKUP);
-    assertEquals(FormatOptions.DATASTORE_BACKUP, options.type());
-    options = new FormatOptions(FormatOptions.AVRO);
-    assertEquals(FormatOptions.AVRO, options.type());
-  }
 
   @Test
   public void testFactoryMethods() {
@@ -53,6 +41,7 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.JSON, FormatOptions.json().getType());
     assertEquals(FormatOptions.DATASTORE_BACKUP, FormatOptions.datastoreBackup().getType());
     assertEquals(FormatOptions.AVRO, FormatOptions.avro().getType());
+    assertEquals(FormatOptions.GOOGLE_SHEETS, FormatOptions.googleSheets().getType());
   }
 
   @Test
@@ -64,5 +53,6 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.datastoreBackup(), FormatOptions.datastoreBackup());
     assertEquals(FormatOptions.datastoreBackup().hashCode(),
         FormatOptions.datastoreBackup().hashCode());
+    assertEquals(FormatOptions.googleSheets(), FormatOptions.googleSheets());
   }
 }

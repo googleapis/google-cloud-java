@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,10 @@ package com.google.cloud.storage.contrib.nio;
 
 import com.google.cloud.storage.Acl;
 import com.google.common.base.Optional;
-import com.google.common.collect.ImmutableMap;
 
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Interface for attributes on a Cloud Storage file or pseudo-directory.
@@ -75,5 +75,5 @@ public interface CloudStorageFileAttributes extends BasicFileAttributes {
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#contentdisposition"
    */
-  ImmutableMap<String, String> userMetadata();
+  Map<String, String> userMetadata();
 }
