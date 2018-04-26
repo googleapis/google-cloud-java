@@ -86,18 +86,18 @@ public class DiskTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void aggregatedListDiskTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     DiskTypesScopedList itemsItem = DiskTypesScopedList.newBuilder().build();
     Map<String, DiskTypesScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
     DiskTypeAggregatedList expectedResponse =
         DiskTypeAggregatedList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .putAllItems(items)
             .build();
@@ -149,26 +149,26 @@ public class DiskTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void getDiskTypeTest() {
-    String defaultDiskSizeGb = "defaultDiskSizeGb807490165";
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
+    String defaultDiskSizeGb = "defaultDiskSizeGb807490165";
     String description = "description-1724546052";
     String id = "id3355";
-    String validDiskSize = "validDiskSize-1653521184";
+    String kind = "kind3292052";
+    String name = "name3373707";
     String selfLink = "selfLink-1691268851";
+    String validDiskSize = "validDiskSize-1653521184";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     DiskType expectedResponse =
         DiskType.newBuilder()
-            .setDefaultDiskSizeGb(defaultDiskSizeGb)
-            .setZone(zone.toString())
-            .setKind(kind)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
+            .setDefaultDiskSizeGb(defaultDiskSizeGb)
             .setDescription(description)
             .setId(id)
-            .setValidDiskSize(validDiskSize)
+            .setKind(kind)
+            .setName(name)
             .setSelfLink(selfLink)
+            .setValidDiskSize(validDiskSize)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -215,17 +215,17 @@ public class DiskTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void listDiskTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     DiskType itemsElement = DiskType.newBuilder().build();
     List<DiskType> items = Arrays.asList(itemsElement);
     DiskTypeList expectedResponse =
         DiskTypeList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

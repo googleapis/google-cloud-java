@@ -78,24 +78,24 @@ public class LicenseCodeClientTest {
   @Test
   @SuppressWarnings("all")
   public void getLicenseCodeTest() {
-    String kind = "kind3292052";
-    Boolean transferable = false;
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
-    String state = "state109757585";
+    String kind = "kind3292052";
+    String name = "name3373707";
     String selfLink = "selfLink-1691268851";
+    String state = "state109757585";
+    Boolean transferable = false;
     LicenseCode expectedResponse =
         LicenseCode.newBuilder()
-            .setKind(kind)
-            .setTransferable(transferable)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
             .setDescription(description)
             .setId(id)
-            .setState(state)
+            .setKind(kind)
+            .setName(name)
             .setSelfLink(selfLink)
+            .setState(state)
+            .setTransferable(transferable)
             .build();
     mockService.addResponse(expectedResponse);
 
