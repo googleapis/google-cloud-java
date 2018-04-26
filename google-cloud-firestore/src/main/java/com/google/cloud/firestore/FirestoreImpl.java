@@ -20,17 +20,25 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
 import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
 import com.google.firestore.v1beta1.DatabaseRootName;
 import com.google.protobuf.ByteString;
+import io.grpc.Context;
 import io.grpc.Status;
+import io.opencensus.common.Scope;
+import io.opencensus.trace.AttributeValue;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,6 +59,10 @@ class FirestoreImpl implements Firestore {
   private static final int AUTO_ID_LENGTH = 20;
   private static final String AUTO_ID_ALPHABET =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  private static final Tracer tracer = Tracing.getTracer();
+  private static final io.opencensus.trace.Status TOO_MANY_RETRIES_STATUS =
+      io.opencensus.trace.Status.ABORTED.withDescription("too many retries");
 
   private final FirestoreRpc firestoreClient;
   private final FirestoreOptions firestoreOptions;
@@ -126,10 +138,23 @@ class FirestoreImpl implements Firestore {
 
     ApiStreamObserver<BatchGetDocumentsResponse> responseObserver =
         new ApiStreamObserver<BatchGetDocumentsResponse>() {
+          int numResponses;
+
           @Override
           public void onNext(BatchGetDocumentsResponse response) {
             DocumentReference documentReference;
             DocumentSnapshot documentSnapshot;
+
+            numResponses++;
+            if (numResponses == 1) {
+              tracer
+                  .getCurrentSpan()
+                  .addAnnotation("Firestore.BatchGet: First response");
+            } else if (numResponses % 100 == 0) {
+              tracer
+                  .getCurrentSpan()
+                  .addAnnotation("Firestore.BatchGet: Received 100 responses");
+            }
 
             switch (response.getResultCase()) {
               case FOUND:
@@ -161,11 +186,13 @@ class FirestoreImpl implements Firestore {
 
           @Override
           public void onError(Throwable throwable) {
+            tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: Error");
             futureList.setException(throwable);
           }
 
           @Override
           public void onCompleted() {
+            tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: Complete");
             List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
 
             for (DocumentReference documentReference : documentReferences) {
@@ -186,6 +213,13 @@ class FirestoreImpl implements Firestore {
     for (DocumentReference docRef : documentReferences) {
       request.addDocuments(docRef.getName());
     }
+
+    tracer
+        .getCurrentSpan()
+        .addAnnotation(
+            "Firestore.BatchGet: Start",
+            ImmutableMap.of(
+                "numDocuments", AttributeValue.longAttributeValue(documentReferences.length)));
 
     streamRequest(request.build(), responseObserver, firestoreClient.batchGetDocumentsCallable());
 
@@ -213,11 +247,28 @@ class FirestoreImpl implements Firestore {
       final Transaction.Function<T> transactionCallback,
       final SettableApiFuture<T> resultFuture,
       final TransactionOptions options) {
+    // span is intentionally not ended here. It will be ended by runTransactionAttempt on success
+    // or error.
+    Span span = tracer.spanBuilder("CloudFirestore.Transaction").startSpan();
+    try (Scope s = tracer.withSpan(span)) {
+      runTransactionAttempt(transactionCallback, resultFuture, options, span);
+    }
+  }
+
+  private <T> void runTransactionAttempt(
+      final Transaction.Function<T> transactionCallback,
+      final SettableApiFuture<T> resultFuture,
+      final TransactionOptions options,
+      final Span span) {
     final Transaction transaction = new Transaction(this, options.getPreviousTransactionId());
     final Executor userCallbackExecutor =
-        options.getExecutor() != null ? options.getExecutor() : firestoreClient.getExecutor();
+        Context.currentContextExecutor(
+            options.getExecutor() != null ? options.getExecutor() : firestoreClient.getExecutor());
 
     final int attemptsRemaining = options.getNumberOfAttempts() - 1;
+    span.addAnnotation(
+        "Start runTransaction",
+        ImmutableMap.of("attemptsRemaining", AttributeValue.longAttributeValue(attemptsRemaining)));
 
     ApiFutures.addCallback(
         transaction.begin(),
@@ -253,6 +304,8 @@ class FirestoreImpl implements Firestore {
 
                           @Override
                           public void onSuccess(List<WriteResult> writeResults) {
+                            span.setStatus(io.opencensus.trace.Status.OK);
+                            span.end();
                             resultFuture.set(userResult);
                           }
                         });
@@ -279,12 +332,15 @@ class FirestoreImpl implements Firestore {
 
           private void maybeRetry() {
             if (attemptsRemaining > 0) {
-              runTransaction(
+              span.addAnnotation("retrying");
+              runTransactionAttempt(
                   transactionCallback,
                   resultFuture,
                   new TransactionOptions(
-                      attemptsRemaining, options.getExecutor(), transaction.getTransactionId()));
+                      attemptsRemaining, options.getExecutor(), transaction.getTransactionId()),
+                  span);
             } else {
+              span.setStatus(TOO_MANY_RETRIES_STATUS);
               rejectTransaction(
                   FirestoreException.serverRejected(
                       Status.ABORTED, "Transaction was cancelled because of too many retries."));
@@ -292,6 +348,10 @@ class FirestoreImpl implements Firestore {
           }
 
           private void rejectTransaction(final Throwable throwable) {
+            if (throwable instanceof ApiException) {
+              span.setStatus(TraceUtil.statusFromApiException((ApiException) throwable));
+            }
+            span.end();
             if (transaction.isPending()) {
               ApiFutures.addCallback(
                   transaction.rollback(),
