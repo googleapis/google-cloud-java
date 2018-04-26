@@ -924,7 +924,8 @@ public class Query {
       request.setTransaction(transactionId);
     }
 
-    Tracing.getTracer().getCurrentSpan()
+    Tracing.getTracer()
+        .getCurrentSpan()
         .addAnnotation(
             "Firestore.Query: Start",
             ImmutableMap.of(
@@ -940,13 +941,13 @@ public class Query {
           public void onNext(RunQueryResponse response) {
             if (!firstResponse) {
               firstResponse = true;
-              Tracing.getTracer().getCurrentSpan()
-                  .addAnnotation("Firestore.Query: First response");
+              Tracing.getTracer().getCurrentSpan().addAnnotation("Firestore.Query: First response");
             }
             if (response.hasDocument()) {
               numDocuments++;
               if (numDocuments % 100 == 0) {
-                Tracing.getTracer().getCurrentSpan()
+                Tracing.getTracer()
+                    .getCurrentSpan()
                     .addAnnotation("Firestore.Query: Received 100 documents");
               }
               Document document = response.getDocument();
@@ -970,12 +971,12 @@ public class Query {
 
           @Override
           public void onCompleted() {
-            Tracing.getTracer().getCurrentSpan()
+            Tracing.getTracer()
+                .getCurrentSpan()
                 .addAnnotation(
                     "Firestore.Query: Completed",
                     ImmutableMap.of(
-                        "numDocuments",
-                        AttributeValue.longAttributeValue(numDocuments)));
+                        "numDocuments", AttributeValue.longAttributeValue(numDocuments)));
             documentObserver.onCompleted(readTime);
           }
         };
