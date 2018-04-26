@@ -147,13 +147,9 @@ class FirestoreImpl implements Firestore {
 
             numResponses++;
             if (numResponses == 1) {
-              tracer
-                  .getCurrentSpan()
-                  .addAnnotation("Firestore.BatchGet: First response");
+              tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: First response");
             } else if (numResponses % 100 == 0) {
-              tracer
-                  .getCurrentSpan()
-                  .addAnnotation("Firestore.BatchGet: Received 100 responses");
+              tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: Received 100 responses");
             }
 
             switch (response.getResultCase()) {
