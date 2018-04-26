@@ -616,6 +616,12 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
+    public Builder setDefaultKmsKeyName(String defaultKmsKeyName) {
+      infoBuilder.setDefaultKmsKeyName(defaultKmsKeyName);
+      return this;
+    }
+
+    @Override
     public Bucket build() {
       return new Bucket(storage, infoBuilder);
     }

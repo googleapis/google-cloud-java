@@ -404,6 +404,12 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    Builder setKmsKey(String kmsKey) {
+      infoBuilder.setKmsKey(kmsKey);
+      return this;
+    }
+
+    @Override
     public Blob build() {
       return new Blob(storage, infoBuilder);
     }
