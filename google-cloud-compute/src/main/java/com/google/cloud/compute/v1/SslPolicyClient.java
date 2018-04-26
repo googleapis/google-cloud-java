@@ -284,7 +284,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all of the ordered rules present in a single specified policy.
+   * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
@@ -311,7 +311,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all of the ordered rules present in a single specified policy.
+   * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
@@ -336,7 +336,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all of the ordered rules present in a single specified policy.
+   * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
@@ -360,7 +360,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all of the ordered rules present in a single specified policy.
+   * Lists all of the ordered rules present in a single specified policy.
    *
    * <p>Sample code:
    *
@@ -530,7 +530,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the SSL policies that have been configured for the specified project.
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -557,7 +557,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the SSL policies that have been configured for the specified project.
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -582,7 +582,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the SSL policies that have been configured for the specified project.
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -608,7 +608,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the SSL policies that have been configured for the specified project.
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *
@@ -634,7 +634,7 @@ public class SslPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the SSL policies that have been configured for the specified project.
+   * Lists all the SSL policies that have been configured for the specified project.
    *
    * <p>Sample code:
    *

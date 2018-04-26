@@ -287,8 +287,8 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance template. Get a list of available instance templates by making a
-   * list() request.
+   * Returns the specified instance template. Gets a list of available instance templates by making
+   * a list() request.
    *
    * <p>Sample code:
    *
@@ -315,8 +315,8 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance template. Get a list of available instance templates by making a
-   * list() request.
+   * Returns the specified instance template. Gets a list of available instance templates by making
+   * a list() request.
    *
    * <p>Sample code:
    *
@@ -340,8 +340,8 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance template. Get a list of available instance templates by making a
-   * list() request.
+   * Returns the specified instance template. Gets a list of available instance templates by making
+   * a list() request.
    *
    * <p>Sample code:
    *
@@ -365,8 +365,8 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified instance template. Get a list of available instance templates by making a
-   * list() request.
+   * Returns the specified instance template. Gets a list of available instance templates by making
+   * a list() request.
    *
    * <p>Sample code:
    *

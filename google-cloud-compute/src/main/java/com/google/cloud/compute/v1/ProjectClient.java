@@ -789,7 +789,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get the shared VPC host project that this project links to. May be empty if no link exists.
+   * Gets the shared VPC host project that this project links to. May be empty if no link exists.
    *
    * <p>Sample code:
    *
@@ -815,7 +815,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get the shared VPC host project that this project links to. May be empty if no link exists.
+   * Gets the shared VPC host project that this project links to. May be empty if no link exists.
    *
    * <p>Sample code:
    *
@@ -839,7 +839,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get the shared VPC host project that this project links to. May be empty if no link exists.
+   * Gets the shared VPC host project that this project links to. May be empty if no link exists.
    *
    * <p>Sample code:
    *
@@ -863,7 +863,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get the shared VPC host project that this project links to. May be empty if no link exists.
+   * Gets the shared VPC host project that this project links to. May be empty if no link exists.
    *
    * <p>Sample code:
    *
@@ -886,7 +886,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get service resources (a.k.a service project) associated with this host project.
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -913,7 +913,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get service resources (a.k.a service project) associated with this host project.
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -938,7 +938,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get service resources (a.k.a service project) associated with this host project.
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -965,7 +965,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get service resources (a.k.a service project) associated with this host project.
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -992,7 +992,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Get service resources (a.k.a service project) associated with this host project.
+   * Gets service resources (a.k.a service project) associated with this host project.
    *
    * <p>Sample code:
    *
@@ -1025,7 +1025,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all shared VPC host projects visible to the user in an organization.
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -1056,7 +1056,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all shared VPC host projects visible to the user in an organization.
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -1087,7 +1087,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all shared VPC host projects visible to the user in an organization.
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -1116,7 +1116,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all shared VPC host projects visible to the user in an organization.
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
@@ -1144,7 +1144,7 @@ public class ProjectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all shared VPC host projects visible to the user in an organization.
+   * Lists all shared VPC host projects visible to the user in an organization.
    *
    * <p>Sample code:
    *
