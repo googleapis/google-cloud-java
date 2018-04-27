@@ -536,16 +536,16 @@ public class QueryTest {
     Iterator<DocumentChange> changeIterator = result.getDocumentChanges().iterator();
 
     DocumentChange documentChange = changeIterator.next();
-    assertEquals("doc1",documentChange.getDocument().getId());
-    assertEquals(DocumentChange.Type.ADDED,documentChange.getType());
-    assertEquals(-1,documentChange.getOldIndex());
-    assertEquals(0,documentChange.getNewIndex());
+    assertEquals("doc1", documentChange.getDocument().getId());
+    assertEquals(DocumentChange.Type.ADDED, documentChange.getType());
+    assertEquals(-1, documentChange.getOldIndex());
+    assertEquals(0, documentChange.getNewIndex());
 
     documentChange = changeIterator.next();
-    assertEquals("doc2",documentChange.getDocument().getId());
-    assertEquals(DocumentChange.Type.ADDED,documentChange.getType());
-    assertEquals(-1,documentChange.getOldIndex());
-    assertEquals(1,documentChange.getNewIndex());
+    assertEquals("doc2", documentChange.getDocument().getId());
+    assertEquals(DocumentChange.Type.ADDED, documentChange.getType());
+    assertEquals(-1, documentChange.getOldIndex());
+    assertEquals(1, documentChange.getNewIndex());
 
     assertFalse(changeIterator.hasNext());
 

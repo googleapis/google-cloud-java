@@ -578,9 +578,11 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   /** Commit the current batch. */
   ApiFuture<List<WriteResult>> commit(@Nullable ByteString transactionId) {
-    Tracing.getTracer().getCurrentSpan().addAnnotation(
-        "CloudFirestore.Commit",
-        ImmutableMap.of("numDocuments", AttributeValue.longAttributeValue(mutations.size())));
+    Tracing.getTracer()
+        .getCurrentSpan()
+        .addAnnotation(
+            "CloudFirestore.Commit",
+            ImmutableMap.of("numDocuments", AttributeValue.longAttributeValue(mutations.size())));
 
     final CommitRequest.Builder request = CommitRequest.newBuilder();
     request.setDatabase(firestore.getDatabaseName());
