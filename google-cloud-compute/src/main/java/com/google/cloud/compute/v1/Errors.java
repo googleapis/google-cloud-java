@@ -17,8 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,33 +29,47 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class Errors implements ApiMessage {
-  private final List<Errors> errors;
+  private final String code;
+  private final String location;
+  private final String message;
 
   private Errors() {
-    this.errors = null;
+    this.code = null;
+    this.location = null;
+    this.message = null;
   }
 
-  private Errors(List<Errors> errors) {
-    this.errors = errors;
+  private Errors(String code, String location, String message) {
+    this.code = code;
+    this.location = location;
+    this.message = message;
   }
 
   @Override
   public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
     Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("errors") && errors != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (Errors item : errors) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("errors", stringList.build());
+    if (fieldNames.contains("code") && code != null) {
+      fieldMap.put("code", Collections.singletonList(String.valueOf(code)));
+    }
+    if (fieldNames.contains("location") && location != null) {
+      fieldMap.put("location", Collections.singletonList(String.valueOf(location)));
+    }
+    if (fieldNames.contains("message") && message != null) {
+      fieldMap.put("message", Collections.singletonList(String.valueOf(message)));
     }
     return fieldMap;
   }
 
   @Override
   public String getFieldStringValue(String fieldName) {
-    if (fieldName.equals("errors")) {
-      return String.valueOf(errors);
+    if (fieldName.equals("code")) {
+      return String.valueOf(code);
+    }
+    if (fieldName.equals("location")) {
+      return String.valueOf(location);
+    }
+    if (fieldName.equals("message")) {
+      return String.valueOf(message);
     }
     return null;
   }
@@ -67,8 +80,16 @@ public final class Errors implements ApiMessage {
     return null;
   }
 
-  public List<Errors> getErrorsList() {
-    return errors;
+  public String getCode() {
+    return code;
+  }
+
+  public String getLocation() {
+    return location;
+  }
+
+  public String getMessage() {
+    return message;
   }
 
   public static Builder newBuilder() {
@@ -94,53 +115,85 @@ public final class Errors implements ApiMessage {
   }
 
   public static class Builder {
-    private List<Errors> errors;
+    private String code;
+    private String location;
+    private String message;
 
     Builder() {}
 
     public Builder mergeFrom(Errors other) {
       if (other == Errors.getDefaultInstance()) return this;
-      if (other.getErrorsList() != null) {
-        this.errors = other.errors;
+      if (other.getCode() != null) {
+        this.code = other.code;
+      }
+      if (other.getLocation() != null) {
+        this.location = other.location;
+      }
+      if (other.getMessage() != null) {
+        this.message = other.message;
       }
       return this;
     }
 
     Builder(Errors source) {
-      this.errors = source.errors;
+      this.code = source.code;
+      this.location = source.location;
+      this.message = source.message;
     }
 
-    public List<Errors> getErrorsList() {
-      return errors;
+    public String getCode() {
+      return code;
     }
 
-    public Builder addAllErrors(List<Errors> errors) {
-      if (this.errors == null) {
-        this.errors = new ArrayList<>(errors.size());
-      }
-      this.errors.addAll(errors);
+    public Builder setCode(String code) {
+      this.code = code;
       return this;
     }
 
-    public Builder addErrors(Errors errors) {
-      this.errors.add(errors);
+    public String getLocation() {
+      return location;
+    }
+
+    public Builder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public String getMessage() {
+      return message;
+    }
+
+    public Builder setMessage(String message) {
+      this.message = message;
       return this;
     }
 
     public Errors build() {
-      return new Errors(errors);
+
+      return new Errors(code, location, message);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
-      newBuilder.addAllErrors(this.errors);
+      newBuilder.setCode(this.code);
+      newBuilder.setLocation(this.location);
+      newBuilder.setMessage(this.message);
       return newBuilder;
     }
   }
 
   @Override
   public String toString() {
-    return "Errors{" + "errors=" + errors + "}";
+    return "Errors{"
+        + "code="
+        + code
+        + ", "
+        + "location="
+        + location
+        + ", "
+        + "message="
+        + message
+        + "}";
   }
 
   @Override
@@ -150,13 +203,15 @@ public final class Errors implements ApiMessage {
     }
     if (o instanceof Errors) {
       Errors that = (Errors) o;
-      return Objects.equals(this.errors, that.getErrorsList());
+      return Objects.equals(this.code, that.getCode())
+          && Objects.equals(this.location, that.getLocation())
+          && Objects.equals(this.message, that.getMessage());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(code, location, message);
   }
 }

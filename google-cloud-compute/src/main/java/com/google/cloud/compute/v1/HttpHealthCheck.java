@@ -28,14 +28,14 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class HTTPSHealthCheck2 implements ApiMessage {
+public final class HttpHealthCheck implements ApiMessage {
   private final String host;
   private final Integer port;
   private final String portName;
   private final String proxyHeader;
   private final String requestPath;
 
-  private HTTPSHealthCheck2() {
+  private HttpHealthCheck() {
     this.host = null;
     this.port = null;
     this.portName = null;
@@ -43,7 +43,7 @@ public final class HTTPSHealthCheck2 implements ApiMessage {
     this.requestPath = null;
   }
 
-  private HTTPSHealthCheck2(
+  private HttpHealthCheck(
       String host, Integer port, String portName, String proxyHeader, String requestPath) {
     this.host = host;
     this.port = port;
@@ -123,7 +123,7 @@ public final class HTTPSHealthCheck2 implements ApiMessage {
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(HTTPSHealthCheck2 prototype) {
+  public static Builder newBuilder(HttpHealthCheck prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -131,14 +131,14 @@ public final class HTTPSHealthCheck2 implements ApiMessage {
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static HTTPSHealthCheck2 getDefaultInstance() {
+  public static HttpHealthCheck getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final HTTPSHealthCheck2 DEFAULT_INSTANCE;
+  private static final HttpHealthCheck DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new HTTPSHealthCheck2();
+    DEFAULT_INSTANCE = new HttpHealthCheck();
   }
 
   public static class Builder {
@@ -150,8 +150,8 @@ public final class HTTPSHealthCheck2 implements ApiMessage {
 
     Builder() {}
 
-    public Builder mergeFrom(HTTPSHealthCheck2 other) {
-      if (other == HTTPSHealthCheck2.getDefaultInstance()) return this;
+    public Builder mergeFrom(HttpHealthCheck other) {
+      if (other == HttpHealthCheck.getDefaultInstance()) return this;
       if (other.getHost() != null) {
         this.host = other.host;
       }
@@ -170,7 +170,7 @@ public final class HTTPSHealthCheck2 implements ApiMessage {
       return this;
     }
 
-    Builder(HTTPSHealthCheck2 source) {
+    Builder(HttpHealthCheck source) {
       this.host = source.host;
       this.port = source.port;
       this.portName = source.portName;
@@ -223,9 +223,9 @@ public final class HTTPSHealthCheck2 implements ApiMessage {
       return this;
     }
 
-    public HTTPSHealthCheck2 build() {
+    public HttpHealthCheck build() {
 
-      return new HTTPSHealthCheck2(host, port, portName, proxyHeader, requestPath);
+      return new HttpHealthCheck(host, port, portName, proxyHeader, requestPath);
     }
 
     public Builder clone() {
@@ -241,7 +241,7 @@ public final class HTTPSHealthCheck2 implements ApiMessage {
 
   @Override
   public String toString() {
-    return "HTTPSHealthCheck2{"
+    return "HttpHealthCheck{"
         + "host="
         + host
         + ", "
@@ -264,8 +264,8 @@ public final class HTTPSHealthCheck2 implements ApiMessage {
     if (o == this) {
       return true;
     }
-    if (o instanceof HTTPSHealthCheck2) {
-      HTTPSHealthCheck2 that = (HTTPSHealthCheck2) o;
+    if (o instanceof HttpHealthCheck) {
+      HttpHealthCheck that = (HttpHealthCheck) o;
       return Objects.equals(this.host, that.getHost())
           && Objects.equals(this.port, that.getPort())
           && Objects.equals(this.portName, that.getPortName())
