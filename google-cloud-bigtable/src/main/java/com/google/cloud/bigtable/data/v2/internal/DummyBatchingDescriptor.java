@@ -24,7 +24,7 @@ import java.util.Collection;
 
 /**
  * This is necessary workaround for {@link
- * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#mutateRowsCallable()}. The settings
+ * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#bulkMutateRowsCallable()}. The settings
  * are exposed to the user using the {@link com.google.cloud.bigtable.data.v2.models.RowMutation}
  * wrapper, but the actual descriptor works on the underlying {@link
  * com.google.bigtable.v2.MutateRowsRequest}s. This class is used as a placeholder for the settings

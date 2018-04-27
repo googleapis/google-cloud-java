@@ -123,7 +123,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class TopicAdminClient implements BackgroundResource {
   private final TopicAdminSettings settings;

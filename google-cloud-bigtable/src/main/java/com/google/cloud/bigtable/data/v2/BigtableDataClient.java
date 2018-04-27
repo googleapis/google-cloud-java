@@ -442,6 +442,7 @@ public class BigtableDataClient implements AutoCloseable {
    *     batch.add("[ROW KEY]", Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *   }
    *   bigtableClient.bulkMutateRowsCallable().call(batch);
+   * }
    * }</pre>
    */
   public UnaryCallable<BulkMutation, Void> bulkMutationCallable() {
@@ -464,6 +465,7 @@ public class BigtableDataClient implements AutoCloseable {
    *       );
    *
    *   ApiFuture<Boolean> future = bigtableClient.checkAndMutateRowAsync(mutation);
+   * }
    * }</pre>
    */
   public ApiFuture<Boolean> checkAndMutateRowAsync(ConditionalRowMutation mutation) {

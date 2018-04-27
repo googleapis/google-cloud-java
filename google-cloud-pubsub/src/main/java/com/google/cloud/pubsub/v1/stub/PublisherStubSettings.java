@@ -101,7 +101,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   /** The default scopes of the service. */

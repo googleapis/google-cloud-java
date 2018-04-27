@@ -77,7 +77,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =

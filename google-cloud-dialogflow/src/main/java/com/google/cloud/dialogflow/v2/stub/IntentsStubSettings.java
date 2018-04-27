@@ -91,7 +91,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   /** The default scopes of the service. */
