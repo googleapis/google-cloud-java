@@ -162,9 +162,9 @@ public class TimelineSample implements Serializable {
   static TimelineSample fromPb(com.google.api.services.bigquery.model.QueryTimelineSample sample) {
     Builder builder = new TimelineSample.Builder();
     builder.setElapsedMs(sample.getElapsedMs());
-    builder.setActiveUnits(sample.getActiveInputs());
-    builder.setCompletedUnits(sample.getCompletedInputs());
-    builder.setPendingUnits(sample.getPendingInputs());
+    builder.setActiveUnits(sample.getActiveUnits());
+    builder.setCompletedUnits(sample.getCompletedUnits());
+    builder.setPendingUnits(sample.getPendingUnits());
     builder.setSlotMillis(sample.getTotalSlotMs());
     return builder.build();
   }
@@ -172,9 +172,9 @@ public class TimelineSample implements Serializable {
   QueryTimelineSample toPb() {
     QueryTimelineSample sample = new QueryTimelineSample()
         .setElapsedMs(elapsedMs)
-        .setActiveInputs(activeUnits)
-        .setCompletedInputs(completedUnits)
-        .setPendingInputs(pendingUnits)
+        .setActiveUnits(activeUnits)
+        .setCompletedUnits(completedUnits)
+        .setPendingUnits(pendingUnits)
         .setTotalSlotMs(slotMillis);
     return sample;
   }
