@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class HttpsHealthCheck implements ApiMessage {
+public final class HttpsHealthCheck2 implements ApiMessage {
   private final Integer checkIntervalSec;
   private final String creationTimestamp;
   private final String description;
@@ -43,7 +43,7 @@ public final class HttpsHealthCheck implements ApiMessage {
   private final Integer timeoutSec;
   private final Integer unhealthyThreshold;
 
-  private HttpsHealthCheck() {
+  private HttpsHealthCheck2() {
     this.checkIntervalSec = null;
     this.creationTimestamp = null;
     this.description = null;
@@ -59,7 +59,7 @@ public final class HttpsHealthCheck implements ApiMessage {
     this.unhealthyThreshold = null;
   }
 
-  private HttpsHealthCheck(
+  private HttpsHealthCheck2(
       Integer checkIntervalSec,
       String creationTimestamp,
       String description,
@@ -241,7 +241,7 @@ public final class HttpsHealthCheck implements ApiMessage {
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(HttpsHealthCheck prototype) {
+  public static Builder newBuilder(HttpsHealthCheck2 prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -249,14 +249,14 @@ public final class HttpsHealthCheck implements ApiMessage {
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static HttpsHealthCheck getDefaultInstance() {
+  public static HttpsHealthCheck2 getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final HttpsHealthCheck DEFAULT_INSTANCE;
+  private static final HttpsHealthCheck2 DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new HttpsHealthCheck();
+    DEFAULT_INSTANCE = new HttpsHealthCheck2();
   }
 
   public static class Builder {
@@ -276,8 +276,8 @@ public final class HttpsHealthCheck implements ApiMessage {
 
     Builder() {}
 
-    public Builder mergeFrom(HttpsHealthCheck other) {
-      if (other == HttpsHealthCheck.getDefaultInstance()) return this;
+    public Builder mergeFrom(HttpsHealthCheck2 other) {
+      if (other == HttpsHealthCheck2.getDefaultInstance()) return this;
       if (other.getCheckIntervalSec() != null) {
         this.checkIntervalSec = other.checkIntervalSec;
       }
@@ -320,7 +320,7 @@ public final class HttpsHealthCheck implements ApiMessage {
       return this;
     }
 
-    Builder(HttpsHealthCheck source) {
+    Builder(HttpsHealthCheck2 source) {
       this.checkIntervalSec = source.checkIntervalSec;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
@@ -453,9 +453,9 @@ public final class HttpsHealthCheck implements ApiMessage {
       return this;
     }
 
-    public HttpsHealthCheck build() {
+    public HttpsHealthCheck2 build() {
 
-      return new HttpsHealthCheck(
+      return new HttpsHealthCheck2(
           checkIntervalSec,
           creationTimestamp,
           description,
@@ -492,7 +492,7 @@ public final class HttpsHealthCheck implements ApiMessage {
 
   @Override
   public String toString() {
-    return "HttpsHealthCheck{"
+    return "HttpsHealthCheck2{"
         + "checkIntervalSec="
         + checkIntervalSec
         + ", "
@@ -539,8 +539,8 @@ public final class HttpsHealthCheck implements ApiMessage {
     if (o == this) {
       return true;
     }
-    if (o instanceof HttpsHealthCheck) {
-      HttpsHealthCheck that = (HttpsHealthCheck) o;
+    if (o instanceof HttpsHealthCheck2) {
+      HttpsHealthCheck2 that = (HttpsHealthCheck2) o;
       return Objects.equals(this.checkIntervalSec, that.getCheckIntervalSec())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
