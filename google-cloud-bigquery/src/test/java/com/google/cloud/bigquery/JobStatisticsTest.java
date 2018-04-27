@@ -90,18 +90,18 @@ public class JobStatisticsTest {
       .build();
 
   private static final TimelineSample TIMELINE_SAMPLE1 = TimelineSample.newBuilder()
-      .setElapsedMs(1001)
-      .setActiveUnits(100)
-      .setCompletedUnits(200)
-      .setPendingUnits(50)
-      .setSlotMillis(12345)
+      .setElapsedMs(1001L)
+      .setActiveUnits(100L)
+      .setCompletedUnits(200L)
+      .setPendingUnits(50L)
+      .setSlotMillis(12345L)
       .build();
   private static final TimelineSample TIMELINE_SAMPLE2 = TimelineSample.newBuilder()
-      .setElapsedMs(2002)
-      .setActiveUnits(48)
-      .setCompletedUnits(302)
-      .setPendingUnits(0)
-      .setSlotMillis(23456)
+      .setElapsedMs(2002L)
+      .setActiveUnits(48L)
+      .setCompletedUnits(302L)
+      .setPendingUnits(0L)
+      .setSlotMillis(23456L)
       .build();
   private static final List<TimelineSample> TIMELINE = ImmutableList.of(TIMELINE_SAMPLE1, TIMELINE_SAMPLE2);
   private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);

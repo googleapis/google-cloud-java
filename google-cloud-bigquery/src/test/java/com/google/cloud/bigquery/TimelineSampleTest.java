@@ -21,11 +21,11 @@ import org.junit.Test;
 
 public class TimelineSampleTest {
 
-  private static final long ELAPSED_MS = 1001;
-  private static final long ACTIVE_UNITS = 500;
-  private static final long COMPLETED_UNITS = 843;
-  private static final long PENDING_UNITS = 14;
-  private static final long SLOT_MILLIS = 1220012;
+  private static final Long ELAPSED_MS = 1001L;
+  private static final Long ACTIVE_UNITS = 500L;
+  private static final Long COMPLETED_UNITS = 843L;
+  private static final Long PENDING_UNITS = 14L;
+  private static final Long SLOT_MILLIS = 1220012L;
 
   private static final TimelineSample TIMELINE_SAMPLE = TimelineSample.newBuilder()
       .setElapsedMs(ELAPSED_MS)
