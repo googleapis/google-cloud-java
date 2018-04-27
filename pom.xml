@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
@@ -92,10 +94,25 @@
         <role>Developer</role>
       </roles>
     </developer>
+    <developer>
+      <id>andreamlin</id>
+      <name>Andrea Lin</name>
+      <email>andrealin@google.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>hzyi-google</id>
+      <name>Hanzhen Yi</name>
+      <email>hzyi@google.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
   </developers>
-
   <organization>
-    <name>Google</name>
+    <name>Google LLC</name>
   </organization>
   <scm>
     <connection>scm:git:git@github.com:GoogleCloudPlatform/google-cloud.git</connection>
@@ -128,8 +145,8 @@
   </distributionManagement>
   <licenses>
     <license>
-      <name>Google Cloud Software License</name>
-      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/google-cloud-java/master/LICENSE</url>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
   <properties>
@@ -428,8 +445,6 @@
     <module>google-cloud-translate</module>
     <module>google-cloud-vision</module>
     <module>google-cloud-video-intelligence</module>
-
-    <module>google-cloud-util</module>
     <module>google-cloud</module>
 
     <!--
@@ -576,7 +591,7 @@
           <encoding>UTF-8</encoding>
           <compilerArgument>-Xlint:unchecked</compilerArgument>
           <compilerArgument>-Xlint:deprecation</compilerArgument>
-	  <showDeprecation>true</showDeprecation>
+          <showDeprecation>true</showDeprecation>
         </configuration>
       </plugin>
       <plugin>
