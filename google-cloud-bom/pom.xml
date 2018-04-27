@@ -177,22 +177,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-common-protos</artifactId>
-        <version>1.9.0</version>
+        <version>1.10.0</version><!-- {x-version-update:proto-google-common-protos:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-common-protos</artifactId>
-        <version>1.9.0</version>
+        <version>1.10.0</version><!-- {x-version-update:grpc-google-common-protos:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-v1</artifactId>
-        <version>0.10.0</version>
+        <version>0.11.0</version><!-- {x-version-update:proto-google-iam-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-v1</artifactId>
-        <version>0.10.0</version>
+        <version>0.11.0</version><!-- {x-version-update:grpc-google-iam-v1:current} -->
       </dependency>
 
       <!-- API-specific dependencies -->
