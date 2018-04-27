@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bom</artifactId>
   <packaging>pom</packaging>
-  <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+  <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
   <name>Google Cloud Java BOM</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-bom</url>
   <description>
@@ -177,45 +177,45 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-common-protos</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:proto-google-common-protos:current} -->
+        <version>1.10.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-common-protos</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:grpc-google-common-protos:current} -->
+        <version>1.10.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+        <version>0.11.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-iam-v1:current} -->
+        <version>0.11.0</version>
       </dependency>
 
       <!-- API-specific dependencies -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -241,23 +241,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquery</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquery</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -273,23 +273,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -305,67 +305,67 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-contrib</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-contrib</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-nio</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-nio</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-contrib:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-grpc</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-grpc</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-http</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-http:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-http:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-http</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-http:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-http:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -381,12 +381,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -397,12 +397,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dlp</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dlp</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -428,12 +428,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -459,23 +459,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dns</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dns</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-errorreporting</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-errorreporting</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -491,23 +491,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-examples</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-examples</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-firestore</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-firestore</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -523,12 +523,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-language</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-language</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -554,12 +554,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -575,18 +575,18 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging-logback</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -602,12 +602,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-login</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-login</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -623,12 +623,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -644,23 +644,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanner</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanner</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -696,12 +696,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech</artifactId>
-        <version>0.45.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>0.46.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -737,23 +737,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-texttospeech</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-texttospeech</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -769,12 +769,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-trace</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-trace</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -800,23 +800,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-translate</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-translate</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vision</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vision</artifactId>
-        <version>1.27.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+        <version>1.28.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -852,12 +852,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence</artifactId>
-        <version>0.45.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+        <version>0.46.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
