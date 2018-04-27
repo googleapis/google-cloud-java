@@ -119,7 +119,7 @@ public class TimelineSample implements Serializable {
     elapsedMs = builder.elapsedMs;
     activeUnits = builder.activeUnits;
     completedUnits = builder.completedUnits;
-    pendingUnits = builder.completedUnits;
+    pendingUnits = builder.pendingUnits;
     slotMillis = builder.slotMillis;
   }
 

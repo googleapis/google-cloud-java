@@ -88,6 +88,22 @@ public class JobStatisticsTest {
       .setWriteRatioAvg(9.9)
       .setWriteRatioMax(10.10)
       .build();
+
+  private static final TimelineSample TIMELINE_SAMPLE1 = TimelineSample.newBuilder()
+      .setElapsedMs(1001)
+      .setActiveUnits(100)
+      .setCompletedUnits(200)
+      .setPendingUnits(50)
+      .setSlotMillis(12345)
+      .build();
+  private static final TimelineSample TIMELINE_SAMPLE2 = TimelineSample.newBuilder()
+      .setElapsedMs(2002)
+      .setActiveUnits(48)
+      .setCompletedUnits(302)
+      .setPendingUnits(0)
+      .setSlotMillis(23456)
+      .build();
+  private static final List<TimelineSample> TIMELINE = ImmutableList.of(TIMELINE_SAMPLE1, TIMELINE_SAMPLE2);
   private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);
   private static final Schema SCHEMA = Schema.of(Field.of("column", LegacySQLTypeName.DATETIME));
   private static final QueryStatistics QUERY_STATISTICS = QueryStatistics.newBuilder()
@@ -99,6 +115,7 @@ public class JobStatisticsTest {
       .setTotalBytesBilled(TOTAL_BYTES_BILLED)
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setQueryPlan(QUERY_PLAN)
+      .setTimeline(TIMELINE)
       .setSchema(SCHEMA)
       .build();
   private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE = QueryStatistics.newBuilder()
@@ -133,6 +150,7 @@ public class JobStatisticsTest {
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.getTotalBytesProcessed());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.getTotalBytesProcessed());
     assertEquals(QUERY_PLAN, QUERY_STATISTICS.getQueryPlan());
+    assertEquals(TIMELINE, QUERY_STATISTICS.getTimeline());
 
     assertEquals(CREATION_TIME, LOAD_STATISTICS_INCOMPLETE.getCreationTime());
     assertEquals(START_TIME, LOAD_STATISTICS_INCOMPLETE.getStartTime());

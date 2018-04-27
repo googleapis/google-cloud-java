@@ -323,6 +323,7 @@ public abstract class JobStatistics implements Serializable {
     private final Long totalBytesBilled;
     private final Long totalBytesProcessed;
     private final List<QueryStage> queryPlan;
+    private final List<TimelineSample> timeline;
     private final Schema schema;
 
     static final class Builder extends JobStatistics.Builder<QueryStatistics, Builder> {
@@ -332,6 +333,7 @@ public abstract class JobStatistics implements Serializable {
       private Long totalBytesBilled;
       private Long totalBytesProcessed;
       private List<QueryStage> queryPlan;
+      private List<TimelineSample> timeline;
       private Schema schema;
 
       private Builder() {}
@@ -347,6 +349,11 @@ public abstract class JobStatistics implements Serializable {
             this.queryPlan =
                 Lists.transform(
                     statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+          }
+          if (statisticsPb.getQuery().getTimeline() != null) {
+            this.timeline =
+                Lists.transform(
+                    statisticsPb.getQuery().getTimeline(), TimelineSample.FROM_PB_FUNCTION);
           }
           if (statisticsPb.getQuery().getSchema() != null) {
             this.schema = Schema.fromPb(statisticsPb.getQuery().getSchema());
@@ -379,6 +386,11 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setTimeline(List<TimelineSample> timeline) {
+        this.timeline = timeline;
+        return self();
+      }
+
       Builder setSchema(Schema schema) {
         this.schema = schema;
         return self();
@@ -397,6 +409,7 @@ public abstract class JobStatistics implements Serializable {
       this.totalBytesBilled = builder.totalBytesBilled;
       this.totalBytesProcessed = builder.totalBytesProcessed;
       this.queryPlan = builder.queryPlan;
+      this.timeline = builder.timeline;
       this.schema = builder.schema;
     }
 
@@ -448,6 +461,14 @@ public abstract class JobStatistics implements Serializable {
       return queryPlan;
     }
 
+    /**
+     * Return the timeline for the query, as a list of timeline samples.  Each sample provides
+     * information about the overall progress of the query.  Information includes time of the
+     * sample, progress reporting on active, completed, and
+     * pending units of work, as well as the cumulative estimation of slot-milliseconds consumed
+     * by the query.
+     */
+    public List<TimelineSample> getTimeline() { return timeline; }
 
     /**
      * Returns the schema for the query result. Present only for successful dry run of
@@ -465,6 +486,7 @@ public abstract class JobStatistics implements Serializable {
           .add("totalBytesBilled", totalBytesBilled)
           .add("totalBytesProcessed", totalBytesProcessed)
           .add("queryPlan", queryPlan)
+          .add("timeline", timeline)
           .add("schema", schema);
     }
 
@@ -491,6 +513,9 @@ public abstract class JobStatistics implements Serializable {
       queryStatisticsPb.setTotalBytesProcessed(totalBytesProcessed);
       if (queryPlan != null) {
         queryStatisticsPb.setQueryPlan(Lists.transform(queryPlan, QueryStage.TO_PB_FUNCTION));
+      }
+      if (timeline != null) {
+        queryStatisticsPb.setTimeline(Lists.transform(timeline, TimelineSample.TO_PB_FUNCTION));
       }
       if (schema != null) {
         queryStatisticsPb.setSchema(schema.toPb());
