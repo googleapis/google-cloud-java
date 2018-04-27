@@ -6,11 +6,11 @@ import org.junit.Test;
 
 public class TimelineSampleTest {
 
-  private static long ELAPSED_MS = 1001;
-  private static long ACTIVE_UNITS = 500;
-  private static long COMPLETED_UNITS = 843;
-  private static long PENDING_UNITS = 14;
-  private static long SLOT_MILLIS = 1220012;
+  private static final long ELAPSED_MS = 1001;
+  private static final long ACTIVE_UNITS = 500;
+  private static final long COMPLETED_UNITS = 843;
+  private static final long PENDING_UNITS = 14;
+  private static final long SLOT_MILLIS = 1220012;
 
   private static TimelineSample TIMELINE_SAMPLE = TimelineSample.newBuilder()
       .setElapsedMs(ELAPSED_MS)

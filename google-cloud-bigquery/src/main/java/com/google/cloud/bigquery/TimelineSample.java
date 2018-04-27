@@ -1,8 +1,5 @@
 package com.google.cloud.bigquery;
 
-import com.google.cloud.bigquery.QueryStage.Builder;
-import com.google.cloud.bigquery.QueryStage.QueryStep;
-import com.google.common.collect.ImmutableList;
 import java.io.Serializable;
 import com.google.api.services.bigquery.model.QueryTimelineSample;
 import com.google.common.base.Function;
@@ -11,6 +8,14 @@ import java.util.Objects;
 
 
 public class TimelineSample implements Serializable {
+
+  private static final long serialVersionUID = 1L;
+
+  private final long elapsedMs;
+  private final long activeUnits;
+  private final long completedUnits;
+  private final long pendingUnits;
+  private final long slotMillis;
 
   static final Function<QueryTimelineSample, TimelineSample> FROM_PB_FUNCTION =
       new Function<QueryTimelineSample, TimelineSample>() {
@@ -27,10 +32,6 @@ public class TimelineSample implements Serializable {
           return sample.toPb();
         }
       };
-
-
-
-
 
   /**
    * Returns the sample time as milliseconds elapsed since the start of query execution.
@@ -67,11 +68,7 @@ public class TimelineSample implements Serializable {
     return this.slotMillis;
   }
 
-  private final long elapsedMs;
-  private final long activeUnits;
-  private final long completedUnits;
-  private final long pendingUnits;
-  private final long slotMillis;
+
 
   static final class Builder {
 
@@ -159,7 +156,7 @@ public class TimelineSample implements Serializable {
         && pendingUnits == other.pendingUnits
         && slotMillis == other.slotMillis;
   }
-  static TimelineSample fromPb(com.google.api.services.bigquery.model.QueryTimelineSample sample) {
+  static TimelineSample fromPb(QueryTimelineSample sample) {
     Builder builder = new TimelineSample.Builder();
     builder.setElapsedMs(sample.getElapsedMs());
     builder.setActiveUnits(sample.getActiveUnits());
