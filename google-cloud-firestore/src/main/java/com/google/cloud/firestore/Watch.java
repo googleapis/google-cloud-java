@@ -196,8 +196,9 @@ class Watch implements ApiStreamObserver<ListenResponse> {
             }
             break;
           case ADD:
-            Preconditions.checkState(
-                WATCH_TARGET_ID == change.getTargetIds(0), "Target ID must be 0xD0");
+            if (WATCH_TARGET_ID != change.getTargetIds(0)) {
+              closeStream(FirestoreException.invalidState("Target ID must be 0x01"));
+            }
             break;
           case REMOVE:
             Status status =

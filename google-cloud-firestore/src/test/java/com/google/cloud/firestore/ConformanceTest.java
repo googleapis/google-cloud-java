@@ -439,7 +439,7 @@ public class ConformanceTest {
     }
   }
 
-  private void runWatchTest(TestDefinition.ListenTest testCase)
+  private void runWatchTest(final TestDefinition.ListenTest testCase)
       throws ExecutionException, InterruptedException {
     final SettableApiFuture<Void> testCaseStarted = SettableApiFuture.create();
     final SettableApiFuture<Void> testCaseFinished = SettableApiFuture.create();
@@ -464,10 +464,20 @@ public class ConformanceTest {
               public void onEvent(
                   @Nullable QuerySnapshot actualSnapshot, @Nullable FirestoreException error) {
                 try {
-                  Assert.assertFalse(expectedSnapshots.isEmpty());
-                  Snapshot expectedSnapshot = expectedSnapshots.remove(0);
-                  Assert.assertEquals(convertQuerySnapshot(expectedSnapshot), actualSnapshot);
-                  if (expectedSnapshots.isEmpty()) {
+                  if (actualSnapshot != null) {
+                    Assert.assertNull(error);
+                    Assert.assertFalse(expectedSnapshots.isEmpty());
+                    Snapshot expectedSnapshot = expectedSnapshots.remove(0);
+                    Assert.assertEquals(convertQuerySnapshot(expectedSnapshot), actualSnapshot);
+                    if (expectedSnapshots.isEmpty()) {
+                      if (!testCase.getIsError()) {
+                        testCaseFinished.set(null);
+                      }
+                    }
+                  } else { // Error case
+                    Assert.assertNotNull(error);
+                    Assert.assertTrue(expectedSnapshots.isEmpty());
+                    Assert.assertTrue(testCase.getIsError());
                     testCaseFinished.set(null);
                   }
                 } catch (AssertionError e) {
