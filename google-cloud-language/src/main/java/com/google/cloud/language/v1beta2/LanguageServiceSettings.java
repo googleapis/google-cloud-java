@@ -56,7 +56,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class LanguageServiceSettings extends ClientSettings<LanguageServiceSettings> {
   /** Returns the object with the settings used for calls to analyzeSentiment. */

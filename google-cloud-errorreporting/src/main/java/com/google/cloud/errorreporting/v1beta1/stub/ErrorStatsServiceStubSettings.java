@@ -84,7 +84,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServiceStubSettings> {
   /** The default scopes of the service. */

@@ -97,7 +97,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2StubSettings> {
   /** The default scopes of the service. */

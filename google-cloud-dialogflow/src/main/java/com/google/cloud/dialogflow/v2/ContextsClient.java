@@ -113,7 +113,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class ContextsClient implements BackgroundResource {
   private final ContextsSettings settings;

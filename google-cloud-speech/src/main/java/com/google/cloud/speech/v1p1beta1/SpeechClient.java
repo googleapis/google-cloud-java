@@ -106,7 +106,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class SpeechClient implements BackgroundResource {
   private final SpeechSettings settings;
