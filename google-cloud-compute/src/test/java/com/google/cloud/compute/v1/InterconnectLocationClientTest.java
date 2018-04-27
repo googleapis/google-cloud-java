@@ -81,34 +81,34 @@ public class InterconnectLocationClientTest {
   @Test
   @SuppressWarnings("all")
   public void getInterconnectLocationTest() {
-    ProjectGlobalAddressName address = ProjectGlobalAddressName.of("[PROJECT]", "[ADDRESS]");
-    String availabilityZone = "availabilityZone-378410992";
-    String city = "city3053931";
     String continent = "continent-403427916";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String facilityProvider = "facilityProvider2143916045";
-    String facilityProviderFacilityId = "facilityProviderFacilityId-1523343611";
-    String id = "id3355";
+    ProjectGlobalAddressName address = ProjectGlobalAddressName.of("[PROJECT]", "[ADDRESS]");
+    String city = "city3053931";
     String kind = "kind3292052";
-    String name = "name3373707";
+    String description = "description-1724546052";
     String peeringdbFacilityId = "peeringdbFacilityId-303818";
+    String availabilityZone = "availabilityZone-378410992";
+    String facilityProviderFacilityId = "facilityProviderFacilityId-1523343611";
     String selfLink = "selfLink-1691268851";
+    String facilityProvider = "facilityProvider2143916045";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    String id = "id3355";
     InterconnectLocation expectedResponse =
         InterconnectLocation.newBuilder()
-            .setAddress(address.toString())
-            .setAvailabilityZone(availabilityZone)
-            .setCity(city)
             .setContinent(continent)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setFacilityProvider(facilityProvider)
-            .setFacilityProviderFacilityId(facilityProviderFacilityId)
-            .setId(id)
+            .setAddress(address.toString())
+            .setCity(city)
             .setKind(kind)
-            .setName(name)
+            .setDescription(description)
             .setPeeringdbFacilityId(peeringdbFacilityId)
+            .setAvailabilityZone(availabilityZone)
+            .setFacilityProviderFacilityId(facilityProviderFacilityId)
             .setSelfLink(selfLink)
+            .setFacilityProvider(facilityProvider)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setId(id)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -155,17 +155,17 @@ public class InterconnectLocationClientTest {
   @Test
   @SuppressWarnings("all")
   public void listInterconnectLocationsTest() {
-    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
+    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     InterconnectLocation itemsElement = InterconnectLocation.newBuilder().build();
     List<InterconnectLocation> items = Arrays.asList(itemsElement);
     InterconnectLocationList expectedResponse =
         InterconnectLocationList.newBuilder()
-            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
+            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

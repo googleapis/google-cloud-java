@@ -85,50 +85,50 @@ public class RouteClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteRouteTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -175,38 +175,38 @@ public class RouteClientTest {
   @Test
   @SuppressWarnings("all")
   public void getRouteTest() {
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String destRange = "destRange918198624";
-    String id = "id3355";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     String nextHopGateway = "nextHopGateway-159695614";
-    String nextHopInstance = "nextHopInstance1467250071";
-    String nextHopIp = "nextHopIp1184061353";
-    String nextHopNetwork = "nextHopNetwork1872908524";
+    String kind = "kind3292052";
     String nextHopPeering = "nextHopPeering-661059074";
-    String nextHopVpnTunnel = "nextHopVpnTunnel-1627639147";
+    String description = "description-1724546052";
     Integer priority = 1165461084;
+    String nextHopNetwork = "nextHopNetwork1872908524";
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
+    String nextHopInstance = "nextHopInstance1467250071";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    String destRange = "destRange918198624";
+    String nextHopVpnTunnel = "nextHopVpnTunnel-1627639147";
+    String nextHopIp = "nextHopIp1184061353";
+    String id = "id3355";
     Route expectedResponse =
         Route.newBuilder()
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setDestRange(destRange)
-            .setId(id)
-            .setKind(kind)
-            .setName(name)
-            .setNetwork(network.toString())
             .setNextHopGateway(nextHopGateway)
-            .setNextHopInstance(nextHopInstance)
-            .setNextHopIp(nextHopIp)
-            .setNextHopNetwork(nextHopNetwork)
+            .setKind(kind)
             .setNextHopPeering(nextHopPeering)
-            .setNextHopVpnTunnel(nextHopVpnTunnel)
+            .setDescription(description)
             .setPriority(priority)
+            .setNextHopNetwork(nextHopNetwork)
+            .setNetwork(network.toString())
             .setSelfLink(selfLink)
+            .setNextHopInstance(nextHopInstance)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setDestRange(destRange)
+            .setNextHopVpnTunnel(nextHopVpnTunnel)
+            .setNextHopIp(nextHopIp)
+            .setId(id)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -251,50 +251,50 @@ public class RouteClientTest {
   @Test
   @SuppressWarnings("all")
   public void insertRouteTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -343,17 +343,17 @@ public class RouteClientTest {
   @Test
   @SuppressWarnings("all")
   public void listRoutesTest() {
-    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
+    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Route itemsElement = Route.newBuilder().build();
     List<Route> items = Arrays.asList(itemsElement);
     RouteList expectedResponse =
         RouteList.newBuilder()
-            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
+            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

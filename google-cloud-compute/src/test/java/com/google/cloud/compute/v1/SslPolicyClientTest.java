@@ -89,50 +89,50 @@ public class SslPolicyClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteSslPolicyTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -181,25 +181,25 @@ public class SslPolicyClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSslPolicyTest() {
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String fingerprint = "fingerprint-1375934236";
-    String id = "id3355";
     String kind = "kind3292052";
     String minTlsVersion = "minTlsVersion8155943";
-    String name = "name3373707";
     String profile = "profile-309425751";
+    String creationTimestamp = "creationTimestamp567396278";
+    String fingerprint = "fingerprint-1375934236";
+    String name = "name3373707";
+    String description = "description-1724546052";
+    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     SslPolicy expectedResponse =
         SslPolicy.newBuilder()
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setFingerprint(fingerprint)
-            .setId(id)
             .setKind(kind)
             .setMinTlsVersion(minTlsVersion)
-            .setName(name)
             .setProfile(profile)
+            .setCreationTimestamp(creationTimestamp)
+            .setFingerprint(fingerprint)
+            .setName(name)
+            .setDescription(description)
+            .setId(id)
             .setSelfLink(selfLink)
             .build();
     mockService.addResponse(expectedResponse);
@@ -247,50 +247,50 @@ public class SslPolicyClientTest {
   @Test
   @SuppressWarnings("all")
   public void insertSslPolicyTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -339,17 +339,17 @@ public class SslPolicyClientTest {
   @Test
   @SuppressWarnings("all")
   public void listSslPoliciesTest() {
-    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
+    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     SslPolicy itemsElement = SslPolicy.newBuilder().build();
     List<SslPolicy> items = Arrays.asList(itemsElement);
     SslPoliciesList expectedResponse =
         SslPoliciesList.newBuilder()
-            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
+            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
@@ -445,50 +445,50 @@ public class SslPolicyClientTest {
   @Test
   @SuppressWarnings("all")
   public void patchSslPolicyTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 

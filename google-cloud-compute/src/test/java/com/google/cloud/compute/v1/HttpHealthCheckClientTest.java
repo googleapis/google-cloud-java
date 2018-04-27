@@ -89,50 +89,50 @@ public class HttpHealthCheckClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteHttpHealthCheckTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -182,33 +182,33 @@ public class HttpHealthCheckClientTest {
   @SuppressWarnings("all")
   public void getHttpHealthCheckTest() {
     Integer checkIntervalSec = 345561006;
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    Integer healthyThreshold = 133658551;
-    String host = "host3208616";
-    String id = "id3355";
     String kind = "kind3292052";
-    String name = "name3373707";
-    Integer port = 3446913;
-    String requestPath = "requestPath1303145429";
-    String selfLink = "selfLink-1691268851";
+    String description = "description-1724546052";
     Integer timeoutSec = 2067488653;
+    String selfLink = "selfLink-1691268851";
+    Integer port = 3446913;
+    String creationTimestamp = "creationTimestamp567396278";
+    String host = "host3208616";
+    String name = "name3373707";
     Integer unhealthyThreshold = 1838571216;
+    Integer healthyThreshold = 133658551;
+    String id = "id3355";
+    String requestPath = "requestPath1303145429";
     HttpHealthCheck expectedResponse =
         HttpHealthCheck.newBuilder()
             .setCheckIntervalSec(checkIntervalSec)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setHealthyThreshold(healthyThreshold)
-            .setHost(host)
-            .setId(id)
             .setKind(kind)
-            .setName(name)
-            .setPort(port)
-            .setRequestPath(requestPath)
-            .setSelfLink(selfLink)
+            .setDescription(description)
             .setTimeoutSec(timeoutSec)
+            .setSelfLink(selfLink)
+            .setPort(port)
+            .setCreationTimestamp(creationTimestamp)
+            .setHost(host)
+            .setName(name)
             .setUnhealthyThreshold(unhealthyThreshold)
+            .setHealthyThreshold(healthyThreshold)
+            .setId(id)
+            .setRequestPath(requestPath)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -255,50 +255,50 @@ public class HttpHealthCheckClientTest {
   @Test
   @SuppressWarnings("all")
   public void insertHttpHealthCheckTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -348,17 +348,17 @@ public class HttpHealthCheckClientTest {
   @Test
   @SuppressWarnings("all")
   public void listHttpHealthChecksTest() {
-    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
+    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     HttpHealthCheck itemsElement = HttpHealthCheck.newBuilder().build();
     List<HttpHealthCheck> items = Arrays.asList(itemsElement);
     HttpHealthCheckList expectedResponse =
         HttpHealthCheckList.newBuilder()
-            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
+            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
@@ -408,50 +408,50 @@ public class HttpHealthCheckClientTest {
   @Test
   @SuppressWarnings("all")
   public void patchHttpHealthCheckTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -503,50 +503,50 @@ public class HttpHealthCheckClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateHttpHealthCheckTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 

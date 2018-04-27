@@ -87,50 +87,50 @@ public class InterconnectClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteInterconnectTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -179,44 +179,44 @@ public class InterconnectClientTest {
   @Test
   @SuppressWarnings("all")
   public void getInterconnectTest() {
+    String operationalStatus = "operationalStatus1274812671";
+    String interconnectType = "interconnectType2125777995";
+    String peerIpAddress = "peerIpAddress-1939747879";
+    String kind = "kind3292052";
+    Integer requestedLinkCount = 1118793211;
+    String googleReferenceId = "googleReferenceId534944469";
+    String description = "description-1724546052";
+    String customerName = "customerName-2143818164";
+    String selfLink = "selfLink-1691268851";
     Boolean adminEnabled = false;
     String creationTimestamp = "creationTimestamp567396278";
-    String customerName = "customerName-2143818164";
-    String description = "description-1724546052";
-    String googleIpAddress = "googleIpAddress1516847778";
-    String googleReferenceId = "googleReferenceId534944469";
-    String id = "id3355";
-    String interconnectType = "interconnectType2125777995";
-    String kind = "kind3292052";
+    String name = "name3373707";
     String linkType = "linkType-1624275873";
     String location = "location1901043637";
-    String name = "name3373707";
-    String nocContactEmail = "nocContactEmail1087814656";
-    String operationalStatus = "operationalStatus1274812671";
-    String peerIpAddress = "peerIpAddress-1939747879";
     Integer provisionedLinkCount = 1199724171;
-    Integer requestedLinkCount = 1118793211;
-    String selfLink = "selfLink-1691268851";
+    String id = "id3355";
+    String googleIpAddress = "googleIpAddress1516847778";
+    String nocContactEmail = "nocContactEmail1087814656";
     Interconnect expectedResponse =
         Interconnect.newBuilder()
+            .setOperationalStatus(operationalStatus)
+            .setInterconnectType(interconnectType)
+            .setPeerIpAddress(peerIpAddress)
+            .setKind(kind)
+            .setRequestedLinkCount(requestedLinkCount)
+            .setGoogleReferenceId(googleReferenceId)
+            .setDescription(description)
+            .setCustomerName(customerName)
+            .setSelfLink(selfLink)
             .setAdminEnabled(adminEnabled)
             .setCreationTimestamp(creationTimestamp)
-            .setCustomerName(customerName)
-            .setDescription(description)
-            .setGoogleIpAddress(googleIpAddress)
-            .setGoogleReferenceId(googleReferenceId)
-            .setId(id)
-            .setInterconnectType(interconnectType)
-            .setKind(kind)
+            .setName(name)
             .setLinkType(linkType)
             .setLocation(location)
-            .setName(name)
-            .setNocContactEmail(nocContactEmail)
-            .setOperationalStatus(operationalStatus)
-            .setPeerIpAddress(peerIpAddress)
             .setProvisionedLinkCount(provisionedLinkCount)
-            .setRequestedLinkCount(requestedLinkCount)
-            .setSelfLink(selfLink)
+            .setId(id)
+            .setGoogleIpAddress(googleIpAddress)
+            .setNocContactEmail(nocContactEmail)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -263,50 +263,50 @@ public class InterconnectClientTest {
   @Test
   @SuppressWarnings("all")
   public void insertInterconnectTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -355,17 +355,17 @@ public class InterconnectClientTest {
   @Test
   @SuppressWarnings("all")
   public void listInterconnectsTest() {
-    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
+    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Interconnect itemsElement = Interconnect.newBuilder().build();
     List<Interconnect> items = Arrays.asList(itemsElement);
     InterconnectList expectedResponse =
         InterconnectList.newBuilder()
-            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
+            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
@@ -415,50 +415,50 @@ public class InterconnectClientTest {
   @Test
   @SuppressWarnings("all")
   public void patchInterconnectTest() {
-    String clientOperationId = "clientOperationId-239630617";
-    String creationTimestamp = "creationTimestamp567396278";
-    String description = "description-1724546052";
-    String endTime = "endTime1725551537";
     String httpErrorMessage = "httpErrorMessage1276263769";
-    Integer httpErrorStatusCode = 1386087020;
-    String id = "id3355";
-    String insertTime = "insertTime-103148397";
-    String kind = "kind3292052";
-    String name = "name3373707";
-    String operationType = "operationType-1432962286";
-    Integer progress = 1001078227;
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String selfLink = "selfLink-1691268851";
-    String startTime = "startTime-1573145462";
-    String status = "status-892481550";
-    String statusMessage = "statusMessage-239442758";
     String targetId = "targetId-815576439";
-    String targetLink = "targetLink-2084812312";
-    String user = "user3599307";
+    String kind = "kind3292052";
+    String description = "description-1724546052";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String insertTime = "insertTime-103148397";
+    Integer httpErrorStatusCode = 1386087020;
     ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
+    String targetLink = "targetLink-2084812312";
+    String creationTimestamp = "creationTimestamp567396278";
+    String name = "name3373707";
+    Integer progress = 1001078227;
+    String operationType = "operationType-1432962286";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    String id = "id3355";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String clientOperationId = "clientOperationId-239630617";
+    String user = "user3599307";
+    String status = "status-892481550";
     Operation expectedResponse =
         Operation.newBuilder()
-            .setClientOperationId(clientOperationId)
-            .setCreationTimestamp(creationTimestamp)
-            .setDescription(description)
-            .setEndTime(endTime)
             .setHttpErrorMessage(httpErrorMessage)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setId(id)
-            .setInsertTime(insertTime)
-            .setKind(kind)
-            .setName(name)
-            .setOperationType(operationType)
-            .setProgress(progress)
-            .setRegion(region.toString())
-            .setSelfLink(selfLink)
-            .setStartTime(startTime)
-            .setStatus(status)
-            .setStatusMessage(statusMessage)
             .setTargetId(targetId)
-            .setTargetLink(targetLink)
-            .setUser(user)
+            .setKind(kind)
+            .setDescription(description)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setInsertTime(insertTime)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
             .setZone(zone.toString())
+            .setTargetLink(targetLink)
+            .setCreationTimestamp(creationTimestamp)
+            .setName(name)
+            .setProgress(progress)
+            .setOperationType(operationType)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .setId(id)
+            .setRegion(region.toString())
+            .setClientOperationId(clientOperationId)
+            .setUser(user)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 
