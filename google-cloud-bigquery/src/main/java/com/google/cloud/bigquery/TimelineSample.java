@@ -153,7 +153,6 @@ public class TimelineSample implements Serializable {
   @Override
   public final int hashCode() {
     return Objects.hash(elapsedMs, activeUnits, completedUnits, pendingUnits, slotMillis);
-
   }
 
   @Override

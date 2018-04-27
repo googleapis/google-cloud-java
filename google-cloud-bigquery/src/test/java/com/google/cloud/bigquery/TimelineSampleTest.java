@@ -27,7 +27,7 @@ public class TimelineSampleTest {
   private static final long PENDING_UNITS = 14;
   private static final long SLOT_MILLIS = 1220012;
 
-  private static TimelineSample TIMELINE_SAMPLE = TimelineSample.newBuilder()
+  private static final TimelineSample TIMELINE_SAMPLE = TimelineSample.newBuilder()
       .setElapsedMs(ELAPSED_MS)
       .setActiveUnits(ACTIVE_UNITS)
       .setCompletedUnits(COMPLETED_UNITS)
