@@ -22,10 +22,10 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Type.StructField;
 import com.google.common.collect.ForwardingList;
 import com.google.common.collect.Lists;
 import com.google.common.testing.EqualsTester;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -526,9 +526,7 @@ public class ValueTest {
     ByteArray c = newByteArray("c");
     Value v = Value.bytesArray(Arrays.asList(a, null, c));
     assertThat(v.isNull()).isFalse();
-    assertThat(v.getBytesArray())
-        .containsExactly(a, null, c)
-        .inOrder();
+    assertThat(v.getBytesArray()).containsExactly(a, null, c).inOrder();
     assertThat(v.toString()).isEqualTo(String.format("[%s,NULL,%s]", a, c));
   }
 
@@ -602,22 +600,76 @@ public class ValueTest {
   }
 
   @Test
-  public void structArray() {
+  public void struct() {
+    Struct struct = Struct.newBuilder().set("f1").to("v1").set("f2").to(30).build();
+    Value v1 = Value.struct(struct);
+    assertThat(v1.getType()).isEqualTo(struct.getType());
+    assertThat(v1.isNull()).isFalse();
+    assertThat(v1.getStruct()).isEqualTo(struct);
+    assertThat(v1.toString()).isEqualTo("[v1, 30]");
+
+    Value v2 = Value.struct(struct.getType(), struct);
+    assertThat(v2).isEqualTo(v1);
+
+    expectedException.expect(IllegalArgumentException.class);
+    expectedException.expectMessage("Mismatch between struct value and type.");
+    Value.struct(Type.struct(Arrays.asList(StructField.of("f3", Type.string()))), struct);
+  }
+
+  @Test
+  public void nullStruct() {
     List<Type.StructField> fieldTypes =
         Arrays.asList(
-            Type.StructField.of("ff1", Type.string()), Type.StructField.of("ff2", Type.int64()));
+            Type.StructField.of("f1", Type.string()), Type.StructField.of("f2", Type.int64()));
+
+    Value v = Value.struct(Type.struct(fieldTypes), null);
+    assertThat(v.getType().getStructFields()).isEqualTo(fieldTypes);
+    assertThat(v.isNull()).isTrue();
+    assertThat(v.toString()).isEqualTo(NULL_STRING);
+
+    expectedException.expect(NullPointerException.class);
+    expectedException.expectMessage("Illegal call to create a NULL struct value.");
+    Value.struct(null);
+  }
+
+  @Test
+  public void nullStructGetter() {
+    List<Type.StructField> fieldTypes =
+        Arrays.asList(
+            Type.StructField.of("f1", Type.string()), Type.StructField.of("f2", Type.int64()));
+
+    Value v = Value.struct(Type.struct(fieldTypes), null);
+    assertThat(v.isNull()).isTrue();
+
+    expectedException.expect(IllegalStateException.class);
+    expectedException.expectMessage("Illegal call to getter of null value.");
+    v.getStruct();
+  }
+
+  @Test
+  public void structArrayField() {
+    Type elementType =
+        Type.struct(
+            Arrays.asList(
+                Type.StructField.of("ff1", Type.string()),
+                Type.StructField.of("ff2", Type.int64())));
     List<Struct> arrayElements =
         Arrays.asList(
             Struct.newBuilder().set("ff1").to("v1").set("ff2").to(1).build(),
             null,
             Struct.newBuilder().set("ff1").to("v3").set("ff2").to(3).build());
     Struct struct =
-        Struct.newBuilder().set("f1").to("x").add("f2", fieldTypes, arrayElements).build();
+        Struct.newBuilder()
+            .set("f1")
+            .to("x")
+            .set("f2")
+            .toStructArray(elementType, arrayElements)
+            .build();
     assertThat(struct.getType())
         .isEqualTo(
             Type.struct(
                 Type.StructField.of("f1", Type.string()),
-                Type.StructField.of("f2", Type.array(Type.struct(fieldTypes)))));
+                Type.StructField.of("f2", Type.array(elementType))));
     assertThat(struct.isNull(0)).isFalse();
     assertThat(struct.isNull(1)).isFalse();
     assertThat(struct.getString(0)).isEqualTo("x");
@@ -625,25 +677,67 @@ public class ValueTest {
   }
 
   @Test
-  public void structArrayNull() {
-    List<Type.StructField> fieldTypes =
-        Arrays.asList(
-            Type.StructField.of("ff1", Type.string()), Type.StructField.of("ff2", Type.int64()));
-    Struct struct = Struct.newBuilder().set("f1").to("x").add("f2", fieldTypes, null).build();
+  public void structArrayFieldNull() {
+    Type elementType =
+        Type.struct(
+            Arrays.asList(
+                Type.StructField.of("ff1", Type.string()),
+                Type.StructField.of("ff2", Type.int64())));
+    Struct struct =
+        Struct.newBuilder().set("f1").to("x").set("f2").toStructArray(elementType, null).build();
     assertThat(struct.getType())
         .isEqualTo(
             Type.struct(
                 Type.StructField.of("f1", Type.string()),
-                Type.StructField.of("f2", Type.array(Type.struct(fieldTypes)))));
+                Type.StructField.of("f2", Type.array(elementType))));
     assertThat(struct.isNull(0)).isFalse();
     assertThat(struct.isNull(1)).isTrue();
   }
 
   @Test
-  public void structArrayInvalidType() {
-    List<Type.StructField> fieldTypes =
+  public void structArray() {
+    Type elementType =
+        Type.struct(
+            Arrays.asList(
+                Type.StructField.of("ff1", Type.string()),
+                Type.StructField.of("ff2", Type.int64())));
+    List<Struct> arrayElements =
         Arrays.asList(
-            Type.StructField.of("ff1", Type.string()), Type.StructField.of("ff2", Type.int64()));
+            Struct.newBuilder().set("ff1").to("v1").set("ff2").to(1).build(),
+            null,
+            null,
+            Struct.newBuilder().set("ff1").to("v3").set("ff2").to(3).build());
+    Value v = Value.structArray(elementType, arrayElements);
+    assertThat(v.isNull()).isFalse();
+    assertThat(v.getType().getArrayElementType()).isEqualTo(elementType);
+    assertThat(v.getStructArray()).isEqualTo(arrayElements);
+    assertThat(v.toString()).isEqualTo("[[v1, 1],NULL,NULL,[v3, 3]]");
+  }
+
+  @Test
+  public void structArrayNull() {
+    Type elementType =
+        Type.struct(
+            Arrays.asList(
+                Type.StructField.of("ff1", Type.string()),
+                Type.StructField.of("ff2", Type.int64())));
+    Value v = Value.structArray(elementType, null);
+    assertThat(v.isNull()).isTrue();
+    assertThat(v.getType().getArrayElementType()).isEqualTo(elementType);
+    assertThat(v.toString()).isEqualTo(NULL_STRING);
+
+    expectedException.expect(IllegalStateException.class);
+    expectedException.expectMessage("Illegal call to getter of null value");
+    v.getStructArray();
+  }
+
+  @Test
+  public void structArrayInvalidType() {
+    Type elementType =
+        Type.struct(
+            Arrays.asList(
+                Type.StructField.of("ff1", Type.string()),
+                Type.StructField.of("ff2", Type.int64())));
     // Second element has INT64 first field, not STRING.
     List<Struct> arrayElements =
         Arrays.asList(
@@ -652,7 +746,7 @@ public class ValueTest {
 
     expectedException.expect(IllegalArgumentException.class);
     expectedException.expectMessage("must have type STRUCT<ff1 STRING, ff2 INT64>");
-    Struct.newBuilder().add("f1", fieldTypes, arrayElements);
+    Value.structArray(elementType, arrayElements);
   }
 
   @Test
@@ -680,8 +774,8 @@ public class ValueTest {
     tester.addEqualityGroup(Value.bytes(null));
 
     tester.addEqualityGroup(Value.timestamp(null), Value.timestamp(null));
-    tester.addEqualityGroup(Value.timestamp(Value.COMMIT_TIMESTAMP),
-        Value.timestamp(Value.COMMIT_TIMESTAMP));
+    tester.addEqualityGroup(
+        Value.timestamp(Value.COMMIT_TIMESTAMP), Value.timestamp(Value.COMMIT_TIMESTAMP));
     Timestamp now = Timestamp.now();
     tester.addEqualityGroup(Value.timestamp(now), Value.timestamp(now));
     tester.addEqualityGroup(Value.timestamp(Timestamp.ofTimeMicroseconds(0)));
@@ -690,8 +784,17 @@ public class ValueTest {
     tester.addEqualityGroup(
         Value.date(Date.fromYearMonthDay(2018, 2, 26)),
         Value.date(Date.fromYearMonthDay(2018, 2, 26)));
-    tester.addEqualityGroup(
-        Value.date(Date.fromYearMonthDay(2018, 2, 27)));
+    tester.addEqualityGroup(Value.date(Date.fromYearMonthDay(2018, 2, 27)));
+
+    Struct structValue1 = Struct.newBuilder().set("f1").to(20).set("f2").to("def").build();
+    Struct structValue2 = Struct.newBuilder().set("f1").to(20).set("f2").to("def").build();
+    assertThat(Value.struct(structValue1).equals(Value.struct(structValue2))).isTrue();
+    tester.addEqualityGroup(Value.struct(structValue1), Value.struct(structValue2));
+
+    Type structType1 = structValue1.getType();
+    Type structType2 = Type.struct(Arrays.asList(StructField.of("f1", Type.string())));
+    tester.addEqualityGroup(Value.struct(structType1, null), Value.struct(structType1, null));
+    tester.addEqualityGroup(Value.struct(structType2, null), Value.struct(structType2, null));
 
     tester.addEqualityGroup(
         Value.boolArray(Arrays.asList(false, true)),
@@ -728,17 +831,27 @@ public class ValueTest {
     tester.addEqualityGroup(Value.bytesArray(Arrays.asList(newByteArray("c"))));
     tester.addEqualityGroup(Value.bytesArray(null));
 
-    tester.addEqualityGroup(Value.timestampArray(Arrays.asList(null, now)),
+    tester.addEqualityGroup(
+        Value.timestampArray(Arrays.asList(null, now)),
         Value.timestampArray(Arrays.asList(null, now)));
     tester.addEqualityGroup(Value.timestampArray(null));
 
     tester.addEqualityGroup(
-        Value.dateArray(
-            Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))),
-        Value.dateArray(
-            Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))));
+        Value.dateArray(Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))),
+        Value.dateArray(Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))));
     tester.addEqualityGroup(Value.dateArray(null));
 
+    tester.addEqualityGroup(
+        Value.structArray(structType1, Arrays.asList(structValue1, null)),
+        Value.structArray(structType1, Arrays.asList(structValue2, null)));
+    tester.addEqualityGroup(
+        Value.structArray(structType1, Arrays.asList((Struct) null)),
+        Value.structArray(structType1, Arrays.asList((Struct) null)));
+    tester.addEqualityGroup(
+        Value.structArray(structType1, null), Value.structArray(structType1, null));
+    tester.addEqualityGroup(
+        Value.structArray(structType1, new ArrayList<Struct>()),
+        Value.structArray(structType1, new ArrayList<Struct>()));
 
     tester.testEquals();
   }
@@ -762,15 +875,25 @@ public class ValueTest {
     reserializeAndAssert(Value.bytes(newByteArray("abc")));
     reserializeAndAssert(Value.bytes(null));
 
-    reserializeAndAssert(Value.boolArray(new boolean[] { false, true }));
+    reserializeAndAssert(
+        Value.struct(Struct.newBuilder().set("f").to(3).set("f").to((Date) null).build()));
+    reserializeAndAssert(
+        Value.struct(
+            Type.struct(
+                Arrays.asList(
+                    Type.StructField.of("a", Type.string()),
+                    Type.StructField.of("b", Type.int64()))),
+            null));
+
+    reserializeAndAssert(Value.boolArray(new boolean[] {false, true}));
     reserializeAndAssert(Value.boolArray(BrokenSerializationList.of(true, false)));
     reserializeAndAssert(Value.boolArray((Iterable<Boolean>) null));
 
     reserializeAndAssert(Value.int64Array(BrokenSerializationList.of(1L, 2L)));
-    reserializeAndAssert(Value.int64Array(new long[] { 1L, 2L }));
+    reserializeAndAssert(Value.int64Array(new long[] {1L, 2L}));
     reserializeAndAssert(Value.int64Array((Iterable<Long>) null));
 
-    reserializeAndAssert(Value.float64Array(new double[] { .1, .2 }));
+    reserializeAndAssert(Value.float64Array(new double[] {.1, .2}));
     reserializeAndAssert(Value.float64Array(BrokenSerializationList.of(.1, .2, .3)));
     reserializeAndAssert(Value.float64Array((Iterable<Double>) null));
 
@@ -781,8 +904,7 @@ public class ValueTest {
 
     reserializeAndAssert(Value.date(null));
     reserializeAndAssert(Value.date(Date.fromYearMonthDay(2018, 2, 26)));
-    reserializeAndAssert(Value.dateArray(Arrays.asList(null,
-        Date.fromYearMonthDay(2018, 2, 26))));
+    reserializeAndAssert(Value.dateArray(Arrays.asList(null, Date.fromYearMonthDay(2018, 2, 26))));
 
     BrokenSerializationList<String> of = BrokenSerializationList.of("a", "b");
     reserializeAndAssert(Value.stringArray(of));
@@ -791,6 +913,11 @@ public class ValueTest {
     reserializeAndAssert(
         Value.bytesArray(BrokenSerializationList.of(newByteArray("a"), newByteArray("b"))));
     reserializeAndAssert(Value.bytesArray(null));
+
+    Struct s1 = Struct.newBuilder().set("f1").to(1).build();
+    Struct s2 = Struct.newBuilder().set("f1").to(2).build();
+    reserializeAndAssert(Value.structArray(s1.getType(), BrokenSerializationList.of(s1, null, s2)));
+    reserializeAndAssert(Value.structArray(s1.getType(), null));
   }
 
   @Test(expected = IllegalStateException.class)
@@ -798,8 +925,9 @@ public class ValueTest {
     reserializeAndAssert(BrokenSerializationList.of(1, 2, 3));
   }
 
-  private static class BrokenSerializationList<T> extends ForwardingList<T> implements
-      Serializable {
+  private static class BrokenSerializationList<T> extends ForwardingList<T>
+      implements Serializable {
+    private static final long serialVersionUID = 1L;
     private final List<T> delegate;
 
     public static <T> BrokenSerializationList<T> of(T... values) {
@@ -810,18 +938,19 @@ public class ValueTest {
       this.delegate = delegate;
     }
 
-    @Override protected List<T> delegate() {
+    @Override
+    protected List<T> delegate() {
       return delegate;
     }
-    private void readObject(java.io.ObjectInputStream unusedStream)
+
+    private void readObject(@SuppressWarnings("unused") java.io.ObjectInputStream unusedStream)
         throws IOException, ClassNotFoundException {
       throw new IllegalStateException("Serialization disabled");
     }
-    private void writeObject(java.io.ObjectOutputStream unusedStream)
+
+    private void writeObject(@SuppressWarnings("unused") java.io.ObjectOutputStream unusedStream)
         throws IOException {
       throw new IllegalStateException("Serialization disabled");
     }
-
-
   }
 }

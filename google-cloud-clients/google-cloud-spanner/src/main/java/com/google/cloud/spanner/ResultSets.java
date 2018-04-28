@@ -19,6 +19,8 @@ package com.google.cloud.spanner;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Type.Code;
+import com.google.cloud.spanner.Type.StructField;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.spanner.v1.ResultSetStats;
@@ -49,6 +51,12 @@ public final class ResultSets {
       Preconditions.checkNotNull(rows);
       Preconditions.checkNotNull(type);
       Preconditions.checkArgument(type.getCode() == Type.Code.STRUCT);
+      for (StructField field : type.getStructFields()) {
+        if (field.getType().getCode() == Code.STRUCT) {
+          throw new UnsupportedOperationException(
+              "STRUCT-typed columns are not supported inside ResultSets.");
+        }
+      }
       this.type = type;
       this.rows = rows instanceof List<?> ? (List<Struct>) rows : Lists.newArrayList(rows);
       for (Struct row : rows) {
