@@ -41,7 +41,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteHttpsHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHttpsHealthCheckHttpRequest;
-import com.google.cloud.compute.v1.HttpsHealthCheck;
+import com.google.cloud.compute.v1.HttpsHealthCheck2;
 import com.google.cloud.compute.v1.HttpsHealthCheckList;
 import com.google.cloud.compute.v1.InsertHttpsHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHttpsHealthChecksHttpRequest;
@@ -100,7 +100,7 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
 
   private final UnaryCallSettings<DeleteHttpsHealthCheckHttpRequest, Operation>
       deleteHttpsHealthCheckSettings;
-  private final UnaryCallSettings<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
+  private final UnaryCallSettings<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
       getHttpsHealthCheckSettings;
   private final UnaryCallSettings<InsertHttpsHealthCheckHttpRequest, Operation>
       insertHttpsHealthCheckSettings;
@@ -120,7 +120,7 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
   }
 
   /** Returns the object with the settings used for calls to getHttpsHealthCheck. */
-  public UnaryCallSettings<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
+  public UnaryCallSettings<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
       getHttpsHealthCheckSettings() {
     return getHttpsHealthCheckSettings;
   }
@@ -235,10 +235,10 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
   }
 
   private static final PagedListDescriptor<
-          ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList, HttpsHealthCheck>
+          ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList, HttpsHealthCheck2>
       LIST_HTTPS_HEALTH_CHECKS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList, HttpsHealthCheck>() {
+              ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList, HttpsHealthCheck2>() {
             @Override
             public String emptyToken() {
               return "";
@@ -271,7 +271,7 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
             }
 
             @Override
-            public Iterable<HttpsHealthCheck> extractResources(HttpsHealthCheckList payload) {
+            public Iterable<HttpsHealthCheck2> extractResources(HttpsHealthCheckList payload) {
               return payload.getItemsList();
             }
           };
@@ -289,7 +289,7 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
                 ListHttpsHealthChecksHttpRequest request,
                 ApiCallContext context,
                 ApiFuture<HttpsHealthCheckList> futureResponse) {
-              PageContext<ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList, HttpsHealthCheck>
+              PageContext<ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList, HttpsHealthCheck2>
                   pageContext =
                       PageContext.create(
                           callable, LIST_HTTPS_HEALTH_CHECKS_PAGE_STR_DESC, request, context);
@@ -303,7 +303,7 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
 
     private final UnaryCallSettings.Builder<DeleteHttpsHealthCheckHttpRequest, Operation>
         deleteHttpsHealthCheckSettings;
-    private final UnaryCallSettings.Builder<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
+    private final UnaryCallSettings.Builder<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
         getHttpsHealthCheckSettings;
     private final UnaryCallSettings.Builder<InsertHttpsHealthCheckHttpRequest, Operation>
         insertHttpsHealthCheckSettings;
@@ -469,7 +469,7 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
     }
 
     /** Returns the builder for the settings used for calls to getHttpsHealthCheck. */
-    public UnaryCallSettings.Builder<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
+    public UnaryCallSettings.Builder<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
         getHttpsHealthCheckSettings() {
       return getHttpsHealthCheckSettings;
     }

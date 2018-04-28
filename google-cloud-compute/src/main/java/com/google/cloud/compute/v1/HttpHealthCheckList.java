@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
 @BetaApi
 public final class HttpHealthCheckList implements ApiMessage {
   private final String id;
-  private final List<HttpHealthCheck> items;
+  private final List<HttpHealthCheck2> items;
   private final String kind;
   private final String nextPageToken;
   private final String selfLink;
@@ -49,7 +49,7 @@ public final class HttpHealthCheckList implements ApiMessage {
 
   private HttpHealthCheckList(
       String id,
-      List<HttpHealthCheck> items,
+      List<HttpHealthCheck2> items,
       String kind,
       String nextPageToken,
       String selfLink,
@@ -70,7 +70,7 @@ public final class HttpHealthCheckList implements ApiMessage {
     }
     if (fieldNames.contains("items") && items != null) {
       ImmutableList.Builder stringList = ImmutableList.builder();
-      for (HttpHealthCheck item : items) {
+      for (HttpHealthCheck2 item : items) {
         stringList.add(item.toString());
       }
       fieldMap.put("items", stringList.build());
@@ -123,7 +123,7 @@ public final class HttpHealthCheckList implements ApiMessage {
     return id;
   }
 
-  public List<HttpHealthCheck> getItemsList() {
+  public List<HttpHealthCheck2> getItemsList() {
     return items;
   }
 
@@ -167,7 +167,7 @@ public final class HttpHealthCheckList implements ApiMessage {
 
   public static class Builder {
     private String id;
-    private List<HttpHealthCheck> items;
+    private List<HttpHealthCheck2> items;
     private String kind;
     private String nextPageToken;
     private String selfLink;
@@ -216,11 +216,11 @@ public final class HttpHealthCheckList implements ApiMessage {
       return this;
     }
 
-    public List<HttpHealthCheck> getItemsList() {
+    public List<HttpHealthCheck2> getItemsList() {
       return items;
     }
 
-    public Builder addAllItems(List<HttpHealthCheck> items) {
+    public Builder addAllItems(List<HttpHealthCheck2> items) {
       if (this.items == null) {
         this.items = new ArrayList<>(items.size());
       }
@@ -228,7 +228,7 @@ public final class HttpHealthCheckList implements ApiMessage {
       return this;
     }
 
-    public Builder addItems(HttpHealthCheck items) {
+    public Builder addItems(HttpHealthCheck2 items) {
       this.items.add(items);
       return this;
     }

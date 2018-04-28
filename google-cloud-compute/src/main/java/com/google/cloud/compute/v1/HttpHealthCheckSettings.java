@@ -70,7 +70,7 @@ public class HttpHealthCheckSettings extends ClientSettings<HttpHealthCheckSetti
   }
 
   /** Returns the object with the settings used for calls to getHttpHealthCheck. */
-  public UnaryCallSettings<GetHttpHealthCheckHttpRequest, HttpHealthCheck>
+  public UnaryCallSettings<GetHttpHealthCheckHttpRequest, HttpHealthCheck2>
       getHttpHealthCheckSettings() {
     return ((HttpHealthCheckStubSettings) getStubSettings()).getHttpHealthCheckSettings();
   }
@@ -209,7 +209,7 @@ public class HttpHealthCheckSettings extends ClientSettings<HttpHealthCheckSetti
     }
 
     /** Returns the builder for the settings used for calls to getHttpHealthCheck. */
-    public UnaryCallSettings.Builder<GetHttpHealthCheckHttpRequest, HttpHealthCheck>
+    public UnaryCallSettings.Builder<GetHttpHealthCheckHttpRequest, HttpHealthCheck2>
         getHttpHealthCheckSettings() {
       return getStubSettingsBuilder().getHttpHealthCheckSettings();
     }

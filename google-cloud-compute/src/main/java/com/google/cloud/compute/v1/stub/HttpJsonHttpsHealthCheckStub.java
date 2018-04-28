@@ -32,7 +32,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteHttpsHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHttpsHealthCheckHttpRequest;
-import com.google.cloud.compute.v1.HttpsHealthCheck;
+import com.google.cloud.compute.v1.HttpsHealthCheck2;
 import com.google.cloud.compute.v1.HttpsHealthCheckList;
 import com.google.cloud.compute.v1.InsertHttpsHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHttpsHealthChecksHttpRequest;
@@ -78,9 +78,9 @@ public class HttpJsonHttpsHealthCheckStub extends HttpsHealthCheckStub {
               .build();
 
   @InternalApi
-  public static final ApiMethodDescriptor<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
+  public static final ApiMethodDescriptor<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
       getHttpsHealthCheckMethodDescriptor =
-          ApiMethodDescriptor.<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>newBuilder()
+          ApiMethodDescriptor.<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>newBuilder()
               .setFullMethodName("compute.httpsHealthChecks.get")
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
@@ -94,8 +94,8 @@ public class HttpJsonHttpsHealthCheckStub extends HttpsHealthCheckStub {
                       .setResourceNameField("httpsHealthCheck")
                       .build())
               .setResponseParser(
-                  ApiMessageHttpResponseParser.<HttpsHealthCheck>newBuilder()
-                      .setResponseInstance(HttpsHealthCheck.getDefaultInstance())
+                  ApiMessageHttpResponseParser.<HttpsHealthCheck2>newBuilder()
+                      .setResponseInstance(HttpsHealthCheck2.getDefaultInstance())
                       .build())
               .build();
 
@@ -188,7 +188,7 @@ public class HttpJsonHttpsHealthCheckStub extends HttpsHealthCheckStub {
 
   private final UnaryCallable<DeleteHttpsHealthCheckHttpRequest, Operation>
       deleteHttpsHealthCheckCallable;
-  private final UnaryCallable<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
+  private final UnaryCallable<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
       getHttpsHealthCheckCallable;
   private final UnaryCallable<InsertHttpsHealthCheckHttpRequest, Operation>
       insertHttpsHealthCheckCallable;
@@ -247,9 +247,9 @@ public class HttpJsonHttpsHealthCheckStub extends HttpsHealthCheckStub {
             HttpJsonCallSettings.<DeleteHttpsHealthCheckHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteHttpsHealthCheckMethodDescriptor)
                 .build();
-    HttpJsonCallSettings<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
+    HttpJsonCallSettings<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
         getHttpsHealthCheckTransportSettings =
-            HttpJsonCallSettings.<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>newBuilder()
+            HttpJsonCallSettings.<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>newBuilder()
                 .setMethodDescriptor(getHttpsHealthCheckMethodDescriptor)
                 .build();
     HttpJsonCallSettings<InsertHttpsHealthCheckHttpRequest, Operation>
@@ -320,7 +320,7 @@ public class HttpJsonHttpsHealthCheckStub extends HttpsHealthCheckStub {
   }
 
   @BetaApi
-  public UnaryCallable<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
+  public UnaryCallable<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
       getHttpsHealthCheckCallable() {
     return getHttpsHealthCheckCallable;
   }

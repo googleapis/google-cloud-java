@@ -32,7 +32,7 @@ public final class InsertHttpHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
   private final String fields;
-  private final HttpHealthCheck httpHealthCheckResource;
+  private final HttpHealthCheck2 httpHealthCheckResource;
   private final String key;
   private final String prettyPrint;
   private final String project;
@@ -57,7 +57,7 @@ public final class InsertHttpHealthCheckHttpRequest implements ApiMessage {
       String access_token,
       String callback,
       String fields,
-      HttpHealthCheck httpHealthCheckResource,
+      HttpHealthCheck2 httpHealthCheckResource,
       String key,
       String prettyPrint,
       String project,
@@ -151,7 +151,7 @@ public final class InsertHttpHealthCheckHttpRequest implements ApiMessage {
 
   @Nullable
   @Override
-  public HttpHealthCheck getApiMessageRequestBody() {
+  public HttpHealthCheck2 getApiMessageRequestBody() {
     return httpHealthCheckResource;
   }
 
@@ -167,7 +167,7 @@ public final class InsertHttpHealthCheckHttpRequest implements ApiMessage {
     return fields;
   }
 
-  public HttpHealthCheck getHttpHealthCheckResource() {
+  public HttpHealthCheck2 getHttpHealthCheckResource() {
     return httpHealthCheckResource;
   }
 
@@ -221,7 +221,7 @@ public final class InsertHttpHealthCheckHttpRequest implements ApiMessage {
     private String access_token;
     private String callback;
     private String fields;
-    private HttpHealthCheck httpHealthCheckResource;
+    private HttpHealthCheck2 httpHealthCheckResource;
     private String key;
     private String prettyPrint;
     private String project;
@@ -306,11 +306,11 @@ public final class InsertHttpHealthCheckHttpRequest implements ApiMessage {
       return this;
     }
 
-    public HttpHealthCheck getHttpHealthCheckResource() {
+    public HttpHealthCheck2 getHttpHealthCheckResource() {
       return httpHealthCheckResource;
     }
 
-    public Builder setHttpHealthCheckResource(HttpHealthCheck httpHealthCheckResource) {
+    public Builder setHttpHealthCheckResource(HttpHealthCheck2 httpHealthCheckResource) {
       this.httpHealthCheckResource = httpHealthCheckResource;
       return this;
     }

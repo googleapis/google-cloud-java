@@ -33,8 +33,8 @@ public final class HealthCheck implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
   private final Integer healthyThreshold;
-  private final HTTPHealthCheck httpHealthCheck;
-  private final HTTPSHealthCheck httpsHealthCheck;
+  private final HttpHealthCheck httpHealthCheck;
+  private final HttpSHealthCheck httpsHealthCheck;
   private final String id;
   private final String kind;
   private final String name;
@@ -68,8 +68,8 @@ public final class HealthCheck implements ApiMessage {
       String creationTimestamp,
       String description,
       Integer healthyThreshold,
-      HTTPHealthCheck httpHealthCheck,
-      HTTPSHealthCheck httpsHealthCheck,
+      HttpHealthCheck httpHealthCheck,
+      HttpSHealthCheck httpsHealthCheck,
       String id,
       String kind,
       String name,
@@ -221,11 +221,11 @@ public final class HealthCheck implements ApiMessage {
     return healthyThreshold;
   }
 
-  public HTTPHealthCheck getHttpHealthCheck() {
+  public HttpHealthCheck getHttpHealthCheck() {
     return httpHealthCheck;
   }
 
-  public HTTPSHealthCheck getHttpsHealthCheck() {
+  public HttpSHealthCheck getHttpsHealthCheck() {
     return httpsHealthCheck;
   }
 
@@ -292,8 +292,8 @@ public final class HealthCheck implements ApiMessage {
     private String creationTimestamp;
     private String description;
     private Integer healthyThreshold;
-    private HTTPHealthCheck httpHealthCheck;
-    private HTTPSHealthCheck httpsHealthCheck;
+    private HttpHealthCheck httpHealthCheck;
+    private HttpSHealthCheck httpsHealthCheck;
     private String id;
     private String kind;
     private String name;
@@ -410,20 +410,20 @@ public final class HealthCheck implements ApiMessage {
       return this;
     }
 
-    public HTTPHealthCheck getHttpHealthCheck() {
+    public HttpHealthCheck getHttpHealthCheck() {
       return httpHealthCheck;
     }
 
-    public Builder setHttpHealthCheck(HTTPHealthCheck httpHealthCheck) {
+    public Builder setHttpHealthCheck(HttpHealthCheck httpHealthCheck) {
       this.httpHealthCheck = httpHealthCheck;
       return this;
     }
 
-    public HTTPSHealthCheck getHttpsHealthCheck() {
+    public HttpSHealthCheck getHttpsHealthCheck() {
       return httpsHealthCheck;
     }
 
-    public Builder setHttpsHealthCheck(HTTPSHealthCheck httpsHealthCheck) {
+    public Builder setHttpsHealthCheck(HttpSHealthCheck httpsHealthCheck) {
       this.httpsHealthCheck = httpsHealthCheck;
       return this;
     }
