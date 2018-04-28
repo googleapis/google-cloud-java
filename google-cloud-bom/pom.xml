@@ -221,22 +221,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigtable-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -263,12 +263,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -295,12 +295,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-container-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-container-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-container-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-container-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-container-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-container-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -371,12 +371,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -392,7 +392,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -408,22 +408,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dlp-v2beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-dlp-v2beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dlp-v2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dlp-v2beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-dlp-v2beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dlp-v2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dlp-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dlp-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-dlp-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dlp-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -439,22 +439,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -481,12 +481,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-error-reporting-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-error-reporting-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-error-reporting-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-error-reporting-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -513,12 +513,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-firestore-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-firestore-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-firestore-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -534,22 +534,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-language-v1</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:proto-google-cloud-language-v1:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-language-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-language-v1</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:grpc-google-cloud-language-v1:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-language-v1beta2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-language-v1beta2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-language-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-language-v1beta2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-language-v1beta2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -565,12 +565,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-logging-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-logging-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -592,12 +592,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -613,12 +613,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-os-login-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-os-login-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-login-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-os-login-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-os-login-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-os-login-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -634,12 +634,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-pubsub-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-pubsub-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-pubsub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -666,32 +666,32 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-spanner-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-spanner-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-admin-database-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-spanner-admin-database-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-database-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-database-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-database-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-admin-instance-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-spanner-admin-instance-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-instance-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-instance-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-instance-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -707,32 +707,32 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-speech-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-speech-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-speech-v1p1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-speech-v1p1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -759,12 +759,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-texttospeech-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-texttospeech-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -780,22 +780,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -822,32 +822,32 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:proto-google-cloud-vision-v1:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:grpc-google-cloud-vision-v1:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-vision-v1p1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-vision-v1p1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p2beta1</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:proto-google-cloud-vision-v1p2beta1:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p2beta1</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:grpc-google-cloud-vision-v1p2beta1:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -863,42 +863,42 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1beta2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1beta2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1beta2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1p1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1p1beta1</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p1beta1:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
