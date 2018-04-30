@@ -83,7 +83,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSettings> {
   /** The default scopes of the service. */

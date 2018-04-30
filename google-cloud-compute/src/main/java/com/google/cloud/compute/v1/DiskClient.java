@@ -101,7 +101,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class DiskClient implements BackgroundResource {
   private final DiskSettings settings;
