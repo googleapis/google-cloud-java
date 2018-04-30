@@ -11,10 +11,10 @@
 #proto-google-iam-v1:0.11.0:0.11.1-SNAPSHOT
 
 #
-# google-api-pom versions
+# google-api-grpc-pom versions
 #
 # parent
-google-api-pom:0.11.0:0.11.1-SNAPSHOT
+google-api-grpc-pom:0.11.0:0.11.1-SNAPSHOT
 # children
 #grpc-google-cloud-datastore-v1
 grpc-google-cloud-bigquerydatatransfer-v1:0.11.0:0.11.1-SNAPSHOT

@@ -4,9 +4,9 @@
   <groupId>com.google.api.grpc</groupId>
   <artifactId>google-api-grpc-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:google-api-pom:current} -->
+  <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc-pom:current} -->
   <name>Google Cloud API</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/google-api-pom</url>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/google-api-grpc</url>
   <description>
     Proto and grpc libraries for idiomatic client for Google Cloud Platform services
   </description>
@@ -57,7 +57,7 @@
   <scm>
     <connection>scm:git:git@github.com:GoogleCloudPlatform/google-cloud-java.git</connection>
     <developerConnection>scm:git:git@github.com:GoogleCloudPlatform/google-cloud-java.git</developerConnection>
-    <url>https://github.com/GoogleCloudPlatform/google-cloud-java/google-api-pom</url>
+    <url>https://github.com/GoogleCloudPlatform/google-cloud-java/google-api-grpc</url>
     <tag>HEAD</tag>
   </scm>
   <ciManagement>
