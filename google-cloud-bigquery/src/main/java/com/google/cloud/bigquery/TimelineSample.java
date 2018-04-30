@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google LLC
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,6 @@ public abstract class TimelineSample {
    * Returns the total number of work units currently being processed.
    */
   @Nullable
-
   public abstract Long getActiveUnits();
 
   /**
