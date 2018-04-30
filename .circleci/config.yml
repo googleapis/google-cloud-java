@@ -32,7 +32,7 @@ jobs:
       - image: maven:3.5.2-jdk-7
         environment:
           TERM: dumb
-          MAVEN_OPTS: -Xmx256m
+          MAVEN_OPTS: -Xmx1024m
     steps:
       - checkout
       - run:
