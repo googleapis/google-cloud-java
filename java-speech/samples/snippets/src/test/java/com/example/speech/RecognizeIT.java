@@ -46,6 +46,8 @@ public class RecognizeIT {
   private String videoFileName = "./resources/Google_Gnome.wav";
   private String gcsVideoPath = "gs://" + BUCKET + "/speech/Google_Gnome.wav";
 
+  private String recognitionAudioFile = "./resources/commercial_mono.wav";
+
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
@@ -144,5 +146,19 @@ public class RecognizeIT {
     Recognize.streamingTranscribeWithAutomaticPunctuation(audioFileName);
     String got = bout.toString();
     assertThat(got).contains("How old is the Brooklyn Bridge?");
+  }
+
+  @Test
+  public void testEnhancedModel() throws Exception {
+    Recognize.transcribeFileWithEnhancedModel(recognitionAudioFile);
+    String got = bout.toString();
+    assertThat(got).contains("Chrome");
+  }
+
+  @Test
+  public void testMetadata() throws Exception {
+    Recognize.transcribeFileWithMetadata(recognitionAudioFile);
+    String got = bout.toString();
+    assertThat(got).contains("Chrome");
   }
 }

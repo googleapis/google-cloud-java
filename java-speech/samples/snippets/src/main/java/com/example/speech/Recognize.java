@@ -24,6 +24,10 @@ import com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
 import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
+import com.google.cloud.speech.v1p1beta1.RecognitionMetadata;
+import com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType;
+import com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance;
+import com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType;
 import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
 import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
@@ -53,7 +57,7 @@ public class Recognize {
           "\tjava %s \"<command>\" \"<path-to-image>\"\n"
           + "Commands:\n"
           + "\tsyncrecognize | asyncrecognize | streamrecognize | wordoffsets | model-selection\n"
-          + "\t| auto-punctuation | stream-punctuation\n"
+          + "\t| auto-punctuation | stream-punctuation | enhanced-model | metadata\n"
           + "Path:\n\tA file path (ex: ./resources/audio.raw) or a URI "
           + "for a Cloud Storage resource (gs://...)\n",
           Recognize.class.getCanonicalName());
@@ -97,6 +101,10 @@ public class Recognize {
       }
     } else if (command.equals("stream-punctuation")) {
       streamingTranscribeWithAutomaticPunctuation(path);
+    } else if (command.equals("enhanced-model")) {
+      transcribeFileWithEnhancedModel(path);
+    } else if (command.equals("metadata")) {
+      transcribeFileWithMetadata(path);
     }
   }
 
@@ -678,4 +686,97 @@ public class Recognize {
     }
   }
   // [END speech_stream_recognize_punctuation]
+
+  // [START speech_transcribe_file_with_enhanced_model]
+  /**
+   * Transcribe the given audio file using an enhanced model.
+   *
+   * @param fileName the path to an audio file.
+   */
+  public static void transcribeFileWithEnhancedModel(String fileName) throws Exception {
+    Path path = Paths.get(fileName);
+    byte[] content = Files.readAllBytes(path);
+
+    try (SpeechClient speechClient = SpeechClient.create()) {
+      // Get the contents of the local audio file
+      RecognitionAudio recognitionAudio = RecognitionAudio.newBuilder()
+          .setContent(ByteString.copyFrom(content))
+          .build();
+
+      // Configure request to enable enhanced models
+      RecognitionConfig config = RecognitionConfig.newBuilder()
+          .setEncoding(AudioEncoding.LINEAR16)
+          .setLanguageCode("en-US")
+          .setSampleRateHertz(8000)
+          // Enhanced models are only available to projects that
+          // opt in for audio data collection.
+          .setUseEnhanced(true)
+          // A model must be specified to use enhanced model.
+          .setModel("phone_call")
+          .build();
+
+      // Perform the transcription request
+      RecognizeResponse recognizeResponse = speechClient.recognize(config, recognitionAudio);
+
+      // Print out the results
+      for (SpeechRecognitionResult result : recognizeResponse.getResultsList()) {
+        // There can be several alternative transcripts for a given chunk of speech. Just use the
+        // first (most likely) one here.
+        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
+        System.out.format("Transcript: %s\n\n", alternative.getTranscript());
+      }
+    }
+  }
+  // [END speech_transcribe_file_with_enhanced_model]
+
+  // [START speech_transcribe_file_with_metadata]
+  /**
+   * Transcribe the given audio file and include recognition metadata in the request.
+   *
+   * @param fileName the path to an audio file.
+   */
+  public static void transcribeFileWithMetadata(String fileName) throws Exception {
+    Path path = Paths.get(fileName);
+    byte[] content = Files.readAllBytes(path);
+
+    try (SpeechClient speechClient = SpeechClient.create()) {
+      // Get the contents of the local audio file
+      RecognitionAudio recognitionAudio = RecognitionAudio.newBuilder()
+          .setContent(ByteString.copyFrom(content))
+          .build();
+
+      // Construct a recognition metadata object.
+      // Most metadata fields are specified as enums that can be found
+      // in speech.enums.RecognitionMetadata
+      RecognitionMetadata metadata = RecognitionMetadata.newBuilder()
+          .setInteractionType(InteractionType.DISCUSSION)
+          .setMicrophoneDistance(MicrophoneDistance.NEARFIELD)
+          .setRecordingDeviceType(RecordingDeviceType.SMARTPHONE)
+          .setRecordingDeviceName("Pixel 2 XL") // Some metadata fields are free form strings
+          // And some are integers, for instance the 6 digit NAICS code
+          // https://www.naics.com/search/
+          .setIndustryNaicsCodeOfAudio(519190)
+          .build();
+
+      // Configure request to enable enhanced models
+      RecognitionConfig config = RecognitionConfig.newBuilder()
+          .setEncoding(AudioEncoding.LINEAR16)
+          .setLanguageCode("en-US")
+          .setSampleRateHertz(8000)
+          .setMetadata(metadata) // Add the metadata to the config
+          .build();
+
+      // Perform the transcription request
+      RecognizeResponse recognizeResponse = speechClient.recognize(config, recognitionAudio);
+
+      // Print out the results
+      for (SpeechRecognitionResult result : recognizeResponse.getResultsList()) {
+        // There can be several alternative transcripts for a given chunk of speech. Just use the
+        // first (most likely) one here.
+        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
+        System.out.format("Transcript: %s\n\n", alternative.getTranscript());
+      }
+    }
+  }
+  // [END speech_transcribe_file_with_metadata]
 }
