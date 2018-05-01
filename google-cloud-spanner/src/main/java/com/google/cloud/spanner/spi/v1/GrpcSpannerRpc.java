@@ -189,7 +189,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     ListInstanceConfigsResponse response =
         get(
             doUnaryCall(
-                InstanceAdminGrpc.METHOD_LIST_INSTANCE_CONFIGS,
+                InstanceAdminGrpc.getListInstanceConfigsMethod(),
                 request.build(),
                 projectName(),
                 null));
@@ -201,7 +201,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     GetInstanceConfigRequest request =
         GetInstanceConfigRequest.newBuilder().setName(instanceConfigName).build();
     return get(
-        doUnaryCall(InstanceAdminGrpc.METHOD_GET_INSTANCE_CONFIG, request, projectName(), null));
+        doUnaryCall(InstanceAdminGrpc.getGetInstanceConfigMethod(), request, projectName(), null));
   }
 
   @Override
@@ -218,7 +218,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     ListInstancesResponse response =
         get(
             doUnaryCall(
-                InstanceAdminGrpc.METHOD_LIST_INSTANCES, request.build(), projectName(), null));
+                InstanceAdminGrpc.getListInstancesMethod(), request.build(), projectName(), null));
     return new Paginated<>(response.getInstancesList(), response.getNextPageToken());
   }
 
@@ -231,7 +231,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
             .setInstanceId(instanceId)
             .setInstance(instance)
             .build();
-    return get(doUnaryCall(InstanceAdminGrpc.METHOD_CREATE_INSTANCE, request, parent, null));
+    return get(doUnaryCall(InstanceAdminGrpc.getCreateInstanceMethod(), request, parent, null));
   }
 
   @Override
@@ -239,14 +239,14 @@ public class GrpcSpannerRpc implements SpannerRpc {
     UpdateInstanceRequest request =
         UpdateInstanceRequest.newBuilder().setInstance(instance).setFieldMask(fieldMask).build();
     return get(
-        doUnaryCall(InstanceAdminGrpc.METHOD_UPDATE_INSTANCE, request, instance.getName(), null));
+        doUnaryCall(InstanceAdminGrpc.getUpdateInstanceMethod(), request, instance.getName(), null));
   }
 
   @Override
   public Instance getInstance(String instanceName) throws SpannerException {
     return get(
         doUnaryCall(
-            InstanceAdminGrpc.METHOD_GET_INSTANCE,
+            InstanceAdminGrpc.getGetInstanceMethod(),
             GetInstanceRequest.newBuilder().setName(instanceName).build(),
             instanceName,
             null));
@@ -256,7 +256,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   public void deleteInstance(String instanceName) throws SpannerException {
     get(
         doUnaryCall(
-            InstanceAdminGrpc.METHOD_DELETE_INSTANCE,
+            InstanceAdminGrpc.getDeleteInstanceMethod(),
             DeleteInstanceRequest.newBuilder().setName(instanceName).build(),
             instanceName,
             null));
@@ -273,7 +273,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     com.google.spanner.admin.database.v1.ListDatabasesResponse response =
         get(
             doUnaryCall(
-                DatabaseAdminGrpc.METHOD_LIST_DATABASES, builder.build(), instanceName, null));
+                DatabaseAdminGrpc.getListDatabasesMethod(), builder.build(), instanceName, null));
     return new Paginated<>(response.getDatabasesList(), response.getNextPageToken());
   }
 
@@ -287,7 +287,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
             .setCreateStatement(createDatabaseStatement)
             .addAllExtraStatements(additionalStatements)
             .build();
-    return get(doUnaryCall(DatabaseAdminGrpc.METHOD_CREATE_DATABASE, request, instanceName, null));
+    return get(doUnaryCall(DatabaseAdminGrpc.getCreateDatabaseMethod(), request, instanceName, null));
   }
 
   @Override
@@ -301,14 +301,14 @@ public class GrpcSpannerRpc implements SpannerRpc {
             .setOperationId(MoreObjects.firstNonNull(operationId, ""))
             .build();
     return get(
-        doUnaryCall(DatabaseAdminGrpc.METHOD_UPDATE_DATABASE_DDL, request, databaseName, null));
+        doUnaryCall(DatabaseAdminGrpc.getUpdateDatabaseDdlMethod(), request, databaseName, null));
   }
 
   @Override
   public void dropDatabase(String databaseName) throws SpannerException {
     get(
         doUnaryCall(
-            DatabaseAdminGrpc.METHOD_DROP_DATABASE,
+            DatabaseAdminGrpc.getDropDatabaseMethod(),
             DropDatabaseRequest.newBuilder().setDatabase(databaseName).build(),
             databaseName,
             null));
@@ -318,7 +318,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   public List<String> getDatabaseDdl(String databaseName) throws SpannerException {
     GetDatabaseDdlRequest request =
         GetDatabaseDdlRequest.newBuilder().setDatabase(databaseName).build();
-    return get(doUnaryCall(DatabaseAdminGrpc.METHOD_GET_DATABASE_DDL, request, databaseName, null))
+    return get(doUnaryCall(DatabaseAdminGrpc.getGetDatabaseDdlMethod(), request, databaseName, null))
         .getStatementsList();
   }
 
@@ -326,7 +326,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   public Database getDatabase(String databaseName) throws SpannerException {
     return get(
         doUnaryCall(
-            DatabaseAdminGrpc.METHOD_GET_DATABASE,
+            DatabaseAdminGrpc.getGetDatabaseMethod(),
             GetDatabaseRequest.newBuilder().setName(databaseName).build(),
             databaseName,
             null));
@@ -335,7 +335,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   @Override
   public Operation getOperation(String name) throws SpannerException {
     GetOperationRequest request = GetOperationRequest.newBuilder().setName(name).build();
-    return get(doUnaryCall(OperationsGrpc.METHOD_GET_OPERATION, request, name, null));
+    return get(doUnaryCall(OperationsGrpc.getGetOperationMethod(), request, name, null));
   }
 
   @Override
@@ -349,7 +349,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     }
     return get(
         doUnaryCall(
-            SpannerGrpc.METHOD_CREATE_SESSION,
+            SpannerGrpc.getCreateSessionMethod(),
             request.build(),
             databaseName,
             Option.CHANNEL_HINT.getLong(options)));
@@ -360,7 +360,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
     DeleteSessionRequest request = DeleteSessionRequest.newBuilder().setName(sessionName).build();
     get(
         doUnaryCall(
-            SpannerGrpc.METHOD_DELETE_SESSION,
+            SpannerGrpc.getDeleteSessionMethod(),
             request,
             sessionName,
             Option.CHANNEL_HINT.getLong(options)));
@@ -370,7 +370,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   public StreamingCall read(
       ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
     return doStreamingCall(
-        SpannerGrpc.METHOD_STREAMING_READ,
+        SpannerGrpc.getStreamingReadMethod(),
         request,
         consumer,
         request.getSession(),
@@ -381,7 +381,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   public StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options) {
     return doStreamingCall(
-        SpannerGrpc.METHOD_EXECUTE_STREAMING_SQL,
+        SpannerGrpc.getExecuteStreamingSqlMethod(),
         request,
         consumer,
         request.getSession(),
@@ -393,7 +393,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
       BeginTransactionRequest request, @Nullable Map<Option, ?> options) {
     return get(
         doUnaryCall(
-            SpannerGrpc.METHOD_BEGIN_TRANSACTION,
+            SpannerGrpc.getBeginTransactionMethod(),
             request,
             request.getSession(),
             Option.CHANNEL_HINT.getLong(options)));
@@ -403,7 +403,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   public CommitResponse commit(CommitRequest commitRequest, @Nullable Map<Option, ?> options) {
     return get(
         doUnaryCall(
-            SpannerGrpc.METHOD_COMMIT,
+            SpannerGrpc.getCommitMethod(),
             commitRequest,
             commitRequest.getSession(),
             Option.CHANNEL_HINT.getLong(options)));
@@ -413,7 +413,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
   public void rollback(RollbackRequest request, @Nullable Map<Option, ?> options) {
     get(
         doUnaryCall(
-            SpannerGrpc.METHOD_ROLLBACK,
+            SpannerGrpc.getRollbackMethod(),
             request,
             request.getSession(),
             Option.CHANNEL_HINT.getLong(options)));
@@ -425,7 +425,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
           throws SpannerException {
     return get(
         doUnaryCall(
-            SpannerGrpc.METHOD_PARTITION_QUERY,
+            SpannerGrpc.getPartitionQueryMethod(),
             request,
             request.getSession(),
             Option.CHANNEL_HINT.getLong(options)));
@@ -437,7 +437,7 @@ public class GrpcSpannerRpc implements SpannerRpc {
           throws SpannerException {
     return get(
         doUnaryCall(
-            SpannerGrpc.METHOD_PARTITION_READ,
+            SpannerGrpc.getPartitionReadMethod(),
             request,
             request.getSession(),
             Option.CHANNEL_HINT.getLong(options)));
