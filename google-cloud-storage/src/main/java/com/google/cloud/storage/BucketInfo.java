@@ -880,9 +880,9 @@ public class BucketInfo implements Serializable {
     if (labels != null) {
       bucketPb.setLabels(labels);
     }
-    if (defaultKmsKeyName != null) {
-      bucketPb.setEncryption(new Encryption().setDefaultKmsKeyName(defaultKmsKeyName));
-    }
+    // default kms key name can be null.
+    bucketPb.setEncryption(new Encryption().setDefaultKmsKeyName(defaultKmsKeyName));
+
     return bucketPb;
   }
 

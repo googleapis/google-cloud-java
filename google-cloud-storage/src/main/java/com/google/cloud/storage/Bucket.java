@@ -118,7 +118,6 @@ public class Bucket extends BucketInfo {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BucketSourceOption userProject(String userProject) {
       return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -271,7 +270,6 @@ public class Bucket extends BucketInfo {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BlobTargetOption userProject(String userProject) {
       return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -468,7 +466,6 @@ public class Bucket extends BucketInfo {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BlobWriteOption userProject(String userProject) {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.USER_PROJECT, userProject);
     }

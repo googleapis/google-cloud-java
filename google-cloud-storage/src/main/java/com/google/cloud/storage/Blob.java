@@ -184,7 +184,6 @@ public class Blob extends BlobInfo {
      * Returns an option for blob's billing user project. This option is used only if the blob's
      * bucket has requester_pays flag enabled.
      */
-    @GcpLaunchStage.Alpha
     public static BlobSourceOption userProject(String userProject) {
       return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -404,8 +403,8 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    Builder setKmsKey(String kmsKey) {
-      infoBuilder.setKmsKey(kmsKey);
+    public Builder setKmsKeyName(String kmsKeyName) {
+      infoBuilder.setKmsKeyName(kmsKeyName);
       return this;
     }
 

@@ -94,7 +94,7 @@ public interface Storage extends Service<StorageOptions> {
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
     ETAG("etag"),
-    @GcpLaunchStage.Alpha
+    DEFAULT_KMS_KEY_NAME("defaultKmsKeyName"),
     BILLING("billing");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
@@ -136,6 +136,7 @@ public interface Storage extends Service<StorageOptions> {
     SIZE("size"),
     STORAGE_CLASS("storageClass"),
     TIME_DELETED("timeDeleted"),
+    KMS_KEY_NAME("kmsKeyName"),
     UPDATED("updated");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(BUCKET, NAME);
@@ -203,7 +204,6 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option to define the billing user project. This option is required by buckets with
      * `requester_pays` flag enabled to assign operation costs.
      */
-    @GcpLaunchStage.Alpha
     public static BucketTargetOption userProject(String userProject) {
       return new BucketTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -240,7 +240,6 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for bucket's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BucketSourceOption userProject(String userProject) {
       return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -281,7 +280,6 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for bucket's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BucketGetOption userProject(String userProject) {
       return new BucketGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -372,7 +370,6 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BlobTargetOption userProject(String userProject) {
       return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -542,7 +539,6 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BlobWriteOption userProject(String userProject) {
       return new BlobWriteOption(Option.USER_PROJECT, userProject);
     }
@@ -636,7 +632,6 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BlobSourceOption userProject(String userProject) {
       return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -726,7 +721,6 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BlobGetOption userProject(String userProject) {
       return new BlobGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -769,7 +763,6 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for bucket's billing user project. This option is only used by the buckets with
      * 'requester_pays' flag.
      */
-    @GcpLaunchStage.Alpha
     public static BucketListOption userProject(String userProject) {
       return new BucketListOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -840,7 +833,6 @@ public interface Storage extends Service<StorageOptions> {
      *
      * @param userProject projectId of the billing user project.
      */
-    @GcpLaunchStage.Alpha
     public static BlobListOption userProject(String userProject) {
       return new BlobListOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
@@ -2587,8 +2579,6 @@ public interface Storage extends Service<StorageOptions> {
    * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
-  @BetaApi
-  @GcpLaunchStage.Alpha
   Policy getIamPolicy(String bucket, BucketSourceOption... options);
 
   /**
@@ -2612,8 +2602,6 @@ public interface Storage extends Service<StorageOptions> {
    * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
-  @BetaApi
-  @GcpLaunchStage.Alpha
   Policy setIamPolicy(String bucket, Policy policy, BucketSourceOption... options);
 
   /**
@@ -2637,8 +2625,6 @@ public interface Storage extends Service<StorageOptions> {
    * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
-  @BetaApi
-  @GcpLaunchStage.Alpha
   List<Boolean> testIamPermissions(String bucket, List<String> permissions, BucketSourceOption... options);
 
   /**

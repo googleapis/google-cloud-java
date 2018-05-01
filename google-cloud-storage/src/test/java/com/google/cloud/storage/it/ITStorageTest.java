@@ -108,6 +108,7 @@ public class ITStorageTest {
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final String SERVICE_ACCOUNT_EMAIL = "gcloud-devel@gs-project-accounts.iam.gserviceaccount.com";
+  private static final String KMS_KEY_NAME = ""; // use real KMS KEY associated to the test project.
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -178,6 +179,21 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testClearBucketDefaultKmsKeyName() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket remoteBucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultKmsKeyName(KMS_KEY_NAME).build());
+
+    try {
+      assertEquals(KMS_KEY_NAME, remoteBucket.getDefaultKmsKeyName());
+      remoteBucket = remoteBucket.toBuilder().setDefaultKmsKeyName(null).build();
+      Bucket updatedBucket = storage.update(remoteBucket);
+      assertEquals(null, updatedBucket.getDefaultKmsKeyName());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
   public void testCreateBlob() {
     String blobName = "test-create-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
@@ -202,6 +218,39 @@ public class ITStorageTest {
     byte[] readBytes =
         storage.readAllBytes(BUCKET, blobName, Storage.BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+  }
+
+  @Test
+  public void testCreateBlobWithKmsKeyName() {
+    String blobName = "test-create-with-kms-key-name-blob";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).setKmsKeyName(KMS_KEY_NAME).build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    assertEquals(blob.getBucket(), remoteBlob.getBucket());
+    assertEquals(blob.getName(), remoteBlob.getName());
+    assertEquals(blob.getKmsKeyName(), remoteBlob.getKmsKeyName());
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+  }
+
+  @Test
+  public void testCreateBlobWithDefaultKmsKeyName() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteStorageHelper.generateBucketName();
+    Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName).setDefaultKmsKeyName(KMS_KEY_NAME).build());
+
+    try {
+      String blobName = "test-create-with-default-kms-key-name-blob";
+      BlobInfo blob = BlobInfo.newBuilder(bucket, blobName).build();
+      Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+      assertNotNull(remoteBlob);
+      assertEquals(blob.getBucket(), remoteBlob.getBucket());
+      assertEquals(blob.getName(), remoteBlob.getName());
+      assertEquals(blob.getKmsKeyName(), remoteBlob.getKmsKeyName());
+      byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
   }
 
   @Test
@@ -374,6 +423,44 @@ public class ITStorageTest {
   }
 
   @Test(timeout = 5000)
+  public void testListBlobsKmsKeySelectedFields() throws InterruptedException {
+    String[] blobNames = {"test-list-blobs-selected-field-kms-key-name-blob1",
+            "test-list-blobs-selected-field-kms-key-name-blob2"};
+    BlobInfo blob1 = BlobInfo.newBuilder(BUCKET, blobNames[0])
+            .setContentType(CONTENT_TYPE)
+            .setKmsKeyName(KMS_KEY_NAME)
+            .build();
+    BlobInfo blob2 = BlobInfo.newBuilder(BUCKET, blobNames[1])
+            .setContentType(CONTENT_TYPE)
+            .setKmsKeyName(KMS_KEY_NAME)
+            .build();
+    Blob remoteBlob1 = storage.create(blob1);
+    Blob remoteBlob2 = storage.create(blob2);
+    assertNotNull(remoteBlob1);
+    assertNotNull(remoteBlob2);
+    Page<Blob> page = storage.list(BUCKET,
+            Storage.BlobListOption.prefix("test-list-blobs-selected-field-kms-key-name-blob"),
+            Storage.BlobListOption.fields(BlobField.KMS_KEY_NAME));
+    // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
+    // test fails if timeout is reached.
+    while (Iterators.size(page.iterateAll().iterator()) != 2) {
+      Thread.sleep(500);
+      page = storage.list(BUCKET,
+              Storage.BlobListOption.prefix("test-list-blobs-selected-field-kms-key-name-blob"),
+              Storage.BlobListOption.fields(BlobField.KMS_KEY_NAME));
+    }
+    Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
+    Iterator<Blob> iterator = page.iterateAll().iterator();
+    while (iterator.hasNext()) {
+      Blob remoteBlob = iterator.next();
+      assertEquals(BUCKET, remoteBlob.getBucket());
+      assertTrue(blobSet.contains(remoteBlob.getName()));
+      assertEquals(KMS_KEY_NAME, remoteBlob.getKmsKeyName());
+      assertNull(remoteBlob.getContentType());
+    }
+  }
+
+  @Test(timeout = 5000)
   public void testListBlobsEmptySelectedFields() throws InterruptedException {
     String[] blobNames = {"test-list-blobs-empty-selected-fields-blob1",
         "test-list-blobs-empty-selected-fields-blob2"};
@@ -451,6 +538,8 @@ public class ITStorageTest {
       Thread.sleep(500);
     }
   }
+
+
 
   @Test(timeout = 15000)
   public void testListBlobsVersioned() throws ExecutionException, InterruptedException {
@@ -803,6 +892,36 @@ public class ITStorageTest {
     assertEquals(metadata, copyWriter.getResult().getMetadata());
     assertTrue(copyWriter.isDone());
     assertTrue(remoteBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
+  public void testRotateFromCustomerEncryptionToKmsKey() {
+    String sourceBlobName = "test-copy-blob-encryption-key-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    Blob remoteBlob = storage.create(BlobInfo.newBuilder(source).build(), BLOB_BYTE_CONTENT,
+            Storage.BlobTargetOption.encryptionKey(KEY));
+    assertNotNull(remoteBlob);
+    String targetBlobName = "test-copy-blob-kms-key-target";
+    BlobInfo target = BlobInfo.newBuilder(BUCKET, targetBlobName)
+            .setContentType(CONTENT_TYPE)
+            .setMetadata(metadata)
+            .setKmsKeyName(KMS_KEY_NAME)
+            .build();
+    Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
+            .setSource(source)
+            .setSourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
+            .setTarget(target)
+            .build();
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.getResult().getBucket());
+    assertEquals(targetBlobName, copyWriter.getResult().getName());
+    assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
+    assertEquals(KMS_KEY_NAME, copyWriter.getResult().getKmsKeyName());
+    assertArrayEquals(BLOB_BYTE_CONTENT, copyWriter.getResult().getContent());
+    assertEquals(metadata, copyWriter.getResult().getMetadata());
+    assertTrue(copyWriter.isDone());
     assertTrue(storage.delete(BUCKET, targetBlobName));
   }
 

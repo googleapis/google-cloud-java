@@ -83,7 +83,7 @@ public class BlobInfo implements Serializable {
   private final Integer componentCount;
   private final boolean isDirectory;
   private final CustomerEncryption customerEncryption;
-  private final String kmsKey;
+  private final String kmsKeyName;
 
   /**
    * This class is meant for internal use only. Users are discouraged from using this class.
@@ -267,7 +267,11 @@ public class BlobInfo implements Serializable {
 
     abstract Builder setCustomerEncryption(CustomerEncryption customerEncryption);
 
-    abstract Builder setKmsKey(String kmsKey);
+    /**
+     *
+     * Sets the blob's kmsKeyName.
+     */
+    public abstract Builder setKmsKeyName(String kmsKeyName);
 
     /**
      * Creates a {@code BlobInfo} object.
@@ -301,7 +305,7 @@ public class BlobInfo implements Serializable {
     private Boolean isDirectory;
     private CustomerEncryption customerEncryption;
     private StorageClass storageClass;
-    private String kmsKey;
+    private String kmsKeyName;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -332,7 +336,7 @@ public class BlobInfo implements Serializable {
       createTime = blobInfo.createTime;
       isDirectory = blobInfo.isDirectory;
       storageClass = blobInfo.storageClass;
-      kmsKey = blobInfo.kmsKey;
+      kmsKeyName = blobInfo.kmsKeyName;
     }
 
     @Override
@@ -481,8 +485,8 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    Builder setKmsKey(String kmsKey) {
-      this.kmsKey = kmsKey;
+    public Builder setKmsKeyName(String kmsKeyName) {
+      this.kmsKeyName = kmsKeyName;
       return this;
     }
 
@@ -518,7 +522,7 @@ public class BlobInfo implements Serializable {
     createTime = builder.createTime;
     isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
     storageClass = builder.storageClass;
-    kmsKey = builder.kmsKey;
+    kmsKeyName = builder.kmsKeyName;
   }
 
     /**
@@ -752,8 +756,8 @@ public class BlobInfo implements Serializable {
   /**
    * Returns the Cloud KMS key used to encrypt the blob, if any.
    */
-  public String getKmsKey() {
-    return kmsKey;
+  public String getKmsKeyName() {
+    return kmsKeyName;
   }
 
   /**
@@ -828,8 +832,8 @@ public class BlobInfo implements Serializable {
     if (customerEncryption != null) {
       storageObject.setCustomerEncryption(customerEncryption.toPb());
     }
-    if (kmsKey != null) {
-      storageObject.setKmsKeyName(kmsKey);
+    if (kmsKeyName != null) {
+      storageObject.setKmsKeyName(kmsKeyName);
     }
     storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
@@ -962,7 +966,7 @@ public class BlobInfo implements Serializable {
       builder.setStorageClass(StorageClass.valueOf(storageObject.getStorageClass()));
     }
     if (storageObject.getKmsKeyName() != null) {
-      builder.setKmsKey(storageObject.getKmsKeyName());
+      builder.setKmsKeyName(storageObject.getKmsKeyName());
     }
     return builder.build();
   }
