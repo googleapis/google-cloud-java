@@ -214,12 +214,27 @@ public class BaseServiceException extends RuntimeException {
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this).add("code", code).add("reason", reason).toString();
+      return MoreObjects.toStringHelper(this)
+          .add("code", code)
+          .add("reason", reason)
+          .add("rejected", rejected)
+          .toString();
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(code, reason);
+      return Objects.hash(code, reason, rejected);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof Error)) {
+        return false;
+      }
+      Error o = (Error) obj;
+      return Objects.equals(code, o.code)
+          && Objects.equals(reason, o.reason)
+          && Objects.equals(rejected, o.rejected);
     }
   }
 
