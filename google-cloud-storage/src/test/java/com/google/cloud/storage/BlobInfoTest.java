@@ -66,7 +66,7 @@ public class BlobInfoTest {
   private static final String KEY_SHA256 = "keySha";
   private static final CustomerEncryption CUSTOMER_ENCRYPTION =
       new CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
-  private static final String KMS_KEY_NAME = "projects/p/keyRings/kr/location/kr-loc/cryptoKey/key";
+  private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final StorageClass STORAGE_CLASS = StorageClass.COLDLINE;
 
   // Unit tests include Customer Supplied encryption which may be confusing with the KMS KEY NAME
