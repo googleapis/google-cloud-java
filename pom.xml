@@ -412,6 +412,7 @@
     </dependencies>
   </dependencyManagement>
   <modules>
+    <module>google-api-grpc</module>
     <module>google-cloud-bom</module>
     <module>google-cloud-bigtable</module>
     <module>google-cloud-bigquery</module>

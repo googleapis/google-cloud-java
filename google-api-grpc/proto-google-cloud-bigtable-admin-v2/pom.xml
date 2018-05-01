@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
+  <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
+  <name>proto-google-cloud-bigtable-admin-v2</name>
+  <description>PROTO library for proto-google-cloud-bigtable-admin-v2</description>
+  <parent>
+    <groupId>com.google.api.grpc</groupId>
+    <artifactId>google-api-grpc-pom</artifactId>
+    <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc-pom:current} -->
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
