@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
@@ -78,8 +79,63 @@ public class CreateTopicAndPublishMessages {
     // [END pubsub_publish]
   }
 
+  public static void publishMessagesWithErrorHandler() throws Exception {
+    // [START pubsub_publish_error_handler]
+    ProjectTopicName topicName = ProjectTopicName.of("my-project-id", "my-topic-id");
+    Publisher publisher = null;
+    List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
+
+    try {
+      // Create a publisher instance with default settings bound to the topic
+      publisher = Publisher.newBuilder(topicName).build();
+
+      List<String> messages = Arrays.asList("first message", "second message");
+
+      // Schedule publishing one message at a time : messages get automatically batched
+      for (String message : messages) {
+        ByteString data = ByteString.copyFromUtf8(message);
+        PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+
+        // Once published, returns a server-assigned message id (unique within the topic)
+        ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+
+        // Add listeners for processing request results
+        messageIdFuture.addListener(() -> {
+          try {
+            String messageId = messageIdFuture.get();
+            System.out.println("published with message ID: " + messageId);
+          } catch (Throwable t) {
+            System.out.println("error: " + t.getMessage());
+          }
+        },
+        MoreExecutors.directExecutor());
+
+        messageIdFutures.add(messageIdFuture);
+      }
+    } finally {
+      // Wait until all requests all completed..
+      int completed = 0;
+
+      do {
+        completed = 0;
+        for (ApiFuture<String> f : messageIdFutures) {
+          if (f.isDone()) {
+            completed ++;
+          }
+        }
+      } while (completed < messageIdFutures.size());
+
+      if (publisher != null) {
+        // When finished with the publisher, shutdown to free up resources.
+        publisher.shutdown();
+      }
+    }
+    // [END pubsub_publish_error_handler]
+  }
+  
   public static void main(String... args) throws Exception {
     createTopic();
     publishMessages();
+    publishMessagesWithErrorHandler();
   }
 }
