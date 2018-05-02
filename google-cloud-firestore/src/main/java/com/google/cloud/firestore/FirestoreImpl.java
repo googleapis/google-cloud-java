@@ -318,8 +318,8 @@ class FirestoreImpl implements Firestore {
                   public void run() {
                     try {
                       callbackResult.set(transactionCallback.updateCallback(transaction));
-                    } catch (Exception e) {
-                      callbackResult.setException(e);
+                    } catch (Throwable t) {
+                      callbackResult.setException(t);
                     }
                   }
                 });
