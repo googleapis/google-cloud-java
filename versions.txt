@@ -1,96 +1,5 @@
 # Format:
 # module:released-version:current-version
-
-#
-# common versions
-#
-#grpc-google-common-protos:1.10.0:1.10.1-SNAPSHOT
-#grpc-google-common-protos:1.10.0:1.10.1-SNAPSHOT
-#grpc-google-iam-v1:0.11.0:0.11.1-SNAPSHOT
-#proto-google-common-protos:1.10.0:1.10.1-SNAPSHOT
-#proto-google-iam-v1:0.11.0:0.11.1-SNAPSHOT
-
-#
-# google-api-grpc-pom versions
-#
-# parent
-google-api-grpc-pom:0.11.0:0.11.1-SNAPSHOT
-# children
-#grpc-google-cloud-datastore-v1
-grpc-google-cloud-bigquerydatatransfer-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-bigtable-admin-v2:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-bigtable-v2:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-container-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-dataproc-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-dialogflow-v2:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-dialogflow-v2beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-dlp-v2:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-dlp-v2beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-error-reporting-v1beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-firestore-v1beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-language-v1:1.10.0:1.10.1-SNAPSHOT
-grpc-google-cloud-language-v1beta2:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-logging-v2:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-monitoring-v3:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-os-login-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-pubsub-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-spanner-admin-database-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-spanner-admin-instance-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-spanner-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-speech-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-speech-v1beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-speech-v1p1beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-texttospeech-v1beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-trace-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-trace-v2:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-video-intelligence-v1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-video-intelligence-v1beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-video-intelligence-v1beta2:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-video-intelligence-v1p1beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-vision-v1:1.10.0:1.10.1-SNAPSHOT
-grpc-google-cloud-vision-v1p1beta1:0.11.0:0.11.1-SNAPSHOT
-grpc-google-cloud-vision-v1p2beta1:1.10.0:1.10.1-SNAPSHOT
-proto-google-cloud-bigquerydatatransfer-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-bigtable-admin-v2:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-bigtable-v2:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-container-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-dataproc-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-datastore-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-dialogflow-v2:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-dialogflow-v2beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-dlp-v2:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-dlp-v2beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-error-reporting-v1beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-firestore-v1beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-language-v1:1.10.0:1.10.1-SNAPSHOT
-proto-google-cloud-language-v1beta2:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-logging-v2:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-monitoring-v3:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-os-login-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-pubsub-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-spanner-admin-database-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-spanner-admin-instance-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-spanner-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-speech-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-speech-v1beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-speech-v1p1beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-texttospeech-v1beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-trace-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-trace-v2:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-video-intelligence-v1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-video-intelligence-v1beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-video-intelligence-v1beta2:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-video-intelligence-v1p1beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-vision-v1:1.10.0:1.10.1-SNAPSHOT
-proto-google-cloud-vision-v1p1beta1:0.11.0:0.11.1-SNAPSHOT
-proto-google-cloud-vision-v1p2beta1:1.10.0:1.10.1-SNAPSHOT
-
-#
-# google-cloud-pom versions
-#
-# parent
-google-cloud-pom:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
-# children
 google-cloud-appengineflexcompat:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
 google-cloud-appengineflexcustom:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
 google-cloud-appengineflexjava:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
@@ -124,6 +33,7 @@ google-cloud-nio:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
 google-cloud-nio-examples:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
 google-cloud-notification:0.46.0-beta:0.46.1-beta-SNAPSHOT
 google-cloud-os-login:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
+google-cloud-pom:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
 google-cloud-pubsub:0.46.0-beta:0.46.1-beta-SNAPSHOT
 google-cloud-resourcemanager:0.46.0-alpha:0.46.1-alpha-SNAPSHOT
 google-cloud-spanner:0.46.0-beta:0.46.1-beta-SNAPSHOT
