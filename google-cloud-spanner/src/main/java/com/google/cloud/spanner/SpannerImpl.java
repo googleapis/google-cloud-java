@@ -914,7 +914,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     TransactionContextImpl newTransaction() {
-      TransactionContextImpl txn = new TransactionContextImpl(this, readyTransactionId, rpc,
+      TransactionContextImpl txn = new TransactionContextImpl(this, readyTransactionId, gapicRpc,
           defaultPrefetchChunks);
       return txn;
     }
