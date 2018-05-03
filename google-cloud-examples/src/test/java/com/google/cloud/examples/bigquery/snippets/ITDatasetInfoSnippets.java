@@ -16,8 +16,11 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.cloud.bigquery.*;
+import com.google.cloud.bigquery.Acl;
+import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
+import com.google.cloud.bigquery.Dataset;
+import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

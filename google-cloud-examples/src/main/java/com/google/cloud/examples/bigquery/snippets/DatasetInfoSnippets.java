@@ -22,9 +22,9 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.api.gax.paging.Page;
-import com.google.cloud.bigquery.*;
-import com.google.cloud.bigquery.DatasetInfo.Builder;
+import com.google.cloud.bigquery.Acl;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.DatasetInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,14 +45,14 @@ public class DatasetInfoSnippets {
    */
   // [TARGET getAcl()]
   // [VARIABLE bigquery.getDataset(DatasetId.of("my_dataset"))]
-  public List<Acl> updateDatasetAccess(Dataset dataset) {
+  public List<Acl> updateDatasetAccess(DatasetInfo dataset) {
     // [START bigquery_update_dataset_access]
     List<Acl> beforeAcls = dataset.getAcl();
 
     // Make a copy of the ACLs so that they can be modified.
     ArrayList<Acl> acls = new ArrayList<>(beforeAcls);
     acls.add(Acl.of(new Acl.User("sample.bigquery.dev@gmail.com"), Acl.Role.READER));
-    Dataset.Builder builder = dataset.toBuilder();
+    DatasetInfo.Builder builder = dataset.toBuilder();
     builder.setAcl(acls);
 
     bigquery.update(builder.build());  // API request.
@@ -66,12 +66,12 @@ public class DatasetInfoSnippets {
    */
   // [TARGET getDefaultTableLifetime()]
   // [VARIABLE bigquery.getDataset(DatasetId.of("my_dataset"))]
-  public Long updateDatasetExpiration(Dataset dataset) {
+  public Long updateDatasetExpiration(DatasetInfo dataset) {
     // [START bigquery_update_dataset_expiration]
     Long beforeExpiration = dataset.getDefaultTableLifetime();
 
     Long oneDayMilliseconds = 24 * 60 * 60 * 1000L;
-    Dataset.Builder builder = dataset.toBuilder();
+    DatasetInfo.Builder builder = dataset.toBuilder();
     builder.setDefaultTableLifetime(oneDayMilliseconds);
     bigquery.update(builder.build());  // API request.
     // [END bigquery_update_dataset_expiration]
