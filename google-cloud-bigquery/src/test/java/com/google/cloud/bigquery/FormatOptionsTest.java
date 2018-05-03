@@ -41,6 +41,7 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.JSON, FormatOptions.json().getType());
     assertEquals(FormatOptions.DATASTORE_BACKUP, FormatOptions.datastoreBackup().getType());
     assertEquals(FormatOptions.AVRO, FormatOptions.avro().getType());
+    assertEquals(FormatOptions.GOOGLE_SHEETS, FormatOptions.googleSheets().getType());
   }
 
   @Test
@@ -52,5 +53,6 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.datastoreBackup(), FormatOptions.datastoreBackup());
     assertEquals(FormatOptions.datastoreBackup().hashCode(),
         FormatOptions.datastoreBackup().hashCode());
+    assertEquals(FormatOptions.googleSheets(), FormatOptions.googleSheets());
   }
 }

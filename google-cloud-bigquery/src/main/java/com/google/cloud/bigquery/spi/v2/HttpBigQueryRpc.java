@@ -32,13 +32,13 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.api.services.bigquery.Bigquery;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.DatasetList;
 import com.google.api.services.bigquery.model.DatasetReference;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobList;
 import com.google.api.services.bigquery.model.JobStatus;
 import com.google.api.services.bigquery.model.Table;
@@ -59,6 +59,7 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
+@InternalExtensionOnly
 public class HttpBigQueryRpc implements BigQueryRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
@@ -308,10 +309,12 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Job getJob(String projectId, String jobId, Map<Option, ?> options) {
+  public Job getJob(String projectId, String jobId, String location, Map<Option, ?> options) {
     try {
-      return bigquery.jobs()
+      return bigquery
+          .jobs()
           .get(projectId, jobId)
+          .setLocation(location)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -365,9 +368,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public boolean cancel(String projectId, String jobId) {
+  public boolean cancel(String projectId, String jobId, String location) {
     try {
-      bigquery.jobs().cancel(projectId, jobId).execute();
+      bigquery.jobs().cancel(projectId, jobId).setLocation(location).execute();
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
@@ -379,14 +382,19 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public GetQueryResultsResponse getQueryResults(String projectId, String jobId,
-      Map<Option, ?> options) {
+  public GetQueryResultsResponse getQueryResults(
+      String projectId, String jobId, String location, Map<Option, ?> options) {
     try {
-      return bigquery.jobs().getQueryResults(projectId, jobId)
+      return bigquery
+          .jobs()
+          .getQueryResults(projectId, jobId)
+          .setLocation(location)
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setStartIndex(Option.START_INDEX.getLong(options) != null
-              ? BigInteger.valueOf(Option.START_INDEX.getLong(options)) : null)
+          .setStartIndex(
+              Option.START_INDEX.getLong(options) != null
+                  ? BigInteger.valueOf(Option.START_INDEX.getLong(options))
+                  : null)
           .setTimeoutMs(Option.TIMEOUT.getLong(options))
           .execute();
     } catch (IOException ex) {
@@ -395,9 +403,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public String open(JobConfiguration configuration) {
+  public String open(Job loadJob) {
     try {
-      Job loadJob = new Job().setConfiguration(configuration);
       String builder = BASE_RESUMABLE_URI + options.getProjectId() + "/jobs";
       GenericUrl url = new GenericUrl(builder);
       url.set("uploadType", "resumable");

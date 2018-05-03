@@ -17,6 +17,7 @@
 package com.google.cloud;
 
 import static com.google.cloud.BaseServiceException.UNKNOWN_CODE;
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
@@ -131,5 +132,20 @@ public class BaseServiceExceptionTest {
     } finally {
       verify(exceptionMock);
     }
+  }
+
+  @Test
+  public void testError_Equal() {
+    BaseServiceException.Error error = new BaseServiceException.Error(0, "reason", true);
+    assertThat(error).isEqualTo(error);
+    assertThat(error.hashCode()).isEqualTo(error.hashCode());
+
+    BaseServiceException.Error sameError = new BaseServiceException.Error(0, "reason", true);
+    assertThat(error).isEqualTo(sameError);
+    assertThat(error.hashCode()).isEqualTo(sameError.hashCode());
+
+    BaseServiceException.Error error2 = new BaseServiceException.Error(1, "other reason", false);
+    assertThat(error).isNotEqualTo(error2);
+    assertThat(error.hashCode()).isNotEqualTo(error2.hashCode());
   }
 }

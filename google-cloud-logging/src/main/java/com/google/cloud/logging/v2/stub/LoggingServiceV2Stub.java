@@ -40,7 +40,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class LoggingServiceV2Stub implements BackgroundResource {
 
@@ -82,4 +82,7 @@ public abstract class LoggingServiceV2Stub implements BackgroundResource {
   public UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable() {
     throw new UnsupportedOperationException("Not implemented: listLogsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

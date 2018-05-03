@@ -239,4 +239,34 @@ public interface DatabaseClient {
    *
    */
   TransactionRunner readWriteTransaction();
+  
+  /**
+   * Returns a transaction manager which allows manual management of transaction lifecycle. This
+   * API is meant for advanced users. Most users should instead use the
+   * {@link #readWriteTransaction()} API instead.
+   *
+   * <p>Example of using {@link TransactionManager}.
+   * <pre> {@code
+   * long singerId = my_singer_id;
+   * try (TransactionManager manager = dbClient.transactionManager()) {
+   *   TransactionContext txn = manager.begin();
+   *   while (true) {
+   *     String column = "FirstName";
+   *     Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
+   *     String name = row.getString(column);
+   *     txn.buffer(
+   *         Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
+   *     try {
+   *       manager.commit();
+   *       break;
+   *     } catch (AbortedException e) {
+   *       Thread.sleep(e.getRetryDelayInMillis() / 1000);
+   *       txn = manager.resetForRetry();
+   *     }
+   *   }
+   * }
+   * }</pre>
+   *
+   */
+  TransactionManager transactionManager();
 }

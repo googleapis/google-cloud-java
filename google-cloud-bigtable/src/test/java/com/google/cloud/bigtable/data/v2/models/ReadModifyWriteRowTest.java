@@ -17,12 +17,16 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRule;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.Test;
 
 public class ReadModifyWriteRowTest {
@@ -91,5 +95,23 @@ public class ReadModifyWriteRowTest {
                         .setColumnQualifier(ByteString.copyFromUtf8("fake-qualifier-str"))
                         .setIncrementAmount(2))
                 .build());
+  }
+
+  @Test
+  public void serializationTest() throws IOException, ClassNotFoundException {
+    ReadModifyWriteRow expected =
+        ReadModifyWriteRow.create(TABLE_NAME.getTable(), "fake-key")
+            .increment("fake-family", ByteString.copyFromUtf8("fake-qualifier"), 1)
+            .append("fake-family", "a", "b");
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+
+    ReadModifyWriteRow actual = (ReadModifyWriteRow) ois.readObject();
+    assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
   }
 }

@@ -101,7 +101,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   /** Returns the object with the settings used for calls to inspectContent. */
@@ -330,6 +330,7 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
       return ((DlpServiceStubSettings.Builder) getStubSettings());
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

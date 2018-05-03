@@ -119,7 +119,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class MetricServiceClient implements BackgroundResource {
   private final MetricServiceSettings settings;
@@ -1184,7 +1184,7 @@ public class MetricServiceClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 

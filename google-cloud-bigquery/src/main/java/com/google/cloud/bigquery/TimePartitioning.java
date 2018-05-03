@@ -18,8 +18,11 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.BetaApi;
+import com.google.auto.value.AutoValue;
 import com.google.common.base.MoreObjects;
 
+import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -30,12 +33,10 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/partitioned-tables">Partitioned Tables</a>
  */
-public final class TimePartitioning implements Serializable {
+@AutoValue
+public abstract class TimePartitioning implements Serializable {
 
   private static final long serialVersionUID = -8565064035346940951L;
-
-  private final Type type;
-  private final Long expirationMs;
 
   /**
    * The type of time partitioning. Currently, the only type supported is {@code DAY}, which will
@@ -49,47 +50,66 @@ public final class TimePartitioning implements Serializable {
     DAY
   }
 
-  private TimePartitioning(Type type, Long expirationMs) {
-    this.type = checkNotNull(type);
-    this.expirationMs = expirationMs;
+  TimePartitioning() {
+    // Users cannot extend this, but AutoValue can.
   }
-
 
   /**
    * Returns the time partitioning type. Currently, the only type supported is {@link Type#DAY},
    * which will generate one partition per day based on data loading time.
    */
-  public Type getType() {
-    return type;
-  }
+  public abstract Type getType();
 
 
   /**
    * Returns the number of milliseconds for which to keep the storage for a partition. When expired,
    * the storage for the partition is reclaimed.
    */
-  public Long getExpirationMs() {
-    return expirationMs;
+  @Nullable
+  public abstract Long getExpirationMs();
+
+
+  /**
+   * If not set, the table is partitioned by pseudo column '_PARTITIONTIME'; if set, the table is
+   * partitioned by this field.
+   */
+  @BetaApi
+  @Nullable
+  public abstract String getField();
+
+
+  /**
+   * If set to true, queries over this table require a partition filter (that can be used for
+   * partition elimination) to be specified.
+   */
+  @BetaApi
+  @Nullable
+  public abstract Boolean getRequirePartitionFilter();
+
+  public abstract Builder toBuilder();
+
+  @AutoValue.Builder
+  public abstract static class Builder {
+    abstract Builder setType(Type type);
+
+    public abstract Builder setExpirationMs(Long expirationMs);
+
+    @BetaApi
+    public abstract Builder setRequirePartitionFilter(Boolean requirePartitionFilter);
+
+    @BetaApi
+    public abstract Builder setField(String field);
+
+    public abstract TimePartitioning build();
   }
 
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("type", type)
-        .add("expirationMs", expirationMs)
-        .toString();
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, expirationMs);
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    return obj == this
-        || obj instanceof TimePartitioning
-        && Objects.equals(toPb(), ((TimePartitioning) obj).toPb());
+  /**
+   * Returns a {@code TimePartitioning} object given the time partitioning type. Currently, the only
+   * type supported is {@link Type#DAY}, which will generate one partition per day based on data
+   * loading time.
+   */
+  public static Builder newBuilder(Type type) {
+    return new AutoValue_TimePartitioning.Builder().setType(type);
   }
 
   /**
@@ -98,7 +118,7 @@ public final class TimePartitioning implements Serializable {
    * loading time.
    */
   public static TimePartitioning of(Type type) {
-    return new TimePartitioning(type, null);
+    return newBuilder(type).build();
   }
 
   /**
@@ -110,20 +130,25 @@ public final class TimePartitioning implements Serializable {
    * @param expirationMs the number of milliseconds for which to keep the storage for a partition
    */
   public static TimePartitioning of(Type type, long expirationMs) {
-    return new TimePartitioning(type, expirationMs);
+    return newBuilder(type).setExpirationMs(expirationMs).build();
   }
 
   com.google.api.services.bigquery.model.TimePartitioning toPb() {
     com.google.api.services.bigquery.model.TimePartitioning partitioningPb =
         new com.google.api.services.bigquery.model.TimePartitioning();
-    partitioningPb.setType(type.name());
-    partitioningPb.setExpirationMs(expirationMs);
+    partitioningPb.setType(getType().name());
+    partitioningPb.setExpirationMs(getExpirationMs());
+    partitioningPb.setRequirePartitionFilter(getRequirePartitionFilter());
+    partitioningPb.setField(getField());
     return partitioningPb;
   }
 
   static TimePartitioning fromPb(
       com.google.api.services.bigquery.model.TimePartitioning partitioningPb) {
-    return new TimePartitioning(
-        Type.valueOf(partitioningPb.getType()), partitioningPb.getExpirationMs());
+    return newBuilder(Type.valueOf(partitioningPb.getType()))
+            .setExpirationMs(partitioningPb.getExpirationMs())
+            .setField(partitioningPb.getField())
+            .setRequirePartitionFilter(partitioningPb.getRequirePartitionFilter())
+            .build();
   }
 }

@@ -86,7 +86,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServiceStubSettings> {
   /** The default scopes of the service. */
@@ -504,6 +504,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
               listUptimeCheckIpsSettings);
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

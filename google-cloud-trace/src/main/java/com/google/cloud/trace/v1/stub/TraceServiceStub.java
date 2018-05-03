@@ -34,7 +34,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TraceServiceStub implements BackgroundResource {
 
@@ -53,4 +53,7 @@ public abstract class TraceServiceStub implements BackgroundResource {
   public UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTracesCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

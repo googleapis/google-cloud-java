@@ -41,6 +41,10 @@ import org.threeten.bp.Instant;
  * <p>If the DocumentSnapshot points to a non-existing document, getData() and its corresponding
  * methods will return null. You can always explicitly check for a document's existence by calling
  * {@link #exists()}.
+ *
+ * <p><b>Subclassing Note</b>: Firestore classes are not meant to be subclassed except for use in
+ * test mocks. Subclassing is not supported in production code and new SDK releases may break code
+ * that does so.
  */
 public class DocumentSnapshot {
 

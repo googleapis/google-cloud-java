@@ -32,7 +32,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class VideoIntelligenceServiceStub implements BackgroundResource {
 
@@ -48,4 +48,7 @@ public abstract class VideoIntelligenceServiceStub implements BackgroundResource
   public UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable() {
     throw new UnsupportedOperationException("Not implemented: annotateVideoCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

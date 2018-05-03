@@ -15,11 +15,13 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
 
 /** The API for creating mutations for a single row. */
+@InternalExtensionOnly
 public interface MutationApi<T extends MutationApi<T>> {
   /**
    * Adds a mutation which sets the value of the specified cell.

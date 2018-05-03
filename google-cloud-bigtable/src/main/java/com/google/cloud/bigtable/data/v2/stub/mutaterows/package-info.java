@@ -15,7 +15,7 @@
  */
 /**
  * Implementation details for {@link
- * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#mutateRowsCallable()}.
+ * com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub#bulkMutateRowsCallable()}.
  *
  * <p>The implementation adapts gax's {@link com.google.api.gax.rpc.BatchingCallable} to work with
  * Bigtable's MutateRows RPC. There are 3 customizations that are necessary:

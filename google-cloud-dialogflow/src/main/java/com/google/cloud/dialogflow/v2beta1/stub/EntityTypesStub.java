@@ -46,7 +46,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class EntityTypesStub implements BackgroundResource {
 
@@ -128,4 +128,7 @@ public abstract class EntityTypesStub implements BackgroundResource {
   public UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchDeleteEntitiesCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

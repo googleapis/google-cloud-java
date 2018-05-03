@@ -37,7 +37,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ContextsStub implements BackgroundResource {
 
@@ -68,4 +68,7 @@ public abstract class ContextsStub implements BackgroundResource {
   public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAllContextsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

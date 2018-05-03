@@ -59,7 +59,7 @@ public abstract class QuerySnapshot implements Iterable<QueryDocumentSnapshot> {
             if (documentChanges == null) {
               documentChanges = new ArrayList<>();
               for (int i = 0; i < documents.size(); ++i) {
-                documentChanges.add(new DocumentChange(documents.get(0), Type.ADDED, -1, i));
+                documentChanges.add(new DocumentChange(documents.get(i), Type.ADDED, -1, i));
               }
             }
           }

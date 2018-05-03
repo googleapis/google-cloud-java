@@ -138,7 +138,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class SubscriptionAdminClient implements BackgroundResource {
   private final SubscriptionAdminSettings settings;
@@ -2114,7 +2114,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 

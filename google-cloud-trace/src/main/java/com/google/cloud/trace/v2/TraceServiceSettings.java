@@ -59,7 +59,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
   /** Returns the object with the settings used for calls to batchWriteSpans. */
@@ -156,6 +156,7 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
       return ((TraceServiceStubSettings.Builder) getStubSettings());
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

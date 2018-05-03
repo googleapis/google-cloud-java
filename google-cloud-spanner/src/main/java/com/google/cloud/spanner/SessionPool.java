@@ -195,6 +195,70 @@ final class SessionPool {
       return txn.getReadTimestamp();
     }
   }
+  
+  private static class AutoClosingTransactionManager implements TransactionManager {
+    final TransactionManager delegate;
+    final PooledSession session;
+    private boolean closed;
+    
+    AutoClosingTransactionManager(TransactionManager delegate, PooledSession session) {
+      this.delegate = delegate;
+      this.session = session;
+    }
+
+    @Override
+    public TransactionContext begin() {
+      return delegate.begin();
+    }
+
+    @Override
+    public void commit() {
+      try {
+        delegate.commit();
+      } finally {
+        if (getState() != TransactionState.ABORTED) {
+          close();
+        }
+      }
+    }
+
+    @Override
+    public void rollback() {
+      try {
+        delegate.rollback();
+      } finally {
+        close();
+      }
+    }
+
+    @Override
+    public TransactionContext resetForRetry() {
+      return delegate.resetForRetry();
+    }
+
+    @Override
+    public Timestamp getCommitTimestamp() {
+      return delegate.getCommitTimestamp();
+    }
+
+    @Override
+    public void close() {
+      if (closed) {
+        return;
+      }
+      closed = true;
+      try {
+        delegate.close();
+      } finally {
+        session.close();
+      }
+    }
+    
+    @Override
+    public TransactionState getState() {
+      return delegate.getState();
+    }
+  }
 
   // Exception class used just to track the stack trace at the point when a session was handed out
   // from the pool.
@@ -385,6 +449,12 @@ final class SessionPool {
 
     private void markUsed() {
       lastUseTime = clock.instant();
+    }
+
+    @Override
+    public TransactionManager transactionManager() {
+      markUsed();
+      return new AutoClosingTransactionManager(delegate.transactionManager(), this);
     }
   }
 
