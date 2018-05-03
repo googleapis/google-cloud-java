@@ -32,7 +32,7 @@ jobs:
       - image: maven:3.5.2-jdk-7
         environment:
           TERM: dumb
-          MAVEN_OPTS: -Xmx256m
+          MAVEN_OPTS: -Xmx1024m
     steps:
       - checkout
       - run:
@@ -221,6 +221,16 @@ jobs:
       - run:
           name: Run integration tests for google-cloud-translate
           command: ./utilities/verify_single_it.sh google-cloud-translate
+  javadoc_test:
+    working_directory: ~/googleapis
+    <<: *anchor_docker
+    steps:
+      - checkout
+      - run:
+          <<: *anchor_build
+      - run:
+          name: Run mvn javadoc goal
+          command: mvn javadoc:jar javadoc:test-jar
 
 workflows:
   version: 2
@@ -229,6 +239,7 @@ workflows:
       - openjdk_7
       - openjdk_8
       - mac_openjdk_8
+      - javadoc_test
       - bigquery_it:
           filters:
             branches:

@@ -528,10 +528,26 @@ public class QueryTest {
     assertEquals(2, result.size());
     assertEquals(2, result.getDocuments().size());
 
-    Iterator<QueryDocumentSnapshot> iterator = result.iterator();
-    assertEquals("doc1", iterator.next().getId());
-    assertEquals("doc2", iterator.next().getId());
-    assertFalse(iterator.hasNext());
+    Iterator<QueryDocumentSnapshot> docIterator = result.iterator();
+    assertEquals("doc1", docIterator.next().getId());
+    assertEquals("doc2", docIterator.next().getId());
+    assertFalse(docIterator.hasNext());
+
+    Iterator<DocumentChange> changeIterator = result.getDocumentChanges().iterator();
+
+    DocumentChange documentChange = changeIterator.next();
+    assertEquals("doc1", documentChange.getDocument().getId());
+    assertEquals(DocumentChange.Type.ADDED, documentChange.getType());
+    assertEquals(-1, documentChange.getOldIndex());
+    assertEquals(0, documentChange.getNewIndex());
+
+    documentChange = changeIterator.next();
+    assertEquals("doc2", documentChange.getDocument().getId());
+    assertEquals(DocumentChange.Type.ADDED, documentChange.getType());
+    assertEquals(-1, documentChange.getOldIndex());
+    assertEquals(1, documentChange.getNewIndex());
+
+    assertFalse(changeIterator.hasNext());
 
     assertEquals(Instant.ofEpochSecond(1, 2), result.getReadTime());
 

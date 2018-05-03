@@ -77,7 +77,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -350,6 +350,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
               annotateTextSettings);
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

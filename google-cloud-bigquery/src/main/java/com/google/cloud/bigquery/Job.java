@@ -154,8 +154,7 @@ public class Job extends JobInfo {
    * Checks if this job exists.
    *
    * <p>Example of checking that a job exists.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * if (!job.exists()) {
    *   // job doesn't exist
    * }
@@ -174,8 +173,7 @@ public class Job extends JobInfo {
    * not exist this method returns {@code true}.
    *
    * <p>Example of waiting for a job until it reports that it is done.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * while (!job.isDone()) {
    *   Thread.sleep(1000L);
    * }
@@ -198,8 +196,7 @@ public class Job extends JobInfo {
    * 12 hours as a total timeout and unlimited number of attempts.
    *
    * <p>Example usage of {@code waitFor()}.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * Job completedJob = job.waitFor();
    * if (completedJob == null) {
    *   // job no longer exists
@@ -210,14 +207,12 @@ public class Job extends JobInfo {
    * }
    * }</pre>
    *
-   * <p>Example usage of {@code waitFor()} with non-jittered custom max delay and total timeout.
-   *
-   * <pre>{@code
+   * <p>Example usage of {@code waitFor()} with checking period and timeout.
+   * <pre> {@code
    * Job completedJob =
    *     job.waitFor(
-   *         RetryOption.maxRetryDelay(Duration.ofSeconds(30)),
-   *         RetryOption.totalTimeout(Duration.ofMinutes(1)),
-   *         RetryOption.jittered(false));
+   *         RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+   *         RetryOption.totalTimeout(Duration.ofMinutes(1)));
    * if (completedJob == null) {
    *   // job no longer exists
    * } else if (completedJob.getStatus().getError() != null) {
@@ -256,16 +251,6 @@ public class Job extends JobInfo {
    * <p>If the job hasn't finished, this method waits for the job to complete. However, the state of
    * the current {@code Job} instance is not updated. To get the new state, call {@link
    * #waitFor(RetryOption...)} or {@link #reload(JobOption...)}.
-   *
-   * <p>Example of getting the results of a query job.
-   *
-   * <pre>{@code
-   * Job job = bigquery.create(queryJobInfo);
-   * TableResult result = job.getQueryResults();
-   * for (FieldValueList row : result.iterateAll()) {
-   *   // do something with the data
-   * }
-   * }</pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -371,8 +356,7 @@ public class Job extends JobInfo {
    * Fetches current job's latest information. Returns {@code null} if the job does not exist.
    *
    * <p>Example of reloading all fields until job status is DONE.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * while (job.getStatus().getState() != JobStatus.State.DONE) {
    *   Thread.sleep(1000L);
    *   job = job.reload();
@@ -380,8 +364,7 @@ public class Job extends JobInfo {
    * }</pre>
    *
    * <p>Example of reloading status field until job status is DONE.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * while (job.getStatus().getState() != JobStatus.State.DONE) {
    *   Thread.sleep(1000L);
    *   job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
@@ -401,8 +384,7 @@ public class Job extends JobInfo {
    * Sends a job cancel request.
    *
    * <p>Example of cancelling a job.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * if (job.cancel()) {
    *   return true; // job successfully cancelled
    * } else {

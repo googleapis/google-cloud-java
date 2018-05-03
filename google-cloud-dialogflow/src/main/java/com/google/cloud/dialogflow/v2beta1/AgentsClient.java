@@ -126,7 +126,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class AgentsClient implements BackgroundResource {
   private final AgentsSettings settings;
@@ -877,7 +877,7 @@ public class AgentsClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     stub.close();
   }
 

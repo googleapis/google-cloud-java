@@ -22,12 +22,19 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import javax.annotation.Nonnull;
 
 /** Mutates a row atomically based on the output of a condition filter. */
-public final class ConditionalRowMutation {
+public final class ConditionalRowMutation implements Serializable {
+  private static final long serialVersionUID = -3699904745621909502L;
+  
   private final String tableId;
-  private final CheckAndMutateRowRequest.Builder builder = CheckAndMutateRowRequest.newBuilder();
+  private transient CheckAndMutateRowRequest.Builder builder =
+      CheckAndMutateRowRequest.newBuilder();
 
   private ConditionalRowMutation(String tableId, ByteString rowKey) {
     this.tableId = tableId;
@@ -44,6 +51,16 @@ public final class ConditionalRowMutation {
     Validations.validateTableId(tableId);
 
     return new ConditionalRowMutation(tableId, rowKey);
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    builder = CheckAndMutateRowRequest.newBuilder().mergeFrom(input);
+  }
+
+  private void writeObject(ObjectOutputStream output) throws IOException {
+    output.defaultWriteObject();
+    builder.build().writeTo(output);
   }
 
   /**

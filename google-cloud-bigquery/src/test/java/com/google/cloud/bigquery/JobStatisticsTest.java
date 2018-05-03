@@ -74,7 +74,7 @@ public class JobStatisticsTest {
   private static final QueryStep QUERY_STEP1 = new QueryStep("KIND", SUBSTEPS1);
   private static final QueryStep QUERY_STEP2 = new QueryStep("KIND", SUBSTEPS2);
   private static final QueryStage QUERY_STAGE = QueryStage.newBuilder()
-      .setComputeRationAvg(1.1)
+      .setComputeRatioAvg(1.1)
       .setComputeRatioMax(2.2)
       .setGeneratedId(42L)
       .setName("stage")
@@ -88,7 +88,24 @@ public class JobStatisticsTest {
       .setWriteRatioAvg(9.9)
       .setWriteRatioMax(10.10)
       .build();
+
+  private static final TimelineSample TIMELINE_SAMPLE1 = TimelineSample.newBuilder()
+      .setElapsedMs(1001L)
+      .setActiveUnits(100L)
+      .setCompletedUnits(200L)
+      .setPendingUnits(50L)
+      .setSlotMillis(12345L)
+      .build();
+  private static final TimelineSample TIMELINE_SAMPLE2 = TimelineSample.newBuilder()
+      .setElapsedMs(2002L)
+      .setActiveUnits(48L)
+      .setCompletedUnits(302L)
+      .setPendingUnits(0L)
+      .setSlotMillis(23456L)
+      .build();
+  private static final List<TimelineSample> TIMELINE = ImmutableList.of(TIMELINE_SAMPLE1, TIMELINE_SAMPLE2);
   private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);
+  private static final Schema SCHEMA = Schema.of(Field.of("column", LegacySQLTypeName.DATETIME));
   private static final QueryStatistics QUERY_STATISTICS = QueryStatistics.newBuilder()
       .setCreationTimestamp(CREATION_TIME)
       .setEndTime(END_TIME)
@@ -98,6 +115,8 @@ public class JobStatisticsTest {
       .setTotalBytesBilled(TOTAL_BYTES_BILLED)
       .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .setQueryPlan(QUERY_PLAN)
+      .setTimeline(TIMELINE)
+      .setSchema(SCHEMA)
       .build();
   private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE = QueryStatistics.newBuilder()
       .setCreationTimestamp(CREATION_TIME)
@@ -131,6 +150,7 @@ public class JobStatisticsTest {
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.getTotalBytesProcessed());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.getTotalBytesProcessed());
     assertEquals(QUERY_PLAN, QUERY_STATISTICS.getQueryPlan());
+    assertEquals(TIMELINE, QUERY_STATISTICS.getTimeline());
 
     assertEquals(CREATION_TIME, LOAD_STATISTICS_INCOMPLETE.getCreationTime());
     assertEquals(START_TIME, LOAD_STATISTICS_INCOMPLETE.getStartTime());
@@ -218,6 +238,7 @@ public class JobStatisticsTest {
     assertEquals(expected.getTotalBytesBilled(), value.getTotalBytesBilled());
     assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());
     assertEquals(expected.getQueryPlan(), value.getQueryPlan());
+    assertEquals(expected.getSchema(), value.getSchema());
   }
 
   private void compareStatistics(JobStatistics expected, JobStatistics value) {

@@ -60,7 +60,7 @@ import javax.annotation.Generated;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class ErrorGroupServiceSettings extends ClientSettings<ErrorGroupServiceSettings> {
   /** Returns the object with the settings used for calls to getGroup. */
@@ -157,6 +157,7 @@ public class ErrorGroupServiceSettings extends ClientSettings<ErrorGroupServiceS
       return ((ErrorGroupServiceStubSettings.Builder) getStubSettings());
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

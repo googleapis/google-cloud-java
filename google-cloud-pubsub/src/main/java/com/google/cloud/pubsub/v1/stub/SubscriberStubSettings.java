@@ -103,7 +103,7 @@ import org.threeten.bp.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi
 public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings> {
   /** The default scopes of the service. */
@@ -738,6 +738,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               testIamPermissionsSettings);
     }
 
+    // NEXT_MAJOR_VER: remove 'throws Exception'
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -22,12 +22,19 @@ import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import javax.annotation.Nonnull;
 
 /** Wraps a {@link ReadModifyWriteRowRequest}. */
-public final class ReadModifyWriteRow {
+public final class ReadModifyWriteRow implements Serializable {
+  private static final long serialVersionUID = -8150045424541029193L;
+
   private final String tableId;
-  private final ReadModifyWriteRowRequest.Builder builder = ReadModifyWriteRowRequest.newBuilder();
+  private transient ReadModifyWriteRowRequest.Builder builder =
+      ReadModifyWriteRowRequest.newBuilder();
 
   private ReadModifyWriteRow(@Nonnull String tableId, @Nonnull ByteString key) {
     Preconditions.checkNotNull(tableId, "tableId can't be null.");
@@ -44,6 +51,16 @@ public final class ReadModifyWriteRow {
 
   public static ReadModifyWriteRow create(@Nonnull String tableId, @Nonnull ByteString key) {
     return new ReadModifyWriteRow(tableId, key);
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    builder = ReadModifyWriteRowRequest.newBuilder().mergeFrom(input);
+  }
+
+  private void writeObject(ObjectOutputStream output) throws IOException {
+    output.defaultWriteObject();
+    builder.build().writeTo(output);
   }
 
   /**

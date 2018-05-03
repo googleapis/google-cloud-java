@@ -16,12 +16,15 @@
 package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
 import com.google.protobuf.ByteString;
+import java.io.Serializable;
 
 /** Represents the offset of a row key in a table. */
+@InternalExtensionOnly
 @AutoValue
-public abstract class KeyOffset {
+public abstract class KeyOffset implements Serializable {
   @InternalApi
   public static KeyOffset create(ByteString key, long offsetBytes) {
     return new AutoValue_KeyOffset(key, offsetBytes);

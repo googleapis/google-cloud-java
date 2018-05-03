@@ -18,7 +18,7 @@
  * EDITING INSTRUCTIONS
  * This file is referenced in Dataset’s javadoc. Any change to this file should be reflected in
  * Dataset’s javadoc.
-*/
+ */
 
 package com.google.cloud.examples.bigquery.snippets;
 
@@ -32,7 +32,6 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TimePartitioning;
 
-
 /**
  * This class contains a number of snippets for the {@link Dataset} interface.
  */
@@ -43,20 +42,20 @@ public class DatasetSnippets {
   public DatasetSnippets(Dataset dataset) {
     this.dataset = dataset;
   }
-  
+
   /**
    * Example of checking whether a dataset exists.
    */
   // [TARGET exists()]
   public boolean doesDatasetExist() {
-    // [START exists]
+    // [START ]
     boolean exists = dataset.exists();
     if (exists) {
       // the dataset exists
     } else {
       // the dataset was not found
     }
-    // [END exists]
+    // [END ]
     return exists;
   }
 
@@ -65,12 +64,12 @@ public class DatasetSnippets {
    */
   // [TARGET reload(DatasetOption...)]
   public Dataset reloadDataset() {
-    // [START reload]
+    // [START ]
     Dataset latestDataset = dataset.reload();
     if (latestDataset == null) {
       // The dataset was not found
     }
-    // [END reload]
+    // [END ]
     return latestDataset;
   }
 
@@ -80,11 +79,11 @@ public class DatasetSnippets {
   // [TARGET update(DatasetOption...)]
   // [VARIABLE "my_friendly_name"]
   public Dataset updateDataset(String friendlyName) {
-    // [START update]
+    // [START ]
     Builder builder = dataset.toBuilder();
     builder.setFriendlyName(friendlyName);
     Dataset updatedDataset = builder.build().update();
-    // [END update]
+    // [END ]
     return updatedDataset;
   }
 
@@ -93,14 +92,14 @@ public class DatasetSnippets {
    */
   // [TARGET delete(DatasetDeleteOption...)]
   public boolean deleteDataset() {
-    // [START delete]
+    // [START ]
     boolean deleted = dataset.delete();
     if (deleted) {
       // The dataset was deleted
     } else {
       // The dataset was not found
     }
-    // [END delete]
+    // [END ]
     return deleted;
   }
 
@@ -109,27 +108,27 @@ public class DatasetSnippets {
    */
   // [TARGET list(TableListOption...)]
   public Page<Table> list() {
-     // [START list]
+    // [START ]
     Page<Table> tables = dataset.list();
     for (Table table : tables.iterateAll()) {
       // do something with the table
     }
-    // [END list]
-   return tables;
+    // [END ]
+    return tables;
   }
-  
+
   /**
    * Example of getting a table in the dataset.
    */
   // [TARGET get(String, TableOption...)]
   // [VARIABLE “my_table”]
   public Table getTable(String tableName) {
-    // [START getTable]
+    // [START ]
     Table table = dataset.get(tableName);
-    // [END getTable]
+    // [END ]
     return table;
   }
-  
+
   /**
    * Example of creating a table in the dataset with schema and time partitioning.
    */
@@ -137,14 +136,15 @@ public class DatasetSnippets {
   // [VARIABLE “my_table”]
   // [VARIABLE “my_field”]
   public Table createTable(String tableName, String fieldName) {
-    // [START createTable]
+    // [START ]
     Schema schema = Schema.of(Field.of(fieldName, LegacySQLTypeName.STRING));
-    StandardTableDefinition definition = StandardTableDefinition.newBuilder()
-        .setSchema(schema)
-        .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
-        .build();
+    StandardTableDefinition definition =
+        StandardTableDefinition.newBuilder()
+            .setSchema(schema)
+            .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
+            .build();
     Table table = dataset.create(tableName, definition);
-    // [END createTable]
+    // [END ]
     return table;
   }
 }

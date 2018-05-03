@@ -336,11 +336,9 @@ class MessageDispatcher {
     }
 
     OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
-    final ArrayList<AckHandler> ackHandlers = new ArrayList<>(messages.size());
     for (ReceivedMessage message : messages) {
       AckHandler ackHandler =
           new AckHandler(message.getAckId(), message.getMessage().getSerializedSize());
-      ackHandlers.add(ackHandler);
       outstandingBatch.addMessage(message, ackHandler);
     }
     synchronized (outstandingMessageBatches) {

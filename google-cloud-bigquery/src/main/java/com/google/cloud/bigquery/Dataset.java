@@ -240,9 +240,7 @@ public class Dataset extends DatasetInfo {
    * <p>Example of listing tables in the dataset.
    * <pre> {@code
    * Page<Table> tables = dataset.list();
-   * Iterator<Table> tableIterator = tables.iterateAll();
-   * while (tableIterator.hasNext()) {
-   *   Table table = tableIterator.next();
+   * for (Table table : tables.iterateAll()) {
    *   // do something with the table
    * }
    * }</pre>
@@ -278,7 +276,7 @@ public class Dataset extends DatasetInfo {
    * <pre> {@code
    * String tableName = “my_table”;
    * String fieldName = “my_field”;
-   * Schema schema = Schema.of(Field.of(fieldName, Type.string()));
+   * Schema schema = Schema.of(Field.of(fieldName, LegacySQLTypeName.STRING));
    * StandardTableDefinition definition = StandardTableDefinition.newBuilder()
    *     .setSchema(schema)
    *     .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))

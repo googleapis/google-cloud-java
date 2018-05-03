@@ -26,7 +26,6 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatus;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 

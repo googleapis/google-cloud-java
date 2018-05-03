@@ -144,6 +144,17 @@ class DatabaseClientImpl implements DatabaseClient {
     }
   }
 
+  @Override
+  public TransactionManager transactionManager() {
+    Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
+      return pool.getReadWriteSession().transactionManager();
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
+    }
+  }
+
   ListenableFuture<Void> closeAsync() {
     return pool.closeAsync();
   }

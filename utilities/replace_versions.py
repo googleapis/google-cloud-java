@@ -88,9 +88,10 @@ def replace_versions_all(target):
     version_map = {}
     with open('versions.txt') as f:
         for line in f:
-            if line.startswith('#'):
+            version_line = line.strip()
+            if not version_line or version_line.startswith('#'):
                 continue
-            module = CodeModule(line)
+            module = CodeModule(version_line)
             version_map[module.name] = module
 
     if target:

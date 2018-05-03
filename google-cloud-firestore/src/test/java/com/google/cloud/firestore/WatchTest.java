@@ -84,7 +84,7 @@ import org.mockito.stubbing.Answer;
 @RunWith(MockitoJUnitRunner.class)
 public class WatchTest {
   /** The Target ID used by the Java Firestore SDK. */
-  private static final int TARGET_ID = 0xD0;
+  private static final int TARGET_ID = 0x1;
 
   /** The resume token used by this test harness. */
   private static final ByteString RESUME_TOKEN = ByteString.copyFromUtf8("token");
@@ -654,7 +654,7 @@ public class WatchTest {
 
     ListenResponse.Builder request = doc("coll/doc1", SINGLE_FIELD_PROTO).toBuilder();
     request.getDocumentChangeBuilder().clearTargetIds();
-    request.getDocumentChangeBuilder().addTargetIds(0x1);
+    request.getDocumentChangeBuilder().addTargetIds(0x2);
 
     send(request.build());
     send(snapshot());

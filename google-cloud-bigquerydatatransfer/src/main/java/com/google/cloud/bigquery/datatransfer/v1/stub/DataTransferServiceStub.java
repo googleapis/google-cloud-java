@@ -54,7 +54,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DataTransferServiceStub implements BackgroundResource {
 
@@ -133,4 +133,7 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     throw new UnsupportedOperationException("Not implemented: checkValidCredsCallable()");
   }
+
+  @Override
+  public abstract void close();
 }

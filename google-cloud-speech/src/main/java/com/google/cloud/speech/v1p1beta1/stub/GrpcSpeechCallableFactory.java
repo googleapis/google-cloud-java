@@ -41,7 +41,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage.
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
 public class GrpcSpeechCallableFactory implements GrpcStubCallableFactory {
   @Override

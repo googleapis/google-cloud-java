@@ -26,6 +26,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1beta1.Cursor;
 import com.google.firestore.v1beta1.Document;
 import com.google.firestore.v1beta1.RunQueryRequest;
@@ -38,6 +39,8 @@ import com.google.firestore.v1beta1.StructuredQuery.Order;
 import com.google.firestore.v1beta1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
+import io.opencensus.trace.AttributeValue;
+import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -921,13 +924,32 @@ public class Query {
       request.setTransaction(transactionId);
     }
 
+    Tracing.getTracer()
+        .getCurrentSpan()
+        .addAnnotation(
+            "Firestore.Query: Start",
+            ImmutableMap.of(
+                "transactional", AttributeValue.booleanAttributeValue(transactionId != null)));
+
     ApiStreamObserver<RunQueryResponse> observer =
         new ApiStreamObserver<RunQueryResponse>() {
           Instant readTime;
+          boolean firstResponse;
+          int numDocuments;
 
           @Override
           public void onNext(RunQueryResponse response) {
+            if (!firstResponse) {
+              firstResponse = true;
+              Tracing.getTracer().getCurrentSpan().addAnnotation("Firestore.Query: First response");
+            }
             if (response.hasDocument()) {
+              numDocuments++;
+              if (numDocuments % 100 == 0) {
+                Tracing.getTracer()
+                    .getCurrentSpan()
+                    .addAnnotation("Firestore.Query: Received 100 documents");
+              }
               Document document = response.getDocument();
               QueryDocumentSnapshot documentSnapshot =
                   QueryDocumentSnapshot.fromDocument(firestore, response.getReadTime(), document);
@@ -943,11 +965,18 @@ public class Query {
 
           @Override
           public void onError(Throwable throwable) {
+            Tracing.getTracer().getCurrentSpan().addAnnotation("Firestore.Query: Error");
             documentObserver.onError(throwable);
           }
 
           @Override
           public void onCompleted() {
+            Tracing.getTracer()
+                .getCurrentSpan()
+                .addAnnotation(
+                    "Firestore.Query: Completed",
+                    ImmutableMap.of(
+                        "numDocuments", AttributeValue.longAttributeValue(numDocuments)));
             documentObserver.onCompleted(readTime);
           }
         };

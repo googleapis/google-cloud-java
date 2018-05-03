@@ -236,6 +236,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (getFormatOptions() != null && FormatOptions.CSV.equals(getFormatOptions().getType())) {
       externalConfigurationPb.setCsvOptions(((CsvOptions) getFormatOptions()).toPb());
     }
+    if (getFormatOptions() != null && FormatOptions.GOOGLE_SHEETS.equals(getFormatOptions().getType())) {
+      externalConfigurationPb.setGoogleSheetsOptions(((GoogleSheetsOptions) getFormatOptions()).toPb());
+    }
     if (getAutodetect() != null) {
       externalConfigurationPb.setAutodetect(getAutodetect());
     }
@@ -340,6 +343,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       if (externalDataConfiguration.getCsvOptions() != null) {
         builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
       }
+      if (externalDataConfiguration.getGoogleSheetsOptions() != null) {
+        builder.setFormatOptions(GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
+      }
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());
       builder.setAutodetect(externalDataConfiguration.getAutodetect());
     }
@@ -366,6 +372,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     }
     if (externalDataConfiguration.getCsvOptions() != null) {
       builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
+    }
+    if (externalDataConfiguration.getGoogleSheetsOptions() != null) {
+      builder.setFormatOptions(GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
     }
     if (externalDataConfiguration.getMaxBadRecords() != null) {
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());

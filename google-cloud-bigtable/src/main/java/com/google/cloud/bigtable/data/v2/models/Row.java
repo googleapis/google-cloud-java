@@ -15,17 +15,18 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
 import com.google.protobuf.ByteString;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Nonnull;
 
 /** Default representation of a logical row. */
-@BetaApi
+@InternalExtensionOnly
 @AutoValue
-public abstract class Row implements Comparable<Row> {
+public abstract class Row implements Comparable<Row>, Serializable {
   /** Creates a new instance of the {@link Row}. */
   @InternalApi
   public static Row create(ByteString key, List<RowCell> cells) {

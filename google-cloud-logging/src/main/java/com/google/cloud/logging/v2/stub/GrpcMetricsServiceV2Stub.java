@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by GAPIC v0.0.5")
+@Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
 
@@ -215,7 +215,7 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
   }
 
   @Override
-  public final void close() throws Exception {
+  public final void close() {
     shutdown();
   }
 
