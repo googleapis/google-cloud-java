@@ -17,78 +17,113 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
 public final class HttpHealthCheck implements ApiMessage {
+  private final Integer checkIntervalSec;
+  private final String creationTimestamp;
+  private final String description;
+  private final Integer healthyThreshold;
   private final String host;
+  private final String id;
+  private final String kind;
+  private final String name;
   private final Integer port;
-  private final String portName;
-  private final String proxyHeader;
   private final String requestPath;
+  private final String selfLink;
+  private final Integer timeoutSec;
+  private final Integer unhealthyThreshold;
 
   private HttpHealthCheck() {
+    this.checkIntervalSec = null;
+    this.creationTimestamp = null;
+    this.description = null;
+    this.healthyThreshold = null;
     this.host = null;
+    this.id = null;
+    this.kind = null;
+    this.name = null;
     this.port = null;
-    this.portName = null;
-    this.proxyHeader = null;
     this.requestPath = null;
+    this.selfLink = null;
+    this.timeoutSec = null;
+    this.unhealthyThreshold = null;
   }
 
   private HttpHealthCheck(
-      String host, Integer port, String portName, String proxyHeader, String requestPath) {
+      Integer checkIntervalSec,
+      String creationTimestamp,
+      String description,
+      Integer healthyThreshold,
+      String host,
+      String id,
+      String kind,
+      String name,
+      Integer port,
+      String requestPath,
+      String selfLink,
+      Integer timeoutSec,
+      Integer unhealthyThreshold) {
+    this.checkIntervalSec = checkIntervalSec;
+    this.creationTimestamp = creationTimestamp;
+    this.description = description;
+    this.healthyThreshold = healthyThreshold;
     this.host = host;
+    this.id = id;
+    this.kind = kind;
+    this.name = name;
     this.port = port;
-    this.portName = portName;
-    this.proxyHeader = proxyHeader;
     this.requestPath = requestPath;
+    this.selfLink = selfLink;
+    this.timeoutSec = timeoutSec;
+    this.unhealthyThreshold = unhealthyThreshold;
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("host") && host != null) {
-      fieldMap.put("host", Collections.singletonList(String.valueOf(host)));
+  public Object getFieldValue(String fieldName) {
+    if (fieldName.equals("checkIntervalSec")) {
+      return checkIntervalSec;
     }
-    if (fieldNames.contains("port") && port != null) {
-      fieldMap.put("port", Collections.singletonList(String.valueOf(port)));
+    if (fieldName.equals("creationTimestamp")) {
+      return creationTimestamp;
     }
-    if (fieldNames.contains("portName") && portName != null) {
-      fieldMap.put("portName", Collections.singletonList(String.valueOf(portName)));
+    if (fieldName.equals("description")) {
+      return description;
     }
-    if (fieldNames.contains("proxyHeader") && proxyHeader != null) {
-      fieldMap.put("proxyHeader", Collections.singletonList(String.valueOf(proxyHeader)));
+    if (fieldName.equals("healthyThreshold")) {
+      return healthyThreshold;
     }
-    if (fieldNames.contains("requestPath") && requestPath != null) {
-      fieldMap.put("requestPath", Collections.singletonList(String.valueOf(requestPath)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
     if (fieldName.equals("host")) {
-      return String.valueOf(host);
+      return host;
+    }
+    if (fieldName.equals("id")) {
+      return id;
+    }
+    if (fieldName.equals("kind")) {
+      return kind;
+    }
+    if (fieldName.equals("name")) {
+      return name;
     }
     if (fieldName.equals("port")) {
-      return String.valueOf(port);
-    }
-    if (fieldName.equals("portName")) {
-      return String.valueOf(portName);
-    }
-    if (fieldName.equals("proxyHeader")) {
-      return String.valueOf(proxyHeader);
+      return port;
     }
     if (fieldName.equals("requestPath")) {
-      return String.valueOf(requestPath);
+      return requestPath;
+    }
+    if (fieldName.equals("selfLink")) {
+      return selfLink;
+    }
+    if (fieldName.equals("timeoutSec")) {
+      return timeoutSec;
+    }
+    if (fieldName.equals("unhealthyThreshold")) {
+      return unhealthyThreshold;
     }
     return null;
   }
@@ -99,24 +134,62 @@ public final class HttpHealthCheck implements ApiMessage {
     return null;
   }
 
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
+    return null;
+  }
+
+  public Integer getCheckIntervalSec() {
+    return checkIntervalSec;
+  }
+
+  public String getCreationTimestamp() {
+    return creationTimestamp;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public Integer getHealthyThreshold() {
+    return healthyThreshold;
+  }
+
   public String getHost() {
     return host;
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public String getKind() {
+    return kind;
+  }
+
+  public String getName() {
+    return name;
   }
 
   public Integer getPort() {
     return port;
   }
 
-  public String getPortName() {
-    return portName;
-  }
-
-  public String getProxyHeader() {
-    return proxyHeader;
-  }
-
   public String getRequestPath() {
     return requestPath;
+  }
+
+  public String getSelfLink() {
+    return selfLink;
+  }
+
+  public Integer getTimeoutSec() {
+    return timeoutSec;
+  }
+
+  public Integer getUnhealthyThreshold() {
+    return unhealthyThreshold;
   }
 
   public static Builder newBuilder() {
@@ -142,40 +215,116 @@ public final class HttpHealthCheck implements ApiMessage {
   }
 
   public static class Builder {
+    private Integer checkIntervalSec;
+    private String creationTimestamp;
+    private String description;
+    private Integer healthyThreshold;
     private String host;
+    private String id;
+    private String kind;
+    private String name;
     private Integer port;
-    private String portName;
-    private String proxyHeader;
     private String requestPath;
+    private String selfLink;
+    private Integer timeoutSec;
+    private Integer unhealthyThreshold;
 
     Builder() {}
 
     public Builder mergeFrom(HttpHealthCheck other) {
       if (other == HttpHealthCheck.getDefaultInstance()) return this;
+      if (other.getCheckIntervalSec() != null) {
+        this.checkIntervalSec = other.checkIntervalSec;
+      }
+      if (other.getCreationTimestamp() != null) {
+        this.creationTimestamp = other.creationTimestamp;
+      }
+      if (other.getDescription() != null) {
+        this.description = other.description;
+      }
+      if (other.getHealthyThreshold() != null) {
+        this.healthyThreshold = other.healthyThreshold;
+      }
       if (other.getHost() != null) {
         this.host = other.host;
+      }
+      if (other.getId() != null) {
+        this.id = other.id;
+      }
+      if (other.getKind() != null) {
+        this.kind = other.kind;
+      }
+      if (other.getName() != null) {
+        this.name = other.name;
       }
       if (other.getPort() != null) {
         this.port = other.port;
       }
-      if (other.getPortName() != null) {
-        this.portName = other.portName;
-      }
-      if (other.getProxyHeader() != null) {
-        this.proxyHeader = other.proxyHeader;
-      }
       if (other.getRequestPath() != null) {
         this.requestPath = other.requestPath;
+      }
+      if (other.getSelfLink() != null) {
+        this.selfLink = other.selfLink;
+      }
+      if (other.getTimeoutSec() != null) {
+        this.timeoutSec = other.timeoutSec;
+      }
+      if (other.getUnhealthyThreshold() != null) {
+        this.unhealthyThreshold = other.unhealthyThreshold;
       }
       return this;
     }
 
     Builder(HttpHealthCheck source) {
+      this.checkIntervalSec = source.checkIntervalSec;
+      this.creationTimestamp = source.creationTimestamp;
+      this.description = source.description;
+      this.healthyThreshold = source.healthyThreshold;
       this.host = source.host;
+      this.id = source.id;
+      this.kind = source.kind;
+      this.name = source.name;
       this.port = source.port;
-      this.portName = source.portName;
-      this.proxyHeader = source.proxyHeader;
       this.requestPath = source.requestPath;
+      this.selfLink = source.selfLink;
+      this.timeoutSec = source.timeoutSec;
+      this.unhealthyThreshold = source.unhealthyThreshold;
+    }
+
+    public Integer getCheckIntervalSec() {
+      return checkIntervalSec;
+    }
+
+    public Builder setCheckIntervalSec(Integer checkIntervalSec) {
+      this.checkIntervalSec = checkIntervalSec;
+      return this;
+    }
+
+    public String getCreationTimestamp() {
+      return creationTimestamp;
+    }
+
+    public Builder setCreationTimestamp(String creationTimestamp) {
+      this.creationTimestamp = creationTimestamp;
+      return this;
+    }
+
+    public String getDescription() {
+      return description;
+    }
+
+    public Builder setDescription(String description) {
+      this.description = description;
+      return this;
+    }
+
+    public Integer getHealthyThreshold() {
+      return healthyThreshold;
+    }
+
+    public Builder setHealthyThreshold(Integer healthyThreshold) {
+      this.healthyThreshold = healthyThreshold;
+      return this;
     }
 
     public String getHost() {
@@ -184,6 +333,33 @@ public final class HttpHealthCheck implements ApiMessage {
 
     public Builder setHost(String host) {
       this.host = host;
+      return this;
+    }
+
+    public String getId() {
+      return id;
+    }
+
+    public Builder setId(String id) {
+      this.id = id;
+      return this;
+    }
+
+    public String getKind() {
+      return kind;
+    }
+
+    public Builder setKind(String kind) {
+      this.kind = kind;
+      return this;
+    }
+
+    public String getName() {
+      return name;
+    }
+
+    public Builder setName(String name) {
+      this.name = name;
       return this;
     }
 
@@ -196,24 +372,6 @@ public final class HttpHealthCheck implements ApiMessage {
       return this;
     }
 
-    public String getPortName() {
-      return portName;
-    }
-
-    public Builder setPortName(String portName) {
-      this.portName = portName;
-      return this;
-    }
-
-    public String getProxyHeader() {
-      return proxyHeader;
-    }
-
-    public Builder setProxyHeader(String proxyHeader) {
-      this.proxyHeader = proxyHeader;
-      return this;
-    }
-
     public String getRequestPath() {
       return requestPath;
     }
@@ -223,18 +381,66 @@ public final class HttpHealthCheck implements ApiMessage {
       return this;
     }
 
+    public String getSelfLink() {
+      return selfLink;
+    }
+
+    public Builder setSelfLink(String selfLink) {
+      this.selfLink = selfLink;
+      return this;
+    }
+
+    public Integer getTimeoutSec() {
+      return timeoutSec;
+    }
+
+    public Builder setTimeoutSec(Integer timeoutSec) {
+      this.timeoutSec = timeoutSec;
+      return this;
+    }
+
+    public Integer getUnhealthyThreshold() {
+      return unhealthyThreshold;
+    }
+
+    public Builder setUnhealthyThreshold(Integer unhealthyThreshold) {
+      this.unhealthyThreshold = unhealthyThreshold;
+      return this;
+    }
+
     public HttpHealthCheck build() {
 
-      return new HttpHealthCheck(host, port, portName, proxyHeader, requestPath);
+      return new HttpHealthCheck(
+          checkIntervalSec,
+          creationTimestamp,
+          description,
+          healthyThreshold,
+          host,
+          id,
+          kind,
+          name,
+          port,
+          requestPath,
+          selfLink,
+          timeoutSec,
+          unhealthyThreshold);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setCheckIntervalSec(this.checkIntervalSec);
+      newBuilder.setCreationTimestamp(this.creationTimestamp);
+      newBuilder.setDescription(this.description);
+      newBuilder.setHealthyThreshold(this.healthyThreshold);
       newBuilder.setHost(this.host);
+      newBuilder.setId(this.id);
+      newBuilder.setKind(this.kind);
+      newBuilder.setName(this.name);
       newBuilder.setPort(this.port);
-      newBuilder.setPortName(this.portName);
-      newBuilder.setProxyHeader(this.proxyHeader);
       newBuilder.setRequestPath(this.requestPath);
+      newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setTimeoutSec(this.timeoutSec);
+      newBuilder.setUnhealthyThreshold(this.unhealthyThreshold);
       return newBuilder;
     }
   }
@@ -242,20 +448,44 @@ public final class HttpHealthCheck implements ApiMessage {
   @Override
   public String toString() {
     return "HttpHealthCheck{"
+        + "checkIntervalSec="
+        + checkIntervalSec
+        + ", "
+        + "creationTimestamp="
+        + creationTimestamp
+        + ", "
+        + "description="
+        + description
+        + ", "
+        + "healthyThreshold="
+        + healthyThreshold
+        + ", "
         + "host="
         + host
+        + ", "
+        + "id="
+        + id
+        + ", "
+        + "kind="
+        + kind
+        + ", "
+        + "name="
+        + name
         + ", "
         + "port="
         + port
         + ", "
-        + "portName="
-        + portName
-        + ", "
-        + "proxyHeader="
-        + proxyHeader
-        + ", "
         + "requestPath="
         + requestPath
+        + ", "
+        + "selfLink="
+        + selfLink
+        + ", "
+        + "timeoutSec="
+        + timeoutSec
+        + ", "
+        + "unhealthyThreshold="
+        + unhealthyThreshold
         + "}";
   }
 
@@ -266,17 +496,38 @@ public final class HttpHealthCheck implements ApiMessage {
     }
     if (o instanceof HttpHealthCheck) {
       HttpHealthCheck that = (HttpHealthCheck) o;
-      return Objects.equals(this.host, that.getHost())
+      return Objects.equals(this.checkIntervalSec, that.getCheckIntervalSec())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+          && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.healthyThreshold, that.getHealthyThreshold())
+          && Objects.equals(this.host, that.getHost())
+          && Objects.equals(this.id, that.getId())
+          && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.name, that.getName())
           && Objects.equals(this.port, that.getPort())
-          && Objects.equals(this.portName, that.getPortName())
-          && Objects.equals(this.proxyHeader, that.getProxyHeader())
-          && Objects.equals(this.requestPath, that.getRequestPath());
+          && Objects.equals(this.requestPath, that.getRequestPath())
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.timeoutSec, that.getTimeoutSec())
+          && Objects.equals(this.unhealthyThreshold, that.getUnhealthyThreshold());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(host, port, portName, proxyHeader, requestPath);
+    return Objects.hash(
+        checkIntervalSec,
+        creationTimestamp,
+        description,
+        healthyThreshold,
+        host,
+        id,
+        kind,
+        name,
+        port,
+        requestPath,
+        selfLink,
+        timeoutSec,
+        unhealthyThreshold);
   }
 }

@@ -17,18 +17,14 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class HttpHealthCheck2 implements ApiMessage {
+public final class HttpsHealthCheck implements ApiMessage {
   private final Integer checkIntervalSec;
   private final String creationTimestamp;
   private final String description;
@@ -43,7 +39,7 @@ public final class HttpHealthCheck2 implements ApiMessage {
   private final Integer timeoutSec;
   private final Integer unhealthyThreshold;
 
-  private HttpHealthCheck2() {
+  private HttpsHealthCheck() {
     this.checkIntervalSec = null;
     this.creationTimestamp = null;
     this.description = null;
@@ -59,7 +55,7 @@ public final class HttpHealthCheck2 implements ApiMessage {
     this.unhealthyThreshold = null;
   }
 
-  private HttpHealthCheck2(
+  private HttpsHealthCheck(
       Integer checkIntervalSec,
       String creationTimestamp,
       String description,
@@ -89,92 +85,45 @@ public final class HttpHealthCheck2 implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("checkIntervalSec") && checkIntervalSec != null) {
-      fieldMap.put("checkIntervalSec", Collections.singletonList(String.valueOf(checkIntervalSec)));
-    }
-    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("healthyThreshold") && healthyThreshold != null) {
-      fieldMap.put("healthyThreshold", Collections.singletonList(String.valueOf(healthyThreshold)));
-    }
-    if (fieldNames.contains("host") && host != null) {
-      fieldMap.put("host", Collections.singletonList(String.valueOf(host)));
-    }
-    if (fieldNames.contains("id") && id != null) {
-      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
-    }
-    if (fieldNames.contains("kind") && kind != null) {
-      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("port") && port != null) {
-      fieldMap.put("port", Collections.singletonList(String.valueOf(port)));
-    }
-    if (fieldNames.contains("requestPath") && requestPath != null) {
-      fieldMap.put("requestPath", Collections.singletonList(String.valueOf(requestPath)));
-    }
-    if (fieldNames.contains("selfLink") && selfLink != null) {
-      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
-    }
-    if (fieldNames.contains("timeoutSec") && timeoutSec != null) {
-      fieldMap.put("timeoutSec", Collections.singletonList(String.valueOf(timeoutSec)));
-    }
-    if (fieldNames.contains("unhealthyThreshold") && unhealthyThreshold != null) {
-      fieldMap.put(
-          "unhealthyThreshold", Collections.singletonList(String.valueOf(unhealthyThreshold)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("checkIntervalSec")) {
-      return String.valueOf(checkIntervalSec);
+      return checkIntervalSec;
     }
     if (fieldName.equals("creationTimestamp")) {
-      return String.valueOf(creationTimestamp);
+      return creationTimestamp;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("healthyThreshold")) {
-      return String.valueOf(healthyThreshold);
+      return healthyThreshold;
     }
     if (fieldName.equals("host")) {
-      return String.valueOf(host);
+      return host;
     }
     if (fieldName.equals("id")) {
-      return String.valueOf(id);
+      return id;
     }
     if (fieldName.equals("kind")) {
-      return String.valueOf(kind);
+      return kind;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("port")) {
-      return String.valueOf(port);
+      return port;
     }
     if (fieldName.equals("requestPath")) {
-      return String.valueOf(requestPath);
+      return requestPath;
     }
     if (fieldName.equals("selfLink")) {
-      return String.valueOf(selfLink);
+      return selfLink;
     }
     if (fieldName.equals("timeoutSec")) {
-      return String.valueOf(timeoutSec);
+      return timeoutSec;
     }
     if (fieldName.equals("unhealthyThreshold")) {
-      return String.valueOf(unhealthyThreshold);
+      return unhealthyThreshold;
     }
     return null;
   }
@@ -182,6 +131,12 @@ public final class HttpHealthCheck2 implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 
@@ -241,7 +196,7 @@ public final class HttpHealthCheck2 implements ApiMessage {
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(HttpHealthCheck2 prototype) {
+  public static Builder newBuilder(HttpsHealthCheck prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -249,14 +204,14 @@ public final class HttpHealthCheck2 implements ApiMessage {
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static HttpHealthCheck2 getDefaultInstance() {
+  public static HttpsHealthCheck getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final HttpHealthCheck2 DEFAULT_INSTANCE;
+  private static final HttpsHealthCheck DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new HttpHealthCheck2();
+    DEFAULT_INSTANCE = new HttpsHealthCheck();
   }
 
   public static class Builder {
@@ -276,8 +231,8 @@ public final class HttpHealthCheck2 implements ApiMessage {
 
     Builder() {}
 
-    public Builder mergeFrom(HttpHealthCheck2 other) {
-      if (other == HttpHealthCheck2.getDefaultInstance()) return this;
+    public Builder mergeFrom(HttpsHealthCheck other) {
+      if (other == HttpsHealthCheck.getDefaultInstance()) return this;
       if (other.getCheckIntervalSec() != null) {
         this.checkIntervalSec = other.checkIntervalSec;
       }
@@ -320,7 +275,7 @@ public final class HttpHealthCheck2 implements ApiMessage {
       return this;
     }
 
-    Builder(HttpHealthCheck2 source) {
+    Builder(HttpsHealthCheck source) {
       this.checkIntervalSec = source.checkIntervalSec;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
@@ -453,9 +408,9 @@ public final class HttpHealthCheck2 implements ApiMessage {
       return this;
     }
 
-    public HttpHealthCheck2 build() {
+    public HttpsHealthCheck build() {
 
-      return new HttpHealthCheck2(
+      return new HttpsHealthCheck(
           checkIntervalSec,
           creationTimestamp,
           description,
@@ -492,7 +447,7 @@ public final class HttpHealthCheck2 implements ApiMessage {
 
   @Override
   public String toString() {
-    return "HttpHealthCheck2{"
+    return "HttpsHealthCheck{"
         + "checkIntervalSec="
         + checkIntervalSec
         + ", "
@@ -539,8 +494,8 @@ public final class HttpHealthCheck2 implements ApiMessage {
     if (o == this) {
       return true;
     }
-    if (o instanceof HttpHealthCheck2) {
-      HttpHealthCheck2 that = (HttpHealthCheck2) o;
+    if (o instanceof HttpsHealthCheck) {
+      HttpsHealthCheck that = (HttpsHealthCheck) o;
       return Objects.equals(this.checkIntervalSec, that.getCheckIntervalSec())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())

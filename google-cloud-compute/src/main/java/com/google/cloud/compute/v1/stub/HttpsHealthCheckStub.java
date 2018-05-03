@@ -22,7 +22,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteHttpsHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHttpsHealthCheckHttpRequest;
-import com.google.cloud.compute.v1.HttpsHealthCheck2;
+import com.google.cloud.compute.v1.HttpsHealthCheck;
 import com.google.cloud.compute.v1.HttpsHealthCheckList;
 import com.google.cloud.compute.v1.InsertHttpsHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHttpsHealthChecksHttpRequest;
@@ -48,7 +48,7 @@ public abstract class HttpsHealthCheckStub implements BackgroundResource {
   }
 
   @BetaApi
-  public UnaryCallable<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck2>
+  public UnaryCallable<GetHttpsHealthCheckHttpRequest, HttpsHealthCheck>
       getHttpsHealthCheckCallable() {
     throw new UnsupportedOperationException("Not implemented: getHttpsHealthCheckCallable()");
   }

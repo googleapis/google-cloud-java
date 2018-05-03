@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -33,7 +29,7 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
   private final String callback;
   private final String fields;
   private final String httpsHealthCheck;
-  private final HttpsHealthCheck2 httpsHealthCheckResource;
+  private final HttpsHealthCheck httpsHealthCheckResource;
   private final String key;
   private final String prettyPrint;
   private final String quotaUser;
@@ -58,7 +54,7 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       String callback,
       String fields,
       String httpsHealthCheck,
-      HttpsHealthCheck2 httpsHealthCheckResource,
+      HttpsHealthCheck httpsHealthCheckResource,
       String key,
       String prettyPrint,
       String quotaUser,
@@ -77,82 +73,50 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("access_token") && access_token != null) {
-      fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
-    }
-    if (fieldNames.contains("callback") && callback != null) {
-      fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
-    }
-    if (fieldNames.contains("fields") && fields != null) {
-      fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
-    }
-    if (fieldNames.contains("httpsHealthCheck") && httpsHealthCheck != null) {
-      fieldMap.put("httpsHealthCheck", Collections.singletonList(String.valueOf(httpsHealthCheck)));
-    }
-    if (fieldNames.contains("httpsHealthCheckResource") && httpsHealthCheckResource != null) {
-      fieldMap.put(
-          "httpsHealthCheckResource",
-          Collections.singletonList(String.valueOf(httpsHealthCheckResource)));
-    }
-    if (fieldNames.contains("key") && key != null) {
-      fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
-    }
-    if (fieldNames.contains("prettyPrint") && prettyPrint != null) {
-      fieldMap.put("prettyPrint", Collections.singletonList(String.valueOf(prettyPrint)));
-    }
-    if (fieldNames.contains("quotaUser") && quotaUser != null) {
-      fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
-    }
-    if (fieldNames.contains("requestId") && requestId != null) {
-      fieldMap.put("requestId", Collections.singletonList(String.valueOf(requestId)));
-    }
-    if (fieldNames.contains("userIp") && userIp != null) {
-      fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("access_token")) {
-      return String.valueOf(access_token);
+      return access_token;
     }
     if (fieldName.equals("callback")) {
-      return String.valueOf(callback);
+      return callback;
     }
     if (fieldName.equals("fields")) {
-      return String.valueOf(fields);
+      return fields;
     }
     if (fieldName.equals("httpsHealthCheck")) {
-      return String.valueOf(httpsHealthCheck);
+      return httpsHealthCheck;
     }
     if (fieldName.equals("httpsHealthCheckResource")) {
-      return String.valueOf(httpsHealthCheckResource);
+      return httpsHealthCheckResource;
     }
     if (fieldName.equals("key")) {
-      return String.valueOf(key);
+      return key;
     }
     if (fieldName.equals("prettyPrint")) {
-      return String.valueOf(prettyPrint);
+      return prettyPrint;
     }
     if (fieldName.equals("quotaUser")) {
-      return String.valueOf(quotaUser);
+      return quotaUser;
     }
     if (fieldName.equals("requestId")) {
-      return String.valueOf(requestId);
+      return requestId;
     }
     if (fieldName.equals("userIp")) {
-      return String.valueOf(userIp);
+      return userIp;
     }
     return null;
   }
 
   @Nullable
   @Override
-  public HttpsHealthCheck2 getApiMessageRequestBody() {
+  public HttpsHealthCheck getApiMessageRequestBody() {
     return httpsHealthCheckResource;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
+    return null;
   }
 
   public String getAccessToken() {
@@ -171,7 +135,7 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
     return httpsHealthCheck;
   }
 
-  public HttpsHealthCheck2 getHttpsHealthCheckResource() {
+  public HttpsHealthCheck getHttpsHealthCheckResource() {
     return httpsHealthCheckResource;
   }
 
@@ -222,7 +186,7 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
     private String callback;
     private String fields;
     private String httpsHealthCheck;
-    private HttpsHealthCheck2 httpsHealthCheckResource;
+    private HttpsHealthCheck httpsHealthCheckResource;
     private String key;
     private String prettyPrint;
     private String quotaUser;
@@ -315,11 +279,11 @@ public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
       return this;
     }
 
-    public HttpsHealthCheck2 getHttpsHealthCheckResource() {
+    public HttpsHealthCheck getHttpsHealthCheckResource() {
       return httpsHealthCheckResource;
     }
 
-    public Builder setHttpsHealthCheckResource(HttpsHealthCheck2 httpsHealthCheckResource) {
+    public Builder setHttpsHealthCheckResource(HttpsHealthCheck httpsHealthCheckResource) {
       this.httpsHealthCheckResource = httpsHealthCheckResource;
       return this;
     }

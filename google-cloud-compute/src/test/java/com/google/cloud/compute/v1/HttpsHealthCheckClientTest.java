@@ -194,8 +194,8 @@ public class HttpsHealthCheckClientTest {
     Integer healthyThreshold = 133658551;
     String id = "id3355";
     String requestPath = "requestPath1303145429";
-    HttpsHealthCheck2 expectedResponse =
-        HttpsHealthCheck2.newBuilder()
+    HttpsHealthCheck expectedResponse =
+        HttpsHealthCheck.newBuilder()
             .setCheckIntervalSec(checkIntervalSec)
             .setKind(kind)
             .setDescription(description)
@@ -215,7 +215,7 @@ public class HttpsHealthCheckClientTest {
     ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
         ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
 
-    HttpsHealthCheck2 actualResponse = client.getHttpsHealthCheck(httpsHealthCheck);
+    HttpsHealthCheck actualResponse = client.getHttpsHealthCheck(httpsHealthCheck);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -304,7 +304,7 @@ public class HttpsHealthCheckClientTest {
 
     String requestId = "requestId37109963";
     ProjectName project = ProjectName.of("[PROJECT]");
-    HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+    HttpsHealthCheck httpsHealthCheckResource = HttpsHealthCheck.newBuilder().build();
 
     Operation actualResponse =
         client.insertHttpsHealthCheck(requestId, project, httpsHealthCheckResource);
@@ -336,7 +336,7 @@ public class HttpsHealthCheckClientTest {
     try {
       String requestId = "requestId37109963";
       ProjectName project = ProjectName.of("[PROJECT]");
-      HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+      HttpsHealthCheck httpsHealthCheckResource = HttpsHealthCheck.newBuilder().build();
 
       client.insertHttpsHealthCheck(requestId, project, httpsHealthCheckResource);
       Assert.fail("No exception raised");
@@ -352,8 +352,8 @@ public class HttpsHealthCheckClientTest {
     String nextPageToken = "";
     String id = "id3355";
     String selfLink = "selfLink-1691268851";
-    HttpsHealthCheck2 itemsElement = HttpsHealthCheck2.newBuilder().build();
-    List<HttpsHealthCheck2> items = Arrays.asList(itemsElement);
+    HttpsHealthCheck itemsElement = HttpsHealthCheck.newBuilder().build();
+    List<HttpsHealthCheck> items = Arrays.asList(itemsElement);
     HttpsHealthCheckList expectedResponse =
         HttpsHealthCheckList.newBuilder()
             .setKind(kind)
@@ -368,7 +368,7 @@ public class HttpsHealthCheckClientTest {
 
     ListHttpsHealthChecksPagedResponse pagedListResponse = client.listHttpsHealthChecks(project);
 
-    List<HttpsHealthCheck2> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<HttpsHealthCheck> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
 
@@ -458,7 +458,7 @@ public class HttpsHealthCheckClientTest {
     ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
         ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
     String requestId = "requestId37109963";
-    HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+    HttpsHealthCheck httpsHealthCheckResource = HttpsHealthCheck.newBuilder().build();
 
     Operation actualResponse =
         client.patchHttpsHealthCheck(httpsHealthCheck, requestId, httpsHealthCheckResource);
@@ -491,7 +491,7 @@ public class HttpsHealthCheckClientTest {
       ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
           ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
       String requestId = "requestId37109963";
-      HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+      HttpsHealthCheck httpsHealthCheckResource = HttpsHealthCheck.newBuilder().build();
 
       client.patchHttpsHealthCheck(httpsHealthCheck, requestId, httpsHealthCheckResource);
       Assert.fail("No exception raised");
@@ -553,7 +553,7 @@ public class HttpsHealthCheckClientTest {
     ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
         ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
     String requestId = "requestId37109963";
-    HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+    HttpsHealthCheck httpsHealthCheckResource = HttpsHealthCheck.newBuilder().build();
 
     Operation actualResponse =
         client.updateHttpsHealthCheck(httpsHealthCheck, requestId, httpsHealthCheckResource);
@@ -586,7 +586,7 @@ public class HttpsHealthCheckClientTest {
       ProjectGlobalHttpsHealthCheckName httpsHealthCheck =
           ProjectGlobalHttpsHealthCheckName.of("[PROJECT]", "[HTTPS_HEALTH_CHECK]");
       String requestId = "requestId37109963";
-      HttpsHealthCheck2 httpsHealthCheckResource = HttpsHealthCheck2.newBuilder().build();
+      HttpsHealthCheck httpsHealthCheckResource = HttpsHealthCheck.newBuilder().build();
 
       client.updateHttpsHealthCheck(httpsHealthCheck, requestId, httpsHealthCheckResource);
       Assert.fail("No exception raised");

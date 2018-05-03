@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -73,69 +69,33 @@ public final class Backend implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("balancingMode") && balancingMode != null) {
-      fieldMap.put("balancingMode", Collections.singletonList(String.valueOf(balancingMode)));
-    }
-    if (fieldNames.contains("capacityScaler") && capacityScaler != null) {
-      fieldMap.put("capacityScaler", Collections.singletonList(String.valueOf(capacityScaler)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("group") && group != null) {
-      fieldMap.put("group", Collections.singletonList(String.valueOf(group)));
-    }
-    if (fieldNames.contains("maxConnections") && maxConnections != null) {
-      fieldMap.put("maxConnections", Collections.singletonList(String.valueOf(maxConnections)));
-    }
-    if (fieldNames.contains("maxConnectionsPerInstance") && maxConnectionsPerInstance != null) {
-      fieldMap.put(
-          "maxConnectionsPerInstance",
-          Collections.singletonList(String.valueOf(maxConnectionsPerInstance)));
-    }
-    if (fieldNames.contains("maxRate") && maxRate != null) {
-      fieldMap.put("maxRate", Collections.singletonList(String.valueOf(maxRate)));
-    }
-    if (fieldNames.contains("maxRatePerInstance") && maxRatePerInstance != null) {
-      fieldMap.put(
-          "maxRatePerInstance", Collections.singletonList(String.valueOf(maxRatePerInstance)));
-    }
-    if (fieldNames.contains("maxUtilization") && maxUtilization != null) {
-      fieldMap.put("maxUtilization", Collections.singletonList(String.valueOf(maxUtilization)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("balancingMode")) {
-      return String.valueOf(balancingMode);
+      return balancingMode;
     }
     if (fieldName.equals("capacityScaler")) {
-      return String.valueOf(capacityScaler);
+      return capacityScaler;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("group")) {
-      return String.valueOf(group);
+      return group;
     }
     if (fieldName.equals("maxConnections")) {
-      return String.valueOf(maxConnections);
+      return maxConnections;
     }
     if (fieldName.equals("maxConnectionsPerInstance")) {
-      return String.valueOf(maxConnectionsPerInstance);
+      return maxConnectionsPerInstance;
     }
     if (fieldName.equals("maxRate")) {
-      return String.valueOf(maxRate);
+      return maxRate;
     }
     if (fieldName.equals("maxRatePerInstance")) {
-      return String.valueOf(maxRatePerInstance);
+      return maxRatePerInstance;
     }
     if (fieldName.equals("maxUtilization")) {
-      return String.valueOf(maxUtilization);
+      return maxUtilization;
     }
     return null;
   }
@@ -143,6 +103,12 @@ public final class Backend implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

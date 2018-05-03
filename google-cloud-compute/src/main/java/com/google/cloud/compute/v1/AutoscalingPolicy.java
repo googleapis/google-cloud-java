@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -63,55 +58,24 @@ public final class AutoscalingPolicy implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("coolDownPeriodSec") && coolDownPeriodSec != null) {
-      fieldMap.put(
-          "coolDownPeriodSec", Collections.singletonList(String.valueOf(coolDownPeriodSec)));
-    }
-    if (fieldNames.contains("cpuUtilization") && cpuUtilization != null) {
-      fieldMap.put("cpuUtilization", Collections.singletonList(String.valueOf(cpuUtilization)));
-    }
-    if (fieldNames.contains("customMetricUtilizations") && customMetricUtilizations != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (AutoscalingPolicyCustomMetricUtilization item : customMetricUtilizations) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("customMetricUtilizations", stringList.build());
-    }
-    if (fieldNames.contains("loadBalancingUtilization") && loadBalancingUtilization != null) {
-      fieldMap.put(
-          "loadBalancingUtilization",
-          Collections.singletonList(String.valueOf(loadBalancingUtilization)));
-    }
-    if (fieldNames.contains("maxNumReplicas") && maxNumReplicas != null) {
-      fieldMap.put("maxNumReplicas", Collections.singletonList(String.valueOf(maxNumReplicas)));
-    }
-    if (fieldNames.contains("minNumReplicas") && minNumReplicas != null) {
-      fieldMap.put("minNumReplicas", Collections.singletonList(String.valueOf(minNumReplicas)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("coolDownPeriodSec")) {
-      return String.valueOf(coolDownPeriodSec);
+      return coolDownPeriodSec;
     }
     if (fieldName.equals("cpuUtilization")) {
-      return String.valueOf(cpuUtilization);
+      return cpuUtilization;
     }
     if (fieldName.equals("customMetricUtilizations")) {
-      return String.valueOf(customMetricUtilizations);
+      return customMetricUtilizations;
     }
     if (fieldName.equals("loadBalancingUtilization")) {
-      return String.valueOf(loadBalancingUtilization);
+      return loadBalancingUtilization;
     }
     if (fieldName.equals("maxNumReplicas")) {
-      return String.valueOf(maxNumReplicas);
+      return maxNumReplicas;
     }
     if (fieldName.equals("minNumReplicas")) {
-      return String.valueOf(minNumReplicas);
+      return minNumReplicas;
     }
     return null;
   }
@@ -119,6 +83,12 @@ public final class AutoscalingPolicy implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

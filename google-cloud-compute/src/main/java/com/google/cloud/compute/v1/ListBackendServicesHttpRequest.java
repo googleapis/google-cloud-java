@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -85,84 +81,42 @@ public final class ListBackendServicesHttpRequest implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("access_token") && access_token != null) {
-      fieldMap.put("access_token", Collections.singletonList(String.valueOf(access_token)));
-    }
-    if (fieldNames.contains("callback") && callback != null) {
-      fieldMap.put("callback", Collections.singletonList(String.valueOf(callback)));
-    }
-    if (fieldNames.contains("fields") && fields != null) {
-      fieldMap.put("fields", Collections.singletonList(String.valueOf(fields)));
-    }
-    if (fieldNames.contains("filter") && filter != null) {
-      fieldMap.put("filter", Collections.singletonList(String.valueOf(filter)));
-    }
-    if (fieldNames.contains("key") && key != null) {
-      fieldMap.put("key", Collections.singletonList(String.valueOf(key)));
-    }
-    if (fieldNames.contains("maxResults") && maxResults != null) {
-      fieldMap.put("maxResults", Collections.singletonList(String.valueOf(maxResults)));
-    }
-    if (fieldNames.contains("orderBy") && orderBy != null) {
-      fieldMap.put("orderBy", Collections.singletonList(String.valueOf(orderBy)));
-    }
-    if (fieldNames.contains("pageToken") && pageToken != null) {
-      fieldMap.put("pageToken", Collections.singletonList(String.valueOf(pageToken)));
-    }
-    if (fieldNames.contains("prettyPrint") && prettyPrint != null) {
-      fieldMap.put("prettyPrint", Collections.singletonList(String.valueOf(prettyPrint)));
-    }
-    if (fieldNames.contains("project") && project != null) {
-      fieldMap.put("project", Collections.singletonList(String.valueOf(project)));
-    }
-    if (fieldNames.contains("quotaUser") && quotaUser != null) {
-      fieldMap.put("quotaUser", Collections.singletonList(String.valueOf(quotaUser)));
-    }
-    if (fieldNames.contains("userIp") && userIp != null) {
-      fieldMap.put("userIp", Collections.singletonList(String.valueOf(userIp)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("access_token")) {
-      return String.valueOf(access_token);
+      return access_token;
     }
     if (fieldName.equals("callback")) {
-      return String.valueOf(callback);
+      return callback;
     }
     if (fieldName.equals("fields")) {
-      return String.valueOf(fields);
+      return fields;
     }
     if (fieldName.equals("filter")) {
-      return String.valueOf(filter);
+      return filter;
     }
     if (fieldName.equals("key")) {
-      return String.valueOf(key);
+      return key;
     }
     if (fieldName.equals("maxResults")) {
-      return String.valueOf(maxResults);
+      return maxResults;
     }
     if (fieldName.equals("orderBy")) {
-      return String.valueOf(orderBy);
+      return orderBy;
     }
     if (fieldName.equals("pageToken")) {
-      return String.valueOf(pageToken);
+      return pageToken;
     }
     if (fieldName.equals("prettyPrint")) {
-      return String.valueOf(prettyPrint);
+      return prettyPrint;
     }
     if (fieldName.equals("project")) {
-      return String.valueOf(project);
+      return project;
     }
     if (fieldName.equals("quotaUser")) {
-      return String.valueOf(quotaUser);
+      return quotaUser;
     }
     if (fieldName.equals("userIp")) {
-      return String.valueOf(userIp);
+      return userIp;
     }
     return null;
   }
@@ -170,6 +124,12 @@ public final class ListBackendServicesHttpRequest implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

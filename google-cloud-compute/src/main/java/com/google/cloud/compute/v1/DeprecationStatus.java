@@ -17,12 +17,8 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -53,42 +49,21 @@ public final class DeprecationStatus implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("deleted") && deleted != null) {
-      fieldMap.put("deleted", Collections.singletonList(String.valueOf(deleted)));
-    }
-    if (fieldNames.contains("deprecated") && deprecated != null) {
-      fieldMap.put("deprecated", Collections.singletonList(String.valueOf(deprecated)));
-    }
-    if (fieldNames.contains("obsolete") && obsolete != null) {
-      fieldMap.put("obsolete", Collections.singletonList(String.valueOf(obsolete)));
-    }
-    if (fieldNames.contains("replacement") && replacement != null) {
-      fieldMap.put("replacement", Collections.singletonList(String.valueOf(replacement)));
-    }
-    if (fieldNames.contains("state") && state != null) {
-      fieldMap.put("state", Collections.singletonList(String.valueOf(state)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("deleted")) {
-      return String.valueOf(deleted);
+      return deleted;
     }
     if (fieldName.equals("deprecated")) {
-      return String.valueOf(deprecated);
+      return deprecated;
     }
     if (fieldName.equals("obsolete")) {
-      return String.valueOf(obsolete);
+      return obsolete;
     }
     if (fieldName.equals("replacement")) {
-      return String.valueOf(replacement);
+      return replacement;
     }
     if (fieldName.equals("state")) {
-      return String.valueOf(state);
+      return state;
     }
     return null;
   }
@@ -96,6 +71,12 @@ public final class DeprecationStatus implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

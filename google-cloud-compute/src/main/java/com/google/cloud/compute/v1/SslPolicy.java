@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -87,97 +82,42 @@ public final class SslPolicy implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
-    }
-    if (fieldNames.contains("customFeatures") && customFeatures != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : customFeatures) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("customFeatures", stringList.build());
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("enabledFeatures") && enabledFeatures != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : enabledFeatures) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("enabledFeatures", stringList.build());
-    }
-    if (fieldNames.contains("fingerprint") && fingerprint != null) {
-      fieldMap.put("fingerprint", Collections.singletonList(String.valueOf(fingerprint)));
-    }
-    if (fieldNames.contains("id") && id != null) {
-      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
-    }
-    if (fieldNames.contains("kind") && kind != null) {
-      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
-    }
-    if (fieldNames.contains("minTlsVersion") && minTlsVersion != null) {
-      fieldMap.put("minTlsVersion", Collections.singletonList(String.valueOf(minTlsVersion)));
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("profile") && profile != null) {
-      fieldMap.put("profile", Collections.singletonList(String.valueOf(profile)));
-    }
-    if (fieldNames.contains("selfLink") && selfLink != null) {
-      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
-    }
-    if (fieldNames.contains("warnings") && warnings != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (Warnings item : warnings) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("warnings", stringList.build());
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("creationTimestamp")) {
-      return String.valueOf(creationTimestamp);
+      return creationTimestamp;
     }
     if (fieldName.equals("customFeatures")) {
-      return String.valueOf(customFeatures);
+      return customFeatures;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("enabledFeatures")) {
-      return String.valueOf(enabledFeatures);
+      return enabledFeatures;
     }
     if (fieldName.equals("fingerprint")) {
-      return String.valueOf(fingerprint);
+      return fingerprint;
     }
     if (fieldName.equals("id")) {
-      return String.valueOf(id);
+      return id;
     }
     if (fieldName.equals("kind")) {
-      return String.valueOf(kind);
+      return kind;
     }
     if (fieldName.equals("minTlsVersion")) {
-      return String.valueOf(minTlsVersion);
+      return minTlsVersion;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("profile")) {
-      return String.valueOf(profile);
+      return profile;
     }
     if (fieldName.equals("selfLink")) {
-      return String.valueOf(selfLink);
+      return selfLink;
     }
     if (fieldName.equals("warnings")) {
-      return String.valueOf(warnings);
+      return warnings;
     }
     return null;
   }
@@ -185,6 +125,12 @@ public final class SslPolicy implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -55,48 +50,18 @@ public final class RouterStatus implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("bestRoutes") && bestRoutes != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (Route item : bestRoutes) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("bestRoutes", stringList.build());
-    }
-    if (fieldNames.contains("bestRoutesForRouter") && bestRoutesForRouter != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (Route item : bestRoutesForRouter) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("bestRoutesForRouter", stringList.build());
-    }
-    if (fieldNames.contains("bgpPeerStatus") && bgpPeerStatus != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (RouterStatusBgpPeerStatus item : bgpPeerStatus) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("bgpPeerStatus", stringList.build());
-    }
-    if (fieldNames.contains("network") && network != null) {
-      fieldMap.put("network", Collections.singletonList(String.valueOf(network)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("bestRoutes")) {
-      return String.valueOf(bestRoutes);
+      return bestRoutes;
     }
     if (fieldName.equals("bestRoutesForRouter")) {
-      return String.valueOf(bestRoutesForRouter);
+      return bestRoutesForRouter;
     }
     if (fieldName.equals("bgpPeerStatus")) {
-      return String.valueOf(bgpPeerStatus);
+      return bgpPeerStatus;
     }
     if (fieldName.equals("network")) {
-      return String.valueOf(network);
+      return network;
     }
     return null;
   }
@@ -104,6 +69,12 @@ public final class RouterStatus implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

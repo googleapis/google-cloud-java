@@ -17,13 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -42,22 +38,9 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("managedInstances") && managedInstances != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (ManagedInstance item : managedInstances) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("managedInstances", stringList.build());
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("managedInstances")) {
-      return String.valueOf(managedInstances);
+      return managedInstances;
     }
     return null;
   }
@@ -65,6 +48,12 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

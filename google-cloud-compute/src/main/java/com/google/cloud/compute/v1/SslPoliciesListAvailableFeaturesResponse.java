@@ -17,13 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -41,22 +37,9 @@ public final class SslPoliciesListAvailableFeaturesResponse implements ApiMessag
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("features") && features != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : features) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("features", stringList.build());
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("features")) {
-      return String.valueOf(features);
+      return features;
     }
     return null;
   }
@@ -64,6 +47,12 @@ public final class SslPoliciesListAvailableFeaturesResponse implements ApiMessag
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

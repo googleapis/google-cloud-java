@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -48,34 +43,15 @@ public final class InstanceWithNamedPorts implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("instance") && instance != null) {
-      fieldMap.put("instance", Collections.singletonList(String.valueOf(instance)));
-    }
-    if (fieldNames.contains("namedPorts") && namedPorts != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (NamedPort item : namedPorts) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("namedPorts", stringList.build());
-    }
-    if (fieldNames.contains("status") && status != null) {
-      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("instance")) {
-      return String.valueOf(instance);
+      return instance;
     }
     if (fieldName.equals("namedPorts")) {
-      return String.valueOf(namedPorts);
+      return namedPorts;
     }
     if (fieldName.equals("status")) {
-      return String.valueOf(status);
+      return status;
     }
     return null;
   }
@@ -83,6 +59,12 @@ public final class InstanceWithNamedPorts implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

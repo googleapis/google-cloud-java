@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -107,123 +102,57 @@ public final class VpnTunnel implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("detailedStatus") && detailedStatus != null) {
-      fieldMap.put("detailedStatus", Collections.singletonList(String.valueOf(detailedStatus)));
-    }
-    if (fieldNames.contains("id") && id != null) {
-      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
-    }
-    if (fieldNames.contains("ikeVersion") && ikeVersion != null) {
-      fieldMap.put("ikeVersion", Collections.singletonList(String.valueOf(ikeVersion)));
-    }
-    if (fieldNames.contains("kind") && kind != null) {
-      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
-    }
-    if (fieldNames.contains("localTrafficSelector") && localTrafficSelector != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : localTrafficSelector) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("localTrafficSelector", stringList.build());
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("peerIp") && peerIp != null) {
-      fieldMap.put("peerIp", Collections.singletonList(String.valueOf(peerIp)));
-    }
-    if (fieldNames.contains("region") && region != null) {
-      fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
-    }
-    if (fieldNames.contains("remoteTrafficSelector") && remoteTrafficSelector != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (String item : remoteTrafficSelector) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("remoteTrafficSelector", stringList.build());
-    }
-    if (fieldNames.contains("router") && router != null) {
-      fieldMap.put("router", Collections.singletonList(String.valueOf(router)));
-    }
-    if (fieldNames.contains("selfLink") && selfLink != null) {
-      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
-    }
-    if (fieldNames.contains("sharedSecret") && sharedSecret != null) {
-      fieldMap.put("sharedSecret", Collections.singletonList(String.valueOf(sharedSecret)));
-    }
-    if (fieldNames.contains("sharedSecretHash") && sharedSecretHash != null) {
-      fieldMap.put("sharedSecretHash", Collections.singletonList(String.valueOf(sharedSecretHash)));
-    }
-    if (fieldNames.contains("status") && status != null) {
-      fieldMap.put("status", Collections.singletonList(String.valueOf(status)));
-    }
-    if (fieldNames.contains("targetVpnGateway") && targetVpnGateway != null) {
-      fieldMap.put("targetVpnGateway", Collections.singletonList(String.valueOf(targetVpnGateway)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("creationTimestamp")) {
-      return String.valueOf(creationTimestamp);
+      return creationTimestamp;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("detailedStatus")) {
-      return String.valueOf(detailedStatus);
+      return detailedStatus;
     }
     if (fieldName.equals("id")) {
-      return String.valueOf(id);
+      return id;
     }
     if (fieldName.equals("ikeVersion")) {
-      return String.valueOf(ikeVersion);
+      return ikeVersion;
     }
     if (fieldName.equals("kind")) {
-      return String.valueOf(kind);
+      return kind;
     }
     if (fieldName.equals("localTrafficSelector")) {
-      return String.valueOf(localTrafficSelector);
+      return localTrafficSelector;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("peerIp")) {
-      return String.valueOf(peerIp);
+      return peerIp;
     }
     if (fieldName.equals("region")) {
-      return String.valueOf(region);
+      return region;
     }
     if (fieldName.equals("remoteTrafficSelector")) {
-      return String.valueOf(remoteTrafficSelector);
+      return remoteTrafficSelector;
     }
     if (fieldName.equals("router")) {
-      return String.valueOf(router);
+      return router;
     }
     if (fieldName.equals("selfLink")) {
-      return String.valueOf(selfLink);
+      return selfLink;
     }
     if (fieldName.equals("sharedSecret")) {
-      return String.valueOf(sharedSecret);
+      return sharedSecret;
     }
     if (fieldName.equals("sharedSecretHash")) {
-      return String.valueOf(sharedSecretHash);
+      return sharedSecretHash;
     }
     if (fieldName.equals("status")) {
-      return String.valueOf(status);
+      return status;
     }
     if (fieldName.equals("targetVpnGateway")) {
-      return String.valueOf(targetVpnGateway);
+      return targetVpnGateway;
     }
     return null;
   }
@@ -231,6 +160,12 @@ public final class VpnTunnel implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -45,28 +40,12 @@ public final class AddressesScopedList implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("addresses") && addresses != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (Address item : addresses) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("addresses", stringList.build());
-    }
-    if (fieldNames.contains("warning") && warning != null) {
-      fieldMap.put("warning", Collections.singletonList(String.valueOf(warning)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("addresses")) {
-      return String.valueOf(addresses);
+      return addresses;
     }
     if (fieldName.equals("warning")) {
-      return String.valueOf(warning);
+      return warning;
     }
     return null;
   }
@@ -74,6 +53,12 @@ public final class AddressesScopedList implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

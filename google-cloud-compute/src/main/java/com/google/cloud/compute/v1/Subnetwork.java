@@ -17,14 +17,9 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
@@ -91,97 +86,45 @@ public final class Subnetwork implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("creationTimestamp") && creationTimestamp != null) {
-      fieldMap.put(
-          "creationTimestamp", Collections.singletonList(String.valueOf(creationTimestamp)));
-    }
-    if (fieldNames.contains("description") && description != null) {
-      fieldMap.put("description", Collections.singletonList(String.valueOf(description)));
-    }
-    if (fieldNames.contains("fingerprint") && fingerprint != null) {
-      fieldMap.put("fingerprint", Collections.singletonList(String.valueOf(fingerprint)));
-    }
-    if (fieldNames.contains("gatewayAddress") && gatewayAddress != null) {
-      fieldMap.put("gatewayAddress", Collections.singletonList(String.valueOf(gatewayAddress)));
-    }
-    if (fieldNames.contains("id") && id != null) {
-      fieldMap.put("id", Collections.singletonList(String.valueOf(id)));
-    }
-    if (fieldNames.contains("ipCidrRange") && ipCidrRange != null) {
-      fieldMap.put("ipCidrRange", Collections.singletonList(String.valueOf(ipCidrRange)));
-    }
-    if (fieldNames.contains("kind") && kind != null) {
-      fieldMap.put("kind", Collections.singletonList(String.valueOf(kind)));
-    }
-    if (fieldNames.contains("name") && name != null) {
-      fieldMap.put("name", Collections.singletonList(String.valueOf(name)));
-    }
-    if (fieldNames.contains("network") && network != null) {
-      fieldMap.put("network", Collections.singletonList(String.valueOf(network)));
-    }
-    if (fieldNames.contains("privateIpGoogleAccess") && privateIpGoogleAccess != null) {
-      fieldMap.put(
-          "privateIpGoogleAccess",
-          Collections.singletonList(String.valueOf(privateIpGoogleAccess)));
-    }
-    if (fieldNames.contains("region") && region != null) {
-      fieldMap.put("region", Collections.singletonList(String.valueOf(region)));
-    }
-    if (fieldNames.contains("secondaryIpRanges") && secondaryIpRanges != null) {
-      ImmutableList.Builder stringList = ImmutableList.builder();
-      for (SubnetworkSecondaryRange item : secondaryIpRanges) {
-        stringList.add(item.toString());
-      }
-      fieldMap.put("secondaryIpRanges", stringList.build());
-    }
-    if (fieldNames.contains("selfLink") && selfLink != null) {
-      fieldMap.put("selfLink", Collections.singletonList(String.valueOf(selfLink)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("creationTimestamp")) {
-      return String.valueOf(creationTimestamp);
+      return creationTimestamp;
     }
     if (fieldName.equals("description")) {
-      return String.valueOf(description);
+      return description;
     }
     if (fieldName.equals("fingerprint")) {
-      return String.valueOf(fingerprint);
+      return fingerprint;
     }
     if (fieldName.equals("gatewayAddress")) {
-      return String.valueOf(gatewayAddress);
+      return gatewayAddress;
     }
     if (fieldName.equals("id")) {
-      return String.valueOf(id);
+      return id;
     }
     if (fieldName.equals("ipCidrRange")) {
-      return String.valueOf(ipCidrRange);
+      return ipCidrRange;
     }
     if (fieldName.equals("kind")) {
-      return String.valueOf(kind);
+      return kind;
     }
     if (fieldName.equals("name")) {
-      return String.valueOf(name);
+      return name;
     }
     if (fieldName.equals("network")) {
-      return String.valueOf(network);
+      return network;
     }
     if (fieldName.equals("privateIpGoogleAccess")) {
-      return String.valueOf(privateIpGoogleAccess);
+      return privateIpGoogleAccess;
     }
     if (fieldName.equals("region")) {
-      return String.valueOf(region);
+      return region;
     }
     if (fieldName.equals("secondaryIpRanges")) {
-      return String.valueOf(secondaryIpRanges);
+      return secondaryIpRanges;
     }
     if (fieldName.equals("selfLink")) {
-      return String.valueOf(selfLink);
+      return selfLink;
     }
     return null;
   }
@@ -189,6 +132,12 @@ public final class Subnetwork implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 

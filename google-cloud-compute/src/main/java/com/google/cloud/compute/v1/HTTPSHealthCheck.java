@@ -17,25 +17,21 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-public final class HttpSHealthCheck implements ApiMessage {
+public final class HTTPSHealthCheck implements ApiMessage {
   private final String host;
   private final Integer port;
   private final String portName;
   private final String proxyHeader;
   private final String requestPath;
 
-  private HttpSHealthCheck() {
+  private HTTPSHealthCheck() {
     this.host = null;
     this.port = null;
     this.portName = null;
@@ -43,7 +39,7 @@ public final class HttpSHealthCheck implements ApiMessage {
     this.requestPath = null;
   }
 
-  private HttpSHealthCheck(
+  private HTTPSHealthCheck(
       String host, Integer port, String portName, String proxyHeader, String requestPath) {
     this.host = host;
     this.port = port;
@@ -53,42 +49,21 @@ public final class HttpSHealthCheck implements ApiMessage {
   }
 
   @Override
-  public Map<String, List<String>> populateFieldsInMap(Set<String> fieldNames) {
-    Map<String, List<String>> fieldMap = new HashMap<>();
-    if (fieldNames.contains("host") && host != null) {
-      fieldMap.put("host", Collections.singletonList(String.valueOf(host)));
-    }
-    if (fieldNames.contains("port") && port != null) {
-      fieldMap.put("port", Collections.singletonList(String.valueOf(port)));
-    }
-    if (fieldNames.contains("portName") && portName != null) {
-      fieldMap.put("portName", Collections.singletonList(String.valueOf(portName)));
-    }
-    if (fieldNames.contains("proxyHeader") && proxyHeader != null) {
-      fieldMap.put("proxyHeader", Collections.singletonList(String.valueOf(proxyHeader)));
-    }
-    if (fieldNames.contains("requestPath") && requestPath != null) {
-      fieldMap.put("requestPath", Collections.singletonList(String.valueOf(requestPath)));
-    }
-    return fieldMap;
-  }
-
-  @Override
-  public String getFieldStringValue(String fieldName) {
+  public Object getFieldValue(String fieldName) {
     if (fieldName.equals("host")) {
-      return String.valueOf(host);
+      return host;
     }
     if (fieldName.equals("port")) {
-      return String.valueOf(port);
+      return port;
     }
     if (fieldName.equals("portName")) {
-      return String.valueOf(portName);
+      return portName;
     }
     if (fieldName.equals("proxyHeader")) {
-      return String.valueOf(proxyHeader);
+      return proxyHeader;
     }
     if (fieldName.equals("requestPath")) {
-      return String.valueOf(requestPath);
+      return requestPath;
     }
     return null;
   }
@@ -96,6 +71,12 @@ public final class HttpSHealthCheck implements ApiMessage {
   @Nullable
   @Override
   public ApiMessage getApiMessageRequestBody() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<String> getFieldMask() {
     return null;
   }
 
@@ -123,7 +104,7 @@ public final class HttpSHealthCheck implements ApiMessage {
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(HttpSHealthCheck prototype) {
+  public static Builder newBuilder(HTTPSHealthCheck prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -131,14 +112,14 @@ public final class HttpSHealthCheck implements ApiMessage {
     return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  public static HttpSHealthCheck getDefaultInstance() {
+  public static HTTPSHealthCheck getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final HttpSHealthCheck DEFAULT_INSTANCE;
+  private static final HTTPSHealthCheck DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new HttpSHealthCheck();
+    DEFAULT_INSTANCE = new HTTPSHealthCheck();
   }
 
   public static class Builder {
@@ -150,8 +131,8 @@ public final class HttpSHealthCheck implements ApiMessage {
 
     Builder() {}
 
-    public Builder mergeFrom(HttpSHealthCheck other) {
-      if (other == HttpSHealthCheck.getDefaultInstance()) return this;
+    public Builder mergeFrom(HTTPSHealthCheck other) {
+      if (other == HTTPSHealthCheck.getDefaultInstance()) return this;
       if (other.getHost() != null) {
         this.host = other.host;
       }
@@ -170,7 +151,7 @@ public final class HttpSHealthCheck implements ApiMessage {
       return this;
     }
 
-    Builder(HttpSHealthCheck source) {
+    Builder(HTTPSHealthCheck source) {
       this.host = source.host;
       this.port = source.port;
       this.portName = source.portName;
@@ -223,9 +204,9 @@ public final class HttpSHealthCheck implements ApiMessage {
       return this;
     }
 
-    public HttpSHealthCheck build() {
+    public HTTPSHealthCheck build() {
 
-      return new HttpSHealthCheck(host, port, portName, proxyHeader, requestPath);
+      return new HTTPSHealthCheck(host, port, portName, proxyHeader, requestPath);
     }
 
     public Builder clone() {
@@ -241,7 +222,7 @@ public final class HttpSHealthCheck implements ApiMessage {
 
   @Override
   public String toString() {
-    return "HttpSHealthCheck{"
+    return "HTTPSHealthCheck{"
         + "host="
         + host
         + ", "
@@ -264,8 +245,8 @@ public final class HttpSHealthCheck implements ApiMessage {
     if (o == this) {
       return true;
     }
-    if (o instanceof HttpSHealthCheck) {
-      HttpSHealthCheck that = (HttpSHealthCheck) o;
+    if (o instanceof HTTPSHealthCheck) {
+      HTTPSHealthCheck that = (HTTPSHealthCheck) o;
       return Objects.equals(this.host, that.getHost())
           && Objects.equals(this.port, that.getPort())
           && Objects.equals(this.portName, that.getPortName())
