@@ -96,6 +96,7 @@ public class Publisher {
   private final PublisherStub publisherStub;
 
   private final ScheduledExecutorService executor;
+  private final boolean closeExecutor;
   private final AtomicBoolean shutdown;
   private final List<AutoCloseable> closeables;
   private final MessageWaiter messagesWaiter;
@@ -120,6 +121,7 @@ public class Publisher {
     messagesBatchLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
+    closeExecutor = builder.executorProvider.shouldAutoClose();
     if (builder.executorProvider.shouldAutoClose()) {
       closeables =
           Collections.<AutoCloseable>singletonList(new ExecutorAsBackgroundResource(executor));
@@ -422,6 +424,9 @@ public class Publisher {
       closeable.close();
     }
     publisherStub.shutdown();
+    if (closeExecutor) {
+      executor.shutdown();
+    }
   }
 
   private boolean hasBatchingBytes() {

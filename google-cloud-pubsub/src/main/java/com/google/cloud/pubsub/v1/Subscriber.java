@@ -107,6 +107,7 @@ public class Subscriber extends AbstractApiService {
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
   private final ScheduledExecutorService executor;
+  private final boolean closeExecutor;
   @Nullable private final ScheduledExecutorService alarmsExecutor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
@@ -147,6 +148,7 @@ public class Subscriber extends AbstractApiService {
                 .build());
 
     executor = builder.executorProvider.getExecutor();
+    closeExecutor = builder.executorProvider.shouldAutoClose();
     if (builder.executorProvider.shouldAutoClose()) {
       closeables.add(
           new AutoCloseable() {
@@ -317,6 +319,9 @@ public class Subscriber extends AbstractApiService {
                   stopAllStreamingConnections();
                   for (AutoCloseable closeable : closeables) {
                     closeable.close();
+                  }
+                  if (closeExecutor) {
+                    executor.shutdown();
                   }
                   notifyStopped();
                 } catch (Exception e) {
