@@ -34,6 +34,7 @@ import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * This class contains snippets for {@link DatabaseAdminClient} interface.
@@ -71,14 +72,13 @@ public class DatabaseAdminClientSnippets {
                     + "  AlbumTitle   STRING(MAX)\n"
                     + ") PRIMARY KEY (SingerId, AlbumId),\n"
                     + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"));
-    Database db;
     try {
-      db = op.get();
-    } catch (Exception e) {
-      throw SpannerExceptionFactory.newSpannerException(e);
+      return op.get();
+      // [END createDatabase]
+    } catch (ExecutionException | InterruptedException e) {
+      // DO error handing
     }
-    // [END createDatabase]
-    return db;
+    return null;
   }
 
   /**
@@ -107,8 +107,8 @@ public class DatabaseAdminClientSnippets {
         databaseId, 
         Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64"), 
         null).get();
-    } catch (Exception e) {
-      throw SpannerExceptionFactory.newSpannerException(e);
+    } catch (ExecutionException | InterruptedException e) {
+      // DO error handling
     }
     // [END updateDatabaseDdl]
   }

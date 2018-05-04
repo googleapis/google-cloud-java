@@ -86,7 +86,7 @@ public class DatabaseAdminClientImplTest {
     assertThat(db.getState()).isEqualTo(DatabaseInfo.State.READY);
   }
 
-  @Test(timeout = 1000)
+  @Test
   public void createDatabase() throws Exception {
     OperationFuture<Database, CreateDatabaseMetadata> rawOperationFuture =
         OperationFutureUtil.immediateOperationFuture(
@@ -117,6 +117,7 @@ public class DatabaseAdminClientImplTest {
 
   @Ignore("More work needs to be done")
   @Test
+  // TODO(hzyi)
   // Changing the surface to OperationFuture breaks updateDatabaseDdl in the case
   // that there is already a longrunning operation running. Disabling this test for 
   // this PR and I will fix this in the next PR. 
