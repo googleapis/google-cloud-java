@@ -29,6 +29,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
   private final String autoscaler;
   private final Autoscaler autoscalerResource;
   private final String callback;
+  private final List<String> fieldMask;
   private final String fields;
   private final String key;
   private final String prettyPrint;
@@ -43,6 +44,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     this.autoscaler = null;
     this.autoscalerResource = null;
     this.callback = null;
+    this.fieldMask = null;
     this.fields = null;
     this.key = null;
     this.prettyPrint = null;
@@ -57,6 +59,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       String autoscaler,
       Autoscaler autoscalerResource,
       String callback,
+      List<String> fieldMask,
       String fields,
       String key,
       String prettyPrint,
@@ -68,6 +71,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     this.autoscaler = autoscaler;
     this.autoscalerResource = autoscalerResource;
     this.callback = callback;
+    this.fieldMask = fieldMask;
     this.fields = fields;
     this.key = key;
     this.prettyPrint = prettyPrint;
@@ -90,6 +94,9 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("callback")) {
       return callback;
+    }
+    if (fieldName.equals("fieldMask")) {
+      return fieldMask;
     }
     if (fieldName.equals("fields")) {
       return fields;
@@ -141,6 +148,10 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
 
   public String getCallback() {
     return callback;
+  }
+
+  public List<String> getFieldMask() {
+    return fieldMask;
   }
 
   public String getFields() {
@@ -198,6 +209,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
     private String autoscaler;
     private Autoscaler autoscalerResource;
     private String callback;
+    private List<String> fieldMask;
     private String fields;
     private String key;
     private String prettyPrint;
@@ -221,6 +233,9 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       }
       if (other.getCallback() != null) {
         this.callback = other.callback;
+      }
+      if (other.getFieldMask() != null) {
+        this.fieldMask = other.fieldMask;
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
@@ -251,6 +266,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       this.autoscaler = source.autoscaler;
       this.autoscalerResource = source.autoscalerResource;
       this.callback = source.callback;
+      this.fieldMask = source.fieldMask;
       this.fields = source.fields;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
@@ -293,6 +309,15 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
 
     public Builder setCallback(String callback) {
       this.callback = callback;
+      return this;
+    }
+
+    public List<String> getFieldMask() {
+      return fieldMask;
+    }
+
+    public Builder setFieldMask(String fieldMask) {
+      this.fieldMask = fieldMask;
       return this;
     }
 
@@ -374,6 +399,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
           autoscaler,
           autoscalerResource,
           callback,
+          fieldMask,
           fields,
           key,
           prettyPrint,
@@ -389,6 +415,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
       newBuilder.setAutoscaler(this.autoscaler);
       newBuilder.setAutoscalerResource(this.autoscalerResource);
       newBuilder.setCallback(this.callback);
+      newBuilder.setFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
@@ -414,6 +441,9 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
         + ", "
         + "callback="
         + callback
+        + ", "
+        + "fieldMask="
+        + fieldMask
         + ", "
         + "fields="
         + fields
@@ -449,6 +479,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
           && Objects.equals(this.autoscaler, that.getAutoscaler())
           && Objects.equals(this.autoscalerResource, that.getAutoscalerResource())
           && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fieldMask, that.getFieldMask())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.key, that.getKey())
           && Objects.equals(this.prettyPrint, that.getPrettyPrint())
@@ -467,6 +498,7 @@ public final class PatchRegionAutoscalerHttpRequest implements ApiMessage {
         autoscaler,
         autoscalerResource,
         callback,
+        fieldMask,
         fields,
         key,
         prettyPrint,

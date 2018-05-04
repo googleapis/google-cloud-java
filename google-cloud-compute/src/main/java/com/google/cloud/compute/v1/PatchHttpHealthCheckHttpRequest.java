@@ -27,6 +27,7 @@ import javax.annotation.Nullable;
 public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
+  private final List<String> fieldMask;
   private final String fields;
   private final String httpHealthCheck;
   private final HttpHealthCheck httpHealthCheckResource;
@@ -40,6 +41,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
   private PatchHttpHealthCheckHttpRequest() {
     this.access_token = null;
     this.callback = null;
+    this.fieldMask = null;
     this.fields = null;
     this.httpHealthCheck = null;
     this.httpHealthCheckResource = null;
@@ -53,6 +55,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
   private PatchHttpHealthCheckHttpRequest(
       String access_token,
       String callback,
+      List<String> fieldMask,
       String fields,
       String httpHealthCheck,
       HttpHealthCheck httpHealthCheckResource,
@@ -63,6 +66,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
       String userIp) {
     this.access_token = access_token;
     this.callback = callback;
+    this.fieldMask = fieldMask;
     this.fields = fields;
     this.httpHealthCheck = httpHealthCheck;
     this.httpHealthCheckResource = httpHealthCheckResource;
@@ -80,6 +84,9 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("callback")) {
       return callback;
+    }
+    if (fieldName.equals("fieldMask")) {
+      return fieldMask;
     }
     if (fieldName.equals("fields")) {
       return fields;
@@ -126,6 +133,10 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
 
   public String getCallback() {
     return callback;
+  }
+
+  public List<String> getFieldMask() {
+    return fieldMask;
   }
 
   public String getFields() {
@@ -185,6 +196,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
   public static class Builder {
     private String access_token;
     private String callback;
+    private List<String> fieldMask;
     private String fields;
     private String httpHealthCheck;
     private HttpHealthCheck httpHealthCheckResource;
@@ -203,6 +215,9 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
       }
       if (other.getCallback() != null) {
         this.callback = other.callback;
+      }
+      if (other.getFieldMask() != null) {
+        this.fieldMask = other.fieldMask;
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
@@ -234,6 +249,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
     Builder(PatchHttpHealthCheckHttpRequest source) {
       this.access_token = source.access_token;
       this.callback = source.callback;
+      this.fieldMask = source.fieldMask;
       this.fields = source.fields;
       this.httpHealthCheck = source.httpHealthCheck;
       this.httpHealthCheckResource = source.httpHealthCheckResource;
@@ -259,6 +275,15 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
 
     public Builder setCallback(String callback) {
       this.callback = callback;
+      return this;
+    }
+
+    public List<String> getFieldMask() {
+      return fieldMask;
+    }
+
+    public Builder setFieldMask(String fieldMask) {
+      this.fieldMask = fieldMask;
       return this;
     }
 
@@ -347,6 +372,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
       return new PatchHttpHealthCheckHttpRequest(
           access_token,
           callback,
+          fieldMask,
           fields,
           httpHealthCheck,
           httpHealthCheckResource,
@@ -361,6 +387,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
       Builder newBuilder = new Builder();
       newBuilder.setAccessToken(this.access_token);
       newBuilder.setCallback(this.callback);
+      newBuilder.setFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setHttpHealthCheck(this.httpHealthCheck);
       newBuilder.setHttpHealthCheckResource(this.httpHealthCheckResource);
@@ -381,6 +408,9 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
         + ", "
         + "callback="
         + callback
+        + ", "
+        + "fieldMask="
+        + fieldMask
         + ", "
         + "fields="
         + fields
@@ -417,6 +447,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
       PatchHttpHealthCheckHttpRequest that = (PatchHttpHealthCheckHttpRequest) o;
       return Objects.equals(this.access_token, that.getAccessToken())
           && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fieldMask, that.getFieldMask())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.httpHealthCheck, that.getHttpHealthCheck())
           && Objects.equals(this.httpHealthCheckResource, that.getHttpHealthCheckResource())
@@ -434,6 +465,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
     return Objects.hash(
         access_token,
         callback,
+        fieldMask,
         fields,
         httpHealthCheck,
         httpHealthCheckResource,

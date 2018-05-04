@@ -29,6 +29,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
   private final String backendBucket;
   private final BackendBucket backendBucketResource;
   private final String callback;
+  private final List<String> fieldMask;
   private final String fields;
   private final String key;
   private final String prettyPrint;
@@ -42,6 +43,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
     this.backendBucket = null;
     this.backendBucketResource = null;
     this.callback = null;
+    this.fieldMask = null;
     this.fields = null;
     this.key = null;
     this.prettyPrint = null;
@@ -55,6 +57,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
       String backendBucket,
       BackendBucket backendBucketResource,
       String callback,
+      List<String> fieldMask,
       String fields,
       String key,
       String prettyPrint,
@@ -65,6 +68,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
     this.backendBucket = backendBucket;
     this.backendBucketResource = backendBucketResource;
     this.callback = callback;
+    this.fieldMask = fieldMask;
     this.fields = fields;
     this.key = key;
     this.prettyPrint = prettyPrint;
@@ -86,6 +90,9 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
     }
     if (fieldName.equals("callback")) {
       return callback;
+    }
+    if (fieldName.equals("fieldMask")) {
+      return fieldMask;
     }
     if (fieldName.equals("fields")) {
       return fields;
@@ -134,6 +141,10 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
 
   public String getCallback() {
     return callback;
+  }
+
+  public List<String> getFieldMask() {
+    return fieldMask;
   }
 
   public String getFields() {
@@ -187,6 +198,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
     private String backendBucket;
     private BackendBucket backendBucketResource;
     private String callback;
+    private List<String> fieldMask;
     private String fields;
     private String key;
     private String prettyPrint;
@@ -209,6 +221,9 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
       }
       if (other.getCallback() != null) {
         this.callback = other.callback;
+      }
+      if (other.getFieldMask() != null) {
+        this.fieldMask = other.fieldMask;
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
@@ -236,6 +251,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
       this.backendBucket = source.backendBucket;
       this.backendBucketResource = source.backendBucketResource;
       this.callback = source.callback;
+      this.fieldMask = source.fieldMask;
       this.fields = source.fields;
       this.key = source.key;
       this.prettyPrint = source.prettyPrint;
@@ -277,6 +293,15 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
 
     public Builder setCallback(String callback) {
       this.callback = callback;
+      return this;
+    }
+
+    public List<String> getFieldMask() {
+      return fieldMask;
+    }
+
+    public Builder setFieldMask(String fieldMask) {
+      this.fieldMask = fieldMask;
       return this;
     }
 
@@ -349,6 +374,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
           backendBucket,
           backendBucketResource,
           callback,
+          fieldMask,
           fields,
           key,
           prettyPrint,
@@ -363,6 +389,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
       newBuilder.setBackendBucket(this.backendBucket);
       newBuilder.setBackendBucketResource(this.backendBucketResource);
       newBuilder.setCallback(this.callback);
+      newBuilder.setFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setKey(this.key);
       newBuilder.setPrettyPrint(this.prettyPrint);
@@ -387,6 +414,9 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
         + ", "
         + "callback="
         + callback
+        + ", "
+        + "fieldMask="
+        + fieldMask
         + ", "
         + "fields="
         + fields
@@ -419,6 +449,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
           && Objects.equals(this.backendBucket, that.getBackendBucket())
           && Objects.equals(this.backendBucketResource, that.getBackendBucketResource())
           && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fieldMask, that.getFieldMask())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.key, that.getKey())
           && Objects.equals(this.prettyPrint, that.getPrettyPrint())
@@ -436,6 +467,7 @@ public final class PatchBackendBucketHttpRequest implements ApiMessage {
         backendBucket,
         backendBucketResource,
         callback,
+        fieldMask,
         fields,
         key,
         prettyPrint,

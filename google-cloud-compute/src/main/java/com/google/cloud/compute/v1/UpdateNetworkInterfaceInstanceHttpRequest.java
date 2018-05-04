@@ -27,6 +27,7 @@ import javax.annotation.Nullable;
 public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
+  private final List<String> fieldMask;
   private final String fields;
   private final String instance;
   private final String key;
@@ -41,6 +42,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
   private UpdateNetworkInterfaceInstanceHttpRequest() {
     this.access_token = null;
     this.callback = null;
+    this.fieldMask = null;
     this.fields = null;
     this.instance = null;
     this.key = null;
@@ -55,6 +57,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
   private UpdateNetworkInterfaceInstanceHttpRequest(
       String access_token,
       String callback,
+      List<String> fieldMask,
       String fields,
       String instance,
       String key,
@@ -66,6 +69,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
       String userIp) {
     this.access_token = access_token;
     this.callback = callback;
+    this.fieldMask = fieldMask;
     this.fields = fields;
     this.instance = instance;
     this.key = key;
@@ -84,6 +88,9 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
     }
     if (fieldName.equals("callback")) {
       return callback;
+    }
+    if (fieldName.equals("fieldMask")) {
+      return fieldMask;
     }
     if (fieldName.equals("fields")) {
       return fields;
@@ -133,6 +140,10 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
 
   public String getCallback() {
     return callback;
+  }
+
+  public List<String> getFieldMask() {
+    return fieldMask;
   }
 
   public String getFields() {
@@ -196,6 +207,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
   public static class Builder {
     private String access_token;
     private String callback;
+    private List<String> fieldMask;
     private String fields;
     private String instance;
     private String key;
@@ -215,6 +227,9 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
       }
       if (other.getCallback() != null) {
         this.callback = other.callback;
+      }
+      if (other.getFieldMask() != null) {
+        this.fieldMask = other.fieldMask;
       }
       if (other.getFields() != null) {
         this.fields = other.fields;
@@ -249,6 +264,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
     Builder(UpdateNetworkInterfaceInstanceHttpRequest source) {
       this.access_token = source.access_token;
       this.callback = source.callback;
+      this.fieldMask = source.fieldMask;
       this.fields = source.fields;
       this.instance = source.instance;
       this.key = source.key;
@@ -275,6 +291,15 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
 
     public Builder setCallback(String callback) {
       this.callback = callback;
+      return this;
+    }
+
+    public List<String> getFieldMask() {
+      return fieldMask;
+    }
+
+    public Builder setFieldMask(String fieldMask) {
+      this.fieldMask = fieldMask;
       return this;
     }
 
@@ -376,6 +401,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
       return new UpdateNetworkInterfaceInstanceHttpRequest(
           access_token,
           callback,
+          fieldMask,
           fields,
           instance,
           key,
@@ -391,6 +417,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
       Builder newBuilder = new Builder();
       newBuilder.setAccessToken(this.access_token);
       newBuilder.setCallback(this.callback);
+      newBuilder.setFieldMask(this.fieldMask);
       newBuilder.setFields(this.fields);
       newBuilder.setInstance(this.instance);
       newBuilder.setKey(this.key);
@@ -412,6 +439,9 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
         + ", "
         + "callback="
         + callback
+        + ", "
+        + "fieldMask="
+        + fieldMask
         + ", "
         + "fields="
         + fields
@@ -452,6 +482,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
           (UpdateNetworkInterfaceInstanceHttpRequest) o;
       return Objects.equals(this.access_token, that.getAccessToken())
           && Objects.equals(this.callback, that.getCallback())
+          && Objects.equals(this.fieldMask, that.getFieldMask())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.instance, that.getInstance())
           && Objects.equals(this.key, that.getKey())
@@ -470,6 +501,7 @@ public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessa
     return Objects.hash(
         access_token,
         callback,
+        fieldMask,
         fields,
         instance,
         key,
