@@ -36,7 +36,6 @@ public final class UpdateHealthCheckHttpRequest implements ApiMessage {
   private final String quotaUser;
   private final String requestId;
   private final String userIp;
-  private final transient List<String> fieldMask;
 
   private UpdateHealthCheckHttpRequest() {
     this.access_token = null;
@@ -133,10 +132,6 @@ public final class UpdateHealthCheckHttpRequest implements ApiMessage {
 
   public String getCallback() {
     return callback;
-  }
-
-  public List<String> getFieldMask() {
-    return fieldMask;
   }
 
   public String getFields() {
@@ -282,7 +277,7 @@ public final class UpdateHealthCheckHttpRequest implements ApiMessage {
       return fieldMask;
     }
 
-    public Builder setFieldMask(String fieldMask) {
+    public Builder setFieldMask(List<String> fieldMask) {
       this.fieldMask = fieldMask;
       return this;
     }
