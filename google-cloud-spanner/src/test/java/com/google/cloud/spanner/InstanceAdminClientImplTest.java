@@ -106,8 +106,8 @@ public class InstanceAdminClientImplTest {
   public void createInstance() throws Exception {
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
         rawOperationFuture =
-            OperationFutureUtil.fakeOperationFuture(
-                true, getInstanceProto(), CreateInstanceMetadata.getDefaultInstance());
+            OperationFutureUtil.immediateOperationFuture(
+                "createInstance", getInstanceProto(), CreateInstanceMetadata.getDefaultInstance());
     when(rpc.createInstance("projects/" + PROJECT_ID, INSTANCE_ID, getInstanceProto()))
         .thenReturn(rawOperationFuture);
     OperationFuture<Instance, CreateInstanceMetadata> op =
@@ -142,7 +142,7 @@ public class InstanceAdminClientImplTest {
             .build();
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, UpdateInstanceMetadata>
         rawOperationFuture =
-            OperationFutureUtil(
+            OperationFutureUtil.immediateOperationFuture(
                 "updateInstance", getInstanceProto(), UpdateInstanceMetadata.getDefaultInstance());
     when(rpc.updateInstance(instance, FieldMask.newBuilder().addPaths("node_count").build()))
         .thenReturn(rawOperationFuture);

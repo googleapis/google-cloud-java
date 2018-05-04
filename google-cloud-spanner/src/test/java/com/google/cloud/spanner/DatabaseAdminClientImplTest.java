@@ -59,10 +59,8 @@ public class DatabaseAdminClientImplTest {
 
   @Before
   public void setUp() {
-    System.out.println("here");
     initMocks(this);
     client = new SpannerImpl.DatabaseAdminClientImpl(PROJECT_ID, rpc);
-    System.out.println("here1");
   }
 
   private Database getDatabaseProto() {
@@ -82,7 +80,6 @@ public class DatabaseAdminClientImplTest {
 
   @Test
   public void getDatabase() {
-    System.out.println("Here");
     when(rpc.getDatabase(DB_NAME)).thenReturn(getDatabaseProto());
     com.google.cloud.spanner.Database db = client.getDatabase(INSTANCE_ID, DB_ID);
     assertThat(db.getId().getName()).isEqualTo(DB_NAME);
@@ -92,7 +89,7 @@ public class DatabaseAdminClientImplTest {
   @Test(timeout = 1000)
   public void createDatabase() throws Exception {
     OperationFuture<Database, CreateDatabaseMetadata> rawOperationFuture =
-        OperationFutureUtil.fakeOperationFuture(
+        OperationFutureUtil.immediateOperationFuture(
             "createDatabase", getDatabaseProto(), CreateDatabaseMetadata.getDefaultInstance());
     when(rpc.createDatabase(
             INSTANCE_NAME, "CREATE DATABASE `" + DB_ID + "`", Collections.<String>emptyList()))
@@ -109,8 +106,8 @@ public class DatabaseAdminClientImplTest {
     String opId = "myop";
     List<String> ddl = ImmutableList.of();
     OperationFuture<Empty, UpdateDatabaseDdlMetadata> rawOperationFuture =
-        createMockOperationFuture(
-            "opName", getDatabaseProto(), UpdateDatabaseDdlMetadata.getDefaultInstance());
+        OperationFutureUtil.immediateOperationFuture(
+            opName, Empty.getDefaultInstance(), UpdateDatabaseDdlMetadata.getDefaultInstance());
     when(rpc.updateDatabaseDdl(DB_NAME, ddl, opId)).thenReturn(rawOperationFuture);
     OperationFuture<Void, UpdateDatabaseDdlMetadata> op =
         client.updateDatabaseDdl(INSTANCE_ID, DB_ID, ddl, opId);
