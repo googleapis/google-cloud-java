@@ -61,7 +61,6 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteGlobalAddressHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteGlobalAddressHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/addresses/{address}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalAddressName.newFactory())
@@ -81,7 +80,6 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetGlobalAddressHttpRequest>newBuilder()
-                      .setRequestInstance(GetGlobalAddressHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/addresses/{address}"))
                       .setQueryParams(Sets.<String>newHashSet())
                       .setResourceNameFactory(ProjectGlobalAddressName.newFactory())
@@ -101,7 +99,6 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertGlobalAddressHttpRequest>newBuilder()
-                      .setRequestInstance(InsertGlobalAddressHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/addresses"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -121,7 +118,6 @@ public class HttpJsonGlobalAddressStub extends GlobalAddressStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListGlobalAddressesHttpRequest>newBuilder()
-                      .setRequestInstance(ListGlobalAddressesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/addresses"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))

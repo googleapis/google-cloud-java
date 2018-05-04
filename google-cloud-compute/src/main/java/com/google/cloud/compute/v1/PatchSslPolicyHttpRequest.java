@@ -35,6 +35,7 @@ public final class PatchSslPolicyHttpRequest implements ApiMessage {
   private final String sslPolicy;
   private final SslPolicy sslPolicyResource;
   private final String userIp;
+  private final transient List<String> fieldMask;
 
   private PatchSslPolicyHttpRequest() {
     this.access_token = null;
@@ -116,7 +117,7 @@ public final class PatchSslPolicyHttpRequest implements ApiMessage {
   @Nullable
   @Override
   public List<String> getFieldMask() {
-    return null;
+    return fieldMask;
   }
 
   public String getAccessToken() {

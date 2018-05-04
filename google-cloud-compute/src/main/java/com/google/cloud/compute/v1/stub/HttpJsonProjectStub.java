@@ -70,7 +70,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DisableXpnHostProjectHttpRequest>newBuilder()
-                      .setRequestInstance(DisableXpnHostProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/disableXpnHost"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -90,7 +89,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DisableXpnResourceProjectHttpRequest>newBuilder()
-                      .setRequestInstance(DisableXpnResourceProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/disableXpnResource"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -110,7 +108,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<EnableXpnHostProjectHttpRequest>newBuilder()
-                      .setRequestInstance(EnableXpnHostProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/enableXpnHost"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -130,7 +127,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<EnableXpnResourceProjectHttpRequest>newBuilder()
-                      .setRequestInstance(EnableXpnResourceProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/enableXpnResource"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -150,7 +146,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetProjectHttpRequest>newBuilder()
-                      .setRequestInstance(GetProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}"))
                       .setQueryParams(Sets.<String>newHashSet())
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -170,7 +165,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetXpnHostProjectHttpRequest>newBuilder()
-                      .setRequestInstance(GetXpnHostProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/getXpnHost"))
                       .setQueryParams(Sets.<String>newHashSet())
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -192,7 +186,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetXpnResourcesProjectsHttpRequest>newBuilder()
-                      .setRequestInstance(GetXpnResourcesProjectsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/getXpnResources"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "order_by", "pageToken"))
@@ -213,7 +206,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListXpnHostsProjectsHttpRequest>newBuilder()
-                      .setRequestInstance(ListXpnHostsProjectsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/listXpnHosts"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "order_by", "pageToken"))
@@ -234,7 +226,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<MoveDiskProjectHttpRequest>newBuilder()
-                      .setRequestInstance(MoveDiskProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/moveDisk"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -254,7 +245,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<MoveInstanceProjectHttpRequest>newBuilder()
-                      .setRequestInstance(MoveInstanceProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/moveInstance"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -275,8 +265,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetCommonInstanceMetadataProjectHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetCommonInstanceMetadataProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/setCommonInstanceMetadata"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -297,8 +285,6 @@ public class HttpJsonProjectStub extends ProjectStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetUsageExportBucketProjectHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetUsageExportBucketProjectHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/setUsageExportBucket"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())

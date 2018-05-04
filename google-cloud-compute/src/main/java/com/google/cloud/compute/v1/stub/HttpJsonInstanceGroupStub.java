@@ -71,7 +71,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AddInstancesInstanceGroupHttpRequest>newBuilder()
-                      .setRequestInstance(AddInstancesInstanceGroupHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroups/{instanceGroup}/addInstances"))
@@ -96,8 +95,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AggregatedListInstanceGroupsHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          AggregatedListInstanceGroupsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/instanceGroups"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -118,7 +115,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteInstanceGroupHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteInstanceGroupHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroups/{instanceGroup}"))
@@ -140,7 +136,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetInstanceGroupHttpRequest>newBuilder()
-                      .setRequestInstance(GetInstanceGroupHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroups/{instanceGroup}"))
@@ -162,7 +157,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertInstanceGroupHttpRequest>newBuilder()
-                      .setRequestInstance(InsertInstanceGroupHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instanceGroups"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectZoneName.newFactory())
@@ -182,7 +176,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListInstanceGroupsHttpRequest>newBuilder()
-                      .setRequestInstance(ListInstanceGroupsHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/instanceGroups"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -206,8 +199,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ListInstancesInstanceGroupsHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          ListInstancesInstanceGroupsHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroups/{instanceGroup}/listInstances"))
@@ -231,8 +222,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<RemoveInstancesInstanceGroupHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          RemoveInstancesInstanceGroupHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroups/{instanceGroup}/removeInstances"))
@@ -254,8 +243,6 @@ public class HttpJsonInstanceGroupStub extends InstanceGroupStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetNamedPortsInstanceGroupHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetNamedPortsInstanceGroupHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/instanceGroups/{instanceGroup}/setNamedPorts"))

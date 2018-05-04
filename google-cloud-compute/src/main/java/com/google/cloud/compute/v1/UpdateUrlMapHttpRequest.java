@@ -35,6 +35,7 @@ public final class UpdateUrlMapHttpRequest implements ApiMessage {
   private final String urlMap;
   private final UrlMap urlMapResource;
   private final String userIp;
+  private final transient List<String> fieldMask;
 
   private UpdateUrlMapHttpRequest() {
     this.access_token = null;
@@ -116,7 +117,7 @@ public final class UpdateUrlMapHttpRequest implements ApiMessage {
   @Nullable
   @Override
   public List<String> getFieldMask() {
-    return null;
+    return fieldMask;
   }
 
   public String getAccessToken() {

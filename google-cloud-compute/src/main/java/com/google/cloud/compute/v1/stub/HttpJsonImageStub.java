@@ -66,7 +66,6 @@ public class HttpJsonImageStub extends ImageStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteImageHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteImageHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/images/{image}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectGlobalImageName.newFactory())
@@ -86,7 +85,6 @@ public class HttpJsonImageStub extends ImageStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeprecateImageHttpRequest>newBuilder()
-                      .setRequestInstance(DeprecateImageHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/images/{image}/deprecate"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -106,7 +104,6 @@ public class HttpJsonImageStub extends ImageStub {
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ApiMessageHttpRequestFormatter.<GetImageHttpRequest>newBuilder()
-                  .setRequestInstance(GetImageHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/global/images/{image}"))
                   .setQueryParams(Sets.<String>newHashSet())
                   .setResourceNameFactory(ProjectGlobalImageName.newFactory())
@@ -126,7 +123,6 @@ public class HttpJsonImageStub extends ImageStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetFromFamilyImageHttpRequest>newBuilder()
-                      .setRequestInstance(GetFromFamilyImageHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/images/family/{family}"))
                       .setQueryParams(Sets.<String>newHashSet())
@@ -147,7 +143,6 @@ public class HttpJsonImageStub extends ImageStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertImageHttpRequest>newBuilder()
-                      .setRequestInstance(InsertImageHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/images"))
                       .setQueryParams(Sets.<String>newHashSet("forceCreate", "requestId"))
                       .setResourceNameFactory(ProjectName.newFactory())
@@ -167,7 +162,6 @@ public class HttpJsonImageStub extends ImageStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListImagesHttpRequest>newBuilder()
-                      .setRequestInstance(ListImagesHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/global/images"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -188,7 +182,6 @@ public class HttpJsonImageStub extends ImageStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetLabelsImageHttpRequest>newBuilder()
-                      .setRequestInstance(SetLabelsImageHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/images/{resource}/setLabels"))
                       .setQueryParams(Sets.<String>newHashSet())

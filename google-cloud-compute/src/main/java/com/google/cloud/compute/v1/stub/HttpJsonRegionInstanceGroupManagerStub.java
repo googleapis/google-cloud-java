@@ -72,9 +72,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<AbandonInstancesRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          AbandonInstancesRegionInstanceGroupManagerHttpRequest
-                              .getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/abandonInstances"))
@@ -97,8 +94,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<DeleteRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          DeleteRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}"))
@@ -123,8 +118,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<DeleteInstancesRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          DeleteInstancesRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/deleteInstances"))
@@ -149,8 +142,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<GetRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          GetRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}"))
@@ -173,8 +164,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<InsertRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          InsertRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/instanceGroupManagers"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -199,8 +188,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ListRegionInstanceGroupManagersHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          ListRegionInstanceGroupManagersHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/instanceGroupManagers"))
                       .setQueryParams(
@@ -228,9 +215,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ListManagedInstancesRegionInstanceGroupManagersHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          ListManagedInstancesRegionInstanceGroupManagersHttpRequest
-                              .getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/listManagedInstances"))
@@ -258,9 +242,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<RecreateInstancesRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          RecreateInstancesRegionInstanceGroupManagerHttpRequest
-                              .getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/recreateInstances"))
@@ -283,8 +264,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ResizeRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          ResizeRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/resize"))
@@ -309,9 +288,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetInstanceTemplateRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetInstanceTemplateRegionInstanceGroupManagerHttpRequest
-                              .getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate"))
@@ -336,8 +312,6 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetTargetPoolsRegionInstanceGroupManagerHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetTargetPoolsRegionInstanceGroupManagerHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/setTargetPools"))

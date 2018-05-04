@@ -35,6 +35,7 @@ public final class PatchSubnetworkHttpRequest implements ApiMessage {
   private final String subnetwork;
   private final Subnetwork subnetworkResource;
   private final String userIp;
+  private final transient List<String> fieldMask;
 
   private PatchSubnetworkHttpRequest() {
     this.access_token = null;
@@ -116,7 +117,7 @@ public final class PatchSubnetworkHttpRequest implements ApiMessage {
   @Nullable
   @Override
   public List<String> getFieldMask() {
-    return null;
+    return fieldMask;
   }
 
   public String getAccessToken() {

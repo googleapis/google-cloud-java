@@ -36,6 +36,7 @@ public final class UpdateAutoscalerHttpRequest implements ApiMessage {
   private final String requestId;
   private final String userIp;
   private final String zone;
+  private final transient List<String> fieldMask;
 
   private UpdateAutoscalerHttpRequest() {
     this.access_token = null;
@@ -123,7 +124,7 @@ public final class UpdateAutoscalerHttpRequest implements ApiMessage {
   @Nullable
   @Override
   public List<String> getFieldMask() {
-    return null;
+    return fieldMask;
   }
 
   public String getAccessToken() {

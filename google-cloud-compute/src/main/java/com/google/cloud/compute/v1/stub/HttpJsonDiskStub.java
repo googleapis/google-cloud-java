@@ -69,7 +69,6 @@ public class HttpJsonDiskStub extends DiskStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<AggregatedListDisksHttpRequest>newBuilder()
-                      .setRequestInstance(AggregatedListDisksHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/aggregated/disks"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -90,7 +89,6 @@ public class HttpJsonDiskStub extends DiskStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<CreateSnapshotDiskHttpRequest>newBuilder()
-                      .setRequestInstance(CreateSnapshotDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/disks/{disk}/createSnapshot"))
                       .setQueryParams(Sets.<String>newHashSet("guestFlush", "requestId"))
@@ -111,7 +109,6 @@ public class HttpJsonDiskStub extends DiskStub {
               .setHttpMethod(HttpMethods.DELETE)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<DeleteDiskHttpRequest>newBuilder()
-                      .setRequestInstance(DeleteDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/disks/{disk}"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
                       .setResourceNameFactory(ProjectZoneDiskName.newFactory())
@@ -130,7 +127,6 @@ public class HttpJsonDiskStub extends DiskStub {
           .setHttpMethod(HttpMethods.GET)
           .setRequestFormatter(
               ApiMessageHttpRequestFormatter.<GetDiskHttpRequest>newBuilder()
-                  .setRequestInstance(GetDiskHttpRequest.getDefaultInstance())
                   .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/disks/{disk}"))
                   .setQueryParams(Sets.<String>newHashSet())
                   .setResourceNameFactory(ProjectZoneDiskName.newFactory())
@@ -150,7 +146,6 @@ public class HttpJsonDiskStub extends DiskStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<InsertDiskHttpRequest>newBuilder()
-                      .setRequestInstance(InsertDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/disks"))
                       .setQueryParams(Sets.<String>newHashSet("requestId", "sourceImage"))
                       .setResourceNameFactory(ProjectZoneName.newFactory())
@@ -170,7 +165,6 @@ public class HttpJsonDiskStub extends DiskStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListDisksHttpRequest>newBuilder()
-                      .setRequestInstance(ListDisksHttpRequest.getDefaultInstance())
                       .setPathTemplate(PathTemplate.create("{project}/zones/{zone}/disks"))
                       .setQueryParams(
                           Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
@@ -191,7 +185,6 @@ public class HttpJsonDiskStub extends DiskStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ResizeDiskHttpRequest>newBuilder()
-                      .setRequestInstance(ResizeDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/disks/{disk}/resize"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))
@@ -212,7 +205,6 @@ public class HttpJsonDiskStub extends DiskStub {
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<SetLabelsDiskHttpRequest>newBuilder()
-                      .setRequestInstance(SetLabelsDiskHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/zones/{zone}/disks/{resource}/setLabels"))
                       .setQueryParams(Sets.<String>newHashSet("requestId"))

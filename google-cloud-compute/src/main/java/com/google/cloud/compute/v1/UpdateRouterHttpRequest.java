@@ -35,6 +35,7 @@ public final class UpdateRouterHttpRequest implements ApiMessage {
   private final String router;
   private final Router routerResource;
   private final String userIp;
+  private final transient List<String> fieldMask;
 
   private UpdateRouterHttpRequest() {
     this.access_token = null;
@@ -116,7 +117,7 @@ public final class UpdateRouterHttpRequest implements ApiMessage {
   @Nullable
   @Override
   public List<String> getFieldMask() {
-    return null;
+    return fieldMask;
   }
 
   public String getAccessToken() {

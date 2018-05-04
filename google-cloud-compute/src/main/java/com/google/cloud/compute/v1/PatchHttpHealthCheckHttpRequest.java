@@ -35,6 +35,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
   private final String quotaUser;
   private final String requestId;
   private final String userIp;
+  private final transient List<String> fieldMask;
 
   private PatchHttpHealthCheckHttpRequest() {
     this.access_token = null;
@@ -116,7 +117,7 @@ public final class PatchHttpHealthCheckHttpRequest implements ApiMessage {
   @Nullable
   @Override
   public List<String> getFieldMask() {
-    return null;
+    return fieldMask;
   }
 
   public String getAccessToken() {

@@ -63,7 +63,6 @@ public class HttpJsonRegionInstanceGroupStub extends RegionInstanceGroupStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<GetRegionInstanceGroupHttpRequest>newBuilder()
-                      .setRequestInstance(GetRegionInstanceGroupHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroups/{instanceGroup}"))
@@ -87,7 +86,6 @@ public class HttpJsonRegionInstanceGroupStub extends RegionInstanceGroupStub {
               .setHttpMethod(HttpMethods.GET)
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter.<ListRegionInstanceGroupsHttpRequest>newBuilder()
-                      .setRequestInstance(ListRegionInstanceGroupsHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create("{project}/regions/{region}/instanceGroups"))
                       .setQueryParams(
@@ -113,8 +111,6 @@ public class HttpJsonRegionInstanceGroupStub extends RegionInstanceGroupStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<ListInstancesRegionInstanceGroupsHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          ListInstancesRegionInstanceGroupsHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroups/{instanceGroup}/listInstances"))
@@ -138,8 +134,6 @@ public class HttpJsonRegionInstanceGroupStub extends RegionInstanceGroupStub {
               .setRequestFormatter(
                   ApiMessageHttpRequestFormatter
                       .<SetNamedPortsRegionInstanceGroupHttpRequest>newBuilder()
-                      .setRequestInstance(
-                          SetNamedPortsRegionInstanceGroupHttpRequest.getDefaultInstance())
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/instanceGroups/{instanceGroup}/setNamedPorts"))
